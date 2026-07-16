@@ -17,14 +17,18 @@ export default function Header() {
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', padding: '10px 0' }}>
-          <svg width="40" height="46" viewBox="0 0 40 46" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: '-12px', marginTop: '-4px' }}>
-            <path d="M40 5 L15 10 V28 C15 38 25 43 40 45" stroke="var(--color-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontSize: '32px', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', lineHeight: '1', position: 'relative', zIndex: 1 }}>Де-Юре</span>
-            <span style={{ fontSize: '11px', color: 'var(--color-text-secondary)', letterSpacing: '0.05em', textTransform: 'uppercase', marginTop: '4px' }}>Юридическая компания</span>
-          </div>
+        <Link href="/" style={{ display: 'block', padding: '0', margin: '-20px 0' }}>
+          <img 
+            src="/-/images/logo-light.png" 
+            alt="Де-Юре" 
+            style={{ 
+              height: '140px', 
+              width: 'auto', 
+              display: 'block',
+              mixBlendMode: 'multiply', /* Полностью убирает белый фон! */
+              objectFit: 'contain'
+            }} 
+          />
         </Link>
         <nav style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
           <div style={{ display: 'flex', gap: '30px' }}>
