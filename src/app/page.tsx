@@ -245,12 +245,12 @@ export default function Home() {
       <footer style={{ backgroundColor: '#0B1C2A', color: 'var(--color-white)', padding: '40px 0 20px' }}>
         <div className="container grid grid-4" style={{ gap: '30px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '30px', marginBottom: '20px' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-              <svg width="30" height="48" viewBox="0 0 24 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M24 0L0 7.5V20C0 31.5 12 38.5 24 40V0Z" fill="var(--color-cream)"/>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
+              <svg width="45" height="52" viewBox="0 0 40 46" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: '-14px', marginTop: '-4px' }}>
+                <path d="M40 5 L15 10 V28 C15 38 25 43 40 45" stroke="var(--color-cream)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontSize: '38px', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'var(--color-cream)', lineHeight: '1' }}>Де-Юре</span>
+                <span style={{ fontSize: '38px', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'var(--color-cream)', lineHeight: '1', position: 'relative', zIndex: 1 }}>Де-Юре</span>
                 <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.7)', letterSpacing: '0.05em', textTransform: 'uppercase', marginTop: '4px' }}>Юридическая компания</span>
               </div>
             </div>
