@@ -40,7 +40,8 @@ export default function FAQ() {
             
             {/* Trust Trigger / Rating */}
             <div style={{ 
-              display: 'flex', 
+              display: 'inline-flex', 
+              width: 'fit-content',
               alignItems: 'center', 
               gap: '20px', 
               padding: '24px', 

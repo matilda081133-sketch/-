@@ -89,46 +89,61 @@ export default function Home() {
           
           <div style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+            gridTemplateColumns: 'repeat(3, 1fr)', 
             borderTop: '1px solid var(--color-primary)', 
-            paddingTop: '40px'
+            borderLeft: '1px solid rgba(23, 50, 77, 0.1)',
+            borderBottom: '1px solid rgba(23, 50, 77, 0.1)'
           }}>
             
-            <div style={{ paddingRight: '40px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', marginBottom: '40px' }}>
-              <div style={{ fontSize: '3.5rem', lineHeight: '1', fontWeight: 'bold', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', marginBottom: '20px' }}>
-                15+
+            {[
+              {
+                tag: "Опыт",
+                title: "10+ лет боевой практики",
+                desc: "Реальные дела и работающие решения. Не ищем оправданий — находим выходы из любых юридических тупиков."
+              },
+              {
+                tag: "Надежность",
+                title: "Абсолютная тайна",
+                desc: "Ваши бизнес-детали не выйдут за пределы офиса. Защищаем переданную информацию как собственные секреты."
+              },
+              {
+                tag: "Аналитика",
+                title: "Никаких шаблонов",
+                desc: "Разбираем задачу до мелочей. Создаем выигрышную стратегию, заточенную именно под ваши цели."
+              },
+              {
+                tag: "Вовлеченность",
+                title: "Ваш итоговый успех",
+                desc: "Предлагаем прозрачные решения без скрытых условий. Минимизируем риски и максимизируем ваш результат."
+              },
+              {
+                tag: "Сервис",
+                title: "Персональный эксперт",
+                desc: "На дело назначается профильный юрист. Глубокое погружение в контекст и всегда на связи с вами."
+              },
+              {
+                tag: "Прозрачность",
+                title: "Фиксированные цены",
+                desc: "Никаких игр с тарифами. Озвученная сумма фиксируется в договоре и не меняется в процессе работы."
+              }
+            ].map((item, i) => (
+              <div key={i} style={{ 
+                padding: '40px', 
+                borderRight: '1px solid rgba(23, 50, 77, 0.1)',
+                borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
+                background: 'var(--color-white)'
+              }}>
+                <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-text-secondary)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase' }}>
+                  {item.tag}
+                </div>
+                <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)' }}>
+                  {item.title}
+                </h3>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0 }}>
+                  {item.desc}
+                </p>
               </div>
-              <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>
-                Лет судебной практики
-              </h3>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.5', margin: 0 }}>
-                Наши юристы имеют реальный опыт работы следователями и федеральными судьями.
-              </p>
-            </div>
-
-            <div style={{ padding: '0 40px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', marginBottom: '40px' }}>
-              <div style={{ fontSize: '3.5rem', lineHeight: '1', fontWeight: 'bold', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', marginBottom: '20px' }}>
-                100%
-              </div>
-              <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>
-                Полная конфиденциальность
-              </h3>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.5', margin: 0 }}>
-                Гарантируем абсолютную анонимность всех консультаций в соответствии с ФЗ №152.
-              </p>
-            </div>
-
-            <div style={{ paddingLeft: '40px', marginBottom: '40px' }}>
-              <div style={{ fontSize: '3.5rem', lineHeight: '1', fontWeight: 'bold', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', marginBottom: '20px' }}>
-                0 ₽
-              </div>
-              <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>
-                Бесплатный глубокий анализ
-              </h3>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.5', margin: 0 }}>
-                Тщательное рассмотрение ваших документов и честная оценка перспектив дела до подписания договора.
-              </p>
-            </div>
+            ))}
 
           </div>
         </div>
