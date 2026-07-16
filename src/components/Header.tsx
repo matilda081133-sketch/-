@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+import Logo from './Logo';
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -17,18 +19,8 @@ export default function Header() {
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link href="/" style={{ display: 'block', padding: '0', margin: '-20px 0' }}>
-          <img 
-            src="/-/images/logo-light.png" 
-            alt="Де-Юре" 
-            style={{ 
-              height: '140px', 
-              width: 'auto', 
-              display: 'block',
-              mixBlendMode: 'multiply', /* Полностью убирает белый фон! */
-              objectFit: 'contain'
-            }} 
-          />
+        <Link href="/" style={{ display: 'block', padding: '10px 0' }}>
+          <Logo color="var(--color-primary)" width="200px" />
         </Link>
         <nav style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
           <div style={{ display: 'flex', gap: '30px' }}>
