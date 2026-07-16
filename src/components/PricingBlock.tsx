@@ -50,27 +50,29 @@ export default function PricingBlock() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {prices.map((item, index) => (
             <div key={index} style={{
               background: 'rgba(255, 255, 255, 0.03)',
               border: '1px solid rgba(255, 255, 255, 0.1)',
-              padding: '32px',
+              padding: '24px 32px',
               transition: 'all 0.4s ease',
               display: 'flex',
-              flexDirection: 'column',
+              alignItems: 'center',
               justifyContent: 'space-between',
               position: 'relative',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              flexWrap: 'wrap',
+              gap: '20px'
             }}
             className="pricing-card"
             >
               <div className="pricing-accent" style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '0%', background: 'var(--color-cream)', transition: 'height 0.4s ease' }}></div>
-              <div>
-                <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-white)', marginBottom: '12px', lineHeight: '1.4' }}>
+              <div style={{ flex: '1 1 500px' }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-white)', marginBottom: '8px', lineHeight: '1.4' }}>
                   {item.title}
                 </h3>
-                <div style={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '15px', marginBottom: '24px' }}>
+                <div style={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '15px' }}>
                   {item.desc}
                 </div>
               </div>
@@ -81,10 +83,10 @@ export default function PricingBlock() {
                 fontFamily: 'var(--font-serif)',
                 display: 'flex',
                 alignItems: 'baseline',
-                gap: '8px'
+                gap: '8px',
+                whiteSpace: 'nowrap'
               }}>
                 {item.price}
-                <span style={{ fontSize: '14px', fontWeight: 'normal', color: 'rgba(255, 255, 255, 0.4)', fontFamily: 'var(--font-sans)' }}>/ базово</span>
               </div>
             </div>
           ))}
