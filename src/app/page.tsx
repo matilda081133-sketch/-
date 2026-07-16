@@ -250,7 +250,7 @@ export default function Home() {
                 src="/-/images/logo-dark.png" 
                 alt="Де-Юре" 
                 style={{ 
-                  height: '90px', 
+                  height: '150px', 
                   width: 'auto', 
                   display: 'block'
                 }} 

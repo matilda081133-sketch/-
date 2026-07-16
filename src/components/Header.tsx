@@ -17,12 +17,12 @@ export default function Header() {
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link href="/" style={{ display: 'block', padding: '10px 0' }}>
+        <Link href="/" style={{ display: 'block', padding: '10px 0', margin: '-15px 0' }}>
           <img 
             src="/-/images/logo-light.png" 
             alt="Де-Юре" 
             style={{ 
-              height: '80px', 
+              height: '130px', 
               width: 'auto', 
               display: 'block'
             }} 
