@@ -32,7 +32,7 @@ export default function PricingBlock() {
   return (
     <section className="section" style={{ padding: '100px 0', background: 'var(--color-primary)', color: 'var(--color-white)', position: 'relative', overflow: 'hidden' }}>
       {/* Декоративный строгий паттерн (линии) */}
-      <div style={{ position: 'absolute', top: 0, right: 0, width: '400px', height: '100%', borderLeft: '1px solid rgba(255,255,255,0.05)', borderRight: '1px solid rgba(255,255,255,0.05)', right: '10%', zIndex: 0 pointerEvents: 'none' }}></div>
+      <div style={{ position: 'absolute', top: 0, right: 0, width: '400px', height: '100%', borderLeft: '1px solid rgba(255,255,255,0.05)', borderRight: '1px solid rgba(255,255,255,0.05)', right: '10%', zIndex: 0, pointerEvents: 'none' }}></div>
       <div style={{ position: 'absolute', top: 0, left: '10%', width: '1px', height: '100%', background: 'rgba(255,255,255,0.05)', zIndex: 0, pointerEvents: 'none' }}></div>
 
       <div className="container" style={{ maxWidth: '1000px', position: 'relative', zIndex: 1 }}>
