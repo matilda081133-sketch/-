@@ -17,7 +17,7 @@ export default function Home() {
         minHeight: '85vh', 
         display: 'flex', 
         alignItems: 'center',
-        paddingTop: '100px',
+        paddingTop: '160px',
         background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
         overflow: 'hidden'
       }}>
@@ -263,7 +263,7 @@ export default function Home() {
       <footer style={{ backgroundColor: '#0B1C2A', color: 'var(--color-white)', padding: '40px 0 20px' }}>
         <div className="container grid grid-4" style={{ gap: '30px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '30px', marginBottom: '20px' }}>
           <div>
-            <div style={{ marginBottom: '24px' }}>
+            <div style={{ marginBottom: '24px', marginTop: '-40px' }}>
               <img 
                 src="/-/images/logo-dark.png" 
                 alt="Де-Юре" 
