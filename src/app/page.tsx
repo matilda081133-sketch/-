@@ -64,7 +64,7 @@ export default function Home() {
             </div>
           </div>
           <div className="img-placeholder" style={{ height: '600px', boxShadow: 'var(--shadow-md)', border: '8px solid var(--color-white)', padding: 0, overflow: 'hidden' }}>
-            <img src="/hero_office.png" alt="Юридическая компания" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src="hero_office.png" alt="Юридическая компания" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
         </div>
       </section>
