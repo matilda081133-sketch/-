@@ -127,12 +127,14 @@ export default function Home() {
                 desc: "Никаких игр с тарифами. Озвученная сумма фиксируется в договоре и не меняется в процессе работы."
               }
             ].map((item, i) => (
-              <div key={i} style={{ 
+              <div key={i} className="usp-card" style={{ 
                 padding: '40px', 
                 borderRight: '1px solid rgba(23, 50, 77, 0.1)',
                 borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
-                background: 'var(--color-white)'
+                background: 'var(--color-white)',
+                position: 'relative'
               }}>
+                <div className="usp-accent"></div>
                 <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-text-secondary)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase' }}>
                   {item.tag}
                 </div>

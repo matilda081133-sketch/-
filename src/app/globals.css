@@ -392,3 +392,26 @@ h4 { font-size: 1.25rem; }
     flex: 0 0 calc(85%);
   }
 }
+
+/* USP Cards Hover Animation */
+.usp-card {
+  transition: all 0.4s ease;
+}
+.usp-card:hover {
+  background: var(--color-grey-blue) !important;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+}
+.usp-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0%;
+  background: var(--color-primary);
+  transition: height 0.4s ease;
+}
+.usp-card:hover .usp-accent {
+  height: 100% !important;
+}
