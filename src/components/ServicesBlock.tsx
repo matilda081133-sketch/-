@@ -135,8 +135,8 @@ export default function ServicesBlock() {
         {/* Cards Grid */}
         <div className="grid grid-3" style={{ gap: '30px' }}>
           {services[activeTab].map((service, index) => (
-            <Link href={service.link} key={index} style={{ textDecoration: 'none', color: 'inherit' }}>
-              <div className="card-service">
+            <Link href={service.link} key={index} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', height: '100%' }}>
+              <div className="card-service" style={{ width: '100%', height: '100%' }}>
                 <div className="card-service-num">{service.num}</div>
                 <div className="card-service-content">
                   <h3 style={{ marginTop: 0, marginBottom: '16px', fontSize: '22px', color: 'var(--color-deep-blue)' }}>
