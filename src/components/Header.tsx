@@ -22,7 +22,7 @@ export default function Header() {
             src="/-/images/logo-light.png" 
             alt="Де-Юре" 
             style={{ 
-              height: '130px', 
+              height: '180px', 
               width: 'auto', 
               display: 'block'
             }} 
