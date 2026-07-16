@@ -50,16 +50,16 @@ export default function Home() {
             </div>
             
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '15px', fontWeight: 600, color: 'var(--color-deep-blue)', background: 'var(--color-white)', padding: '12px 18px', borderLeft: '3px solid var(--color-primary)', boxShadow: 'var(--shadow-sm)' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', fontWeight: 500, color: 'var(--color-white)', background: 'var(--color-deep-blue)', padding: '14px 20px', borderBottom: '3px solid var(--color-primary)' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 Более 20 лет практики
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '15px', fontWeight: 600, color: 'var(--color-deep-blue)', background: 'var(--color-white)', padding: '12px 18px', borderLeft: '3px solid var(--color-primary)', boxShadow: 'var(--shadow-sm)' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', fontWeight: 500, color: 'var(--color-white)', background: 'var(--color-deep-blue)', padding: '14px 20px', borderBottom: '3px solid var(--color-primary)' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 Полная конфиденциальность
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '15px', fontWeight: 600, color: 'var(--color-deep-blue)', background: 'var(--color-white)', padding: '12px 18px', borderLeft: '3px solid var(--color-primary)', boxShadow: 'var(--shadow-sm)' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', fontWeight: 500, color: 'var(--color-white)', background: 'var(--color-deep-blue)', padding: '14px 20px', borderBottom: '3px solid var(--color-primary)' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 Честная оценка перспектив
               </div>
             </div>
