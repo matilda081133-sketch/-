@@ -164,27 +164,34 @@ export default function ServicesBlock() {
       </div>
 
       {/* Tabs */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginBottom: '50px', flexWrap: 'wrap' }}>
-        {tabs.map(tab => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id as Tab)}
-            style={{
-              padding: '16px 32px',
-              borderRadius: 'var(--radius-lg)',
-              border: 'none',
-              background: activeTab === tab.id ? 'var(--color-primary)' : 'var(--color-white)',
-              color: activeTab === tab.id ? 'var(--color-white)' : 'var(--color-primary)',
-              fontSize: '18px',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              boxShadow: activeTab === tab.id ? 'var(--shadow-md)' : 'var(--shadow-sm)',
-              transition: 'var(--transition)'
-            }}
-          >
-            {tab.label}
-          </button>
-        ))}
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '50px' }}>
+        <div style={{ 
+          display: 'flex', 
+          background: 'var(--color-white)', 
+          border: '1px solid var(--color-primary)',
+          borderRadius: '0px'
+        }}>
+          {tabs.map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id as Tab)}
+              style={{
+                padding: '16px 48px',
+                border: 'none',
+                background: activeTab === tab.id ? 'var(--color-primary)' : 'transparent',
+                color: activeTab === tab.id ? 'var(--color-white)' : 'var(--color-primary)',
+                fontSize: '18px',
+                fontWeight: activeTab === tab.id ? 'bold' : 'normal',
+                cursor: 'pointer',
+                transition: 'var(--transition)',
+                outline: 'none',
+                minWidth: '250px'
+              }}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Cards Grid */}
