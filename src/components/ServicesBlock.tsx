@@ -18,25 +18,41 @@ export default function ServicesBlock() {
     business: [
       {
         title: 'Арбитражные споры',
-        desc: 'Взыскание дебиторской задолженности, споры по договорам подряда и поставки, защита интересов в суде.',
+        subServices: [
+          'Взыскание дебиторской задолженности',
+          'Споры по договорам подряда и поставки',
+          'Защита интересов в суде'
+        ],
         link: '/biznesu/arbitrazh',
         icon: '⚖️'
       },
       {
         title: 'Налоговая практика',
-        desc: 'Защита при выездных и камеральных проверках ФНС, оспаривание доначислений, налоговый консалтинг.',
+        subServices: [
+          'Защита при налоговых проверках',
+          'Оспаривание доначислений ФНС',
+          'Налоговый консалтинг'
+        ],
         link: '/biznesu/nalogi',
         icon: '📊'
       },
       {
         title: 'Банкротство юр. лиц',
-        desc: 'Защита от субсидиарной ответственности, контролируемое банкротство, включение в реестр кредиторов.',
+        subServices: [
+          'Защита от субсидиарной ответственности',
+          'Контролируемое банкротство',
+          'Включение в реестр кредиторов'
+        ],
         link: '/biznesu/bankrotstvo',
         icon: '🏢'
       },
       {
         title: 'Корпоративное право',
-        desc: 'Разрешение конфликтов учредителей, защита от рейдерских захватов, структурирование сделок.',
+        subServices: [
+          'Разрешение конфликтов учредителей',
+          'Защита от рейдерских захватов',
+          'Структурирование сделок'
+        ],
         link: '/biznesu/korporativnoe',
         icon: '🤝'
       }
@@ -44,45 +60,73 @@ export default function ServicesBlock() {
     citizens: [
       {
         title: 'Банкротство физ. лиц',
-        desc: 'Законное списание долгов по кредитам и ЖКХ, защита имущества от приставов и коллекторов.',
+        subServices: [
+          'Списание долгов по кредитам и ЖКХ',
+          'Защита имущества от приставов',
+          'Защита от коллекторов'
+        ],
         link: '/grazhdanam/bankrotstvo',
         icon: '💳'
       },
       {
         title: 'Семейные споры',
-        desc: 'Сложные разводы, раздел совместно нажитого имущества, споры о детях и алиментах.',
+        subServices: [
+          'Сложные разводы',
+          'Раздел совместно нажитого имущества',
+          'Споры о детях и алиментах'
+        ],
         link: '/grazhdanam/semejnie',
         icon: '👨‍👩‍👧'
       },
       {
         title: 'Споры с застройщиками',
-        desc: 'Взыскание неустойки за просрочку, компенсация за строительные недостатки, приемка квартир.',
+        subServices: [
+          'Взыскание неустойки за просрочку',
+          'Компенсация за недостатки',
+          'Приемка квартир'
+        ],
         link: '/grazhdanam/zastroishiki',
         icon: '🏗️'
       },
       {
         title: 'Наследственные дела',
-        desc: 'Оспаривание завещаний, восстановление сроков, раздел наследственного имущества.',
+        subServices: [
+          'Оспаривание завещаний',
+          'Восстановление сроков',
+          'Раздел наследственного имущества'
+        ],
         link: '/grazhdanam/nasledstvo',
         icon: '📜'
       },
       {
         title: 'Защита прав потребителей',
-        desc: 'Возврат бракованных автомобилей, споры со страховыми, маркетплейсами и мед. клиниками.',
+        subServices: [
+          'Возврат бракованных автомобилей',
+          'Споры со страховыми',
+          'Взыскание ущерба'
+        ],
         link: '/grazhdanam/potrebiteli',
         icon: '🛍️'
       }
     ],
     special: [
       {
-        title: 'Уголовная защита (White-collar)',
-        desc: 'Защита руководителей и собственников по экономическим, должностным и налоговым преступлениям.',
+        title: 'Уголовная защита',
+        subServices: [
+          'Защита по экономическим преступлениям',
+          'Защита по должностным преступлениям',
+          'Сопровождение при допросах'
+        ],
         link: '/praktika/ugolovnaya',
         icon: '🛡️'
       },
       {
         title: 'Миграционные споры',
-        desc: 'Снятие запрета на въезд в РФ, обжалование депортации, помощь в получении ВНЖ и гражданства.',
+        subServices: [
+          'Отмена выдворения и депортации',
+          'Снятие запрета на въезд в РФ',
+          'Помощь в получении ВНЖ'
+        ],
         link: '/praktika/migracionnaya',
         icon: '🌍'
       }
@@ -146,12 +190,35 @@ export default function ServicesBlock() {
             <div style={{ fontSize: '40px', marginBottom: '24px', opacity: 0.9 }}>
               {service.icon}
             </div>
-            <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)' }}>
+            <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '24px', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)' }}>
               {service.title}
             </h3>
-            <p style={{ color: 'var(--color-text-secondary)', marginBottom: '32px', lineHeight: '1.6', flexGrow: 1 }}>
-              {service.desc}
-            </p>
+            
+            <ul style={{ 
+              listStyle: 'none', 
+              padding: 0, 
+              margin: '0 0 32px 0', 
+              flexGrow: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px'
+            }}>
+              {service.subServices.map((sub, i) => (
+                <li key={i} style={{ 
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: '1.4',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '10px'
+                }}>
+                  <svg style={{ flexShrink: 0, marginTop: '4px', color: 'var(--color-accent)' }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span style={{ fontSize: '15px' }}>{sub}</span>
+                </li>
+              ))}
+            </ul>
+
             <Link href={service.link} style={{ 
               color: 'var(--color-accent)', 
               fontWeight: 'bold', 
