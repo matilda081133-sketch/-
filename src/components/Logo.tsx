@@ -42,7 +42,7 @@ export default function Logo({ color = 'var(--color-primary)', width = '220px', 
         fill={color} 
         opacity="0.8" 
         letterSpacing="0.08em" 
-        textTransform="uppercase"
+        style={{ textTransform: 'uppercase' }}
       >
         Юридическая компания
       </text>
