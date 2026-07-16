@@ -48,10 +48,10 @@ export default function FAQ() {
               backgroundColor: 'var(--color-white)',
               borderLeft: '4px solid var(--color-primary)',
               boxShadow: 'var(--shadow-sm)'
-            }}>
-              <div style={{ display: 'flex', gap: '4px' }}>
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <svg key={star} width="20" height="20" viewBox="0 0 24 24" fill="#D4AF37" xmlns="http://www.w3.org/2000/svg">
+            }} className="trust-stars-container">
+              <div className="trust-stars" style={{ display: 'flex', gap: '4px' }}>
+                {[1, 2, 3, 4, 5].map((star, i) => (
+                  <svg key={star} className="trust-star" style={{ animationDelay: `${i * 0.1}s` }} width="20" height="20" viewBox="0 0 24 24" fill="#D4AF37" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
                   </svg>
                 ))}

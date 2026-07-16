@@ -96,7 +96,7 @@ export default function PricingBlock() {
           <p style={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '15px', margin: 0 }}>
             *Указана базовая стоимость. Точная смета формируется после бесплатного анализа вашей ситуации.
           </p>
-          <a href="#consultation" className="btn" style={{ background: 'var(--color-white)', color: 'var(--color-primary)', borderColor: 'var(--color-white)' }}>Узнать точную стоимость</a>
+          <a href="#consultation" className="btn btn-white">Узнать точную стоимость</a>
         </div>
       </div>
 

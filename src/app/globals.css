@@ -141,6 +141,15 @@ h4 { font-size: 1.25rem; }
   color: var(--color-white);
 }
 
+.btn-white {
+  background-color: var(--color-white);
+  color: var(--color-deep-blue);
+  border-color: var(--color-white);
+}
+.btn-white::before {
+  background-color: var(--color-primary);
+}
+
 /* Cards with Micro-interactions */
 .card {
   background: var(--color-white);
@@ -435,4 +444,18 @@ h4 { font-size: 1.25rem; }
 }
 .usp-card:hover .usp-accent {
   height: 100% !important;
+}
+
+/* Trust Stars Animation */
+.trust-star {
+  transition: transform 0.3s ease;
+}
+.trust-stars-container:hover .trust-star {
+  animation: spinStar 0.8s cubic-bezier(0.45, 0, 0.15, 1);
+}
+
+@keyframes spinStar {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
 }

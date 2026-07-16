@@ -244,12 +244,12 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="card" style={{ padding: '40px', borderRadius: '16px' }}>
+          <div className="card" style={{ padding: '40px', borderRadius: '0px' }}>
             <h3 style={{ marginTop: 0, color: 'var(--color-primary)', marginBottom: '10px' }}>Оставить заявку</h3>
             <p style={{ color: 'var(--color-text-secondary)', marginBottom: '30px' }}>Перезвоним вам в течение 15 минут в рабочее время.</p>
             <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <input type="text" placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '8px', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none' }} />
-              <input type="tel" placeholder="+7 (___) ___-__-__" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '8px', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none' }} />
+              <input type="text" placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0px', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none' }} />
+              <input type="tel" placeholder="+7 (___) ___-__-__" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0px', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none' }} />
               <button type="button" className="btn" style={{ width: '100%', padding: '18px', fontSize: '18px', marginTop: '10px' }}>Обсудить ситуацию с юристом</button>
               <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', textAlign: 'center', margin: 0 }}>
                 Отправляя заявку, вы соглашаетесь с <Link href="/privacy" className="link-animated" style={{ fontSize: '13px' }}>политикой конфиденциальности</Link>.
