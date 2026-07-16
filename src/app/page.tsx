@@ -3,6 +3,7 @@ import TeamCarousel from '@/components/TeamCarousel';
 import Header from '@/components/Header';
 import ServicesBlock from '@/components/ServicesBlock';
 import FAQBlock from '@/components/FAQBlock';
+import PricingBlock from '@/components/PricingBlock';
 
 export default function Home() {
   return (
@@ -254,6 +255,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* PRICING SECTION */}
+      <PricingBlock />
 
       {/* FAQ SECTION */}
       <FAQBlock />
