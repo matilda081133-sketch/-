@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import ServicesBlock from '@/components/ServicesBlock';
 import FAQBlock from '@/components/FAQBlock';
 import PricingBlock from '@/components/PricingBlock';
+import FAQ from '@/components/FAQ';
 
 export default function Home() {
   return (
@@ -205,7 +206,7 @@ export default function Home() {
       <PricingBlock />
 
       {/* FAQ SECTION */}
-      <FAQBlock />
+      <FAQ />
 
       {/* CTA SECTION */}
       <section className="section bg-deep-blue" style={{ position: 'relative', overflow: 'hidden' }}>
