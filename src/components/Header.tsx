@@ -17,9 +17,9 @@ export default function Header() {
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ fontSize: '28px', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)' }}>
-          Де-Юре
-        </div>
+        <Link href="/" style={{ display: 'block', padding: '10px 0' }}>
+          <img src="/-/images/logo-light.png" alt="Де-Юре" style={{ height: '75px', width: 'auto', display: 'block' }} />
+        </Link>
         <nav style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
           <div style={{ display: 'flex', gap: '30px' }}>
             <Link href="/grazhdanam" className="nav-link">Гражданам</Link>

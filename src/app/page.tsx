@@ -245,8 +245,8 @@ export default function Home() {
       <footer style={{ backgroundColor: '#0B1C2A', color: 'var(--color-white)', padding: '40px 0 20px' }}>
         <div className="container grid grid-4" style={{ gap: '30px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '30px', marginBottom: '20px' }}>
           <div>
-            <div style={{ fontSize: '28px', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '16px' }}>
-              Де-Юре
+            <div style={{ marginBottom: '24px' }}>
+              <img src="/-/images/logo-dark.png" alt="Де-Юре" style={{ height: '90px', width: 'auto', display: 'block' }} />
             </div>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px', lineHeight: 1.5, marginBottom: '16px' }}>
               Надежная правовая защита для бизнеса и граждан. Экспертиза, проверенная годами успешной судебной практики.
