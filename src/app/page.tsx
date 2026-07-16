@@ -72,26 +72,63 @@ export default function Home() {
       {/* PRIORITIES */}
       <ServicesBlock />
 
-      {/* TRUST / FACTS */}
-      <section className="section bg-white">
+      {/* WHY US / USP */}
+      <section className="section" style={{ background: 'var(--color-white)', padding: '100px 0', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
         <div className="container">
-          <h2 style={{ marginTop: 0, marginBottom: '60px', textAlign: 'center' }}>Факты, а не обещания</h2>
-          <div className="grid grid-3" style={{ gap: '40px', width: '100%', textAlign: 'center' }}>
-            <div className="card">
-              <div style={{ fontSize: '3.5rem', fontWeight: 'bold', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', marginBottom: '16px' }}>15+</div>
-              <p style={{ fontWeight: 600, fontSize: '18px', color: 'var(--color-deep-blue)' }}>Лет судебной практики</p>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', marginTop: '12px' }}>Наши юристы имеют опыт работы следователями и федеральными судьями</p>
+          <h2 style={{ 
+            marginTop: 0, 
+            marginBottom: '60px', 
+            fontSize: '42px', 
+            fontFamily: 'var(--font-serif)', 
+            color: 'var(--color-deep-blue)',
+            textAlign: 'left'
+          }}>
+            Почему мы?
+          </h2>
+          
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+            borderTop: '1px solid var(--color-primary)', 
+            paddingTop: '40px'
+          }}>
+            
+            <div style={{ paddingRight: '40px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', marginBottom: '40px' }}>
+              <div style={{ fontSize: '3.5rem', lineHeight: '1', fontWeight: 'bold', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', marginBottom: '20px' }}>
+                15+
+              </div>
+              <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>
+                Лет судебной практики
+              </h3>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.5', margin: 0 }}>
+                Наши юристы имеют реальный опыт работы следователями и федеральными судьями.
+              </p>
             </div>
-            <div className="card">
-              <div style={{ fontSize: '3.5rem', fontWeight: 'bold', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', marginBottom: '16px' }}>100%</div>
-              <p style={{ fontWeight: 600, fontSize: '18px', color: 'var(--color-deep-blue)' }}>Конфиденциальность</p>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', marginTop: '12px' }}>Гарантируем полную анонимность всех консультаций по ФЗ №152</p>
+
+            <div style={{ padding: '0 40px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', marginBottom: '40px' }}>
+              <div style={{ fontSize: '3.5rem', lineHeight: '1', fontWeight: 'bold', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', marginBottom: '20px' }}>
+                100%
+              </div>
+              <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>
+                Полная конфиденциальность
+              </h3>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.5', margin: 0 }}>
+                Гарантируем абсолютную анонимность всех консультаций в соответствии с ФЗ №152.
+              </p>
             </div>
-            <div className="card">
-              <div style={{ fontSize: '3.5rem', fontWeight: 'bold', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', marginBottom: '16px' }}>0 ₽</div>
-              <p style={{ fontWeight: 600, fontSize: '18px', color: 'var(--color-deep-blue)' }}>Первичный анализ</p>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', marginTop: '12px' }}>Тщательное рассмотрение документов и оценка перспектив дела бесплатно</p>
+
+            <div style={{ paddingLeft: '40px', marginBottom: '40px' }}>
+              <div style={{ fontSize: '3.5rem', lineHeight: '1', fontWeight: 'bold', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', marginBottom: '20px' }}>
+                0 ₽
+              </div>
+              <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>
+                Бесплатный глубокий анализ
+              </h3>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.5', margin: 0 }}>
+                Тщательное рассмотрение ваших документов и честная оценка перспектив дела до подписания договора.
+              </p>
             </div>
+
           </div>
         </div>
       </section>
