@@ -17,8 +17,14 @@ export default function Header() {
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link href="/" style={{ display: 'block', padding: '10px 0' }}>
-          <img src="/-/images/logo-light.png" alt="Де-Юре" style={{ height: '75px', width: 'auto', display: 'block' }} />
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', padding: '10px 0' }}>
+          <svg width="24" height="40" viewBox="0 0 24 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 0L0 7.5V20C0 31.5 12 38.5 24 40V0Z" fill="var(--color-primary)"/>
+          </svg>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span style={{ fontSize: '32px', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', lineHeight: '1' }}>Де-Юре</span>
+            <span style={{ fontSize: '11px', color: 'var(--color-text-secondary)', letterSpacing: '0.05em', textTransform: 'uppercase', marginTop: '4px' }}>Юридическая компания</span>
+          </div>
         </Link>
         <nav style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
           <div style={{ display: 'flex', gap: '30px' }}>

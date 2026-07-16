@@ -245,8 +245,14 @@ export default function Home() {
       <footer style={{ backgroundColor: '#0B1C2A', color: 'var(--color-white)', padding: '40px 0 20px' }}>
         <div className="container grid grid-4" style={{ gap: '30px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '30px', marginBottom: '20px' }}>
           <div>
-            <div style={{ marginBottom: '24px' }}>
-              <img src="/-/images/logo-dark.png" alt="Де-Юре" style={{ height: '90px', width: 'auto', display: 'block' }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+              <svg width="30" height="48" viewBox="0 0 24 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 0L0 7.5V20C0 31.5 12 38.5 24 40V0Z" fill="var(--color-cream)"/>
+              </svg>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontSize: '38px', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'var(--color-cream)', lineHeight: '1' }}>Де-Юре</span>
+                <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.7)', letterSpacing: '0.05em', textTransform: 'uppercase', marginTop: '4px' }}>Юридическая компания</span>
+              </div>
             </div>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px', lineHeight: 1.5, marginBottom: '16px' }}>
               Надежная правовая защита для бизнеса и граждан. Экспертиза, проверенная годами успешной судебной практики.
