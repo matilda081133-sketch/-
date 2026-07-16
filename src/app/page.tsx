@@ -4,7 +4,6 @@ import Header from '@/components/Header';
 import ServicesBlock from '@/components/ServicesBlock';
 import FAQBlock from '@/components/FAQBlock';
 import PricingBlock from '@/components/PricingBlock';
-import Logo from '@/components/Logo';
 
 export default function Home() {
   return (
@@ -247,7 +246,15 @@ export default function Home() {
         <div className="container grid grid-4" style={{ gap: '30px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '30px', marginBottom: '20px' }}>
           <div>
             <div style={{ marginBottom: '24px' }}>
-              <Logo color="var(--color-cream)" width="220px" />
+              <img 
+                src="/-/images/logo-dark.png" 
+                alt="Де-Юре" 
+                style={{ 
+                  height: '90px', 
+                  width: 'auto', 
+                  display: 'block'
+                }} 
+              />
             </div>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px', lineHeight: 1.5, marginBottom: '16px' }}>
               Надежная правовая защита для бизнеса и граждан. Экспертиза, проверенная годами успешной судебной практики.
