@@ -24,8 +24,7 @@ export default function Header() {
             style={{ 
               height: '80px', 
               width: 'auto', 
-              display: 'block',
-              mixBlendMode: 'multiply'
+              display: 'block'
             }} 
           />
         </Link>
