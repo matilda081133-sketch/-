@@ -242,17 +242,18 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer style={{ backgroundColor: '#0B1C2A', color: 'var(--color-white)', padding: '40px 0 20px' }}>
+      <footer style={{ backgroundColor: '#111a2d', color: 'var(--color-white)', padding: '40px 0 20px' }}>
         <div className="container grid grid-4" style={{ gap: '30px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '30px', marginBottom: '20px' }}>
           <div>
             <div style={{ marginBottom: '24px' }}>
               <img 
-                src="/-/images/logo-dark.png" 
+                src="/-/images/logo-dark.jpg" 
                 alt="Де-Юре" 
                 style={{ 
                   height: '90px', 
                   width: 'auto', 
-                  display: 'block'
+                  display: 'block',
+                  mixBlendMode: 'lighten'
                 }} 
               />
             </div>

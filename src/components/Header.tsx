@@ -19,12 +19,14 @@ export default function Header() {
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link href="/" style={{ display: 'block', padding: '10px 0' }}>
           <img 
-            src="/-/images/logo-light.png" 
+            src="/-/images/logo-light.jpg" 
             alt="Де-Юре" 
             style={{ 
               height: '80px', 
               width: 'auto', 
-              display: 'block'
+              display: 'block',
+              mixBlendMode: 'multiply',
+              filter: 'contrast(1.1)'
             }} 
           />
         </Link>
