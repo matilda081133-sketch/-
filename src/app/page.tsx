@@ -181,15 +181,15 @@ export default function Home() {
             {/* Scrolling Right Content */}
             <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: '80px' }}>
               {[
-                { num: '01', title: 'Анализ ситуации', desc: 'Мы начинаем с глубокого погружения в вашу проблему. Изучаем все имеющиеся документы, оцениваем риски и судебные перспективы дела. Никаких пустых обещаний — только честный правовой анализ.', img: '/images/stage_1.png' },
-                { num: '02', title: 'Стратегия', desc: 'На основе анализа мы разрабатываем оптимальный правовой путь. Собираем необходимую доказательную базу, привлекаем экспертов и готовим процессуальные документы.', img: '/images/stage_2.png' },
-                { num: '03', title: 'Реализация защиты', desc: 'Представляем ваши интересы на всех этапах: от досудебных переговоров до участия в судебных заседаниях. Берем на себя всю коммуникацию с оппонентами и госорганами.', img: '/images/stage_3.png' },
-                { num: '04', title: 'Результат', desc: 'Достижение поставленной цели — это не только выигрыш в суде, но и фактическое исполнение решения. Мы контролируем процесс до полного восстановления ваших прав.', img: '/images/stage_4.png' },
+                { num: '01', title: 'Анализ ситуации', desc: 'Мы начинаем с глубокого погружения в вашу проблему. Изучаем все имеющиеся документы, оцениваем риски и судебные перспективы дела. Никаких пустых обещаний — только честный правовой анализ.', img: '/-/images/stage_1.png' },
+                { num: '02', title: 'Стратегия', desc: 'На основе анализа мы разрабатываем оптимальный правовой путь. Собираем необходимую доказательную базу, привлекаем экспертов и готовим процессуальные документы.', img: '/-/images/stage_2.png' },
+                { num: '03', title: 'Реализация защиты', desc: 'Представляем ваши интересы на всех этапах: от досудебных переговоров до участия в судебных заседаниях. Берем на себя всю коммуникацию с оппонентами и госорганами.', img: '/-/images/stage_3.png' },
+                { num: '04', title: 'Результат', desc: 'Достижение поставленной цели — это не только выигрыш в суде, но и фактическое исполнение решения. Мы контролируем процесс до полного восстановления ваших прав.', img: '/-/images/stage_4.png' },
               ].map((step, i) => (
                 <div key={i} className="sticky-stage-card" style={{ 
                   background: 'rgba(255, 255, 255, 0.02)',
                   border: '1px solid rgba(255, 255, 255, 0.05)',
-                  borderRadius: '24px',
+                  borderRadius: '0',
                   padding: '40px',
                   position: 'relative',
                   overflow: 'hidden',
@@ -200,7 +200,7 @@ export default function Home() {
                     {step.num}
                   </div>
                   
-                  <div style={{ position: 'relative', width: '100%', paddingTop: '65%', borderRadius: '16px', overflow: 'hidden', marginBottom: '40px', zIndex: 1 }}>
+                  <div style={{ position: 'relative', width: '100%', paddingTop: '65%', borderRadius: '0', overflow: 'hidden', marginBottom: '40px', zIndex: 1 }}>
                     <img src={step.img} alt={step.title} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s ease' }} className="stage-img" />
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16, 39, 59, 0.8) 0%, transparent 100%)' }}></div>
                   </div>
@@ -326,7 +326,7 @@ export default function Home() {
             {/* Yandex Card */}
             <div className="review-widget" style={{
               background: 'var(--color-deep-blue)',
-              borderRadius: '24px',
+              borderRadius: '0',
               padding: '40px',
               position: 'relative',
               overflow: 'hidden',
@@ -361,7 +361,7 @@ export default function Home() {
                 border: '1px solid var(--color-primary)', 
                 color: 'var(--color-primary)', 
                 padding: '12px 30px', 
-                borderRadius: '8px', 
+                borderRadius: '0', 
                 fontSize: '14px', 
                 fontWeight: 'bold',
                 position: 'relative', 
@@ -376,7 +376,7 @@ export default function Home() {
             {/* 2GIS Card */}
             <div className="review-widget" style={{
               background: 'var(--color-deep-blue)',
-              borderRadius: '24px',
+              borderRadius: '0',
               padding: '40px',
               position: 'relative',
               overflow: 'hidden',
@@ -411,7 +411,7 @@ export default function Home() {
                 border: '1px solid var(--color-primary)', 
                 color: 'var(--color-primary)', 
                 padding: '12px 30px', 
-                borderRadius: '8px', 
+                borderRadius: '0', 
                 fontSize: '14px', 
                 fontWeight: 'bold',
                 position: 'relative', 
