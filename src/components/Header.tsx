@@ -27,40 +27,42 @@ export default function Header() {
           <div style={{ display: 'flex', gap: '20px', fontSize: '14px' }}>
             <Link href="/o-kompanii" className="nav-link">О компании</Link>
             
-            <div className="nav-item-mega">
+            <div className="nav-item-dropdown">
               <Link href="/grazhdanam" className="nav-link">Гражданам</Link>
-              <div className="mega-menu-wrapper">
-                <div className="mega-menu-grid">
-                  {megaMenuB2C.map((col, idx) => (
-                    <div className="mega-menu-column" key={idx}>
-                      <div className="mega-menu-title">{col.title}</div>
-                      <ul className="mega-menu-list">
-                        {col.links.map((link, lIdx) => (
-                          <li key={lIdx}><Link href={link.href} className="mega-menu-link">{link.label}</Link></li>
-                        ))}
-                      </ul>
+              <ul className="dropdown-level-1">
+                {megaMenuB2C.map((col, idx) => (
+                  <li className="dropdown-item-1" key={idx}>
+                    <div className="dropdown-link-1">
+                      {col.title}
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </div>
-                  ))}
-                </div>
-              </div>
+                    <ul className="dropdown-level-2">
+                      {col.links.map((link, lIdx) => (
+                        <li key={lIdx}><Link href={link.href} className="dropdown-link-2">{link.label}</Link></li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="nav-item-mega">
+            <div className="nav-item-dropdown">
               <Link href="/biznesu" className="nav-link">Бизнесу</Link>
-              <div className="mega-menu-wrapper">
-                <div className="mega-menu-grid">
-                  {megaMenuB2B.map((col, idx) => (
-                    <div className="mega-menu-column" key={idx}>
-                      <div className="mega-menu-title">{col.title}</div>
-                      <ul className="mega-menu-list">
-                        {col.links.map((link, lIdx) => (
-                          <li key={lIdx}><Link href={link.href} className="mega-menu-link">{link.label}</Link></li>
-                        ))}
-                      </ul>
+              <ul className="dropdown-level-1">
+                {megaMenuB2B.map((col, idx) => (
+                  <li className="dropdown-item-1" key={idx}>
+                    <div className="dropdown-link-1">
+                      {col.title}
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </div>
-                  ))}
-                </div>
-              </div>
+                    <ul className="dropdown-level-2">
+                      {col.links.map((link, lIdx) => (
+                        <li key={lIdx}><Link href={link.href} className="dropdown-link-2">{link.label}</Link></li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <Link href="/praktika" className="nav-link">Практика</Link>
