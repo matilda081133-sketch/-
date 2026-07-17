@@ -1,9 +1,8 @@
 :HL["/-/_next/static/chunks/0joxpxdyr4618.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap","style"]
-:HL["/images/hero_legal_premium.png","image"]
 :HL["images/stage_1.png","image"]
 :HL["images/stage_2.png","image"]
 :HL["images/logo.png","image"]
 :HL["images/stage_3.png","image"]
 :HL["images/stage_4.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"g2BSUHBy6SUJF7MPKGe5Q"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"C8H2MZ8Q4Rg4yqmwvZivP"}
