@@ -28,7 +28,7 @@ export default function Home() {
         }} />
         
         <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
-          <div style={{ padding: '40px 0' }}>
+          <div className="reveal-on-scroll" style={{ padding: '40px 0' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
               <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
               <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
@@ -45,7 +45,7 @@ export default function Home() {
               <a href="#services" className="btn btn-outline">Выбрать направление</a>
             </div>
             
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <div className="reveal-on-scroll delay-100" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'rgba(23, 50, 77, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 Профильный специалист по каждому направлению
@@ -83,7 +83,7 @@ export default function Home() {
         borderBottom: '1px solid var(--color-border)' 
       }}>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <h2 style={{ 
+          <h2 className="reveal-on-scroll" style={{ 
             marginTop: 0, 
             marginBottom: '60px', 
             fontSize: '42px', 
@@ -315,7 +315,7 @@ export default function Home() {
           <div className="grid grid-2" style={{ gap: '80px', alignItems: 'center' }}>
             
             {/* Left Content */}
-            <div style={{ position: 'relative' }}>
+            <div className="reveal-on-scroll" style={{ position: 'relative' }}>
               <div style={{ position: 'absolute', top: '-80px', left: '-40px', fontSize: '320px', fontFamily: 'var(--font-serif)', color: 'rgba(23, 50, 77, 0.04)', lineHeight: 1, zIndex: 0, pointerEvents: 'none' }}>
                 “
               </div>
@@ -341,7 +341,7 @@ export default function Home() {
             {/* Right Content - Floating Badges */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', position: 'relative' }}>
               {/* Yandex Badge */}
-              <div className="review-widget" style={{ 
+              <div className="review-widget reveal-on-scroll delay-100" style={{ 
                 background: 'var(--color-deep-blue)', 
                 padding: '40px', 
                 display: 'flex', 
@@ -369,7 +369,7 @@ export default function Home() {
               </div>
 
               {/* 2GIS Badge */}
-              <div className="review-widget" style={{ 
+              <div className="review-widget reveal-on-scroll delay-200" style={{ 
                 background: 'var(--color-white)', 
                 border: '1px solid var(--color-border)',
                 padding: '40px', 
@@ -427,7 +427,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="card" style={{ padding: '40px', borderRadius: '0' }}>
+          <div className="card reveal-on-scroll delay-200" style={{ padding: '40px', borderRadius: '0' }}>
             <h3 style={{ marginTop: 0, color: 'var(--color-primary)', marginBottom: '10px' }}>Оставить заявку</h3>
             <p style={{ color: 'var(--color-text-secondary)', marginBottom: '30px' }}>Перезвоним вам в течение 15 минут в рабочее время.</p>
             <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
