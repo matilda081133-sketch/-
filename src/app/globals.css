@@ -349,6 +349,31 @@ h4 { font-size: 1.25rem; }
   box-shadow: 0 15px 40px rgba(23, 50, 77, 0.1) !important;
 }
 
+@keyframes floatFront {
+  0%, 100% { transform: rotateY(-15deg) rotateX(5deg) translateZ(20px) translateY(0); }
+  50% { transform: rotateY(-15deg) rotateX(5deg) translateZ(20px) translateY(-15px); }
+}
+
+@keyframes floatBack {
+  0%, 100% { transform: rotateY(-20deg) rotateX(10deg) translateZ(-50px) translateX(40px) translateY(0); }
+  50% { transform: rotateY(-20deg) rotateX(10deg) translateZ(-50px) translateX(40px) translateY(-10px); }
+}
+
+@keyframes pulseSeal {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 126, 85, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 20px 0 rgba(155, 126, 85, 0.2); }
+}
+
+.animated-doc-front {
+  animation: floatFront 6s ease-in-out infinite;
+}
+.animated-doc-back {
+  animation: floatBack 7s ease-in-out infinite;
+}
+.animated-seal {
+  animation: pulseSeal 4s ease-in-out infinite;
+}
+
 /* Layout Utilities */
 .flex { display: flex; }
 .flex-col { flex-direction: column; }
