@@ -159,54 +159,65 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. HOW WE WORK (REDESIGNED PREMIUM) */}
-      <section className="section bg-deep-blue" style={{ position: 'relative', overflow: 'hidden', padding: '120px 0' }}>
+      {/* 4. HOW WE WORK (APPLE-STYLE STICKY SCROLL) */}
+      <section className="section bg-deep-blue" style={{ position: 'relative', overflow: 'visible', padding: '120px 0' }}>
         {/* Abstract Background Glows */}
-        <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
-        <div style={{ position: 'absolute', bottom: '-10%', right: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(23, 50, 77, 0.8) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
+        <div style={{ position: 'absolute', top: '20%', left: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
         
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ color: 'var(--color-white)', fontFamily: 'var(--font-serif)', fontSize: '36px', marginBottom: '16px' }}>Как проходит работа</h2>
-            <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '18px', maxWidth: '600px', margin: '0 auto' }}>
-              Прозрачный и понятный процесс от первого обращения до достижения результата.
-            </p>
-          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '60px', alignItems: 'flex-start' }}>
+            
+            {/* Sticky Left Sidebar */}
+            <div style={{ flex: '1 1 400px', position: 'sticky', top: '120px' }}>
+              <h2 style={{ color: 'var(--color-white)', fontFamily: 'var(--font-serif)', fontSize: '48px', marginBottom: '24px', lineHeight: 1.2 }}>
+                Как мы<br />строим защиту
+              </h2>
+              <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '18px', lineHeight: 1.6, marginBottom: '40px' }}>
+                Каждое дело уникально, но наш подход всегда остается системным. Прозрачный процесс работы от первой консультации до итогового решения суда.
+              </p>
+              <div style={{ width: '60px', height: '2px', background: 'var(--color-primary)' }}></div>
+            </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px' }}>
-            {[
-              { num: '01', title: 'Анализ ситуации', desc: 'Первичное обращение, изучение документов и оценка судебных перспектив дела.', img: '/images/stage_1.png' },
-              { num: '02', title: 'Стратегия', desc: 'Разработка оптимального правового пути и подготовка необходимых документов.', img: '/images/stage_2.png' },
-              { num: '03', title: 'Реализация защиты', desc: 'Представление ваших интересов в суде, на переговорах и в госорганах.', img: '/images/stage_3.png' },
-              { num: '04', title: 'Результат', desc: 'Достижение поставленной цели и контроль за исполнением решения суда.', img: '/images/stage_4.png' },
-            ].map((step, i) => (
-              <div key={i} className="premium-stage-card" style={{ 
-                background: 'rgba(255, 255, 255, 0.02)',
-                border: '1px solid rgba(255, 255, 255, 0.05)',
-                borderRadius: '24px',
-                padding: '12px',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.4s ease',
-                display: 'flex',
-                flexDirection: 'column'
-              }}>
-                <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '140px', fontWeight: '900', color: 'rgba(255, 255, 255, 0.02)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
-                  {step.num}
-                </div>
-                
-                <div style={{ position: 'relative', width: '100%', paddingTop: '75%', borderRadius: '16px', overflow: 'hidden', marginBottom: '24px', zIndex: 1 }}>
-                  <img src={step.img} alt={step.title} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s ease' }} className="stage-img" />
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16, 39, 59, 1) 0%, rgba(16, 39, 59, 0.4) 50%, transparent 100%)' }}></div>
-                </div>
+            {/* Scrolling Right Content */}
+            <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: '80px' }}>
+              {[
+                { num: '01', title: 'Анализ ситуации', desc: 'Мы начинаем с глубокого погружения в вашу проблему. Изучаем все имеющиеся документы, оцениваем риски и судебные перспективы дела. Никаких пустых обещаний — только честный правовой анализ.', img: '/images/stage_1.png' },
+                { num: '02', title: 'Стратегия', desc: 'На основе анализа мы разрабатываем оптимальный правовой путь. Собираем необходимую доказательную базу, привлекаем экспертов и готовим процессуальные документы.', img: '/images/stage_2.png' },
+                { num: '03', title: 'Реализация защиты', desc: 'Представляем ваши интересы на всех этапах: от досудебных переговоров до участия в судебных заседаниях. Берем на себя всю коммуникацию с оппонентами и госорганами.', img: '/images/stage_3.png' },
+                { num: '04', title: 'Результат', desc: 'Достижение поставленной цели — это не только выигрыш в суде, но и фактическое исполнение решения. Мы контролируем процесс до полного восстановления ваших прав.', img: '/images/stage_4.png' },
+              ].map((step, i) => (
+                <div key={i} className="sticky-stage-card" style={{ 
+                  background: 'rgba(255, 255, 255, 0.02)',
+                  border: '1px solid rgba(255, 255, 255, 0.05)',
+                  borderRadius: '24px',
+                  padding: '40px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+                  transition: 'transform 0.5s ease',
+                }}>
+                  <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '180px', fontWeight: '900', color: 'rgba(255, 255, 255, 0.02)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
+                    {step.num}
+                  </div>
+                  
+                  <div style={{ position: 'relative', width: '100%', paddingTop: '65%', borderRadius: '16px', overflow: 'hidden', marginBottom: '40px', zIndex: 1 }}>
+                    <img src={step.img} alt={step.title} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s ease' }} className="stage-img" />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16, 39, 59, 0.8) 0%, transparent 100%)' }}></div>
+                  </div>
 
-                <div style={{ padding: '0 16px 24px', position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ color: 'var(--color-primary)', fontSize: '13px', fontWeight: 'bold', marginBottom: '12px', letterSpacing: '2px' }}>ЭТАП {step.num}</div>
-                  <h4 style={{ fontSize: '22px', color: 'var(--color-white)', marginBottom: '12px', fontFamily: 'var(--font-serif)' }}>{step.title}</h4>
-                  <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.6)', lineHeight: 1.6, margin: 0 }}>{step.desc}</p>
+                  <div style={{ position: 'relative', zIndex: 1 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+                      <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--color-primary)', color: 'var(--color-deep-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '16px' }}>
+                        {parseInt(step.num)}
+                      </div>
+                      <h4 style={{ fontSize: '28px', color: 'var(--color-white)', margin: 0, fontFamily: 'var(--font-serif)' }}>{step.title}</h4>
+                    </div>
+                    <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6, margin: 0 }}>{step.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            
           </div>
         </div>
       </section>
@@ -295,35 +306,121 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. REVIEWS (New Block) */}
-      <section className="section bg-white" style={{ padding: '60px 0' }}>
+      {/* 7. REVIEWS (Redesigned Premium Block) */}
+      <section className="section bg-white" style={{ padding: '100px 0', position: 'relative' }}>
         <div className="container">
-          <h2 style={{ fontSize: '32px', marginBottom: '40px' }}>Отзывы и независимые оценки</h2>
+          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <h2 style={{ fontSize: '36px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px' }}>Отзывы доверителей</h2>
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '600px', margin: '0 auto' }}>
+              Мы дорожим своей репутацией и работаем на результат. Вы можете ознакомиться с независимыми оценками нашей работы на профильных площадках.
+            </p>
+          </div>
           
           <div style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(2, 1fr)', 
-            gap: '30px',
-            maxWidth: '800px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+            gap: '40px',
+            maxWidth: '900px',
+            margin: '0 auto'
           }}>
-            <div style={{ border: '1px solid var(--color-border)', padding: '24px', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '24px' }}>
-              <div style={{ fontSize: '32px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>Яндекс Карты</div>
-              <div>
-                <div style={{ color: 'var(--color-text-secondary)', fontSize: '14px', marginBottom: '8px' }}>
-                  Здесь будет актуальный рейтинг после подключения и проверки профиля.
-                </div>
-                <button className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '13px' }} disabled>Смотреть отзывы</button>
+            {/* Yandex Card */}
+            <div className="review-widget" style={{
+              background: 'var(--color-deep-blue)',
+              borderRadius: '24px',
+              padding: '40px',
+              position: 'relative',
+              overflow: 'hidden',
+              boxShadow: '0 20px 40px rgba(16, 39, 59, 0.15)',
+              transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center'
+            }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #ffcc00, var(--color-primary))' }}></div>
+              <div style={{ position: 'absolute', top: '-50%', left: '-50%', width: '200%', height: '200%', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 60%)', pointerEvents: 'none' }}></div>
+              
+              <div style={{ fontSize: '32px', fontWeight: '900', color: '#fff', letterSpacing: '-1px', marginBottom: '16px', position: 'relative', zIndex: 1 }}>
+                Яндекс <span style={{ color: '#ffcc00' }}>Карты</span>
               </div>
+              
+              <div style={{ display: 'flex', gap: '8px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+                {[1,2,3,4,5].map(star => (
+                  <svg key={star} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                ))}
+              </div>
+              
+              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: '1.6', marginBottom: '32px', position: 'relative', zIndex: 1 }}>
+                Рейтинг находится в стадии формирования после прохождения верификации профиля компании.
+              </p>
+              
+              <button className="btn" style={{ 
+                background: 'transparent', 
+                border: '1px solid var(--color-primary)', 
+                color: 'var(--color-primary)', 
+                padding: '12px 30px', 
+                borderRadius: '8px', 
+                fontSize: '14px', 
+                fontWeight: 'bold',
+                position: 'relative', 
+                zIndex: 1,
+                cursor: 'not-allowed',
+                opacity: 0.6
+              }}>
+                Страница на модерации
+              </button>
             </div>
-            
-            <div style={{ border: '1px solid var(--color-border)', padding: '24px', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '24px' }}>
-              <div style={{ fontSize: '32px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>2ГИС</div>
-              <div>
-                <div style={{ color: 'var(--color-text-secondary)', fontSize: '14px', marginBottom: '8px' }}>
-                  Здесь будет актуальный рейтинг после подключения и проверки профиля.
-                </div>
-                <button className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '13px' }} disabled>Смотреть отзывы</button>
+
+            {/* 2GIS Card */}
+            <div className="review-widget" style={{
+              background: 'var(--color-deep-blue)',
+              borderRadius: '24px',
+              padding: '40px',
+              position: 'relative',
+              overflow: 'hidden',
+              boxShadow: '0 20px 40px rgba(16, 39, 59, 0.15)',
+              transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center'
+            }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #A4D33B, var(--color-primary))' }}></div>
+              <div style={{ position: 'absolute', top: '-50%', left: '-50%', width: '200%', height: '200%', background: 'radial-gradient(circle, rgba(164, 211, 59, 0.05) 0%, transparent 60%)', pointerEvents: 'none' }}></div>
+              
+              <div style={{ fontSize: '36px', fontWeight: '900', color: '#fff', letterSpacing: '-1px', marginBottom: '16px', position: 'relative', zIndex: 1 }}>
+                2<span style={{ color: '#A4D33B' }}>ГИС</span>
               </div>
+              
+              <div style={{ display: 'flex', gap: '8px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+                {[1,2,3,4,5].map(star => (
+                  <svg key={star} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                ))}
+              </div>
+              
+              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: '1.6', marginBottom: '32px', position: 'relative', zIndex: 1 }}>
+                Рейтинг находится в стадии формирования после прохождения верификации профиля компании.
+              </p>
+              
+              <button className="btn" style={{ 
+                background: 'transparent', 
+                border: '1px solid var(--color-primary)', 
+                color: 'var(--color-primary)', 
+                padding: '12px 30px', 
+                borderRadius: '8px', 
+                fontSize: '14px', 
+                fontWeight: 'bold',
+                position: 'relative', 
+                zIndex: 1,
+                cursor: 'not-allowed',
+                opacity: 0.6
+              }}>
+                Страница на модерации
+              </button>
             </div>
           </div>
         </div>

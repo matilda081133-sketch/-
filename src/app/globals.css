@@ -467,12 +467,17 @@ h4 { font-size: 1.25rem; }
   100% { transform: rotate(360deg) scale(1); }
 }
 /* Premium Stage Cards Animation */
-.premium-stage-card:hover {
+.sticky-stage-card:hover {
   transform: translateY(-10px);
   border-color: rgba(212, 175, 55, 0.3) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.1) !important;
   background: rgba(255, 255, 255, 0.04) !important;
 }
-.premium-stage-card:hover .stage-img {
+.sticky-stage-card:hover .stage-img {
   transform: scale(1.05);
+}
+
+.review-widget:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 50px rgba(16, 39, 59, 0.2) !important;
 }
