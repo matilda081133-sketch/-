@@ -351,12 +351,12 @@ h4 { font-size: 1.25rem; }
 
 @keyframes floatVertical {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes pulseSeal {
   0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 126, 85, 0.4); }
-  50% { transform: scale(1.05); box-shadow: 0 0 20px 0 rgba(155, 126, 85, 0.2); }
+  50% { transform: scale(1.03); box-shadow: 0 0 15px 0 rgba(155, 126, 85, 0.2); }
 }
 
 .mockup-container {
@@ -371,10 +371,10 @@ h4 { font-size: 1.25rem; }
   cursor: pointer;
 }
 
-.doc-wrapper-float-1 { animation: floatVertical 6s ease-in-out infinite; position: absolute; transform-style: preserve-3d; z-index: 4; }
-.doc-wrapper-float-2 { animation: floatVertical 6.5s ease-in-out infinite reverse; position: absolute; transform-style: preserve-3d; z-index: 3; }
-.doc-wrapper-float-3 { animation: floatVertical 7s ease-in-out infinite; position: absolute; transform-style: preserve-3d; z-index: 2; }
-.doc-wrapper-float-4 { animation: floatVertical 7.5s ease-in-out infinite reverse; position: absolute; transform-style: preserve-3d; z-index: 1; }
+.doc-wrapper-float-1 { animation: floatVertical 10s ease-in-out infinite; position: absolute; transform-style: preserve-3d; z-index: 4; }
+.doc-wrapper-float-2 { animation: floatVertical 11s ease-in-out infinite reverse; position: absolute; transform-style: preserve-3d; z-index: 3; }
+.doc-wrapper-float-3 { animation: floatVertical 12s ease-in-out infinite; position: absolute; transform-style: preserve-3d; z-index: 2; }
+.doc-wrapper-float-4 { animation: floatVertical 13s ease-in-out infinite reverse; position: absolute; transform-style: preserve-3d; z-index: 1; }
 
 .doc-sheet {
   width: 320px;
@@ -384,7 +384,7 @@ h4 { font-size: 1.25rem; }
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  transition: all 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 2.5s ease-in-out, box-shadow 2.5s ease-in-out, opacity 2.5s ease-in-out;
   transform-style: preserve-3d;
   background-image: linear-gradient(180deg, #FFFFFF 0%, #FDFCF9 100%);
 }

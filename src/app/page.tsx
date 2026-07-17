@@ -138,47 +138,55 @@ export default function Home() {
               {/* Document 2 */}
               <div className="doc-wrapper-float-2">
                 <div className="doc-sheet doc-sheet-2">
-                  <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ padding: '30px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
                     {/* Stamp at top left */}
-                    <div style={{ position: 'absolute', top: '30px', left: '30px', width: '70px', height: '30px', border: '2px solid #C8A97E', color: '#C8A97E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)', opacity: 0.8 }}>
-                       <div style={{ width: '40px', height: '4px', background: '#C8A97E' }}></div>
+                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '80px', height: '35px', border: '1px solid #C8A97E', color: '#C8A97E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)', opacity: 0.9 }}>
+                       <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold' }}>
+                         ПРИЛОЖЕНИЕ №1<br/>
+                         К ДОГОВОРУ № 14/2026
+                       </div>
                     </div>
 
                     {/* Header */}
-                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
-                        <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
-                        <div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '30px' }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '6px', color: 'rgba(23,50,77,0.5)', textAlign: 'right', lineHeight: '1.4' }}>
+                        УТВЕРЖДЕНО<br/>
+                        Генеральным директором<br/>
+                        ООО "Де-Юре"<br/>
+                        «___» ________ 2026 г.
                       </div>
                     </div>
 
                     {/* Title */}
-                    <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
+                    <div style={{ fontFamily: 'var(--font-serif)', fontSize: '9px', color: 'var(--color-primary)', textAlign: 'center', fontWeight: 'bold', margin: '0 auto 20px auto', letterSpacing: '0.5px' }}>
+                      ПЕРЕЧЕНЬ ПРЕДОСТАВЛЯЕМЫХ УСЛУГ
+                    </div>
 
                     {/* Solid text blocks */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
-                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                    </div>
-
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: 'auto' }}>
-                      <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ fontFamily: 'var(--font-sans)', fontSize: '5px', color: 'rgba(23,50,77,0.4)', textAlign: 'justify', lineHeight: '1.6' }}>
+                        <strong style={{ color: 'rgba(23,50,77,0.7)' }}>РАЗДЕЛ 1. СУДЕБНОЕ ПРЕДСТАВИТЕЛЬСТВО</strong><br/>
+                        1. Подготовка и подача исковых заявлений, отзывов на исковые заявления, апелляционных и кассационных жалоб в суды общей юрисдикции и арбитражные суды.<br/>
+                        2. Участие в судебных заседаниях на всех стадиях судебного процесса (первая, апелляционная, кассационная, надзорная инстанции).<br/>
+                        3. Ознакомление с материалами судебных дел, получение копий судебных актов и исполнительных листов.
+                      </div>
+                      <div style={{ fontFamily: 'var(--font-sans)', fontSize: '5px', color: 'rgba(23,50,77,0.4)', textAlign: 'justify', lineHeight: '1.6' }}>
+                        <strong style={{ color: 'rgba(23,50,77,0.7)' }}>РАЗДЕЛ 2. ДОГОВОРНАЯ РАБОТА И АНАЛИТИКА</strong><br/>
+                        4. Правовая экспертиза (due diligence) проектов договоров, соглашений, контрактов и иных документов правового характера.<br/>
+                        5. Участие в переговорах с контрагентами Заказчика по вопросам заключения, изменения или расторжения договоров.<br/>
+                        6. Подготовка письменных правовых заключений (Legal Opinions) по сложным юридическим вопросам, связанным с хозяйственной деятельностью Заказчика.
+                      </div>
                     </div>
 
                     {/* Footer grid */}
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', borderTop: '2px dashed rgba(23,50,77,0.1)', paddingTop: '20px' }}>
-                      <div>
-                        <div style={{ width: '60px', height: '2px', background: 'var(--color-primary)', marginBottom: '8px' }}></div>
-                        <div style={{ width: '30px', height: '2px', background: 'rgba(23,50,77,0.3)' }}></div>
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px dashed rgba(23,50,77,0.1)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)', fontFamily: 'var(--font-sans)' }}>Заказчик:</div>
+                        <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
                       </div>
-                      <div>
-                        <div style={{ width: '60px', height: '2px', background: 'var(--color-primary)', marginBottom: '8px' }}></div>
-                        <div style={{ width: '30px', height: '2px', background: 'rgba(23,50,77,0.3)' }}></div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)', fontFamily: 'var(--font-sans)' }}>Исполнитель:</div>
+                        <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
                       </div>
                     </div>
                   </div>
@@ -188,51 +196,57 @@ export default function Home() {
               {/* Document 1 (Front) */}
               <div className="doc-wrapper-float-1">
                 <div className="doc-sheet doc-sheet-1">
-                  <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    {/* Watermark */}
-                    <svg style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.03, width: '150px', height: '150px' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1"><path d="M12 2v20M4 10v6a2 2 0 0 0 2 2h2M20 10v6a2 2 0 0 1-2 2h-2M12 6H4M12 6h8M12 22h-4M12 22h4M8 6l-4 4M16 6l4 4"/></svg>
+                  <div style={{ padding: '30px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    {/* Watermark Logo */}
+                    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.03, width: '150px' }}>
+                      <img src="images/logo_dark.png" alt="" style={{ width: '100%', height: 'auto' }} />
+                    </div>
                     
                     {/* Header */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '2px solid var(--color-primary)', paddingBottom: '16px', marginBottom: '24px' }}>
-                      <div style={{ width: '40px', height: '40px', border: '2px solid var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                      </div>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
-                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
-                        <div style={{ width: '50px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '12px', marginBottom: '20px' }}>
+                      <img src="images/logo_dark.png" alt="" style={{ width: '60px', height: 'auto', opacity: 0.8 }} />
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '6px', color: 'rgba(23,50,77,0.5)', textAlign: 'right', lineHeight: '1.4' }}>
+                        г. Липецк, ул. Советская, д. 4<br/>
+                        ОГРН 1111111111111<br/>
+                        ИНН 2222222222
                       </div>
                     </div>
 
                     {/* Title */}
-                    <div style={{ width: '120px', height: '8px', background: 'var(--color-deep-blue)', margin: '0 auto 30px auto' }}></div>
-
-                    {/* Clauses */}
-                    <div style={{ display: 'flex', gap: '12px', marginBottom: '16px' }}>
-                      <div style={{ width: '16px', height: '4px', background: 'var(--color-primary)', flexShrink: 0, marginTop: '4px' }}></div>
-                      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                        <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                        <div style={{ width: '70%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      </div>
+                    <div style={{ fontFamily: 'var(--font-serif)', fontSize: '10px', color: 'var(--color-deep-blue)', textAlign: 'center', fontWeight: 'bold', marginBottom: '16px', letterSpacing: '0.5px' }}>
+                      ДОГОВОР ОБ ОКАЗАНИИ ЮРИДИЧЕСКИХ УСЛУГ № 14/2026
                     </div>
 
-                    <div style={{ display: 'flex', gap: '12px', marginBottom: '30px' }}>
-                      <div style={{ width: '16px', height: '4px', background: 'var(--color-primary)', flexShrink: 0, marginTop: '4px' }}></div>
-                      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                        <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    {/* Clauses / Tiny Text */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
+                      <div style={{ fontFamily: 'var(--font-sans)', fontSize: '5px', color: 'rgba(23,50,77,0.4)', textAlign: 'justify', lineHeight: '1.6' }}>
+                        <strong style={{ color: 'rgba(23,50,77,0.7)' }}>1. ПРЕДМЕТ ДОГОВОРА</strong><br/>
+                        1.1. Исполнитель обязуется по заданию Заказчика оказать юридические услуги, а Заказчик обязуется оплатить эти услуги в порядке и сроки, установленные настоящим Договором.<br/>
+                        1.2. Под услугами в настоящем Договоре понимается комплексное правовое сопровождение деятельности Заказчика, представление интересов в арбитражных судах и судах общей юрисдикции.
+                      </div>
+                      <div style={{ fontFamily: 'var(--font-sans)', fontSize: '5px', color: 'rgba(23,50,77,0.4)', textAlign: 'justify', lineHeight: '1.6' }}>
+                        <strong style={{ color: 'rgba(23,50,77,0.7)' }}>2. ПРАВА И ОБЯЗАННОСТИ СТОРОН</strong><br/>
+                        2.1. Исполнитель обязан: изучить предоставленные Заказчиком документы и проинформировать о возможных вариантах решения проблемы, подготовить необходимые процессуальные документы.<br/>
+                        2.2. Заказчик обязан: своевременно предоставлять достоверную информацию и документы, необходимые для выполнения поручения.
+                      </div>
+                      <div style={{ fontFamily: 'var(--font-sans)', fontSize: '5px', color: 'rgba(23,50,77,0.4)', textAlign: 'justify', lineHeight: '1.6' }}>
+                        <strong style={{ color: 'rgba(23,50,77,0.7)' }}>3. КОНФИДЕНЦИАЛЬНОСТЬ</strong><br/>
+                        3.1. Стороны обязуются сохранять строгую конфиденциальность информации, полученной в ходе исполнения настоящего Договора, и принимать все возможные меры для ее защиты.
                       </div>
                     </div>
 
                     {/* Signatures */}
-                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                        <div style={{ width: '60px', height: '2px', background: 'var(--color-primary)' }}></div>
-                        <div style={{ width: '30px', height: '2px', background: 'rgba(23,50,77,0.3)' }}></div>
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px dashed rgba(23,50,77,0.1)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)', fontFamily: 'var(--font-sans)' }}>От Исполнителя:</div>
+                        <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
+                        <div style={{ fontSize: '4px', color: 'rgba(23,50,77,0.4)', textAlign: 'center' }}>(подпись, М.П.)</div>
                       </div>
-                      <div className="animated-seal" style={{ width: '60px', height: '60px', borderRadius: '50%', border: '2px solid #9B7E55', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-                        <div style={{ width: '44px', height: '44px', borderRadius: '50%', border: '1px dashed #9B7E55', background: 'rgba(155, 126, 85, 0.05)' }}></div>
-                        <svg style={{ position: 'absolute' }} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9B7E55" strokeWidth="1.5"><circle cx="12" cy="12" r="6"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+                      <div className="animated-seal" style={{ width: '60px', height: '60px', borderRadius: '50%', border: '1px solid #9B7E55', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', transform: 'rotate(-15deg)' }}>
+                        <div style={{ width: '50px', height: '50px', borderRadius: '50%', border: '1px dashed #9B7E55', background: 'rgba(155, 126, 85, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <img src="images/logo_dark.png" alt="" style={{ width: '30px', opacity: 0.3, filter: 'sepia(1) hue-rotate(340deg) saturate(3)' }} />
+                        </div>
+                        <div style={{ position: 'absolute', width: '100%', height: '100%', borderRadius: '50%', border: '1px solid rgba(155, 126, 85, 0.2)' }}></div>
                       </div>
                     </div>
                   </div>
