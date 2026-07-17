@@ -61,7 +61,7 @@ export default function Home() {
             </div>
           </div>
           <div className="img-placeholder" style={{ height: '600px', boxShadow: 'var(--shadow-md)', border: '8px solid var(--color-white)', padding: 0, overflow: 'hidden' }}>
-            <img src="/images/hero_office.png" alt="Временная заглушка" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src="images/hero_office.png" alt="Временная заглушка" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
         </div>
       </section>
