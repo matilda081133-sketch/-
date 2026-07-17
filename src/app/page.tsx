@@ -446,8 +446,8 @@ export default function Home() {
       <footer style={{ backgroundColor: '#0B1C2A', color: 'var(--color-white)', padding: '40px 0 20px' }}>
         <div className="container grid grid-4" style={{ gap: '30px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '30px', marginBottom: '20px' }}>
           <div>
-            <div style={{ marginBottom: '24px', marginTop: '-10px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-white)', fontFamily: 'var(--font-serif)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Де-Юре <span style={{ fontSize: '12px', display: 'block', fontWeight: 'normal', color: 'rgba(255,255,255,0.5)' }}>Прототип</span>
+            <div style={{ marginBottom: '24px', marginTop: '-10px' }}>
+              <img src="images/logo.png" alt="Де-Юре" style={{ height: '75px', width: 'auto' }} />
             </div>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px', lineHeight: 1.5, marginBottom: '16px' }}>
               Юридическая помощь гражданам и бизнесу в Липецке.
