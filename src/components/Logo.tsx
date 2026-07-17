@@ -5,7 +5,7 @@ export default function Logo({ width = 160, height = 48, fill = "var(--color-dee
       <path d="M24 16V32" stroke={fill} strokeWidth="2.5" strokeLinecap="round"/>
       <path d="M18 20L24 16L30 20" stroke={fill} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
       <text x="50" y="32" fontFamily="var(--font-serif)" fontSize="26" fontWeight="bold" fill={fill} letterSpacing="-0.02em">Де-Юре</text>
-      <text x="50" y="44" fontFamily="var(--font-sans)" fontSize="10" fontWeight="600" fill={fill} opacity="0.6" letterSpacing="0.1em" textTransform="uppercase">Юридическая компания</text>
+      <text x="50" y="44" fontFamily="var(--font-sans)" fontSize="10" fontWeight="600" fill={fill} opacity="0.6" letterSpacing="0.1em">ЮРИДИЧЕСКАЯ КОМПАНИЯ</text>
     </svg>
   );
 }

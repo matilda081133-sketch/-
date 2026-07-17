@@ -196,7 +196,7 @@ export default function Home() {
                   boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
                   transition: 'transform 0.5s ease',
                 }}>
-                  <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '180px', fontWeight: '900', color: 'rgba(255, 255, 255, 0.02)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
+                  <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '180px', fontWeight: '900', color: 'rgba(212, 175, 55, 0.15)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
                     {step.num}
                   </div>
                   
@@ -306,122 +306,93 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. REVIEWS (Redesigned Premium Block) */}
-      <section className="section bg-white" style={{ padding: '100px 0', position: 'relative' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h2 style={{ fontSize: '36px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px' }}>Отзывы доверителей</h2>
-            <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '600px', margin: '0 auto' }}>
-              Мы дорожим своей репутацией и работаем на результат. Вы можете ознакомиться с независимыми оценками нашей работы на профильных площадках.
-            </p>
-          </div>
-          
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-            gap: '40px',
-            maxWidth: '900px',
-            margin: '0 auto'
-          }}>
-            {/* Yandex Card */}
-            <div className="review-widget" style={{
-              background: 'var(--color-deep-blue)',
-              borderRadius: '0',
-              padding: '40px',
-              position: 'relative',
-              overflow: 'hidden',
-              boxShadow: '0 20px 40px rgba(16, 39, 59, 0.15)',
-              transition: 'transform 0.4s ease, box-shadow 0.4s ease',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              textAlign: 'center'
-            }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #ffcc00, var(--color-primary))' }}></div>
-              <div style={{ position: 'absolute', top: '-50%', left: '-50%', width: '200%', height: '200%', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 60%)', pointerEvents: 'none' }}></div>
-              
-              <div style={{ fontSize: '32px', fontWeight: '900', color: '#fff', letterSpacing: '-1px', marginBottom: '16px', position: 'relative', zIndex: 1 }}>
-                Яндекс <span style={{ color: '#ffcc00' }}>Карты</span>
+      {/* 7. REVIEWS (Creative Premium Block) */}
+      <section className="section bg-white" style={{ padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
+        {/* Background decorative elements */}
+        <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(23, 50, 77, 0.03) 0%, transparent 70%)', zIndex: 0 }}></div>
+        
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="grid grid-2" style={{ gap: '80px', alignItems: 'center' }}>
+            
+            {/* Left Content */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Репутация
+                </span>
               </div>
-              
-              <div style={{ display: 'flex', gap: '8px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
-                {[1,2,3,4,5].map(star => (
-                  <svg key={star} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                  </svg>
-                ))}
-              </div>
-              
-              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: '1.6', marginBottom: '32px', position: 'relative', zIndex: 1 }}>
-                Рейтинг находится в стадии формирования после прохождения верификации профиля компании.
+              <h2 style={{ fontSize: '42px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '32px', lineHeight: 1.2 }}>
+                Тишина — лучшее доказательство успеха.
+              </h2>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.8, marginBottom: '24px' }}>
+                Мы соблюдаем строгую адвокатскую тайну и принципиально не публикуем имена доверителей или детали выигранных дел на сайте.
               </p>
-              
-              <button className="btn" style={{ 
-                background: 'transparent', 
-                border: '1px solid var(--color-primary)', 
-                color: 'var(--color-primary)', 
-                padding: '12px 30px', 
-                borderRadius: '0', 
-                fontSize: '14px', 
-                fontWeight: 'bold',
-                position: 'relative', 
-                zIndex: 1,
-                cursor: 'not-allowed',
-                opacity: 0.6
-              }}>
-                Страница на модерации
-              </button>
+              <p style={{ color: 'var(--color-deep-blue)', fontSize: '18px', lineHeight: 1.8, fontWeight: 500 }}>
+                Наша реальная оценка — это независимые рейтинги на официальных площадках.
+              </p>
             </div>
 
-            {/* 2GIS Card */}
-            <div className="review-widget" style={{
-              background: 'var(--color-deep-blue)',
-              borderRadius: '0',
-              padding: '40px',
-              position: 'relative',
-              overflow: 'hidden',
-              boxShadow: '0 20px 40px rgba(16, 39, 59, 0.15)',
-              transition: 'transform 0.4s ease, box-shadow 0.4s ease',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              textAlign: 'center'
-            }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #A4D33B, var(--color-primary))' }}></div>
-              <div style={{ position: 'absolute', top: '-50%', left: '-50%', width: '200%', height: '200%', background: 'radial-gradient(circle, rgba(164, 211, 59, 0.05) 0%, transparent 60%)', pointerEvents: 'none' }}></div>
-              
-              <div style={{ fontSize: '36px', fontWeight: '900', color: '#fff', letterSpacing: '-1px', marginBottom: '16px', position: 'relative', zIndex: 1 }}>
-                2<span style={{ color: '#A4D33B' }}>ГИС</span>
-              </div>
-              
-              <div style={{ display: 'flex', gap: '8px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
-                {[1,2,3,4,5].map(star => (
-                  <svg key={star} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                  </svg>
-                ))}
-              </div>
-              
-              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: '1.6', marginBottom: '32px', position: 'relative', zIndex: 1 }}>
-                Рейтинг находится в стадии формирования после прохождения верификации профиля компании.
-              </p>
-              
-              <button className="btn" style={{ 
-                background: 'transparent', 
-                border: '1px solid var(--color-primary)', 
-                color: 'var(--color-primary)', 
-                padding: '12px 30px', 
-                borderRadius: '0', 
-                fontSize: '14px', 
-                fontWeight: 'bold',
-                position: 'relative', 
-                zIndex: 1,
-                cursor: 'not-allowed',
-                opacity: 0.6
+            {/* Right Content - Floating Badges */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', position: 'relative' }}>
+              {/* Yandex Badge */}
+              <div className="review-widget" style={{ 
+                background: 'var(--color-deep-blue)', 
+                padding: '40px', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'space-between',
+                boxShadow: '0 30px 60px rgba(16, 39, 59, 0.1)',
+                transform: 'translateX(-20px)'
               }}>
-                Страница на модерации
-              </button>
+                <div>
+                  <div style={{ fontSize: '32px', fontWeight: '900', color: '#fff', letterSpacing: '-1px', marginBottom: '8px' }}>
+                    Яндекс <span style={{ color: '#ffcc00' }}>Карты</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '4px' }}>
+                    {[1,2,3,4,5].map(star => (
+                      <svg key={star} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <div style={{ textAlign: 'right' }}>
+                  <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Рейтинг</div>
+                  <div style={{ color: '#ffcc00', fontWeight: 'bold', fontSize: '16px' }}>Формируется</div>
+                </div>
+              </div>
+
+              {/* 2GIS Badge */}
+              <div className="review-widget" style={{ 
+                background: 'var(--color-white)', 
+                border: '1px solid var(--color-border)',
+                padding: '40px', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'space-between',
+                boxShadow: '0 30px 60px rgba(16, 39, 59, 0.05)',
+                transform: 'translateX(20px)'
+              }}>
+                <div>
+                  <div style={{ fontSize: '32px', fontWeight: '900', color: 'var(--color-deep-blue)', letterSpacing: '-1px', marginBottom: '8px' }}>
+                    2<span style={{ color: '#A4D33B' }}>ГИС</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '4px' }}>
+                    {[1,2,3,4,5].map(star => (
+                      <svg key={star} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A4D33B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <div style={{ textAlign: 'right' }}>
+                  <div style={{ color: 'var(--color-text-secondary)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Профиль</div>
+                  <div style={{ color: '#A4D33B', fontWeight: 'bold', fontSize: '16px' }}>На модерации</div>
+                </div>
+              </div>
             </div>
+            
           </div>
         </div>
       </section>
