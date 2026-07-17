@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
 
+import { megaMenuB2C, megaMenuB2B } from '../data/megaMenuData';
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -24,8 +26,43 @@ export default function Header() {
         <nav style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'nowrap', whiteSpace: 'nowrap' }}>
           <div style={{ display: 'flex', gap: '20px', fontSize: '14px' }}>
             <Link href="/o-kompanii" className="nav-link">О компании</Link>
-            <Link href="/grazhdanam" className="nav-link">Гражданам</Link>
-            <Link href="/biznesu" className="nav-link">Бизнесу</Link>
+            
+            <div className="nav-item-mega">
+              <Link href="/grazhdanam" className="nav-link">Гражданам</Link>
+              <div className="mega-menu-wrapper">
+                <div className="mega-menu-grid">
+                  {megaMenuB2C.map((col, idx) => (
+                    <div className="mega-menu-column" key={idx}>
+                      <div className="mega-menu-title">{col.title}</div>
+                      <ul className="mega-menu-list">
+                        {col.links.map((link, lIdx) => (
+                          <li key={lIdx}><Link href={link.href} className="mega-menu-link">{link.label}</Link></li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="nav-item-mega">
+              <Link href="/biznesu" className="nav-link">Бизнесу</Link>
+              <div className="mega-menu-wrapper">
+                <div className="mega-menu-grid">
+                  {megaMenuB2B.map((col, idx) => (
+                    <div className="mega-menu-column" key={idx}>
+                      <div className="mega-menu-title">{col.title}</div>
+                      <ul className="mega-menu-list">
+                        {col.links.map((link, lIdx) => (
+                          <li key={lIdx}><Link href={link.href} className="mega-menu-link">{link.label}</Link></li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             <Link href="/praktika" className="nav-link">Практика</Link>
             <Link href="/publikacii" className="nav-link">Публикации</Link>
             <Link href="/kontakty" className="nav-link">Контакты</Link>
