@@ -349,14 +349,9 @@ h4 { font-size: 1.25rem; }
   box-shadow: 0 15px 40px rgba(23, 50, 77, 0.1) !important;
 }
 
-@keyframes floatFront {
-  0%, 100% { transform: rotateY(-15deg) rotateX(5deg) translateZ(20px) translateY(0); }
-  50% { transform: rotateY(-15deg) rotateX(5deg) translateZ(20px) translateY(-15px); }
-}
-
-@keyframes floatBack {
-  0%, 100% { transform: rotateY(-20deg) rotateX(10deg) translateZ(-50px) translateX(40px) translateY(0); }
-  50% { transform: rotateY(-20deg) rotateX(10deg) translateZ(-50px) translateX(40px) translateY(-10px); }
+@keyframes floatVertical {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
 @keyframes pulseSeal {
@@ -364,12 +359,76 @@ h4 { font-size: 1.25rem; }
   50% { transform: scale(1.05); box-shadow: 0 0 20px 0 rgba(155, 126, 85, 0.2); }
 }
 
-.animated-doc-front {
-  animation: floatFront 6s ease-in-out infinite;
+.mockup-container {
+  perspective: 1200px;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
-.animated-doc-back {
-  animation: floatBack 7s ease-in-out infinite;
+
+.doc-wrapper-float-front {
+  animation: floatVertical 6s ease-in-out infinite;
+  position: absolute;
+  transform-style: preserve-3d;
+  z-index: 2;
 }
+
+.doc-wrapper-float-back {
+  animation: floatVertical 7s ease-in-out infinite reverse;
+  position: absolute;
+  transform-style: preserve-3d;
+  z-index: 1;
+}
+
+.doc-sheet {
+  width: 320px;
+  height: 440px;
+  background: var(--color-white);
+  border: 1px solid rgba(23, 50, 77, 0.1);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform-style: preserve-3d;
+  background-image: linear-gradient(180deg, #FFFFFF 0%, #FDFCF9 100%);
+}
+
+.doc-sheet-1 {
+  transform: rotateY(-15deg) rotateX(5deg) translateZ(30px);
+  box-shadow: 0 30px 60px rgba(23, 50, 77, 0.12);
+  opacity: 1;
+}
+
+.doc-sheet-2 {
+  transform: rotateY(-20deg) rotateX(10deg) translateZ(-50px) translateX(40px);
+  box-shadow: 0 10px 30px rgba(23, 50, 77, 0.05);
+  opacity: 0.6;
+}
+
+.mockup-container:hover .doc-wrapper-float-front {
+  z-index: 1;
+}
+.mockup-container:hover .doc-wrapper-float-back {
+  z-index: 2;
+}
+
+.mockup-container:hover .doc-sheet-1 {
+  transform: rotateY(-20deg) rotateX(10deg) translateZ(-50px) translateX(40px);
+  box-shadow: 0 10px 30px rgba(23, 50, 77, 0.05);
+  opacity: 0.6;
+}
+
+.mockup-container:hover .doc-sheet-2 {
+  transform: rotateY(-15deg) rotateX(5deg) translateZ(30px) translateX(0px);
+  box-shadow: 0 30px 60px rgba(23, 50, 77, 0.15);
+  opacity: 1;
+}
+
 .animated-seal {
   animation: pulseSeal 4s ease-in-out infinite;
 }

@@ -95,7 +95,7 @@ export default function ServicesBlock() {
   return (
     <section id="services" className="section" style={{ position: 'relative', overflow: 'hidden' }}>
       {/* Background Graphic: Scales of Justice */}
-      <svg style={{ position: 'absolute', top: '-10%', left: '-10%', width: '500px', height: '500px', opacity: 0.02, transform: 'rotate(-10deg)', zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+      <svg style={{ position: 'absolute', top: '-5%', left: '-5%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
         <path d="M12 2v20 M4 10v6a2 2 0 0 0 2 2h2 M20 10v6a2 2 0 0 1-2 2h-2 M12 6H4 M12 6h8 M12 22h-4 M12 22h4 M8 6l-4 4 M16 6l4 4"/>
       </svg>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>

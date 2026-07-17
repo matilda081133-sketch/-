@@ -89,66 +89,110 @@ export default function Home() {
           </div>
           
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center' }}>
-            {/* COMPLEX ANIMATED CSS MOCKUP */}
-            <div style={{ position: 'relative', width: '100%', maxWidth: '500px', height: '450px', perspective: '1200px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            {/* INTERACTIVE ANIMATED CSS MOCKUP */}
+            <div className="mockup-container">
               {/* Background decorative glows */}
               <div style={{ position: 'absolute', width: '250px', height: '250px', background: 'var(--color-primary)', filter: 'blur(100px)', opacity: 0.15, borderRadius: '50%' }}></div>
               
-              {/* Document 2 (Back) */}
-              <div className="animated-doc-back" style={{
-                position: 'absolute',
-                width: '300px', height: '400px',
-                background: 'rgba(255, 255, 255, 0.6)',
-                backdropFilter: 'blur(12px)',
-                border: '1px solid rgba(23, 50, 77, 0.08)',
-                boxShadow: '0 20px 40px rgba(23, 50, 77, 0.05)',
-                transform: 'rotateY(-20deg) rotateX(10deg) translateZ(-50px) translateX(40px)',
-                transformStyle: 'preserve-3d'
-              }}>
-                <div style={{ padding: '40px' }}>
-                  <div style={{ width: '30%', height: '8px', background: 'rgba(23, 50, 77, 0.1)', marginBottom: '40px' }}></div>
-                  <div style={{ width: '100%', height: '4px', background: 'rgba(23, 50, 77, 0.05)', marginBottom: '20px' }}></div>
-                  <div style={{ width: '85%', height: '4px', background: 'rgba(23, 50, 77, 0.05)', marginBottom: '20px' }}></div>
-                  <div style={{ width: '90%', height: '4px', background: 'rgba(23, 50, 77, 0.05)', marginBottom: '20px' }}></div>
+              {/* Document 2 (Back -> Front on hover) */}
+              <div className="doc-wrapper-float-back">
+                <div className="doc-sheet doc-sheet-2">
+                  <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    {/* Stamp at top left */}
+                    <div style={{ position: 'absolute', top: '30px', left: '30px', width: '70px', height: '30px', border: '2px solid #C8A97E', color: '#C8A97E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)', opacity: 0.8 }}>
+                       <div style={{ width: '40px', height: '4px', background: '#C8A97E' }}></div>
+                    </div>
+
+                    {/* Header */}
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
+
+                    {/* Solid text blocks */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
+                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: 'auto' }}>
+                      <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    {/* Footer grid */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', borderTop: '2px dashed rgba(23,50,77,0.1)', paddingTop: '20px' }}>
+                      <div>
+                        <div style={{ width: '60px', height: '2px', background: 'var(--color-primary)', marginBottom: '8px' }}></div>
+                        <div style={{ width: '30px', height: '2px', background: 'rgba(23,50,77,0.3)' }}></div>
+                      </div>
+                      <div>
+                        <div style={{ width: '60px', height: '2px', background: 'var(--color-primary)', marginBottom: '8px' }}></div>
+                        <div style={{ width: '30px', height: '2px', background: 'rgba(23,50,77,0.3)' }}></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Document 1 (Front) */}
-              <div className="animated-doc-front" style={{
-                position: 'absolute',
-                width: '320px', height: '440px',
-                background: 'var(--color-white)',
-                border: '1px solid rgba(23, 50, 77, 0.1)',
-                boxShadow: '0 30px 60px rgba(23, 50, 77, 0.12)',
-                transform: 'rotateY(-15deg) rotateX(5deg) translateZ(30px)',
-                display: 'flex', flexDirection: 'column',
-                transformStyle: 'preserve-3d'
-              }}>
-                <div style={{ padding: '50px 40px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  {/* Header */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '50px' }}>
-                    <div style={{ width: '50px', height: '50px', background: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              {/* Document 1 (Front -> Back on hover) */}
+              <div className="doc-wrapper-float-front">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    {/* Watermark */}
+                    <svg style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.03, width: '150px', height: '150px' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1"><path d="M12 2v20M4 10v6a2 2 0 0 0 2 2h2M20 10v6a2 2 0 0 1-2 2h-2M12 6H4M12 6h8M12 22h-4M12 22h4M8 6l-4 4M16 6l4 4"/></svg>
+                    
+                    {/* Header */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '2px solid var(--color-primary)', paddingBottom: '16px', marginBottom: '24px' }}>
+                      <div style={{ width: '40px', height: '40px', border: '2px solid var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
                     </div>
-                    <div style={{ width: '25%', height: '6px', background: 'var(--color-primary)', opacity: 0.2 }}></div>
-                  </div>
-                  
-                  {/* Body lines */}
-                  <div style={{ width: '100%', height: '6px', background: 'rgba(23, 50, 77, 0.04)', marginBottom: '24px' }}></div>
-                  <div style={{ width: '95%', height: '6px', background: 'rgba(23, 50, 77, 0.04)', marginBottom: '24px' }}></div>
-                  <div style={{ width: '80%', height: '6px', background: 'rgba(23, 50, 77, 0.04)', marginBottom: '24px' }}></div>
-                  <div style={{ width: '90%', height: '6px', background: 'rgba(23, 50, 77, 0.04)', marginBottom: '50px' }}></div>
-                  
-                  {/* Signature & Seal */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: 'auto' }}>
-                    <div>
-                      <div style={{ width: '80px', height: '2px', background: 'var(--color-primary)', marginBottom: '10px' }}></div>
-                      <div style={{ width: '40px', height: '4px', background: 'rgba(23, 50, 77, 0.1)' }}></div>
+
+                    {/* Title */}
+                    <div style={{ width: '120px', height: '8px', background: 'var(--color-deep-blue)', margin: '0 auto 30px auto' }}></div>
+
+                    {/* Clauses */}
+                    <div style={{ display: 'flex', gap: '12px', marginBottom: '16px' }}>
+                      <div style={{ width: '16px', height: '4px', background: 'var(--color-primary)', flexShrink: 0, marginTop: '4px' }}></div>
+                      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '70%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
                     </div>
-                    {/* Animated Seal */}
-                    <div className="animated-seal" style={{ width: '70px', height: '70px', borderRadius: '50%', border: '2px solid #9B7E55', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-                      <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(155, 126, 85, 0.05)', border: '1px dashed #9B7E55' }}></div>
-                      <svg style={{ position: 'absolute' }} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9B7E55" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+
+                    <div style={{ display: 'flex', gap: '12px', marginBottom: '30px' }}>
+                      <div style={{ width: '16px', height: '4px', background: 'var(--color-primary)', flexShrink: 0, marginTop: '4px' }}></div>
+                      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+
+                    {/* Signatures */}
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        <div style={{ width: '60px', height: '2px', background: 'var(--color-primary)' }}></div>
+                        <div style={{ width: '30px', height: '2px', background: 'rgba(23,50,77,0.3)' }}></div>
+                      </div>
+                      <div className="animated-seal" style={{ width: '60px', height: '60px', borderRadius: '50%', border: '2px solid #9B7E55', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+                        <div style={{ width: '44px', height: '44px', borderRadius: '50%', border: '1px dashed #9B7E55', background: 'rgba(155, 126, 85, 0.05)' }}></div>
+                        <svg style={{ position: 'absolute' }} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9B7E55" strokeWidth="1.5"><circle cx="12" cy="12" r="6"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -177,7 +221,7 @@ export default function Home() {
         overflow: 'hidden'
       }}>
         {/* Background Graphic: Shield */}
-        <svg style={{ position: 'absolute', top: '-10%', left: '-10%', width: '600px', height: '600px', opacity: 0.02, transform: 'rotate(-15deg)', zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+        <svg style={{ position: 'absolute', top: '-5%', left: '-5%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           <path d="M9 12l2 2 4-4"/>
         </svg>
@@ -541,7 +585,7 @@ export default function Home() {
       {/* 10. CTA SECTION (FORM) */}
       <section id="consultation" className="section bg-deep-blue" style={{ position: 'relative', overflow: 'hidden' }}>
         {/* Background Graphic: Scales of Justice */}
-        <svg style={{ position: 'absolute', top: '-5%', left: '-10%', width: '500px', height: '500px', opacity: 0.02, transform: 'rotate(-10deg)', zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+        <svg style={{ position: 'absolute', top: '0%', left: '-5%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
           <path d="M12 2v20 M4 10v6a2 2 0 0 0 2 2h2 M20 10v6a2 2 0 0 1-2 2h-2 M12 6H4 M12 6h8 M12 22h-4 M12 22h4 M8 6l-4 4 M16 6l4 4"/>
         </svg>
 
