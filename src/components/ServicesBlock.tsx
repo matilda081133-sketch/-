@@ -140,7 +140,7 @@ export default function ServicesBlock() {
         <div className="grid grid-3" style={{ gap: '30px' }}>
           {services[activeTab].map((service, index) => (
             <Link href={service.link} key={index} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', height: '100%' }}>
-              <div className="card-service" style={{ width: '100%', height: '100%' }}>
+              <div className="card-service" style={{ width: '100%', height: '100%', border: '1px solid rgba(200, 169, 126, 0.4)' }}>
                 <div className="card-service-num">{service.num}</div>
                 <div className="card-service-content" style={{ 
                   display: 'flex', 

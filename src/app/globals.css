@@ -384,62 +384,52 @@ h4 { font-size: 1.25rem; }
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  transition: transform 2.5s ease-in-out, box-shadow 2.5s ease-in-out, opacity 2.5s ease-in-out;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 1.2s cubic-bezier(0.25, 1, 0.5, 1);
   transform-style: preserve-3d;
   background-image: linear-gradient(180deg, #FFFFFF 0%, #FDFCF9 100%);
+  opacity: 1; /* Always solid */
 }
 
+/* Base Stack Positions */
 .doc-sheet-1 {
   transform: rotateY(-15deg) rotateX(5deg) translateZ(40px) translateX(0px);
   box-shadow: 0 30px 60px rgba(23, 50, 77, 0.12);
-  opacity: 1;
 }
 
 .doc-sheet-2 {
-  transform: rotateY(-17deg) rotateX(7deg) translateZ(10px) translateX(15px);
+  transform: rotateY(-16deg) rotateX(6deg) translateZ(15px) translateX(15px) translateY(5px);
   box-shadow: 0 20px 40px rgba(23, 50, 77, 0.08);
-  opacity: 0.8;
 }
 
 .doc-sheet-3 {
-  transform: rotateY(-19deg) rotateX(9deg) translateZ(-20px) translateX(30px);
+  transform: rotateY(-17deg) rotateX(7deg) translateZ(-10px) translateX(30px) translateY(10px);
   box-shadow: 0 15px 30px rgba(23, 50, 77, 0.06);
-  opacity: 0.6;
 }
 
 .doc-sheet-4 {
-  transform: rotateY(-21deg) rotateX(11deg) translateZ(-50px) translateX(45px);
+  transform: rotateY(-18deg) rotateX(8deg) translateZ(-35px) translateX(45px) translateY(15px);
   box-shadow: 0 10px 20px rgba(23, 50, 77, 0.04);
-  opacity: 0.4;
 }
 
-.mockup-container:hover .doc-wrapper-float-1 { z-index: 1; }
-.mockup-container:hover .doc-wrapper-float-2 { z-index: 2; }
-.mockup-container:hover .doc-wrapper-float-3 { z-index: 3; }
-.mockup-container:hover .doc-wrapper-float-4 { z-index: 4; }
-
+/* Hover Fan Out (No z-index changing) */
 .mockup-container:hover .doc-sheet-1 {
-  transform: rotateY(-21deg) rotateX(11deg) translateZ(-50px) translateX(45px);
-  box-shadow: 0 10px 20px rgba(23, 50, 77, 0.04);
-  opacity: 0.4;
+  transform: rotateY(-12deg) rotateX(4deg) translateZ(60px) translateX(-60px) translateY(-20px);
+  box-shadow: 0 40px 80px rgba(23, 50, 77, 0.15);
 }
 
 .mockup-container:hover .doc-sheet-2 {
-  transform: rotateY(-19deg) rotateX(9deg) translateZ(-20px) translateX(30px);
-  box-shadow: 0 15px 30px rgba(23, 50, 77, 0.06);
-  opacity: 0.6;
+  transform: rotateY(-14deg) rotateX(5deg) translateZ(20px) translateX(-20px) translateY(-10px);
+  box-shadow: 0 30px 60px rgba(23, 50, 77, 0.12);
 }
 
 .mockup-container:hover .doc-sheet-3 {
-  transform: rotateY(-17deg) rotateX(7deg) translateZ(10px) translateX(15px);
+  transform: rotateY(-16deg) rotateX(6deg) translateZ(-20px) translateX(20px) translateY(0px);
   box-shadow: 0 20px 40px rgba(23, 50, 77, 0.08);
-  opacity: 0.8;
 }
 
 .mockup-container:hover .doc-sheet-4 {
-  transform: rotateY(-15deg) rotateX(5deg) translateZ(40px) translateX(0px);
-  box-shadow: 0 30px 60px rgba(23, 50, 77, 0.12);
-  opacity: 1;
+  transform: rotateY(-18deg) rotateX(7deg) translateZ(-60px) translateX(60px) translateY(10px);
+  box-shadow: 0 10px 20px rgba(23, 50, 77, 0.05);
 }
 
 .animated-seal {

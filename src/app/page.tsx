@@ -149,32 +149,29 @@ export default function Home() {
 
                     {/* Header */}
                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '30px' }}>
-                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '6px', color: 'rgba(23,50,77,0.5)', textAlign: 'right', lineHeight: '1.4' }}>
-                        УТВЕРЖДЕНО<br/>
-                        Генеральным директором<br/>
-                        ООО "Де-Юре"<br/>
-                        «___» ________ 2026 г.
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
                       </div>
                     </div>
 
                     {/* Title */}
-                    <div style={{ fontFamily: 'var(--font-serif)', fontSize: '9px', color: 'var(--color-primary)', textAlign: 'center', fontWeight: 'bold', margin: '0 auto 20px auto', letterSpacing: '0.5px' }}>
-                      ПЕРЕЧЕНЬ ПРЕДОСТАВЛЯЕМЫХ УСЛУГ
-                    </div>
+                    <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 20px auto' }}></div>
 
                     {/* Solid text blocks */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
-                      <div style={{ fontFamily: 'var(--font-sans)', fontSize: '5px', color: 'rgba(23,50,77,0.4)', textAlign: 'justify', lineHeight: '1.6' }}>
-                        <strong style={{ color: 'rgba(23,50,77,0.7)' }}>РАЗДЕЛ 1. СУДЕБНОЕ ПРЕДСТАВИТЕЛЬСТВО</strong><br/>
-                        1. Подготовка и подача исковых заявлений, отзывов на исковые заявления, апелляционных и кассационных жалоб в суды общей юрисдикции и арбитражные суды.<br/>
-                        2. Участие в судебных заседаниях на всех стадиях судебного процесса (первая, апелляционная, кассационная, надзорная инстанции).<br/>
-                        3. Ознакомление с материалами судебных дел, получение копий судебных актов и исполнительных листов.
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        <div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
                       </div>
-                      <div style={{ fontFamily: 'var(--font-sans)', fontSize: '5px', color: 'rgba(23,50,77,0.4)', textAlign: 'justify', lineHeight: '1.6' }}>
-                        <strong style={{ color: 'rgba(23,50,77,0.7)' }}>РАЗДЕЛ 2. ДОГОВОРНАЯ РАБОТА И АНАЛИТИКА</strong><br/>
-                        4. Правовая экспертиза (due diligence) проектов договоров, соглашений, контрактов и иных документов правового характера.<br/>
-                        5. Участие в переговорах с контрагентами Заказчика по вопросам заключения, изменения или расторжения договоров.<br/>
-                        6. Подготовка письменных правовых заключений (Legal Opinions) по сложным юридическим вопросам, связанным с хозяйственной деятельностью Заказчика.
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        <div style={{ width: '50%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '80%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
                       </div>
                     </div>
 
@@ -205,42 +202,48 @@ export default function Home() {
                     {/* Header */}
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '12px', marginBottom: '20px' }}>
                       <img src="images/logo_dark.png" alt="" style={{ width: '60px', height: 'auto', opacity: 0.8 }} />
-                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '6px', color: 'rgba(23,50,77,0.5)', textAlign: 'right', lineHeight: '1.4' }}>
-                        г. Липецк, ул. Советская, д. 4<br/>
-                        ОГРН 1111111111111<br/>
-                        ИНН 2222222222
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
                       </div>
                     </div>
 
                     {/* Title */}
-                    <div style={{ fontFamily: 'var(--font-serif)', fontSize: '10px', color: 'var(--color-deep-blue)', textAlign: 'center', fontWeight: 'bold', marginBottom: '16px', letterSpacing: '0.5px' }}>
-                      ДОГОВОР ОБ ОКАЗАНИИ ЮРИДИЧЕСКИХ УСЛУГ № 14/2026
-                    </div>
+                    <div style={{ width: '120px', height: '8px', background: 'var(--color-deep-blue)', margin: '0 auto 20px auto' }}></div>
 
-                    {/* Clauses / Tiny Text */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
-                      <div style={{ fontFamily: 'var(--font-sans)', fontSize: '5px', color: 'rgba(23,50,77,0.4)', textAlign: 'justify', lineHeight: '1.6' }}>
-                        <strong style={{ color: 'rgba(23,50,77,0.7)' }}>1. ПРЕДМЕТ ДОГОВОРА</strong><br/>
-                        1.1. Исполнитель обязуется по заданию Заказчика оказать юридические услуги, а Заказчик обязуется оплатить эти услуги в порядке и сроки, установленные настоящим Договором.<br/>
-                        1.2. Под услугами в настоящем Договоре понимается комплексное правовое сопровождение деятельности Заказчика, представление интересов в арбитражных судах и судах общей юрисдикции.
+                    {/* Clauses / Abstract Lines */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '16px' }}>
+                      <div style={{ display: 'flex', gap: '8px' }}>
+                         <div style={{ width: '12px', height: '4px', background: 'var(--color-primary)' }}></div>
+                         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                           <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                           <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                           <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                         </div>
                       </div>
-                      <div style={{ fontFamily: 'var(--font-sans)', fontSize: '5px', color: 'rgba(23,50,77,0.4)', textAlign: 'justify', lineHeight: '1.6' }}>
-                        <strong style={{ color: 'rgba(23,50,77,0.7)' }}>2. ПРАВА И ОБЯЗАННОСТИ СТОРОН</strong><br/>
-                        2.1. Исполнитель обязан: изучить предоставленные Заказчиком документы и проинформировать о возможных вариантах решения проблемы, подготовить необходимые процессуальные документы.<br/>
-                        2.2. Заказчик обязан: своевременно предоставлять достоверную информацию и документы, необходимые для выполнения поручения.
+                      <div style={{ display: 'flex', gap: '8px' }}>
+                         <div style={{ width: '12px', height: '4px', background: 'var(--color-primary)' }}></div>
+                         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                           <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                           <div style={{ width: '75%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                           <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                         </div>
                       </div>
-                      <div style={{ fontFamily: 'var(--font-sans)', fontSize: '5px', color: 'rgba(23,50,77,0.4)', textAlign: 'justify', lineHeight: '1.6' }}>
-                        <strong style={{ color: 'rgba(23,50,77,0.7)' }}>3. КОНФИДЕНЦИАЛЬНОСТЬ</strong><br/>
-                        3.1. Стороны обязуются сохранять строгую конфиденциальность информации, полученной в ходе исполнения настоящего Договора, и принимать все возможные меры для ее защиты.
+                      <div style={{ display: 'flex', gap: '8px' }}>
+                         <div style={{ width: '12px', height: '4px', background: 'var(--color-primary)' }}></div>
+                         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                           <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                           <div style={{ width: '60%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                         </div>
                       </div>
                     </div>
 
                     {/* Signatures */}
                     <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px dashed rgba(23,50,77,0.1)' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)', fontFamily: 'var(--font-sans)' }}>От Исполнителя:</div>
+                        <div style={{ width: '40px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
                         <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
-                        <div style={{ fontSize: '4px', color: 'rgba(23,50,77,0.4)', textAlign: 'center' }}>(подпись, М.П.)</div>
+                        <div style={{ width: '50px', height: '2px', background: 'rgba(23,50,77,0.1)', margin: '0 auto' }}></div>
                       </div>
                       <div className="animated-seal" style={{ width: '60px', height: '60px', borderRadius: '50%', border: '1px solid #9B7E55', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', transform: 'rotate(-15deg)' }}>
                         <div style={{ width: '50px', height: '50px', borderRadius: '50%', border: '1px dashed #9B7E55', background: 'rgba(155, 126, 85, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
