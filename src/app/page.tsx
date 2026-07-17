@@ -315,22 +315,27 @@ export default function Home() {
           <div className="grid grid-2" style={{ gap: '80px', alignItems: 'center' }}>
             
             {/* Left Content */}
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
-                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                  Репутация
-                </span>
+            <div style={{ position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-80px', left: '-40px', fontSize: '320px', fontFamily: 'var(--font-serif)', color: 'rgba(23, 50, 77, 0.04)', lineHeight: 1, zIndex: 0, pointerEvents: 'none' }}>
+                “
               </div>
-              <h2 style={{ fontSize: '42px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '32px', lineHeight: 1.2 }}>
-                Тишина — лучшее доказательство успеха.
-              </h2>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.8, marginBottom: '24px' }}>
-                Мы соблюдаем строгую адвокатскую тайну и принципиально не публикуем имена доверителей или детали выигранных дел на сайте.
-              </p>
-              <p style={{ color: 'var(--color-deep-blue)', fontSize: '18px', lineHeight: 1.8, fontWeight: 500 }}>
-                Наша реальная оценка — это независимые рейтинги на официальных площадках.
-              </p>
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+                  <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                    Репутация
+                  </span>
+                </div>
+                <h2 style={{ fontSize: '42px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '32px', lineHeight: 1.2 }}>
+                  Тишина — лучшее доказательство успеха.
+                </h2>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.8, marginBottom: '24px' }}>
+                  Мы соблюдаем строгую адвокатскую тайну и принципиально не публикуем имена доверителей или детали выигранных дел на сайте.
+                </p>
+                <p style={{ color: 'var(--color-deep-blue)', fontSize: '18px', lineHeight: 1.8, fontWeight: 500 }}>
+                  Наша реальная оценка — это независимые рейтинги на официальных площадках.
+                </p>
+              </div>
             </div>
 
             {/* Right Content - Floating Badges */}
@@ -351,7 +356,7 @@ export default function Home() {
                   </div>
                   <div style={{ display: 'flex', gap: '4px' }}>
                     {[1,2,3,4,5].map(star => (
-                      <svg key={star} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <svg key={star} width="20" height="20" viewBox="0 0 24 24" fill="#ffcc00" stroke="#ffcc00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                       </svg>
                     ))}
@@ -380,7 +385,7 @@ export default function Home() {
                   </div>
                   <div style={{ display: 'flex', gap: '4px' }}>
                     {[1,2,3,4,5].map(star => (
-                      <svg key={star} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A4D33B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <svg key={star} width="20" height="20" viewBox="0 0 24 24" fill="#A4D33B" stroke="#A4D33B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                       </svg>
                     ))}
