@@ -60,37 +60,58 @@ export default function Home() {
               <a href="#services" className="btn btn-outline">Выбрать направление</a>
             </div>
 
-            <div className="reveal-on-scroll delay-100" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'var(--color-white)', padding: '8px 14px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Бесплатный анализ перспективы
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'var(--color-white)', padding: '8px 14px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Конфиденциальность гарантирована
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'var(--color-white)', padding: '8px 14px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Полное ведение дела в суде
-              </div>
+            {/* Modern Glassmorphic Bullets */}
+            <div className="reveal-on-scroll delay-100" style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', 
+              gap: '20px', 
+              marginTop: '40px' 
+            }}>
+              {[
+                { title: 'Бесплатный анализ', desc: 'Оценка перспективы дела' },
+                { title: 'Конфиденциальность', desc: 'Полная защита данных' },
+                { title: 'Ведение в суде', desc: 'Под ключ без вашего участия' }
+              ].map((bullet, i) => (
+                <div key={i} style={{
+                  background: 'rgba(255, 255, 255, 0.7)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(23, 50, 77, 0.1)',
+                  borderRadius: '12px',
+                  padding: '20px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                }}
+                className="hover-lift"
+                >
+                  <div style={{
+                    width: '40px', height: '40px', borderRadius: '8px', 
+                    background: 'var(--color-primary)', color: 'white',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    marginBottom: '16px'
+                  }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', color: 'var(--color-deep-blue)' }}>{bullet.title}</h4>
+                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)' }}>{bullet.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
           
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center' }}>
             <svg className="hero-graphic" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', maxWidth: '500px', height: 'auto', filter: 'drop-shadow(0px 20px 40px rgba(23, 50, 77, 0.15))' }}>
-              <rect x="50" y="80" width="220" height="280" rx="12" fill="#FFFFFF" stroke="#EAF1F6" strokeWidth="4"/>
-              <rect x="80" y="120" width="160" height="16" rx="4" fill="#EAF1F6"/>
-              <rect x="80" y="150" width="120" height="12" rx="4" fill="#F7F4ED"/>
-              <rect x="80" y="174" width="140" height="12" rx="4" fill="#F7F4ED"/>
-              <rect x="80" y="198" width="100" height="12" rx="4" fill="#F7F4ED"/>
+              <circle cx="200" cy="200" r="140" stroke="var(--color-primary)" strokeWidth="2" strokeDasharray="10 10" />
+              <circle cx="200" cy="200" r="180" stroke="rgba(23, 50, 77, 0.1)" strokeWidth="1" />
               
-              <rect x="130" y="40" width="220" height="280" rx="12" fill="#17324D" stroke="#10273B" strokeWidth="4"/>
-              <rect x="160" y="80" width="160" height="16" rx="4" fill="#EAF1F6" fillOpacity="0.2"/>
-              <rect x="160" y="110" width="120" height="12" rx="4" fill="#EAF1F6" fillOpacity="0.1"/>
-              <rect x="160" y="134" width="140" height="12" rx="4" fill="#EAF1F6" fillOpacity="0.1"/>
+              <rect x="180" y="60" width="40" height="280" rx="20" fill="var(--color-deep-blue)" />
+              <rect x="120" y="140" width="40" height="200" rx="20" fill="var(--color-primary)" />
+              <rect x="240" y="100" width="40" height="240" rx="20" fill="rgba(23, 50, 77, 0.15)" />
               
-              <circle cx="270" cy="240" r="40" fill="#EAF1F6"/>
-              <path d="M255 240L265 250L285 230" stroke="#17324D" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="140" cy="140" r="12" fill="#FFFFFF" stroke="var(--color-primary)" strokeWidth="4" />
+              <circle cx="260" cy="100" r="8" fill="var(--color-primary)" />
+              <circle cx="200" cy="60" r="16" fill="#FFFFFF" stroke="var(--color-deep-blue)" strokeWidth="4" />
             </svg>
           </div>
         </div>

@@ -328,15 +328,25 @@ h4 { font-size: 1.25rem; }
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-.reveal-on-scroll.revealed {
+
+.reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
+
 .delay-100 { transition-delay: 100ms; }
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.hover-lift:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 40px rgba(23, 50, 77, 0.1) !important;
+}
 
 /* Layout Utilities */
 .flex { display: flex; }
