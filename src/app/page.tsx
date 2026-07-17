@@ -35,10 +35,10 @@ export default function Home() {
                 Юридическая компания в Липецке
               </span>
             </div>
-            <h1 style={{ marginBottom: '24px' }}>
-              Юридическая помощь<br/>
-              гражданам и бизнесу<br/>
-              в Липецке
+            <h1 style={{ marginBottom: '24px', lineHeight: '1.2' }}>
+              <span style={{ display: 'block' }}>Юридическая помощь</span>
+              <span style={{ display: 'block' }}>гражданам и бизнесу</span>
+              <span style={{ display: 'block' }}>в Липецке</span>
             </h1>
             <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', marginBottom: '30px', maxWidth: '560px', lineHeight: 1.6 }}>
               Разбираемся в ситуации, формируем правовую позицию и сопровождаем дело на необходимых этапах — от переговоров и обращений в государственные органы до суда и исполнения решения.
@@ -164,10 +164,15 @@ export default function Home() {
       </section>
 
       {/* 4. HOW WE WORK */}
-      <section className="section bg-cream">
-        <div className="container">
-          <h2 style={{ textAlign: 'center', marginBottom: '60px' }}>Как проходит работа</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '20px', alignItems: 'start' }}>
+      <section className="section bg-deep-blue" style={{ position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
+        <div style={{ position: 'absolute', top: 0, right: 0, width: '400px', height: '100%', background: 'linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.03))' }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '80px', color: 'var(--color-white)', fontFamily: 'var(--font-serif)' }}>Как проходит работа</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '20px', alignItems: 'start', position: 'relative' }}>
+            
+            {/* Connecting Line */}
+            <div style={{ position: 'absolute', top: '40px', left: '10%', right: '10%', height: '2px', background: 'rgba(255, 255, 255, 0.1)', zIndex: 0 }}></div>
+
             {[
               { num: '01', title: 'Обращение', desc: 'Первичное обращение и постановка задачи' },
               { num: '02', title: 'Уточнение', desc: 'Уточнение обстоятельств и деталей' },
@@ -175,15 +180,42 @@ export default function Home() {
               { num: '04', title: 'Предложение', desc: 'Формирование правовой позиции и договора' },
               { num: '05', title: 'Сопровождение', desc: 'Реализация стратегии защиты' },
             ].map((step, i) => (
-              <div key={i} style={{ position: 'relative' }}>
-                <div style={{ fontSize: '48px', fontWeight: 800, color: 'var(--color-grey-blue)', lineHeight: 1, marginBottom: '16px', fontFamily: 'var(--font-serif)' }}>
-                  {step.num}
+              <div key={i} className="process-step" style={{ 
+                position: 'relative', 
+                zIndex: 1, 
+                display: 'flex', 
+                flexDirection: 'column', 
+                alignItems: 'center', 
+                textAlign: 'center',
+                transition: 'transform 0.4s ease, opacity 0.4s ease'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-10px)' }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)' }}
+              >
+                <div style={{ 
+                  width: '80px', 
+                  height: '80px', 
+                  borderRadius: '50%', 
+                  background: 'var(--color-deep-blue)', 
+                  border: '2px solid var(--color-primary)', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  fontSize: '28px', 
+                  fontWeight: 'bold', 
+                  color: 'var(--color-primary)', 
+                  marginBottom: '24px',
+                  fontFamily: 'var(--font-serif)',
+                  boxShadow: '0 0 20px rgba(212, 175, 55, 0.1)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}>
+                  {/* Subtle inner glow */}
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%)' }}></div>
+                  <span style={{ position: 'relative', zIndex: 1 }}>{step.num}</span>
                 </div>
-                <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '10px' }}>{step.title}</h4>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{step.desc}</p>
-                {i < 4 && (
-                  <div style={{ position: 'absolute', top: '24px', right: '-10px', width: '20px', height: '2px', background: 'var(--color-border)' }}></div>
-                )}
+                <h4 style={{ fontSize: '18px', color: 'var(--color-white)', marginBottom: '10px' }}>{step.title}</h4>
+                <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.6)', lineHeight: 1.5, margin: 0, padding: '0 10px' }}>{step.desc}</p>
               </div>
             ))}
           </div>
