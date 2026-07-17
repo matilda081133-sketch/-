@@ -6,9 +6,9 @@ async function extractLogos() {
     const imgDarkBg = await Jimp.read(path.join(__dirname, 'public/images/logo_ref_1.jpg'));
     const imgLightBg = await Jimp.read(path.join(__dirname, 'public/images/logo_ref_2.jpg'));
     
-    // Wipe 5 pixels from all edges to remove any JPG framing lines
+    // Wipe 25 pixels from the bottom to ensure the thick framing line is gone
     const wipeBorders = (x, y, width, height) => {
-      return (x < 5 || x >= width - 5 || y < 5 || y >= height - 5);
+      return (x < 10 || x >= width - 10 || y < 10 || y >= height - 25);
     };
 
     imgDarkBg.scan(0, 0, imgDarkBg.bitmap.width, imgDarkBg.bitmap.height, function(x, y, idx) {
@@ -43,7 +43,7 @@ async function extractLogos() {
 
     await imgDarkBg.writeAsync(path.join(__dirname, 'public/images/logo.png'));
     await imgLightBg.writeAsync(path.join(__dirname, 'public/images/logo_dark.png'));
-    console.log("Logos successfully extracted without border artifacts!");
+    console.log("Logos successfully extracted, cropped 25px from bottom!");
   } catch (err) {
     console.error("Extraction error:", err);
   }
