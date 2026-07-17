@@ -106,7 +106,7 @@ export default function ServicesBlock() {
             <div style={{ 
               display: 'inline-flex', 
               background: 'var(--color-white)', 
-              border: '1px solid #B89855',
+              border: '1px solid #EAF1F6',
             }}>
               {tabs.map(tab => (
                 <button
@@ -115,8 +115,8 @@ export default function ServicesBlock() {
                   style={{
                     padding: '16px 48px',
                     border: 'none',
-                    background: activeTab === tab.id ? '#B89855' : 'transparent',
-                    color: activeTab === tab.id ? 'var(--color-white)' : '#B89855',
+                    background: activeTab === tab.id ? '#EAF1F6' : 'transparent',
+                    color: activeTab === tab.id ? 'var(--color-white)' : '#EAF1F6',
                     fontSize: '18px',
                     fontWeight: activeTab === tab.id ? 'bold' : 'normal',
                     cursor: 'pointer',

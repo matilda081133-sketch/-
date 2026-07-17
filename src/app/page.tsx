@@ -33,8 +33,8 @@ export default function Home() {
         <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div className="reveal-on-scroll" style={{ padding: '40px 0', maxWidth: '800px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: '#B89855' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#B89855' }}>
+              <div style={{ width: '40px', height: '2px', backgroundColor: '#EAF1F6' }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#EAF1F6' }}>
                 Юридическая компания в Липецке
               </span>
             </div>
@@ -65,15 +65,15 @@ export default function Home() {
 
             <div className="reveal-on-scroll delay-100" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: '#D3E4F9', background: 'rgba(255, 255, 255, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B89855" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EAF1F6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 Профильный специалист по каждому направлению
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: '#D3E4F9', background: 'rgba(255, 255, 255, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B89855" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EAF1F6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 Полное сопровождение без вашего присутствия
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: '#D3E4F9', background: 'rgba(255, 255, 255, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B89855" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EAF1F6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 Честная оценка перспектив и рисков
               </div>
             </div>
@@ -81,7 +81,7 @@ export default function Home() {
           
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center' }}>
             <img 
-              src="images/hero_graphic.png" 
+              src="images/hero_office_premium.png" 
               alt="Креатив права и закона" 
               className="hero-graphic"
               style={{ 
