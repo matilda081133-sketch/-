@@ -81,7 +81,7 @@ export default function Home() {
           
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center' }}>
             <img 
-              src="images/hero_office_premium.png" 
+              src="images/hero_abstract_silver.png" 
               alt="Креатив права и закона" 
               className="hero-graphic"
               style={{ 
@@ -478,12 +478,10 @@ export default function Home() {
             <p style={{ fontSize: '20px', marginBottom: '40px', color: 'rgba(255,255,255,0.8)' }}>
               Кратко опишите ситуацию. Юрист уточнит обстоятельства и сообщит, какие документы потребуются для дальнейшего разбора.
             </p>
-            <div className="flex-col gap-8">
-              <div className="flex items-center gap-4">
+            <div className="flex-col gap-8" style={{ alignItems: 'flex-start' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
                 <a href="tel:+79103503111" style={{ fontSize: '28px', fontWeight: 'bold', color: 'var(--color-white)' }}>+7 (910) 350-31-11</a>
-              </div>
-              <div className="flex items-center gap-4">
-                <span style={{ fontSize: '18px', color: 'var(--color-white)' }}>г. Липецк, ул. Советская, д. 35, оф. 213</span>
+                <span style={{ fontSize: '18px', color: 'var(--color-white)', textAlign: 'center' }}>г. Липецк, ул. Советская, д. 35, оф. 213</span>
               </div>
             </div>
           </div>
