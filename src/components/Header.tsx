@@ -32,9 +32,9 @@ export default function Header() {
           </div>
           
           <div style={{ display: 'flex', alignItems: 'center', paddingLeft: '20px', borderLeft: '1px solid var(--color-border)' }}>
-            <button className="btn btn-outline" style={{ padding: '8px 20px', fontSize: '13px', borderRadius: '4px', whiteSpace: 'nowrap' }}>
+            <a href="#consultation" className="btn btn-outline" style={{ padding: '8px 20px', fontSize: '13px', borderRadius: '4px', whiteSpace: 'nowrap', textDecoration: 'none' }}>
               Написать
-            </button>
+            </a>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'right', borderLeft: '1px solid var(--color-border)', paddingLeft: '20px', whiteSpace: 'nowrap' }}>
