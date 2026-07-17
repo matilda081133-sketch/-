@@ -17,24 +17,21 @@ export default function Home() {
         display: 'flex', 
         alignItems: 'center',
         paddingTop: '160px',
-        backgroundColor: '#0B1C2A',
-        backgroundImage: 'url(/images/hero_abstract.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
         overflow: 'hidden'
       }}>
-        {/* Dark overlay for better text readability */}
+        {/* Decorative circle */}
         <div style={{
-          position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
-          background: 'linear-gradient(to right, rgba(11, 28, 42, 0.95) 0%, rgba(11, 28, 42, 0.6) 100%)',
-          zIndex: 0
+          position: 'absolute', top: '-10%', right: '-5%', width: '600px', height: '600px',
+          background: 'radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)',
+          borderRadius: '50%', zIndex: 0
         }} />
         
         <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div className="reveal-on-scroll" style={{ padding: '40px 0', maxWidth: '800px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+              <div style={{ width: '40px', height: '2px', backgroundColor: '#C8A97E' }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#C8A97E' }}>
                 Юридическая компания в Липецке
               </span>
             </div>
@@ -44,13 +41,13 @@ export default function Home() {
               whiteSpace: 'pre', 
               fontSize: 'clamp(36px, 4vw, 64px)',
               fontFamily: 'var(--font-serif)',
-              color: '#FFFFFF'
+              color: 'var(--color-deep-blue)'
             }}>
               {`Юридическая помощь\nгражданам и бизнесу\nв Липецке`}
             </h1>
             <p style={{ 
               fontSize: '20px', 
-              color: '#D3E4F9', 
+              color: 'var(--color-text-secondary)', 
               marginBottom: '30px', 
               maxWidth: '600px', 
               lineHeight: 1.6 
@@ -60,10 +57,10 @@ export default function Home() {
             
             <div className="flex gap-4" style={{ marginBottom: '40px' }}>
               <a href="#consultation" className="btn">Обсудить ситуацию</a>
-              <a href="#services" className="btn btn-outline" style={{ borderColor: 'rgba(255,255,255,0.2)', color: '#FFF' }}>Выбрать направление</a>
+              <a href="#services" className="btn btn-outline">Выбрать направление</a>
             </div>
 
-            {/* Modern Glassmorphic Bullets (Dark Theme) */}
+            {/* Modern Glassmorphic Bullets */}
             <div className="reveal-on-scroll delay-100" style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', 
@@ -76,47 +73,46 @@ export default function Home() {
                 { title: 'Ведение в суде', desc: 'Под ключ без вашего участия' }
               ].map((bullet, i) => (
                 <div key={i} style={{
-                  background: 'rgba(255, 255, 255, 0.05)',
+                  background: 'rgba(255, 255, 255, 0.7)',
                   backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  borderRadius: '12px',
+                  border: '1px solid rgba(23, 50, 77, 0.1)',
+                  borderRadius: '0',
                   padding: '20px',
                   position: 'relative',
                   overflow: 'hidden',
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
+                  boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)',
                   transition: 'transform 0.3s ease, box-shadow 0.3s ease'
                 }}
                 className="hover-lift"
                 >
                   <div style={{
-                    width: '40px', height: '40px', borderRadius: '8px', 
+                    width: '40px', height: '40px', borderRadius: '0', 
                     background: 'var(--color-primary)', color: 'white',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     marginBottom: '16px'
                   }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', color: '#FFFFFF' }}>{bullet.title}</h4>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'rgba(255, 255, 255, 0.6)' }}>{bullet.desc}</p>
+                  <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', color: 'var(--color-deep-blue)' }}>{bullet.title}</h4>
+                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)' }}>{bullet.desc}</p>
                 </div>
               ))}
             </div>
           </div>
           
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center' }}>
-            <img 
-              src="/images/hero_legal_premium.png" 
-              alt="Де-Юре" 
-              className="hero-graphic"
-              style={{ 
-                width: '100%', 
-                maxWidth: '700px', 
-                height: 'auto', 
-                borderRadius: '16px',
-                boxShadow: '0 30px 60px rgba(0,0,0,0.6)',
-                border: '1px solid rgba(255,255,255,0.05)'
-              }} 
-            />
+            <svg className="hero-graphic" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', maxWidth: '500px', height: 'auto', filter: 'drop-shadow(0px 20px 40px rgba(23, 50, 77, 0.15))' }}>
+              <circle cx="200" cy="200" r="140" stroke="var(--color-primary)" strokeWidth="2" strokeDasharray="10 10" />
+              <circle cx="200" cy="200" r="180" stroke="rgba(23, 50, 77, 0.1)" strokeWidth="1" />
+              
+              <rect x="180" y="60" width="40" height="280" fill="var(--color-deep-blue)" />
+              <rect x="120" y="140" width="40" height="200" fill="var(--color-primary)" />
+              <rect x="240" y="100" width="40" height="240" fill="rgba(23, 50, 77, 0.15)" />
+              
+              <circle cx="140" cy="140" r="12" fill="#FFFFFF" stroke="var(--color-primary)" strokeWidth="4" />
+              <circle cx="260" cy="100" r="8" fill="var(--color-primary)" />
+              <circle cx="200" cy="60" r="16" fill="#FFFFFF" stroke="var(--color-deep-blue)" strokeWidth="4" />
+            </svg>
           </div>
         </div>
       </section>
