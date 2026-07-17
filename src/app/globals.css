@@ -144,8 +144,8 @@ h4 { font-size: 1.25rem; }
 }
 
 .btn-outline:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-deep-blue);
+  border-color: var(--color-deep-blue);
 }
 
 .btn-white {
@@ -178,10 +178,11 @@ h4 { font-size: 1.25rem; }
   border: 1px solid #EAF1F6;
 }
 .btn-outline-gold::before {
-  background-color: #EAF1F6;
+  display: none;
 }
 .btn-outline-gold:hover {
-  color: #0B1C2A !important;
+  background-color: rgba(234, 241, 246, 0.1) !important;
+  color: #EAF1F6 !important;
   border-color: #EAF1F6;
 }
 
