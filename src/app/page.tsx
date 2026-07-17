@@ -159,56 +159,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. HOW WE WORK */}
-      <section className="section bg-deep-blue" style={{ position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
-        <div style={{ position: 'absolute', top: 0, right: 0, width: '400px', height: '100%', background: 'linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.03))' }}></div>
+      {/* 4. HOW WE WORK (REDESIGNED PREMIUM) */}
+      <section className="section bg-deep-blue" style={{ position: 'relative', overflow: 'hidden', padding: '120px 0' }}>
+        {/* Abstract Background Glows */}
+        <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
+        <div style={{ position: 'absolute', bottom: '-10%', right: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(23, 50, 77, 0.8) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
+        
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '80px', color: 'var(--color-white)', fontFamily: 'var(--font-serif)' }}>Как проходит работа</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '20px', alignItems: 'start', position: 'relative' }}>
-            
-            {/* Connecting Line */}
-            <div style={{ position: 'absolute', top: '40px', left: '10%', right: '10%', height: '2px', background: 'rgba(255, 255, 255, 0.1)', zIndex: 0 }}></div>
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <h2 style={{ color: 'var(--color-white)', fontFamily: 'var(--font-serif)', fontSize: '36px', marginBottom: '16px' }}>Как проходит работа</h2>
+            <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '18px', maxWidth: '600px', margin: '0 auto' }}>
+              Прозрачный и понятный процесс от первого обращения до достижения результата.
+            </p>
+          </div>
 
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px' }}>
             {[
-              { num: '01', title: 'Обращение', desc: 'Первичное обращение и постановка задачи' },
-              { num: '02', title: 'Уточнение', desc: 'Уточнение обстоятельств и деталей' },
-              { num: '03', title: 'Документы', desc: 'Запрос и изучение документов' },
-              { num: '04', title: 'Предложение', desc: 'Формирование правовой позиции и договора' },
-              { num: '05', title: 'Сопровождение', desc: 'Реализация стратегии защиты' },
+              { num: '01', title: 'Анализ ситуации', desc: 'Первичное обращение, изучение документов и оценка судебных перспектив дела.', img: '/images/stage_1.png' },
+              { num: '02', title: 'Стратегия', desc: 'Разработка оптимального правового пути и подготовка необходимых документов.', img: '/images/stage_2.png' },
+              { num: '03', title: 'Реализация защиты', desc: 'Представление ваших интересов в суде, на переговорах и в госорганах.', img: '/images/stage_3.png' },
+              { num: '04', title: 'Результат', desc: 'Достижение поставленной цели и контроль за исполнением решения суда.', img: '/images/stage_4.png' },
             ].map((step, i) => (
-              <div key={i} className="process-step" style={{ 
-                position: 'relative', 
-                zIndex: 1, 
-                display: 'flex', 
-                flexDirection: 'column', 
-                alignItems: 'center', 
-                textAlign: 'center',
-                transition: 'transform 0.4s ease, opacity 0.4s ease'
+              <div key={i} className="premium-stage-card" style={{ 
+                background: 'rgba(255, 255, 255, 0.02)',
+                border: '1px solid rgba(255, 255, 255, 0.05)',
+                borderRadius: '24px',
+                padding: '12px',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.4s ease',
+                display: 'flex',
+                flexDirection: 'column'
               }}>
-                <div style={{ 
-                  width: '80px', 
-                  height: '80px', 
-                  borderRadius: '50%', 
-                  background: 'var(--color-deep-blue)', 
-                  border: '2px solid var(--color-primary)', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
-                  fontSize: '28px', 
-                  fontWeight: 'bold', 
-                  color: 'var(--color-primary)', 
-                  marginBottom: '24px',
-                  fontFamily: 'var(--font-serif)',
-                  boxShadow: '0 0 20px rgba(212, 175, 55, 0.1)',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}>
-                  {/* Subtle inner glow */}
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%)' }}></div>
-                  <span style={{ position: 'relative', zIndex: 1 }}>{step.num}</span>
+                <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '140px', fontWeight: '900', color: 'rgba(255, 255, 255, 0.02)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
+                  {step.num}
                 </div>
-                <h4 style={{ fontSize: '18px', color: 'var(--color-white)', marginBottom: '10px' }}>{step.title}</h4>
-                <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.6)', lineHeight: 1.5, margin: 0, padding: '0 10px' }}>{step.desc}</p>
+                
+                <div style={{ position: 'relative', width: '100%', paddingTop: '75%', borderRadius: '16px', overflow: 'hidden', marginBottom: '24px', zIndex: 1 }}>
+                  <img src={step.img} alt={step.title} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s ease' }} className="stage-img" />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16, 39, 59, 1) 0%, rgba(16, 39, 59, 0.4) 50%, transparent 100%)' }}></div>
+                </div>
+
+                <div style={{ padding: '0 16px 24px', position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ color: 'var(--color-primary)', fontSize: '13px', fontWeight: 'bold', marginBottom: '12px', letterSpacing: '2px' }}>ЭТАП {step.num}</div>
+                  <h4 style={{ fontSize: '22px', color: 'var(--color-white)', marginBottom: '12px', fontFamily: 'var(--font-serif)' }}>{step.title}</h4>
+                  <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.6)', lineHeight: 1.6, margin: 0 }}>{step.desc}</p>
+                </div>
               </div>
             ))}
           </div>

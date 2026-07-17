@@ -466,4 +466,13 @@ h4 { font-size: 1.25rem; }
   50% { transform: rotate(180deg) scale(1.2); }
   100% { transform: rotate(360deg) scale(1); }
 }
-.process-step:hover { transform: translateY(-10px); }
+/* Premium Stage Cards Animation */
+.premium-stage-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.1);
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+.premium-stage-card:hover .stage-img {
+  transform: scale(1.05);
+}
