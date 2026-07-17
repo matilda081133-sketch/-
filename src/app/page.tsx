@@ -172,8 +172,16 @@ export default function Home() {
         backgroundRepeat: 'no-repeat',
         padding: '100px 0', 
         borderTop: '1px solid var(--color-border)', 
-        borderBottom: '1px solid var(--color-border)' 
+        borderBottom: '1px solid var(--color-border)',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
+        {/* Background Graphic: Shield */}
+        <svg style={{ position: 'absolute', top: '-10%', left: '-10%', width: '600px', height: '600px', opacity: 0.02, transform: 'rotate(-15deg)', zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <h2 className="reveal-on-scroll" style={{ 
             marginTop: 0, 
@@ -532,6 +540,11 @@ export default function Home() {
 
       {/* 10. CTA SECTION (FORM) */}
       <section id="consultation" className="section bg-deep-blue" style={{ position: 'relative', overflow: 'hidden' }}>
+        {/* Background Graphic: Scales of Justice */}
+        <svg style={{ position: 'absolute', top: '-5%', left: '-10%', width: '500px', height: '500px', opacity: 0.02, transform: 'rotate(-10deg)', zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+          <path d="M12 2v20 M4 10v6a2 2 0 0 0 2 2h2 M20 10v6a2 2 0 0 1-2 2h-2 M12 6H4 M12 6h8 M12 22h-4 M12 22h4 M8 6l-4 4 M16 6l4 4"/>
+        </svg>
+
         <div style={{ position: 'absolute', bottom: '-50%', left: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)', borderRadius: '0' }}></div>
         <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div>
