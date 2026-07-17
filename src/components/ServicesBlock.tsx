@@ -105,7 +105,7 @@ export default function ServicesBlock() {
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <div style={{ 
               display: 'inline-flex', 
-              background: 'var(--color-white)', 
+              background: 'var(--gradient-light)', 
               border: '1px solid var(--color-primary)',
             }}>
               {tabs.map(tab => (

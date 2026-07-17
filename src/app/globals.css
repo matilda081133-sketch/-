@@ -9,6 +9,7 @@
   --color-text-secondary: #66727D;
   --color-border: #D7E0E6;
   --color-accent: #2A4C6E;
+  --gradient-light: linear-gradient(145deg, #FFFFFF 0%, #F7F4ED 100%);
 
   /* Типографика */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;

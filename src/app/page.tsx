@@ -30,8 +30,8 @@ export default function Home() {
         <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div className="reveal-on-scroll" style={{ padding: '40px 0', maxWidth: '800px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: '#C8A97E' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#C8A97E' }}>
+              <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#9B7E55' }}>
                 Юридическая компания в Липецке
               </span>
             </div>
@@ -60,59 +60,46 @@ export default function Home() {
               <a href="#services" className="btn btn-outline">Выбрать направление</a>
             </div>
 
-            {/* Modern Glassmorphic Bullets */}
+            {/* Organic Minimalist Bullets */}
             <div className="reveal-on-scroll delay-100" style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', 
-              gap: '20px', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              gap: '24px', 
               marginTop: '40px' 
             }}>
               {[
-                { title: 'Бесплатный анализ', desc: 'Оценка перспективы дела' },
-                { title: 'Конфиденциальность', desc: 'Полная защита данных' },
-                { title: 'Ведение в суде', desc: 'Под ключ без вашего участия' }
+                { title: 'Бесплатный анализ', desc: 'Честная оценка судебной перспективы вашего дела' },
+                { title: 'Конфиденциальность', desc: 'Полная защита данных и соблюдение адвокатской тайны' },
+                { title: 'Ведение в суде под ключ', desc: 'Представление интересов без вашего личного участия' }
               ].map((bullet, i) => (
                 <div key={i} style={{
-                  background: 'rgba(255, 255, 255, 0.7)',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(23, 50, 77, 0.1)',
-                  borderRadius: '0',
-                  padding: '20px',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-                }}
-                className="hover-lift"
-                >
-                  <div style={{
-                    width: '40px', height: '40px', borderRadius: '0', 
-                    background: 'var(--color-primary)', color: 'white',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    marginBottom: '16px'
-                  }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '16px',
+                  paddingLeft: '16px',
+                  borderLeft: '2px solid var(--color-primary)'
+                }}>
+                  <div>
+                    <h4 style={{ margin: '0 0 4px 0', fontSize: '18px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>{bullet.title}</h4>
+                    <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{bullet.desc}</p>
                   </div>
-                  <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', color: 'var(--color-deep-blue)' }}>{bullet.title}</h4>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)' }}>{bullet.desc}</p>
                 </div>
               ))}
             </div>
           </div>
           
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center' }}>
-            <svg className="hero-graphic" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', maxWidth: '500px', height: 'auto', filter: 'drop-shadow(0px 20px 40px rgba(23, 50, 77, 0.15))' }}>
-              <circle cx="200" cy="200" r="140" stroke="var(--color-primary)" strokeWidth="2" strokeDasharray="10 10" />
-              <circle cx="200" cy="200" r="180" stroke="rgba(23, 50, 77, 0.1)" strokeWidth="1" />
-              
-              <rect x="180" y="60" width="40" height="280" fill="var(--color-deep-blue)" />
-              <rect x="120" y="140" width="40" height="200" fill="var(--color-primary)" />
-              <rect x="240" y="100" width="40" height="240" fill="rgba(23, 50, 77, 0.15)" />
-              
-              <circle cx="140" cy="140" r="12" fill="#FFFFFF" stroke="var(--color-primary)" strokeWidth="4" />
-              <circle cx="260" cy="100" r="8" fill="var(--color-primary)" />
-              <circle cx="200" cy="60" r="16" fill="#FFFFFF" stroke="var(--color-deep-blue)" strokeWidth="4" />
-            </svg>
+            <img 
+              src="images/hero_cream_premium.png" 
+              alt="Де-Юре Мокап" 
+              className="hero-graphic"
+              style={{ 
+                width: '100%', 
+                maxWidth: '650px', 
+                height: 'auto',
+                filter: 'drop-shadow(0 20px 40px rgba(23, 50, 77, 0.1))'
+              }} 
+            />
           </div>
         </div>
       </section>
@@ -124,7 +111,7 @@ export default function Home() {
 
       {/* 3. WHY US / USP */}
       <section className="section" style={{ 
-        backgroundColor: 'var(--color-white)',
+        background: 'var(--gradient-light)',
         backgroundImage: 'url(/images/organic-pattern.svg)', 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -309,7 +296,7 @@ export default function Home() {
           <div className="grid grid-3 reveal-on-scroll delay-200" style={{ gap: '30px' }}>
             
             {/* Case Card 1 */}
-            <div className="card" style={{ padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)' }}>
+            <div className="card" style={{ padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', background: 'var(--gradient-light)', transition: 'var(--transition)' }}>
               <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Земельное право</span>
                 <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Спор о границах земельного участка</h4>
@@ -334,7 +321,7 @@ export default function Home() {
             </div>
 
             {/* Case Card 2 */}
-            <div className="card" style={{ padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)' }}>
+            <div className="card" style={{ padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', background: 'var(--gradient-light)', transition: 'var(--transition)' }}>
               <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Семейное право</span>
                 <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Раздел совместно нажитого имущества</h4>
@@ -359,7 +346,7 @@ export default function Home() {
             </div>
 
             {/* Case Card 3 */}
-            <div className="card" style={{ padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)' }}>
+            <div className="card" style={{ padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', background: 'var(--gradient-light)', transition: 'var(--transition)' }}>
               <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Арбитраж</span>
                 <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Взыскание долга по договору подряда</h4>
@@ -451,7 +438,7 @@ export default function Home() {
 
               {/* 2GIS Badge */}
               <div className="review-widget reveal-on-scroll delay-200" style={{ 
-                background: 'var(--color-white)', 
+                background: 'var(--gradient-light)', 
                 border: '1px solid var(--color-border)',
                 padding: '40px', 
                 display: 'flex', 
