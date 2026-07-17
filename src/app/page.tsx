@@ -73,18 +73,7 @@ export default function Home() {
                 { title: 'Профильные юристы', icon: '02' },
                 { title: 'Суды под ключ', icon: '03' }
               ].map((bullet, i) => (
-                <div key={i} style={{
-                  background: 'rgba(255, 255, 255, 0.7)',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
-                  padding: '20px 16px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px',
-                  transition: 'var(--transition)'
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--color-white)'; e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(23, 50, 77, 0.05)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.7)'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
-                >
+                <div key={i} className="hero-usp-card">
                   <div style={{ color: 'var(--color-primary)', opacity: 0.5, fontWeight: 'bold', fontSize: '14px', fontFamily: 'var(--font-serif)' }}>{bullet.icon}</div>
                   <h4 style={{ margin: 0, fontSize: '15px', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>{bullet.title}</h4>
                 </div>

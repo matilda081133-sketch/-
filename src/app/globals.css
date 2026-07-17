@@ -268,7 +268,7 @@ h4 { font-size: 1.25rem; }
 }
 .card-service:hover .card-service-num {
   color: var(--color-primary);
-  opacity: 0.05;
+  opacity: 1;
   transform: scale(1.1);
 }
 .card-service-content {
@@ -643,6 +643,22 @@ h4 { font-size: 1.25rem; }
 }
 .usp-card:hover .usp-accent {
   height: 100% !important;
+}
+
+/* Hero USP Cards */
+.hero-usp-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(23, 50, 77, 0.08);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: var(--transition);
+}
+.hero-usp-card:hover {
+  background: var(--color-white) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(23, 50, 77, 0.05);
 }
 
 /* Trust Stars Animation */
