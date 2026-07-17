@@ -188,10 +188,7 @@ export default function Home() {
                 alignItems: 'center', 
                 textAlign: 'center',
                 transition: 'transform 0.4s ease, opacity 0.4s ease'
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-10px)' }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)' }}
-              >
+              }}>
                 <div style={{ 
                   width: '80px', 
                   height: '80px', 
