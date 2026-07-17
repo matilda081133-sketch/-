@@ -644,6 +644,10 @@ h4 { font-size: 1.25rem; }
 .usp-card:hover .usp-accent {
   height: 100% !important;
 }
+.usp-card:hover > div:nth-child(2) {
+  opacity: 0.15 !important;
+  transform: scale(1.1);
+}
 
 /* Hero USP Cards */
 .hero-usp-card {
