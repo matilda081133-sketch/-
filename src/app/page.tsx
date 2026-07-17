@@ -83,7 +83,7 @@ export default function Home() {
           
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
             {/* Background Graphic: Courthouse (Centered behind mockup, shifted right) */}
-            <svg style={{ position: 'absolute', top: '50%', left: '80%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+            <svg style={{ position: 'absolute', top: '35%', left: '100%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
               <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
             </svg>
 
