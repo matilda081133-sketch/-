@@ -35,26 +35,27 @@ export default function Home() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
               <div style={{ width: '40px', height: '2px', backgroundColor: '#B89855' }}></div>
               <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#B89855' }}>
-                De-Jure
+                Юридическая компания в Липецке
               </span>
             </div>
             <h1 style={{ 
               marginBottom: '24px', 
               lineHeight: '1.2', 
+              whiteSpace: 'pre', 
               fontSize: 'clamp(36px, 4vw, 64px)',
               fontFamily: 'var(--font-serif)',
               color: '#FFFFFF'
             }}>
-              Надёжная правовая защита ваших интересов
+              {`Юридическая помощь\nгражданам и бизнесу\nв Липецке`}
             </h1>
             <p style={{ 
               fontSize: '20px', 
               color: '#D3E4F9', 
-              marginBottom: '40px', 
+              marginBottom: '30px', 
               maxWidth: '600px', 
               lineHeight: 1.6 
             }}>
-              Премиальные юридические услуги для граждан и бизнеса с 20-летней экспертизой.
+              Разбираемся в ситуации, формируем правовую позицию и сопровождаем дело на необходимых этапах — от переговоров и обращений в государственные органы до суда и исполнения решения.
             </p>
             
             <div className="flex gap-4" style={{ marginBottom: '40px' }}>
@@ -63,11 +64,26 @@ export default function Home() {
                 color: '#0B1C2A',
                 border: 'none',
                 fontWeight: 600
-              }}>Получить консультацию</a>
+              }}>Обсудить ситуацию</a>
               <a href="#services" className="btn btn-outline" style={{
                 borderColor: '#B89855',
                 color: '#B89855'
-              }}>Наши услуги</a>
+              }}>Выбрать направление</a>
+            </div>
+
+            <div className="reveal-on-scroll delay-100" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: '#D3E4F9', background: 'rgba(255, 255, 255, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B89855" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Профильный специалист по каждому направлению
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: '#D3E4F9', background: 'rgba(255, 255, 255, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B89855" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Полное сопровождение без вашего присутствия
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: '#D3E4F9', background: 'rgba(255, 255, 255, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B89855" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Честная оценка перспектив и рисков
+              </div>
             </div>
           </div>
         </div>
