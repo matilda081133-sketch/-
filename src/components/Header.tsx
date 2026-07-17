@@ -20,8 +20,8 @@ export default function Header() {
         <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <img src="/images/logo.png" alt="Де-Юре" style={{ height: '70px', width: 'auto' }} />
         </Link>
-        <nav style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
-          <div style={{ display: 'flex', gap: '30px' }}>
+        <nav style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'nowrap', whiteSpace: 'nowrap' }}>
+          <div style={{ display: 'flex', gap: '20px' }}>
             <Link href="/o-kompanii" className="nav-link">О компании</Link>
             <Link href="/grazhdanam" className="nav-link">Гражданам</Link>
             <Link href="/biznesu" className="nav-link">Бизнесу</Link>
@@ -30,15 +30,15 @@ export default function Header() {
             <Link href="/kontakty" className="nav-link">Контакты</Link>
           </div>
           
-          <div style={{ display: 'flex', alignItems: 'center', paddingLeft: '30px', borderLeft: '1px solid var(--color-border)' }}>
-            <button className="btn btn-outline" style={{ padding: '10px 24px', fontSize: '14px', borderRadius: '4px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', paddingLeft: '20px', borderLeft: '1px solid var(--color-border)' }}>
+            <button className="btn btn-outline" style={{ padding: '8px 20px', fontSize: '14px', borderRadius: '4px', whiteSpace: 'nowrap' }}>
               Написать
             </button>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'right', borderLeft: '1px solid var(--color-border)', paddingLeft: '30px' }}>
-            <a href="tel:+79103503111" style={{ fontWeight: 'bold', fontSize: '18px', color: 'var(--color-deep-blue)' }}>+7 (910) 350-31-11</a>
-            <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>ул. Советская, 35</span>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'right', borderLeft: '1px solid var(--color-border)', paddingLeft: '20px', whiteSpace: 'nowrap' }}>
+            <a href="tel:+79103503111" style={{ fontWeight: 'bold', fontSize: '18px', color: 'var(--color-deep-blue)', whiteSpace: 'nowrap' }}>+7 (910) 350-31-11</a>
+            <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', whiteSpace: 'nowrap' }}>ул. Советская, 35</span>
           </div>
         </nav>
       </div>
