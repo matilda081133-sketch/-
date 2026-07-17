@@ -196,7 +196,7 @@ export default function Home() {
                   boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
                   transition: 'transform 0.5s ease',
                 }}>
-                  <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '180px', fontWeight: '900', color: 'rgba(212, 175, 55, 0.15)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
+                  <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '180px', fontWeight: '900', color: 'rgba(255, 255, 255, 0.02)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
                     {step.num}
                   </div>
                   
@@ -206,9 +206,9 @@ export default function Home() {
                   </div>
 
                   <div style={{ position: 'relative', zIndex: 1 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-                      <div style={{ width: '40px', height: '40px', borderRadius: '0', background: 'var(--color-primary)', color: 'var(--color-deep-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '16px' }}>
-                        {parseInt(step.num)}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px' }}>
+                      <div style={{ fontSize: '36px', color: 'var(--color-primary)', fontWeight: 'bold', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>
+                        {step.num}
                       </div>
                       <h4 style={{ fontSize: '28px', color: 'var(--color-white)', margin: 0, fontFamily: 'var(--font-serif)' }}>{step.title}</h4>
                     </div>
