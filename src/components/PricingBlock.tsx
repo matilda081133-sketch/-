@@ -109,12 +109,9 @@ export default function PricingBlock() {
                 ))}
               </ul>
 
-              <a href="#consultation" className="btn" style={{ 
+              <a href="#consultation" className={`btn ${tier.popular ? 'btn-popular' : 'btn-regular'}`} style={{ 
                 width: '100%', 
-                textAlign: 'center', 
-                background: tier.popular ? 'var(--color-white)' : 'transparent',
-                color: tier.popular ? 'var(--color-deep-blue)' : 'var(--color-primary)',
-                border: tier.popular ? 'none' : '1px solid var(--color-primary)',
+                textAlign: 'center',
                 borderRadius: '0'
               }}>
                 Узнать точную стоимость
@@ -127,6 +124,25 @@ export default function PricingBlock() {
         .pricing-tier-card:hover {
           transform: translateY(-10px);
           box-shadow: 0 30px 60px rgba(0,0,0,0.1) !important;
+        }
+        .btn-regular {
+          background: transparent;
+          color: var(--color-primary);
+          border: 1px solid var(--color-primary);
+        }
+        .btn-regular:hover {
+          background: var(--color-primary) !important;
+          color: var(--color-white) !important;
+        }
+        .btn-popular {
+          background: var(--color-white);
+          color: var(--color-deep-blue);
+          border: 1px solid var(--color-white);
+        }
+        .btn-popular:hover {
+          background: var(--color-primary) !important;
+          color: var(--color-white) !important;
+          border-color: var(--color-primary) !important;
         }
       `}</style>
     </section>
