@@ -30,7 +30,7 @@ export default function Home() {
           zIndex: 0
         }} />
         
-        <div className="container grid" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+        <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div className="reveal-on-scroll" style={{ padding: '40px 0', maxWidth: '800px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
               <div style={{ width: '40px', height: '2px', backgroundColor: '#B89855' }}></div>
@@ -85,6 +85,21 @@ export default function Home() {
                 Честная оценка перспектив и рисков
               </div>
             </div>
+          </div>
+          
+          <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center' }}>
+            <img 
+              src="images/hero_graphic.png" 
+              alt="Креатив права и закона" 
+              style={{ 
+                width: '100%', 
+                maxWidth: '560px', 
+                height: 'auto', 
+                border: '1px solid rgba(184, 152, 85, 0.3)',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+                filter: 'drop-shadow(0px 0px 20px rgba(184, 152, 85, 0.1))'
+              }} 
+            />
           </div>
         </div>
       </section>
