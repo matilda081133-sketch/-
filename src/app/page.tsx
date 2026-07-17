@@ -94,8 +94,49 @@ export default function Home() {
               {/* Background decorative glows */}
               <div style={{ position: 'absolute', width: '250px', height: '250px', background: 'var(--color-primary)', filter: 'blur(100px)', opacity: 0.15, borderRadius: '50%' }}></div>
               
-              {/* Document 2 (Back -> Front on hover) */}
-              <div className="doc-wrapper-float-back">
+              {/* Document 4 (Back) */}
+              <div className="doc-wrapper-float-4">
+                <div className="doc-sheet doc-sheet-4">
+                  <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+                    <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
+                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Document 3 */}
+              <div className="doc-wrapper-float-3">
+                <div className="doc-sheet doc-sheet-3">
+                  <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '30px', left: '30px', width: '70px', height: '30px', border: '2px solid rgba(23, 50, 77, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}></div>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+                    <div style={{ width: '140px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
+                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Document 2 */}
+              <div className="doc-wrapper-float-2">
                 <div className="doc-sheet doc-sheet-2">
                   <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
                     {/* Stamp at top left */}
@@ -144,8 +185,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Document 1 (Front -> Back on hover) */}
-              <div className="doc-wrapper-float-front">
+              {/* Document 1 (Front) */}
+              <div className="doc-wrapper-float-1">
                 <div className="doc-sheet doc-sheet-1">
                   <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
                     {/* Watermark */}
@@ -221,7 +262,7 @@ export default function Home() {
         overflow: 'hidden'
       }}>
         {/* Background Graphic: Shield */}
-        <svg style={{ position: 'absolute', top: '-5%', left: '-5%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+        <svg style={{ position: 'absolute', top: '-5%', left: '2%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           <path d="M9 12l2 2 4-4"/>
         </svg>
@@ -585,7 +626,7 @@ export default function Home() {
       {/* 10. CTA SECTION (FORM) */}
       <section id="consultation" className="section bg-deep-blue" style={{ position: 'relative', overflow: 'hidden' }}>
         {/* Background Graphic: Scales of Justice */}
-        <svg style={{ position: 'absolute', top: '0%', left: '-5%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+        <svg style={{ position: 'absolute', top: '0%', left: '2%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
           <path d="M12 2v20 M4 10v6a2 2 0 0 0 2 2h2 M20 10v6a2 2 0 0 1-2 2h-2 M12 6H4 M12 6h8 M12 22h-4 M12 22h4 M8 6l-4 4 M16 6l4 4"/>
         </svg>
 
