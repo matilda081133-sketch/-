@@ -100,77 +100,90 @@ export default function ServicesBlock() {
           <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0 auto', marginBottom: '40px' }}>
             Основные направления юридической помощи гражданам и бизнесу.
           </p>
-          
-          <div className="tabs" style={{ display: 'flex', justifyContent: 'center', gap: '16px' }}>
-            {tabs.map(tab => (
-              <button
-                key={tab.id}
-                className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
-                onClick={() => setActiveTab(tab.id as Tab)}
-                style={{
-                  padding: '16px 32px',
-                  border: '1px solid var(--color-border)',
-                  background: activeTab === tab.id ? 'var(--color-deep-blue)' : 'transparent',
-                  color: activeTab === tab.id ? 'var(--color-white)' : 'var(--color-deep-blue)',
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '16px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  borderRadius: '0'
-                }}
-              >
-                {tab.label}
-              </button>
-            ))}
+
+          {/* Switcher / Переключатель */}
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div style={{ 
+              display: 'inline-flex', 
+              background: 'var(--color-white)', 
+              border: '1px solid var(--color-primary)',
+            }}>
+              {tabs.map(tab => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as Tab)}
+                  style={{
+                    padding: '16px 48px',
+                    border: 'none',
+                    background: activeTab === tab.id ? 'var(--color-primary)' : 'transparent',
+                    color: activeTab === tab.id ? 'var(--color-white)' : 'var(--color-primary)',
+                    fontSize: '18px',
+                    fontWeight: activeTab === tab.id ? 'bold' : 'normal',
+                    cursor: 'pointer',
+                    transition: 'var(--transition)',
+                    outline: 'none',
+                    minWidth: '250px'
+                  }}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
+        
+        {/* Cards Grid */}
+        <div className="grid grid-3" style={{ gap: '30px' }}>
           {services[activeTab].map((service, index) => (
-            <div key={index} className="service-card" style={{
-              background: 'var(--color-white)',
-              padding: '40px',
-              border: '1px solid var(--color-border)',
-              display: 'flex',
-              flexDirection: 'column',
-              position: 'relative'
-            }}>
-              <div style={{ 
-                fontSize: '12px', 
-                color: 'var(--color-primary)', 
-                fontWeight: 'bold', 
-                marginBottom: '20px' 
-              }}>
-                {service.num}
+            <Link href={service.link} key={index} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', height: '100%' }}>
+              <div className="card-service" style={{ width: '100%', height: '100%' }}>
+                <div className="card-service-num">{service.num}</div>
+                <div className="card-service-content" style={{ 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  flexGrow: 1, 
+                  marginTop: '40px' 
+                }}>
+                  <h3 style={{ marginTop: 0, marginBottom: '16px', fontSize: '22px', color: 'var(--color-deep-blue)', minHeight: '60px' }}>
+                    {service.title}
+                  </h3>
+                  
+                  <ul style={{ 
+                    listStyle: 'none', 
+                    padding: 0, 
+                    margin: '0 0 32px 0', 
+                    flexGrow: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '10px'
+                  }}>
+                    {service.desc.split(', ').map((sub, i) => (
+                      <li key={i} style={{ 
+                        color: 'var(--color-text-secondary)', 
+                        lineHeight: '1.4',
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '8px'
+                      }}>
+                        <span style={{ color: 'var(--color-primary)', fontSize: '14px', marginTop: '2px' }}>■</span>
+                        <span style={{ fontSize: '15px' }}>{sub.trim().replace(/\.$/, '')}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="card-service-arrow" style={{ 
+                    marginTop: 'auto',
+                    color: 'var(--color-primary)', 
+                    fontWeight: 'bold',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}>
+                    Подробнее <span style={{ fontSize: '18px' }}>→</span>
+                  </div>
+                </div>
               </div>
-              <h3 style={{ 
-                fontSize: '22px', 
-                marginBottom: '16px',
-                fontFamily: 'var(--font-serif)',
-                color: 'var(--color-deep-blue)'
-              }}>
-                {service.title}
-              </h3>
-              <p style={{ 
-                color: 'var(--color-text-secondary)', 
-                lineHeight: '1.6',
-                marginBottom: '30px',
-                flexGrow: 1
-              }}>
-                {service.desc}
-              </p>
-              <Link href={service.link} style={{
-                color: 'var(--color-deep-blue)',
-                textDecoration: 'none',
-                fontWeight: 'bold',
-                fontSize: '14px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                Узнать больше <span>→</span>
-              </Link>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
