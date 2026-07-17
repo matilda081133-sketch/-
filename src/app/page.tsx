@@ -24,7 +24,7 @@ export default function Home() {
         <div style={{
           position: 'absolute', top: '-20%', right: '-10%', width: '800px', height: '800px',
           background: 'radial-gradient(circle, var(--color-grey-blue) 0%, rgba(234, 241, 246, 0) 70%)',
-          borderRadius: '50%', zIndex: 0
+          borderRadius: '0', zIndex: 0
         }} />
         
         <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
@@ -46,15 +46,15 @@ export default function Home() {
             </div>
             
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'rgba(23, 50, 77, 0.05)', padding: '8px 14px', borderRadius: '6px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'rgba(23, 50, 77, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 Профильный специалист по каждому направлению
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'rgba(23, 50, 77, 0.05)', padding: '8px 14px', borderRadius: '6px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'rgba(23, 50, 77, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 Конфиденциальность обращения
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'rgba(23, 50, 77, 0.05)', padding: '8px 14px', borderRadius: '6px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'rgba(23, 50, 77, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 Оцениваем возможные варианты и риски
               </div>
@@ -181,10 +181,10 @@ export default function Home() {
             {/* Scrolling Right Content */}
             <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: '80px' }}>
               {[
-                { num: '01', title: 'Анализ ситуации', desc: 'Мы начинаем с глубокого погружения в вашу проблему. Изучаем все имеющиеся документы, оцениваем риски и судебные перспективы дела. Никаких пустых обещаний — только честный правовой анализ.', img: '/-/images/stage_1.png' },
-                { num: '02', title: 'Стратегия', desc: 'На основе анализа мы разрабатываем оптимальный правовой путь. Собираем необходимую доказательную базу, привлекаем экспертов и готовим процессуальные документы.', img: '/-/images/stage_2.png' },
-                { num: '03', title: 'Реализация защиты', desc: 'Представляем ваши интересы на всех этапах: от досудебных переговоров до участия в судебных заседаниях. Берем на себя всю коммуникацию с оппонентами и госорганами.', img: '/-/images/stage_3.png' },
-                { num: '04', title: 'Результат', desc: 'Достижение поставленной цели — это не только выигрыш в суде, но и фактическое исполнение решения. Мы контролируем процесс до полного восстановления ваших прав.', img: '/-/images/stage_4.png' },
+                { num: '01', title: 'Анализ ситуации', desc: 'Мы начинаем с глубокого погружения в вашу проблему. Изучаем все имеющиеся документы, оцениваем риски и судебные перспективы дела. Никаких пустых обещаний — только честный правовой анализ.', img: 'images/stage_1.png' },
+                { num: '02', title: 'Стратегия', desc: 'На основе анализа мы разрабатываем оптимальный правовой путь. Собираем необходимую доказательную базу, привлекаем экспертов и готовим процессуальные документы.', img: 'images/stage_2.png' },
+                { num: '03', title: 'Реализация защиты', desc: 'Представляем ваши интересы на всех этапах: от досудебных переговоров до участия в судебных заседаниях. Берем на себя всю коммуникацию с оппонентами и госорганами.', img: 'images/stage_3.png' },
+                { num: '04', title: 'Результат', desc: 'Достижение поставленной цели — это не только выигрыш в суде, но и фактическое исполнение решения. Мы контролируем процесс до полного восстановления ваших прав.', img: 'images/stage_4.png' },
               ].map((step, i) => (
                 <div key={i} className="sticky-stage-card" style={{ 
                   background: 'rgba(255, 255, 255, 0.02)',
@@ -207,7 +207,7 @@ export default function Home() {
 
                   <div style={{ position: 'relative', zIndex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-                      <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--color-primary)', color: 'var(--color-deep-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '16px' }}>
+                      <div style={{ width: '40px', height: '40px', borderRadius: '0', background: 'var(--color-primary)', color: 'var(--color-deep-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '16px' }}>
                         {parseInt(step.num)}
                       </div>
                       <h4 style={{ fontSize: '28px', color: 'var(--color-white)', margin: 0, fontFamily: 'var(--font-serif)' }}>{step.title}</h4>
@@ -235,7 +235,7 @@ export default function Home() {
           <div style={{ 
             background: 'var(--color-grey-blue)', 
             padding: '12px 20px', 
-            borderRadius: '6px', 
+            borderRadius: '0', 
             color: 'var(--color-deep-blue)',
             fontSize: '14px',
             marginBottom: '40px',
@@ -247,11 +247,11 @@ export default function Home() {
           <div className="grid grid-2" style={{ gap: '40px' }}>
             <div className="card">
               <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
-                <span style={{ fontSize: '12px', fontWeight: 600, padding: '4px 12px', background: 'var(--color-grey-blue)', borderRadius: '16px', color: 'var(--color-primary)' }}>Направление (например: Земельное право)</span>
+                <span style={{ fontSize: '12px', fontWeight: 600, padding: '4px 12px', background: 'var(--color-grey-blue)', borderRadius: '0', color: 'var(--color-primary)' }}>Направление (например: Земельное право)</span>
               </div>
               <h4 style={{ marginTop: 0, marginBottom: '24px' }}>Спор о границах земельного участка</h4>
               
-              <div style={{ background: 'var(--color-cream)', padding: '20px', borderRadius: '8px', marginBottom: '20px' }}>
+              <div style={{ background: 'var(--color-cream)', padding: '20px', borderRadius: '0', marginBottom: '20px' }}>
                 <p style={{ fontSize: '15px', margin: 0 }}>
                   <strong style={{ color: 'var(--color-primary)' }}>Проблема:</strong> Краткое описание исходной ситуации клиента без дат и сумм.
                 </p>
@@ -264,7 +264,7 @@ export default function Home() {
                   <strong>Что сделали:</strong> Какие юридические действия описываются в кейсе (подача иска, экспертиза).
                 </p>
               </div>
-              <div style={{ background: 'rgba(23, 50, 77, 0.05)', padding: '20px', borderRadius: '8px', marginBottom: '20px', flexGrow: 1 }}>
+              <div style={{ background: 'rgba(23, 50, 77, 0.05)', padding: '20px', borderRadius: '0', marginBottom: '20px', flexGrow: 1 }}>
                 <p style={{ fontSize: '15px', margin: 0 }}>
                   <strong style={{ color: 'var(--color-deep-blue)' }}>Результат:</strong> Какой подтвержденный юридический результат будет указан после сбора фактуры.
                 </p>
@@ -276,11 +276,11 @@ export default function Home() {
 
             <div className="card">
               <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
-                <span style={{ fontSize: '12px', fontWeight: 600, padding: '4px 12px', background: 'var(--color-grey-blue)', borderRadius: '16px', color: 'var(--color-primary)' }}>Направление (например: Семейные споры)</span>
+                <span style={{ fontSize: '12px', fontWeight: 600, padding: '4px 12px', background: 'var(--color-grey-blue)', borderRadius: '0', color: 'var(--color-primary)' }}>Направление (например: Семейные споры)</span>
               </div>
               <h4 style={{ marginTop: 0, marginBottom: '24px' }}>Раздел совместно нажитого имущества</h4>
               
-              <div style={{ background: 'var(--color-cream)', padding: '20px', borderRadius: '8px', marginBottom: '20px' }}>
+              <div style={{ background: 'var(--color-cream)', padding: '20px', borderRadius: '0', marginBottom: '20px' }}>
                 <p style={{ fontSize: '15px', margin: 0 }}>
                   <strong style={{ color: 'var(--color-primary)' }}>Проблема:</strong> Краткое описание исходной ситуации клиента.
                 </p>
@@ -293,7 +293,7 @@ export default function Home() {
                   <strong>Что сделали:</strong> Какие юридические действия описываются в кейсе.
                 </p>
               </div>
-              <div style={{ background: 'rgba(23, 50, 77, 0.05)', padding: '20px', borderRadius: '8px', marginBottom: '20px', flexGrow: 1 }}>
+              <div style={{ background: 'rgba(23, 50, 77, 0.05)', padding: '20px', borderRadius: '0', marginBottom: '20px', flexGrow: 1 }}>
                 <p style={{ fontSize: '15px', margin: 0 }}>
                   <strong style={{ color: 'var(--color-deep-blue)' }}>Результат:</strong> Какой подтвержденный юридический результат будет указан после сбора фактуры.
                 </p>
@@ -434,7 +434,7 @@ export default function Home() {
 
       {/* 10. CTA SECTION (FORM) */}
       <section id="consultation" className="section bg-deep-blue" style={{ position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', bottom: '-50%', left: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)', borderRadius: '50%' }}></div>
+        <div style={{ position: 'absolute', bottom: '-50%', left: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)', borderRadius: '0' }}></div>
         <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div>
             <h2 style={{ marginTop: 0, color: 'var(--color-white)' }}>Обсудите ситуацию с юристом</h2>
@@ -451,12 +451,12 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="card" style={{ padding: '40px', borderRadius: '0px' }}>
+          <div className="card" style={{ padding: '40px', borderRadius: '0' }}>
             <h3 style={{ marginTop: 0, color: 'var(--color-primary)', marginBottom: '10px' }}>Оставить заявку</h3>
             <p style={{ color: 'var(--color-text-secondary)', marginBottom: '30px' }}>Перезвоним вам в течение 15 минут в рабочее время.</p>
             <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <input type="text" placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0px', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none' }} />
-              <input type="tel" placeholder="+7 (___) ___-__-__" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0px', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none' }} />
+              <input type="text" placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none' }} />
+              <input type="tel" placeholder="+7 (___) ___-__-__" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none' }} />
               <button type="button" className="btn" style={{ width: '100%', padding: '18px', fontSize: '18px', marginTop: '10px' }}>Обсудить ситуацию</button>
               <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', textAlign: 'center', margin: 0 }}>
                 Отправляя заявку, вы соглашаетесь с <Link href="/privacy" className="link-animated" style={{ fontSize: '13px' }}>политикой конфиденциальности</Link>.
