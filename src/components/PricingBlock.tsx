@@ -1,113 +1,132 @@
 'use client';
 
 export default function PricingBlock() {
-  const prices = [
+  const tiers = [
     {
-      title: 'Представление интересов в Арбитражном суде',
-      desc: '(взыскание задолженности, оспаривание сделок, договоры)',
-      price: 'от ХХ ХХХ ₽'
+      title: 'Гражданам',
+      subtitle: 'Защита личных интересов',
+      popular: false,
+      price: 'от ХХ ХХХ ₽',
+      features: [
+        'Сложные семейные споры (раздел)',
+        'Банкротство физических лиц',
+        'Наследственные дела',
+        'Споры с застройщиками'
+      ]
     },
     {
-      title: 'Сопровождение процедуры банкротства юр. лиц',
-      desc: '(защита от субсидиарной ответственности, включение в реестр)',
-      price: 'от ХХ ХХХ ₽'
+      title: 'Бизнесу',
+      subtitle: 'Комплексное сопровождение',
+      popular: true,
+      price: 'от ХХ ХХХ ₽',
+      features: [
+        'Арбитражные споры',
+        'Банкротство юр. лиц',
+        'Налоговая практика',
+        'Корпоративные конфликты'
+      ]
     },
     {
-      title: 'Уголовно-правовая защита (УК РФ)',
-      desc: '(участие адвоката на стадии доследственной проверки, следствия и суда)',
-      price: 'от ХХ ХХХ ₽'
-    },
-    {
-      title: 'Разрешение налоговых споров',
-      desc: '(оспаривание доначислений ФНС, защита при проверках)',
-      price: 'от ХХ ХХХ ₽'
-    },
-    {
-      title: 'Сложные семейные споры',
-      desc: '(раздел бизнеса и имущества, споры о детях)',
-      price: 'от ХХ ХХХ ₽'
+      title: 'Уголовная практика',
+      subtitle: 'Защита по экономическим статьям',
+      popular: false,
+      price: 'от ХХ ХХХ ₽',
+      features: [
+        'Участие на стадии проверки',
+        'Защита на следствии и в суде',
+        'Сопровождение обысков',
+        'Защита руководителей (УК РФ)'
+      ]
     }
   ];
 
   return (
-    <section className="section" style={{ padding: '100px 0', background: 'var(--color-primary)', color: 'var(--color-white)', position: 'relative', overflow: 'hidden' }}>
-      {/* Декоративный строгий паттерн (линии) */}
-      <div style={{ position: 'absolute', top: 0, width: '400px', height: '100%', borderLeft: '1px solid rgba(255,255,255,0.05)', borderRight: '1px solid rgba(255,255,255,0.05)', right: '10%', zIndex: 0, pointerEvents: 'none' as const }}></div>
-      <div style={{ position: 'absolute', top: 0, left: '10%', width: '1px', height: '100%', background: 'rgba(255,255,255,0.05)', zIndex: 0, pointerEvents: 'none' as const }}></div>
-
-      <div className="container" style={{ maxWidth: '1000px', position: 'relative', zIndex: 1 }}>
-        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+    <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '100px 0', background: 'var(--color-cream)' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <h2 style={{ 
             fontSize: '42px', 
             fontFamily: 'var(--font-serif)', 
-            color: 'var(--color-white)',
+            color: 'var(--color-deep-blue)',
             marginBottom: '16px'
           }}>
             Стоимость услуг
           </h2>
-          <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '18px', maxWidth: '700px', margin: '0 auto' }}>
-            Объем работ и порядок оплаты закрепляются в договоре.
+          <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '700px', margin: '0 auto' }}>
+            Каждое дело требует индивидуального подхода. Итоговая стоимость фиксируется в договоре после бесплатного анализа вашей ситуации.
           </p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          {prices.map((item, index) => (
-            <div key={index} style={{
-              background: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              padding: '24px 32px',
-              transition: 'all 0.4s ease',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
+        <div className="grid grid-3" style={{ gap: '30px', alignItems: 'stretch' }}>
+          {tiers.map((tier, idx) => (
+            <div key={idx} style={{
+              background: tier.popular ? 'var(--color-deep-blue)' : 'var(--color-white)',
+              color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)',
+              borderRadius: '0',
+              padding: '40px 30px',
+              boxShadow: tier.popular ? '0 20px 40px rgba(16, 39, 59, 0.15)' : '0 10px 30px rgba(0,0,0,0.05)',
+              border: tier.popular ? 'none' : '1px solid rgba(23, 50, 77, 0.1)',
               position: 'relative',
-              overflow: 'hidden',
-              flexWrap: 'wrap',
-              gap: '20px'
+              transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%'
             }}
-            className="pricing-card"
+            className="pricing-tier-card"
             >
-              <div className="pricing-accent" style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '0%', background: 'var(--color-cream)', transition: 'height 0.4s ease' }}></div>
-              <div style={{ flex: '1 1 500px' }}>
-                <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-white)', marginBottom: '8px', lineHeight: '1.4' }}>
-                  {item.title}
-                </h3>
-                <div style={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '15px' }}>
-                  {item.desc}
+              {tier.popular && (
+                <div style={{
+                  position: 'absolute',
+                  top: '0',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  background: 'var(--color-primary)',
+                  color: 'var(--color-deep-blue)',
+                  padding: '6px 16px',
+                  borderRadius: '0',
+                  fontSize: '12px',
+                  fontWeight: 'bold',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em'
+                }}>
+                  Востребовано
                 </div>
+              )}
+              
+              <h3 style={{ fontSize: '24px', margin: '0 0 8px 0', color: 'inherit' }}>{tier.title}</h3>
+              <p style={{ fontSize: '15px', opacity: 0.8, margin: '0 0 30px 0', minHeight: '40px' }}>{tier.subtitle}</p>
+              
+              <div style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', margin: '0 0 30px 0', borderBottom: `1px solid ${tier.popular ? 'rgba(255,255,255,0.2)' : 'rgba(23,50,77,0.1)'}`, paddingBottom: '30px' }}>
+                {tier.price}
               </div>
-              <div style={{ 
-                fontSize: '26px', 
-                fontWeight: 'bold', 
-                color: 'var(--color-cream)',
-                fontFamily: 'var(--font-serif)',
-                display: 'flex',
-                alignItems: 'baseline',
-                gap: '8px',
-                whiteSpace: 'nowrap'
+
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 40px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {tier.features.map((feature, fIdx) => (
+                  <li key={fIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', opacity: 0.9 }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a href="#consultation" className="btn" style={{ 
+                width: '100%', 
+                textAlign: 'center', 
+                background: tier.popular ? 'var(--color-primary)' : 'transparent',
+                color: tier.popular ? 'var(--color-deep-blue)' : 'var(--color-primary)',
+                border: tier.popular ? 'none' : '1px solid var(--color-primary)',
+                borderRadius: '0'
               }}>
-                {item.price}
-              </div>
+                Узнать точную стоимость
+              </a>
             </div>
           ))}
         </div>
-
-        <div style={{ marginTop: '50px', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-          <p style={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '15px', margin: 0 }}>
-            *Значения будут внесены после утверждения прайса.
-          </p>
-          <a href="#consultation" className="btn btn-white">Узнать стоимость</a>
-        </div>
       </div>
-
       <style jsx>{`
-        .pricing-card:hover {
-          background: rgba(255, 255, 255, 0.08) !important;
-          transform: translateY(-5px);
-          border-color: rgba(255, 255, 255, 0.2) !important;
-        }
-        .pricing-card:hover .pricing-accent {
-          height: 100% !important;
+        .pricing-tier-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 30px 60px rgba(0,0,0,0.1) !important;
         }
       `}</style>
     </section>
