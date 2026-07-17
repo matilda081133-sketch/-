@@ -17,14 +17,17 @@ export default function Home() {
         display: 'flex', 
         alignItems: 'center',
         paddingTop: '160px',
-        background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
+        backgroundColor: '#0B1C2A',
+        backgroundImage: 'url(/images/hero_abstract.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         overflow: 'hidden'
       }}>
-        {/* Decorative circle */}
+        {/* Dark overlay for better text readability */}
         <div style={{
-          position: 'absolute', top: '-10%', right: '-5%', width: '600px', height: '600px',
-          background: 'radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)',
-          borderRadius: '50%', zIndex: 0
+          position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+          background: 'linear-gradient(to right, rgba(11, 28, 42, 0.95) 0%, rgba(11, 28, 42, 0.6) 100%)',
+          zIndex: 0
         }} />
         
         <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
@@ -41,13 +44,13 @@ export default function Home() {
               whiteSpace: 'pre', 
               fontSize: 'clamp(36px, 4vw, 64px)',
               fontFamily: 'var(--font-serif)',
-              color: 'var(--color-deep-blue)'
+              color: '#FFFFFF'
             }}>
               {`Юридическая помощь\nгражданам и бизнесу\nв Липецке`}
             </h1>
             <p style={{ 
               fontSize: '20px', 
-              color: 'var(--color-text-secondary)', 
+              color: '#D3E4F9', 
               marginBottom: '30px', 
               maxWidth: '600px', 
               lineHeight: 1.6 
@@ -57,10 +60,10 @@ export default function Home() {
             
             <div className="flex gap-4" style={{ marginBottom: '40px' }}>
               <a href="#consultation" className="btn">Обсудить ситуацию</a>
-              <a href="#services" className="btn btn-outline">Выбрать направление</a>
+              <a href="#services" className="btn btn-outline" style={{ borderColor: 'rgba(255,255,255,0.2)', color: '#FFF' }}>Выбрать направление</a>
             </div>
 
-            {/* Modern Glassmorphic Bullets */}
+            {/* Modern Glassmorphic Bullets (Dark Theme) */}
             <div className="reveal-on-scroll delay-100" style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', 
@@ -73,14 +76,14 @@ export default function Home() {
                 { title: 'Ведение в суде', desc: 'Под ключ без вашего участия' }
               ].map((bullet, i) => (
                 <div key={i} style={{
-                  background: 'rgba(255, 255, 255, 0.7)',
+                  background: 'rgba(255, 255, 255, 0.05)',
                   backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(23, 50, 77, 0.1)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
                   borderRadius: '12px',
                   padding: '20px',
                   position: 'relative',
                   overflow: 'hidden',
-                  boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)',
+                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
                   transition: 'transform 0.3s ease, box-shadow 0.3s ease'
                 }}
                 className="hover-lift"
@@ -93,26 +96,27 @@ export default function Home() {
                   }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', color: 'var(--color-deep-blue)' }}>{bullet.title}</h4>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)' }}>{bullet.desc}</p>
+                  <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', color: '#FFFFFF' }}>{bullet.title}</h4>
+                  <p style={{ margin: 0, fontSize: '14px', color: 'rgba(255, 255, 255, 0.6)' }}>{bullet.desc}</p>
                 </div>
               ))}
             </div>
           </div>
           
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center' }}>
-            <svg className="hero-graphic" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', maxWidth: '500px', height: 'auto', filter: 'drop-shadow(0px 20px 40px rgba(23, 50, 77, 0.15))' }}>
-              <circle cx="200" cy="200" r="140" stroke="var(--color-primary)" strokeWidth="2" strokeDasharray="10 10" />
-              <circle cx="200" cy="200" r="180" stroke="rgba(23, 50, 77, 0.1)" strokeWidth="1" />
-              
-              <rect x="180" y="60" width="40" height="280" rx="20" fill="var(--color-deep-blue)" />
-              <rect x="120" y="140" width="40" height="200" rx="20" fill="var(--color-primary)" />
-              <rect x="240" y="100" width="40" height="240" rx="20" fill="rgba(23, 50, 77, 0.15)" />
-              
-              <circle cx="140" cy="140" r="12" fill="#FFFFFF" stroke="var(--color-primary)" strokeWidth="4" />
-              <circle cx="260" cy="100" r="8" fill="var(--color-primary)" />
-              <circle cx="200" cy="60" r="16" fill="#FFFFFF" stroke="var(--color-deep-blue)" strokeWidth="4" />
-            </svg>
+            <img 
+              src="/images/hero_legal_premium.png" 
+              alt="Де-Юре" 
+              className="hero-graphic"
+              style={{ 
+                width: '100%', 
+                maxWidth: '700px', 
+                height: 'auto', 
+                borderRadius: '16px',
+                boxShadow: '0 30px 60px rgba(0,0,0,0.6)',
+                border: '1px solid rgba(255,255,255,0.05)'
+              }} 
+            />
           </div>
         </div>
       </section>
@@ -498,9 +502,9 @@ export default function Home() {
             <p style={{ fontSize: '20px', marginBottom: '40px', color: 'rgba(255,255,255,0.8)' }}>
               Кратко опишите ситуацию. Юрист уточнит обстоятельства и сообщит, какие документы потребуются для дальнейшего разбора.
             </p>
-            <div className="flex-col gap-8" style={{ alignItems: 'flex-start' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-                <a href="tel:+79103503111" style={{ fontSize: '28px', fontWeight: 'bold', color: 'var(--color-white)' }}>+7 (910) 350-31-11</a>
+            <div style={{ marginTop: '20px' }}>
+              <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center' }}>
+                <a href="tel:+79103503111" style={{ fontSize: '28px', fontWeight: 'bold', color: 'var(--color-white)', marginBottom: '8px' }}>+7 (910) 350-31-11</a>
                 <span style={{ fontSize: '18px', color: 'var(--color-white)', textAlign: 'center' }}>г. Липецк, ул. Советская, д. 35, оф. 213</span>
               </div>
             </div>
