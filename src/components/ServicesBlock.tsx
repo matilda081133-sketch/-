@@ -93,9 +93,13 @@ export default function ServicesBlock() {
   };
 
   return (
-    <section id="services" className="section" style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* Background Graphic: Scales of Justice */}
-      <svg style={{ position: 'absolute', top: '-5%', left: '2%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+    <section id="services" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
+      {/* Abstract Background Glows for Depth */}
+      <div style={{ position: 'absolute', top: '0', right: '-10%', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.04) 0%, transparent 70%)', filter: 'blur(80px)', zIndex: 0, pointerEvents: 'none' }}></div>
+      <div style={{ position: 'absolute', bottom: '-20%', left: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(23, 50, 77, 0.04) 0%, transparent 70%)', filter: 'blur(60px)', zIndex: 0, pointerEvents: 'none' }}></div>
+
+      {/* Background Graphic: Scales of Justice (Huge & Rotated) */}
+      <svg style={{ position: 'absolute', top: '10%', right: '-15%', width: '1000px', height: '1000px', opacity: 0.03, zIndex: 0, pointerEvents: 'none', transform: 'rotate(-5deg)' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
         <path d="M12 2v20 M4 10v6a2 2 0 0 0 2 2h2 M20 10v6a2 2 0 0 1-2 2h-2 M12 6H4 M12 6h8 M12 22h-4 M12 22h4 M8 6l-4 4 M16 6l4 4"/>
       </svg>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
