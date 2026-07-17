@@ -21,11 +21,6 @@ export default function Home() {
         background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
         overflow: 'hidden'
       }}>
-        {/* Background Graphic: Courthouse */}
-        <svg style={{ position: 'absolute', top: '5%', right: '5%', width: '600px', height: '600px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
-          <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
-        </svg>
-
         {/* Decorative circle */}
         <div style={{
           position: 'absolute', top: '-10%', right: '-5%', width: '600px', height: '600px',
@@ -70,33 +65,34 @@ export default function Home() {
             <div className="reveal-on-scroll delay-100" style={{ 
               display: 'flex', 
               flexDirection: 'column', 
-              gap: '24px', 
+              gap: '16px', 
               marginTop: '40px' 
             }}>
               {[
-                { title: 'Бесплатный анализ', desc: 'Честная оценка судебной перспективы вашего дела' },
-                { title: 'Конфиденциальность', desc: 'Полная защита данных и соблюдение адвокатской тайны' },
-                { title: 'Ведение в суде под ключ', desc: 'Представление интересов без вашего личного участия' }
+                { title: 'Бесплатный анализ' },
+                { title: 'Конфиденциальность' },
+                { title: 'Ведение в суде под ключ' }
               ].map((bullet, i) => (
                 <div key={i} style={{
                   display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '16px',
+                  alignItems: 'center',
                   paddingLeft: '16px',
                   borderLeft: '2px solid var(--color-primary)'
                 }}>
-                  <div>
-                    <h4 style={{ margin: '0 0 4px 0', fontSize: '18px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>{bullet.title}</h4>
-                    <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{bullet.desc}</p>
-                  </div>
+                  <h4 style={{ margin: 0, fontSize: '18px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>{bullet.title}</h4>
                 </div>
               ))}
             </div>
           </div>
           
-          <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center' }}>
+          <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+            {/* Background Graphic: Courthouse (Centered behind mockup) */}
+            <svg style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+              <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
+            </svg>
+
             {/* INTERACTIVE ANIMATED CSS MOCKUP */}
-            <div className="mockup-container">
+            <div className="mockup-container" style={{ zIndex: 1 }}>
               {/* Background decorative glows */}
               <div style={{ position: 'absolute', width: '250px', height: '250px', background: 'var(--color-primary)', filter: 'blur(100px)', opacity: 0.15, borderRadius: '50%' }}></div>
               
