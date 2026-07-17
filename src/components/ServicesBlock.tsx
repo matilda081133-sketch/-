@@ -30,63 +30,63 @@ export default function ServicesBlock() {
       {
         num: '03',
         title: 'Банкротство юр. лиц',
-        desc: 'Защита от субсидиарной ответственности, контролируемое банкротство, включение в реестр кредиторов.',
+        desc: 'Защита от субсидиарной ответственности, оспаривание сделок должника, включение в реестр кредиторов.',
         link: '/biznesu/bankrotstvo'
       },
       {
         num: '04',
         title: 'Корпоративное право',
-        desc: 'Разрешение конфликтов учредителей, защита от рейдерских захватов, структурирование бизнеса.',
+        desc: 'Разрешение конфликтов учредителей, структурирование бизнеса, защита корпоративных интересов в суде.',
         link: '/biznesu/korporativnoe'
       },
       {
         num: '05',
         title: 'Недвижимость и стройка',
-        desc: 'Сопровождение инвестиционных проектов, споры по аренде и подряду, легализация самостроя.',
+        desc: 'Сопровождение инвестиционных проектов, споры по аренде и подряду, легализация недвижимости.',
         link: '/biznesu/nedvizhimost'
       },
       {
         num: '06',
         title: 'Защита бизнеса (УК РФ)',
-        desc: 'Защита при полицейских проверках (ОЭБиПК), сопровождение обысков, защита по экономическим статьям УК РФ.',
+        desc: 'Защита при полицейских проверках (ОЭБиПК), сопровождение обысков, защита по экономическим статьям.',
         link: '/biznesu/ugolovnaya'
       }
     ],
     citizens: [
       {
         num: '01',
-        title: 'Банкротство граждан',
-        desc: 'Защита имущества от приставов, остановка звонков коллекторов, внесудебное банкротство через МФЦ.',
+        title: 'Банкротство физических лиц',
+        desc: 'Защита имущества от взысканий, взаимодействие с финансовыми управляющими, внесудебное банкротство.',
         link: '/grazhdanam/bankrotstvo'
       },
       {
         num: '02',
         title: 'Семейные споры',
-        desc: 'Сложные бракоразводные процессы, раздел совместно нажитого имущества, споры о детях и лишение родительских прав.',
+        desc: 'Бракоразводные процессы, раздел совместно нажитого имущества, споры о детях и алиментные обязательства.',
         link: '/grazhdanam/semejnie'
       },
       {
         num: '03',
         title: 'Споры с застройщиками',
-        desc: 'Взыскание неустойки за просрочку, компенсация за строительные недостатки, расторжение ДДУ.',
+        desc: 'Взыскание неустойки за просрочку, компенсация за строительные недостатки, споры по ДДУ.',
         link: '/grazhdanam/zastroishiki'
       },
       {
         num: '04',
         title: 'Защита прав потребителей',
-        desc: 'Возврат бракованных автомобилей, споры со страховыми, взыскание ущерба за некачественные услуги.',
+        desc: 'Возврат бракованных автомобилей, споры со страховыми компаниями, взыскание ущерба за некачественные услуги.',
         link: '/grazhdanam/potrebiteli'
       },
       {
         num: '05',
         title: 'Наследственные дела',
-        desc: 'Оспаривание завещаний, восстановление сроков, раздел наследственного имущества.',
+        desc: 'Оспаривание завещаний, восстановление сроков принятия наследства, раздел наследственного имущества.',
         link: '/grazhdanam/nasledstvo'
       },
       {
         num: '06',
         title: 'Миграционные споры',
-        desc: 'Отмена выдворения и депортации, снятие запрета на въезд в РФ, отмена решений ГУВМ МВД.',
+        desc: 'Отмена выдворения и депортации, снятие запрета на въезд в РФ, оспаривание решений миграционных органов.',
         link: '/praktika/migracionnaya'
       }
     ]
@@ -97,93 +97,80 @@ export default function ServicesBlock() {
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <h2 style={{ marginTop: 0, marginBottom: '16px' }}>Приоритетные направления</h2>
-          <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '600px', margin: '0 auto', marginBottom: '40px' }}>
-            Мы берем в работу только те дела, в которых имеем подтвержденную годами экспертизу.
+          <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0 auto', marginBottom: '40px' }}>
+            Основные направления юридической помощи гражданам и бизнесу.
           </p>
-
-          {/* Switcher / Переключатель */}
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <div style={{ 
-              display: 'inline-flex', 
-              background: 'var(--color-white)', 
-              border: '1px solid var(--color-primary)',
-            }}>
-              {tabs.map(tab => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id as Tab)}
-                  style={{
-                    padding: '16px 48px',
-                    border: 'none',
-                    background: activeTab === tab.id ? 'var(--color-primary)' : 'transparent',
-                    color: activeTab === tab.id ? 'var(--color-white)' : 'var(--color-primary)',
-                    fontSize: '18px',
-                    fontWeight: activeTab === tab.id ? 'bold' : 'normal',
-                    cursor: 'pointer',
-                    transition: 'var(--transition)',
-                    outline: 'none',
-                    minWidth: '250px'
-                  }}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
+          
+          <div className="tabs" style={{ display: 'flex', justifyContent: 'center', gap: '16px' }}>
+            {tabs.map(tab => (
+              <button
+                key={tab.id}
+                className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
+                onClick={() => setActiveTab(tab.id as Tab)}
+                style={{
+                  padding: '16px 32px',
+                  border: '1px solid var(--color-border)',
+                  background: activeTab === tab.id ? 'var(--color-deep-blue)' : 'transparent',
+                  color: activeTab === tab.id ? 'var(--color-white)' : 'var(--color-deep-blue)',
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '16px',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  borderRadius: '0'
+                }}
+              >
+                {tab.label}
+              </button>
+            ))}
           </div>
         </div>
-        
-        {/* Cards Grid */}
-        <div className="grid grid-3" style={{ gap: '30px' }}>
-          {services[activeTab].map((service, index) => (
-            <Link href={service.link} key={index} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', height: '100%' }}>
-              <div className="card-service" style={{ width: '100%', height: '100%' }}>
-                <div className="card-service-num">{service.num}</div>
-                <div className="card-service-content" style={{ 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  flexGrow: 1, 
-                  marginTop: '40px' 
-                }}>
-                  <h3 style={{ marginTop: 0, marginBottom: '16px', fontSize: '22px', color: 'var(--color-deep-blue)', minHeight: '60px' }}>
-                    {service.title}
-                  </h3>
-                  
-                  <ul style={{ 
-                    listStyle: 'none', 
-                    padding: 0, 
-                    margin: '0 0 32px 0', 
-                    flexGrow: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '10px'
-                  }}>
-                    {service.desc.split(', ').map((sub, i) => (
-                      <li key={i} style={{ 
-                        color: 'var(--color-text-secondary)', 
-                        lineHeight: '1.4',
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: '8px'
-                      }}>
-                        <span style={{ color: 'var(--color-primary)', fontSize: '14px', marginTop: '2px' }}>■</span>
-                        <span style={{ fontSize: '15px' }}>{sub.trim().replace(/\.$/, '')}</span>
-                      </li>
-                    ))}
-                  </ul>
 
-                  <div className="card-service-arrow" style={{ 
-                    marginTop: 'auto',
-                    color: 'var(--color-primary)', 
-                    fontWeight: 'bold',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px'
-                  }}>
-                    Подробнее <span style={{ fontSize: '18px' }}>→</span>
-                  </div>
-                </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
+          {services[activeTab].map((service, index) => (
+            <div key={index} className="service-card" style={{
+              background: 'var(--color-white)',
+              padding: '40px',
+              border: '1px solid var(--color-border)',
+              display: 'flex',
+              flexDirection: 'column',
+              position: 'relative'
+            }}>
+              <div style={{ 
+                fontSize: '12px', 
+                color: 'var(--color-primary)', 
+                fontWeight: 'bold', 
+                marginBottom: '20px' 
+              }}>
+                {service.num}
               </div>
-            </Link>
+              <h3 style={{ 
+                fontSize: '22px', 
+                marginBottom: '16px',
+                fontFamily: 'var(--font-serif)',
+                color: 'var(--color-deep-blue)'
+              }}>
+                {service.title}
+              </h3>
+              <p style={{ 
+                color: 'var(--color-text-secondary)', 
+                lineHeight: '1.6',
+                marginBottom: '30px',
+                flexGrow: 1
+              }}>
+                {service.desc}
+              </p>
+              <Link href={service.link} style={{
+                color: 'var(--color-deep-blue)',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                fontSize: '14px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}>
+                Узнать больше <span>→</span>
+              </Link>
+            </div>
           ))}
         </div>
       </div>

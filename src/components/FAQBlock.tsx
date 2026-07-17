@@ -1,162 +1,92 @@
 'use client';
 
-import React, { useState } from 'react';
-
-const faqData = [
-  {
-    question: 'Вы даете гарантию на выигрыш дела в суде?',
-    answer: 'По закону (ст. 10 Кодекса профессиональной этики адвоката) мы не имеем права давать 100% гарантию на решение суда. Однако мы гарантируем, что честно оценим перспективы на первой бесплатной консультации. Если дело заведомо проигрышное, мы прямо скажем об этом и не будем брать с вас деньги за пустые обещания.'
-  },
-  {
-    question: 'Могут ли возникнуть скрытые доплаты в процессе работы?',
-    answer: 'Нет. Стоимость наших услуг фиксируется в официальном договоре после полного анализа вашей ситуации. Мы работаем абсолютно прозрачно — вы заранее знаете итоговую сумму. Никаких внезапных платежей "за дополнительные бумажки" не будет.'
-  },
-  {
-    question: 'Обязательно ли мне присутствовать на судебных заседаниях?',
-    answer: 'В 95% случаев — нет. Мы представляем ваши интересы в суде по доверенности или ордеру адвоката. Это позволяет вам сэкономить время, нервы и избежать неприятных встреч со второй стороной конфликта. Всю бюрократическую и судебную рутину мы берем на себя.'
-  },
-  {
-    question: 'Возместят ли мне расходы на ваши услуги?',
-    answer: 'Да. Согласно процессуальному законодательству (ГПК и АПК РФ), расходы на оплату услуг представителя взыскиваются судом с проигравшей стороны. Мы всегда заявляем отдельное требование о компенсации судебных издержек, чтобы вернуть потраченные вами средства.'
-  },
-  {
-    question: 'Как быстро вы можете приступить к работе?',
-    answer: 'В экстренных случаях (например, при внезапной проверке бизнеса или задержании) наши адвокаты готовы выехать круглосуточно. По остальным делам (гражданские, арбитражные споры) мы приступаем к работе в день подписания договора.'
-  }
-];
+import { useState } from 'react';
 
 export default function FAQBlock() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0); // Откроем первый по умолчанию для стиля
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const faqs = [
+    { q: 'Как проходит первое обращение?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
+    { q: 'Какие документы нужно подготовить?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
+    { q: 'Как определяется стоимость юридической помощи?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
+    { q: 'Кто будет вести мое дело?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
+    { q: 'Можно ли подключить адвоката или нескольких специалистов?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
+    { q: 'Какие гарантии может дать юридическая компания?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
+    { q: 'Как я буду узнавать о ходе дела?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
+    { q: 'Можно ли работать дистанционно?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
+    { q: 'Как обеспечивается конфиденциальность?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
+    { q: 'Работаете ли вы за пределами Липецка и области?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' }
+  ];
+
   return (
-    <section className="section" style={{ padding: '100px 0', backgroundColor: '#F9FAFB' }}>
-      <div className="container" style={{ maxWidth: '900px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-          <h2 style={{ 
-            fontSize: '36px', 
-            fontFamily: 'var(--font-serif)', 
-            color: 'var(--color-deep-blue)',
-            marginBottom: '16px'
-          }}>
-            Часто задаваемые вопросы
-          </h2>
-          <p style={{ color: 'rgba(23, 50, 77, 0.6)', fontSize: '18px', maxWidth: '600px', margin: '0 auto' }}>
-            Прямые и честные ответы на вопросы, которые волнуют наших доверителей.
-          </p>
-        </div>
+    <section className="section bg-cream">
+      <div className="container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+        <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '40px', textAlign: 'center' }}>
+          Частые вопросы
+        </h2>
         
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          {faqData.map((item, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div 
-                key={index} 
-                className="faq-card"
-                style={{ 
-                  background: 'var(--color-white)', 
-                  padding: '10px 30px', 
-                  borderRadius: 'var(--radius-lg)', 
-                  boxShadow: 'var(--shadow-sm)', 
-                  transition: 'var(--transition)',
-                  position: 'relative',
-                  overflow: 'hidden',
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          {faqs.map((faq, index) => (
+            <div key={index} style={{
+              background: 'var(--color-white)',
+              border: '1px solid var(--color-border)',
+              overflow: 'hidden'
+            }}>
+              <button 
+                onClick={() => toggle(index)}
+                style={{
+                  width: '100%',
+                  textAlign: 'left',
+                  padding: '24px 32px',
+                  background: 'transparent',
+                  border: 'none',
                   display: 'flex',
-                  flexDirection: 'column'
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  cursor: 'pointer',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  color: 'var(--color-deep-blue)',
+                  fontFamily: 'var(--font-sans)'
                 }}
               >
-                <button 
-                  onClick={() => toggle(index)}
-                  style={{ 
-                    width: '100%', 
-                    padding: '24px 0', 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    alignItems: 'center',
-                    background: 'transparent',
-                    border: 'none',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    color: isOpen ? 'var(--color-primary)' : 'var(--color-deep-blue)',
-                    transition: 'color 0.3s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!isOpen) e.currentTarget.style.color = 'var(--color-primary)';
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!isOpen) e.currentTarget.style.color = 'var(--color-deep-blue)';
-                  }}
-                >
-                  <span style={{ 
-                    fontSize: '20px', 
-                    fontWeight: 'bold', 
-                    fontFamily: 'var(--font-serif)',
-                    lineHeight: 1.4,
-                    paddingRight: '20px'
-                  }}>
-                    {item.question}
-                  </span>
-                  <div style={{ 
-                    position: 'relative',
-                    width: '24px',
-                    height: '24px',
-                    flexShrink: 0,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    {/* Горизонтальная линия плюса/минуса */}
-                    <div style={{
-                      position: 'absolute',
-                      width: '100%',
-                      height: '2px',
-                      backgroundColor: 'currentColor',
-                      transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
-                    }} />
-                    {/* Вертикальная линия плюса (исчезает при открытии) */}
-                    <div style={{
-                      position: 'absolute',
-                      width: '2px',
-                      height: '100%',
-                      backgroundColor: 'currentColor',
-                      transform: isOpen ? 'rotate(90deg) scaleY(0)' : 'rotate(0deg) scaleY(1)',
-                      transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
-                    }} />
-                  </div>
-                </button>
-                
-                <div style={{ 
-                  display: 'grid',
-                  gridTemplateRows: isOpen ? '1fr' : '0fr',
-                  transition: 'grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                {faq.q}
+                <span style={{ 
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  background: openIndex === index ? 'var(--color-primary)' : 'rgba(23, 50, 77, 0.05)',
+                  color: openIndex === index ? 'var(--color-white)' : 'var(--color-primary)',
+                  transition: 'all 0.3s ease'
                 }}>
-                  <div style={{ overflow: 'hidden' }}>
-                    <div style={{ 
-                      paddingBottom: '24px', 
-                      color: 'var(--color-text-secondary)',
-                      lineHeight: 1.7,
-                      fontSize: '16px',
-                      paddingRight: '44px'
-                    }}>
-                      {item.answer}
-                    </div>
-                  </div>
+                  {openIndex === index ? '−' : '+'}
+                </span>
+              </button>
+              
+              <div style={{
+                maxHeight: openIndex === index ? '200px' : '0',
+                opacity: openIndex === index ? 1 : 0,
+                overflow: 'hidden',
+                transition: 'all 0.3s ease-in-out',
+                padding: openIndex === index ? '0 32px 24px 32px' : '0 32px',
+                color: 'var(--color-text-secondary)',
+                lineHeight: '1.6'
+              }}>
+                <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '16px' }}>
+                  {faq.a}
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .faq-card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-md) !important;
-        }
-      `}</style>
     </section>
   );
 }
