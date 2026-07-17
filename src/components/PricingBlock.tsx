@@ -80,7 +80,7 @@ export default function PricingBlock() {
                   top: '0',
                   left: '50%',
                   transform: 'translate(-50%, -50%)',
-                  background: 'var(--color-primary)',
+                  background: 'var(--color-white)',
                   color: 'var(--color-deep-blue)',
                   padding: '6px 16px',
                   borderRadius: '0',
@@ -112,7 +112,7 @@ export default function PricingBlock() {
               <a href="#consultation" className="btn" style={{ 
                 width: '100%', 
                 textAlign: 'center', 
-                background: tier.popular ? 'var(--color-primary)' : 'transparent',
+                background: tier.popular ? 'var(--color-white)' : 'transparent',
                 color: tier.popular ? 'var(--color-deep-blue)' : 'var(--color-primary)',
                 border: tier.popular ? 'none' : '1px solid var(--color-primary)',
                 borderRadius: '0'
