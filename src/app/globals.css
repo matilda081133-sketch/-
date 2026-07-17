@@ -370,7 +370,8 @@ h4 { font-size: 1.25rem; }
   z-index: 1000;
   transition: all 0.3s ease;
   padding: 8px 0;
-  background: transparent;
+  background: var(--color-white);
+  border-bottom: 1px solid rgba(23, 50, 77, 0.05);
 }
 .site-header.scrolled {
   background: rgba(255, 255, 255, 0.95);

@@ -17,51 +17,58 @@ export default function Home() {
         display: 'flex', 
         alignItems: 'center',
         paddingTop: '160px',
-        background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
+        backgroundColor: '#0B1C2A',
+        backgroundImage: 'url(/images/hero_abstract.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         overflow: 'hidden'
       }}>
-        {/* Decorative circle */}
+        {/* Dark overlay for better text readability */}
         <div style={{
-          position: 'absolute', top: '-20%', right: '-10%', width: '800px', height: '800px',
-          background: 'radial-gradient(circle, var(--color-grey-blue) 0%, rgba(234, 241, 246, 0) 70%)',
-          borderRadius: '0', zIndex: 0
+          position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+          background: 'linear-gradient(to right, rgba(11, 28, 42, 0.9) 0%, rgba(11, 28, 42, 0.4) 100%)',
+          zIndex: 0
         }} />
         
-        <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
-          <div className="reveal-on-scroll" style={{ padding: '40px 0' }}>
+        <div className="container grid" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div className="reveal-on-scroll" style={{ padding: '40px 0', maxWidth: '800px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                Юридическая компания в Липецке
+              <div style={{ width: '40px', height: '2px', backgroundColor: '#B89855' }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#B89855' }}>
+                De-Jure
               </span>
             </div>
-            <h1 style={{ marginBottom: '24px', lineHeight: '1.2', whiteSpace: 'pre', fontSize: 'clamp(28px, 3.5vw, 48px)' }}>{`Юридическая помощь\nгражданам и бизнесу\nв Липецке`}</h1>
-            <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', marginBottom: '30px', maxWidth: '560px', lineHeight: 1.6 }}>
-              Разбираемся в ситуации, формируем правовую позицию и сопровождаем дело на необходимых этапах — от переговоров и обращений в государственные органы до суда и исполнения решения.
+            <h1 style={{ 
+              marginBottom: '24px', 
+              lineHeight: '1.2', 
+              fontSize: 'clamp(36px, 4vw, 64px)',
+              fontFamily: 'var(--font-serif)',
+              color: '#FFFFFF'
+            }}>
+              Надёжная правовая защита ваших интересов
+            </h1>
+            <p style={{ 
+              fontSize: '20px', 
+              color: '#D3E4F9', 
+              marginBottom: '40px', 
+              maxWidth: '600px', 
+              lineHeight: 1.6 
+            }}>
+              Премиальные юридические услуги для граждан и бизнеса с 20-летней экспертизой.
             </p>
             
             <div className="flex gap-4" style={{ marginBottom: '40px' }}>
-              <a href="#consultation" className="btn">Обсудить ситуацию</a>
-              <a href="#services" className="btn btn-outline">Выбрать направление</a>
+              <a href="#consultation" className="btn" style={{
+                backgroundColor: '#B89855',
+                color: '#0B1C2A',
+                border: 'none',
+                fontWeight: 600
+              }}>Получить консультацию</a>
+              <a href="#services" className="btn btn-outline" style={{
+                borderColor: '#B89855',
+                color: '#B89855'
+              }}>Наши услуги</a>
             </div>
-            
-            <div className="reveal-on-scroll delay-100" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'rgba(23, 50, 77, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Профильный специалист по каждому направлению
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'rgba(23, 50, 77, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Полное сопровождение без вашего присутствия
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'rgba(23, 50, 77, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Честная оценка перспектив и рисков
-              </div>
-            </div>
-          </div>
-          <div className="img-placeholder" style={{ height: '600px', boxShadow: 'var(--shadow-md)', border: '8px solid var(--color-white)', padding: 0, overflow: 'hidden' }}>
-            <img src="images/hero_office.png" alt="Временная заглушка" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
         </div>
       </section>
