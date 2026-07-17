@@ -543,8 +543,8 @@ h4 { font-size: 1.25rem; }
   color: var(--color-deep-blue);
   text-decoration: none;
   font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   transition: background 0.2s;
   cursor: pointer;
 }
