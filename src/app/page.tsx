@@ -447,7 +447,7 @@ export default function Home() {
         <div className="container grid grid-4" style={{ gap: '30px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '30px', marginBottom: '20px' }}>
           <div>
             <div style={{ marginBottom: '24px', marginTop: '-10px' }}>
-              <img src="images/logo.png" alt="Де-Юре" style={{ height: '75px', width: 'auto' }} />
+              <img src="images/logo.png" alt="Де-Юре" style={{ height: '110px', width: 'auto' }} />
             </div>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px', lineHeight: 1.5, marginBottom: '16px' }}>
               Юридическая помощь гражданам и бизнесу в Липецке.
