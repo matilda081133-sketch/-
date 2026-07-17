@@ -81,7 +81,7 @@ export default function Home() {
           
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center' }}>
             <img 
-              src="images/hero_abstract_silver.png" 
+              src="images/hero_vector_mockup.png" 
               alt="Креатив права и закона" 
               className="hero-graphic"
               style={{ 
