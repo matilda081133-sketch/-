@@ -35,11 +35,7 @@ export default function Home() {
                 Юридическая компания в Липецке
               </span>
             </div>
-            <h1 style={{ marginBottom: '24px', lineHeight: '1.2' }}>
-              <span style={{ display: 'block' }}>Юридическая помощь</span>
-              <span style={{ display: 'block' }}>гражданам и бизнесу</span>
-              <span style={{ display: 'block' }}>в Липецке</span>
-            </h1>
+            <h1 style={{ marginBottom: '24px', lineHeight: '1.2', whiteSpace: 'pre-line' }}>{`Юридическая помощь\nгражданам и бизнесу\nв Липецке`}</h1>
             <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', marginBottom: '30px', maxWidth: '560px', lineHeight: 1.6 }}>
               Разбираемся в ситуации, формируем правовую позицию и сопровождаем дело на необходимых этапах — от переговоров и обращений в государственные органы до суда и исполнения решения.
             </p>
