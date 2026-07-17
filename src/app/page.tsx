@@ -207,7 +207,7 @@ export default function Home() {
 
                   <div style={{ position: 'relative', zIndex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px' }}>
-                      <div style={{ fontSize: '36px', color: 'var(--color-primary)', fontWeight: 'bold', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>
+                      <div style={{ fontSize: '48px', color: '#D4AF37', fontWeight: 'bold', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>
                         {step.num}
                       </div>
                       <h4 style={{ fontSize: '28px', color: 'var(--color-white)', margin: 0, fontFamily: 'var(--font-serif)' }}>{step.title}</h4>
