@@ -226,117 +226,109 @@ export default function Home() {
       <TeamCarousel />
 
       {/* 6. CASES */}
-      <section className="section bg-cream" style={{ overflow: 'hidden' }}>
+      <section className="section bg-cream">
         <div className="container">
-          <div className="flex justify-between items-end" style={{ marginBottom: '40px', flexWrap: 'wrap', gap: '20px' }}>
+          <div className="flex justify-between items-end" style={{ marginBottom: '50px', flexWrap: 'wrap', gap: '20px' }}>
             <div className="reveal-on-scroll">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+                <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
                   Практика
                 </span>
               </div>
-              <h2 style={{ margin: 0, fontSize: '48px', lineHeight: 1.1 }}>Результаты нашей работы</h2>
+              <h2 style={{ margin: 0, fontSize: '42px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>Результаты нашей работы</h2>
             </div>
             <Link href="/praktika" className="btn btn-outline reveal-on-scroll delay-100">Смотреть все дела</Link>
           </div>
           
           <div className="reveal-on-scroll delay-200" style={{ 
-            background: 'rgba(23, 50, 77, 0.03)', 
+            background: 'transparent', 
             padding: '16px 24px', 
-            borderRadius: '4px', 
+            border: '1px solid var(--color-border)',
             color: 'var(--color-text-secondary)',
             fontSize: '14px',
             marginBottom: '40px',
             borderLeft: '4px solid var(--color-primary)',
-            maxWidth: '800px'
+            maxWidth: '800px',
+            fontStyle: 'italic'
           }}>
-            <strong>Внимание:</strong> Ниже представлены демонстрационные макеты кейсов. Они будут заменены реальной практикой после утверждения фактуры.
+            Внимание: Ниже представлены демонстрационные макеты кейсов. Они будут заменены реальной практикой после утверждения фактуры.
           </div>
           
-          <div className="carousel-container reveal-on-scroll delay-200" style={{ paddingBottom: '40px', margin: '0 -24px', padding: '0 24px 40px 24px' }}>
+          <div className="grid grid-3 reveal-on-scroll delay-200" style={{ gap: '30px' }}>
             
             {/* Case Card 1 */}
-            <div className="carousel-item" style={{ minWidth: '400px' }}>
-              <div className="card" style={{ padding: 0, border: 'none', height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-                <div style={{ background: 'var(--color-deep-blue)', color: 'white', padding: '30px', position: 'relative' }}>
-                  <div style={{ position: 'absolute', top: 0, right: 0, width: '100px', height: '100px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%)' }}></div>
-                  <span style={{ display: 'inline-block', fontSize: '12px', fontWeight: 600, padding: '4px 12px', background: 'rgba(255,255,255,0.1)', color: 'white', marginBottom: '16px', borderRadius: '20px' }}>Земельное право</span>
-                  <h4 style={{ margin: 0, color: 'white', fontSize: '22px', lineHeight: 1.3 }}>Спор о границах земельного участка</h4>
+            <div className="card" style={{ padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)' }}>
+              <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
+                <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Земельное право</span>
+                <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Спор о границах земельного участка</h4>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
+                <div>
+                  <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Сосед незаконно захватил часть территории клиента. Досудебные переговоры не дали результата.</p>
                 </div>
                 
-                <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1, background: 'white' }}>
-                  <div>
-                    <h5 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
-                    <p style={{ fontSize: '15px', margin: 0, lineHeight: 1.5 }}>Краткое описание исходной ситуации клиента без дат и сумм. Сосед незаконно захватил часть территории.</p>
-                  </div>
-                  
-                  <div style={{ paddingLeft: '16px', borderLeft: '2px solid var(--color-border)' }}>
-                    <h5 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
-                    <p style={{ fontSize: '15px', margin: 0, lineHeight: 1.5 }}>Провели независимую экспертизу, подготовили исковое заявление, представили интересы в суде.</p>
-                  </div>
+                <div>
+                  <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Провели независимую землеустроительную экспертизу, подали иск об устранении препятствий.</p>
                 </div>
-                
-                <div style={{ background: 'var(--color-primary)', color: 'white', padding: '20px 30px', marginTop: 'auto' }}>
-                  <h5 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255,255,255,0.6)', marginBottom: '8px' }}>Результат</h5>
-                  <p style={{ fontSize: '16px', margin: 0, fontWeight: 500 }}>Границы восстановлены. Выиграно дело в суде первой инстанции.</p>
-                </div>
+              </div>
+              
+              <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
+                <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Результат</h5>
+                <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)' }}>Границы восстановлены. Выиграно дело в суде первой инстанции.</p>
               </div>
             </div>
 
             {/* Case Card 2 */}
-            <div className="carousel-item" style={{ minWidth: '400px' }}>
-              <div className="card" style={{ padding: 0, border: 'none', height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-                <div style={{ background: 'var(--color-deep-blue)', color: 'white', padding: '30px', position: 'relative' }}>
-                  <div style={{ position: 'absolute', top: 0, right: 0, width: '100px', height: '100px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%)' }}></div>
-                  <span style={{ display: 'inline-block', fontSize: '12px', fontWeight: 600, padding: '4px 12px', background: 'rgba(255,255,255,0.1)', color: 'white', marginBottom: '16px', borderRadius: '20px' }}>Семейное право</span>
-                  <h4 style={{ margin: 0, color: 'white', fontSize: '22px', lineHeight: 1.3 }}>Раздел совместно нажитого имущества</h4>
+            <div className="card" style={{ padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)' }}>
+              <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
+                <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Семейное право</span>
+                <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Раздел совместно нажитого имущества</h4>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
+                <div>
+                  <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Сложный раздел бизнеса и недвижимости при разводе с конфликтующей стороной, попытки сокрытия активов.</p>
                 </div>
                 
-                <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1, background: 'white' }}>
-                  <div>
-                    <h5 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
-                    <p style={{ fontSize: '15px', margin: 0, lineHeight: 1.5 }}>Сложный раздел бизнеса и недвижимости при разводе с конфликтующей стороной.</p>
-                  </div>
-                  
-                  <div style={{ paddingLeft: '16px', borderLeft: '2px solid var(--color-border)' }}>
-                    <h5 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
-                    <p style={{ fontSize: '15px', margin: 0, lineHeight: 1.5 }}>Наложили арест на активы, провели финансовый аудит, подготовили мировое соглашение.</p>
-                  </div>
+                <div>
+                  <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Наложили обеспечительный арест на активы, провели полный финансовый аудит предприятий.</p>
                 </div>
-                
-                <div style={{ background: 'var(--color-primary)', color: 'white', padding: '20px 30px', marginTop: 'auto' }}>
-                  <h5 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255,255,255,0.6)', marginBottom: '8px' }}>Результат</h5>
-                  <p style={{ fontSize: '16px', margin: 0, fontWeight: 500 }}>Достигнуто выгодное мировое соглашение. Сохранен контроль над бизнесом.</p>
-                </div>
+              </div>
+              
+              <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
+                <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Результат</h5>
+                <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)' }}>Достигнуто выгодное мировое соглашение. Клиент сохранил контроль над бизнесом.</p>
               </div>
             </div>
 
             {/* Case Card 3 */}
-            <div className="carousel-item" style={{ minWidth: '400px' }}>
-              <div className="card" style={{ padding: 0, border: 'none', height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-                <div style={{ background: 'var(--color-deep-blue)', color: 'white', padding: '30px', position: 'relative' }}>
-                  <div style={{ position: 'absolute', top: 0, right: 0, width: '100px', height: '100px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%)' }}></div>
-                  <span style={{ display: 'inline-block', fontSize: '12px', fontWeight: 600, padding: '4px 12px', background: 'rgba(255,255,255,0.1)', color: 'white', marginBottom: '16px', borderRadius: '20px' }}>Арбитраж</span>
-                  <h4 style={{ margin: 0, color: 'white', fontSize: '22px', lineHeight: 1.3 }}>Взыскание долга по договору подряда</h4>
+            <div className="card" style={{ padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)' }}>
+              <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
+                <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Арбитраж</span>
+                <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Взыскание долга по договору подряда</h4>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
+                <div>
+                  <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Заказчик отказался оплачивать выполненные строительные работы, ссылаясь на вымышленные недостатки.</p>
                 </div>
                 
-                <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1, background: 'white' }}>
-                  <div>
-                    <h5 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
-                    <p style={{ fontSize: '15px', margin: 0, lineHeight: 1.5 }}>Заказчик отказался оплачивать выполненные строительные работы, ссылаясь на вымышленные недостатки.</p>
-                  </div>
-                  
-                  <div style={{ paddingLeft: '16px', borderLeft: '2px solid var(--color-border)' }}>
-                    <h5 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
-                    <p style={{ fontSize: '15px', margin: 0, lineHeight: 1.5 }}>Собрали доказательства приемки работ, инициировали строительно-техническую экспертизу.</p>
-                  </div>
+                <div>
+                  <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Собрали документальную базу, подтверждающую приемку, инициировали строительно-техническую экспертизу.</p>
                 </div>
-                
-                <div style={{ background: 'var(--color-primary)', color: 'white', padding: '20px 30px', marginTop: 'auto' }}>
-                  <h5 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255,255,255,0.6)', marginBottom: '8px' }}>Результат</h5>
-                  <p style={{ fontSize: '16px', margin: 0, fontWeight: 500 }}>Задолженность и пени полностью взысканы через Арбитражный суд.</p>
-                </div>
+              </div>
+              
+              <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
+                <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Результат</h5>
+                <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)' }}>Задолженность и пени в размере 100% взысканы через Арбитражный суд.</p>
               </div>
             </div>
 

@@ -340,6 +340,14 @@ h4 { font-size: 1.25rem; }
   width: 100%;
 }
 
+/* Contact Dropdown */
+.contact-dropdown:hover .contact-dropdown-content {
+  display: flex !important;
+}
+.dropdown-link:hover {
+  background: var(--color-grey-blue) !important;
+}
+
 /* Image Placeholder styling */
 .img-placeholder {
   background: linear-gradient(135deg, var(--color-grey-blue) 0%, var(--color-border) 100%);
