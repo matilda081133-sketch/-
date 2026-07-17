@@ -413,22 +413,22 @@ h4 { font-size: 1.25rem; }
 
 /* Hover Fan Out (No z-index changing) */
 .mockup-container:hover .doc-sheet-1 {
-  transform: rotateY(-12deg) rotateX(4deg) translateZ(60px) translateX(-60px) translateY(-20px);
+  transform: rotateY(-14deg) rotateX(4deg) translateZ(50px) translateX(-25px) translateY(-10px);
   box-shadow: 0 40px 80px rgba(23, 50, 77, 0.15);
 }
 
 .mockup-container:hover .doc-sheet-2 {
-  transform: rotateY(-14deg) rotateX(5deg) translateZ(20px) translateX(-20px) translateY(-10px);
+  transform: rotateY(-15deg) rotateX(5deg) translateZ(20px) translateX(-5px) translateY(-5px);
   box-shadow: 0 30px 60px rgba(23, 50, 77, 0.12);
 }
 
 .mockup-container:hover .doc-sheet-3 {
-  transform: rotateY(-16deg) rotateX(6deg) translateZ(-20px) translateX(20px) translateY(0px);
+  transform: rotateY(-16deg) rotateX(6deg) translateZ(-10px) translateX(15px) translateY(0px);
   box-shadow: 0 20px 40px rgba(23, 50, 77, 0.08);
 }
 
 .mockup-container:hover .doc-sheet-4 {
-  transform: rotateY(-18deg) rotateX(7deg) translateZ(-60px) translateX(60px) translateY(10px);
+  transform: rotateY(-17deg) rotateX(7deg) translateZ(-40px) translateX(35px) translateY(5px);
   box-shadow: 0 10px 20px rgba(23, 50, 77, 0.05);
 }
 
