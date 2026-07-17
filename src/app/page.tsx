@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import ServicesBlock from '@/components/ServicesBlock';
 import FAQBlock from '@/components/FAQBlock';
 import PricingBlock from '@/components/PricingBlock';
+import PhoneInput from '@/components/PhoneInput';
 
 export default function Home() {
   return (
@@ -20,6 +21,11 @@ export default function Home() {
         background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
         overflow: 'hidden'
       }}>
+        {/* Background Graphic: Courthouse */}
+        <svg style={{ position: 'absolute', top: '5%', right: '5%', width: '600px', height: '600px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+          <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
+        </svg>
+
         {/* Decorative circle */}
         <div style={{
           position: 'absolute', top: '-10%', right: '-5%', width: '600px', height: '600px',
@@ -366,6 +372,12 @@ export default function Home() {
         {/* Abstract Background Glows */}
         <div style={{ position: 'absolute', top: '20%', left: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
         
+        {/* Background Graphic: Open Book (Light) */}
+        <svg style={{ position: 'absolute', top: '-5%', right: '10%', width: '500px', height: '500px', opacity: 0.03, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-white)" strokeWidth="0.5">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+        
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '60px', alignItems: 'flex-start' }}>
             
@@ -664,10 +676,10 @@ export default function Home() {
           
           <div className="card reveal-on-scroll delay-200" style={{ padding: '40px', borderRadius: '0' }}>
             <h3 style={{ marginTop: 0, color: 'var(--color-primary)', marginBottom: '10px' }}>Оставить заявку</h3>
-            <p style={{ color: 'var(--color-text-secondary)', marginBottom: '30px' }}>Перезвоним вам в течение 15 минут в рабочее время.</p>
+            <p style={{ color: 'var(--color-text-secondary)', marginBottom: '30px', lineHeight: 1.5 }}>Перезвоним вам в течение 15 минут<br/>в рабочее время.</p>
             <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <input type="text" placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none' }} />
-              <input type="tel" placeholder="+7 (___) ___-__-__" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none' }} />
+              <PhoneInput />
               <button type="button" className="btn" style={{ width: '100%', padding: '18px', fontSize: '18px', marginTop: '10px' }}>Обсудить ситуацию</button>
               <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', textAlign: 'center', margin: 0 }}>
                 Отправляя заявку, вы соглашаетесь с <Link href="/privacy" className="link-animated" style={{ fontSize: '13px' }}>политикой конфиденциальности</Link>.
@@ -681,8 +693,8 @@ export default function Home() {
       <footer style={{ backgroundColor: '#0B1C2A', color: 'var(--color-white)', padding: '40px 0 20px' }}>
         <div className="container grid grid-4" style={{ gap: '30px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '30px', marginBottom: '20px' }}>
           <div>
-            <div style={{ marginBottom: '24px', marginTop: '-10px' }}>
-              <img src="images/logo.png" alt="Де-Юре" style={{ height: '150px', width: 'auto' }} />
+            <div style={{ marginBottom: '24px', marginTop: '-20px' }}>
+              <img src="images/logo.png" alt="Де-Юре" style={{ height: '190px', width: 'auto' }} />
             </div>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px', lineHeight: 1.5, marginBottom: '16px' }}>
               Юридическая помощь гражданам и бизнесу в Липецке.
@@ -703,26 +715,26 @@ export default function Home() {
           <div>
             <h4 style={{ color: 'var(--color-white)', margin: '0 0 16px 0', fontSize: '16px' }}>Гражданам</h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <li><Link href="/grazhdanam/semejnie" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', transition: 'color 0.3s' }}>Семейные споры</Link></li>
-              <li><Link href="/grazhdanam/bankrotstvo" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', transition: 'color 0.3s' }}>Банкротство физ. лиц</Link></li>
-              <li><Link href="/grazhdanam/nasledstvo" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', transition: 'color 0.3s' }}>Наследственные дела</Link></li>
+              <li><Link href="/grazhdanam/semejnie" className="footer-link" style={{ fontSize: '14px' }}>Семейные споры</Link></li>
+              <li><Link href="/grazhdanam/bankrotstvo" className="footer-link" style={{ fontSize: '14px' }}>Банкротство физ. лиц</Link></li>
+              <li><Link href="/grazhdanam/nasledstvo" className="footer-link" style={{ fontSize: '14px' }}>Наследственные дела</Link></li>
             </ul>
           </div>
           <div>
             <h4 style={{ color: 'var(--color-white)', margin: '0 0 16px 0', fontSize: '16px' }}>Бизнесу</h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <li><Link href="/biznesu/arbitrazh" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', transition: 'color 0.3s' }}>Арбитражные споры</Link></li>
-              <li><Link href="/biznesu/nalogi" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', transition: 'color 0.3s' }}>Налоговая практика</Link></li>
-              <li><Link href="/biznesu/bankrotstvo" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', transition: 'color 0.3s' }}>Банкротство юр. лиц</Link></li>
+              <li><Link href="/biznesu/arbitrazh" className="footer-link" style={{ fontSize: '14px' }}>Арбитражные споры</Link></li>
+              <li><Link href="/biznesu/nalogi" className="footer-link" style={{ fontSize: '14px' }}>Налоговая практика</Link></li>
+              <li><Link href="/biznesu/bankrotstvo" className="footer-link" style={{ fontSize: '14px' }}>Банкротство юр. лиц</Link></li>
             </ul>
           </div>
           <div>
             <h4 style={{ color: 'var(--color-white)', margin: '0 0 16px 0', fontSize: '16px' }}>Компания</h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <li><Link href="/o-kompanii" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', transition: 'color 0.3s' }}>О компании</Link></li>
-              <li><Link href="/praktika" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', transition: 'color 0.3s' }}>Практика</Link></li>
-              <li><Link href="/publikacii" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', transition: 'color 0.3s' }}>Публикации</Link></li>
-              <li><Link href="/kontakty" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', transition: 'color 0.3s' }}>Контакты</Link></li>
+              <li><Link href="/o-kompanii" className="footer-link" style={{ fontSize: '14px' }}>О компании</Link></li>
+              <li><Link href="/praktika" className="footer-link" style={{ fontSize: '14px' }}>Практика</Link></li>
+              <li><Link href="/publikacii" className="footer-link" style={{ fontSize: '14px' }}>Публикации</Link></li>
+              <li><Link href="/kontakty" className="footer-link" style={{ fontSize: '14px' }}>Контакты</Link></li>
             </ul>
           </div>
         </div>

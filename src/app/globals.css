@@ -341,12 +341,14 @@ h4 { font-size: 1.25rem; }
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
 
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+.review-widget {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 4px;
 }
-.hover-lift:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 15px 40px rgba(23, 50, 77, 0.1) !important;
+
+.review-widget:hover {
+  transform: translateX(0) scale(1.01) !important;
+  box-shadow: 0 15px 35px rgba(23, 50, 77, 0.06) !important;
 }
 
 @keyframes floatVertical {
@@ -477,6 +479,33 @@ h4 { font-size: 1.25rem; }
   color: var(--color-primary);
 }
 .nav-link:hover::before {
+  width: 100%;
+}
+
+/* Footer Link Hover */
+.footer-link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+.footer-link::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-white);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.footer-link:hover {
+  color: var(--color-white) !important;
+}
+.footer-link:hover::before {
   width: 100%;
 }
 
