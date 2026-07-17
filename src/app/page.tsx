@@ -59,16 +59,8 @@ export default function Home() {
             </p>
             
             <div className="flex gap-4" style={{ marginBottom: '40px' }}>
-              <a href="#consultation" className="btn" style={{
-                backgroundColor: '#B89855',
-                color: '#0B1C2A',
-                border: 'none',
-                fontWeight: 600
-              }}>Обсудить ситуацию</a>
-              <a href="#services" className="btn btn-outline" style={{
-                borderColor: '#B89855',
-                color: '#B89855'
-              }}>Выбрать направление</a>
+              <a href="#consultation" className="btn btn-gold">Обсудить ситуацию</a>
+              <a href="#services" className="btn btn-outline-gold">Выбрать направление</a>
             </div>
 
             <div className="reveal-on-scroll delay-100" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
@@ -91,9 +83,10 @@ export default function Home() {
             <img 
               src="images/hero_graphic.png" 
               alt="Креатив права и закона" 
+              className="hero-graphic"
               style={{ 
                 width: '100%', 
-                maxWidth: '560px', 
+                maxWidth: '700px', 
                 height: 'auto', 
                 border: '1px solid rgba(184, 152, 85, 0.3)',
                 boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
