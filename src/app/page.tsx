@@ -364,24 +364,25 @@ export default function Home() {
         {/* Abstract Background Glows */}
         <div style={{ position: 'absolute', top: '20%', left: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
         
-        {/* Background Graphic: Open Book (Light) */}
-        <svg style={{ position: 'absolute', top: '-5%', right: '10%', width: '500px', height: '500px', opacity: 0.03, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-white)" strokeWidth="0.5">
-          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-        </svg>
-        
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '60px', alignItems: 'flex-start' }}>
             
             {/* Sticky Left Sidebar */}
             <div style={{ flex: '1 1 400px', position: 'sticky', top: '120px' }}>
-              <h2 style={{ color: 'var(--color-white)', fontFamily: 'var(--font-serif)', fontSize: '48px', marginBottom: '24px', lineHeight: 1.2 }}>
-                Как мы<br />строим защиту
-              </h2>
-              <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '18px', lineHeight: 1.6, marginBottom: '40px' }}>
-                Каждое дело уникально, но наш подход всегда остается системным. Прозрачный процесс работы от первой консультации до итогового решения суда.
-              </p>
-              <div style={{ width: '60px', height: '2px', background: 'var(--color-primary)' }}></div>
+              {/* Background Graphic: Open Book (Light) */}
+              <svg style={{ position: 'absolute', top: '-100px', left: '-100px', width: '500px', height: '500px', opacity: 0.03, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-white)" strokeWidth="0.5">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <h2 style={{ color: 'var(--color-white)', fontFamily: 'var(--font-serif)', fontSize: '48px', marginBottom: '24px', lineHeight: 1.2 }}>
+                  Как мы<br />строим защиту
+                </h2>
+                <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '18px', lineHeight: 1.6, marginBottom: '40px' }}>
+                  Каждое дело уникально, но наш подход всегда остается системным. Прозрачный процесс работы от первой консультации до итогового решения суда.
+                </p>
+                <div style={{ width: '60px', height: '2px', background: 'var(--color-primary)' }}></div>
+              </div>
             </div>
 
             {/* Scrolling Right Content */}
