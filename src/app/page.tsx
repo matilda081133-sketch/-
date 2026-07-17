@@ -61,33 +61,40 @@ export default function Home() {
               <a href="#services" className="btn btn-outline">Выбрать направление</a>
             </div>
 
-            {/* Organic Minimalist Bullets */}
+            {/* Hero USPs Row */}
             <div className="reveal-on-scroll delay-100" style={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(3, 1fr)', 
               gap: '16px', 
               marginTop: '40px' 
             }}>
               {[
-                { title: 'Бесплатный анализ' },
-                { title: 'Конфиденциальность' },
-                { title: 'Ведение в суде под ключ' }
+                { title: 'Бесплатный анализ', icon: '01' },
+                { title: 'Профильные юристы', icon: '02' },
+                { title: 'Суды под ключ', icon: '03' }
               ].map((bullet, i) => (
                 <div key={i} style={{
+                  background: 'rgba(255, 255, 255, 0.7)',
+                  border: '1px solid rgba(23, 50, 77, 0.08)',
+                  padding: '20px 16px',
                   display: 'flex',
-                  alignItems: 'center',
-                  paddingLeft: '16px',
-                  borderLeft: '2px solid var(--color-primary)'
-                }}>
-                  <h4 style={{ margin: 0, fontSize: '18px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>{bullet.title}</h4>
+                  flexDirection: 'column',
+                  gap: '12px',
+                  transition: 'var(--transition)'
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--color-white)'; e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(23, 50, 77, 0.05)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.7)'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
+                >
+                  <div style={{ color: 'var(--color-primary)', opacity: 0.5, fontWeight: 'bold', fontSize: '14px', fontFamily: 'var(--font-serif)' }}>{bullet.icon}</div>
+                  <h4 style={{ margin: 0, fontSize: '15px', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>{bullet.title}</h4>
                 </div>
               ))}
             </div>
           </div>
           
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
-            {/* Background Graphic: Courthouse (Centered behind mockup) */}
-            <svg style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+            {/* Background Graphic: Courthouse (Centered behind mockup, shifted right) */}
+            <svg style={{ position: 'absolute', top: '50%', left: '80%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
               <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
             </svg>
 
