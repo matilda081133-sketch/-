@@ -84,8 +84,9 @@ export default function FAQBlock() {
                     width: '40px',
                     height: '40px',
                     borderRadius: '50%',
+                    border: '1px solid var(--color-deep-blue)',
                     background: openIndex === index ? 'var(--color-primary)' : 'rgba(23, 50, 77, 0.03)',
-                    color: openIndex === index ? 'var(--color-white)' : 'var(--color-primary)',
+                    color: openIndex === index ? 'var(--color-white)' : 'var(--color-deep-blue)',
                     transition: 'all 0.3s ease',
                     flexShrink: 0
                   }}>
