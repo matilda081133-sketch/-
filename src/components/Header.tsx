@@ -21,7 +21,7 @@ export default function Header() {
           <img src="/images/logo.png" alt="Де-Юре" style={{ height: '70px', width: 'auto' }} />
         </Link>
         <nav style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'nowrap', whiteSpace: 'nowrap' }}>
-          <div style={{ display: 'flex', gap: '20px' }}>
+          <div style={{ display: 'flex', gap: '20px', fontSize: '14px' }}>
             <Link href="/o-kompanii" className="nav-link">О компании</Link>
             <Link href="/grazhdanam" className="nav-link">Гражданам</Link>
             <Link href="/biznesu" className="nav-link">Бизнесу</Link>
@@ -31,7 +31,7 @@ export default function Header() {
           </div>
           
           <div style={{ display: 'flex', alignItems: 'center', paddingLeft: '20px', borderLeft: '1px solid var(--color-border)' }}>
-            <button className="btn btn-outline" style={{ padding: '8px 20px', fontSize: '14px', borderRadius: '4px', whiteSpace: 'nowrap' }}>
+            <button className="btn btn-outline" style={{ padding: '8px 20px', fontSize: '13px', borderRadius: '4px', whiteSpace: 'nowrap' }}>
               Написать
             </button>
           </div>
