@@ -525,18 +525,6 @@ export const megaMenuB2C = [
       {
         "label": "Миграционные споры (физические лица)",
         "href": "/migratsionnye-spory-(fizicheskie-litsa)"
-      },
-      {
-        "label": "Отзывы и кейсы",
-        "href": "/otzyvy-i-keysy"
-      },
-      {
-        "label": "Полезные статьи",
-        "href": "/poleznye-statьi"
-      },
-      {
-        "label": "Контакты",
-        "href": "/kontakty"
       }
     ]
   }

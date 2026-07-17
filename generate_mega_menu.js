@@ -43,6 +43,10 @@ for (let line of lines) {
   if (line.startsWith('- [ ] **')) {
     const itemStr = line.match(/\*\*([^*]+)\*\*/)[1].trim();
     if (currentTarget && currentCategory) {
+      if (['Контакты', 'Полезные статьи', 'Отзывы и кейсы'].includes(itemStr)) {
+        continue;
+      }
+      
       if (currentCategory === 'Прочее для бизнеса') {
         if (itemStr.includes('юридические лица') || itemStr.includes('Исполнительное производство')) {
           b2bCategories['Прочее для бизнеса'].push(itemStr);
