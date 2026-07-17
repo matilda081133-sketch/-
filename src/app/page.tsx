@@ -17,24 +17,21 @@ export default function Home() {
         display: 'flex', 
         alignItems: 'center',
         paddingTop: '160px',
-        backgroundColor: '#0B1C2A',
-        backgroundImage: 'url(/images/hero_abstract.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
         overflow: 'hidden'
       }}>
-        {/* Dark overlay for better text readability */}
+        {/* Decorative circle */}
         <div style={{
-          position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
-          background: 'linear-gradient(to right, rgba(11, 28, 42, 0.9) 0%, rgba(11, 28, 42, 0.4) 100%)',
-          zIndex: 0
+          position: 'absolute', top: '-10%', right: '-5%', width: '600px', height: '600px',
+          background: 'radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)',
+          borderRadius: '50%', zIndex: 0
         }} />
         
         <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div className="reveal-on-scroll" style={{ padding: '40px 0', maxWidth: '800px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: '#EAF1F6' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#EAF1F6' }}>
+              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
                 Юридическая компания в Липецке
               </span>
             </div>
@@ -44,55 +41,57 @@ export default function Home() {
               whiteSpace: 'pre', 
               fontSize: 'clamp(36px, 4vw, 64px)',
               fontFamily: 'var(--font-serif)',
-              color: '#FFFFFF'
+              color: 'var(--color-deep-blue)'
             }}>
               {`Юридическая помощь\nгражданам и бизнесу\nв Липецке`}
             </h1>
             <p style={{ 
               fontSize: '20px', 
-              color: '#D3E4F9', 
+              color: 'var(--color-text-secondary)', 
               marginBottom: '30px', 
               maxWidth: '600px', 
               lineHeight: 1.6 
             }}>
-              Разбираемся в ситуации, формируем правовую позицию и сопровождаем дело на необходимых этапах — от переговоров и обращений в государственные органы до суда и исполнения решения.
+              Надежная защита интересов граждан и организаций. Десятилетний опыт работы с арбитражными, гражданскими и корпоративными спорами на стороне клиента.
             </p>
             
             <div className="flex gap-4" style={{ marginBottom: '40px' }}>
-              <a href="#consultation" className="btn btn-gold">Обсудить ситуацию</a>
-              <a href="#services" className="btn btn-outline-gold">Выбрать направление</a>
+              <a href="#consultation" className="btn">Обсудить ситуацию</a>
+              <a href="#services" className="btn btn-outline">Выбрать направление</a>
             </div>
 
             <div className="reveal-on-scroll delay-100" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: '#D3E4F9', background: 'rgba(255, 255, 255, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EAF1F6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Профильный специалист по каждому направлению
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'var(--color-white)', padding: '8px 14px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Бесплатный анализ перспективы
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: '#D3E4F9', background: 'rgba(255, 255, 255, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EAF1F6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Полное сопровождение без вашего присутствия
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'var(--color-white)', padding: '8px 14px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Конфиденциальность гарантирована
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: '#D3E4F9', background: 'rgba(255, 255, 255, 0.05)', padding: '8px 14px', borderRadius: '0' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EAF1F6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Честная оценка перспектив и рисков
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)', background: 'var(--color-white)', padding: '8px 14px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Полное ведение дела в суде
               </div>
             </div>
           </div>
           
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center' }}>
-            <img 
-              src="images/hero_vector_mockup.png" 
-              alt="Креатив права и закона" 
-              className="hero-graphic"
-              style={{ 
-                width: '100%', 
-                maxWidth: '700px', 
-                height: 'auto', 
-                border: '1px solid rgba(184, 152, 85, 0.3)',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
-                filter: 'drop-shadow(0px 0px 20px rgba(184, 152, 85, 0.1))'
-              }} 
-            />
+            <svg className="hero-graphic" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', maxWidth: '500px', height: 'auto', filter: 'drop-shadow(0px 20px 40px rgba(23, 50, 77, 0.15))' }}>
+              <rect x="50" y="80" width="220" height="280" rx="12" fill="#FFFFFF" stroke="#EAF1F6" strokeWidth="4"/>
+              <rect x="80" y="120" width="160" height="16" rx="4" fill="#EAF1F6"/>
+              <rect x="80" y="150" width="120" height="12" rx="4" fill="#F7F4ED"/>
+              <rect x="80" y="174" width="140" height="12" rx="4" fill="#F7F4ED"/>
+              <rect x="80" y="198" width="100" height="12" rx="4" fill="#F7F4ED"/>
+              
+              <rect x="130" y="40" width="220" height="280" rx="12" fill="#17324D" stroke="#10273B" strokeWidth="4"/>
+              <rect x="160" y="80" width="160" height="16" rx="4" fill="#EAF1F6" fillOpacity="0.2"/>
+              <rect x="160" y="110" width="120" height="12" rx="4" fill="#EAF1F6" fillOpacity="0.1"/>
+              <rect x="160" y="134" width="140" height="12" rx="4" fill="#EAF1F6" fillOpacity="0.1"/>
+              
+              <circle cx="270" cy="240" r="40" fill="#EAF1F6"/>
+              <path d="M255 240L265 250L285 230" stroke="#17324D" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </div>
         </div>
       </section>
