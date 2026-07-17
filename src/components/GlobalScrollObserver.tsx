@@ -7,7 +7,6 @@ export default function GlobalScrollObserver() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
-          // Unobserve to keep it revealed
           observer.unobserve(entry.target);
         }
       });
@@ -16,12 +15,20 @@ export default function GlobalScrollObserver() {
       rootMargin: '0px 0px -50px 0px' 
     });
 
-    // We use a small timeout to ensure DOM is ready
-    setTimeout(() => {
-      document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+    const initObserver = () => {
+      document.querySelectorAll('.reveal-on-scroll:not(.observed)').forEach((el) => {
+        el.classList.add('observed');
         observer.observe(el);
       });
-    }, 100);
+    };
+
+    // Initial check
+    initObserver();
+    
+    // Fallbacks to ensure it catches late renders
+    setTimeout(initObserver, 100);
+    setTimeout(initObserver, 500);
+    setTimeout(initObserver, 1000);
 
     return () => observer.disconnect();
   }, []);
