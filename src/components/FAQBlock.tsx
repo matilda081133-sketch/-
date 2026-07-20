@@ -23,7 +23,7 @@ export default function FAQBlock() {
   ];
 
   return (
-    <section className="section bg-cream" style={{ padding: '120px 0', borderTop: '1px solid var(--color-border)' }}>
+    <section className="section bg-white" style={{ padding: '120px 0', borderTop: '1px solid var(--color-border)' }}>
       <div className="container">
         <div className="grid grid-2" style={{ gap: '80px', alignItems: 'flex-start' }}>
           
@@ -48,13 +48,13 @@ export default function FAQBlock() {
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {faqs.map((faq, index) => (
               <div key={index} style={{
-                background: 'var(--gradient-light)',
-                border: '1px solid var(--color-border)',
+                background: 'var(--color-deep-blue)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
                 overflow: 'hidden',
                 borderRadius: '0',
                 transition: 'var(--transition)'
               }}
-              onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 10px 30px rgba(23, 50, 77, 0.05)'}
+              onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 20px 40px rgba(16, 39, 59, 0.15)'}
               onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'none'}
               >
                 <button 
@@ -71,7 +71,7 @@ export default function FAQBlock() {
                     cursor: 'pointer',
                     fontSize: '20px',
                     fontWeight: 'bold',
-                    color: 'var(--color-deep-blue)',
+                    color: 'var(--color-white)',
                     fontFamily: 'var(--font-sans)',
                     transition: 'var(--transition)'
                   }}
@@ -84,9 +84,9 @@ export default function FAQBlock() {
                     width: '40px',
                     height: '40px',
                     borderRadius: '50%',
-                    border: '1px solid var(--color-deep-blue)',
-                    background: openIndex === index ? 'var(--color-primary)' : 'rgba(23, 50, 77, 0.03)',
-                    color: openIndex === index ? 'var(--color-white)' : 'var(--color-deep-blue)',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    background: openIndex === index ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
+                    color: 'var(--color-white)',
                     transition: 'all 0.3s ease',
                     flexShrink: 0
                   }}>
@@ -100,11 +100,11 @@ export default function FAQBlock() {
                   overflow: 'hidden',
                   transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
                   padding: openIndex === index ? '0 32px 32px 32px' : '0 32px',
-                  color: 'var(--color-text-secondary)',
+                  color: 'rgba(255, 255, 255, 0.8)',
                   lineHeight: '1.6',
                   fontSize: '16px'
                 }}>
-                  <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '24px' }}>
+                  <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '24px' }}>
                     {faq.a}
                   </div>
                 </div>

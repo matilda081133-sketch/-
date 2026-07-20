@@ -1,6 +1,10 @@
 'use client';
 
+import { useState } from 'react';
+
 export default function ReviewsBlock() {
+  const [showAll, setShowAll] = useState(false);
+
   const reviews = [
     {
       text: "Юристы Де-Юре помогли отбить субсидиарную ответственность на сумму более 40 млн рублей. Процесс длился почти год, но результат превзошел ожидания. Работают четко, без лишних обещаний, опираясь только на факты.",
@@ -16,8 +20,25 @@ export default function ReviewsBlock() {
       text: "Единственная компания в городе, которая честно сказала о рисках до подписания договора. В итоге мы отказались от бесперспективного иска и сэкономили кучу денег на пошлинах и экспертизах. Очень ценю такой подход.",
       author: "Михаил С.",
       role: "Индивидуальный предприниматель"
+    },
+    {
+      text: "Блестяще провели процедуру банкротства нашей компании. Все прошло максимально гладко, активы были защищены на законных основаниях. Настоящие профессионалы, которым можно доверять.",
+      author: "Сергей Н.",
+      role: "Генеральный директор"
+    },
+    {
+      text: "Взыскали долг по договору подряда в полном объеме, включая все пени и неустойки. Отличная работа в арбитраже. Юристы всегда были на связи и оперативно отвечали на все вопросы.",
+      author: "Олег Т.",
+      role: "Учредитель ООО"
+    },
+    {
+      text: "Помогли решить сложнейший корпоративный конфликт без потери бизнеса. Юристы Де-Юре разработали стратегию, которая позволила нам выкупить долю партнера на выгодных условиях.",
+      author: "Наталья П.",
+      role: "Соучредитель"
     }
   ];
+
+  const visibleReviews = showAll ? reviews : reviews.slice(0, 3);
 
   return (
     <section id="reviews" className="section bg-white" style={{ position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
@@ -41,8 +62,8 @@ export default function ReviewsBlock() {
           </p>
         </div>
 
-        <div className="grid grid-3" style={{ gap: '30px' }}>
-          {reviews.map((review, idx) => (
+        <div className="grid grid-3" style={{ gap: '30px', transition: 'all 0.5s ease-in-out' }}>
+          {visibleReviews.map((review, idx) => (
             <div key={idx} style={{
               background: 'var(--color-white)',
               border: '1px solid var(--color-border)',
@@ -51,7 +72,8 @@ export default function ReviewsBlock() {
               display: 'flex',
               flexDirection: 'column',
               transition: 'var(--transition)',
-              boxShadow: '0 10px 30px rgba(23, 50, 77, 0.02)'
+              boxShadow: '0 10px 30px rgba(23, 50, 77, 0.02)',
+              animation: 'fadeIn 0.5s ease-out forwards'
             }}
             className="review-text-card"
             >
@@ -93,12 +115,34 @@ export default function ReviewsBlock() {
             </div>
           ))}
         </div>
+
+        {reviews.length > 3 && (
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
+            <button 
+              onClick={() => setShowAll(!showAll)}
+              className="btn btn-outline"
+              style={{
+                background: 'transparent',
+                color: 'var(--color-primary)',
+                border: '1px solid var(--color-primary)',
+                cursor: 'pointer'
+              }}
+            >
+              {showAll ? 'Скрыть отзывы' : 'Читать все отзывы'}
+            </button>
+          </div>
+        )}
+
       </div>
       <style jsx>{`
         .review-text-card:hover {
           transform: translateY(-5px);
           box-shadow: 0 20px 40px rgba(23, 50, 77, 0.08) !important;
           border-color: rgba(212, 175, 55, 0.3) !important;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
     </section>
