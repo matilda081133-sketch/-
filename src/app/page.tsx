@@ -485,7 +485,7 @@ export default function Home() {
             
             {/* Case Card 1 */}
             <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
-              <div style={{ position: 'absolute', top: '10px', right: '10px', background: 'rgba(23, 50, 77, 0.05)', color: 'var(--color-text-secondary)', padding: '4px 8px', fontSize: '11px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>Демонстрация формата</div>
+              <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '6px 12px', fontSize: '11px', borderRadius: '4px', fontWeight: 600, letterSpacing: '0.05em', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>Демонстрация формата</div>
               <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Земельное право</span>
                 <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Спор о границах земельного участка</h4>
@@ -511,7 +511,7 @@ export default function Home() {
 
             {/* Case Card 2 */}
             <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
-              <div style={{ position: 'absolute', top: '10px', right: '10px', background: 'rgba(23, 50, 77, 0.05)', color: 'var(--color-text-secondary)', padding: '4px 8px', fontSize: '11px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>Демонстрация формата</div>
+              <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '6px 12px', fontSize: '11px', borderRadius: '4px', fontWeight: 600, letterSpacing: '0.05em', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>Демонстрация формата</div>
               <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Семейное право</span>
                 <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Раздел совместно нажитого имущества</h4>
@@ -537,7 +537,7 @@ export default function Home() {
 
             {/* Case Card 3 */}
             <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
-              <div style={{ position: 'absolute', top: '10px', right: '10px', background: 'rgba(23, 50, 77, 0.05)', color: 'var(--color-text-secondary)', padding: '4px 8px', fontSize: '11px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>Демонстрация формата</div>
+              <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '6px 12px', fontSize: '11px', borderRadius: '4px', fontWeight: 600, letterSpacing: '0.05em', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>Демонстрация формата</div>
               <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Арбитраж</span>
                 <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Взыскание долга по договору подряда</h4>
