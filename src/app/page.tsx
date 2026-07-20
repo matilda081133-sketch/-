@@ -274,7 +274,12 @@ export default function Home() {
       </div>
 
       {/* 3. WHY US / USP */}
-      <section className="section bg-grey-blue" style={{ 
+      <section className="section" style={{ 
+        background: 'var(--gradient-light)',
+        backgroundImage: 'url(/images/organic-pattern.svg)', 
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         padding: '100px 0', 
         borderTop: '1px solid var(--color-border)', 
         borderBottom: '1px solid var(--color-border)',
@@ -302,7 +307,9 @@ export default function Home() {
           <div style={{ 
             display: 'grid', 
             gridTemplateColumns: 'repeat(3, 1fr)', 
-            gap: '30px'
+            borderTop: '1px solid var(--color-primary)', 
+            borderLeft: '1px solid rgba(23, 50, 77, 0.1)',
+            borderBottom: '1px solid rgba(23, 50, 77, 0.1)'
           }}>
             
             {[
@@ -343,26 +350,25 @@ export default function Home() {
                 desc: "Никаких внезапных платежей. Точный перечень действий специалиста и порядок оплаты фиксируются в официальном договоре."
               }
             ].map((item, i) => (
-              <div key={i} className="usp-card group" style={{ 
+              <div key={i} className="usp-card" style={{ 
                 padding: '40px', 
-                border: '1px solid rgba(23, 50, 77, 0.1)',
+                borderRight: '1px solid rgba(23, 50, 77, 0.1)',
+                borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
                 background: 'rgba(255, 255, 255, 0.85)',
-                position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between'
+                backdropFilter: 'blur(12px)',
+                position: 'relative'
               }}>
-                <div>
-                  <div style={{ fontSize: '11px', letterSpacing: '0.15em', color: 'var(--color-primary)', fontWeight: 700, marginBottom: '24px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
-                    {item.tag}
-                  </div>
-                  <h3 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1, lineHeight: 1.3 }}>
-                    {item.title}
-                  </h3>
+                <div className="usp-accent"></div>
+                <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-text-secondary)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
+                  {item.tag}
                 </div>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1, marginTop: '20px' }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
+                  {item.title}
+                </h3>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1 }}>
                   {item.desc}
                 </p>
+
               </div>
             ))}
 
