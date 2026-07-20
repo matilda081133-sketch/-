@@ -424,7 +424,7 @@ export default function Home() {
                   border: '1px solid rgba(255, 255, 255, 0.12)',
                   backdropFilter: 'blur(24px)',
                   WebkitBackdropFilter: 'blur(24px)',
-                  borderRadius: '16px',
+                  borderRadius: '0',
                   padding: '40px',
                   position: 'relative',
                   overflow: 'hidden',
