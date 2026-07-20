@@ -459,7 +459,7 @@ export default function Home() {
           </div>
           
           <div className="reveal-on-scroll delay-200" style={{ 
-            background: 'transparent', 
+            background: 'var(--color-white)', 
             padding: '16px 24px', 
             border: '1px solid var(--color-border)',
             color: 'var(--color-text-secondary)',
