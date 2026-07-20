@@ -397,7 +397,7 @@ export default function Home() {
                 <h2 style={{ color: 'var(--color-white)', fontFamily: 'var(--font-serif)', fontSize: '48px', marginBottom: '24px', lineHeight: 1.2 }}>
                   Как мы<br />строим защиту
                 </h2>
-                <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '18px', lineHeight: 1.6, marginBottom: '40px' }}>
+                <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '15px', lineHeight: 1.6, marginBottom: '40px' }}>
                   Каждое дело уникально, но наш подход всегда остается системным. Прозрачный процесс работы от первой консультации до итогового решения суда.
                 </p>
                 <div style={{ width: '60px', height: '2px', background: 'var(--color-primary)' }}></div>
