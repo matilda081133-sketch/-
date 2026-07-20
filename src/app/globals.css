@@ -236,22 +236,10 @@ h4 { font-size: 1.25rem; }
   min-height: 280px;
   cursor: pointer;
 }
-.card-service::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 4px;
-  background: var(--color-primary);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
 .card-service:hover {
   transform: translateY(-8px);
   box-shadow: 0 32px 64px rgba(23, 50, 77, 0.15);
   border-color: transparent;
-}
-.card-service:hover::after {
-  transform: scaleX(1);
 }
 .card-service-num {
   position: absolute;
@@ -791,13 +779,4 @@ h4 { font-size: 1.25rem; }
   }
 }
 
-.usp-num {
-  opacity: 0;
-  transform: translateX(-20px) scale(0.9);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
 
-.usp-card:hover .usp-num {
-  opacity: 0.15;
-  transform: translateX(0) scale(1);
-}

@@ -368,20 +368,7 @@ export default function Home() {
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1 }}>
                   {item.desc}
                 </p>
-                <div className="usp-num" style={{
-                  position: 'absolute',
-                  bottom: '20px',
-                  right: '20px',
-                  fontSize: '80px',
-                  fontWeight: 900,
-                  fontFamily: 'var(--font-serif)',
-                  color: 'var(--color-primary)',
-                  lineHeight: 0.8,
-                  zIndex: 0,
-                  pointerEvents: 'none'
-                }}>
-                  {item.num}
-                </div>
+
               </div>
             ))}
 
