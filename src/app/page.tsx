@@ -346,7 +346,7 @@ export default function Home() {
                 tag: "Понятные условия",
                 title: "Объем работ закреплен в договоре",
                 desc: "Никаких внезапных платежей. Точный перечень действий специалиста и порядок оплаты фиксируются в официальном договоре.",
-                span: "span 2"
+                span: "span 4"
               }
             ].map((item, i) => (
               <div key={i} className="usp-card group" style={{ 
