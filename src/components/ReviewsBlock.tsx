@@ -72,7 +72,7 @@ export default function ReviewsBlock() {
               display: 'flex',
               flexDirection: 'column',
               transition: 'var(--transition)',
-              boxShadow: '0 10px 30px rgba(23, 50, 77, 0.02)',
+              boxShadow: '0 12px 36px rgba(23, 50, 77, 0.06)',
               animation: 'fadeIn 0.5s ease-out forwards'
             }}
             className="review-text-card"
