@@ -76,7 +76,7 @@ export default function ServicesBlock() {
   };
 
   return (
-    <section id="services" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
+    <section id="services" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0' }}>
       {/* Abstract Background Glows for Depth */}
       <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'linear-gradient(135deg, rgba(234, 241, 246, 0.7) 0%, rgba(247, 244, 237, 0.7) 100%)', zIndex: 0, pointerEvents: 'none' }}></div>
       <div style={{ position: 'absolute', top: '0', right: '-10%', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%)', filter: 'blur(80px)', zIndex: 0, pointerEvents: 'none' }}></div>

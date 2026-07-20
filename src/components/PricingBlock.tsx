@@ -44,7 +44,7 @@ export default function PricingBlock() {
   ];
 
   return (
-    <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '100px 0', background: 'var(--color-cream)' }}>
+    <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-cream)' }}>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <h2 style={{ 

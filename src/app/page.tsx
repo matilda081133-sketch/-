@@ -280,7 +280,7 @@ export default function Home() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        padding: '100px 0', 
+        padding: '60px 0', 
         borderTop: '1px solid var(--color-border)', 
         borderBottom: '1px solid var(--color-border)',
         position: 'relative',
@@ -377,12 +377,12 @@ export default function Home() {
       </section>
 
             {/* 4. КАК МЫ РАБОТАЕМ (СВЕТЛЫЙ СТАТИЧНЫЙ БЛОК) */}
-      <section className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '120px 0', background: 'var(--color-white)' }}>
+      <section className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
         {/* Organic graphic background */}
         <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'radial-gradient(circle at 0% 0%, rgba(193, 160, 102, 0.04) 0%, transparent 50%), radial-gradient(circle at 100% 100%, rgba(23, 50, 77, 0.03) 0%, transparent 50%)', pointerEvents: 'none' }}></div>
         
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '42px', color: 'var(--color-deep-blue)', marginBottom: '24px' }}>
               Как мы работаем
             </h2>
@@ -484,7 +484,7 @@ export default function Home() {
           <div className="grid grid-3 reveal-on-scroll delay-200" style={{ gap: '30px' }}>
             
             {/* Case Card 1 */}
-            <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '16px', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
+            <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
               <div style={{ position: 'absolute', top: '10px', right: '10px', background: 'rgba(23, 50, 77, 0.05)', color: 'var(--color-text-secondary)', padding: '4px 8px', fontSize: '11px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>Демонстрация формата</div>
               <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Земельное право</span>
@@ -510,7 +510,7 @@ export default function Home() {
             </div>
 
             {/* Case Card 2 */}
-            <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '16px', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
+            <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
               <div style={{ position: 'absolute', top: '10px', right: '10px', background: 'rgba(23, 50, 77, 0.05)', color: 'var(--color-text-secondary)', padding: '4px 8px', fontSize: '11px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>Демонстрация формата</div>
               <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Семейное право</span>
@@ -536,7 +536,7 @@ export default function Home() {
             </div>
 
             {/* Case Card 3 */}
-            <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '16px', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
+            <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
               <div style={{ position: 'absolute', top: '10px', right: '10px', background: 'rgba(23, 50, 77, 0.05)', color: 'var(--color-text-secondary)', padding: '4px 8px', fontSize: '11px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>Демонстрация формата</div>
               <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Арбитраж</span>
@@ -576,7 +576,7 @@ export default function Home() {
       <FAQBlock />
 
       {/* 10. CTA SECTION (FORM) */}
-      <section id="consultation" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '120px 0', background: 'var(--color-white)' }}>
+      <section id="consultation" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
         <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div>
             <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)' }}>Обсудите ситуацию с юристом</h2>
@@ -598,7 +598,7 @@ export default function Home() {
             <h3 style={{ marginTop: 0, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>Оставить заявку</h3>
             <p style={{ color: 'var(--color-text-secondary)', marginBottom: '30px', lineHeight: 1.5 }}>Перезвоним вам в течение 15 минут<br/>в рабочее время.</p>
             <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <input type="text" placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none', background: 'var(--color-cream)' }} />
+              <input type="text" placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none', background: 'var(--color-white)' }} />
               <PhoneInput />
               <button type="button" className="btn" style={{ width: '100%', padding: '18px', fontSize: '18px', marginTop: '10px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', border: 'none' }}>Обсудить ситуацию</button>
               

@@ -15,7 +15,7 @@ export default function FAQBlock() {
   ];
 
   return (
-    <section className="section bg-white" style={{ padding: '120px 0', borderTop: '1px solid var(--color-border)' }}>
+    <section className="section bg-white" style={{ padding: '80px 0', borderTop: '1px solid var(--color-border)' }}>
       <div className="container">
         <div className="grid grid-2" style={{ gap: '80px', alignItems: 'flex-start' }}>
           

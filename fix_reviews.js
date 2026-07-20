@@ -1,4 +1,6 @@
+const fs = require('fs');
 
+const reviewsContent = `
 'use client';
 
 export default function ReviewsBlock() {
@@ -83,3 +85,7 @@ export default function ReviewsBlock() {
     </section>
   );
 }
+`;
+
+fs.writeFileSync('src/components/ReviewsBlock.tsx', reviewsContent, 'utf8');
+console.log('Fixed ReviewsBlock.tsx');
