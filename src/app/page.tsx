@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import TeamCarousel from '@/components/TeamCarousel';
 import Header from '@/components/Header';
 import ServicesBlock from '@/components/ServicesBlock';
@@ -543,101 +543,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. REVIEWS (Creative Premium Block) */}
-      <section className="section bg-white" style={{ padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
-        {/* Background decorative elements */}
-        <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(23, 50, 77, 0.03) 0%, transparent 70%)', zIndex: 0 }}></div>
-        
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="grid grid-2" style={{ gap: '80px', alignItems: 'center' }}>
-            
-            {/* Left Content */}
-            <div className="reveal-on-scroll" style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute', top: '-80px', left: '-40px', fontSize: '320px', fontFamily: 'var(--font-serif)', color: 'rgba(23, 50, 77, 0.04)', lineHeight: 1, zIndex: 0, pointerEvents: 'none' }}>
-                “
-              </div>
-              <div style={{ position: 'relative', zIndex: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
-                  <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                    Репутация
-                  </span>
-                </div>
-                <h2 style={{ fontSize: '42px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '32px', lineHeight: 1.2 }}>
-                  Тишина — лучшее доказательство успеха.
-                </h2>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.8, marginBottom: '24px' }}>
-                  Мы соблюдаем строгую адвокатскую тайну и принципиально не публикуем имена доверителей или детали выигранных дел на сайте.
-                </p>
-                <p style={{ color: 'var(--color-deep-blue)', fontSize: '18px', lineHeight: 1.8, fontWeight: 500 }}>
-                  Наша реальная оценка — это независимые рейтинги на официальных площадках.
-                </p>
-              </div>
-            </div>
-
-            {/* Right Content - Floating Badges */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', position: 'relative' }}>
-              {/* Yandex Badge */}
-              <div className="review-widget reveal-on-scroll delay-100" style={{ 
-                background: 'var(--color-deep-blue)', 
-                padding: '40px', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'space-between',
-                boxShadow: '0 30px 60px rgba(16, 39, 59, 0.1)',
-                transform: 'translateX(-20px)'
-              }}>
-                <div>
-                  <div style={{ fontSize: '32px', fontWeight: '900', color: '#fff', letterSpacing: '-1px', marginBottom: '8px' }}>
-                    Яндекс <span style={{ color: '#ffcc00' }}>Карты</span>
-                  </div>
-                  <div style={{ display: 'flex', gap: '4px' }}>
-                    {[1,2,3,4,5].map(star => (
-                      <svg key={star} width="20" height="20" viewBox="0 0 24 24" fill="#ffcc00" stroke="#ffcc00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-                <div style={{ textAlign: 'right' }}>
-                  <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Рейтинг</div>
-                  <div style={{ color: '#ffcc00', fontWeight: 'bold', fontSize: '16px' }}>Формируется</div>
-                </div>
-              </div>
-
-              {/* 2GIS Badge */}
-              <div className="review-widget reveal-on-scroll delay-200" style={{ 
-                background: 'var(--gradient-light)', 
-                border: '1px solid var(--color-border)',
-                padding: '40px', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'space-between',
-                boxShadow: '0 30px 60px rgba(16, 39, 59, 0.05)',
-                transform: 'translateX(20px)'
-              }}>
-                <div>
-                  <div style={{ fontSize: '32px', fontWeight: '900', color: 'var(--color-deep-blue)', letterSpacing: '-1px', marginBottom: '8px' }}>
-                    2<span style={{ color: '#A4D33B' }}>ГИС</span>
-                  </div>
-                  <div style={{ display: 'flex', gap: '4px' }}>
-                    {[1,2,3,4,5].map(star => (
-                      <svg key={star} width="20" height="20" viewBox="0 0 24 24" fill="#A4D33B" stroke="#A4D33B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-                <div style={{ textAlign: 'right' }}>
-                  <div style={{ color: 'var(--color-text-secondary)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Профиль</div>
-                  <div style={{ color: '#A4D33B', fontWeight: 'bold', fontSize: '16px' }}>На модерации</div>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
 
       {/* 8. PRICING SECTION */}
       <PricingBlock />
