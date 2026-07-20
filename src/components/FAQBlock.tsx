@@ -70,7 +70,7 @@ export default function FAQBlock() {
                     alignItems: 'center',
                     cursor: 'pointer',
                     fontSize: '20px',
-                    fontWeight: 'bold',
+                    fontWeight: '500',
                     color: 'var(--color-white)',
                     fontFamily: 'var(--font-sans)',
                     transition: 'var(--transition)'

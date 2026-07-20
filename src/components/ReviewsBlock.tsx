@@ -41,10 +41,9 @@ export default function ReviewsBlock() {
   const visibleReviews = showAll ? reviews : reviews.slice(0, 3);
 
   return (
-    <section id="reviews" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '100px 0', background: 'var(--color-cream)' }}>
+    <section id="reviews" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '100px 0', background: 'var(--color-white)' }}>
       {/* Background abstract elements for depth */}
-      <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(23,50,77,0.04) 0%, transparent 70%)', zIndex: 0, pointerEvents: 'none' }}></div>
-      <div style={{ position: 'absolute', bottom: '-20%', left: '-10%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%)', zIndex: 0, pointerEvents: 'none' }}></div>
+      <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'linear-gradient(135deg, rgba(234, 241, 246, 0.5) 0%, rgba(247, 244, 237, 0.5) 100%)', zIndex: 0, pointerEvents: 'none' }}></div>
       
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
