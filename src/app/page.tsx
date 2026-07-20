@@ -385,8 +385,10 @@ export default function Home() {
 
       {/* 4. HOW WE WORK (APPLE-STYLE STICKY SCROLL) */}
       <section className="section bg-deep-blue" style={{ position: 'relative', overflow: 'visible', padding: '120px 0' }}>
-        {/* Abstract Background Glows */}
-        <div style={{ position: 'absolute', top: '20%', left: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
+        {/* Background Gradients for Depth */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(16,39,59,1) 0%, rgba(23,50,77,1) 100%)', zIndex: 0 }}></div>
+        <div style={{ position: 'absolute', top: '20%', left: '-10%', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%)', filter: 'blur(60px)', zIndex: 0, pointerEvents: 'none' }}></div>
+        <div style={{ position: 'absolute', bottom: '10%', right: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%)', filter: 'blur(60px)', zIndex: 0, pointerEvents: 'none' }}></div>
         
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '60px', alignItems: 'flex-start' }}>
@@ -417,17 +419,19 @@ export default function Home() {
                 { num: '03', title: 'Реализация защиты', desc: 'Представляем ваши интересы на всех этапах: от досудебных переговоров до участия в судебных заседаниях. Берем на себя всю коммуникацию с оппонентами и госорганами.', img: 'images/stage_3.png' },
                 { num: '04', title: 'Результат', desc: 'Достижение поставленной цели — это не только выигрыш в суде, но и фактическое исполнение решения. Мы контролируем процесс до полного восстановления ваших прав.', img: 'images/stage_4.png' },
               ].map((step, i) => (
-                <div key={i} className="sticky-stage-card" style={{ 
-                  background: 'rgba(255, 255, 255, 0.02)',
-                  border: '1px solid rgba(255, 255, 255, 0.05)',
-                  borderRadius: '0',
+                <div key={i} className="sticky-stage-card group" style={{ 
+                  background: 'rgba(255, 255, 255, 0.04)',
+                  border: '1px solid rgba(255, 255, 255, 0.12)',
+                  backdropFilter: 'blur(24px)',
+                  WebkitBackdropFilter: 'blur(24px)',
+                  borderRadius: '16px',
                   padding: '40px',
                   position: 'relative',
                   overflow: 'hidden',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-                  transition: 'transform 0.5s ease',
+                  boxShadow: '0 30px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)',
+                  transition: 'transform 0.5s ease, border-color 0.4s ease',
                 }}>
-                  <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '180px', fontWeight: '900', color: 'rgba(255, 255, 255, 0.02)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
+                  <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '180px', fontWeight: '900', color: 'rgba(255, 255, 255, 0.03)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
                     {step.num}
                   </div>
                   

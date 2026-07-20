@@ -81,7 +81,7 @@ export default function ReviewsBlock() {
                 left: '20px', 
                 fontSize: '120px', 
                 fontFamily: 'var(--font-serif)', 
-                color: 'rgba(212, 175, 55, 0.1)', 
+                color: 'rgba(212, 175, 55, 0.25)', 
                 lineHeight: 1, 
                 zIndex: 0,
                 userSelect: 'none'
