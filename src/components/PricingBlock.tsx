@@ -6,36 +6,39 @@ export default function PricingBlock() {
       title: 'Гражданам',
       subtitle: 'Защита личных интересов',
       popular: false,
-      price: 'от ХХ ХХХ ₽',
+      price: 'от 2 000 ₽',
       features: [
-        'Сложные семейные споры (раздел)',
-        'Банкротство физических лиц',
-        'Наследственные дела',
-        'Споры с застройщиками'
+        { name: 'Устная консультация', value: '2 000 ₽' },
+        { name: 'Составление иска', value: 'от 10 000 ₽' },
+        { name: 'Ведение дела в суде', value: 'от 15 000 ₽' },
+        { name: 'Апелляционная жалоба', value: 'от 20 000 ₽' },
+        { name: 'Ознакомление с делом', value: '4 000 ₽/том' }
       ]
     },
     {
       title: 'Бизнесу',
       subtitle: 'Комплексное сопровождение',
       popular: true,
-      price: 'от ХХ ХХХ ₽',
+      price: 'от 5 000 ₽',
       features: [
-        'Арбитражные споры',
-        'Банкротство юр. лиц',
-        'Налоговая практика',
-        'Корпоративные конфликты'
+        { name: 'Консультация (юр. лица)', value: '5 000 ₽' },
+        { name: 'Разработка договоров', value: 'от 10 000 ₽' },
+        { name: 'Претензионная работа', value: 'от 15 000 ₽' },
+        { name: 'Судебное представительство', value: 'от 15 000 ₽' },
+        { name: 'Анализ документов', value: 'от 10 000 ₽' }
       ]
     },
     {
-      title: 'Уголовная практика',
-      subtitle: 'Защита по экономическим статьям',
+      title: 'Документы и консалтинг',
+      subtitle: 'Правовая аналитика',
       popular: false,
-      price: 'от ХХ ХХХ ₽',
+      price: 'от 10 000 ₽',
       features: [
-        'Участие на стадии проверки',
-        'Защита на следствии и в суде',
-        'Сопровождение обысков',
-        'Защита руководителей (УК РФ)'
+        { name: 'Письменная консультация', value: 'от 30 000 ₽' },
+        { name: 'Правовое заключение', value: 'от 35 000 ₽' },
+        { name: 'Участие в переговорах', value: '15 000 ₽' },
+        { name: 'Представление в гос. органах', value: '15 000 ₽' },
+        { name: 'Внутренняя документация', value: 'от 15 000 ₽' }
       ]
     }
   ];
@@ -53,7 +56,7 @@ export default function PricingBlock() {
             Стоимость услуг
           </h2>
           <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '700px', margin: '0 auto' }}>
-            Каждое дело требует индивидуального подхода. Итоговая стоимость фиксируется в договоре после бесплатного анализа вашей ситуации.
+            Каждое дело требует индивидуального подхода. Ниже представлены базовые тарифы, итоговая стоимость фиксируется в договоре.
           </p>
         </div>
 
@@ -102,9 +105,12 @@ export default function PricingBlock() {
 
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 40px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {tier.features.map((feature, fIdx) => (
-                  <li key={fIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', opacity: 0.9 }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>{feature}</span>
+                  <li key={fIdx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', fontSize: '14px', opacity: 0.9 }}>
+                    <div style={{ display: 'flex', gap: '10px' }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '1px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span style={{ lineHeight: 1.3 }}>{feature.name}</span>
+                    </div>
+                    <span style={{ fontWeight: 600, whiteSpace: 'nowrap', color: tier.popular ? 'var(--color-primary)' : 'var(--color-deep-blue)' }}>{feature.value}</span>
                   </li>
                 ))}
               </ul>
