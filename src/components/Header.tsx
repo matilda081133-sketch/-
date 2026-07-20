@@ -2,12 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Logo from './Logo';
-
-import { megaMenuB2C, megaMenuB2B } from '../data/megaMenuData';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +15,18 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const b2cHubs = [
+    { title: "Семейные споры", href: "/grazhdanam/semejnie" },
+    { title: "Банкротство физ. лиц", href: "/grazhdanam/bankrotstvo" },
+    { title: "Наследственные дела", href: "/grazhdanam/nasledstvo" }
+  ];
+
+  const b2bHubs = [
+    { title: "Арбитражные споры", href: "/biznesu/arbitrazh" },
+    { title: "Налоговая практика", href: "/biznesu/nalogi" },
+    { title: "Банкротство юр. лиц", href: "/biznesu/bankrotstvo" }
+  ];
+
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -25,42 +35,94 @@ export default function Header() {
         </Link>
         <nav style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'nowrap', whiteSpace: 'nowrap' }}>
           <div style={{ display: 'flex', gap: '20px', fontSize: '14px' }}>
-            <Link href="/o-kompanii" className="nav-link">О компании</Link>
             
-            <div className="nav-item-dropdown">
-              <Link href="/grazhdanam" className="nav-link">Гражданам</Link>
-              <ul className="dropdown-level-1">
-                {megaMenuB2C.map((col, idx) => (
-                  <li className="dropdown-item-1" key={idx}>
-                    <div className="dropdown-link-1">
-                      {col.title}
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </div>
-                    <ul className="dropdown-level-2">
-                      {col.links.map((link, lIdx) => (
-                        <li key={lIdx}><Link href={link.href} className="dropdown-link-2">{link.label}</Link></li>
-                      ))}
-                    </ul>
-                  </li>
+            {/* О компании */}
+            <div 
+              className="nav-item-dropdown" 
+              onMouseEnter={() => setOpenDropdown('about')} 
+              onMouseLeave={() => setOpenDropdown(null)}
+              onFocus={() => setOpenDropdown('about')}
+              onBlur={() => setOpenDropdown(null)}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <Link href="/o-kompanii" className="nav-link">О компании</Link>
+                <button 
+                  aria-expanded={openDropdown === 'about'} 
+                  aria-controls="dropdown-about"
+                  className="chevron-btn"
+                  onClick={(e) => { e.preventDefault(); setOpenDropdown(openDropdown === 'about' ? null : 'about'); }}
+                  aria-label="Открыть меню О компании"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openDropdown === 'about' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}>
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <ul id="dropdown-about" className={`dropdown-simple ${openDropdown === 'about' ? 'show' : ''}`}>
+                <li><Link href="/o-kompanii" className="dropdown-link-2" style={{ fontWeight: 'bold' }}>Обзор раздела</Link></li>
+                <li><Link href="/o-kompanii" className="dropdown-link-2">О компании</Link></li>
+                <li><Link href="/specialisty" className="dropdown-link-2">Специалисты</Link></li>
+                <li><Link href="/otzyvy" className="dropdown-link-2">Отзывы</Link></li>
+                <li><Link href="/stoimost" className="dropdown-link-2">Стоимость</Link></li>
+              </ul>
+            </div>
+
+            {/* Гражданам */}
+            <div 
+              className="nav-item-dropdown"
+              onMouseEnter={() => setOpenDropdown('b2c')} 
+              onMouseLeave={() => setOpenDropdown(null)}
+              onFocus={() => setOpenDropdown('b2c')}
+              onBlur={() => setOpenDropdown(null)}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <Link href="/grazhdanam" className="nav-link">Гражданам</Link>
+                <button 
+                  aria-expanded={openDropdown === 'b2c'} 
+                  aria-controls="dropdown-b2c"
+                  className="chevron-btn"
+                  onClick={(e) => { e.preventDefault(); setOpenDropdown(openDropdown === 'b2c' ? null : 'b2c'); }}
+                  aria-label="Открыть меню Гражданам"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openDropdown === 'b2c' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}>
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <ul id="dropdown-b2c" className={`dropdown-simple ${openDropdown === 'b2c' ? 'show' : ''}`}>
+                <li><Link href="/grazhdanam" className="dropdown-link-2" style={{ fontWeight: 'bold' }}>Обзор раздела</Link></li>
+                {b2cHubs.map((hub, idx) => (
+                  <li key={idx}><Link href={hub.href} className="dropdown-link-2">{hub.title}</Link></li>
                 ))}
               </ul>
             </div>
 
-            <div className="nav-item-dropdown">
-              <Link href="/biznesu" className="nav-link">Бизнесу</Link>
-              <ul className="dropdown-level-1">
-                {megaMenuB2B.map((col, idx) => (
-                  <li className="dropdown-item-1" key={idx}>
-                    <div className="dropdown-link-1">
-                      {col.title}
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </div>
-                    <ul className="dropdown-level-2">
-                      {col.links.map((link, lIdx) => (
-                        <li key={lIdx}><Link href={link.href} className="dropdown-link-2">{link.label}</Link></li>
-                      ))}
-                    </ul>
-                  </li>
+            {/* Бизнесу */}
+            <div 
+              className="nav-item-dropdown"
+              onMouseEnter={() => setOpenDropdown('b2b')} 
+              onMouseLeave={() => setOpenDropdown(null)}
+              onFocus={() => setOpenDropdown('b2b')}
+              onBlur={() => setOpenDropdown(null)}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <Link href="/biznesu" className="nav-link">Бизнесу</Link>
+                <button 
+                  aria-expanded={openDropdown === 'b2b'} 
+                  aria-controls="dropdown-b2b"
+                  className="chevron-btn"
+                  onClick={(e) => { e.preventDefault(); setOpenDropdown(openDropdown === 'b2b' ? null : 'b2b'); }}
+                  aria-label="Открыть меню Бизнесу"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openDropdown === 'b2b' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}>
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <ul id="dropdown-b2b" className={`dropdown-simple ${openDropdown === 'b2b' ? 'show' : ''}`}>
+                <li><Link href="/biznesu" className="dropdown-link-2" style={{ fontWeight: 'bold' }}>Обзор раздела</Link></li>
+                {b2bHubs.map((hub, idx) => (
+                  <li key={idx}><Link href={hub.href} className="dropdown-link-2">{hub.title}</Link></li>
                 ))}
               </ul>
             </div>
@@ -112,3 +174,4 @@ export default function Header() {
     </header>
   );
 }
+

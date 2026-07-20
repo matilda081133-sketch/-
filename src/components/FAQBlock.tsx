@@ -1,25 +1,17 @@
 'use client';
 
-import { useState } from 'react';
-
 export default function FAQBlock() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   const faqs = [
-    { q: 'Как проходит первое обращение?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
-    { q: 'Какие документы нужно подготовить?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
-    { q: 'Как определяется стоимость юридической помощи?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
-    { q: 'Кто будет вести мое дело?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
-    { q: 'Можно ли подключить адвоката или нескольких специалистов?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
-    { q: 'Какие гарантии может дать юридическая компания?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
-    { q: 'Как я буду узнавать о ходе дела?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
-    { q: 'Можно ли работать дистанционно?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
-    { q: 'Как обеспечивается конфиденциальность?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' },
-    { q: 'Работаете ли вы за пределами Липецка и области?', a: 'Ответ будет подготовлен после согласования порядка работы с юристами.' }
+    { q: 'Как проходит первое обращение?', a: 'Ответ будет добавлен после согласования с профильным юристом.' },
+    { q: 'Какие документы нужно подготовить?', a: 'Ответ будет добавлен после согласования с профильным юристом.' },
+    { q: 'Как определяется стоимость юридической помощи?', a: 'Ответ будет добавлен после согласования с профильным юристом.' },
+    { q: 'Кто будет вести мое дело?', a: 'Ответ будет добавлен после согласования с профильным юристом.' },
+    { q: 'Можно ли подключить адвоката или нескольких специалистов?', a: 'Ответ будет добавлен после согласования с профильным юристом.' },
+    { q: 'Какие гарантии может дать юридическая компания?', a: 'Ответ будет добавлен после согласования с профильным юристом.' },
+    { q: 'Как я буду узнавать о ходе дела?', a: 'Ответ будет добавлен после согласования с профильным юристом.' },
+    { q: 'Можно ли работать дистанционно?', a: 'Ответ будет добавлен после согласования с профильным юристом.' },
+    { q: 'Как обеспечивается конфиденциальность?', a: 'Ответ будет добавлен после согласования с профильным юристом.' },
+    { q: 'Работаете ли вы за пределами Липецка и области?', a: 'Ответ будет добавлен после согласования с профильным юристом.' }
   ];
 
   return (
@@ -32,11 +24,11 @@ export default function FAQBlock() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
               <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
               <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                F.A.Q.
+                Частые вопросы клиентов
               </span>
             </div>
             <h2 style={{ fontSize: '48px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '32px', lineHeight: 1.1 }}>
-              Ответы на<br/>важные вопросы
+              Ответы на важные вопросы
             </h2>
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '40px', maxWidth: '400px' }}>
               Мы собрали самые частые вопросы наших доверителей. Если вы не нашли ответ на свой вопрос — свяжитесь с нами для индивидуальной консультации.
@@ -47,37 +39,26 @@ export default function FAQBlock() {
           {/* Right Side: Accordion */}
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {faqs.map((faq, index) => (
-              <div key={index} style={{
+              <details key={index} className="faq-details" style={{
                 background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, var(--color-accent) 100%)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
-                overflow: 'hidden',
                 borderRadius: '0',
-                transition: 'var(--transition)'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 20px 40px rgba(16, 39, 59, 0.15)'}
-              onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'none'}
-              >
-                <button 
-                  onClick={() => toggle(index)}
-                  style={{
-                    width: '100%',
-                    textAlign: 'left',
-                    padding: '32px',
-                    background: 'transparent',
-                    border: 'none',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    cursor: 'pointer',
-                    fontSize: '20px',
-                    fontWeight: '500',
-                    color: 'var(--color-white)',
-                    fontFamily: 'var(--font-sans)',
-                    transition: 'var(--transition)'
-                  }}
-                >
+                transition: 'var(--transition)',
+                color: 'var(--color-white)'
+              }}>
+                <summary style={{
+                  padding: '32px',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  cursor: 'pointer',
+                  fontSize: '20px',
+                  fontWeight: '500',
+                  fontFamily: 'var(--font-sans)',
+                  listStyle: 'none'
+                }} className="faq-summary">
                   <span style={{ paddingRight: '20px', lineHeight: 1.4 }}>{faq.q}</span>
-                  <span style={{ 
+                  <span className="faq-icon" style={{ 
                     display: 'inline-flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -85,21 +66,15 @@ export default function FAQBlock() {
                     height: '40px',
                     borderRadius: '50%',
                     border: '1px solid rgba(255, 255, 255, 0.2)',
-                    background: openIndex === index ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
-                    color: 'var(--color-white)',
                     transition: 'all 0.3s ease',
                     flexShrink: 0
                   }}>
-                    {openIndex === index ? '−' : '+'}
+                    +
                   </span>
-                </button>
+                </summary>
                 
                 <div style={{
-                  maxHeight: openIndex === index ? '300px' : '0',
-                  opacity: openIndex === index ? 1 : 0,
-                  overflow: 'hidden',
-                  transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-                  padding: openIndex === index ? '0 32px 32px 32px' : '0 32px',
+                  padding: '0 32px 32px 32px',
                   color: 'rgba(255, 255, 255, 0.8)',
                   lineHeight: '1.6',
                   fontSize: '16px'
@@ -108,12 +83,24 @@ export default function FAQBlock() {
                     {faq.a}
                   </div>
                 </div>
-              </div>
+              </details>
             ))}
           </div>
           
         </div>
       </div>
+      <style jsx>{`
+        .faq-summary::-webkit-details-marker {
+          display: none;
+        }
+        details[open] .faq-icon {
+          background: rgba(255, 255, 255, 0.1);
+          transform: rotate(45deg);
+        }
+        details:hover {
+          box-shadow: 0 20px 40px rgba(16, 39, 59, 0.15);
+        }
+      `}</style>
     </section>
   );
 }

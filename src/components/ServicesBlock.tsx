@@ -3,92 +3,75 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-type Tab = 'business' | 'citizens';
+type Tab = 'citizens' | 'business';
 
 export default function ServicesBlock() {
-  const [activeTab, setActiveTab] = useState<Tab>('business');
+  const [activeTab, setActiveTab] = useState<Tab>('citizens');
 
   const tabs = [
-    { id: 'business', label: 'Юридическим лицам' },
-    { id: 'citizens', label: 'Физическим лицам' }
+    { id: 'citizens', label: 'Гражданам' },
+    { id: 'business', label: 'Бизнесу' }
   ];
 
-  const services = {
-    business: [
-      {
-        num: '01',
-        title: 'Арбитражные споры',
-        desc: 'Взыскание дебиторской задолженности, споры по договорам подряда и поставки, оспаривание сделок и защита интересов в суде.',
-        link: '/biznesu/arbitrazh'
-      },
-      {
-        num: '02',
-        title: 'Налоговая практика',
-        desc: 'Защита при налоговых проверках, оспаривание доначислений ФНС, налоговый консалтинг и возмещение НДС.',
-        link: '/biznesu/nalogi'
-      },
-      {
-        num: '03',
-        title: 'Банкротство юр. лиц',
-        desc: 'Защита от субсидиарной ответственности, оспаривание сделок должника, включение в реестр кредиторов.',
-        link: '/biznesu/bankrotstvo'
-      },
-      {
-        num: '04',
-        title: 'Корпоративное право',
-        desc: 'Разрешение конфликтов учредителей, структурирование бизнеса, защита корпоративных интересов в суде.',
-        link: '/biznesu/korporativnoe'
-      },
-      {
-        num: '05',
-        title: 'Недвижимость и стройка',
-        desc: 'Сопровождение инвестиционных проектов, споры по аренде и подряду, легализация недвижимости.',
-        link: '/biznesu/nedvizhimost'
-      },
-      {
-        num: '06',
-        title: 'Защита бизнеса (УК РФ)',
-        desc: 'Защита при полицейских проверках (ОЭБиПК), сопровождение обысков, защита по экономическим статьям.',
-        link: '/biznesu/ugolovnaya'
-      }
-    ],
+  const priorityServices = [
+    {
+      num: '01',
+      title: 'Земельные споры',
+      desc: 'Оспаривание кадастровой стоимости, установление границ участка, споры о правах на землю, легализация самостроя.',
+      link: '/grazhdanam/zemelnye-spory'
+    },
+    {
+      num: '02',
+      title: 'Споры с недвижимостью',
+      desc: 'Сопровождение сделок с недвижимостью, защита прав дольщиков (ДДУ), взыскание неустойки с застройщика.',
+      link: '/grazhdanam/zhilischnye-voprosy'
+    },
+    {
+      num: '03',
+      title: 'Исполнительное производство',
+      desc: 'Взаимодействие с судебными приставами, снятие арестов с имущества, обжалование действий ФССП.',
+      link: '/grazhdanam/ispolnitelnoe-proizvodstvo'
+    },
+    {
+      num: '04',
+      title: 'Уголовная защита',
+      desc: 'Защита на стадии доследственной проверки, следствия и в суде. Экономические и должностные преступления.',
+      link: '/grazhdanam/ugolovnaya-zaschita'
+    },
+    {
+      num: '05',
+      title: 'Военное право',
+      desc: 'Консультации при мобилизации и призыве, оспаривание решений ВВК, выплаты военнослужащим.',
+      link: '/grazhdanam/voennyy-yurist'
+    },
+    {
+      num: '06',
+      title: 'Юридическое обслуживание',
+      desc: 'Аутсорсинг юридических услуг для бизнеса, договорная работа, претензионно-исковая работа, комплаенс.',
+      link: '/biznesu/yuridicheskoe-obsluzhivanie'
+    }
+  ];
+
+  const allServices = {
     citizens: [
-      {
-        num: '01',
-        title: 'Банкротство физических лиц',
-        desc: 'Защита имущества от взысканий, взаимодействие с финансовыми управляющими, внесудебное банкротство.',
-        link: '/grazhdanam/bankrotstvo'
-      },
-      {
-        num: '02',
-        title: 'Семейные споры',
-        desc: 'Бракоразводные процессы, раздел совместно нажитого имущества, споры о детях и алиментные обязательства.',
-        link: '/grazhdanam/semejnie'
-      },
-      {
-        num: '03',
-        title: 'Споры с застройщиками',
-        desc: 'Взыскание неустойки за просрочку, компенсация за строительные недостатки, споры по ДДУ.',
-        link: '/grazhdanam/zastroishiki'
-      },
-      {
-        num: '04',
-        title: 'Защита прав потребителей',
-        desc: 'Возврат бракованных автомобилей, споры со страховыми компаниями, взыскание ущерба за некачественные услуги.',
-        link: '/grazhdanam/potrebiteli'
-      },
-      {
-        num: '05',
-        title: 'Наследственные дела',
-        desc: 'Оспаривание завещаний, восстановление сроков принятия наследства, раздел наследственного имущества.',
-        link: '/grazhdanam/nasledstvo'
-      },
-      {
-        num: '06',
-        title: 'Миграционные споры',
-        desc: 'Отмена выдворения и депортации, снятие запрета на въезд в РФ, оспаривание решений миграционных органов.',
-        link: '/praktika/migracionnaya'
-      }
+      { title: "Банкротство и долги", href: "/grazhdanam/bankrotstvo-i-dolgi" },
+      { title: "Семейные споры", href: "/grazhdanam/semeynye-spory" },
+      { title: "Уголовная защита", href: "/grazhdanam/ugolovnaya-zaschita" },
+      { title: "Жилищные вопросы", href: "/grazhdanam/zhilischnye-voprosy" },
+      { title: "Защита прав потребителей", href: "/grazhdanam/zaschita-prav-potrebiteley" },
+      { title: "Земельные споры", href: "/grazhdanam/zemelnye-spory" },
+      { title: "Автоюрист", href: "/grazhdanam/avtoyurist" },
+      { title: "Наследственные дела", href: "/grazhdanam/nasledstvennye-dela" },
+      { title: "Военный юрист", href: "/grazhdanam/voennyy-yurist" },
+      { title: "Исполнительное производство", href: "/grazhdanam/ispolnitelnoe-proizvodstvo" }
+    ],
+    business: [
+      { title: "Арбитражные споры", href: "/biznesu/arbitrazhnye-spory" },
+      { title: "Юридическое обслуживание", href: "/biznesu/yuridicheskoe-obsluzhivanie" },
+      { title: "Банкротство юридических лиц", href: "/biznesu/bankrotstvo-yuridicheskih-lits" },
+      { title: "Налоговые споры", href: "/biznesu/nalogovye-spory" },
+      { title: "Корпоративные споры", href: "/biznesu/korporativnye-spory" },
+      { title: "Таможенные споры", href: "/biznesu/tamozhennye-spory" }
     ]
   };
 
@@ -100,46 +83,16 @@ export default function ServicesBlock() {
       <div style={{ position: 'absolute', bottom: '-20%', left: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(23, 50, 77, 0.06) 0%, transparent 70%)', filter: 'blur(60px)', zIndex: 0, pointerEvents: 'none' }}></div>
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <div style={{ textAlign: 'left', marginBottom: '80px' }}>
+        <div style={{ textAlign: 'left', marginBottom: '60px' }}>
           <h2 style={{ marginTop: 0, marginBottom: '16px' }}>Приоритетные направления</h2>
-          <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0 0 40px 0' }}>
+          <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0' }}>
             Основные направления юридической помощи гражданам и бизнесу.
           </p>
-
-          {/* Switcher / Переключатель */}
-          <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-            <div style={{ 
-              display: 'inline-flex', 
-              background: 'var(--gradient-light)', 
-              border: '1px solid var(--color-primary)',
-            }}>
-              {tabs.map(tab => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id as Tab)}
-                  style={{
-                    padding: '16px 48px',
-                    border: 'none',
-                    background: activeTab === tab.id ? 'var(--color-primary)' : 'transparent',
-                    color: activeTab === tab.id ? 'var(--color-white)' : 'var(--color-primary)',
-                    fontSize: '16px',
-                    fontWeight: 500,
-                    cursor: 'pointer',
-                    transition: 'var(--transition)',
-                    outline: 'none',
-                    minWidth: '250px'
-                  }}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
         
-        {/* Cards Grid */}
-        <div className="grid grid-3" style={{ gap: '30px' }}>
-          {services[activeTab].map((service, index) => (
+        {/* Priority Cards Grid */}
+        <div className="grid grid-3" style={{ gap: '30px', marginBottom: '80px' }}>
+          {priorityServices.map((service, index) => (
             <Link href={service.link} key={index} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', height: '100%' }}>
               <div className="card-service" style={{ width: '100%', height: '100%', border: '1px solid rgba(200, 169, 126, 0.4)' }}>
                 <div className="card-service-num">{service.num}</div>
@@ -195,7 +148,75 @@ export default function ServicesBlock() {
             </Link>
           ))}
         </div>
+
+        {/* All Services Tabs Block */}
+        <div style={{ background: 'var(--color-white)', borderRadius: '12px', padding: '40px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', border: '1px solid rgba(23, 50, 77, 0.05)' }}>
+          <h3 style={{ marginTop: 0, marginBottom: '30px', fontSize: '24px', textAlign: 'center' }}>Все направления</h3>
+          
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
+            <div style={{ 
+              display: 'inline-flex', 
+              background: 'var(--gradient-light)', 
+              border: '1px solid var(--color-primary)',
+              borderRadius: '4px',
+              overflow: 'hidden'
+            }}>
+              {tabs.map(tab => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as Tab)}
+                  style={{
+                    padding: '12px 32px',
+                    border: 'none',
+                    background: activeTab === tab.id ? 'var(--color-primary)' : 'transparent',
+                    color: activeTab === tab.id ? 'var(--color-white)' : 'var(--color-primary)',
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    transition: 'var(--transition)',
+                    outline: 'none',
+                    minWidth: '200px'
+                  }}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
+            {allServices[activeTab].map((item, idx) => (
+              <Link href={item.href} key={idx} style={{ 
+                padding: '16px 24px', 
+                background: 'rgba(234, 241, 246, 0.3)', 
+                borderRadius: '8px',
+                color: 'var(--color-deep-blue)',
+                fontWeight: 500,
+                fontSize: '15px',
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                transition: 'background 0.3s, transform 0.3s'
+              }} className="hub-link">
+                <span>{item.title}</span>
+                <span style={{ color: 'var(--color-primary)', opacity: 0.5 }}>→</span>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
+      <style dangerouslySetInnerHTML={{__html:`
+        .hub-link:hover {
+          background: rgba(234, 241, 246, 0.8) !important;
+          transform: translateY(-2px);
+        }
+        .hub-link:hover span:last-child {
+          opacity: 1 !important;
+          transform: translateX(4px);
+          transition: all 0.3s ease;
+        }
+      `}} />
     </section>
   );
 }

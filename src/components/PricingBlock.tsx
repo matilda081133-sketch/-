@@ -58,6 +58,9 @@ export default function PricingBlock() {
           <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '700px', margin: '0 auto' }}>
             Каждое дело требует индивидуального подхода. Ниже представлены базовые тарифы, итоговая стоимость фиксируется в договоре.
           </p>
+          <div style={{ display: 'inline-block', marginTop: '20px', padding: '6px 16px', background: 'rgba(23, 50, 77, 0.05)', borderRadius: '4px', border: '1px solid var(--color-border)', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
+            Тестовые значения для согласования
+          </div>
         </div>
 
         <div className="grid grid-3" style={{ gap: '30px', alignItems: 'stretch' }}>

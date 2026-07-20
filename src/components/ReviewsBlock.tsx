@@ -1,45 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-
 export default function ReviewsBlock() {
-  const [showAll, setShowAll] = useState(false);
-
-  const reviews = [
-    {
-      text: "Юристы Де-Юре помогли отбить субсидиарную ответственность на сумму более 40 млн рублей. Процесс длился почти год, но результат превзошел ожидания. Работают четко, без лишних обещаний, опираясь только на факты.",
-      author: "Александр М.",
-      role: "Владелец строительной компании"
-    },
-    {
-      text: "Обратились по рекомендации после того, как налоговая доначислила огромную сумму по выездной проверке. Адвокаты подключились на этапе возражений и смогли снизить сумму претензий в суде на 80%.",
-      author: "Екатерина В.",
-      role: "Финансовый директор"
-    },
-    {
-      text: "Единственная компания в городе, которая честно сказала о рисках до подписания договора. В итоге мы отказались от бесперспективного иска и сэкономили кучу денег на пошлинах и экспертизах. Очень ценю такой подход.",
-      author: "Михаил С.",
-      role: "Индивидуальный предприниматель"
-    },
-    {
-      text: "Блестяще провели процедуру банкротства нашей компании. Все прошло максимально гладко, активы были защищены на законных основаниях. Настоящие профессионалы, которым можно доверять.",
-      author: "Сергей Н.",
-      role: "Генеральный директор"
-    },
-    {
-      text: "Взыскали долг по договору подряда в полном объеме, включая все пени и неустойки. Отличная работа в арбитраже. Юристы всегда были на связи и оперативно отвечали на все вопросы.",
-      author: "Олег Т.",
-      role: "Учредитель ООО"
-    },
-    {
-      text: "Помогли решить сложнейший корпоративный конфликт без потери бизнеса. Юристы Де-Юре разработали стратегию, которая позволила нам выкупить долю партнера на выгодных условиях.",
-      author: "Наталья П.",
-      role: "Соучредитель"
-    }
-  ];
-
-  const visibleReviews = showAll ? reviews : reviews.slice(0, 3);
-
   return (
     <section id="reviews" className="section bg-grey-blue" style={{ position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
@@ -54,13 +15,45 @@ export default function ReviewsBlock() {
           <h2 style={{ fontSize: '42px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0, lineHeight: 1.2, maxWidth: '600px' }}>
             Доверие, подкрепленное результатами
           </h2>
-          <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', margin: 0, maxWidth: '400px' }}>
+          <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', margin: 0, maxWidth: '400px', fontWeight: 500, fontStyle: 'italic', borderLeft: '3px solid var(--color-primary)', paddingLeft: '16px' }}>
             Мы сохраняем строгую адвокатскую тайну, поэтому публикуем отзывы только с согласия доверителей.
           </p>
         </div>
 
-        <div className="grid grid-3" style={{ gap: '30px', transition: 'all 0.5s ease-in-out' }}>
-          {visibleReviews.map((review, idx) => (
+        {/* Rating Badges Row */}
+        <div style={{ display: 'flex', gap: '30px', marginBottom: '60px', flexWrap: 'wrap' }}>
+          {/* Yandex Maps Mock */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', background: 'var(--color-white)', padding: '20px 30px', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', flex: '1', minWidth: '280px' }}>
+            <div style={{ width: '48px', height: '48px', background: '#FC3F1D', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '24px' }}>Я</div>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                <span style={{ fontSize: '24px', fontWeight: 800, color: 'var(--color-deep-blue)', lineHeight: 1 }}>5.0</span>
+                <div style={{ display: 'flex', gap: '2px', color: '#FC3F1D' }}>
+                  {[1,2,3,4,5].map(i => <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>)}
+                </div>
+              </div>
+              <div style={{ color: 'var(--color-text-secondary)', fontSize: '14px' }}>Яндекс Карты</div>
+            </div>
+          </div>
+
+          {/* 2GIS Mock */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', background: 'var(--color-white)', padding: '20px 30px', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', flex: '1', minWidth: '280px' }}>
+            <div style={{ width: '48px', height: '48px', background: '#A3C83D', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>2ГИС</div>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                <span style={{ fontSize: '24px', fontWeight: 800, color: 'var(--color-deep-blue)', lineHeight: 1 }}>5.0</span>
+                <div style={{ display: 'flex', gap: '2px', color: '#A3C83D' }}>
+                  {[1,2,3,4,5].map(i => <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>)}
+                </div>
+              </div>
+              <div style={{ color: 'var(--color-text-secondary)', fontSize: '14px' }}>Отзывы 2ГИС</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Wireframe Review Cards */}
+        <div className="grid grid-3" style={{ gap: '30px' }}>
+          {[1, 2, 3].map((idx) => (
             <div key={idx} style={{
               background: 'var(--color-white)',
               border: '1px solid var(--color-border)',
@@ -68,20 +61,17 @@ export default function ReviewsBlock() {
               position: 'relative',
               display: 'flex',
               flexDirection: 'column',
-              transition: 'var(--transition)',
-              boxShadow: '0 12px 36px rgba(23, 50, 77, 0.06)',
-              animation: 'fadeIn 0.5s ease-out forwards'
-            }}
-            className="review-text-card"
-            >
+              boxShadow: '0 4px 12px rgba(23, 50, 77, 0.03)',
+              minHeight: '280px'
+            }}>
               {/* Quote Mark */}
               <div style={{ 
                 position: 'absolute', 
                 top: '-20px', 
                 left: '20px', 
-                fontSize: '120px', 
+                fontSize: '100px', 
                 fontFamily: 'var(--font-serif)', 
-                color: 'rgba(212, 175, 55, 0.25)', 
+                color: 'var(--color-grey-blue)', 
                 lineHeight: 1, 
                 zIndex: 0,
                 userSelect: 'none'
@@ -89,59 +79,28 @@ export default function ReviewsBlock() {
                 “
               </div>
               
-              <div style={{ position: 'relative', zIndex: 1, flexGrow: 1 }}>
-                <p style={{ 
-                  fontSize: '16px', 
-                  lineHeight: 1.7, 
-                  color: 'var(--color-text-main)', 
-                  fontStyle: 'italic',
-                  marginBottom: '30px'
-                }}>
-                  "{review.text}"
-                </p>
+              <div style={{ position: 'relative', zIndex: 1, flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '12px', paddingTop: '20px' }}>
+                {/* Wireframe Text Lines */}
+                <div style={{ height: '14px', background: 'var(--color-grey-blue)', borderRadius: '4px', width: '100%' }}></div>
+                <div style={{ height: '14px', background: 'var(--color-grey-blue)', borderRadius: '4px', width: '90%' }}></div>
+                <div style={{ height: '14px', background: 'var(--color-grey-blue)', borderRadius: '4px', width: '95%' }}></div>
+                <div style={{ height: '14px', background: 'var(--color-grey-blue)', borderRadius: '4px', width: '60%' }}></div>
               </div>
 
-              <div style={{ position: 'relative', zIndex: 1, borderTop: '1px solid rgba(23, 50, 77, 0.05)', paddingTop: '20px' }}>
-                <div style={{ fontWeight: 700, color: 'var(--color-deep-blue)', fontSize: '16px', marginBottom: '4px' }}>
-                  {review.author}
-                </div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                  {review.role}
-                </div>
+              <div style={{ position: 'relative', zIndex: 1, borderTop: '1px solid rgba(23, 50, 77, 0.05)', paddingTop: '20px', marginTop: '20px' }}>
+                <div style={{ height: '16px', background: '#D7E0E6', borderRadius: '4px', width: '120px', marginBottom: '8px' }}></div>
+                <div style={{ height: '12px', background: 'var(--color-grey-blue)', borderRadius: '4px', width: '80px' }}></div>
+              </div>
+              
+              {/* Overlay Disclaimer */}
+              <div style={{ position: 'absolute', inset: 0, background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(2px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', textAlign: 'center' }}>
+                <span style={{ background: 'var(--color-primary)', color: 'white', padding: '8px 16px', borderRadius: '4px', fontSize: '13px', fontWeight: 600 }}>Ожидается публикация</span>
               </div>
             </div>
           ))}
         </div>
 
-        {reviews.length > 3 && (
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
-            <button 
-              onClick={() => setShowAll(!showAll)}
-              className="btn btn-outline"
-              style={{
-                background: 'transparent',
-                color: 'var(--color-primary)',
-                border: '1px solid var(--color-primary)',
-                cursor: 'pointer'
-              }}
-            >
-              {showAll ? 'Скрыть отзывы' : 'Читать все отзывы'}
-            </button>
-          </div>
-        )}
-
       </div>
-      <style jsx>{`
-        .review-text-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 20px 40px rgba(23, 50, 77, 0.08) !important;
-          border-color: rgba(212, 175, 55, 0.3) !important;
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
     </section>
   );
 }
