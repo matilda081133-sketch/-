@@ -52,7 +52,7 @@ export default function TeamCarousel() {
   ];
 
   return (
-    <section className="section bg-grey-blue">
+    <section className="section bg-cream">
       <div className="container">
         <div className="flex justify-between items-center" style={{ marginBottom: '50px' }}>
           <h2 style={{ margin: 0, fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)' }}>Наша команда</h2>
@@ -106,7 +106,10 @@ export default function TeamCarousel() {
                 height: 'auto'
               }}>
                 <div style={{ height: '280px', marginBottom: '24px', borderRadius: '8px', flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
-                  <img src={person.img} alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)' }}>
+                    <div style={{ width: '40px', height: '40px', border: '1px solid rgba(212, 175, 55, 0.4)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', fontSize: '20px' }}>DJ</div>
+                    <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Фото ожидается</span>
+                  </div>
                 </div>
                 <h4 style={{ margin: '0 0 8px 0', fontSize: '20px', color: 'var(--color-primary)' }}>{person.name}</h4>
                 <p style={{ color: 'var(--color-accent)', fontWeight: 600, margin: '0 0 16px 0', fontSize: '14px' }}>{person.role}</p>

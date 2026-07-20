@@ -274,12 +274,7 @@ export default function Home() {
       </div>
 
       {/* 3. WHY US / USP */}
-      <section className="section" style={{ 
-        background: 'var(--gradient-light)',
-        backgroundImage: 'url(/images/organic-pattern.svg)', 
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+      <section className="section bg-grey-blue" style={{ 
         padding: '100px 0', 
         borderTop: '1px solid var(--color-border)', 
         borderBottom: '1px solid var(--color-border)',
@@ -306,10 +301,8 @@ export default function Home() {
           
           <div style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(3, 1fr)', 
-            borderTop: '1px solid var(--color-primary)', 
-            borderLeft: '1px solid rgba(23, 50, 77, 0.1)',
-            borderBottom: '1px solid rgba(23, 50, 77, 0.1)'
+            gridTemplateColumns: 'repeat(4, 1fr)', 
+            gap: '24px'
           }}>
             
             {[
@@ -317,58 +310,66 @@ export default function Home() {
                 num: "01",
                 tag: "Специализация",
                 title: "Профильный специалист по каждому направлению",
-                desc: "Мы не беремся за всё подряд силами одного юриста. Вашим делом будет заниматься специалист, который ежедневно практикует именно в этой отрасли права."
+                desc: "Мы не беремся за всё подряд силами одного юриста. Вашим делом будет заниматься специалист, который ежедневно практикует именно в этой отрасли права.",
+                span: "span 2"
               },
               {
                 num: "02",
                 tag: "Командная работа",
                 title: "Комплексная защита",
-                desc: "При необходимости подключаем адвоката и других профильных специалистов из нашей команды, без поиска экспертов на стороне."
+                desc: "При необходимости подключаем адвоката и других профильных специалистов из нашей команды, без поиска экспертов на стороне.",
+                span: "span 2"
               },
               {
                 num: "03",
                 tag: "Анализ",
                 title: "Честная оценка рисков",
-                desc: "Оцениваем возможные варианты, риски и необходимые этапы работы до подписания договора. Прямо говорим о судебных перспективах."
+                desc: "Оцениваем возможные варианты, риски и необходимые этапы работы до подписания договора. Прямо говорим о судебных перспективах.",
+                span: "span 1"
               },
               {
                 num: "04",
                 tag: "Сопровождение",
                 title: "Работа под ключ",
-                desc: "Сопровождаем клиента на тех этапах, которые требуются для решения задачи. Представляем интересы по доверенности."
+                desc: "Сопровождаем клиента на тех этапах, которые требуются для решения задачи. Представляем интересы по доверенности.",
+                span: "span 1"
               },
               {
                 num: "05",
                 tag: "Региональная практика",
                 title: "Работаем в Липецке и области",
-                desc: "Мы местная компания. Знаем специфику работы судов, правоохранительных органов и государственных учреждений нашего региона."
+                desc: "Мы местная компания. Знаем специфику работы судов, правоохранительных органов и государственных учреждений нашего региона.",
+                span: "span 2"
               },
               {
                 num: "06",
                 tag: "Понятные условия",
                 title: "Объем работ закреплен в договоре",
-                desc: "Никаких внезапных платежей. Точный перечень действий специалиста и порядок оплаты фиксируются в официальном договоре."
+                desc: "Никаких внезапных платежей. Точный перечень действий специалиста и порядок оплаты фиксируются в официальном договоре.",
+                span: "span 2"
               }
             ].map((item, i) => (
-              <div key={i} className="usp-card" style={{ 
+              <div key={i} className="usp-card group" style={{ 
+                gridColumn: item.span,
                 padding: '40px', 
-                borderRight: '1px solid rgba(23, 50, 77, 0.1)',
-                borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
+                border: '1px solid rgba(23, 50, 77, 0.1)',
                 background: 'rgba(255, 255, 255, 0.85)',
-                backdropFilter: 'blur(12px)',
-                position: 'relative'
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
               }}>
-                <div className="usp-accent"></div>
-                <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-text-secondary)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
-                  {item.tag}
+                <div>
+                  <div style={{ fontSize: '11px', letterSpacing: '0.15em', color: 'var(--color-primary)', fontWeight: 700, marginBottom: '24px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
+                    {item.tag}
+                  </div>
+                  <h3 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1, lineHeight: 1.3 }}>
+                    {item.title}
+                  </h3>
                 </div>
-                <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
-                  {item.title}
-                </h3>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1 }}>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1, marginTop: '20px' }}>
                   {item.desc}
                 </p>
-
               </div>
             ))}
 
@@ -405,7 +406,13 @@ export default function Home() {
             </div>
 
             {/* Scrolling Right Content */}
-            <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: '80px' }}>
+            <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: '80px', position: 'relative', paddingLeft: '40px' }}>
+              {/* Timeline Line */}
+              <div style={{ position: 'absolute', top: '0', bottom: '0', left: '0', width: '2px', background: 'rgba(255, 255, 255, 0.1)' }}>
+                {/* Simulated progress indicator (CSS based for smooth scroll fill) */}
+                <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '30%', background: 'var(--color-primary)' }}></div>
+              </div>
+
               {[
                 { num: '01', title: 'Анализ ситуации', desc: 'Мы начинаем с глубокого погружения в вашу проблему. Изучаем все имеющиеся документы, оцениваем риски и судебные перспективы дела. Никаких пустых обещаний — только честный правовой анализ.', img: 'images/stage_1.png' },
                 { num: '02', title: 'Стратегия', desc: 'На основе анализа мы разрабатываем оптимальный правовой путь. Собираем необходимую доказательную базу, привлекаем экспертов и готовим процессуальные документы.', img: 'images/stage_2.png' },
@@ -420,17 +427,15 @@ export default function Home() {
                   borderRadius: '0',
                   padding: '40px',
                   position: 'relative',
-                  overflow: 'hidden',
+                  overflow: 'visible',
                   boxShadow: '0 30px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)',
                   transition: 'transform 0.5s ease, border-color 0.4s ease',
                 }}>
+                  {/* Timeline Dot */}
+                  <div style={{ position: 'absolute', top: '50px', left: '-45px', width: '12px', height: '12px', borderRadius: '50%', background: i === 0 ? 'var(--color-primary)' : 'rgba(255, 255, 255, 0.2)', border: '2px solid var(--color-deep-blue)' }}></div>
+
                   <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '180px', fontWeight: '900', color: 'rgba(255, 255, 255, 0.03)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
                     {step.num}
-                  </div>
-                  
-                  <div style={{ position: 'relative', width: '100%', paddingTop: '65%', borderRadius: '0', overflow: 'hidden', marginBottom: '40px', zIndex: 1 }}>
-                    <img src={step.img} alt={step.title} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s ease' }} className="stage-img" />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16, 39, 59, 0.8) 0%, transparent 100%)' }}></div>
                   </div>
 
                   <div style={{ position: 'relative', zIndex: 1 }}>
@@ -454,7 +459,7 @@ export default function Home() {
       <TeamCarousel />
 
       {/* 6. CASES */}
-      <section className="section bg-cream">
+      <section className="section bg-white">
         <div className="container">
           <div className="flex justify-between items-end" style={{ marginBottom: '50px', flexWrap: 'wrap', gap: '20px' }}>
             <div className="reveal-on-scroll">
