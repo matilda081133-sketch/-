@@ -5,6 +5,7 @@ import ServicesBlock from '@/components/ServicesBlock';
 import FAQBlock from '@/components/FAQBlock';
 import PricingBlock from '@/components/PricingBlock';
 import PhoneInput from '@/components/PhoneInput';
+import ReviewsBlock from '@/components/ReviewsBlock';
 
 export default function Home() {
   return (
@@ -552,6 +553,9 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* 7. REVIEWS SECTION */}
+      <ReviewsBlock />
 
       {/* 8. PRICING SECTION */}
       <PricingBlock />
