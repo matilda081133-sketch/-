@@ -434,13 +434,13 @@ export default function Home() {
                   {/* Timeline Dot */}
                   <div style={{ position: 'absolute', top: '50px', left: '-45px', width: '12px', height: '12px', borderRadius: '50%', background: i === 0 ? 'var(--color-primary)' : 'rgba(255, 255, 255, 0.2)', border: '2px solid var(--color-deep-blue)' }}></div>
 
-                  <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '180px', fontWeight: '900', color: 'rgba(255, 255, 255, 0.03)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
+                  <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '100px', fontWeight: '900', color: 'rgba(255, 255, 255, 0.03)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
                     {step.num}
                   </div>
 
                   <div style={{ position: 'relative', zIndex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px' }}>
-                      <div style={{ fontSize: '48px', color: '#D4AF37', fontWeight: 'bold', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>
+                      <div style={{ fontSize: '32px', color: '#D4AF37', fontWeight: 'bold', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>
                         {step.num}
                       </div>
                       <h4 style={{ fontSize: '28px', color: 'var(--color-white)', margin: 0, fontFamily: 'var(--font-serif)' }}>{step.title}</h4>
