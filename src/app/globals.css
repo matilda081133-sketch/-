@@ -791,13 +791,13 @@ h4 { font-size: 1.25rem; }
   }
 }
 
-.usp-icon {
+.usp-num {
   opacity: 0;
-  transform: translateX(-15px) scale(0.9);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-20px) scale(0.9);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.usp-card:hover .usp-icon {
-  opacity: 1;
+.usp-card:hover .usp-num {
+  opacity: 0.15;
   transform: translateX(0) scale(1);
 }
