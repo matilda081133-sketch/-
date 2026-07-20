@@ -161,18 +161,22 @@ export default function ServicesBlock() {
                     flexDirection: 'column',
                     gap: '10px'
                   }}>
-                    {service.desc.split(', ').map((sub, i) => (
-                      <li key={i} style={{ 
-                        color: 'var(--color-text-secondary)', 
-                        lineHeight: '1.4',
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: '8px'
-                      }}>
-                        <span style={{ color: 'var(--color-primary)', fontSize: '14px', marginTop: '2px' }}>■</span>
-                        <span style={{ fontSize: '15px' }}>{sub.trim().replace(/\.$/, '')}</span>
-                      </li>
-                    ))}
+                    {service.desc.split(', ').map((sub, i) => {
+                      const cleanSub = sub.trim().replace(/\.$/, '');
+                      const capitalizedSub = cleanSub.charAt(0).toUpperCase() + cleanSub.slice(1);
+                      return (
+                        <li key={i} style={{ 
+                          color: 'var(--color-text-secondary)', 
+                          lineHeight: '1.4',
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '8px'
+                        }}>
+                          <span style={{ color: 'var(--color-primary)', fontSize: '14px', marginTop: '2px' }}>■</span>
+                          <span style={{ fontSize: '15px' }}>{capitalizedSub}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
 
                   <div className="card-service-arrow" style={{ 
