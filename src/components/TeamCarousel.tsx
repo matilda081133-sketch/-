@@ -105,7 +105,7 @@ export default function TeamCarousel() {
                 flexDirection: 'column',
                 height: 'auto'
               }}>
-                <div style={{ height: '280px', marginBottom: '24px', borderRadius: '8px', flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
+                <div style={{ height: '280px', marginBottom: '24px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)' }}>
                     <div style={{ width: '40px', height: '40px', border: '1px solid rgba(212, 175, 55, 0.4)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', fontSize: '20px' }}>DJ</div>
                     <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Фото ожидается</span>
