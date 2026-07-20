@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import TeamCarousel from '@/components/TeamCarousel';
 import Header from '@/components/Header';
 import ServicesBlock from '@/components/ServicesBlock';
@@ -63,19 +63,28 @@ export default function Home() {
 
             {/* Hero USPs Row */}
             <div className="reveal-on-scroll delay-100" style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(3, 1fr)', 
-              gap: '16px', 
-              marginTop: '40px' 
+              display: 'flex', 
+              gap: '20px', 
+              marginTop: '50px' 
             }}>
               {[
-                { title: 'Бесплатный анализ', icon: '01' },
-                { title: 'Профильные юристы', icon: '02' },
-                { title: 'Суды под ключ', icon: '03' }
+                { value: '15+', label: 'Лет практики' },
+                { value: '92%', label: 'Успешных дел' },
+                { value: '24/7', label: 'Всегда на связи' }
               ].map((bullet, i) => (
-                <div key={i} className="hero-usp-card">
-                  <div style={{ color: 'var(--color-primary)', opacity: 0.5, fontWeight: 'bold', fontSize: '14px', fontFamily: 'var(--font-serif)' }}>{bullet.icon}</div>
-                  <h4 style={{ margin: 0, fontSize: '15px', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>{bullet.title}</h4>
+                <div key={i} style={{ 
+                  flex: 1,
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '16px',
+                  background: 'rgba(255, 255, 255, 0.7)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.9)',
+                  padding: '20px 24px',
+                  boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)'
+                }}>
+                  <div style={{ color: 'var(--color-primary)', fontSize: '36px', fontWeight: 800, fontFamily: 'var(--font-serif)', lineHeight: 1 }}>{bullet.value}</div>
+                  <div style={{ color: 'var(--color-deep-blue)', fontSize: '14px', fontWeight: 600, lineHeight: 1.3 }}>{bullet.label}</div>
                 </div>
               ))}
             </div>
