@@ -313,27 +313,6 @@ h4 { font-size: 1.25rem; }
   width: 100%;
 }
 
-/* Smooth Scroll adjustments */
-html.lenis, html.lenis body {
-  height: auto;
-  width: 100vw;
-}
-
-/* Stage Card Hover Effects */
-.sticky-stage-card:hover {
-  border-left-color: var(--color-primary) !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  transform: translateX(10px);
-}
-.sticky-stage-card:hover .stage-img {
-  filter: grayscale(0%) opacity(1) !important;
-  transform: scale(1.05);
-}
-.sticky-stage-card:hover .stage-bg-num {
-  color: rgba(212, 175, 55, 0.08) !important;
-  transform: translate(-10px, 10px);
-}
-
 /* Scroll Animations */
 .reveal-on-scroll {
   opacity: 0;

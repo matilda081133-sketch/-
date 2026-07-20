@@ -407,71 +407,38 @@ export default function Home() {
             {/* Scrolling Right Content */}
             <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: '80px' }}>
               {[
-                { 
-                  num: '01', 
-                  title: 'Аудит и консультация', 
-                  desc: 'Погружение в проблему, изучение документов и честная оценка перспектив без ложных обещаний. Определяем, целесообразно ли начинать спор.', 
-                  img: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80' 
-                },
-                { 
-                  num: '02', 
-                  title: 'Разработка стратегии', 
-                  desc: 'Детальная проработка правовой позиции. Собираем доказательную базу, привлекаем профильных экспертов и формируем пошаговый план защиты.', 
-                  img: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80' 
-                },
-                { 
-                  num: '03', 
-                  title: 'Досудебный порядок', 
-                  desc: 'В значительной части случаев мы решаем конфликт до суда. Проводим жесткие переговоры с оппонентами, составляем грамотные претензии и добиваемся мирового соглашения.', 
-                  img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&w=800&q=80' 
-                },
-                { 
-                  num: '04', 
-                  title: 'Судебная защита', 
-                  desc: 'Уверенное представление ваших интересов во всех инстанциях. Берем на себя всю процессуальную работу и коммуникацию с судьями, ограждая вас от лишнего стресса.', 
-                  img: 'https://images.unsplash.com/photo-1589578228468-ebce1f50f2f3?auto=format&fit=crop&w=800&q=80' 
-                },
-                { 
-                  num: '05', 
-                  title: 'Исполнение решения', 
-                  desc: 'Победа на бумаге — лишь половина дела. Мы жестко контролируем работу службы судебных приставов вплоть до фактического поступления средств на ваш счет.', 
-                  img: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80' 
-                },
-                { 
-                  num: '06', 
-                  title: 'Постпроектный контроль', 
-                  desc: 'После успешного завершения дела мы остаемся на связи, консультируем по возникающим вопросам и помогаем предотвратить новые риски в будущем.', 
-                  img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80' 
-                },
+                { num: '01', title: 'Анализ ситуации', desc: 'Мы начинаем с глубокого погружения в вашу проблему. Изучаем все имеющиеся документы, оцениваем риски и судебные перспективы дела. Никаких пустых обещаний — только честный правовой анализ.', img: 'images/stage_1.png' },
+                { num: '02', title: 'Стратегия', desc: 'На основе анализа мы разрабатываем оптимальный правовой путь. Собираем необходимую доказательную базу, привлекаем экспертов и готовим процессуальные документы.', img: 'images/stage_2.png' },
+                { num: '03', title: 'Реализация защиты', desc: 'Представляем ваши интересы на всех этапах: от досудебных переговоров до участия в судебных заседаниях. Берем на себя всю коммуникацию с оппонентами и госорганами.', img: 'images/stage_3.png' },
+                { num: '04', title: 'Результат', desc: 'Достижение поставленной цели — это не только выигрыш в суде, но и фактическое исполнение решения. Мы контролируем процесс до полного восстановления ваших прав.', img: 'images/stage_4.png' },
               ].map((step, i) => (
                 <div key={i} className="sticky-stage-card group" style={{ 
-                  background: 'rgba(255, 255, 255, 0.03)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
-                  borderLeft: '4px solid rgba(212, 175, 55, 0.2)',
+                  background: 'rgba(255, 255, 255, 0.04)',
+                  border: '1px solid rgba(255, 255, 255, 0.12)',
                   backdropFilter: 'blur(24px)',
                   WebkitBackdropFilter: 'blur(24px)',
                   borderRadius: '0',
                   padding: '40px',
                   position: 'relative',
                   overflow: 'hidden',
-                  boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
-                  transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+                  boxShadow: '0 30px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)',
+                  transition: 'transform 0.5s ease, border-color 0.4s ease',
                 }}>
-                  <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '180px', fontWeight: '900', color: 'rgba(255, 255, 255, 0.03)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none', transition: 'all 0.5s ease' }} className="stage-bg-num">
+                  <div style={{ position: 'absolute', top: '-10px', right: '-10px', fontSize: '180px', fontWeight: '900', color: 'rgba(255, 255, 255, 0.03)', lineHeight: 1, zIndex: 0, fontFamily: 'var(--font-serif)', pointerEvents: 'none' }}>
                     {step.num}
                   </div>
                   
-                  <div style={{ position: 'relative', width: '100%', height: '220px', overflow: 'hidden', marginBottom: '40px', zIndex: 1 }}>
-                    <img src={step.img} alt={step.title} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'all 0.8s ease', filter: 'grayscale(100%) opacity(0.7)' }} className="stage-img" />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16, 39, 59, 1) 0%, rgba(16, 39, 59, 0.1) 100%)', pointerEvents: 'none' }}></div>
+                  <div style={{ position: 'relative', width: '100%', paddingTop: '65%', borderRadius: '0', overflow: 'hidden', marginBottom: '40px', zIndex: 1 }}>
+                    <img src={step.img} alt={step.title} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s ease' }} className="stage-img" />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16, 39, 59, 0.8) 0%, transparent 100%)' }}></div>
                   </div>
 
                   <div style={{ position: 'relative', zIndex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px' }}>
-                      <div style={{ fontSize: '42px', color: 'var(--color-primary)', fontWeight: 'bold', fontFamily: 'var(--font-serif)', lineHeight: 1 }} className="stage-num">
+                      <div style={{ fontSize: '48px', color: '#D4AF37', fontWeight: 'bold', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>
                         {step.num}
                       </div>
-                      <h4 style={{ fontSize: '26px', color: 'var(--color-white)', margin: 0, fontFamily: 'var(--font-serif)', lineHeight: 1.2 }}>{step.title}</h4>
+                      <h4 style={{ fontSize: '28px', color: 'var(--color-white)', margin: 0, fontFamily: 'var(--font-serif)' }}>{step.title}</h4>
                     </div>
                     <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6, margin: 0 }}>{step.desc}</p>
                   </div>
