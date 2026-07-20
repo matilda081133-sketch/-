@@ -376,55 +376,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. КАК МЫ РАБОТАЕМ (СВЕТЛЫЙ СТАТИЧНЫЙ БЛОК) */}
+            {/* 4. КАК МЫ РАБОТАЕМ (СВЕТЛЫЙ СТАТИЧНЫЙ БЛОК) */}
       <section className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '120px 0', background: 'var(--color-white)' }}>
-        <div className="container">
+        {/* Organic graphic background */}
+        <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'radial-gradient(circle at 0% 0%, rgba(193, 160, 102, 0.04) 0%, transparent 50%), radial-gradient(circle at 100% 100%, rgba(23, 50, 77, 0.03) 0%, transparent 50%)', pointerEvents: 'none' }}></div>
+        
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '42px', color: 'var(--color-deep-blue)', marginBottom: '24px' }}>
               Как мы работаем
             </h2>
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0 auto' }}>
-              Каждое дело уникально, но наш подход всегда остается системным. Прозрачный процесс работы от первой консультации до итогового решения суда.
+              Каждое дело уникально, но наш подход всегда остается системным. Прозрачный процесс работы от первой консультации до итогового решения.
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '30px' }}>
-            {[
-              { num: '01', title: 'Первичное обращение', desc: 'Изучаем ваши документы и собираем вводную информацию. Проводим начальную консультацию для определения сути проблемы.' },
-              { num: '02', title: 'Анализ', desc: 'Проводим честную оценку рисков и перспектив дела. Никаких пустых обещаний — только объективный правовой анализ ситуации.' },
-              { num: '03', title: 'План и условия', desc: 'Разрабатываем стратегию защиты, четко фиксируем этапы работы, необходимые сроки и стоимость услуг в договоре.' },
-              { num: '04', title: 'Сопровождение', desc: 'Представляем ваши интересы на всех стадиях: от досудебных переговоров до участия в судебных заседаниях и взаимодействия с госорганами.' },
-            ].map((step, i) => (
-              <div key={i} style={{ 
-                background: 'var(--color-cream)',
-                border: '1px solid var(--color-border)',
-                padding: '40px',
-                position: 'relative',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-              }} className="hover-lift">
-                <div style={{ fontSize: '48px', fontWeight: '900', color: 'rgba(23, 50, 77, 0.05)', lineHeight: 1, marginBottom: '20px', fontFamily: 'var(--font-serif)' }}>
-                  {step.num}
-                </div>
-                <h4 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)' }}>
-                  {step.title}
-                </h4>
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {step.desc}
-                </p>
-                {/* Visual Arrow for first 3 cards */}
-                {i < 3 && (
-                  <div className="hidden md:block" style={{ position: 'absolute', right: '-25px', top: '50%', transform: 'translateY(-50%)', zIndex: 10, color: 'var(--color-primary)', opacity: 0.2 }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <div style={{ position: 'relative' }}>
+            {/* Horizontal Line for Desktop */}
+            <div className="hidden md:block" style={{ position: 'absolute', top: '30px', left: '10%', right: '10%', height: '1px', background: 'linear-gradient(90deg, transparent, rgba(193, 160, 102, 0.4), transparent)', zIndex: 0 }}></div>
+            
+            <div className="grid grid-4" style={{ gap: '40px' }}>
+              {[
+                { num: '01', title: 'Первичное обращение', desc: 'Изучаем ваши документы и собираем вводную информацию. Проводим начальную консультацию для определения сути проблемы.' },
+                { num: '02', title: 'Анализ', desc: 'Проводим честную оценку рисков и перспектив дела. Никаких пустых обещаний — только объективный правовой анализ ситуации.' },
+                { num: '03', title: 'План и условия', desc: 'Разрабатываем стратегию защиты, четко фиксируем этапы работы, необходимые сроки и стоимость услуг в договоре.' },
+                { num: '04', title: 'Сопровождение', desc: 'Представляем ваши интересы на всех стадиях: от досудебных переговоров до участия в судебных заседаниях и взаимодействия с госорганами.' },
+              ].map((step, i) => (
+                <div key={i} style={{ 
+                  position: 'relative',
+                  zIndex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  background: 'transparent',
+                  padding: '10px'
+                }} className="stage-item">
+                  
+                  {/* Organic Number / Dot */}
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '30px' }}>
+                    <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'var(--color-white)', border: '1px solid rgba(193, 160, 102, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', fontWeight: '300', fontSize: '24px', fontFamily: 'var(--font-serif)', boxShadow: '0 10px 20px rgba(23, 50, 77, 0.05)', position: 'relative' }}>
+                      {step.num}
+                      <div style={{ position: 'absolute', inset: '4px', borderRadius: '50%', border: '1px dashed rgba(193, 160, 102, 0.3)' }}></div>
+                    </div>
                   </div>
-                )}
-              </div>
-            ))}
+
+                  <h4 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
+                    {step.title}
+                  </h4>
+                  <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center' }}>
+                    {step.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <style dangerouslySetInnerHTML={{__html:`
-          .hover-lift:hover {
+          .stage-item {
+            transition: transform 0.4s ease;
+          }
+          .stage-item:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(23, 50, 77, 0.08);
+          }
+          .stage-item:hover > div > div {
+            background: var(--color-primary) !important;
+            color: var(--color-white) !important;
+            box-shadow: 0 15px 30px rgba(193, 160, 102, 0.3) !important;
+          }
+          .stage-item > div > div {
+            transition: all 0.4s ease;
           }
         `}} />
       </section>
@@ -465,7 +484,7 @@ export default function Home() {
           <div className="grid grid-3 reveal-on-scroll delay-200" style={{ gap: '30px' }}>
             
             {/* Case Card 1 */}
-            <div className="card" style={{ padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative' }}>
+            <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '16px', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
               <div style={{ position: 'absolute', top: '10px', right: '10px', background: 'rgba(23, 50, 77, 0.05)', color: 'var(--color-text-secondary)', padding: '4px 8px', fontSize: '11px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>Демонстрация формата</div>
               <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Земельное право</span>
@@ -491,7 +510,7 @@ export default function Home() {
             </div>
 
             {/* Case Card 2 */}
-            <div className="card" style={{ padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative' }}>
+            <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '16px', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
               <div style={{ position: 'absolute', top: '10px', right: '10px', background: 'rgba(23, 50, 77, 0.05)', color: 'var(--color-text-secondary)', padding: '4px 8px', fontSize: '11px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>Демонстрация формата</div>
               <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Семейное право</span>
@@ -517,7 +536,7 @@ export default function Home() {
             </div>
 
             {/* Case Card 3 */}
-            <div className="card" style={{ padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative' }}>
+            <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '16px', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
               <div style={{ position: 'absolute', top: '10px', right: '10px', background: 'rgba(23, 50, 77, 0.05)', color: 'var(--color-text-secondary)', padding: '4px 8px', fontSize: '11px', borderRadius: '4px', border: '1px solid var(--color-border)' }}>Демонстрация формата</div>
               <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Арбитраж</span>
@@ -557,7 +576,7 @@ export default function Home() {
       <FAQBlock />
 
       {/* 10. CTA SECTION (FORM) */}
-      <section id="consultation" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '120px 0', background: 'var(--color-cream)' }}>
+      <section id="consultation" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '120px 0', background: 'var(--color-white)' }}>
         <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div>
             <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)' }}>Обсудите ситуацию с юристом</h2>

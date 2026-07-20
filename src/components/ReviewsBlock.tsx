@@ -24,29 +24,23 @@ export default function ReviewsBlock() {
         <div style={{ display: 'flex', gap: '30px', marginBottom: '60px', flexWrap: 'wrap' }}>
           {/* Yandex Maps Mock */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', background: 'var(--color-white)', padding: '20px 30px', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', flex: '1', minWidth: '280px' }}>
-            <div style={{ width: '48px', height: '48px', background: '#FC3F1D', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '24px' }}>Я</div>
+            <div style={{ width: '48px', height: '48px', background: '#FC3F1D', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '24px', flexShrink: 0 }}>Я</div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                <span style={{ fontSize: '24px', fontWeight: 800, color: 'var(--color-deep-blue)', lineHeight: 1 }}>5.0</span>
-                <div style={{ display: 'flex', gap: '2px', color: '#FC3F1D' }}>
-                  {[1,2,3,4,5].map(i => <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>)}
-                </div>
+                <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4, fontWeight: 500 }}>Рейтинг будет добавлен после запуска профиля</span>
               </div>
-              <div style={{ color: 'var(--color-text-secondary)', fontSize: '14px' }}>Яндекс Карты</div>
+              <div style={{ color: 'var(--color-deep-blue)', fontSize: '15px', fontWeight: 600 }}>Яндекс Карты</div>
             </div>
           </div>
 
           {/* 2GIS Mock */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', background: 'var(--color-white)', padding: '20px 30px', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', flex: '1', minWidth: '280px' }}>
-            <div style={{ width: '48px', height: '48px', background: '#A3C83D', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>2ГИС</div>
+            <div style={{ width: '48px', height: '48px', background: '#A3C83D', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '18px', flexShrink: 0 }}>2ГИС</div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                <span style={{ fontSize: '24px', fontWeight: 800, color: 'var(--color-deep-blue)', lineHeight: 1 }}>5.0</span>
-                <div style={{ display: 'flex', gap: '2px', color: '#A3C83D' }}>
-                  {[1,2,3,4,5].map(i => <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>)}
-                </div>
+                <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4, fontWeight: 500 }}>Рейтинг будет добавлен после запуска профиля</span>
               </div>
-              <div style={{ color: 'var(--color-text-secondary)', fontSize: '14px' }}>Отзывы 2ГИС</div>
+              <div style={{ color: 'var(--color-deep-blue)', fontSize: '15px', fontWeight: 600 }}>Отзывы 2ГИС</div>
             </div>
           </div>
         </div>
