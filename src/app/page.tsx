@@ -70,9 +70,12 @@ export default function Home() {
               marginTop: '50px' 
             }}>
               {[
-                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, label: 'Юристы и адвокаты — по профилю дела.' },
-                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, label: 'Практический опыт команды — прокуратура, СК, ФССП, администрация.' },
-                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, label: 'Условия — в договоре — состав работ, стоимость и порядок оплаты.' }
+                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
+                  title: 'Юристы и адвокаты', desc: 'По профилю дела' },
+                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
+                  title: 'Практический опыт команды', desc: 'Прокуратура, СК, ФССП, администрация' },
+                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
+                  title: 'Условия — в договоре', desc: 'Состав работ, стоимость и порядок оплаты' }
               ].map((bullet, i) => (
                 <div key={i} style={{ 
                   flex: 1,
@@ -85,16 +88,31 @@ export default function Home() {
                   padding: '20px 24px',
                   boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)'
                 }}>
-                  <div style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{bullet.value}</div>
-                  <div style={{ color: 'var(--color-deep-blue)', fontSize: '14px', fontWeight: 600, lineHeight: 1.3 }}>{bullet.label}</div>
+                  <div style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{bullet.value}</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <div style={{ color: 'var(--color-deep-blue)', fontSize: '14px', fontWeight: 700, lineHeight: 1.2 }}>{bullet.title}</div>
+                    <div style={{ color: 'var(--color-text-secondary)', fontSize: '12px', fontWeight: 500, lineHeight: 1.3 }}>{bullet.desc}</div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
           
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+            {/* Darkening gradient under the creative to highlight the background graphic */}
+            <div style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '150%',
+              height: '150%',
+              background: 'radial-gradient(circle, rgba(23, 50, 77, 0.12) 0%, rgba(23, 50, 77, 0.05) 30%, transparent 60%)',
+              zIndex: 0,
+              pointerEvents: 'none'
+            }} />
             {/* Background Graphic: Courthouse (Centered behind mockup, shifted right) */}
-            <svg style={{ position: 'absolute', top: '35%', left: '100%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+            <svg style={{ position: 'absolute', top: '35%', left: '100%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.15, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.8">
               <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
             </svg>
 
@@ -393,14 +411,11 @@ export default function Home() {
           </div>
 
           <div style={{ position: 'relative' }}>
-            {/* Horizontal Line for Desktop */}
-            <div className="hidden md:block" style={{ position: 'absolute', top: '30px', left: '10%', right: '10%', height: '1px', background: 'linear-gradient(90deg, transparent, rgba(193, 160, 102, 0.4), transparent)', zIndex: 0 }}></div>
-            
             <div className="grid grid-3" style={{ gap: '40px' }}>
               {[
-                { num: '01', title: 'Уточняем ситуацию', desc: 'Уточним суть вопроса, срочность, текущую стадию дела и имеющиеся документы. Сообщим, что желательно направить или принести на встречу.' },
-                { num: '02', title: 'Определяем формат разбора', desc: 'Юрист изучит исходную информацию. Если для ответа потребуется отдельный анализ материалов, заранее согласуем его объем и стоимость.' },
-                { num: '03', title: 'Согласовываем дальнейшую работу', desc: 'Объясним возможные варианты действий, определим подходящего специалиста и зафиксируем в договоре состав работ, стоимость и порядок связи.' },
+                { num: '01', title: 'Первичное обращение и анализ', desc: 'Уточним суть вопроса, проведем первичную правовую экспертизу документов и дадим объективную оценку перспективы судебного дела или спора.' },
+                { num: '02', title: 'Выработка стратегии защиты', desc: 'Профильный юрист или адвокат изучит исходную информацию, разработает правовую позицию и подготовит варианты досудебного урегулирования.' },
+                { num: '03', title: 'Договор и ведение дела', desc: 'Заключаем официальный договор на оказание юридических услуг. Берем на себя представительство в суде без вашего участия, взаимодействие с ФССП и госорганами.' },
               ].map((step, i) => (
                 <div key={i} style={{ 
                   position: 'relative',
@@ -495,78 +510,78 @@ export default function Home() {
             {/* Case Card 1 */}
             <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
               <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '6px 12px', fontSize: '11px', borderRadius: '4px', fontWeight: 600, letterSpacing: '0.05em', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>Демонстрация формата</div>
-              <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
+              <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Земельное право</span>
-                <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Спор о границах земельного участка</h4>
+                <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Успешное разрешение спора о границах земельного участка</h4>
               </div>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
                 <div>
                   <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
-                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Сосед незаконно захватил часть территории клиента. Досудебные переговоры не дали результата.</p>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Сосед незаконно захватил часть территории клиента. Досудебные переговоры по земельному спору не дали результата, потребовалось обращение к юристу.</p>
                 </div>
                 
                 <div>
                   <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
-                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Провели независимую землеустроительную экспертизу, подали иск об устранении препятствий.</p>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Провели независимую землеустроительную экспертизу, составили и подали иск об устранении препятствий в пользовании участком в городской суд Липецка.</p>
                 </div>
               </div>
               
               <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '4px', border: '1px solid rgba(193, 160, 102, 0.2)', borderLeft: '4px solid var(--color-gold)' }}>
     <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
-    <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>Границы восстановлены. Выиграно дело в суде первой инстанции.</p>
+    <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>Границы восстановлены. Выиграно дело в суде первой инстанции, судебные издержки взысканы с ответчика.</p>
   </div>
             </div>
 
             {/* Case Card 2 */}
             <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
               <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '6px 12px', fontSize: '11px', borderRadius: '4px', fontWeight: 600, letterSpacing: '0.05em', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>Демонстрация формата</div>
-              <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
+              <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Семейное право</span>
-                <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Раздел совместно нажитого имущества</h4>
+                <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Защита активов при сложном разделе имущества супругов</h4>
               </div>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
                 <div>
                   <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
-                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Сложный раздел бизнеса и недвижимости при разводе с конфликтующей стороной, попытки сокрытия активов.</p>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Сложный раздел бизнеса и совместно нажитой недвижимости при разводе с конфликтующей стороной, зафиксированы попытки незаконного сокрытия активов.</p>
                 </div>
                 
                 <div>
                   <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
-                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Наложили обеспечительный арест на активы, провели полный финансовый аудит предприятий.</p>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Подали заявление на обеспечительный арест имущества. Юрист по семейным делам провел полный финансовый аудит предприятий для защиты доли клиента.</p>
                 </div>
               </div>
               
               <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '4px', border: '1px solid rgba(193, 160, 102, 0.2)', borderLeft: '4px solid var(--color-gold)' }}>
     <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
-    <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>Достигнуто выгодное мировое соглашение. Клиент сохранил контроль над бизнесом.</p>
+    <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>Достигнуто выгодное мировое соглашение в суде. Клиент полностью сохранил законный контроль над бизнесом.</p>
   </div>
             </div>
 
             {/* Case Card 3 */}
             <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
               <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '6px 12px', fontSize: '11px', borderRadius: '4px', fontWeight: 600, letterSpacing: '0.05em', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>Демонстрация формата</div>
-              <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '20px', marginBottom: '24px' }}>
+              <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Арбитраж</span>
-                <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Взыскание долга по договору подряда</h4>
+                <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Взыскание задолженности по договору подряда через суд</h4>
               </div>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
                 <div>
                   <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
-                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Заказчик отказался оплачивать выполненные строительные работы, ссылаясь на вымышленные недостатки.</p>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Заказчик отказался оплачивать выполненные строительные работы по договору строительного подряда, ссылаясь на вымышленные недостатки.</p>
                 </div>
                 
                 <div>
                   <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
-                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Собрали документальную базу, подтверждающую приемку, инициировали строительно-техническую экспертизу.</p>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Арбитражный юрист собрал документальную базу, подтверждающую приемку этапов, и инициировал судебную строительно-техническую экспертизу.</p>
                 </div>
               </div>
               
               <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '4px', border: '1px solid rgba(193, 160, 102, 0.2)', borderLeft: '4px solid var(--color-gold)' }}>
     <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
-    <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>Задолженность и пени в размере 100% взысканы через Арбитражный суд.</p>
+    <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>Основная задолженность и пени по договору взысканы на 100% через Арбитражный суд Липецкой области.</p>
   </div>
             </div>
 

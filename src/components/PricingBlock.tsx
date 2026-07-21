@@ -8,37 +8,37 @@ export default function PricingBlock() {
       popular: false,
       price: 'от 2 000 ₽',
       features: [
-        { name: 'Устная консультация', value: '2 000 ₽' },
-        { name: 'Составление иска', value: 'от 10 000 ₽' },
-        { name: 'Ведение дела в суде', value: 'от 15 000 ₽' },
+        { name: 'Юридическая консультация', value: '2 000 ₽' },
+        { name: 'Составление и подача иска', value: 'от 10 000 ₽' },
+        { name: 'Ведение дела в суде Липецка', value: 'от 15 000 ₽' },
         { name: 'Апелляционная жалоба', value: 'от 20 000 ₽' },
-        { name: 'Ознакомление с делом', value: '4 000 ₽/том' }
+        { name: 'Ознакомление с материалами', value: '4 000 ₽/том' }
       ]
     },
     {
       title: 'Бизнесу',
-      subtitle: 'Комплексное сопровождение',
+      subtitle: 'Комплексное юридическое сопровождение',
       popular: true,
       price: 'от 5 000 ₽',
       features: [
-        { name: 'Консультация (юр. лица)', value: '5 000 ₽' },
+        { name: 'Консультация для бизнеса', value: '5 000 ₽' },
         { name: 'Разработка договоров', value: 'от 10 000 ₽' },
-        { name: 'Претензионная работа', value: 'от 15 000 ₽' },
-        { name: 'Судебное представительство', value: 'от 15 000 ₽' },
-        { name: 'Анализ документов', value: 'от 10 000 ₽' }
+        { name: 'Досудебная претензионная работа', value: 'от 15 000 ₽' },
+        { name: 'Представительство в Арбитраже', value: 'от 15 000 ₽' },
+        { name: 'Правовой аудит документов', value: 'от 10 000 ₽' }
       ]
     },
     {
       title: 'Документы и консалтинг',
-      subtitle: 'Правовая аналитика',
+      subtitle: 'Глубокая правовая аналитика',
       popular: false,
       price: 'от 10 000 ₽',
       features: [
-        { name: 'Письменная консультация', value: 'от 30 000 ₽' },
-        { name: 'Правовое заключение', value: 'от 35 000 ₽' },
-        { name: 'Участие в переговорах', value: '15 000 ₽' },
-        { name: 'Представление в гос. органах', value: '15 000 ₽' },
-        { name: 'Внутренняя документация', value: 'от 15 000 ₽' }
+        { name: 'Письменная правовая оценка', value: 'от 30 000 ₽' },
+        { name: 'Официальное заключение юриста', value: 'от 35 000 ₽' },
+        { name: 'Участие в деловых переговорах', value: '15 000 ₽' },
+        { name: 'Защита интересов в госорганах', value: '15 000 ₽' },
+        { name: 'Разработка внутренних регламентов', value: 'от 15 000 ₽' }
       ]
     }
   ];
@@ -53,10 +53,10 @@ export default function PricingBlock() {
             color: 'var(--color-deep-blue)',
             marginBottom: '16px'
           }}>
-            Стоимость услуг
+            Прозрачные цены на юридические услуги в Липецке
           </h2>
-          <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '700px', margin: '0 auto' }}>
-            Каждое дело требует индивидуального подхода. Ниже представлены базовые тарифы, итоговая стоимость фиксируется в договоре.
+          <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
+            Сколько стоит нанять юриста или адвоката? Базовые тарифы представлены ниже. Итоговая цена на ведение судебного дела, представительство в суде или составление иска фиксируется в официальном договоре на оказание юридических услуг.
           </p>
           <div style={{ display: 'inline-block', marginTop: '20px', padding: '6px 16px', background: 'rgba(23, 50, 77, 0.05)', borderRadius: '4px', border: '1px solid var(--color-border)', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
             Тестовые значения для согласования
@@ -66,7 +66,7 @@ export default function PricingBlock() {
         <div className="grid grid-3" style={{ gap: '30px', alignItems: 'stretch' }}>
           {tiers.map((tier, idx) => (
             <div key={idx} style={{
-              background: tier.popular ? 'var(--color-deep-blue)' : 'var(--color-white)',
+              background: tier.popular ? 'linear-gradient(145deg, var(--color-deep-blue) 0%, var(--color-primary) 100%)' : 'var(--color-white)',
               color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)',
               borderRadius: '0',
               padding: '40px 30px',
@@ -102,7 +102,7 @@ export default function PricingBlock() {
               <h3 style={{ fontSize: '24px', margin: '0 0 8px 0', color: 'inherit' }}>{tier.title}</h3>
               <p style={{ fontSize: '15px', opacity: 0.8, margin: '0 0 30px 0', minHeight: '40px' }}>{tier.subtitle}</p>
               
-              <div style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', margin: '0 0 30px 0', borderBottom: `1px solid ${tier.popular ? 'rgba(255,255,255,0.2)' : 'rgba(23,50,77,0.1)'}`, paddingBottom: '30px' }}>
+              <div style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', margin: '0 0 30px 0', paddingBottom: '30px' }}>
                 {tier.price}
               </div>
 

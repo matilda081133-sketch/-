@@ -55,7 +55,7 @@ export default function Footer() {
         <div>
           <div style={{ marginBottom: '24px', marginTop: '-20px' }}>
             <Link href="/">
-              <img src="images/logo-light.png" alt="Де-Юре" style={{ height: '120px', width: 'auto' }} />
+              <img src="images/logo_light_transparent.png" alt="Де-Юре" style={{ height: '110px', width: 'auto', transform: 'scale(1.25)', transformOrigin: 'left center' }} />
             </Link>
           </div>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px', lineHeight: 1.5, marginBottom: '20px' }}>
