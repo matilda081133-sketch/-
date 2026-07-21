@@ -80,7 +80,7 @@ export default function Header() {
                 </button>
               </div>
               <ul id="dropdown-about" className={`dropdown-simple ${openDropdown === 'about' ? 'show' : ''}`}>
-                <li><Link href="/o-kompanii" className="dropdown-link-2" style={{ fontWeight: 'bold' }}>Обзор раздела</Link></li>
+                
                 <li><Link href="/o-kompanii" className="dropdown-link-2">О компании</Link></li>
                 <li><Link href="/specialisty" className="dropdown-link-2">Специалисты</Link></li>
                 <li><Link href="/otzyvy" className="dropdown-link-2">Отзывы</Link></li>

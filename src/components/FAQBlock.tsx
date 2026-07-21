@@ -68,16 +68,16 @@ export default function FAQBlock() {
 
           {/* Right Side: Accordion */}
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            {faqs.map((faq, index) => (
               <details key={index} className="faq-details" style={{
-                background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, var(--color-accent) 100%)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
+                background: 'var(--color-deep-blue)',
+                border: '1px solid var(--color-border)',
                 borderRadius: '0',
                 transition: 'var(--transition)',
-                color: 'var(--color-white)'
+                color: 'var(--color-white)',
+                overflow: 'hidden'
               }}>
                 <summary style={{
-                  padding: '32px',
+                  padding: '24px 32px',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
@@ -85,9 +85,10 @@ export default function FAQBlock() {
                   fontSize: '20px',
                   fontWeight: '500',
                   fontFamily: 'var(--font-sans)',
-                  listStyle: 'none'
+                  listStyle: 'none',
+                  background: 'var(--color-deep-blue)'
                 }} className="faq-summary">
-                  <span style={{ paddingRight: '20px', lineHeight: 1.4 }}>{faq.q}</span>
+                  <span style={{ paddingRight: '20px', lineHeight: 1.4, color: 'var(--color-white)' }}>{faq.q}</span>
                   <span className="faq-icon" style={{ 
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -97,19 +98,22 @@ export default function FAQBlock() {
                     borderRadius: '50%',
                     border: '1px solid rgba(255, 255, 255, 0.2)',
                     transition: 'all 0.3s ease',
-                    flexShrink: 0
+                    flexShrink: 0,
+                    color: 'var(--color-white)'
                   }}>
                     +
                   </span>
                 </summary>
                 
                 <div style={{
-                  padding: '0 32px 32px 32px',
-                  color: 'rgba(255, 255, 255, 0.8)',
+                  padding: '32px',
+                  background: 'var(--color-cream)',
+                  color: 'var(--color-text-main)',
                   lineHeight: '1.6',
-                  fontSize: '16px'
+                  fontSize: '16px',
+                  borderTop: '1px solid var(--color-border)'
                 }}>
-                  <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '24px' }}>
+                  <div>
                     {faq.a}
                   </div>
                 </div>
