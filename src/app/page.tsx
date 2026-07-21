@@ -334,38 +334,32 @@ export default function Home() {
               {
                 num: "01",
                 tag: "Специализация",
-                title: "Подбираем специалиста под категорию дела",
-                desc: "Земельный спор передаем юристу по земельному праву, уголовное дело — адвокату. Если задача затрагивает несколько отраслей, определяем состав команды после первичного разбора."
+                text: "Земельный спор ведет земельный юрист, уголовное дело — адвокат. Для сложных задач формируем профильную команду."
               },
               {
                 num: "02",
                 tag: "Командная работа",
-                title: "Подключаем адвоката, когда этого требует дело",
-                desc: "В уголовных делах и других ситуациях, где необходим статус адвоката, к работе подключается специалист с действующим адвокатским статусом. Дополнительных экспертов привлекаем после согласования с клиентом."
+                text: "Когда того требует специфика дела, подключаем адвоката или дополнительных экспертов только после согласования с вами."
               },
               {
                 num: "03",
                 tag: "Анализ",
-                title: "Варианты и риски до начала основных работ",
-                desc: "На первой встрече уточняем обстоятельства и изучаем доступные документы. Если требуется отдельный углубленный анализ, заранее согласовываем его объем и стоимость."
+                text: "До старта работ детально изучаем документы, честно оцениваем риски и предлагаем оптимальные варианты решения."
               },
               {
                 num: "04",
                 tag: "Сопровождение",
-                title: "Берем на себя согласованные этапы",
-                desc: "Подготовка документов, переговоры, обращения в государственные органы, суд и исполнительное производство включаются в работу в зависимости от задачи и фиксируются в договоре."
+                text: "Берем на себя всю рутину: от подготовки документов до представительства в суде и госорганах без вашего участия."
               },
               {
                 num: "05",
                 tag: "Региональная практика",
-                title: "Офис в центре Липецка",
-                desc: "Принимаем по адресу: г. Липецк, ул. Советская, д. 35, офис 213. Возможность дистанционной работы определяется характером дела."
+                text: "Офис в центре Липецка. Отлично знаем специфику местных судов и госорганов, но при необходимости работаем дистанционно."
               },
               {
                 num: "06",
                 tag: "Понятные условия",
-                title: "Состав работ и порядок оплаты — в договоре",
-                desc: "До начала основных работ фиксируем, какие действия выполняет специалист, как рассчитывается стоимость и какие расходы оплачиваются отдельно."
+                text: "До начала работы фиксируем в официальном договоре точный состав наших действий, итоговую стоимость и порядок расчетов."
               }
             ].map((item, i) => (
               <div key={i} className="usp-card" style={{ 
@@ -380,13 +374,13 @@ export default function Home() {
                 <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
                   {item.tag}
                 </div>
-                <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
-                  {item.title}
-                </h3>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1 }}>
-                  {item.desc}
+                <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6, position: 'relative', zIndex: 1, fontWeight: 500 }}>
+                  {(item as any).text}
                 </p>
-
+                
+                <div style={{ position: 'absolute', top: '30px', right: '30px', fontSize: '48px', fontWeight: 900, color: 'rgba(23, 50, 77, 0.03)', pointerEvents: 'none', zIndex: 0, fontFamily: 'var(--font-serif)' }}>
+                  {item.num}
+                </div>
               </div>
             ))}
 
@@ -446,32 +440,25 @@ export default function Home() {
             {/* CTA inside Process Block */}
             <div style={{ 
               marginTop: '50px', 
-              background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #1a3a5c 100%)', 
-              padding: '50px 40px', 
-              borderRadius: '0', 
+              background: 'var(--color-cream)', 
+              padding: '40px', 
+              borderRadius: '16px', 
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
               textAlign: 'center',
               position: 'relative',
-              overflow: 'hidden',
-              boxShadow: '0 20px 40px rgba(16, 39, 59, 0.1)'
+              border: '1px solid rgba(23, 50, 77, 0.05)',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.02)'
             }}>
-              {/* Decorative elements */}
-              <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="rgba(193, 160, 102, 0.1)" strokeWidth="1" style={{ position: 'absolute', right: '-20px', top: '-20px', pointerEvents: 'none' }}>
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-              </svg>
-              
-              <h3 style={{ fontSize: '24px', color: 'var(--color-white)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
+              <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '12px', fontWeight: '500' }}>
                 Не уверены, к какому направлению относится ваш вопрос?
               </h3>
-              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)', marginBottom: '30px', maxWidth: '600px', lineHeight: 1.5, position: 'relative', zIndex: 1 }}>
+              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', marginBottom: '24px', maxWidth: '500px', lineHeight: 1.5 }}>
                 Кратко опишите ситуацию — мы бесплатно проанализируем её и определим, какой именно профильный специалист вам потребуется.
               </p>
-              <a href="#consultation" className="btn btn-primary" style={{ display: 'inline-flex', position: 'relative', zIndex: 1, boxShadow: '0 10px 20px rgba(193, 160, 102, 0.2)' }}>Обсудить ситуацию</a>
+              <a href="#consultation" className="btn btn-outline" style={{ display: 'inline-flex' }}>Обсудить ситуацию</a>
             </div>
 
           </div>
