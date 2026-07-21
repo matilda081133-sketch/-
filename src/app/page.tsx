@@ -442,7 +442,7 @@ export default function Home() {
               marginTop: '50px', 
               background: 'var(--color-cream)', 
               padding: '40px', 
-              borderRadius: '16px', 
+              borderRadius: '0', 
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
