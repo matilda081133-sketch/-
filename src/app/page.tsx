@@ -396,12 +396,11 @@ export default function Home() {
             {/* Horizontal Line for Desktop */}
             <div className="hidden md:block" style={{ position: 'absolute', top: '30px', left: '10%', right: '10%', height: '1px', background: 'linear-gradient(90deg, transparent, rgba(193, 160, 102, 0.4), transparent)', zIndex: 0 }}></div>
             
-            <div className="grid grid-4" style={{ gap: '40px' }}>
+            <div className="grid grid-3" style={{ gap: '40px' }}>
               {[
-                { num: '01', title: 'Первичное обращение', desc: 'Изучаем ваши документы и собираем вводную информацию. Проводим начальную консультацию для определения сути проблемы.' },
-                { num: '02', title: 'Анализ', desc: 'Проводим честную оценку рисков и перспектив дела. Никаких пустых обещаний — только объективный правовой анализ ситуации.' },
-                { num: '03', title: 'План и условия', desc: 'Разрабатываем стратегию защиты, четко фиксируем этапы работы, необходимые сроки и стоимость услуг в договоре.' },
-                { num: '04', title: 'Сопровождение', desc: 'Представляем ваши интересы на всех стадиях: от досудебных переговоров до участия в судебных заседаниях и взаимодействия с госорганами.' },
+                { num: '01', title: 'Уточняем ситуацию', desc: 'Уточним суть вопроса, срочность, текущую стадию дела и имеющиеся документы. Сообщим, что желательно направить или принести на встречу.' },
+                { num: '02', title: 'Определяем формат разбора', desc: 'Юрист изучит исходную информацию. Если для ответа потребуется отдельный анализ материалов, заранее согласуем его объем и стоимость.' },
+                { num: '03', title: 'Согласовываем дальнейшую работу', desc: 'Объясним возможные варианты действий, определим подходящего специалиста и зафиксируем в договоре состав работ, стоимость и порядок связи.' },
               ].map((step, i) => (
                 <div key={i} style={{ 
                   position: 'relative',
@@ -429,6 +428,15 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            
+            {/* CTA inside Process Block */}
+            <div style={{ marginTop: '50px', background: 'var(--color-cream)', padding: '40px', borderRadius: '8px', textAlign: 'center' }}>
+              <p style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '24px', fontWeight: '500' }}>
+                Не уверены, к какому направлению относится ваш вопрос? Кратко опишите ситуацию — мы определим, какой специалист потребуется
+              </p>
+              <a href="#consultation" className="btn btn-primary" style={{ display: 'inline-flex' }}>Обсудить ситуацию</a>
+            </div>
+
           </div>
         </div>
         <style dangerouslySetInnerHTML={{__html:`
@@ -504,10 +512,10 @@ export default function Home() {
                 </div>
               </div>
               
-              <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
-                <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Результат</h5>
-                <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)' }}>Границы восстановлены. Выиграно дело в суде первой инстанции.</p>
-              </div>
+              <div style={{ marginTop: '30px', background: 'var(--color-deep-blue)', padding: '20px', borderRadius: '0', borderLeft: '4px solid var(--color-gold)', boxShadow: '0 10px 20px rgba(16,39,59,0.1)' }}>
+    <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255,255,255,0.7)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
+    <p style={{ fontSize: '16px', margin: 0, fontWeight: 600, color: 'var(--color-white)', lineHeight: 1.4 }}>Границы восстановлены. Выиграно дело в суде первой инстанции.</p>
+  </div>
             </div>
 
             {/* Case Card 2 */}
@@ -530,10 +538,10 @@ export default function Home() {
                 </div>
               </div>
               
-              <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
-                <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Результат</h5>
-                <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)' }}>Достигнуто выгодное мировое соглашение. Клиент сохранил контроль над бизнесом.</p>
-              </div>
+              <div style={{ marginTop: '30px', background: 'var(--color-deep-blue)', padding: '20px', borderRadius: '0', borderLeft: '4px solid var(--color-gold)', boxShadow: '0 10px 20px rgba(16,39,59,0.1)' }}>
+    <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255,255,255,0.7)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
+    <p style={{ fontSize: '16px', margin: 0, fontWeight: 600, color: 'var(--color-white)', lineHeight: 1.4 }}>Достигнуто выгодное мировое соглашение. Клиент сохранил контроль над бизнесом.</p>
+  </div>
             </div>
 
             {/* Case Card 3 */}
@@ -556,10 +564,10 @@ export default function Home() {
                 </div>
               </div>
               
-              <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
-                <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Результат</h5>
-                <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)' }}>Задолженность и пени в размере 100% взысканы через Арбитражный суд.</p>
-              </div>
+              <div style={{ marginTop: '30px', background: 'var(--color-deep-blue)', padding: '20px', borderRadius: '0', borderLeft: '4px solid var(--color-gold)', boxShadow: '0 10px 20px rgba(16,39,59,0.1)' }}>
+    <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255,255,255,0.7)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
+    <p style={{ fontSize: '16px', margin: 0, fontWeight: 600, color: 'var(--color-white)', lineHeight: 1.4 }}>Задолженность и пени в размере 100% взысканы через Арбитражный суд.</p>
+  </div>
             </div>
 
           </div>
