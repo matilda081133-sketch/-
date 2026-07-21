@@ -66,19 +66,19 @@ export default function Home() {
             {/* Hero USPs Row */}
             <div className="reveal-on-scroll delay-100" style={{ 
               display: 'flex', 
-              flexDirection: 'column',
-              gap: '12px', 
+              gap: '20px', 
               marginTop: '50px' 
             }}>
               {[
-                { value: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
-                  text: 'Профильные юристы и адвокаты под конкретную специфику вашего дела.' },
-                { value: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
-                  text: 'Опыт работы изнутри системы: СК, ФССП, прокуратура, администрация.' },
-                { value: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
-                  text: 'Честный договор: фиксируем точный состав работ, стоимость и порядок оплаты.' }
+                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
+                  text: 'Юристы и адвокаты под профиль вашего дела.' },
+                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
+                  text: 'Опыт изнутри системы: СК, ФССП, госорганы.' },
+                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
+                  text: 'Честный договор: фиксируем план работ и цены.' }
               ].map((bullet, i) => (
                 <div key={i} style={{ 
+                  flex: 1,
                   display: 'flex', 
                   alignItems: 'center', 
                   gap: '16px',
@@ -387,7 +387,7 @@ export default function Home() {
                   {item.desc}
                 </p>
                 
-                <div style={{ position: 'absolute', top: '30px', right: '30px', fontSize: '48px', fontWeight: 900, color: 'rgba(23, 50, 77, 0.03)', pointerEvents: 'none', zIndex: 0, fontFamily: 'var(--font-serif)' }}>
+                <div style={{ position: 'absolute', top: '20px', right: '30px', fontSize: '96px', fontWeight: 900, color: 'rgba(23, 50, 77, 0.04)', pointerEvents: 'none', zIndex: 0, fontFamily: 'var(--font-serif)', lineHeight: 1 }}>
                   {item.num}
                 </div>
               </div>
