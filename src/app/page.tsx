@@ -334,36 +334,36 @@ export default function Home() {
               {
                 num: "01",
                 tag: "Специализация",
-                text: "Земельный спор ведет земельный юрист, уголовное дело — адвокат. Для сложных задач формируем профильную команду."
+                text: "Земельный спор ведет земельный юрист, уголовное — адвокат. Сложные дела — команда."
               },
               {
                 num: "02",
                 tag: "Командная работа",
-                text: "Когда того требует специфика дела, подключаем адвоката или дополнительных экспертов только после согласования с вами."
+                text: "Подключаем профильного адвоката или экспертов строго после согласования с клиентом."
               },
               {
                 num: "03",
                 tag: "Анализ",
-                text: "До старта работ детально изучаем документы, честно оцениваем риски и предлагаем оптимальные варианты решения."
+                text: "До старта работ изучаем документы, честно оцениваем риски и перспективы решения."
               },
               {
                 num: "04",
                 tag: "Сопровождение",
-                text: "Берем на себя всю рутину: от подготовки документов до представительства в суде и госорганах без вашего участия."
+                text: "Берем рутину на себя: от подготовки документов до судов без вашего личного участия."
               },
               {
                 num: "05",
                 tag: "Региональная практика",
-                text: "Офис в центре Липецка. Отлично знаем специфику местных судов и госорганов, но при необходимости работаем дистанционно."
+                text: "Офис в центре Липецка. Досконально знаем практику местных судов и госорганов."
               },
               {
                 num: "06",
                 tag: "Понятные условия",
-                text: "До начала работы фиксируем в официальном договоре точный состав наших действий, итоговую стоимость и порядок расчетов."
+                text: "Сразу фиксируем в официальном договоре точный состав всех работ, стоимость и оплату."
               }
             ].map((item, i) => (
               <div key={i} className="usp-card" style={{ 
-                padding: '40px', 
+                padding: '30px', 
                 borderRight: '1px solid rgba(23, 50, 77, 0.1)',
                 borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
                 background: 'rgba(255, 255, 255, 0.85)',
@@ -374,11 +374,11 @@ export default function Home() {
                 <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
                   {item.tag}
                 </div>
-                <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6, position: 'relative', zIndex: 1, fontWeight: 500 }}>
-                  {(item as any).text}
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5, position: 'relative', zIndex: 1, fontWeight: 500 }}>
+                  {item.text}
                 </p>
                 
-                <div style={{ position: 'absolute', top: '30px', right: '30px', fontSize: '48px', fontWeight: 900, color: 'rgba(23, 50, 77, 0.03)', pointerEvents: 'none', zIndex: 0, fontFamily: 'var(--font-serif)' }}>
+                <div style={{ position: 'absolute', top: '20px', right: '20px', fontSize: '48px', fontWeight: 900, color: 'rgba(23, 50, 77, 0.03)', pointerEvents: 'none', zIndex: 0, fontFamily: 'var(--font-serif)' }}>
                   {item.num}
                 </div>
               </div>
