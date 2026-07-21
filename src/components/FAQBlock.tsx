@@ -68,6 +68,7 @@ export default function FAQBlock() {
 
           {/* Right Side: Accordion */}
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {faqs.map((faq, index) => (
               <details key={index} className="faq-details" style={{
                 background: 'var(--color-deep-blue)',
                 border: '1px solid var(--color-border)',
