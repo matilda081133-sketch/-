@@ -768,12 +768,9 @@ h4 { font-size: 1.25rem; }
 }
 
 /* Premium Accents */
-h2 {
-  position: relative;
-  padding-bottom: 15px;
-}
+.with-accent { position: relative; padding-bottom: 15px; }
 
-h2::after {
+.with-accent::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -783,7 +780,7 @@ h2::after {
   background: var(--color-gold);
 }
 
-.text-center h2::after {
+.text-center .with-accent::after {
   left: 50%;
   transform: translateX(-50%);
 }

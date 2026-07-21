@@ -30,7 +30,7 @@ export default function ServicesTabs() {
     <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--color-cream)' }}>
       <div className="container">
         <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
-          <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+          <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
             Ключевые направления юридической помощи
           </h2>
           <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0 }}>
