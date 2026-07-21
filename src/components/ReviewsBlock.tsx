@@ -26,7 +26,7 @@ export default function ReviewsBlock() {
           {/* Yandex Maps Mock */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', background: 'var(--color-cream)', padding: '24px 30px', borderRadius: '0', flex: '1', minWidth: '320px', borderLeft: '4px solid #FC3F1D', justifyContent: 'space-between', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-              <img src="https://avatars.mds.yandex.net/get-bunker/60661/2a00000160d5b7661e754cbcf1a42f567b55/256x256" alt="Yandex" width="48" height="48" style={{ borderRadius: '50%', objectFit: 'cover' }} />
+              <img src="images/yandex_logo.png" alt="Yandex" width="48" height="48" style={{ borderRadius: '50%', objectFit: 'cover' }} />
               <div>
                 <div style={{ color: 'var(--color-deep-blue)', fontSize: '18px', fontWeight: 600, marginBottom: '6px' }}>Яндекс Карты</div>
                 <div style={{ color: 'var(--color-text-secondary)', fontSize: '14px', fontStyle: 'italic' }}>рейтинг будет добавлен...</div>
@@ -38,7 +38,7 @@ export default function ReviewsBlock() {
           {/* 2GIS Mock */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', background: 'var(--color-cream)', padding: '24px 30px', borderRadius: '0', flex: '1', minWidth: '320px', borderLeft: '4px solid #A3C83D', justifyContent: 'space-between', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/2GIS_logo.png" alt="2GIS" width="48" height="48" style={{ borderRadius: '12px', objectFit: 'cover' }} />
+              <img src="images/2gis_logo.png" alt="2GIS" width="48" height="48" style={{ borderRadius: '12px', objectFit: 'cover' }} />
               <div>
                 <div style={{ color: 'var(--color-deep-blue)', fontSize: '18px', fontWeight: 600, marginBottom: '6px' }}>Отзывы 2ГИС</div>
                 <div style={{ color: 'var(--color-text-secondary)', fontSize: '14px', fontStyle: 'italic' }}>рейтинг будет добавлен...</div>
