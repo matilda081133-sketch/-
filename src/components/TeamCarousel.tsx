@@ -61,7 +61,9 @@ export default function TeamCarousel() {
               Опытные юристы и адвокаты Липецка с профильной специализацией. Бывшие сотрудники прокуратуры, Следственного комитета и службы судебных приставов, обеспечивающие надежную правовую защиту по гражданским, арбитражным и уголовным делам.
             </p>
           </div>
-          <Link href="/specialists" className="btn btn-outline" style={{ fontSize: '16px', flexShrink: 0, marginTop: '8px' }}>Вся команда</Link>
+          <div style={{ marginTop: '8px' }}>
+            <Link href="/specialists" className="btn btn-outline" style={{ fontSize: '16px', display: 'inline-block', whiteSpace: 'nowrap' }}>Вся команда</Link>
+          </div>
         </div>
         
         <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>

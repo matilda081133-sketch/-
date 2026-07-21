@@ -71,11 +71,11 @@ export default function Home() {
             }}>
               {[
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
-                  text: 'Юристы и адвокаты — по профилю дела.' },
+                  text: 'Профильные юристы и адвокаты под специфику вашего дела.' },
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
-                  text: 'Практический опыт команды — прокуратура, СК, ФССП, администрация.' },
+                  text: 'Опыт работы изнутри системы: СК, ФССП, прокуратура, администрация.' },
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
-                  text: 'Условия — в договоре — состав работ, стоимость и порядок оплаты.' }
+                  text: 'Честный договор: фиксируем состав работ, стоимость и оплату.' }
               ].map((bullet, i) => (
                 <div key={i} style={{ 
                   flex: 1,
@@ -377,7 +377,7 @@ export default function Home() {
                 position: 'relative'
               }}>
                 <div className="usp-accent"></div>
-                <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-text-secondary)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
+                <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
                   {item.tag}
                 </div>
                 <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
@@ -444,11 +444,34 @@ export default function Home() {
             </div>
             
             {/* CTA inside Process Block */}
-            <div style={{ marginTop: '50px', background: 'var(--color-cream)', padding: '40px', borderRadius: '8px', textAlign: 'center' }}>
-              <p style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '24px', fontWeight: '500' }}>
-                Не уверены, к какому направлению относится ваш вопрос? Кратко опишите ситуацию — мы определим, какой специалист потребуется
+            <div style={{ 
+              marginTop: '50px', 
+              background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #1a3a5c 100%)', 
+              padding: '50px 40px', 
+              borderRadius: '0', 
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              textAlign: 'center',
+              position: 'relative',
+              overflow: 'hidden',
+              boxShadow: '0 20px 40px rgba(16, 39, 59, 0.1)'
+            }}>
+              {/* Decorative elements */}
+              <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="rgba(193, 160, 102, 0.1)" strokeWidth="1" style={{ position: 'absolute', right: '-20px', top: '-20px', pointerEvents: 'none' }}>
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+              
+              <h3 style={{ fontSize: '24px', color: 'var(--color-white)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
+                Не уверены, к какому направлению относится ваш вопрос?
+              </h3>
+              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)', marginBottom: '30px', maxWidth: '600px', lineHeight: 1.5, position: 'relative', zIndex: 1 }}>
+                Кратко опишите ситуацию — мы бесплатно проанализируем её и определим, какой именно профильный специалист вам потребуется.
               </p>
-              <a href="#consultation" className="btn btn-primary" style={{ display: 'inline-flex' }}>Обсудить ситуацию</a>
+              <a href="#consultation" className="btn btn-primary" style={{ display: 'inline-flex', position: 'relative', zIndex: 1, boxShadow: '0 10px 20px rgba(193, 160, 102, 0.2)' }}>Обсудить ситуацию</a>
             </div>
 
           </div>
