@@ -71,11 +71,11 @@ export default function Home() {
             }}>
               {[
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
-                  title: 'Юристы и адвокаты', desc: 'По профилю дела' },
+                  title: 'Точно по профилю дела', desc: 'Юристы и адвокаты с нужной специализацией' },
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
-                  title: 'Практический опыт команды', desc: 'Прокуратура, СК, ФССП, администрация' },
+                  title: 'Практический опыт', desc: 'Выходцы из СК, ФССП и прокуратуры' },
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
-                  title: 'Условия — в договоре', desc: 'Состав работ, стоимость и порядок оплаты' }
+                  title: 'Условия — в договоре', desc: 'Фиксируем состав работ, цену и порядок оплаты' }
               ].map((bullet, i) => (
                 <div key={i} style={{ 
                   flex: 1,
@@ -405,8 +405,8 @@ export default function Home() {
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '42px', color: 'var(--color-deep-blue)', marginBottom: '24px' }}>
               Что происходит после обращения
             </h2>
-            <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0 auto' }}>
-              Каждое дело уникально, но наш подход всегда остается системным. Прозрачный процесс работы от первой консультации до итогового решения.
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
+              Каждое судебное дело уникально, но наш подход всегда остается системным. Прозрачный процесс работы от первой юридической консультации и досудебного урегулирования до вынесения итогового решения суда.
             </p>
           </div>
 
@@ -423,8 +423,14 @@ export default function Home() {
                   display: 'flex',
                   flexDirection: 'column',
                   background: 'transparent',
-                  padding: '10px'
+                  padding: '30px 20px',
+                  alignItems: 'center'
                 }} className="stage-item">
+                  
+                  {/* Hand-drawn pencil outline around the step */}
+                  <svg style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, pointerEvents: 'none', opacity: 0.8 }} viewBox="0 0 300 250" preserveAspectRatio="none">
+                    <path d="M 15 15 C 150 5, 290 10, 285 125 C 290 240, 150 245, 15 235 C 5 200, 10 50, 15 15 Z" fill="none" stroke="rgba(193, 160, 102, 0.4)" strokeWidth="1.5" strokeDasharray="4 2 8 2" vectorEffect="non-scaling-stroke"/>
+                  </svg>
                   
                   {/* Organic Number / Dot */}
                   <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '30px' }}>
@@ -509,7 +515,7 @@ export default function Home() {
             
             {/* Case Card 1 */}
             <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
-              <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '6px 12px', fontSize: '11px', borderRadius: '4px', fontWeight: 600, letterSpacing: '0.05em', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>Демонстрация формата</div>
+              <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(23, 50, 77, 0.05)', border: '1px solid rgba(23, 50, 77, 0.1)', color: 'var(--color-text-secondary)', padding: '4px 10px', fontSize: '11px', borderRadius: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>Демонстрация формата</div>
               <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Земельное право</span>
                 <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Успешное разрешение спора о границах земельного участка</h4>
@@ -535,7 +541,7 @@ export default function Home() {
 
             {/* Case Card 2 */}
             <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
-              <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '6px 12px', fontSize: '11px', borderRadius: '4px', fontWeight: 600, letterSpacing: '0.05em', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>Демонстрация формата</div>
+              <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(23, 50, 77, 0.05)', border: '1px solid rgba(23, 50, 77, 0.1)', color: 'var(--color-text-secondary)', padding: '4px 10px', fontSize: '11px', borderRadius: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>Демонстрация формата</div>
               <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Семейное право</span>
                 <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Защита активов при сложном разделе имущества супругов</h4>
@@ -561,7 +567,7 @@ export default function Home() {
 
             {/* Case Card 3 */}
             <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
-              <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '6px 12px', fontSize: '11px', borderRadius: '4px', fontWeight: 600, letterSpacing: '0.05em', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>Демонстрация формата</div>
+              <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(23, 50, 77, 0.05)', border: '1px solid rgba(23, 50, 77, 0.1)', color: 'var(--color-text-secondary)', padding: '4px 10px', fontSize: '11px', borderRadius: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>Демонстрация формата</div>
               <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Арбитраж</span>
                 <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Взыскание задолженности по договору подряда через суд</h4>

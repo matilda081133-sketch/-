@@ -66,12 +66,12 @@ export default function PricingBlock() {
         <div className="grid grid-3" style={{ gap: '30px', alignItems: 'stretch' }}>
           {tiers.map((tier, idx) => (
             <div key={idx} style={{
-              background: tier.popular ? 'linear-gradient(145deg, var(--color-deep-blue) 0%, var(--color-primary) 100%)' : 'var(--color-white)',
-              color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)',
+              background: tier.popular ? 'linear-gradient(145deg, var(--color-cream) 0%, #FFFFFF 100%)' : 'var(--color-white)',
+              color: 'var(--color-deep-blue)',
               borderRadius: '0',
               padding: '40px 30px',
               boxShadow: tier.popular ? '0 20px 40px rgba(16, 39, 59, 0.15)' : '0 10px 30px rgba(0,0,0,0.05)',
-              border: tier.popular ? 'none' : '1px solid rgba(23, 50, 77, 0.1)',
+              border: tier.popular ? '1px solid rgba(184, 156, 114, 0.3)' : '1px solid rgba(23, 50, 77, 0.1)',
               position: 'relative',
               transition: 'transform 0.4s ease, box-shadow 0.4s ease',
               display: 'flex',
@@ -86,8 +86,8 @@ export default function PricingBlock() {
                   top: '0',
                   left: '50%',
                   transform: 'translate(-50%, -50%)',
-                  background: 'var(--color-white)',
-                  color: 'var(--color-deep-blue)',
+                  background: 'var(--color-deep-blue)',
+                  color: 'var(--color-white)',
                   padding: '6px 16px',
                   borderRadius: '0',
                   fontSize: '12px',

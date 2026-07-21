@@ -33,8 +33,8 @@ export default function ServicesTabs() {
           <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
             Ключевые направления юридической помощи
           </h2>
-          <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0 }}>
-            Выберите, кому требуется юридическая помощь
+          <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+            Профессиональные услуги юриста и адвоката в Липецке. Предоставляем комплексное правовое обслуживание для бизнеса и частных лиц: от первичной юридической консультации до представительства в суде.
           </p>
         </div>
 
