@@ -386,10 +386,6 @@ export default function Home() {
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1 }}>
                   {item.desc}
                 </p>
-                
-                <div style={{ position: 'absolute', top: '20px', right: '30px', fontSize: '96px', fontWeight: 900, color: 'rgba(23, 50, 77, 0.04)', pointerEvents: 'none', zIndex: 0, fontFamily: 'var(--font-serif)', lineHeight: 1 }}>
-                  {item.num}
-                </div>
               </div>
             ))}
 
