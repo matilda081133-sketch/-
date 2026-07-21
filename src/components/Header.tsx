@@ -16,15 +16,36 @@ export default function Header() {
   }, []);
 
   const b2cHubs = [
-    { title: "Семейные споры", href: "/grazhdanam/semejnie" },
-    { title: "Банкротство физ. лиц", href: "/grazhdanam/bankrotstvo" },
-    { title: "Наследственные дела", href: "/grazhdanam/nasledstvo" }
+    { title: "Семейный юрист", href: "/grazhdanam/semejnyj-yurist/" },
+    { title: "Наследственный юрист", href: "/grazhdanam/nasledstvennyj-yurist/" },
+    { title: "Жилищный юрист", href: "/grazhdanam/zhilishchnyj-yurist/" },
+    { title: "Юрист по недвижимости", href: "/grazhdanam/yurist-po-nedvizhimosti/" },
+    { title: "Земельный юрист", href: "/grazhdanam/zemelnyj-yurist/" },
+    { title: "Банкротство физических лиц", href: "/grazhdanam/bankrotstvo-fizicheskih-lic/" },
+    { title: "Кредитный юрист", href: "/grazhdanam/kreditnyj-yurist/" },
+    { title: "Взыскание долгов", href: "/grazhdanam/vzyskanie-dolgov/" },
+    { title: "Юрист по исполнительному производству", href: "/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/" },
+    { title: "Автоюрист", href: "/grazhdanam/avtoyurist/" },
+    { title: "Трудовой юрист", href: "/grazhdanam/trudovoj-yurist/" },
+    { title: "Адвокат по уголовным делам", href: "/grazhdanam/advokat-po-ugolovnym-delam/" },
+    { title: "Военный юрист", href: "/grazhdanam/voennyj-yurist/" },
+    { title: "Миграционный юрист", href: "/grazhdanam/migracionnyj-yurist/" }
   ];
 
   const b2bHubs = [
-    { title: "Арбитражные споры", href: "/biznesu/arbitrazh" },
-    { title: "Налоговая практика", href: "/biznesu/nalogi" },
-    { title: "Банкротство юр. лиц", href: "/biznesu/bankrotstvo" }
+    { title: "Арбитражный юрист", href: "/biznesu/arbitrazhnyj-yurist/" },
+    { title: "Взыскание задолженности с юридических лиц", href: "/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/" },
+    { title: "Корпоративный юрист", href: "/biznesu/korporativnyj-yurist/" },
+    { title: "Договорное право", href: "/biznesu/dogovornoe-pravo/" },
+    { title: "Налоговый юрист для бизнеса", href: "/biznesu/nalogovyj-yurist-dlya-biznesa/" },
+    { title: "Банкротство бизнеса", href: "/biznesu/bankrotstvo-biznesa/" },
+    { title: "Трудовые споры с работниками", href: "/biznesu/trudovye-spory-s-rabotnikami/" },
+    { title: "Юридическое сопровождение бизнеса", href: "/biznesu/yuridicheskoe-soprovozhdenie-biznesa/" },
+    { title: "Юрист по недвижимости и строительству для бизнеса", href: "/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/" },
+    { title: "Исполнительное производство для бизнеса", href: "/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/" },
+    { title: "Миграционное сопровождение бизнеса", href: "/biznesu/migracionnoe-soprovozhdenie-biznesa/" },
+    { title: "Разблокировка расчётного счёта по 115-ФЗ", href: "/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/" },
+    { title: "Уголовно-правовая защита бизнеса", href: "/biznesu/ugolovno-pravovaya-zashchita-biznesa/" }
   ];
 
   return (
@@ -132,7 +153,13 @@ export default function Header() {
             <Link href="/kontakty" className="nav-link">Контакты</Link>
           </div>
           
-          <div className="contact-dropdown" style={{ position: 'relative', display: 'flex', alignItems: 'center', paddingLeft: '20px', borderLeft: '1px solid var(--color-border)' }}>
+          
+          <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginLeft: 'auto' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', fontSize: '13px', lineHeight: 1.4 }}>
+              <a href="tel:+79103503111" style={{ fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', fontSize: '16px' }}>+7 (910) 350-31-11</a>
+              <span style={{ color: 'var(--color-text-secondary)', fontSize: '12px' }}>Липецк, ул. Советская, 35, оф. 213</span>
+            </div>
+            <div className="contact-dropdown" style={{ position: 'relative', display: 'flex', alignItems: 'center', paddingLeft: '20px', borderLeft: '1px solid var(--color-border)' }}>
             <button className="btn btn-outline contact-btn" style={{ padding: '8px 20px', fontSize: '13px', borderRadius: '4px', whiteSpace: 'nowrap', textDecoration: 'none', cursor: 'pointer' }}>
               Написать
             </button>
@@ -164,10 +191,6 @@ export default function Header() {
               </a>
             </div>
           </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', borderLeft: '1px solid var(--color-border)', paddingLeft: '20px', whiteSpace: 'nowrap' }}>
-            <a href="tel:+79103503111" style={{ fontWeight: 'bold', fontSize: '18px', color: 'var(--color-deep-blue)', whiteSpace: 'nowrap' }}>+7 (910) 350-31-11</a>
-            <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', whiteSpace: 'nowrap' }}>ул. Советская, 35</span>
           </div>
         </nav>
       </div>

@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import TeamCarousel from '@/components/TeamCarousel';
 import Header from '@/components/Header';
-import ServicesBlock from '@/components/ServicesBlock';
+import ServicesTabs from '@/components/ServicesTabs';
 import FAQBlock from '@/components/FAQBlock';
 import PricingBlock from '@/components/PricingBlock';
 import PhoneInput from '@/components/PhoneInput';
 import ReviewsBlock from '@/components/ReviewsBlock';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -69,9 +70,9 @@ export default function Home() {
               marginTop: '50px' 
             }}>
               {[
-                { value: '15+', label: 'Лет практики' },
-                { value: '92%', label: 'Успешных дел' },
-                { value: '24/7', label: 'Всегда на связи' }
+                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, label: 'Юристы и адвокаты по профилю дела' },
+                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, label: 'Практический опыт в органах' },
+                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, label: 'Условия работы строго в договоре' }
               ].map((bullet, i) => (
                 <div key={i} style={{ 
                   flex: 1,
@@ -84,7 +85,7 @@ export default function Home() {
                   padding: '20px 24px',
                   boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)'
                 }}>
-                  <div style={{ color: 'var(--color-primary)', fontSize: '36px', fontWeight: 800, fontFamily: 'var(--font-serif)', lineHeight: 1 }}>{bullet.value}</div>
+                  <div style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{bullet.value}</div>
                   <div style={{ color: 'var(--color-deep-blue)', fontSize: '14px', fontWeight: 600, lineHeight: 1.3 }}>{bullet.label}</div>
                 </div>
               ))}
@@ -270,7 +271,7 @@ export default function Home() {
 
       {/* 2. PRIORITIES */}
       <div id="services">
-        <ServicesBlock />
+        <ServicesTabs />
       </div>
 
       {/* 3. WHY US / USP */}
@@ -384,7 +385,7 @@ export default function Home() {
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', marginBottom: '50px' }}>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '42px', color: 'var(--color-deep-blue)', marginBottom: '24px' }}>
-              Как мы работаем
+              Что происходит после обращения
             </h2>
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0 auto' }}>
               Каждое дело уникально, но наш подход всегда остается системным. Прозрачный процесс работы от первой консультации до итогового решения.
@@ -614,66 +615,8 @@ export default function Home() {
       </section>
 
       {/* 11. FOOTER */}
-      <footer style={{ backgroundColor: '#17324D', color: 'var(--color-white)', padding: '40px 0 20px' }}>
-        <div className="container grid grid-4" style={{ gap: '30px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '30px', marginBottom: '20px' }}>
-          <div>
-            <div style={{ marginBottom: '24px', marginTop: '-20px' }}>
-              <img src="images/logo.png" alt="Де-Юре" style={{ height: '190px', width: 'auto' }} />
-            </div>
-            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px', lineHeight: 1.5, marginBottom: '16px' }}>
-              Юридическая помощь гражданам и бизнесу в Липецке.
-            </p>
-            <div style={{ display: 'flex', gap: '12px' }}>
-              <a href="https://max.ru/join/j5TVaYjQLyJwXfW1azJJ84YZToaXviRu-YFPDy8gMBI" target="_blank" rel="noopener noreferrer" className="footer-social-icon">
-                <svg width="20" height="20" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24C0 10.7452 10.7452 0 24 0ZM24.2314 12.5C17.8663 12.5 12.4942 17.4255 12.4941 23.9727C12.4941 26.714 13.0015 28.6059 13.4482 30.3047C13.8233 31.6836 14.1543 32.9467 14.1543 34.4414C14.3143 36.4326 17.9823 35.2685 19.1406 33.7793C20.9718 35.1031 22.0251 35.4346 24.292 35.4346C30.5586 35.4011 35.6151 30.2999 35.5938 24.0332C35.5937 17.6682 30.602 12.5 24.2314 12.5ZM24.3857 18.1592V18.165C27.5981 18.349 30.0709 21.0719 29.9453 24.2871C29.7296 27.4955 26.9854 29.9406 23.7734 29.7861C22.768 29.7055 21.8016 29.3614 20.9717 28.7881C20.4699 29.2899 19.6648 29.9402 19.3447 29.8633C18.6774 29.6868 17.8938 26.2951 18.335 23.5098C18.87 20.1452 21.2859 17.9993 24.3857 18.1592Z" />
-                </svg>
-              </a>
-              <a href="https://vk.com/" target="_blank" rel="noopener noreferrer" className="footer-social-icon">
-                <svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50ZM25 34c.406 19.488 10.15 31.2 27.233 31.2h.968V54.05c6.278.625 11.024 5.216 12.93 11.15H75c-2.436-8.87-8.838-13.773-12.836-15.647C66.162 47.242 71.783 41.62 73.126 34h-8.058c-1.749 6.184-6.932 11.805-11.867 12.336V34h-8.057v21.611C40.147 54.362 33.838 48.304 33.556 34H25Z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div>
-            <h4 style={{ color: 'var(--color-white)', margin: '0 0 16px 0', fontSize: '16px' }}>Гражданам</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <li><Link href="/grazhdanam/semejnie" className="footer-link" style={{ fontSize: '14px' }}>Семейные споры</Link></li>
-              <li><Link href="/grazhdanam/bankrotstvo" className="footer-link" style={{ fontSize: '14px' }}>Банкротство физ. лиц</Link></li>
-              <li><Link href="/grazhdanam/nasledstvo" className="footer-link" style={{ fontSize: '14px' }}>Наследственные дела</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 style={{ color: 'var(--color-white)', margin: '0 0 16px 0', fontSize: '16px' }}>Бизнесу</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <li><Link href="/biznesu/arbitrazh" className="footer-link" style={{ fontSize: '14px' }}>Арбитражные споры</Link></li>
-              <li><Link href="/biznesu/nalogi" className="footer-link" style={{ fontSize: '14px' }}>Налоговая практика</Link></li>
-              <li><Link href="/biznesu/bankrotstvo" className="footer-link" style={{ fontSize: '14px' }}>Банкротство юр. лиц</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 style={{ color: 'var(--color-white)', margin: '0 0 16px 0', fontSize: '16px' }}>Компания</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <li><Link href="/o-kompanii" className="footer-link" style={{ fontSize: '14px' }}>О компании</Link></li>
-              <li><Link href="/praktika" className="footer-link" style={{ fontSize: '14px' }}>Практика</Link></li>
-              <li><Link href="/publikacii" className="footer-link" style={{ fontSize: '14px' }}>Публикации</Link></li>
-              <li><Link href="/kontakty" className="footer-link" style={{ fontSize: '14px' }}>Контакты</Link></li>
-            </ul>
-          </div>
-        </div>
-        <div className="container" style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', marginBottom: '20px', display: 'flex', flexWrap: 'wrap', rowGap: '6px', columnGap: '16px' }}>
-          <span>ООО ЮК "ДЕ-ЮРЕ"</span>
-          <span>ИНН: 4800009680</span>
-          <span>ОГРН: 1234800008464</span>
-          <span>Адрес: 398902, Липецкая область, г. Липецк, ул. Юношеская, влд. 46Б, помещение 1</span>
-          <span>Телефон: +7 (910) 350-31-11</span>
-        </div>
-        <div className="container flex justify-between" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}>
-          <span>© 2026 ООО «Де-Юре». Все права защищены.</span>
-          <Link href="/privacy" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'underline' }}>Политика конфиденциальности</Link>
-        </div>
-      </footer>
+      <Footer />
+
     </main>
   );
 }
