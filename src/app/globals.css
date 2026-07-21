@@ -2,6 +2,8 @@
   /* Цветовая палитра из ТЗ */
   --color-primary: #17324D;
   --color-deep-blue: #10273B;
+  --color-gold: #B89C72;
+  --color-gold-light: #DFD3C3;
   --color-white: #FFFFFF;
   --color-cream: #F7F4ED;
   --color-grey-blue: #EAF1F6;
@@ -763,4 +765,68 @@ h4 { font-size: 1.25rem; }
     flex-direction: column;
     width: 100%;
   }
+}
+
+/* Premium Accents */
+h2 {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--color-gold);
+}
+
+.text-center h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.service-card {
+  border-top: 3px solid transparent !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover {
+  border-top: 3px solid var(--color-gold) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(16, 39, 59, 0.08);
+}
+
+.service-card:hover .card-arrow {
+  color: var(--color-gold) !important;
+  transform: translateX(5px);
+}
+
+.btn {
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-deep-blue);
+  border-color: var(--color-gold);
+}
+
+.btn-outline {
+  border: 1px solid var(--color-gold);
+  color: var(--color-deep-blue);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+/* Add a subtle elegant pattern to cream backgrounds */
+.bg-cream {
+  background-image: radial-gradient(var(--color-gold-light) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-color: var(--color-cream);
 }
