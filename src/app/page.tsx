@@ -112,7 +112,7 @@ export default function Home() {
               pointerEvents: 'none'
             }} />
             {/* Background Graphic: Courthouse (Centered behind mockup, shifted right) */}
-            <svg style={{ position: 'absolute', top: '35%', left: '100%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.15, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.8">
+            <svg style={{ position: 'absolute', top: '35%', left: '100%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.08, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
               <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
             </svg>
 
@@ -423,14 +423,8 @@ export default function Home() {
                   display: 'flex',
                   flexDirection: 'column',
                   background: 'transparent',
-                  padding: '30px 20px',
-                  alignItems: 'center'
+                  padding: '10px'
                 }} className="stage-item">
-                  
-                  {/* Hand-drawn pencil outline around the step */}
-                  <svg style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, pointerEvents: 'none', opacity: 0.8 }} viewBox="0 0 300 250" preserveAspectRatio="none">
-                    <path d="M 15 15 C 150 5, 290 10, 285 125 C 290 240, 150 245, 15 235 C 5 200, 10 50, 15 15 Z" fill="none" stroke="rgba(193, 160, 102, 0.4)" strokeWidth="1.5" strokeDasharray="4 2 8 2" vectorEffect="non-scaling-stroke"/>
-                  </svg>
                   
                   {/* Organic Number / Dot */}
                   <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '30px' }}>
