@@ -66,19 +66,19 @@ export default function Home() {
             {/* Hero USPs Row */}
             <div className="reveal-on-scroll delay-100" style={{ 
               display: 'flex', 
-              gap: '20px', 
+              flexDirection: 'column',
+              gap: '12px', 
               marginTop: '50px' 
             }}>
               {[
-                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
-                  text: 'Профильные юристы и адвокаты под специфику вашего дела.' },
-                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
+                { value: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
+                  text: 'Профильные юристы и адвокаты под конкретную специфику вашего дела.' },
+                { value: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
                   text: 'Опыт работы изнутри системы: СК, ФССП, прокуратура, администрация.' },
-                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
-                  text: 'Честный договор: фиксируем состав работ, стоимость и оплату.' }
+                { value: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
+                  text: 'Честный договор: фиксируем точный состав работ, стоимость и порядок оплаты.' }
               ].map((bullet, i) => (
                 <div key={i} style={{ 
-                  flex: 1,
                   display: 'flex', 
                   alignItems: 'center', 
                   gap: '16px',
@@ -334,36 +334,42 @@ export default function Home() {
               {
                 num: "01",
                 tag: "Специализация",
-                text: "Земельный спор ведет земельный юрист, уголовное — адвокат. Сложные дела — команда."
+                title: "Подбираем специалиста под категорию дела",
+                desc: "Земельный спор передаем юристу по земельному праву, уголовное дело — адвокату. Если задача затрагивает несколько отраслей, определяем состав команды после первичного разбора."
               },
               {
                 num: "02",
                 tag: "Командная работа",
-                text: "Подключаем профильного адвоката или экспертов строго после согласования с клиентом."
+                title: "Подключаем адвоката, когда этого требует дело",
+                desc: "В уголовных делах и других ситуациях, где необходим статус адвоката, к работе подключается специалист с действующим адвокатским статусом. Дополнительных экспертов привлекаем после согласования с клиентом."
               },
               {
                 num: "03",
                 tag: "Анализ",
-                text: "До старта работ изучаем документы, честно оцениваем риски и перспективы решения."
+                title: "Варианты и риски до начала основных работ",
+                desc: "На первой встрече уточняем обстоятельства и изучаем доступные документы. Если требуется отдельный углубленный анализ, заранее согласовываем его объем и стоимость."
               },
               {
                 num: "04",
                 tag: "Сопровождение",
-                text: "Берем рутину на себя: от подготовки документов до судов без вашего личного участия."
+                title: "Берем на себя согласованные этапы",
+                desc: "Подготовка документов, переговоры, обращения в государственные органы, суд и исполнительное производство включаются в работу в зависимости от задачи и фиксируются в договоре."
               },
               {
                 num: "05",
                 tag: "Региональная практика",
-                text: "Офис в центре Липецка. Досконально знаем практику местных судов и госорганов."
+                title: "Офис в центре Липецка",
+                desc: "Принимаем по адресу: г. Липецк, ул. Советская, д. 35, офис 213. Возможность дистанционной работы определяется характером дела."
               },
               {
                 num: "06",
                 tag: "Понятные условия",
-                text: "Сразу фиксируем в официальном договоре точный состав всех работ, стоимость и оплату."
+                title: "Состав работ и порядок оплаты — в договоре",
+                desc: "До начала основных работ фиксируем, какие действия выполняет специалист, как рассчитывается стоимость и какие расходы оплачиваются отдельно."
               }
             ].map((item, i) => (
               <div key={i} className="usp-card" style={{ 
-                padding: '30px', 
+                padding: '40px', 
                 borderRight: '1px solid rgba(23, 50, 77, 0.1)',
                 borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
                 background: 'rgba(255, 255, 255, 0.85)',
@@ -374,11 +380,14 @@ export default function Home() {
                 <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
                   {item.tag}
                 </div>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5, position: 'relative', zIndex: 1, fontWeight: 500 }}>
-                  {item.text}
+                <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
+                  {item.title}
+                </h3>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1 }}>
+                  {item.desc}
                 </p>
                 
-                <div style={{ position: 'absolute', top: '20px', right: '20px', fontSize: '48px', fontWeight: 900, color: 'rgba(23, 50, 77, 0.03)', pointerEvents: 'none', zIndex: 0, fontFamily: 'var(--font-serif)' }}>
+                <div style={{ position: 'absolute', top: '30px', right: '30px', fontSize: '48px', fontWeight: 900, color: 'rgba(23, 50, 77, 0.03)', pointerEvents: 'none', zIndex: 0, fontFamily: 'var(--font-serif)' }}>
                   {item.num}
                 </div>
               </div>
