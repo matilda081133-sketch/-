@@ -71,11 +71,11 @@ export default function Home() {
             }}>
               {[
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
-                  title: 'Точно по профилю дела', desc: 'Юристы и адвокаты с нужной специализацией' },
+                  text: 'Юристы и адвокаты — по профилю дела.' },
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
-                  title: 'Практический опыт', desc: 'Выходцы из СК, ФССП и прокуратуры' },
+                  text: 'Практический опыт команды — прокуратура, СК, ФССП, администрация.' },
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
-                  title: 'Условия — в договоре', desc: 'Фиксируем состав работ, цену и порядок оплаты' }
+                  text: 'Условия — в договоре — состав работ, стоимость и порядок оплаты.' }
               ].map((bullet, i) => (
                 <div key={i} style={{ 
                   flex: 1,
@@ -89,9 +89,8 @@ export default function Home() {
                   boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)'
                 }}>
                   <div style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{bullet.value}</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                    <div style={{ color: 'var(--color-deep-blue)', fontSize: '14px', fontWeight: 700, lineHeight: 1.2 }}>{bullet.title}</div>
-                    <div style={{ color: 'var(--color-text-secondary)', fontSize: '12px', fontWeight: 500, lineHeight: 1.3 }}>{bullet.desc}</div>
+                  <div style={{ color: 'var(--color-deep-blue)', fontSize: '13px', fontWeight: 600, lineHeight: 1.4 }}>
+                    {bullet.text}
                   </div>
                 </div>
               ))}
