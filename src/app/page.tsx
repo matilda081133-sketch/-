@@ -512,9 +512,9 @@ export default function Home() {
                 </div>
               </div>
               
-              <div style={{ marginTop: '30px', background: 'var(--color-deep-blue)', padding: '20px', borderRadius: '0', borderLeft: '4px solid var(--color-gold)', boxShadow: '0 10px 20px rgba(16,39,59,0.1)' }}>
-    <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255,255,255,0.7)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
-    <p style={{ fontSize: '16px', margin: 0, fontWeight: 600, color: 'var(--color-white)', lineHeight: 1.4 }}>Границы восстановлены. Выиграно дело в суде первой инстанции.</p>
+              <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '4px', border: '1px solid rgba(193, 160, 102, 0.2)', borderLeft: '4px solid var(--color-gold)' }}>
+    <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
+    <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>Границы восстановлены. Выиграно дело в суде первой инстанции.</p>
   </div>
             </div>
 
@@ -538,9 +538,9 @@ export default function Home() {
                 </div>
               </div>
               
-              <div style={{ marginTop: '30px', background: 'var(--color-deep-blue)', padding: '20px', borderRadius: '0', borderLeft: '4px solid var(--color-gold)', boxShadow: '0 10px 20px rgba(16,39,59,0.1)' }}>
-    <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255,255,255,0.7)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
-    <p style={{ fontSize: '16px', margin: 0, fontWeight: 600, color: 'var(--color-white)', lineHeight: 1.4 }}>Достигнуто выгодное мировое соглашение. Клиент сохранил контроль над бизнесом.</p>
+              <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '4px', border: '1px solid rgba(193, 160, 102, 0.2)', borderLeft: '4px solid var(--color-gold)' }}>
+    <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
+    <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>Достигнуто выгодное мировое соглашение. Клиент сохранил контроль над бизнесом.</p>
   </div>
             </div>
 
@@ -564,9 +564,9 @@ export default function Home() {
                 </div>
               </div>
               
-              <div style={{ marginTop: '30px', background: 'var(--color-deep-blue)', padding: '20px', borderRadius: '0', borderLeft: '4px solid var(--color-gold)', boxShadow: '0 10px 20px rgba(16,39,59,0.1)' }}>
-    <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255,255,255,0.7)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
-    <p style={{ fontSize: '16px', margin: 0, fontWeight: 600, color: 'var(--color-white)', lineHeight: 1.4 }}>Задолженность и пени в размере 100% взысканы через Арбитражный суд.</p>
+              <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '4px', border: '1px solid rgba(193, 160, 102, 0.2)', borderLeft: '4px solid var(--color-gold)' }}>
+    <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
+    <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>Задолженность и пени в размере 100% взысканы через Арбитражный суд.</p>
   </div>
             </div>
 
