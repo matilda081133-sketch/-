@@ -293,7 +293,7 @@ export default function Home() {
 
  {/* 3. WHY US / USP */}
  <section className="section" style={{ 
- background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), radial-gradient(at 80% 50%, rgba(234, 241, 246, 0.8) 0%, transparent 50%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)',
+ background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), radial-gradient(at 90% 20%, rgba(210, 225, 240, 0.8) 0%, transparent 70%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)',
  backgroundPosition: 'center',
  backgroundRepeat: 'no-repeat',
  padding: '60px 0', 
