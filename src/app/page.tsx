@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import TeamCarousel from '@/components/TeamCarousel';
 import Header from '@/components/Header';
 import ServicesTabs from '@/components/ServicesTabs';
@@ -17,7 +16,7 @@ export default function Home() {
  {/* 1. HERO */}
  <section style={{ 
  position: 'relative', 
- minHeight: 'auto', 
+ minHeight: '85vh', 
  display: 'flex', 
  alignItems: 'center',
  paddingTop: '160px',
@@ -31,8 +30,8 @@ export default function Home() {
  borderRadius: '50%', zIndex: 0
  }} />
  
- <div className="container hero-grid" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
- <div className="" style={{ padding: '40px 0', maxWidth: '800px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+ <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+ <div className="" style={{ padding: '40px 0', maxWidth: '800px' }}>
  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
  <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
  <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#9B7E55' }}>
@@ -98,7 +97,7 @@ export default function Home() {
  </div>
  </div>
  
- <div style={{ display: 'flex', flexDirection: 'column', flex: 1, position: 'relative', height: '100%' }}>
+ <div  style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
  {/* Darkening gradient under the creative to highlight the background graphic */}
  <div style={{
  position: 'absolute',
@@ -116,23 +115,173 @@ export default function Home() {
  <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
  </svg>
 
-          <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
-            <div className="photo-hover-shadow" style={{ 
-              width: '100%',
-              aspectRatio: '571/1024',
-              background: 'var(--color-cream)', 
-              borderRadius: '4px',
-              overflow: 'hidden'
-            }}>
-              <Image 
-                src="/-/images/hero-photo.jpg" 
-                alt="Юридическая помощь" 
-                width={571}
-                height={1024}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-            </div>
-          </div>
+ {/* INTERACTIVE ANIMATED CSS MOCKUP */}
+ <div className="mockup-container" style={{ zIndex: 1 }}>
+ {/* Background decorative glows */}
+ <div style={{ position: 'absolute', width: '250px', height: '250px', background: 'var(--color-primary)', filter: 'blur(100px)', opacity: 0.15, borderRadius: '50%' }}></div>
+ 
+ {/* Document 4 (Back) */}
+ <div className="doc-wrapper-float-4">
+ <div className="doc-sheet doc-sheet-4">
+ <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+ <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+ <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+ <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ </div>
+ </div>
+ <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
+ <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ {/* Document 3 */}
+ <div className="doc-wrapper-float-3">
+ <div className="doc-sheet doc-sheet-3">
+ <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+ <div style={{ position: 'absolute', top: '30px', left: '30px', width: '70px', height: '30px', border: '2px solid rgba(23, 50, 77, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}></div>
+ <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+ <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+ <div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ </div>
+ </div>
+ <div style={{ width: '140px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
+ <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ {/* Document 2 */}
+ <div className="doc-wrapper-float-2">
+ <div className="doc-sheet doc-sheet-2">
+ <div style={{ padding: '30px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+ {/* Stamp at top left */}
+ <div style={{ position: 'absolute', top: '25px', left: '25px', width: '80px', height: '35px', border: '1px solid #C8A97E', color: '#C8A97E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)', opacity: 0.9 }}>
+ <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold' }}>
+ ПРИЛОЖЕНИЕ №1<br/>
+ К ДОГОВОРУ № 14/2026
+ </div>
+ </div>
+
+ {/* Header */}
+ <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '30px' }}>
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+ <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+ <div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ </div>
+ </div>
+
+ {/* Title */}
+ <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 20px auto' }}></div>
+
+ {/* Solid text blocks */}
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+ <div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+ <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ </div>
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+ <div style={{ width: '50%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+ <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '80%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ </div>
+ </div>
+
+ {/* Footer grid */}
+ <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px dashed rgba(23,50,77,0.1)' }}>
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+ <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)', fontFamily: 'var(--font-sans)' }}>Заказчик:</div>
+ <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
+ </div>
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+ <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)', fontFamily: 'var(--font-sans)' }}>Исполнитель:</div>
+ <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ {/* Document 1 (Front) */}
+ <div className="doc-wrapper-float-1">
+ <div className="doc-sheet doc-sheet-1">
+ <div style={{ padding: '30px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+ {/* Watermark Logo */}
+ <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.03, width: '150px' }}>
+ <img src="images/logo_dark.png" alt="" style={{ width: '100%', height: 'auto' }} />
+ </div>
+ 
+ {/* Header */}
+ <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '12px', marginBottom: '20px' }}>
+ <img src="images/logo_dark.png" alt="" style={{ width: '60px', height: 'auto', opacity: 0.8 }} />
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+ <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+ <div style={{ width: '50px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ </div>
+ </div>
+
+ {/* Title */}
+ <div style={{ width: '120px', height: '8px', background: 'var(--color-deep-blue)', margin: '0 auto 20px auto' }}></div>
+
+ {/* Clauses / Abstract Lines */}
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '16px' }}>
+ <div style={{ display: 'flex', gap: '8px' }}>
+ <div style={{ width: '12px', height: '4px', background: 'var(--color-primary)' }}></div>
+ <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+ <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ </div>
+ </div>
+ <div style={{ display: 'flex', gap: '8px' }}>
+ <div style={{ width: '12px', height: '4px', background: 'var(--color-primary)' }}></div>
+ <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+ <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '75%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ </div>
+ </div>
+ <div style={{ display: 'flex', gap: '8px' }}>
+ <div style={{ width: '12px', height: '4px', background: 'var(--color-primary)' }}></div>
+ <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+ <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ <div style={{ width: '60%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+ </div>
+ </div>
+ </div>
+
+ {/* Signatures */}
+ <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px dashed rgba(23,50,77,0.1)' }}>
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+ <div style={{ width: '40px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+ <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
+ <div style={{ width: '50px', height: '2px', background: 'rgba(23,50,77,0.1)', margin: '0 auto' }}></div>
+ </div>
+ <div className="animated-seal" style={{ width: '60px', height: '60px', borderRadius: '50%', border: '1px solid #9B7E55', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', transform: 'rotate(-15deg)' }}>
+ <div style={{ width: '50px', height: '50px', borderRadius: '50%', border: '1px dashed #9B7E55', background: 'rgba(155, 126, 85, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+ <img src="images/logo_dark.png" alt="" style={{ width: '30px', opacity: 0.3, filter: 'sepia(1) hue-rotate(340deg) saturate(3)' }} />
+ </div>
+ <div style={{ position: 'absolute', width: '100%', height: '100%', borderRadius: '50%', border: '1px solid rgba(155, 126, 85, 0.2)' }}></div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
  </div>
  </div>
  </section>
@@ -186,19 +335,19 @@ export default function Home() {
  num: "01",
  tag: "Специализация",
  title: "Подбираем специалиста под категорию дела",
- desc: <>Земельный спор передаем <span className="text-accent">юристу по земельному праву</span>, уголовное дело — <span className="text-accent">адвокату</span>. Если задача затрагивает несколько отраслей, определяем состав команды после первичного разбора.</>
+ desc: "Земельный спор передаем юристу по земельному праву, уголовное дело — адвокату. Если задача затрагивает несколько отраслей, определяем состав команды после первичного разбора."
  },
  {
  num: "02",
  tag: "Командная работа",
  title: "Подключаем адвоката, когда этого требует дело",
- desc: <>В уголовных делах и других ситуациях, где необходим статус адвоката, к работе подключается <span className="text-accent">специалист с действующим адвокатским статусом</span>. Дополнительных экспертов привлекаем после согласования с клиентом.</>
+ desc: "В уголовных делах и других ситуациях, где необходим статус адвоката, к работе подключается специалист с действующим адвокатским статусом. Дополнительных экспертов привлекаем после согласования с клиентом."
  },
  {
  num: "03",
  tag: "Анализ",
  title: "Варианты и риски до начала основных работ",
- desc: <>На первой встрече уточняем обстоятельства и изучаем доступные документы. Если требуется <span className="text-accent">отдельный углубленный анализ</span>, заранее согласовываем его объем и стоимость.</>
+ desc: "На первой встрече уточняем обстоятельства и изучаем доступные документы. Если требуется отдельный углубленный анализ, заранее согласовываем его объем и стоимость."
  },
  {
  num: "04",
