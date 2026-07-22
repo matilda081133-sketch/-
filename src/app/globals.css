@@ -826,9 +826,11 @@ h4 { font-size: 1.25rem; }
   font-weight: 600 !important;
 }
 .btn-light::before {
-  background-color: var(--color-gold) !important;
+  display: none !important;
 }
 .btn-light:hover {
-  color: var(--color-white) !important;
+  background-color: var(--color-white) !important;
+  color: var(--color-deep-blue) !important;
   border-color: transparent !important;
+  opacity: 0.9;
 }
