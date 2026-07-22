@@ -203,9 +203,9 @@ export default async function TeamMemberPage({ params }: PageProps) {
         <div className="container">
           <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
             {/* Left: Photo */}
-            <div style={{ display: 'flex', borderRadius: '4px', overflow: 'hidden' }}>
+            <div style={{ position: 'relative', borderRadius: '4px', overflow: 'hidden' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/-/images/team-process.jpg" alt="Как специалист ведёт дело" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', flex: 1 }} />
+              <img src="/-/images/team-process.jpg" alt="Как специалист ведёт дело" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
 
             {/* Right: Content */}
