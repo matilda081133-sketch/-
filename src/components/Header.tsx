@@ -157,7 +157,7 @@ export default function Header() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginLeft: 'auto' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', fontSize: '13px', lineHeight: 1.4 }}>
               <a href="tel:+79103503111" style={{ fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', fontSize: '16px' }}>+7 (910) 350-31-11</a>
-              <span style={{ color: 'var(--color-text-secondary)', fontSize: '12px' }}>Липецк, ул. Советская, 35, оф. 213</span>
+              <Link href="/kontakty" className="header-address" style={{ color: 'var(--color-text-secondary)', fontSize: '12px', textDecoration: 'none' }}>Липецк, ул. Советская, 35</Link>
             </div>
             <div className="contact-dropdown" style={{ position: 'relative', display: 'flex', alignItems: 'center', paddingLeft: '20px', borderLeft: '1px solid var(--color-border)' }}>
             <button className="btn btn-outline contact-btn" style={{ padding: '8px 20px', fontSize: '13px', borderRadius: '4px', whiteSpace: 'nowrap', textDecoration: 'none', cursor: 'pointer' }}>

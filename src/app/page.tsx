@@ -55,7 +55,7 @@ export default function Home() {
               maxWidth: '600px', 
               lineHeight: 1.6 
             }}>
-              Помогаем по земельным и имущественным спорам, уголовным и военным делам, исполнительному производству и правовым вопросам бизнеса. После первичного разбора определяем возможные варианты действий, состав работы и подходящего специалиста.
+              Подключаем специалиста с опытом именно в вашей категории дел — от оценки ситуации до защиты интересов в суде.
             </p>
             
             <div className="flex gap-4" style={{ marginBottom: '40px' }}>
@@ -71,11 +71,11 @@ export default function Home() {
             }}>
               {[
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
-                  text: 'Юристы и адвокаты под профиль вашего дела.' },
+                  text: 'Юристы и адвокаты под профиль вашего дела' },
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
-                  text: 'Опыт изнутри системы: СК, ФССП, госорганы.' },
+                  text: 'Опыт изнутри системы: СК, ФССП, госорганы' },
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
-                  text: 'Честный договор: фиксируем план работ и цены.' }
+                  text: 'Честный договор: фиксируем план работ и цены' }
               ].map((bullet, i) => (
                 <div key={i} style={{ 
                   flex: 1,
@@ -443,27 +443,25 @@ export default function Home() {
             </div>
             
             {/* CTA inside Process Block */}
-            <div style={{ 
-              marginTop: '50px', 
-              background: 'var(--color-cream)', 
-              padding: '40px', 
-              borderRadius: '0', 
+            <div className="process-cta-banner" style={{ 
+              marginTop: '40px', 
+              background: 'var(--color-deep-blue)', 
+              padding: '24px 32px',
               display: 'flex',
-              flexDirection: 'column',
               alignItems: 'center',
-              justifyContent: 'center',
-              textAlign: 'center',
-              position: 'relative',
-              border: '1px solid rgba(23, 50, 77, 0.05)',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.02)'
+              justifyContent: 'space-between',
+              gap: '24px',
+              flexWrap: 'wrap'
             }}>
-              <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '12px', fontWeight: '500' }}>
-                Не уверены, к какому направлению относится ваш вопрос?
-              </h3>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', marginBottom: '24px', maxWidth: '500px', lineHeight: 1.5 }}>
-                Кратко опишите ситуацию — мы бесплатно проанализируем её и определим, какой именно профильный специалист вам потребуется.
-              </p>
-              <a href="#consultation" className="btn btn-outline" style={{ display: 'inline-flex' }}>Обсудить ситуацию</a>
+              <div style={{ flex: '1 1 300px' }}>
+                <h3 style={{ fontSize: '18px', color: 'var(--color-white)', marginBottom: '8px', fontWeight: '600', fontFamily: 'var(--font-sans)' }}>
+                  Начните с первичного обращения
+                </h3>
+                <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)', margin: 0, lineHeight: 1.5 }}>
+                  Кратко опишите ситуацию — мы уточним обстоятельства, скажем, какие документы потребуются, и определим следующий шаг.
+                </p>
+              </div>
+              <a href="#consultation" className="btn" style={{ whiteSpace: 'nowrap', flexShrink: 0, background: 'var(--color-primary)', color: 'var(--color-white)', border: 'none' }}>Обсудить ситуацию</a>
             </div>
 
           </div>
@@ -614,8 +612,8 @@ export default function Home() {
       <FAQBlock />
 
       {/* 10. CTA SECTION (FORM) */}
-      <section id="consultation" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
-        <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+      <section id="consultation" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '60px 0', background: 'var(--color-white)', minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
+        <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center', position: 'relative', zIndex: 1, width: '100%' }}>
           <div>
             <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)' }}>Обсудите ситуацию с юристом</h2>
             <p style={{ fontSize: '20px', marginBottom: '40px', color: 'var(--color-text-secondary)' }}>
@@ -632,18 +630,18 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="card reveal-on-scroll delay-200" style={{ padding: '40px', borderRadius: '0', background: 'var(--color-white)', boxShadow: '0 20px 40px rgba(23, 50, 77, 0.08)' }}>
+          <div className="card" style={{ padding: '40px', borderRadius: '0', background: 'var(--color-white)', boxShadow: '0 20px 40px rgba(23, 50, 77, 0.08)' }}>
             <h3 style={{ marginTop: 0, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>Оставить заявку</h3>
             <p style={{ color: 'var(--color-text-secondary)', marginBottom: '30px', lineHeight: 1.5 }}>Перезвоним вам в течение 15 минут<br/>в рабочее время.</p>
             <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <input type="text" placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none', background: 'var(--color-white)' }} />
+              <input type="text" required placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none', background: 'var(--color-white)' }} />
               <PhoneInput />
-              <button type="button" className="btn" style={{ width: '100%', padding: '18px', fontSize: '18px', marginTop: '10px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', border: 'none' }}>Обсудить ситуацию</button>
+              <button type="submit" className="btn" style={{ width: '100%', padding: '18px', fontSize: '18px', marginTop: '10px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', border: 'none' }}>Обсудить ситуацию</button>
               
               <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer', marginTop: '4px' }}>
-                <input type="checkbox" defaultChecked style={{ marginTop: '4px', accentColor: 'var(--color-primary)' }} />
+                <input type="checkbox" required style={{ marginTop: '4px', accentColor: 'var(--color-primary)' }} />
                 <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
-                  Я согласен(на) с <Link href="/privacy" className="link-animated" style={{ fontSize: '13px', color: 'var(--color-primary)' }}>политикой конфиденциальности</Link>
+                  Я даю согласие на <Link href="/privacy" className="link-animated" style={{ fontSize: '13px', color: 'var(--color-primary)' }}>обработку персональных данных</Link>
                 </span>
               </label>
             </form>

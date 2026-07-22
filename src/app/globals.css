@@ -828,3 +828,6 @@ h4 { font-size: 1.25rem; }
   background-size: 40px 40px;
   background-color: var(--color-cream);
 }
+
+#consultation { scroll-margin-top: 110px; }
+@media (max-width: 768px) { .header-address { display: none !important; } }

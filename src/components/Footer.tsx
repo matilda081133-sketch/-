@@ -1,17 +1,14 @@
 import Link from 'next/link';
 
 export default function Footer() {
-  const b2cLinks1 = [
+  const b2cLinks = [
     { title: "Семейный юрист", href: "/grazhdanam/semejnyj-yurist/" },
     { title: "Наследственный юрист", href: "/grazhdanam/nasledstvennyj-yurist/" },
     { title: "Жилищный юрист", href: "/grazhdanam/zhilishchnyj-yurist/" },
     { title: "Юрист по недвижимости", href: "/grazhdanam/yurist-po-nedvizhimosti/" },
     { title: "Земельный юрист", href: "/grazhdanam/zemelnyj-yurist/" },
     { title: "Банкротство физических лиц", href: "/grazhdanam/bankrotstvo-fizicheskih-lic/" },
-    { title: "Кредитный юрист", href: "/grazhdanam/kreditnyj-yurist/" }
-  ];
-
-  const b2cLinks2 = [
+    { title: "Кредитный юрист", href: "/grazhdanam/kreditnyj-yurist/" },
     { title: "Взыскание долгов", href: "/grazhdanam/vzyskanie-dolgov/" },
     { title: "Юрист по исполнительному производству", href: "/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/" },
     { title: "Автоюрист", href: "/grazhdanam/avtoyurist/" },
@@ -49,7 +46,7 @@ export default function Footer() {
 
   return (
     <footer style={{ backgroundColor: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '64px 0 24px', fontSize: '13px' }}>
-      <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1fr 1fr', gap: '40px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '40px', marginBottom: '24px' }}>
+      <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '40px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '40px', marginBottom: '24px' }}>
         
         {/* Column 1: Logo & Info */}
         <div>
@@ -71,21 +68,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Column 2: Гражданам (split into 2) */}
+        {/* Column 2: Гражданам (single column) */}
         <div>
           <h4 style={{ color: 'var(--color-white)', margin: '0 0 20px 0', fontSize: '15px', letterSpacing: '0.05em' }}>Гражданам</h4>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {b2cLinks1.map((link, i) => (
-                <li key={i}><Link href={link.href} style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s' }} className="footer-link-hover">{link.title}</Link></li>
-              ))}
-            </ul>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {b2cLinks2.map((link, i) => (
-                <li key={i}><Link href={link.href} style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s' }} className="footer-link-hover">{link.title}</Link></li>
-              ))}
-            </ul>
-          </div>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {b2cLinks.map((link, i) => (
+              <li key={i}><Link href={link.href} style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s' }} className="footer-link-hover">{link.title}</Link></li>
+            ))}
+          </ul>
         </div>
 
         {/* Column 3: Бизнесу */}
