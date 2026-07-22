@@ -263,8 +263,8 @@ export default async function TeamMemberPage({ params }: PageProps) {
                   <div key={i} className="usp-card" style={{ padding: '24px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
                     <div className="usp-accent"></div>
                     <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '8px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Этап {step.step}</div>
-                    <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '8px', fontWeight: 600 }}>{step.title}</h4>
-                    <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4, margin: 0 }}>{step.description}</p>
+                    <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '8px', fontWeight: 600 }}>{step.title}</h4>
+                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
                     
                     {/* Golden arrow between left and right cards */}
                     {i % 2 === 0 && (
