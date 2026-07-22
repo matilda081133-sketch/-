@@ -31,7 +31,7 @@ export default function Home() {
  borderRadius: '50%', zIndex: 0
  }} />
  
- <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'stretch', position: 'relative', zIndex: 1 }}>
+ <div className="container hero-grid-wide" style={{ alignItems: 'stretch', position: 'relative', zIndex: 1 }}>
  <div className="" style={{ padding: '80px 0', maxWidth: '800px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
  <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
@@ -464,8 +464,8 @@ export default function Home() {
  <FAQBlock />
 
  {/* 10. CTA SECTION (FORM) */}
- <section id="consultation" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '40px 0', background: 'var(--color-white)', scrollMarginTop: '80px', minHeight: 'calc(100vh - 80px)', display: 'flex', alignItems: 'center' }}>
- <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center', position: 'relative', zIndex: 1, width: '100%' }}>
+ <section id="consultation" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '40px 0', background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)', scrollMarginTop: '80px', minHeight: 'calc(100vh - 80px)', display: 'flex', alignItems: 'center' }}>
+ <div className="container hero-grid-wide" style={{ alignItems: 'center', position: 'relative', zIndex: 1, width: '100%' }}>
  <div>
  <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)' }}>Обсудите ситуацию с юристом</h2>
  <p style={{ fontSize: '20px', marginBottom: '40px', color: 'var(--color-text-secondary)' }}>

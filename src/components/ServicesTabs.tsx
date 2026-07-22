@@ -27,7 +27,7 @@ export default function ServicesTabs() {
   const currentServices = activeTab === 'b2c' ? b2cServices : b2bServices;
 
   return (
-    <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--color-cream)' }}>
+    <section className="section bg-light" style={{ padding: '64px 0', background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
       <div className="container">
         <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
           <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
