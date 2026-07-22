@@ -117,18 +117,21 @@ export default function Home() {
 
         {/* HERO IMAGE */}
         <div className="photo-hover-shadow" style={{ 
-          flex: 1,
+          position: 'absolute',
+          top: 0,
+          left: 0,
           width: '100%',
+          height: '100%',
           background: 'var(--color-cream)', 
           borderRadius: '4px',
           overflow: 'hidden',
-          position: 'relative'
+          zIndex: 1
         }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src="images/hero-photo.jpg" 
             alt="Юридическая помощь" 
-            style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
         </div>
  </div>
