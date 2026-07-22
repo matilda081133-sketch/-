@@ -152,11 +152,11 @@ export default async function TeamMemberPage({ params }: PageProps) {
           <div className="grid grid-3" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)' }}>
             
             {/* Experience */}
-            <div className="usp-card" style={{ padding: '40px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+            <div className="usp-card" style={{ padding: '24px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
               <div className="usp-accent"></div>
-              <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Опыт</div>
-              <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '20px' }}>Профессиональный опыт</h2>
-              <ul style={{ paddingLeft: '20px', color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '12px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Опыт</div>
+              <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px' }}>Профессиональный опыт</h2>
+              <ul style={{ paddingLeft: '20px', color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {member.experience.map((exp, i) => (
                   <li key={i} dangerouslySetInnerHTML={{ __html: exp }}></li>
                 ))}
@@ -164,20 +164,20 @@ export default async function TeamMemberPage({ params }: PageProps) {
             </div>
 
             {/* Geography */}
-            <div className="usp-card" style={{ padding: '40px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+            <div className="usp-card" style={{ padding: '24px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
               <div className="usp-accent"></div>
-              <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Локация</div>
-              <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '20px' }}>География практики</h2>
+              <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '12px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Локация</div>
+              <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px' }}>География практики</h2>
               <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                 {member.geography}
               </p>
             </div>
 
             {/* Education & Status */}
-            <div className="usp-card" style={{ padding: '40px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+            <div className="usp-card" style={{ padding: '24px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
               <div className="usp-accent"></div>
-              <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Квалификация</div>
-              <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '20px' }}>Образование и статус</h2>
+              <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '12px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Квалификация</div>
+              <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px' }}>Образование и статус</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div style={{ paddingBottom: '16px', borderBottom: '1px solid var(--color-border)' }}>
                   <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px', letterSpacing: '0.05em' }}>Образование</div>
@@ -215,7 +215,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
               </h2>
               <div className="grid grid-2" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)', flex: 1 }}>
                 {member.process.map((step, i) => (
-                  <div key={i} className="usp-card" style={{ padding: '16px 24px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <div key={i} className="usp-card" style={{ padding: '20px 24px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                     <div className="usp-accent"></div>
                     <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Этап {step.step}</div>
                     <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0 }}>{step.title}</h4>
