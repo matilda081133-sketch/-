@@ -124,10 +124,6 @@ export default async function TeamMemberPage({ params }: PageProps) {
                   src={member.image} 
                   alt={member.name} 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  onError={(e) => {
-                    // Fallback if image doesn't exist yet
-                    e.currentTarget.src = 'https://placehold.co/600x800/f3f0ea/17324d?text=Фотография+в+обработке';
-                  }}
                 />
               </div>
             </div>
