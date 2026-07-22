@@ -31,7 +31,7 @@ export default function Home() {
  borderRadius: '50%', zIndex: 0
  }} />
  
- <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+ <div className="container hero-grid" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
  <div className="" style={{ padding: '40px 0', maxWidth: '800px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
  <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
