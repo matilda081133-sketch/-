@@ -88,7 +88,18 @@ h4 { font-size: 1.25rem; }
 
 /* Backgrounds */
 .bg-white { background-color: var(--color-white); }
-.bg-cream { background-color: var(--color-cream); }
+.bg-cream {
+  background-color: var(--color-cream);
+}
+
+/* Photo Hover Shadow */
+.photo-hover-shadow {
+  transition: all 0.4s ease;
+}
+.photo-hover-shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(23, 50, 77, 0.2) !important;
+}
 .bg-grey-blue { background-color: var(--color-grey-blue); }
 .bg-deep-blue { background-color: var(--color-deep-blue); color: var(--color-white); }
 .bg-deep-blue h1, .bg-deep-blue h2, .bg-deep-blue h3, .bg-deep-blue p { color: var(--color-white); }

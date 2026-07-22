@@ -112,15 +112,14 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
             {/* Photo Column */}
             <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-              <div style={{ 
+              <div className="photo-hover-shadow" style={{ 
                 width: '100%',
                 maxWidth: '380px',
                 aspectRatio: '3/4', 
                 background: 'var(--color-cream)', 
                 borderRadius: '4px',
                 overflow: 'hidden',
-                position: 'relative',
-                boxShadow: '0 20px 50px rgba(23, 50, 77, 0.15)'
+                position: 'relative'
               }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
