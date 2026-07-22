@@ -70,7 +70,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       />
 
       {/* 1. Breadcrumbs */}
-      <div className="bg-light" style={{ paddingTop: '120px', paddingBottom: '20px', background: 'var(--color-white)' }}>
+      <div className="bg-light" style={{ paddingTop: '160px', paddingBottom: '20px', background: 'var(--color-white)' }}>
         <div className="container">
           <div style={{ display: 'flex', gap: '8px', fontSize: '13px', color: 'var(--color-text-secondary)', flexWrap: 'wrap' }}>
             <Link href="/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Главная</Link>
