@@ -97,7 +97,7 @@ export default function Home() {
  </div>
  </div>
  
- <div  style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+ <div style={{ display: 'flex', flexDirection: 'column', flex: 1, position: 'relative', height: '100%' }}>
  {/* Darkening gradient under the creative to highlight the background graphic */}
  <div style={{
  position: 'absolute',
@@ -117,8 +117,8 @@ export default function Home() {
 
         {/* HERO IMAGE */}
         <div className="photo-hover-shadow" style={{ 
+          flex: 1,
           width: '100%',
-          height: '100%',
           background: 'var(--color-cream)', 
           borderRadius: '4px',
           overflow: 'hidden',
