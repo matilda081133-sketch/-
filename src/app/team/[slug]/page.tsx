@@ -87,7 +87,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       {/* 2. Hero Section */}
       <section style={{ padding: '40px 0 80px 0', background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
         <div className="container">
-          <div className="grid hero-grid-wide" style={{ gap: '60px', alignItems: 'center' }}>
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'center' }}>
             {/* Info Column */}
             <div>
               <h1 style={{ fontSize: 'clamp(32px, 4vw, 48px)', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1.2 }}>
@@ -116,7 +116,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
             <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
               <div className="photo-hover-shadow" style={{ 
                 width: '100%',
-                maxWidth: '600px',
+                maxWidth: '450px',
                 aspectRatio: '3/4', 
                 background: 'var(--color-cream)', 
                 borderRadius: '4px',
