@@ -17,7 +17,7 @@ export default function Home() {
  {/* 1. HERO */}
  <section style={{ 
  position: 'relative', 
- minHeight: '85vh', 
+ minHeight: 'auto', 
  display: 'flex', 
  alignItems: 'center',
  paddingTop: '160px',
