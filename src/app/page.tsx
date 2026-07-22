@@ -119,8 +119,7 @@ export default function Home() {
           <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
             <div className="photo-hover-shadow" style={{ 
               width: '100%',
-              aspectRatio: '4/5',
-              maxHeight: '700px',
+              aspectRatio: '2/3',
               background: 'var(--color-cream)', 
               borderRadius: '4px',
               overflow: 'hidden'
