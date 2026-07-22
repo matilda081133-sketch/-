@@ -74,7 +74,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       {/* 1 & 2. Breadcrumbs & Hero Section */}
       <section style={{ 
         position: 'relative', 
-        background: 'radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba(234, 241, 246, 0.9) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(193, 160, 102, 0.03) 0%, transparent 60%), var(--color-cream)',
+        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)',
         paddingBottom: '80px',
         overflow: 'hidden'
       }}>
@@ -126,7 +126,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 height: '100%',
                 borderRadius: '80px 16px 80px 16px',
                 border: '2px solid var(--color-gold)',
-                opacity: 0.7,
+                opacity: 0.4,
                 zIndex: 0
               }} />
               
@@ -156,7 +156,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
       {/* 3. Specializations */}
       <section className="section bg-light" style={{ 
-        background: 'radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba(234, 241, 246, 0.9) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(193, 160, 102, 0.03) 0%, transparent 60%), var(--color-cream)'
+        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)'
       }}>
         <div className="container">
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>
@@ -168,7 +168,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
       {/* 4. Experience & Process Grid */}
       <section className="section" style={{ 
-        background: 'radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba(234, 241, 246, 0.9) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(193, 160, 102, 0.03) 0%, transparent 60%), var(--color-cream)'
+        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)'
       }}>
         <div className="container">
           <div className="grid grid-3" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)' }}>
@@ -312,7 +312,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       {/* 7. Related Services */}
       <section className="section bg-light" style={{ 
         padding: '60px 0',
-        background: 'radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba(234, 241, 246, 0.9) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(193, 160, 102, 0.03) 0%, transparent 60%), var(--color-cream)'
+        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)'
       }}>
         <div className="container">
           <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '30px' }}>Вопросы, с которыми можно обратиться</h2>
@@ -331,7 +331,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
         position: 'relative', 
         overflow: 'hidden', 
         padding: '80px 0', 
-        background: 'radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba(234, 241, 246, 0.9) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(193, 160, 102, 0.03) 0%, transparent 60%), var(--color-cream)',
+        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)',
         scrollMarginTop: '80px' 
       }}>
         <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center' }}>
