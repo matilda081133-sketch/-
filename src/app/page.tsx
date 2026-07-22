@@ -31,8 +31,8 @@ export default function Home() {
  borderRadius: '50%', zIndex: 0
  }} />
  
- <div className="hero-grid-massive" style={{ maxWidth: '1600px', margin: '0 auto', padding: '0 5%', alignItems: 'stretch', position: 'relative', zIndex: 1 }}>
- <div className="" style={{ padding: '80px 0', maxWidth: '800px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+ <div className="container hero-grid" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+ <div className="" style={{ padding: '40px 0', maxWidth: '800px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
  <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
  <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#9B7E55' }}>
@@ -98,7 +98,7 @@ export default function Home() {
  </div>
  </div>
  
- <div style={{ display: 'flex', flexDirection: 'column', flex: 1, position: 'relative', minHeight: '800px' }}>
+ <div style={{ display: 'flex', flexDirection: 'column', flex: 1, position: 'relative', height: '100%' }}>
  {/* Darkening gradient under the creative to highlight the background graphic */}
  <div style={{
  position: 'absolute',
@@ -116,24 +116,23 @@ export default function Home() {
  <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
  </svg>
 
-    <div className="photo-hover-shadow" style={{ 
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      background: 'var(--color-cream)', 
-      borderRadius: '8px',
-      overflow: 'hidden',
-      zIndex: 1
-    }}>
-      <Image 
-        src="/-/images/hero-photo.jpg" 
-        alt="Юридическая помощь" 
-        fill
-        style={{ objectFit: 'cover' }}
-      />
-    </div>
+          <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+            <div className="photo-hover-shadow" style={{ 
+              width: '100%',
+              aspectRatio: '571/1024',
+              background: 'var(--color-cream)', 
+              borderRadius: '4px',
+              overflow: 'hidden'
+            }}>
+              <Image 
+                src="/-/images/hero-photo.jpg" 
+                alt="Юридическая помощь" 
+                width={571}
+                height={1024}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+          </div>
  </div>
  </div>
  </section>
@@ -145,7 +144,7 @@ export default function Home() {
 
  {/* 3. WHY US / USP */}
  <section className="section" style={{ 
- background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
+ background: 'var(--gradient-light)',
  backgroundImage: 'url(/images/organic-pattern.svg)', 
  backgroundSize: 'cover',
  backgroundPosition: 'center',
@@ -464,8 +463,8 @@ export default function Home() {
  <FAQBlock />
 
  {/* 10. CTA SECTION (FORM) */}
- <section id="consultation" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '40px 0', background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)', scrollMarginTop: '80px', minHeight: 'calc(100vh - 80px)', display: 'flex', alignItems: 'center' }}>
- <div className="container hero-grid-wide" style={{ alignItems: 'center', position: 'relative', zIndex: 1, width: '100%' }}>
+ <section id="consultation" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '40px 0', background: 'var(--color-white)', scrollMarginTop: '80px', minHeight: 'calc(100vh - 80px)', display: 'flex', alignItems: 'center' }}>
+ <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center', position: 'relative', zIndex: 1, width: '100%' }}>
  <div>
  <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)' }}>Обсудите ситуацию с юристом</h2>
  <p style={{ fontSize: '20px', marginBottom: '40px', color: 'var(--color-text-secondary)' }}>
