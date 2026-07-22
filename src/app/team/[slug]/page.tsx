@@ -71,13 +71,15 @@ export default async function TeamMemberPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1 & 2. Breadcrumbs & Hero Section */}
-      <section style={{ 
-        position: 'relative', 
-        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)',
-        paddingBottom: '80px',
+      {/* 1, 2, 3 & 4. Shared Background Wrapper */}
+      <div style={{
+        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), radial-gradient(at 80% 50%, rgba(234, 241, 246, 0.8) 0%, transparent 50%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)',
+        position: 'relative',
         overflow: 'hidden'
       }}>
+
+      {/* 1 & 2. Breadcrumbs & Hero Section */}
+      <section style={{ position: 'relative', paddingBottom: '80px', background: 'transparent' }}>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           
           {/* Breadcrumbs */}
@@ -155,9 +157,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       </section>
 
       {/* 3. Specializations */}
-      <section className="section bg-light" style={{ 
-        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)'
-      }}>
+      <section className="section" style={{ background: 'transparent' }}>
         <div className="container">
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>
             Вопросы, с которыми можно обратиться
@@ -167,9 +167,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       </section>
 
       {/* 4. Experience & Process Grid */}
-      <section className="section" style={{ 
-        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)'
-      }}>
+      <section className="section" style={{ background: 'transparent' }}>
         <div className="container">
           <div className="grid grid-3" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)' }}>
             
@@ -219,6 +217,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+      </div> {/* End Shared Wrapper 1-4 */}
 
       {/* 5. Process Steps */}
       <section className="section bg-light">
@@ -309,11 +308,14 @@ export default async function TeamMemberPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* 7. Related Services */}
-      <section className="section bg-light" style={{ 
-        padding: '60px 0',
-        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)'
+      {/* Shared Wrapper for 7 & 8 */}
+      <div style={{
+        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), radial-gradient(at 80% 50%, rgba(234, 241, 246, 0.8) 0%, transparent 50%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)',
+        position: 'relative'
       }}>
+      
+      {/* 7. Related Services */}
+      <section className="section" style={{ padding: '60px 0', background: 'transparent' }}>
         <div className="container">
           <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '30px' }}>Вопросы, с которыми можно обратиться</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
@@ -331,7 +333,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
         position: 'relative', 
         overflow: 'hidden', 
         padding: '80px 0', 
-        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)',
+        background: 'transparent',
         scrollMarginTop: '80px' 
       }}>
         <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center' }}>
@@ -360,6 +362,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+      </div> {/* End Shared Wrapper 7-8 */}
 
       <Footer />
     </main>
