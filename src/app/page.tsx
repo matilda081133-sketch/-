@@ -31,7 +31,7 @@ export default function Home() {
  borderRadius: '50%', zIndex: 0
  }} />
  
- <div className="container hero-grid" style={{ gap: '60px', alignItems: 'stretch', position: 'relative', zIndex: 1 }}>
+ <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'stretch', position: 'relative', zIndex: 1 }}>
  <div className="" style={{ padding: '80px 0', maxWidth: '800px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
  <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
@@ -98,7 +98,7 @@ export default function Home() {
  </div>
  </div>
  
- <div style={{ display: 'flex', flexDirection: 'column', flex: 1, position: 'relative', height: '100%' }}>
+ <div style={{ display: 'flex', flexDirection: 'column', flex: 1, position: 'relative', minHeight: '800px' }}>
  {/* Darkening gradient under the creative to highlight the background graphic */}
  <div style={{
  position: 'absolute',
@@ -116,24 +116,24 @@ export default function Home() {
  <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
  </svg>
 
-          <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
-            <div className="photo-hover-shadow" style={{ 
-              width: '100%',
-              flex: 1,
-              minHeight: '800px',
-              background: 'var(--color-cream)', 
-              borderRadius: '4px',
-              overflow: 'hidden'
-            }}>
-              <Image 
-                src="/-/images/hero-photo.jpg" 
-                alt="Юридическая помощь" 
-                width={571}
-                height={1024}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-            </div>
-          </div>
+    <div className="photo-hover-shadow" style={{ 
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      background: 'var(--color-cream)', 
+      borderRadius: '8px',
+      overflow: 'hidden',
+      zIndex: 1
+    }}>
+      <Image 
+        src="/-/images/hero-photo.jpg" 
+        alt="Юридическая помощь" 
+        fill
+        style={{ objectFit: 'cover' }}
+      />
+    </div>
  </div>
  </div>
  </section>
@@ -145,7 +145,7 @@ export default function Home() {
 
  {/* 3. WHY US / USP */}
  <section className="section" style={{ 
- background: 'var(--gradient-light)',
+ background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
  backgroundImage: 'url(/images/organic-pattern.svg)', 
  backgroundSize: 'cover',
  backgroundPosition: 'center',
