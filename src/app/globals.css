@@ -798,13 +798,15 @@ h4 { font-size: 1.25rem; }
 }
 
 .btn-outline {
-  border: 1px solid var(--color-gold);
-  color: var(--color-deep-blue);
+  border: 1px solid var(--color-gold) !important;
+  color: var(--color-deep-blue) !important;
+  background-color: transparent !important;
 }
 
 .btn-outline:hover {
-  background-color: var(--color-gold);
-  color: var(--color-white);
+  background-color: var(--color-deep-blue) !important;
+  color: var(--color-white) !important;
+  border-color: var(--color-deep-blue) !important;
 }
 
 /* Add a subtle elegant pattern to cream backgrounds */
