@@ -71,22 +71,33 @@ export default async function TeamMemberPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. Breadcrumbs */}
-      <div className="bg-light" style={{ paddingTop: '160px', paddingBottom: '20px', background: 'var(--color-white)' }}>
-        <div className="container">
-          <div style={{ display: 'flex', gap: '8px', fontSize: '13px', color: 'var(--color-text-secondary)', flexWrap: 'wrap' }}>
+      {/* 1 & 2. Breadcrumbs & Hero Section */}
+      <section style={{ 
+        position: 'relative', 
+        background: 'var(--gradient-light)',
+        backgroundImage: 'url(/images/organic-pattern.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        paddingBottom: '80px',
+        overflow: 'hidden'
+      }}>
+        {/* Background Graphic: Shield (subtle) */}
+        <svg style={{ position: 'absolute', top: '-5%', left: '2%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          
+          {/* Breadcrumbs */}
+          <div style={{ display: 'flex', gap: '8px', fontSize: '13px', color: 'var(--color-text-secondary)', flexWrap: 'wrap', paddingTop: '160px', paddingBottom: '40px' }}>
             <Link href="/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Главная</Link>
             <span>/</span>
             <Link href="/team" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Команда</Link>
             <span>/</span>
             <span>{member.name}</span>
           </div>
-        </div>
-      </div>
 
-      {/* 2. Hero Section */}
-      <section style={{ padding: '40px 0 80px 0', background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
-        <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'center' }}>
             {/* Info Column */}
             <div>
@@ -114,14 +125,30 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
             {/* Photo Column */}
             <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+              {/* Organic decorative border behind */}
+              <div style={{
+                position: 'absolute',
+                top: '20px',
+                right: '20px',
+                width: '100%',
+                maxWidth: '380px',
+                height: '100%',
+                borderRadius: '80px 16px 80px 16px',
+                border: '1px solid var(--color-gold)',
+                opacity: 0.3,
+                zIndex: 0
+              }} />
+              
               <div className="photo-hover-shadow" style={{ 
                 width: '100%',
-                maxWidth: '450px',
+                maxWidth: '400px',
                 aspectRatio: '3/4', 
                 background: 'var(--color-cream)', 
-                borderRadius: '4px',
+                borderRadius: '16px 80px 16px 80px',
                 overflow: 'hidden',
-                position: 'relative'
+                position: 'relative',
+                boxShadow: '0 30px 60px rgba(23, 50, 77, 0.15)',
+                zIndex: 1
               }}>
                 <Image 
                   src={member.image} 
@@ -137,7 +164,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       </section>
 
       {/* 3. Specializations */}
-      <section className="section bg-light" style={{ background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
+      <section className="section bg-light" style={{ background: 'var(--color-white)' }}>
         <div className="container">
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>
             Вопросы, с которыми можно обратиться
@@ -147,7 +174,12 @@ export default async function TeamMemberPage({ params }: PageProps) {
       </section>
 
       {/* 4. Experience & Process Grid */}
-      <section className="section" style={{ background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
+      <section className="section" style={{ 
+        background: 'var(--gradient-light)',
+        backgroundImage: 'url(/images/organic-pattern.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center' 
+      }}>
         <div className="container">
           <div className="grid grid-3" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)' }}>
             
@@ -215,7 +247,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
               </h2>
               <div className="grid grid-2" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)', flex: 1 }}>
                 {member.process.map((step, i) => (
-                  <div key={i} className="usp-card" style={{ padding: '40px 30px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column', gap: '6px', minHeight: '280px', justifyContent: 'center' }}>
+                  <div key={i} className="usp-card" style={{ padding: '40px 30px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column', gap: '6px', minHeight: '230px', justifyContent: 'center' }}>
                     <div className="usp-accent"></div>
                     <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Этап {step.step}</div>
                     <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0 }}>{step.title}</h4>
@@ -302,7 +334,16 @@ export default async function TeamMemberPage({ params }: PageProps) {
       </section>
 
       {/* 8. CTA Form */}
-      <section id="consultation" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)', scrollMarginTop: '80px' }}>
+      <section id="consultation" className="section" style={{ 
+        position: 'relative', 
+        overflow: 'hidden', 
+        padding: '80px 0', 
+        background: 'var(--gradient-light)',
+        backgroundImage: 'url(/images/organic-pattern.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        scrollMarginTop: '80px' 
+      }}>
         <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center' }}>
           <div>
             <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)', fontSize: '36px', fontFamily: 'var(--font-serif)' }}>Обсудите ситуацию со специалистом</h2>
