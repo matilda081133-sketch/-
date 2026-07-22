@@ -141,7 +141,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
           </h2>
           <div className="grid grid-3" style={{ gap: '30px' }}>
             {member.specializations.map((spec, i) => (
-              <div key={i} className="card" style={{ padding: '30px', background: 'var(--color-white)', borderRadius: '0', borderTop: i === 0 ? '4px solid var(--color-primary)' : '1px solid var(--color-border)', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.04)' }}>
+              <div key={i} className="card specialization-card" style={{ padding: '30px', background: 'var(--color-white)', borderRadius: '0', borderTop: i === 0 ? '4px solid var(--color-primary)' : '1px solid var(--color-border)', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.04)' }}>
                 <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '20px' }}>{spec.title}</h3>
                 <ul style={{ paddingLeft: '20px', color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   {spec.items.map((item, j) => (
@@ -151,7 +151,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 {spec.link && (
                   <Link href={spec.link.url} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', marginTop: '24px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
                     {spec.link.text}
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <svg className="card-arrow" style={{ transition: 'transform 0.4s ease' }} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </Link>
                 )}
               </div>
@@ -215,18 +215,29 @@ export default async function TeamMemberPage({ params }: PageProps) {
       {/* 5. Process Steps */}
       <section className="section bg-light">
         <div className="container">
-          <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px', textAlign: 'center' }}>
-            Как специалист ведёт дело
-          </h2>
-          <div className="grid grid-3" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)' }}>
-            {member.process.map((step, i) => (
-              <div key={i} className="usp-card" style={{ padding: '40px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
-                <div className="usp-accent"></div>
-                <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Этап {step.step}</div>
-                <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>{step.title}</h4>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
+          <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
+            {/* Left: Photo */}
+            <div style={{ position: 'relative', borderRadius: '4px', overflow: 'hidden', minHeight: '600px' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="images/team-process.jpg" alt="Как специалист ведёт дело" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+
+            {/* Right: Content */}
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>
+                Как специалист ведёт дело
+              </h2>
+              <div className="grid grid-2" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)', flex: 1 }}>
+                {member.process.map((step, i) => (
+                  <div key={i} className="usp-card" style={{ padding: '30px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+                    <div className="usp-accent"></div>
+                    <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Этап {step.step}</div>
+                    <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>{step.title}</h4>
+                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

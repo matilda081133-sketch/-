@@ -847,3 +847,17 @@ h4 { font-size: 1.25rem; }
   border-color: transparent !important;
   opacity: 0.9;
 }
+
+/* Specialization Cards Hover Animation */
+.specialization-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.specialization-card:hover {
+  border-top: 4px solid var(--color-gold) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(16, 39, 59, 0.08) !important;
+}
+.specialization-card:hover .card-arrow {
+  color: var(--color-gold) !important;
+  transform: translateX(5px);
+}
