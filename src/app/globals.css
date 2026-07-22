@@ -1093,3 +1093,6 @@ h4 { font-size: 1.25rem; }
 
 .hero-grid-wide { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; }
 @media (max-width: 991px) { .hero-grid-wide { grid-template-columns: 1fr; gap: 40px; } }
+
+.hero-grid-massive { display: grid; grid-template-columns: 0.8fr 1.4fr; gap: 40px; }
+@media (max-width: 991px) { .hero-grid-massive { grid-template-columns: 1fr; gap: 40px; } }
