@@ -119,7 +119,7 @@ export default function Home() {
           <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
             <div className="photo-hover-shadow" style={{ 
               width: '100%',
-              aspectRatio: '2/3',
+              aspectRatio: '571/1024',
               background: 'var(--color-cream)', 
               borderRadius: '4px',
               overflow: 'hidden'
@@ -127,8 +127,8 @@ export default function Home() {
               <Image 
                 src="/-/images/hero-photo.jpg" 
                 alt="Юридическая помощь" 
-                width={800}
-                height={1200}
+                width={571}
+                height={1024}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
             </div>
