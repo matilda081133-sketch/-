@@ -877,5 +877,4 @@ h4 { font-size: 1.25rem; }
 }
 .spec-modern-item:hover .spec-arrow {
   stroke: var(--color-white) !important;
-  transform: rotate(-45deg);
 }

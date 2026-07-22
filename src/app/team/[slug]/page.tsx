@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import SpecializationsAccordion from '@/components/SpecializationsAccordion';
 import { getTeamMember, teamData } from '@/data/team';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -137,57 +138,9 @@ export default async function TeamMemberPage({ params }: PageProps) {
       <section className="section bg-light">
         <div className="container">
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>
-            С какими вопросами работает
+            Вопросы, с которыми можно обратиться
           </h2>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            {member.specializations.map((spec, i) => {
-              const content = (
-                <div className="spec-modern-item" style={{ 
-                  display: 'flex', 
-                  alignItems: 'flex-start',
-                  padding: '40px 0', 
-                  borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
-                  cursor: spec.link ? 'pointer' : 'default',
-                  gap: '30px',
-                  transition: 'all 0.4s ease'
-                }}>
-                  <div style={{ fontSize: '18px', color: 'var(--color-gold)', fontWeight: 600, fontFamily: 'var(--font-serif)', marginTop: '4px' }}>
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
-                  
-                  <div style={{ flex: 1 }}>
-                    <h3 className="spec-title" style={{ fontSize: '28px', color: 'var(--color-deep-blue)', marginBottom: '20px', transition: 'all 0.3s ease', fontFamily: 'var(--font-serif)' }}>
-                      {spec.title}
-                    </h3>
-                    <ul style={{ paddingLeft: '0', listStyle: 'none', margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '12px' }}>
-                      {spec.items.map((item, j) => (
-                        <li className="spec-desc" key={j} style={{ color: 'var(--color-text-secondary)', fontSize: '15px', position: 'relative', paddingLeft: '20px', transition: 'all 0.3s ease' }}>
-                          <span style={{ position: 'absolute', left: 0, top: '8px', width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {spec.link && (
-                    <div className="spec-arrow-wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '60px', height: '60px', borderRadius: '50%', border: '1px solid rgba(23,50,77,0.1)', transition: 'all 0.4s ease', flexShrink: 0 }}>
-                      <svg className="spec-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'all 0.4s ease' }}>
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                      </svg>
-                    </div>
-                  )}
-                </div>
-              );
-
-              return spec.link ? (
-                <Link href={spec.link.url} key={i} style={{ textDecoration: 'none', display: 'block' }}>
-                  {content}
-                </Link>
-              ) : (
-                <div key={i}>{content}</div>
-              );
-            })}
-          </div>
+          <SpecializationsAccordion specializations={member.specializations} />
         </div>
       </section>
 
