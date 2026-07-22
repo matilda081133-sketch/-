@@ -317,21 +317,6 @@ h4 { font-size: 1.25rem; }
 }
 
 /* Scroll Animations */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.reveal-on-scroll.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-100 { transition-delay: 100ms; }
-.delay-200 { transition-delay: 200ms; }
-.delay-300 { transition-delay: 300ms; }
-
 .review-widget {
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 4px;
@@ -831,3 +816,12 @@ h4 { font-size: 1.25rem; }
 
 #consultation { scroll-margin-top: 110px; }
 @media (max-width: 768px) { .header-address { display: none !important; } }
+
+.btn-light {
+  background-color: var(--color-white) !important;
+  color: var(--color-deep-blue) !important;
+  border-color: transparent !important;
+}
+.btn-light:hover {
+  background-color: var(--color-cream) !important;
+}
