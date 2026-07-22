@@ -1,4 +1,4 @@
-:HL["/-/_next/static/chunks/0llj88x4k-zhs.css","style"]
+:HL["/-/_next/static/chunks/26t0bc5q95h0k.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap","style"]
 :HL["images/logo_dark.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"iCJWMELAF6k4egMCDWH91"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"glH0EzzdlJ2DGex5Zxyfx"}
