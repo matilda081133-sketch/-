@@ -119,7 +119,8 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 background: 'var(--color-cream)', 
                 borderRadius: '4px',
                 overflow: 'hidden',
-                position: 'relative'
+                position: 'relative',
+                boxShadow: '0 20px 50px rgba(23, 50, 77, 0.15)'
               }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
@@ -287,7 +288,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
           <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '30px' }}>Вопросы, с которыми можно обратиться</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
             {member.relatedServices.map((service, i) => (
-              <Link key={i} href={service.url} className="btn btn-outline" style={{ background: 'var(--color-white)', padding: '12px 24px' }}>
+              <Link key={i} href={service.url} className="btn btn-outline" style={{ padding: '12px 24px' }}>
                 {service.title}
               </Link>
             ))}
