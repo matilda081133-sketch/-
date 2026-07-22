@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import PhoneInput from '@/components/PhoneInput';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -16,8 +16,9 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const member = getTeamMember(params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const member = getTeamMember(slug);
   if (!member) {
     return { title: 'Специалист не найден' };
   }
@@ -36,8 +37,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function TeamMemberPage({ params }: PageProps) {
-  const member = getTeamMember(params.slug);
+export default async function TeamMemberPage({ params }: PageProps) {
+  const { slug } = await params;
+  const member = getTeamMember(slug);
 
   if (!member) {
     notFound();
