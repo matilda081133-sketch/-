@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import SpecializationsAccordion from '@/components/SpecializationsAccordion';
 import { getTeamMember, teamData } from '@/data/team';
@@ -122,10 +123,11 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 overflow: 'hidden',
                 position: 'relative'
               }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
+                <Image 
                   src={member.image} 
-                  alt={member.name} 
+                  alt={member.name}
+                  width={600}
+                  height={800}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
