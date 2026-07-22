@@ -1,6 +1,6 @@
-:HL["/-/_next/static/chunks/27l9bu_n77jg3.css","style"]
+:HL["/-/_next/static/chunks/2n0o4wn_g1i_w.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap","style"]
 :HL["https://placehold.co/600x800/f3f0ea/17324d?text=%D0%A4%D0%BE%D1%82%D0%BE","image"]
 :HL["/-/images/team-process.jpg","image"]
 :HL["/-/images/logo_dark.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"team","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"konopkin-dmitriy-sergeevich","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"oEMtHJ4W1VHwKjJ7TbfVy"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"team","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"konopkin-dmitriy-sergeevich","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"Is1OmRvFV3D-CA5l5X4mD"}
