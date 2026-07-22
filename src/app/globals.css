@@ -817,11 +817,16 @@ h4 { font-size: 1.25rem; }
 #consultation { scroll-margin-top: 110px; }
 @media (max-width: 768px) { .header-address { display: none !important; } }
 
+
+
 .btn-light {
   background-color: var(--color-white) !important;
   color: var(--color-deep-blue) !important;
   border-color: transparent !important;
+  font-weight: 600 !important;
 }
 .btn-light:hover {
   background-color: var(--color-cream) !important;
+  color: var(--color-deep-blue) !important;
+  border-color: transparent !important;
 }

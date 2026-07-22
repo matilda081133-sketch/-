@@ -461,7 +461,7 @@ export default function Home() {
  Кратко опишите ситуацию — мы уточним обстоятельства, скажем, какие документы потребуются, и определим следующий шаг.
  </p>
  </div>
- <a href="#consultation" className="btn" style={{ whiteSpace: 'nowrap', flexShrink: 0, backgroundColor: '#FFFFFF', color: '#17324D', border: 'none', fontWeight: 'bold' }}>Обсудить ситуацию</a>
+ <a href="#consultation" className="btn btn-light" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>Обсудить ситуацию</a>
  </div>
 
  </div>
