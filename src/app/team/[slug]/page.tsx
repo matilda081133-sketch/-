@@ -142,22 +142,36 @@ export default async function TeamMemberPage({ params }: PageProps) {
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             {member.specializations.map((spec, i) => {
               const content = (
-                <div className="spec-list-item" style={{ 
-                  display: 'flex', alignItems: 'center', justifyContent: 'space-between', 
-                  padding: '32px 0', borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
-                  transition: 'all 0.3s ease', cursor: spec.link ? 'pointer' : 'default'
+                <div className="spec-modern-item" style={{ 
+                  display: 'flex', 
+                  alignItems: 'flex-start',
+                  padding: '40px 0', 
+                  borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
+                  cursor: spec.link ? 'pointer' : 'default',
+                  gap: '30px',
+                  transition: 'all 0.4s ease'
                 }}>
-                  <div style={{ flex: 1, paddingRight: '40px' }}>
-                    <h3 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', transition: 'color 0.3s ease' }} className="spec-title">{spec.title}</h3>
-                    <ul style={{ paddingLeft: '20px', color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <div style={{ fontSize: '18px', color: 'var(--color-gold)', fontWeight: 600, fontFamily: 'var(--font-serif)', marginTop: '4px' }}>
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  
+                  <div style={{ flex: 1 }}>
+                    <h3 className="spec-title" style={{ fontSize: '28px', color: 'var(--color-deep-blue)', marginBottom: '20px', transition: 'all 0.3s ease', fontFamily: 'var(--font-serif)' }}>
+                      {spec.title}
+                    </h3>
+                    <ul style={{ paddingLeft: '0', listStyle: 'none', margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '12px' }}>
                       {spec.items.map((item, j) => (
-                        <li key={j}>{item}</li>
+                        <li className="spec-desc" key={j} style={{ color: 'var(--color-text-secondary)', fontSize: '15px', position: 'relative', paddingLeft: '20px', transition: 'all 0.3s ease' }}>
+                          <span style={{ position: 'absolute', left: 0, top: '8px', width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></span>
+                          {item}
+                        </li>
                       ))}
                     </ul>
                   </div>
+
                   {spec.link && (
-                    <div className="spec-arrow-container" style={{ width: '48px', height: '48px', borderRadius: '50%', border: '1px solid rgba(212, 175, 55, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', flexShrink: 0 }}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s ease' }} className="spec-arrow">
+                    <div className="spec-arrow-wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '60px', height: '60px', borderRadius: '50%', border: '1px solid rgba(23,50,77,0.1)', transition: 'all 0.4s ease', flexShrink: 0 }}>
+                      <svg className="spec-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'all 0.4s ease' }}>
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                       </svg>
                     </div>
@@ -246,16 +260,16 @@ export default async function TeamMemberPage({ params }: PageProps) {
               </h2>
               <div className="grid grid-2" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)', flex: 1 }}>
                 {member.process.map((step, i) => (
-                  <div key={i} className="usp-card" style={{ padding: '30px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+                  <div key={i} className="usp-card" style={{ padding: '24px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
                     <div className="usp-accent"></div>
-                    <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Этап {step.step}</div>
-                    <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>{step.title}</h4>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
+                    <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '8px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Этап {step.step}</div>
+                    <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '8px', fontWeight: 600 }}>{step.title}</h4>
+                    <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4, margin: 0 }}>{step.description}</p>
                     
                     {/* Golden arrow between left and right cards */}
                     {i % 2 === 0 && (
-                      <div style={{ position: 'absolute', right: '-12px', top: '50%', transform: 'translateY(-50%)', width: '24px', height: '24px', background: 'var(--color-white)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(212, 175, 55, 0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', zIndex: 10 }}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <div style={{ position: 'absolute', right: '-10px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', background: 'var(--color-white)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(212, 175, 55, 0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', zIndex: 10 }}>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                       </div>
