@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import TeamCarousel from '@/components/TeamCarousel';
 import Header from '@/components/Header';
 import ServicesTabs from '@/components/ServicesTabs';
@@ -123,10 +124,11 @@ export default function Home() {
               borderRadius: '4px',
               overflow: 'hidden'
             }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
-                src="/-/images/hero-photo.jpg" 
+              <Image 
+                src="/images/hero-photo.jpg" 
                 alt="Юридическая помощь" 
+                width={800}
+                height={1200}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
             </div>
