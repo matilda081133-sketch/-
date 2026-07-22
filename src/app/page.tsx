@@ -129,7 +129,7 @@ export default function Home() {
         }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
-            src="images/hero-photo.jpg" 
+            src="/-/images/hero-photo.jpg" 
             alt="Юридическая помощь" 
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />

@@ -219,7 +219,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
             {/* Left: Photo */}
             <div style={{ position: 'relative', borderRadius: '4px', overflow: 'hidden', minHeight: '600px' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="images/team-process.jpg" alt="Как специалист ведёт дело" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="/-/images/team-process.jpg" alt="Как специалист ведёт дело" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
 
             {/* Right: Content */}
