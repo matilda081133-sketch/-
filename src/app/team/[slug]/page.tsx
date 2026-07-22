@@ -74,10 +74,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       {/* 1 & 2. Breadcrumbs & Hero Section */}
       <section style={{ 
         position: 'relative', 
-        background: 'var(--gradient-light)',
-        backgroundImage: 'url(/images/organic-pattern.svg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
         paddingBottom: '80px',
         overflow: 'hidden'
       }}>
@@ -141,7 +138,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 borderRadius: '16px 80px 16px 80px',
                 overflow: 'hidden',
                 position: 'relative',
-                boxShadow: '0 30px 60px rgba(23, 50, 77, 0.15)',
+                boxShadow: '0 15px 30px rgba(23, 50, 77, 0.25)',
                 zIndex: 1
               }}>
                 <Image 
@@ -159,10 +156,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
       {/* 3. Specializations */}
       <section className="section bg-light" style={{ 
-        background: 'var(--gradient-light)',
-        backgroundImage: 'url(/images/organic-pattern.svg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center' 
+        background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)'
       }}>
         <div className="container">
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>
@@ -174,10 +168,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
       {/* 4. Experience & Process Grid */}
       <section className="section" style={{ 
-        background: 'var(--gradient-light)',
-        backgroundImage: 'url(/images/organic-pattern.svg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center' 
+        background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)'
       }}>
         <div className="container">
           <div className="grid grid-3" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)' }}>
@@ -321,10 +312,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       {/* 7. Related Services */}
       <section className="section bg-light" style={{ 
         padding: '60px 0',
-        background: 'var(--gradient-light)',
-        backgroundImage: 'url(/images/organic-pattern.svg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center' 
+        background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)'
       }}>
         <div className="container">
           <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '30px' }}>Вопросы, с которыми можно обратиться</h2>
@@ -343,10 +331,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
         position: 'relative', 
         overflow: 'hidden', 
         padding: '80px 0', 
-        background: 'var(--gradient-light)',
-        backgroundImage: 'url(/images/organic-pattern.svg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
         scrollMarginTop: '80px' 
       }}>
         <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center' }}>
