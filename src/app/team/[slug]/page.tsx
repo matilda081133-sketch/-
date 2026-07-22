@@ -215,11 +215,11 @@ export default async function TeamMemberPage({ params }: PageProps) {
               </h2>
               <div className="grid grid-2" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)', flex: 1 }}>
                 {member.process.map((step, i) => (
-                  <div key={i} className="usp-card" style={{ padding: '24px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+                  <div key={i} className="usp-card" style={{ padding: '16px 24px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column', gap: '4px' }}>
                     <div className="usp-accent"></div>
-                    <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '8px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Этап {step.step}</div>
-                    <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '8px', fontWeight: 600 }}>{step.title}</h4>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
+                    <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Этап {step.step}</div>
+                    <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0 }}>{step.title}</h4>
+                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.4, margin: 0 }}>{step.description}</p>
                     
                     {/* Golden arrow between left and right cards */}
                     {i % 2 === 0 && (

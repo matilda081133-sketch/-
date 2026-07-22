@@ -31,7 +31,7 @@ export default function Home() {
  borderRadius: '50%', zIndex: 0
  }} />
  
- <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'stretch', position: 'relative', zIndex: 1 }}>
+ <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
  <div className="" style={{ padding: '40px 0', maxWidth: '800px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
  <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
@@ -116,10 +116,11 @@ export default function Home() {
  <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
  </svg>
 
-          <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
             <div className="photo-hover-shadow" style={{ 
-              flex: 1,
               width: '100%',
+              aspectRatio: '4/5',
+              maxHeight: '700px',
               background: 'var(--color-cream)', 
               borderRadius: '4px',
               overflow: 'hidden'
