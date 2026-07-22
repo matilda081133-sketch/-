@@ -825,8 +825,10 @@ h4 { font-size: 1.25rem; }
   border-color: transparent !important;
   font-weight: 600 !important;
 }
-.btn-light:hover {
+.btn-light::before {
   background-color: var(--color-gold) !important;
+}
+.btn-light:hover {
   color: var(--color-white) !important;
   border-color: transparent !important;
 }
