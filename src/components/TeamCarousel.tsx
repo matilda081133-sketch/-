@@ -106,7 +106,7 @@ export default function TeamCarousel() {
           
           <div className="carousel-container" ref={scrollRef} style={{ display: 'flex', alignItems: 'stretch' }}>
             {team.map((person, index) => (
-              <div key={index} className="card carousel-item" style={{ 
+              <div key={index} className="card team-card carousel-item" style={{ 
                 padding: '24px', 
                 display: 'flex', 
                 flexDirection: 'column',

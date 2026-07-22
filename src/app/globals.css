@@ -847,5 +847,4 @@ h4 { font-size: 1.25rem; }
   border-color: transparent !important;
   opacity: 0.9;
 }
-. t e a m - c a r d   {   - - s h a d o w - s m :   0   4 p x   8 p x   r g b a ( 2 3 ,   5 0 ,   7 7 ,   0 . 0 8 ) ;   - - s h a d o w - h o v e r :   0   8 p x   2 0 p x   r g b a ( 2 3 ,   5 0 ,   7 7 ,   0 . 1 5 ) ;   }  
- 
+.team-card { --shadow-sm: 0 4px 8px rgba(23, 50, 77, 0.08); --shadow-hover: 0 8px 20px rgba(23, 50, 77, 0.15); }
