@@ -69,157 +69,46 @@ export default function Home() {
  gap: '20px', 
  marginTop: '50px' 
  }}>
- {[
- { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
- text: 'Юристы и адвокаты под профиль вашего дела' },
- { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
- text: 'Опыт изнутри системы: СК, ФССП, госорганы' },
- { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
- text: 'Честный договор: фиксируем план работ и цены' }
- ].map((bullet, i) => (
- <div key={i} style={{ 
- flex: 1,
- display: 'flex', 
- alignItems: 'center', 
- gap: '16px',
- background: 'rgba(255, 255, 255, 0.7)',
- backdropFilter: 'blur(10px)',
- border: '1px solid rgba(255, 255, 255, 0.9)',
- padding: '20px 24px',
- boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)'
- }}>
- <div style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{bullet.value}</div>
- <div style={{ color: 'var(--color-deep-blue)', fontSize: '13px', fontWeight: 600, lineHeight: 1.4 }}>
- {bullet.text}
- </div>
- </div>
- ))}
- </div>
- </div>
- 
- <div style={{ display: 'flex', flexDirection: 'column', flex: 1, position: 'relative', height: '100%' }}>
- {/* Darkening gradient under the creative to highlight the background graphic */}
- <div style={{
- position: 'absolute',
- top: '50%',
- left: '50%',
- transform: 'translate(-50%, -50%)',
- width: '150%',
- height: '150%',
- background: 'radial-gradient(circle, rgba(23, 50, 77, 0.12) 0%, rgba(23, 50, 77, 0.05) 30%, transparent 60%)',
- zIndex: 0,
- pointerEvents: 'none'
- }} />
- {/* Background Graphic: Courthouse (Centered behind mockup, shifted right) */}
- <svg style={{ position: 'absolute', top: '35%', left: '100%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.08, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
- <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
- </svg>
+ {
+  [
+    {
+      num: '01',
+      tag: '�������������',
+      title: '��������� ����������� ��� ��������� ����',
+      desc: <>��������� ���� �������� <span className='text-accent'>������ �� ���������� �����</span>, ��������� ���� � <span className='text-accent'>��������</span>. ���� ������ ����������� ��������� ��������, ���������� ������ ������� ����� ���������� �������.</>
+    },
+    {
+      num: '02',
+      tag: '��������� ������',
+      title: '���������� ��������, ����� ����� ������� ����',
+      desc: <>� ��������� ����� � ������ ���������, ��� ��������� ������ ��������, � ������ ������������ <span className='text-accent'>���������� � ����������� ����������� ��������</span>. �������������� ��������� ���������� ����� ������������ � ��������.</>
+    },
+    {
+      num: '03',
+      tag: '������',
+      title: '�������� � ����� �� ������ �������� �����',
+      desc: <>�� ������ ������� �������� �������������� � ������� ��������� ���������. ���� ��������� <span className='text-accent'>��������� ����������� ������</span>, ������� ������������� ��� ����� � ���������.</>
+    },
+    {
+      num: '04',
+      tag: '�������������',
+      title: '����� �� ���� ������������� �����',
+      desc: <>���������� ����������, ����������, ��������� � ��������������� ������, ��� � �������������� ������������ ���������� � ������ <span className='text-accent'>� ����������� �� ������</span> � ����������� � ��������.</>
+    },
+    {
+      num: '05',
+      tag: '������������ ��������',
+      title: '���� � ������ �������',
+      desc: <>��������� �� ������: <span className='text-accent'>�. ������, ��. ���������, �. 35, ���� 213</span>. ����������� ������������� ������ ������������ ���������� ����.</>
+    },
+    {
+      num: '06',
+      tag: '�������� �������',
+      title: '������ ����� � ������� ������ � � ��������',
+      desc: <>�� ������ �������� ����� <span className='text-accent'>���������</span>, ����� �������� ��������� ����������, ��� �������������� <span className='text-accent'>���������</span> � ����� ������� ������������ ��������.</>
+    }
+  ].map((item, i) => (
 
-        {/* HERO IMAGE */}
-        <div className="photo-hover-shadow" style={{ 
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: 'var(--color-cream)', 
-          borderRadius: '4px',
-          overflow: 'hidden',
-          zIndex: 1
-        }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/-/images/hero-photo.jpg" 
-            alt="Юридическая помощь" 
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        </div>
- </div>
- </div>
- </section>
-
- {/* 2. PRIORITIES */}
- <div id="services">
- <ServicesTabs />
- </div>
-
- {/* 3. WHY US / USP */}
- <section className="section" style={{ 
- background: 'var(--gradient-light)',
- backgroundImage: 'url(/images/organic-pattern.svg)', 
- backgroundSize: 'cover',
- backgroundPosition: 'center',
- backgroundRepeat: 'no-repeat',
- padding: '60px 0', 
- borderTop: '1px solid var(--color-border)', 
- borderBottom: '1px solid var(--color-border)',
- position: 'relative',
- overflow: 'hidden'
- }}>
- {/* Background Graphic: Shield */}
- <svg style={{ position: 'absolute', top: '-5%', left: '2%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
- <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
- <path d="M9 12l2 2 4-4"/>
- </svg>
-
- <div className="container" style={{ position: 'relative', zIndex: 1 }}>
- <h2 className="" style={{ 
- marginTop: 0, 
- marginBottom: '60px', 
- fontSize: '42px', 
- fontFamily: 'var(--font-serif)', 
- color: 'var(--color-deep-blue)',
- textAlign: 'left'
- }}>
- Почему мы?
- </h2>
- 
- <div style={{ 
- display: 'grid', 
- gridTemplateColumns: 'repeat(3, 1fr)', 
- borderTop: '1px solid var(--color-primary)', 
- borderLeft: '1px solid rgba(23, 50, 77, 0.1)',
- borderBottom: '1px solid rgba(23, 50, 77, 0.1)'
- }}>
- 
- {[
- {
- num: "01",
- tag: "Специализация",
- title: "Подбираем специалиста под категорию дела",
- desc: "Земельный спор передаем юристу по земельному праву, уголовное дело — адвокату. Если задача затрагивает несколько отраслей, определяем состав команды после первичного разбора."
- },
- {
- num: "02",
- tag: "Командная работа",
- title: "Подключаем адвоката, когда этого требует дело",
- desc: "В уголовных делах и других ситуациях, где необходим статус адвоката, к работе подключается специалист с действующим адвокатским статусом. Дополнительных экспертов привлекаем после согласования с клиентом."
- },
- {
- num: "03",
- tag: "Анализ",
- title: "Варианты и риски до начала основных работ",
- desc: "На первой встрече уточняем обстоятельства и изучаем доступные документы. Если требуется отдельный углубленный анализ, заранее согласовываем его объем и стоимость."
- },
- {
- num: "04",
- tag: "Сопровождение",
- title: "Берем на себя согласованные этапы",
- desc: "Подготовка документов, переговоры, обращения в государственные органы, суд и исполнительное производство включаются в работу в зависимости от задачи и фиксируются в договоре."
- },
- {
- num: "05",
- tag: "Региональная практика",
- title: "Офис в центре Липецка",
- desc: "Принимаем по адресу: г. Липецк, ул. Советская, д. 35, офис 213. Возможность дистанционной работы определяется характером дела."
- },
- {
- num: "06",
- tag: "Понятные условия",
- title: "Состав работ и порядок оплаты — в договоре",
- desc: "До начала основных работ фиксируем, какие действия выполняет специалист, как рассчитывается стоимость и какие расходы оплачиваются отдельно."
- }
- ].map((item, i) => (
  <div key={i} className="usp-card" style={{ 
  padding: '40px', 
  borderRight: '1px solid rgba(23, 50, 77, 0.1)',

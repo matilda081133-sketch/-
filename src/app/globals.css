@@ -861,3 +861,8 @@ h4 { font-size: 1.25rem; }
   color: var(--color-gold) !important;
   transform: translateX(5px);
 }
+
+.text-accent {
+  color: var(--color-primary);
+  font-weight: 600;
+}

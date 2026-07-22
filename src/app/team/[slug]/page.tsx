@@ -139,23 +139,40 @@ export default async function TeamMemberPage({ params }: PageProps) {
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>
             С какими вопросами работает
           </h2>
-          <div className="grid grid-3" style={{ gap: '30px' }}>
-            {member.specializations.map((spec, i) => (
-              <div key={i} className="card specialization-card" style={{ padding: '30px', background: 'var(--color-white)', borderRadius: '0', borderTop: i === 0 ? '4px solid var(--color-primary)' : '1px solid var(--color-border)', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.04)' }}>
-                <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '20px' }}>{spec.title}</h3>
-                <ul style={{ paddingLeft: '20px', color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  {spec.items.map((item, j) => (
-                    <li key={j}>{item}</li>
-                  ))}
-                </ul>
-                {spec.link && (
-                  <Link href={spec.link.url} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', marginTop: '24px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
-                    {spec.link.text}
-                    <svg className="card-arrow" style={{ transition: 'transform 0.4s ease' }} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </Link>
-                )}
-              </div>
-            ))}
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            {member.specializations.map((spec, i) => {
+              const content = (
+                <div className="spec-list-item" style={{ 
+                  display: 'flex', alignItems: 'center', justifyContent: 'space-between', 
+                  padding: '32px 0', borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
+                  transition: 'all 0.3s ease', cursor: spec.link ? 'pointer' : 'default'
+                }}>
+                  <div style={{ flex: 1, paddingRight: '40px' }}>
+                    <h3 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', transition: 'color 0.3s ease' }} className="spec-title">{spec.title}</h3>
+                    <ul style={{ paddingLeft: '20px', color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      {spec.items.map((item, j) => (
+                        <li key={j}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  {spec.link && (
+                    <div className="spec-arrow-container" style={{ width: '48px', height: '48px', borderRadius: '50%', border: '1px solid rgba(212, 175, 55, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', flexShrink: 0 }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s ease' }} className="spec-arrow">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              );
+
+              return spec.link ? (
+                <Link href={spec.link.url} key={i} style={{ textDecoration: 'none', display: 'block' }}>
+                  {content}
+                </Link>
+              ) : (
+                <div key={i}>{content}</div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -217,9 +234,9 @@ export default async function TeamMemberPage({ params }: PageProps) {
         <div className="container">
           <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
             {/* Left: Photo */}
-            <div style={{ position: 'relative', borderRadius: '4px', overflow: 'hidden', minHeight: '600px' }}>
+            <div style={{ display: 'flex', borderRadius: '4px', overflow: 'hidden' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/-/images/team-process.jpg" alt="Как специалист ведёт дело" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="/-/images/team-process.jpg" alt="Как специалист ведёт дело" style={{ width: '100%', objectFit: 'cover', display: 'block', flex: 1 }} />
             </div>
 
             {/* Right: Content */}
@@ -234,6 +251,15 @@ export default async function TeamMemberPage({ params }: PageProps) {
                     <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Этап {step.step}</div>
                     <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>{step.title}</h4>
                     <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
+                    
+                    {/* Golden arrow between left and right cards */}
+                    {i % 2 === 0 && (
+                      <div style={{ position: 'absolute', right: '-12px', top: '50%', transform: 'translateY(-50%)', width: '24px', height: '24px', background: 'var(--color-white)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(212, 175, 55, 0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', zIndex: 10 }}>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
