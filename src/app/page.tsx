@@ -125,7 +125,7 @@ export default function Home() {
               overflow: 'hidden'
             }}>
               <Image 
-                src="/images/hero-photo.jpg" 
+                src="/-/images/hero-photo.jpg" 
                 alt="Юридическая помощь" 
                 width={800}
                 height={1200}
