@@ -81,12 +81,6 @@ export default async function TeamMemberPage({ params }: PageProps) {
         paddingBottom: '80px',
         overflow: 'hidden'
       }}>
-        {/* Background Graphic: Shield (subtle) */}
-        <svg style={{ position: 'absolute', top: '-5%', left: '2%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          <path d="M9 12l2 2 4-4"/>
-        </svg>
-
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           
           {/* Breadcrumbs */}
@@ -164,7 +158,12 @@ export default async function TeamMemberPage({ params }: PageProps) {
       </section>
 
       {/* 3. Specializations */}
-      <section className="section bg-light" style={{ background: 'var(--color-white)' }}>
+      <section className="section bg-light" style={{ 
+        background: 'var(--gradient-light)',
+        backgroundImage: 'url(/images/organic-pattern.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center' 
+      }}>
         <div className="container">
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>
             Вопросы, с которыми можно обратиться
@@ -320,7 +319,13 @@ export default async function TeamMemberPage({ params }: PageProps) {
       )}
 
       {/* 7. Related Services */}
-      <section className="section bg-light" style={{ padding: '60px 0' }}>
+      <section className="section bg-light" style={{ 
+        padding: '60px 0',
+        background: 'var(--gradient-light)',
+        backgroundImage: 'url(/images/organic-pattern.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center' 
+      }}>
         <div className="container">
           <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '30px' }}>Вопросы, с которыми можно обратиться</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
