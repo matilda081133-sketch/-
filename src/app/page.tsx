@@ -117,15 +117,13 @@ export default function Home() {
 
         {/* HERO IMAGE */}
         <div className="photo-hover-shadow" style={{ 
-          position: 'absolute',
-          top: 0,
-          left: 0,
+          flex: 1,
           width: '100%',
-          height: '100%',
+          minHeight: '600px',
           background: 'var(--color-cream)', 
           borderRadius: '4px',
           overflow: 'hidden',
-          zIndex: 1
+          position: 'relative'
         }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
