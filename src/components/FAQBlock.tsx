@@ -81,11 +81,11 @@ export default function FAQBlock({ faqs: propFaqs }: FAQBlockProps) {
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {faqs.map((faq, index) => (
               <details key={index} className="faq-details" style={{
-                background: 'var(--color-white)',
-                border: '1px solid rgba(23, 50, 77, 0.1)',
-                borderRadius: '4px',
+                background: 'linear-gradient(135deg, #17375E 0%, #0B1C2A 100%)',
+                border: '1px solid var(--color-border)',
+                borderRadius: '0',
                 transition: 'var(--transition)',
-                color: 'var(--color-deep-blue)',
+                color: 'var(--color-white)',
                 overflow: 'hidden'
               }}>
                 <summary style={{
@@ -100,7 +100,7 @@ export default function FAQBlock({ faqs: propFaqs }: FAQBlockProps) {
                   listStyle: 'none',
                   background: 'transparent'
                 }} className="faq-summary">
-                  <span style={{ paddingRight: '20px', lineHeight: 1.4, color: 'var(--color-deep-blue)', fontWeight: 600 }}>{faq.q}</span>
+                  <span style={{ paddingRight: '20px', lineHeight: 1.4, color: 'var(--color-white)' }}>{faq.q}</span>
                   <span className="faq-icon" style={{ 
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -108,11 +108,10 @@ export default function FAQBlock({ faqs: propFaqs }: FAQBlockProps) {
                     width: '40px',
                     height: '40px',
                     borderRadius: '50%',
-                    border: '1px solid rgba(23, 50, 77, 0.2)',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
                     transition: 'all 0.3s ease',
                     flexShrink: 0,
-                    color: 'var(--color-gold)',
-                    fontSize: '24px'
+                    color: 'var(--color-white)'
                   }}>
                     +
                   </span>
