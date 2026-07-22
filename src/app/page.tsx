@@ -115,172 +115,26 @@ export default function Home() {
  <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
  </svg>
 
- </div>
- </div>
- </div>
- </div>
- </div>
- </section>
+        {/* HERO IMAGE */}
+        <div style={{ position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'center' }}>
+          <div className="photo-hover-shadow" style={{ 
+            width: '100%',
+            maxWidth: '450px',
+            aspectRatio: '3/4', 
+            background: 'var(--color-cream)', 
+            borderRadius: '4px',
+            overflow: 'hidden',
+            position: 'relative'
+          }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="images/hero-photo.jpg" 
+              alt="Юридическая помощь" 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          </div>
+        </div>
 
- {/* 2. PRIORITIES */}
- <div id="services">
- <ServicesTabs />
- </div>
-
- {/* 3. WHY US / USP */}
- <section className="section" style={{ 
- background: 'var(--gradient-light)',
- backgroundImage: 'url(/images/organic-pattern.svg)', 
- backgroundSize: 'cover',
- backgroundPosition: 'center',
- backgroundRepeat: 'no-repeat',
- padding: '60px 0', 
- borderTop: '1px solid var(--color-border)', 
- borderBottom: '1px solid var(--color-border)',
- position: 'relative',
- overflow: 'hidden'
- }}>
- {/* Background Graphic: Shield */}
- <svg style={{ position: 'absolute', top: '-5%', left: '2%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
- <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
- <path d="M9 12l2 2 4-4"/>
- </svg>
-
- <div className="container" style={{ position: 'relative', zIndex: 1 }}>
- <h2 className="" style={{ 
- marginTop: 0, 
- marginBottom: '60px', 
- fontSize: '42px', 
- fontFamily: 'var(--font-serif)', 
- color: 'var(--color-deep-blue)',
- textAlign: 'left'
- }}>
- Почему мы?
- </h2>
- 
- <div style={{ 
- display: 'grid', 
- gridTemplateColumns: 'repeat(3, 1fr)', 
- borderTop: '1px solid var(--color-primary)', 
- borderLeft: '1px solid rgba(23, 50, 77, 0.1)',
- borderBottom: '1px solid rgba(23, 50, 77, 0.1)'
- }}>
- 
- {[
- {
- num: "01",
- tag: "Специализация",
- title: "Подбираем специалиста под категорию дела",
- desc: "Земельный спор передаем юристу по земельному праву, уголовное дело — адвокату. Если задача затрагивает несколько отраслей, определяем состав команды после первичного разбора."
- },
- {
- num: "02",
- tag: "Командная работа",
- title: "Подключаем адвоката, когда этого требует дело",
- desc: "В уголовных делах и других ситуациях, где необходим статус адвоката, к работе подключается специалист с действующим адвокатским статусом. Дополнительных экспертов привлекаем после согласования с клиентом."
- },
- {
- num: "03",
- tag: "Анализ",
- title: "Варианты и риски до начала основных работ",
- desc: "На первой встрече уточняем обстоятельства и изучаем доступные документы. Если требуется отдельный углубленный анализ, заранее согласовываем его объем и стоимость."
- },
- {
- num: "04",
- tag: "Сопровождение",
- title: "Берем на себя согласованные этапы",
- desc: "Подготовка документов, переговоры, обращения в государственные органы, суд и исполнительное производство включаются в работу в зависимости от задачи и фиксируются в договоре."
- },
- {
- num: "05",
- tag: "Региональная практика",
- title: "Офис в центре Липецка",
- desc: "Принимаем по адресу: г. Липецк, ул. Советская, д. 35, офис 213. Возможность дистанционной работы определяется характером дела."
- },
- {
- num: "06",
- tag: "Понятные условия",
- title: "Состав работ и порядок оплаты — в договоре",
- desc: "До начала основных работ фиксируем, какие действия выполняет специалист, как рассчитывается стоимость и какие расходы оплачиваются отдельно."
- }
- ].map((item, i) => (
- <div key={i} className="usp-card" style={{ 
- padding: '40px', 
- borderRight: '1px solid rgba(23, 50, 77, 0.1)',
- borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
- background: 'rgba(255, 255, 255, 0.85)',
- backdropFilter: 'blur(12px)',
- position: 'relative'
- }}>
- <div className="usp-accent"></div>
- <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
- {item.tag}
- </div>
- <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
- {item.title}
- </h3>
- <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1 }}>
- {item.desc}
- </p>
- </div>
- ))}
-
- </div>
- </div>
- </section>
-
- {/* 4. КАК МЫ РАБОТАЕМ (СВЕТЛЫЙ СТАТИЧНЫЙ БЛОК) */}
- <section className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
- {/* Organic graphic background */}
- <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'radial-gradient(circle at 0% 0%, rgba(193, 160, 102, 0.04) 0%, transparent 50%), radial-gradient(circle at 100% 100%, rgba(23, 50, 77, 0.03) 0%, transparent 50%)', pointerEvents: 'none' }}></div>
- 
- <div className="container" style={{ position: 'relative', zIndex: 1 }}>
- <div style={{ textAlign: 'center', marginBottom: '50px' }}>
- <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '42px', color: 'var(--color-deep-blue)', marginBottom: '24px' }}>
- Что происходит после обращения
- </h2>
- <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
- Каждое судебное дело уникально, но наш подход всегда остается системным. Прозрачный процесс работы от первой юридической консультации и досудебного урегулирования до вынесения итогового решения суда.
- </p>
- </div>
-
- <div style={{ position: 'relative' }}>
- <div className="grid grid-3" style={{ gap: '40px' }}>
- {[
- { num: '01', title: 'Первичное обращение', desc: 'Уточняем суть вопроса, запрашиваем необходимые документы и определяем профильного специалиста.' },
- { num: '02', title: 'Консультация и план действий', desc: 'Изучаем исходные материалы, оцениваем возможные варианты, риски, объём и стоимость дальнейшей работы.' },
- { num: '03', title: 'Договор и ведение дела', desc: 'Заключаем договор, формируем правовую позицию и выполняем согласованные действия: готовим документы, представляем интересы в суде, взаимодействуем с ФССП и государственными органами.' },
- ].map((step, i) => (
- <div key={i} style={{ 
- position: 'relative',
- zIndex: 1,
- display: 'flex',
- flexDirection: 'column',
- background: 'transparent',
- padding: '10px'
- }} className="stage-item">
- 
- {/* Organic Number / Dot */}
- <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '30px' }}>
- <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'var(--color-white)', border: '1px solid rgba(193, 160, 102, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', fontWeight: '300', fontSize: '24px', fontFamily: 'var(--font-serif)', boxShadow: '0 10px 20px rgba(23, 50, 77, 0.05)', position: 'relative' }}>
- {step.num}
- <div style={{ position: 'absolute', inset: '4px', borderRadius: '50%', border: '1px dashed rgba(193, 160, 102, 0.3)' }}></div>
- </div>
- </div>
-
- <h4 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
- {step.title}
- </h4>
- <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center' }}>
- {step.desc}
- </p>
- </div>
- ))}
- </div>
- 
- {/* CTA inside Process Block */}
- <div className="process-cta-banner" style={{ 
- marginTop: '40px', 
  background: 'var(--color-deep-blue)', 
  padding: '24px 32px',
  display: 'flex',
