@@ -1,5 +1,5 @@
-:HL["/-/_next/static/chunks/1zqij2b5l014g.css","style"]
+:HL["/-/_next/static/chunks/0k1sxm1o_-lco.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap","style"]
 :HL["/-/images/hero-photo.jpg","image"]
 :HL["/-/images/logo_dark.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"eukj1kHZWll7JXyt9clyI"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"SReeu4zWR0bqM8FALxt0d"}
