@@ -26,7 +26,7 @@ export default function ReviewsBlock() {
           {/* Yandex Maps Mock */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', background: 'var(--color-cream)', padding: '24px 30px', borderRadius: '0', flex: '1', minWidth: '320px', borderLeft: '4px solid #FC3F1D', justifyContent: 'space-between', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-              <img src="images/yandex_logo.png" alt="Yandex" width="48" height="48" style={{ borderRadius: '50%', objectFit: 'cover' }} />
+              <img src="/-/images/yandex_logo.png" alt="Yandex" width="48" height="48" style={{ borderRadius: '50%', objectFit: 'cover' }} />
               <div>
                 <div style={{ color: 'var(--color-deep-blue)', fontSize: '18px', fontWeight: 600, marginBottom: '6px' }}>Яндекс Карты</div>
                 <div style={{ color: 'var(--color-text-secondary)', fontSize: '14px', fontStyle: 'italic' }}>рейтинг будет добавлен...</div>
@@ -39,7 +39,7 @@ export default function ReviewsBlock() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', background: 'var(--color-cream)', padding: '24px 30px', borderRadius: '0', flex: '1', minWidth: '320px', borderLeft: '4px solid #A3C83D', justifyContent: 'space-between', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
               <div style={{ width: '48px', height: '48px', overflow: 'hidden', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img src="images/2gis_logo.png" alt="2GIS" width="110" height="110" style={{ objectFit: 'contain', flexShrink: 0 }} />
+                <img src="/-/images/2gis_logo.png" alt="2GIS" width="110" height="110" style={{ objectFit: 'contain', flexShrink: 0 }} />
               </div>
               <div>
                 <div style={{ color: 'var(--color-deep-blue)', fontSize: '18px', fontWeight: 600, marginBottom: '6px' }}>Отзывы 2ГИС</div>

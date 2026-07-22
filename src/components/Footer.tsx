@@ -52,7 +52,7 @@ export default function Footer() {
         <div>
           <div style={{ marginBottom: '24px', marginTop: '-20px' }}>
             <Link href="/">
-              <img src="images/logo_dark.png" alt="Де-Юре" style={{ height: '110px', width: 'auto', transform: 'scale(1.25)', transformOrigin: 'left center', filter: 'brightness(0) invert(1)' }} />
+              <img src="/-/images/logo_dark.png" alt="Де-Юре" style={{ height: '110px', width: 'auto', transform: 'scale(1.25)', transformOrigin: 'left center', filter: 'brightness(0) invert(1)' }} />
             </Link>
           </div>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px', lineHeight: 1.5, marginBottom: '20px' }}>
