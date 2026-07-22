@@ -85,9 +85,9 @@ export default async function TeamMemberPage({ params }: PageProps) {
       </div>
 
       {/* 2. Hero Section */}
-      <section style={{ padding: '40px 0 80px 0', background: 'var(--color-white)' }}>
+      <section style={{ padding: '40px 0 80px 0', background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'flex-start' }}>
+          <div className="grid hero-grid-wide" style={{ gap: '60px', alignItems: 'center' }}>
             {/* Info Column */}
             <div>
               <h1 style={{ fontSize: 'clamp(32px, 4vw, 48px)', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1.2 }}>
@@ -116,7 +116,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
             <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
               <div className="photo-hover-shadow" style={{ 
                 width: '100%',
-                maxWidth: '380px',
+                maxWidth: '600px',
                 aspectRatio: '3/4', 
                 background: 'var(--color-cream)', 
                 borderRadius: '4px',
@@ -137,7 +137,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       </section>
 
       {/* 3. Specializations */}
-      <section className="section bg-light">
+      <section className="section bg-light" style={{ background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
         <div className="container">
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>
             Вопросы, с которыми можно обратиться
@@ -147,7 +147,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       </section>
 
       {/* 4. Experience & Process Grid */}
-      <section className="section" style={{ background: 'var(--color-white)' }}>
+      <section className="section" style={{ background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
         <div className="container">
           <div className="grid grid-3" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)' }}>
             
@@ -215,7 +215,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
               </h2>
               <div className="grid grid-2" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)', flex: 1 }}>
                 {member.process.map((step, i) => (
-                  <div key={i} className="usp-card" style={{ padding: '40px 30px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  <div key={i} className="usp-card" style={{ padding: '40px 30px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column', gap: '6px', minHeight: '280px', justifyContent: 'center' }}>
                     <div className="usp-accent"></div>
                     <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Этап {step.step}</div>
                     <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0 }}>{step.title}</h4>
@@ -302,7 +302,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       </section>
 
       {/* 8. CTA Form */}
-      <section id="consultation" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)', scrollMarginTop: '80px' }}>
+      <section id="consultation" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)', scrollMarginTop: '80px' }}>
         <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center' }}>
           <div>
             <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)', fontSize: '36px', fontFamily: 'var(--font-serif)' }}>Обсудите ситуацию со специалистом</h2>
