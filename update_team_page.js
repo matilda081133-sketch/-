@@ -1,4 +1,7 @@
-import { Metadata } from 'next';
+const fs = require('fs');
+const path = require('path');
+
+const pageContent = `import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTeamMember, teamData } from '@/data/team';
@@ -27,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: member.seo.title,
     description: member.seo.description,
     alternates: {
-      canonical: `/team/${member.slug}`,
+      canonical: \`/team/\${member.slug}\`,
     },
     openGraph: {
       title: member.name,
@@ -154,7 +157,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                     <div style={{ padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '4px', borderLeft: '4px solid var(--color-deep-blue)' }}>
                       <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '8px', letterSpacing: '0.05em', fontWeight: 600 }}>Статус</div>
                       <div style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>
-                        Адвокат, реестровый номер <a href={`https://aplo.fparf.ru/`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 600 }}>{member.advocateStatus.registryNumber}</a>
+                        Адвокат, реестровый номер <a href={\`https://aplo.fparf.ru/\`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 600 }}>{member.advocateStatus.registryNumber}</a>
                       </div>
                       <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>{member.advocateStatus.chamber}</div>
                     </div>
@@ -342,3 +345,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
     </main>
   );
 }
+`;
+
+fs.writeFileSync(path.join('src', 'app', 'team', '[slug]', 'page.tsx'), pageContent);
+console.log('Finished updating team member page');
