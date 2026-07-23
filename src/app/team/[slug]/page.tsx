@@ -132,7 +132,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  style={{ width: '100%', height: '484px', objectFit: 'cover', objectPosition: 'center 25%', display: 'block', filter: 'brightness(1.05)' }}
+                  style={{ width: '100%', height: '484px', objectFit: 'cover', objectPosition: 'center 35%', display: 'block', filter: 'brightness(1.05)' }}
                 />
               </div>
             </div>
