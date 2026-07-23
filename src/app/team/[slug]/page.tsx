@@ -140,7 +140,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 borderRadius: '16px 80px 16px 80px',
                 overflow: 'hidden',
                 position: 'relative',
-                boxShadow: '0 15px 30px rgba(23, 50, 77, 0.25)',
+                boxShadow: '0 8px 20px rgba(23, 50, 77, 0.15)',
                 zIndex: 1
               }}>
                 <Image 
@@ -224,7 +224,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
         <div className="container">
           <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
             {/* Left: Photo */}
-            <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
               {/* Organic decorative border behind */}
               <div style={{
                 position: 'absolute',
@@ -232,8 +232,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 left: '20px',
                 width: '100%',
                 maxWidth: '480px',
-                height: '100%',
-                maxHeight: '640px',
+                height: 'calc(100% - 20px)',
                 borderRadius: '16px 80px 16px 80px',
                 border: '2px solid var(--color-gold)',
                 opacity: 0.4,
@@ -243,12 +242,12 @@ export default async function TeamMemberPage({ params }: PageProps) {
               <div className="photo-hover-shadow" style={{ 
                 width: '100%',
                 maxWidth: '480px',
-                aspectRatio: '3/4', 
+                height: '100%',
                 background: 'var(--color-cream)', 
                 borderRadius: '80px 16px 80px 16px',
                 overflow: 'hidden',
                 position: 'relative',
-                boxShadow: '0 15px 30px rgba(23, 50, 77, 0.15)',
+                boxShadow: '0 8px 20px rgba(23, 50, 77, 0.15)',
                 zIndex: 1
               }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
