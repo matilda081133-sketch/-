@@ -148,7 +148,16 @@ export default async function TeamMemberPage({ params }: PageProps) {
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>Направления юридической помощи</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {member.specializations.map((spec, i) => (
-              <div key={i} className="card" style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', padding: '16px 24px', background: 'var(--color-white)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(23, 50, 77, 0.05)', border: 'none', alignItems: 'center' }}>
+              <div key={i} style={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                gap: '20px', 
+                padding: '24px 30px', 
+                background: 'var(--color-white)', 
+                borderRadius: '16px', 
+                boxShadow: '0 4px 15px rgba(23, 50, 77, 0.05)', 
+                alignItems: 'flex-start' 
+              }}>
                 <div style={{ flex: '1 1 250px', display: 'flex', flexDirection: 'column', paddingRight: '10px' }}>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '8px' }}>
                     <div style={{ fontSize: '13px', color: 'var(--color-gold)', fontWeight: 700 }}>0{i + 1}</div>
