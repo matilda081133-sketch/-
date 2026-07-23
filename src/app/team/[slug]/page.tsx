@@ -140,7 +140,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 borderRadius: '16px 80px 16px 80px',
                 overflow: 'hidden',
                 position: 'relative',
-                boxShadow: '0 8px 20px rgba(23, 50, 77, 0.15)',
+                boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)',
                 zIndex: 1
               }}>
                 <Image 
@@ -247,7 +247,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 borderRadius: '80px 16px 80px 16px',
                 overflow: 'hidden',
                 position: 'relative',
-                boxShadow: '0 8px 20px rgba(23, 50, 77, 0.15)',
+                boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)',
                 zIndex: 1
               }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
