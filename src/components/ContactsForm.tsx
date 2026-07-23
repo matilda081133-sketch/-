@@ -16,7 +16,7 @@ export default function ContactsForm() {
     return (
       <div style={{ 
         padding: '64px 48px', 
-        background: 'linear-gradient(135deg, #1f4266 0%, var(--color-deep-blue) 100%)', 
+        background: 'linear-gradient(to right, var(--color-deep-blue) 0%, #244b75 100%)', 
         border: '1px solid rgba(200, 169, 126, 0.3)',
         textAlign: 'center',
         display: 'flex',
@@ -40,7 +40,7 @@ export default function ContactsForm() {
   return (
     <div style={{ 
       padding: '48px', 
-      background: 'linear-gradient(135deg, #1f4266 0%, var(--color-deep-blue) 100%)', 
+      background: 'linear-gradient(to right, var(--color-deep-blue) 0%, #244b75 100%)', 
       border: '1px solid rgba(255, 255, 255, 0.1)',
       display: 'flex',
       flexDirection: 'column',
