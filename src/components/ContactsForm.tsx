@@ -26,9 +26,15 @@ export default function ContactsForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-      <h3 style={{ fontSize: '28px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 8px 0' }}>Написать нам</h3>
-      <p style={{ margin: '0 0 16px 0', color: 'var(--color-text-secondary)', fontSize: '15px' }}>Заполните форму ниже, и мы перезвоним.</p>
+    <div style={{ 
+      background: 'var(--color-white)',
+      border: '1px solid rgba(23, 50, 77, 0.1)',
+      padding: '40px',
+      boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)'
+    }}>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <h3 style={{ fontSize: '28px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 8px 0' }}>Написать нам</h3>
+        <p style={{ margin: '0 0 16px 0', color: 'var(--color-text-secondary)', fontSize: '15px' }}>Заполните форму ниже, и мы перезвоним.</p>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <label htmlFor="name" style={{ fontSize: '13px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>Ваше имя</label>
@@ -91,9 +97,10 @@ export default function ContactsForm() {
         </span>
       </label>
 
-      <button type="submit" className="btn btn-primary" style={{ marginTop: '8px', width: '100%' }}>
-        Отправить заявку
-      </button>
-    </form>
+        <button type="submit" className="btn btn-primary" style={{ marginTop: '8px', width: '100%', padding: '16px', fontSize: '15px' }}>
+          Отправить заявку
+        </button>
+      </form>
+    </div>
   );
 }
