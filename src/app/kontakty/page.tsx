@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
+import MapWidget from '@/components/MapWidget';
 
 export const metadata = {
   title: 'Контакты | Де-Юре',
@@ -127,7 +128,7 @@ export default function ContactsPage() {
                 <a href="#form" className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '15px' }}>
                   Оставить заявку
                 </a>
-                <a href="https://yandex.ru/maps/-/CDq~6Y~O" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '16px 40px', fontSize: '15px' }}>
+                <a href="https://yandex.ru/maps/?text=г.+Липецк,+ул.+Советская,+д.+35" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '16px 40px', fontSize: '15px' }}>
                   Построить маршрут
                 </a>
               </div>
@@ -144,19 +145,7 @@ export default function ContactsPage() {
             {/* Левая колонка: Карта */}
             <div>
               <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 32px 0' }}>Как добраться</h2>
-              <div style={{ width: '100%', height: '480px', background: '#eee', position: 'relative', border: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                {/* Отложенная загрузка Яндекс.Карт */}
-                <iframe 
-                  src="https://yandex.ru/map-widget/v1/?ll=39.598857%2C52.610220&mode=search&text=%D0%9B%D0%B8%D0%BF%D0%B5%D1%86%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F%2C%2035&z=16" 
-                  width="100%" 
-                  height="100%" 
-                  frameBorder="0" 
-                  allowFullScreen={true} 
-                  loading="lazy"
-                  style={{ position: 'absolute', top: 0, left: 0 }}
-                  title="Карта проезда к офису Де-Юре"
-                ></iframe>
-              </div>
+              <MapWidget />
               
               <div style={{ marginTop: '32px', padding: '24px', background: 'var(--color-cream)', border: '1px solid rgba(23, 50, 77, 0.1)' }}>
                 <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0' }}>Реквизиты</h4>
