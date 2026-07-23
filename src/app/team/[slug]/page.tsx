@@ -151,37 +151,35 @@ export default async function TeamMemberPage({ params }: PageProps) {
               <div key={i} style={{ 
                 display: 'flex', 
                 flexWrap: 'wrap', 
-                gap: '20px', 
-                padding: '24px 30px', 
+                gap: '40px', 
+                padding: '40px', 
                 background: 'var(--color-white)', 
                 borderRadius: '16px', 
-                boxShadow: '0 4px 15px rgba(23, 50, 77, 0.05)', 
+                boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', 
                 alignItems: 'flex-start' 
               }}>
-                <div style={{ flex: '1 1 250px', display: 'flex', flexDirection: 'column', paddingRight: '10px' }}>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '8px' }}>
-                    <div style={{ fontSize: '13px', color: 'var(--color-gold)', fontWeight: 700 }}>0{i + 1}</div>
-                    <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0 }}>{spec.title}</h3>
-                  </div>
-                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4, margin: '0 0 12px 0' }}>{spec.description}</p>
+                <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ fontSize: '14px', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '8px' }}>0{i + 1}</div>
+                  <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', marginTop: 0 }}>{spec.title}</h3>
+                  <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px', flexGrow: 1 }}>{spec.description}</p>
                   {spec.link && (
-                    <Link href={spec.link.url} style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px' }}>
+                    <Link href={spec.link.url} style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                       {spec.link.text}
                     </Link>
                   )}
                 </div>
-                <div style={{ flex: '2 1 450px' }}>
+                <div style={{ flex: '2 1 500px' }}>
                   <ul style={{ 
                     listStyleType: 'none', 
                     padding: 0, 
                     margin: 0, 
                     display: 'grid', 
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-                    columnGap: '16px', 
-                    rowGap: '6px' 
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+                    columnGap: '30px', 
+                    rowGap: '12px' 
                   }}>
                     {spec.items.map((item, j) => (
-                      <li key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
+                      <li key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.4 }}>
                         <span style={{ color: 'var(--color-gold)', marginTop: '2px' }}>•</span>
                         <span>{item}</span>
                       </li>
@@ -236,13 +234,16 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
           {/* Chronology */}
           {member.experienceChronology && (
-            <div style={{ position: 'relative', padding: '40px 0', borderTop: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', marginBottom: '40px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px' }}>
+            <div style={{ position: 'relative', padding: '40px', background: 'var(--color-white)', borderRadius: '24px', boxShadow: '0 10px 40px rgba(23, 50, 77, 0.05)', marginBottom: '60px' }}>
+              <div style={{ position: 'absolute', left: '50px', top: '50px', bottom: '50px', width: '2px', background: 'rgba(212, 175, 55, 0.2)' }}></div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
                 {member.experienceChronology.map((item, i) => (
-                  <div key={i} style={{ position: 'relative', paddingLeft: '24px' }}>
-                    <div style={{ position: 'absolute', left: 0, top: '6px', width: '12px', height: '12px', borderRadius: '50%', background: 'var(--color-primary)' }}></div>
-                    <div style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, marginBottom: '8px' }}>{item.year}</div>
-                    <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{item.text}</div>
+                  <div key={i} style={{ display: 'flex', gap: '30px', alignItems: 'flex-start', position: 'relative', zIndex: 1 }}>
+                    <div style={{ flexShrink: 0, width: '22px', height: '22px', borderRadius: '50%', background: 'var(--color-gold)', border: '4px solid var(--color-white)', boxShadow: '0 0 0 1px rgba(212, 175, 55, 0.3)', marginTop: '4px' }}></div>
+                    <div style={{ flexGrow: 1 }}>
+                      <div style={{ fontSize: '20px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '6px', fontWeight: 600 }}>{item.year}</div>
+                      <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{item.text}</div>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -319,19 +320,19 @@ export default async function TeamMemberPage({ params }: PageProps) {
           <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
             {/* Left: Photo */}
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: '100%' }}>
-              <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
+              <div style={{ width: '100%', borderRadius: '0', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/-/images/team-process.jpg" alt="Процесс работы" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             </div>
 
             {/* Right: 4 cards */}
-            <div className="grid grid-2" style={{ gap: '20px' }}>
+            <div className="grid grid-2" style={{ gap: '16px' }}>
               {member.process.map((step, i) => (
-                <div key={i} style={{ padding: '30px', background: 'var(--color-white)', borderRadius: '16px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', display: 'flex', flexDirection: 'column', gap: '16px', height: '100%' }}>
-                  <div style={{ fontSize: '48px', color: 'rgba(212, 175, 55, 0.2)', fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1, marginTop: '-10px' }}>{step.step}</div>
-                  <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0, lineHeight: 1.3 }}>{step.title}</h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
+                <div key={i} style={{ padding: '24px', background: 'var(--color-white)', borderRadius: '0', boxShadow: '0 4px 15px rgba(23, 50, 77, 0.05)', display: 'flex', flexDirection: 'column', gap: '12px', height: '100%' }}>
+                  <div style={{ fontSize: '36px', color: 'rgba(212, 175, 55, 0.2)', fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1, marginTop: '-5px' }}>{step.step}</div>
+                  <h3 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0, lineHeight: 1.3 }}>{step.title}</h3>
+                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4, margin: 0 }}>{step.description}</p>
                 </div>
               ))}
             </div>
@@ -345,19 +346,6 @@ export default async function TeamMemberPage({ params }: PageProps) {
         position: 'relative'
       }}>
       
-      {/* 7. Related Services */}
-      <section className="section" style={{ padding: '60px 0', background: 'transparent' }}>
-        <div className="container">
-          <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '30px' }}>Вопросы, с которыми можно обратиться</h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
-            {member.relatedServices?.map((service, i) => (
-              <Link key={i} href={service.url} className="btn btn-outline" style={{ padding: '12px 24px' }}>
-                {service.title}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 8. CTA Form */}
       <section id="consultation" className="section" style={{ 
@@ -375,7 +363,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
             <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
               <div style={{ width: '90px', height: '90px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, boxShadow: '0 4px 12px rgba(23, 50, 77, 0.1)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+                <img src={member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }} />
               </div>
               <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, maxWidth: '400px' }}>
                 Кратко опишите вопрос. Мы уточним обстоятельства, скажем, какие документы потребуются, и определим следующий шаг.
