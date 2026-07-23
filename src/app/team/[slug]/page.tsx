@@ -192,26 +192,35 @@ export default async function TeamMemberPage({ params }: PageProps) {
             <div style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, whiteSpace: 'pre-line' }}>
               {member.experienceText}
             </div>
-            {/* Status Compact Card */}
-            {member.advocateStatus && (
-              <div style={{ background: 'rgba(23, 50, 77, 0.03)', padding: '30px', borderRadius: '16px', borderLeft: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', gap: '16px', alignSelf: 'flex-start' }}>
-                <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', margin: 0 }}>Адвокатский статус</h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    <span>действующий адвокат</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                    <span>реестровый номер <a href="https://aplo.fparf.ru/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>{member.advocateStatus.registryNumber}</a></span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    <span>ведущий юрист «Де-Юре»</span>
+            {/* Right Column: Status & Geography */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', alignSelf: 'flex-start' }}>
+              {member.advocateStatus && (
+                <div style={{ background: 'rgba(23, 50, 77, 0.03)', padding: '30px', borderRadius: '16px', borderLeft: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', margin: 0 }}>Адвокатский статус</h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                      <span>действующий адвокат</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <span>реестровый номер <a href="https://aplo.fparf.ru/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>{member.advocateStatus.registryNumber}</a></span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                      <span>ведущий юрист «Де-Юре»</span>
+                    </div>
                   </div>
                 </div>
+              )}
+              {/* Geography */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, fontFamily: 'var(--font-serif)' }}>География практики</h3>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {member.geography}
+                </p>
               </div>
-            )}
+            </div>
           </div>
 
           {/* Chronology */}
@@ -229,13 +238,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
             </div>
           )}
 
-          {/* Geography */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', margin: 0 }}>География практики</h3>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, maxWidth: '800px' }}>
-              {member.geography}
-            </p>
-          </div>
+
         </div>
       </section>
       </div> {/* End Shared Wrapper 1-4 */}
