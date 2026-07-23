@@ -148,29 +148,31 @@ export default async function TeamMemberPage({ params }: PageProps) {
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>Направления юридической помощи</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {member.specializations.map((spec, i) => (
-              <div key={i} className="card" style={{ display: 'flex', flexWrap: 'wrap', gap: '30px', padding: '24px 30px', background: 'var(--color-white)', borderRadius: '16px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', border: 'none' }}>
-                <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ fontSize: '13px', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '6px' }}>0{i + 1}</div>
-                  <h3 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '12px', fontFamily: 'var(--font-serif)', marginTop: 0 }}>{spec.title}</h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, marginBottom: '16px', flexGrow: 1 }}>{spec.description}</p>
+              <div key={i} className="card" style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', padding: '16px 24px', background: 'var(--color-white)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(23, 50, 77, 0.05)', border: 'none', alignItems: 'center' }}>
+                <div style={{ flex: '1 1 250px', display: 'flex', flexDirection: 'column', paddingRight: '10px' }}>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '8px' }}>
+                    <div style={{ fontSize: '13px', color: 'var(--color-gold)', fontWeight: 700 }}>0{i + 1}</div>
+                    <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0 }}>{spec.title}</h3>
+                  </div>
+                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4, margin: '0 0 12px 0' }}>{spec.description}</p>
                   {spec.link && (
-                    <Link href={spec.link.url} style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+                    <Link href={spec.link.url} style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px' }}>
                       {spec.link.text}
                     </Link>
                   )}
                 </div>
-                <div style={{ flex: '2 1 500px' }}>
+                <div style={{ flex: '2 1 450px' }}>
                   <ul style={{ 
                     listStyleType: 'none', 
                     padding: 0, 
                     margin: 0, 
                     display: 'grid', 
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', 
-                    columnGap: '20px', 
-                    rowGap: '8px' 
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+                    columnGap: '16px', 
+                    rowGap: '6px' 
                   }}>
                     {spec.items.map((item, j) => (
-                      <li key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.4 }}>
+                      <li key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
                         <span style={{ color: 'var(--color-gold)', marginTop: '2px' }}>•</span>
                         <span>{item}</span>
                       </li>
