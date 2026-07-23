@@ -231,9 +231,9 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 top: '20px',
                 left: '20px',
                 width: '100%',
-                maxWidth: '400px',
+                maxWidth: '480px',
                 height: '100%',
-                maxHeight: '533px',
+                maxHeight: '640px',
                 borderRadius: '16px 80px 16px 80px',
                 border: '2px solid var(--color-gold)',
                 opacity: 0.4,
@@ -242,7 +242,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
               
               <div className="photo-hover-shadow" style={{ 
                 width: '100%',
-                maxWidth: '400px',
+                maxWidth: '480px',
                 aspectRatio: '3/4', 
                 background: 'var(--color-cream)', 
                 borderRadius: '80px 16px 80px 16px',
