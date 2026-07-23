@@ -4,7 +4,15 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import PhoneInput from './PhoneInput';
 
-export default function ContactsForm() {
+interface ContactsFormProps {
+  title?: string;
+  subtitle?: string;
+}
+
+export default function ContactsForm({ 
+  title = "Написать нам", 
+  subtitle = "Заполните форму ниже, и мы перезвоним вам в течение 15 минут в рабочее время для обсуждения деталей."
+}: ContactsFormProps = {}) {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -39,19 +47,23 @@ export default function ContactsForm() {
 
   return (
     <div style={{ 
-      padding: '48px', 
+      padding: '40px', 
       background: 'linear-gradient(to right, var(--color-deep-blue) 0%, #1c3c5d 100%)', 
       border: '1px solid rgba(255, 255, 255, 0.1)',
       display: 'flex',
       flexDirection: 'column',
       boxShadow: '0 30px 60px rgba(23, 50, 77, 0.2)'
     }}>
-      <h3 style={{ fontSize: '32px', color: 'var(--color-white)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0', lineHeight: 1.2 }}>
-        Написать нам
-      </h3>
-      <p style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '32px', fontSize: '15px', lineHeight: 1.6 }}>
-        Заполните форму ниже, и мы перезвоним вам в течение 15 минут в рабочее время для обсуждения деталей.
-      </p>
+      {title && (
+        <h3 style={{ fontSize: '32px', color: 'var(--color-white)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0', lineHeight: 1.2 }}>
+          {title}
+        </h3>
+      )}
+      {subtitle && (
+        <p style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '32px', fontSize: '15px', lineHeight: 1.6 }}>
+          {subtitle}
+        </p>
+      )}
       
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <input 

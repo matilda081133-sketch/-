@@ -7,9 +7,12 @@ interface FAQ {
 
 interface FAQBlockProps {
   faqs?: FAQ[];
+  superTitle?: string;
+  title?: string;
+  subtitle?: string;
 }
 
-export default function FAQBlock({ faqs: propFaqs }: FAQBlockProps) {
+export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые вопросы клиентов", title = "Ответы на важные вопросы", subtitle = "Мы собрали самые частые вопросы наших доверителей. Если вы не нашли ответ на свой вопрос — свяжитесь с нами для индивидуальной консультации." }: FAQBlockProps) {
   const defaultFaqs = [
     {
       q: 'Как проходит первое обращение?',
@@ -65,14 +68,14 @@ export default function FAQBlock({ faqs: propFaqs }: FAQBlockProps) {
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
               <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
               <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                Частые вопросы клиентов
+                {superTitle}
               </span>
             </div>
             <h2 style={{ fontSize: '48px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '32px', lineHeight: 1.1 }}>
-              Ответы на важные вопросы
+              {title}
             </h2>
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '40px', maxWidth: '400px' }}>
-              Мы собрали самые частые вопросы наших доверителей. Если вы не нашли ответ на свой вопрос — свяжитесь с нами для индивидуальной консультации.
+              {subtitle}
             </p>
             <a href="#consultation" className="btn btn-outline" style={{ display: 'inline-flex' }}>Задать свой вопрос</a>
           </div>
@@ -81,7 +84,7 @@ export default function FAQBlock({ faqs: propFaqs }: FAQBlockProps) {
           <div className="reveal-on-scroll delay-200" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {faqs.map((faq, index) => (
               <details key={index} className="faq-details" style={{
-                background: 'linear-gradient(135deg, #17375E 0%, #0B1C2A 100%)',
+                background: 'linear-gradient(to right, #0B1C2A 0%, #17375E 100%)',
                 border: '1px solid var(--color-border)',
                 borderRadius: '0',
                 transition: 'var(--transition)',

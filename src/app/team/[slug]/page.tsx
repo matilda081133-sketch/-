@@ -104,16 +104,19 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 {member.shortDescription}
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '40px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '40px' }}>
                 {member.facts.map((fact, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>{fact}</span>
-                  </div>
+                  <div key={i} style={{ 
+                    paddingLeft: '16px', 
+                    borderLeft: '2px solid rgba(193, 160, 102, 0.5)', 
+                    fontSize: '15px', 
+                    color: 'var(--color-deep-blue)', 
+                    lineHeight: 1.5 
+                  }} dangerouslySetInnerHTML={{ __html: fact }} />
                 ))}
               </div>
 
-              <a href="#consultation" className="btn">Записаться на консультацию</a>
+              <a href="#consultation" className="btn" data-analytics="consultation-click">Записаться на консультацию</a>
             </div>
 
             {/* Photo Column */}
@@ -144,46 +147,34 @@ export default async function TeamMemberPage({ params }: PageProps) {
       <section className="section" style={{ background: 'transparent', paddingBottom: '40px' }}>
         <div className="container">
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>Направления юридической помощи</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             {member.specializations.map((spec, i) => (
-              <div key={i} style={{ 
+              <div key={i} className="hover-lift" style={{ 
                 display: 'flex', 
-                flexWrap: 'wrap', 
-                gap: '40px', 
-                padding: '40px', 
+                flexDirection: 'column', 
+                padding: '32px', 
                 background: 'var(--color-white)', 
-                borderRadius: '0', 
-                boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', 
-                alignItems: 'flex-start' 
+                boxShadow: '0 4px 12px rgba(23, 50, 77, 0.06)',
+                borderTop: '4px solid var(--color-gold)'
               }}>
-                <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ fontSize: '14px', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '8px' }}>0{i + 1}</div>
-                  <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', marginTop: 0 }}>{spec.title}</h3>
-                  <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px', flexGrow: 1 }}>{spec.description}</p>
-                  {spec.link && (
-                    <Link href={spec.link.url} style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                      {spec.link.text}
-                    </Link>
-                  )}
+                <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', marginTop: 0, lineHeight: 1.3 }}>
+                  {spec.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, marginBottom: '24px' }}>
+                  {spec.description}
+                </p>
+                <div style={{ flexGrow: 1, marginBottom: '32px' }}>
+                  {spec.items.map((item, j) => (
+                    <div key={j} style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5, marginBottom: '12px' }}>
+                      {item.replace(/;$/, '')}
+                    </div>
+                  ))}
                 </div>
-                <div style={{ flex: '2 1 500px' }}>
-                  <ul style={{ 
-                    listStyleType: 'none', 
-                    padding: 0, 
-                    margin: 0, 
-                    display: 'grid', 
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-                    columnGap: '30px', 
-                    rowGap: '12px' 
-                  }}>
-                    {spec.items.map((item, j) => (
-                      <li key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.4 }}>
-                        <span style={{ color: 'var(--color-gold)', marginTop: '2px' }}>•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {spec.link && (
+                  <Link href={spec.link.url} className="btn-outline" style={{ display: 'block', textAlign: 'center', width: '100%', padding: '12px', fontSize: '14px' }} data-analytics="specialization-click" data-direction={spec.title}>
+                    {spec.link.text}
+                  </Link>
+                )}
               </div>
             ))}
           </div>
@@ -195,54 +186,34 @@ export default async function TeamMemberPage({ params }: PageProps) {
         <div className="container">
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>Профессиональный опыт и квалификация</h2>
           
-          <div className="grid grid-2" style={{ gap: '40px', marginBottom: '60px' }}>
-            <div 
-              style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, whiteSpace: 'pre-line' }}
-              dangerouslySetInnerHTML={{ __html: member.experienceText || '' }}
-            />
-            {/* Right Column: Status & Geography */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', alignSelf: 'flex-start' }}>
-              {member.advocateStatus && (
-                <div style={{ background: 'rgba(23, 50, 77, 0.03)', padding: '30px', borderRadius: '0', borderLeft: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', margin: 0 }}>Адвокатский статус</h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                      <span>действующий адвокат</span>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                      <span>реестровый номер <a href="https://aplo.fparf.ru/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>{member.advocateStatus.registryNumber}</a></span>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                      <span>ведущий юрист «Де-Юре»</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {/* Geography */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, fontFamily: 'var(--font-serif)' }}>География практики</h3>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '60px', marginBottom: '60px' }}>
+            <div style={{ flex: '1.5 1 400px' }}>
+              <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '24px', marginTop: 0 }}>От следственной работы к адвокатской защите</h3>
+              <div 
+                style={{ fontSize: '16px', color: 'var(--color-deep-blue)', lineHeight: 1.6, whiteSpace: 'pre-line' }}
+                dangerouslySetInnerHTML={{ __html: member.experienceText || '' }}
+              />
+            </div>
+            {/* Right Column: Geography */}
+            <div style={{ flex: '1 1 300px', alignSelf: 'flex-start' }}>
+                <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', margin: '0 0 24px 0', fontFamily: 'var(--font-serif)' }}>Работа по делам в разных регионах</h3>
                 <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {member.geography}
                 </p>
-              </div>
             </div>
           </div>
 
           {/* Chronology */}
           {member.experienceChronology && (
-            <div style={{ position: 'relative', padding: '40px', background: 'var(--color-white)', borderRadius: '0', boxShadow: '0 25px 60px rgba(23, 50, 77, 0.1), 0 10px 25px rgba(23, 50, 77, 0.05)', marginBottom: '60px' }}>
-              <div style={{ position: 'absolute', left: '50px', top: '50px', bottom: '50px', width: '2px', background: 'rgba(212, 175, 55, 0.2)' }}></div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+            <div style={{ position: 'relative', paddingTop: '10px' }}>
+              {/* Horizontal line */}
+              <div style={{ position: 'absolute', top: '20px', left: '10px', right: '10px', height: '2px', background: 'rgba(212, 175, 55, 0.3)', zIndex: 0 }} className="d-md-block d-none"></div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px' }}>
                 {member.experienceChronology.map((item, i) => (
-                  <div key={i} style={{ display: 'flex', gap: '30px', alignItems: 'flex-start', position: 'relative', zIndex: 1 }}>
-                    <div style={{ flexShrink: 0, width: '22px', height: '22px', borderRadius: '50%', background: 'var(--color-gold)', border: '4px solid var(--color-white)', boxShadow: '0 0 0 1px rgba(212, 175, 55, 0.3)', marginTop: '4px' }}></div>
-                    <div style={{ flexGrow: 1 }}>
-                      <div style={{ fontSize: '20px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '6px', fontWeight: 600 }}>{item.year}</div>
-                      <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{item.text}</div>
-                    </div>
+                  <div key={i} style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'var(--color-gold)', border: '4px solid #f9f6f0', boxShadow: '0 0 0 1px rgba(212, 175, 55, 0.3)', marginBottom: '16px' }}></div>
+                    <div style={{ fontSize: '20px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '8px', fontWeight: 600 }}>{item.year}</div>
+                    <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{item.text}</div>
                   </div>
                 ))}
               </div>
@@ -274,9 +245,9 @@ export default async function TeamMemberPage({ params }: PageProps) {
               Внимание: Ниже представлены демонстрационные макеты кейсов (заглушки) до утверждения фактуры адвокатом.
             </div>
 
-            <div className="grid grid-2" style={{ gap: '30px' }}>
-              {member.cases.map((c, i) => (
-                <div key={i} className="card" style={{ padding: '40px', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', boxShadow: '0 25px 50px -12px rgba(23, 50, 77, 0.25), 0 8px 24px rgba(23, 50, 77, 0.08)' }}>
+            <div className="grid grid-3" style={{ gap: '30px' }}>
+              {member.cases.slice(0, 3).map((c, i) => (
+                <div key={i} className="card" style={{ padding: '40px', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', boxShadow: '0 25px 50px -12px rgba(23, 50, 77, 0.25), 0 8px 24px rgba(23, 50, 77, 0.08)' }} data-analytics="case-click">
                   <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
                     <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>{c.category}</span>
                     <h3 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>{c.title}</h3>
@@ -300,6 +271,13 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 </div>
               ))}
             </div>
+            {member.cases.length > 3 && (
+              <div style={{ textAlign: 'center', marginTop: '40px' }}>
+                <Link href={`/praktika?specialist=${member.slug}`} className="btn-outline" data-analytics="all-cases-click">
+                  Все дела из практики
+                </Link>
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -309,16 +287,13 @@ export default async function TeamMemberPage({ params }: PageProps) {
         <div className="container">
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ marginTop: 0, fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1.2 }}>
-              Как Дмитрий Конопкин работает по делу
+              Как проходит работа по делу
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '800px', margin: 0 }}>
-              Каждое дело требует детального погружения и индивидуальной стратегии. Работа строится поэтапно — от первой консультации до защиты интересов в суде.
-            </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'stretch' }}>
             {/* Left: Photo */}
-            <div style={{ position: 'relative', height: '100%', minHeight: '300px' }}>
+            <div style={{ flex: '0 0 40%', position: 'relative', minHeight: '300px' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: '0', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/-/images/team-process.jpg" alt="Процесс работы" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
@@ -326,12 +301,12 @@ export default async function TeamMemberPage({ params }: PageProps) {
             </div>
 
             {/* Right: 4 cards */}
-            <div className="grid grid-2" style={{ gap: '20px' }}>
+            <div style={{ flex: '1', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {member.process.map((step, i) => (
-                <div key={i} style={{ padding: '30px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.04)', borderRadius: '0', boxShadow: '0 4px 8px rgba(23, 50, 77, 0.12)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <div style={{ fontSize: '48px', color: 'rgba(212, 175, 55, 0.2)', fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1, marginTop: '-10px' }}>{step.step}</div>
+                <div key={i} style={{ padding: '20px 24px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.04)', borderRadius: '0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <div style={{ fontSize: '14px', color: 'var(--color-gold)', fontWeight: 600, fontFamily: 'var(--font-serif)', lineHeight: 1 }}>{step.step}</div>
                   <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0, lineHeight: 1.3 }}>{step.title}</h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
+                  <p style={{ fontSize: '15px', color: 'rgba(23, 50, 77, 0.8)', lineHeight: 1.4, margin: 0 }}>{step.description}</p>
                 </div>
               ))}
             </div>
@@ -354,36 +329,41 @@ export default async function TeamMemberPage({ params }: PageProps) {
         background: 'transparent',
         scrollMarginTop: '80px' 
       }}>
-        <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+        <div className="container" style={{ display: 'flex', flexWrap: 'wrap', gap: '60px', alignItems: 'center' }}>
+          <div style={{ flex: '0 0 42%', display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)', fontSize: '36px', fontFamily: 'var(--font-serif)', lineHeight: 1.2 }}>
-              Обсудите ситуацию лично <br />со специалистом
+              Запишитесь на консультацию к Дмитрию Сергеевичу Конопкину
             </h2>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-              <div style={{ width: '90px', height: '90px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, boxShadow: '0 8px 16px rgba(23, 50, 77, 0.25)' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }} />
-              </div>
-              <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, maxWidth: '400px' }}>
-                Кратко опишите вопрос. Мы уточним обстоятельства, скажем, какие документы потребуются, и определим следующий шаг.
-              </p>
+            <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+              Кратко опишите ситуацию и оставьте контактные данные. Мы уточним обстоятельства и согласуем время консультации с Дмитрием Сергеевичем Конопкиным.
+            </p>
+            <div style={{ marginTop: '16px', borderLeft: '4px solid var(--color-gold)', paddingLeft: '16px' }}>
+              <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', fontSize: '18px', marginBottom: '4px' }}>Дмитрий Сергеевич Конопкин</div>
+              <div style={{ color: 'var(--color-text-secondary)', fontSize: '15px' }}>Адвокат, ведущий юрист «Де-Юре»</div>
             </div>
           </div>
           
-          <div className="card" style={{ padding: '40px', borderRadius: '0', background: 'var(--color-white)', boxShadow: '0 20px 40px rgba(23, 50, 77, 0.08)' }}>
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <input type="hidden" name="specialist" value={member.name} />
-              <input type="text" required placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', outline: 'none', background: 'var(--color-white)' }} />
-              <PhoneInput />
-              <textarea placeholder="Краткое описание ситуации (необязательно)" rows={3} style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', outline: 'none', background: 'var(--color-white)', resize: 'vertical' }}></textarea>
-              <button type="submit" className="btn" style={{ width: '100%', padding: '18px', fontSize: '18px', marginTop: '10px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', border: 'none' }}>Обсудить ситуацию</button>
+          <div className="card" style={{ flex: '1', padding: '40px', borderRadius: '0', background: 'var(--color-white)', boxShadow: '0 20px 40px rgba(23, 50, 77, 0.08)' }}>
+            <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} data-analytics="consultation-form">
+              <input type="hidden" name="specialist" value="Конопкин Дмитрий Сергеевич" />
+              <input type="hidden" name="page_url" value={`/team/${member.slug}`} />
               
-              <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer', marginTop: '4px' }}>
-                <input type="checkbox" required style={{ marginTop: '4px', accentColor: 'var(--color-primary)' }} />
-                <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
-                  Я даю согласие на <Link href="/privacy" style={{ color: 'var(--color-primary)' }}>обработку персональных данных</Link>
-                </span>
-              </label>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
+                <input type="text" required placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', outline: 'none', background: 'var(--color-white)', width: '100%' }} />
+                <PhoneInput />
+              </div>
+              
+              <textarea placeholder="Краткое описание ситуации (необязательно)" rows={3} style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', outline: 'none', background: 'var(--color-white)', resize: 'vertical', width: '100%' }}></textarea>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '10px' }}>
+                <button type="submit" className="btn" style={{ width: '100%', padding: '18px', fontSize: '18px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', border: 'none' }}>Записаться на консультацию</button>
+                <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer' }}>
+                  <input type="checkbox" required style={{ marginTop: '4px', accentColor: 'var(--color-primary)' }} />
+                  <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
+                    Я даю согласие на <Link href="/privacy" style={{ color: 'var(--color-primary)' }}>обработку персональных данных</Link>
+                  </span>
+                </label>
+              </div>
             </form>
           </div>
         </div>

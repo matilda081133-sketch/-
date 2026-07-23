@@ -250,6 +250,26 @@ h4 { font-size: 1.25rem; }
   min-height: 280px;
   cursor: pointer;
 }
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(23, 50, 77, 0.1) !important;
+}
+
+.border-red {
+  border-top: 3px solid #D9534F;
+}
+
+.border-hover-blue {
+  border-top: 3px solid transparent;
+}
+.border-hover-blue:hover {
+  border-top-color: var(--color-primary);
+}
+
 .card-service:hover {
   transform: translateY(-8px);
   box-shadow: 0 32px 64px rgba(23, 50, 77, 0.15);
