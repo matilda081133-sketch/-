@@ -147,19 +147,17 @@ export default function ContactsPage() {
               <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 32px 0' }}>Как добраться</h2>
               <MapWidget />
               
-              <div style={{ marginTop: '32px', padding: '24px', background: 'var(--color-cream)', border: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0' }}>Реквизиты</h4>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  <div>
-                    <strong>ООО «Де-Юре»</strong><br />
-                    ИНН: 4826139414<br />
-                    КПП: 482601001
-                  </div>
-                  <div>
-                    ОГРН: 1194827010260<br />
-                    Юридический адрес:<br />
-                    398059, г. Липецк, ул. Советская, д. 35
-                  </div>
+              <div style={{ marginTop: '32px', padding: '32px', background: 'var(--color-deep-blue)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'rgba(255, 255, 255, 0.7)', boxShadow: '0 30px 60px rgba(23, 50, 77, 0.2)' }}>
+                <h4 style={{ fontSize: '24px', color: 'var(--color-white)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0' }}>Реквизиты</h4>
+                <p style={{ margin: '0 0 8px 0', color: 'var(--color-white)', fontWeight: 600 }}>ООО «Де-Юре»</p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '15px' }}>
+                  <span><strong style={{ color: 'var(--color-white)' }}>ИНН:</strong> 4826139414</span>
+                  <span><strong style={{ color: 'var(--color-white)' }}>КПП:</strong> 482601001</span>
+                  <span><strong style={{ color: 'var(--color-white)' }}>ОГРН:</strong> 1194827010260</span>
+                </div>
+                <div style={{ marginTop: '16px', fontSize: '15px' }}>
+                  <strong style={{ color: 'var(--color-white)' }}>Юридический адрес:</strong><br />
+                  398059, г. Липецк, ул. Советская, д. 35
                 </div>
               </div>
             </div>
