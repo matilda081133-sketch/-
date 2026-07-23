@@ -304,10 +304,10 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
           <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
             {/* Left: Photo */}
-            <div style={{ display: 'flex', height: '100%' }}>
-              <div style={{ width: '100%', height: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: '100%' }}>
+              <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/-/images/team-process.jpg" alt="Процесс работы" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }} />
+                <img src="/-/images/team-process.jpg" alt="Процесс работы" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             </div>
 
