@@ -14,20 +14,22 @@ export default function ContactsPage() {
     <main>
       <Header />
       
-      {/* 1. Главный экран (Hero) */}
-      <section style={{ 
-        position: 'relative',
-        paddingTop: '160px', 
-        paddingBottom: '80px', 
-        background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
-        overflow: 'hidden'
-      }}>
-        {/* Decorative circle */}
-        <div style={{
-          position: 'absolute', top: '-20%', left: '-5%', width: '500px', height: '500px',
-          background: 'radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)',
-          borderRadius: '50%', zIndex: 0
-        }} />
+      {/* Wrapper for the whole page background */}
+      <div style={{ background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
+        {/* 1. Главный экран (Hero) */}
+        <section style={{ 
+          position: 'relative',
+          paddingTop: '160px', 
+          paddingBottom: '80px'
+        }}>
+          {/* Decorative circle container (prevents horizontal scroll without breaking sticky) */}
+          <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+            <div style={{
+              position: 'absolute', top: '-20%', left: '-5%', width: '500px', height: '500px',
+              background: 'radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)',
+              borderRadius: '50%', zIndex: 0
+            }} />
+          </div>
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '900px' }}>
@@ -172,6 +174,7 @@ export default function ContactsPage() {
           </div>
         </div>
       </section>
+      </div>
 
       <Footer />
     </main>
