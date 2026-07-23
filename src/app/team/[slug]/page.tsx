@@ -119,22 +119,18 @@ export default async function TeamMemberPage({ params }: PageProps) {
             {/* Photo Column */}
             <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
               <div className="photo-hover-shadow" style={{ 
-                width: '100%',
-                maxWidth: '400px',
-                aspectRatio: '4/5',
-                background: 'var(--color-cream)', 
                 borderRadius: '0',
                 overflow: 'hidden',
                 position: 'relative',
                 boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)',
                 zIndex: 1,
-                display: 'flex'
+                display: 'inline-flex'
               }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 10%', display: 'block', filter: 'brightness(1.05)' }}
+                  style={{ maxWidth: '100%', maxHeight: '480px', width: 'auto', height: 'auto', display: 'block', filter: 'brightness(1.05)' }}
                 />
               </div>
             </div>
@@ -198,9 +194,10 @@ export default async function TeamMemberPage({ params }: PageProps) {
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>Профессиональный опыт и квалификация</h2>
           
           <div className="grid grid-2" style={{ gap: '40px', marginBottom: '60px' }}>
-            <div style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, whiteSpace: 'pre-line' }}>
-              {member.experienceText}
-            </div>
+            <div 
+              style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, whiteSpace: 'pre-line' }}
+              dangerouslySetInnerHTML={{ __html: member.experienceText || '' }}
+            />
             {/* Right Column: Status & Geography */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', alignSelf: 'flex-start' }}>
               {member.advocateStatus && (
@@ -277,7 +274,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
             <div className="grid grid-2" style={{ gap: '30px' }}>
               {member.cases.map((c, i) => (
-                <div key={i} className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
+                <div key={i} className="card" style={{ padding: '40px', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', boxShadow: '0 25px 50px -12px rgba(23, 50, 77, 0.25), 0 8px 24px rgba(23, 50, 77, 0.08)' }}>
                   <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
                     <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>{c.category}</span>
                     <h3 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>{c.title}</h3>
@@ -327,12 +324,12 @@ export default async function TeamMemberPage({ params }: PageProps) {
             </div>
 
             {/* Right: 4 cards */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            <div className="grid grid-2" style={{ gap: '20px' }}>
               {member.process.map((step, i) => (
-                <div key={i} style={{ padding: '20px', background: 'var(--color-white)', borderRadius: '0', boxShadow: '0 4px 15px rgba(23, 50, 77, 0.05)', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <div style={{ fontSize: '32px', color: 'rgba(212, 175, 55, 0.2)', fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1, marginTop: '-5px' }}>{step.step}</div>
-                  <h3 style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0, lineHeight: 1.3 }}>{step.title}</h3>
-                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4, margin: 0 }}>{step.description}</p>
+                <div key={i} style={{ padding: '30px', background: 'var(--color-white)', borderRadius: '0', boxShadow: '0 4px 15px rgba(23, 50, 77, 0.05)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <div style={{ fontSize: '48px', color: 'rgba(212, 175, 55, 0.2)', fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1, marginTop: '-10px' }}>{step.step}</div>
+                  <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0, lineHeight: 1.3 }}>{step.title}</h3>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
                 </div>
               ))}
             </div>
@@ -361,7 +358,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
               Обсудите ситуацию лично <br />со специалистом
             </h2>
             <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-              <div style={{ width: '90px', height: '90px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, boxShadow: '0 4px 12px rgba(23, 50, 77, 0.1)' }}>
+              <div style={{ width: '90px', height: '90px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, boxShadow: '0 8px 16px rgba(23, 50, 77, 0.25)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }} />
               </div>
