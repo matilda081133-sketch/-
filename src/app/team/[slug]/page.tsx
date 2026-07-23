@@ -121,8 +121,9 @@ export default async function TeamMemberPage({ params }: PageProps) {
               <div className="photo-hover-shadow" style={{ 
                 width: '100%',
                 maxWidth: '400px',
+                aspectRatio: '4/5',
                 background: 'var(--color-cream)', 
-                borderRadius: '16px',
+                borderRadius: '0',
                 overflow: 'hidden',
                 position: 'relative',
                 boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)',
@@ -133,7 +134,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  style={{ width: '100%', height: 'auto', display: 'block', filter: 'brightness(1.05)' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 10%', display: 'block', filter: 'brightness(1.05)' }}
                 />
               </div>
             </div>
@@ -153,7 +154,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 gap: '40px', 
                 padding: '40px', 
                 background: 'var(--color-white)', 
-                borderRadius: '16px', 
+                borderRadius: '0', 
                 boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', 
                 alignItems: 'flex-start' 
               }}>
@@ -203,7 +204,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
             {/* Right Column: Status & Geography */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', alignSelf: 'flex-start' }}>
               {member.advocateStatus && (
-                <div style={{ background: 'rgba(23, 50, 77, 0.03)', padding: '30px', borderRadius: '16px', borderLeft: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ background: 'rgba(23, 50, 77, 0.03)', padding: '30px', borderRadius: '0', borderLeft: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', margin: 0 }}>Адвокатский статус</h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -318,10 +319,10 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
           <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
             {/* Left: Photo */}
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: '100%' }}>
-              <div style={{ width: '100%', borderRadius: '0', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
+            <div style={{ position: 'relative', height: '100%', minHeight: '300px' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: '0', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/-/images/team-process.jpg" alt="Процесс работы" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src="/-/images/team-process.jpg" alt="Процесс работы" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
             </div>
 
