@@ -229,8 +229,8 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 {/* Organic decorative border behind */}
                 <div style={{
                   position: 'absolute',
-                  top: '35px',
-                  left: '-35px',
+                  top: '45px',
+                  left: '-45px',
                   width: '100%',
                   height: '100%',
                   borderRadius: '16px 80px 16px 80px',
