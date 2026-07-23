@@ -149,7 +149,7 @@ export default function ContactsPage() {
               <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 32px 0' }}>Как добраться</h2>
               <MapWidget />
               
-              <div style={{ marginTop: '32px', padding: '32px', background: 'linear-gradient(to right, var(--color-deep-blue) 0%, #244b75 100%)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'rgba(255, 255, 255, 0.7)', boxShadow: '0 30px 60px rgba(23, 50, 77, 0.2)' }}>
+              <div style={{ marginTop: '32px', padding: '32px', background: 'linear-gradient(to right, var(--color-deep-blue) 0%, #1c3c5d 100%)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'rgba(255, 255, 255, 0.7)', boxShadow: '0 30px 60px rgba(23, 50, 77, 0.2)' }}>
                 <h4 style={{ fontSize: '24px', color: 'var(--color-white)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0' }}>Реквизиты</h4>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '15px', lineHeight: 1.5 }}>
                   <div>
