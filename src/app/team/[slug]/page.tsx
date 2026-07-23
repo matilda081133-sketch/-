@@ -119,18 +119,20 @@ export default async function TeamMemberPage({ params }: PageProps) {
             {/* Photo Column */}
             <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
               <div className="photo-hover-shadow" style={{ 
+                width: '100%',
+                maxWidth: '400px',
                 borderRadius: '0',
                 overflow: 'hidden',
                 position: 'relative',
                 boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)',
                 zIndex: 1,
-                display: 'inline-flex'
+                display: 'block'
               }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  style={{ maxWidth: '100%', maxHeight: '480px', width: 'auto', height: 'auto', display: 'block', filter: 'brightness(1.05)' }}
+                  style={{ width: '100%', height: '480px', objectFit: 'cover', objectPosition: 'center 10%', display: 'block', filter: 'brightness(1.05)' }}
                 />
               </div>
             </div>
@@ -326,7 +328,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
             {/* Right: 4 cards */}
             <div className="grid grid-2" style={{ gap: '20px' }}>
               {member.process.map((step, i) => (
-                <div key={i} style={{ padding: '30px', background: 'var(--color-white)', borderRadius: '0', boxShadow: '0 4px 15px rgba(23, 50, 77, 0.05)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div key={i} style={{ padding: '30px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.04)', borderRadius: '0', boxShadow: '0 4px 8px rgba(23, 50, 77, 0.12)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   <div style={{ fontSize: '48px', color: 'rgba(212, 175, 55, 0.2)', fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1, marginTop: '-10px' }}>{step.step}</div>
                   <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0, lineHeight: 1.3 }}>{step.title}</h3>
                   <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
