@@ -3,4 +3,4 @@
 :HL["/-/images/team-process.jpg","image"]
 :HL["/-/images/konopkin.jpg","image"]
 :HL["/-/images/logo_dark.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"team","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"konopkin-dmitriy-sergeevich","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"P8vdiZBRj1SgBjU8F9tLW"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"team","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"konopkin-dmitriy-sergeevich","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"URuPu_5CufEPNBg11uDPU"}
