@@ -121,20 +121,19 @@ export default async function TeamMemberPage({ params }: PageProps) {
               <div className="photo-hover-shadow" style={{ 
                 width: '100%',
                 maxWidth: '400px',
-                aspectRatio: '4/5', 
                 background: 'var(--color-cream)', 
                 borderRadius: '16px',
                 overflow: 'hidden',
                 position: 'relative',
                 boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)',
-                zIndex: 1
+                zIndex: 1,
+                display: 'flex'
               }}>
-                <Image 
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
                   src={member.image} 
                   alt={member.name}
-                  width={600}
-                  height={750}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(1.05)' }}
+                  style={{ width: '100%', height: 'auto', display: 'block', filter: 'brightness(1.05)' }}
                 />
               </div>
             </div>
@@ -234,7 +233,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
           {/* Chronology */}
           {member.experienceChronology && (
-            <div style={{ position: 'relative', padding: '40px', background: 'var(--color-white)', borderRadius: '24px', boxShadow: '0 10px 40px rgba(23, 50, 77, 0.05)', marginBottom: '60px' }}>
+            <div style={{ position: 'relative', padding: '40px', background: 'var(--color-white)', borderRadius: '0', boxShadow: '0 25px 60px rgba(23, 50, 77, 0.1), 0 10px 25px rgba(23, 50, 77, 0.05)', marginBottom: '60px' }}>
               <div style={{ position: 'absolute', left: '50px', top: '50px', bottom: '50px', width: '2px', background: 'rgba(212, 175, 55, 0.2)' }}></div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
                 {member.experienceChronology.map((item, i) => (
@@ -327,11 +326,11 @@ export default async function TeamMemberPage({ params }: PageProps) {
             </div>
 
             {/* Right: 4 cards */}
-            <div className="grid grid-2" style={{ gap: '16px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
               {member.process.map((step, i) => (
-                <div key={i} style={{ padding: '24px', background: 'var(--color-white)', borderRadius: '0', boxShadow: '0 4px 15px rgba(23, 50, 77, 0.05)', display: 'flex', flexDirection: 'column', gap: '12px', height: '100%' }}>
-                  <div style={{ fontSize: '36px', color: 'rgba(212, 175, 55, 0.2)', fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1, marginTop: '-5px' }}>{step.step}</div>
-                  <h3 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0, lineHeight: 1.3 }}>{step.title}</h3>
+                <div key={i} style={{ padding: '20px', background: 'var(--color-white)', borderRadius: '0', boxShadow: '0 4px 15px rgba(23, 50, 77, 0.05)', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <div style={{ fontSize: '32px', color: 'rgba(212, 175, 55, 0.2)', fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1, marginTop: '-5px' }}>{step.step}</div>
+                  <h3 style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0, lineHeight: 1.3 }}>{step.title}</h3>
                   <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4, margin: 0 }}>{step.description}</p>
                 </div>
               ))}
@@ -358,7 +357,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
         <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
             <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)', fontSize: '36px', fontFamily: 'var(--font-serif)', lineHeight: 1.2 }}>
-              Обсудите ситуацию лично со специалистом
+              Обсудите ситуацию лично <br />со специалистом
             </h2>
             <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
               <div style={{ width: '90px', height: '90px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, boxShadow: '0 4px 12px rgba(23, 50, 77, 0.1)' }}>
