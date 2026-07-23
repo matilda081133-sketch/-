@@ -113,7 +113,7 @@ export default function ContactsForm() {
           fontSize: '16px', 
           marginTop: '16px',
           background: 'var(--color-gold, #C8A97E)',
-          color: 'var(--color-deep-blue)',
+          color: 'var(--color-white)',
           border: 'none',
           fontWeight: 600,
           cursor: 'pointer',
