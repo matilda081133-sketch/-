@@ -14,14 +14,24 @@ export default function ContactsForm() {
 
   if (submitted) {
     return (
-      <div className="card" style={{ padding: '60px 40px', borderRadius: '0', background: 'var(--color-white)', boxShadow: '0 20px 40px rgba(23, 50, 77, 0.08)', textAlign: 'center' }}>
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="1.5" strokeLinecap="square" style={{ marginBottom: '16px' }}>
+      <div style={{ 
+        padding: '64px 48px', 
+        background: 'var(--color-deep-blue)', 
+        border: '1px solid rgba(200, 169, 126, 0.3)',
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '400px'
+      }}>
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold, #C8A97E)" strokeWidth="1.5" strokeLinecap="square" style={{ marginBottom: '24px' }}>
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
           <polyline points="22 4 12 14.01 9 11.01"></polyline>
         </svg>
-        <h3 style={{ fontSize: '28px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 12px 0' }}>Заявка отправлена</h3>
-        <p style={{ margin: 0, color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.5 }}>
-          Мы свяжемся с вами в течение 15 минут в рабочее время.
+        <h3 style={{ fontSize: '32px', color: 'var(--color-white)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0', lineHeight: 1.2 }}>Заявка отправлена</h3>
+        <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.7)', fontSize: '16px', lineHeight: 1.6, maxWidth: '300px' }}>
+          Мы свяжемся с вами в течение 15 минут в рабочее время для уточнения деталей.
         </p>
       </div>
     );
@@ -30,15 +40,16 @@ export default function ContactsForm() {
   return (
     <div style={{ 
       padding: '48px', 
-      background: 'var(--color-cream)', 
-      border: '1px solid rgba(23, 50, 77, 0.05)',
+      background: 'var(--color-deep-blue)', 
+      border: '1px solid rgba(255, 255, 255, 0.1)',
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
+      boxShadow: '0 30px 60px rgba(23, 50, 77, 0.2)'
     }}>
-      <h3 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0', lineHeight: 1.2 }}>
+      <h3 style={{ fontSize: '32px', color: 'var(--color-white)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0', lineHeight: 1.2 }}>
         Написать нам
       </h3>
-      <p style={{ color: 'var(--color-text-secondary)', marginBottom: '32px', fontSize: '15px', lineHeight: 1.6 }}>
+      <p style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '32px', fontSize: '15px', lineHeight: 1.6 }}>
         Заполните форму ниже, и мы перезвоним вам в течение 15 минут в рабочее время для обсуждения деталей.
       </p>
       
@@ -49,43 +60,75 @@ export default function ContactsForm() {
           placeholder="Ваше имя" 
           style={{ 
             padding: '16px 20px', 
-            border: '1px solid rgba(23, 50, 77, 0.1)', 
+            border: '1px solid rgba(255, 255, 255, 0.2)', 
             borderRadius: '0', 
             fontSize: '16px', 
-            transition: 'border-color 0.3s', 
+            transition: 'border-color 0.3s, background-color 0.3s', 
             outline: 'none', 
-            background: 'var(--color-white)', 
+            background: 'rgba(255, 255, 255, 0.05)', 
+            color: 'var(--color-white)',
             fontFamily: 'inherit' 
           }} 
+          onFocus={(e) => e.target.style.borderColor = 'var(--color-gold, #C8A97E)'}
+          onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)'}
         />
         
-        <PhoneInput />
+        <PhoneInput 
+          style={{ 
+            padding: '16px 20px', 
+            border: '1px solid rgba(255, 255, 255, 0.2)', 
+            borderRadius: '0', 
+            fontSize: '16px', 
+            transition: 'border-color 0.3s, background-color 0.3s', 
+            outline: 'none', 
+            background: 'rgba(255, 255, 255, 0.05)', 
+            color: 'var(--color-white)',
+            fontFamily: 'inherit'
+          }} 
+        />
         
         <textarea 
           id="message" 
           rows={4}
-          placeholder="Кратко опишите вашу ситуацию (необязательно)"
+          placeholder="Кратко опишите вашу ситуацию"
           style={{ 
             padding: '16px 20px', 
-            border: '1px solid rgba(23, 50, 77, 0.1)', 
+            border: '1px solid rgba(255, 255, 255, 0.2)', 
             borderRadius: '0', 
             fontSize: '16px',
             outline: 'none',
             fontFamily: 'inherit',
             resize: 'vertical',
-            background: 'var(--color-white)',
-            transition: 'border-color 0.3s'
+            background: 'rgba(255, 255, 255, 0.05)',
+            color: 'var(--color-white)',
+            transition: 'border-color 0.3s, background-color 0.3s'
           }} 
+          onFocus={(e) => e.target.style.borderColor = 'var(--color-gold, #C8A97E)'}
+          onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)'}
         />
         
-        <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '18px', fontSize: '16px', marginTop: '16px' }}>
+        <button type="submit" style={{ 
+          width: '100%', 
+          padding: '18px', 
+          fontSize: '16px', 
+          marginTop: '16px',
+          background: 'var(--color-gold, #C8A97E)',
+          color: 'var(--color-deep-blue)',
+          border: 'none',
+          fontWeight: 600,
+          cursor: 'pointer',
+          transition: 'opacity 0.3s'
+        }}
+        onMouseOver={(e) => e.currentTarget.style.opacity = '0.9'}
+        onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
+        >
           Оставить заявку
         </button>
         
         <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer', marginTop: '4px' }}>
-          <input type="checkbox" required style={{ marginTop: '4px', accentColor: 'var(--color-primary)' }} />
-          <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
-            Я даю согласие на <Link href="/privacy" className="link-animated" style={{ fontSize: '13px', color: 'var(--color-primary)' }}>обработку персональных данных</Link>
+          <input type="checkbox" required style={{ marginTop: '4px', accentColor: 'var(--color-gold, #C8A97E)' }} />
+          <span style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.5)', lineHeight: 1.4 }}>
+            Я даю согласие на <Link href="/privacy" style={{ fontSize: '13px', color: 'var(--color-gold, #C8A97E)', textDecoration: 'none' }}>обработку персональных данных</Link>
           </span>
         </label>
       </form>
