@@ -59,7 +59,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       '@type': 'LegalService',
       name: 'Юридическая компания Де-Юре'
     },
-    alumniOf: member.education.institution
+    alumniOf: member.education?.institution
   };
 
   return (
@@ -113,31 +113,17 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 ))}
               </div>
 
-              <a href="#consultation" className="btn">Обсудить ситуацию</a>
+              <a href="#consultation" className="btn">Записаться на консультацию</a>
             </div>
 
             {/* Photo Column */}
             <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-              {/* Organic decorative border behind */}
-              <div style={{
-                position: 'absolute',
-                top: '20px',
-                right: '20px',
-                width: '100%',
-                maxWidth: '380px',
-                height: '100%',
-                borderRadius: '80px 16px 80px 16px',
-                border: '2px solid var(--color-gold)',
-                opacity: 0.4,
-                zIndex: 0
-              }} />
-              
               <div className="photo-hover-shadow" style={{ 
                 width: '100%',
                 maxWidth: '400px',
-                aspectRatio: '3/4', 
+                aspectRatio: '4/5', 
                 background: 'var(--color-cream)', 
-                borderRadius: '16px 80px 16px 80px',
+                borderRadius: '16px',
                 overflow: 'hidden',
                 position: 'relative',
                 boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)',
@@ -147,8 +133,8 @@ export default async function TeamMemberPage({ params }: PageProps) {
                   src={member.image} 
                   alt={member.name}
                   width={600}
-                  height={800}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  height={750}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(1.05)' }}
                 />
               </div>
             </div>
@@ -156,135 +142,105 @@ export default async function TeamMemberPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* 3. Specializations */}
-      <section className="section" style={{ background: 'transparent' }}>
+      {/* 3. Направления юридической помощи */}
+      <section className="section" style={{ background: 'transparent', paddingBottom: '40px' }}>
         <div className="container">
-          <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>
-            Вопросы, с которыми можно обратиться
-          </h2>
-          <SpecializationsAccordion specializations={member.specializations} />
+          <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>Направления юридической помощи</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            {member.specializations.map((spec, i) => (
+              <div key={i} className="card" style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', padding: '40px', background: 'var(--color-white)', borderRadius: '16px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', border: 'none' }}>
+                <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ fontSize: '14px', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '8px' }}>0{i + 1}</div>
+                  <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', marginTop: 0 }}>{spec.title}</h3>
+                  <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px', flexGrow: 1 }}>{spec.description}</p>
+                  {spec.link && (
+                    <Link href={spec.link.url} style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                      {spec.link.text}
+                    </Link>
+                  )}
+                </div>
+                <div style={{ flex: '2 1 500px' }}>
+                  <ul style={{ 
+                    listStyleType: 'none', 
+                    padding: 0, 
+                    margin: 0, 
+                    display: 'grid', 
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+                    columnGap: '30px', 
+                    rowGap: '12px' 
+                  }}>
+                    {spec.items.map((item, j) => (
+                      <li key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.4 }}>
+                        <span style={{ color: 'var(--color-gold)', marginTop: '2px' }}>•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* 4. Experience & Process Grid */}
+      {/* 4. Профессиональный опыт и квалификация */}
       <section className="section" style={{ background: 'transparent' }}>
         <div className="container">
-          <div className="grid grid-3" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)' }}>
-            
-            {/* Experience */}
-            <div className="usp-card" style={{ padding: '24px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
-              <div className="usp-accent"></div>
-              <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '12px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Опыт</div>
-              <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px' }}>Профессиональный опыт</h2>
-              <ul style={{ paddingLeft: '20px', color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {member.experience.map((exp, i) => (
-                  <li key={i} dangerouslySetInnerHTML={{ __html: exp }}></li>
-                ))}
-              </ul>
+          <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>Профессиональный опыт и квалификация</h2>
+          
+          <div className="grid grid-2" style={{ gap: '40px', marginBottom: '60px' }}>
+            <div style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, whiteSpace: 'pre-line' }}>
+              {member.experienceText}
             </div>
-
-            {/* Geography */}
-            <div className="usp-card" style={{ padding: '24px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
-              <div className="usp-accent"></div>
-              <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '12px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Локация</div>
-              <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px' }}>География практики</h2>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                {member.geography}
-              </p>
-            </div>
-
-            {/* Education & Status */}
-            <div className="usp-card" style={{ padding: '24px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
-              <div className="usp-accent"></div>
-              <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '12px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Квалификация</div>
-              <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px' }}>Образование и статус</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div style={{ paddingBottom: '16px', borderBottom: '1px solid var(--color-border)' }}>
-                  <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px', letterSpacing: '0.05em' }}>Образование</div>
-                  <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)' }}>{member.education.institution}, {member.education.direction}, {member.education.year}</div>
-                </div>
-                {member.advocateStatus && (
-                  <div style={{ paddingBottom: '16px' }}>
-                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px', letterSpacing: '0.05em' }}>Статус</div>
-                    <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-                      Адвокат, реестровый номер <a href={`https://aplo.fparf.ru/`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>{member.advocateStatus.registryNumber}</a>, {member.advocateStatus.chamber}
-                    </div>
+            {/* Status Compact Card */}
+            {member.advocateStatus && (
+              <div style={{ background: 'rgba(23, 50, 77, 0.03)', padding: '30px', borderRadius: '16px', borderLeft: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', gap: '16px', alignSelf: 'flex-start' }}>
+                <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', margin: 0 }}>Адвокатский статус</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <span>действующий адвокат</span>
                   </div>
-                )}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>реестровый номер <a href="https://aplo.fparf.ru/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>{member.advocateStatus.registryNumber}</a></span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>ведущий юрист «Де-Юре»</span>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Chronology */}
+          {member.experienceChronology && (
+            <div style={{ position: 'relative', padding: '40px 0', borderTop: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', marginBottom: '40px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px' }}>
+                {member.experienceChronology.map((item, i) => (
+                  <div key={i} style={{ position: 'relative', paddingLeft: '24px' }}>
+                    <div style={{ position: 'absolute', left: 0, top: '6px', width: '12px', height: '12px', borderRadius: '50%', background: 'var(--color-primary)' }}></div>
+                    <div style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, marginBottom: '8px' }}>{item.year}</div>
+                    <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{item.text}</div>
+                  </div>
+                ))}
               </div>
             </div>
+          )}
 
+          {/* Geography */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', margin: 0 }}>География практики</h3>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, maxWidth: '800px' }}>
+              {member.geography}
+            </p>
           </div>
         </div>
       </section>
       </div> {/* End Shared Wrapper 1-4 */}
 
-      {/* 5. Process Steps */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
-            {/* Left: Photo */}
-            <div style={{ marginTop: '68px', display: 'flex', justifyContent: 'flex-start', height: '100%' }}>
-              <div style={{ position: 'relative', width: '100%', maxWidth: '480px', height: '100%' }}>
-                {/* Organic decorative border behind */}
-                <div style={{
-                  position: 'absolute',
-                  top: '30px',
-                  left: '-30px',
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '16px 80px 16px 80px',
-                  border: '2px solid var(--color-gold)',
-                  opacity: 0.4,
-                  zIndex: 0
-                }} />
-                
-                <div className="photo-hover-shadow" style={{ 
-                  width: '100%',
-                  height: '100%',
-                  background: 'var(--color-cream)', 
-                  borderRadius: '80px 16px 80px 16px',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)',
-                  zIndex: 1
-                }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/-/images/team-process.jpg" alt="Как специалист ведёт дело" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Content */}
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <h2 style={{ marginTop: 0, fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '30px', lineHeight: 1.2 }}>
-                Как специалист ведёт дело
-              </h2>
-              <div className="grid grid-2" style={{ gap: '0', borderLeft: '1px solid rgba(23, 50, 77, 0.1)', borderTop: '1px solid rgba(23, 50, 77, 0.1)', flex: 1 }}>
-                {member.process.map((step, i) => (
-                  <div key={i} className="usp-card" style={{ padding: '40px 30px', borderRight: '1px solid rgba(23, 50, 77, 0.1)', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', background: 'rgba(255, 255, 255, 0.85)', position: 'relative', display: 'flex', flexDirection: 'column', gap: '6px', minHeight: '230px', justifyContent: 'center' }}>
-                    <div className="usp-accent"></div>
-                    <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>Этап {step.step}</div>
-                    <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0 }}>{step.title}</h4>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.4, margin: 0 }}>{step.description}</p>
-                    
-                    {/* Golden arrow between left and right cards */}
-                    {i % 2 === 0 && (
-                      <div style={{ position: 'absolute', right: '-10px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', background: 'var(--color-white)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(212, 175, 55, 0.3)', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', zIndex: 10 }}>
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Cases (Mockup for now) */}
+      {/* 5. Cases (Moved before Process) */}
       {member.cases && member.cases.length > 0 && (
         <section className="section" style={{ background: 'var(--color-white)' }}>
           <div className="container">
@@ -309,22 +265,22 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 <div key={i} className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
                   <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
                     <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>{c.category}</span>
-                    <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>{c.title}</h4>
+                    <h3 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>{c.title}</h3>
                   </div>
                   
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
                     <div>
-                      <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
+                      <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px', margin: 0 }}>Проблема</h4>
                       <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>{c.problem}</p>
                     </div>
                     <div>
-                      <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
+                      <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px', margin: 0 }}>Что сделали</h4>
                       <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>{c.action}</p>
                     </div>
                   </div>
                   
                   <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '4px', borderLeft: '4px solid var(--color-gold)' }}>
-                    <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Результат</h5>
+                    <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600, margin: 0 }}>Результат</h4>
                     <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>{c.result}</p>
                   </div>
                 </div>
@@ -333,6 +289,41 @@ export default async function TeamMemberPage({ params }: PageProps) {
           </div>
         </section>
       )}
+
+      {/* 6. Process Steps */}
+      <section className="section bg-light">
+        <div className="container">
+          <div style={{ marginBottom: '40px' }}>
+            <h2 style={{ marginTop: 0, fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1.2 }}>
+              Как Дмитрий Конопкин работает по делу
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '800px', margin: 0 }}>
+              Каждое дело требует детального погружения и индивидуальной стратегии. Работа строится поэтапно — от первой консультации до защиты интересов в суде.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
+            {/* Left: Photo */}
+            <div style={{ display: 'flex', height: '100%' }}>
+              <div style={{ width: '100%', height: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/-/images/team-process.jpg" alt="Процесс работы" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }} />
+              </div>
+            </div>
+
+            {/* Right: 4 cards */}
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              {member.process.map((step, i) => (
+                <div key={i} style={{ padding: '30px', background: 'var(--color-white)', borderRadius: '16px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', display: 'flex', flexDirection: 'column', gap: '16px', height: '100%' }}>
+                  <div style={{ fontSize: '48px', color: 'rgba(212, 175, 55, 0.2)', fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1, marginTop: '-10px' }}>{step.step}</div>
+                  <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0, lineHeight: 1.3 }}>{step.title}</h3>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Shared Wrapper for 7 & 8 */}
       <div style={{
@@ -345,7 +336,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
         <div className="container">
           <h2 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '30px' }}>Вопросы, с которыми можно обратиться</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
-            {member.relatedServices.map((service, i) => (
+            {member.relatedServices?.map((service, i) => (
               <Link key={i} href={service.url} className="btn btn-outline" style={{ padding: '12px 24px' }}>
                 {service.title}
               </Link>
@@ -363,11 +354,19 @@ export default async function TeamMemberPage({ params }: PageProps) {
         scrollMarginTop: '80px' 
       }}>
         <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center' }}>
-          <div>
-            <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)', fontSize: '36px', fontFamily: 'var(--font-serif)' }}>Обсудите ситуацию со специалистом</h2>
-            <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '500px' }}>
-              Кратко опишите вопрос. Мы уточним обстоятельства, скажем, какие документы потребуются, и определим следующий шаг.
-            </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+            <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)', fontSize: '36px', fontFamily: 'var(--font-serif)', lineHeight: 1.2 }}>
+              Обсудите ситуацию лично со специалистом
+            </h2>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+              <div style={{ width: '90px', height: '90px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, boxShadow: '0 4px 12px rgba(23, 50, 77, 0.1)' }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+              </div>
+              <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, maxWidth: '400px' }}>
+                Кратко опишите вопрос. Мы уточним обстоятельства, скажем, какие документы потребуются, и определим следующий шаг.
+              </p>
+            </div>
           </div>
           
           <div className="card" style={{ padding: '40px', borderRadius: '0', background: 'var(--color-white)', boxShadow: '0 20px 40px rgba(23, 50, 77, 0.08)' }}>
