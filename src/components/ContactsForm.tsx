@@ -63,10 +63,10 @@ export default function ContactsForm() {
             border: '1px solid rgba(255, 255, 255, 0.2)', 
             borderRadius: '0', 
             fontSize: '16px', 
-            transition: 'border-color 0.3s, background-color 0.3s', 
+            transition: 'border-color 0.3s', 
             outline: 'none', 
-            background: 'rgba(255, 255, 255, 0.05)', 
-            color: 'var(--color-white)',
+            background: 'var(--color-white)', 
+            color: 'var(--color-deep-blue)',
             fontFamily: 'inherit' 
           }} 
           onFocus={(e) => e.target.style.borderColor = 'var(--color-gold, #C8A97E)'}
@@ -79,10 +79,10 @@ export default function ContactsForm() {
             border: '1px solid rgba(255, 255, 255, 0.2)', 
             borderRadius: '0', 
             fontSize: '16px', 
-            transition: 'border-color 0.3s, background-color 0.3s', 
+            transition: 'border-color 0.3s', 
             outline: 'none', 
-            background: 'rgba(255, 255, 255, 0.05)', 
-            color: 'var(--color-white)',
+            background: 'var(--color-white)', 
+            color: 'var(--color-deep-blue)',
             fontFamily: 'inherit'
           }} 
         />
@@ -99,9 +99,9 @@ export default function ContactsForm() {
             outline: 'none',
             fontFamily: 'inherit',
             resize: 'vertical',
-            background: 'rgba(255, 255, 255, 0.05)',
-            color: 'var(--color-white)',
-            transition: 'border-color 0.3s, background-color 0.3s'
+            background: 'var(--color-white)',
+            color: 'var(--color-deep-blue)',
+            transition: 'border-color 0.3s'
           }} 
           onFocus={(e) => e.target.style.borderColor = 'var(--color-gold, #C8A97E)'}
           onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)'}
