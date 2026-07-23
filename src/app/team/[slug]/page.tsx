@@ -224,34 +224,34 @@ export default async function TeamMemberPage({ params }: PageProps) {
         <div className="container">
           <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
             {/* Left: Photo */}
-            <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-              {/* Organic decorative border behind */}
-              <div style={{
-                position: 'absolute',
-                top: '20px',
-                left: '20px',
-                width: '100%',
-                maxWidth: '480px',
-                height: 'calc(100% - 20px)',
-                borderRadius: '16px 80px 16px 80px',
-                border: '2px solid var(--color-gold)',
-                opacity: 0.4,
-                zIndex: 0
-              }} />
-              
-              <div className="photo-hover-shadow" style={{ 
-                width: '100%',
-                maxWidth: '480px',
-                height: '100%',
-                background: 'var(--color-cream)', 
-                borderRadius: '80px 16px 80px 16px',
-                overflow: 'hidden',
-                position: 'relative',
-                boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)',
-                zIndex: 1
-              }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/-/images/team-process.jpg" alt="Как специалист ведёт дело" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <div style={{ marginTop: '68px', display: 'flex', justifyContent: 'flex-start', height: '100%' }}>
+              <div style={{ position: 'relative', width: '100%', maxWidth: '480px', height: '100%' }}>
+                {/* Organic decorative border behind */}
+                <div style={{
+                  position: 'absolute',
+                  top: '20px',
+                  left: '-20px',
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '16px 80px 16px 80px',
+                  border: '2px solid var(--color-gold)',
+                  opacity: 0.4,
+                  zIndex: 0
+                }} />
+                
+                <div className="photo-hover-shadow" style={{ 
+                  width: '100%',
+                  height: '100%',
+                  background: 'var(--color-cream)', 
+                  borderRadius: '80px 16px 80px 16px',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)',
+                  zIndex: 1
+                }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/-/images/team-process.jpg" alt="Как специалист ведёт дело" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                </div>
               </div>
             </div>
 
