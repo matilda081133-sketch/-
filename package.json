@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy": "npm run build && npx -y gh-pages -d out -t"
   },
   "dependencies": {
     "jimp": "^0.16.13",
