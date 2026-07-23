@@ -126,13 +126,14 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 position: 'relative',
                 boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)',
                 zIndex: 1,
-                display: 'block'
+                display: 'block',
+                background: 'var(--color-white)'
               }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  style={{ width: '100%', height: '480px', objectFit: 'cover', objectPosition: 'center 10%', display: 'block', filter: 'brightness(1.05)' }}
+                  style={{ width: '100%', height: '484px', objectFit: 'contain', objectPosition: 'center bottom', display: 'block', filter: 'brightness(1.05)' }}
                 />
               </div>
             </div>
