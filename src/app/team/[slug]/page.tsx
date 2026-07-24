@@ -291,22 +291,22 @@ export default async function TeamMemberPage({ params }: PageProps) {
             </h2>
           </div>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'stretch' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'flex-start' }}>
             {/* Left: Photo */}
-            <div style={{ flex: '0 0 40%', position: 'relative', minHeight: '300px' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: '0', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
+            <div style={{ flex: '1 1 400px' }}>
+              <div style={{ borderRadius: '0', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/-/images/team-process.jpg" alt="Процесс работы" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <img src="/-/images/team-process.jpg" alt="Процесс работы" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             </div>
 
             {/* Right: 4 cards */}
-            <div style={{ flex: '1', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+            <div style={{ flex: '1.2 1 500px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
               {member.process.map((step, i) => (
-                <div key={i} style={{ padding: '20px 24px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.04)', borderRadius: '0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <div style={{ fontSize: '14px', color: 'var(--color-gold)', fontWeight: 600, fontFamily: 'var(--font-serif)', lineHeight: 1 }}>{step.step}</div>
+                <div key={i} style={{ padding: '32px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.04)', borderRadius: '0', display: 'flex', flexDirection: 'column', gap: '16px', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.06)' }}>
+                  <div style={{ fontSize: '16px', color: 'var(--color-gold)', fontWeight: 600, fontFamily: 'var(--font-serif)', lineHeight: 1 }}>{step.step}</div>
                   <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0, lineHeight: 1.3 }}>{step.title}</h3>
-                  <p style={{ fontSize: '15px', color: 'rgba(23, 50, 77, 0.8)', lineHeight: 1.4, margin: 0 }}>{step.description}</p>
+                  <p style={{ fontSize: '15px', color: 'rgba(23, 50, 77, 0.8)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
                 </div>
               ))}
             </div>
