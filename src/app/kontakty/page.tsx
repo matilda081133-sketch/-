@@ -100,69 +100,89 @@ export default function ContactsPage() {
                 Мы находимся в самом центре Липецка. Вы можете приехать к нам в офис для очной консультации, позвонить или написать на электронную почту. Юристы «Де-юре» работают по предварительной записи, чтобы уделить вашей проблеме максимум времени.
               </p>
               
-              {/* Контактные карточки */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+              {/* Контактный блок (Визуальный приоритет по ТЗ) */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '64px', alignItems: 'center' }}>
                 
-                {/* Телефон */}
+                {/* Первичный призыв (Телефон) - Выделен карточкой */}
                 <div style={{ 
+                  flex: '1 1 350px',
                   background: 'var(--color-white)',
-                  border: '1px solid rgba(23, 50, 77, 0.05)',
-                  padding: '32px',
-                  boxShadow: '0 4px 12px rgba(23, 50, 77, 0.04)',
+                  padding: '48px 40px',
+                  boxShadow: '0 20px 40px rgba(23, 50, 77, 0.08)',
+                  borderRadius: '4px',
+                  borderTop: '4px solid var(--color-gold)',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '12px'
+                  gap: '16px'
                 }}>
-                  <h3 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0 }}>Телефон</h3>
-                  <a href="tel:+74742203070" style={{ fontSize: '28px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', marginBottom: '8px' }}>
+                  <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-text-secondary)', margin: 0 }}>Телефон для связи</h3>
+                  <a href="tel:+74742203070" style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', textDecoration: 'none', lineHeight: 1.2 }}>
                     +7 (4742) 20-30-70
                   </a>
-                  <a href="tel:+74742203070" className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '14px', alignSelf: 'flex-start' }} data-analytics="call-click">
+                  <a href="tel:+74742203070" className="btn btn-primary" style={{ padding: '14px 32px', fontSize: '15px', alignSelf: 'flex-start', marginTop: '8px' }} data-analytics="call-click">
                     Позвонить
                   </a>
                 </div>
-                
-                {/* Email */}
-                <div style={{ 
-                  background: 'var(--color-cream)',
-                  border: '1px solid rgba(23, 50, 77, 0.05)',
-                  padding: '32px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px',
-                  justifyContent: 'center'
-                }}>
-                  <h3 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0 }}>Электронная почта</h3>
-                  <a href="mailto:info@dejure-help.ru" style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
-                    info@dejure-help.ru
-                  </a>
-                </div>
-                
-                {/* Адрес и Режим работы */}
-                <div style={{ 
-                  background: 'var(--color-cream)',
-                  border: '1px solid rgba(23, 50, 77, 0.05)',
-                  padding: '32px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '24px'
-                }}>
-                  <div>
-                    <h3 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: '0 0 8px 0' }}>Адрес офиса</h3>
-                    <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.5, fontWeight: 500 }}>
-                      г. Липецк, ул. Советская, д. 35,<br />
-                      офис 213 (2-й этаж)
-                    </p>
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: '0 0 8px 0' }}>Режим работы</h3>
-                    <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.5 }}>
-                      Пн–Пт: 09:00 — 18:00<br />
-                      Сб, Вс: выходной
-                    </p>
-                  </div>
-                </div>
 
+                {/* Информационный блок (Email, Адрес, График) - Без рамок, аккуратный список */}
+                <div style={{ 
+                  flex: '1.5 1 400px', 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  gap: '32px'
+                }}>
+                  
+                  {/* Email */}
+                  <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+                    <div style={{ color: 'var(--color-gold)', marginTop: '2px' }}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: '0 0 8px 0' }}>Электронная почта</h4>
+                      <a href="mailto:info@dejure-help.ru" style={{ fontSize: '18px', color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 500 }}>
+                        info@dejure-help.ru
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Адрес */}
+                  <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+                    <div style={{ color: 'var(--color-gold)', marginTop: '2px' }}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: '0 0 8px 0' }}>Адрес офиса</h4>
+                      <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.5 }}>
+                        г. Липецк, ул. Советская, д. 35,<br />
+                        офис 213 (2-й этаж)
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Режим работы */}
+                  <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+                    <div style={{ color: 'var(--color-gold)', marginTop: '2px' }}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: '0 0 8px 0' }}>Режим работы</h4>
+                      <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.5 }}>
+                        Пн–Пт: 09:00 — 18:00<br />
+                        Сб, Вс: выходной
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
