@@ -26,15 +26,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: member.seo.title,
-    description: member.seo.description,
+    title: 'Дмитрий Сергеевич Конопкин — адвокат ЮК «ДЕ-ЮРЕ»',
+    description: 'Защита по уголовным делам, помощь военнослужащим и по автомобильным спорам.',
     alternates: {
-      canonical: `/team/${member.slug}`,
+      canonical: `https://dejure-help.ru/team/${member.slug}/`,
     },
     openGraph: {
-      title: member.name,
-      description: member.status,
-      images: [member.image],
+      title: 'Дмитрий Сергеевич Конопкин — адвокат ЮК «ДЕ-ЮРЕ»',
+      description: 'Защита по уголовным делам, помощь военнослужащим и по автомобильным спорам.',
+      url: `https://dejure-help.ru/team/${member.slug}/`,
+      images: [
+        {
+          url: `https://dejure-help.ru${member.image}`,
+          width: 1200,
+          height: 630,
+        }
+      ],
     },
   };
 }
@@ -47,28 +54,42 @@ export default async function TeamMemberPage({ params }: PageProps) {
     notFound();
   }
 
-  // Generate JSON-LD
-  const jsonLd = {
+  // Generate JSON-LD Person
+  const jsonLdPerson = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: member.name,
-    jobTitle: member.status,
-    image: `https://dejure-lipetsk.ru${member.image}`,
-    url: `https://dejure-lipetsk.ru/team/${member.slug}`,
+    name: 'Дмитрий Сергеевич Конопкин',
+    jobTitle: 'Адвокат, ведущий юрист ООО ЮК «ДЕ-ЮРЕ»',
+    image: `https://dejure-help.ru${member.image}`,
+    url: `https://dejure-help.ru/team/${member.slug}/`,
     worksFor: {
       '@type': 'LegalService',
-      name: 'Юридическая компания Де-Юре'
-    },
-    alumniOf: member.education?.institution
+      name: 'ООО ЮК «ДЕ-ЮРЕ»'
+    }
+  };
+
+  // Generate JSON-LD BreadcrumbList
+  const jsonLdBreadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
+      { '@type': 'ListItem', position: 2, name: 'Специалисты', item: 'https://dejure-help.ru/team/' },
+      { '@type': 'ListItem', position: 3, name: member.name, item: `https://dejure-help.ru/team/${member.slug}/` }
+    ]
   };
 
   return (
     <main>
       <Header />
-      {/* JSON-LD Schema */}
+      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
       {/* 1, 2, 3 & 4. Shared Background Wrapper */}
@@ -100,11 +121,11 @@ export default async function TeamMemberPage({ params }: PageProps) {
               <div style={{ fontSize: '18px', color: 'var(--color-primary)', fontWeight: 600, marginBottom: '24px' }}>
                 {member.status}
               </div>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '40px' }}>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
                 {member.shortDescription}
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '40px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '24px' }}>
                 {member.facts.map((fact, i) => (
                   <div key={i} style={{ 
                     paddingLeft: '16px', 
@@ -152,7 +173,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
               <div key={i} className="hover-lift" style={{ 
                 display: 'flex', 
                 flexDirection: 'column', 
-                padding: '32px', 
+                padding: '24px', 
                 background: 'var(--color-white)', 
                 boxShadow: '0 4px 12px rgba(23, 50, 77, 0.06)',
                 borderTop: '4px solid var(--color-gold)'
@@ -165,8 +186,8 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 </p>
                 <div style={{ flexGrow: 1, marginBottom: '32px' }}>
                   {spec.items.map((item, j) => (
-                    <div key={j} style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5, marginBottom: '12px' }}>
-                      {item.replace(/;$/, '')}
+                    <div key={j} style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5, marginBottom: '8px' }}>
+                      {item}
                     </div>
                   ))}
                 </div>
@@ -283,7 +304,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       )}
 
       {/* 6. Process Steps */}
-      <section className="section bg-light">
+      <section className="section bg-light" style={{ paddingBottom: '40px' }}>
         <div className="container">
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ marginTop: 0, fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1.2 }}>
@@ -291,19 +312,19 @@ export default async function TeamMemberPage({ params }: PageProps) {
             </h2>
           </div>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'flex-start' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'stretch' }}>
             {/* Left: Photo */}
-            <div style={{ flex: '1 1 400px' }}>
-              <div style={{ borderRadius: '0', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
+            <div style={{ flex: '1 1 400px', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ flex: '1', position: 'relative', borderRadius: '0', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/-/images/team-process.jpg" alt="Процесс работы" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src="/-/images/team-process.jpg" alt="Процесс работы" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
               </div>
             </div>
 
-            {/* Right: 4 cards */}
-            <div style={{ flex: '1.2 1 500px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
+            {/* Right: 4 cards (single column) */}
+            <div style={{ flex: '1.2 1 500px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
               {member.process.map((step, i) => (
-                <div key={i} style={{ padding: '32px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.04)', borderRadius: '0', display: 'flex', flexDirection: 'column', gap: '16px', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.06)' }}>
+                <div key={i} style={{ padding: '24px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.04)', borderRadius: '0', display: 'flex', flexDirection: 'column', gap: '12px', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.06)' }}>
                   <div style={{ fontSize: '16px', color: 'var(--color-gold)', fontWeight: 600, fontFamily: 'var(--font-serif)', lineHeight: 1 }}>{step.step}</div>
                   <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0, lineHeight: 1.3 }}>{step.title}</h3>
                   <p style={{ fontSize: '15px', color: 'rgba(23, 50, 77, 0.8)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
