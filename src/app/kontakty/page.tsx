@@ -124,20 +124,17 @@ export default function ContactsPage() {
                 
                 {/* Email */}
                 <div style={{ 
-                  background: 'var(--color-white)',
+                  background: 'var(--color-cream)',
                   border: '1px solid rgba(23, 50, 77, 0.05)',
                   padding: '32px',
-                  boxShadow: '0 4px 12px rgba(23, 50, 77, 0.04)',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '12px'
+                  gap: '12px',
+                  justifyContent: 'center'
                 }}>
                   <h3 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0 }}>Электронная почта</h3>
-                  <a href="mailto:info@dejure-help.ru" style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', marginBottom: '8px' }}>
+                  <a href="mailto:info@dejure-help.ru" style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
                     info@dejure-help.ru
-                  </a>
-                  <a href="mailto:info@dejure-help.ru" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14px', alignSelf: 'flex-start' }} data-analytics="email-click">
-                    Написать письмо
                   </a>
                 </div>
                 
