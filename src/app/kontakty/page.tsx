@@ -143,8 +143,8 @@ export default function ContactsPage() {
                 
                 {/* Адрес и Режим работы */}
                 <div style={{ 
-                  background: 'transparent',
-                  border: '1px solid rgba(23, 50, 77, 0.1)',
+                  background: 'var(--color-cream)',
+                  border: '1px solid rgba(23, 50, 77, 0.05)',
                   padding: '32px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -197,10 +197,9 @@ export default function ContactsPage() {
                   <CopyAddressButton address="г. Липецк, ул. Советская, д. 35, оф. 213" />
                 </div>
                 
-                {/* Фотография здания */}
-                <div style={{ marginTop: '16px', borderRadius: '4px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.05)' }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/-/images/office-building.jpg" alt="Здание офиса ЮК Де-юре на Советской 35" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                {/* Фотография здания (Плейсхолдер до получения фото от маркетолога) */}
+                <div style={{ marginTop: '16px', borderRadius: '4px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.05)', background: '#e0e0e0', height: '250px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#888', fontSize: '14px' }}>[Фотография здания будет добавлена позже]</span>
                 </div>
               </div>
             </div>
