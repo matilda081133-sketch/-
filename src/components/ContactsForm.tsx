@@ -143,6 +143,10 @@ export default function ContactsForm({
             Я даю согласие на <Link href="/privacy" style={{ fontSize: '13px', color: 'var(--color-gold, #C8A97E)', textDecoration: 'none' }}>обработку персональных данных</Link>
           </span>
         </label>
+        
+        <div style={{ marginTop: '8px', fontSize: '13px', color: 'rgba(255, 255, 255, 0.5)', lineHeight: 1.4, textAlign: 'left' }}>
+          * Если вы оставите заявку вечером или в выходной день, мы перезвоним вам в ближайшее рабочее время.
+        </div>
       </form>
     </div>
   );
