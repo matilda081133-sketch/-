@@ -212,60 +212,93 @@ export default function MilitaryLawyerHub() {
         <div className="container">
           <h2 className="section-title text-center" style={{ marginBottom: '40px' }}>Направления помощи</h2>
           
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '30px', marginBottom: '24px' }}>
             {/* Все 7 карточек услуг */}
             {directions.map((dir, i) => (
               <a key={i} href={dir.link} data-analytics="military_service_click" data-slug={dir.slug} style={{
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%',
-                background: 'var(--color-white)',
-                padding: '32px',
                 textDecoration: 'none',
+                background: 'var(--color-white)',
+                padding: '40px',
+                borderRadius: '0',
                 position: 'relative',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+                overflow: 'hidden',
                 border: '1px solid var(--color-border)',
-                borderRadius: '8px'
-              }} className="hover-lift border-hover-blue">
-                <h3 style={{ fontSize: '20px', marginBottom: '16px', color: 'var(--color-deep-blue)' }}>{dir.title}</h3>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.5, marginBottom: '24px' }}>
+                transition: 'all 0.4s ease',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column'
+              }} className="service-card group">
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '4px',
+                  height: '0%',
+                  background: 'var(--color-gold)',
+                  transition: 'height 0.4s ease'
+                }} className="service-accent-line"></div>
+                <h3 style={{ fontSize: '24px', fontWeight: 500, color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', transition: 'color 0.4s ease' }} className="service-title">
+                  {dir.title}
+                </h3>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, marginBottom: '32px', flexGrow: 1 }}>
                   {dir.desc}
                 </p>
-                <div style={{ marginTop: 'auto', color: 'var(--color-primary)', fontWeight: 600, fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  Подробнее <span style={{ transition: 'transform 0.3s' }}>→</span>
+                <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', color: 'var(--color-primary)', fontWeight: 600, fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <span style={{ borderBottom: '1px solid transparent', transition: 'border-color 0.3s' }} className="service-link-text">Подробнее</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ marginLeft: '8px', transform: 'translateX(0)', transition: 'transform 0.3s' }} className="service-arrow">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
               </a>
             ))}
 
             {/* Блок «Не нашли свою ситуацию?» */}
-            <div className="span-2-desktop" style={{
-              background: 'var(--color-cream)',
+            <div className="span-2-desktop service-card" style={{
+              background: 'var(--color-deep-blue)',
               padding: '40px',
-              borderRadius: '8px',
+              borderRadius: '0',
+              position: 'relative',
+              overflow: 'hidden',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
               height: '100%'
             }}>
               <div>
-                <h3 style={{ fontSize: '24px', marginBottom: '16px', color: 'var(--color-deep-blue)' }}>Не нашли свою ситуацию?</h3>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 500, color: 'var(--color-white)', marginBottom: '16px', fontFamily: 'var(--font-serif)' }}>
+                  Не нашли свою ситуацию?
+                </h3>
+                <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
                   Необязательно самостоятельно определять, какая именно услуга вам нужна. Кратко опишите обстоятельства — мы изучим вопрос и подскажем, какой специалист сможет помочь.
                 </p>
               </div>
               <div>
-                <a href="#form" className="btn-primary" style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  color: 'var(--color-primary)',
-                  fontWeight: 600,
-                  fontSize: '15px',
-                  textDecoration: 'none',
-                  gap: '8px'
-                }}>Описать ситуацию <span style={{ transition: 'transform 0.3s' }}>→</span></a>
+                <a href="#form" className="btn btn-light" style={{ display: 'inline-block' }}>Описать ситуацию</a>
               </div>
             </div>
           </div>
+          <style dangerouslySetInnerHTML={{__html: `
+            .service-card {
+              transition: all 0.4s ease;
+            }
+            .service-card:hover {
+              box-shadow: 0 20px 40px rgba(23, 50, 77, 0.08);
+              border-color: transparent;
+              transform: translateY(-4px);
+            }
+            .service-card:hover .service-accent-line {
+              height: 100%;
+            }
+            .service-card:hover .service-title {
+              color: var(--color-primary);
+            }
+            .service-card:hover .service-link-text {
+              border-color: var(--color-primary);
+            }
+            .service-card:hover .service-arrow {
+              transform: translateX(4px);
+            }
+          `}} />
         </div>
       </section>
 
