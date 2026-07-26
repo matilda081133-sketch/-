@@ -7,11 +7,12 @@ type HeroProps = {
   title: React.ReactNode;
   subtitle: string;
   primaryCtaText: string;
+  primaryCtaSubtext?: string;
   primaryCtaLink?: string;
   secondaryCtaText?: string;
   secondaryCtaLink?: string;
   urgentHint?: string;
-  trustItems: { icon?: React.ReactNode; text: string }[];
+  trustItems?: { icon?: React.ReactNode; text: string }[];
 };
 
 export default function MilitaryHero({
@@ -20,11 +21,12 @@ export default function MilitaryHero({
   title,
   subtitle,
   primaryCtaText,
+  primaryCtaSubtext,
   primaryCtaLink = '#form',
   secondaryCtaText,
   secondaryCtaLink,
   urgentHint,
-  trustItems
+  trustItems = []
 }: HeroProps) {
   return (
     <div style={{ background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
@@ -43,66 +45,96 @@ export default function MilitaryHero({
         </div>
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          {breadcrumbs && (
-            <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
-              {breadcrumbs}
-            </div>
-          )}
-          <div style={{ maxWidth: '900px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#9B7E55' }}>
-                {superTitle}
-              </span>
-            </div>
-            
-            <h1 style={{ 
-              fontSize: 'clamp(36px, 5vw, 56px)', 
-              color: 'var(--color-deep-blue)', 
-              fontFamily: 'var(--font-serif)', 
-              margin: '0 0 32px 0', 
-              lineHeight: 1.1 
-            }}>
-              {title}
-            </h1>
-            
-            <p style={{ 
-              fontSize: '18px', 
-              color: 'var(--color-text-secondary)', 
-              marginBottom: '40px', 
-              maxWidth: '750px', 
-              lineHeight: 1.6 
-            }}>
-              {subtitle}
-            </p>
-
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: urgentHint ? '32px' : '48px' }}>
-              <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '15px' }}>
-                {primaryCtaText}
-              </a>
-              {secondaryCtaText && secondaryCtaLink && (
-                <a href={secondaryCtaLink} className="btn btn-outline" style={{ padding: '16px 40px', fontSize: '15px' }}>
-                  {secondaryCtaText}
-                </a>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }} className="lg:flex-row">
+            {/* Left Column */}
+            <div style={{ flex: '1 1 0%' }}>
+              {breadcrumbs && (
+                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
+                  {breadcrumbs}
+                </div>
               )}
-            </div>
-
-            {urgentHint && (
-              <div style={{
-                background: 'rgba(200, 169, 126, 0.1)',
-                borderLeft: '4px solid var(--color-gold)',
-                padding: '16px 24px',
-                marginBottom: '48px',
-                fontSize: '15px',
-                color: 'var(--color-deep-blue)',
-                lineHeight: 1.5
-              }}>
-                <strong style={{ display: 'block', marginBottom: '4px' }}>Важно:</strong>
-                {urgentHint}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#9B7E55' }}>
+                  {superTitle}
+                </span>
               </div>
-            )}
+              
+              <h1 style={{ 
+                fontSize: 'clamp(36px, 5vw, 56px)', 
+                color: 'var(--color-deep-blue)', 
+                fontFamily: 'var(--font-serif)', 
+                margin: '0 0 32px 0', 
+                lineHeight: 1.1 
+              }}>
+                {title}
+              </h1>
+              
+              <p style={{ 
+                fontSize: '18px', 
+                color: 'var(--color-text-secondary)', 
+                marginBottom: '40px', 
+                maxWidth: '750px', 
+                lineHeight: 1.6 
+              }}>
+                {subtitle}
+              </p>
 
-            <TrustStrip items={trustItems} />
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', marginBottom: urgentHint ? '32px' : '48px' }}>
+                <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+                  <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '15px' }} data-analytics="military_hero_consultation_click">
+                    {primaryCtaText}
+                  </a>
+                  {secondaryCtaText && secondaryCtaLink && (
+                    <a href={secondaryCtaLink} className="btn btn-outline" style={{ padding: '16px 40px', fontSize: '15px' }}>
+                      {secondaryCtaText}
+                    </a>
+                  )}
+                </div>
+                {primaryCtaSubtext && (
+                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
+                    {primaryCtaSubtext}
+                  </div>
+                )}
+              </div>
+
+              {urgentHint && (
+                <div style={{
+                  background: 'rgba(200, 169, 126, 0.1)',
+                  borderLeft: '4px solid var(--color-gold)',
+                  padding: '16px 24px',
+                  marginBottom: '48px',
+                  fontSize: '15px',
+                  color: 'var(--color-deep-blue)',
+                  lineHeight: 1.5
+                }}>
+                  <strong style={{ display: 'block', marginBottom: '4px' }}>Важно:</strong>
+                  {urgentHint}
+                </div>
+              )}
+
+              {trustItems && trustItems.length > 0 && <TrustStrip items={trustItems} />}
+            </div>
+            
+            {/* Right Column for Photo */}
+            <div style={{ width: '100%', maxWidth: '500px', margin: '0 auto', flexShrink: 0 }}>
+              <div style={{ 
+                width: '100%', 
+                aspectRatio: '3/4', 
+                backgroundColor: '#e5e5e5', 
+                overflow: 'hidden',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--color-text-secondary)',
+                fontSize: '14px',
+                border: '1px dashed var(--color-border)'
+              }}>
+                <span style={{ padding: '20px', textAlign: 'center' }}>
+                  [Фото специалиста]
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

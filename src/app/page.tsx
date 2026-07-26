@@ -5,6 +5,7 @@ import ServicesTabs from '@/components/ServicesTabs';
 import FAQBlock from '@/components/FAQBlock';
 import PricingBlock from '@/components/PricingBlock';
 import PhoneInput from '@/components/PhoneInput';
+import CasesBlock from '@/components/CasesBlock';
 import ReviewsBlock from '@/components/ReviewsBlock';
 import Footer from '@/components/Footer';
 
@@ -487,122 +488,37 @@ export default function Home() {
  {/* 5. TEAM */}
  <TeamCarousel />
 
- {/* 6. CASES */}
- <section className="section bg-white">
- <div className="container">
- <div className="flex justify-between items-end" style={{ marginBottom: '50px', flexWrap: 'wrap', gap: '20px' }}>
- <div className="">
- <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
- <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
- <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
- Практика
- </span>
- </div>
- <h2 style={{ margin: 0, fontSize: '42px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>Результаты нашей работы</h2>
- </div>
- <Link href="/praktika" className="btn btn-outline " style={{ padding: '12px 24px', height: 'fit-content' }}>Смотреть все дела</Link>
- </div>
- 
- <div  style={{ 
- background: 'var(--color-white)', 
- padding: '16px 24px', 
- border: '1px solid var(--color-border)',
- color: 'var(--color-text-secondary)',
- fontSize: '14px',
- marginBottom: '40px',
- borderLeft: '4px solid var(--color-primary)',
- maxWidth: '800px',
- fontStyle: 'italic'
- }}>
- Внимание: Ниже представлены демонстрационные макеты кейсов. Они будут заменены реальной практикой после утверждения фактуры.
- </div>
- 
- <div className="grid grid-3 " style={{ gap: '30px' }}>
- 
- {/* Case Card 1 */}
- <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
- <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(23, 50, 77, 0.05)', border: '1px solid rgba(23, 50, 77, 0.1)', color: 'var(--color-text-secondary)', padding: '4px 10px', fontSize: '11px', borderRadius: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>Демонстрация формата</div>
- <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
- <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Земельное право</span>
- <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Успешное разрешение спора о границах земельного участка</h4>
- </div>
- 
- <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
- <div>
- <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
- <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Сосед незаконно захватил часть территории клиента. Досудебные переговоры по земельному спору не дали результата, потребовалось обращение к юристу.</p>
- </div>
- 
- <div>
- <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
- <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Провели независимую землеустроительную экспертизу, составили и подали иск об устранении препятствий в пользовании участком в городской суд Липецка.</p>
- </div>
- </div>
- 
- <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '4px', border: '1px solid rgba(193, 160, 102, 0.2)', borderLeft: '4px solid var(--color-gold)' }}>
- <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
- <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>Границы восстановлены. Выиграно дело в суде первой инстанции, судебные издержки взысканы с ответчика.</p>
- </div>
- </div>
+       {/* 6. CASES */}
+      <CasesBlock 
+        cases={[
+          {
+            category: 'Земельное право',
+            title: 'Успешное разрешение спора о границах земельного участка',
+            problem: 'Сосед незаконно захватил часть территории клиента. Досудебные переговоры по земельному спору не дали результата, потребовалось обращение к юристу.',
+            action: 'Провели независимую землеустроительную экспертизу, составили и подали иск об устранении препятствий в пользовании участком в городской суд Липецка.',
+            result: 'Границы восстановлены. Выиграно дело в суде первой инстанции, судебные издержки взысканы с ответчика.',
+            isDemo: true
+          },
+          {
+            category: 'Семейное право',
+            title: 'Защита активов при сложном разделе имущества супругов',
+            problem: 'Сложный раздел бизнеса и совместно нажитой недвижимости при разводе с конфликтующей стороной, зафиксированы попытки незаконного сокрытия активов.',
+            action: 'Подали заявление на обеспечительный арест имущества. Юрист по семейным делам провел полный финансовый аудит предприятий для защиты доли клиента.',
+            result: 'Достигнуто выгодное мировое соглашение в суде. Клиент полностью сохранил законный контроль над бизнесом.',
+            isDemo: true
+          },
+          {
+            category: 'Арбитраж',
+            title: 'Взыскание задолженности по договору подряда через суд',
+            problem: 'Заказчик отказался оплачивать выполненные строительные работы по договору строительного подряда, ссылаясь на вымышленные недостатки.',
+            action: 'Арбитражный юрист собрал документальную базу, подтверждающую приемку этапов, и инициировал судебную строительно-техническую экспертизу.',
+            result: 'Основная задолженность и пени по договору взысканы на 100% через Арбитражный суд Липецкой области.',
+            isDemo: true
+          }
+        ]}
+      />
 
- {/* Case Card 2 */}
- <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
- <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(23, 50, 77, 0.05)', border: '1px solid rgba(23, 50, 77, 0.1)', color: 'var(--color-text-secondary)', padding: '4px 10px', fontSize: '11px', borderRadius: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>Демонстрация формата</div>
- <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
- <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Семейное право</span>
- <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Защита активов при сложном разделе имущества супругов</h4>
- </div>
- 
- <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
- <div>
- <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
- <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Сложный раздел бизнеса и совместно нажитой недвижимости при разводе с конфликтующей стороной, зафиксированы попытки незаконного сокрытия активов.</p>
- </div>
- 
- <div>
- <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
- <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Подали заявление на обеспечительный арест имущества. Юрист по семейным делам провел полный финансовый аудит предприятий для защиты доли клиента.</p>
- </div>
- </div>
- 
- <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '4px', border: '1px solid rgba(193, 160, 102, 0.2)', borderLeft: '4px solid var(--color-gold)' }}>
- <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
- <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>Достигнуто выгодное мировое соглашение в суде. Клиент полностью сохранил законный контроль над бизнесом.</p>
- </div>
- </div>
-
- {/* Case Card 3 */}
- <div className="card" style={{ padding: '40px', border: 'none', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'var(--transition)', position: 'relative', boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' }}>
- <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(23, 50, 77, 0.05)', border: '1px solid rgba(23, 50, 77, 0.1)', color: 'var(--color-text-secondary)', padding: '4px 10px', fontSize: '11px', borderRadius: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>Демонстрация формата</div>
- <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
- <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>Арбитраж</span>
- <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>Взыскание задолженности по договору подряда через суд</h4>
- </div>
- 
- <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
- <div>
- <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h5>
- <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Заказчик отказался оплачивать выполненные строительные работы по договору строительного подряда, ссылаясь на вымышленные недостатки.</p>
- </div>
- 
- <div>
- <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h5>
- <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>Арбитражный юрист собрал документальную базу, подтверждающую приемку этапов, и инициировал судебную строительно-техническую экспертизу.</p>
- </div>
- </div>
- 
- <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '4px', border: '1px solid rgba(193, 160, 102, 0.2)', borderLeft: '4px solid var(--color-gold)' }}>
- <h5 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h5>
- <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>Основная задолженность и пени по договору взысканы на 100% через Арбитражный суд Липецкой области.</p>
- </div>
- </div>
-
- </div>
- </div>
- </section>
-
-
- {/* 7. REVIEWS SECTION */}
+      {/* 7. REVIEWS SECTION */}
  <ReviewsBlock />
 
  {/* 8. PRICING SECTION */}

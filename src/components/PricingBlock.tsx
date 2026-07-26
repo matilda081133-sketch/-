@@ -1,7 +1,30 @@
 'use client';
 
-export default function PricingBlock() {
-  const tiers = [
+export interface PricingFeature {
+  name: string;
+  value: string;
+}
+
+export interface PricingTier {
+  title: string;
+  subtitle: string;
+  popular?: boolean;
+  price?: string;
+  features: PricingFeature[];
+}
+
+interface PricingBlockProps {
+  title?: string;
+  subtitle?: string;
+  tiers?: PricingTier[];
+}
+
+export default function PricingBlock({
+  title = "Стоимость юридических услуг в Липецке",
+  subtitle = "Честные цены, закрепленные в договоре. Никаких скрытых платежей.",
+  tiers: propTiers
+}: PricingBlockProps) {
+  const defaultTiers: PricingTier[] = [
     {
       title: 'Гражданам',
       subtitle: 'Защита личных интересов',
@@ -43,24 +66,30 @@ export default function PricingBlock() {
     }
   ];
 
+  const tiers = propTiers || defaultTiers;
+
   return (
     <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-cream)' }}>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <h2 style={{ 
-            fontSize: '42px', 
+            marginTop: 0, 
+            fontSize: '48px', 
             fontFamily: 'var(--font-serif)', 
             color: 'var(--color-deep-blue)',
-            marginBottom: '16px'
+            marginBottom: '20px'
           }}>
-            Прозрачные цены на юридические услуги в Липецке
+            {title}
           </h2>
-          <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
-            Сколько стоит нанять юриста или адвоката? Базовые тарифы представлены ниже. Итоговая цена на ведение судебного дела, представительство в суде или составление иска фиксируется в официальном договоре на оказание юридических услуг.
+          <p style={{ 
+            fontSize: '20px', 
+            color: 'var(--color-text-secondary)',
+            maxWidth: '600px',
+            margin: '0 auto',
+            lineHeight: 1.6
+          }}>
+            {subtitle}
           </p>
-          <div style={{ display: 'inline-block', marginTop: '20px', padding: '6px 16px', background: 'rgba(23, 50, 77, 0.05)', borderRadius: '4px', border: '1px solid var(--color-border)', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
-            Тестовые значения для согласования
-          </div>
         </div>
 
         <div className="grid grid-3" style={{ gap: '30px', alignItems: 'stretch' }}>

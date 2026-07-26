@@ -4,125 +4,217 @@ import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import MilitaryHero from '@/components/MilitaryHero';
+import UrgentContactStrip from '@/components/UrgentContactStrip';
+import SpecialistBlock from '@/components/SpecialistBlock';
+import CasesBlock from '@/components/CasesBlock';
+import PricingBlock from '@/components/PricingBlock';
+import Head from 'next/head';
 
 export const metadata = {
-  title: 'Военный юрист в Липецке — помощь военнослужащим | Де-Юре',
-  description: 'Юридическая помощь военнослужащим и родственникам в Липецке: уголовные дела, ВВК, выплаты, военкомат и признание военнослужащего умершим. Работа по России.'
+  title: 'Военный юрист в Липецке — помощь военнослужащим | ЮК «Де-юре»',
+  description: 'Юридическая помощь военнослужащим, призывникам и их близким в Липецке: уголовные дела, ВВК, выплаты, споры с военкоматом. Работа по России.',
+  alternates: {
+    canonical: 'https://dejure.ru/grazhdanam/voennyj-yurist/'
+  },
+  openGraph: {
+    title: 'Военный юрист в Липецке — помощь военнослужащим | ЮК «Де-юре»',
+    description: 'Юридическая помощь военнослужащим, призывникам и их близким в Липецке: уголовные дела, ВВК, выплаты, споры с военкоматом. Работа по России.',
+    url: 'https://dejure.ru/grazhdanam/voennyj-yurist/',
+    siteName: 'ЮК «Де-юре»',
+    images: [
+      {
+        url: 'https://dejure.ru/images/og-military-lawyer.jpg', // Placeholder, needs actual OG image
+        width: 1200,
+        height: 630,
+        alt: 'Военный юрист ЮК Де-юре',
+      }
+    ],
+    locale: 'ru_RU',
+    type: 'website',
+  },
 };
 
 export default function MilitaryLawyerHub() {
+  const helps = [
+    { text: 'Военнослужащие по контракту' },
+    { text: 'Мобилизованные' },
+    { text: 'Добровольцы' },
+    { text: 'Призывники и допризывники' },
+    { text: 'Ветераны боевых действий' },
+    { text: 'Родственники военнослужащих' }
+  ];
+
   const directions = [
     {
       title: 'Самовольное оставление части (СОЧ)',
-      desc: 'Помощь при задержании, подготовке добровольной явки и защита по статье 337 УК РФ.',
+      desc: 'Помощь при проверке, задержании, подготовке явки и защите по делу, связанному с оставлением части.',
       link: '/grazhdanam/voennyj-yurist/samovolnoe-ostavlenie-chasti/',
-      urgent: true
+      slug: 'soch'
     },
     {
       title: 'Дезертирство',
-      desc: 'Срочный разбор умысла, участие при явке или задержании по статье 338 УК РФ.',
+      desc: 'Правовая оценка обстоятельств и умысла, помощь при явке или задержании, защита на стадии расследования и в суде.',
       link: '/grazhdanam/voennyj-yurist/dezertirstvo/',
-      urgent: true
+      slug: 'dezertirstvo'
     },
     {
       title: 'Выплаты за ранение',
-      desc: 'Проверка справок, запрос документов и обжалование при задержке или отказе.',
-      link: '/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/'
+      desc: 'Помощь, если выплату не назначили, задерживают либо документы не подтверждают обстоятельства и тяжесть ранения.',
+      link: '/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/',
+      slug: 'vyplaty-ranenie'
     },
     {
       title: 'Выплаты семье погибшего',
-      desc: 'Проверка оснований по каждому получателю, сбор документов и доказывание иждивения.',
-      link: '/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/'
+      desc: 'Определение права на выплаты, сбор документов и обжалование отказа или неверного расчета.',
+      link: '/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/',
+      slug: 'vyplaty-semya'
     },
     {
-      title: 'Признание безвестно отсутствующим',
-      desc: 'Установление юридического статуса через суд для выплат и наследства.',
-      link: '/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/'
-    },
-    {
-      title: 'Оспаривание заключения ВВК',
-      desc: 'Анализ медицинских документов, вышестоящая комиссия и суд.',
-      link: '/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/'
+      title: 'Оспаривание заключений ВВК',
+      desc: 'Анализ медицинских документов и заключений комиссии, подготовка жалобы и сопровождение пересмотра.',
+      link: '/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/',
+      slug: 'vvk'
     },
     {
       title: 'Споры с военкоматом',
-      desc: 'Обжалование решений призывной комиссии и вопросы воинского учета.',
-      link: '/grazhdanam/voennyj-yurist/spory-s-voenkomatom/'
+      desc: 'Помощь при несогласии с решением призывной комиссии и нарушениях процедуры со стороны военкомата.',
+      link: '/grazhdanam/voennyj-yurist/spory-s-voenkomatom/',
+      slug: 'voenkomat'
     },
     {
-      title: 'Иной вопрос',
-      desc: 'Не нашли свою ситуацию? Оставьте контакты, и мы разберем ваш случай индивидуально.',
-      link: '#form'
+      title: 'Признание военнослужащего безвестно отсутствующим или объявление умершим',
+      desc: 'Помощь семье в выборе правовой процедуры, подготовке доказательств и обращении в суд.',
+      link: '/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
+      slug: 'bezvestno'
     }
   ];
 
   const faqs = [
-    { q: 'С какими вопросами помогает военный юрист?', a: 'Мы помогаем по уголовным делам (СОЧ, дезертирство), оспариванию заключений ВВК, получению положенных выплат (за ранение, семье погибшего), спорам с военкоматом и признанию военнослужащего безвестно отсутствующим или умершим.' },
-    { q: 'Когда для дела обязательно нужен адвокат?', a: 'Адвокат обязательно требуется для защиты по уголовным делам. По вопросам выплат, ВВК и административным спорам в зависимости от задачи может работать юрист или адвокат.' },
-    { q: 'Можно ли обратиться родственнику военнослужащего?', a: 'Да. Родственник может обратиться за первичной консультацией и заключить соглашение в интересах военнослужащего. Возможность представительства по конкретным действиям зависит от наличия доверенности.' },
-    { q: 'Можно ли вести дело дистанционно из другого региона?', a: 'Подготовка рапортов, заявлений, жалоб и анализ документов могут осуществляться дистанционно. Уголовная защита требует личного участия адвоката.' },
-    { q: 'Что сообщить, если военнослужащего задержали?', a: 'В первую очередь сообщите фактическое место нахождения (отдел, комендатура и т.д.) и причину задержания, если она известна. Немедленно свяжитесь с адвокатом.' },
-    { q: 'Какие документы нужны для первичного разбора?', a: 'Подготовьте медицинские документы, справки, рапорты, процессуальные документы или ответы органов — только то, что относится к вашей ситуации.' },
-    { q: 'Можно ли подготовить рапорт или жалобу дистанционно?', a: 'Да, мы можем подготовить документы дистанционно. Подписывать и подавать их будет сам военнослужащий.' },
-    { q: 'От чего зависит стоимость помощи?', a: 'Стоимость зависит от срочности, объема анализируемых документов, стадии дела и необходимости личного участия адвоката или выезда.' }
+    { q: 'С какими вопросами помогает военный юрист?', a: 'С выплатами и документами после ранения или гибели военнослужащего, заключениями ВВК, решениями военкомата, установлением статуса пропавшего военнослужащего и другими спорами, связанными с военной службой. Если ситуация связана с задержанием, проверкой или уголовным делом, к работе подключается адвокат.' },
+    { q: 'В каких ситуациях нужно обращаться именно к адвокату?', a: 'Адвокат требуется, когда военнослужащего подозревают или обвиняют в преступлении, задержали, вызывают на допрос либо проводят иные процессуальные действия в рамках уголовного дела. По вопросам выплат, ВВК, увольнения и административным спорам помощь может оказывать юрист, если конкретное действие не требует статуса адвоката.' },
+    { q: 'Можно ли обратиться родственнику военнослужащего?', a: 'Да. Родственник может сообщить обстоятельства, передать документы и получить разъяснение о возможных действиях. Возможность получить сведения, представлять интересы военнослужащего или заключить соглашение от его имени зависит от ситуации, полномочий и требований закона.' },
+    { q: 'Можно ли вести дело дистанционно из другого региона?', a: 'Многие задачи можно начать дистанционно: провести консультацию, изучить документы, подготовить обращения и определить стратегию. Необходимость личного участия зависит от вида дела, стадии производства и места совершения процессуальных действий.' },
+    { q: 'Что сообщить, если военнослужащего задержали?', a: 'Сообщите имя и дату рождения, воинскую часть, когда и где человека видели в последний раз, предполагаемую причину и фактическое место задержания, а также данные должностных лиц и документы, если они есть. Если часть сведений неизвестна, не откладывайте обращение.' },
+    { q: 'Какие документы нужны для первичного разбора?', a: 'Подойдут имеющиеся документы: контракт, военный билет, заключение ВВК, медицинские выписки, справки о ранении, решения военкомата или призывной комиссии, постановления, повестки, ответы ведомств и переписка. Точный перечень зависит от ситуации; ждать полного комплекта перед обращением не нужно.' },
+    { q: 'Можно ли подготовить рапорт или жалобы дистанционно?', a: 'Да, если специалист может получить факты и документы, необходимые для подготовки. До отправки нужно проверить адресата, способ подачи, приложения и подтверждение вручения. В отдельных ситуациях одной жалобы недостаточно и требуется дальнейшее сопровождение.' },
+    { q: 'От чего зависит стоимость помощи?', a: 'От характера и сложности ситуации, стадии дела, объёма документов, количества необходимых действий, региона и необходимости личного участия адвоката или юриста. Состав работ и стоимость согласовываются до заключения договора.' }
   ];
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://dejure.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Гражданам",
+            "item": "https://dejure.ru/grazhdanam/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Военный юрист",
+            "item": "https://dejure.ru/grazhdanam/voennyj-yurist/"
+          }
+        ]
+      },
+      {
+        "@type": "LegalService",
+        "name": "ЮК «Де-юре»",
+        "description": "Юридическая помощь военнослужащим в Липецке",
+        "url": "https://dejure.ru/grazhdanam/voennyj-yurist/"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      },
+      {
+        "@type": "Person",
+        "name": "Дмитрий Сергеевич Конопкин",
+        "jobTitle": "Адвокат, Руководитель практики военного права",
+        "url": "https://dejure.ru/grazhdanam/voennyj-yurist/"
+      }
+    ]
+  };
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       
+      {/* 1. Первый экран */}
       <MilitaryHero 
         breadcrumbs={
           <>
             <a href="/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
-            Гражданам <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
             <span style={{ color: 'var(--color-text-main)' }}>Военный юрист</span>
           </>
         }
-        superTitle="Военное право • Липецк и работа по России"
+        superTitle="Помощь военнослужащим в Липецке и по России"
         title="Военный юрист в Липецке"
-        subtitle="Помогаем военнослужащим и их близким по уголовным делам, ВВК, выплатам, спорам с военкоматами и признанию пропавшего военнослужащего безвестно отсутствующим или умершим. После первичного разбора определим, кто нужен — юрист или адвокат — и возможный порядок действий."
+        subtitle="Защита по уголовным делам (СОЧ, дезертирство, неисполнение приказа), оспаривание незаконных решений ВВК и призывных комиссий, помощь в получении положенных выплат для военнослужащих и членов их семей."
         primaryCtaText="Обсудить ситуацию"
-        secondaryCtaText="Выбрать направление"
-        secondaryCtaLink="#directions"
-        urgentHint="Если человека задержали или решается вопрос о помещении в СИЗО, сразу сообщите причину задержания и фактическое место нахождения."
-        trustItems={[
-          { text: 'Юрист или адвокат — по характеру дела' },
-          { text: 'Липецк и дистанционная работа по России' },
-          { text: 'Состав и стоимость — в договоре' }
-        ]}
+        primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        trustItems={[]} // Removed from hero per TZ
       />
 
-      <section className="section bg-white">
+      {/* 2. Компактная полоса */}
+      <UrgentContactStrip />
+
+      {/* 3. Кому помогаем */}
+      <section className="section bg-white" id="audience">
         <div className="container">
-          <h2 className="section-title" style={{ marginBottom: '40px' }}>Кому помогаем</h2>
+          <h2 className="section-title text-center" style={{ marginBottom: '40px' }}>Кому мы помогаем</h2>
           <div style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', 
-            gap: '20px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+            gap: '24px'
           }}>
-            {['Контрактники', 'Мобилизованные', 'Добровольцы', 'Призывники', 'Участники СВО', 'Родственники'].map((aud, i) => (
+            {helps.map((aud, i) => (
               <div key={i} style={{
                 background: 'var(--color-cream)',
-                padding: '24px',
+                padding: '32px',
                 textAlign: 'left',
                 fontWeight: 600,
                 color: 'var(--color-deep-blue)',
-                borderBottom: '3px solid var(--color-gold)'
+                borderBottom: '4px solid var(--color-gold)',
+                fontSize: '18px'
               }}>
-                {aud}
+                {aud.text}
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* 4. Направления помощи */}
       <section id="directions" className="section" style={{ background: 'var(--color-cream)' }}>
         <div className="container">
-          <h2 className="section-title text-center">Выберите направление</h2>
-          <div className="grid grid-4" style={{ marginTop: '48px', gap: '16px' }}>
+          <h2 className="section-title text-center" style={{ marginBottom: '40px' }}>Направления помощи</h2>
+          
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '24px' }}>
+            {/* Все 7 карточек услуг */}
             {directions.map((dir, i) => (
-              <a key={i} href={dir.link} style={{
+              <a key={i} href={dir.link} data-analytics="military_service_click" data-slug={dir.slug} style={{
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
@@ -130,23 +222,10 @@ export default function MilitaryLawyerHub() {
                 padding: '32px',
                 textDecoration: 'none',
                 position: 'relative',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.03)'
-              }} className={`hover-lift ${dir.urgent ? 'border-red' : 'border-hover-blue'}`}>
-                {dir.urgent && (
-                  <span style={{ 
-                    position: 'absolute', 
-                    top: '12px', right: '12px', 
-                    background: 'rgba(217, 83, 79, 0.1)', 
-                    color: '#D9534F', 
-                    fontSize: '11px', 
-                    fontWeight: 700, 
-                    padding: '4px 8px', 
-                    borderRadius: '4px',
-                    textTransform: 'uppercase'
-                  }}>
-                    Срочно
-                  </span>
-                )}
+                boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+                border: '1px solid var(--color-border)',
+                borderRadius: '8px'
+              }} className="hover-lift border-hover-blue">
                 <h3 style={{ fontSize: '20px', marginBottom: '16px', color: 'var(--color-deep-blue)' }}>{dir.title}</h3>
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.5, marginBottom: '24px' }}>
                   {dir.desc}
@@ -156,104 +235,218 @@ export default function MilitaryLawyerHub() {
                 </div>
               </a>
             ))}
-          </div>
-        </div>
-      </section>
 
-      <section className="section bg-white">
-        <div className="container grid grid-2" style={{ gap: '60px' }}>
-          <div>
-            <h2 className="section-title">Срочные ситуации</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '32px' }}>
-              {[
-                { t: 'Задержание / Решение о СИЗО', d: 'Сообщите фактическое место нахождения, причину задержания и не давайте объяснений без адвоката.' },
-                { t: 'Добровольная явка', d: 'Свяжитесь с адвокатом до прибытия в часть или комендатуру для оценки рисков и формирования позиции.' },
-                { t: 'Решение призывной комиссии', d: 'Если назначена дата отправки, оспорить решение нужно до этого момента, иначе обжалование усложнится.' }
-              ].map((urg, i) => (
-                <div key={i} style={{ padding: '24px', border: '1px solid var(--color-border)', borderLeft: '4px solid #D9534F' }}>
-                  <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '8px' }}>{urg.t}</h4>
-                  <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', marginBottom: '16px' }}>{urg.d}</p>
-                  <a href="#form" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '14px' }}>Связаться с адвокатом →</a>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h2 className="section-title">Другие вопросы</h2>
-            <div style={{ padding: '32px', background: 'var(--color-cream)', marginTop: '32px' }}>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px 0', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                {[
-                  'Невыплата денежного довольствия и иных положенных выплат',
-                  'Составление рапортов и жалоб',
-                  'Обращения в военную прокуратуру'
-                ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                    <div style={{ color: 'var(--color-gold)', marginTop: '2px' }}>✓</div>
-                    <span style={{ color: 'var(--color-deep-blue)', fontWeight: 500 }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <a href="#form" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>Обсудить вопрос</a>
-            </div>
-
-            <div style={{ marginTop: '40px' }}>
-              <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', marginBottom: '16px' }}>Что можно сделать дистанционно</h3>
-              <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Подготовка рапортов, заявлений и жалоб, анализ документов, консультация родственников. Важно: документ подписывает сам военнослужащий. Представительство родственника зависит от доверенности, а уголовная защита требует личного участия адвоката.
-              </p>
+            {/* Блок «Не нашли свою ситуацию?» */}
+            <div className="span-2-desktop" style={{
+              background: 'var(--color-cream)',
+              padding: '40px',
+              borderRadius: '8px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              height: '100%'
+            }}>
+              <div>
+                <h3 style={{ fontSize: '24px', marginBottom: '16px', color: 'var(--color-deep-blue)' }}>Не нашли свою ситуацию?</h3>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
+                  Необязательно самостоятельно определять, какая именно услуга вам нужна. Кратко опишите обстоятельства — мы изучим вопрос и подскажем, какой специалист сможет помочь.
+                </p>
+              </div>
+              <div>
+                <a href="#form" className="btn-primary" style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  color: 'var(--color-primary)',
+                  fontWeight: 600,
+                  fontSize: '15px',
+                  textDecoration: 'none',
+                  gap: '8px'
+                }}>Описать ситуацию <span style={{ transition: 'transform 0.3s' }}>→</span></a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ background: 'linear-gradient(to right, var(--color-deep-blue) 0%, #1c3c5d 100%)', color: 'var(--color-white)' }}>
-        <div className="container">
-          <div className="grid grid-2" style={{ gap: '60px' }}>
-            <div>
-              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', marginBottom: '24px', color: 'var(--color-white)' }}>Кто подключается к делу</h2>
-              <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '18px', lineHeight: 1.6 }}>
-                В уголовном деле защиту ведет адвокат. По выплатам, ВВК и административным спорам в зависимости от задачи может работать юрист или адвокат. Мы определяем нужного специалиста на этапе разбора ситуации.
-              </p>
-            </div>
-            <div>
-              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', marginBottom: '24px', color: 'var(--color-white)' }}>Что происходит после обращения</h2>
-              <ol style={{ paddingLeft: '20px', color: 'rgba(255,255,255,0.8)', display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '16px', lineHeight: 1.6 }}>
-                <li>Выясняем суть, срочность, местонахождение и имеющиеся документы.</li>
-                <li>Определяем правовой маршрут и нужного специалиста.</li>
-                <li>Согласуем состав работ и стоимость.</li>
-                <li>Начинаем работу.</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <FAQBlock 
-        faqs={faqs} 
-        superTitle="Вопросы и ответы" 
-        title="Частые вопросы о военной защите"
-        subtitle="Ответы на популярные вопросы о юридической помощи военнослужащим. Информация носит общий характер. Возможный порядок действий зависит от обстоятельств и документов."
+      {/* 5. Ведущий юрист */}
+      <SpecialistBlock 
+        title="Руководитель практики военного права"
+        name="Дмитрий Сергеевич Конопкин"
+        position="Адвокат • Регистрационный номер 48/812"
+        description={[
+          "С 2016 по 2022 год работал в Следственном комитете, прошел путь до старшего следователя отдела по расследованию особо важных дел. С 2022 года занимается адвокатской практикой.",
+          "Опыт следственной работы помогает оценивать доказательства, выявлять процессуальные нарушения и выстраивать защиту по сложным делам."
+        ]}
+        photoPlaceholder="[Фото Д.С. Конопкина]"
+        buttonText="Задать вопрос адвокату"
+        buttonHref="#form"
       />
 
-      <section className="section bg-white" id="form">
+      {/* 6. Дела из практики */}
+      <CasesBlock 
+        title="Примеры из практики"
+        showAllLink="#"
+        showDemoWarning={true}
+        cases={[
+          {
+            category: "Военное право",
+            title: "[Кейс 1: Пример заголовка дела]",
+            problem: "Здесь будет размещено реальное дело из практики по защите прав военнослужащего.",
+            action: "Текст на этапе макета является заглушкой и будет заменен после согласования.",
+            result: "[Ключевой результат]",
+            isDemo: true
+          },
+          {
+            category: "Военное право",
+            title: "[Кейс 2: Пример заголовка дела]",
+            problem: "Здесь будет размещено реальное дело из практики по защите прав военнослужащего.",
+            action: "Текст на этапе макета является заглушкой и будет заменен после согласования.",
+            result: "[Ключевой результат]",
+            isDemo: true
+          }
+        ]}
+      />
+
+      {/* 7. Срочный блок */}
+      <section className="section" style={{ background: 'var(--color-deep-blue)', color: 'var(--color-white)' }}>
+        <div className="container">
+          <h2 className="section-title text-center" style={{ color: 'var(--color-white)', marginBottom: '40px' }}>
+            Если помощь нужна прямо сейчас
+          </h2>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
+            <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'rgba(255,255,255,0.05)' }}>
+              <h4 style={{ fontSize: '18px', color: 'var(--color-white)', marginBottom: '12px' }}>Военнослужащего задержали</h4>
+              <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: 1.6 }}>
+                Уточните фактическое место нахождения, время и предполагаемую причину задержания. Не передавайте непроверенные сведения от имени задержанного. Свяжитесь с адвокатом.
+              </p>
+            </div>
+            <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'rgba(255,255,255,0.05)' }}>
+              <h4 style={{ fontSize: '18px', color: 'var(--color-white)', marginBottom: '12px' }}>Возбуждено дело или вызывают на допрос</h4>
+              <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: 1.6 }}>
+                До объяснений и подписания документов согласуйте позицию с адвокатом. Сохраните повестку, постановление и иные полученные документы.
+              </p>
+            </div>
+            <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'rgba(255,255,255,0.05)' }}>
+              <h4 style={{ fontSize: '18px', color: 'var(--color-white)', marginBottom: '12px' }}>Военнослужащий не выходит на связь</h4>
+              <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: 1.6 }}>
+                Зафиксируйте даты и обстоятельства последнего контакта, воинскую часть и известные обращения. Соберите официальные ответы и документы, не полагаясь только на устные сообщения.
+              </p>
+            </div>
+          </div>
+          <div className="text-center" style={{ marginTop: '40px' }}>
+            <a href="tel:+79103503111" className="btn btn-primary" style={{ padding: '16px 32px', fontSize: '16px' }} data-analytics="military_urgent_call_click">
+              Позвонить адвокату
+            </a>
+            <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', marginTop: '16px' }}>
+              +7 (910) 350-31-11 • Перезвоним в течение 15 минут в рабочее время
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Другие вопросы и дистанционная помощь */}
+      <section className="section bg-white">
+        <div className="container remote-help-grid">
+          {/* Row 1 / Mobile Order 1 & 3 */}
+          <div className="remote-help-item-h1" style={{ display: 'flex', alignItems: 'flex-start' }}>
+            <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3vw, 32px)', margin: 0 }}>
+              Если вашей ситуации нет в списке
+            </h2>
+          </div>
+          <div className="remote-help-item-h2" style={{ display: 'flex', alignItems: 'flex-start' }}>
+            <h2 className="section-title" style={{ fontSize: 'clamp(24px, 3vw, 32px)', margin: 0 }}>
+              Что можно сделать дистанционно
+            </h2>
+          </div>
+          
+          {/* Row 2 / Mobile Order 2 & 4 */}
+          <div className="remote-help-item-p1" style={{ display: 'flex', flexDirection: 'column' }}>
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '32px' }}>
+              Необязательно самостоятельно определять вид услуги. Опишите обстоятельства — мы разберём ситуацию, уточним необходимые документы и определим, какой специалист должен подключиться.
+            </p>
+            <div style={{ marginTop: 'auto' }}>
+              <a href="#form" className="btn btn-primary">Описать ситуацию</a>
+            </div>
+          </div>
+          <div className="remote-help-item-p2" style={{ display: 'flex', flexDirection: 'column' }}>
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>
+              Провести первичную консультацию, изучить документы, подготовить обращения и жалобы, определить порядок дальнейших действий. Возможность полностью дистанционной работы зависит от характера дела и необходимости личного участия адвоката или юриста.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. Как проходит работа */}
+      <section className="section" style={{ background: 'var(--color-cream)' }}>
+        <div className="container">
+          <h2 className="section-title text-center" style={{ marginBottom: '40px' }}>Как проходит работа</h2>
+          <div className="grid grid-4" style={{ gap: '24px' }}>
+            {[
+              { t: '1. Первичный разбор', d: 'Уточняем обстоятельства, срочность, процессуальную стадию и имеющиеся документы.' },
+              { t: '2. Определяем специалиста', d: 'Понимаем, нужен ли адвокат либо задачу вправе выполнить юрист.' },
+              { t: '3. Согласовываем объём', d: 'Фиксируем перечень работ, формат взаимодействия, стоимость и условия в договоре.' },
+              { t: '4. Приступаем к работе', d: 'Готовим документы, участвуем в необходимых действиях и сообщаем клиенту о ходе дела.' }
+            ].map((step, i) => (
+              <div key={i} style={{ padding: '24px', background: 'var(--color-white)', borderTop: '4px solid var(--color-primary)' }}>
+                <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>{step.t}</h4>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.5 }}>{step.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Стоимость */}
+      {/* 10. PRICES */}
+      <PricingBlock 
+        title="Стоимость юридической помощи"
+        subtitle="Стоимость зависит от характера ситуации, стадии дела, объёма документов, сложности и необходимости личного участия адвоката. После первичного разбора мы определим перечень работ и согласуем стоимость до заключения договора."
+        tiers={[
+          {
+            title: 'Базовые услуги',
+            subtitle: 'Первичный анализ и документы',
+            popular: false,
+            features: [
+              { name: 'Консультация и анализ документов', value: 'от [УТОЧНИТЬ] ₽' },
+              { name: 'Подготовка заявления, рапорта или жалобы', value: 'от [УТОЧНИТЬ] ₽' }
+            ]
+          },
+          {
+            title: 'Ведение дела',
+            subtitle: 'Комплексная защита',
+            popular: true,
+            features: [
+              { name: 'Сопровождение спора', value: 'от [УТОЧНИТЬ] ₽' },
+              { name: 'Защита по уголовному делу', value: 'от [УТОЧНИТЬ] ₽' }
+            ]
+          }
+        ]}
+      />
+
+      {/* 11. FAQ */}
+      <FAQBlock 
+        faqs={faqs} 
+        title="Частые вопросы"
+        subtitle=""
+      />
+
+      {/* 12. Финальная форма */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'center' }}>
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
-                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                  Связаться с нами
-                </span>
-              </div>
               <h2 style={{ fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', lineHeight: 1.1 }}>
-                Расскажите, что произошло
+                Получите первичную оценку ситуации
               </h2>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '0' }}>
-                Уточним срочность, нужного специалиста и какие документы потребуются для первичного разбора. Перезвоним в течение 15 минут.
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '24px' }}>
+                Кратко опишите, что произошло. Мы определим срочность, уточним необходимые документы и подключим Дмитрия Сергеевича Конопкина либо другого специалиста с нужными полномочиями.
               </p>
+              <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px' }}>
+                Перезвоним в течение 15 минут в рабочее время
+              </div>
             </div>
             <div>
-              <ContactsForm title="Написать нам" subtitle="" />
+              <ContactsForm title="Отправить обращение" subtitle="" />
             </div>
           </div>
         </div>
