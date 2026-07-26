@@ -216,16 +216,16 @@ export default function ContactsPage() {
                 {/* Инструкция */}
                 <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: '4px', flex: 1 }}>
                   <p style={{ margin: 0 }}>
-                    В здание можно войти через <strong style={{ color: 'var(--color-deep-blue)' }}>любой из двух общих входов</strong>, расположенных со стороны улицы Советской в <strong style={{ color: 'var(--color-deep-blue)' }}>правой и левой</strong> частях фасада. Офис ЮК «Де-Юре» находится <strong style={{ color: 'var(--color-deep-blue)' }}>на втором этаже</strong>. <strong style={{ color: 'var(--color-deep-blue)' }}>Отдельного входа и пропускного режима нет</strong>.
+                    В здание можно войти через любой из двух общих входов, расположенных со стороны улицы Советской в правой и левой частях фасада. Офис ЮК «Де-Юре» находится <strong style={{ color: 'var(--color-deep-blue)' }}>на втором этаже</strong>. Отдельного входа и пропускного режима нет.
                   </p>
                   <p style={{ margin: 0 }}>
-                    Если вы вошли через <strong style={{ color: 'var(--color-deep-blue)' }}>правый вход</strong>, поднимитесь по лестнице на второй этаж и поверните в коридоре <strong style={{ color: 'var(--color-deep-blue)' }}>направо</strong>. Если вошли через <strong style={{ color: 'var(--color-deep-blue)' }}>левый вход</strong> — поднимитесь на второй этаж и поверните <strong style={{ color: 'var(--color-deep-blue)' }}>налево</strong>. <strong style={{ color: 'var(--color-deep-blue)' }}>Лифта в здании нет</strong>.
+                    Если вы вошли через правый вход, поднимитесь по лестнице на второй этаж и поверните в коридоре <strong style={{ color: 'var(--color-deep-blue)' }}>направо</strong>. Если вошли через левый вход — поднимитесь на второй этаж и поверните <strong style={{ color: 'var(--color-deep-blue)' }}>налево</strong>. Лифта в здании нет.
                   </p>
                   <p style={{ margin: 0 }}>
-                    Ближайшая остановка — <strong style={{ color: 'var(--color-deep-blue)' }}>«Улица Горького»</strong>. От неё до здания идти <strong style={{ color: 'var(--color-deep-blue)' }}>не более одной минуты</strong>. В зависимости от стороны, с которой вы приехали, потребуется перейти одну или две дороги.
+                    Ближайшая остановка — <strong style={{ color: 'var(--color-deep-blue)' }}>«Улица Горького»</strong>. От неё до здания идти не более одной минуты. В зависимости от стороны, с которой вы приехали, потребуется перейти одну или две дороги.
                   </p>
                   <p style={{ margin: 0 }}>
-                    Непосредственно у здания <strong style={{ color: 'var(--color-deep-blue)' }}>парковки нет</strong>. Автомобиль можно оставить на стоянке <strong style={{ color: 'var(--color-deep-blue)' }}>напротив здания через дорогу</strong> на улице Советской либо на стоянке немного дальше, <strong style={{ color: 'var(--color-deep-blue)' }}>на улице Горького</strong>.
+                    Непосредственно у здания <strong style={{ color: 'var(--color-deep-blue)' }}>парковки нет</strong>. Автомобиль можно оставить на стоянке напротив здания через дорогу на улице Советской либо на стоянке немного дальше, на улице Горького.
                   </p>
                 </div>
                 
