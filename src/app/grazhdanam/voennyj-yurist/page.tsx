@@ -307,9 +307,10 @@ export default function MilitaryLawyerHub() {
         title="Руководитель практики военного права"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат • Регистрационный номер 48/812"
+        imageUrl="/-/images/konopkin.jpg"
         description={[
-          "С 2016 по 2022 год работал в Следственном комитете, прошел путь до старшего следователя отдела по расследованию особо важных дел. С 2022 года занимается адвокатской практикой.",
-          "Опыт следственной работы помогает оценивать доказательства, выявлять процессуальные нарушения и выстраивать защиту по сложным делам."
+          <span key="1" style={{ color: 'var(--color-deep-blue)', textWrap: 'balance', display: 'block' }}>С 2016 по 2022 год работал в Следственном комитете, прошел путь до старшего следователя отдела по расследованию особо важных дел. С 2022 года занимается адвокатской практикой.</span>,
+          <span key="2" style={{ color: 'var(--color-deep-blue)', textWrap: 'balance', display: 'block' }}>Опыт следственной работы помогает оценивать доказательства, выявлять процессуальные нарушения и выстраивать защиту по сложным делам.</span>
         ]}
         photoPlaceholder="[Фото Д.С. Конопкина]"
         buttonText="Задать вопрос адвокату"
@@ -384,7 +385,7 @@ export default function MilitaryLawyerHub() {
             <a href="tel:+79103503111" className="btn btn-primary" style={{ padding: '16px 32px', fontSize: '16px' }} data-analytics="military_urgent_call_click">
               Позвонить адвокату
             </a>
-            <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', marginTop: '16px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginTop: '16px' }}>
               +7 (910) 350-31-11 • Перезвоним в течение 15 минут в рабочее время
             </p>
           </div>
