@@ -65,18 +65,26 @@ export default function CasesBlock({
         
         <div className="grid grid-3" style={{ gap: '30px' }}>
           {cases.map((caseItem, idx) => (
-            <div key={idx} className="card" style={{ 
+            <div key={idx} className="case-card group" style={{ 
               padding: '40px', 
-              border: 'none', 
+              border: '1px solid var(--color-border)', 
               borderRadius: '0', 
-              borderTop: '4px solid var(--color-primary)', 
               display: 'flex', 
               flexDirection: 'column', 
               background: 'var(--color-white)', 
-              transition: 'var(--transition)', 
-              position: 'relative', 
-              boxShadow: '0 15px 40px rgba(23, 50, 77, 0.08)' 
+              position: 'relative',
+              overflow: 'hidden',
+              height: '100%'
             }}>
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '4px',
+                height: '0%',
+                background: 'var(--color-gold)',
+                transition: 'height 0.4s ease'
+              }} className="case-accent-line"></div>
               {caseItem.isDemo && (
                 <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(23, 50, 77, 0.05)', border: '1px solid rgba(23, 50, 77, 0.1)', color: 'var(--color-text-secondary)', padding: '4px 10px', fontSize: '11px', borderRadius: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>
                   Демонстрация формата
@@ -113,6 +121,19 @@ export default function CasesBlock({
           ))}
         </div>
       </div>
+      <style dangerouslySetInnerHTML={{__html: `
+        .case-card {
+          transition: all 0.4s ease;
+        }
+        .case-card:hover {
+          box-shadow: 0 20px 40px rgba(23, 50, 77, 0.08);
+          border-color: transparent;
+          transform: translateY(-4px);
+        }
+        .case-card:hover .case-accent-line {
+          height: 100%;
+        }
+      `}} />
     </section>
   );
 }
