@@ -355,27 +355,27 @@ export default function MilitaryLawyerHub() {
       />
 
       {/* 7. Срочный блок */}
-      <section className="section" style={{ background: 'var(--color-deep-blue)', color: 'var(--color-white)' }}>
+      <section className="section" style={{ background: 'var(--color-cream)' }}>
         <div className="container">
-          <h2 className="section-title text-center" style={{ color: 'var(--color-white)', marginBottom: '40px' }}>
+          <h2 className="section-title text-center" style={{ marginBottom: '40px' }}>
             Если помощь нужна прямо сейчас
           </h2>
           <div className="grid grid-3" style={{ gap: '24px' }}>
-            <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'rgba(255,255,255,0.05)' }}>
-              <h4 style={{ fontSize: '18px', color: 'var(--color-white)', marginBottom: '12px' }}>Военнослужащего задержали</h4>
-              <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: 1.6 }}>
+            <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+              <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>Военнослужащего задержали</h4>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6 }}>
                 Уточните фактическое место нахождения, время и предполагаемую причину задержания. Не передавайте непроверенные сведения от имени задержанного. Свяжитесь с адвокатом.
               </p>
             </div>
-            <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'rgba(255,255,255,0.05)' }}>
-              <h4 style={{ fontSize: '18px', color: 'var(--color-white)', marginBottom: '12px' }}>Возбуждено дело или вызывают на допрос</h4>
-              <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: 1.6 }}>
+            <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+              <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>Возбуждено дело или вызывают на допрос</h4>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6 }}>
                 До объяснений и подписания документов согласуйте позицию с адвокатом. Сохраните повестку, постановление и иные полученные документы.
               </p>
             </div>
-            <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'rgba(255,255,255,0.05)' }}>
-              <h4 style={{ fontSize: '18px', color: 'var(--color-white)', marginBottom: '12px' }}>Военнослужащий не выходит на связь</h4>
-              <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: 1.6 }}>
+            <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+              <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>Военнослужащий не выходит на связь</h4>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6 }}>
                 Зафиксируйте даты и обстоятельства последнего контакта, воинскую часть и известные обращения. Соберите официальные ответы и документы, не полагаясь только на устные сообщения.
               </p>
             </div>
