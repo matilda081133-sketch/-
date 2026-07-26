@@ -85,7 +85,7 @@ export default function ContactsPage() {
           paddingBottom: '80px'
         }}>
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-            <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <div style={{ margin: '0 auto' }}>
               <h1 style={{ 
                 fontSize: 'clamp(40px, 5vw, 64px)', 
                 color: 'var(--color-deep-blue)', 
