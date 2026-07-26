@@ -6,14 +6,14 @@ import MapWidget from '@/components/MapWidget';
 import CopyAddressButton from '@/components/CopyAddressButton';
 
 export const metadata = {
-  title: 'Контакты юридической компании «Де-юре» в Липецке',
-  description: 'Телефон, адрес офиса, режим работы и реквизиты ЮК «Де-юре» в Липецке. Свяжитесь с нами или постройте маршрут до офиса.',
+  title: 'Контакты юридической компании «Де-Юре» в Липецке',
+  description: 'Телефон, адрес офиса, режим работы и реквизиты ЮК «Де-Юре» в Липецке. Свяжитесь с нами или постройте маршрут до офиса.',
   alternates: {
     canonical: 'https://dejure-help.ru/kontakty/',
   },
   openGraph: {
-    title: 'Контакты юридической компании «Де-юре» в Липецке',
-    description: 'Телефон, адрес офиса, режим работы и реквизиты ЮК «Де-юре» в Липецке. Свяжитесь с нами или постройте маршрут до офиса.',
+    title: 'Контакты юридической компании «Де-Юре» в Липецке',
+    description: 'Телефон, адрес офиса, режим работы и реквизиты ЮК «Де-Юре» в Липецке. Свяжитесь с нами или постройте маршрут до офиса.',
     url: 'https://dejure-help.ru/kontakty/',
     images: [{ url: 'https://dejure-help.ru/-/images/office-building.jpg', width: 1200, height: 630 }],
   }
@@ -23,7 +23,7 @@ export default function ContactsPage() {
   const jsonLdOrg = {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
-    name: 'ЮК «Де-юре»',
+    name: 'ЮК «Де-Юре»',
     legalName: 'ООО ЮК «ДЕ-ЮРЕ»',
     url: 'https://dejure-help.ru/',
     logo: 'https://dejure-help.ru/-/images/logo_dark.png',
@@ -85,7 +85,7 @@ export default function ContactsPage() {
           paddingBottom: '80px'
         }}>
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-            <div style={{ maxWidth: '900px' }}>
+            <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
               <h1 style={{ 
                 fontSize: 'clamp(40px, 5vw, 64px)', 
                 color: 'var(--color-deep-blue)', 
@@ -96,92 +96,74 @@ export default function ContactsPage() {
                 Контакты
               </h1>
               
-              <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 48px 0', maxWidth: '700px' }}>
-                Мы находимся в самом центре Липецка. Вы можете приехать к нам в офис для очной консультации, позвонить или написать на электронную почту. Юристы «Де-юре» работают по предварительной записи, чтобы уделить вашей проблеме максимум времени.
-              </p>
+              <div style={{ marginBottom: '48px' }}>
+                <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 16px 0', maxWidth: '750px' }}>
+                  Позвоните или напишите нам либо приезжайте в офис юридической компании «Де-Юре» в центре Липецка.
+                </p>
+                <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, maxWidth: '750px' }}>
+                  Личные встречи с юристами проводятся по предварительной записи — пожалуйста, согласуйте время визита заранее.
+                </p>
+              </div>
               
-              {/* Контактный блок (Визуальный приоритет по ТЗ) */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '64px', alignItems: 'center' }}>
+              {/* Контактные карточки (Сетка 2x2) */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
                 
-                {/* Первичный призыв (Телефон) - Выделен карточкой */}
-                <div style={{ 
-                  flex: '1 1 350px',
-                  background: 'var(--color-white)',
-                  padding: '48px 40px',
-                  boxShadow: '0 20px 40px rgba(23, 50, 77, 0.08)',
-                  borderRadius: '4px',
-                  borderTop: '4px solid var(--color-gold)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '16px'
-                }}>
-                  <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-text-secondary)', margin: 0 }}>Телефон для связи</h3>
-                  <a href="tel:+74742203070" style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', textDecoration: 'none', lineHeight: 1.2 }}>
+                {/* 1. Телефон */}
+                <div style={{ background: 'var(--color-white)', padding: '32px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
+                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    Телефон
+                  </h3>
+                  <a href="tel:+74742203070" style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
                     +7 (4742) 20-30-70
                   </a>
-                  <a href="tel:+74742203070" className="btn btn-primary" style={{ padding: '14px 32px', fontSize: '15px', alignSelf: 'flex-start', marginTop: '8px' }} data-analytics="call-click">
+                  <a href="tel:+74742203070" className="btn btn-outline" style={{ padding: '10px 24px', fontSize: '14px', alignSelf: 'flex-start', marginTop: 'auto' }}>
                     Позвонить
                   </a>
                 </div>
 
-                {/* Информационный блок (Email, Адрес, График) - Без рамок, аккуратный список */}
-                <div style={{ 
-                  flex: '1.5 1 400px', 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  gap: '32px'
-                }}>
-                  
-                  {/* Email */}
-                  <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                    <div style={{ color: 'var(--color-gold)', marginTop: '2px' }}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: '0 0 8px 0' }}>Электронная почта</h4>
-                      <a href="mailto:info@dejure-help.ru" style={{ fontSize: '18px', color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 500 }}>
-                        info@dejure-help.ru
-                      </a>
-                    </div>
+                {/* 2. Адрес */}
+                <div style={{ background: 'var(--color-white)', padding: '32px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Адрес офиса
+                  </h3>
+                  <p style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.5, fontWeight: 500 }}>
+                    г. Липецк, ул. Советская, д. 35,<br/>офис 213
+                  </p>
+                  <div style={{ marginTop: 'auto' }}>
+                    <CopyAddressButton address="г. Липецк, ул. Советская, д. 35, офис 213" />
                   </div>
+                </div>
 
-                  {/* Адрес */}
-                  <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                    <div style={{ color: 'var(--color-gold)', marginTop: '2px' }}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: '0 0 8px 0' }}>Адрес офиса</h4>
-                      <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.5 }}>
-                        г. Липецк, ул. Советская, д. 35,<br />
-                        офис 213 (2-й этаж)
-                      </p>
-                    </div>
-                  </div>
+                {/* 3. Режим работы */}
+                <div style={{ background: 'var(--color-white)', padding: '32px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
+                      <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    Режим работы
+                  </h3>
+                  <p style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.5, fontWeight: 500 }}>
+                    Пн–Пт: 09:00 — 18:00<br />Сб, Вс: выходной
+                  </p>
+                </div>
 
-                  {/* Режим работы */}
-                  <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                    <div style={{ color: 'var(--color-gold)', marginTop: '2px' }}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: '0 0 8px 0' }}>Режим работы</h4>
-                      <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.5 }}>
-                        Пн–Пт: 09:00 — 18:00<br />
-                        Сб, Вс: выходной
-                      </p>
-                    </div>
-                  </div>
-
+                {/* 4. Email */}
+                <div style={{ background: 'var(--color-white)', padding: '32px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Электронная почта
+                  </h3>
+                  <a href="mailto:info@dejure-help.ru" style={{ fontSize: '20px', color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 500 }}>
+                    info@dejure-help.ru
+                  </a>
                 </div>
               </div>
             </div>
@@ -196,69 +178,108 @@ export default function ContactsPage() {
             </h2>
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '40px', alignItems: 'flex-start' }}>
-              {/* Карта */}
-              <div style={{ borderRadius: '4px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
-                <MapWidget />
-              </div>
-              
-              {/* Инструкция и фото */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  Здание находится в пяти минутах от площади Петра Великого. Вход расположен со стороны улицы Советской (центральный вход, 2-й этаж). Рядом находится бесплатная парковка, а также остановка общественного транспорта «Площадь Революции» или «Театральная».
-                </p>
+              {/* Инструкция (40-45%) */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', order: 2 }}>
                 
-                <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                  <a href="https://yandex.ru/maps/?text=г.+Липецк,+ул.+Советская,+д.+35" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14px' }}>
-                    Построить маршрут
+                {/* Краткие данные */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', background: 'var(--color-white)', padding: '24px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                  <div>
+                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Адрес</div>
+                    <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>г. Липецк, ул. Советская, д. 35, офис 213</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Этаж</div>
+                    <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>2-й</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Пропускной режим</div>
+                    <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>Нет</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Лифт</div>
+                    <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>Нет</div>
+                  </div>
+                  <div style={{ gridColumn: '1 / -1' }}>
+                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Ближайшая остановка</div>
+                    <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>«Улица Горького», до 1 минуты пешком</div>
+                  </div>
+                </div>
+
+                {/* Инструкция */}
+                <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <p style={{ margin: 0 }}>В здание можно войти через любой из двух общих входов, расположенных со стороны улицы Советской в правой и левой частях фасада. Офис ЮК «Де-Юре» находится на втором этаже. Отдельного входа и пропускного режима нет.</p>
+                  <p style={{ margin: 0 }}>Если вы вошли через правый вход, поднимитесь по лестнице на второй этаж и поверните в коридоре направо. Если вошли через левый вход — поднимитесь на второй этаж и поверните налево. Лифта в здании нет.</p>
+                  <p style={{ margin: 0 }}>Ближайшая остановка — «Улица Горького». От неё до здания идти не более одной минуты. В зависимости от стороны, с которой вы приехали, потребуется перейти одну или две дороги.</p>
+                  <p style={{ margin: 0 }}>Непосредственно у здания парковки нет. Автомобиль можно оставить на стоянке напротив здания через дорогу на улице Советской либо на стоянке немного дальше, на улице Горького.</p>
+                </div>
+                
+              </div>
+
+              {/* Карта (55-60%) */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', order: 1 }}>
+                <div style={{ borderRadius: '4px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
+                  {/* Маркер установлен на г. Липецк, ул. Советская, д. 35 (52.608826, 39.598217) */}
+                  <MapWidget />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                  <a href="https://yandex.ru/maps/?pt=39.598217,52.608826&z=17&text=г.+Липецк,+ул.+Советская,+д.+35" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14px' }}>
+                    Построить маршрут до офиса
                   </a>
-                  <CopyAddressButton address="г. Липецк, ул. Советская, д. 35, оф. 213" />
-                </div>
-                
-                {/* Фотография здания (Плейсхолдер до получения фото от маркетолога) */}
-                <div style={{ marginTop: '16px', borderRadius: '4px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.05)', background: '#e0e0e0', height: '250px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#888', fontSize: '14px' }}>[Фотография здания будет добавлена позже]</span>
                 </div>
               </div>
+
             </div>
+
+            {/* Плейсхолдер под фото фасада */}
+            <div style={{ marginTop: '40px', borderRadius: '4px', overflow: 'hidden', border: '1px dashed rgba(23, 50, 77, 0.2)', background: 'rgba(23, 50, 77, 0.02)', height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span style={{ color: 'var(--color-text-secondary)', fontSize: '15px' }}>[Здесь будет размещена фотография фасада здания]</span>
+            </div>
+            
           </div>
         </section>
 
         {/* 3. Форма и Реквизиты */}
         <section className="section" style={{ padding: '80px 0', background: 'var(--color-white)' }}>
           <div className="container">
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-              
-              <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 40px 0', textAlign: 'center' }}>
+            
+            {/* Убрали чрезмерное доминирование формы. Ограничили ширину. */}
+            <div style={{ maxWidth: '600px', margin: '0 auto 60px auto' }}>
+              <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 24px 0', textAlign: 'center' }}>
                 Написать нам
               </h2>
-              
-              <div style={{ background: 'var(--color-cream)', padding: '40px', borderRadius: '4px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', marginBottom: '60px' }}>
+              <div style={{ background: 'var(--color-cream)', padding: '32px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
                 <ContactsForm title="" subtitle="" />
               </div>
-              
-              <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 32px 0' }}>
+            </div>
+
+            {/* Блок реквизитов */}
+            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+              <h2 style={{ fontSize: '28px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 24px 0' }}>
                 Реквизиты
               </h2>
               
-              <div style={{ padding: '32px', background: 'rgba(23, 50, 77, 0.03)', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '4px', fontSize: '15px', lineHeight: 1.6, color: 'var(--color-deep-blue)' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', marginBottom: '32px' }}>
+              <div style={{ padding: '32px', background: 'rgba(23, 50, 77, 0.02)', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '4px', fontSize: '15px', lineHeight: 1.6, color: 'var(--color-deep-blue)' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px', marginBottom: '32px' }}>
                   <div>
                     <strong>ООО ЮК «ДЕ-ЮРЕ»</strong><br />
-                    <span style={{ color: 'var(--color-text-secondary)' }}>ИНН:</span> 4800009680<br />
-                    <span style={{ color: 'var(--color-text-secondary)' }}>ОГРН:</span> 1234800008464
+                    <span style={{ color: 'var(--color-text-secondary)' }}>ИНН/КПП:</span> 4800009680 / 480001001<br />
+                    <span style={{ color: 'var(--color-text-secondary)' }}>ОГРН:</span> 1234800008464<br />
+                    <span style={{ color: 'var(--color-text-secondary)' }}>Руководитель:</span> Шалавин Д.Г.
                   </div>
                   <div>
                     <strong>Юридический адрес:</strong><br />
-                    398902, Липецкая обл., г. Липецк,<br />ул. Юношеская, влд. 46Б, пом. 1
+                    398902, Липецкая обл., г. Липецк,<br />ул. Юношеская, влд. 46Б, пом. 1<br />
+                    <strong style={{ display: 'block', marginTop: '12px' }}>Фактический адрес:</strong>
+                    398059, г. Липецк, ул. Советская, 35, оф. 213
                   </div>
                 </div>
                 
                 <a href="/docs/kartochka-predpriyatiya.pdf" download target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14px', borderColor: 'rgba(23, 50, 77, 0.2)', color: 'var(--color-deep-blue)' }}>
-                  Скачать карточку предприятия (PDF)
+                  Скачать карточку организации
                 </a>
               </div>
-
             </div>
+            
           </div>
         </section>
 
