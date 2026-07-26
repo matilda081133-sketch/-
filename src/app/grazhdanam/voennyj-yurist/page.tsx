@@ -175,6 +175,7 @@ export default function MilitaryLawyerHub() {
         subtitle="Защита по уголовным делам (СОЧ, дезертирство, неисполнение приказа), оспаривание незаконных решений ВВК и призывных комиссий, помощь в получении положенных выплат для военнослужащих и членов их семей."
         primaryCtaText="Обсудить ситуацию"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        imageUrl="/-/images/team-process.jpg"
         trustItems={[]} // Removed from hero per TZ
       />
 

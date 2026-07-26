@@ -15,6 +15,10 @@ type HeroProps = {
   trustItems?: { icon?: React.ReactNode; text: string }[];
 };
 
+import Image from 'next/image';
+
+type ExtendedHeroProps = HeroProps & { imageUrl?: string; };
+
 export default function MilitaryHero({
   breadcrumbs,
   superTitle,
@@ -26,8 +30,9 @@ export default function MilitaryHero({
   secondaryCtaText,
   secondaryCtaLink,
   urgentHint,
-  trustItems = []
-}: HeroProps) {
+  trustItems = [],
+  imageUrl
+}: ExtendedHeroProps) {
   return (
     <section style={{ 
       position: 'relative', 
@@ -123,18 +128,23 @@ export default function MilitaryHero({
               <div style={{ 
                 width: '100%', 
                 aspectRatio: '3/4', 
-                backgroundColor: '#e5e5e5', 
+                backgroundColor: 'var(--color-white)', 
                 overflow: 'hidden',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: 'var(--color-text-secondary)',
                 fontSize: '14px',
-                border: '1px dashed var(--color-border)'
+                border: '1px solid var(--color-border)',
+                position: 'relative'
               }}>
-                <span style={{ padding: '20px', textAlign: 'center' }}>
-                  [Фото специалиста]
-                </span>
+                {imageUrl ? (
+                  <Image src={imageUrl} alt={title?.toString() || 'Специалист'} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 500px" priority />
+                ) : (
+                  <span style={{ padding: '20px', textAlign: 'center', fontStyle: 'italic' }}>
+                    [Фото специалиста]
+                  </span>
+                )}
               </div>
             </div>
           </div>
