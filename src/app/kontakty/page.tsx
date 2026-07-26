@@ -214,7 +214,7 @@ export default function ContactsPage() {
                 </div>
 
                 {/* Инструкция */}
-                <div style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+                <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
                   <p style={{ margin: 0 }}>В здание можно войти через любой из двух общих входов, расположенных со стороны улицы Советской в правой и левой частях фасада. Офис ЮК «Де-Юре» находится на втором этаже. Отдельного входа и пропускного режима нет.</p>
                   <p style={{ margin: 0 }}>Если вы вошли через правый вход, поднимитесь по лестнице на второй этаж и поверните в коридоре направо. Если вошли через левый вход — поднимитесь на второй этаж и поверните налево. Лифта в здании нет.</p>
                   <p style={{ margin: 0 }}>Ближайшая остановка — «Улица Горького». От неё до здания идти не более одной минуты. В зависимости от стороны, с которой вы приехали, потребуется перейти одну или две дороги.</p>
@@ -257,7 +257,7 @@ export default function ContactsPage() {
                   Реквизиты
                 </h2>
                 
-                <div style={{ padding: '32px', background: 'rgba(23, 50, 77, 0.02)', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '4px', fontSize: '15px', lineHeight: 1.6, color: 'var(--color-deep-blue)' }}>
+                <div style={{ padding: '32px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', fontSize: '15px', lineHeight: 1.6, color: 'var(--color-deep-blue)' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '32px' }}>
                     <div>
                       <strong style={{ fontSize: '16px' }}>ООО ЮК «ДЕ-ЮРЕ»</strong><br />
