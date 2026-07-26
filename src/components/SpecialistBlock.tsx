@@ -2,12 +2,15 @@
 
 import React from 'react';
 
+import Image from 'next/image';
+
 export interface SpecialistBlockProps {
   title?: string;
   name: string;
   position: string;
-  description: string[];
+  description: (string | React.ReactNode)[];
   photoPlaceholder?: string;
+  imageUrl?: string;
   buttonText?: string;
   buttonHref?: string;
 }
@@ -18,6 +21,7 @@ export default function SpecialistBlock({
   position,
   description,
   photoPlaceholder = "[Фото специалиста]",
+  imageUrl,
   buttonText = "Задать вопрос специалисту",
   buttonHref = "#consultation"
 }: SpecialistBlockProps) {
@@ -50,11 +54,16 @@ export default function SpecialistBlock({
               justifyContent: 'center',
               color: 'var(--color-text-secondary)',
               fontSize: '14px',
-              border: '1px solid var(--color-border)'
+              border: '1px solid var(--color-border)',
+              position: 'relative'
             }}>
-              <span style={{ padding: '20px', textAlign: 'center', fontStyle: 'italic' }}>
-                {photoPlaceholder}
-              </span>
+              {imageUrl ? (
+                <Image src={imageUrl} alt={name} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 500px" />
+              ) : (
+                <span style={{ padding: '20px', textAlign: 'center', fontStyle: 'italic' }}>
+                  {photoPlaceholder}
+                </span>
+              )}
             </div>
           </div>
           

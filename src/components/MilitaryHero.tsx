@@ -29,20 +29,22 @@ export default function MilitaryHero({
   trustItems = []
 }: HeroProps) {
   return (
-    <div style={{ background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
-      <section style={{ 
-        position: 'relative',
-        paddingTop: '160px', 
-        paddingBottom: '80px'
-      }}>
-        {/* Decorative circle container */}
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, overflow: 'hidden', pointerEvents: 'none' }}>
-          <div style={{
-            position: 'absolute', top: '-20%', left: '-5%', width: '500px', height: '500px',
-            background: 'radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)',
-            borderRadius: '50%', zIndex: 0
-          }} />
-        </div>
+    <section style={{ 
+      position: 'relative', 
+      minHeight: '85vh', 
+      display: 'flex', 
+      alignItems: 'center',
+      paddingTop: '160px',
+      paddingBottom: '80px',
+      background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
+      overflow: 'hidden'
+    }}>
+      {/* Decorative circle */}
+      <div style={{
+        position: 'absolute', top: '-10%', right: '-5%', width: '600px', height: '600px',
+        background: 'radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)',
+        borderRadius: '50%', zIndex: 0
+      }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }} className="lg:flex-row">
@@ -137,7 +139,6 @@ export default function MilitaryHero({
             </div>
           </div>
         </div>
-      </section>
-    </div>
+    </section>
   );
 }
