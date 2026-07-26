@@ -182,7 +182,7 @@ export default function ContactsPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', order: 2 }}>
                 
                 {/* Краткие данные (Оформленная карточка) */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', background: 'var(--color-white)', padding: '32px', borderRadius: '4px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.08)', borderTop: '4px solid var(--color-gold)' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', background: 'var(--color-white)', padding: '32px', borderRadius: '4px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.08)', borderTop: '4px solid var(--color-gold)' }}>
                   <div style={{ gridColumn: '1 / -1', marginBottom: '8px' }}>
                     <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
@@ -196,12 +196,12 @@ export default function ContactsPage() {
                     <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>г. Липецк, ул. Советская, д.&nbsp;35, офис 213</div>
                   </div>
                   <div>
-                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Этаж</div>
-                    <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>2-й</div>
-                  </div>
-                  <div>
                     <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Пропускной режим</div>
                     <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>Нет</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Этаж</div>
+                    <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>2-й</div>
                   </div>
                   <div>
                     <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Лифт</div>
