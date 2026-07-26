@@ -59,7 +59,7 @@ export default function MapWidget() {
   return (
     <div 
       ref={mapRef} 
-      style={{ width: '100%', height: '480px', background: '#e5e3df', position: 'relative', border: '1px solid rgba(23, 50, 77, 0.1)' }}
+      style={{ width: '100%', height: '100%', minHeight: '400px', background: '#e5e3df', position: 'relative', border: '1px solid rgba(23, 50, 77, 0.1)' }}
       title="Карта проезда к офису Де-Юре"
     />
   );

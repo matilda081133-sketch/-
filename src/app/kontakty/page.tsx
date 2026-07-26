@@ -133,7 +133,7 @@ export default function ContactsPage() {
                     Адрес офиса
                   </h3>
                   <p style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.5, fontWeight: 500 }}>
-                    г. Липецк, ул. Советская, д. 35,<br/>офис 213
+                    г. Липецк, ул. Советская, д.&nbsp;35,<br/>офис 213
                   </p>
                   <div style={{ marginTop: 'auto' }}>
                     <CopyAddressButton address="г. Липецк, ул. Советская, д. 35, офис 213" />
@@ -177,15 +177,23 @@ export default function ContactsPage() {
               Как добраться
             </h2>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '40px', alignItems: 'flex-start' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.3fr) minmax(0, 1fr)', gap: '40px', alignItems: 'stretch' }}>
               {/* Инструкция (40-45%) */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', order: 2 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', order: 2 }}>
                 
-                {/* Краткие данные */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', background: 'var(--color-white)', padding: '24px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-                  <div>
+                {/* Краткие данные (Оформленная карточка) */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', background: 'var(--color-white)', padding: '32px', borderRadius: '4px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.08)', borderTop: '4px solid var(--color-gold)' }}>
+                  <div style={{ gridColumn: '1 / -1', marginBottom: '8px' }}>
+                    <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                      Информация о здании
+                    </h3>
+                  </div>
+                  <div style={{ gridColumn: '1 / -1' }}>
                     <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Адрес</div>
-                    <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>г. Липецк, ул. Советская, д. 35, офис 213</div>
+                    <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>г. Липецк, ул. Советская, д.&nbsp;35, офис 213</div>
                   </div>
                   <div>
                     <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Этаж</div>
@@ -201,12 +209,12 @@ export default function ContactsPage() {
                   </div>
                   <div style={{ gridColumn: '1 / -1' }}>
                     <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Ближайшая остановка</div>
-                    <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>«Улица Горького», до 1 минуты пешком</div>
+                    <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>«Улица Горького», до 1 минуты пешком</div>
                   </div>
                 </div>
 
                 {/* Инструкция */}
-                <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
                   <p style={{ margin: 0 }}>В здание можно войти через любой из двух общих входов, расположенных со стороны улицы Советской в правой и левой частях фасада. Офис ЮК «Де-Юре» находится на втором этаже. Отдельного входа и пропускного режима нет.</p>
                   <p style={{ margin: 0 }}>Если вы вошли через правый вход, поднимитесь по лестнице на второй этаж и поверните в коридоре направо. Если вошли через левый вход — поднимитесь на второй этаж и поверните налево. Лифта в здании нет.</p>
                   <p style={{ margin: 0 }}>Ближайшая остановка — «Улица Горького». От неё до здания идти не более одной минуты. В зависимости от стороны, с которой вы приехали, потребуется перейти одну или две дороги.</p>
@@ -217,12 +225,12 @@ export default function ContactsPage() {
 
               {/* Карта (55-60%) */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', order: 1 }}>
-                <div style={{ borderRadius: '4px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
+                <div style={{ borderRadius: '4px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', flex: 1, minHeight: '400px' }}>
                   {/* Маркер установлен на г. Липецк, ул. Советская, д. 35 (52.608826, 39.598217) */}
                   <MapWidget />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                  <a href="https://yandex.ru/maps/?pt=39.598217,52.608826&z=17&text=г.+Липецк,+ул.+Советская,+д.+35" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14px' }}>
+                  <a href="https://yandex.ru/maps/?pt=39.598217,52.608826&z=17&text=г.+Липецк,+ул.+Советская,+д.+35" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '16px 32px', fontSize: '15px' }}>
                     Построить маршрут до офиса
                   </a>
                 </div>
@@ -241,45 +249,47 @@ export default function ContactsPage() {
         {/* 3. Форма и Реквизиты */}
         <section className="section" style={{ padding: '80px 0', background: 'var(--color-white)' }}>
           <div className="container">
-            
-            {/* Убрали чрезмерное доминирование формы. Ограничили ширину. */}
-            <div style={{ maxWidth: '600px', margin: '0 auto 60px auto' }}>
-              <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 24px 0', textAlign: 'center' }}>
-                Написать нам
-              </h2>
-              <div style={{ background: 'var(--color-cream)', padding: '32px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-                <ContactsForm title="" subtitle="" />
-              </div>
-            </div>
-
-            {/* Блок реквизитов */}
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-              <h2 style={{ fontSize: '28px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 24px 0' }}>
-                Реквизиты
-              </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '60px', alignItems: 'flex-start' }}>
               
-              <div style={{ padding: '32px', background: 'rgba(23, 50, 77, 0.02)', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '4px', fontSize: '15px', lineHeight: 1.6, color: 'var(--color-deep-blue)' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px', marginBottom: '32px' }}>
-                  <div>
-                    <strong>ООО ЮК «ДЕ-ЮРЕ»</strong><br />
-                    <span style={{ color: 'var(--color-text-secondary)' }}>ИНН/КПП:</span> 4800009680 / 480001001<br />
-                    <span style={{ color: 'var(--color-text-secondary)' }}>ОГРН:</span> 1234800008464<br />
-                    <span style={{ color: 'var(--color-text-secondary)' }}>Руководитель:</span> Шалавин Д.Г.
-                  </div>
-                  <div>
-                    <strong>Юридический адрес:</strong><br />
-                    398902, Липецкая обл., г. Липецк,<br />ул. Юношеская, влд. 46Б, пом. 1<br />
-                    <strong style={{ display: 'block', marginTop: '12px' }}>Фактический адрес:</strong>
-                    398059, г. Липецк, ул. Советская, 35, оф. 213
-                  </div>
-                </div>
+              {/* Левая колонка: Реквизиты */}
+              <div>
+                <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 32px 0' }}>
+                  Реквизиты
+                </h2>
                 
-                <a href="/docs/kartochka-predpriyatiya.pdf" download target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14px', borderColor: 'rgba(23, 50, 77, 0.2)', color: 'var(--color-deep-blue)' }}>
-                  Скачать карточку организации
-                </a>
+                <div style={{ padding: '32px', background: 'rgba(23, 50, 77, 0.02)', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '4px', fontSize: '15px', lineHeight: 1.6, color: 'var(--color-deep-blue)' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '32px' }}>
+                    <div>
+                      <strong style={{ fontSize: '16px' }}>ООО ЮК «ДЕ-ЮРЕ»</strong><br />
+                      <span style={{ color: 'var(--color-text-secondary)' }}>ИНН/КПП:</span> 4800009680 / 480001001<br />
+                      <span style={{ color: 'var(--color-text-secondary)' }}>ОГРН:</span> 1234800008464<br />
+                      <span style={{ color: 'var(--color-text-secondary)' }}>Руководитель:</span> Шалавин Д.Г.
+                    </div>
+                    <div>
+                      <strong>Юридический адрес:</strong><br />
+                      398902, Липецкая обл., г. Липецк,<br />ул. Юношеская, влд. 46Б, пом. 1<br />
+                      <strong style={{ display: 'block', marginTop: '12px' }}>Фактический адрес:</strong>
+                      398059, г. Липецк, ул. Советская, 35, оф. 213
+                    </div>
+                  </div>
+                  
+                  <a href="/docs/kartochka-predpriyatiya.pdf" download target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14px', borderColor: 'rgba(23, 50, 77, 0.2)', color: 'var(--color-deep-blue)', display: 'inline-block' }}>
+                    Скачать карточку организации
+                  </a>
+                </div>
               </div>
+
+              {/* Правая колонка: Форма */}
+              <div>
+                <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 32px 0' }}>
+                  Написать нам
+                </h2>
+                <div style={{ background: 'var(--color-cream)', padding: '32px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                  <ContactsForm title="" subtitle="" />
+                </div>
+              </div>
+
             </div>
-            
           </div>
         </section>
 
