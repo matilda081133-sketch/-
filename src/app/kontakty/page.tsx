@@ -292,7 +292,7 @@ export default function ContactsPage() {
                 <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 32px 0' }}>
                   Написать нам
                 </h2>
-                <div style={{ background: 'var(--color-cream)', padding: '32px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                <div style={{ gridColumn: '1 / -1', background: 'var(--color-cream)', padding: '24px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
                   <ContactsForm title="" subtitle="" />
                 </div>
               </div>
