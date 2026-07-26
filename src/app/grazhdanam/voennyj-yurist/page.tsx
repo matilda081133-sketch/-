@@ -6,6 +6,7 @@ import FAQBlock from '@/components/FAQBlock';
 import MilitaryHero from '@/components/MilitaryHero';
 import UrgentContactStrip from '@/components/UrgentContactStrip';
 import SpecialistBlock from '@/components/SpecialistBlock';
+import ProcessBlock from '@/components/ProcessBlock';
 import CasesBlock from '@/components/CasesBlock';
 import PricingBlock from '@/components/PricingBlock';
 import Head from 'next/head';
@@ -280,6 +281,19 @@ export default function MilitaryLawyerHub() {
         photoPlaceholder="[Фото Д.С. Конопкина]"
         buttonText="Задать вопрос адвокату"
         buttonHref="#form"
+      />
+
+      {/* Как проходит работа */}
+      <ProcessBlock 
+        title="Как проходит работа"
+        subtitle=""
+        ctaTitle=""
+        steps={[
+          { num: '01', title: 'Первичный разбор', desc: 'Уточняем обстоятельства, срочность, процессуальную стадию и имеющиеся документы.' },
+          { num: '02', title: 'Определяем специалиста', desc: 'Понимаем, нужен ли адвокат либо задачу вправе выполнить юрист.' },
+          { num: '03', title: 'Согласовываем объём', desc: 'Фиксируем перечень работ, формат взаимодействия, стоимость и условия в договоре.' },
+          { num: '04', title: 'Приступаем к работе', desc: 'Готовим документы, участвуем в необходимых действиях и сообщаем клиенту о ходе дела.' }
+        ]}
       />
 
       {/* 6. Дела из практики */}

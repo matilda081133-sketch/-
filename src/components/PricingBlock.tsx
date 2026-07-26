@@ -92,7 +92,15 @@ export default function PricingBlock({
           </p>
         </div>
 
-        <div className="grid grid-3" style={{ gap: '30px', alignItems: 'stretch' }}>
+        <div 
+          className={tiers.length >= 3 ? "grid grid-3" : "grid grid-2"} 
+          style={{ 
+            gap: '30px', 
+            alignItems: 'stretch',
+            maxWidth: tiers.length === 2 ? '850px' : 'none',
+            margin: tiers.length === 2 ? '0 auto' : '0'
+          }}
+        >
           {tiers.map((tier, idx) => (
             <div key={idx} style={{
               background: tier.popular ? 'linear-gradient(145deg, #10273B 0%, #1F3F5C 100%)' : 'var(--color-white)',

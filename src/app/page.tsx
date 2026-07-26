@@ -5,6 +5,7 @@ import ServicesTabs from '@/components/ServicesTabs';
 import FAQBlock from '@/components/FAQBlock';
 import PricingBlock from '@/components/PricingBlock';
 import PhoneInput from '@/components/PhoneInput';
+import ProcessBlock from '@/components/ProcessBlock';
 import CasesBlock from '@/components/CasesBlock';
 import ReviewsBlock from '@/components/ReviewsBlock';
 import Footer from '@/components/Footer';
@@ -394,98 +395,16 @@ export default function Home() {
  </div>
  </section>
 
- {/* 4. КАК МЫ РАБОТАЕМ (СВЕТЛЫЙ СТАТИЧНЫЙ БЛОК) */}
- <section className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
- {/* Organic graphic background */}
- <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'radial-gradient(circle at 0% 0%, rgba(193, 160, 102, 0.04) 0%, transparent 50%), radial-gradient(circle at 100% 100%, rgba(23, 50, 77, 0.03) 0%, transparent 50%)', pointerEvents: 'none' }}></div>
- 
- <div className="container" style={{ position: 'relative', zIndex: 1 }}>
- <div style={{ textAlign: 'center', marginBottom: '50px' }}>
- <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '42px', color: 'var(--color-deep-blue)', marginBottom: '24px' }}>
- Что происходит после обращения
- </h2>
- <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
- Каждое судебное дело уникально, но наш подход всегда остается системным. Прозрачный процесс работы от первой юридической консультации и досудебного урегулирования до вынесения итогового решения суда.
- </p>
- </div>
+       {/* 4. КАК МЫ РАБОТАЕМ */}
+      <ProcessBlock 
+        steps={[
+          { num: '01', title: 'Первичное обращение', desc: 'Уточняем суть вопроса, запрашиваем необходимые документы и определяем профильного специалиста.' },
+          { num: '02', title: 'Консультация и план действий', desc: 'Изучаем исходные материалы, оцениваем возможные варианты, риски, объём и стоимость дальнейшей работы.' },
+          { num: '03', title: 'Договор и ведение дела', desc: 'Заключаем договор, формируем правовую позицию и выполняем согласованные действия: готовим документы, представляем интересы в суде, взаимодействуем с ФССП и государственными органами.' }
+        ]}
+      />
 
- <div style={{ position: 'relative' }}>
- <div className="grid grid-3" style={{ gap: '40px' }}>
- {[
- { num: '01', title: 'Первичное обращение', desc: 'Уточняем суть вопроса, запрашиваем необходимые документы и определяем профильного специалиста.' },
- { num: '02', title: 'Консультация и план действий', desc: 'Изучаем исходные материалы, оцениваем возможные варианты, риски, объём и стоимость дальнейшей работы.' },
- { num: '03', title: 'Договор и ведение дела', desc: 'Заключаем договор, формируем правовую позицию и выполняем согласованные действия: готовим документы, представляем интересы в суде, взаимодействуем с ФССП и государственными органами.' },
- ].map((step, i) => (
- <div key={i} style={{ 
- position: 'relative',
- zIndex: 1,
- display: 'flex',
- flexDirection: 'column',
- background: 'transparent',
- padding: '10px'
- }} className="stage-item">
- 
- {/* Organic Number / Dot */}
- <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '30px' }}>
- <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'var(--color-white)', border: '1px solid rgba(193, 160, 102, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', fontWeight: '300', fontSize: '24px', fontFamily: 'var(--font-serif)', boxShadow: '0 10px 20px rgba(23, 50, 77, 0.05)', position: 'relative' }}>
- {step.num}
- <div style={{ position: 'absolute', inset: '4px', borderRadius: '50%', border: '1px dashed rgba(193, 160, 102, 0.3)' }}></div>
- </div>
- </div>
-
- <h4 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
- {step.title}
- </h4>
- <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center' }}>
- {step.desc}
- </p>
- </div>
- ))}
- </div>
- 
- {/* CTA inside Process Block */}
- <div className="process-cta-banner" style={{ 
- marginTop: '40px', 
- background: 'var(--color-deep-blue)', 
- padding: '24px 32px',
- display: 'flex',
- alignItems: 'center',
- justifyContent: 'space-between',
- gap: '24px',
- flexWrap: 'wrap'
- }}>
- <div style={{ flex: '1 1 300px' }}>
- <h3 style={{ fontSize: '18px', color: 'var(--color-white)', marginBottom: '8px', fontWeight: '600', fontFamily: 'var(--font-sans)' }}>
- Начните с первичного обращения
- </h3>
- <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)', margin: 0, lineHeight: 1.5 }}>
- Кратко опишите ситуацию — мы уточним обстоятельства, скажем, какие документы потребуются, и определим следующий шаг.
- </p>
- </div>
- <a href="#consultation" className="btn btn-light" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>Обсудить ситуацию</a>
- </div>
-
- </div>
- </div>
- <style dangerouslySetInnerHTML={{__html:`
- .stage-item {
- transition: transform 0.4s ease;
- }
- .stage-item:hover {
- transform: translateY(-8px);
- }
- .stage-item:hover > div > div {
- background: var(--color-primary) !important;
- color: var(--color-white) !important;
- box-shadow: 0 15px 30px rgba(193, 160, 102, 0.3) !important;
- }
- .stage-item > div > div {
- transition: all 0.4s ease;
- }
- `}} />
- </section>
-
- {/* 5. TEAM */}
+      {/* 5. TEAM */}
  <TeamCarousel />
 
        {/* 6. CASES */}
