@@ -390,25 +390,6 @@ export default function MilitaryLawyerHub() {
         </div>
       </section>
 
-      {/* 9. Как проходит работа */}
-      <section className="section" style={{ background: 'var(--color-cream)' }}>
-        <div className="container">
-          <h2 className="section-title text-center" style={{ marginBottom: '40px' }}>Как проходит работа</h2>
-          <div className="grid grid-4" style={{ gap: '24px' }}>
-            {[
-              { t: '1. Первичный разбор', d: 'Уточняем обстоятельства, срочность, процессуальную стадию и имеющиеся документы.' },
-              { t: '2. Определяем специалиста', d: 'Понимаем, нужен ли адвокат либо задачу вправе выполнить юрист.' },
-              { t: '3. Согласовываем объём', d: 'Фиксируем перечень работ, формат взаимодействия, стоимость и условия в договоре.' },
-              { t: '4. Приступаем к работе', d: 'Готовим документы, участвуем в необходимых действиях и сообщаем клиенту о ходе дела.' }
-            ].map((step, i) => (
-              <div key={i} style={{ padding: '24px', background: 'var(--color-white)', borderTop: '4px solid var(--color-primary)' }}>
-                <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>{step.t}</h4>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.5 }}>{step.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 10. Стоимость */}
       {/* 10. PRICES */}
