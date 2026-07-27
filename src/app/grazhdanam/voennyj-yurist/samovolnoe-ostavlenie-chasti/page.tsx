@@ -372,7 +372,7 @@ export default function SochPage() {
               }
             `}} />
 
-            <div style={{ background: 'var(--color-deep-blue)', padding: '40px', borderRadius: '4px', color: 'var(--color-white)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div style={{ background: 'var(--color-deep-blue)', padding: '40px', borderRadius: '4px', color: 'var(--color-white)', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignSelf: 'flex-start' }}>
               <h3 style={{ fontSize: '24px', color: 'var(--color-gold)', marginBottom: '24px', fontFamily: 'var(--font-serif)' }}>Что сообщить при первом обращении</h3>
               <p style={{ fontSize: '16px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)', marginBottom: '24px' }}>
                 Где сейчас находится военнослужащий; как долго он отсутствует; служит по призыву или по контракту; известно ли о розыске или возбужденном деле; вызывали ли его для объяснений или на допрос; давал ли он объяснения; какие документы сохранились. Если часть сведений неизвестна, это не препятствует обращению.

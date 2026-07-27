@@ -306,24 +306,17 @@ export default function MilitaryLawyerHub() {
       </section>
 
       {/* 5. Ведущий юрист */}
-      {/* 5. Ведущий юрист */}
-      <section className="section bg-white" style={{ position: 'relative', overflow: 'hidden' }}>
-        <div className="container">
-          <div className="reveal-on-scroll" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '42px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', lineHeight: 1.1 }}>
-              Руководитель практики военного права
-            </h2>
-            <h3 style={{ fontSize: '28px', color: 'var(--color-primary)', marginBottom: '16px', fontFamily: 'var(--font-serif)' }}>
-              Дмитрий Сергеевич Конопкин
-            </h3>
-            <div style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '32px' }}>
-              <p style={{ marginBottom: '16px' }}>С 2016 по 2022 год работал в Следственном комитете, прошел путь до старшего следователя отдела по расследованию особо важных дел. С 2022 года занимается адвокатской практикой.</p>
-              <p>Опыт следственной работы помогает оценивать доказательства, выявлять процессуальные нарушения и выстраивать защиту по сложным делам.</p>
-            </div>
-            <a href="#form" className="btn btn-primary">Задать вопрос адвокату</a>
-          </div>
-        </div>
-      </section>
+      <SpecialistBlock 
+        title="Руководитель практики военного права"
+        name="Дмитрий Сергеевич Конопкин"
+        position="Адвокат"
+        description={[
+          "С 2016 по 2022 год работал в Следственном комитете, прошел путь до старшего следователя отдела по расследованию особо важных дел. С 2022 года занимается адвокатской практикой.",
+          "Опыт следственной работы помогает оценивать доказательства, выявлять процессуальные нарушения и выстраивать защиту по сложным делам."
+        ]}
+        imageUrl="/-/images/konopkin.jpg"
+        buttonText="Задать вопрос адвокату"
+      />
 
       {/* Как проходит работа */}
       <ProcessBlock 
