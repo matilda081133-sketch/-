@@ -58,7 +58,7 @@ export default function MilitaryHero({
       }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }} className="lg:flex-row">
+          <div className={imageUrl ? "grid grid-2" : ""} style={{ display: imageUrl ? 'grid' : 'flex', flexDirection: 'column', gap: '40px', alignItems: 'center' }}>
             {/* Left Column */}
             <div style={{ flex: '1 1 0%' }}>
               {breadcrumbs && (

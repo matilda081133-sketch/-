@@ -309,12 +309,21 @@ export default function MilitaryLawyerHub() {
       <SpecialistBlock 
         title="Руководитель практики военного права"
         name="Дмитрий Сергеевич Конопкин"
-        position="Адвокат"
-        description={[
-          "С 2016 по 2022 год работал в Следственном комитете, прошел путь до старшего следователя отдела по расследованию особо важных дел. С 2022 года занимается адвокатской практикой.",
-          "Опыт следственной работы помогает оценивать доказательства, выявлять процессуальные нарушения и выстраивать защиту по сложным делам."
-        ]}
+        position="Адвокат, ведущий юрист военного направления"
         imageUrl="/-/images/konopkin.jpg"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>Подключается к защите на стадии проверки, предварительного расследования и судебного разбирательства, участвует в процессуальных действиях и сопровождает доверителя при взаимодействии со следственными органами.</span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
+              Опыт работы в Следственном комитете
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
+              Реестровый номер 48/812
+            </li>
+          </ul>
+        ]}
         buttonText="Задать вопрос адвокату"
       />
 
