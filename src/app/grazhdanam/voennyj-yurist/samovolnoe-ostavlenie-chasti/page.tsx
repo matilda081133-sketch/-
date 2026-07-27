@@ -547,7 +547,7 @@ export default function SochPage() {
                 Если человека задержали или он готовится явиться,<br /> не откладывайте связь<br /> с адвокатом
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Уточним срочность, местонахождение и необходимые документы.
+                Уточним срочность, местонахождение<br />и необходимые документы.
               </p>
               
               <div style={{ marginTop: 'auto', marginBottom: '32px' }}>
