@@ -122,12 +122,6 @@ export default function SochPage() {
                   box-shadow: 0 20px 40px rgba(23, 50, 77, 0.15);
                   transform: translateY(-4px);
                 }
-                .hero-photo-img {
-                  transition: transform 0.6s ease;
-                }
-                .hero-photo-hover:hover .hero-photo-img {
-                  transform: scale(1.03);
-                }
               `}} />
               <div>
                 <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Дмитрий Сергеевич Конопкин</div>
@@ -250,50 +244,31 @@ export default function SochPage() {
                 <svg width="150" height="150" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
               </div>
               <h3 style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '24px', position: 'relative', zIndex: 1 }}>Что сообщить при первом обращении</h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
-                {[
-                  'Где сейчас находится военнослужащий;',
-                  'Как долго он отсутствует;',
-                  'Служит по призыву или по контракту;',
-                  'Известно ли о розыске или возбужденном деле;',
-                  'Вызывали ли его для объяснений или на допрос;',
-                  'Давал ли он объяснения;',
-                  'Какие документы сохранились.'
-                ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '16px', fontSize: '15px', color: 'rgba(255,255,255,0.9)', alignItems: 'flex-start' }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ padding: '16px', background: 'rgba(255,255,255,0.05)', borderRadius: '4px', borderLeft: '3px solid var(--color-gold)', position: 'relative', zIndex: 1 }}>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, marginBottom: '8px' }}>
-                  <strong>Важно:</strong> Если часть сведений неизвестна, это не препятствует обращению.
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, marginBottom: '20px' }}>
+                  Где сейчас находится военнослужащий; как долго он отсутствует; служит по призыву или по контракту; известно ли о розыске или возбужденном деле; вызывали ли его для объяснений или на допрос; давал ли он объяснения; какие документы сохранились. Если часть сведений неизвестна, это не препятствует обращению.
                 </p>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, margin: 0 }}>
                   Эти сведения нужны для предварительной оценки стадии и возможного формата помощи. Правовая позиция формируется после изучения документов и обстоятельств дела.
                 </p>
               </div>
             </div>
             
-            {/* Правая колонка */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            {/* Правая колонка - Объединенная карточка */}
+            <div style={{ display: 'flex', flexDirection: 'column', background: 'var(--color-white)', borderRadius: '4px', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
               
               {/* Освобождение от ответственности */}
-              <div style={{ background: 'var(--color-white)', padding: '40px', borderRadius: '4px', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-                  <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'var(--color-cream)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)' }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                  </div>
-                  <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>Освобождение от ответственности</h3>
-                </div>
+              <div style={{ padding: '40px' }}>
+                <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px' }}>Освобождение от ответственности</h3>
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.7, margin: 0 }}>
-                  Примечание к статье 337 УК РФ допускает освобождение от уголовной ответственности лица, впервые совершившего деяние (ч. 1–4), если отсутствие стало следствием <strong>стечения тяжёлых обстоятельств</strong>. Это не автоматическое основание: необходимо установить применимую часть статьи и документально подтвердить фактические обстоятельства.
+                  Примечание к статье 337 УК РФ допускает освобождение от уголовной ответственности лица, впервые совершившего деяние (ч. 1–4), если отсутствие стало следствием стечения тяжёлых обстоятельств. Это не автоматическое основание: необходимо установить применимую часть статьи и документально подтвердить фактические обстоятельства.
                 </p>
               </div>
               
+              <div style={{ height: '1px', background: 'var(--color-border)', margin: '0 40px' }}></div>
+              
               {/* Отличие от дезертирства */}
-              <div style={{ background: 'var(--color-white)', padding: '40px', borderRadius: '4px', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
+              <div style={{ padding: '40px' }}>
                 <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px' }}>Чем СОЧ отличается от дезертирства</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {/* СОЧ */}
@@ -396,14 +371,8 @@ export default function SochPage() {
       <section className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'flex-start' }}>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                  Важный нюанс
-                </span>
-              </div>
-              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', lineHeight: 1.1 }}>
+            <div style={{ paddingTop: '40px' }}>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', lineHeight: 1.1, marginTop: 0 }}>
                 Добровольная явка при самовольном оставлении части
               </h2>
               <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
@@ -418,7 +387,7 @@ export default function SochPage() {
               <div style={{ position: 'absolute', top: '-10px', right: '20px', color: 'var(--color-gold)', opacity: 0.1 }}>
                 <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
               </div>
-              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', position: 'relative', zIndex: 1 }}>Чем может помочь адвокат</h3>
+              <h3 style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', position: 'relative', zIndex: 1, marginTop: 0 }}>Чем может помочь адвокат</h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px', position: 'relative', zIndex: 1 }}>
                 {[
                   'Уточнить, возбуждено ли дело и какие решения приняты',
@@ -495,20 +464,11 @@ export default function SochPage() {
             ]
           }
         ]}
+        ctaTitle="Не знаете, какой формат помощи потребуется?"
+        ctaSubtitle="Опишите известные обстоятельства. Адвокат уточнит стадию дела и предложит подходящий формат работы."
+        ctaButtonText="Описать ситуацию"
+        ctaButtonLink="#form"
       />
-      <section className="section bg-white" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div style={{ background: 'var(--color-white)', padding: '40px', borderRadius: '4px', border: '1px solid var(--color-border)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', display: 'flex', flexWrap: 'wrap', gap: '32px', alignItems: 'center', justifyContent: 'space-between' }}>
-            <div style={{ flex: '1 1 400px' }}>
-              <h3 style={{ fontSize: '24px', marginBottom: '16px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>Не знаете, какой формат помощи потребуется?</h3>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0 }}>Опишите известные обстоятельства. Адвокат уточнит стадию дела и предложит подходящий формат работы.</p>
-            </div>
-            <div>
-              <a href="#form" className="btn btn-primary" style={{ padding: '16px 40px' }}>Описать ситуацию</a>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Блок 10. Частые вопросы */}
       <FAQBlock 
@@ -563,7 +523,7 @@ export default function SochPage() {
                 Уточним срочность, местонахождение и необходимые документы.
               </p>
               
-              <div style={{ marginTop: 'auto', marginBottom: '64px' }}>
+              <div style={{ marginTop: 'auto', marginBottom: '32px' }}>
                 <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                   Перезвоним в течение 15 минут

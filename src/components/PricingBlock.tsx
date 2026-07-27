@@ -17,12 +17,20 @@ interface PricingBlockProps {
   title?: string;
   subtitle?: string;
   tiers?: PricingTier[];
+  ctaTitle?: string;
+  ctaSubtitle?: string;
+  ctaButtonText?: string;
+  ctaButtonLink?: string;
 }
 
 export default function PricingBlock({
   title = "Стоимость юридических услуг в Липецке",
   subtitle = "Честные цены, закрепленные в договоре. Никаких скрытых платежей.",
-  tiers: propTiers
+  tiers: propTiers,
+  ctaTitle,
+  ctaSubtitle,
+  ctaButtonText,
+  ctaButtonLink
 }: PricingBlockProps) {
   const defaultTiers: PricingTier[] = [
     {
@@ -165,6 +173,18 @@ export default function PricingBlock({
             </div>
           ))}
         </div>
+        
+        {ctaTitle && (
+          <div style={{ marginTop: '40px', background: 'var(--color-cream)', padding: '40px', borderRadius: '4px', display: 'flex', flexWrap: 'wrap', gap: '32px', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ flex: '1 1 400px' }}>
+              <h3 style={{ fontSize: '24px', marginBottom: '16px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>{ctaTitle}</h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0 }}>{ctaSubtitle}</p>
+            </div>
+            <div>
+              <a href={ctaButtonLink || '#form'} className="btn btn-primary" style={{ padding: '16px 40px' }}>{ctaButtonText}</a>
+            </div>
+          </div>
+        )}
       </div>
       <style jsx>{`
         .pricing-tier-card:hover {

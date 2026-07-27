@@ -55,7 +55,7 @@ export default function SpecialistBlock({
               position: 'relative'
             }}>
               {imageUrl ? (
-                <Image src={imageUrl} alt={name} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 500px" />
+                <img src={imageUrl} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               ) : (
                 <span style={{ padding: '20px', textAlign: 'center', fontStyle: 'italic' }}>
                   {photoPlaceholder}

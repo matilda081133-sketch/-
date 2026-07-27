@@ -160,12 +160,6 @@ export default function MilitaryHero({
                   box-shadow: 0 20px 40px rgba(23, 50, 77, 0.15);
                   transform: translateY(-4px);
                 }
-                .hero-photo-img {
-                  transition: transform 0.6s ease;
-                }
-                .hero-photo-hover:hover .hero-photo-img {
-                  transform: scale(1.03);
-                }
               `}} />
               {(imageName || imageSubtitle) && (
                 <div>
