@@ -227,23 +227,14 @@ export default function SochPage() {
           </div>
 
           <div className="grid grid-2" style={{ gap: '40px' }}>
-            <div style={{ background: 'var(--color-white)', padding: '32px', borderRadius: '4px' }}>
-              <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '20px' }}>Что ещё имеет значение</h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {[
-                  'проходил ли человек службу по призыву или по контракту;',
-                  'когда началось и когда фактически прекратилось отсутствие;',
-                  'был ли период мобилизации, военного положения, военного времени, вооружённого конфликта или ведения боевых действий;',
-                  'каковы причины отсутствия и какими документами они подтверждаются;',
-                  'какие объяснения уже даны и какие процессуальные решения приняты;',
-                  'имеются ли обстоятельства, предусмотренные специальными частями статьи 337 УК РФ.'
-                ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '12px', fontSize: '15px', color: 'var(--color-text-secondary)' }}>
-                    <div style={{ color: 'var(--color-gold)', marginTop: '2px' }}>✓</div>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div style={{ background: 'var(--color-white)', padding: '32px', borderRadius: '4px', alignSelf: 'flex-start' }}>
+              <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '20px' }}>Что сообщить при первом обращении</h3>
+              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '16px' }}>
+                Где сейчас находится военнослужащий; как долго он отсутствует; служит по призыву или по контракту; известно ли о розыске или возбужденном деле; вызывали ли его для объяснений или на допрос; давал ли он объяснения; какие документы сохранились. Если часть сведений неизвестна, это не препятствует обращению.
+              </p>
+              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                Эти сведения нужны для предварительной оценки стадии и возможного формата помощи. Правовая позиция формируется после изучения документов и обстоятельств дела.
+              </p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <div style={{ background: 'var(--color-white)', padding: '32px', borderRadius: '4px' }}>
