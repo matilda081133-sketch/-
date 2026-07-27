@@ -106,13 +106,29 @@ export default function SochPage() {
                 fontSize: '14px',
                 border: '1px solid var(--color-border)',
                 position: 'relative'
-              }}>
+              }} className="hero-photo-hover">
                 <img 
                   src="/-/images/konopkin.jpg" 
                   alt="Дмитрий Сергеевич Конопкин"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  className="hero-photo-img"
                 />
               </div>
+              <style dangerouslySetInnerHTML={{__html: `
+                .hero-photo-hover {
+                  transition: all 0.4s ease;
+                }
+                .hero-photo-hover:hover {
+                  box-shadow: 0 20px 40px rgba(23, 50, 77, 0.15);
+                  transform: translateY(-4px);
+                }
+                .hero-photo-img {
+                  transition: transform 0.6s ease;
+                }
+                .hero-photo-hover:hover .hero-photo-img {
+                  transform: scale(1.03);
+                }
+              `}} />
               <div>
                 <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Дмитрий Сергеевич Конопкин</div>
                 <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)' }}>Адвокат, ведущий юрист военного направления</div>
