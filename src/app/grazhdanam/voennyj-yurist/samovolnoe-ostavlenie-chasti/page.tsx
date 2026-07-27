@@ -341,7 +341,7 @@ export default function SochPage() {
       {/* Блок 7. Добровольная явка */}
       <section className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'center' }}>
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'flex-start' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
