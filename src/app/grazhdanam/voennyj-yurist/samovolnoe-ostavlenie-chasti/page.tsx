@@ -162,6 +162,7 @@ export default function SochPage() {
                 position: 'relative',
                 overflow: 'hidden',
                 border: '1px solid var(--color-border)',
+                borderTop: '1px solid var(--color-border)',
                 transition: 'all 0.4s ease',
                 height: '100%',
                 display: 'flex',
@@ -497,10 +498,10 @@ export default function SochPage() {
       />
       <section className="section bg-white" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div style={{ background: 'var(--color-deep-blue)', padding: '40px', borderRadius: '4px', color: 'var(--color-white)', display: 'flex', flexWrap: 'wrap', gap: '32px', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ background: 'var(--color-white)', padding: '40px', borderRadius: '4px', border: '1px solid var(--color-border)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', display: 'flex', flexWrap: 'wrap', gap: '32px', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ flex: '1 1 400px' }}>
-              <h3 style={{ fontSize: '24px', marginBottom: '16px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)' }}>Не знаете, какой формат помощи потребуется?</h3>
-              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)', margin: 0 }}>Опишите известные обстоятельства. Адвокат уточнит стадию дела и предложит подходящий формат работы.</p>
+              <h3 style={{ fontSize: '24px', marginBottom: '16px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>Не знаете, какой формат помощи потребуется?</h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0 }}>Опишите известные обстоятельства. Адвокат уточнит стадию дела и предложит подходящий формат работы.</p>
             </div>
             <div>
               <a href="#form" className="btn btn-primary" style={{ padding: '16px 40px' }}>Описать ситуацию</a>
@@ -521,7 +522,7 @@ export default function SochPage() {
       <section className="section bg-white" style={{ paddingTop: '40px' }}>
         <div className="container">
           <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '40px' }}>Другие услуги военного адвоката</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
             <a href="/grazhdanam/voennyj-yurist/" style={{ 
               display: 'block', 
               textDecoration: 'none', 
@@ -530,7 +531,9 @@ export default function SochPage() {
               textAlign: 'left',
               color: 'var(--color-deep-blue)',
               borderBottom: '4px solid var(--color-gold)',
-              transition: 'transform 0.3s' 
+              transition: 'transform 0.3s',
+              width: '100%',
+              maxWidth: '350px'
             }} className="hover-lift">
               <div style={{ fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>Военный адвокат</div>
               <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', fontWeight: 400 }}>Защита прав военнослужащих</div>
@@ -547,15 +550,13 @@ export default function SochPage() {
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{ position: 'relative' }}>
-                <div style={{ position: 'absolute', top: '-40px', left: 0, display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                    Связаться с нами
-                  </span>
-                </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
               </div>
-              <h2 style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0 }}>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', lineHeight: 1.2, marginTop: 0 }}>
                 Если человека задержали или он готовится явиться,<br /> не откладывайте связь<br /> с адвокатом
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>

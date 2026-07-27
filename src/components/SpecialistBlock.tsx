@@ -34,15 +34,12 @@ export default function SpecialistBlock({
           </h2>
         )}
         
-        <div style={{ 
-          display: 'flex', 
-          flexDirection: 'column', 
-          gap: '40px', 
+        <div className="specialist-grid" style={{ 
           background: 'var(--color-cream)',
           padding: '40px',
           borderRadius: '0', // Unifying rounded corners to 0 for consistency with the premium theme
           borderTop: '4px solid var(--color-primary)'
-        }} className="md:flex-row md:items-center">
+        }}>
           <div style={{ width: '100%', maxWidth: '500px', margin: '0 auto', flexShrink: 0 }}>
             <div style={{ 
               width: '100%', 
@@ -92,7 +89,22 @@ export default function SpecialistBlock({
           </div>
           
         </div>
+        </div>
       </div>
+      <style dangerouslySetInnerHTML={{__html: `
+        .specialist-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 40px;
+          align-items: center;
+        }
+        @media (min-width: 768px) {
+          .specialist-grid {
+            grid-template-columns: 400px 1fr;
+            gap: 60px;
+          }
+        }
+      `}} />
     </section>
   );
 }
