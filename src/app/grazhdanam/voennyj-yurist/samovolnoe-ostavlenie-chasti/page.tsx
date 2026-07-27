@@ -137,7 +137,7 @@ export default function SochPage() {
         <div className="container">
           <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '16px' }}>В каких ситуациях нужна помощь адвоката</h2>
           <p style={{ textAlign: 'center', color: 'var(--color-text-secondary)', maxWidth: '800px', margin: '0 auto 40px auto', lineHeight: 1.6 }}>
-            Обстоятельства дел о самовольном оставлении части различаются: значение имеют срок и причины отсутствия, статус военнослужащего, стадия проверки или расследования и уже данные объяснения. Ниже — ситуации, в которых важно получить индивидуальную правовую оценку.
+            Обстоятельства дел о самовольном оставлении части различаются: значение имеют срок и причины отсутствия, статус военнослужащего, стадия проверки или расследования и уже данные объяснения. Ниже — ситуации, в которых важно получить индивидуальную правовую&nbsp;оценку.
           </p>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
@@ -218,13 +218,31 @@ export default function SochPage() {
                 { title: 'ч. 4 ст. 337', cond: 'Свыше 1 месяца; обстоятельства ч. 3', res: 'Лишение свободы до 5 лет' },
                 { title: 'ч. 5 ст. 337', cond: 'Свыше 1 месяца; призыв или контракт; в специальный период', res: 'Лишение свободы от 5 до 10 лет' }
               ].map((item, i) => (
-                <div key={i} style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--color-white)', padding: '24px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                <div key={i} className="punishment-card" style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--color-white)', padding: '24px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
                   <div style={{ alignSelf: 'flex-start', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '4px 12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, marginBottom: '16px' }}>{item.title}</div>
                   <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', flexGrow: 1 }}>{item.cond}</div>
-                  <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, marginTop: 'auto' }}>{item.res}</div>
+                  <div className="punishment-res" style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, marginTop: 'auto' }}>{item.res}</div>
                 </div>
               ))}
             </div>
+            <style dangerouslySetInnerHTML={{__html: `
+              .punishment-card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+              }
+              .punishment-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(23, 50, 77, 0.08) !important;
+              }
+              .punishment-res {
+                transition: text-decoration 0.2s ease;
+                text-underline-offset: 4px;
+                text-decoration-thickness: 1px;
+              }
+              .punishment-card:hover .punishment-res {
+                text-decoration: underline;
+                text-decoration-color: var(--color-deep-blue);
+              }
+            `}} />
             
             <div style={{ marginTop: '24px', background: 'var(--color-white)', padding: '24px', borderRadius: '4px', borderLeft: '4px solid var(--color-gold)' }}>
               <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '8px' }}>Отдельные случаи, введённые с 2026 года</h4>
