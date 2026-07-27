@@ -213,7 +213,7 @@ export default function MilitaryLawyerHub() {
       {/* 4. Направления помощи */}
       <section id="directions" className="section" style={{ background: 'var(--color-cream)' }}>
         <div className="container">
-          <h2 className="section-title text-center" style={{ marginBottom: '40px' }}>Направления помощи</h2>
+          <h2 className="section-title text-center" style={{ marginBottom: '40px', textAlign: 'center' }}>Направления помощи</h2>
           
           <div className="grid grid-3" style={{ gap: '30px', marginBottom: '24px' }}>
             {/* Все 7 карточек услуг */}
@@ -359,7 +359,7 @@ export default function MilitaryLawyerHub() {
       {/* 7. Срочный блок */}
       <section className="section" style={{ background: 'var(--color-cream)' }}>
         <div className="container">
-          <h2 className="section-title text-center" style={{ marginBottom: '24px' }}>
+          <h2 className="section-title text-center" style={{ marginBottom: '24px', textAlign: 'center' }}>
             Если помощь нужна прямо сейчас
           </h2>
           <p style={{ textAlign: 'center', color: 'var(--color-text-secondary)', fontSize: '16px', maxWidth: '700px', margin: '0 auto 40px auto', lineHeight: 1.6 }}>
@@ -367,20 +367,29 @@ export default function MilitaryLawyerHub() {
           </p>
           <div className="grid grid-3" style={{ gap: '24px' }}>
             <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
-              <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>Военнослужащего задержали</h4>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9534F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0 }}>Военнослужащего задержали</h4>
+              </div>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                 Уточните фактическое место нахождения, время и предполагаемую причину задержания. Не передавайте непроверенные сведения от имени задержанного. Свяжитесь с адвокатом.
               </p>
             </div>
             <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
-              <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>Возбуждено дело или вызывают на допрос</h4>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9534F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0 }}>Возбуждено дело или вызывают на допрос</h4>
+              </div>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                 До объяснений и подписания документов согласуйте позицию с адвокатом. Сохраните повестку, постановление и иные полученные документы.
               </p>
             </div>
             <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
-              <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>Военнослужащий не выходит на связь</h4>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9534F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0 }}>Военнослужащий не выходит на связь</h4>
+              </div>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                 Зафиксируйте даты и обстоятельства последнего контакта, воинскую часть и известные обращения. Соберите официальные ответы и документы, не полагаясь только на устные сообщения.
               </p>
             </div>
@@ -397,7 +406,7 @@ export default function MilitaryLawyerHub() {
       </section>
 
       {/* 8. Другие вопросы и дистанционная помощь */}
-      <section className="section bg-white">
+      <section className="section bg-cream">
         <div className="container remote-help-grid">
           {/* Row 1 / Mobile Order 1 & 3 */}
           <div className="remote-help-item-h1" style={{ display: 'flex', alignItems: 'flex-start' }}>

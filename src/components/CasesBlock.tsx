@@ -28,7 +28,7 @@ export default function CasesBlock({
   return (
     <section className="section bg-white">
       <div className="container">
-        <div className="flex justify-between items-end" style={{ marginBottom: '50px', flexWrap: 'wrap', gap: '20px' }}>
+        <div className="flex justify-between" style={{ alignItems: 'flex-end', marginBottom: '50px', flexWrap: 'wrap', gap: '20px' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
               <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
