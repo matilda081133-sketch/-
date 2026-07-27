@@ -234,13 +234,22 @@ export default function SochPage() {
                 box-shadow: 0 10px 25px rgba(23, 50, 77, 0.08) !important;
               }
               .punishment-res {
-                transition: text-decoration 0.2s ease;
-                text-underline-offset: 4px;
-                text-decoration-thickness: 1px;
+                position: relative;
+                display: inline-block;
+                color: var(--color-deep-blue);
               }
-              .punishment-card:hover .punishment-res {
-                text-decoration: underline;
-                text-decoration-color: var(--color-deep-blue);
+              .punishment-res::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 1px;
+                bottom: -2px;
+                left: 0;
+                background-color: var(--color-deep-blue);
+                transition: width 0.3s ease;
+              }
+              .punishment-card:hover .punishment-res::after {
+                width: 100%;
               }
             `}} />
             
@@ -313,7 +322,7 @@ export default function SochPage() {
         title="Ваше дело будет вести профильный адвокат"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, ведущий юрист военного направления"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/-/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>Подключается к защите на стадии проверки, предварительного расследования и судебного разбирательства, участвует в процессуальных действиях и сопровождает доверителя при взаимодействии со следственными органами.</span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -537,7 +546,7 @@ export default function SochPage() {
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', lineHeight: 1.2, marginTop: 0 }}>
                 Если человека задержали или он готовится явиться,<br /> не откладывайте связь<br /> с адвокатом
               </h2>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
                 Уточним срочность, местонахождение и необходимые документы.
               </p>
               
