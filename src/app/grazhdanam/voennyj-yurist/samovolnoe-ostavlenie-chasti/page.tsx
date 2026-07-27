@@ -79,15 +79,15 @@ export default function SochPage() {
                 Защита военнослужащих при проверке, возбуждении и расследовании уголовных дел по статье 337 УК РФ. Подключимся к делу при задержании, вызове в следственный орган, подготовке добровольной явки или передаче дела в суд.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '24px' }}>
                 <a href="#form" className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '15px' }}>
                   Связаться с адвокатом
                 </a>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                  <a href="tel:+74742527752" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
+                <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+                  <a href="tel:+74742527752" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
                     +7 (4742) 52-77-52
                   </a>
-                  <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>Перезвоним в течение 15 минут в рабочее время</span>
+                  <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>• Перезвоним в течение 15 минут в рабочее время</span>
                 </div>
               </div>
             </div>

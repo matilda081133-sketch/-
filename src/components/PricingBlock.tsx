@@ -175,7 +175,7 @@ export default function PricingBlock({
         </div>
         
         {ctaTitle && (
-          <div style={{ marginTop: '40px', background: 'var(--color-cream)', padding: '40px', borderRadius: '4px', display: 'flex', flexWrap: 'wrap', gap: '32px', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ marginTop: '40px', background: 'var(--color-white)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', padding: '40px', borderRadius: '4px', display: 'flex', flexWrap: 'wrap', gap: '32px', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ flex: '1 1 400px' }}>
               <h3 style={{ fontSize: '24px', marginBottom: '16px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>{ctaTitle}</h3>
               <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, textWrap: 'balance' }}>{ctaSubtitle}</p>
