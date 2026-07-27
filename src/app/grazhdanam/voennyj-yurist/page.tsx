@@ -176,6 +176,8 @@ export default function MilitaryLawyerHub() {
         primaryCtaText="Обсудить ситуацию"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
         imageUrl="/-/images/konopkin.jpg"
+        imageName="Дмитрий Сергеевич Конопкин"
+        imageSubtitle="Адвокат, ведущий юрист военного направления"
         trustItems={[]} // Removed from hero per TZ
       />
 

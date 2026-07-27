@@ -139,7 +139,7 @@ export default function SochPage() {
       </section>
 
       {/* Блок 2. Ситуации */}
-      <section className="section bg-white">
+      <section className="section bg-cream">
         <div className="container">
           <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '16px' }}>В каких ситуациях нужна помощь адвоката</h2>
           <p style={{ textAlign: 'center', color: 'var(--color-text-secondary)', maxWidth: '800px', margin: '0 auto 40px auto', lineHeight: 1.6 }}>

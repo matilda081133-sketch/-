@@ -89,7 +89,6 @@ export default function SpecialistBlock({
           </div>
           
         </div>
-        </div>
       </div>
       <style dangerouslySetInnerHTML={{__html: `
         .specialist-grid {

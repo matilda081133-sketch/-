@@ -17,7 +17,11 @@ type HeroProps = {
 
 import Image from 'next/image';
 
-type ExtendedHeroProps = HeroProps & { imageUrl?: string; };
+type ExtendedHeroProps = HeroProps & { 
+  imageUrl?: string; 
+  imageName?: string;
+  imageSubtitle?: string;
+};
 
 export default function MilitaryHero({
   breadcrumbs,
@@ -31,7 +35,9 @@ export default function MilitaryHero({
   secondaryCtaLink,
   urgentHint,
   trustItems = [],
-  imageUrl
+  imageUrl,
+  imageName,
+  imageSubtitle
 }: ExtendedHeroProps) {
   return (
     <section style={{ 
@@ -124,7 +130,7 @@ export default function MilitaryHero({
             </div>
             
             {/* Right Column for Photo */}
-            <div style={{ width: '100%', maxWidth: '500px', margin: '0 auto', flexShrink: 0 }}>
+            <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div style={{ 
                 width: '100%', 
                 aspectRatio: '3/4', 
@@ -137,15 +143,36 @@ export default function MilitaryHero({
                 fontSize: '14px',
                 border: '1px solid var(--color-border)',
                 position: 'relative'
-              }}>
+              }} className="hero-photo-hover">
                 {imageUrl ? (
-                  <Image src={imageUrl} alt={title?.toString() || 'Специалист'} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 500px" priority />
+                  <img src={imageUrl} alt={imageName || title?.toString() || 'Специалист'} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} className="hero-photo-img" />
                 ) : (
                   <span style={{ padding: '20px', textAlign: 'center', fontStyle: 'italic' }}>
                     [Фото специалиста]
                   </span>
                 )}
               </div>
+              <style dangerouslySetInnerHTML={{__html: `
+                .hero-photo-hover {
+                  transition: all 0.4s ease;
+                }
+                .hero-photo-hover:hover {
+                  box-shadow: 0 20px 40px rgba(23, 50, 77, 0.15);
+                  transform: translateY(-4px);
+                }
+                .hero-photo-img {
+                  transition: transform 0.6s ease;
+                }
+                .hero-photo-hover:hover .hero-photo-img {
+                  transform: scale(1.03);
+                }
+              `}} />
+              {(imageName || imageSubtitle) && (
+                <div>
+                  {imageName && <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px' }}>{imageName}</div>}
+                  {imageSubtitle && <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)' }}>{imageSubtitle}</div>}
+                </div>
+              )}
             </div>
           </div>
         </div>
