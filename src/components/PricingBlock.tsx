@@ -82,7 +82,7 @@ export default function PricingBlock({
             {title}
           </h2>
           <p style={{ 
-            fontSize: '15px', 
+            fontSize: '16px', 
             color: 'var(--color-text-secondary)',
             maxWidth: '700px',
             margin: '0 auto',

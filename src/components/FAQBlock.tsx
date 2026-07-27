@@ -74,7 +74,7 @@ export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые в
             <h2 style={{ fontSize: '48px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '32px', lineHeight: 1.1 }}>
               {title}
             </h2>
-            <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '40px', maxWidth: '400px' }}>
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '40px', maxWidth: '400px' }}>
               {subtitle}
             </p>
             <a href="#consultation" className="btn btn-outline" style={{ display: 'inline-flex' }}>Задать свой вопрос</a>

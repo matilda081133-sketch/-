@@ -46,7 +46,7 @@ export default function ProcessBlock({
             {title}
           </h2>
           {subtitle && (
-            <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
               {subtitle}
             </p>
           )}
@@ -75,7 +75,7 @@ export default function ProcessBlock({
                 <h4 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
                   {step.title}
                 </h4>
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center' }}>
+                <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center' }}>
                   {step.desc}
                 </p>
               </div>
@@ -114,6 +114,21 @@ export default function ProcessBlock({
       .stage-item {
         transition: transform 0.4s ease;
       }
+      .stage-item::after {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        width: calc(100% + 40px);
+        height: 1px;
+        border-top: 1px dashed rgba(193, 160, 102, 0.5);
+        z-index: -1;
+      }
+      .grid-3 .stage-item:nth-child(3n)::after { display: none; }
+      .grid-4 .stage-item:nth-child(4n)::after { display: none; }
+      .grid-2 .stage-item:nth-child(2n)::after { display: none; }
+      .stage-item:last-child::after { display: none; }
+      
       .stage-item:hover {
         transform: translateY(-8px);
       }

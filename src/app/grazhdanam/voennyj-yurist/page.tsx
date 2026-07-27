@@ -175,7 +175,7 @@ export default function MilitaryLawyerHub() {
         subtitle="Защита по уголовным делам (СОЧ, дезертирство, неисполнение приказа), оспаривание незаконных решений ВВК и призывных комиссий, помощь в получении положенных выплат для военнослужащих и членов их семей."
         primaryCtaText="Обсудить ситуацию"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
-        imageUrl="/-/images/team-process.jpg"
+        imageUrl="/-/images/konopkin.jpg"
         trustItems={[]} // Removed from hero per TZ
       />
 
@@ -304,19 +304,24 @@ export default function MilitaryLawyerHub() {
       </section>
 
       {/* 5. Ведущий юрист */}
-      <SpecialistBlock 
-        title="Руководитель практики военного права"
-        name="Дмитрий Сергеевич Конопкин"
-        position="Адвокат • Регистрационный номер 48/812"
-        imageUrl="/-/images/konopkin.jpg"
-        description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', textWrap: 'balance', display: 'block' }}>С 2016 по 2022 год работал в Следственном комитете, прошел путь до старшего следователя отдела по расследованию особо важных дел. С 2022 года занимается адвокатской практикой.</span>,
-          <span key="2" style={{ color: 'var(--color-deep-blue)', textWrap: 'balance', display: 'block' }}>Опыт следственной работы помогает оценивать доказательства, выявлять процессуальные нарушения и выстраивать защиту по сложным делам.</span>
-        ]}
-        photoPlaceholder="[Фото Д.С. Конопкина]"
-        buttonText="Задать вопрос адвокату"
-        buttonHref="#form"
-      />
+      {/* 5. Ведущий юрист */}
+      <section className="section bg-white" style={{ position: 'relative', overflow: 'hidden' }}>
+        <div className="container">
+          <div className="reveal-on-scroll" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+            <h2 style={{ fontSize: '42px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', lineHeight: 1.1 }}>
+              Руководитель практики военного права
+            </h2>
+            <h3 style={{ fontSize: '28px', color: 'var(--color-primary)', marginBottom: '16px', fontFamily: 'var(--font-serif)' }}>
+              Дмитрий Сергеевич Конопкин
+            </h3>
+            <div style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '32px' }}>
+              <p style={{ marginBottom: '16px' }}>С 2016 по 2022 год работал в Следственном комитете, прошел путь до старшего следователя отдела по расследованию особо важных дел. С 2022 года занимается адвокатской практикой.</p>
+              <p>Опыт следственной работы помогает оценивать доказательства, выявлять процессуальные нарушения и выстраивать защиту по сложным делам.</p>
+            </div>
+            <a href="#form" className="btn btn-primary">Задать вопрос адвокату</a>
+          </div>
+        </div>
+      </section>
 
       {/* Как проходит работа */}
       <ProcessBlock 
@@ -359,9 +364,12 @@ export default function MilitaryLawyerHub() {
       {/* 7. Срочный блок */}
       <section className="section" style={{ background: 'var(--color-cream)' }}>
         <div className="container">
-          <h2 className="section-title text-center" style={{ marginBottom: '40px' }}>
+          <h2 className="section-title text-center" style={{ marginBottom: '24px' }}>
             Если помощь нужна прямо сейчас
           </h2>
+          <p style={{ textAlign: 'center', color: 'var(--color-text-secondary)', fontSize: '16px', maxWidth: '700px', margin: '0 auto 40px auto', lineHeight: 1.6 }}>
+            Ниже — типичные ситуации, в которых откладывать обращение за юридической помощью опасно. Чем раньше подключится профильный специалист, тем больше возможностей для защиты ваших прав.
+          </p>
           <div className="grid grid-3" style={{ gap: '24px' }}>
             <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
               <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>Военнослужащего задержали</h4>
@@ -463,19 +471,23 @@ export default function MilitaryLawyerHub() {
       {/* 12. Финальная форма */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'center' }}>
-            <div>
-              <h2 style={{ fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', lineHeight: 1.1 }}>
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+              <h2 style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0 }}>
                 Получите первичную оценку ситуации
               </h2>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '24px' }}>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
                 Кратко опишите, что произошло. Мы определим срочность, уточним необходимые документы и подключим Дмитрия Сергеевича Конопкина либо другого специалиста с нужными полномочиями.
               </p>
-              <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px' }}>
-                Перезвоним в течение 15 минут в рабочее время
+              
+              <div style={{ marginTop: 'auto', marginBottom: '64px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  Перезвоним в течение 15 минут в рабочее время
+                </div>
               </div>
             </div>
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
               <ContactsForm title="Отправить обращение" subtitle="" />
             </div>
           </div>

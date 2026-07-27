@@ -3,7 +3,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
-import MilitaryHero from '@/components/MilitaryHero';
+import SpecialistBlock from '@/components/SpecialistBlock';
+import ProcessBlock from '@/components/ProcessBlock';
+import PricingBlock from '@/components/PricingBlock';
 
 export const metadata = {
   title: 'Адвокат по СОЧ в Липецке — статья 337 УК РФ | Де-Юре',
@@ -12,144 +14,255 @@ export const metadata = {
 
 export default function SochPage() {
   const faqs = [
-    { q: 'Что сообщить адвокату в первую очередь?', a: 'Сообщите срок отсутствия, фактическое местонахождение, есть ли факт задержания и какие медицинские документы или жалобы на здоровье имеются.' },
-    { q: 'Можно ли обратиться родственнику, если военнослужащий не может позвонить сам?', a: 'Да, родственник может заключить соглашение с адвокатом в интересах военнослужащего.' },
-    { q: 'Когда самовольное оставление части становится уголовным делом?', a: 'Значение имеет длительность отсутствия, статус военнослужащего, причины ухода и направленность умысла. Уголовное дело возбуждается при наличии признаков состава преступления, предусмотренного ст. 337 УК РФ.' },
-    { q: 'Чем СОЧ отличается от дезертирства?', a: 'Ключевое отличие — в умысле. При СОЧ военнослужащий намеревается временно уклониться от службы, а при дезертирстве — полностью избежать прохождения военной службы.' },
-    { q: 'Как организовать добровольную явку с адвокатом?', a: 'Адвокат предварительно разбирает ситуацию, помогает подготовить медицинские и иные документы, согласовывает порядок явки и сопровождает военнослужащего.' },
-    { q: 'Какие медицинские документы могут иметь значение?', a: 'Любые справки, выписки и результаты обследований, подтверждающие наличие заболевания, препятствующего прохождению службы, или свидетельствующие о необходимости оказания срочной медицинской помощи.' },
-    { q: 'Что делать, если человека задержали и решается вопрос о СИЗО?', a: 'Немедленно свяжитесь с адвокатом. До прибытия защитника не давайте никаких объяснений и показаний.' },
-    { q: 'От чего зависит стоимость защиты?', a: 'От стадии дела, срочности, местонахождения доверителя, необходимости срочного выезда и объема работы по сбору доказательств.' }
+    { q: 'Когда отсутствие может повлечь ответственность по статье 337 УК РФ?', a: 'Закон связывает квалификацию с продолжительностью отсутствия, статусом военнослужащего и периодом совершения деяния. Для разных частей статьи установлены разные сроки и условия. Применимую норму определяют по конкретным обстоятельствам.' },
+    { q: 'Что считается неявкой в срок на службу?', a: 'Статья 337 УК РФ охватывает неявку без уважительных причин после увольнения из части, назначения, перевода, командировки, отпуска или медицинской организации. Правовая оценка зависит от причины, срока и подтверждающих документов.' },
+    { q: 'Может ли заболевание быть учтено по делу?', a: 'Медицинские обстоятельства могут иметь значение, если они относятся к периоду отсутствия и подтверждаются надлежащими документами. Сам факт жалоб на здоровье не предопределяет правовую оценку.' },
+    { q: 'Освобождает ли добровольная явка от ответственности?', a: 'Нет, автоматического освобождения закон не устанавливает. Значение явки оценивается вместе с продолжительностью, причинами отсутствия, поведением военнослужащего и другими материалами дела.' },
+    { q: 'В чём основное отличие СОЧ от дезертирства?', a: 'Для дезертирства обязательна цель вовсе уклониться от прохождения военной службы. При статье 337 речь идёт о временном уклонении. Вывод о цели делают по совокупности доказательств, а не только по длительности отсутствия.' },
+    { q: 'Можно ли освободиться от ответственности из-за тяжёлых обстоятельств?', a: 'Примечание к статье 337 предусматривает такую возможность для лица, впервые совершившего деяние по частям 1, 2, 3 или 4, если отсутствие стало следствием стечения тяжёлых обстоятельств. Применимость нормы требует проверки и подтверждения фактов.' },
+    { q: 'Что делать, если военнослужащего задержали?', a: 'Родственникам важно установить место нахождения и процессуальный статус военнослужащего и как можно быстрее передать адвокату известные сведения. Конкретный порядок действий зависит от ситуации.' },
+    { q: 'Можно ли обратиться родственнику военнослужащего?', a: 'Да. Родственник может сообщить известные обстоятельства и получить информацию о возможном формате юридической помощи. Возможность вступления адвоката в дело и дальнейшие действия определяются по процессуальной ситуации.' },
+    { q: 'Какие документы подготовить для первичной оценки?', a: 'Полезны имеющиеся повестки, уведомления, процессуальные документы, медицинские документы, сведения о службе и материалы, относящиеся к причинам и сроку отсутствия. Если документов нет, это не препятствует первичному обращению.' },
+    { q: 'Работает ли адвокат только в Липецке?', a: 'Мы работаем в Липецке и Липецкой области. Возможность выезда в другие регионы обсуждается индивидуально при наличии ресурсов и необходимости.' }
   ];
 
   return (
     <main>
       <Header />
       
-      <MilitaryHero 
-        breadcrumbs={
-          <>
-            <a href="/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <a href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <a href="/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <span style={{ color: 'var(--color-text-main)' }}>СОЧ</span>
-          </>
-        }
-        superTitle="Уголовная защита военнослужащих • статья 337 УК РФ"
-        title="Адвокат по делам о самовольном оставлении части (СОЧ) в Липецке"
-        subtitle="Адвокат выяснит срок и причины отсутствия, фактическое местонахождение, наличие задержания и стадию дела, после чего определит безопасный порядок действий и подключится к защите."
-        primaryCtaText="Связаться с адвокатом"
-        secondaryCtaText="Что сообщить адвокату"
-        secondaryCtaLink="#info"
-        urgentHint="Не давайте объяснения и не участвуйте в опросе или допросе без адвоката. Сообщите близким фактическое место нахождения и название органа, который проводит действия."
-        trustItems={[
-          { text: 'Защита ведётся адвокатом' },
-          { text: 'Подключение до объяснений и допроса' },
-          { text: 'Условия работы — в договоре' }
-        ]}
-      />
+      {/* Блок 1. Первый экран */}
+      <section style={{ 
+        position: 'relative', 
+        minHeight: '85vh', 
+        display: 'flex', 
+        alignItems: 'center',
+        paddingTop: '160px',
+        paddingBottom: '80px',
+        background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
+        overflow: 'hidden'
+      }}>
+        {/* Decorative circle */}
+        <div style={{
+          position: 'absolute', top: '-10%', right: '-5%', width: '600px', height: '600px',
+          background: 'radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)',
+          borderRadius: '50%', zIndex: 0
+        }} />
 
-      <section className="section bg-white">
-        <div className="container">
-          <h2 className="section-title text-center" style={{ marginBottom: '40px' }}>Когда нужна срочная помощь</h2>
-          <div className="grid grid-3" style={{ gap: '20px' }}>
-            {[
-              'Человек находится вне части', 
-              'Задержан', 
-              'Доставлен в следственный орган или комендатуру', 
-              'Решается вопрос о помещении в СИЗО', 
-              'Хочет добровольно явиться', 
-              'Дело уже в суде'
-            ].map((item, i) => (
-              <div key={i} style={{
-                background: 'var(--color-cream)',
-                padding: '24px',
-                borderLeft: '4px solid #D9534F',
-                fontWeight: 500,
-                color: 'var(--color-deep-blue)',
-                display: 'flex',
-                alignItems: 'center',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-              }} className="hover-lift">
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="info" className="section" style={{ background: 'var(--color-cream)' }}>
-        <div className="container grid grid-2" style={{ gap: '60px' }}>
-          <div>
-            <h2 className="section-title">Что важно сообщить адвокату</h2>
-            <ul style={{ listStyle: 'none', padding: 0, marginTop: '24px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {[
-                'Срок отсутствия и фактическое местонахождение',
-                'Причина ухода или неявки в часть',
-                'Состояние здоровья, наличие медицинских документов',
-                'Факт задержания и его причина (если применимо)',
-                'Был ли суд по мере пресечения',
-                'Связь с частью: какие рапорты или уведомления направлялись'
-              ].map((item, i) => (
-                <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <div style={{ color: 'var(--color-gold)', marginTop: '2px' }}>✓</div>
-                  <span style={{ color: 'var(--color-text-main)', fontSize: '16px' }}>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <div style={{ background: 'var(--color-white)', padding: '32px', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
-              <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '16px' }}>СОЧ или другая квалификация?</h3>
-              <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                Значение имеют длительность отсутствия, статус военнослужащего, причины ухода и направленность умысла. Не пытайтесь самостоятельно выбирать часть статьи. Окончательную квалификацию определяет следствие на основе собранных доказательств. Наша задача — не допустить ухудшения положения.
-              </p>
-              <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '16px' }}>Обстоятельства, которые нужно проверить</h3>
-              <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                В первую очередь мы анализируем состояние здоровья и медицинские доказательства. Индивидуально проверяются факты неуставных отношений или тяжелая болезнь родственников. Значение обстоятельства зависит от длительности отсутствия, поведения после его возникновения и подтверждающих документов.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section bg-white">
-        <div className="container">
-          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="grid grid-2" style={{ gap: '40px', alignItems: 'center' }}>
+            {/* Left Column */}
             <div>
-              <h2 className="section-title">Добровольная явка</h2>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '24px' }}>
-                Добровольная явка — ответственный шаг, который требует подготовки. Сама по себе явка не исключает ответственность автоматически, но может быть учтена. 
+              <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
+                <a href="/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
+                <a href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
+                <a href="/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
+                <span style={{ color: 'var(--color-text-main)' }}>Самовольное оставление части</span>
+              </div>
+              
+              <h1 style={{ 
+                fontSize: 'clamp(36px, 5vw, 56px)', 
+                color: 'var(--color-deep-blue)', 
+                fontFamily: 'var(--font-serif)', 
+                margin: '0 0 32px 0', 
+                lineHeight: 1.1 
+              }}>
+                Адвокат по делам о самовольном оставлении части в Липецке
+              </h1>
+              
+              <p style={{ 
+                fontSize: '18px', 
+                color: 'var(--color-text-secondary)', 
+                marginBottom: '40px', 
+                maxWidth: '750px', 
+                lineHeight: 1.6 
+              }}>
+                Защита военнослужащих при проверке, возбуждении и расследовании уголовных дел по статье 337 УК РФ. Подключимся к делу при задержании, вызове в следственный орган, подготовке добровольной явки или передаче дела в суд.
               </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
-                {[
-                  'Предварительный разбор ситуации',
-                  'Подготовка подтверждающих документов',
-                  'Согласование порядка явки с адвокатом',
-                  'Сопровождение при явке'
-                ].map((item, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-gold)' }} />
-                    <span style={{ fontSize: '16px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>{item}</span>
-                  </div>
-                ))}
+
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px' }}>
+                <a href="#form" className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '15px' }}>
+                  Связаться с адвокатом
+                </a>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <a href="tel:+74742527752" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
+                    +7 (4742) 52-77-52
+                  </a>
+                  <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>Перезвоним в течение 15 минут в рабочее время</span>
+                </div>
               </div>
             </div>
             
-            <div style={{ background: 'var(--color-deep-blue)', padding: '32px', color: 'var(--color-white)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <h3 style={{ fontSize: '24px', marginBottom: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)' }}>Что делает адвокат</h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                <div>
-                  <h4 style={{ color: '#E5C494', marginBottom: '8px', fontSize: '18px', fontWeight: 600 }}>1. До объяснений</h4>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: 1.5 }}>Изучает ситуацию, оценивает риски и формирует позицию защиты.</p>
+            {/* Right Column for Photo */}
+            <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ 
+                width: '100%', 
+                aspectRatio: '3/4', 
+                backgroundColor: 'var(--color-white)', 
+                overflow: 'hidden',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--color-text-secondary)',
+                fontSize: '14px',
+                border: '1px solid var(--color-border)',
+                position: 'relative'
+              }}>
+                <img 
+                  src="/-/images/konopkin.jpg" 
+                  alt="Дмитрий Сергеевич Конопкин"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+              <div>
+                <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Дмитрий Сергеевич Конопкин</div>
+                <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)' }}>Адвокат, ведущий юрист военного направления</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Блок 2. Ситуации */}
+      <section className="section bg-white">
+        <div className="container">
+          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '16px' }}>В каких ситуациях нужна помощь адвоката</h2>
+          <p style={{ textAlign: 'center', color: 'var(--color-text-secondary)', maxWidth: '800px', margin: '0 auto 40px auto', lineHeight: 1.6 }}>
+            Обстоятельства дел о самовольном оставлении части различаются: значение имеют срок и причины отсутствия, статус военнослужащего, стадия проверки или расследования и уже данные объяснения. Ниже — ситуации, в которых важно получить индивидуальную правовую оценку.
+          </p>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+            {[
+              { title: 'Военнослужащий находится вне части', desc: 'Неясно, возбуждено ли уголовное дело, объявлен ли военнослужащий в розыск и как может быть квалифицирован период отсутствия.' },
+              { title: 'Военнослужащего задержали', desc: 'Родственникам неизвестны его процессуальный статус, место нахождения и действия, которые уже проводят следственные органы.' },
+              { title: 'Вызывают для объяснений или на допрос', desc: 'До процессуальных действий необходимо разобраться в обстоятельствах и определить позицию с учётом уже имеющихся документов и сведений.' },
+              { title: 'Решается вопрос о заключении под стражу', desc: 'Суд будет оценивать материалы дела и доводы сторон при выборе меры пресечения. Адвокату важно подключиться до заседания или как можно раньше.' },
+              { title: 'Рассматривается добровольная явка', desc: 'Нужно оценить обстоятельства отсутствия, проверить документы и определить порядок юридического сопровождения применительно к конкретному делу.' },
+              { title: 'Дело уже передано в суд', desc: 'Требуется изучить обвинение, доказательства и ранее данные показания, чтобы выстроить позицию защиты в судебном разбирательстве.' }
+            ].map((item, i) => (
+              <div key={i} style={{
+                background: 'var(--color-white)',
+                padding: '40px',
+                borderRadius: '0',
+                position: 'relative',
+                overflow: 'hidden',
+                border: '1px solid var(--color-border)',
+                transition: 'all 0.4s ease',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column'
+              }} className="service-card group">
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '4px',
+                  height: '0%',
+                  background: 'var(--color-gold)',
+                  transition: 'height 0.4s ease'
+                }} className="service-accent-line"></div>
+                <h3 style={{ fontSize: '24px', fontWeight: 500, color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', transition: 'color 0.4s ease' }} className="service-title">
+                  {item.title}
+                </h3>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0, flexGrow: 1 }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+          <style dangerouslySetInnerHTML={{__html: `
+            .service-card {
+              transition: all 0.4s ease;
+            }
+            .service-card:hover {
+              box-shadow: 0 20px 40px rgba(23, 50, 77, 0.08);
+              border-color: transparent;
+              transform: translateY(-4px);
+            }
+            .service-card:hover .service-accent-line {
+              height: 100%;
+            }
+            .service-card:hover .service-title {
+              color: var(--color-primary);
+            }
+          `}} />
+        </div>
+      </section>
+
+      {/* Блок 3. Ответственность */}
+      <section className="section" style={{ background: 'var(--color-cream)' }}>
+        <div className="container">
+          <h2 className="section-title" style={{ textAlign: 'center' }}>Ответственность за самовольное оставление части</h2>
+          <p style={{ textAlign: 'center', color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '40px', maxWidth: '900px', margin: '0 auto 40px auto' }}>
+            Статья 337 УК РФ предусматривает ответственность за самовольное оставление части или места службы, а также за неявку в срок без уважительных причин. Квалификация зависит не только от продолжительности отсутствия, но и от статуса военнослужащего, периода совершения деяния и других обстоятельств.
+          </p>
+
+          <div style={{ marginBottom: '40px' }}>
+            <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', marginBottom: '20px' }}>Как срок отсутствия влияет на квалификацию</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
+              {[
+                { title: 'ч. 1 ст. 337', cond: 'Свыше 2, но не более 10 суток; военнослужащий по призыву; вне специальных периодов', res: 'Арест до 6 месяцев или содержание в дисциплинарной воинской части до 1 года' },
+                { title: 'ч. 2.1 ст. 337', cond: 'Свыше 2, но не более 10 суток; призыв или контракт; в период мобилизации, военного положения, в военное время, в условиях вооружённого конфликта или боевых действий', res: 'Лишение свободы до 5 лет' },
+                { title: 'ч. 3 ст. 337', cond: 'Свыше 10 суток, но не более 1 месяца; призыв или контракт; вне специальных периодов', res: 'До 3 лет лишения свободы; законом предусмотрены и иные виды наказания' },
+                { title: 'ч. 3.1 ст. 337', cond: 'Свыше 10 суток, но не более 1 месяца; призыв или контракт; в специальный период', res: 'Лишение свободы до 7 лет' },
+                { title: 'ч. 4 ст. 337', cond: 'Свыше 1 месяца; обстоятельства ч. 3', res: 'Лишение свободы до 5 лет' },
+                { title: 'ч. 5 ст. 337', cond: 'Свыше 1 месяца; призыв или контракт; в специальный период', res: 'Лишение свободы от 5 до 10 лет' }
+              ].map((item, i) => (
+                <div key={i} style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--color-white)', padding: '24px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                  <div style={{ alignSelf: 'flex-start', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '4px 12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, marginBottom: '16px' }}>{item.title}</div>
+                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', flexGrow: 1 }}>{item.cond}</div>
+                  <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, marginTop: 'auto' }}>{item.res}</div>
                 </div>
-                <div>
-                  <h4 style={{ color: '#E5C494', marginBottom: '8px', fontSize: '18px', fontWeight: 600 }}>2. На следствии</h4>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: 1.5 }}>Участвует в следственных действиях, собирает и представляет доказательства, заявляет ходатайства.</p>
-                </div>
-                <div>
-                  <h4 style={{ color: '#E5C494', marginBottom: '8px', fontSize: '18px', fontWeight: 600 }}>3. В суде</h4>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: 1.5 }}>Ведет защиту в судебных заседаниях, обжалует приговор при необходимости.</p>
+              ))}
+            </div>
+            
+            <div style={{ marginTop: '24px', background: 'var(--color-white)', padding: '24px', borderRadius: '4px', borderLeft: '4px solid var(--color-gold)' }}>
+              <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '8px' }}>Отдельные случаи, введённые с 2026 года</h4>
+              <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Части 2.2, 3.2 и 6 статьи 337 УК РФ устанавливают повышенную ответственность для отдельных лиц, ранее условно освобождённых от наказания по статье 80.2 УК РФ либо по делам которых производство приостанавливалось по ходатайству командования. Применимость этих норм требует отдельной проверки адвокатом.
+              </p>
+            </div>
+            <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', opacity: 0.8, marginTop: '16px' }}>
+              Таблица даёт общее представление о действующей редакции закона и не определяет квалификацию конкретной ситуации. Окончательные выводы возможны после изучения обстоятельств и материалов дела.
+            </div>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '40px' }}>
+            <div style={{ background: 'var(--color-white)', padding: '32px', borderRadius: '4px' }}>
+              <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '20px' }}>Что ещё имеет значение</h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {[
+                  'проходил ли человек службу по призыву или по контракту;',
+                  'когда началось и когда фактически прекратилось отсутствие;',
+                  'был ли период мобилизации, военного положения, военного времени, вооружённого конфликта или ведения боевых действий;',
+                  'каковы причины отсутствия и какими документами они подтверждаются;',
+                  'какие объяснения уже даны и какие процессуальные решения приняты;',
+                  'имеются ли обстоятельства, предусмотренные специальными частями статьи 337 УК РФ.'
+                ].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', gap: '12px', fontSize: '15px', color: 'var(--color-text-secondary)' }}>
+                    <div style={{ color: 'var(--color-gold)', marginTop: '2px' }}>✓</div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <div style={{ background: 'var(--color-white)', padding: '32px', borderRadius: '4px' }}>
+                <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '16px' }}>Освобождение от ответственности</h3>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                  Примечание к статье 337 УК РФ допускает освобождение от уголовной ответственности лица, впервые совершившего деяние, предусмотренное частями 1, 2, 3 или 4 статьи, если отсутствие стало следствием стечения тяжёлых обстоятельств. Это не автоматическое основание: необходимо установить применимую часть статьи и подтвердить фактические обстоятельства.
+                </p>
+              </div>
+              <div style={{ background: 'var(--color-white)', padding: '32px', borderRadius: '4px' }}>
+                <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '16px' }}>Чем СОЧ отличается от дезертирства</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <div>
+                    <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)', textTransform: 'uppercase', marginBottom: '4px' }}>СОЧ (ст. 337)</div>
+                    <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)' }}>Временное уклонение от исполнения обязанностей военной службы. Квалификация определяется по совокупности материалов дела.</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#D9534F', textTransform: 'uppercase', marginBottom: '4px' }}>Дезертирство (ст. 338)</div>
+                    <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)' }}>Цель вовсе уклониться от прохождения военной службы. Направленность умысла на полное уклонение; продолжительность отсутствия сама по себе вопрос не решает.</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -157,31 +270,262 @@ export default function SochPage() {
         </div>
       </section>
 
-      <FAQBlock 
-        faqs={faqs} 
-        superTitle="Частые вопросы" 
-        title="Вопросы по делам о СОЧ"
-        subtitle="Ответы на частые вопросы родственников и военнослужащих. Информация носит общий характер. Возможный порядок действий зависит от обстоятельств и документов."
+      {/* Блок 4. Профильный адвокат */}
+      <SpecialistBlock 
+        title="Ваше дело будет вести профильный адвокат"
+        name="Дмитрий Сергеевич Конопкин"
+        position="Адвокат, ведущий юрист военного направления"
+        imageUrl="/images/konopkin.jpg"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>Подключается к защите на стадии проверки, предварительного расследования и судебного разбирательства, участвует в процессуальных действиях и сопровождает доверителя при взаимодействии со следственными органами.</span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
+              Опыт работы в Следственном комитете
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
+              Реестровый номер 48/812
+            </li>
+          </ul>
+        ]}
+        buttonText="Связаться с адвокатом"
+        buttonHref="#form"
       />
 
-      <section className="section bg-white" id="form">
+      {/* Блок 6. Как адвокат выстраивает защиту */}
+      <section className="section" style={{ background: 'var(--color-cream)' }}>
+        <div className="container">
+          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '16px' }}>Как адвокат выстраивает защиту</h2>
+          <p style={{ textAlign: 'center', color: 'var(--color-text-secondary)', maxWidth: '800px', margin: '0 auto 40px auto', lineHeight: 1.6 }}>
+            Единой позиции для всех дел о самовольном оставлении части не существует. Адвокат сопоставляет обстоятельства отсутствия, документы, процессуальный статус военнослужащего и материалы дела, после чего определяет объём помощи и последовательность защиты.
+          </p>
+          
+          <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', position: 'relative' }}>
+              <div style={{ position: 'absolute', left: '29px', top: '30px', bottom: '30px', width: '2px', background: 'var(--color-border)', zIndex: 0 }}></div>
+              {[
+                { n: '1', t: 'Уточняет фактическую ситуацию', d: 'Где находится военнослужащий, когда началось отсутствие, каковы его причины, что известно о проверке, розыске или уголовном деле.' },
+                { n: '2', t: 'Изучает документы и ранее данные объяснения', d: 'Медицинские документы, приказы, переписку, повестки, протоколы, постановления и иные материалы, которые могут иметь значение.' },
+                { n: '3', t: 'Определяет процессуальный статус и риски', d: 'Проверяет стадию производства, применимую норму, проведённые действия и вопросы, требующие немедленного участия защитника.' },
+                { n: '4', t: 'Формирует позицию защиты', d: 'Определяет юридически значимые обстоятельства, доказательства и порядок участия в следственных действиях или судебном разбирательстве.' },
+                { n: '5', t: 'Представляет интересы доверителя', d: 'Участвует в процессуальных действиях, заявляет ходатайства и возражения, представляет позицию при избрании меры пресечения и в суде.' }
+              ].map((item, i) => (
+                <div key={i} className="process-step-item" style={{ display: 'flex', gap: '20px', position: 'relative', zIndex: 1, transition: 'transform 0.4s ease' }}>
+                  <div className="process-step-circle" style={{ flexShrink: 0, width: '60px', height: '60px', borderRadius: '50%', background: 'var(--color-white)', border: '1px solid rgba(193, 160, 102, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', fontWeight: '300', fontSize: '24px', fontFamily: 'var(--font-serif)', boxShadow: '0 10px 20px rgba(23, 50, 77, 0.05)', position: 'relative', transition: 'all 0.4s ease' }}>
+                    {item.n}
+                    <div className="process-step-inner" style={{ position: 'absolute', inset: '4px', borderRadius: '50%', border: '1px dashed rgba(193, 160, 102, 0.3)', transition: 'all 0.4s ease' }}></div>
+                  </div>
+                  <div style={{ paddingTop: '8px' }}>
+                    <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>{item.t}</h4>
+                    <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.5, margin: 0 }}>{item.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <style dangerouslySetInnerHTML={{__html:`
+              .process-step-item:hover {
+                transform: translateX(8px);
+              }
+              .process-step-item:hover .process-step-circle {
+                background: var(--color-primary) !important;
+                color: var(--color-white) !important;
+                box-shadow: 0 15px 30px rgba(193, 160, 102, 0.3) !important;
+              }
+            `}} />
+
+            <div style={{ background: 'var(--color-deep-blue)', padding: '40px', borderRadius: '4px', color: 'var(--color-white)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <h3 style={{ fontSize: '24px', color: 'var(--color-gold)', marginBottom: '24px', fontFamily: 'var(--font-serif)' }}>Что сообщить при первом обращении</h3>
+              <p style={{ fontSize: '16px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)', marginBottom: '24px' }}>
+                Где сейчас находится военнослужащий; как долго он отсутствует; служит по призыву или по контракту; известно ли о розыске или возбужденном деле; вызывали ли его для объяснений или на допрос; давал ли он объяснения; какие документы сохранились. Если часть сведений неизвестна, это не препятствует обращению.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.1)', padding: '16px', borderLeft: '4px solid var(--color-gold)', fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5 }}>
+                Эти сведения нужны для предварительной оценки стадии и возможного формата помощи. Правовая позиция формируется после изучения документов и обстоятельств дела.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Блок 7. Добровольная явка */}
+      <section className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'center' }}>
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                  Связаться с нами
+                  Важный нюанс
                 </span>
               </div>
-              <h2 style={{ fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.1 }}>
-                Если человека задержали или он готовится явиться,<br /> не откладывайте связь<br /> с адвокатом
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', lineHeight: 1.1 }}>
+                Добровольная явка при самовольном оставлении части
               </h2>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '0' }}>
-                Уточним срочность, местонахождение и необходимые документы. Перезвоним в течение 15 минут.
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
+                Добровольная явка может иметь значение для оценки поведения военнослужащего, но <strong>сама по себе не прекращает уголовное дело</strong> и не гарантирует освобождение от ответственности.
+              </p>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '0' }}>
+                До принятия решения необходимо разобраться в продолжительности и причинах отсутствия, процессуальном статусе и имеющихся документах.
               </p>
             </div>
+            
+            <div style={{ background: 'var(--color-cream)', padding: '40px', borderLeft: '4px solid var(--color-gold)', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-10px', right: '20px', color: 'var(--color-gold)', opacity: 0.1 }}>
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', position: 'relative', zIndex: 1 }}>Чем может помочь адвокат</h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px', position: 'relative', zIndex: 1 }}>
+                {[
+                  'Уточнить, возбуждено ли дело и какие решения приняты',
+                  'Оценить документы, имеющие значение для защиты',
+                  'Подготовить к процессуальным действиям без заучивания показаний',
+                  'Согласовать порядок юридического сопровождения',
+                  'Участвовать в следственных действиях и защищать права'
+                ].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', gap: '16px', fontSize: '15px', color: 'var(--color-deep-blue)', alignItems: 'flex-start', lineHeight: 1.5 }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Блок 8. Как проходит работа */}
+      <ProcessBlock 
+        title="Как проходит работа"
+        subtitle="Порядок зависит от стадии дела и срочности ситуации. До начала работы согласуем объём помощи, стоимость и порядок взаимодействия."
+        steps={[
+          { num: '1', title: 'Первичное обращение', desc: 'Вы сообщаете известные обстоятельства и оставляете контакт для связи.' },
+          { num: '2', title: 'Уточнение ситуации', desc: 'Адвокат определяет, какие сведения и документы необходимы для первоначальной оценки.' },
+          { num: '3', title: 'Согласование помощи', desc: 'Обсуждаем возможный формат работы, состав действий и стоимость.' },
+          { num: '4', title: 'Заключение соглашения', desc: 'Фиксируем объём поручения, условия оплаты и порядок взаимодействия.' },
+          { num: '5', title: 'Подключение к делу', desc: 'Адвокат изучает материалы и выполняет согласованный объём юридической помощи.' },
+          { num: '6', title: 'Информирование доверителя', desc: 'Сообщаем о значимых действиях и согласуем дальнейшие решения в рамках поручения.' }
+        ]}
+        ctaTitle=""
+      />
+
+      {/* Блок 9. Стоимость */}
+      <PricingBlock 
+        title="Стоимость помощи адвоката"
+        subtitle="Стоимость зависит от стадии дела, срочности, объёма материалов, количества процессуальных действий и необходимого формата участия. До начала работы согласуем объём поручения и фиксируем условия в соглашении."
+        tiers={[
+          {
+            title: 'Разовые действия',
+            subtitle: 'Оценка и отдельные действия',
+            popular: false,
+            price: 'по согласованию',
+            features: [
+              { name: 'Изучение документов', value: '✓' },
+              { name: 'Определение формата помощи', value: '✓' },
+              { name: 'Подготовка позиции', value: '✓' },
+              { name: 'Участие адвоката в допросе', value: '✓' }
+            ]
+          },
+          {
+            title: 'Защита на следствии',
+            subtitle: 'Предварительное расследование',
+            popular: true,
+            price: 'по согласованию',
+            features: [
+              { name: 'Составление плана защиты', value: '✓' },
+              { name: 'Участие в следственных действиях', value: '✓' },
+              { name: 'Подача заявлений и ходатайств', value: '✓' },
+              { name: 'Посещение в ИВС/СИЗО', value: '✓' }
+            ]
+          },
+          {
+            title: 'Защита в суде',
+            subtitle: 'Судебное разбирательство',
+            popular: false,
+            price: 'по согласованию',
+            features: [
+              { name: 'Ознакомление с делом', value: '✓' },
+              { name: 'Подготовка к заседаниям', value: '✓' },
+              { name: 'Выезды и участие в суде', value: '✓' },
+              { name: 'Обжалование решений', value: '✓' }
+            ]
+          }
+        ]}
+      />
+      <section className="section bg-white" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div style={{ background: 'var(--color-deep-blue)', padding: '40px', borderRadius: '4px', color: 'var(--color-white)', display: 'flex', flexWrap: 'wrap', gap: '32px', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ flex: '1 1 400px' }}>
+              <h3 style={{ fontSize: '24px', marginBottom: '16px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)' }}>Не знаете, какой формат помощи потребуется?</h3>
+              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)', margin: 0 }}>Опишите известные обстоятельства. Адвокат уточнит стадию дела и предложит подходящий формат работы.</p>
+            </div>
             <div>
+              <a href="#form" className="btn btn-primary" style={{ padding: '16px 40px' }}>Описать ситуацию</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Блок 10. Частые вопросы */}
+      <FAQBlock 
+        faqs={faqs} 
+        superTitle="FAQ" 
+        title="Частые вопросы"
+        subtitle=""
+      />
+
+      {/* Блок 11. Связанные услуги */}
+      <section className="section bg-white" style={{ paddingTop: '40px' }}>
+        <div className="container">
+          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '40px' }}>Другие услуги военного адвоката</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+            <a href="/grazhdanam/voennyj-yurist/" style={{ 
+              display: 'block', 
+              textDecoration: 'none', 
+              background: 'var(--color-cream)', 
+              padding: '32px',
+              textAlign: 'left',
+              color: 'var(--color-deep-blue)',
+              borderBottom: '4px solid var(--color-gold)',
+              transition: 'transform 0.3s' 
+            }} className="hover-lift">
+              <div style={{ fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>Военный адвокат</div>
+              <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', fontWeight: 400 }}>Защита прав военнослужащих</div>
+            </a>
+            {/* До публикации страниц ссылки скрыты, выводим заглушки или скрываем. 
+                По ТЗ: "До публикации целевой страницы карточка скрывается"
+            */}
+          </div>
+        </div>
+      </section>
+
+      {/* Блок 12. Финальная форма */}
+      <section className="section" id="form" style={{ background: 'var(--color-cream)' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-40px', left: 0, display: 'flex', alignItems: 'center', gap: '16px' }}>
+                  <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                    Связаться с нами
+                  </span>
+                </div>
+              </div>
+              <h2 style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0 }}>
+                Если человека задержали или он готовится явиться,<br /> не откладывайте связь<br /> с адвокатом
+              </h2>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
+                Уточним срочность, местонахождение и необходимые документы.
+              </p>
+              
+              <div style={{ marginTop: 'auto', marginBottom: '64px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  Перезвоним в течение 15 минут
+                </div>
+              </div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
               <ContactsForm title="Написать нам" subtitle="" />
             </div>
           </div>
