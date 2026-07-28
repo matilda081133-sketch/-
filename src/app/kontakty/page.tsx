@@ -29,7 +29,7 @@ export default function ContactsPage() {
     logo: 'https://dejure-help.ru/-/images/logo_dark.png',
     image: 'https://dejure-help.ru/-/images/office-building.jpg',
     description: 'Юридическая помощь гражданам и бизнесу в Липецке.',
-    telephone: '+7 (4742) 20-30-70',
+    telephone: '+7 (910) 350-31-11',
     email: 'info@dejure-help.ru',
     address: {
       '@type': 'PostalAddress',
@@ -98,7 +98,7 @@ export default function ContactsPage() {
               
               <div style={{ marginBottom: '48px' }}>
                 <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 16px 0', maxWidth: '750px' }}>
-                  Позвоните или напишите нам либо приезжайте в офис юридической компании «Де-Юре» в центре Липецка.
+                  Позвоните или напишите нам либо приезжайте в офис юридической компании «Де&#8209;Юре» в центре Липецка.
                 </p>
                 <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, maxWidth: '750px' }}>
                   Личные встречи с юристами проводятся по предварительной записи — пожалуйста, согласуйте время визита заранее.
@@ -106,32 +106,32 @@ export default function ContactsPage() {
               </div>
               
               {/* Контактные карточки (Сетка 2x2) */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+              <div className="grid grid-2" style={{ gap: '24px' }}>
                 
                 {/* 1. Телефон */}
                 <div style={{ background: 'var(--color-white)', padding: '32px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
                     Телефон
-                  </h3>
-                  <a href="tel:+74742203070" style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
-                    +7 (4742) 20-30-70
+                  </div>
+                  <a href="tel:+79103503111" style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
+                    +7 (910) 350-31-11
                   </a>
-                  <a href="tel:+74742203070" className="btn btn-outline" style={{ padding: '10px 24px', fontSize: '14px', alignSelf: 'flex-start', marginTop: 'auto' }}>
+                  <a href="tel:+79103503111" className="btn btn-outline" style={{ padding: '10px 24px', fontSize: '14px', alignSelf: 'flex-start', marginTop: 'auto' }}>
                     Позвонить
                   </a>
                 </div>
 
                 {/* 2. Адрес */}
                 <div style={{ background: 'var(--color-white)', padding: '32px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
                     </svg>
                     Адрес офиса
-                  </h3>
+                  </div>
                   <p style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.5, fontWeight: 500 }}>
                     г. Липецк, ул. Советская, д.&nbsp;35,<br/>офис 213
                   </p>
@@ -142,12 +142,12 @@ export default function ContactsPage() {
 
                 {/* 3. Режим работы */}
                 <div style={{ background: 'var(--color-white)', padding: '32px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
                       <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
                     </svg>
                     Режим работы
-                  </h3>
+                  </div>
                   <p style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.5, fontWeight: 500 }}>
                     Пн–Пт: 09:00 — 18:00<br />Сб, Вс: выходной
                   </p>
@@ -155,12 +155,12 @@ export default function ContactsPage() {
 
                 {/* 4. Email */}
                 <div style={{ background: 'var(--color-white)', padding: '32px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.05)', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
                     Электронная почта
-                  </h3>
+                  </div>
                   <a href="mailto:info@dejure-help.ru" style={{ fontSize: '20px', color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 500 }}>
                     info@dejure-help.ru
                   </a>
@@ -184,12 +184,12 @@ export default function ContactsPage() {
                 {/* Краткие данные (Оформленная карточка) */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', background: 'var(--color-white)', padding: '32px', borderRadius: '4px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.08)', borderTop: '4px solid var(--color-gold)' }}>
                   <div style={{ gridColumn: '1 / -1', marginBottom: '8px' }}>
-                    <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <div style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
                       </svg>
                       Информация о здании
-                    </h3>
+                    </div>
                   </div>
                   <div style={{ gridColumn: '1 / -1' }}>
                     <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Адрес</div>
@@ -214,19 +214,32 @@ export default function ContactsPage() {
                 </div>
 
                 {/* Инструкция */}
-                <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: '4px', flex: 1 }}>
-                  <p style={{ margin: 0 }}>
-                    В здание можно войти через любой из двух общих входов, расположенных со стороны улицы Советской в правой и левой частях фасада. Офис ЮК «Де-Юре» находится <strong style={{ color: 'var(--color-deep-blue)' }}>на втором этаже</strong>. Отдельного входа и пропускного режима нет.
-                  </p>
-                  <p style={{ margin: 0 }}>
-                    Если вы вошли через правый вход, поднимитесь по лестнице на второй этаж и поверните в коридоре направо. Если вошли через левый вход — поднимитесь на второй этаж и поверните налево. Лифта в здании нет.
-                  </p>
-                  <p style={{ margin: 0 }}>
-                    Ближайшая остановка — <strong style={{ color: 'var(--color-deep-blue)' }}>«Улица Горького»</strong>. От неё до здания идти не более одной минуты. В зависимости от стороны, с которой вы приехали, потребуется перейти одну или две дороги.
-                  </p>
-                  <p style={{ margin: 0 }}>
-                    Непосредственно у здания <strong style={{ color: 'var(--color-deep-blue)' }}>парковки нет</strong>. Автомобиль можно оставить на стоянке напротив здания через дорогу на улице Советской либо на стоянке немного дальше, на улице Горького.
-                  </p>
+                {/* Инструкция */}
+                <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: '20px', flex: 1 }}>
+                  <div>
+                    <h3 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 4px 0', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Вход в здание</h3>
+                    <p style={{ margin: 0 }}>
+                      Войти можно через любой из двух общих входов, расположенных со стороны улицы Советской в правой и левой частях фасада. Отдельного входа нет.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 4px 0', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Как найти офис</h3>
+                    <p style={{ margin: 0 }}>
+                      Если вы вошли через правый вход, поднимитесь по лестнице и поверните в коридоре направо. Если вошли через левый вход — поднимитесь и поверните налево.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 4px 0', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>От остановки</h3>
+                    <p style={{ margin: 0 }}>
+                      От остановки «Улица Горького» до здания идти не более одной минуты. В зависимости от стороны, с которой вы приехали, потребуется перейти одну или две дороги.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 4px 0', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Где припарковаться</h3>
+                    <p style={{ margin: 0 }}>
+                      Непосредственно у здания парковки нет. Автомобиль можно оставить на стоянке напротив здания через дорогу на улице Советской либо на стоянке немного дальше, на улице Горького.
+                    </p>
+                  </div>
                 </div>
                 
               </div>
@@ -292,7 +305,7 @@ export default function ContactsPage() {
                 <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 32px 0' }}>
                   Написать нам
                 </h2>
-                <div style={{ gridColumn: '1 / -1', background: 'var(--color-cream)', padding: '24px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                <div style={{ gridColumn: '1 / -1', background: 'var(--gradient-cream)', padding: '24px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
                   <ContactsForm title="" subtitle="" />
                 </div>
               </div>

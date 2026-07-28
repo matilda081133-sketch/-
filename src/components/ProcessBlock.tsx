@@ -10,12 +10,13 @@ export interface ProcessStep {
 
 interface ProcessBlockProps {
   title?: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   steps: ProcessStep[];
   ctaTitle?: string;
   ctaSubtitle?: string;
   ctaButtonText?: string;
   ctaButtonHref?: string;
+  alignTitle?: 'left' | 'center';
 }
 
 export default function ProcessBlock({
@@ -25,7 +26,8 @@ export default function ProcessBlock({
   ctaTitle = "Начните с первичного обращения",
   ctaSubtitle = "Кратко опишите ситуацию — мы уточним обстоятельства, скажем, какие документы потребуются, и определим следующий шаг.",
   ctaButtonText = "Обсудить ситуацию",
-  ctaButtonHref = "#consultation"
+  ctaButtonHref = "#consultation",
+  alignTitle = 'center'
 }: ProcessBlockProps) {
   // Determine grid class based on number of steps
   let gridClass = "grid grid-3";
@@ -41,8 +43,8 @@ export default function ProcessBlock({
       <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'radial-gradient(circle at 0% 0%, rgba(193, 160, 102, 0.04) 0%, transparent 50%), radial-gradient(circle at 100% 100%, rgba(23, 50, 77, 0.03) 0%, transparent 50%)', pointerEvents: 'none' }}></div>
       
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '42px', color: 'var(--color-deep-blue)', marginBottom: '24px', textAlign: 'center' }}>
+        <div style={{ textAlign: alignTitle, marginBottom: '50px' }}>
+          <h2 className={alignTitle === 'left' ? 'with-accent' : ''} style={{ fontFamily: 'var(--font-serif)', fontSize: '42px', color: 'var(--color-deep-blue)', marginBottom: '24px', textAlign: alignTitle }}>
             {title}
           </h2>
           {subtitle && (

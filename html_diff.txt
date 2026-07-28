@@ -1,0 +1,1261 @@
+diff --git a/m1.html b/m2.html
+index d000283e..6e809898 100644
+--- a/m1.html
++++ b/m2.html
+@@ -1,16 +1,16 @@
+ <main>
+-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://dejure.ru/"},{"@type":"ListItem","position":2,"name":"Гражданам","item":"https://dejure.ru/grazhdanam/"},{"@type":"ListItem","position":3,"name":"Военный юрист","item":"https://dejure.ru/grazhdanam/voennyj-yurist/"}]},{"@type":"LegalService","name":"ЮК «Де-юре»","description":"Юридическая помощь военнослужащим в Липецке","url":"https://dejure.ru/grazhdanam/voennyj-yurist/"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"С какими вопросами помогает военный юрист?","acceptedAnswer":{"@type":"Answer","text":"С выплатами и документами после ранения или гибели военнослужащего, заключениями ВВК, решениями военкомата, установлением статуса пропавшего военнослужащего и другими спорами, связанными с военной службой. Если ситуация связана с задержанием, проверкой или уголовным делом, к работе подключается адвокат."}},{"@type":"Question","name":"В каких ситуациях нужно обращаться именно к адвокату?","acceptedAnswer":{"@type":"Answer","text":"Адвокат требуется, когда военнослужащего подозревают или обвиняют в преступлении, задержали, вызывают на допрос либо проводят иные процессуальные действия в рамках уголовного дела. По вопросам выплат, ВВК, увольнения и административным спорам помощь может оказывать юрист, если конкретное действие не требует статуса адвоката."}},{"@type":"Question","name":"Можно ли обратиться родственнику военнослужащего?","acceptedAnswer":{"@type":"Answer","text":"Да. Родственник может сообщить обстоятельства, передать документы и получить разъяснение о возможных действиях. Возможность получить сведения, представлять интересы военнослужащего или заключить соглашение от его имени зависит от ситуации, полномочий и требований закона."}},{"@type":"Question","name":"Можно ли вести дело дистанционно из другого региона?","acceptedAnswer":{"@type":"Answer","text":"Многие задачи можно начать дистанционно: провести консультацию, изучить документы, подготовить обращения и определить стратегию. Необходимость личного участия зависит от вида дела, стадии производства и места совершения процессуальных действий."}},{"@type":"Question","name":"Что сообщить, если военнослужащего задержали?","acceptedAnswer":{"@type":"Answer","text":"Сообщите имя и дату рождения, воинскую часть, когда и где человека видели в последний раз, предполагаемую причину и фактическое место задержания, а также данные должностных лиц и документы, если они есть. Если часть сведений неизвестна, не откладывайте обращение."}},{"@type":"Question","name":"Какие документы нужны для первичного разбора?","acceptedAnswer":{"@type":"Answer","text":"Подойдут имеющиеся документы: контракт, военный билет, заключение ВВК, медицинские выписки, справки о ранении, решения военкомата или призывной комиссии, постановления, повестки, ответы ведомств и переписка. Точный перечень зависит от ситуации; ждать полного комплекта перед обращением не нужно."}},{"@type":"Question","name":"Можно ли подготовить рапорт или жалобы дистанционно?","acceptedAnswer":{"@type":"Answer","text":"Да, если специалист может получить факты и документы, необходимые для подготовки. До отправки нужно проверить адресата, способ подачи, приложения и подтверждение вручения. В отдельных ситуациях одной жалобы недостаточно и требуется дальнейшее сопровождение."}},{"@type":"Question","name":"От чего зависит стоимость помощи?","acceptedAnswer":{"@type":"Answer","text":"От характера и сложности ситуации, стадии дела, объёма документов, количества необходимых действий, региона и необходимости личного участия адвоката или юриста. Состав работ и стоимость согласовываются до заключения договора."}}]},{"@type":"Person","name":"Дмитрий Сергеевич Конопкин","jobTitle":"Адвокат, Руководитель практики военного права","url":"https://dejure.ru/grazhdanam/voennyj-yurist/"}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"╨У╨╗╨░╨▓╨╜╨░╤П","item":"https://dejure.ru/"},{"@type":"ListItem","position":2,"name":"╨У╤А╨░╨╢╨┤╨░╨╜╨░╨╝","item":"https://dejure.ru/grazhdanam/"},{"@type":"ListItem","position":3,"name":"╨Т╨╛╨╡╨╜╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В","item":"https://dejure.ru/grazhdanam/voennyj-yurist/"}]},{"@type":"LegalService","name":"╨о╨Ъ ┬л╨Ф╨╡-╤О╤А╨╡┬╗","description":"╨о╤А╨╕╨┤╨╕╤З╨╡╤Б╨║╨░╤П ╨┐╨╛╨╝╨╛╤Й╤М ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╕╨╝ ╨▓ ╨Ы╨╕╨┐╨╡╤Ж╨║╨╡","url":"https://dejure.ru/grazhdanam/voennyj-yurist/"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"╨б ╨║╨░╨║╨╕╨╝╨╕ ╨▓╨╛╨┐╤А╨╛╤Б╨░╨╝╨╕ ╨┐╨╛╨╝╨╛╨│╨░╨╡╤В ╨▓╨╛╨╡╨╜╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В?","acceptedAnswer":{"@type":"Answer","text":"╨б ╨▓╤Л╨┐╨╗╨░╤В╨░╨╝╨╕ ╨╕ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╨░╨╝╨╕ ╨┐╨╛╤Б╨╗╨╡ ╤А╨░╨╜╨╡╨╜╨╕╤П ╨╕╨╗╨╕ ╨│╨╕╨▒╨╡╨╗╨╕ ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛, ╨╖╨░╨║╨╗╤О╤З╨╡╨╜╨╕╤П╨╝╨╕ ╨Т╨Т╨Ъ, ╤А╨╡╤И╨╡╨╜╨╕╤П╨╝╨╕ ╨▓╨╛╨╡╨╜╨║╨╛╨╝╨░╤В╨░, ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡╨╝ ╤Б╤В╨░╤В╤Г╤Б╨░ ╨┐╤А╨╛╨┐╨░╨▓╤И╨╡╨│╨╛ ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛ ╨╕ ╨┤╤А╤Г╨│╨╕╨╝╨╕ ╤Б╨┐╨╛╤А╨░╨╝╨╕, ╤Б╨▓╤П╨╖╨░╨╜╨╜╤Л╨╝╨╕ ╤Б ╨▓╨╛╨╡╨╜╨╜╨╛╨╣ ╤Б╨╗╤Г╨╢╨▒╨╛╨╣. ╨Х╤Б╨╗╨╕ ╤Б╨╕╤В╤Г╨░╤Ж╨╕╤П ╤Б╨▓╤П╨╖╨░╨╜╨░ ╤Б ╨╖╨░╨┤╨╡╤А╨╢╨░╨╜╨╕╨╡╨╝, ╨┐╤А╨╛╨▓╨╡╤А╨║╨╛╨╣ ╨╕╨╗╨╕ ╤Г╨│╨╛╨╗╨╛╨▓╨╜╤Л╨╝ ╨┤╨╡╨╗╨╛╨╝, ╨║ ╤А╨░╨▒╨╛╤В╨╡ ╨┐╨╛╨┤╨║╨╗╤О╤З╨░╨╡╤В╤Б╤П ╨░╨┤╨▓╨╛╨║╨░╤В."}},{"@type":"Question","name":"╨Т ╨║╨░╨║╨╕╤Е ╤Б╨╕╤В╤Г╨░╤Ж╨╕╤П╤Е ╨╜╤Г╨╢╨╜╨╛ ╨╛╨▒╤А╨░╤Й╨░╤В╤М╤Б╤П ╨╕╨╝╨╡╨╜╨╜╨╛ ╨║ ╨░╨┤╨▓╨╛╨║╨░╤В╤Г?","acceptedAnswer":{"@type":"Answer","text":"╨Р╨┤╨▓╨╛╨║╨░╤В ╤В╤А╨╡╨▒╤Г╨╡╤В╤Б╤П, ╨║╨╛╨│╨┤╨░ ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛ ╨┐╨╛╨┤╨╛╨╖╤А╨╡╨▓╨░╤О╤В ╨╕╨╗╨╕ ╨╛╨▒╨▓╨╕╨╜╤П╤О╤В ╨▓ ╨┐╤А╨╡╤Б╤В╤Г╨┐╨╗╨╡╨╜╨╕╨╕, ╨╖╨░╨┤╨╡╤А╨╢╨░╨╗╨╕, ╨▓╤Л╨╖╤Л╨▓╨░╤О╤В ╨╜╨░ ╨┤╨╛╨┐╤А╨╛╤Б ╨╗╨╕╨▒╨╛ ╨┐╤А╨╛╨▓╨╛╨┤╤П╤В ╨╕╨╜╤Л╨╡ ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╤Г╨░╨╗╤М╨╜╤Л╨╡ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П ╨▓ ╤А╨░╨╝╨║╨░╤Е ╤Г╨│╨╛╨╗╨╛╨▓╨╜╨╛╨│╨╛ ╨┤╨╡╨╗╨░. ╨Я╨╛ ╨▓╨╛╨┐╤А╨╛╤Б╨░╨╝ ╨▓╤Л╨┐╨╗╨░╤В, ╨Т╨Т╨Ъ, ╤Г╨▓╨╛╨╗╤М╨╜╨╡╨╜╨╕╤П ╨╕ ╨░╨┤╨╝╨╕╨╜╨╕╤Б╤В╤А╨░╤В╨╕╨▓╨╜╤Л╨╝ ╤Б╨┐╨╛╤А╨░╨╝ ╨┐╨╛╨╝╨╛╤Й╤М ╨╝╨╛╨╢╨╡╤В ╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤О╤А╨╕╤Б╤В, ╨╡╤Б╨╗╨╕ ╨║╨╛╨╜╨║╤А╨╡╤В╨╜╨╛╨╡ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╨╡ ╨╜╨╡ ╤В╤А╨╡╨▒╤Г╨╡╤В ╤Б╤В╨░╤В╤Г╤Б╨░ ╨░╨┤╨▓╨╛╨║╨░╤В╨░."}},{"@type":"Question","name":"╨Ь╨╛╨╢╨╜╨╛ ╨╗╨╕ ╨╛╨▒╤А╨░╤В╨╕╤В╤М╤Б╤П ╤А╨╛╨┤╤Б╤В╨▓╨╡╨╜╨╜╨╕╨║╤Г ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛?","acceptedAnswer":{"@type":"Answer","text":"╨Ф╨░. ╨а╨╛╨┤╤Б╤В╨▓╨╡╨╜╨╜╨╕╨║ ╨╝╨╛╨╢╨╡╤В ╤Б╨╛╨╛╨▒╤Й╨╕╤В╤М ╨╛╨▒╤Б╤В╨╛╤П╤В╨╡╨╗╤М╤Б╤В╨▓╨░, ╨┐╨╡╤А╨╡╨┤╨░╤В╤М ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л ╨╕ ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╤А╨░╨╖╤К╤П╤Б╨╜╨╡╨╜╨╕╨╡ ╨╛ ╨▓╨╛╨╖╨╝╨╛╨╢╨╜╤Л╤Е ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П╤Е. ╨Т╨╛╨╖╨╝╨╛╨╢╨╜╨╛╤Б╤В╤М ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╤Б╨▓╨╡╨┤╨╡╨╜╨╕╤П, ╨┐╤А╨╡╨┤╤Б╤В╨░╨▓╨╗╤П╤В╤М ╨╕╨╜╤В╨╡╤А╨╡╤Б╤Л ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛ ╨╕╨╗╨╕ ╨╖╨░╨║╨╗╤О╤З╨╕╤В╤М ╤Б╨╛╨│╨╗╨░╤И╨╡╨╜╨╕╨╡ ╨╛╤В ╨╡╨│╨╛ ╨╕╨╝╨╡╨╜╨╕ ╨╖╨░╨▓╨╕╤Б╨╕╤В ╨╛╤В ╤Б╨╕╤В╤Г╨░╤Ж╨╕╨╕, ╨┐╨╛╨╗╨╜╨╛╨╝╨╛╤З╨╕╨╣ ╨╕ ╤В╤А╨╡╨▒╨╛╨▓╨░╨╜╨╕╨╣ ╨╖╨░╨║╨╛╨╜╨░."}},{"@type":"Question","name":"╨Ь╨╛╨╢╨╜╨╛ ╨╗╨╕ ╨▓╨╡╤Б╤В╨╕ ╨┤╨╡╨╗╨╛ ╨┤╨╕╤Б╤В╨░╨╜╤Ж╨╕╨╛╨╜╨╜╨╛ ╨╕╨╖ ╨┤╤А╤Г╨│╨╛╨│╨╛ ╤А╨╡╨│╨╕╨╛╨╜╨░?","acceptedAnswer":{"@type":"Answer","text":"╨Ь╨╜╨╛╨│╨╕╨╡ ╨╖╨░╨┤╨░╤З╨╕ ╨╝╨╛╨╢╨╜╨╛ ╨╜╨░╤З╨░╤В╤М ╨┤╨╕╤Б╤В╨░╨╜╤Ж╨╕╨╛╨╜╨╜╨╛: ╨┐╤А╨╛╨▓╨╡╤Б╤В╨╕ ╨║╨╛╨╜╤Б╤Г╨╗╤М╤В╨░╤Ж╨╕╤О, ╨╕╨╖╤Г╤З╨╕╤В╤М ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л, ╨┐╨╛╨┤╨│╨╛╤В╨╛╨▓╨╕╤В╤М ╨╛╨▒╤А╨░╤Й╨╡╨╜╨╕╤П ╨╕ ╨╛╨┐╤А╨╡╨┤╨╡╨╗╨╕╤В╤М ╤Б╤В╤А╨░╤В╨╡╨│╨╕╤О. ╨Э╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛╤Б╤В╤М ╨╗╨╕╤З╨╜╨╛╨│╨╛ ╤Г╤З╨░╤Б╤В╨╕╤П ╨╖╨░╨▓╨╕╤Б╨╕╤В ╨╛╤В ╨▓╨╕╨┤╨░ ╨┤╨╡╨╗╨░, ╤Б╤В╨░╨┤╨╕╨╕ ╨┐╤А╨╛╨╕╨╖╨▓╨╛╨┤╤Б╤В╨▓╨░ ╨╕ ╨╝╨╡╤Б╤В╨░ ╤Б╨╛╨▓╨╡╤А╤И╨╡╨╜╨╕╤П ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╤Г╨░╨╗╤М╨╜╤Л╤Е ╨┤╨╡╨╣╤Б╤В╨▓╨╕╨╣."}},{"@type":"Question","name":"╨з╤В╨╛ ╤Б╨╛╨╛╨▒╤Й╨╕╤В╤М, ╨╡╤Б╨╗╨╕ ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛ ╨╖╨░╨┤╨╡╤А╨╢╨░╨╗╨╕?","acceptedAnswer":{"@type":"Answer","text":"╨б╨╛╨╛╨▒╤Й╨╕╤В╨╡ ╨╕╨╝╤П ╨╕ ╨┤╨░╤В╤Г ╤А╨╛╨╢╨┤╨╡╨╜╨╕╤П, ╨▓╨╛╨╕╨╜╤Б╨║╤Г╤О ╤З╨░╤Б╤В╤М, ╨║╨╛╨│╨┤╨░ ╨╕ ╨│╨┤╨╡ ╤З╨╡╨╗╨╛╨▓╨╡╨║╨░ ╨▓╨╕╨┤╨╡╨╗╨╕ ╨▓ ╨┐╨╛╤Б╨╗╨╡╨┤╨╜╨╕╨╣ ╤А╨░╨╖, ╨┐╤А╨╡╨┤╨┐╨╛╨╗╨░╨│╨░╨╡╨╝╤Г╤О ╨┐╤А╨╕╤З╨╕╨╜╤Г ╨╕ ╤Д╨░╨║╤В╨╕╤З╨╡╤Б╨║╨╛╨╡ ╨╝╨╡╤Б╤В╨╛ ╨╖╨░╨┤╨╡╤А╨╢╨░╨╜╨╕╤П, ╨░ ╤В╨░╨║╨╢╨╡ ╨┤╨░╨╜╨╜╤Л╨╡ ╨┤╨╛╨╗╨╢╨╜╨╛╤Б╤В╨╜╤Л╤Е ╨╗╨╕╤Ж ╨╕ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л, ╨╡╤Б╨╗╨╕ ╨╛╨╜╨╕ ╨╡╤Б╤В╤М. ╨Х╤Б╨╗╨╕ ╤З╨░╤Б╤В╤М ╤Б╨▓╨╡╨┤╨╡╨╜╨╕╨╣ ╨╜╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╨░, ╨╜╨╡ ╨╛╤В╨║╨╗╨░╨┤╤Л╨▓╨░╨╣╤В╨╡ ╨╛╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡."}},{"@type":"Question","name":"╨Ъ╨░╨║╨╕╨╡ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л ╨╜╤Г╨╢╨╜╤Л ╨┤╨╗╤П ╨┐╨╡╤А╨▓╨╕╤З╨╜╨╛╨│╨╛ ╤А╨░╨╖╨▒╨╛╤А╨░?","acceptedAnswer":{"@type":"Answer","text":"╨Я╨╛╨┤╨╛╨╣╨┤╤Г╤В ╨╕╨╝╨╡╤О╤Й╨╕╨╡╤Б╤П ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л: ╨║╨╛╨╜╤В╤А╨░╨║╤В, ╨▓╨╛╨╡╨╜╨╜╤Л╨╣ ╨▒╨╕╨╗╨╡╤В, ╨╖╨░╨║╨╗╤О╤З╨╡╨╜╨╕╨╡ ╨Т╨Т╨Ъ, ╨╝╨╡╨┤╨╕╤Ж╨╕╨╜╤Б╨║╨╕╨╡ ╨▓╤Л╨┐╨╕╤Б╨║╨╕, ╤Б╨┐╤А╨░╨▓╨║╨╕ ╨╛ ╤А╨░╨╜╨╡╨╜╨╕╨╕, ╤А╨╡╤И╨╡╨╜╨╕╤П ╨▓╨╛╨╡╨╜╨║╨╛╨╝╨░╤В╨░ ╨╕╨╗╨╕ ╨┐╤А╨╕╨╖╤Л╨▓╨╜╨╛╨╣ ╨║╨╛╨╝╨╕╤Б╤Б╨╕╨╕, ╨┐╨╛╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П, ╨┐╨╛╨▓╨╡╤Б╤В╨║╨╕, ╨╛╤В╨▓╨╡╤В╤Л ╨▓╨╡╨┤╨╛╨╝╤Б╤В╨▓ ╨╕ ╨┐╨╡╤А╨╡╨┐╨╕╤Б╨║╨░. ╨в╨╛╤З╨╜╤Л╨╣ ╨┐╨╡╤А╨╡╤З╨╡╨╜╤М ╨╖╨░╨▓╨╕╤Б╨╕╤В ╨╛╤В ╤Б╨╕╤В╤Г╨░╤Ж╨╕╨╕; ╨╢╨┤╨░╤В╤М ╨┐╨╛╨╗╨╜╨╛╨│╨╛ ╨║╨╛╨╝╨┐╨╗╨╡╨║╤В╨░ ╨┐╨╡╤А╨╡╨┤ ╨╛╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡╨╝ ╨╜╨╡ ╨╜╤Г╨╢╨╜╨╛."}},{"@type":"Question","name":"╨Ь╨╛╨╢╨╜╨╛ ╨╗╨╕ ╨┐╨╛╨┤╨│╨╛╤В╨╛╨▓╨╕╤В╤М ╤А╨░╨┐╨╛╤А╤В ╨╕╨╗╨╕ ╨╢╨░╨╗╨╛╨▒╤Л ╨┤╨╕╤Б╤В╨░╨╜╤Ж╨╕╨╛╨╜╨╜╨╛?","acceptedAnswer":{"@type":"Answer","text":"╨Ф╨░, ╨╡╤Б╨╗╨╕ ╤Б╨┐╨╡╤Ж╨╕╨░╨╗╨╕╤Б╤В ╨╝╨╛╨╢╨╡╤В ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╤Д╨░╨║╤В╤Л ╨╕ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л, ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╨╡ ╨┤╨╗╤П ╨┐╨╛╨┤╨│╨╛╤В╨╛╨▓╨║╨╕. ╨Ф╨╛ ╨╛╤В╨┐╤А╨░╨▓╨║╨╕ ╨╜╤Г╨╢╨╜╨╛ ╨┐╤А╨╛╨▓╨╡╤А╨╕╤В╤М ╨░╨┤╤А╨╡╤Б╨░╤В╨░, ╤Б╨┐╨╛╤Б╨╛╨▒ ╨┐╨╛╨┤╨░╤З╨╕, ╨┐╤А╨╕╨╗╨╛╨╢╨╡╨╜╨╕╤П ╨╕ ╨┐╨╛╨┤╤В╨▓╨╡╤А╨╢╨┤╨╡╨╜╨╕╨╡ ╨▓╤А╤Г╤З╨╡╨╜╨╕╤П. ╨Т ╨╛╤В╨┤╨╡╨╗╤М╨╜╤Л╤Е ╤Б╨╕╤В╤Г╨░╤Ж╨╕╤П╤Е ╨╛╨┤╨╜╨╛╨╣ ╨╢╨░╨╗╨╛╨▒╤Л ╨╜╨╡╨┤╨╛╤Б╤В╨░╤В╨╛╤З╨╜╨╛ ╨╕ ╤В╤А╨╡╨▒╤Г╨╡╤В╤Б╤П ╨┤╨░╨╗╤М╨╜╨╡╨╣╤И╨╡╨╡ ╤Б╨╛╨┐╤А╨╛╨▓╨╛╨╢╨┤╨╡╨╜╨╕╨╡."}},{"@type":"Question","name":"╨Ю╤В ╤З╨╡╨│╨╛ ╨╖╨░╨▓╨╕╤Б╨╕╤В ╤Б╤В╨╛╨╕╨╝╨╛╤Б╤В╤М ╨┐╨╛╨╝╨╛╤Й╨╕?","acceptedAnswer":{"@type":"Answer","text":"╨Ю╤В ╤Е╨░╤А╨░╨║╤В╨╡╤А╨░ ╨╕ ╤Б╨╗╨╛╨╢╨╜╨╛╤Б╤В╨╕ ╤Б╨╕╤В╤Г╨░╤Ж╨╕╨╕, ╤Б╤В╨░╨┤╨╕╨╕ ╨┤╨╡╨╗╨░, ╨╛╨▒╤К╤С╨╝╨░ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╨╛╨▓, ╨║╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨░ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╤Е ╨┤╨╡╨╣╤Б╤В╨▓╨╕╨╣, ╤А╨╡╨│╨╕╨╛╨╜╨░ ╨╕ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛╤Б╤В╨╕ ╨╗╨╕╤З╨╜╨╛╨│╨╛ ╤Г╤З╨░╤Б╤В╨╕╤П ╨░╨┤╨▓╨╛╨║╨░╤В╨░ ╨╕╨╗╨╕ ╤О╤А╨╕╤Б╤В╨░. ╨б╨╛╤Б╤В╨░╨▓ ╤А╨░╨▒╨╛╤В ╨╕ ╤Б╤В╨╛╨╕╨╝╨╛╤Б╤В╤М ╤Б╨╛╨│╨╗╨░╤Б╨╛╨▓╤Л╨▓╨░╤О╤В╤Б╤П ╨┤╨╛ ╨╖╨░╨║╨╗╤О╤З╨╡╨╜╨╕╤П ╨┤╨╛╨│╨╛╨▓╨╛╤А╨░."}}]},{"@type":"Person","name":"╨Ф╨╝╨╕╤В╤А╨╕╨╣ ╨б╨╡╤А╨│╨╡╨╡╨▓╨╕╤З ╨Ъ╨╛╨╜╨╛╨┐╨║╨╕╨╜","jobTitle":"╨Р╨┤╨▓╨╛╨║╨░╤В, ╨а╤Г╨║╨╛╨▓╨╛╨┤╨╕╤В╨╡╨╗╤М ╨┐╤А╨░╨║╤В╨╕╨║╨╕ ╨▓╨╛╨╡╨╜╨╜╨╛╨│╨╛ ╨┐╤А╨░╨▓╨░","url":"https://dejure.ru/grazhdanam/voennyj-yurist/"}]}</script>
+ <header class="site-header ">
+ <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+ <a style="display:flex;align-items:center;text-decoration:none" href="/-/">
+-<img src="/-/images/logo_dark.png" alt="Де-Юре" style="height:110px;width:auto;transform:scale(1.25);transform-origin:left center"/>
++<img src="/-/images/logo_dark.png" alt="╨Ф╨╡-╨о╤А╨╡" style="height:110px;width:auto;transform:scale(1.25);transform-origin:left center"/>
+ </a>
+ <nav style="display:flex;gap:20px;align-items:center;flex-wrap:nowrap;white-space:nowrap">
+ <div style="display:flex;gap:20px;font-size:14px">
+ <div class="nav-item-dropdown">
+ <div style="display:flex;align-items:center;gap:4px">
+-<a class="nav-link" href="/-/o-kompanii/">О компании</a>
+-<button aria-expanded="false" aria-controls="dropdown-about" class="chevron-btn" aria-label="Открыть меню О компании">
++<a class="nav-link" href="/-/o-kompanii/">╨Ю ╨║╨╛╨╝╨┐╨░╨╜╨╕╨╕</a>
++<button aria-expanded="false" aria-controls="dropdown-about" class="chevron-btn" aria-label="╨Ю╤В╨║╤А╤Л╤В╤М ╨╝╨╡╨╜╤О ╨Ю ╨║╨╛╨╝╨┐╨░╨╜╨╕╨╕">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(0deg);transition:transform 0.3s">
+ <polyline points="6 9 12 15 18 9">
+ </polyline>
+@@ -19,23 +19,23 @@
+ </div>
+ <ul id="dropdown-about" class="dropdown-simple ">
+ <li>
+-<a class="dropdown-link-2" href="/-/o-kompanii/">О компании</a>
++<a class="dropdown-link-2" href="/-/o-kompanii/">╨Ю ╨║╨╛╨╝╨┐╨░╨╜╨╕╨╕</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/specialisty/">Специалисты</a>
++<a class="dropdown-link-2" href="/-/specialisty/">╨б╨┐╨╡╤Ж╨╕╨░╨╗╨╕╤Б╤В╤Л</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/otzyvy/">Отзывы</a>
++<a class="dropdown-link-2" href="/-/otzyvy/">╨Ю╤В╨╖╤Л╨▓╤Л</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/stoimost/">Стоимость</a>
++<a class="dropdown-link-2" href="/-/stoimost/">╨б╤В╨╛╨╕╨╝╨╛╤Б╤В╤М</a>
+ </li>
+ </ul>
+ </div>
+ <div class="nav-item-dropdown">
+ <div style="display:flex;align-items:center;gap:4px">
+-<a class="nav-link" href="/-/grazhdanam/">Гражданам</a>
+-<button aria-expanded="false" aria-controls="dropdown-b2c" class="chevron-btn" aria-label="Открыть меню Гражданам">
++<a class="nav-link" href="/-/grazhdanam/">╨У╤А╨░╨╢╨┤╨░╨╜╨░╨╝</a>
++<button aria-expanded="false" aria-controls="dropdown-b2c" class="chevron-btn" aria-label="╨Ю╤В╨║╤А╤Л╤В╤М ╨╝╨╡╨╜╤О ╨У╤А╨░╨╢╨┤╨░╨╜╨░╨╝">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(0deg);transition:transform 0.3s">
+ <polyline points="6 9 12 15 18 9">
+ </polyline>
+@@ -44,56 +44,56 @@
+ </div>
+ <ul id="dropdown-b2c" class="dropdown-simple ">
+ <li>
+-<a class="dropdown-link-2" style="font-weight:bold" href="/-/grazhdanam/">Обзор раздела</a>
++<a class="dropdown-link-2" style="font-weight:bold" href="/-/grazhdanam/">╨Ю╨▒╨╖╨╛╤А ╤А╨░╨╖╨┤╨╡╨╗╨░</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/semejnyj-yurist/">Семейный юрист</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/semejnyj-yurist/">╨б╨╡╨╝╨╡╨╣╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/nasledstvennyj-yurist/">Наследственный юрист</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/nasledstvennyj-yurist/">╨Э╨░╤Б╨╗╨╡╨┤╤Б╤В╨▓╨╡╨╜╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/zhilishchnyj-yurist/">Жилищный юрист</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/zhilishchnyj-yurist/">╨Ц╨╕╨╗╨╕╤Й╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/yurist-po-nedvizhimosti/">Юрист по недвижимости</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/yurist-po-nedvizhimosti/">╨о╤А╨╕╤Б╤В ╨┐╨╛ ╨╜╨╡╨┤╨▓╨╕╨╢╨╕╨╝╨╛╤Б╤В╨╕</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/zemelnyj-yurist/">Земельный юрист</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/zemelnyj-yurist/">╨Ч╨╡╨╝╨╡╨╗╤М╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/bankrotstvo-fizicheskih-lic/">Банкротство физических лиц</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/bankrotstvo-fizicheskih-lic/">╨С╨░╨╜╨║╤А╨╛╤В╤Б╤В╨▓╨╛ ╤Д╨╕╨╖╨╕╤З╨╡╤Б╨║╨╕╤Е ╨╗╨╕╤Ж</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/kreditnyj-yurist/">Кредитный юрист</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/kreditnyj-yurist/">╨Ъ╤А╨╡╨┤╨╕╤В╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/vzyskanie-dolgov/">Взыскание долгов</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/vzyskanie-dolgov/">╨Т╨╖╤Л╤Б╨║╨░╨╜╨╕╨╡ ╨┤╨╛╨╗╨│╨╛╨▓</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/">Юрист по исполнительному производству</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/">╨о╤А╨╕╤Б╤В ╨┐╨╛ ╨╕╤Б╨┐╨╛╨╗╨╜╨╕╤В╨╡╨╗╤М╨╜╨╛╨╝╤Г ╨┐╤А╨╛╨╕╨╖╨▓╨╛╨┤╤Б╤В╨▓╤Г</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/avtoyurist/">Автоюрист</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/avtoyurist/">╨Р╨▓╤В╨╛╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/trudovoj-yurist/">Трудовой юрист</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/trudovoj-yurist/">╨в╤А╤Г╨┤╨╛╨▓╨╛╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/advokat-po-ugolovnym-delam/">Адвокат по уголовным делам</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/advokat-po-ugolovnym-delam/">╨Р╨┤╨▓╨╛╨║╨░╤В ╨┐╨╛ ╤Г╨│╨╛╨╗╨╛╨▓╨╜╤Л╨╝ ╨┤╨╡╨╗╨░╨╝</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/voennyj-yurist/">Военный юрист</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/voennyj-yurist/">╨Т╨╛╨╡╨╜╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/grazhdanam/migracionnyj-yurist/">Миграционный юрист</a>
++<a class="dropdown-link-2" href="/-/grazhdanam/migracionnyj-yurist/">╨Ь╨╕╨│╤А╨░╤Ж╨╕╨╛╨╜╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ </ul>
+ </div>
+ <div class="nav-item-dropdown">
+ <div style="display:flex;align-items:center;gap:4px">
+-<a class="nav-link" href="/-/biznesu/">Бизнесу</a>
+-<button aria-expanded="false" aria-controls="dropdown-b2b" class="chevron-btn" aria-label="Открыть меню Бизнесу">
++<a class="nav-link" href="/-/biznesu/">╨С╨╕╨╖╨╜╨╡╤Б╤Г</a>
++<button aria-expanded="false" aria-controls="dropdown-b2b" class="chevron-btn" aria-label="╨Ю╤В╨║╤А╤Л╤В╤М ╨╝╨╡╨╜╤О ╨С╨╕╨╖╨╜╨╡╤Б╤Г">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(0deg);transition:transform 0.3s">
+ <polyline points="6 9 12 15 18 9">
+ </polyline>
+@@ -102,60 +102,60 @@
+ </div>
+ <ul id="dropdown-b2b" class="dropdown-simple ">
+ <li>
+-<a class="dropdown-link-2" style="font-weight:bold" href="/-/biznesu/">Обзор раздела</a>
++<a class="dropdown-link-2" style="font-weight:bold" href="/-/biznesu/">╨Ю╨▒╨╖╨╛╤А ╤А╨░╨╖╨┤╨╡╨╗╨░</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/arbitrazhnyj-yurist/">Арбитражный юрист</a>
++<a class="dropdown-link-2" href="/-/biznesu/arbitrazhnyj-yurist/">╨Р╤А╨▒╨╕╤В╤А╨░╨╢╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/">Взыскание задолженности с юридических лиц</a>
++<a class="dropdown-link-2" href="/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/">╨Т╨╖╤Л╤Б╨║╨░╨╜╨╕╨╡ ╨╖╨░╨┤╨╛╨╗╨╢╨╡╨╜╨╜╨╛╤Б╤В╨╕ ╤Б ╤О╤А╨╕╨┤╨╕╤З╨╡╤Б╨║╨╕╤Е ╨╗╨╕╤Ж</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/korporativnyj-yurist/">Корпоративный юрист</a>
++<a class="dropdown-link-2" href="/-/biznesu/korporativnyj-yurist/">╨Ъ╨╛╤А╨┐╨╛╤А╨░╤В╨╕╨▓╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/dogovornoe-pravo/">Договорное право</a>
++<a class="dropdown-link-2" href="/-/biznesu/dogovornoe-pravo/">╨Ф╨╛╨│╨╛╨▓╨╛╤А╨╜╨╛╨╡ ╨┐╤А╨░╨▓╨╛</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/nalogovyj-yurist-dlya-biznesa/">Налоговый юрист для бизнеса</a>
++<a class="dropdown-link-2" href="/-/biznesu/nalogovyj-yurist-dlya-biznesa/">╨Э╨░╨╗╨╛╨│╨╛╨▓╤Л╨╣ ╤О╤А╨╕╤Б╤В ╨┤╨╗╤П ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/bankrotstvo-biznesa/">Банкротство бизнеса</a>
++<a class="dropdown-link-2" href="/-/biznesu/bankrotstvo-biznesa/">╨С╨░╨╜╨║╤А╨╛╤В╤Б╤В╨▓╨╛ ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/trudovye-spory-s-rabotnikami/">Трудовые споры с работниками</a>
++<a class="dropdown-link-2" href="/-/biznesu/trudovye-spory-s-rabotnikami/">╨в╤А╤Г╨┤╨╛╨▓╤Л╨╡ ╤Б╨┐╨╛╤А╤Л ╤Б ╤А╨░╨▒╨╛╤В╨╜╨╕╨║╨░╨╝╨╕</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/yuridicheskoe-soprovozhdenie-biznesa/">Юридическое сопровождение бизнеса</a>
++<a class="dropdown-link-2" href="/-/biznesu/yuridicheskoe-soprovozhdenie-biznesa/">╨о╤А╨╕╨┤╨╕╤З╨╡╤Б╨║╨╛╨╡ ╤Б╨╛╨┐╤А╨╛╨▓╨╛╨╢╨┤╨╡╨╜╨╕╨╡ ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/">Юрист по недвижимости и строительству для бизнеса</a>
++<a class="dropdown-link-2" href="/-/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/">╨о╤А╨╕╤Б╤В ╨┐╨╛ ╨╜╨╡╨┤╨▓╨╕╨╢╨╕╨╝╨╛╤Б╤В╨╕ ╨╕ ╤Б╤В╤А╨╛╨╕╤В╨╡╨╗╤М╤Б╤В╨▓╤Г ╨┤╨╗╤П ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/">Исполнительное производство для бизнеса</a>
++<a class="dropdown-link-2" href="/-/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/">╨Ш╤Б╨┐╨╛╨╗╨╜╨╕╤В╨╡╨╗╤М╨╜╨╛╨╡ ╨┐╤А╨╛╨╕╨╖╨▓╨╛╨┤╤Б╤В╨▓╨╛ ╨┤╨╗╤П ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/migracionnoe-soprovozhdenie-biznesa/">Миграционное сопровождение бизнеса</a>
++<a class="dropdown-link-2" href="/-/biznesu/migracionnoe-soprovozhdenie-biznesa/">╨Ь╨╕╨│╤А╨░╤Ж╨╕╨╛╨╜╨╜╨╛╨╡ ╤Б╨╛╨┐╤А╨╛╨▓╨╛╨╢╨┤╨╡╨╜╨╕╨╡ ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/">Разблокировка расчётного счёта по 115-ФЗ</a>
++<a class="dropdown-link-2" href="/-/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/">╨а╨░╨╖╨▒╨╗╨╛╨║╨╕╤А╨╛╨▓╨║╨░ ╤А╨░╤Б╤З╤С╤В╨╜╨╛╨│╨╛ ╤Б╤З╤С╤В╨░ ╨┐╨╛ 115-╨д╨Ч</a>
+ </li>
+ <li>
+-<a class="dropdown-link-2" href="/-/biznesu/ugolovno-pravovaya-zashchita-biznesa/">Уголовно-правовая защита бизнеса</a>
++<a class="dropdown-link-2" href="/-/biznesu/ugolovno-pravovaya-zashchita-biznesa/">╨г╨│╨╛╨╗╨╛╨▓╨╜╨╛-╨┐╤А╨░╨▓╨╛╨▓╨░╤П ╨╖╨░╤Й╨╕╤В╨░ ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ </ul>
+ </div>
+-<a class="nav-link" href="/-/praktika/">Практика</a>
+-<a class="nav-link" href="/-/publikacii/">Публикации</a>
+-<a class="nav-link" href="/-/kontakty/">Контакты</a>
++<a class="nav-link" href="/-/praktika/">╨Я╤А╨░╨║╤В╨╕╨║╨░</a>
++<a class="nav-link" href="/-/publikacii/">╨Я╤Г╨▒╨╗╨╕╨║╨░╤Ж╨╕╨╕</a>
++<a class="nav-link" href="/-/kontakty/">╨Ъ╨╛╨╜╤В╨░╨║╤В╤Л</a>
+ </div>
+ <div style="display:flex;align-items:center;gap:24px;margin-left:auto">
+ <div style="display:flex;flex-direction:column;align-items:flex-end;font-size:13px;line-height:1.4">
+ <a href="tel:+79103503111" style="font-weight:bold;color:var(--color-deep-blue);text-decoration:none;font-size:16px">+7 (910) 350-31-11</a>
+-<a class="header-address" style="color:var(--color-text-secondary);font-size:12px;text-decoration:none" href="/-/kontakty/">Липецк, ул. Советская, 35</a>
++<a class="header-address" style="color:var(--color-text-secondary);font-size:12px;text-decoration:none" href="/-/kontakty/">╨Ы╨╕╨┐╨╡╤Ж╨║, ╤Г╨╗. ╨б╨╛╨▓╨╡╤В╤Б╨║╨░╤П, 35</a>
+ </div>
+ <div class="contact-dropdown" style="position:relative;display:flex;align-items:center;padding-left:20px;border-left:1px solid var(--color-border)">
+-<button class="btn btn-outline contact-btn" style="padding:8px 20px;font-size:13px;border-radius:4px;white-space:nowrap;text-decoration:none;cursor:pointer">Написать</button>
++<button class="btn btn-outline contact-btn" style="padding:8px 20px;font-size:13px;border-radius:4px;white-space:nowrap;text-decoration:none;cursor:pointer">╨Э╨░╨┐╨╕╤Б╨░╤В╤М</button>
+ <div class="contact-dropdown-content" style="position:absolute;top:100%;left:20px;background:var(--color-white);border:1px solid var(--color-border);border-radius:4px;padding:8px 0;box-shadow:0 4px 12px rgba(0,0,0,0.1);display:none;flex-direction:column;min-width:160px;z-index:100">
+ <a href="https://max.ru/join/j5TVaYjQLyJwXfW1azJJ84YZToaXviRu-YFPDy8gMBI" target="_blank" rel="noopener noreferrer" style="padding:8px 20px;color:var(--color-deep-blue);text-decoration:none;font-size:14px;display:flex;align-items:center;gap:8px;transition:background 0.3s" class="dropdown-link">
+ <svg width="18" height="18" viewBox="0 0 48 48" fill="var(--color-deep-blue)" xmlns="http://www.w3.org/2000/svg">
+@@ -166,7 +166,7 @@
+ <svg width="18" height="18" viewBox="0 0 100 100" fill="var(--color-deep-blue)" xmlns="http://www.w3.org/2000/svg">
+ <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50ZM25 34c.406 19.488 10.15 31.2 27.233 31.2h.968V54.05c6.278.625 11.024 5.216 12.93 11.15H75c-2.436-8.87-8.838-13.773-12.836-15.647C66.162 47.242 71.783 41.62 73.126 34h-8.058c-1.749 6.184-6.932 11.805-11.867 12.336V34h-8.057v21.611C40.147 54.362 33.838 48.304 33.556 34H25Z">
+ </path>
+-</svg>ВКонтакте</a>
++</svg>╨Т╨Ъ╨╛╨╜╤В╨░╨║╤В╨╡</a>
+ </div>
+ </div>
+ </div>
+@@ -180,25 +180,25 @@
+ <div class="grid grid-2" style="display:grid;flex-direction:column;gap:40px;align-items:center">
+ <div style="flex:1 1 0%">
+ <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:24px">
+-<a href="/" style="color:var(--color-primary)">Главная</a> <span style="margin:0 8px">/</span>
+-<a href="/grazhdanam/" style="color:var(--color-primary)">Гражданам</a> <span style="margin:0 8px">/</span>
+-<span style="color:var(--color-text-main)">Военный юрист</span>
++<a href="/" style="color:var(--color-primary)">╨У╨╗╨░╨▓╨╜╨░╤П</a> <span style="margin:0 8px">/</span>
++<a href="/grazhdanam/" style="color:var(--color-primary)">╨У╤А╨░╨╢╨┤╨░╨╜╨░╨╝</a> <span style="margin:0 8px">/</span>
++<span style="color:var(--color-text-main)">╨Т╨╛╨╡╨╜╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</span>
+ </div>
+ <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px">
+ <div style="width:40px;height:2px;background-color:#9B7E55">
+ </div>
+-<span style="text-transform:uppercase;letter-spacing:0.1em;font-size:14px;font-weight:600;color:#9B7E55">Помощь военнослужащим в Липецке и по России</span>
++<span style="text-transform:uppercase;letter-spacing:0.1em;font-size:14px;font-weight:600;color:#9B7E55">╨Я╨╛╨╝╨╛╤Й╤М ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╕╨╝ ╨▓ ╨Ы╨╕╨┐╨╡╤Ж╨║╨╡ ╨╕ ╨┐╨╛ ╨а╨╛╤Б╤Б╨╕╨╕</span>
+ </div>
+-<h1 style="font-size:clamp(36px, 5vw, 56px);color:var(--color-deep-blue);font-family:var(--font-serif);margin:0 0 32px 0;line-height:1.1">Военный юрист <br/>в Липецке</h1>
+-<p style="font-size:18px;color:var(--color-text-secondary);margin-bottom:40px;max-width:750px;line-height:1.6">Защита по уголовным делам (СОЧ, дезертирство, неисполнение приказа), оспаривание незаконных решений ВВК и призывных комиссий, помощь в получении положенных выплат для военнослужащих и членов их семей.</p>
++<h1 style="font-size:clamp(36px, 5vw, 56px);color:var(--color-deep-blue);font-family:var(--font-serif);margin:0 0 32px 0;line-height:1.1">╨Т╨╛╨╡╨╜╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В ╨▓ ╨Ы╨╕╨┐╨╡╤Ж╨║╨╡</h1>
++<p style="font-size:18px;color:var(--color-text-secondary);margin-bottom:40px;max-width:750px;line-height:1.6">╨Ч╨░╤Й╨╕╤В╨░ ╨┐╨╛ ╤Г╨│╨╛╨╗╨╛╨▓╨╜╤Л╨╝ ╨┤╨╡╨╗╨░╨╝ (╨б╨Ю╨з, ╨┤╨╡╨╖╨╡╤А╤В╨╕╤А╤Б╤В╨▓╨╛, ╨╜╨╡╨╕╤Б╨┐╨╛╨╗╨╜╨╡╨╜╨╕╨╡ ╨┐╤А╨╕╨║╨░╨╖╨░), ╨╛╤Б╨┐╨░╤А╨╕╨▓╨░╨╜╨╕╨╡ ╨╜╨╡╨╖╨░╨║╨╛╨╜╨╜╤Л╤Е ╤А╨╡╤И╨╡╨╜╨╕╨╣ ╨Т╨Т╨Ъ ╨╕ ╨┐╤А╨╕╨╖╤Л╨▓╨╜╤Л╤Е ╨║╨╛╨╝╨╕╤Б╤Б╨╕╨╣, ╨┐╨╛╨╝╨╛╤Й╤М ╨▓ ╨┐╨╛╨╗╤Г╤З╨╡╨╜╨╕╨╕ ╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╜╤Л╤Е ╨▓╤Л╨┐╨╗╨░╤В ╨┤╨╗╤П ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╕╤Е ╨╕ ╤З╨╗╨╡╨╜╨╛╨▓ ╨╕╤Е ╤Б╨╡╨╝╨╡╨╣.</p>
+ <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-bottom:48px">
+-<a href="#form" class="btn btn-primary" style="padding:16px 40px;font-size:15px" data-analytics="military_hero_consultation_click">Обсудить ситуацию</a>
+-<div style="font-size:14px;color:var(--color-text-secondary)">Перезвоним в течение 15 минут в рабочее время</div>
++<a href="#form" class="btn btn-primary" style="padding:16px 40px;font-size:15px" data-analytics="military_hero_consultation_click">╨Ю╨▒╤Б╤Г╨┤╨╕╤В╤М ╤Б╨╕╤В╤Г╨░╤Ж╨╕╤О</a>
++<div style="font-size:14px;color:var(--color-text-secondary)">╨Я╨╡╤А╨╡╨╖╨▓╨╛╨╜╨╕╨╝ ╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╡ 15 ╨╝╨╕╨╜╤Г╤В ╨▓ ╤А╨░╨▒╨╛╤З╨╡╨╡ ╨▓╤А╨╡╨╝╤П</div>
+ </div>
+ </div>
+ <div style="width:100%;max-width:400px;margin:0 auto;flex-shrink:0;display:flex;flex-direction:column;gap:16px">
+ <div style="width:100%;aspect-ratio:3/4;background-color:var(--color-white);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);font-size:14px;border:1px solid var(--color-border);position:relative" class="hero-photo-hover">
+-<img src="/-/images/konopkin.jpg" alt="Дмитрий Сергеевич Конопкин" style="width:100%;height:100%;object-fit:cover;display:block" class="hero-photo-img"/>
++<img src="/-/images/konopkin.jpg" alt="╨Ф╨╝╨╕╤В╤А╨╕╨╣ ╨б╨╡╤А╨│╨╡╨╡╨▓╨╕╤З ╨Ъ╨╛╨╜╨╛╨┐╨║╨╕╨╜" style="width:100%;height:100%;object-fit:cover;display:block" class="hero-photo-img"/>
+ </div>
+ <style>
+                 .hero-photo-hover {
+@@ -210,8 +210,8 @@
+                 }
+               </style>
+ <div>
+-<div style="font-size:18px;font-weight:600;color:var(--color-deep-blue);margin-bottom:4px">Дмитрий Сергеевич Конопкин</div>
+-<div style="font-size:15px;color:var(--color-text-secondary)">Адвокат, ведущий юрист военного направления</div>
++<div style="font-size:18px;font-weight:600;color:var(--color-deep-blue);margin-bottom:4px">╨Ф╨╝╨╕╤В╤А╨╕╨╣ ╨б╨╡╤А╨│╨╡╨╡╨▓╨╕╤З ╨Ъ╨╛╨╜╨╛╨┐╨║╨╕╨╜</div>
++<div style="font-size:15px;color:var(--color-text-secondary)">╨Р╨┤╨▓╨╛╨║╨░╤В, ╨▓╨╡╨┤╤Г╤Й╨╕╨╣ ╤О╤А╨╕╤Б╤В ╨▓╨╛╨╡╨╜╨╜╨╛╨│╨╛ ╨╜╨░╨┐╤А╨░╨▓╨╗╨╡╨╜╨╕╤П</div>
+ </div>
+ </div>
+ </div>
+@@ -221,167 +221,193 @@
+ <div class="container">
+ <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+ <div style="flex:1 1 500px">
+-<h2 style="font-size:24px;font-family:var(--font-serif);margin:0 0 8px 0;color:var(--color-white)">Военнослужащего задержали или<br/>его местонахождение неизвестно?</h2>
+-<p style="font-size:16px;color:rgba(255, 255, 255, 0.8);margin:0">Позвоните адвокату и сообщите все, что известно о ситуации.</p>
++<h2 style="font-size:24px;font-family:var(--font-serif);margin:0 0 8px 0;color:var(--color-white)">╨Т╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛ ╨╖╨░╨┤╨╡╤А╨╢╨░╨╗╨╕ ╨╕╨╗╨╕<br/>╨╡╨│╨╛ ╨╝╨╡╤Б╤В╨╛╨╜╨░╤Е╨╛╨╢╨┤╨╡╨╜╨╕╨╡ ╨╜╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╨╛?</h2>
++<p style="font-size:16px;color:rgba(255, 255, 255, 0.8);margin:0">╨Я╨╛╨╖╨▓╨╛╨╜╨╕╤В╨╡ ╨░╨┤╨▓╨╛╨║╨░╤В╤Г ╨╕ ╤Б╨╛╨╛╨▒╤Й╨╕╤В╨╡ ╨▓╤Б╨╡, ╤З╤В╨╛ ╨╕╨╖╨▓╨╡╤Б╤В╨╜╨╛ ╨╛ ╤Б╨╕╤В╤Г╨░╤Ж╨╕╨╕.</p>
+ </div>
+ <div style="display:flex;flex-wrap:wrap;align-items:center;gap:24px">
+ <div style="display:flex;flex-direction:column;gap:4px">
+ <a href="tel:+79103503111" style="font-size:24px;font-weight:bold;color:var(--color-white);text-decoration:none">+7 (910) 350-31-11</a>
+ </div>
+-<a href="tel:+79103503111" class="btn-gold" data-analytics="military_urgent_call_click">Позвонить адвокату</a>
+-<a href="#form" style="color:var(--color-gold-light);text-decoration:none;font-size:15px;font-weight:500">Описать ситуацию</a>
++<a href="tel:+79103503111" class="btn-gold" data-analytics="military_urgent_call_click">╨Я╨╛╨╖╨▓╨╛╨╜╨╕╤В╤М ╨░╨┤╨▓╨╛╨║╨░╤В╤Г</a>
++<a href="#form" style="color:var(--color-gold-light);text-decoration:none;font-size:15px;font-weight:500">╨Ю╨┐╨╕╤Б╨░╤В╤М ╤Б╨╕╤В╤Г╨░╤Ж╨╕╤О</a>
+ </div>
+ </div>
+ </div>
+ </section>
+ <section class="section bg-white" id="audience">
+ <div class="container">
+-<h2 class="section-title text-center" style="margin-bottom:40px">Кому мы помогаем</h2>
++<h2 class="section-title text-center" style="margin-bottom:40px">╨Ъ╨╛╨╝╤Г ╨╝╤Л ╨┐╨╛╨╝╨╛╨│╨░╨╡╨╝</h2>
+ <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:24px">
+-<div style="background:var(--color-cream);padding:32px;text-align:left;font-weight:600;color:var(--color-deep-blue);border-bottom:4px solid var(--color-gold);font-size:18px">Военнослужащие по контракту</div>
+-<div style="background:var(--color-cream);padding:32px;text-align:left;font-weight:600;color:var(--color-deep-blue);border-bottom:4px solid var(--color-gold);font-size:18px">Мобилизованные</div>
+-<div style="background:var(--color-cream);padding:32px;text-align:left;font-weight:600;color:var(--color-deep-blue);border-bottom:4px solid var(--color-gold);font-size:18px">Добровольцы</div>
+-<div style="background:var(--color-cream);padding:32px;text-align:left;font-weight:600;color:var(--color-deep-blue);border-bottom:4px solid var(--color-gold);font-size:18px">Призывники и допризывники</div>
+-<div style="background:var(--color-cream);padding:32px;text-align:left;font-weight:600;color:var(--color-deep-blue);border-bottom:4px solid var(--color-gold);font-size:18px">Ветераны боевых действий</div>
+-<div style="background:var(--color-cream);padding:32px;text-align:left;font-weight:600;color:var(--color-deep-blue);border-bottom:4px solid var(--color-gold);font-size:18px">Родственники военнослужащих</div>
++<div style="background:var(--color-cream);padding:32px;text-align:left;font-weight:600;color:var(--color-deep-blue);border-bottom:4px solid var(--color-gold);font-size:18px">╨Т╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╕╨╡ ╨┐╨╛ ╨║╨╛╨╜╤В╤А╨░╨║╤В╤Г</div>
++<div style="background:var(--color-cream);padding:32px;text-align:left;font-weight:600;color:var(--color-deep-blue);border-bottom:4px solid var(--color-gold);font-size:18px">╨Ь╨╛╨▒╨╕╨╗╨╕╨╖╨╛╨▓╨░╨╜╨╜╤Л╨╡</div>
++<div style="background:var(--color-cream);padding:32px;text-align:left;font-weight:600;color:var(--color-deep-blue);border-bottom:4px solid var(--color-gold);font-size:18px">╨Ф╨╛╨▒╤А╨╛╨▓╨╛╨╗╤М╤Ж╤Л</div>
++<div style="background:var(--color-cream);padding:32px;text-align:left;font-weight:600;color:var(--color-deep-blue);border-bottom:4px solid var(--color-gold);font-size:18px">╨Я╤А╨╕╨╖╤Л╨▓╨╜╨╕╨║╨╕ ╨╕ ╨┤╨╛╨┐╤А╨╕╨╖╤Л╨▓╨╜╨╕╨║╨╕</div>
++<div style="background:var(--color-cream);padding:32px;text-align:left;font-weight:600;color:var(--color-deep-blue);border-bottom:4px solid var(--color-gold);font-size:18px">╨Т╨╡╤В╨╡╤А╨░╨╜╤Л ╨▒╨╛╨╡╨▓╤Л╤Е ╨┤╨╡╨╣╤Б╤В╨▓╨╕╨╣</div>
++<div style="background:var(--color-cream);padding:32px;text-align:left;font-weight:600;color:var(--color-deep-blue);border-bottom:4px solid var(--color-gold);font-size:18px">╨а╨╛╨┤╤Б╤В╨▓╨╡╨╜╨╜╨╕╨║╨╕ ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╕╤Е</div>
+ </div>
+ </div>
+ </section>
+ <section id="directions" class="section" style="background:var(--color-cream)">
+ <div class="container">
+-<h2 class="section-title text-center" style="margin-bottom:40px;text-align:center">Направления помощи</h2>
++<div style="display:flex;flex-direction:column;align-items:flex-start;margin-bottom:40px">
++<h2 class="section-title" style="text-align:left;margin-bottom:16px">╨Э╨░╨┐╤А╨░╨▓╨╗╨╡╨╜╨╕╤П ╨┐╨╛╨╝╨╛╤Й╨╕</h2>
++<div style="width:40px;height:2px;background-color:#E5C494">
++</div>
++</div>
+ <div class="grid grid-3" style="gap:30px;margin-bottom:24px">
+-<a href="/grazhdanam/voennyj-yurist/samovolnoe-ostavlenie-chasti/" data-analytics="military_service_click" data-slug="soch" style="text-decoration:none;display:block">
+-<div class="card service-card" style="height:100%;min-height:160px;padding:30px;background:var(--color-white);border:1px solid var(--color-border);border-radius:0;display:flex;flex-direction:column;transition:all 0.3s;position:relative;border-top:3px solid var(--color-primary)">
+-<h3 style="margin:0 0 12px 0;font-size:18px;color:var(--color-deep-blue);line-height:1.3">Самовольное оставление части (СОЧ)</h3>
+-<p style="margin:0 0 20px 0;font-size:14px;color:var(--color-text-secondary);line-height:1.5;flex-grow:1">Помощь при проверке, задержании, подготовке явки и защите по делу, связанному с оставлением части.</p>
+-<div class="card-arrow" style="display:flex;align-items:center;gap:8px;color:var(--color-primary);font-size:14px;font-weight:600;transition:transform 0.3s">Подробнее<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s">
+-<line x1="5" y1="12" x2="19" y2="12">
+-</line>
+-<polyline points="12 5 19 12 12 19">
+-</polyline>
++<a href="/grazhdanam/voennyj-yurist/samovolnoe-ostavlenie-chasti/" data-analytics="military_service_click" data-slug="soch" style="text-decoration:none;background:var(--color-white);padding:40px;border-radius:0;position:relative;overflow:hidden;border:1px solid var(--color-border);transition:all 0.4s ease;height:100%;display:flex;flex-direction:column" class="service-card group">
++<div style="position:absolute;top:0;left:0;width:4px;height:0%;background:var(--color-gold);transition:height 0.4s ease" class="service-accent-line">
++</div>
++<h3 style="font-size:24px;font-weight:500;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);transition:color 0.4s ease" class="service-title">╨б╨░╨╝╨╛╨▓╨╛╨╗╤М╨╜╨╛╨╡ ╨╛╤Б╤В╨░╨▓╨╗╨╡╨╜╨╕╨╡ ╤З╨░╤Б╤В╨╕ (╨б╨Ю╨з)</h3>
++<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin-bottom:32px;flex-grow:1">╨Я╨╛╨╝╨╛╤Й╤М ╨┐╤А╨╕ ╨┐╤А╨╛╨▓╨╡╤А╨║╨╡, ╨╖╨░╨┤╨╡╤А╨╢╨░╨╜╨╕╨╕, ╨┐╨╛╨┤╨│╨╛╤В╨╛╨▓╨║╨╡ ╤П╨▓╨║╨╕ ╨╕ ╨╖╨░╤Й╨╕╤В╨╡ ╨┐╨╛ ╨┤╨╡╨╗╤Г, ╤Б╨▓╤П╨╖╨░╨╜╨╜╨╛╨╝╤Г ╤Б ╨╛╤Б╤В╨░╨▓╨╗╨╡╨╜╨╕╨╡╨╝ ╤З╨░╤Б╤В╨╕.</p>
++<div style="margin-top:auto;display:flex;align-items:center;color:var(--color-primary);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.05em">
++<span style="border-bottom:1px solid transparent;transition:border-color 0.3s" class="service-link-text">╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡</span>
++<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left:8px;transform:translateX(0);transition:transform 0.3s" class="service-arrow">
++<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
++</path>
+ </svg>
+ </div>
+-</div>
+ </a>
+-<a href="/grazhdanam/voennyj-yurist/dezertirstvo/" data-analytics="military_service_click" data-slug="dezertirstvo" style="text-decoration:none;display:block">
+-<div class="card service-card" style="height:100%;min-height:160px;padding:30px;background:var(--color-white);border:1px solid var(--color-border);border-radius:0;display:flex;flex-direction:column;transition:all 0.3s;position:relative;border-top:3px solid var(--color-primary)">
+-<h3 style="margin:0 0 12px 0;font-size:18px;color:var(--color-deep-blue);line-height:1.3">Дезертирство</h3>
+-<p style="margin:0 0 20px 0;font-size:14px;color:var(--color-text-secondary);line-height:1.5;flex-grow:1">Правовая оценка обстоятельств и умысла, помощь при явке или задержании, защита на стадии расследования и в суде.</p>
+-<div class="card-arrow" style="display:flex;align-items:center;gap:8px;color:var(--color-primary);font-size:14px;font-weight:600;transition:transform 0.3s">Подробнее<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s">
+-<line x1="5" y1="12" x2="19" y2="12">
+-</line>
+-<polyline points="12 5 19 12 12 19">
+-</polyline>
++<a href="/grazhdanam/voennyj-yurist/dezertirstvo/" data-analytics="military_service_click" data-slug="dezertirstvo" style="text-decoration:none;background:var(--color-white);padding:40px;border-radius:0;position:relative;overflow:hidden;border:1px solid var(--color-border);transition:all 0.4s ease;height:100%;display:flex;flex-direction:column" class="service-card group">
++<div style="position:absolute;top:0;left:0;width:4px;height:0%;background:var(--color-gold);transition:height 0.4s ease" class="service-accent-line">
++</div>
++<h3 style="font-size:24px;font-weight:500;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);transition:color 0.4s ease" class="service-title">╨Ф╨╡╨╖╨╡╤А╤В╨╕╤А╤Б╤В╨▓╨╛</h3>
++<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin-bottom:32px;flex-grow:1">╨Я╤А╨░╨▓╨╛╨▓╨░╤П ╨╛╤Ж╨╡╨╜╨║╨░ ╨╛╨▒╤Б╤В╨╛╤П╤В╨╡╨╗╤М╤Б╤В╨▓ ╨╕ ╤Г╨╝╤Л╤Б╨╗╨░, ╨┐╨╛╨╝╨╛╤Й╤М ╨┐╤А╨╕ ╤П╨▓╨║╨╡ ╨╕╨╗╨╕ ╨╖╨░╨┤╨╡╤А╨╢╨░╨╜╨╕╨╕, ╨╖╨░╤Й╨╕╤В╨░ ╨╜╨░ ╤Б╤В╨░╨┤╨╕╨╕ ╤А╨░╤Б╤Б╨╗╨╡╨┤╨╛╨▓╨░╨╜╨╕╤П ╨╕ ╨▓ ╤Б╤Г╨┤╨╡.</p>
++<div style="margin-top:auto;display:flex;align-items:center;color:var(--color-primary);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.05em">
++<span style="border-bottom:1px solid transparent;transition:border-color 0.3s" class="service-link-text">╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡</span>
++<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left:8px;transform:translateX(0);transition:transform 0.3s" class="service-arrow">
++<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
++</path>
+ </svg>
+ </div>
+-</div>
+ </a>
+-<a href="/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/" data-analytics="military_service_click" data-slug="vyplaty-ranenie" style="text-decoration:none;display:block">
+-<div class="card service-card" style="height:100%;min-height:160px;padding:30px;background:var(--color-white);border:1px solid var(--color-border);border-radius:0;display:flex;flex-direction:column;transition:all 0.3s;position:relative;border-top:3px solid var(--color-primary)">
+-<h3 style="margin:0 0 12px 0;font-size:18px;color:var(--color-deep-blue);line-height:1.3">Выплаты за ранение</h3>
+-<p style="margin:0 0 20px 0;font-size:14px;color:var(--color-text-secondary);line-height:1.5;flex-grow:1">Помощь, если выплату не назначили, задерживают либо документы не подтверждают обстоятельства и тяжесть ранения.</p>
+-<div class="card-arrow" style="display:flex;align-items:center;gap:8px;color:var(--color-primary);font-size:14px;font-weight:600;transition:transform 0.3s">Подробнее<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s">
+-<line x1="5" y1="12" x2="19" y2="12">
+-</line>
+-<polyline points="12 5 19 12 12 19">
+-</polyline>
++<a href="/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/" data-analytics="military_service_click" data-slug="vyplaty-ranenie" style="text-decoration:none;background:var(--color-white);padding:40px;border-radius:0;position:relative;overflow:hidden;border:1px solid var(--color-border);transition:all 0.4s ease;height:100%;display:flex;flex-direction:column" class="service-card group">
++<div style="position:absolute;top:0;left:0;width:4px;height:0%;background:var(--color-gold);transition:height 0.4s ease" class="service-accent-line">
++</div>
++<h3 style="font-size:24px;font-weight:500;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);transition:color 0.4s ease" class="service-title">╨Т╤Л╨┐╨╗╨░╤В╤Л ╨╖╨░ ╤А╨░╨╜╨╡╨╜╨╕╨╡</h3>
++<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin-bottom:32px;flex-grow:1">╨Я╨╛╨╝╨╛╤Й╤М, ╨╡╤Б╨╗╨╕ ╨▓╤Л╨┐╨╗╨░╤В╤Г ╨╜╨╡ ╨╜╨░╨╖╨╜╨░╤З╨╕╨╗╨╕, ╨╖╨░╨┤╨╡╤А╨╢╨╕╨▓╨░╤О╤В ╨╗╨╕╨▒╨╛ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л ╨╜╨╡ ╨┐╨╛╨┤╤В╨▓╨╡╤А╨╢╨┤╨░╤О╤В ╨╛╨▒╤Б╤В╨╛╤П╤В╨╡╨╗╤М╤Б╤В╨▓╨░ ╨╕ ╤В╤П╨╢╨╡╤Б╤В╤М ╤А╨░╨╜╨╡╨╜╨╕╤П.</p>
++<div style="margin-top:auto;display:flex;align-items:center;color:var(--color-primary);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.05em">
++<span style="border-bottom:1px solid transparent;transition:border-color 0.3s" class="service-link-text">╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡</span>
++<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left:8px;transform:translateX(0);transition:transform 0.3s" class="service-arrow">
++<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
++</path>
+ </svg>
+ </div>
+-</div>
+ </a>
+-<a href="/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/" data-analytics="military_service_click" data-slug="vyplaty-semya" style="text-decoration:none;display:block">
+-<div class="card service-card" style="height:100%;min-height:160px;padding:30px;background:var(--color-white);border:1px solid var(--color-border);border-radius:0;display:flex;flex-direction:column;transition:all 0.3s;position:relative;border-top:3px solid var(--color-primary)">
+-<h3 style="margin:0 0 12px 0;font-size:18px;color:var(--color-deep-blue);line-height:1.3">Выплаты семье погибшего</h3>
+-<p style="margin:0 0 20px 0;font-size:14px;color:var(--color-text-secondary);line-height:1.5;flex-grow:1">Определение права на выплаты, сбор документов и обжалование отказа или неверного расчета.</p>
+-<div class="card-arrow" style="display:flex;align-items:center;gap:8px;color:var(--color-primary);font-size:14px;font-weight:600;transition:transform 0.3s">Подробнее<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s">
+-<line x1="5" y1="12" x2="19" y2="12">
+-</line>
+-<polyline points="12 5 19 12 12 19">
+-</polyline>
++<a href="/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/" data-analytics="military_service_click" data-slug="vyplaty-semya" style="text-decoration:none;background:var(--color-white);padding:40px;border-radius:0;position:relative;overflow:hidden;border:1px solid var(--color-border);transition:all 0.4s ease;height:100%;display:flex;flex-direction:column" class="service-card group">
++<div style="position:absolute;top:0;left:0;width:4px;height:0%;background:var(--color-gold);transition:height 0.4s ease" class="service-accent-line">
++</div>
++<h3 style="font-size:24px;font-weight:500;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);transition:color 0.4s ease" class="service-title">╨Т╤Л╨┐╨╗╨░╤В╤Л ╤Б╨╡╨╝╤М╨╡ ╨┐╨╛╨│╨╕╨▒╤И╨╡╨│╨╛</h3>
++<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin-bottom:32px;flex-grow:1">╨Ю╨┐╤А╨╡╨┤╨╡╨╗╨╡╨╜╨╕╨╡ ╨┐╤А╨░╨▓╨░ ╨╜╨░ ╨▓╤Л╨┐╨╗╨░╤В╤Л, ╤Б╨▒╨╛╤А ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╨╛╨▓ ╨╕ ╨╛╨▒╨╢╨░╨╗╨╛╨▓╨░╨╜╨╕╨╡ ╨╛╤В╨║╨░╨╖╨░ ╨╕╨╗╨╕ ╨╜╨╡╨▓╨╡╤А╨╜╨╛╨│╨╛ ╤А╨░╤Б╤З╨╡╤В╨░.</p>
++<div style="margin-top:auto;display:flex;align-items:center;color:var(--color-primary);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.05em">
++<span style="border-bottom:1px solid transparent;transition:border-color 0.3s" class="service-link-text">╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡</span>
++<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left:8px;transform:translateX(0);transition:transform 0.3s" class="service-arrow">
++<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
++</path>
+ </svg>
+ </div>
+-</div>
+ </a>
+-<a href="/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/" data-analytics="military_service_click" data-slug="vvk" style="text-decoration:none;display:block">
+-<div class="card service-card" style="height:100%;min-height:160px;padding:30px;background:var(--color-white);border:1px solid var(--color-border);border-radius:0;display:flex;flex-direction:column;transition:all 0.3s;position:relative;border-top:3px solid var(--color-primary)">
+-<h3 style="margin:0 0 12px 0;font-size:18px;color:var(--color-deep-blue);line-height:1.3">Оспаривание заключений ВВК</h3>
+-<p style="margin:0 0 20px 0;font-size:14px;color:var(--color-text-secondary);line-height:1.5;flex-grow:1">Анализ медицинских документов и заключений комиссии, подготовка жалобы и сопровождение пересмотра.</p>
+-<div class="card-arrow" style="display:flex;align-items:center;gap:8px;color:var(--color-primary);font-size:14px;font-weight:600;transition:transform 0.3s">Подробнее<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s">
+-<line x1="5" y1="12" x2="19" y2="12">
+-</line>
+-<polyline points="12 5 19 12 12 19">
+-</polyline>
++<a href="/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/" data-analytics="military_service_click" data-slug="vvk" style="text-decoration:none;background:var(--color-white);padding:40px;border-radius:0;position:relative;overflow:hidden;border:1px solid var(--color-border);transition:all 0.4s ease;height:100%;display:flex;flex-direction:column" class="service-card group">
++<div style="position:absolute;top:0;left:0;width:4px;height:0%;background:var(--color-gold);transition:height 0.4s ease" class="service-accent-line">
++</div>
++<h3 style="font-size:24px;font-weight:500;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);transition:color 0.4s ease" class="service-title">╨Ю╤Б╨┐╨░╤А╨╕╨▓╨░╨╜╨╕╨╡ ╨╖╨░╨║╨╗╤О╤З╨╡╨╜╨╕╨╣ ╨Т╨Т╨Ъ</h3>
++<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin-bottom:32px;flex-grow:1">╨Р╨╜╨░╨╗╨╕╨╖ ╨╝╨╡╨┤╨╕╤Ж╨╕╨╜╤Б╨║╨╕╤Е ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╨╛╨▓ ╨╕ ╨╖╨░╨║╨╗╤О╤З╨╡╨╜╨╕╨╣ ╨║╨╛╨╝╨╕╤Б╤Б╨╕╨╕, ╨┐╨╛╨┤╨│╨╛╤В╨╛╨▓╨║╨░ ╨╢╨░╨╗╨╛╨▒╤Л ╨╕ ╤Б╨╛╨┐╤А╨╛╨▓╨╛╨╢╨┤╨╡╨╜╨╕╨╡ ╨┐╨╡╤А╨╡╤Б╨╝╨╛╤В╤А╨░.</p>
++<div style="margin-top:auto;display:flex;align-items:center;color:var(--color-primary);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.05em">
++<span style="border-bottom:1px solid transparent;transition:border-color 0.3s" class="service-link-text">╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡</span>
++<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left:8px;transform:translateX(0);transition:transform 0.3s" class="service-arrow">
++<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
++</path>
+ </svg>
+ </div>
+-</div>
+ </a>
+-<a href="/grazhdanam/voennyj-yurist/spory-s-voenkomatom/" data-analytics="military_service_click" data-slug="voenkomat" style="text-decoration:none;display:block">
+-<div class="card service-card" style="height:100%;min-height:160px;padding:30px;background:var(--color-white);border:1px solid var(--color-border);border-radius:0;display:flex;flex-direction:column;transition:all 0.3s;position:relative;border-top:3px solid var(--color-primary)">
+-<h3 style="margin:0 0 12px 0;font-size:18px;color:var(--color-deep-blue);line-height:1.3">Споры с военкоматом</h3>
+-<p style="margin:0 0 20px 0;font-size:14px;color:var(--color-text-secondary);line-height:1.5;flex-grow:1">Помощь при несогласии с решением призывной комиссии и нарушениях процедуры со стороны военкомата.</p>
+-<div class="card-arrow" style="display:flex;align-items:center;gap:8px;color:var(--color-primary);font-size:14px;font-weight:600;transition:transform 0.3s">Подробнее<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s">
+-<line x1="5" y1="12" x2="19" y2="12">
+-</line>
+-<polyline points="12 5 19 12 12 19">
+-</polyline>
++<a href="/grazhdanam/voennyj-yurist/spory-s-voenkomatom/" data-analytics="military_service_click" data-slug="voenkomat" style="text-decoration:none;background:var(--color-white);padding:40px;border-radius:0;position:relative;overflow:hidden;border:1px solid var(--color-border);transition:all 0.4s ease;height:100%;display:flex;flex-direction:column" class="service-card group">
++<div style="position:absolute;top:0;left:0;width:4px;height:0%;background:var(--color-gold);transition:height 0.4s ease" class="service-accent-line">
++</div>
++<h3 style="font-size:24px;font-weight:500;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);transition:color 0.4s ease" class="service-title">╨б╨┐╨╛╤А╤Л ╤Б ╨▓╨╛╨╡╨╜╨║╨╛╨╝╨░╤В╨╛╨╝</h3>
++<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin-bottom:32px;flex-grow:1">╨Я╨╛╨╝╨╛╤Й╤М ╨┐╤А╨╕ ╨╜╨╡╤Б╨╛╨│╨╗╨░╤Б╨╕╨╕ ╤Б ╤А╨╡╤И╨╡╨╜╨╕╨╡╨╝ ╨┐╤А╨╕╨╖╤Л╨▓╨╜╨╛╨╣ ╨║╨╛╨╝╨╕╤Б╤Б╨╕╨╕ ╨╕ ╨╜╨░╤А╤Г╤И╨╡╨╜╨╕╤П╤Е ╨┐╤А╨╛╤Ж╨╡╨┤╤Г╤А╤Л ╤Б╨╛ ╤Б╤В╨╛╤А╨╛╨╜╤Л ╨▓╨╛╨╡╨╜╨║╨╛╨╝╨░╤В╨░.</p>
++<div style="margin-top:auto;display:flex;align-items:center;color:var(--color-primary);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.05em">
++<span style="border-bottom:1px solid transparent;transition:border-color 0.3s" class="service-link-text">╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡</span>
++<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left:8px;transform:translateX(0);transition:transform 0.3s" class="service-arrow">
++<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
++</path>
+ </svg>
+ </div>
+-</div>
+ </a>
+-<a href="/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/" data-analytics="military_service_click" data-slug="bezvestno" style="text-decoration:none;display:block">
+-<div class="card service-card" style="height:100%;min-height:160px;padding:30px;background:var(--color-white);border:1px solid var(--color-border);border-radius:0;display:flex;flex-direction:column;transition:all 0.3s;position:relative;border-top:3px solid var(--color-primary)">
+-<h3 style="margin:0 0 12px 0;font-size:18px;color:var(--color-deep-blue);line-height:1.3">Признание военнослужащего безвестно отсутствующим или объявление умершим</h3>
+-<p style="margin:0 0 20px 0;font-size:14px;color:var(--color-text-secondary);line-height:1.5;flex-grow:1">Помощь семье в выборе правовой процедуры, подготовке доказательств и обращении в суд.</p>
+-<div class="card-arrow" style="display:flex;align-items:center;gap:8px;color:var(--color-primary);font-size:14px;font-weight:600;transition:transform 0.3s">Подробнее<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s">
+-<line x1="5" y1="12" x2="19" y2="12">
+-</line>
+-<polyline points="12 5 19 12 12 19">
+-</polyline>
++<a href="/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/" data-analytics="military_service_click" data-slug="bezvestno" style="text-decoration:none;background:var(--color-white);padding:40px;border-radius:0;position:relative;overflow:hidden;border:1px solid var(--color-border);transition:all 0.4s ease;height:100%;display:flex;flex-direction:column" class="service-card group">
++<div style="position:absolute;top:0;left:0;width:4px;height:0%;background:var(--color-gold);transition:height 0.4s ease" class="service-accent-line">
++</div>
++<h3 style="font-size:24px;font-weight:500;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);transition:color 0.4s ease" class="service-title">╨Я╤А╨╕╨╖╨╜╨░╨╜╨╕╨╡ ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛ ╨▒╨╡╨╖╨▓╨╡╤Б╤В╨╜╨╛ ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╤О╤Й╨╕╨╝ ╨╕╨╗╨╕ ╨╛╨▒╤К╤П╨▓╨╗╨╡╨╜╨╕╨╡ ╤Г╨╝╨╡╤А╤И╨╕╨╝</h3>
++<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin-bottom:32px;flex-grow:1">╨Я╨╛╨╝╨╛╤Й╤М ╤Б╨╡╨╝╤М╨╡ ╨▓ ╨▓╤Л╨▒╨╛╤А╨╡ ╨┐╤А╨░╨▓╨╛╨▓╨╛╨╣ ╨┐╤А╨╛╤Ж╨╡╨┤╤Г╤А╤Л, ╨┐╨╛╨┤╨│╨╛╤В╨╛╨▓╨║╨╡ ╨┤╨╛╨║╨░╨╖╨░╤В╨╡╨╗╤М╤Б╤В╨▓ ╨╕ ╨╛╨▒╤А╨░╤Й╨╡╨╜╨╕╨╕ ╨▓ ╤Б╤Г╨┤.</p>
++<div style="margin-top:auto;display:flex;align-items:center;color:var(--color-primary);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.05em">
++<span style="border-bottom:1px solid transparent;transition:border-color 0.3s" class="service-link-text">╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡</span>
++<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left:8px;transform:translateX(0);transition:transform 0.3s" class="service-arrow">
++<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
++</path>
+ </svg>
+ </div>
+-</div>
+ </a>
+ <div class="span-2-desktop service-card" style="background:var(--color-deep-blue);padding:40px;border-radius:0;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;height:100%">
+ <div>
+-<h3 style="font-size:24px;font-weight:500;color:var(--color-white);margin-bottom:16px;font-family:var(--font-serif)">Не нашли свою ситуацию?</h3>
+-<p style="color:rgba(255, 255, 255, 0.8);font-size:16px;line-height:1.6;margin-bottom:24px">Необязательно самостоятельно определять, какая именно услуга вам нужна. Кратко опишите обстоятельства — мы изучим вопрос и подскажем, какой специалист сможет помочь.</p>
++<h3 style="font-size:24px;font-weight:500;color:var(--color-white);margin-bottom:16px;font-family:var(--font-serif)">╨Э╨╡ ╨╜╨░╤И╨╗╨╕ ╤Б╨▓╨╛╤О ╤Б╨╕╤В╤Г╨░╤Ж╨╕╤О?</h3>
++<p style="color:rgba(255, 255, 255, 0.8);font-size:16px;line-height:1.6;margin-bottom:24px">╨Э╨╡╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╨╛ ╤Б╨░╨╝╨╛╤Б╤В╨╛╤П╤В╨╡╨╗╤М╨╜╨╛ ╨╛╨┐╤А╨╡╨┤╨╡╨╗╤П╤В╤М, ╨║╨░╨║╨░╤П ╨╕╨╝╨╡╨╜╨╜╨╛ ╤Г╤Б╨╗╤Г╨│╨░ ╨▓╨░╨╝ ╨╜╤Г╨╢╨╜╨░. ╨Ъ╤А╨░╤В╨║╨╛ ╨╛╨┐╨╕╤И╨╕╤В╨╡ ╨╛╨▒╤Б╤В╨╛╤П╤В╨╡╨╗╤М╤Б╤В╨▓╨░ тАФ ╨╝╤Л ╨╕╨╖╤Г╤З╨╕╨╝ ╨▓╨╛╨┐╤А╨╛╤Б ╨╕ ╨┐╨╛╨┤╤Б╨║╨░╨╢╨╡╨╝, ╨║╨░╨║╨╛╨╣ ╤Б╨┐╨╡╤Ж╨╕╨░╨╗╨╕╤Б╤В ╤Б╨╝╨╛╨╢╨╡╤В ╨┐╨╛╨╝╨╛╤З╤М.</p>
+ </div>
+ <div>
+-<a href="#form" class="btn btn-light" style="display:inline-block">Описать ситуацию</a>
++<a href="#form" class="btn btn-light" style="display:inline-block">╨Ю╨┐╨╕╤Б╨░╤В╤М ╤Б╨╕╤В╤Г╨░╤Ж╨╕╤О</a>
+ </div>
+ </div>
+ </div>
++<style>
++            .service-card {
++              transition: all 0.4s ease;
++            }
++            .service-card:hover {
++              box-shadow: 0 20px 40px rgba(23, 50, 77, 0.08);
++              border-color: transparent;
++              transform: translateY(-4px);
++            }
++            .service-card:hover .service-accent-line {
++              height: 100%;
++            }
++            .service-card:hover .service-title {
++              color: var(--color-primary);
++            }
++            .service-card:hover .service-link-text {
++              border-color: var(--color-primary);
++            }
++            .service-card:hover .service-arrow {
++              transform: translateX(4px);
++            }
++          </style>
+ </div>
+ </section>
+ <section class="section bg-white" id="specialist">
+ <div class="container">
+-<h2 class="section-title text-center" style="margin-bottom:40px">Руководитель практики военного права</h2>
++<h2 class="section-title text-center" style="margin-bottom:40px">╨а╤Г╨║╨╛╨▓╨╛╨┤╨╕╤В╨╡╨╗╤М ╨┐╤А╨░╨║╤В╨╕╨║╨╕ ╨▓╨╛╨╡╨╜╨╜╨╛╨│╨╛ ╨┐╤А╨░╨▓╨░</h2>
+ <div class="specialist-grid" style="background:var(--color-cream);padding:40px;border-radius:0;border-top:4px solid var(--color-primary)">
+ <div style="width:100%;max-width:500px;margin:0 auto;flex-shrink:0">
+ <div style="width:100%;aspect-ratio:3/4;background-color:var(--color-white);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);font-size:14px;border:1px solid var(--color-border);position:relative">
+-<img src="/-/images/konopkin.jpg" alt="Дмитрий Сергеевич Конопкин" style="width:100%;height:100%;object-fit:cover;display:block"/>
++<img src="/-/images/konopkin.jpg" alt="╨Ф╨╝╨╕╤В╤А╨╕╨╣ ╨б╨╡╤А╨│╨╡╨╡╨▓╨╕╤З ╨Ъ╨╛╨╜╨╛╨┐╨║╨╕╨╜" style="width:100%;height:100%;object-fit:cover;display:block"/>
+ </div>
+ </div>
+ <div style="flex:1 1 0%">
+-<h3 style="font-size:32px;color:var(--color-deep-blue);margin-bottom:12px;font-family:var(--font-serif)">Дмитрий Сергеевич Конопкин</h3>
+-<div style="color:var(--color-primary);font-weight:600;font-size:16px;margin-bottom:32px;text-transform:uppercase;letter-spacing:0.05em">Адвокат, ведущий юрист военного направления</div>
++<h3 style="font-size:32px;color:var(--color-deep-blue);margin-bottom:12px;font-family:var(--font-serif)">╨Ф╨╝╨╕╤В╤А╨╕╨╣ ╨б╨╡╤А╨│╨╡╨╡╨▓╨╕╤З ╨Ъ╨╛╨╜╨╛╨┐╨║╨╕╨╜</h3>
++<div style="color:var(--color-primary);font-weight:600;font-size:16px;margin-bottom:32px;text-transform:uppercase;letter-spacing:0.05em">╨Р╨┤╨▓╨╛╨║╨░╤В, ╨▓╨╡╨┤╤Г╤Й╨╕╨╣ ╤О╤А╨╕╤Б╤В ╨▓╨╛╨╡╨╜╨╜╨╛╨│╨╛ ╨╜╨░╨┐╤А╨░╨▓╨╗╨╡╨╜╨╕╤П</div>
+ <div style="margin-bottom:32px">
+ <p style="font-size:16px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:16px">
+-<span style="color:var(--color-deep-blue);display:block">Подключается к защите на стадии проверки, предварительного расследования и судебного разбирательства, участвует в процессуальных действиях и сопровождает доверителя при взаимодействии со следственными органами.</span>
++<span style="color:var(--color-deep-blue);display:block">╨Я╨╛╨┤╨║╨╗╤О╤З╨░╨╡╤В╤Б╤П ╨║ ╨╖╨░╤Й╨╕╤В╨╡ ╨╜╨░ ╤Б╤В╨░╨┤╨╕╨╕ ╨┐╤А╨╛╨▓╨╡╤А╨║╨╕, ╨┐╤А╨╡╨┤╨▓╨░╤А╨╕╤В╨╡╨╗╤М╨╜╨╛╨│╨╛ ╤А╨░╤Б╤Б╨╗╨╡╨┤╨╛╨▓╨░╨╜╨╕╤П ╨╕ ╤Б╤Г╨┤╨╡╨▒╨╜╨╛╨│╨╛ ╤А╨░╨╖╨▒╨╕╤А╨░╤В╨╡╨╗╤М╤Б╤В╨▓╨░, ╤Г╤З╨░╤Б╤В╨▓╤Г╨╡╤В ╨▓ ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╤Г╨░╨╗╤М╨╜╤Л╤Е ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П╤Е ╨╕ ╤Б╨╛╨┐╤А╨╛╨▓╨╛╨╢╨┤╨░╨╡╤В ╨┤╨╛╨▓╨╡╤А╨╕╤В╨╡╨╗╤П ╨┐╤А╨╕ ╨▓╨╖╨░╨╕╨╝╨╛╨┤╨╡╨╣╤Б╤В╨▓╨╕╨╕ ╤Б╨╛ ╤Б╨╗╨╡╨┤╤Б╤В╨▓╨╡╨╜╨╜╤Л╨╝╨╕ ╨╛╤А╨│╨░╨╜╨░╨╝╨╕.</span>
+ </p>
+ <p style="font-size:16px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:0">
+ <ul style="list-style:none;padding:0;margin:16px 0 0 0;display:flex;flex-direction:column;gap:12px">
+ <li style="display:flex;align-items:center;gap:12px;font-size:15px;color:var(--color-deep-blue)">
+ <div style="width:6px;height:6px;background:var(--color-gold);border-radius:50%">
+-</div>Опыт работы в Следственном комитете</li>
++</div>╨Ю╨┐╤Л╤В ╤А╨░╨▒╨╛╤В╤Л ╨▓ ╨б╨╗╨╡╨┤╤Б╤В╨▓╨╡╨╜╨╜╨╛╨╝ ╨║╨╛╨╝╨╕╤В╨╡╤В╨╡</li>
+ <li style="display:flex;align-items:center;gap:12px;font-size:15px;color:var(--color-deep-blue)">
+ <div style="width:6px;height:6px;background:var(--color-gold);border-radius:50%">
+-</div>Реестровый номер 48/812</li>
++</div>╨а╨╡╨╡╤Б╤В╤А╨╛╨▓╤Л╨╣ ╨╜╨╛╨╝╨╡╤А 48/812</li>
+ </ul>
+ </p>
+ </div>
+-<a href="#consultation" class="btn btn-primary">Задать вопрос адвокату</a>
++<a href="#consultation" class="btn btn-primary">╨Ч╨░╨┤╨░╤В╤М ╨▓╨╛╨┐╤А╨╛╤Б ╨░╨┤╨▓╨╛╨║╨░╤В╤Г</a>
+ </div>
+ </div>
+ </div>
+@@ -405,7 +431,7 @@
+ </div>
+ <div class="container" style="position:relative;z-index:1">
+ <div style="text-align:center;margin-bottom:50px">
+-<h2 style="font-family:var(--font-serif);font-size:42px;color:var(--color-deep-blue);margin-bottom:24px;text-align:center">Как проходит работа</h2>
++<h2 style="font-family:var(--font-serif);font-size:42px;color:var(--color-deep-blue);margin-bottom:24px;text-align:center">╨Ъ╨░╨║ ╨┐╤А╨╛╤Е╨╛╨┤╨╕╤В ╤А╨░╨▒╨╛╤В╨░</h2>
+ </div>
+ <div style="position:relative">
+ <div class="grid grid-4" style="gap:40px">
+@@ -415,8 +441,8 @@
+ </div>
+ </div>
+ </div>
+-<h4 style="font-size:22px;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);line-height:1.3;text-align:center">Первичный разбор</h4>
+-<p style="font-size:16px;color:var(--color-text-secondary);line-height:1.6;margin:0;text-align:center">Уточняем обстоятельства, срочность, процессуальную стадию и имеющиеся документы.</p>
++<h4 style="font-size:22px;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);line-height:1.3;text-align:center">╨Я╨╡╤А╨▓╨╕╤З╨╜╤Л╨╣ ╤А╨░╨╖╨▒╨╛╤А</h4>
++<p style="font-size:16px;color:var(--color-text-secondary);line-height:1.6;margin:0;text-align:center">╨г╤В╨╛╤З╨╜╤П╨╡╨╝ ╨╛╨▒╤Б╤В╨╛╤П╤В╨╡╨╗╤М╤Б╤В╨▓╨░, ╤Б╤А╨╛╤З╨╜╨╛╤Б╤В╤М, ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╤Г╨░╨╗╤М╨╜╤Г╤О ╤Б╤В╨░╨┤╨╕╤О ╨╕ ╨╕╨╝╨╡╤О╤Й╨╕╨╡╤Б╤П ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л.</p>
+ </div>
+ <div style="position:relative;z-index:1;display:flex;flex-direction:column;background:transparent;padding:10px" class="stage-item">
+ <div style="display:flex;justify-content:center;margin-bottom:30px">
+@@ -424,8 +450,8 @@
+ </div>
+ </div>
+ </div>
+-<h4 style="font-size:22px;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);line-height:1.3;text-align:center">Определяем специалиста</h4>
+-<p style="font-size:16px;color:var(--color-text-secondary);line-height:1.6;margin:0;text-align:center">Понимаем, нужен ли адвокат либо задачу вправе выполнить юрист.</p>
++<h4 style="font-size:22px;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);line-height:1.3;text-align:center">╨Ю╨┐╤А╨╡╨┤╨╡╨╗╤П╨╡╨╝ ╤Б╨┐╨╡╤Ж╨╕╨░╨╗╨╕╤Б╤В╨░</h4>
++<p style="font-size:16px;color:var(--color-text-secondary);line-height:1.6;margin:0;text-align:center">╨Я╨╛╨╜╨╕╨╝╨░╨╡╨╝, ╨╜╤Г╨╢╨╡╨╜ ╨╗╨╕ ╨░╨┤╨▓╨╛╨║╨░╤В ╨╗╨╕╨▒╨╛ ╨╖╨░╨┤╨░╤З╤Г ╨▓╨┐╤А╨░╨▓╨╡ ╨▓╤Л╨┐╨╛╨╗╨╜╨╕╤В╤М ╤О╤А╨╕╤Б╤В.</p>
+ </div>
+ <div style="position:relative;z-index:1;display:flex;flex-direction:column;background:transparent;padding:10px" class="stage-item">
+ <div style="display:flex;justify-content:center;margin-bottom:30px">
+@@ -433,8 +459,8 @@
+ </div>
+ </div>
+ </div>
+-<h4 style="font-size:22px;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);line-height:1.3;text-align:center">Согласовываем объём</h4>
+-<p style="font-size:16px;color:var(--color-text-secondary);line-height:1.6;margin:0;text-align:center">Фиксируем перечень работ, формат взаимодействия, стоимость и условия в договоре.</p>
++<h4 style="font-size:22px;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);line-height:1.3;text-align:center">╨б╨╛╨│╨╗╨░╤Б╨╛╨▓╤Л╨▓╨░╨╡╨╝ ╨╛╨▒╤К╤С╨╝</h4>
++<p style="font-size:16px;color:var(--color-text-secondary);line-height:1.6;margin:0;text-align:center">╨д╨╕╨║╤Б╨╕╤А╤Г╨╡╨╝ ╨┐╨╡╤А╨╡╤З╨╡╨╜╤М ╤А╨░╨▒╨╛╤В, ╤Д╨╛╤А╨╝╨░╤В ╨▓╨╖╨░╨╕╨╝╨╛╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П, ╤Б╤В╨╛╨╕╨╝╨╛╤Б╤В╤М ╨╕ ╤Г╤Б╨╗╨╛╨▓╨╕╤П ╨▓ ╨┤╨╛╨│╨╛╨▓╨╛╤А╨╡.</p>
+ </div>
+ <div style="position:relative;z-index:1;display:flex;flex-direction:column;background:transparent;padding:10px" class="stage-item">
+ <div style="display:flex;justify-content:center;margin-bottom:30px">
+@@ -442,8 +468,8 @@
+ </div>
+ </div>
+ </div>
+-<h4 style="font-size:22px;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);line-height:1.3;text-align:center">Приступаем к работе</h4>
+-<p style="font-size:16px;color:var(--color-text-secondary);line-height:1.6;margin:0;text-align:center">Готовим документы, участвуем в необходимых действиях и сообщаем клиенту о ходе дела.</p>
++<h4 style="font-size:22px;color:var(--color-deep-blue);margin-bottom:16px;font-family:var(--font-serif);line-height:1.3;text-align:center">╨Я╤А╨╕╤Б╤В╤Г╨┐╨░╨╡╨╝ ╨║ ╤А╨░╨▒╨╛╤В╨╡</h4>
++<p style="font-size:16px;color:var(--color-text-secondary);line-height:1.6;margin:0;text-align:center">╨У╨╛╤В╨╛╨▓╨╕╨╝ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л, ╤Г╤З╨░╤Б╤В╨▓╤Г╨╡╨╝ ╨▓ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╤Е ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П╤Е ╨╕ ╤Б╨╛╨╛╨▒╤Й╨░╨╡╨╝ ╨║╨╗╨╕╨╡╨╜╤В╤Г ╨╛ ╤Е╨╛╨┤╨╡ ╨┤╨╡╨╗╨░.</p>
+ </div>
+ </div>
+ </div>
+@@ -487,81 +513,58 @@
+ <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+ <div style="width:40px;height:1px;background-color:var(--color-primary)">
+ </div>
+-<span style="text-transform:uppercase;letter-spacing:0.15em;font-size:12px;color:var(--color-primary)">Практика</span>
++<span style="text-transform:uppercase;letter-spacing:0.15em;font-size:12px;color:var(--color-primary)">╨Я╤А╨░╨║╤В╨╕╨║╨░</span>
+ </div>
+-<h2 style="margin:0;font-size:clamp(32px, 4vw, 42px);font-family:var(--font-serif);color:var(--color-deep-blue)">Примеры из практики</h2>
++<h2 style="margin:0;font-size:clamp(32px, 4vw, 42px);font-family:var(--font-serif);color:var(--color-deep-blue)">╨Я╤А╨╕╨╝╨╡╤А╤Л ╨╕╨╖ ╨┐╤А╨░╨║╤В╨╕╨║╨╕</h2>
+ </div>
+-<a class="btn btn-outline" style="padding:12px 24px;height:fit-content" href="#">Смотреть все дела</a>
++<a class="btn btn-outline" style="padding:12px 24px;height:fit-content" href="#">╨б╨╝╨╛╤В╤А╨╡╤В╤М ╨▓╤Б╨╡ ╨┤╨╡╨╗╨░</a>
+ </div>
+-<div style="background:var(--color-white);padding:16px 24px;border:1px solid var(--color-border);color:var(--color-text-secondary);font-size:14px;margin-bottom:40px;border-left:4px solid var(--color-primary);max-width:800px;font-style:italic">Внимание: Ниже представлены демонстрационные макеты кейсов. Они будут заменены реальной практикой после утверждения фактуры.</div>
++<div style="background:var(--color-white);padding:16px 24px;border:1px solid var(--color-border);color:var(--color-text-secondary);font-size:14px;margin-bottom:40px;border-left:4px solid var(--color-primary);max-width:800px;font-style:italic">╨Т╨╜╨╕╨╝╨░╨╜╨╕╨╡: ╨Э╨╕╨╢╨╡ ╨┐╤А╨╡╨┤╤Б╤В╨░╨▓╨╗╨╡╨╜╤Л ╨┤╨╡╨╝╨╛╨╜╤Б╤В╤А╨░╤Ж╨╕╨╛╨╜╨╜╤Л╨╡ ╨╝╨░╨║╨╡╤В╤Л ╨║╨╡╨╣╤Б╨╛╨▓. ╨Ю╨╜╨╕ ╨▒╤Г╨┤╤Г╤В ╨╖╨░╨╝╨╡╨╜╨╡╨╜╤Л ╤А╨╡╨░╨╗╤М╨╜╨╛╨╣ ╨┐╤А╨░╨║╤В╨╕╨║╨╛╨╣ ╨┐╨╛╤Б╨╗╨╡ ╤Г╤В╨▓╨╡╤А╨╢╨┤╨╡╨╜╨╕╤П ╤Д╨░╨║╤В╤Г╤А╤Л.</div>
+ <div class="grid grid-3" style="gap:30px">
+ <div class="case-card group" style="padding:40px;border:1px solid var(--color-border);border-radius:0;display:flex;flex-direction:column;background:var(--color-white);position:relative;overflow:hidden;height:100%;box-shadow:0 4px 10px rgba(0,0,0,0.12)">
+ <div style="position:absolute;top:0;left:0;width:4px;height:0%;background:var(--color-gold);transition:height 0.4s ease" class="case-accent-line">
+ </div>
+-<div style="position:absolute;top:12px;right:12px;background:rgba(23, 50, 77, 0.05);border:1px solid rgba(23, 50, 77, 0.1);color:var(--color-text-secondary);padding:4px 10px;font-size:11px;border-radius:4px;font-weight:500;letter-spacing:0.02em">Демонстрация формата</div>
++<div style="position:absolute;top:12px;right:12px;background:rgba(23, 50, 77, 0.05);border:1px solid rgba(23, 50, 77, 0.1);color:var(--color-text-secondary);padding:4px 10px;font-size:11px;border-radius:4px;font-weight:500;letter-spacing:0.02em">╨Ф╨╡╨╝╨╛╨╜╤Б╤В╤А╨░╤Ж╨╕╤П ╤Д╨╛╤А╨╝╨░╤В╨░</div>
+ <div style="padding-bottom:20px;margin-bottom:24px">
+-<span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#D4AF37;margin-bottom:12px;font-weight:600">Военное право</span>
+-<h4 style="margin:0;color:var(--color-deep-blue);font-size:20px;font-family:var(--font-serif);line-height:1.4">[Кейс 1: Пример заголовка дела]</h4>
++<span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#D4AF37;margin-bottom:12px;font-weight:600">╨Т╨╛╨╡╨╜╨╜╨╛╨╡ ╨┐╤А╨░╨▓╨╛</span>
++<h4 style="margin:0;color:var(--color-deep-blue);font-size:20px;font-family:var(--font-serif);line-height:1.4">[╨Ъ╨╡╨╣╤Б 1: ╨Я╤А╨╕╨╝╨╡╤А ╨╖╨░╨│╨╛╨╗╨╛╨▓╨║╨░ ╨┤╨╡╨╗╨░]</h4>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:20px;flex-grow:1">
+ <div>
+-<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-secondary);margin-bottom:8px">Проблема</h5>
+-<p style="font-size:14px;margin:0;line-height:1.6">Здесь будет размещено реальное дело из практики по защите прав военнослужащего.</p>
++<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-secondary);margin-bottom:8px">╨Я╤А╨╛╨▒╨╗╨╡╨╝╨░</h5>
++<p style="font-size:14px;margin:0;line-height:1.6">╨Ч╨┤╨╡╤Б╤М ╨▒╤Г╨┤╨╡╤В ╤А╨░╨╖╨╝╨╡╤Й╨╡╨╜╨╛ ╤А╨╡╨░╨╗╤М╨╜╨╛╨╡ ╨┤╨╡╨╗╨╛ ╨╕╨╖ ╨┐╤А╨░╨║╤В╨╕╨║╨╕ ╨┐╨╛ ╨╖╨░╤Й╨╕╤В╨╡ ╨┐╤А╨░╨▓ ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛.</p>
+ </div>
+ <div>
+-<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-secondary);margin-bottom:8px">Что сделали</h5>
+-<p style="font-size:14px;margin:0;line-height:1.6">Текст на этапе макета является заглушкой и будет заменен после согласования.</p>
++<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-secondary);margin-bottom:8px">╨з╤В╨╛ ╤Б╨┤╨╡╨╗╨░╨╗╨╕</h5>
++<p style="font-size:14px;margin:0;line-height:1.6">╨в╨╡╨║╤Б╤В ╨╜╨░ ╤Н╤В╨░╨┐╨╡ ╨╝╨░╨║╨╡╤В╨░ ╤П╨▓╨╗╤П╨╡╤В╤Б╤П ╨╖╨░╨│╨╗╤Г╤И╨║╨╛╨╣ ╨╕ ╨▒╤Г╨┤╨╡╤В ╨╖╨░╨╝╨╡╨╜╨╡╨╜ ╨┐╨╛╤Б╨╗╨╡ ╤Б╨╛╨│╨╗╨░╤Б╨╛╨▓╨░╨╜╨╕╤П.</p>
+ </div>
+ </div>
+ <div style="margin-top:30px;background:rgba(193, 160, 102, 0.05);padding:20px;border-radius:4px;border:1px solid rgba(193, 160, 102, 0.2);border-left:4px solid var(--color-gold)">
+-<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-primary);margin-bottom:8px;font-weight:600">Ключевой результат</h5>
+-<p style="font-size:15px;margin:0;font-weight:500;color:var(--color-deep-blue);line-height:1.5">[Ключевой результат]</p>
++<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-primary);margin-bottom:8px;font-weight:600">╨Ъ╨╗╤О╤З╨╡╨▓╨╛╨╣ ╤А╨╡╨╖╤Г╨╗╤М╤В╨░╤В</h5>
++<p style="font-size:15px;margin:0;font-weight:500;color:var(--color-deep-blue);line-height:1.5">[╨Ъ╨╗╤О╤З╨╡╨▓╨╛╨╣ ╤А╨╡╨╖╤Г╨╗╤М╤В╨░╤В]</p>
+ </div>
+ </div>
+ <div class="case-card group" style="padding:40px;border:1px solid var(--color-border);border-radius:0;display:flex;flex-direction:column;background:var(--color-white);position:relative;overflow:hidden;height:100%;box-shadow:0 4px 10px rgba(0,0,0,0.12)">
+ <div style="position:absolute;top:0;left:0;width:4px;height:0%;background:var(--color-gold);transition:height 0.4s ease" class="case-accent-line">
+ </div>
+-<div style="position:absolute;top:12px;right:12px;background:rgba(23, 50, 77, 0.05);border:1px solid rgba(23, 50, 77, 0.1);color:var(--color-text-secondary);padding:4px 10px;font-size:11px;border-radius:4px;font-weight:500;letter-spacing:0.02em">Демонстрация формата</div>
++<div style="position:absolute;top:12px;right:12px;background:rgba(23, 50, 77, 0.05);border:1px solid rgba(23, 50, 77, 0.1);color:var(--color-text-secondary);padding:4px 10px;font-size:11px;border-radius:4px;font-weight:500;letter-spacing:0.02em">╨Ф╨╡╨╝╨╛╨╜╤Б╤В╤А╨░╤Ж╨╕╤П ╤Д╨╛╤А╨╝╨░╤В╨░</div>
+ <div style="padding-bottom:20px;margin-bottom:24px">
+-<span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#D4AF37;margin-bottom:12px;font-weight:600">Военное право</span>
+-<h4 style="margin:0;color:var(--color-deep-blue);font-size:20px;font-family:var(--font-serif);line-height:1.4">[Кейс 2: Пример заголовка дела]</h4>
++<span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#D4AF37;margin-bottom:12px;font-weight:600">╨Т╨╛╨╡╨╜╨╜╨╛╨╡ ╨┐╤А╨░╨▓╨╛</span>
++<h4 style="margin:0;color:var(--color-deep-blue);font-size:20px;font-family:var(--font-serif);line-height:1.4">[╨Ъ╨╡╨╣╤Б 2: ╨Я╤А╨╕╨╝╨╡╤А ╨╖╨░╨│╨╛╨╗╨╛╨▓╨║╨░ ╨┤╨╡╨╗╨░]</h4>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:20px;flex-grow:1">
+ <div>
+-<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-secondary);margin-bottom:8px">Проблема</h5>
+-<p style="font-size:14px;margin:0;line-height:1.6">Здесь будет размещено реальное дело из практики по защите прав военнослужащего.</p>
++<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-secondary);margin-bottom:8px">╨Я╤А╨╛╨▒╨╗╨╡╨╝╨░</h5>
++<p style="font-size:14px;margin:0;line-height:1.6">╨Ч╨┤╨╡╤Б╤М ╨▒╤Г╨┤╨╡╤В ╤А╨░╨╖╨╝╨╡╤Й╨╡╨╜╨╛ ╤А╨╡╨░╨╗╤М╨╜╨╛╨╡ ╨┤╨╡╨╗╨╛ ╨╕╨╖ ╨┐╤А╨░╨║╤В╨╕╨║╨╕ ╨┐╨╛ ╨╖╨░╤Й╨╕╤В╨╡ ╨┐╤А╨░╨▓ ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛.</p>
+ </div>
+ <div>
+-<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-secondary);margin-bottom:8px">Что сделали</h5>
+-<p style="font-size:14px;margin:0;line-height:1.6">Текст на этапе макета является заглушкой и будет заменен после согласования.</p>
++<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-secondary);margin-bottom:8px">╨з╤В╨╛ ╤Б╨┤╨╡╨╗╨░╨╗╨╕</h5>
++<p style="font-size:14px;margin:0;line-height:1.6">╨в╨╡╨║╤Б╤В ╨╜╨░ ╤Н╤В╨░╨┐╨╡ ╨╝╨░╨║╨╡╤В╨░ ╤П╨▓╨╗╤П╨╡╤В╤Б╤П ╨╖╨░╨│╨╗╤Г╤И╨║╨╛╨╣ ╨╕ ╨▒╤Г╨┤╨╡╤В ╨╖╨░╨╝╨╡╨╜╨╡╨╜ ╨┐╨╛╤Б╨╗╨╡ ╤Б╨╛╨│╨╗╨░╤Б╨╛╨▓╨░╨╜╨╕╤П.</p>
+ </div>
+ </div>
+ <div style="margin-top:30px;background:rgba(193, 160, 102, 0.05);padding:20px;border-radius:4px;border:1px solid rgba(193, 160, 102, 0.2);border-left:4px solid var(--color-gold)">
+-<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-primary);margin-bottom:8px;font-weight:600">Ключевой результат</h5>
+-<p style="font-size:15px;margin:0;font-weight:500;color:var(--color-deep-blue);line-height:1.5">[Ключевой результат]</p>
+-</div>
+-</div>
+-<div class="case-card group" style="padding:40px;border:1px solid var(--color-border);border-radius:0;display:flex;flex-direction:column;background:var(--color-white);position:relative;overflow:hidden;height:100%;box-shadow:0 4px 10px rgba(0,0,0,0.12)">
+-<div style="position:absolute;top:0;left:0;width:4px;height:0%;background:var(--color-gold);transition:height 0.4s ease" class="case-accent-line">
+-</div>
+-<div style="position:absolute;top:12px;right:12px;background:rgba(23, 50, 77, 0.05);border:1px solid rgba(23, 50, 77, 0.1);color:var(--color-text-secondary);padding:4px 10px;font-size:11px;border-radius:4px;font-weight:500;letter-spacing:0.02em">Демонстрация формата</div>
+-<div style="padding-bottom:20px;margin-bottom:24px">
+-<span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#D4AF37;margin-bottom:12px;font-weight:600">Военное право</span>
+-<h4 style="margin:0;color:var(--color-deep-blue);font-size:20px;font-family:var(--font-serif);line-height:1.4">[Кейс 3: Пример заголовка дела]</h4>
+-</div>
+-<div style="display:flex;flex-direction:column;gap:20px;flex-grow:1">
+-<div>
+-<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-secondary);margin-bottom:8px">Проблема</h5>
+-<p style="font-size:14px;margin:0;line-height:1.6">Здесь будет размещено реальное дело из практики по защите прав военнослужащего.</p>
+-</div>
+-<div>
+-<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-secondary);margin-bottom:8px">Что сделали</h5>
+-<p style="font-size:14px;margin:0;line-height:1.6">Текст на этапе макета является заглушкой и будет заменен после согласования.</p>
+-</div>
+-</div>
+-<div style="margin-top:30px;background:rgba(193, 160, 102, 0.05);padding:20px;border-radius:4px;border:1px solid rgba(193, 160, 102, 0.2);border-left:4px solid var(--color-gold)">
+-<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-primary);margin-bottom:8px;font-weight:600">Ключевой результат</h5>
+-<p style="font-size:15px;margin:0;font-weight:500;color:var(--color-deep-blue);line-height:1.5">[Ключевой результат]</p>
++<h5 style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-primary);margin-bottom:8px;font-weight:600">╨Ъ╨╗╤О╤З╨╡╨▓╨╛╨╣ ╤А╨╡╨╖╤Г╨╗╤М╤В╨░╤В</h5>
++<p style="font-size:15px;margin:0;font-weight:500;color:var(--color-deep-blue);line-height:1.5">[╨Ъ╨╗╤О╤З╨╡╨▓╨╛╨╣ ╤А╨╡╨╖╤Г╨╗╤М╤В╨░╤В]</p>
+ </div>
+ </div>
+ </div>
+@@ -582,8 +585,8 @@
+ </section>
+ <section class="section" style="background:var(--color-cream)">
+ <div class="container">
+-<h2 class="section-title text-center" style="margin-bottom:24px;text-align:center">Если помощь нужна прямо сейчас</h2>
+-<p style="text-align:center;color:var(--color-text-secondary);font-size:16px;max-width:700px;margin:0 auto 40px auto;line-height:1.6">Ниже — типичные ситуации, в которых откладывать обращение за юридической помощью опасно. Чем раньше подключится профильный специалист, тем больше возможностей для защиты ваших прав.</p>
++<h2 class="section-title text-center" style="margin-bottom:24px;text-align:center">╨Х╤Б╨╗╨╕ ╨┐╨╛╨╝╨╛╤Й╤М ╨╜╤Г╨╢╨╜╨░ ╨┐╤А╤П╨╝╨╛ ╤Б╨╡╨╣╤З╨░╤Б</h2>
++<p style="text-align:center;color:var(--color-text-secondary);font-size:16px;max-width:700px;margin:0 auto 40px auto;line-height:1.6">╨Э╨╕╨╢╨╡ тАФ ╤В╨╕╨┐╨╕╤З╨╜╤Л╨╡ ╤Б╨╕╤В╤Г╨░╤Ж╨╕╨╕, ╨▓ ╨║╨╛╤В╨╛╤А╤Л╤Е ╨╛╤В╨║╨╗╨░╨┤╤Л╨▓╨░╤В╤М ╨╛╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨╖╨░ ╤О╤А╨╕╨┤╨╕╤З╨╡╤Б╨║╨╛╨╣ ╨┐╨╛╨╝╨╛╤Й╤М╤О ╨╛╨┐╨░╤Б╨╜╨╛. ╨з╨╡╨╝ ╤А╨░╨╜╤М╤И╨╡ ╨┐╨╛╨┤╨║╨╗╤О╤З╨╕╤В╤Б╤П ╨┐╤А╨╛╤Д╨╕╨╗╤М╨╜╤Л╨╣ ╤Б╨┐╨╡╤Ж╨╕╨░╨╗╨╕╤Б╤В, ╤В╨╡╨╝ ╨▒╨╛╨╗╤М╤И╨╡ ╨▓╨╛╨╖╨╝╨╛╨╢╨╜╨╛╤Б╤В╨╡╨╣ ╨┤╨╗╤П ╨╖╨░╤Й╨╕╤В╤Л ╨▓╨░╤И╨╕╤Е ╨┐╤А╨░╨▓.</p>
+ <div class="grid grid-3" style="gap:24px">
+ <div style="padding:24px;border-left:4px solid #D9534F;background:var(--color-white);box-shadow:0 4px 15px rgba(0,0,0,0.05)">
+ <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+@@ -595,9 +598,9 @@
+ <line x1="12" y1="16" x2="12.01" y2="16">
+ </line>
+ </svg>
+-<h4 style="font-size:18px;color:var(--color-deep-blue);margin:0">Военнослужащего задержали</h4>
++<h4 style="font-size:18px;color:var(--color-deep-blue);margin:0">╨Т╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛ ╨╖╨░╨┤╨╡╤А╨╢╨░╨╗╨╕</h4>
+ </div>
+-<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin:0">Уточните фактическое место нахождения, время и предполагаемую причину задержания. Не передавайте непроверенные сведения от имени задержанного. Свяжитесь с адвокатом.</p>
++<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin:0">╨г╤В╨╛╤З╨╜╨╕╤В╨╡ ╤Д╨░╨║╤В╨╕╤З╨╡╤Б╨║╨╛╨╡ ╨╝╨╡╤Б╤В╨╛ ╨╜╨░╤Е╨╛╨╢╨┤╨╡╨╜╨╕╤П, ╨▓╤А╨╡╨╝╤П ╨╕ ╨┐╤А╨╡╨┤╨┐╨╛╨╗╨░╨│╨░╨╡╨╝╤Г╤О ╨┐╤А╨╕╤З╨╕╨╜╤Г ╨╖╨░╨┤╨╡╤А╨╢╨░╨╜╨╕╤П. ╨Э╨╡ ╨┐╨╡╤А╨╡╨┤╨░╨▓╨░╨╣╤В╨╡ ╨╜╨╡╨┐╤А╨╛╨▓╨╡╤А╨╡╨╜╨╜╤Л╨╡ ╤Б╨▓╨╡╨┤╨╡╨╜╨╕╤П ╨╛╤В ╨╕╨╝╨╡╨╜╨╕ ╨╖╨░╨┤╨╡╤А╨╢╨░╨╜╨╜╨╛╨│╨╛. ╨б╨▓╤П╨╢╨╕╤В╨╡╤Б╤М ╤Б ╨░╨┤╨▓╨╛╨║╨░╤В╨╛╨╝.</p>
+ </div>
+ <div style="padding:24px;border-left:4px solid #D9534F;background:var(--color-white);box-shadow:0 4px 15px rgba(0,0,0,0.05)">
+ <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+@@ -609,9 +612,9 @@
+ <line x1="12" y1="16" x2="12.01" y2="16">
+ </line>
+ </svg>
+-<h4 style="font-size:18px;color:var(--color-deep-blue);margin:0">Возбуждено дело или вызывают на допрос</h4>
++<h4 style="font-size:18px;color:var(--color-deep-blue);margin:0">╨Т╨╛╨╖╨▒╤Г╨╢╨┤╨╡╨╜╨╛ ╨┤╨╡╨╗╨╛ ╨╕╨╗╨╕ ╨▓╤Л╨╖╤Л╨▓╨░╤О╤В ╨╜╨░ ╨┤╨╛╨┐╤А╨╛╤Б</h4>
+ </div>
+-<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin:0">До объяснений и подписания документов согласуйте позицию с адвокатом. Сохраните повестку, постановление и иные полученные документы.</p>
++<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin:0">╨Ф╨╛ ╨╛╨▒╤К╤П╤Б╨╜╨╡╨╜╨╕╨╣ ╨╕ ╨┐╨╛╨┤╨┐╨╕╤Б╨░╨╜╨╕╤П ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╨╛╨▓ ╤Б╨╛╨│╨╗╨░╤Б╤Г╨╣╤В╨╡ ╨┐╨╛╨╖╨╕╤Ж╨╕╤О ╤Б ╨░╨┤╨▓╨╛╨║╨░╤В╨╛╨╝. ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╨╡ ╨┐╨╛╨▓╨╡╤Б╤В╨║╤Г, ╨┐╨╛╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╨╕ ╨╕╨╜╤Л╨╡ ╨┐╨╛╨╗╤Г╤З╨╡╨╜╨╜╤Л╨╡ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л.</p>
+ </div>
+ <div style="padding:24px;border-left:4px solid #D9534F;background:var(--color-white);box-shadow:0 4px 15px rgba(0,0,0,0.05)">
+ <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+@@ -623,67 +626,46 @@
+ <line x1="12" y1="16" x2="12.01" y2="16">
+ </line>
+ </svg>
+-<h4 style="font-size:18px;color:var(--color-deep-blue);margin:0">Военнослужащий не выходит на связь</h4>
++<h4 style="font-size:18px;color:var(--color-deep-blue);margin:0">╨Т╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╕╨╣ ╨╜╨╡ ╨▓╤Л╤Е╨╛╨┤╨╕╤В ╨╜╨░ ╤Б╨▓╤П╨╖╤М</h4>
+ </div>
+-<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin:0">Зафиксируйте даты и обстоятельства последнего контакта, воинскую часть и известные обращения. Соберите официальные ответы и документы, не полагаясь только на устные сообщения.</p>
++<p style="color:var(--color-text-secondary);font-size:15px;line-height:1.6;margin:0">╨Ч╨░╤Д╨╕╨║╤Б╨╕╤А╤Г╨╣╤В╨╡ ╨┤╨░╤В╤Л ╨╕ ╨╛╨▒╤Б╤В╨╛╤П╤В╨╡╨╗╤М╤Б╤В╨▓╨░ ╨┐╨╛╤Б╨╗╨╡╨┤╨╜╨╡╨│╨╛ ╨║╨╛╨╜╤В╨░╨║╤В╨░, ╨▓╨╛╨╕╨╜╤Б╨║╤Г╤О ╤З╨░╤Б╤В╤М ╨╕ ╨╕╨╖╨▓╨╡╤Б╤В╨╜╤Л╨╡ ╨╛╨▒╤А╨░╤Й╨╡╨╜╨╕╤П. ╨б╨╛╨▒╨╡╤А╨╕╤В╨╡ ╨╛╤Д╨╕╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╡ ╨╛╤В╨▓╨╡╤В╤Л ╨╕ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л, ╨╜╨╡ ╨┐╨╛╨╗╨░╨│╨░╤П╤Б╤М ╤В╨╛╨╗╤М╨║╨╛ ╨╜╨░ ╤Г╤Б╤В╨╜╤Л╨╡ ╤Б╨╛╨╛╨▒╤Й╨╡╨╜╨╕╤П.</p>
+ </div>
+ </div>
+ <div class="text-center" style="margin-top:40px">
+-<a href="tel:+79103503111" class="btn btn-primary" style="padding:16px 32px;font-size:16px" data-analytics="military_urgent_call_click">Позвонить адвокату</a>
+-<p style="font-size:14px;color:var(--color-text-secondary);margin-top:16px">+7 (910) 350-31-11 • Перезвоним в течение 15 минут в рабочее время</p>
++<a href="tel:+79103503111" class="btn btn-primary" style="padding:16px 32px;font-size:16px" data-analytics="military_urgent_call_click">╨Я╨╛╨╖╨▓╨╛╨╜╨╕╤В╤М ╨░╨┤╨▓╨╛╨║╨░╤В╤Г</a>
++<p style="font-size:14px;color:var(--color-text-secondary);margin-top:16px">+7 (910) 350-31-11 тАв ╨Я╨╡╤А╨╡╨╖╨▓╨╛╨╜╨╕╨╝ ╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╡ 15 ╨╝╨╕╨╜╤Г╤В ╨▓ ╤А╨░╨▒╨╛╤З╨╡╨╡ ╨▓╤А╨╡╨╝╤П</p>
+ </div>
+ </div>
+ </section>
+-<section class="section bg-cream" id="remote">
+-<div class="container">
+-<div class="grid grid-2" style="gap:60px;align-items:center">
+-<div style="display:flex;flex-direction:column">
+-<h2 class="section-title" style="font-size:32px;margin-bottom:16px;text-align:left">Если вашей ситуации <br/>нет в списке</h2>
+-<div style="width:40px;height:2px;background-color:#E5C494;margin-bottom:24px">
+-</div>
+-<p style="color:var(--color-text-secondary);font-size:16px;line-height:1.6;margin-bottom:12px;text-align:left">Необязательно самостоятельно определять вид услуги.</p>
+-<p style="color:var(--color-text-secondary);font-size:16px;line-height:1.6;margin-bottom:32px;text-align:left">Опишите обстоятельства — мы разберём ситуацию,<br/>уточним необходимые документы и определим,<br/>какой специалист должен подключиться.</p>
+-<div style="margin-top:auto;text-align:left">
+-<a href="#form" class="btn btn-primary" style="text-decoration:none;border:0">Описать ситуацию</a>
+-</div>
+-</div>
+-<div style="display:flex;flex-direction:column;height:100%;justify-content:center">
+-<div style="background:var(--color-primary);padding:40px;border-radius:4px;color:var(--color-white);position:relative;overflow:hidden">
+-<div style="position:absolute;top:0;right:0;opacity:0.1;transform:translate(20%, -20%)">
+-<svg width="150" height="150" viewBox="0 0 24 24" fill="var(--color-white)">
+-<path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5">
+-</path>
+-</svg>
++<section class="section bg-cream">
++<div class="container remote-help-grid">
++<div class="remote-help-item-h1" style="display:flex;align-items:flex-start">
++<h2 class="section-title" style="font-size:clamp(24px, 3vw, 32px);margin:0">╨Х╤Б╨╗╨╕ ╨▓╨░╤И╨╡╨╣ ╤Б╨╕╤В╤Г╨░╤Ж╨╕╨╕<br/>╨╜╨╡╤В ╨▓ ╤Б╨┐╨╕╤Б╨║╨╡</h2>
+ </div>
+-<h3 style="font-size:24px;font-family:var(--font-serif);color:#E5C494;margin-bottom:24px;position:relative;z-index:1">Что можно сделать дистанционно</h3>
+-<div style="position:relative;z-index:1">
+-<ul style="list-style:none;padding:0;margin:0 0 24px 0;color:rgba(255,255,255,0.9);font-size:16px;line-height:1.7;font-weight:500">
+-<li style="margin-bottom:12px">
+-<strong style="color:#E5C494">1.</strong> Провести первичную консультацию</li>
+-<li style="margin-bottom:12px">
+-<strong style="color:#E5C494">2.</strong> Изучить документы</li>
+-<li style="margin-bottom:12px">
+-<strong style="color:#E5C494">3.</strong> Подготовить обращения и жалобы</li>
+-<li style="margin:0">
+-<strong style="color:#E5C494">4.</strong> Определить порядок дальнейших действий</li>
+-</ul>
+-<div style="background:rgba(255,255,255,0.1);padding:16px;border-left:4px solid var(--color-gold);font-size:14px;color:rgba(255,255,255,0.7);line-height:1.5">Возможность полностью дистанционной работы зависит от характера дела и необходимости личного участия адвоката или юриста.</div>
++<div class="remote-help-item-h2" style="display:flex;align-items:flex-start">
++<h2 class="section-title" style="font-size:clamp(24px, 3vw, 32px);margin:0">╨з╤В╨╛ ╨╝╨╛╨╢╨╜╨╛ ╤Б╨┤╨╡╨╗╨░╤В╤М ╨┤╨╕╤Б╤В╨░╨╜╤Ж╨╕╨╛╨╜╨╜╨╛</h2>
+ </div>
++<div class="remote-help-item-p1" style="display:flex;flex-direction:column">
++<p style="color:var(--color-text-secondary);font-size:16px;line-height:1.6;margin-bottom:32px">╨Э╨╡╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╨╛ ╤Б╨░╨╝╨╛╤Б╤В╨╛╤П╤В╨╡╨╗╤М╨╜╨╛ ╨╛╨┐╤А╨╡╨┤╨╡╨╗╤П╤В╤М ╨▓╨╕╨┤ ╤Г╤Б╨╗╤Г╨│╨╕. ╨Ю╨┐╨╕╤И╨╕╤В╨╡ ╨╛╨▒╤Б╤В╨╛╤П╤В╨╡╨╗╤М╤Б╤В╨▓╨░ тАФ ╨╝╤Л ╤А╨░╨╖╨▒╨╡╤А╤С╨╝ ╤Б╨╕╤В╤Г╨░╤Ж╨╕╤О, ╤Г╤В╨╛╤З╨╜╨╕╨╝ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╨╡ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л ╨╕ ╨╛╨┐╤А╨╡╨┤╨╡╨╗╨╕╨╝, ╨║╨░╨║╨╛╨╣ ╤Б╨┐╨╡╤Ж╨╕╨░╨╗╨╕╤Б╤В ╨┤╨╛╨╗╨╢╨╡╨╜ ╨┐╨╛╨┤╨║╨╗╤О╤З╨╕╤В╤М╤Б╤П.</p>
++<div style="margin-top:auto">
++<a href="#form" class="btn btn-primary">╨Ю╨┐╨╕╤Б╨░╤В╤М ╤Б╨╕╤В╤Г╨░╤Ж╨╕╤О</a>
+ </div>
+ </div>
++<div class="remote-help-item-p2" style="display:flex;flex-direction:column">
++<p style="color:var(--color-text-secondary);font-size:16px;line-height:1.6;margin:0">╨Я╤А╨╛╨▓╨╡╤Б╤В╨╕ ╨┐╨╡╤А╨▓╨╕╤З╨╜╤Г╤О ╨║╨╛╨╜╤Б╤Г╨╗╤М╤В╨░╤Ж╨╕╤О, ╨╕╨╖╤Г╤З╨╕╤В╤М ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л, ╨┐╨╛╨┤╨│╨╛╤В╨╛╨▓╨╕╤В╤М ╨╛╨▒╤А╨░╤Й╨╡╨╜╨╕╤П ╨╕ ╨╢╨░╨╗╨╛╨▒╤Л, ╨╛╨┐╤А╨╡╨┤╨╡╨╗╨╕╤В╤М ╨┐╨╛╤А╤П╨┤╨╛╨║ ╨┤╨░╨╗╤М╨╜╨╡╨╣╤И╨╕╤Е ╨┤╨╡╨╣╤Б╤В╨▓╨╕╨╣. ╨Т╨╛╨╖╨╝╨╛╨╢╨╜╨╛╤Б╤В╤М ╨┐╨╛╨╗╨╜╨╛╤Б╤В╤М╤О ╨┤╨╕╤Б╤В╨░╨╜╤Ж╨╕╨╛╨╜╨╜╨╛╨╣ ╤А╨░╨▒╨╛╤В╤Л ╨╖╨░╨▓╨╕╤Б╨╕╤В ╨╛╤В ╤Е╨░╤А╨░╨║╤В╨╡╤А╨░ ╨┤╨╡╨╗╨░ ╨╕ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛╤Б╤В╨╕ ╨╗╨╕╤З╨╜╨╛╨│╨╛ ╤Г╤З╨░╤Б╤В╨╕╤П ╨░╨┤╨▓╨╛╨║╨░╤В╨░ ╨╕╨╗╨╕ ╤О╤А╨╕╤Б╤В╨░.</p>
+ </div>
+ </div>
+ </section>
+ <section id="pricing" style="position:relative;overflow:hidden;padding:80px 0;background:var(--gradient-cream)" class="jsx-e9da7f3b2cb2d76f section">
+ <div style="position:relative;z-index:1" class="jsx-e9da7f3b2cb2d76f container">
+ <div style="text-align:center;margin-bottom:80px" class="jsx-e9da7f3b2cb2d76f">
+-<h2 style="margin-top:0;font-size:48px;font-family:var(--font-serif);color:var(--color-deep-blue);margin-bottom:20px;text-align:center" class="jsx-e9da7f3b2cb2d76f">Стоимость юридической помощи</h2>
+-<p style="font-size:16px;color:var(--color-text-secondary);max-width:700px;margin:0 auto;line-height:1.6" class="jsx-e9da7f3b2cb2d76f">Стоимость зависит от характера ситуации, стадии дела, объёма документов, сложности и необходимости личного участия адвоката. После первичного разбора мы определим перечень работ и согласуем стоимость до заключения договора.</p>
++<h2 style="margin-top:0;font-size:48px;font-family:var(--font-serif);color:var(--color-deep-blue);margin-bottom:20px;text-align:center" class="jsx-e9da7f3b2cb2d76f">╨б╤В╨╛╨╕╨╝╨╛╤Б╤В╤М ╤О╤А╨╕╨┤╨╕╤З╨╡╤Б╨║╨╛╨╣ ╨┐╨╛╨╝╨╛╤Й╨╕</h2>
++<p style="font-size:16px;color:var(--color-text-secondary);max-width:700px;margin:0 auto;line-height:1.6" class="jsx-e9da7f3b2cb2d76f">╨б╤В╨╛╨╕╨╝╨╛╤Б╤В╤М ╨╖╨░╨▓╨╕╤Б╨╕╤В ╨╛╤В ╤Е╨░╤А╨░╨║╤В╨╡╤А╨░ ╤Б╨╕╤В╤Г╨░╤Ж╨╕╨╕, ╤Б╤В╨░╨┤╨╕╨╕ ╨┤╨╡╨╗╨░, ╨╛╨▒╤К╤С╨╝╨░ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╨╛╨▓, ╤Б╨╗╨╛╨╢╨╜╨╛╤Б╤В╨╕ ╨╕ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛╤Б╤В╨╕ ╨╗╨╕╤З╨╜╨╛╨│╨╛ ╤Г╤З╨░╤Б╤В╨╕╤П ╨░╨┤╨▓╨╛╨║╨░╤В╨░. ╨Я╨╛╤Б╨╗╨╡ ╨┐╨╡╤А╨▓╨╕╤З╨╜╨╛╨│╨╛ ╤А╨░╨╖╨▒╨╛╤А╨░ ╨╝╤Л ╨╛╨┐╤А╨╡╨┤╨╡╨╗╨╕╨╝ ╨┐╨╡╤А╨╡╤З╨╡╨╜╤М ╤А╨░╨▒╨╛╤В ╨╕ ╤Б╨╛╨│╨╗╨░╤Б╤Г╨╡╨╝ ╤Б╤В╨╛╨╕╨╝╨╛╤Б╤В╤М ╨┤╨╛ ╨╖╨░╨║╨╗╤О╤З╨╡╨╜╨╕╤П ╨┤╨╛╨│╨╛╨▓╨╛╤А╨░.</p>
+ </div>
+ <div style="gap:30px;align-items:stretch;max-width:850px;margin:0 auto" class="jsx-e9da7f3b2cb2d76f grid grid-2">
+ <div style="background:var(--color-white);color:var(--color-deep-blue);border-radius:0;padding:40px 30px;box-shadow:0 10px 30px rgba(0,0,0,0.05);border:1px solid rgba(23, 50, 77, 0.1);position:relative;transition:transform 0.4s ease, box-shadow 0.4s ease;display:flex;flex-direction:column;height:100%" class="jsx-e9da7f3b2cb2d76f pricing-tier-card">
+-<h3 style="font-size:24px;margin:0 0 8px 0;color:inherit;text-align:center" class="jsx-e9da7f3b2cb2d76f">Базовые услуги</h3>
+-<p style="font-size:15px;opacity:0.8;margin:0 0 30px 0;min-height:40px;text-align:center" class="jsx-e9da7f3b2cb2d76f">Первичный анализ и документы</p>
++<h3 style="font-size:24px;margin:0 0 8px 0;color:inherit;text-align:center" class="jsx-e9da7f3b2cb2d76f">╨С╨░╨╖╨╛╨▓╤Л╨╡ ╤Г╤Б╨╗╤Г╨│╨╕</h3>
++<p style="font-size:15px;opacity:0.8;margin:0 0 30px 0;min-height:40px;text-align:center" class="jsx-e9da7f3b2cb2d76f">╨Я╨╡╤А╨▓╨╕╤З╨╜╤Л╨╣ ╨░╨╜╨░╨╗╨╕╨╖ ╨╕ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л</p>
+ <div style="font-size:32px;font-family:var(--font-serif);font-weight:bold;margin:0 0 30px 0;padding-bottom:30px" class="jsx-e9da7f3b2cb2d76f">
+ </div>
+ <ul style="list-style:none;padding:0;margin:0 0 40px 0;flex-grow:1;display:flex;flex-direction:column;gap:16px" class="jsx-e9da7f3b2cb2d76f">
+@@ -693,9 +675,9 @@
+ <polyline points="20 6 9 17 4 12" class="jsx-e9da7f3b2cb2d76f">
+ </polyline>
+ </svg>
+-<span style="line-height:1.3" class="jsx-e9da7f3b2cb2d76f">Консультация и анализ документов</span>
++<span style="line-height:1.3" class="jsx-e9da7f3b2cb2d76f">╨Ъ╨╛╨╜╤Б╤Г╨╗╤М╤В╨░╤Ж╨╕╤П ╨╕ ╨░╨╜╨░╨╗╨╕╨╖ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╨╛╨▓</span>
+ </div>
+-<span style="font-weight:600;white-space:nowrap;color:var(--color-deep-blue)" class="jsx-e9da7f3b2cb2d76f">от [УТОЧНИТЬ] ₽</span>
++<span style="font-weight:600;white-space:nowrap;color:var(--color-deep-blue)" class="jsx-e9da7f3b2cb2d76f">╨╛╤В [╨г╨в╨Ю╨з╨Э╨Ш╨в╨м] тВ╜</span>
+ </li>
+ <li style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;font-size:14px;opacity:0.9" class="jsx-e9da7f3b2cb2d76f">
+ <div style="display:flex;align-items:flex-start;gap:10px" class="jsx-e9da7f3b2cb2d76f">
+@@ -703,17 +685,17 @@
+ <polyline points="20 6 9 17 4 12" class="jsx-e9da7f3b2cb2d76f">
+ </polyline>
+ </svg>
+-<span style="line-height:1.3" class="jsx-e9da7f3b2cb2d76f">Подготовка заявления, рапорта или жалобы</span>
++<span style="line-height:1.3" class="jsx-e9da7f3b2cb2d76f">╨Я╨╛╨┤╨│╨╛╤В╨╛╨▓╨║╨░ ╨╖╨░╤П╨▓╨╗╨╡╨╜╨╕╤П, ╤А╨░╨┐╨╛╤А╤В╨░ ╨╕╨╗╨╕ ╨╢╨░╨╗╨╛╨▒╤Л</span>
+ </div>
+-<span style="font-weight:600;white-space:nowrap;color:var(--color-deep-blue)" class="jsx-e9da7f3b2cb2d76f">от [УТОЧНИТЬ] ₽</span>
++<span style="font-weight:600;white-space:nowrap;color:var(--color-deep-blue)" class="jsx-e9da7f3b2cb2d76f">╨╛╤В [╨г╨в╨Ю╨з╨Э╨Ш╨в╨м] тВ╜</span>
+ </li>
+ </ul>
+-<a href="#consultation" style="width:100%;text-align:center;border-radius:0" class="jsx-e9da7f3b2cb2d76f btn btn-regular">Узнать точную стоимость</a>
++<a href="#consultation" style="width:100%;text-align:center;border-radius:0" class="jsx-e9da7f3b2cb2d76f btn btn-regular">╨г╨╖╨╜╨░╤В╤М ╤В╨╛╤З╨╜╤Г╤О ╤Б╤В╨╛╨╕╨╝╨╛╤Б╤В╤М</a>
+ </div>
+-<div style="background:linear-gradient(145deg, #10273B 0%, #1F3F5C 100%);color:var(--color-white);border-radius:0;padding:40px 30px;box-shadow:0 20px 40px rgba(16, 39, 59, 0.15);border:none;position:relative;transition:transform 0.4s ease, box-shadow 0.4s ease;display:flex;flex-direction:column;height:100%" class="jsx-e9da7f3b2cb2d76f pricing-tier-card">
+-<div style="position:absolute;top:0;left:50%;transform:translate(-50%, -50%);background:var(--color-white);color:var(--color-deep-blue);padding:6px 16px;border-radius:0;font-size:12px;font-weight:bold;text-transform:uppercase;letter-spacing:0.1em" class="jsx-e9da7f3b2cb2d76f">Востребовано</div>
+-<h3 style="font-size:24px;margin:0 0 8px 0;color:inherit;text-align:center" class="jsx-e9da7f3b2cb2d76f">Ведение дела</h3>
+-<p style="font-size:15px;opacity:0.8;margin:0 0 30px 0;min-height:40px;text-align:center" class="jsx-e9da7f3b2cb2d76f">Комплексная защита</p>
++<div style="background:linear-gradient(to right, #0B1C2A 0%, #17375E 100%);color:var(--color-white);border-radius:0;padding:40px 30px;box-shadow:0 20px 40px rgba(16, 39, 59, 0.15);border:none;position:relative;transition:transform 0.4s ease, box-shadow 0.4s ease;display:flex;flex-direction:column;height:100%" class="jsx-e9da7f3b2cb2d76f pricing-tier-card">
++<div style="position:absolute;top:0;left:50%;transform:translate(-50%, -50%);background:var(--color-white);color:var(--color-deep-blue);padding:6px 16px;border-radius:0;font-size:12px;font-weight:bold;text-transform:uppercase;letter-spacing:0.1em" class="jsx-e9da7f3b2cb2d76f">╨Т╨╛╤Б╤В╤А╨╡╨▒╨╛╨▓╨░╨╜╨╛</div>
++<h3 style="font-size:24px;margin:0 0 8px 0;color:inherit;text-align:center" class="jsx-e9da7f3b2cb2d76f">╨Т╨╡╨┤╨╡╨╜╨╕╨╡ ╨┤╨╡╨╗╨░</h3>
++<p style="font-size:15px;opacity:0.8;margin:0 0 30px 0;min-height:40px;text-align:center" class="jsx-e9da7f3b2cb2d76f">╨Ъ╨╛╨╝╨┐╨╗╨╡╨║╤Б╨╜╨░╤П ╨╖╨░╤Й╨╕╤В╨░</p>
+ <div style="font-size:32px;font-family:var(--font-serif);font-weight:bold;margin:0 0 30px 0;padding-bottom:30px" class="jsx-e9da7f3b2cb2d76f">
+ </div>
+ <ul style="list-style:none;padding:0;margin:0 0 40px 0;flex-grow:1;display:flex;flex-direction:column;gap:16px" class="jsx-e9da7f3b2cb2d76f">
+@@ -723,9 +705,9 @@
+ <polyline points="20 6 9 17 4 12" class="jsx-e9da7f3b2cb2d76f">
+ </polyline>
+ </svg>
+-<span style="line-height:1.3" class="jsx-e9da7f3b2cb2d76f">Сопровождение спора</span>
++<span style="line-height:1.3" class="jsx-e9da7f3b2cb2d76f">╨б╨╛╨┐╤А╨╛╨▓╨╛╨╢╨┤╨╡╨╜╨╕╨╡ ╤Б╨┐╨╛╤А╨░</span>
+ </div>
+-<span style="font-weight:600;white-space:nowrap;color:var(--color-white)" class="jsx-e9da7f3b2cb2d76f">от [УТОЧНИТЬ] ₽</span>
++<span style="font-weight:600;white-space:nowrap;color:var(--color-white)" class="jsx-e9da7f3b2cb2d76f">╨╛╤В [╨г╨в╨Ю╨з╨Э╨Ш╨в╨м] тВ╜</span>
+ </li>
+ <li style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;font-size:14px;opacity:0.9" class="jsx-e9da7f3b2cb2d76f">
+ <div style="display:flex;align-items:flex-start;gap:10px" class="jsx-e9da7f3b2cb2d76f">
+@@ -733,12 +715,12 @@
+ <polyline points="20 6 9 17 4 12" class="jsx-e9da7f3b2cb2d76f">
+ </polyline>
+ </svg>
+-<span style="line-height:1.3" class="jsx-e9da7f3b2cb2d76f">Защита по <br />уголовному делу</span>
++<span style="line-height:1.3" class="jsx-e9da7f3b2cb2d76f">╨Ч╨░╤Й╨╕╤В╨░ ╨┐╨╛ ╤Г╨│╨╛╨╗╨╛╨▓╨╜╨╛╨╝╤Г ╨┤╨╡╨╗╤Г</span>
+ </div>
+-<span style="font-weight:600;white-space:nowrap;color:var(--color-white)" class="jsx-e9da7f3b2cb2d76f">от [УТОЧНИТЬ] ₽</span>
++<span style="font-weight:600;white-space:nowrap;color:var(--color-white)" class="jsx-e9da7f3b2cb2d76f">╨╛╤В [╨г╨в╨Ю╨з╨Э╨Ш╨в╨м] тВ╜</span>
+ </li>
+ </ul>
+-<a href="#consultation" style="width:100%;text-align:center;border-radius:0" class="jsx-e9da7f3b2cb2d76f btn btn-popular">Узнать точную стоимость</a>
++<a href="#consultation" style="width:100%;text-align:center;border-radius:0" class="jsx-e9da7f3b2cb2d76f btn btn-popular">╨г╨╖╨╜╨░╤В╤М ╤В╨╛╤З╨╜╤Г╤О ╤Б╤В╨╛╨╕╨╝╨╛╤Б╤В╤М</a>
+ </div>
+ </div>
+ </div>
+@@ -750,84 +732,84 @@
+ <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px" class="jsx-5bd19e9b2fb6e42f">
+ <div style="width:40px;height:2px;background-color:var(--color-primary)" class="jsx-5bd19e9b2fb6e42f">
+ </div>
+-<span style="text-transform:uppercase;letter-spacing:0.1em;font-size:13px;font-weight:600;color:var(--color-primary)" class="jsx-5bd19e9b2fb6e42f">Частые вопросы клиентов</span>
++<span style="text-transform:uppercase;letter-spacing:0.1em;font-size:13px;font-weight:600;color:var(--color-primary)" class="jsx-5bd19e9b2fb6e42f">╨з╨░╤Б╤В╤Л╨╡ ╨▓╨╛╨┐╤А╨╛╤Б╤Л ╨║╨╗╨╕╨╡╨╜╤В╨╛╨▓</span>
+ </div>
+-<h2 style="font-size:48px;font-family:var(--font-serif);color:var(--color-deep-blue);margin-bottom:32px;line-height:1.1" class="jsx-5bd19e9b2fb6e42f">Частые вопросы</h2>
++<h2 style="font-size:48px;font-family:var(--font-serif);color:var(--color-deep-blue);margin-bottom:32px;line-height:1.1" class="jsx-5bd19e9b2fb6e42f">╨з╨░╤Б╤В╤Л╨╡ ╨▓╨╛╨┐╤А╨╛╤Б╤Л</h2>
+ <p style="color:var(--color-text-secondary);font-size:16px;line-height:1.6;margin-bottom:40px;max-width:400px" class="jsx-5bd19e9b2fb6e42f">
+ </p>
+-<a href="#consultation" style="display:inline-flex" class="jsx-5bd19e9b2fb6e42f btn btn-outline">Задать свой вопрос</a>
++<a href="#consultation" style="display:inline-flex" class="jsx-5bd19e9b2fb6e42f btn btn-outline">╨Ч╨░╨┤╨░╤В╤М ╤Б╨▓╨╛╨╣ ╨▓╨╛╨┐╤А╨╛╤Б</a>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:16px" class="jsx-5bd19e9b2fb6e42f reveal-on-scroll delay-200">
+ <details style="background:linear-gradient(to right, #0B1C2A 0%, #17375E 100%);border:1px solid var(--color-border);border-radius:0;transition:var(--transition);color:var(--color-white);overflow:hidden" class="jsx-5bd19e9b2fb6e42f faq-details">
+ <summary style="padding:24px 32px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:20px;font-weight:500;font-family:var(--font-sans);list-style:none;background:transparent" class="jsx-5bd19e9b2fb6e42f faq-summary">
+-<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">С какими вопросами помогает военный юрист?</span>
++<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">╨б ╨║╨░╨║╨╕╨╝╨╕ ╨▓╨╛╨┐╤А╨╛╤Б╨░╨╝╨╕ ╨┐╨╛╨╝╨╛╨│╨░╨╡╤В ╨▓╨╛╨╡╨╜╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В?</span>
+ <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255, 255, 255, 0.2);transition:all 0.3s ease;flex-shrink:0;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f faq-icon">+</span>
+ </summary>
+ <div style="padding:32px;background:var(--gradient-cream);color:var(--color-text-main);line-height:1.6;font-size:16px;border-top:1px solid var(--color-border)" class="jsx-5bd19e9b2fb6e42f">
+-<div class="jsx-5bd19e9b2fb6e42f">С выплатами и документами после ранения или гибели военнослужащего, заключениями ВВК, решениями военкомата, установлением статуса пропавшего военнослужащего и другими спорами, связанными с военной службой. Если ситуация связана с задержанием, проверкой или уголовным делом, к работе подключается адвокат.</div>
++<div class="jsx-5bd19e9b2fb6e42f">╨б ╨▓╤Л╨┐╨╗╨░╤В╨░╨╝╨╕ ╨╕ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╨░╨╝╨╕ ╨┐╨╛╤Б╨╗╨╡ ╤А╨░╨╜╨╡╨╜╨╕╤П ╨╕╨╗╨╕ ╨│╨╕╨▒╨╡╨╗╨╕ ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛, ╨╖╨░╨║╨╗╤О╤З╨╡╨╜╨╕╤П╨╝╨╕ ╨Т╨Т╨Ъ, ╤А╨╡╤И╨╡╨╜╨╕╤П╨╝╨╕ ╨▓╨╛╨╡╨╜╨║╨╛╨╝╨░╤В╨░, ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡╨╝ ╤Б╤В╨░╤В╤Г╤Б╨░ ╨┐╤А╨╛╨┐╨░╨▓╤И╨╡╨│╨╛ ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛ ╨╕ ╨┤╤А╤Г╨│╨╕╨╝╨╕ ╤Б╨┐╨╛╤А╨░╨╝╨╕, ╤Б╨▓╤П╨╖╨░╨╜╨╜╤Л╨╝╨╕ ╤Б ╨▓╨╛╨╡╨╜╨╜╨╛╨╣ ╤Б╨╗╤Г╨╢╨▒╨╛╨╣. ╨Х╤Б╨╗╨╕ ╤Б╨╕╤В╤Г╨░╤Ж╨╕╤П ╤Б╨▓╤П╨╖╨░╨╜╨░ ╤Б ╨╖╨░╨┤╨╡╤А╨╢╨░╨╜╨╕╨╡╨╝, ╨┐╤А╨╛╨▓╨╡╤А╨║╨╛╨╣ ╨╕╨╗╨╕ ╤Г╨│╨╛╨╗╨╛╨▓╨╜╤Л╨╝ ╨┤╨╡╨╗╨╛╨╝, ╨║ ╤А╨░╨▒╨╛╤В╨╡ ╨┐╨╛╨┤╨║╨╗╤О╤З╨░╨╡╤В╤Б╤П ╨░╨┤╨▓╨╛╨║╨░╤В.</div>
+ </div>
+ </details>
+ <details style="background:linear-gradient(to right, #0B1C2A 0%, #17375E 100%);border:1px solid var(--color-border);border-radius:0;transition:var(--transition);color:var(--color-white);overflow:hidden" class="jsx-5bd19e9b2fb6e42f faq-details">
+ <summary style="padding:24px 32px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:20px;font-weight:500;font-family:var(--font-sans);list-style:none;background:transparent" class="jsx-5bd19e9b2fb6e42f faq-summary">
+-<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">В каких ситуациях нужно обращаться именно к адвокату?</span>
++<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">╨Т ╨║╨░╨║╨╕╤Е ╤Б╨╕╤В╤Г╨░╤Ж╨╕╤П╤Е ╨╜╤Г╨╢╨╜╨╛ ╨╛╨▒╤А╨░╤Й╨░╤В╤М╤Б╤П ╨╕╨╝╨╡╨╜╨╜╨╛ ╨║ ╨░╨┤╨▓╨╛╨║╨░╤В╤Г?</span>
+ <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255, 255, 255, 0.2);transition:all 0.3s ease;flex-shrink:0;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f faq-icon">+</span>
+ </summary>
+ <div style="padding:32px;background:var(--gradient-cream);color:var(--color-text-main);line-height:1.6;font-size:16px;border-top:1px solid var(--color-border)" class="jsx-5bd19e9b2fb6e42f">
+-<div class="jsx-5bd19e9b2fb6e42f">Адвокат требуется, когда военнослужащего подозревают или обвиняют в преступлении, задержали, вызывают на допрос либо проводят иные процессуальные действия в рамках уголовного дела. По вопросам выплат, ВВК, увольнения и административным спорам помощь может оказывать юрист, если конкретное действие не требует статуса адвоката.</div>
++<div class="jsx-5bd19e9b2fb6e42f">╨Р╨┤╨▓╨╛╨║╨░╤В ╤В╤А╨╡╨▒╤Г╨╡╤В╤Б╤П, ╨║╨╛╨│╨┤╨░ ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛ ╨┐╨╛╨┤╨╛╨╖╤А╨╡╨▓╨░╤О╤В ╨╕╨╗╨╕ ╨╛╨▒╨▓╨╕╨╜╤П╤О╤В ╨▓ ╨┐╤А╨╡╤Б╤В╤Г╨┐╨╗╨╡╨╜╨╕╨╕, ╨╖╨░╨┤╨╡╤А╨╢╨░╨╗╨╕, ╨▓╤Л╨╖╤Л╨▓╨░╤О╤В ╨╜╨░ ╨┤╨╛╨┐╤А╨╛╤Б ╨╗╨╕╨▒╨╛ ╨┐╤А╨╛╨▓╨╛╨┤╤П╤В ╨╕╨╜╤Л╨╡ ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╤Г╨░╨╗╤М╨╜╤Л╨╡ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П ╨▓ ╤А╨░╨╝╨║╨░╤Е ╤Г╨│╨╛╨╗╨╛╨▓╨╜╨╛╨│╨╛ ╨┤╨╡╨╗╨░. ╨Я╨╛ ╨▓╨╛╨┐╤А╨╛╤Б╨░╨╝ ╨▓╤Л╨┐╨╗╨░╤В, ╨Т╨Т╨Ъ, ╤Г╨▓╨╛╨╗╤М╨╜╨╡╨╜╨╕╤П ╨╕ ╨░╨┤╨╝╨╕╨╜╨╕╤Б╤В╤А╨░╤В╨╕╨▓╨╜╤Л╨╝ ╤Б╨┐╨╛╤А╨░╨╝ ╨┐╨╛╨╝╨╛╤Й╤М ╨╝╨╛╨╢╨╡╤В ╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤О╤А╨╕╤Б╤В, ╨╡╤Б╨╗╨╕ ╨║╨╛╨╜╨║╤А╨╡╤В╨╜╨╛╨╡ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╨╡ ╨╜╨╡ ╤В╤А╨╡╨▒╤Г╨╡╤В ╤Б╤В╨░╤В╤Г╤Б╨░ ╨░╨┤╨▓╨╛╨║╨░╤В╨░.</div>
+ </div>
+ </details>
+ <details style="background:linear-gradient(to right, #0B1C2A 0%, #17375E 100%);border:1px solid var(--color-border);border-radius:0;transition:var(--transition);color:var(--color-white);overflow:hidden" class="jsx-5bd19e9b2fb6e42f faq-details">
+ <summary style="padding:24px 32px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:20px;font-weight:500;font-family:var(--font-sans);list-style:none;background:transparent" class="jsx-5bd19e9b2fb6e42f faq-summary">
+-<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">Можно ли обратиться родственнику военнослужащего?</span>
++<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">╨Ь╨╛╨╢╨╜╨╛ ╨╗╨╕ ╨╛╨▒╤А╨░╤В╨╕╤В╤М╤Б╤П ╤А╨╛╨┤╤Б╤В╨▓╨╡╨╜╨╜╨╕╨║╤Г ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛?</span>
+ <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255, 255, 255, 0.2);transition:all 0.3s ease;flex-shrink:0;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f faq-icon">+</span>
+ </summary>
+ <div style="padding:32px;background:var(--gradient-cream);color:var(--color-text-main);line-height:1.6;font-size:16px;border-top:1px solid var(--color-border)" class="jsx-5bd19e9b2fb6e42f">
+-<div class="jsx-5bd19e9b2fb6e42f">Да. Родственник может сообщить обстоятельства, передать документы и получить разъяснение о возможных действиях. Возможность получить сведения, представлять интересы военнослужащего или заключить соглашение от его имени зависит от ситуации, полномочий и требований закона.</div>
++<div class="jsx-5bd19e9b2fb6e42f">╨Ф╨░. ╨а╨╛╨┤╤Б╤В╨▓╨╡╨╜╨╜╨╕╨║ ╨╝╨╛╨╢╨╡╤В ╤Б╨╛╨╛╨▒╤Й╨╕╤В╤М ╨╛╨▒╤Б╤В╨╛╤П╤В╨╡╨╗╤М╤Б╤В╨▓╨░, ╨┐╨╡╤А╨╡╨┤╨░╤В╤М ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л ╨╕ ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╤А╨░╨╖╤К╤П╤Б╨╜╨╡╨╜╨╕╨╡ ╨╛ ╨▓╨╛╨╖╨╝╨╛╨╢╨╜╤Л╤Е ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П╤Е. ╨Т╨╛╨╖╨╝╨╛╨╢╨╜╨╛╤Б╤В╤М ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╤Б╨▓╨╡╨┤╨╡╨╜╨╕╤П, ╨┐╤А╨╡╨┤╤Б╤В╨░╨▓╨╗╤П╤В╤М ╨╕╨╜╤В╨╡╤А╨╡╤Б╤Л ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛ ╨╕╨╗╨╕ ╨╖╨░╨║╨╗╤О╤З╨╕╤В╤М ╤Б╨╛╨│╨╗╨░╤И╨╡╨╜╨╕╨╡ ╨╛╤В ╨╡╨│╨╛ ╨╕╨╝╨╡╨╜╨╕ ╨╖╨░╨▓╨╕╤Б╨╕╤В ╨╛╤В ╤Б╨╕╤В╤Г╨░╤Ж╨╕╨╕, ╨┐╨╛╨╗╨╜╨╛╨╝╨╛╤З╨╕╨╣ ╨╕ ╤В╤А╨╡╨▒╨╛╨▓╨░╨╜╨╕╨╣ ╨╖╨░╨║╨╛╨╜╨░.</div>
+ </div>
+ </details>
+ <details style="background:linear-gradient(to right, #0B1C2A 0%, #17375E 100%);border:1px solid var(--color-border);border-radius:0;transition:var(--transition);color:var(--color-white);overflow:hidden" class="jsx-5bd19e9b2fb6e42f faq-details">
+ <summary style="padding:24px 32px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:20px;font-weight:500;font-family:var(--font-sans);list-style:none;background:transparent" class="jsx-5bd19e9b2fb6e42f faq-summary">
+-<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">Можно ли вести дело дистанционно из другого региона?</span>
++<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">╨Ь╨╛╨╢╨╜╨╛ ╨╗╨╕ ╨▓╨╡╤Б╤В╨╕ ╨┤╨╡╨╗╨╛ ╨┤╨╕╤Б╤В╨░╨╜╤Ж╨╕╨╛╨╜╨╜╨╛ ╨╕╨╖ ╨┤╤А╤Г╨│╨╛╨│╨╛ ╤А╨╡╨│╨╕╨╛╨╜╨░?</span>
+ <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255, 255, 255, 0.2);transition:all 0.3s ease;flex-shrink:0;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f faq-icon">+</span>
+ </summary>
+ <div style="padding:32px;background:var(--gradient-cream);color:var(--color-text-main);line-height:1.6;font-size:16px;border-top:1px solid var(--color-border)" class="jsx-5bd19e9b2fb6e42f">
+-<div class="jsx-5bd19e9b2fb6e42f">Многие задачи можно начать дистанционно: провести консультацию, изучить документы, подготовить обращения и определить стратегию. Необходимость личного участия зависит от вида дела, стадии производства и места совершения процессуальных действий.</div>
++<div class="jsx-5bd19e9b2fb6e42f">╨Ь╨╜╨╛╨│╨╕╨╡ ╨╖╨░╨┤╨░╤З╨╕ ╨╝╨╛╨╢╨╜╨╛ ╨╜╨░╤З╨░╤В╤М ╨┤╨╕╤Б╤В╨░╨╜╤Ж╨╕╨╛╨╜╨╜╨╛: ╨┐╤А╨╛╨▓╨╡╤Б╤В╨╕ ╨║╨╛╨╜╤Б╤Г╨╗╤М╤В╨░╤Ж╨╕╤О, ╨╕╨╖╤Г╤З╨╕╤В╤М ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л, ╨┐╨╛╨┤╨│╨╛╤В╨╛╨▓╨╕╤В╤М ╨╛╨▒╤А╨░╤Й╨╡╨╜╨╕╤П ╨╕ ╨╛╨┐╤А╨╡╨┤╨╡╨╗╨╕╤В╤М ╤Б╤В╤А╨░╤В╨╡╨│╨╕╤О. ╨Э╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛╤Б╤В╤М ╨╗╨╕╤З╨╜╨╛╨│╨╛ ╤Г╤З╨░╤Б╤В╨╕╤П ╨╖╨░╨▓╨╕╤Б╨╕╤В ╨╛╤В ╨▓╨╕╨┤╨░ ╨┤╨╡╨╗╨░, ╤Б╤В╨░╨┤╨╕╨╕ ╨┐╤А╨╛╨╕╨╖╨▓╨╛╨┤╤Б╤В╨▓╨░ ╨╕ ╨╝╨╡╤Б╤В╨░ ╤Б╨╛╨▓╨╡╤А╤И╨╡╨╜╨╕╤П ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╤Г╨░╨╗╤М╨╜╤Л╤Е ╨┤╨╡╨╣╤Б╤В╨▓╨╕╨╣.</div>
+ </div>
+ </details>
+ <details style="background:linear-gradient(to right, #0B1C2A 0%, #17375E 100%);border:1px solid var(--color-border);border-radius:0;transition:var(--transition);color:var(--color-white);overflow:hidden" class="jsx-5bd19e9b2fb6e42f faq-details">
+ <summary style="padding:24px 32px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:20px;font-weight:500;font-family:var(--font-sans);list-style:none;background:transparent" class="jsx-5bd19e9b2fb6e42f faq-summary">
+-<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">Что сообщить, если военнослужащего задержали?</span>
++<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">╨з╤В╨╛ ╤Б╨╛╨╛╨▒╤Й╨╕╤В╤М, ╨╡╤Б╨╗╨╕ ╨▓╨╛╨╡╨╜╨╜╨╛╤Б╨╗╤Г╨╢╨░╤Й╨╡╨│╨╛ ╨╖╨░╨┤╨╡╤А╨╢╨░╨╗╨╕?</span>
+ <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255, 255, 255, 0.2);transition:all 0.3s ease;flex-shrink:0;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f faq-icon">+</span>
+ </summary>
+ <div style="padding:32px;background:var(--gradient-cream);color:var(--color-text-main);line-height:1.6;font-size:16px;border-top:1px solid var(--color-border)" class="jsx-5bd19e9b2fb6e42f">
+-<div class="jsx-5bd19e9b2fb6e42f">Сообщите имя и дату рождения, воинскую часть, когда и где человека видели в последний раз, предполагаемую причину и фактическое место задержания, а также данные должностных лиц и документы, если они есть. Если часть сведений неизвестна, не откладывайте обращение.</div>
++<div class="jsx-5bd19e9b2fb6e42f">╨б╨╛╨╛╨▒╤Й╨╕╤В╨╡ ╨╕╨╝╤П ╨╕ ╨┤╨░╤В╤Г ╤А╨╛╨╢╨┤╨╡╨╜╨╕╤П, ╨▓╨╛╨╕╨╜╤Б╨║╤Г╤О ╤З╨░╤Б╤В╤М, ╨║╨╛╨│╨┤╨░ ╨╕ ╨│╨┤╨╡ ╤З╨╡╨╗╨╛╨▓╨╡╨║╨░ ╨▓╨╕╨┤╨╡╨╗╨╕ ╨▓ ╨┐╨╛╤Б╨╗╨╡╨┤╨╜╨╕╨╣ ╤А╨░╨╖, ╨┐╤А╨╡╨┤╨┐╨╛╨╗╨░╨│╨░╨╡╨╝╤Г╤О ╨┐╤А╨╕╤З╨╕╨╜╤Г ╨╕ ╤Д╨░╨║╤В╨╕╤З╨╡╤Б╨║╨╛╨╡ ╨╝╨╡╤Б╤В╨╛ ╨╖╨░╨┤╨╡╤А╨╢╨░╨╜╨╕╤П, ╨░ ╤В╨░╨║╨╢╨╡ ╨┤╨░╨╜╨╜╤Л╨╡ ╨┤╨╛╨╗╨╢╨╜╨╛╤Б╤В╨╜╤Л╤Е ╨╗╨╕╤Ж ╨╕ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л, ╨╡╤Б╨╗╨╕ ╨╛╨╜╨╕ ╨╡╤Б╤В╤М. ╨Х╤Б╨╗╨╕ ╤З╨░╤Б╤В╤М ╤Б╨▓╨╡╨┤╨╡╨╜╨╕╨╣ ╨╜╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╨░, ╨╜╨╡ ╨╛╤В╨║╨╗╨░╨┤╤Л╨▓╨░╨╣╤В╨╡ ╨╛╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡.</div>
+ </div>
+ </details>
+ <details style="background:linear-gradient(to right, #0B1C2A 0%, #17375E 100%);border:1px solid var(--color-border);border-radius:0;transition:var(--transition);color:var(--color-white);overflow:hidden" class="jsx-5bd19e9b2fb6e42f faq-details">
+ <summary style="padding:24px 32px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:20px;font-weight:500;font-family:var(--font-sans);list-style:none;background:transparent" class="jsx-5bd19e9b2fb6e42f faq-summary">
+-<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">Какие документы нужны для первичного разбора?</span>
++<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">╨Ъ╨░╨║╨╕╨╡ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л ╨╜╤Г╨╢╨╜╤Л ╨┤╨╗╤П ╨┐╨╡╤А╨▓╨╕╤З╨╜╨╛╨│╨╛ ╤А╨░╨╖╨▒╨╛╤А╨░?</span>
+ <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255, 255, 255, 0.2);transition:all 0.3s ease;flex-shrink:0;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f faq-icon">+</span>
+ </summary>
+ <div style="padding:32px;background:var(--gradient-cream);color:var(--color-text-main);line-height:1.6;font-size:16px;border-top:1px solid var(--color-border)" class="jsx-5bd19e9b2fb6e42f">
+-<div class="jsx-5bd19e9b2fb6e42f">Подойдут имеющиеся документы: контракт, военный билет, заключение ВВК, медицинские выписки, справки о ранении, решения военкомата или призывной комиссии, постановления, повестки, ответы ведомств и переписка. Точный перечень зависит от ситуации; ждать полного комплекта перед обращением не нужно.</div>
++<div class="jsx-5bd19e9b2fb6e42f">╨Я╨╛╨┤╨╛╨╣╨┤╤Г╤В ╨╕╨╝╨╡╤О╤Й╨╕╨╡╤Б╤П ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л: ╨║╨╛╨╜╤В╤А╨░╨║╤В, ╨▓╨╛╨╡╨╜╨╜╤Л╨╣ ╨▒╨╕╨╗╨╡╤В, ╨╖╨░╨║╨╗╤О╤З╨╡╨╜╨╕╨╡ ╨Т╨Т╨Ъ, ╨╝╨╡╨┤╨╕╤Ж╨╕╨╜╤Б╨║╨╕╨╡ ╨▓╤Л╨┐╨╕╤Б╨║╨╕, ╤Б╨┐╤А╨░╨▓╨║╨╕ ╨╛ ╤А╨░╨╜╨╡╨╜╨╕╨╕, ╤А╨╡╤И╨╡╨╜╨╕╤П ╨▓╨╛╨╡╨╜╨║╨╛╨╝╨░╤В╨░ ╨╕╨╗╨╕ ╨┐╤А╨╕╨╖╤Л╨▓╨╜╨╛╨╣ ╨║╨╛╨╝╨╕╤Б╤Б╨╕╨╕, ╨┐╨╛╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П, ╨┐╨╛╨▓╨╡╤Б╤В╨║╨╕, ╨╛╤В╨▓╨╡╤В╤Л ╨▓╨╡╨┤╨╛╨╝╤Б╤В╨▓ ╨╕ ╨┐╨╡╤А╨╡╨┐╨╕╤Б╨║╨░. ╨в╨╛╤З╨╜╤Л╨╣ ╨┐╨╡╤А╨╡╤З╨╡╨╜╤М ╨╖╨░╨▓╨╕╤Б╨╕╤В ╨╛╤В ╤Б╨╕╤В╤Г╨░╤Ж╨╕╨╕; ╨╢╨┤╨░╤В╤М ╨┐╨╛╨╗╨╜╨╛╨│╨╛ ╨║╨╛╨╝╨┐╨╗╨╡╨║╤В╨░ ╨┐╨╡╤А╨╡╨┤ ╨╛╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡╨╝ ╨╜╨╡ ╨╜╤Г╨╢╨╜╨╛.</div>
+ </div>
+ </details>
+ <details style="background:linear-gradient(to right, #0B1C2A 0%, #17375E 100%);border:1px solid var(--color-border);border-radius:0;transition:var(--transition);color:var(--color-white);overflow:hidden" class="jsx-5bd19e9b2fb6e42f faq-details">
+ <summary style="padding:24px 32px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:20px;font-weight:500;font-family:var(--font-sans);list-style:none;background:transparent" class="jsx-5bd19e9b2fb6e42f faq-summary">
+-<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">Можно ли подготовить рапорт или жалобы дистанционно?</span>
++<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">╨Ь╨╛╨╢╨╜╨╛ ╨╗╨╕ ╨┐╨╛╨┤╨│╨╛╤В╨╛╨▓╨╕╤В╤М ╤А╨░╨┐╨╛╤А╤В ╨╕╨╗╨╕ ╨╢╨░╨╗╨╛╨▒╤Л ╨┤╨╕╤Б╤В╨░╨╜╤Ж╨╕╨╛╨╜╨╜╨╛?</span>
+ <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255, 255, 255, 0.2);transition:all 0.3s ease;flex-shrink:0;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f faq-icon">+</span>
+ </summary>
+ <div style="padding:32px;background:var(--gradient-cream);color:var(--color-text-main);line-height:1.6;font-size:16px;border-top:1px solid var(--color-border)" class="jsx-5bd19e9b2fb6e42f">
+-<div class="jsx-5bd19e9b2fb6e42f">Да, если специалист может получить факты и документы, необходимые для подготовки. До отправки нужно проверить адресата, способ подачи, приложения и подтверждение вручения. В отдельных ситуациях одной жалобы недостаточно и требуется дальнейшее сопровождение.</div>
++<div class="jsx-5bd19e9b2fb6e42f">╨Ф╨░, ╨╡╤Б╨╗╨╕ ╤Б╨┐╨╡╤Ж╨╕╨░╨╗╨╕╤Б╤В ╨╝╨╛╨╢╨╡╤В ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╤Д╨░╨║╤В╤Л ╨╕ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л, ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╨╡ ╨┤╨╗╤П ╨┐╨╛╨┤╨│╨╛╤В╨╛╨▓╨║╨╕. ╨Ф╨╛ ╨╛╤В╨┐╤А╨░╨▓╨║╨╕ ╨╜╤Г╨╢╨╜╨╛ ╨┐╤А╨╛╨▓╨╡╤А╨╕╤В╤М ╨░╨┤╤А╨╡╤Б╨░╤В╨░, ╤Б╨┐╨╛╤Б╨╛╨▒ ╨┐╨╛╨┤╨░╤З╨╕, ╨┐╤А╨╕╨╗╨╛╨╢╨╡╨╜╨╕╤П ╨╕ ╨┐╨╛╨┤╤В╨▓╨╡╤А╨╢╨┤╨╡╨╜╨╕╨╡ ╨▓╤А╤Г╤З╨╡╨╜╨╕╤П. ╨Т ╨╛╤В╨┤╨╡╨╗╤М╨╜╤Л╤Е ╤Б╨╕╤В╤Г╨░╤Ж╨╕╤П╤Е ╨╛╨┤╨╜╨╛╨╣ ╨╢╨░╨╗╨╛╨▒╤Л ╨╜╨╡╨┤╨╛╤Б╤В╨░╤В╨╛╤З╨╜╨╛ ╨╕ ╤В╤А╨╡╨▒╤Г╨╡╤В╤Б╤П ╨┤╨░╨╗╤М╨╜╨╡╨╣╤И╨╡╨╡ ╤Б╨╛╨┐╤А╨╛╨▓╨╛╨╢╨┤╨╡╨╜╨╕╨╡.</div>
+ </div>
+ </details>
+ <details style="background:linear-gradient(to right, #0B1C2A 0%, #17375E 100%);border:1px solid var(--color-border);border-radius:0;transition:var(--transition);color:var(--color-white);overflow:hidden" class="jsx-5bd19e9b2fb6e42f faq-details">
+ <summary style="padding:24px 32px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:20px;font-weight:500;font-family:var(--font-sans);list-style:none;background:transparent" class="jsx-5bd19e9b2fb6e42f faq-summary">
+-<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">От чего зависит стоимость помощи?</span>
++<span style="padding-right:20px;line-height:1.4;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f">╨Ю╤В ╤З╨╡╨│╨╛ ╨╖╨░╨▓╨╕╤Б╨╕╤В ╤Б╤В╨╛╨╕╨╝╨╛╤Б╤В╤М ╨┐╨╛╨╝╨╛╤Й╨╕?</span>
+ <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255, 255, 255, 0.2);transition:all 0.3s ease;flex-shrink:0;color:var(--color-white)" class="jsx-5bd19e9b2fb6e42f faq-icon">+</span>
+ </summary>
+ <div style="padding:32px;background:var(--gradient-cream);color:var(--color-text-main);line-height:1.6;font-size:16px;border-top:1px solid var(--color-border)" class="jsx-5bd19e9b2fb6e42f">
+-<div class="jsx-5bd19e9b2fb6e42f">От характера и сложности ситуации, стадии дела, объёма документов, количества необходимых действий, региона и необходимости личного участия адвоката или юриста. Состав работ и стоимость согласовываются до заключения договора.</div>
++<div class="jsx-5bd19e9b2fb6e42f">╨Ю╤В ╤Е╨░╤А╨░╨║╤В╨╡╤А╨░ ╨╕ ╤Б╨╗╨╛╨╢╨╜╨╛╤Б╤В╨╕ ╤Б╨╕╤В╤Г╨░╤Ж╨╕╨╕, ╤Б╤В╨░╨┤╨╕╨╕ ╨┤╨╡╨╗╨░, ╨╛╨▒╤К╤С╨╝╨░ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╨╛╨▓, ╨║╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨░ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╤Е ╨┤╨╡╨╣╤Б╤В╨▓╨╕╨╣, ╤А╨╡╨│╨╕╨╛╨╜╨░ ╨╕ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛╤Б╤В╨╕ ╨╗╨╕╤З╨╜╨╛╨│╨╛ ╤Г╤З╨░╤Б╤В╨╕╤П ╨░╨┤╨▓╨╛╨║╨░╤В╨░ ╨╕╨╗╨╕ ╤О╤А╨╕╤Б╤В╨░. ╨б╨╛╤Б╤В╨░╨▓ ╤А╨░╨▒╨╛╤В ╨╕ ╤Б╤В╨╛╨╕╨╝╨╛╤Б╤В╤М ╤Б╨╛╨│╨╗╨░╤Б╨╛╨▓╤Л╨▓╨░╤О╤В╤Б╤П ╨┤╨╛ ╨╖╨░╨║╨╗╤О╤З╨╡╨╜╨╕╤П ╨┤╨╛╨│╨╛╨▓╨╛╤А╨░.</div>
+ </div>
+ </details>
+ </div>
+@@ -837,197 +819,190 @@
+ <section class="section bg-white" id="form" style="scroll-margin-top:120px">
+ <div class="container">
+ <div class="grid grid-2" style="gap:60px;align-items:stretch">
+-<div style="display:flex;flex-direction:column;height:100%;justify-content:center">
+-<div style="display:flex;align-items:center;gap:16px;margin-bottom:24px">
+-<div style="width:40px;height:2px;background-color:#E5C494">
+-</div>
+-<span style="text-transform:uppercase;letter-spacing:0.1em;font-size:14px;font-weight:600;color:var(--color-primary)">Связаться с нами</span>
+-</div>
+-<h2 style="font-size:36px;font-family:var(--font-serif);color:var(--color-deep-blue);margin-bottom:16px;line-height:1.2;margin-top:0;text-wrap:balance">Получите первичную оценку ситуации</h2>
+-<p style="color:var(--color-text-secondary);font-size:16px;line-height:1.6;margin-bottom:24px;text-wrap:balance">Кратко опишите, что произошло. Мы определим срочность, уточним необходимые документы и подключим Дмитрия Сергеевича Конопкина либо другого специалиста с нужными полномочиями.</p>
+-<div style="margin-top:32px">
++<div style="display:flex;flex-direction:column;height:100%">
++<h2 style="font-size:36px;font-family:var(--font-serif);color:var(--color-deep-blue);margin-bottom:16px;line-height:1.2;margin-top:0">╨Я╨╛╨╗╤Г╤З╨╕╤В╨╡ ╨┐╨╡╤А╨▓╨╕╤З╨╜╤Г╤О ╨╛╤Ж╨╡╨╜╨║╤Г ╤Б╨╕╤В╤Г╨░╤Ж╨╕╨╕</h2>
++<p style="color:var(--color-text-secondary);font-size:16px;line-height:1.6;margin-bottom:24px;text-wrap:balance">╨Ъ╤А╨░╤В╨║╨╛ ╨╛╨┐╨╕╤И╨╕╤В╨╡, ╤З╤В╨╛ ╨┐╤А╨╛╨╕╨╖╨╛╤И╨╗╨╛. ╨Ь╤Л ╨╛╨┐╤А╨╡╨┤╨╡╨╗╨╕╨╝ ╤Б╤А╨╛╤З╨╜╨╛╤Б╤В╤М, ╤Г╤В╨╛╤З╨╜╨╕╨╝ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╨╡ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╤Л ╨╕ ╨┐╨╛╨┤╨║╨╗╤О╤З╨╕╨╝ ╨Ф╨╝╨╕╤В╤А╨╕╤П ╨б╨╡╤А╨│╨╡╨╡╨▓╨╕╤З╨░ ╨Ъ╨╛╨╜╨╛╨┐╨║╨╕╨╜╨░ ╨╗╨╕╨▒╨╛ ╨┤╤А╤Г╨│╨╛╨│╨╛ ╤Б╨┐╨╡╤Ж╨╕╨░╨╗╨╕╤Б╤В╨░ ╤Б ╨╜╤Г╨╢╨╜╤Л╨╝╨╕ ╨┐╨╛╨╗╨╜╨╛╨╝╨╛╤З╨╕╤П╨╝╨╕.</p>
++<div style="margin-top:auto;margin-bottom:64px">
+ <div style="color:var(--color-primary);font-weight:600;font-size:16px;display:flex;align-items:center;gap:12px">
+ <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+ </path>
+-</svg>Перезвоним в течение 15 минут в рабочее время</div>
++</svg>╨Я╨╡╤А╨╡╨╖╨▓╨╛╨╜╨╕╨╝ ╨▓ ╤В╨╡╤З╨╡╨╜╨╕╨╡ 15 ╨╝╨╕╨╜╤Г╤В ╨▓ ╤А╨░╨▒╨╛╤З╨╡╨╡ ╨▓╤А╨╡╨╝╤П</div>
+ </div>
+ </div>
+-<div style="display:flex;flex-direction:column;height:100%;justify-content:center">
+-<div style="background:var(--gradient-cream);padding:40px;border-radius:4px;box-shadow:0 10px 30px rgba(0,0,0,0.02);width:100%;border:1px solid rgba(0,0,0,0.06)">
++<div style="display:flex;flex-direction:column;height:100%">
+ <div style="display:flex;flex-direction:column">
+-<h3 style="font-size:28px;color:var(--color-deep-blue);font-family:var(--font-serif);margin:0 0 16px 0;line-height:1.2">Написать нам</h3>
++<h3 style="font-size:28px;color:var(--color-deep-blue);font-family:var(--font-serif);margin:0 0 16px 0;line-height:1.2">╨Ю╤В╨┐╤А╨░╨▓╨╕╤В╤М ╨╛╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡</h3>
+ <form style="display:flex;flex-direction:column;gap:20px">
+ <div style="display:flex;flex-direction:column;gap:8px">
+-<label for="name" style="font-size:14px;font-weight:500;color:var(--color-deep-blue)">Имя <span style="color:var(--color-gold)">*</span>
++<label for="name" style="font-size:14px;font-weight:500;color:var(--color-deep-blue)">╨Ш╨╝╤П <span style="color:var(--color-gold)">*</span>
+ </label>
+-<input type="text" id="name" required="" placeholder="Иван Иванов" style="padding:14px 16px;border:1px solid rgba(23, 50, 77, 0.2);border-radius:0;font-size:15px;transition:border-color 0.3s;outline:none;background:var(--color-white);color:var(--color-deep-blue);font-family:inherit" name="name"/>
++<input type="text" id="name" required="" placeholder="╨Ш╨▓╨░╨╜ ╨Ш╨▓╨░╨╜╨╛╨▓" style="padding:14px 16px;border:1px solid rgba(23, 50, 77, 0.2);border-radius:0;font-size:15px;transition:border-color 0.3s;outline:none;background:var(--color-white);color:var(--color-deep-blue);font-family:inherit" name="name"/>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:8px">
+-<label for="phone" style="font-size:14px;font-weight:500;color:var(--color-deep-blue)">Телефон <span style="color:var(--color-gold)">*</span>
++<label for="phone" style="font-size:14px;font-weight:500;color:var(--color-deep-blue)">╨в╨╡╨╗╨╡╤Д╨╛╨╜ <span style="color:var(--color-gold)">*</span>
+ </label>
+ <input type="tel" placeholder="+7 (___) ___-__-__" style="padding:14px 16px;border:1px solid rgba(23, 50, 77, 0.2);border-radius:0;font-size:15px;transition:border-color 0.3s;outline:none;width:100%;background:var(--color-white);color:var(--color-deep-blue);font-family:inherit" id="phone" required="" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" name="phone" value=""/>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:8px">
+-<label for="message" style="font-size:14px;font-weight:500;color:var(--color-deep-blue)">Описание ситуации (необязательно)</label>
+-<textarea id="message" name="message" rows="3" placeholder="Например: Вопрос о выплатах за ранение..." style="padding:14px 16px;border:1px solid rgba(23, 50, 77, 0.2);border-radius:0;font-size:15px;outline:none;font-family:inherit;resize:vertical;background:var(--color-white);color:var(--color-deep-blue);transition:border-color 0.3s">
++<label for="message" style="font-size:14px;font-weight:500;color:var(--color-deep-blue)">╨Ю╨┐╨╕╤Б╨░╨╜╨╕╨╡ ╤Б╨╕╤В╤Г╨░╤Ж╨╕╨╕ (╨╜╨╡╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╨╛)</label>
++<textarea id="message" name="message" rows="3" placeholder="╨Э╨░╨┐╤А╨╕╨╝╨╡╤А: ╨Т╨╛╨┐╤А╨╛╤Б ╨╛ ╨▓╤Л╨┐╨╗╨░╤В╨░╤Е ╨╖╨░ ╤А╨░╨╜╨╡╨╜╨╕╨╡..." style="padding:14px 16px;border:1px solid rgba(23, 50, 77, 0.2);border-radius:0;font-size:15px;outline:none;font-family:inherit;resize:vertical;background:var(--color-white);color:var(--color-deep-blue);transition:border-color 0.3s">
+ </textarea>
+ </div>
+ <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;margin-top:4px">
+ <input type="checkbox" required="" style="margin-top:3px;accent-color:var(--color-gold)" name="agreement"/>
+-<span style="font-size:13px;color:var(--color-text-secondary);line-height:1.4">Я даю согласие на <a style="color:var(--color-deep-blue);text-decoration:underline" href="/-/privacy/">обработку персональных данных</a>
++<span style="font-size:13px;color:var(--color-text-secondary);line-height:1.4">╨п ╨┤╨░╤О ╤Б╨╛╨│╨╗╨░╤Б╨╕╨╡ ╨╜╨░ <a style="color:var(--color-deep-blue);text-decoration:underline" href="/-/privacy/">╨╛╨▒╤А╨░╨▒╨╛╤В╨║╤Г ╨┐╨╡╤А╤Б╨╛╨╜╨░╨╗╤М╨╜╤Л╤Е ╨┤╨░╨╜╨╜╤Л╤Е</a>
+ </span>
+ </label>
+-<button type="submit" style="width:100%;padding:16px;font-size:15px;margin-top:8px;background:var(--color-gold);color:var(--color-white);border:none;font-weight:600;cursor:pointer;transition:opacity 0.3s">Оставить заявку</button>
+-<div style="margin-top:4px;font-size:13px;color:var(--color-text-secondary);line-height:1.4;text-align:left">* Если вы оставите заявку вечером или в выходной день, мы перезвоним вам в ближайший рабочий день.</div>
++<button type="submit" style="width:100%;padding:16px;font-size:15px;margin-top:8px;background:var(--color-gold);color:var(--color-white);border:none;font-weight:600;cursor:pointer;transition:opacity 0.3s">╨Ю╤Б╤В╨░╨▓╨╕╤В╤М ╨╖╨░╤П╨▓╨║╤Г</button>
++<div style="margin-top:4px;font-size:13px;color:var(--color-text-secondary);line-height:1.4;text-align:left">* ╨Х╤Б╨╗╨╕ ╨▓╤Л ╨╛╤Б╤В╨░╨▓╨╕╤В╨╡ ╨╖╨░╤П╨▓╨║╤Г ╨▓╨╡╤З╨╡╤А╨╛╨╝ ╨╕╨╗╨╕ ╨▓ ╨▓╤Л╤Е╨╛╨┤╨╜╨╛╨╣ ╨┤╨╡╨╜╤М, ╨╝╤Л ╨┐╨╡╤А╨╡╨╖╨▓╨╛╨╜╨╕╨╝ ╨▓╨░╨╝ ╨▓ ╨▒╨╗╨╕╨╢╨░╨╣╤И╨╕╨╣ ╤А╨░╨▒╨╛╤З╨╕╨╣ ╨┤╨╡╨╜╤М.</div>
+ </form>
+ </div>
+ </div>
+ </div>
+ </div>
+-</div>
+ </section>
+ <footer style="background-color:var(--color-deep-blue);color:var(--color-white);padding:64px 0 24px;font-size:13px">
+ <div class="container" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:40px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:40px;margin-bottom:24px">
+ <div>
+ <div style="margin-bottom:24px;margin-top:-20px">
+ <a href="/-/">
+-<img src="/-/images/logo_dark.png" alt="Де-Юре" style="height:110px;width:auto;transform:scale(1.25);transform-origin:left center;filter:brightness(0) invert(1)"/>
++<img src="/-/images/logo_dark.png" alt="╨Ф╨╡-╨о╤А╨╡" style="height:110px;width:auto;transform:scale(1.25);transform-origin:left center;filter:brightness(0) invert(1)"/>
+ </a>
+ </div>
+-<p style="color:rgba(255,255,255,0.7);font-size:13px;line-height:1.5;margin-bottom:20px">Юридическая помощь гражданам и бизнесу в Липецке.</p>
++<p style="color:rgba(255,255,255,0.7);font-size:13px;line-height:1.5;margin-bottom:20px">╨о╤А╨╕╨┤╨╕╤З╨╡╤Б╨║╨░╤П ╨┐╨╛╨╝╨╛╤Й╤М ╨│╤А╨░╨╢╨┤╨░╨╜╨░╨╝ ╨╕ ╨▒╨╕╨╖╨╜╨╡╤Б╤Г ╨▓ ╨Ы╨╕╨┐╨╡╤Ж╨║╨╡.</p>
+ </div>
+ <div>
+-<h4 style="color:var(--color-white);margin:0 0 20px 0;font-size:15px;letter-spacing:0.05em">Гражданам</h4>
++<h4 style="color:var(--color-white);margin:0 0 20px 0;font-size:15px;letter-spacing:0.05em">╨У╤А╨░╨╢╨┤╨░╨╜╨░╨╝</h4>
+ <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px">
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/semejnyj-yurist/">Семейный юрист</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/semejnyj-yurist/">╨б╨╡╨╝╨╡╨╣╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/nasledstvennyj-yurist/">Наследственный юрист</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/nasledstvennyj-yurist/">╨Э╨░╤Б╨╗╨╡╨┤╤Б╤В╨▓╨╡╨╜╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/zhilishchnyj-yurist/">Жилищный юрист</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/zhilishchnyj-yurist/">╨Ц╨╕╨╗╨╕╤Й╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/yurist-po-nedvizhimosti/">Юрист по недвижимости</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/yurist-po-nedvizhimosti/">╨о╤А╨╕╤Б╤В ╨┐╨╛ ╨╜╨╡╨┤╨▓╨╕╨╢╨╕╨╝╨╛╤Б╤В╨╕</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/zemelnyj-yurist/">Земельный юрист</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/zemelnyj-yurist/">╨Ч╨╡╨╝╨╡╨╗╤М╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/bankrotstvo-fizicheskih-lic/">Банкротство физических лиц</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/bankrotstvo-fizicheskih-lic/">╨С╨░╨╜╨║╤А╨╛╤В╤Б╤В╨▓╨╛ ╤Д╨╕╨╖╨╕╤З╨╡╤Б╨║╨╕╤Е ╨╗╨╕╤Ж</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/kreditnyj-yurist/">Кредитный юрист</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/kreditnyj-yurist/">╨Ъ╤А╨╡╨┤╨╕╤В╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/vzyskanie-dolgov/">Взыскание долгов</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/vzyskanie-dolgov/">╨Т╨╖╤Л╤Б╨║╨░╨╜╨╕╨╡ ╨┤╨╛╨╗╨│╨╛╨▓</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/">Юрист по исполнительному производству</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/">╨о╤А╨╕╤Б╤В ╨┐╨╛ ╨╕╤Б╨┐╨╛╨╗╨╜╨╕╤В╨╡╨╗╤М╨╜╨╛╨╝╤Г ╨┐╤А╨╛╨╕╨╖╨▓╨╛╨┤╤Б╤В╨▓╤Г</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/avtoyurist/">Автоюрист</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/avtoyurist/">╨Р╨▓╤В╨╛╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/trudovoj-yurist/">Трудовой юрист</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/trudovoj-yurist/">╨в╤А╤Г╨┤╨╛╨▓╨╛╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/advokat-po-ugolovnym-delam/">Адвокат по уголовным делам</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/advokat-po-ugolovnym-delam/">╨Р╨┤╨▓╨╛╨║╨░╤В ╨┐╨╛ ╤Г╨│╨╛╨╗╨╛╨▓╨╜╤Л╨╝ ╨┤╨╡╨╗╨░╨╝</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/voennyj-yurist/">Военный юрист</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/voennyj-yurist/">╨Т╨╛╨╡╨╜╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/migracionnyj-yurist/">Миграционный юрист</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/grazhdanam/migracionnyj-yurist/">╨Ь╨╕╨│╤А╨░╤Ж╨╕╨╛╨╜╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ </ul>
+ </div>
+ <div>
+-<h4 style="color:var(--color-white);margin:0 0 20px 0;font-size:15px;letter-spacing:0.05em">Бизнесу</h4>
++<h4 style="color:var(--color-white);margin:0 0 20px 0;font-size:15px;letter-spacing:0.05em">╨С╨╕╨╖╨╜╨╡╤Б╤Г</h4>
+ <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px">
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/arbitrazhnyj-yurist/">Арбитражный юрист</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/arbitrazhnyj-yurist/">╨Р╤А╨▒╨╕╤В╤А╨░╨╢╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/">Взыскание задолженности с юридических лиц</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/">╨Т╨╖╤Л╤Б╨║╨░╨╜╨╕╨╡ ╨╖╨░╨┤╨╛╨╗╨╢╨╡╨╜╨╜╨╛╤Б╤В╨╕ ╤Б ╤О╤А╨╕╨┤╨╕╤З╨╡╤Б╨║╨╕╤Е ╨╗╨╕╤Ж</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/korporativnyj-yurist/">Корпоративный юрист</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/korporativnyj-yurist/">╨Ъ╨╛╤А╨┐╨╛╤А╨░╤В╨╕╨▓╨╜╤Л╨╣ ╤О╤А╨╕╤Б╤В</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/dogovornoe-pravo/">Договорное право</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/dogovornoe-pravo/">╨Ф╨╛╨│╨╛╨▓╨╛╤А╨╜╨╛╨╡ ╨┐╤А╨░╨▓╨╛</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/nalogovyj-yurist-dlya-biznesa/">Налоговый юрист для бизнеса</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/nalogovyj-yurist-dlya-biznesa/">╨Э╨░╨╗╨╛╨│╨╛╨▓╤Л╨╣ ╤О╤А╨╕╤Б╤В ╨┤╨╗╤П ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/bankrotstvo-biznesa/">Банкротство бизнеса</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/bankrotstvo-biznesa/">╨С╨░╨╜╨║╤А╨╛╤В╤Б╤В╨▓╨╛ ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/trudovye-spory-s-rabotnikami/">Трудовые споры с работниками</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/trudovye-spory-s-rabotnikami/">╨в╤А╤Г╨┤╨╛╨▓╤Л╨╡ ╤Б╨┐╨╛╤А╤Л ╤Б ╤А╨░╨▒╨╛╤В╨╜╨╕╨║╨░╨╝╨╕</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/yuridicheskoe-soprovozhdenie-biznesa/">Юридическое сопровождение бизнеса</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/yuridicheskoe-soprovozhdenie-biznesa/">╨о╤А╨╕╨┤╨╕╤З╨╡╤Б╨║╨╛╨╡ ╤Б╨╛╨┐╤А╨╛╨▓╨╛╨╢╨┤╨╡╨╜╨╕╨╡ ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/">Юрист по недвижимости и строительству для бизнеса</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/">╨о╤А╨╕╤Б╤В ╨┐╨╛ ╨╜╨╡╨┤╨▓╨╕╨╢╨╕╨╝╨╛╤Б╤В╨╕ ╨╕ ╤Б╤В╤А╨╛╨╕╤В╨╡╨╗╤М╤Б╤В╨▓╤Г ╨┤╨╗╤П ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/">Исполнительное производство для бизнеса</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/">╨Ш╤Б╨┐╨╛╨╗╨╜╨╕╤В╨╡╨╗╤М╨╜╨╛╨╡ ╨┐╤А╨╛╨╕╨╖╨▓╨╛╨┤╤Б╤В╨▓╨╛ ╨┤╨╗╤П ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/migracionnoe-soprovozhdenie-biznesa/">Миграционное сопровождение бизнеса</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/migracionnoe-soprovozhdenie-biznesa/">╨Ь╨╕╨│╤А╨░╤Ж╨╕╨╛╨╜╨╜╨╛╨╡ ╤Б╨╛╨┐╤А╨╛╨▓╨╛╨╢╨┤╨╡╨╜╨╕╨╡ ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/">Разблокировка расчётного счёта по 115-ФЗ</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/">╨а╨░╨╖╨▒╨╗╨╛╨║╨╕╤А╨╛╨▓╨║╨░ ╤А╨░╤Б╤З╤С╤В╨╜╨╛╨│╨╛ ╤Б╤З╤С╤В╨░ ╨┐╨╛ 115-╨д╨Ч</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/ugolovno-pravovaya-zashchita-biznesa/">Уголовно-правовая защита бизнеса</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/biznesu/ugolovno-pravovaya-zashchita-biznesa/">╨г╨│╨╛╨╗╨╛╨▓╨╜╨╛-╨┐╤А╨░╨▓╨╛╨▓╨░╤П ╨╖╨░╤Й╨╕╤В╨░ ╨▒╨╕╨╖╨╜╨╡╤Б╨░</a>
+ </li>
+ </ul>
+ </div>
+ <div>
+-<h4 style="color:var(--color-white);margin:0 0 20px 0;font-size:15px;letter-spacing:0.05em">Компания</h4>
++<h4 style="color:var(--color-white);margin:0 0 20px 0;font-size:15px;letter-spacing:0.05em">╨Ъ╨╛╨╝╨┐╨░╨╜╨╕╤П</h4>
+ <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px">
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/o-kompanii/">О компании</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/o-kompanii/">╨Ю ╨║╨╛╨╝╨┐╨░╨╜╨╕╨╕</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/specialisty/">Специалисты</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/specialisty/">╨б╨┐╨╡╤Ж╨╕╨░╨╗╨╕╤Б╤В╤Л</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/otzyvy/">Отзывы</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/otzyvy/">╨Ю╤В╨╖╤Л╨▓╤Л</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/stoimost/">Стоимость</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/stoimost/">╨б╤В╨╛╨╕╨╝╨╛╤Б╤В╤М</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/praktika/">Практика</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/praktika/">╨Я╤А╨░╨║╤В╨╕╨║╨░</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/publikacii/">Публикации</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/publikacii/">╨Я╤Г╨▒╨╗╨╕╨║╨░╤Ж╨╕╨╕</a>
+ </li>
+ <li>
+-<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/kontakty/">Контакты</a>
++<a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s" class="footer-link-hover" href="/-/kontakty/">╨Ъ╨╛╨╜╤В╨░╨║╤В╤Л</a>
+ </li>
+ </ul>
+ </div>
+ </div>
+ <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;color:rgba(255,255,255,0.5)">
+ <div style="display:flex;flex-direction:column;gap:8px">
+-<span>© <!-- -->2026<!-- --> ООО ЮК «ДЕ-ЮРЕ»</span>
+-<span>ИНН: 4800009680 | ОГРН: 1234800008464</span>
+-<span>Фактический адрес: г. Липецк, ул. Советская, д. 35, оф. 213</span>
+-<span>Юридический адрес: 398902, Липецкая обл., г. Липецк, ул. Юношеская, влд. 46Б, пом. 1</span>
++<span>┬й <!-- -->2026<!-- --> ╨Ю╨Ю╨Ю ╨о╨Ъ ┬л╨Ф╨Х-╨о╨а╨Х┬╗</span>
++<span>╨Ш╨Э╨Э: 4800009680 | ╨Ю╨У╨а╨Э: 1234800008464</span>
++<span>╨д╨░╨║╤В╨╕╤З╨╡╤Б╨║╨╕╨╣ ╨░╨┤╤А╨╡╤Б: ╨│. ╨Ы╨╕╨┐╨╡╤Ж╨║, ╤Г╨╗. ╨б╨╛╨▓╨╡╤В╤Б╨║╨░╤П, ╨┤. 35, ╨╛╤Д. 213</span>
++<span>╨о╤А╨╕╨┤╨╕╤З╨╡╤Б╨║╨╕╨╣ ╨░╨┤╤А╨╡╤Б: 398902, ╨Ы╨╕╨┐╨╡╤Ж╨║╨░╤П ╨╛╨▒╨╗., ╨│. ╨Ы╨╕╨┐╨╡╤Ж╨║, ╤Г╨╗. ╨о╨╜╨╛╤И╨╡╤Б╨║╨░╤П, ╨▓╨╗╨┤. 46╨С, ╨┐╨╛╨╝. 1</span>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;text-align:right">
+-<a style="color:rgba(255,255,255,0.5);text-decoration:underline" href="/-/privacy/">Политика в отношении обработки персональных данных</a>
+-<a style="color:rgba(255,255,255,0.5);text-decoration:underline" href="/-/consent/">Согласие на обработку персональных данных</a>
+-<a style="color:rgba(255,255,255,0.5);text-decoration:underline" href="/-/cookies/">Политика использования cookie</a>
+-<a style="color:rgba(255,255,255,0.5);text-decoration:underline" href="/-/terms/">Условия использования сайта / правовой дисклеймер</a>
+-<a style="color:rgba(255,255,255,0.5);text-decoration:underline" href="/-/sitemap/">Карта сайта</a>
++<a style="color:rgba(255,255,255,0.5);text-decoration:underline" href="/-/privacy/">╨Я╨╛╨╗╨╕╤В╨╕╨║╨░ ╨▓ ╨╛╤В╨╜╨╛╤И╨╡╨╜╨╕╨╕ ╨╛╨▒╤А╨░╨▒╨╛╤В╨║╨╕ ╨┐╨╡╤А╤Б╨╛╨╜╨░╨╗╤М╨╜╤Л╤Е ╨┤╨░╨╜╨╜╤Л╤Е</a>
++<a style="color:rgba(255,255,255,0.5);text-decoration:underline" href="/-/consent/">╨б╨╛╨│╨╗╨░╤Б╨╕╨╡ ╨╜╨░ ╨╛╨▒╤А╨░╨▒╨╛╤В╨║╤Г ╨┐╨╡╤А╤Б╨╛╨╜╨░╨╗╤М╨╜╤Л╤Е ╨┤╨░╨╜╨╜╤Л╤Е</a>
++<a style="color:rgba(255,255,255,0.5);text-decoration:underline" href="/-/cookies/">╨Я╨╛╨╗╨╕╤В╨╕╨║╨░ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╕╤П cookie</a>
++<a style="color:rgba(255,255,255,0.5);text-decoration:underline" href="/-/terms/">╨г╤Б╨╗╨╛╨▓╨╕╤П ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╕╤П ╤Б╨░╨╣╤В╨░ / ╨┐╤А╨░╨▓╨╛╨▓╨╛╨╣ ╨┤╨╕╤Б╨║╨╗╨╡╨╣╨╝╨╡╤А</a>
++<a style="color:rgba(255,255,255,0.5);text-decoration:underline" href="/-/sitemap/">╨Ъ╨░╤А╤В╨░ ╤Б╨░╨╣╤В╨░</a>
+ </div>
+ </div>
+ </footer>

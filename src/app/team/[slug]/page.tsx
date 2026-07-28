@@ -7,6 +7,8 @@ import { getTeamMember, teamData } from '@/data/team';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PhoneInput from '@/components/PhoneInput';
+import ProcessBlock from '@/components/ProcessBlock';
+import ContactsForm from '@/components/ContactsForm';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -304,92 +306,59 @@ export default async function TeamMemberPage({ params }: PageProps) {
       )}
 
       {/* 6. Process Steps */}
-      <section className="section bg-light" style={{ paddingBottom: '40px' }}>
-        <div className="container">
-          <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ marginTop: 0, fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1.2 }}>
-              Как проходит работа по делу
-            </h2>
-          </div>
-
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'stretch' }}>
-            {/* Left: Photo */}
-            <div style={{ flex: '1 1 400px', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ flex: '1', position: 'relative', borderRadius: '0', overflow: 'hidden', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/-/images/team-process.jpg" alt="Процесс работы" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
-              </div>
-            </div>
-
-            {/* Right: 4 cards (single column) */}
-            <div style={{ flex: '1.2 1 500px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              {member.process.map((step, i) => (
-                <div key={i} style={{ padding: '24px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.04)', borderRadius: '0', display: 'flex', flexDirection: 'column', gap: '12px', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.06)' }}>
-                  <div style={{ fontSize: '16px', color: 'var(--color-gold)', fontWeight: 600, fontFamily: 'var(--font-serif)', lineHeight: 1 }}>{step.step}</div>
-                  <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontWeight: 600, margin: 0, lineHeight: 1.3 }}>{step.title}</h3>
-                  <p style={{ fontSize: '15px', color: 'rgba(23, 50, 77, 0.8)', lineHeight: 1.5, margin: 0 }}>{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Shared Wrapper for 7 & 8 */}
-      <div style={{
-        background: 'radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), radial-gradient(at 80% 50%, rgba(234, 241, 246, 0.8) 0%, transparent 50%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%)',
-        position: 'relative'
-      }}>
-      
+      <ProcessBlock 
+        title="Как проходит работа по делу"
+        steps={member.process.map(s => ({
+          num: s.step.replace(/^0+/, ''),
+          title: s.title,
+          desc: s.description
+        }))}
+        ctaTitle=""
+      />
 
       {/* 8. CTA Form */}
-      <section id="consultation" className="section" style={{ 
-        position: 'relative', 
-        overflow: 'hidden', 
-        padding: '80px 0', 
-        background: 'transparent',
-        scrollMarginTop: '80px' 
-      }}>
-        <div className="container" style={{ display: 'flex', flexWrap: 'wrap', gap: '60px', alignItems: 'center' }}>
-          <div style={{ flex: '0 0 42%', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)', fontSize: '36px', fontFamily: 'var(--font-serif)', lineHeight: 1.2 }}>
-              Запишитесь на консультацию к Дмитрию Сергеевичу Конопкину
-            </h2>
-            <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-              Кратко опишите ситуацию и оставьте контактные данные. Мы уточним обстоятельства и согласуем время консультации с Дмитрием Сергеевичем Конопкиным.
-            </p>
-            <div style={{ marginTop: '16px', borderLeft: '4px solid var(--color-gold)', paddingLeft: '16px' }}>
-              <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', fontSize: '18px', marginBottom: '4px' }}>Дмитрий Сергеевич Конопкин</div>
-              <div style={{ color: 'var(--color-text-secondary)', fontSize: '15px' }}>Адвокат, ведущий юрист «Де-Юре»</div>
+      <section className="section bg-cream" id="form" style={{ scrollMarginTop: '120px' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0 }}>
+                Запишитесь на консультацию к Дмитрию Сергеевичу Конопкину
+              </h2>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '32px', textWrap: 'balance' }}>
+                Кратко опишите ситуацию. Мы уточним обстоятельства и согласуем время консультации.
+              </p>
+              
+              <div style={{ marginBottom: '32px', borderLeft: '4px solid var(--color-gold)', paddingLeft: '16px' }}>
+                <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', fontSize: '18px', marginBottom: '4px' }}>{member.name}</div>
+                <div style={{ color: 'var(--color-text-secondary)', fontSize: '15px' }}>{member.status}</div>
+              </div>
+
+              <div>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  Перезвоним вам в течение 15 минут<br/>в рабочее время
+                </div>
+              </div>
             </div>
-          </div>
-          
-          <div className="card" style={{ flex: '1', padding: '40px', borderRadius: '0', background: 'var(--color-white)', boxShadow: '0 20px 40px rgba(23, 50, 77, 0.08)' }}>
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} data-analytics="consultation-form">
-              <input type="hidden" name="specialist" value="Конопкин Дмитрий Сергеевич" />
-              <input type="hidden" name="page_url" value={`/team/${member.slug}`} />
-              
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
-                <input type="text" required placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', outline: 'none', background: 'var(--color-white)', width: '100%' }} />
-                <PhoneInput />
-              </div>
-              
-              <textarea placeholder="Краткое описание ситуации (необязательно)" rows={3} style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', outline: 'none', background: 'var(--color-white)', resize: 'vertical', width: '100%' }}></textarea>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '10px' }}>
-                <button type="submit" className="btn" style={{ width: '100%', padding: '18px', fontSize: '18px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', border: 'none' }}>Записаться на консультацию</button>
-                <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer' }}>
-                  <input type="checkbox" required style={{ marginTop: '4px', accentColor: 'var(--color-primary)' }} />
-                  <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
-                    Я даю согласие на <Link href="/privacy" style={{ color: 'var(--color-primary)' }}>обработку персональных данных</Link>
-                  </span>
-                </label>
-              </div>
-            </form>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--color-white)', padding: '40px', borderRadius: '4px', boxShadow: '0 8px 16px rgba(16, 39, 59, 0.08)' }}>
+              <ContactsForm 
+                title="Отправить обращение" 
+                subtitle="" 
+                hiddenFields={[
+                  { name: 'specialist', value: member.name },
+                  { name: 'page_url', value: `/team/${member.slug}` }
+                ]}
+              />
+            </div>
           </div>
         </div>
       </section>
-      </div> {/* End Shared Wrapper 7-8 */}
 
       <Footer />
     </main>

@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
+import PricingBlock from '@/components/PricingBlock';
 import MilitaryHero from '@/components/MilitaryHero';
 
 export const metadata = {
@@ -49,30 +50,54 @@ export default function VyplatyRaneniePage() {
       />
 
       <section className="section bg-white">
-        <div className="container">
-          <h2 className="section-title text-center" style={{ marginBottom: '40px' }}>С какими проблемами обращаются</h2>
-          <div className="grid grid-3" style={{ gap: '20px' }}>
-            {[
-              'Не выдают справки (о ранении или тяжести)', 
-              'Выплата задержана без объяснения причин', 
-              'Получен незаконный отказ', 
-              'Неверно определена тяжесть или характер травмы', 
-              'Выплачена не вся положенная сумма', 
-              'Не учтена отдельная мера поддержки'
-            ].map((item, i) => (
-              <div key={i} className="hover-lift" style={{
-                background: 'var(--color-cream)',
-                padding: '24px',
-                borderLeft: '4px solid var(--color-gold)',
-                color: 'var(--color-deep-blue)',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-              }}>
-                {item}
-              </div>
-            ))}
-          </div>
+  <div className="container">
+    <div className="grid grid-2" style={{ gap: '40px' }}>
+      {/* Левая колонка - Маршруты решения */}
+      <div style={{ background: 'var(--color-deep-blue)', padding: '40px', borderRadius: '0', color: 'var(--color-white)', display: 'flex', flexDirection: 'column', height: '100%', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: 0, right: 0, opacity: 0.1, transform: 'translate(10%, -10%)' }}>
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-white)">
+            <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
         </div>
-      </section>
+        <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '24px', marginTop: 0, textAlign: 'left', position: 'relative', zIndex: 1 }}>Маршруты решения</h2>
+        <p style={{ fontSize: '16px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+          Порядок действий зависит от наличия справок и стадии рассмотрения вашего рапорта.
+        </p>
+        <div style={{ background: 'rgba(255,255,255,0.1)', padding: '16px', borderLeft: '4px solid var(--color-gold)', fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, marginTop: 'auto', position: 'relative', zIndex: 1 }}>
+          Мы рекомендуем не затягивать с обращением: чем раньше будут направлены запросы и жалобы, тем выше шансы на своевременную выплату.
+        </div>
+      </div>
+
+      {/* Правая колонка - Карточки вариантов */}
+      <div style={{ background: 'var(--color-white)', border: '1px solid var(--color-border)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', padding: '40px', height: '100%' }}>
+        <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px' }}>Возможные ситуации</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          
+          <div style={{ padding: '20px', background: 'var(--color-cream)', borderLeft: '4px solid var(--color-primary)', borderRadius: '0' }}>
+            <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>Документов достаточно</div>
+            <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>Составляем заявление на выплату и контролируем начисление.</div>
+          </div>
+          
+          <div style={{ padding: '20px', background: 'var(--color-cream)', borderLeft: '4px solid var(--color-primary)', borderRadius: '0' }}>
+            <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>Документа не хватает</div>
+            <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>Направляем адвокатские и служебные запросы для истребования справок и выписок.</div>
+          </div>
+
+          <div style={{ padding: '20px', background: 'var(--color-cream)', borderLeft: '4px solid var(--color-primary)', borderRadius: '0' }}>
+            <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>Задержка или отказ</div>
+            <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>Готовим мотивированное досудебное обращение или жалобу.</div>
+          </div>
+
+          <div style={{ padding: '20px', background: '#FFF8F8', borderLeft: '4px solid #D9534F', borderRadius: '0' }}>
+            <div style={{ fontSize: '14px', fontWeight: 700, color: '#D9534F', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>Нарушение не устранено</div>
+            <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>Формируем доказательства и подаем административный иск в гарнизонный военный суд.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="section" style={{ background: 'var(--color-cream)' }}>
         <div className="container grid grid-2" style={{ gap: '60px' }}>
@@ -179,6 +204,54 @@ export default function VyplatyRaneniePage() {
           </div>
         </div>
       </section>
+
+      
+      <PricingBlock 
+        title="Стоимость помощи адвоката"
+        subtitle="Стоимость зависит от полноты имеющихся документов, необходимости направления адвокатских запросов, количества инстанций и формата участия. До начала работы мы согласуем с вами план действий и зафиксируем стоимость в соглашении."
+        tiers={[
+          {
+            title: 'Первичная оценка',
+            subtitle: 'Анализ документов и ситуации',
+            popular: false,
+            price: 'от 5 000 ₽',
+            features: [
+              { name: 'Изучение медицинских справок', value: '✓' },
+              { name: 'Проверка оснований для выплат', value: '✓' },
+              { name: 'Определение порядка обжалования', value: '✓' },
+              { name: 'Устная консультация', value: '✓' }
+            ]
+          },
+          {
+            title: 'Досудебный порядок',
+            subtitle: 'Истребование документов и жалобы',
+            popular: true,
+            price: 'от 30 000 ₽',
+            features: [
+              { name: 'Подготовка адвокатских запросов', value: '✓' },
+              { name: 'Жалобы в военную прокуратуру', value: '✓' },
+              { name: 'Составление рапортов командованию', value: '✓' },
+              { name: 'Контроль ответов', value: '✓' }
+            ]
+          },
+          {
+            title: 'Защита в суде',
+            subtitle: 'Административное судопроизводство',
+            popular: false,
+            price: 'от 70 000 ₽',
+            features: [
+              { name: 'Подготовка административного иска', value: '✓' },
+              { name: 'Сбор доказательной базы', value: '✓' },
+              { name: 'Представительство в военном суде', value: '✓' },
+              { name: 'Получение судебного акта', value: '✓' }
+            ]
+          }
+        ]}
+        ctaTitle="Не знаете, какой формат помощи потребуется?"
+        ctaSubtitle="Опишите ситуацию, какие справки у вас уже есть и в чем возникла проблема. Юрист оценит перспективы и предложит варианты решения."
+        ctaButtonText="Описать ситуацию"
+        ctaButtonLink="#form"
+      />
 
       <FAQBlock 
         faqs={faqs} 

@@ -6,6 +6,7 @@
   --color-gold-light: #DFD3C3;
   --color-white: #FFFFFF;
   --color-cream: #F7F4ED;
+  --gradient-cream: radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), radial-gradient(at 90% 90%, rgba(234, 241, 246, 0.8) 0%, transparent 50%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%);
   --color-grey-blue: #EAF1F6;
   --color-text-main: #202A33;
   --color-text-secondary: #66727D;
@@ -90,6 +91,7 @@ h4 { font-size: 1.25rem; }
 .bg-white { background-color: var(--color-white); }
 .bg-cream {
   background-color: var(--color-cream);
+  background: radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), radial-gradient(at 90% 90%, rgba(234, 241, 246, 0.8) 0%, transparent 50%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%);
 }
 
 /* Photo Hover Shadow */
@@ -842,7 +844,7 @@ h4 { font-size: 1.25rem; }
 .service-card:hover {
   border-top: 3px solid var(--color-gold) !important;
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(16, 39, 59, 0.08);
+  box-shadow: 0 10px 20px rgba(16, 39, 59, 0.1);
 }
 
 .service-card:hover .card-arrow {
@@ -872,11 +874,10 @@ h4 { font-size: 1.25rem; }
   border-color: var(--color-deep-blue) !important;
 }
 
-/* Add a subtle elegant pattern to cream backgrounds */
+/* Cream background without pattern */
 .bg-cream {
-  background-image: radial-gradient(var(--color-gold-light) 1px, transparent 1px);
-  background-size: 40px 40px;
   background-color: var(--color-cream);
+  background: radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 60%), radial-gradient(at 100% 100%, rgba(225, 218, 205, 0.5) 0%, transparent 60%), radial-gradient(at 90% 90%, rgba(234, 241, 246, 0.8) 0%, transparent 50%), linear-gradient(135deg, var(--color-cream) 0%, #f4f0e6 100%);
 }
 
 #consultation { scroll-margin-top: 110px; }
@@ -900,3 +901,7 @@ h4 { font-size: 1.25rem; }
   opacity: 0.9;
 }
 .team-card { --shadow-sm: 0 4px 8px rgba(23, 50, 77, 0.08); --shadow-hover: 0 8px 20px rgba(23, 50, 77, 0.15); }
+
+.btn-gold { padding: 12px 32px; font-size: 15px; background-color: var(--color-gold); color: var(--color-white); text-decoration: none; font-weight: 600; display: inline-block; transition: opacity 0.3s ease; text-align: center; border-radius: var(--radius-md); border: none; }
+.btn-gold:hover { opacity: 0.9; }
+

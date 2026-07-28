@@ -68,7 +68,7 @@ export default function SochPage() {
                 margin: '0 0 32px 0', 
                 lineHeight: 1.1 
               }}>
-                Адвокат по делам о самовольном оставлении части в Липецке
+                Адвокат по делам <br/>о самовольном оставлении части в Липецке
               </h1>
               
               <p style={{ 
@@ -137,18 +137,19 @@ export default function SochPage() {
       {/* Блок 2. Ситуации */}
       <section className="section bg-cream">
         <div className="container">
-          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '16px' }}>В каких ситуациях нужна помощь адвоката</h2>
-          <p style={{ textAlign: 'center', color: 'var(--color-text-secondary)', maxWidth: '800px', margin: '0 auto 40px auto', lineHeight: 1.6 }}>
+          <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '24px' }}>В каких ситуациях нужна помощь адвоката</h2>
+          <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--color-gold)', marginBottom: '24px' }}></div>
+          <p style={{ textAlign: 'left', color: 'var(--color-text-secondary)', maxWidth: '800px', marginBottom: '40px', lineHeight: 1.6 }}>
             Обстоятельства дел о самовольном оставлении части различаются: значение имеют срок и причины отсутствия, статус военнослужащего, стадия проверки или расследования и уже данные объяснения. Ниже — ситуации, в которых важно получить индивидуальную правовую&nbsp;оценку.
           </p>
           
           <div className="grid grid-3" style={{ gap: '24px' }}>
             {[
-              { title: 'Военнослужащий находится вне части', desc: 'Неясно, возбуждено ли уголовное дело, объявлен ли военнослужащий в розыск и как может быть квалифицирован период отсутствия.' },
+              { title: <>Военнослужащий находится <br/>вне части</>, desc: 'Неясно, возбуждено ли уголовное дело, объявлен ли военнослужащий в розыск и как может быть квалифицирован период отсутствия.' },
               { title: 'Военнослужащего задержали', desc: 'Родственникам неизвестны его процессуальный статус, место нахождения и действия, которые уже проводят следственные органы.' },
-              { title: 'Вызывают для объяснений или на допрос', desc: 'До процессуальных действий необходимо разобраться в обстоятельствах и определить позицию с учётом уже имеющихся документов и сведений.' },
+              { title: <>Вызывают для объяснений <br/>или на допрос</>, desc: 'До процессуальных действий необходимо разобраться в обстоятельствах и определить позицию с учётом уже имеющихся документов и сведений.' },
               { title: 'Решается вопрос о заключении под стражу', desc: 'Суд будет оценивать материалы дела и доводы сторон при выборе меры пресечения. Адвокату важно подключиться до заседания или как можно раньше.' },
-              { title: 'Рассматривается добровольная явка', desc: 'Нужно оценить обстоятельства отсутствия, проверить документы и определить порядок юридического сопровождения применительно к конкретному делу.' },
+              { title: <>Рассматривается <br/>добровольная явка</>, desc: 'Нужно оценить обстоятельства отсутствия, проверить документы и определить порядок юридического сопровождения применительно к конкретному делу.' },
               { title: 'Дело уже передано в суд', desc: 'Требуется изучить обвинение, доказательства и ранее данные показания, чтобы выстроить позицию защиты в судебном разбирательстве.' }
             ].map((item, i) => (
               <div key={i} style={{
@@ -197,8 +198,8 @@ export default function SochPage() {
                 { title: 'ч. 4 ст. 337', cond: 'Свыше 1 месяца; обстоятельства ч. 3', res: 'Лишение свободы до 5 лет' },
                 { title: 'ч. 5 ст. 337', cond: 'Свыше 1 месяца; призыв или контракт; в специальный период', res: 'Лишение свободы от 5 до 10 лет' }
               ].map((item, i) => (
-                <div key={i} className="punishment-card" style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--color-white)', padding: '24px', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-                  <div style={{ alignSelf: 'flex-start', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '4px 12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, marginBottom: '16px' }}>{item.title}</div>
+                <div key={i} className="punishment-card" style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--color-white)', padding: '24px', borderRadius: '0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                  <div style={{ alignSelf: 'flex-start', background: 'var(--color-deep-blue)', color: 'var(--color-white)', padding: '4px 12px', borderRadius: '0', fontSize: '13px', fontWeight: 600, marginBottom: '16px' }}>{item.title}</div>
                   <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', flexGrow: 1 }}>{item.cond}</div>
                   <div className="punishment-res" style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, marginTop: 'auto' }}>{item.res}</div>
                 </div>
@@ -232,7 +233,7 @@ export default function SochPage() {
               }
             `}} />
             
-            <div style={{ marginTop: '24px', background: 'var(--color-white)', padding: '24px', borderRadius: '4px', borderLeft: '4px solid var(--color-gold)' }}>
+            <div style={{ marginTop: '24px', background: 'var(--color-white)', padding: '24px', borderRadius: '0', borderLeft: '4px solid var(--color-gold)' }}>
               <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '8px' }}>Отдельные случаи, введённые с 2026 года</h4>
               <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                 Части 2.2, 3.2 и 6 статьи 337 УК РФ устанавливают повышенную ответственность для отдельных лиц, ранее условно освобождённых от наказания по статье 80.2 УК РФ либо по делам которых производство приостанавливалось по ходатайству командования. Применимость этих норм требует отдельной проверки адвокатом.
@@ -245,25 +246,33 @@ export default function SochPage() {
 
           <div className="grid grid-2" style={{ gap: '40px' }}>
             {/* Левая колонка - Освобождение от ответственности */}
-            <div style={{ background: 'var(--color-white)', borderRadius: '4px', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', padding: '40px', height: '100%' }}>
-                <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px' }}>Освобождение от ответственности</h3>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.7, margin: 0 }}>
-                  Примечание к статье 337 УК РФ допускает освобождение от уголовной ответственности лица, впервые совершившего деяние (ч. 1–4), если отсутствие стало следствием стечения тяжёлых обстоятельств. Это не автоматическое основание: необходимо установить применимую часть статьи и документально подтвердить фактические обстоятельства.
-                </p>
+            <div style={{ background: 'var(--color-deep-blue)', padding: '40px', borderRadius: '0', color: 'var(--color-white)', display: 'flex', flexDirection: 'column', height: '100%', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: 0, right: 0, opacity: 0.1, transform: 'translate(10%, -10%)' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-white)">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <h3 style={{ fontSize: '24px', color: '#D2B282', marginBottom: '24px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>Освобождение от ответственности</h3>
+              <p style={{ fontSize: '16px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+                Примечание к статье 337 УК РФ допускает освобождение от уголовной ответственности лица, впервые совершившего деяние (ч. 1–4), если отсутствие стало следствием стечения тяжёлых обстоятельств.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.1)', padding: '16px', borderLeft: '4px solid var(--color-gold)', fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, marginTop: 'auto', position: 'relative', zIndex: 1 }}>
+                Это не автоматическое основание: необходимо установить применимую часть статьи и документально подтвердить фактические обстоятельства.
+              </div>
             </div>
 
             {/* Правая колонка - Отличие от дезертирства */}
-            <div style={{ background: 'var(--color-white)', borderRadius: '4px', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', padding: '40px', height: '100%' }}>
+            <div style={{ background: 'var(--color-white)', borderRadius: '0', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', padding: '40px', height: '100%' }}>
                 <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px' }}>Чем СОЧ отличается от дезертирства</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {/* СОЧ */}
-                  <div style={{ padding: '20px', background: 'var(--color-cream)', borderLeft: '4px solid var(--color-primary)', borderRadius: '0 4px 4px 0' }}>
+                  <div style={{ padding: '20px', background: 'var(--color-cream)', borderLeft: '4px solid var(--color-primary)', borderRadius: '0' }}>
                     <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>СОЧ (ст. 337 УК РФ)</div>
                     <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}><strong>Временное уклонение</strong> от исполнения обязанностей военной службы. Квалификация определяется по совокупности материалов дела.</div>
                   </div>
                   
                   {/* Дезертирство */}
-                  <div style={{ padding: '20px', background: '#FFF8F8', borderLeft: '4px solid #D9534F', borderRadius: '0 4px 4px 0' }}>
+                  <div style={{ padding: '20px', background: '#FFF8F8', borderLeft: '4px solid #D9534F', borderRadius: '0' }}>
                     <div style={{ fontSize: '14px', fontWeight: 700, color: '#D9534F', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>Дезертирство (ст. 338 УК РФ)</div>
                     <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>Цель <strong>вовсе уклониться</strong> от прохождения службы. Направленность умысла на полное уклонение; продолжительность отсутствия сама по себе вопрос не решает.</div>
                   </div>
@@ -338,12 +347,17 @@ export default function SochPage() {
               }
             `}} />
 
-            <div style={{ background: 'var(--color-deep-blue)', padding: '40px', borderRadius: '4px', color: 'var(--color-white)', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignSelf: 'flex-start' }}>
-              <h3 style={{ fontSize: '24px', color: 'var(--color-gold)', marginBottom: '24px', fontFamily: 'var(--font-serif)' }}>Что сообщить при первом обращении</h3>
-              <p style={{ fontSize: '16px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)', marginBottom: '24px' }}>
+            <div style={{ background: 'var(--color-deep-blue)', padding: '40px', borderRadius: '4px', color: 'var(--color-white)', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignSelf: 'flex-start', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: 0, right: 0, opacity: 0.1, transform: 'translate(10%, -10%)' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-white)">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <h3 style={{ fontSize: '24px', color: '#D2B282', marginBottom: '24px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>Что сообщить при первом обращении</h3>
+              <p style={{ fontSize: '16px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
                 Где сейчас находится военнослужащий; как долго он отсутствует; служит по призыву или по контракту; известно ли о розыске или возбужденном деле; вызывали ли его для объяснений или на допрос; давал ли он объяснения; какие документы сохранились. Если часть сведений неизвестна, это не препятствует обращению.
               </p>
-              <div style={{ background: 'rgba(255,255,255,0.1)', padding: '16px', borderLeft: '4px solid var(--color-gold)', fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5 }}>
+              <div style={{ background: 'rgba(255,255,255,0.1)', padding: '16px', borderLeft: '4px solid var(--color-gold)', fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, position: 'relative', zIndex: 1 }}>
                 Эти сведения нужны для предварительной оценки стадии и возможного формата помощи. Правовая позиция формируется после изучения документов и обстоятельств дела.
               </div>
             </div>
@@ -361,14 +375,14 @@ export default function SochPage() {
               </h2>
               <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--color-gold)', marginBottom: '24px' }}></div>
               <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                Добровольная явка может иметь значение для оценки поведения военнослужащего, но <strong>сама по себе не прекращает уголовное дело</strong> и не гарантирует освобождение от ответственности.
+                Добровольная явка может иметь значение для оценки поведения военнослужащего, но <span style={{ color: 'var(--color-deep-blue)' }}>сама по себе не прекращает уголовное дело</span> и не гарантирует освобождение от ответственности.
               </p>
               <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '0' }}>
                 До принятия решения необходимо разобраться в продолжительности и причинах отсутствия, процессуальном статусе и имеющихся документах.
               </p>
             </div>
             
-            <div style={{ background: 'var(--color-cream)', padding: '40px', borderLeft: '4px solid var(--color-gold)', position: 'relative' }}>
+            <div style={{ background: 'var(--color-cream)', padding: '40px', borderLeft: '4px solid var(--color-gold)', position: 'relative', marginTop: '60px' }}>
               <div style={{ position: 'absolute', top: '-10px', right: '20px', color: 'var(--color-gold)', opacity: 0.1 }}>
                 <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
               </div>
@@ -395,7 +409,7 @@ export default function SochPage() {
       {/* Блок 8. Как проходит работа */}
       <ProcessBlock 
         title="Как проходит работа"
-        subtitle="Порядок зависит от стадии дела и срочности ситуации. До начала работы согласуем объём помощи, стоимость и порядок взаимодействия."
+        subtitle={<>Порядок зависит от стадии дела и срочности ситуации.<br/>До начала работы согласуем объём помощи, стоимость и порядок взаимодействия.</>}
         steps={[
           { num: '1', title: 'Первичное обращение', desc: 'Вы сообщаете известные обстоятельства и оставляете контакт для связи.' },
           { num: '2', title: 'Уточнение ситуации', desc: 'Адвокат определяет, какие сведения и документы необходимы для первоначальной оценки.' },
@@ -491,32 +505,33 @@ export default function SochPage() {
       </section>
 
       {/* Блок 12. Финальная форма */}
-      <section className="section" id="form" style={{ background: 'var(--color-cream)' }}>
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                  Связаться с нами
-                </span>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
               </div>
-              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px', lineHeight: 1.2, marginTop: 0 }}>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
                 Если человека задержали или он готовится явиться,<br /> не откладывайте связь<br /> с адвокатом
               </h2>
+              
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
                 Уточним срочность, местонахождение<br />и необходимые документы.
               </p>
               
-              <div style={{ marginTop: 'auto', marginBottom: '32px' }}>
+              <div style={{ marginTop: '32px' }}>
                 <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                   Перезвоним в течение 15 минут
                 </div>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <ContactsForm title="Написать нам" subtitle="" />
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm title="Написать нам" subtitle="" />
+              </div>
             </div>
           </div>
         </div>

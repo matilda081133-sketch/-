@@ -10,7 +10,7 @@ export interface ProcessStep {
 
 interface ProcessBlockProps {
   title?: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   steps: ProcessStep[];
   ctaTitle?: string;
   ctaSubtitle?: string;
