@@ -244,21 +244,16 @@ export default function SochPage() {
           </div>
 
           <div className="grid grid-2" style={{ gap: '40px' }}>
-            {/* Левая колонка - Объединенная карточка */}
-            <div style={{ display: 'flex', flexDirection: 'column', background: 'var(--color-white)', borderRadius: '4px', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
-              
-              {/* Освобождение от ответственности */}
-              <div style={{ padding: '40px' }}>
+            {/* Левая колонка - Освобождение от ответственности */}
+            <div style={{ background: 'var(--color-white)', borderRadius: '4px', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', padding: '40px', height: '100%' }}>
                 <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px' }}>Освобождение от ответственности</h3>
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.7, margin: 0 }}>
                   Примечание к статье 337 УК РФ допускает освобождение от уголовной ответственности лица, впервые совершившего деяние (ч. 1–4), если отсутствие стало следствием стечения тяжёлых обстоятельств. Это не автоматическое основание: необходимо установить применимую часть статьи и документально подтвердить фактические обстоятельства.
                 </p>
-              </div>
-              
-              <div style={{ height: '1px', background: 'var(--color-border)', margin: '0 40px' }}></div>
-              
-              {/* Отличие от дезертирства */}
-              <div style={{ padding: '40px' }}>
+            </div>
+
+            {/* Правая колонка - Отличие от дезертирства */}
+            <div style={{ background: 'var(--color-white)', borderRadius: '4px', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', padding: '40px', height: '100%' }}>
                 <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '24px' }}>Чем СОЧ отличается от дезертирства</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {/* СОЧ */}
@@ -273,23 +268,6 @@ export default function SochPage() {
                     <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>Цель <strong>вовсе уклониться</strong> от прохождения службы. Направленность умысла на полное уклонение; продолжительность отсутствия сама по себе вопрос не решает.</div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Правая колонка - Темная акцентная карточка */}
-            <div style={{ background: 'var(--color-deep-blue)', padding: '40px', borderRadius: '4px', alignSelf: 'flex-start', color: 'var(--color-white)', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, right: 0, opacity: 0.05, transform: 'translate(20%, -20%)' }}>
-                <svg width="150" height="150" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
-              <h3 style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', color: '#FFD700', marginBottom: '24px', position: 'relative', zIndex: 1 }}>Что сообщить при первом обращении</h3>
-              <div style={{ position: 'relative', zIndex: 1 }}>
-                <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, marginBottom: '20px' }}>
-                  Где сейчас находится военнослужащий; как долго он отсутствует; служит по призыву или по контракту; известно ли о розыске или возбужденном деле; вызывали ли его для объяснений или на допрос; давал ли он объяснения; какие документы сохранились. Если часть сведений неизвестна, это не препятствует обращению.
-                </p>
-                <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, margin: 0 }}>
-                  Эти сведения нужны для предварительной оценки стадии и возможного формата помощи. Правовая позиция формируется после изучения документов и обстоятельств дела.
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -321,8 +299,9 @@ export default function SochPage() {
       {/* Блок 6. Как адвокат выстраивает защиту */}
       <section className="section" style={{ background: 'var(--color-cream)' }}>
         <div className="container">
-          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '16px' }}>Как адвокат выстраивает защиту</h2>
-          <p style={{ textAlign: 'center', color: 'var(--color-text-secondary)', maxWidth: '800px', margin: '0 auto 40px auto', lineHeight: 1.6 }}>
+          <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '24px' }}>Как адвокат выстраивает защиту</h2>
+          <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--color-gold)', marginBottom: '24px' }}></div>
+          <p style={{ textAlign: 'left', color: 'var(--color-text-secondary)', maxWidth: '800px', marginBottom: '40px', lineHeight: 1.6 }}>
             Единой позиции для всех дел о самовольном оставлении части не существует. Адвокат сопоставляет обстоятельства отсутствия, документы, процессуальный статус военнослужащего и материалы дела, после чего определяет объём помощи и последовательность защиты.
           </p>
           
