@@ -142,7 +142,7 @@ export default function SochPage() {
             Обстоятельства дел о самовольном оставлении части различаются: значение имеют срок и причины отсутствия, статус военнослужащего, стадия проверки или расследования и уже данные объяснения. Ниже — ситуации, в которых важно получить индивидуальную правовую&nbsp;оценку.
           </p>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             {[
               { title: 'Военнослужащий находится вне части', desc: 'Неясно, возбуждено ли уголовное дело, объявлен ли военнослужащий в розыск и как может быть квалифицирован период отсутствия.' },
               { title: 'Военнослужащего задержали', desc: 'Родственникам неизвестны его процессуальный статус, место нахождения и действия, которые уже проводят следственные органы.' },
@@ -152,31 +152,13 @@ export default function SochPage() {
               { title: 'Дело уже передано в суд', desc: 'Требуется изучить обвинение, доказательства и ранее данные показания, чтобы выстроить позицию защиты в судебном разбирательстве.' }
             ].map((item, i) => (
               <div key={i} style={{
-                background: 'var(--color-white)',
-                padding: '40px',
-                borderRadius: '0',
-                position: 'relative',
-                overflow: 'hidden',
-                border: '1px solid var(--color-border)',
-                borderTop: '1px solid var(--color-border)',
-                transition: 'all 0.4s ease',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column'
-              }} className="service-card group">
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '4px',
-                  height: '0%',
-                  background: 'var(--color-gold)',
-                  transition: 'height 0.4s ease'
-                }} className="service-accent-line"></div>
-                <h3 style={{ fontSize: '24px', fontWeight: 500, color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', transition: 'color 0.4s ease' }} className="service-title">
+                height: '100%', minHeight: '160px', padding: '30px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', transition: 'all 0.3s', position: 'relative', borderTop: '3px solid var(--color-primary)'
+              }} className="card service-card">
+                
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
                   {item.title}
                 </h3>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0, flexGrow: 1 }}>
+                <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
                   {item.desc}
                 </p>
               </div>
@@ -184,18 +166,12 @@ export default function SochPage() {
           </div>
           <style dangerouslySetInnerHTML={{__html: `
             .service-card {
-              transition: all 0.4s ease;
+              transition: all 0.3s ease;
             }
             .service-card:hover {
-              box-shadow: 0 20px 40px rgba(23, 50, 77, 0.08);
+              box-shadow: 0 8px 24px rgba(0,0,0,0.15);
               border-color: transparent;
               transform: translateY(-4px);
-            }
-            .service-card:hover .service-accent-line {
-              height: 100%;
-            }
-            .service-card:hover .service-title {
-              color: var(--color-primary);
             }
           `}} />
         </div>
@@ -204,7 +180,7 @@ export default function SochPage() {
       {/* Блок 3. Ответственность */}
       <section className="section" style={{ background: 'var(--color-cream)' }}>
         <div className="container">
-          <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '24px' }}>Ответственность за самовольное оставление части</h2>
+          <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '24px' }}>Ответственность за самовольное<br />оставление части</h2>
           <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--color-gold)', marginBottom: '24px' }}></div>
           <p style={{ textAlign: 'left', color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '40px', maxWidth: '900px' }}>
             Статья 337 УК РФ предусматривает ответственность за самовольное оставление части или места службы, а также за неявку в срок без уважительных причин. Квалификация зависит не только от продолжительности отсутствия, но и от статуса военнослужащего, периода совершения деяния и других обстоятельств.
@@ -305,7 +281,7 @@ export default function SochPage() {
               <div style={{ position: 'absolute', top: 0, right: 0, opacity: 0.05, transform: 'translate(20%, -20%)' }}>
                 <svg width="150" height="150" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
               </div>
-              <h3 style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-gold)', marginBottom: '24px', position: 'relative', zIndex: 1 }}>Что сообщить при первом обращении</h3>
+              <h3 style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', color: '#FFD700', marginBottom: '24px', position: 'relative', zIndex: 1 }}>Что сообщить при первом обращении</h3>
               <div style={{ position: 'relative', zIndex: 1 }}>
                 <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, marginBottom: '20px' }}>
                   Где сейчас находится военнослужащий; как долго он отсутствует; служит по призыву или по контракту; известно ли о розыске или возбужденном деле; вызывали ли его для объяснений или на допрос; давал ли он объяснения; какие документы сохранились. Если часть сведений неизвестна, это не препятствует обращению.
