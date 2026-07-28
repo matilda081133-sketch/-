@@ -18,7 +18,7 @@ export default function UrgentContactStrip() {
           
           <div style={{ flex: '1 1 500px' }}>
             <h2 style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', margin: '0 0 8px 0', color: 'var(--color-white)' }}>
-              Военнослужащего задержали или его местонахождение неизвестно?
+              Военнослужащего задержали или<br/>его местонахождение неизвестно?
             </h2>
             <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.8)', margin: 0 }}>
               Позвоните адвокату и сообщите все, что известно о ситуации.
@@ -42,8 +42,7 @@ export default function UrgentContactStrip() {
             
             <a 
               href="tel:+79103503111" 
-              className="btn btn-primary" 
-              style={{ padding: '12px 24px', fontSize: '15px' }}
+              className="btn-gold"
               data-analytics="military_urgent_call_click"
             >
               Позвонить адвокату
@@ -51,7 +50,7 @@ export default function UrgentContactStrip() {
             
             <a 
               href="#form" 
-              style={{ color: 'var(--color-gold)', textDecoration: 'underline', fontSize: '15px', fontWeight: 500 }}
+              style={{ color: 'var(--color-gold-light)', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}
             >
               Описать ситуацию
             </a>

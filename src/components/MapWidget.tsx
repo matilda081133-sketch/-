@@ -20,14 +20,14 @@ export default function MapWidget() {
           if (!mapRef.current) return;
           
           const map = new window.ymaps.Map(mapRef.current, {
-            center: [52.610220, 39.598857], // Липецк, ул. Советская, 35
+            center: [52.608826, 39.598217], // Липецк, ул. Советская, 35
             zoom: 16,
             controls: ['zoomControl', 'fullscreenControl']
           });
 
           // Custom Placemark
           const placemark = new window.ymaps.Placemark(
-            [52.610220, 39.598857],
+            [52.608826, 39.598217],
             {
               hintContent: 'ООО «Де-Юре»',
               balloonContent: '<b>ООО «Де-Юре»</b><br/>г. Липецк, ул. Советская, д. 35'

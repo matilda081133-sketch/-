@@ -1,12 +1,12 @@
 'use client';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-interface PhoneInputProps {
+interface PhoneInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   className?: string;
   style?: React.CSSProperties;
 }
 
-export default function PhoneInput({ className, style }: PhoneInputProps = {}) {
+export default function PhoneInput({ className, style, onFocus, onBlur, ...rest }: PhoneInputProps = {}) {
   const [value, setValue] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,15 +52,22 @@ export default function PhoneInput({ className, style }: PhoneInputProps = {}) {
     }
   }
 
+  const handleFocusCustom = (e: React.FocusEvent<HTMLInputElement>) => {
+    handleFocus();
+    if (onFocus) onFocus(e);
+  };
+
   return (
     <input 
       type="tel" 
       placeholder="+7 (___) ___-__-__" 
       value={value}
       onChange={handleChange}
-      onFocus={handleFocus}
+      onFocus={handleFocusCustom}
+      onBlur={onBlur}
       className={className}
       style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none', width: '100%', ...style }} 
+      {...rest}
     />
   );
 }

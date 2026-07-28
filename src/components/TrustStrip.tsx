@@ -6,12 +6,14 @@ type TrustItem = {
 };
 
 export default function TrustStrip({ items }: { items: TrustItem[] }) {
+  if (!items || items.length === 0) return null;
+  
   return (
     <div style={{ 
-      display: 'grid', 
-      gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', 
+      display: 'flex', 
+      flexWrap: 'wrap',
       gap: '20px', 
-      marginTop: '40px' 
+      marginTop: '-20px' 
     }}>
       {items.map((bullet, i) => (
         <div key={i} style={{ 

@@ -5,7 +5,7 @@ type HeroProps = {
   breadcrumbs?: React.ReactNode;
   superTitle: string;
   title: React.ReactNode;
-  subtitle: string;
+  subtitle: React.ReactNode;
   primaryCtaText: string;
   primaryCtaSubtext?: string;
   primaryCtaLink?: string;
@@ -17,7 +17,8 @@ type HeroProps = {
 
 import Image from 'next/image';
 
-type ExtendedHeroProps = HeroProps & { 
+type ExtendedHeroProps = HeroProps & {
+  theme?: 'light' | 'dark'; 
   imageUrl?: string; 
   imageName?: string;
   imageSubtitle?: string;
