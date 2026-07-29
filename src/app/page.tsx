@@ -1,3 +1,4 @@
+// !!! VERSION 29.07 MAIN PAGE - FROZEN BY USER REQUEST !!!
 import Link from 'next/link';
 import TeamCarousel from '@/components/TeamCarousel';
 import Header from '@/components/Header';
