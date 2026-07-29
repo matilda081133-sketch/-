@@ -345,10 +345,10 @@ export default async function SpecialistPage({ params }: PageProps) {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0 }}>
-                Запишитесь на консультацию к Дмитрию Сергеевичу Конопкину
+                {member.consultationTitle || `Запишитесь на консультацию к ${member.name}`}
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '32px', textWrap: 'balance' }}>
-                Кратко опишите ситуацию. Мы уточним обстоятельства и согласуем время консультации.
+                {member.consultationSubtitle || 'Кратко опишите ситуацию. Мы уточним обстоятельства и согласуем время консультации.'}
               </p>
               
               <div style={{ marginBottom: '32px', borderLeft: '4px solid var(--color-gold)', paddingLeft: '16px' }}>
