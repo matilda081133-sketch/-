@@ -182,33 +182,59 @@ export default function VyplatyRaneniePage() {
       />
 
       {/* ═══ 2. Компактная строка доверия ═══ */}
-      <section style={{ background: 'var(--color-cream)', padding: '24px 0', borderBottom: '1px solid var(--color-border)' }}>
+      <section style={{ background: 'var(--color-cream)', padding: '32px 0', borderBottom: '1px solid var(--color-border)' }}>
         <div className="container">
           <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
-            gap: '20px',
-            alignItems: 'center'
+            display: 'flex', 
+            gap: '20px', 
+            flexWrap: 'wrap' 
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '8px', height: '8px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
-                Проверяем несколько оснований выплат
-              </span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '8px', height: '8px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
-                Начинаем со справок и решений
-              </span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '8px', height: '8px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
-                Условия работы — в договоре
-              </span>
-            </div>
+            {[
+              { 
+                value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
+                text: 'Проверяем несколько оснований выплат' 
+              },
+              { 
+                value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>, 
+                text: 'Начинаем со справок и решений' 
+              },
+              { 
+                value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>, 
+                text: 'Условия работы — в договоре' 
+              }
+            ].map((bullet, i) => (
+              <div key={i} className="hero-bullet-item" style={{ 
+                flex: '1 1 260px',
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '16px',
+                background: 'rgba(255, 255, 255, 0.7)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.9)',
+                padding: '20px 24px',
+                boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease',
+                cursor: 'default'
+              }}>
+                <div style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{bullet.value}</div>
+                <div style={{ color: 'var(--color-deep-blue)', fontSize: '14px', fontWeight: 600, lineHeight: 1.4 }}>
+                  {bullet.text}
+                </div>
+              </div>
+            ))}
           </div>
+          <style dangerouslySetInnerHTML={{__html: `
+            .hero-bullet-item:hover {
+              transform: translateY(-4px);
+              box-shadow: 0 20px 35px rgba(23, 50, 77, 0.12) !important;
+              background: rgba(255, 255, 255, 0.95) !important;
+              border-color: var(--color-gold) !important;
+            }
+            .hero-bullet-item:hover svg {
+              transform: scale(1.1);
+              transition: transform 0.3s ease;
+            }
+          `}} />
         </div>
       </section>
 
@@ -217,7 +243,7 @@ export default function VyplatyRaneniePage() {
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              В каких ситуациях мы можем помочь
+              В каких ситуациях<br />мы можем помочь
             </h2>
             <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
               Найдите свою проблему — мы подскажем, с каких документов начать и как восстановить ваши права.
