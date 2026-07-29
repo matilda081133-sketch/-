@@ -129,7 +129,7 @@ export default function PricingBlock({
             }}
             className="pricing-tier-card"
             >
-              {tier.popular && tier.badgeText !== '' && (
+              {tier.popular && Boolean(tier.badgeText) && (
                 <div style={{
                   position: 'absolute',
                   top: '0',
@@ -144,7 +144,7 @@ export default function PricingBlock({
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em'
                 }}>
-                  {tier.badgeText || 'Востребовано'}
+                  {tier.badgeText}
                 </div>
               )}
               

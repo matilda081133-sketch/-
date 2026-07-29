@@ -441,7 +441,7 @@ export default function SochPage() {
           {
             title: 'Защита на следствии',
             subtitle: 'Предварительное расследование',
-            popular: false,
+            popular: true,
             price: 'ХХХ ₽',
             features: [
               { name: 'Составление плана защиты', value: '✓' },

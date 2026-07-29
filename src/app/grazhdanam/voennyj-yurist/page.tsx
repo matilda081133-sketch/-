@@ -548,7 +548,7 @@ export default function VoennyjYuristPage() {
           {
             title: 'Досудебная работа',
             subtitle: 'Запросы и жалобы',
-            popular: false,
+            popular: true,
             price: 'ХХХ ₽',
             features: [
               { name: 'Подготовка адвокатских запросов', value: '✓' },
