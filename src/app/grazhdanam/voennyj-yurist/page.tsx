@@ -347,7 +347,7 @@ export default function VoennyjYuristPage() {
       </section>
 
       {/* ═══ 4. Направления помощи ═══ */}
-      <section id="directions" className="section" style={{ padding: '64px 0', background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
+      <section id="directions" className="section" style={{ padding: '64px 0', background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)' }}>
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
