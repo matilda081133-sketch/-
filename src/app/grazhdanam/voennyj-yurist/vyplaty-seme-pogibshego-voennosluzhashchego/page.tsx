@@ -147,18 +147,34 @@ export default function VyplatySemePogibshegoPage() {
       <MilitaryHero 
         breadcrumbs={
           <>
-            <Link href="/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Главная</Link> <span style={{ margin: '0 8px' }}>/</span> 
-            <Link href="/grazhdanam/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Гражданам</Link> <span style={{ margin: '0 8px' }}>/</span> 
-            <Link href="/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Военный юрист</Link> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/-/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/-/grazhdanam/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/-/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
             <span style={{ color: 'var(--color-text-main)' }}>Выплаты семье погибшего</span>
           </>
         }
         superTitle="Военные выплаты • проверка права и документов"
-        title={<>Юрист по выплатам семье <br />погибшего военнослужащего в Липецке</>}
-        subtitle="Проверим право каждого заявителя на положенные выплаты, определим недостающие документы и порядок действий при задержке, отказе или споре о включении в число получателей."
+        title={
+          <>
+            Юрист по выплатам <br />
+            семье погибшего <br />
+            военнослужащего <br />
+            в Липецке
+          </>
+        }
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
+            Проверим право каждого заявителя на положенные выплаты,<br />
+            определим недостающие документы и порядок действий при задержке,<br />
+            отказе или споре о включении в число получателей.
+          </span>
+        }
         primaryCtaText="Получить консультацию"
-        secondaryCtaText=""
-        secondaryCtaLink=""
+        primaryCtaLink="#form"
+        primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        imageUrl="/-/images/konopkin.jpg"
+        imageName="Дмитрий Сергеевич Конопкин"
+        imageSubtitle="Адвокат, партнёр ЮК «Де-Юре»"
         trustItems={[
           { text: 'Проверяем право каждого заявителя' },
           { text: 'Федеральные, страховые и региональные основания' },
