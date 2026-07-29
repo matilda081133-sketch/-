@@ -14,7 +14,7 @@ import PricingBlock from '@/components/PricingBlock';
 import Head from 'next/head';
 
 export const metadata = {
-  title: 'Военный юрист<br/>в Липецке — помощь военнослужащим | ЮК «Де-юре»',
+  title: 'Военный юрист в Липецке — помощь военнослужащим | ЮК «Де-юре»',
   description: 'Юридическая помощь военнослужащим, призывникам и их близким в Липецке: уголовные дела, ВВК, выплаты, споры с военкоматом. Работа по России.',
   alternates: {
     canonical: 'https://dejure.ru/grazhdanam/voennyj-yurist/'
