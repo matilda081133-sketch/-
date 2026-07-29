@@ -514,37 +514,10 @@ export default function VoennyjYuristPage() {
           { num: '02', title: 'Изучение документов', desc: 'Анализируем имеющиеся материалы. Документы можно передать лично или направить в электронном виде.' },
           { num: '03', title: 'План действий', desc: 'Оцениваем правовые основания, риски и предлагаем порядок защиты, обжалования или получения положенных выплат.' },
           { num: '04', title: 'Юридическая работа', desc: 'Готовим документы, обращения и жалобы; при необходимости участвуем в процессуальных действиях и представляем интересы клиента.' },
-          { num: '05', title: 'Информирование', desc: 'Сообщаем о ходе работы, объясняем результаты и заранее согласовываем дальнейшие действия.' }
+          { num: '05', title: 'Информирование', desc: 'Сообщаем о ходе работы, объясняем результаты и заранее согласовываем дальнейшие действия.' },
+          { num: '06', title: 'Дистанционный формат', desc: 'Значительную часть работы можно организовать дистанционно. Если требуется личное участие адвоката или юриста, заранее согласуем место и порядок работы.' }
         ]}
       />
-
-      {/* Информационная плашка о дистанционной работе под этапами */}
-      <section style={{ background: 'var(--color-white)', padding: '0 0 64px 0' }}>
-        <div className="container">
-          <div style={{ 
-            background: 'var(--color-cream)', 
-            border: '1px solid var(--color-border)', 
-            borderLeft: '4px solid var(--color-primary)', 
-            padding: '24px 32px', 
-            fontSize: '15px', 
-            color: 'var(--color-text-secondary)', 
-            lineHeight: 1.6,
-            display: 'flex',
-            alignItems: 'center',
-            gap: '20px'
-          }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="16" x2="12" y2="12"></line>
-              <line x1="12" y1="8" x2="12.01" y2="8"></line>
-            </svg>
-            <div>
-              <strong style={{ color: 'var(--color-deep-blue)', display: 'inline' }}>Дистанционный формат: </strong>
-              Значительную часть работы можно организовать дистанционно. Если требуется личное участие адвоката или юриста, заранее согласуем место и порядок работы.
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ═══ 8. Стоимость юридической помощи ═══ */}
       <PricingBlock 
@@ -579,7 +552,6 @@ export default function VoennyjYuristPage() {
             title: 'Не знаете, какой формат помощи потребуется?',
             subtitle: 'Опишите ситуацию — мы определим необходимый объём работы и согласуем условия.',
             popular: false,
-            price: 'Индивидуально',
             features: [
               { name: 'Первичная оценка рисков', value: '✓' },
               { name: 'Определение состава работ', value: '✓' },

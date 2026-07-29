@@ -148,11 +148,13 @@ export default function PricingBlock({
               )}
               
               <h3 style={{ fontSize: '24px', margin: '0 0 8px 0', color: 'inherit', textAlign: 'center' }}>{tier.title}</h3>
-              <p style={{ fontSize: '15px', opacity: 0.8, margin: '0 0 30px 0', minHeight: '40px', textAlign: 'center' }}>{tier.subtitle}</p>
+              <p style={{ fontSize: '15px', opacity: 0.8, margin: tier.price ? '0 0 30px 0' : '0 0 16px 0', minHeight: tier.price ? '40px' : 'auto', textAlign: 'center' }}>{tier.subtitle}</p>
               
-              <div style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', margin: '0 0 30px 0', paddingBottom: '30px', textAlign: 'center' }}>
-                {tier.price}
-              </div>
+              {tier.price && (
+                <div style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', margin: '0 0 30px 0', paddingBottom: '30px', textAlign: 'center' }}>
+                  {tier.price}
+                </div>
+              )}
 
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 40px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {tier.features.map((feature, fIdx) => (
