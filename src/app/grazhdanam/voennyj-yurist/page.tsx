@@ -136,7 +136,7 @@ export default function VoennyjYuristPage() {
       <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
-            Когда юридическая помощь нужна срочно
+            Когда юридическая<br />помощь нужна срочно
           </h2>
           <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '620px', lineHeight: 1.6 }}>
@@ -328,7 +328,7 @@ export default function VoennyjYuristPage() {
                   {sit.situation}
                 </h3>
 
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, marginTop: 'auto', position: 'relative', zIndex: 1 }}>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
                   {sit.help}
                 </p>
               </div>
