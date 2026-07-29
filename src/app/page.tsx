@@ -282,7 +282,7 @@ export default function Home() {
       </div>
 
       {/* 3. USP SECTION */}
-      <section className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-cream)' }}>
+      <section className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
             <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
@@ -350,8 +350,7 @@ export default function Home() {
                 padding: '40px', 
                 borderRight: '1px solid rgba(23, 50, 77, 0.1)',
                 borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
-                background: 'rgba(255, 255, 255, 0.85)',
-                backdropFilter: 'blur(12px)',
+                background: 'rgba(247, 244, 237, 0.45)',
                 position: 'relative'
               }}>
                 <div className="usp-accent"></div>
