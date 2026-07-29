@@ -351,16 +351,21 @@ export default function Home() {
                 borderRight: '1px solid rgba(23, 50, 77, 0.1)',
                 borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
                 background: 'rgba(247, 244, 237, 0.45)',
-                position: 'relative'
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
               }}>
-                <div className="usp-accent"></div>
-                <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
-                  {item.tag}
+                <div>
+                  <div className="usp-accent"></div>
+                  <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
+                    {item.tag}
+                  </div>
+                  <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '24px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1, lineHeight: 1.3 }}>
+                    {item.title}
+                  </h3>
                 </div>
-                <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
-                  {item.title}
-                </h3>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1 }}>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1, marginTop: 'auto' }}>
                   {item.desc}
                 </p>
               </div>
