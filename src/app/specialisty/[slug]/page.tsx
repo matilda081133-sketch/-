@@ -140,7 +140,8 @@ export default async function SpecialistPage({ params }: PageProps) {
                     fontSize: '15px', 
                     color: 'var(--color-deep-blue)', 
                     lineHeight: 1.4,
-                    fontWeight: 500
+                    fontWeight: 500,
+                    whiteSpace: 'pre-line'
                   }}>
                     {fact}
                   </div>
