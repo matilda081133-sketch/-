@@ -307,6 +307,9 @@ export default function ContactsPage() {
                   <div style={{ height: '280px', overflow: 'hidden', position: 'relative' }}>
                     <img 
                       src="/-/images/office-entrance.jpg" 
+                      alt="Вход в офис 213 юридической компании Де-Юре" 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
                   </div>
                   <div style={{ padding: '20px' }}>
                     <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
