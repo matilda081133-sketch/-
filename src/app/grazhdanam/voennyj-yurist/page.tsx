@@ -96,8 +96,8 @@ export default function VoennyjYuristPage() {
       {
         "@type": "Person",
         "name": "Дмитрий Сергеевич Конопкин",
-        "jobTitle": "Адвокат, партнёр ЮК «Де-Юре»",
-        "url": "https://dejure-help.ru/team/konopkin-dmitriy-sergeevich/"
+        "jobTitle": "Адвокат",
+        "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/"
       }
     ]
   };
@@ -452,7 +452,7 @@ export default function VoennyjYuristPage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position="Адвокат, партнёр ЮК «Де-Юре»"
+        position="Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»"
         imageUrl="/-/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
@@ -472,7 +472,7 @@ export default function VoennyjYuristPage() {
               Реестровый номер 48/812
             </li>
           </ul>,
-          <a key="3" href="/-/team/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+          <a key="3" href="/-/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
             Подробнее о Дмитрии Сергеевиче Конопкине →
           </a>
         ]}

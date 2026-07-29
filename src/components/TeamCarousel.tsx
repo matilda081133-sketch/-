@@ -56,13 +56,13 @@ export default function TeamCarousel() {
       <div className="container">
         <div className="flex justify-between items-start" style={{ marginBottom: '50px', gap: '40px', flexWrap: 'wrap' }}>
           <div style={{ maxWidth: '800px' }}>
-            <h2 style={{ margin: 0, marginBottom: '16px', fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)' }}>Наша команда</h2>
+            <h2 style={{ margin: 0, marginBottom: '16px', fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)' }}>Наши специалисты</h2>
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', margin: 0, lineHeight: 1.6 }}>
               Опытные юристы и адвокаты Липецка с профильной специализацией. Бывшие сотрудники прокуратуры, Следственного комитета и службы судебных приставов, обеспечивающие надежную правовую защиту по гражданским, арбитражным и уголовным делам.
             </p>
           </div>
           <div style={{ marginTop: '8px' }}>
-            <Link href="/specialists" className="btn btn-outline" style={{ fontSize: '16px', display: 'inline-block', whiteSpace: 'nowrap' }}>Вся команда</Link>
+            <Link href="/specialisty" className="btn btn-outline" style={{ fontSize: '16px', display: 'inline-block', whiteSpace: 'nowrap' }}>Все специалисты</Link>
           </div>
         </div>
         

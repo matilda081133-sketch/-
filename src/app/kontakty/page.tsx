@@ -41,8 +41,8 @@ export default function ContactsPage() {
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 52.608826, 
-      longitude: 39.598217
+      latitude: 52.604024, 
+      longitude: 39.585799
     },
     openingHoursSpecification: [
       {
@@ -264,11 +264,11 @@ export default function ContactsPage() {
               {/* Карта (55-60%) */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', order: 1 }}>
                 <div style={{ borderRadius: '4px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', flex: 1, minHeight: '400px' }}>
-                  {/* Маркер установлен на г. Липецк, ул. Советская, д. 35 (52.608826, 39.598217) */}
+                  {/* Маркер установлен на г. Липецк, ул. Советская, д. 35 (БЦ «Антарес», 52.604024, 39.585799) */}
                   <MapWidget />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                  <a href="https://yandex.ru/maps/?pt=39.598217,52.608826&z=17&text=г.+Липецк,+ул.+Советская,+д.+35" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '16px 32px', fontSize: '15px' }}>
+                  <a href="https://yandex.ru/maps/?pt=39.585799,52.604024&z=17&text=г.+Липецк,+ул.+Советская,+д.+35" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '16px 32px', fontSize: '15px' }}>
                     Построить маршрут до офиса
                   </a>
                 </div>
@@ -276,9 +276,51 @@ export default function ContactsPage() {
 
             </div>
 
-            {/* Плейсхолдер под фото фасада */}
-            <div style={{ marginTop: '40px', borderRadius: '4px', overflow: 'hidden', border: '1px dashed rgba(23, 50, 77, 0.2)', background: 'rgba(23, 50, 77, 0.02)', height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span style={{ color: 'var(--color-text-secondary)', fontSize: '15px' }}>[Здесь будет размещена фотография фасада здания]</span>
+            {/* Фотографии здания и входа в офис */}
+            <div style={{ marginTop: '48px' }}>
+              <h3 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '24px' }}>
+                Фотографии здания и входа в офис
+              </h3>
+              
+              <div className="grid grid-2" style={{ gap: '24px' }}>
+                {/* 1. Фасад здания БЦ "Антарес" */}
+                <div style={{ background: 'var(--color-white)', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.06)', border: '1px solid rgba(23, 50, 77, 0.08)' }}>
+                  <div style={{ height: '280px', overflow: 'hidden', position: 'relative' }}>
+                    <img 
+                      src="/-/images/office-building.jpg" 
+                      alt="Фасад здания БЦ Антарес, ул. Советская, 35, Липецк" 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
+                    />
+                  </div>
+                  <div style={{ padding: '20px' }}>
+                    <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
+                      Фасад здания (БЦ «Антарес»)
+                    </div>
+                    <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
+                      г. Липецк, ул. Советская, д. 35 — вид со стороны улицы Советской
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2. Вход в офис "Де-Юре" */}
+                <div style={{ background: 'var(--color-white)', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.06)', border: '1px solid rgba(23, 50, 77, 0.08)' }}>
+                  <div style={{ height: '280px', overflow: 'hidden', position: 'relative' }}>
+                    <img 
+                      src="/-/images/office-entrance.jpg" 
+                      alt="Вход в офис Де-Юре, 2 этаж, офис 213, Липецк" 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
+                    />
+                  </div>
+                  <div style={{ padding: '20px' }}>
+                    <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
+                      Вход в офис «Де-Юре»
+                    </div>
+                    <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
+                      2-й этаж, офис 213 — вывеска над стеклянными дверьми
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             
           </div>

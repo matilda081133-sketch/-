@@ -20,17 +20,17 @@ export default function MapWidget() {
           if (!mapRef.current) return;
           
           const map = new window.ymaps.Map(mapRef.current, {
-            center: [52.608826, 39.598217], // Липецк, ул. Советская, 35
-            zoom: 16,
+            center: [52.604024, 39.585799], // Липецк, ул. Советская, 35 (БЦ «Антарес»)
+            zoom: 17,
             controls: ['zoomControl', 'fullscreenControl']
           });
 
           // Custom Placemark
           const placemark = new window.ymaps.Placemark(
-            [52.608826, 39.598217],
+            [52.604024, 39.585799],
             {
-              hintContent: 'ООО «Де-Юре»',
-              balloonContent: '<b>ООО «Де-Юре»</b><br/>г. Липецк, ул. Советская, д. 35'
+              hintContent: 'ЮК «Де-Юре»',
+              balloonContent: '<b>ООО ЮК «Де-Юре»</b><br/>г. Липецк, ул. Советская, д. 35, офис 213 (2 этаж)'
             },
             {
               preset: 'islands#blueStretchyIcon',

@@ -128,16 +128,16 @@ export default function VyplatyRaneniePage() {
         "description": "Юридическая помощь по выплатам за ранение военнослужащих в Липецке",
         "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/",
         "employee": {
-          "@id": "https://dejure-help.ru/team/konopkin-dmitriy-sergeevich/#person"
+          "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person"
         }
       },
       {
         "@type": "Person",
-        "@id": "https://dejure-help.ru/team/konopkin-dmitriy-sergeevich/#person",
+        "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person",
         "name": "Дмитрий Сергеевич Конопкин",
         "jobTitle": "Адвокат",
         "description": "Реестровый номер 48/812",
-        "url": "https://dejure-help.ru/team/konopkin-dmitriy-sergeevich/",
+        "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
         "image": "https://dejure-help.ru/images/konopkin.jpg",
         "worksFor": {
           "@id": "https://dejure-help.ru/#legalservice"
@@ -317,7 +317,7 @@ export default function VyplatyRaneniePage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position="Адвокат, партнёр ЮК «Де-Юре», куратор направления военного права"
+        position="Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»"
         imageUrl="/-/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
@@ -337,7 +337,7 @@ export default function VyplatyRaneniePage() {
               <span>Ведёт военные дела в Липецкой области и представляет интересы доверителей в других регионах России.</span>
             </li>
           </ul>,
-          <a key="3" href="/-/team/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+          <a key="3" href="/-/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
             Подробнее о Дмитрии Сергеевиче Конопкине →
           </a>
         ]}

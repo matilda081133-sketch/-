@@ -1,12 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import SpecializationsAccordion from '@/components/SpecializationsAccordion';
 import { getTeamMember, teamData } from '@/data/team';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import PhoneInput from '@/components/PhoneInput';
 import ProcessBlock from '@/components/ProcessBlock';
 import ContactsForm from '@/components/ContactsForm';
 
@@ -27,28 +24,31 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Специалист не найден' };
   }
 
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : 'logo_dark.png'}`;
+
   return {
-    title: 'Дмитрий Сергеевич Конопкин — адвокат ЮК «Де-Юре»',
-    description: 'Защита по уголовным делам, помощь военнослужащим и по автомобильным спорам.',
+    title: member.seo.title,
+    description: member.seo.description,
     alternates: {
-      canonical: `https://dejure-help.ru/team/${member.slug}/`,
+      canonical: `https://dejure-help.ru/specialisty/${member.slug}/`,
     },
     openGraph: {
-      title: 'Дмитрий Сергеевич Конопкин — адвокат ЮК «Де-Юре»',
-      description: 'Защита по уголовным делам, помощь военнослужащим и по автомобильным спорам.',
-      url: `https://dejure-help.ru/team/${member.slug}/`,
+      title: member.seo.title,
+      description: member.seo.description,
+      url: `https://dejure-help.ru/specialisty/${member.slug}/`,
       images: [
         {
-          url: `https://dejure-help.ru${member.image}`,
+          url: imageUrl,
           width: 1200,
           height: 630,
+          alt: `${member.name} — адвокат, партнёр ЮК «Де-Юре»`
         }
       ],
     },
   };
 }
 
-export default async function TeamMemberPage({ params }: PageProps) {
+export default async function SpecialistPage({ params }: PageProps) {
   const { slug } = await params;
   const member = getTeamMember(slug);
 
@@ -56,16 +56,21 @@ export default async function TeamMemberPage({ params }: PageProps) {
     notFound();
   }
 
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : 'logo_dark.png'}`;
+
   // Generate JSON-LD Person
   const jsonLdPerson = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Дмитрий Сергеевич Конопкин',
-    jobTitle: 'Адвокат, ведущий юрист ООО ЮК «Де-Юре»',
-    image: `https://dejure-help.ru${member.image}`,
-    url: `https://dejure-help.ru/team/${member.slug}/`,
+    '@id': `https://dejure-help.ru/specialisty/${member.slug}/#person`,
+    name: member.name,
+    jobTitle: 'Адвокат',
+    description: 'Реестровый номер 48/812',
+    image: imageUrl,
+    url: `https://dejure-help.ru/specialisty/${member.slug}/`,
     worksFor: {
       '@type': 'LegalService',
+      '@id': 'https://dejure-help.ru/#legalservice',
       name: 'ООО ЮК «Де-Юре»'
     }
   };
@@ -76,8 +81,8 @@ export default async function TeamMemberPage({ params }: PageProps) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
-      { '@type': 'ListItem', position: 2, name: 'Специалисты', item: 'https://dejure-help.ru/team/' },
-      { '@type': 'ListItem', position: 3, name: member.name, item: `https://dejure-help.ru/team/${member.slug}/` }
+      { '@type': 'ListItem', position: 2, name: 'Специалисты', item: 'https://dejure-help.ru/specialisty/' },
+      { '@type': 'ListItem', position: 3, name: member.name, item: `https://dejure-help.ru/specialisty/${member.slug}/` }
     ]
   };
 
@@ -109,7 +114,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
           <div style={{ display: 'flex', gap: '8px', fontSize: '13px', color: 'var(--color-text-secondary)', flexWrap: 'wrap', paddingTop: '160px', paddingBottom: '40px' }}>
             <Link href="/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Главная</Link>
             <span>/</span>
-            <Link href="/team" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Команда</Link>
+            <Link href="/specialisty" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Специалисты</Link>
             <span>/</span>
             <span>{member.name}</span>
           </div>
@@ -120,22 +125,25 @@ export default async function TeamMemberPage({ params }: PageProps) {
               <h1 style={{ fontSize: 'clamp(32px, 4vw, 48px)', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1.2 }}>
                 {member.name}
               </h1>
-              <div style={{ fontSize: '18px', color: 'var(--color-primary)', fontWeight: 600, marginBottom: '24px' }}>
+              <div style={{ fontSize: '18px', color: 'var(--color-primary)', fontWeight: 600, marginBottom: '8px', lineHeight: 1.4 }}>
                 {member.status}
               </div>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
+              <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, marginBottom: '24px' }}>
                 {member.shortDescription}
-              </p>
+              </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '24px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '32px' }}>
                 {member.facts.map((fact, i) => (
                   <div key={i} style={{ 
                     paddingLeft: '16px', 
-                    borderLeft: '2px solid rgba(193, 160, 102, 0.5)', 
+                    borderLeft: '3px solid var(--color-gold)', 
                     fontSize: '15px', 
                     color: 'var(--color-deep-blue)', 
-                    lineHeight: 1.5 
-                  }} dangerouslySetInnerHTML={{ __html: fact }} />
+                    lineHeight: 1.4,
+                    fontWeight: 500
+                  }}>
+                    {fact}
+                  </div>
                 ))}
               </div>
 
@@ -157,7 +165,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={member.image} 
-                  alt={member.name}
+                  alt={`${member.name} — адвокат, партнёр ЮК «Де-Юре»`}
                   style={{ width: '100%', height: '520px', objectFit: 'cover', objectPosition: 'center 35%', display: 'block', filter: 'brightness(1.05)' }}
                 />
               </div>
@@ -243,12 +251,11 @@ export default async function TeamMemberPage({ params }: PageProps) {
             </div>
           )}
 
-
         </div>
       </section>
       </div> {/* End Shared Wrapper 1-4 */}
 
-      {/* 5. Cases (Moved before Process) */}
+      {/* 5. Cases */}
       {member.cases && member.cases.length > 0 && (
         <section className="section" style={{ background: 'var(--color-white)' }}>
           <div className="container">
@@ -308,6 +315,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       {/* 6. Process Steps */}
       <ProcessBlock 
         title="Как проходит работа по делу"
+        subtitle="Каждая юридическая ситуация требует отдельной стратегии, но работа по делу строится последовательно: от первичной оценки и анализа документов до защиты интересов доверителя и контроля результата."
         steps={member.process.map(s => ({
           num: s.step.replace(/^0+/, ''),
           title: s.title,
@@ -317,7 +325,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
       />
 
       {/* 8. CTA Form */}
-      <section className="section bg-cream" id="form" style={{ scrollMarginTop: '120px' }}>
+      <section className="section bg-cream" id="consultation" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
@@ -352,7 +360,7 @@ export default async function TeamMemberPage({ params }: PageProps) {
                 subtitle="" 
                 hiddenFields={[
                   { name: 'specialist', value: member.name },
-                  { name: 'page_url', value: `/team/${member.slug}` }
+                  { name: 'page_url', value: `/specialisty/${member.slug}/` }
                 ]}
               />
             </div>
