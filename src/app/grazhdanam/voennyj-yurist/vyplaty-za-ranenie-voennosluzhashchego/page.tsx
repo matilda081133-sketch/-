@@ -413,8 +413,7 @@ export default function VyplatyRaneniePage() {
           {
             title: 'Досудебная работа',
             subtitle: 'Запросы и жалобы',
-            popular: true,
-            badgeText: '',
+            popular: false,
             price: 'ХХХ ₽',
             features: [
               { name: 'Подготовка адвокатских запросов', value: '✓' },

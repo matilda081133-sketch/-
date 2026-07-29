@@ -430,7 +430,7 @@ export default function SochPage() {
             title: 'Разовые действия',
             subtitle: 'Оценка и отдельные действия',
             popular: false,
-            price: 'по согласованию',
+            price: 'ХХХ ₽',
             features: [
               { name: 'Изучение документов', value: '✓' },
               { name: 'Определение формата помощи', value: '✓' },
@@ -441,8 +441,8 @@ export default function SochPage() {
           {
             title: 'Защита на следствии',
             subtitle: 'Предварительное расследование',
-            popular: true,
-            price: 'по согласованию',
+            popular: false,
+            price: 'ХХХ ₽',
             features: [
               { name: 'Составление плана защиты', value: '✓' },
               { name: 'Участие в следственных действиях', value: '✓' },
@@ -454,7 +454,7 @@ export default function SochPage() {
             title: 'Защита в суде',
             subtitle: 'Судебное разбирательство',
             popular: false,
-            price: 'по согласованию',
+            price: 'ХХХ ₽',
             features: [
               { name: 'Ознакомление с делом', value: '✓' },
               { name: 'Подготовка к заседаниям', value: '✓' },
