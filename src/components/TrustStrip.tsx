@@ -25,7 +25,7 @@ export default function TrustStrip({ items }: { items: TrustItem[] }) {
       <div style={{ 
         display: 'flex', 
         gap: '20px', 
-        marginTop: '40px',
+        marginTop: '24px',
         flexWrap: 'wrap'
       }}>
         {items.map((bullet, i) => (
