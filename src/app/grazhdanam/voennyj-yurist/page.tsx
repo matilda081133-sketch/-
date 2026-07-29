@@ -139,8 +139,8 @@ export default function VoennyjYuristPage() {
             Когда юридическая помощь нужна срочно
           </h2>
           <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '620px', lineHeight: 1.6, textWrap: 'balance' }}>
-            Типичные ситуации, в которых важно подключить специалиста<br />как можно раньше.
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '620px', lineHeight: 1.6 }}>
+            Типичные ситуации, в которых важно<br />подключить специалиста как можно раньше.
           </p>
 
           <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
