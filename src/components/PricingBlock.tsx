@@ -8,7 +8,7 @@ export interface PricingFeature {
 
 export interface PricingTier {
   title: string;
-  subtitle: string;
+  subtitle: string | React.ReactNode;
   popular?: boolean;
   badgeText?: string;
   price?: string;
