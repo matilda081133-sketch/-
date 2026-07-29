@@ -178,68 +178,85 @@ export default function ContactsPage() {
             </h2>
             
             <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.3fr) minmax(0, 1fr)', gap: '40px', alignItems: 'stretch' }}>
-              {/* Инструкция (40-45%) */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', order: 2 }}>
+              {/* Единая карточка информации о здании и маршруте (40-45%) */}
+              <div style={{ display: 'flex', flexDirection: 'column', order: 2 }}>
                 
-                {/* Краткие данные (Оформленная карточка) */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', background: 'var(--color-white)', padding: '32px', borderRadius: '4px', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.08)', borderTop: '4px solid var(--color-gold)' }}>
-                  <div style={{ gridColumn: '1 / -1', marginBottom: '8px' }}>
-                    <div style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-                      </svg>
-                      Информация о здании
+                <div style={{ 
+                  background: 'var(--color-white)', 
+                  padding: '36px', 
+                  borderRadius: '4px', 
+                  boxShadow: '0 10px 30px rgba(23, 50, 77, 0.08)', 
+                  borderTop: '4px solid var(--color-gold)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '24px'
+                }}>
+                  {/* Заголовок карточки */}
+                  <div style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="square">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Информация о здании
+                  </div>
+
+                  {/* Характеристики здания */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+                    <div style={{ gridColumn: '1 / -1' }}>
+                      <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Адрес</div>
+                      <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 600 }}>г. Липецк, ул. Советская, д.&nbsp;35, офис 213</div>
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Пропускной режим</div>
+                      <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>Нет</div>
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Этаж</div>
+                      <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>2-й</div>
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Лифт</div>
+                      <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>Нет</div>
+                    </div>
+                    <div style={{ gridColumn: '1 / -1' }}>
+                      <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Ближайшая остановка</div>
+                      <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>«Улица Горького», до 1 минуты пешком</div>
                     </div>
                   </div>
-                  <div style={{ gridColumn: '1 / -1' }}>
-                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Адрес</div>
-                    <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>г. Липецк, ул. Советская, д.&nbsp;35, офис 213</div>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Пропускной режим</div>
-                    <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>Нет</div>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Этаж</div>
-                    <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>2-й</div>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Лифт</div>
-                    <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>Нет</div>
-                  </div>
-                  <div style={{ gridColumn: '1 / -1' }}>
-                    <div style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Ближайшая остановка</div>
-                    <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>«Улица Горького», до 1 минуты пешком</div>
-                  </div>
-                </div>
 
-                {/* Инструкция */}
-                {/* Инструкция */}
-                <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: '20px', flex: 1 }}>
-                  <div>
-                    <h3 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 4px 0', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Вход в здание</h3>
-                    <p style={{ margin: 0 }}>
-                      Войти можно через любой из двух общих входов, расположенных со стороны улицы Советской в правой и левой частях фасада. Отдельного входа нет.
-                    </p>
+                  {/* Разделитель */}
+                  <div style={{ borderTop: '1px solid rgba(23, 50, 77, 0.08)' }}></div>
+
+                  {/* Текстовые инструкции по входу и парковке */}
+                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <div>
+                      <h3 style={{ fontSize: '15px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Вход в здание</h3>
+                      <p style={{ margin: 0 }}>
+                        Войти можно через любой из двух общих входов, расположенных со стороны улицы Советской в правой и левой частях фасада. Отдельного входа нет.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 style={{ fontSize: '15px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Как найти офис</h3>
+                      <p style={{ margin: 0 }}>
+                        Если вы вошли через правый вход, поднимитесь по лестнице и поверните в коридоре направо. Если вошли через левый вход — поднимитесь и поверните налево.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 style={{ fontSize: '15px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>От остановки</h3>
+                      <p style={{ margin: 0 }}>
+                        От остановки «Улица Горького» до здания идти не более одной минуты. В зависимости от стороны, с которой вы приехали, потребуется перейти одну или две дороги.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 style={{ fontSize: '15px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Где припарковаться</h3>
+                      <p style={{ margin: 0 }}>
+                        Непосредственно у здания парковки нет. Автомобиль можно оставить на стоянке напротив здания через дорогу на улице Советской либо на стоянке немного дальше, на улице Горького.
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 4px 0', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Как найти офис</h3>
-                    <p style={{ margin: 0 }}>
-                      Если вы вошли через правый вход, поднимитесь по лестнице и поверните в коридоре направо. Если вошли через левый вход — поднимитесь и поверните налево.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 4px 0', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>От остановки</h3>
-                    <p style={{ margin: 0 }}>
-                      От остановки «Улица Горького» до здания идти не более одной минуты. В зависимости от стороны, с которой вы приехали, потребуется перейти одну или две дороги.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 4px 0', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Где припарковаться</h3>
-                    <p style={{ margin: 0 }}>
-                      Непосредственно у здания парковки нет. Автомобиль можно оставить на стоянке напротив здания через дорогу на улице Советской либо на стоянке немного дальше, на улице Горького.
-                    </p>
-                  </div>
+                  
                 </div>
                 
               </div>
