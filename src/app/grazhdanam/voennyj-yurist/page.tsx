@@ -402,27 +402,27 @@ export default function MilitaryLawyerHub() {
             Ниже — типичные ситуации, в которых откладывать обращение за юридической помощью опасно. Чем раньше подключится профильный специалист, тем больше возможностей для защиты ваших прав.
           </p>
           <div className="grid grid-3" style={{ gap: '24px' }}>
-            <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+            <div style={{ padding: '24px', borderLeft: '4px solid #B08D57', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9534F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
                 <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0 }}>Военнослужащего задержали</h4>
               </div>
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                 Уточните фактическое место нахождения, время и предполагаемую причину задержания. Не передавайте непроверенные сведения от имени задержанного. Свяжитесь с адвокатом.
               </p>
             </div>
-            <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+            <div style={{ padding: '24px', borderLeft: '4px solid #B08D57', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9534F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
                 <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0 }}>Возбуждено дело или вызывают на допрос</h4>
               </div>
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                 До объяснений и подписания документов согласуйте позицию с адвокатом. Сохраните повестку, постановление и иные полученные документы.
               </p>
             </div>
-            <div style={{ padding: '24px', borderLeft: '4px solid #D9534F', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+            <div style={{ padding: '24px', borderLeft: '4px solid #B08D57', background: 'var(--color-white)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9534F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
                 <h4 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0 }}>Военнослужащий не выходит на связь</h4>
               </div>
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
