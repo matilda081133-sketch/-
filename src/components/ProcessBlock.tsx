@@ -122,7 +122,8 @@ export default function ProcessBlock({
             <div className="process-cta-banner" style={{ 
               marginTop: '40px', 
               background: 'var(--color-deep-blue)', 
-              padding: '24px 32px',
+              padding: '38px 40px',
+              minHeight: '120px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',

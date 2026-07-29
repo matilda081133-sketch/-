@@ -16,387 +16,351 @@ export default function Home() {
     <main>
       <Header />
 
- {/* 1. HERO */}
- <section style={{ 
- position: 'relative', 
- minHeight: '85vh', 
- display: 'flex', 
- alignItems: 'center',
- paddingTop: '160px',
- background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
- overflow: 'hidden'
- }}>
- {/* Decorative circle */}
- <div style={{
- position: 'absolute', top: '-10%', right: '-5%', width: '600px', height: '600px',
- background: 'radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)',
- borderRadius: '50%', zIndex: 0
- }} />
- 
- <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
- <div className="" style={{ padding: '40px 0', maxWidth: '800px' }}>
- <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
- <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
- <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#9B7E55' }}>
- Юридическая компания в Липецке
- </span>
- </div>
- <h1 style={{ 
- marginBottom: '24px', 
- lineHeight: '1.2', 
- whiteSpace: 'pre', 
- fontSize: 'clamp(36px, 4vw, 64px)',
- fontFamily: 'var(--font-serif)',
- color: 'var(--color-deep-blue)'
- }}>
- {`Юридическая помощь\nгражданам и бизнесу\nв Липецке`}
- </h1>
- <p style={{ 
- fontSize: '20px', 
- color: 'var(--color-text-secondary)', 
- marginBottom: '30px', 
- maxWidth: '600px', 
- lineHeight: 1.6 
- }}>
- Подключаем специалиста с опытом именно в вашей категории дел — от оценки ситуации до защиты интересов в суде.
- </p>
- 
- <div className="flex gap-4" style={{ marginBottom: '40px' }}>
- <a href="#consultation" className="btn">Обсудить ситуацию</a>
- <a href="#services" className="btn btn-outline">Выбрать направление</a>
- </div>
+      {/* 1. HERO */}
+      <section style={{ 
+        position: 'relative', 
+        minHeight: '85vh', 
+        display: 'flex', 
+        alignItems: 'center',
+        paddingTop: '160px',
+        paddingBottom: '80px',
+        background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
+        overflow: 'hidden'
+      }}>
+        {/* Decorative circle */}
+        <div style={{
+          position: 'absolute', top: '-10%', right: '-5%', width: '600px', height: '600px',
+          background: 'radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)',
+          borderRadius: '50%', zIndex: 0
+        }} />
 
- {/* Hero USPs Row */}
- <div  style={{ 
- display: 'flex', 
- gap: '20px', 
- marginTop: '50px' 
- }}>
- {[
- { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
- text: 'Юристы и адвокаты под профиль вашего дела' },
- { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
- text: 'Опыт изнутри системы: СК, ФССП, госорганы' },
- { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
- text: 'Честный договор: фиксируем план работ и цены' }
- ].map((bullet, i) => (
- <div key={i} style={{ 
- flex: 1,
- display: 'flex', 
- alignItems: 'center', 
- gap: '16px',
- background: 'rgba(255, 255, 255, 0.7)',
- backdropFilter: 'blur(10px)',
- border: '1px solid rgba(255, 255, 255, 0.9)',
- padding: '20px 24px',
- boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)'
- }}>
- <div style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{bullet.value}</div>
- <div style={{ color: 'var(--color-deep-blue)', fontSize: '13px', fontWeight: 600, lineHeight: 1.4 }}>
- {bullet.text}
- </div>
- </div>
- ))}
- </div>
- </div>
- 
- <div  style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
- {/* Darkening gradient under the creative to highlight the background graphic */}
- <div style={{
- position: 'absolute',
- top: '50%',
- left: '50%',
- transform: 'translate(-50%, -50%)',
- width: '150%',
- height: '150%',
- background: 'radial-gradient(circle, rgba(23, 50, 77, 0.12) 0%, rgba(23, 50, 77, 0.05) 30%, transparent 60%)',
- zIndex: 0,
- pointerEvents: 'none'
- }} />
- {/* Background Graphic: Courthouse (Centered behind mockup, shifted right) */}
- <svg style={{ position: 'absolute', top: '35%', left: '100%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.08, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
- <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
- </svg>
+        <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div style={{ padding: '40px 0', maxWidth: '800px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+              <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#9B7E55' }}>
+                Юридическая компания в Липецке
+              </span>
+            </div>
 
- {/* INTERACTIVE ANIMATED CSS MOCKUP */}
- <div className="mockup-container" style={{ zIndex: 1 }}>
- {/* Background decorative glows */}
- <div style={{ position: 'absolute', width: '250px', height: '250px', background: 'var(--color-primary)', filter: 'blur(100px)', opacity: 0.15, borderRadius: '50%' }}></div>
- 
- {/* Document 4 (Back) */}
- <div className="doc-wrapper-float-4">
- <div className="doc-sheet doc-sheet-4">
- <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
- <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
- <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
- <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
- <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- </div>
- </div>
- <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
- <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
- <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- </div>
- </div>
- </div>
- </div>
+            <h1 style={{ 
+              marginBottom: '24px', 
+              lineHeight: '1.2', 
+              fontSize: 'clamp(36px, 4vw, 64px)',
+              fontFamily: 'var(--font-serif)',
+              color: 'var(--color-deep-blue)'
+            }}>
+              Юридическая помощь<br />гражданам и бизнесу<br />в Липецке
+            </h1>
+            
+            <p style={{ 
+              fontSize: '18px', 
+              color: 'var(--color-text-secondary)', 
+              marginBottom: '40px', 
+              maxWidth: '750px', 
+              lineHeight: 1.6 
+            }}>
+              Подключаем специалиста с опытом именно в вашей категории дел —<br />
+              от оценки ситуации<br />
+              до защиты интересов в суде.
+            </p>
+            
+            <div className="flex gap-4" style={{ marginBottom: '40px' }}>
+              <a href="#consultation" className="btn">Обсудить ситуацию</a>
+              <a href="#services" className="btn btn-outline">Выбрать направление</a>
+            </div>
 
- {/* Document 3 */}
- <div className="doc-wrapper-float-3">
- <div className="doc-sheet doc-sheet-3">
- <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
- <div style={{ position: 'absolute', top: '30px', left: '30px', width: '70px', height: '30px', border: '2px solid rgba(23, 50, 77, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}></div>
- <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
- <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
- <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
- <div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- </div>
- </div>
- <div style={{ width: '140px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
- <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
- <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- </div>
- </div>
- </div>
- </div>
+            {/* Hero USPs Row */}
+            <div style={{ 
+              display: 'flex', 
+              gap: '20px', 
+              marginTop: '50px' 
+            }}>
+              {[
+                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
+                  text: 'Юристы и адвокаты под профиль вашего дела' },
+                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
+                  text: 'Опыт изнутри системы: СК, ФССП, госорганы' },
+                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
+                  text: 'Честный договор: фиксируем план работ и цены' }
+              ].map((bullet, i) => (
+                <div key={i} className="hero-bullet-card" style={{ 
+                  flex: 1,
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '16px',
+                  background: 'rgba(255, 255, 255, 0.85)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.9)',
+                  padding: '20px 24px',
+                  boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'default'
+                }}>
+                  <div className="bullet-icon" style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'transform 0.3s' }}>{bullet.value}</div>
+                  <div style={{ color: 'var(--color-deep-blue)', fontSize: '13px', fontWeight: 600, lineHeight: 1.4 }}>
+                    {bullet.text}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
- {/* Document 2 */}
- <div className="doc-wrapper-float-2">
- <div className="doc-sheet doc-sheet-2">
- <div style={{ padding: '30px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
- {/* Stamp at top left */}
- <div style={{ position: 'absolute', top: '25px', left: '25px', width: '80px', height: '35px', border: '1px solid #C8A97E', color: '#C8A97E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)', opacity: 0.9 }}>
- <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold' }}>
- ПРИЛОЖЕНИЕ №1<br/>
- К ДОГОВОРУ № 14/2026
- </div>
- </div>
+          <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+            <div style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '150%',
+              height: '150%',
+              background: 'radial-gradient(circle, rgba(23, 50, 77, 0.12) 0%, rgba(23, 50, 77, 0.05) 30%, transparent 60%)',
+              zIndex: 0,
+              pointerEvents: 'none'
+            }} />
+            
+            <svg style={{ position: 'absolute', top: '35%', left: '100%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.08, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
+              <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
+            </svg>
 
- {/* Header */}
- <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '30px' }}>
- <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
- <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
- <div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- </div>
- </div>
+            {/* INTERACTIVE ANIMATED CSS MOCKUP */}
+            <div className="mockup-container" style={{ zIndex: 1 }}>
+              <div style={{ position: 'absolute', width: '250px', height: '250px', background: 'var(--color-primary)', filter: 'blur(100px)', opacity: 0.15, borderRadius: '50%' }}></div>
+              
+              <div className="doc-wrapper-float-4">
+                <div className="doc-sheet doc-sheet-4">
+                  <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+                    <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
+                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
- {/* Title */}
- <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 20px auto' }}></div>
+              <div className="doc-wrapper-float-3">
+                <div className="doc-sheet doc-sheet-3">
+                  <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '30px', left: '30px', width: '70px', height: '30px', border: '2px solid rgba(23, 50, 77, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}></div>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+                    <div style={{ width: '140px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
+                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
- {/* Solid text blocks */}
- <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
- <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
- <div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
- <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- </div>
- <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
- <div style={{ width: '50%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
- <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '80%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- </div>
- </div>
+              <div className="doc-wrapper-float-2">
+                <div className="doc-sheet doc-sheet-2">
+                  <div style={{ padding: '30px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '80px', height: '35px', border: '1px solid #C8A97E', color: '#C8A97E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)', opacity: 0.9 }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold' }}>
+                        ПРИЛОЖЕНИЕ №1<br/>
+                        К ДОГОВОРУ № 14/2026
+                      </div>
+                    </div>
 
- {/* Footer grid */}
- <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px dashed rgba(23,50,77,0.1)' }}>
- <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
- <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)', fontFamily: 'var(--font-sans)' }}>Заказчик:</div>
- <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
- </div>
- <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
- <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)', fontFamily: 'var(--font-sans)' }}>Исполнитель:</div>
- <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
- </div>
- </div>
- </div>
- </div>
- </div>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '30px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
 
- {/* Document 1 (Front) */}
- <div className="doc-wrapper-float-1">
- <div className="doc-sheet doc-sheet-1">
- <div style={{ padding: '30px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
- {/* Watermark Logo */}
- <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.03, width: '150px' }}>
- <img src="images/logo_dark.png" alt="" style={{ width: '100%', height: 'auto' }} />
- </div>
- 
- {/* Header */}
- <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '12px', marginBottom: '20px' }}>
- <img src="images/logo_dark.png" alt="" style={{ width: '60px', height: 'auto', opacity: 0.8 }} />
- <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
- <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
- <div style={{ width: '50px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- </div>
- </div>
+                    <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 20px auto' }}></div>
 
- {/* Title */}
- <div style={{ width: '120px', height: '8px', background: 'var(--color-deep-blue)', margin: '0 auto 20px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        <div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        <div style={{ width: '50%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '80%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
 
- {/* Clauses / Abstract Lines */}
- <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '16px' }}>
- <div style={{ display: 'flex', gap: '8px' }}>
- <div style={{ width: '12px', height: '4px', background: 'var(--color-primary)' }}></div>
- <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
- <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- </div>
- </div>
- <div style={{ display: 'flex', gap: '8px' }}>
- <div style={{ width: '12px', height: '4px', background: 'var(--color-primary)' }}></div>
- <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
- <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '75%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- </div>
- </div>
- <div style={{ display: 'flex', gap: '8px' }}>
- <div style={{ width: '12px', height: '4px', background: 'var(--color-primary)' }}></div>
- <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
- <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- <div style={{ width: '60%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
- </div>
- </div>
- </div>
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px dashed rgba(23,50,77,0.1)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)', fontFamily: 'var(--font-sans)' }}>Заказчик:</div>
+                        <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)', fontFamily: 'var(--font-sans)' }}>Исполнитель:</div>
+                        <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
- {/* Signatures */}
- <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px dashed rgba(23,50,77,0.1)' }}>
- <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
- <div style={{ width: '40px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
- <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
- <div style={{ width: '50px', height: '2px', background: 'rgba(23,50,77,0.1)', margin: '0 auto' }}></div>
- </div>
- <div className="animated-seal" style={{ width: '60px', height: '60px', borderRadius: '50%', border: '1px solid #9B7E55', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', transform: 'rotate(-15deg)' }}>
- <div style={{ width: '50px', height: '50px', borderRadius: '50%', border: '1px dashed #9B7E55', background: 'rgba(155, 126, 85, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
- <img src="images/logo_dark.png" alt="" style={{ width: '30px', opacity: 0.3, filter: 'sepia(1) hue-rotate(340deg) saturate(3)' }} />
- </div>
- <div style={{ position: 'absolute', width: '100%', height: '100%', borderRadius: '50%', border: '1px solid rgba(155, 126, 85, 0.2)' }}></div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </section>
+              <div className="doc-wrapper-float-1">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '30px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.03, width: '150px' }}>
+                      <img src="images/logo_dark.png" alt="" style={{ width: '100%', height: 'auto' }} />
+                    </div>
+                    
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '12px', marginBottom: '20px' }}>
+                      <img src="images/logo_dark.png" alt="" style={{ width: '60px', height: 'auto', opacity: 0.8 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
 
- {/* 2. PRIORITIES */}
- <div id="services">
- <ServicesTabs />
- </div>
+                    <div style={{ width: '120px', height: '8px', background: 'var(--color-deep-blue)', margin: '0 auto 20px auto' }}></div>
 
- {/* 3. WHY US / USP */}
- <section className="section" style={{ 
- background: 'var(--gradient-light)',
- backgroundImage: 'url(/images/organic-pattern.svg)', 
- backgroundSize: 'cover',
- backgroundPosition: 'center',
- backgroundRepeat: 'no-repeat',
- padding: '60px 0', 
- borderTop: '1px solid var(--color-border)', 
- borderBottom: '1px solid var(--color-border)',
- position: 'relative',
- overflow: 'hidden'
- }}>
- {/* Background Graphic: Shield */}
- <svg style={{ position: 'absolute', top: '-5%', left: '2%', width: '400px', height: '400px', opacity: 0.02, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.5">
- <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
- <path d="M9 12l2 2 4-4"/>
- </svg>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '16px' }}>
+                      <div style={{ display: 'flex', gap: '8px' }}>
+                        <div style={{ width: '12px', height: '4px', background: 'var(--color-primary)' }}></div>
+                        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                          <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                          <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                          <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        </div>
+                      </div>
+                    </div>
 
- <div className="container" style={{ position: 'relative', zIndex: 1 }}>
- <h2 className="" style={{ 
- marginTop: 0, 
- marginBottom: '60px', 
- fontSize: '42px', 
- fontFamily: 'var(--font-serif)', 
- color: 'var(--color-deep-blue)',
- textAlign: 'left'
- }}>
- Почему мы?
- </h2>
- 
- <div style={{ 
- display: 'grid', 
- gridTemplateColumns: 'repeat(3, 1fr)', 
- borderTop: '1px solid var(--color-primary)', 
- borderLeft: '1px solid rgba(23, 50, 77, 0.1)',
- borderBottom: '1px solid rgba(23, 50, 77, 0.1)'
- }}>
- 
- {[
- {
- num: "01",
- tag: "Специализация",
- title: "Подбираем специалиста под категорию дела",
- desc: "Земельный спор передаем юристу по земельному праву, уголовное дело — адвокату. Если задача затрагивает несколько отраслей, определяем состав команды после первичного разбора."
- },
- {
- num: "02",
- tag: "Командная работа",
- title: "Подключаем адвоката, когда этого требует дело",
- desc: "В уголовных делах и других ситуациях, где необходим статус адвоката, к работе подключается специалист с действующим адвокатским статусом. Дополнительных экспертов привлекаем после согласования с клиентом."
- },
- {
- num: "03",
- tag: "Анализ",
- title: "Варианты и риски до начала основных работ",
- desc: "На первой встрече уточняем обстоятельства и изучаем доступные документы. Если требуется отдельный углубленный анализ, заранее согласовываем его объем и стоимость."
- },
- {
- num: "04",
- tag: "Сопровождение",
- title: "Берем на себя согласованные этапы",
- desc: "Подготовка документов, переговоры, обращения в государственные органы, суд и исполнительное производство включаются в работу в зависимости от задачи и фиксируются в договоре."
- },
- {
- num: "05",
- tag: "Региональная практика",
- title: "Офис в центре Липецка",
- desc: "Принимаем по адресу: г. Липецк, ул. Советская, д. 35, офис 213. Возможность дистанционной работы определяется характером дела."
- },
- {
- num: "06",
- tag: "Понятные условия",
- title: "Состав работ и порядок оплаты — в договоре",
- desc: "До начала основных работ фиксируем, какие действия выполняет специалист, как рассчитывается стоимость и какие расходы оплачиваются отдельно."
- }
- ].map((item, i) => (
- <div key={i} className="usp-card" style={{ 
- padding: '40px', 
- borderRight: '1px solid rgba(23, 50, 77, 0.1)',
- borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
- background: 'rgba(255, 255, 255, 0.85)',
- backdropFilter: 'blur(12px)',
- position: 'relative'
- }}>
- <div className="usp-accent"></div>
- <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
- {item.tag}
- </div>
- <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
- {item.title}
- </h3>
- <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1 }}>
- {item.desc}
- </p>
- </div>
- ))}
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px solid rgba(23,50,77,0.2)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        <div style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ООО «ДЕДЮРЕ»</div>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>ИНН 4826145890</div>
+                      </div>
+                      <div style={{ position: 'relative', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ width: '45px', height: '45px', borderRadius: '50%', border: '1.5px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-15deg)', opacity: 0.85 }}>
+                          <div style={{ width: '37px', height: '37px', borderRadius: '50%', border: '0.5px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <span style={{ fontSize: '4px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.1 }}>
+                              ДЕДЮРЕ<br/>ЛИПЕЦК
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
- </div>
- </div>
- </section>
+      {/* 2. SERVICES TABS */}
+      <div id="services">
+        <ServicesTabs />
+      </div>
 
-       {/* 4. КАК МЫ РАБОТАЕМ */}
+      {/* 3. USP SECTION */}
+      <section className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-cream)' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+            <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+            <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
+              Преимущества
+            </span>
+          </div>
+          
+          <h2 style={{ 
+            marginBottom: '40px', 
+            fontSize: '42px', 
+            fontFamily: 'var(--font-serif)', 
+            color: 'var(--color-deep-blue)',
+            textAlign: 'left'
+          }}>
+            Почему мы?
+          </h2>
+          
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(3, 1fr)', 
+            borderTop: '1px solid var(--color-primary)', 
+            borderLeft: '1px solid rgba(23, 50, 77, 0.1)',
+            borderBottom: '1px solid rgba(23, 50, 77, 0.1)'
+          }}>
+            {[
+              {
+                num: "01",
+                tag: "Специализация",
+                title: "Подбираем специалиста под категорию дела",
+                desc: "Земельный спор передаем юристу по земельному праву, уголовное дело — адвокату. Если задача затрагивает несколько отраслей, определяем состав команды после первичного разбора."
+              },
+              {
+                num: "02",
+                tag: "Командная работа",
+                title: "Подключаем адвоката, когда этого требует дело",
+                desc: "В уголовных делах и других ситуациях, где необходим статус адвоката, к работе подключается специалист с действующим адвокатским статусом. Дополнительных экспертов привлекаем после согласования с клиентом."
+              },
+              {
+                num: "03",
+                tag: "Анализ",
+                title: "Варианты и риски до начала основных работ",
+                desc: "На первой встрече уточняем обстоятельства и изучаем доступные документы. Если требуется отдельный углубленный анализ, заранее согласовываем его объем и стоимость."
+              },
+              {
+                num: "04",
+                tag: "Сопровождение",
+                title: "Берем на себя согласованные этапы",
+                desc: "Подготовка документов, переговоры, обращения в государственные органы, суд и исполнительное производство включаются в работу в зависимости от задачи и фиксируются в договоре."
+              },
+              {
+                num: "05",
+                tag: "Региональная практика",
+                title: "Офис в центре Липецка",
+                desc: "Принимаем по адресу: г. Липецк, ул. Советская, д. 35, офис 213. Возможность дистанционной работы определяется характером дела."
+              },
+              {
+                num: "06",
+                tag: "Понятные условия",
+                title: "Состав работ и порядок оплаты — в договоре",
+                desc: "До начала основных работ фиксируем, какие действия выполняет специалист, как рассчитывается стоимость и какие расходы оплачиваются отдельно."
+              }
+            ].map((item, i) => (
+              <div key={i} className="usp-card" style={{ 
+                padding: '40px', 
+                borderRight: '1px solid rgba(23, 50, 77, 0.1)',
+                borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
+                background: 'rgba(255, 255, 255, 0.85)',
+                backdropFilter: 'blur(12px)',
+                position: 'relative'
+              }}>
+                <div className="usp-accent"></div>
+                <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
+                  {item.tag}
+                </div>
+                <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
+                  {item.title}
+                </h3>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1 }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. КАК МЫ РАБОТАЕМ */}
       <ProcessBlock 
         steps={[
           { num: '01', title: 'Первичное обращение', desc: 'Уточняем суть вопроса, запрашиваем необходимые документы и определяем профильного специалиста.' },
@@ -408,7 +372,7 @@ export default function Home() {
       {/* 5. TEAM */}
       <TeamCarousel />
 
-       {/* 6. CASES */}
+      {/* 6. CASES */}
       <CasesBlock 
         cases={[
           {
@@ -491,6 +455,17 @@ export default function Home() {
 
       {/* 11. FOOTER */}
       <Footer />
+      <style dangerouslySetInnerHTML={{__html: `
+        .hero-bullet-card:hover {
+          transform: translateY(-6px);
+          background: #FFFFFF !important;
+          border-color: var(--color-primary) !important;
+          box-shadow: 0 20px 40px rgba(23, 50, 77, 0.12) !important;
+        }
+        .hero-bullet-card:hover .bullet-icon {
+          transform: scale(1.15);
+        }
+      `}} />
     </main>
   );
 }

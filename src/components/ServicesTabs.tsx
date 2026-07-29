@@ -121,11 +121,24 @@ export default function ServicesTabs() {
         </div>
 
         {/* Footer dynamic button */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '24px 30px', background: 'var(--color-white)', border: '1px solid var(--color-border)' }}>
-          <span style={{ fontSize: '16px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Не нашли нужное направление?</span>
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center', 
+          padding: '28px 36px', 
+          background: 'var(--color-deep-blue)', 
+          border: 'none',
+          boxShadow: '0 10px 24px rgba(11, 28, 42, 0.25)',
+          flexWrap: 'wrap',
+          gap: '16px'
+        }}>
+          <span style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-white)', fontFamily: 'var(--font-serif)' }}>
+            Не нашли нужное направление?
+          </span>
           <Link 
             href={activeTab === 'b2c' ? '/grazhdanam/' : '/biznesu/'} 
-            className="btn btn-outline"
+            className="btn btn-light"
+            style={{ whiteSpace: 'nowrap' }}
           >
             {activeTab === 'b2c' ? 'Все услуги гражданам' : 'Все услуги бизнесу'}
           </Link>
