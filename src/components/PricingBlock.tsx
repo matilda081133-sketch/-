@@ -12,6 +12,8 @@ export interface PricingTier {
   popular?: boolean;
   price?: string;
   features: PricingFeature[];
+  buttonText?: string;
+  buttonHref?: string;
 }
 
 interface PricingBlockProps {
@@ -164,12 +166,12 @@ export default function PricingBlock({
                 ))}
               </ul>
 
-              <a href="#consultation" className={`btn ${tier.popular ? 'btn-popular' : 'btn-regular'}`} style={{ 
+              <a href={tier.buttonHref || "#form"} className={`btn ${tier.popular ? 'btn-popular' : 'btn-regular'}`} style={{ 
                 width: '100%', 
                 textAlign: 'center',
                 borderRadius: '0'
               }}>
-                Узнать точную стоимость
+                {tier.buttonText || 'Узнать точную стоимость'}
               </a>
             </div>
           ))}

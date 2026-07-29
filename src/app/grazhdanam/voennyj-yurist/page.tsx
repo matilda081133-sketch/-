@@ -115,7 +115,14 @@ export default function VoennyjYuristPage() {
         }
         superTitle="Помощь военнослужащим в Липецке и по России"
         title={<>Военный юрист <br />в Липецке</>}
-        subtitle="Защита по уголовным делам, оспаривание незаконных решений ВВК и призывных комиссий, помощь в получении положенных выплат для военнослужащих и членов их семей."
+        subtitle={
+          <>
+            Защита по уголовным делам,<br />
+            оспаривание незаконных решений ВВК и призывных комиссий,<br />
+            помощь в получении положенных выплат<br />
+            для военнослужащих и членов их семей.
+          </>
+        }
         primaryCtaText="Обсудить ситуацию"
         primaryCtaLink="#form"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
@@ -126,74 +133,182 @@ export default function VoennyjYuristPage() {
       />
 
       {/* ═══ 2. Когда юридическая помощь нужна срочно ═══ */}
-      <section style={{ background: 'var(--color-deep-blue)', padding: '56px 0 48px' }}>
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
-          <h2 style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '8px', marginTop: 0 }}>
+          <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
             Когда юридическая помощь нужна срочно
           </h2>
-          <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '16px' }}></div>
-          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', marginBottom: '40px', maxWidth: '600px', lineHeight: 1.6 }}>
-            Типичные ситуации, в которых важно подключить специалиста как можно раньше.
+          <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '620px', lineHeight: 1.6, textWrap: 'balance' }}>
+            Типичные ситуации, в которых важно подключить специалиста<br />как можно раньше.
           </p>
 
           <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
             {/* Карточка 1 */}
-            <div style={{ background: 'rgba(255,255,255,0.07)', padding: '28px', borderTop: '3px solid var(--color-gold)' }}>
-              <h4 style={{ fontSize: '18px', color: 'var(--color-white)', marginTop: 0, marginBottom: '12px' }}>Военнослужащего задержали</h4>
-              <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+            <div 
+              className="urgent-card"
+              style={{ 
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                padding: '32px 28px', 
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, marginBottom: '14px', lineHeight: 1.3 }}>
+                Военнослужащего задержали
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                 Важно установить его местонахождение и процессуальный статус и подключить адвоката до объяснений или допроса.
               </p>
             </div>
+
             {/* Карточка 2 */}
-            <div style={{ background: 'rgba(255,255,255,0.07)', padding: '28px', borderTop: '3px solid var(--color-gold)' }}>
-              <h4 style={{ fontSize: '18px', color: 'var(--color-white)', marginTop: 0, marginBottom: '12px' }}>Возбуждено уголовное дело или вызывают на допрос</h4>
-              <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+            <div 
+              className="urgent-card"
+              style={{ 
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                padding: '32px 28px', 
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, marginBottom: '14px', lineHeight: 1.3 }}>
+                Возбуждено уголовное дело или вызывают на допрос
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                 До явки нужно понять статус военнослужащего, изучить документы и определить позицию.
               </p>
             </div>
+
             {/* Карточка 3 */}
-            <div style={{ background: 'rgba(255,255,255,0.07)', padding: '28px', borderTop: '3px solid var(--color-gold)' }}>
-              <h4 style={{ fontSize: '18px', color: 'var(--color-white)', marginTop: 0, marginBottom: '12px' }}>Военнослужащий перестал выходить на связь</h4>
-              <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+            <div 
+              className="urgent-card"
+              style={{ 
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                padding: '32px 28px', 
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, marginBottom: '14px', lineHeight: 1.3 }}>
+                Военнослужащий перестал выходить на связь
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                 Нужно собрать сведения о части, последнем месте нахождения и официальном статусе, затем определить порядок обращений.
               </p>
             </div>
           </div>
 
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 16px 36px rgba(0,0,0,0.22) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              transition: all 0.3s ease !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              background: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.3s ease !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background: #C4A16E !important;
+              color: var(--color-deep-blue) !important;
+            }
+          `}} />
+
           {/* Зона связи */}
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" style={{ color: 'var(--color-white)', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
               +7 (910) 350-31-11
             </a>
-            <a href="tel:+79103503111" className="btn" style={{ background: 'var(--color-gold)', color: 'var(--color-deep-blue)', padding: '14px 28px', fontSize: '15px', fontWeight: 600, border: 'none' }} data-analytics="military_urgent_call_click">
+            <a href="tel:+79103503111" className="btn btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="military_urgent_call_click">
               Позвонить адвокату
             </a>
-            <a href="#form" className="btn btn-outline" style={{ color: 'var(--color-white)', borderColor: 'rgba(255,255,255,0.4)', padding: '14px 28px', fontSize: '15px' }}>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Описать ситуацию
             </a>
-            <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>Перезвоним в течение 15 минут в рабочее время</span>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
+              Перезвоним в течение 15 минут в рабочее время
+            </span>
           </div>
         </div>
       </section>
 
       {/* ═══ 3. В каких ситуациях мы можем помочь ═══ */}
-      <section className="section bg-white" id="situations">
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <h2 className="section-title" style={{ marginBottom: '40px' }}>В каких ситуациях мы можем помочь</h2>
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          <div style={{ maxWidth: '700px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              В каких ситуациях мы можем помочь
+            </h2>
+            <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              Комплексная защита прав военнослужащих, призывников и их семей. Поможем разобрать вашу ситуацию и выстроить правовую позицию.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '28px' }}>
             {situations.map((sit, i) => (
-              <div key={i} style={{
-                padding: '32px',
-                background: 'var(--color-white)',
+              <div key={i} className="hover-lift" style={{
+                padding: '36px 30px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                 border: '1px solid var(--color-border)',
-                boxShadow: '0 2px 8px rgba(23, 50, 77, 0.06)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '12px'
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
               }}>
-                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{sit.who}</div>
-                <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4 }}>{sit.situation}</div>
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, marginTop: 'auto' }}>{sit.help}</p>
+                {/* Vector watermark logo/icon */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="120" height="120" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                  </svg>
+                </div>
+
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start'
+                }}>
+                  {sit.who}
+                </div>
+
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                  {sit.situation}
+                </h3>
+
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, marginTop: 'auto', position: 'relative', zIndex: 1 }}>
+                  {sit.help}
+                </p>
               </div>
             ))}
           </div>
@@ -384,26 +499,10 @@ export default function VoennyjYuristPage() {
           { num: '02', title: 'Изучение документов', desc: 'Анализируем имеющиеся материалы. Документы можно передать лично или направить в электронном виде.' },
           { num: '03', title: 'План действий', desc: 'Оцениваем правовые основания, риски и предлагаем порядок защиты, обжалования или получения положенных выплат.' },
           { num: '04', title: 'Юридическая работа', desc: 'Готовим документы, обращения и жалобы; при необходимости участвуем в процессуальных действиях и представляем интересы клиента.' },
-          { num: '05', title: 'Информирование', desc: 'Сообщаем о ходе работы, объясняем результаты и заранее согласовываем дальнейшие действия.' }
+          { num: '05', title: 'Информирование', desc: 'Сообщаем о ходе работы, объясняем результаты и заранее согласовываем дальнейшие действия.' },
+          { num: '06', title: 'Дистанционный формат', desc: 'Значительную часть работы можно организовать дистанционно. Если требуется личное участие адвоката или юриста, заранее согласуем место и порядок работы.' }
         ]}
       />
-
-      {/* Плашка о дистанционной работе */}
-      <section style={{ background: 'var(--color-cream)', padding: '0 0 48px' }}>
-        <div className="container">
-          <div style={{ 
-            background: 'var(--color-white)', 
-            border: '1px solid var(--color-border)', 
-            borderLeft: '4px solid var(--color-primary)', 
-            padding: '24px 32px', 
-            fontSize: '15px', 
-            color: 'var(--color-text-secondary)', 
-            lineHeight: 1.6 
-          }}>
-            Значительную часть работы можно организовать дистанционно. Если требуется личное участие адвоката или юриста, заранее согласуем место и порядок работы.
-          </div>
-        </div>
-      </section>
 
       {/* ═══ 8. Стоимость юридической помощи ═══ */}
       <PricingBlock 
@@ -414,25 +513,41 @@ export default function VoennyjYuristPage() {
             title: 'Базовые услуги',
             subtitle: 'Первичный анализ и документы',
             popular: false,
+            price: 'по согласованию',
             features: [
-              { name: 'Консультация и анализ документов', value: 'от [УТОЧНИТЬ] ₽' },
-              { name: 'Подготовка заявления, рапорта или жалобы', value: 'от [УТОЧНИТЬ] ₽' }
-            ]
+              { name: 'Консультация и анализ документов', value: '✓' },
+              { name: 'Подготовка заявления, рапорта или жалобы', value: '✓' }
+            ],
+            buttonText: 'Узнать точную стоимость',
+            buttonHref: '#form'
           },
           {
             title: 'Ведение дела',
             subtitle: 'Комплексная защита',
             popular: true,
+            price: 'по согласованию',
             features: [
-              { name: 'Сопровождение спора', value: 'от [УТОЧНИТЬ] ₽' },
-              { name: <>Защита по <br/>уголовному делу</>, value: 'от [УТОЧНИТЬ] ₽' }
-            ]
+              { name: 'Сопровождение спора', value: '✓' },
+              { name: 'Защита по уголовному делу', value: '✓' }
+            ],
+            buttonText: 'Узнать точную стоимость',
+            buttonHref: '#form'
+          },
+          {
+            title: 'Не знаете, какой формат помощи потребуется?',
+            subtitle: 'Опишите ситуацию — мы определим необходимый объём работы и согласуем условия.',
+            popular: false,
+            price: 'Индивидуально',
+            features: [
+              { name: 'Первичная оценка рисков', value: '✓' },
+              { name: 'Определение состава работ', value: '✓' },
+              { name: 'Согласование формата', value: '✓' }
+            ],
+            buttonText: 'Описать ситуацию',
+            buttonHref: '#form'
           }
         ]}
-        ctaTitle="Не знаете, какой формат помощи потребуется?"
-        ctaSubtitle="Опишите ситуацию — мы определим необходимый объём работы и согласуем условия."
-        ctaButtonText="Описать ситуацию"
-        ctaButtonLink="#form"
+        ctaTitle=""
       />
 
       {/* ═══ 9. Ответы на частые вопросы ═══ */}

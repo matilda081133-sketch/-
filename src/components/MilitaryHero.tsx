@@ -94,17 +94,19 @@ export default function MilitaryHero({
                 {subtitle}
               </p>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px', marginBottom: urgentHint ? '32px' : '48px' }}>
-                <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '15px' }} data-analytics="military_hero_consultation_click">
-                  {primaryCtaText}
-                </a>
-                {secondaryCtaText && secondaryCtaLink && (
-                  <a href={secondaryCtaLink} className="btn btn-outline" style={{ padding: '16px 40px', fontSize: '15px' }}>
-                    {secondaryCtaText}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '12px', marginTop: '32px', marginBottom: urgentHint ? '32px' : '48px' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px' }}>
+                  <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '15px' }} data-analytics="military_hero_consultation_click">
+                    {primaryCtaText}
                   </a>
-                )}
+                  {secondaryCtaText && secondaryCtaLink && (
+                    <a href={secondaryCtaLink} className="btn btn-outline" style={{ padding: '16px 40px', fontSize: '15px' }}>
+                      {secondaryCtaText}
+                    </a>
+                  )}
+                </div>
                 {primaryCtaSubtext && (
-                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
+                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
                     {primaryCtaSubtext}
                   </div>
                 )}
