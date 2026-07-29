@@ -306,8 +306,8 @@ export default function VoennyjYuristPage() {
                 transition: 'all 0.3s ease'
               }}>
                 {/* Vector watermark logo/icon */}
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="120" height="120" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                <div style={{ position: 'absolute', bottom: '-8px', right: '-8px', opacity: 0.05, pointerEvents: 'none' }}>
+                  <svg width="75" height="75" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
                     <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
                   </svg>
                 </div>
