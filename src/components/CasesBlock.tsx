@@ -66,7 +66,7 @@ export default function CasesBlock({
         <div className="grid grid-3" style={{ gap: '30px' }}>
           {cases.map((caseItem, idx) => (
             <div key={idx} className="case-card group" style={{ 
-              padding: '40px', 
+              padding: '40px 36px 36px 36px', 
               border: '1px solid var(--color-border)', 
               borderRadius: '0', 
               display: 'flex', 
@@ -86,13 +86,15 @@ export default function CasesBlock({
                 background: 'var(--color-gold)',
                 transition: 'height 0.4s ease'
               }} className="case-accent-line"></div>
+              
               {caseItem.isDemo && (
-                <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(23, 50, 77, 0.05)', border: '1px solid rgba(23, 50, 77, 0.1)', color: 'var(--color-text-secondary)', padding: '4px 10px', fontSize: '11px', borderRadius: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>
+                <div style={{ position: 'absolute', top: '14px', right: '14px', background: 'rgba(23, 50, 77, 0.05)', border: '1px solid rgba(23, 50, 77, 0.12)', color: 'var(--color-text-secondary)', padding: '4px 10px', fontSize: '11px', borderRadius: '4px', fontWeight: 500, letterSpacing: '0.02em', zIndex: 2 }}>
                   Демонстрация формата
                 </div>
               )}
-              <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
-                <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>
+              
+              <div style={{ paddingBottom: '20px', marginBottom: '24px', paddingTop: caseItem.isDemo ? '24px' : '0' }}>
+                <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600, paddingRight: caseItem.isDemo ? '140px' : '0' }}>
                   {caseItem.category}
                 </span>
                 <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>

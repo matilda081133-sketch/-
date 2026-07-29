@@ -3,9 +3,10 @@
 import React from 'react';
 
 export interface ProcessStep {
-  num: string;
+  num?: string;
   title: string;
   desc: string;
+  isBanner?: boolean;
 }
 
 interface ProcessBlockProps {
@@ -56,32 +57,64 @@ export default function ProcessBlock({
 
         <div style={{ position: 'relative' }}>
           <div className={gridClass} style={{ gap: '40px' }}>
-            {steps.map((step, i) => (
-              <div key={i} style={{ 
-                position: 'relative',
-                zIndex: 1,
-                display: 'flex',
-                flexDirection: 'column',
-                background: 'transparent',
-                padding: '10px'
-              }} className="stage-item">
-                
-                {/* Organic Number / Dot */}
-                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '30px' }}>
-                  <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'var(--color-white)', border: '1px solid rgba(193, 160, 102, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', fontWeight: '300', fontSize: '24px', fontFamily: 'var(--font-serif)', boxShadow: '0 10px 20px rgba(23, 50, 77, 0.05)', position: 'relative' }}>
-                    {step.num}
-                    <div style={{ position: 'absolute', inset: '4px', borderRadius: '50%', border: '1px dashed rgba(193, 160, 102, 0.3)' }}></div>
+            {steps.map((step, i) => 
+              step.isBanner ? (
+                <div key={i} style={{ 
+                  position: 'relative',
+                  zIndex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  background: 'var(--color-cream)', 
+                  border: '1px solid var(--color-border)', 
+                  borderLeft: '4px solid var(--color-primary)', 
+                  padding: '28px 24px', 
+                  boxShadow: '0 4px 12px rgba(23, 50, 77, 0.05)',
+                  height: '100%'
+                }} className="stage-banner-item">
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="16" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <div>
+                      <h4 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', marginBottom: '8px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, fontWeight: 700 }}>
+                        {step.title}
+                      </h4>
+                      <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                        {step.desc}
+                      </p>
+                    </div>
                   </div>
                 </div>
+              ) : (
+                <div key={i} style={{ 
+                  position: 'relative',
+                  zIndex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  background: 'transparent',
+                  padding: '10px'
+                }} className="stage-item">
+                  
+                  {/* Organic Number / Dot */}
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '30px' }}>
+                    <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'var(--color-white)', border: '1px solid rgba(193, 160, 102, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', fontWeight: '300', fontSize: '24px', fontFamily: 'var(--font-serif)', boxShadow: '0 10px 20px rgba(23, 50, 77, 0.05)', position: 'relative' }}>
+                      {step.num}
+                      <div style={{ position: 'absolute', inset: '4px', borderRadius: '50%', border: '1px dashed rgba(193, 160, 102, 0.3)' }}></div>
+                    </div>
+                  </div>
 
-                <h4 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
-                  {step.title}
-                </h4>
-                <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center' }}>
-                  {step.desc}
-                </p>
-              </div>
-            ))}
+                  <h4 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
+                    {step.title}
+                  </h4>
+                  <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center' }}>
+                    {step.desc}
+                  </p>
+                </div>
+              )
+            )}
           </div>
           
           {/* CTA inside Process Block */}
