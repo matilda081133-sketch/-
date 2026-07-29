@@ -147,14 +147,16 @@ export default function PricingBlock({
                 </div>
               )}
               
-              <h3 style={{ fontSize: '24px', margin: '0 0 8px 0', color: 'inherit', textAlign: 'center' }}>{tier.title}</h3>
-              <p style={{ fontSize: '15px', opacity: 0.8, margin: tier.price ? '0 0 30px 0' : '0 0 52px 0', minHeight: tier.price ? '40px' : 'auto', textAlign: 'center' }}>{tier.subtitle}</p>
-              
-              {tier.price && (
-                <div style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', margin: '0 0 30px 0', paddingBottom: '30px', textAlign: 'center' }}>
-                  {tier.price}
-                </div>
-              )}
+              <div style={{ minHeight: '185px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', marginBottom: '24px' }}>
+                <h3 style={{ fontSize: '22px', margin: '0 0 8px 0', color: 'inherit', textAlign: 'center', lineHeight: 1.3 }}>{tier.title}</h3>
+                <p style={{ fontSize: '14px', opacity: 0.8, margin: '0 0 12px 0', textAlign: 'center', lineHeight: 1.5 }}>{tier.subtitle}</p>
+                
+                {tier.price && (
+                  <div style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', marginTop: 'auto', textAlign: 'center' }}>
+                    {tier.price}
+                  </div>
+                )}
+              </div>
 
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 40px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {tier.features.map((feature, fIdx) => (

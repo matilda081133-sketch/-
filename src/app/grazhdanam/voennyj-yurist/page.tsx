@@ -306,13 +306,6 @@ export default function VoennyjYuristPage() {
                 overflow: 'hidden',
                 transition: 'all 0.3s ease'
               }}>
-                {/* Vector watermark logo/icon (larger & cropped at edge) */}
-                <div style={{ position: 'absolute', bottom: '-25px', right: '-25px', opacity: 0.07, pointerEvents: 'none' }}>
-                  <svg width="115" height="115" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
-                  </svg>
-                </div>
-
                 <div style={{ 
                   fontSize: '12px', 
                   fontWeight: 700, 
@@ -531,7 +524,7 @@ export default function VoennyjYuristPage() {
             price: 'по согласованию',
             features: [
               { name: 'Консультация и анализ документов', value: '✓' },
-              { name: 'Подготовка заявления, рапорта или жалобы', value: '✓' }
+              { name: <>Подготовка заявления, рапорта<br />или жалобы</>, value: '✓' }
             ],
             buttonText: 'Узнать точную стоимость',
             buttonHref: '#form'
