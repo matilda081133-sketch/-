@@ -424,8 +424,17 @@ export default function VyplatyRaneniePage() {
             </p>
           </div>
 
+          <style dangerouslySetInnerHTML={{__html: `
+            .related-card-link:hover .related-more-btn {
+              color: var(--color-gold) !important;
+            }
+            .related-more-btn {
+              transition: color 0.3s ease !important;
+            }
+          `}} />
+
           <div className="grid grid-2" style={{ gap: '24px' }}>
-            <a href="/-/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/" style={{ textDecoration: 'none' }}>
+            <a href="/-/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/" className="related-card-link" style={{ textDecoration: 'none' }}>
               <div className="card hover-lift" style={{ 
                 padding: '28px 24px', 
                 background: 'var(--color-cream)', 
@@ -444,13 +453,13 @@ export default function VyplatyRaneniePage() {
                     Если медицинское заключение не отражает характер или последствия ранения и это влияет на дальнейшее оформление прав военнослужащего.
                   </p>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>
+                <div className="related-more-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>
                   Подробнее →
                 </div>
               </div>
             </a>
 
-            <a href="/-/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/" style={{ textDecoration: 'none' }}>
+            <a href="/-/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/" className="related-card-link" style={{ textDecoration: 'none' }}>
               <div className="card hover-lift" style={{ 
                 padding: '28px 24px', 
                 background: 'var(--color-cream)', 
@@ -469,7 +478,7 @@ export default function VyplatyRaneniePage() {
                     Если семье требуется помощь с отдельным оформлением выплат после гибели военнослужащего.
                   </p>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>
+                <div className="related-more-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>
                   Подробнее →
                 </div>
               </div>
