@@ -245,15 +245,17 @@ export default function VoennyjYuristPage() {
               color: #FFFFFF !important;
               border-color: #FFFFFF !important;
             }
+            a.btn.btn-urgent-call,
             .btn-urgent-call {
-              background: var(--color-gold) !important;
+              background-color: var(--color-gold) !important;
               color: var(--color-deep-blue) !important;
               font-weight: 700 !important;
               transition: all 0.3s ease !important;
               border: 1px solid var(--color-gold) !important;
             }
+            a.btn.btn-urgent-call:hover,
             .btn-urgent-call:hover {
-              background: #FFFFFF !important;
+              background-color: #FFFFFF !important;
               color: var(--color-deep-blue) !important;
               border-color: #FFFFFF !important;
             }
