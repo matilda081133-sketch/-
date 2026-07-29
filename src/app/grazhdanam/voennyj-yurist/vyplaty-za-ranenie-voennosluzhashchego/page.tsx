@@ -239,19 +239,38 @@ export default function VyplatyRaneniePage() {
         </div>
       </section>
 
-      {/* ═══ 4. Компактный CTA ═══ */}
-      <section style={{ background: 'var(--color-deep-blue)', padding: '40px 0', borderTop: '3px solid var(--color-gold)' }}>
+      {/* ═══ 4. Компактная карточка CTA ═══ */}
+      <section className="section bg-white" style={{ padding: '0 0 80px 0' }}>
         <div className="container">
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '32px', flexWrap: 'wrap' }}>
-            <div style={{ maxWidth: '680px' }}>
-              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', margin: '0 0 8px 0', lineHeight: 1.3 }}>
+          <div style={{ 
+            background: 'var(--color-deep-blue)', 
+            borderTop: '3px solid var(--color-gold)',
+            padding: '36px 40px',
+            boxShadow: '0 12px 35px rgba(23, 50, 77, 0.14)',
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between', 
+            gap: '32px', 
+            flexWrap: 'wrap',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            {/* Vector watermark graphic */}
+            <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.08, pointerEvents: 'none' }}>
+              <svg width="140" height="140" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+
+            <div style={{ maxWidth: '680px', position: 'relative', zIndex: 1 }}>
+              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', margin: '0 0 10px 0', lineHeight: 1.3 }}>
                 Не уверены, относится ли ваша ситуация<br />к одному из этих случаев?
               </h3>
               <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.5 }}>
                 Опишите обстоятельства и имеющиеся документы — специалист<br />определит возможный порядок действий.
               </p>
             </div>
-            <div>
+            <div style={{ position: 'relative', zIndex: 1 }}>
               <style dangerouslySetInnerHTML={{__html: `
                 .btn-cta-gold {
                   background-color: var(--color-gold) !important;
