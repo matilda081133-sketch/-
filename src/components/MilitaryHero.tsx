@@ -59,7 +59,7 @@ export default function MilitaryHero({
       }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div className={imageUrl ? "grid grid-2" : ""} style={{ display: imageUrl ? 'grid' : 'flex', flexDirection: 'column', gap: '40px', alignItems: 'center', ...(imageUrl && { gridTemplateColumns: '1.3fr 0.7fr' }) }}>
+          <div className={imageUrl ? "grid grid-2" : ""} style={{ display: imageUrl ? 'grid' : 'flex', flexDirection: 'column', gap: '40px', alignItems: 'flex-start', ...(imageUrl && { gridTemplateColumns: '1.3fr 0.7fr' }) }}>
             {/* Left Column */}
             <div style={{ flex: '1 1 0%', paddingTop: '64px' }}>
               {breadcrumbs && (
@@ -131,7 +131,7 @@ export default function MilitaryHero({
             </div>
             
             {/* Right Column for Photo */}
-            <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '60px' }}>
+            <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '16px', paddingTop: '108px', marginTop: 0 }}>
               <div style={{ 
                 width: '100%', 
                 aspectRatio: '3/4', 
