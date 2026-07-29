@@ -178,65 +178,21 @@ export default function VyplatyRaneniePage() {
         imageUrl="/-/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, партнёр ЮК «Де-Юре»"
-        trustItems={[]}
+        trustItems={[
+          { 
+            icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
+            text: 'Проверяем несколько оснований выплат' 
+          },
+          { 
+            icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>, 
+            text: 'Начинаем со справок и решений' 
+          },
+          { 
+            icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>, 
+            text: 'Условия работы — в договоре' 
+          }
+        ]}
       />
-
-      {/* ═══ 2. Компактная строка доверия ═══ */}
-      <section style={{ background: 'var(--color-cream)', padding: '32px 0', borderBottom: '1px solid var(--color-border)' }}>
-        <div className="container">
-          <div style={{ 
-            display: 'flex', 
-            gap: '20px', 
-            flexWrap: 'wrap' 
-          }}>
-            {[
-              { 
-                value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
-                text: 'Проверяем несколько оснований выплат' 
-              },
-              { 
-                value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>, 
-                text: 'Начинаем со справок и решений' 
-              },
-              { 
-                value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>, 
-                text: 'Условия работы — в договоре' 
-              }
-            ].map((bullet, i) => (
-              <div key={i} className="hero-bullet-item" style={{ 
-                flex: '1 1 260px',
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '16px',
-                background: 'rgba(255, 255, 255, 0.7)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.9)',
-                padding: '20px 24px',
-                boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease',
-                cursor: 'default'
-              }}>
-                <div style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{bullet.value}</div>
-                <div style={{ color: 'var(--color-deep-blue)', fontSize: '14px', fontWeight: 600, lineHeight: 1.4 }}>
-                  {bullet.text}
-                </div>
-              </div>
-            ))}
-          </div>
-          <style dangerouslySetInnerHTML={{__html: `
-            .hero-bullet-item:hover {
-              transform: translateY(-4px);
-              box-shadow: 0 20px 35px rgba(23, 50, 77, 0.12) !important;
-              background: rgba(255, 255, 255, 0.95) !important;
-              border-color: var(--color-gold) !important;
-            }
-            .hero-bullet-item:hover svg {
-              transform: scale(1.1);
-              transition: transform 0.3s ease;
-            }
-          `}} />
-        </div>
-      </section>
 
       {/* ═══ 3. В каких ситуациях мы можем помочь ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
@@ -289,14 +245,30 @@ export default function VyplatyRaneniePage() {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '32px', flexWrap: 'wrap' }}>
             <div style={{ maxWidth: '680px' }}>
               <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', margin: '0 0 8px 0', lineHeight: 1.3 }}>
-                Не уверены, относится ли ваша ситуация к одному из этих случаев?
+                Не уверены, относится ли ваша ситуация<br />к одному из этих случаев?
               </h3>
               <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.5 }}>
-                Опишите обстоятельства и имеющиеся документы — специалист определит возможный порядок действий.
+                Опишите обстоятельства и имеющиеся документы — специалист<br />определит возможный порядок действий.
               </p>
             </div>
             <div>
-              <a href="#form" className="btn btn-gold" style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 700, whiteSpace: 'nowrap' }}>
+              <style dangerouslySetInnerHTML={{__html: `
+                .btn-cta-gold {
+                  background-color: var(--color-gold) !important;
+                  color: var(--color-deep-blue) !important;
+                  border: 2px solid var(--color-gold) !important;
+                  transition: all 0.3s ease !important;
+                  display: inline-block;
+                  text-decoration: none;
+                }
+                .btn-cta-gold:hover {
+                  background-color: transparent !important;
+                  color: #FFFFFF !important;
+                  border-color: var(--color-gold) !important;
+                  box-shadow: 0 0 16px rgba(200, 169, 126, 0.4) !important;
+                }
+              `}} />
+              <a href="#form" className="btn btn-cta-gold" style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 700, whiteSpace: 'nowrap' }}>
                 Обсудить ситуацию
               </a>
             </div>
