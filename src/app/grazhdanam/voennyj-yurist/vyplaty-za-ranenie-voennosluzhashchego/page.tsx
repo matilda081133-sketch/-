@@ -281,7 +281,7 @@ export default function VyplatyRaneniePage() {
             </div>
 
             <div style={{ maxWidth: '680px', position: 'relative', zIndex: 1 }}>
-              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', margin: '0 0 10px 0', lineHeight: 1.3 }}>
+              <h3 style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', margin: '0 0 10px 0', lineHeight: 1.3 }}>
                 Не уверены, относится ли ваша ситуация <br />к одному из этих случаев?
               </h3>
               <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.5, textWrap: 'pretty' }}>

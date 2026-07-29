@@ -132,7 +132,7 @@ export default function ServicesTabs() {
           flexWrap: 'wrap',
           gap: '16px'
         }}>
-          <span style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-white)', fontFamily: 'var(--font-serif)' }}>
+          <span style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-white)', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
             Не нашли нужное направление?
           </span>
           <Link 

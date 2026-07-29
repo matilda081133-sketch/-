@@ -132,11 +132,11 @@ export default function ProcessBlock({
               boxShadow: '0 10px 18px -2px rgba(11, 28, 42, 0.38), 0 4px 8px -2px rgba(0, 0, 0, 0.25)'
             }}>
               <div style={{ flex: '1 1 300px' }}>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-white)', marginBottom: '8px', fontWeight: '600', fontFamily: 'var(--font-sans)' }}>
+                <h3 style={{ fontSize: '24px', color: 'var(--color-white)', marginBottom: '10px', fontWeight: '600', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
                   {ctaTitle}
                 </h3>
                 {ctaSubtitle && (
-                  <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)', margin: 0, lineHeight: 1.5, textWrap: 'balance' }}>
+                  <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.85)', margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
                     {ctaSubtitle}
                   </p>
                 )}
