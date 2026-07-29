@@ -148,7 +148,7 @@ export default function PricingBlock({
               )}
               
               <h3 style={{ fontSize: '24px', margin: '0 0 8px 0', color: 'inherit', textAlign: 'center' }}>{tier.title}</h3>
-              <p style={{ fontSize: '15px', opacity: 0.8, margin: tier.price ? '0 0 30px 0' : '0 0 32px 0', minHeight: tier.price ? '40px' : 'auto', textAlign: 'center' }}>{tier.subtitle}</p>
+              <p style={{ fontSize: '15px', opacity: 0.8, margin: tier.price ? '0 0 30px 0' : '0 0 52px 0', minHeight: tier.price ? '40px' : 'auto', textAlign: 'center' }}>{tier.subtitle}</p>
               
               {tier.price && (
                 <div style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', margin: '0 0 30px 0', paddingBottom: '30px', textAlign: 'center' }}>
