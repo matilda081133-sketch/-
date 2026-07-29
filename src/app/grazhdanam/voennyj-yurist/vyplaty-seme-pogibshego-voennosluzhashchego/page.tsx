@@ -8,6 +8,7 @@ import MilitaryHero from '@/components/MilitaryHero';
 import CasesBlock from '@/components/CasesBlock';
 import ProcessBlock from '@/components/ProcessBlock';
 import PricingBlock from '@/components/PricingBlock';
+import SpecialistBlock from '@/components/SpecialistBlock';
 
 export const metadata = {
   title: 'Выплаты семье погибшего военнослужащего — юрист в Липецке | Де-Юре',
@@ -184,69 +185,89 @@ export default function VyplatySemePogibshegoPage() {
       />
 
       {/* 4.4. В каких ситуациях мы можем помочь */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                Повод для обращения
-              </span>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-            </div>
-            <h2 style={{ fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+          <div style={{ maxWidth: '700px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               В каких ситуациях мы можем помочь
             </h2>
+            <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              Поможем разобрать вашу ситуацию, проверить документы и выстроить правовую позицию для получения положенных выплат.
+            </p>
           </div>
 
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(3, 1fr)', 
-            gap: '24px',
-            marginBottom: '40px'
-          }}>
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
             {[
               {
-                title: '1. Непонятно, кто имеет право на выплаты',
+                tag: 'СИТУАЦИЯ 01',
+                title: 'Непонятно, кто имеет право на выплаты',
                 desc: 'Проверим статус каждого заявителя и условия отдельных выплат. Объясним, кто может обращаться и какие обстоятельства необходимо подтвердить.'
               },
               {
-                title: '2. Не хватает документов',
+                tag: 'СИТУАЦИЯ 02',
+                title: 'Не хватает документов',
                 desc: 'Определим, каких документов о гибели, службе, родстве, обучении, инвалидности или иждивении недостаёт, и поможем их получить.'
               },
               {
-                title: '3. Выплаты задерживают',
+                tag: 'СИТУАЦИЯ 03',
+                title: 'Выплаты задерживают',
                 desc: 'Установим, где остановилось рассмотрение, подготовим обращения и поможем получить официальный ответ по поданным документам.'
               },
               {
-                title: '4. В выплате отказали',
+                tag: 'СИТУАЦИЯ 04',
+                title: 'В выплате отказали',
                 desc: 'Проверим основания отказа, документы и применённые нормы. Определим порядок досудебного или судебного обжалования.'
               },
               {
-                title: '5. Заявителя не включили в число получателей',
+                tag: 'СИТУАЦИЯ 05',
+                title: 'Заявителя не включили в число получателей',
                 desc: 'Проверим, относится ли человек к кругу получателей конкретной выплаты и какие документы подтверждают его право.'
               },
               {
-                title: '6. Право требуется подтвердить отдельно',
+                tag: 'СИТУАЦИЯ 06',
+                title: 'Право требуется подтвердить отдельно',
                 desc: 'Поможем определить, нужно ли устанавливать иждивение, родство, фактическое воспитание или иное юридически значимое обстоятельство.'
               }
-            ].map((item, i) => (
-              <div key={i} style={{ 
-                padding: '32px 28px', 
-                background: 'var(--color-cream)',
-                borderTop: '3px solid var(--color-gold)',
+            ].map((sit, i) => (
+              <div key={i} className="hover-lift" style={{ 
+                padding: '36px 30px', 
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
-                height: '100%'
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
               }}>
-                <div>
-                  <h3 style={{ fontSize: '19px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
-                    {item.title}
-                  </h3>
+                {/* Vector watermark graphic */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
                 </div>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.65', margin: 0, marginTop: 'auto' }}>
-                  {item.desc}
+
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start'
+                }}>
+                  {sit.tag}
+                </div>
+
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                  {sit.title}
+                </h3>
+
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
+                  {sit.desc}
                 </p>
               </div>
             ))}
@@ -327,74 +348,36 @@ export default function VyplatySemePogibshegoPage() {
       </section>
 
       {/* 4.6. Куратор направления */}
-      <section className="section bg-cream" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'center' }}>
-            <div style={{ position: 'relative' }}>
-              <div style={{
-                position: 'relative',
-                borderRadius: '4px',
-                overflow: 'hidden',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
-              }}>
-                <img 
-                  src="/images/konopkin.jpg" 
-                  alt="Дмитрий Сергеевич Конопкин" 
-                  style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
-                />
-              </div>
-            </div>
-
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-                <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                  Куратор направления
-                </span>
-              </div>
-
-              <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 38px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '8px' }}>
-                Дмитрий Сергеевич Конопкин
-              </h2>
-              
-              <p style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '16px', marginBottom: '24px' }}>
-                Адвокат, партнёр ЮК «Де-Юре», куратор направления военного права
-              </p>
-
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.65, marginBottom: '24px' }}>
-                Дмитрий Сергеевич Конопкин лично ведёт работу по вопросам выплат семье погибшего военнослужащего. Он проверяет обстоятельства гибели или смерти, статус каждого заявителя, возможные федеральные, страховые и региональные основания, а также документы, необходимые для обращения. При задержке, отказе или необходимости подтвердить юридически значимый факт определяет возможный порядок действий.
-              </p>
-
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {[
-                  'Адвокат, реестровый номер 48/812.',
-                  'С 2016 по 2022 год работал в Следственном управлении Следственного комитета Российской Федерации по Липецкой области; прошёл путь до старшего следователя отдела по расследованию особо важных дел.',
-                  'Ведёт военные дела в Липецкой области и представляет интересы доверителей в других регионах России.'
-                ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                    <div style={{ 
-                      width: '6px', 
-                      height: '6px', 
-                      borderRadius: '50%', 
-                      background: 'var(--color-gold)', 
-                      marginTop: '8px', 
-                      flexShrink: 0 
-                    }} />
-                    <span style={{ color: 'var(--color-text-main)', fontSize: '15px', lineHeight: 1.5 }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' }}>
-                <a href="#form" className="btn">Обсудить ситуацию с адвокатом</a>
-                <Link href="/specialisty/konopkin-dmitriy-sergeevich" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none', fontSize: '15px' }}>
-                  Подробнее о Дмитрии Сергеевиче Конопкине →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SpecialistBlock 
+        title="Куратор направления"
+        name="Дмитрий Сергеевич Конопкин"
+        position="Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        imageUrl="/-/images/konopkin.jpg"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Дмитрий Сергеевич Конопкин курирует работу по военному праву: определяет правовую позицию, контролирует ведение дел и подключается к сложным вопросам, связанным с выплатами, заключениями ВВК, спорами с военкоматами и уголовной защитой военнослужащих. Опыт работы в Следственном комитете помогает оценивать правовые риски и выстраивать защиту по делам, связанным с уголовным преследованием.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Опыт работы в Следственном комитете с 2016 по 2022 год</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>С сентября 2022 года — адвокат</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Реестровый номер 48/812</span>
+            </li>
+          </ul>,
+          <a key="3" href="/-/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о Дмитрии Сергеевиче Конопкине →
+          </a>
+        ]}
+        buttonText="Задать вопрос Дмитрию Сергеевичу"
+        buttonHref="#form"
+      />
 
       {/* 4.7. Примеры из практики */}
       <CasesBlock cases={cases} title="Примеры из практики" showAllLink="/praktika" showDemoWarning={true} />

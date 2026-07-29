@@ -245,6 +245,20 @@ export default function VyplatyRaneniePage() {
                   </svg>
                 </div>
 
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start'
+                }}>
+                  {`СИТУАЦИЯ 0${i + 1}`}
+                </div>
+
                 <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0', position: 'relative', zIndex: 1, whiteSpace: 'pre-line' }}>
                   {sit.title}
                 </h3>
@@ -324,24 +338,24 @@ export default function VyplatyRaneniePage() {
             Дмитрий Сергеевич Конопкин лично ведёт работу по вопросам выплат за ранение военнослужащих. Он проверяет медицинские и служебные документы, определяет возможные основания для получения выплат и порядок действий при задержке, отказе или неверном оформлении документов.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
-              <span>Адвокат, реестровый номер 48/812.</span>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Опыт работы в Следственном комитете с 2016 по 2022 год</span>
             </li>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
-              <span>С 2016 по 2022 год работал в Следственном управлении Следственного комитета Российской Федерации по Липецкой области; прошёл путь до старшего следователя отдела по расследованию особо важных дел.</span>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>С сентября 2022 года — адвокат</span>
             </li>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
-              <span>Ведёт военные дела в Липецкой области и представляет интересы доверителей в других регионах России.</span>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Реестровый номер 48/812</span>
             </li>
           </ul>,
           <a key="3" href="/-/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
             Подробнее о Дмитрии Сергеевиче Конопкине →
           </a>
         ]}
-        buttonText="Обсудить ситуацию с адвокатом"
+        buttonText="Задать вопрос Дмитрию Сергеевичу"
         buttonHref="#form"
       />
 
@@ -388,7 +402,7 @@ export default function VyplatyRaneniePage() {
           { num: '03', title: 'Определяем порядок действий', desc: 'Объясняем, какие документы необходимо получить или исправить и куда следует обращаться.' },
           { num: '04', title: 'Сопровождаем оформление или обжалование', desc: 'Готовим заявления, запросы и жалобы, взаимодействуем с соответствующими органами, при необходимости обращаемся в суд.' },
           { num: '05', title: 'Контролируем результат', desc: 'Отслеживаем рассмотрение обращений и информируем клиента о дальнейших действиях.' },
-          { isBanner: true, title: 'Дистанционный формат', desc: 'Консультацию и проверку документов можно провести дистанционно. Необходимость личного участия юриста или адвоката определим после изучения ситуации.' }
+          { isBanner: true, title: 'Дистанционный формат', desc: 'Значительную часть работы можно организовать дистанционно. Если требуется личное участие адвоката или юриста, заранее согласуем место и порядок работы.' }
         ]}
       />
 

@@ -284,24 +284,33 @@ export default function SochPage() {
 
       {/* Блок 4. Профильный адвокат */}
       <SpecialistBlock 
-        title="Куратор направления «Военное право»"
+        title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»"
         imageUrl="/-/images/konopkin.jpg"
         description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>Подключается к защите на стадии проверки, предварительного расследования и судебного разбирательства, участвует в процессуальных действиях и сопровождает доверителя при взаимодействии со следственными органами.</span>,
-          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Дмитрий Сергеевич Конопкин курирует работу по военному праву: определяет правовую позицию, контролирует ведение дел и подключается к сложным вопросам, связанным с выплатами, заключениями ВВК, спорами с военкоматами и уголовной защитой военнослужащих. Опыт работы в Следственном комитете помогает оценивать правовые риски и выстраивать защиту по делам, связанным с уголовным преследованием.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
-              Опыт работы в Следственном комитете
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Опыт работы в Следственном комитете с 2016 по 2022 год</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
-              Реестровый номер 48/812
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>С сентября 2022 года — адвокат</span>
             </li>
-          </ul>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Реестровый номер 48/812</span>
+            </li>
+          </ul>,
+          <a key="3" href="/-/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о Дмитрии Сергеевиче Конопкине →
+          </a>
         ]}
-        buttonText="Связаться с адвокатом"
+        buttonText="Задать вопрос Дмитрию Сергеевичу"
         buttonHref="#form"
       />
 
