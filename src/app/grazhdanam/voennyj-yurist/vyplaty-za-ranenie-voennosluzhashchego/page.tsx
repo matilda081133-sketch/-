@@ -317,7 +317,7 @@ export default function VyplatyRaneniePage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position="Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        position="Адвокат, партнёр ЮК «Де-Юре»,\nкуратор направления «Военное право»"
         imageUrl="/-/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

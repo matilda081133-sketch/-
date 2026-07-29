@@ -272,19 +272,6 @@ export default function ContactsPage() {
                     Построить маршрут до офиса
                   </a>
                 </div>
-                <style jsx>{`
-                  .btn-route-map {
-                    background-color: #ffffff !important;
-                    color: var(--color-deep-blue) !important;
-                    border: 1px solid var(--color-deep-blue) !important;
-                    transition: all 0.3s ease !important;
-                  }
-                  .btn-route-map:hover {
-                    background-color: var(--color-deep-blue) !important;
-                    color: #ffffff !important;
-                    border-color: var(--color-deep-blue) !important;
-                  }
-                `}</style>
               </div>
 
             </div>

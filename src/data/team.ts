@@ -50,7 +50,7 @@ export const teamData: Record<string, TeamMember> = {
     id: 'konopkin',
     slug: 'konopkin-dmitriy-sergeevich',
     name: 'Дмитрий Сергеевич Конопкин',
-    status: 'Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»',
+    status: 'Адвокат, партнёр ЮК «Де-Юре»,\nкуратор направления «Военное право»',
     shortDescription: 'Военное право · Уголовные дела · Автомобильные споры',
     image: '/-/images/konopkin.jpg',
     facts: [

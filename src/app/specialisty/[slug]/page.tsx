@@ -125,7 +125,7 @@ export default async function SpecialistPage({ params }: PageProps) {
               <h1 style={{ fontSize: 'clamp(32px, 4vw, 48px)', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1.2 }}>
                 {member.name}
               </h1>
-              <div style={{ fontSize: '18px', color: 'var(--color-primary)', fontWeight: 600, marginBottom: '8px', lineHeight: 1.4 }}>
+              <div style={{ fontSize: '18px', color: 'var(--color-primary)', fontWeight: 600, marginBottom: '8px', lineHeight: 1.4, whiteSpace: 'pre-line' }}>
                 {member.status}
               </div>
               <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, marginBottom: '24px' }}>
