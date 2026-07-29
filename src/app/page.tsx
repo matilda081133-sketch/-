@@ -23,7 +23,6 @@ export default function Home() {
         display: 'flex', 
         alignItems: 'center',
         paddingTop: '160px',
-        paddingBottom: '80px',
         background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
         overflow: 'hidden'
       }}>
@@ -33,36 +32,33 @@ export default function Home() {
           background: 'radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)',
           borderRadius: '50%', zIndex: 0
         }} />
-
+        
         <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
-          <div style={{ padding: '40px 0', maxWidth: '800px' }}>
+          <div className="" style={{ padding: '40px 0', maxWidth: '800px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
               <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
               <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#9B7E55' }}>
                 Юридическая компания в Липецке
               </span>
             </div>
-
             <h1 style={{ 
               marginBottom: '24px', 
               lineHeight: '1.2', 
+              whiteSpace: 'pre', 
               fontSize: 'clamp(36px, 4vw, 64px)',
               fontFamily: 'var(--font-serif)',
               color: 'var(--color-deep-blue)'
             }}>
-              Юридическая помощь<br />гражданам и бизнесу<br />в Липецке
+              {`Юридическая помощь\nгражданам и бизнесу\nв Липецке`}
             </h1>
-            
             <p style={{ 
-              fontSize: '18px', 
+              fontSize: '20px', 
               color: 'var(--color-text-secondary)', 
-              marginBottom: '40px', 
-              maxWidth: '750px', 
+              marginBottom: '30px', 
+              maxWidth: '600px', 
               lineHeight: 1.6 
             }}>
-              Подключаем специалиста с опытом именно в вашей категории дел —<br />
-              от оценки ситуации<br />
-              до защиты интересов в суде.
+              Подключаем специалиста с опытом именно в вашей категории дел — от оценки ситуации до защиты интересов в суде.
             </p>
             
             <div className="flex gap-4" style={{ marginBottom: '40px' }}>
@@ -84,20 +80,18 @@ export default function Home() {
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
                   text: 'Честный договор: фиксируем план работ и цены' }
               ].map((bullet, i) => (
-                <div key={i} className="hero-bullet-card" style={{ 
+                <div key={i} style={{ 
                   flex: 1,
                   display: 'flex', 
                   alignItems: 'center', 
                   gap: '16px',
-                  background: 'rgba(255, 255, 255, 0.85)',
+                  background: 'rgba(255, 255, 255, 0.7)',
                   backdropFilter: 'blur(10px)',
                   border: '1px solid rgba(255, 255, 255, 0.9)',
                   padding: '20px 24px',
-                  boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)',
-                  transition: 'all 0.3s ease',
-                  cursor: 'default'
+                  boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)'
                 }}>
-                  <div className="bullet-icon" style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'transform 0.3s' }}>{bullet.value}</div>
+                  <div style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{bullet.value}</div>
                   <div style={{ color: 'var(--color-deep-blue)', fontSize: '13px', fontWeight: 600, lineHeight: 1.4 }}>
                     {bullet.text}
                   </div>
@@ -105,8 +99,9 @@ export default function Home() {
               ))}
             </div>
           </div>
-
+          
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+            {/* Darkening gradient under the creative to highlight the background graphic */}
             <div style={{
               position: 'absolute',
               top: '50%',
@@ -118,7 +113,7 @@ export default function Home() {
               zIndex: 0,
               pointerEvents: 'none'
             }} />
-            
+            {/* Background Graphic: Courthouse (Centered behind mockup, shifted right) */}
             <svg style={{ position: 'absolute', top: '35%', left: '100%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.08, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
               <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
             </svg>
@@ -455,17 +450,6 @@ export default function Home() {
 
       {/* 11. FOOTER */}
       <Footer />
-      <style dangerouslySetInnerHTML={{__html: `
-        .hero-bullet-card:hover {
-          transform: translateY(-6px);
-          background: #FFFFFF !important;
-          border-color: var(--color-primary) !important;
-          box-shadow: 0 20px 40px rgba(23, 50, 77, 0.12) !important;
-        }
-        .hero-bullet-card:hover .bullet-icon {
-          transform: scale(1.15);
-        }
-      `}} />
     </main>
   );
 }
