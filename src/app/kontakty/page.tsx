@@ -268,7 +268,7 @@ export default function ContactsPage() {
                   <MapWidget />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                  <a href="https://yandex.ru/maps/?pt=39.585799,52.604024&z=17&text=г.+Липецк,+ул.+Советская,+д.+35" target="_blank" rel="noopener noreferrer" className="btn btn-route-map" style={{ padding: '16px 32px', fontSize: '15px' }}>
+                  <a href="https://yandex.ru/maps/?pt=39.585799,52.604024&z=17&text=г.+Липецк,+ул.+Советская,+д.+35" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14px', borderColor: 'rgba(23, 50, 77, 0.2)', color: 'var(--color-deep-blue)', display: 'inline-block' }}>
                     Построить маршрут до офиса
                   </a>
                 </div>
@@ -288,17 +288,17 @@ export default function ContactsPage() {
                   <div style={{ height: '280px', overflow: 'hidden', position: 'relative' }}>
                     <img 
                       src="/-/images/office-building.jpg" 
-                      alt="Фасад здания БЦ Антарес, ул. Советская, 35, Липецк" 
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
+                      alt="Здание бизнес-центра Антарес в Липецке" 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   </div>
                   <div style={{ padding: '20px' }}>
-                    <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
-                      Фасад здания (БЦ «Антарес»)
+                    <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', fontSize: '16px', marginBottom: '6px' }}>
+                      Бизнес-центр «Антарес»
                     </div>
-                    <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
-                      г. Липецк, ул. Советская, д. 35 — вид со стороны улицы Советской
-                    </div>
+                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                      Главный вход с улицы Советской. Наш офис № 213 расположен на 2 этаже.
+                    </p>
                   </div>
                 </div>
 
@@ -307,9 +307,6 @@ export default function ContactsPage() {
                   <div style={{ height: '280px', overflow: 'hidden', position: 'relative' }}>
                     <img 
                       src="/-/images/office-entrance.jpg" 
-                      alt="Вход в офис Де-Юре, 2 этаж, офис 213, Липецк" 
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
-                    />
                   </div>
                   <div style={{ padding: '20px' }}>
                     <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
@@ -337,7 +334,7 @@ export default function ContactsPage() {
                   Реквизиты
                 </h2>
                 
-                <div style={{ padding: '32px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', fontSize: '15px', lineHeight: 1.6, color: 'var(--color-deep-blue)' }}>
+                <div style={{ padding: '32px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.12)', borderRadius: '4px', boxShadow: '0 8px 16px -2px rgba(23, 50, 77, 0.12), 0 2px 4px -1px rgba(23, 50, 77, 0.08)', fontSize: '15px', lineHeight: 1.6, color: 'var(--color-deep-blue)' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '32px' }}>
                     <div>
                       <strong style={{ fontSize: '16px' }}>ООО ЮК «Де-Юре»</strong><br />

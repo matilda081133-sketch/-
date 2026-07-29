@@ -206,6 +206,15 @@ export default async function SpecialistPage({ params }: PageProps) {
                     {spec.link.text}
                   </Link>
                 )}
+                {spec.links && spec.links.length > 0 && (
+                  <div style={{ display: 'flex', gap: '12px' }}>
+                    {spec.links.map((lnk, k) => (
+                      <Link key={k} href={lnk.url} className="btn-outline" style={{ flex: 1, textAlign: 'center', padding: '12px 8px', fontSize: '14px' }} data-analytics="specialization-click" data-direction={spec.title}>
+                        {lnk.text}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
