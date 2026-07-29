@@ -157,8 +157,15 @@ export default function VoennyjYuristPage() {
                 flexDirection: 'column'
               }}
             >
-              <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, marginBottom: '14px', lineHeight: 1.3 }}>
-                Военнослужащего задержали
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Военнослужащего задержали
+                </div>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                 Важно установить его местонахождение и процессуальный статус и подключить адвоката до объяснений или допроса.
@@ -178,8 +185,15 @@ export default function VoennyjYuristPage() {
                 flexDirection: 'column'
               }}
             >
-              <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, marginBottom: '14px', lineHeight: 1.3 }}>
-                Возбуждено уголовное дело или вызывают на допрос
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Возбуждено уголовное дело или вызывают на допрос
+                </div>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                 До явки нужно понять статус военнослужащего, изучить документы и определить позицию.
@@ -199,8 +213,15 @@ export default function VoennyjYuristPage() {
                 flexDirection: 'column'
               }}
             >
-              <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, marginBottom: '14px', lineHeight: 1.3 }}>
-                Военнослужащий перестал выходить на связь
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Военнослужащий перестал выходить на связь
+                </div>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                 Нужно собрать сведения о части, последнем месте нахождения и официальном статусе, затем определить порядок обращений.
@@ -232,8 +253,9 @@ export default function VoennyjYuristPage() {
               border: 1px solid var(--color-gold) !important;
             }
             .btn-urgent-call:hover {
-              background: #C4A16E !important;
+              background: #FFFFFF !important;
               color: var(--color-deep-blue) !important;
+              border-color: #FFFFFF !important;
             }
           `}} />
 
