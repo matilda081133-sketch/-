@@ -282,7 +282,7 @@ export default function VoennyjYuristPage() {
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              В каких ситуациях мы можем помочь
+              В каких ситуациях<br />мы можем помочь
             </h2>
             <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
               Комплексная защита прав военнослужащих, призывников и их семей. Поможем разобрать вашу ситуацию и выстроить правовую позицию.
