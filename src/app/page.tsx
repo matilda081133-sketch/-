@@ -80,7 +80,7 @@ export default function Home() {
                 { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
                   text: 'Честный договор: фиксируем план работ и цены' }
               ].map((bullet, i) => (
-                <div key={i} style={{ 
+                <div key={i} className="hero-bullet-item" style={{ 
                   flex: 1,
                   display: 'flex', 
                   alignItems: 'center', 
@@ -89,7 +89,9 @@ export default function Home() {
                   backdropFilter: 'blur(10px)',
                   border: '1px solid rgba(255, 255, 255, 0.9)',
                   padding: '20px 24px',
-                  boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)'
+                  boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease',
+                  cursor: 'default'
                 }}>
                   <div style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{bullet.value}</div>
                   <div style={{ color: 'var(--color-deep-blue)', fontSize: '13px', fontWeight: 600, lineHeight: 1.4 }}>
@@ -98,6 +100,18 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            <style dangerouslySetInnerHTML={{__html: `
+              .hero-bullet-item:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 35px rgba(23, 50, 77, 0.12) !important;
+                background: rgba(255, 255, 255, 0.95) !important;
+                border-color: var(--color-gold) !important;
+              }
+              .hero-bullet-item:hover svg {
+                transform: scale(1.1);
+                transition: transform 0.3s ease;
+              }
+            `}} />
           </div>
           
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
