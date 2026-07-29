@@ -256,7 +256,7 @@ export default function VyplatyRaneniePage() {
                 .btn-cta-gold {
                   background-color: var(--color-gold) !important;
                   color: var(--color-deep-blue) !important;
-                  border: 2px solid var(--color-gold) !important;
+                  border: 1px solid var(--color-gold) !important;
                   transition: all 0.3s ease !important;
                   display: inline-block;
                   text-decoration: none;
@@ -265,7 +265,7 @@ export default function VyplatyRaneniePage() {
                   background-color: transparent !important;
                   color: #FFFFFF !important;
                   border-color: var(--color-gold) !important;
-                  box-shadow: 0 0 16px rgba(200, 169, 126, 0.4) !important;
+                  box-shadow: 0 0 10px rgba(200, 169, 126, 0.3) !important;
                 }
               `}} />
               <a href="#form" className="btn btn-cta-gold" style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 700, whiteSpace: 'nowrap' }}>
