@@ -160,7 +160,7 @@ export const teamData: Record<string, TeamMember> = {
     slug: 'smolyaninova-marina-valerevna',
     name: 'Смольянинова Марина Валерьевна',
     status: 'Куратор и ведущий юрист «Де-Юре»',
-    shortDescription: 'Трудовые споры · Семейные споры · Исполнительное производство и ФССП',
+    shortDescription: 'Трудовые споры · Семейные споры ·\nИсполнительное производство и ФССП',
     image: '/-/images/specialist-placeholder.svg',
     facts: [
       'Более 13 лет работы в ФССП, в том числе на руководящих должностях',

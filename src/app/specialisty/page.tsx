@@ -85,7 +85,7 @@ export default function SpecialistyPage() {
                     <div style={{ fontSize: '14px', color: 'var(--color-primary)', fontWeight: 600, marginBottom: '12px' }}>
                       {sp.status}
                     </div>
-                    <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, marginBottom: '20px' }}>
+                    <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, marginBottom: '20px', whiteSpace: 'pre-line' }}>
                       {sp.shortDescription}
                     </div>
                   </div>
