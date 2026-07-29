@@ -79,9 +79,9 @@ export default function ProcessBlock({
                       <line x1="12" y1="8" x2="12.01" y2="8"></line>
                     </svg>
                     <div>
-                      <h4 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', marginBottom: '8px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, fontWeight: 700 }}>
+                      <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', marginBottom: '8px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, fontWeight: 700 }}>
                         {step.title}
-                      </h4>
+                      </h3>
                       <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
                         {step.desc}
                       </p>
@@ -106,9 +106,9 @@ export default function ProcessBlock({
                     </div>
                   </div>
 
-                  <h4 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
+                  <h3 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
                     {step.title}
-                  </h4>
+                  </h3>
                   <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center' }}>
                     {step.desc}
                   </p>

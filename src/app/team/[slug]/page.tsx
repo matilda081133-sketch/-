@@ -28,13 +28,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: 'Дмитрий Сергеевич Конопкин — адвокат ЮК «ДЕ-ЮРЕ»',
+    title: 'Дмитрий Сергеевич Конопкин — адвокат ЮК «Де-Юре»',
     description: 'Защита по уголовным делам, помощь военнослужащим и по автомобильным спорам.',
     alternates: {
       canonical: `https://dejure-help.ru/team/${member.slug}/`,
     },
     openGraph: {
-      title: 'Дмитрий Сергеевич Конопкин — адвокат ЮК «ДЕ-ЮРЕ»',
+      title: 'Дмитрий Сергеевич Конопкин — адвокат ЮК «Де-Юре»',
       description: 'Защита по уголовным делам, помощь военнослужащим и по автомобильным спорам.',
       url: `https://dejure-help.ru/team/${member.slug}/`,
       images: [
@@ -61,12 +61,12 @@ export default async function TeamMemberPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Дмитрий Сергеевич Конопкин',
-    jobTitle: 'Адвокат, ведущий юрист ООО ЮК «ДЕ-ЮРЕ»',
+    jobTitle: 'Адвокат, ведущий юрист ООО ЮК «Де-Юре»',
     image: `https://dejure-help.ru${member.image}`,
     url: `https://dejure-help.ru/team/${member.slug}/`,
     worksFor: {
       '@type': 'LegalService',
-      name: 'ООО ЮК «ДЕ-ЮРЕ»'
+      name: 'ООО ЮК «Де-Юре»'
     }
   };
 

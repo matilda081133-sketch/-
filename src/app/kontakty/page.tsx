@@ -24,7 +24,7 @@ export default function ContactsPage() {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
     name: 'ЮК «Де-Юре»',
-    legalName: 'ООО ЮК «ДЕ-ЮРЕ»',
+    legalName: 'ООО ЮК «Де-Юре»',
     url: 'https://dejure-help.ru/',
     logo: 'https://dejure-help.ru/-/images/logo_dark.png',
     image: 'https://dejure-help.ru/-/images/office-building.jpg',
@@ -298,7 +298,7 @@ export default function ContactsPage() {
                 <div style={{ padding: '32px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', fontSize: '15px', lineHeight: 1.6, color: 'var(--color-deep-blue)' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '32px' }}>
                     <div>
-                      <strong style={{ fontSize: '16px' }}>ООО ЮК «ДЕ-ЮРЕ»</strong><br />
+                      <strong style={{ fontSize: '16px' }}>ООО ЮК «Де-Юре»</strong><br />
                       <span style={{ color: 'var(--color-text-secondary)' }}>ИНН/КПП:</span> 4800009680 / 480001001<br />
                       <span style={{ color: 'var(--color-text-secondary)' }}>ОГРН:</span> 1234800008464<br />
                       <span style={{ color: 'var(--color-text-secondary)' }}>Руководитель:</span> Шалавин Д.Г.

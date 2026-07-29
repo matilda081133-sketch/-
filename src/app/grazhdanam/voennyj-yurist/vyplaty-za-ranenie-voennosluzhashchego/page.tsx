@@ -113,6 +113,7 @@ export default function VyplatyRaneniePage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
+        "@id": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/#breadcrumb",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://dejure-help.ru/" },
           { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://dejure-help.ru/grazhdanam/" },
@@ -122,12 +123,29 @@ export default function VyplatyRaneniePage() {
       },
       {
         "@type": "LegalService",
+        "@id": "https://dejure-help.ru/#legalservice",
         "name": "ЮК «Де-Юре»",
         "description": "Юридическая помощь по выплатам за ранение военнослужащих в Липецке",
-        "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/"
+        "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/",
+        "employee": {
+          "@id": "https://dejure-help.ru/team/konopkin-dmitriy-sergeevich/#person"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dejure-help.ru/team/konopkin-dmitriy-sergeevich/#person",
+        "name": "Дмитрий Сергеевич Конопкин",
+        "jobTitle": "Адвокат",
+        "description": "Реестровый номер 48/812",
+        "url": "https://dejure-help.ru/team/konopkin-dmitriy-sergeevich/",
+        "image": "https://dejure-help.ru/images/konopkin.jpg",
+        "worksFor": {
+          "@id": "https://dejure-help.ru/#legalservice"
+        }
       },
       {
         "@type": "FAQPage",
+        "@id": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.q,
@@ -158,9 +176,9 @@ export default function VyplatyRaneniePage() {
         superTitle="Военные выплаты • анализ документов и обжалование"
         title={
           <>
-            Юрист по выплатам<br />
-            за ранение<br />
-            военнослужащего<br />
+            Юрист по выплатам <br />
+            за ранение <br />
+            военнослужащего <br />
             в Липецке
           </>
         }
@@ -199,7 +217,7 @@ export default function VyplatyRaneniePage() {
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              В каких ситуациях<br />мы можем помочь
+              В каких ситуациях <br />мы можем помочь
             </h2>
             <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
               Найдите свою проблему — мы подскажем, с каких документов начать и как восстановить ваши права.
@@ -264,10 +282,10 @@ export default function VyplatyRaneniePage() {
 
             <div style={{ maxWidth: '680px', position: 'relative', zIndex: 1 }}>
               <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', margin: '0 0 10px 0', lineHeight: 1.3 }}>
-                Не уверены, относится ли ваша ситуация<br />к одному из этих случаев?
+                Не уверены, относится ли ваша ситуация <br />к одному из этих случаев?
               </h3>
               <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.5 }}>
-                Опишите обстоятельства и имеющиеся документы — специалист<br />определит возможный порядок действий.
+                Опишите обстоятельства и укажите, какие документы у вас есть. Дмитрий Сергеевич Конопкин<br /> изучит информацию и определит возможный порядок действий.
               </p>
             </div>
             <div style={{ position: 'relative', zIndex: 1 }}>
@@ -303,7 +321,7 @@ export default function VyplatyRaneniePage() {
         imageUrl="/-/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Дмитрий Сергеевич Конопкин ведёт военное направление и подключается к вопросам выплат при задержке, отказе, недостатке или противоречиях в медицинских и служебных документах. После изучения ситуации определяет возможный порядок оформления или обжалования.
+            Дмитрий Сергеевич Конопкин лично ведёт работу по вопросам выплат за ранение военнослужащих. Он проверяет медицинские и служебные документы, определяет возможные основания для получения выплат и порядок действий при задержке, отказе или неверном оформлении документов.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
@@ -383,7 +401,7 @@ export default function VyplatyRaneniePage() {
             title: 'Консультация и анализ',
             subtitle: 'Первичный разбор',
             popular: false,
-            price: 'по согласованию',
+            price: 'ХХХ ₽',
             features: [
               { name: 'Проверка имеющихся справок', value: '✓' },
               { name: 'Определение оснований для выплат', value: '✓' },
@@ -395,8 +413,8 @@ export default function VyplatyRaneniePage() {
           {
             title: 'Досудебная работа',
             subtitle: 'Запросы и жалобы',
-            popular: true,
-            price: 'по согласованию',
+            popular: false,
+            price: 'ХХХ ₽',
             features: [
               { name: 'Подготовка адвокатских запросов', value: '✓' },
               { name: 'Обращения в ведомства и части', value: '✓' },
@@ -407,11 +425,11 @@ export default function VyplatyRaneniePage() {
           },
           {
             title: 'Судебная защита',
-            subtitle: 'Военный суд',
+            subtitle: 'Судебное обжалование',
             popular: false,
-            price: 'по согласованию',
+            price: 'ХХХ ₽',
             features: [
-              { name: 'Подготовка иск/жалобы в суд', value: '✓' },
+              { name: 'Подготовка иска или жалобы в суд.', value: '✓' },
               { name: 'Сбор доказательной базы', value: '✓' },
               { name: 'Представительство в военном суде', value: '✓' }
             ],
@@ -469,7 +487,7 @@ export default function VyplatyRaneniePage() {
                     Оспаривание заключения ВВК
                   </h3>
                   <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-                    Если медицинское заключение не отражает характер или последствия ранения и это влияет на дальнейшее оформление прав военнослужащего.
+                    Если медицинское заключение не отражает характер или последствия ранения.
                   </p>
                 </div>
                 <div className="related-more-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>
@@ -494,7 +512,7 @@ export default function VyplatyRaneniePage() {
                     Выплаты семье погибшего военнослужащего
                   </h3>
                   <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-                    Если семье требуется помощь с отдельным оформлением выплат после гибели военнослужащего.
+                    Если после гибели военнослужащего семье требуется помощь с оформлением положенных выплат.
                   </p>
                 </div>
                 <div className="related-more-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>
@@ -520,7 +538,7 @@ export default function VyplatyRaneniePage() {
               </h2>
               
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Кратко опишите, что произошло, и оставьте контактные данные. Мы уточним, какие документы есть и на каком этапе возникла проблема, после чего согласуем консультацию.
+                Кратко опишите, что произошло, и оставьте контактные данные. Обращение будет передано Дмитрию Сергеевичу Конопкину. Он уточнит, какие документы у вас есть, изучит обстоятельства и согласует с вами консультацию.
               </p>
               
               <div style={{ marginTop: '32px' }}>

@@ -74,9 +74,9 @@ export default function SpecialistBlock({
             
             <div style={{ marginBottom: '32px' }}>
               {description.map((paragraph, idx) => (
-                <p key={idx} style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: idx === description.length - 1 ? 0 : '16px' }}>
+                <div key={idx} style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: idx === description.length - 1 ? 0 : '16px' }}>
                   {paragraph}
-                </p>
+                </div>
               ))}
             </div>
             

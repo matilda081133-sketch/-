@@ -102,7 +102,7 @@ export default function Footer() {
 
       <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', color: 'rgba(255,255,255,0.5)' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <span>© {new Date().getFullYear()} ООО ЮК «ДЕ-ЮРЕ»</span>
+          <span>© 2026 ООО ЮК «Де-Юре»</span>
           <span>ИНН: 4800009680 | ОГРН: 1234800008464</span>
           <span>Фактический адрес: г. Липецк, ул. Советская, д. 35, оф. 213</span>
           <span>Юридический адрес: 398902, Липецкая обл., г. Липецк, ул. Юношеская, влд. 46Б, пом. 1</span>
