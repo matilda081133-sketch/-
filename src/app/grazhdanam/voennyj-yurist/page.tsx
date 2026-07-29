@@ -364,22 +364,21 @@ export default function VoennyjYuristPage() {
               </a>
             ))}
 
-            {/* Не нашли свою ситуацию? */}
-            <div style={{ gridColumn: 'span 2' }}>
+            {/* Не нашли свою ситуацию? (3-я карточка во 2-й строке) */}
+            <div style={{ gridColumn: 'span 1' }}>
               <div 
                 className="card service-card" 
                 style={{ 
                   height: '100%', 
                   minHeight: '160px',
-                  padding: '30px 40px', 
+                  padding: '30px', 
                   background: 'var(--color-deep-blue)', 
                   border: '1px solid transparent',
                   borderRadius: '0',
                   display: 'flex', 
-                  flexDirection: 'row',
-                  alignItems: 'center',
+                  flexDirection: 'column',
                   justifyContent: 'space-between',
-                  gap: '30px',
+                  gap: '20px',
                   transition: 'all 0.3s',
                   position: 'relative',
                   borderTop: '3px solid var(--color-gold)'
@@ -397,27 +396,18 @@ export default function VoennyjYuristPage() {
                       color: var(--color-white) !important;
                       border-color: var(--color-primary) !important;
                     }
-                    @media (max-width: 768px) {
-                      .horizontal-card-inner {
-                        flex-direction: column !important;
-                        align-items: flex-start !important;
-                      }
-                      .horizontal-card-btn {
-                        margin-top: 20px;
-                      }
-                    }
                   `}
                 </style>
-                <div style={{ flex: '1', textAlign: 'left' }}>
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '24px', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                <div>
+                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-white)', lineHeight: 1.3 }}>
                     Не нашли свою ситуацию?
                   </h3>
-                  <p style={{ margin: '0', fontSize: '16px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>
+                  <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>
                     Кратко опишите обстоятельства — мы изучим вопрос и подскажем, какой специалист сможет помочь.
                   </p>
                 </div>
-                <div className="horizontal-card-btn" style={{ flexShrink: 0, textAlign: 'right' }}>
-                  <a href="#form" className="btn white-btn-custom" style={{ display: 'inline-block', width: 'auto', fontSize: '16px', padding: '14px 28px' }}>
+                <div>
+                  <a href="#form" className="btn white-btn-custom" style={{ display: 'inline-block', width: '100%', textAlign: 'center', fontSize: '14px', padding: '12px 20px' }}>
                     Описать ситуацию
                   </a>
                 </div>
@@ -499,10 +489,37 @@ export default function VoennyjYuristPage() {
           { num: '02', title: 'Изучение документов', desc: 'Анализируем имеющиеся материалы. Документы можно передать лично или направить в электронном виде.' },
           { num: '03', title: 'План действий', desc: 'Оцениваем правовые основания, риски и предлагаем порядок защиты, обжалования или получения положенных выплат.' },
           { num: '04', title: 'Юридическая работа', desc: 'Готовим документы, обращения и жалобы; при необходимости участвуем в процессуальных действиях и представляем интересы клиента.' },
-          { num: '05', title: 'Информирование', desc: 'Сообщаем о ходе работы, объясняем результаты и заранее согласовываем дальнейшие действия.' },
-          { num: '06', title: 'Дистанционный формат', desc: 'Значительную часть работы можно организовать дистанционно. Если требуется личное участие адвоката или юриста, заранее согласуем место и порядок работы.' }
+          { num: '05', title: 'Информирование', desc: 'Сообщаем о ходе работы, объясняем результаты и заранее согласовываем дальнейшие действия.' }
         ]}
       />
+
+      {/* Информационная плашка о дистанционной работе под этапами */}
+      <section style={{ background: 'var(--color-white)', padding: '0 0 64px 0' }}>
+        <div className="container">
+          <div style={{ 
+            background: 'var(--color-cream)', 
+            border: '1px solid var(--color-border)', 
+            borderLeft: '4px solid var(--color-primary)', 
+            padding: '24px 32px', 
+            fontSize: '15px', 
+            color: 'var(--color-text-secondary)', 
+            lineHeight: 1.6,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '20px'
+          }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <div>
+              <strong style={{ color: 'var(--color-deep-blue)', display: 'inline' }}>Дистанционный формат: </strong>
+              Значительную часть работы можно организовать дистанционно. Если требуется личное участие адвоката или юриста, заранее согласуем место и порядок работы.
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ═══ 8. Стоимость юридической помощи ═══ */}
       <PricingBlock 
