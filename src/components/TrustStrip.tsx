@@ -37,7 +37,7 @@ export default function TrustStrip({ items }: { items: TrustItem[] }) {
             background: 'rgba(255, 255, 255, 0.7)',
             backdropFilter: 'blur(10px)',
             border: '1px solid rgba(255, 255, 255, 0.9)',
-            padding: '20px 24px',
+            padding: '14px 20px',
             boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)',
             transition: 'transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease',
             cursor: 'default'
