@@ -8,12 +8,13 @@ import PhoneInput from '@/components/PhoneInput';
 import ProcessBlock from '@/components/ProcessBlock';
 import CasesBlock from '@/components/CasesBlock';
 import ReviewsBlock from '@/components/ReviewsBlock';
+import ContactsForm from '@/components/ContactsForm';
 import Footer from '@/components/Footer';
 
 export default function Home() {
- return (
- <main>
- <Header />
+  return (
+    <main>
+      <Header />
 
  {/* 1. HERO */}
  <section style={{ 
@@ -405,7 +406,7 @@ export default function Home() {
       />
 
       {/* 5. TEAM */}
- <TeamCarousel />
+      <TeamCarousel />
 
        {/* 6. CASES */}
       <CasesBlock 
@@ -438,55 +439,58 @@ export default function Home() {
       />
 
       {/* 7. REVIEWS SECTION */}
- <ReviewsBlock />
+      <ReviewsBlock />
 
- {/* 8. PRICING SECTION */}
- <PricingBlock />
+      {/* 8. PRICING SECTION */}
+      <PricingBlock />
 
- {/* 9. FAQ SECTION */}
- <FAQBlock />
+      {/* 9. FAQ SECTION */}
+      <FAQBlock />
 
- {/* 10. CTA SECTION (FORM) */}
- <section id="consultation" className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '40px 0', background: 'var(--color-white)', scrollMarginTop: '80px', minHeight: 'calc(100vh - 80px)', display: 'flex', alignItems: 'center' }}>
- <div className="container grid grid-2" style={{ gap: '80px', alignItems: 'center', position: 'relative', zIndex: 1, width: '100%' }}>
- <div>
- <h2 style={{ marginTop: 0, color: 'var(--color-deep-blue)' }}>Обсудите ситуацию с юристом</h2>
- <p style={{ fontSize: '20px', marginBottom: '40px', color: 'var(--color-text-secondary)' }}>
- Кратко опишите ситуацию. Юрист уточнит обстоятельства и сообщит, какие документы потребуются для дальнейшего разбора.
- </p>
- <div style={{ marginTop: '20px' }}>
- <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'flex-start' }}>
- <a href="tel:+79103503111" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '28px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '8px', textDecoration: 'none' }}>
- <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
- +7 (910) 350-31-11
- </a>
- <span style={{ fontSize: '18px', color: 'var(--color-text-secondary)' }}>г. Липецк, ул. Советская, д. 35, оф. 213</span>
- </div>
- </div>
- </div>
- 
- <div className="card" style={{ padding: '40px', borderRadius: '0', background: 'var(--color-white)', boxShadow: '0 20px 40px rgba(23, 50, 77, 0.08)' }}>
- <h3 style={{ marginTop: 0, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>Оставить заявку</h3>
- <p style={{ color: 'var(--color-text-secondary)', marginBottom: '30px', lineHeight: 1.5 }}>Перезвоним вам в течение 15 минут<br/>в рабочее время.</p>
- <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
- <input type="text" required placeholder="Ваше имя" style={{ padding: '16px', border: '1px solid var(--color-border)', borderRadius: '0', fontSize: '16px', transition: 'border-color 0.3s', outline: 'none', background: 'var(--color-white)' }} />
- <PhoneInput />
- <button type="submit" className="btn" style={{ width: '100%', padding: '18px', fontSize: '18px', marginTop: '10px', background: 'var(--color-deep-blue)', color: 'var(--color-white)', border: 'none' }}>Обсудить ситуацию</button>
- 
- <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer', marginTop: '4px' }}>
- <input type="checkbox" required style={{ marginTop: '4px', accentColor: 'var(--color-primary)' }} />
- <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
- Я даю согласие на <Link href="/privacy" className="link-animated" style={{ fontSize: '13px', color: 'var(--color-primary)' }}>обработку персональных данных</Link>
- </span>
- </label>
- </form>
- </div>
- </div>
- </section>
+      {/* 10. CTA SECTION (FORM) */}
+      <section className="section bg-white" id="consultation" style={{ scrollMarginTop: '120px' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Обсудите ситуацию с юристом
+              </h2>
+              
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко опишите ситуацию. Юрист уточнит обстоятельства и сообщит, какие документы потребуются для дальнейшего разбора.
+              </p>
 
- {/* 11. FOOTER */}
- <Footer />
+              <div style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <a href="tel:+79103503111" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  +7 (910) 350-31-11
+                </a>
+                <span style={{ fontSize: '15px', color: 'var(--color-text-secondary)' }}>г. Липецк, ул. Советская, д. 35, оф. 213</span>
+              </div>
+              
+              <div style={{ marginTop: '16px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  Перезвоним в течение 15 минут в рабочее время
+                </div>
+              </div>
+            </div>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm title="Оставить заявку" subtitle="Перезвоним вам в течение 15 минут в рабочее время." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
- </main>
- );
+      {/* 11. FOOTER */}
+      <Footer />
+    </main>
+  );
 }
