@@ -304,73 +304,119 @@ export default function Home() {
           <div style={{ 
             display: 'grid', 
             gridTemplateColumns: 'repeat(3, 1fr)', 
-            borderTop: '1px solid var(--color-primary)', 
-            borderLeft: '1px solid rgba(23, 50, 77, 0.1)',
-            borderBottom: '1px solid rgba(23, 50, 77, 0.1)'
+            gap: '24px'
           }}>
             {[
               {
                 num: "01",
                 tag: "Специализация",
                 title: "Подбираем специалиста под категорию дела",
-                desc: "Земельный спор передаем юристу по земельному праву, уголовное дело — адвокату. Если задача затрагивает несколько отраслей, определяем состав команды после первичного разбора."
+                desc: "Земельный спор передаем юристу по земельному праву, уголовное дело — адвокату. Если задача затрагивает несколько отраслей, определяем состав команды после первичного разбора.",
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
               },
               {
                 num: "02",
                 tag: "Командная работа",
                 title: "Подключаем адвоката, когда этого требует дело",
-                desc: "В уголовных делах и других ситуациях, где необходим статус адвоката, к работе подключается специалист с действующим адвокатским статусом. Дополнительных экспертов привлекаем после согласования с клиентом."
+                desc: "В уголовных делах и других ситуациях, где необходим статус адвоката, к работе подключается специалист с действующим адвокатским статусом. Дополнительных экспертов привлекаем после согласования с клиентом.",
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
               },
               {
                 num: "03",
                 tag: "Анализ",
                 title: "Варианты и риски до начала основных работ",
-                desc: "На первой встрече уточняем обстоятельства и изучаем доступные документы. Если требуется отдельный углубленный анализ, заранее согласовываем его объем и стоимость."
+                desc: "На первой встрече уточняем обстоятельства и изучаем доступные документы. Если требуется отдельный углубленный анализ, заранее согласовываем его объем и стоимость.",
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
               },
               {
                 num: "04",
                 tag: "Сопровождение",
                 title: "Берем на себя согласованные этапы",
-                desc: "Подготовка документов, переговоры, обращения в государственные органы, суд и исполнительное производство включаются в работу в зависимости от задачи и фиксируются в договоре."
+                desc: "Подготовка документов, переговоры, обращения в государственные органы, суд и исполнительное производство включаются в работу в зависимости от задачи и фиксируются в договоре.",
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
               },
               {
                 num: "05",
                 tag: "Региональная практика",
                 title: "Офис в центре Липецка",
-                desc: "Принимаем по адресу: г. Липецк, ул. Советская, д. 35, офис 213. Возможность дистанционной работы определяется характером дела."
+                desc: "Принимаем по адресу: г. Липецк, ул. Советская, д. 35, офис 213. Возможность дистанционной работы определяется характером дела.",
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
               },
               {
                 num: "06",
                 tag: "Понятные условия",
                 title: "Состав работ и порядок оплаты — в договоре",
-                desc: "До начала основных работ фиксируем, какие действия выполняет специалист, как рассчитывается стоимость и какие расходы оплачиваются отдельно."
+                desc: "До начала основных работ фиксируем, какие действия выполняет специалист, как рассчитывается стоимость и какие расходы оплачиваются отдельно.",
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
               }
             ].map((item, i) => (
-              <div key={i} className="usp-card" style={{ 
-                padding: '40px', 
-                borderRight: '1px solid rgba(23, 50, 77, 0.1)',
-                borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
-                background: 'rgba(247, 244, 237, 0.45)',
+              <div key={i} className="usp-organic-card" style={{ 
+                padding: '36px 32px', 
+                background: 'linear-gradient(145deg, #FAF8F5 0%, #F4EFE6 100%)',
+                border: '1px solid rgba(23, 50, 77, 0.08)',
+                borderTop: '3px solid var(--color-gold)',
                 position: 'relative',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                boxShadow: '0 4px 16px rgba(23, 50, 77, 0.03)'
               }}>
-                <div>
-                  <div className="usp-accent"></div>
-                  <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
-                    {item.tag}
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  {/* Top bar with Icon, Tag and Watermark number */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <div style={{ 
+                        width: '40px', 
+                        height: '40px', 
+                        borderRadius: '50%', 
+                        background: 'rgba(23, 50, 77, 0.06)', 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center', 
+                        color: 'var(--color-primary)' 
+                      }}>
+                        {item.icon}
+                      </div>
+                      <span style={{ fontSize: '11px', letterSpacing: '0.12em', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase' }}>
+                        {item.tag}
+                      </span>
+                    </div>
+                    <span style={{ 
+                      fontSize: '28px', 
+                      fontFamily: 'var(--font-serif)', 
+                      fontWeight: 700, 
+                      color: 'var(--color-gold)', 
+                      opacity: 0.3,
+                      lineHeight: 1
+                    }}>
+                      {item.num}
+                    </span>
                   </div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '24px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1, lineHeight: 1.3 }}>
+
+                  <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
                     {item.title}
                   </h3>
                 </div>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1, marginTop: 'auto' }}>
+
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.65', margin: 0, position: 'relative', zIndex: 1, marginTop: 'auto' }}>
                   {item.desc}
                 </p>
               </div>
             ))}
           </div>
+          <style dangerouslySetInnerHTML={{__html: `
+            .usp-organic-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 16px 36px rgba(23, 50, 77, 0.1) !important;
+              border-top-color: var(--color-primary) !important;
+              background: #FFFFFF !important;
+            }
+            .usp-organic-card:hover svg {
+              transform: scale(1.1);
+              transition: transform 0.3s ease;
+            }
+          `}} />
         </div>
       </section>
 
