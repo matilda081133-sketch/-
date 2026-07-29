@@ -61,7 +61,7 @@ export default function MilitaryHero({
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className={imageUrl ? "grid grid-2" : ""} style={{ display: imageUrl ? 'grid' : 'flex', flexDirection: 'column', gap: '40px', alignItems: 'center', ...(imageUrl && { gridTemplateColumns: '1.3fr 0.7fr' }) }}>
             {/* Left Column */}
-            <div style={{ flex: '1 1 0%', paddingTop: '36px' }}>
+            <div style={{ flex: '1 1 0%', paddingTop: '64px' }}>
               {breadcrumbs && (
                 <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
                   {breadcrumbs}
