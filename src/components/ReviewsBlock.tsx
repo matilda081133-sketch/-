@@ -14,7 +14,7 @@ export default function ReviewsBlock() {
         
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '50px', flexWrap: 'wrap', gap: '20px' }}>
           <h2 style={{ fontSize: '42px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0, lineHeight: 1.2, maxWidth: '600px' }}>
-            Отзывы и независимые оценки
+            Отзывы<br />и независимые оценки
           </h2>
           <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', margin: 0, maxWidth: '400px', fontWeight: 500, fontStyle: 'italic', borderLeft: '3px solid var(--color-primary)', paddingLeft: '16px' }}>
             Строго соблюдаем конфиденциальность, поэтому публикуем отзывы только с согласия доверителей.

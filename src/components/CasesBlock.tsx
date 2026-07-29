@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export interface CaseData {
   category: string;
-  title: string;
+  title: string | React.ReactNode;
   problem: string;
   action: string;
   result: string;
@@ -93,8 +93,8 @@ export default function CasesBlock({
                 </div>
               )}
               
-              <div style={{ paddingBottom: '20px', marginBottom: '24px', paddingTop: caseItem.isDemo ? '24px' : '0' }}>
-                <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600, paddingRight: caseItem.isDemo ? '140px' : '0' }}>
+              <div style={{ paddingBottom: '20px', marginBottom: '24px', paddingTop: caseItem.isDemo ? '28px' : '0' }}>
+                <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>
                   {caseItem.category}
                 </span>
                 <h4 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>

@@ -65,7 +65,7 @@ export default function ProcessBlock({
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
-                  background: 'var(--color-cream)', 
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
                   border: '1px solid var(--color-border)', 
                   borderLeft: '4px solid var(--color-primary)', 
                   padding: '28px 24px', 
@@ -127,7 +127,8 @@ export default function ProcessBlock({
               alignItems: 'center',
               justifyContent: 'space-between',
               gap: '24px',
-              flexWrap: 'wrap'
+              flexWrap: 'wrap',
+              boxShadow: '0 10px 18px -2px rgba(11, 28, 42, 0.38), 0 4px 8px -2px rgba(0, 0, 0, 0.25)'
             }}>
               <div style={{ flex: '1 1 300px' }}>
                 <h3 style={{ fontSize: '18px', color: 'var(--color-white)', marginBottom: '8px', fontWeight: '600', fontFamily: 'var(--font-sans)' }}>
