@@ -1,3 +1,5 @@
+// !!! VERSION 29.07 - FROZEN BY USER REQUEST !!!
+// !!! НИКАКИМ СКРИПТАМ НЕ ТРОГАТЬ И НЕ ИЗМЕНЯТЬ ЭТУ СТРАНИЦУ БЕЗ ЯВНОГО УКАЗАНИЯ !!!
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
