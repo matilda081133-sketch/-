@@ -10,6 +10,7 @@ export interface PricingTier {
   title: string;
   subtitle: string;
   popular?: boolean;
+  badgeText?: string;
   price?: string;
   features: PricingFeature[];
   buttonText?: string;
@@ -128,7 +129,7 @@ export default function PricingBlock({
             }}
             className="pricing-tier-card"
             >
-              {tier.popular && (
+              {tier.popular && tier.badgeText !== '' && (
                 <div style={{
                   position: 'absolute',
                   top: '0',
@@ -143,7 +144,7 @@ export default function PricingBlock({
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em'
                 }}>
-                  Востребовано
+                  {tier.badgeText || 'Востребовано'}
                 </div>
               )}
               
