@@ -12,19 +12,23 @@ import CasesBlock from '@/components/CasesBlock';
 import PricingBlock from '@/components/PricingBlock';
 
 export const metadata = {
-  title: 'Военный юрист в Липецке — помощь военнослужащим | ЮК «Де-юре»',
+  title: 'Военный юрист в Липецке — помощь военнослужащим | ЮК «Де-Юре»',
   description: 'Юридическая помощь военнослужащим, призывникам и их близким в Липецке: ВВК, выплаты, споры с военкоматом, защита по уголовным делам. Работа по России.',
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
-    canonical: 'https://dejure.ru/grazhdanam/voennyj-yurist/'
+    canonical: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/'
   },
   openGraph: {
-    title: 'Военный юрист в Липецке — помощь военнослужащим | ЮК «Де-юре»',
+    title: 'Военный юрист в Липецке — помощь военнослужащим | ЮК «Де-Юре»',
     description: 'Юридическая помощь военнослужащим, призывникам и их близким в Липецке: ВВК, выплаты, споры с военкоматом, защита по уголовным делам. Работа по России.',
-    url: 'https://dejure.ru/grazhdanam/voennyj-yurist/',
-    siteName: 'ЮК «Де-юре»',
+    url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/',
+    siteName: 'ЮК «Де-Юре»',
     images: [
       {
-        url: 'https://dejure.ru/images/og-military-lawyer.jpg',
+        url: 'https://dejure-help.ru/images/og-military-lawyer.jpg',
         width: 1200,
         height: 630,
         alt: 'Военный юрист в Липецке'
@@ -70,16 +74,16 @@ export default function VoennyjYuristPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://dejure.ru/" },
-          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://dejure.ru/grazhdanam/" },
-          { "@type": "ListItem", "position": 3, "name": "Военный юрист", "item": "https://dejure.ru/grazhdanam/voennyj-yurist/" }
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://dejure-help.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://dejure-help.ru/grazhdanam/" },
+          { "@type": "ListItem", "position": 3, "name": "Военный юрист", "item": "https://dejure-help.ru/grazhdanam/voennyj-yurist/" }
         ]
       },
       {
         "@type": "LegalService",
-        "name": "ЮК «Де-юре»",
+        "name": "ЮК «Де-Юре»",
         "description": "Юридическая помощь военнослужащим в Липецке",
-        "url": "https://dejure.ru/grazhdanam/voennyj-yurist/"
+        "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/"
       },
       {
         "@type": "FAQPage",
@@ -93,7 +97,7 @@ export default function VoennyjYuristPage() {
         "@type": "Person",
         "name": "Дмитрий Сергеевич Конопкин",
         "jobTitle": "Адвокат, партнёр ЮК «Де-Юре»",
-        "url": "https://dejure.ru/team/konopkin-dmitriy-sergeevich/"
+        "url": "https://dejure-help.ru/team/konopkin-dmitriy-sergeevich/"
       }
     ]
   };
@@ -120,7 +124,7 @@ export default function VoennyjYuristPage() {
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
             Защита по уголовным делам, оспаривание<br />
-            незаконных решений ВВК и призывных комиссий,<br />
+            заключений ВВК и решений призывных комиссий,<br />
             помощь в получении положенных выплат<br />
             для военнослужащих и членов их семей.
           </span>
@@ -282,12 +286,12 @@ export default function VoennyjYuristPage() {
         </div>
       </section>
 
-      {/* ═══ 3. В каких ситуациях мы можем помочь ═══ */}
+      {/* ═══ 3. Кому мы помогаем ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              В каких ситуациях<br />мы можем помочь
+              Кому мы помогаем
             </h2>
             <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
               Комплексная защита прав военнослужащих, призывников и их семей. Поможем разобрать вашу ситуацию и выстроить правовую позицию.
@@ -451,7 +455,9 @@ export default function VoennyjYuristPage() {
         position="Адвокат, партнёр ЮК «Де-Юре»"
         imageUrl="/-/images/konopkin.jpg"
         description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>Дмитрий Сергеевич защищает военнослужащих при проверках, возбуждении уголовных дел, проведении следственных действий и судебном разбирательстве. Опыт работы в следственных органах позволяет оценивать ситуацию с учётом практики расследования и заранее выстраивать позицию защиты.</span>,
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Дмитрий Сергеевич Конопкин курирует работу по военному праву: определяет правовую позицию, контролирует ведение дел и подключается к сложным вопросам, связанным с выплатами, заключениями ВВК, спорами с военкоматами и уголовной защитой военнослужащих. Опыт работы в Следственном комитете помогает оценивать правовые риски и выстраивать защиту по делам, связанным с уголовным преследованием.
+          </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
@@ -589,7 +595,7 @@ export default function VoennyjYuristPage() {
               </h2>
               
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Кратко опишите, что произошло. Мы определим срочность, уточним необходимые документы и подключим Дмитрия Сергеевича Конопкина либо другого специалиста с нужными полномочиями.
+                Опишите ситуацию и оставьте контактные данные. Обращение передадим Дмитрию Сергеевичу Конопкину. Он изучит обстоятельства и предложит возможный порядок действий.
               </p>
               
               <div style={{ marginTop: '32px' }}>
