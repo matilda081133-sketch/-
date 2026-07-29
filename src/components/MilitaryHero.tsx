@@ -94,7 +94,7 @@ export default function MilitaryHero({
                 {subtitle}
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '12px', marginTop: '52px', marginBottom: urgentHint ? '32px' : '48px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '12px', marginTop: '76px', marginBottom: urgentHint ? '32px' : '48px' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px' }}>
                   <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '15px' }} data-analytics="military_hero_consultation_click">
                     {primaryCtaText}
