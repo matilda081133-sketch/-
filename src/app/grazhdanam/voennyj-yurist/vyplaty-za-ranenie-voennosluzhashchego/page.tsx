@@ -306,17 +306,17 @@ export default function VyplatyRaneniePage() {
             Дмитрий Сергеевич Конопкин ведёт военное направление и подключается к вопросам выплат при задержке, отказе, недостатке или противоречиях в медицинских и служебных документах. После изучения ситуации определяет возможный порядок оформления или обжалования.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
-              Адвокат, реестровый номер 48/812.
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
+              <span>Адвокат, реестровый номер 48/812.</span>
             </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
-              С 2016 по 2022 год работал в Следственном управлении Следственного комитета Российской Федерации по Липецкой области; прошёл путь до старшего следователя отдела по расследованию особо важных дел.
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
+              <span>С 2016 по 2022 год работал в Следственном управлении Следственного комитета Российской Федерации по Липецкой области; прошёл путь до старшего следователя отдела по расследованию особо важных дел.</span>
             </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
-              Ведёт военные дела в Липецкой области и представляет интересы доверителей в других регионах России.
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
+              <span>Ведёт военные дела в Липецкой области и представляет интересы доверителей в других регионах России.</span>
             </li>
           </ul>,
           <a key="3" href="/-/team/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
