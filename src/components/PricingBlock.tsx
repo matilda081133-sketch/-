@@ -81,7 +81,7 @@ export default function PricingBlock({
   const tiers = propTiers || defaultTiers;
 
   return (
-    <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-cream)' }}>
+    <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)' }}>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <h2 style={{ 
@@ -203,6 +203,7 @@ export default function PricingBlock({
           background: transparent;
           color: var(--color-primary);
           border: 1px solid var(--color-primary);
+          transition: all 0.3s ease;
         }
         .btn-regular:hover {
           background: var(--color-primary) !important;
@@ -212,11 +213,12 @@ export default function PricingBlock({
           background: var(--color-white);
           color: var(--color-deep-blue);
           border: 1px solid var(--color-white);
+          transition: all 0.3s ease;
         }
         .btn-popular:hover {
-          background: var(--color-primary) !important;
+          background: rgba(255, 255, 255, 0.12) !important;
           color: var(--color-white) !important;
-          border-color: var(--color-primary) !important;
+          border: 1px solid #ffffff !important;
         }
       `}</style>
     </section>
