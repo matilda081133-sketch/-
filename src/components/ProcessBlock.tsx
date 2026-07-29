@@ -145,6 +145,7 @@ export default function ProcessBlock({
               </div>
               <a href={ctaButtonHref} className="btn btn-light" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>{ctaButtonText}</a>
             </div>
+          )}
           {footerNote && (
             <p style={{
               marginTop: '32px',

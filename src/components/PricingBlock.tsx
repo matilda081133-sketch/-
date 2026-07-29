@@ -25,6 +25,8 @@ interface PricingBlockProps {
   ctaSubtitle?: string;
   ctaButtonText?: string;
   ctaButtonLink?: string;
+  disclaimer?: string;
+  guaranteeText?: string;
 }
 
 export default function PricingBlock({
@@ -34,7 +36,9 @@ export default function PricingBlock({
   ctaTitle,
   ctaSubtitle,
   ctaButtonText,
-  ctaButtonLink
+  ctaButtonLink,
+  disclaimer,
+  guaranteeText
 }: PricingBlockProps) {
   const defaultTiers: PricingTier[] = [
     {
@@ -181,6 +185,21 @@ export default function PricingBlock({
             </div>
           ))}
         </div>
+
+        {(disclaimer || guaranteeText) && (
+          <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {disclaimer && (
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: 1.6, margin: 0, textAlign: 'center' }}>
+                {disclaimer}
+              </p>
+            )}
+            {guaranteeText && (
+              <p style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '14px', lineHeight: 1.5, margin: 0, textAlign: 'center' }}>
+                ✓ {guaranteeText}
+              </p>
+            )}
+          </div>
+        )}
         
         {ctaTitle && (
           <div style={{ marginTop: '40px', background: 'var(--color-white)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', padding: '40px', borderRadius: '4px', display: 'flex', flexWrap: 'wrap', gap: '32px', alignItems: 'center', justifyContent: 'space-between' }}>
