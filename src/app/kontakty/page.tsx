@@ -268,10 +268,23 @@ export default function ContactsPage() {
                   <MapWidget />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                  <a href="https://yandex.ru/maps/?pt=39.585799,52.604024&z=17&text=г.+Липецк,+ул.+Советская,+д.+35" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '16px 32px', fontSize: '15px' }}>
+                  <a href="https://yandex.ru/maps/?pt=39.585799,52.604024&z=17&text=г.+Липецк,+ул.+Советская,+д.+35" target="_blank" rel="noopener noreferrer" className="btn btn-route-map" style={{ padding: '16px 32px', fontSize: '15px' }}>
                     Построить маршрут до офиса
                   </a>
                 </div>
+                <style jsx>{`
+                  .btn-route-map {
+                    background-color: #ffffff !important;
+                    color: var(--color-deep-blue) !important;
+                    border: 1px solid var(--color-deep-blue) !important;
+                    transition: all 0.3s ease !important;
+                  }
+                  .btn-route-map:hover {
+                    background-color: var(--color-deep-blue) !important;
+                    color: #ffffff !important;
+                    border-color: var(--color-deep-blue) !important;
+                  }
+                `}</style>
               </div>
 
             </div>
