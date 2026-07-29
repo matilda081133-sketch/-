@@ -46,7 +46,7 @@ export default function MilitaryHero({
       minHeight: '85vh', 
       display: 'flex', 
       alignItems: 'center',
-      paddingTop: '160px',
+      paddingTop: '100px',
       paddingBottom: '80px',
       background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
       overflow: 'hidden'
