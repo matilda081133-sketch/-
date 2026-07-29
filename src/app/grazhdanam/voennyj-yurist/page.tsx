@@ -245,18 +245,19 @@ export default function VoennyjYuristPage() {
               color: #FFFFFF !important;
               border-color: #FFFFFF !important;
             }
-            a.btn.btn-urgent-call,
             .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
               background-color: var(--color-gold) !important;
               color: var(--color-deep-blue) !important;
               font-weight: 700 !important;
               transition: all 0.3s ease !important;
               border: 1px solid var(--color-gold) !important;
             }
-            a.btn.btn-urgent-call:hover,
             .btn-urgent-call:hover {
               background-color: #FFFFFF !important;
-              color: var(--color-deep-blue) !important;
+              color: #0B1C2A !important;
               border-color: #FFFFFF !important;
             }
           `}} />
@@ -266,7 +267,7 @@ export default function VoennyjYuristPage() {
             <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
               +7 (910) 350-31-11
             </a>
-            <a href="tel:+79103503111" className="btn btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="military_urgent_call_click">
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="military_urgent_call_click">
               Позвонить адвокату
             </a>
             <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
@@ -305,9 +306,9 @@ export default function VoennyjYuristPage() {
                 overflow: 'hidden',
                 transition: 'all 0.3s ease'
               }}>
-                {/* Vector watermark logo/icon */}
-                <div style={{ position: 'absolute', bottom: '-8px', right: '-8px', opacity: 0.05, pointerEvents: 'none' }}>
-                  <svg width="75" height="75" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                {/* Vector watermark logo/icon (larger & cropped at edge) */}
+                <div style={{ position: 'absolute', bottom: '-25px', right: '-25px', opacity: 0.07, pointerEvents: 'none' }}>
+                  <svg width="115" height="115" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
                     <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
                   </svg>
                 </div>
