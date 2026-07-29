@@ -387,6 +387,7 @@ export default function VyplatySemePogibshegoPage() {
         steps={steps}
         title="Как проходит работа"
         subtitle=""
+        ctaTitle=""
         footerNote="Консультацию и первичную проверку документов можно провести дистанционно. Необходимость личного участия юриста или адвоката определим после изучения ситуации."
       />
 

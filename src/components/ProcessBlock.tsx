@@ -18,6 +18,7 @@ interface ProcessBlockProps {
   ctaButtonText?: string;
   ctaButtonHref?: string;
   alignTitle?: 'left' | 'center';
+  footerNote?: string;
 }
 
 export default function ProcessBlock({
@@ -28,7 +29,8 @@ export default function ProcessBlock({
   ctaSubtitle = "Кратко опишите ситуацию — мы уточним обстоятельства, скажем, какие документы потребуются, и определим следующий шаг.",
   ctaButtonText = "Обсудить ситуацию",
   ctaButtonHref = "#consultation",
-  alignTitle = 'center'
+  alignTitle = 'center',
+  footerNote
 }: ProcessBlockProps) {
   // Determine grid class based on number of steps
   let gridClass = "grid grid-3";
@@ -143,6 +145,18 @@ export default function ProcessBlock({
               </div>
               <a href={ctaButtonHref} className="btn btn-light" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>{ctaButtonText}</a>
             </div>
+          {footerNote && (
+            <p style={{
+              marginTop: '32px',
+              textAlign: 'center',
+              color: 'var(--color-text-secondary)',
+              fontSize: '15px',
+              lineHeight: 1.6,
+              maxWidth: '900px',
+              marginInline: 'auto'
+            }}>
+              {footerNote}
+            </p>
           )}
 
         </div>
