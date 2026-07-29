@@ -83,7 +83,7 @@ export default function VyplatyRaneniePage() {
 
   const situations = [
     {
-      title: 'Выплату после ранения не назначили',
+      title: "Выплату после ранения\nне назначили",
       desc: 'Проверим основания отказа и имеющиеся документы. Определим, что необходимо получить или исправить и в каком порядке обжаловать решение.'
     },
     {
@@ -245,7 +245,7 @@ export default function VyplatyRaneniePage() {
                   </svg>
                 </div>
 
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0', position: 'relative', zIndex: 1 }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0', position: 'relative', zIndex: 1, whiteSpace: 'pre-line' }}>
                   {sit.title}
                 </h3>
                 <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
@@ -539,7 +539,7 @@ export default function VyplatyRaneniePage() {
               </h2>
               
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Кратко опишите, что произошло, и оставьте контактные данные. Обращение будет передано Дмитрию Сергеевичу Конопкину. Он уточнит, какие документы у вас есть, изучит обстоятельства и согласует с вами консультацию.
+                Кратко опишите, что произошло, и оставьте контактные данные. <span style={{ color: 'var(--color-deep-blue)', fontWeight: 600 }}>Обращение будет передано Дмитрию Сергеевичу Конопкину.</span> Он уточнит, какие документы у вас есть, изучит обстоятельства и согласует с вами консультацию.
               </p>
               
               <div style={{ marginTop: '32px' }}>
