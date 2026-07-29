@@ -252,7 +252,7 @@ export default function VyplatyRaneniePage() {
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
             {situations.map((sit, i) => (
-              <div key={i} style={{
+              <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                 border: '1px solid var(--color-border)',
@@ -261,12 +261,20 @@ export default function VyplatyRaneniePage() {
                 display: 'flex',
                 flexDirection: 'column',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
               }}>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                {/* Vector watermark graphic from SOCH / hub page */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0', position: 'relative', zIndex: 1 }}>
                   {sit.title}
                 </h3>
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
                   {sit.desc}
                 </p>
               </div>
