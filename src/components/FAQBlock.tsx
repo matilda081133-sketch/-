@@ -10,9 +10,11 @@ interface FAQBlockProps {
   superTitle?: string;
   title?: string;
   subtitle?: string;
+  ctaText?: string;
+  ctaLink?: string;
 }
 
-export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые вопросы клиентов", title = "Ответы на важные вопросы", subtitle = "Мы собрали самые частые вопросы наших доверителей. Если вы не нашли ответ на свой вопрос — свяжитесь с нами для индивидуальной консультации." }: FAQBlockProps) {
+export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые вопросы клиентов", title = "Ответы на важные вопросы", subtitle = "Мы собрали самые частые вопросы наших доверителей. Если вы не нашли ответ на свой вопрос — свяжитесь с нами для индивидуальной консультации.", ctaText = "Задать свой вопрос", ctaLink = "#form" }: FAQBlockProps) {
   const defaultFaqs = [
     {
       q: 'Как проходит первое обращение?',
@@ -77,7 +79,7 @@ export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые в
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '40px', maxWidth: '400px' }}>
               {subtitle}
             </p>
-            <a href="#consultation" className="btn btn-outline" style={{ display: 'inline-flex' }}>Задать свой вопрос</a>
+            <a href={ctaLink} className="btn btn-outline" style={{ display: 'inline-flex' }}>{ctaText}</a>
           </div>
 
           {/* Right Side: Accordion */}
