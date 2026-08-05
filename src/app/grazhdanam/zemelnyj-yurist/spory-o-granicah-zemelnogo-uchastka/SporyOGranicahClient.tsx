@@ -210,6 +210,7 @@ export default function SporyOGranicahClient() {
           }
           primaryCtaText="Обсудить спор о границе"
           primaryCtaLink="#form"
+          primaryCtaAnalytics="land_spory_o_granicah_consultation_click"
           primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
           secondaryCtaText="С какими ситуациями помогаем"
           secondaryCtaLink="#situations"
@@ -833,7 +834,8 @@ export default function SporyOGranicahClient() {
                   subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
                   hiddenFields={[
                     { name: 'pageId', value: 'CIV-05-01' },
-                    { name: 'specialist', value: 'Юрист по спорам о границах земельного участка' },
+                    { name: 'pageTitle', value: 'Споры о границах земельного участка в Липецке' },
+                    { name: 'practice', value: 'Земельное право' },
                     { name: 'ctaSource', value: ctaSource },
                     { name: 'cta_source', value: ctaSource },
                     { name: 'cta_text', value: ctaText }

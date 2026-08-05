@@ -194,6 +194,7 @@ export default function UstanovlenieServitutaClient() {
           }
           primaryCtaText="Оценить возможность сервитута"
           primaryCtaLink="#form"
+          primaryCtaAnalytics="land_servitut_consultation_click"
           primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
           rightContent={
             <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>

@@ -194,6 +194,7 @@ export default function RazdelUchastkaClient() {
           }
           primaryCtaText="Проверить возможность раздела"
           primaryCtaLink="#form"
+          primaryCtaAnalytics="land_razdel_uchastka_consultation_click"
           primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
           rightContent={
             <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>

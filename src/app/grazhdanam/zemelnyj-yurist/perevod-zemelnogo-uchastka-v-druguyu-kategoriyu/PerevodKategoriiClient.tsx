@@ -194,6 +194,7 @@ export default function PerevodKategoriiClient() {
           }
           primaryCtaText="Проверить допустимость перевода"
           primaryCtaLink="#form"
+          primaryCtaAnalytics="land_perevod_kategorii_consultation_click"
           primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
           rightContent={
             <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>

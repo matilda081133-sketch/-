@@ -295,6 +295,7 @@ export default function ZemelnyjYuristClient() {
           }
           primaryCtaText={<>Оценить перспективы <br />дела</>}
           primaryCtaLink="#form"
+          primaryCtaAnalytics="land_hero_consultation_click"
           primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
           rightContent={
             <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>

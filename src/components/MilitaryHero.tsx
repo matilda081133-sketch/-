@@ -9,6 +9,7 @@ type HeroProps = {
   primaryCtaText: React.ReactNode;
   primaryCtaSubtext?: React.ReactNode;
   primaryCtaLink?: string;
+  primaryCtaAnalytics?: string;
   secondaryCtaText?: React.ReactNode;
   secondaryCtaLink?: string;
   urgentHint?: string;
@@ -36,6 +37,7 @@ export default function MilitaryHero({
   primaryCtaText,
   primaryCtaSubtext,
   primaryCtaLink = '#form',
+  primaryCtaAnalytics,
   secondaryCtaText,
   secondaryCtaLink,
   urgentHint,
@@ -107,7 +109,7 @@ export default function MilitaryHero({
               {/* Primary Call to Action - IMMEDIATELY AFTER INTRO TEXT */}
               <div className="military-hero-cta" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px', marginTop: '16px', marginBottom: urgentHint ? '16px' : '24px' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px' }}>
-                  <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '15px 36px', fontSize: '15px', color: '#FFFFFF', backgroundColor: '#10273B', border: '1px solid #9B7E55', boxShadow: '0 4px 14px rgba(16, 39, 59, 0.25)' }} data-analytics="military_hero_consultation_click">
+                  <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '15px 36px', fontSize: '15px', color: '#FFFFFF', backgroundColor: '#10273B', border: '1px solid #9B7E55', boxShadow: '0 4px 14px rgba(16, 39, 59, 0.25)' }} data-analytics={primaryCtaAnalytics || "military_hero_consultation_click"}>
                     {primaryCtaText}
                   </a>
                   {secondaryCtaText && secondaryCtaLink && (
