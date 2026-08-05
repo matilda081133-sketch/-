@@ -193,12 +193,11 @@ export default function VyplatyRaneniePage() {
         superTitle="Военные выплаты • анализ документов и обжалование"
         title={<><span style={{ display: 'inline-block' }}>Юрист по выплатам</span> <br /><span style={{ display: 'inline-block' }}>за ранение военнослужащего</span> <br /><span style={{ display: 'inline-block' }}>в Липецке</span></>}
         subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
+          <span style={{ display: 'inline-block', maxWidth: '640px', textWrap: 'balance' }}>
             <span style={{ display: 'inline-block' }}>Проверим документы и виды положенных выплат,</span> <br />
-            <span style={{ display: 'inline-block' }}>запросим недостающие сведения</span> <br />
-            <span style={{ display: 'inline-block' }}>и определим порядок действий при задержке,</span> <br />
-            <span style={{ display: 'inline-block' }}>отказе, неверно определённой степени</span> <br />
-            <span style={{ display: 'inline-block' }}>тяжести ранения или неполной выплате.</span>
+            <span style={{ display: 'inline-block' }}>запросим недостающие сведения и определим порядок</span> <br />
+            <span style={{ display: 'inline-block' }}>действий при задержке, отказе, неверно определённой</span> <br />
+            <span style={{ display: 'inline-block' }}>степени тяжести ранения или неполной выплате.</span>
           </span>
         }
         primaryCtaText="Получить консультацию"

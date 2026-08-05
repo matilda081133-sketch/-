@@ -14,6 +14,7 @@ type HeroProps = {
   secondaryCtaLink?: string;
   urgentHint?: string;
   trustItems?: { icon?: React.ReactNode; text: React.ReactNode }[];
+  trustPosition?: 'above-cta' | 'below-cta';
 };
 
 import Image from 'next/image';
@@ -42,6 +43,7 @@ export default function MilitaryHero({
   secondaryCtaLink,
   urgentHint,
   trustItems = [],
+  trustPosition = 'above-cta',
   imageUrl,
   imageName,
   imageSubtitle,
@@ -106,8 +108,13 @@ export default function MilitaryHero({
                 {subtitle}
               </p>
 
-              {/* Primary Call to Action - IMMEDIATELY AFTER INTRO TEXT */}
-              <div className="military-hero-cta" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px', marginTop: '16px', marginBottom: urgentHint ? '16px' : '24px' }}>
+              {/* Three Bullet USPs (TrustStrip) - PLACED ABOVE CTA BUTTON & BELOW DESCRIPTION */}
+              {trustPosition === 'above-cta' && trustItems && trustItems.length > 0 && (
+                <TrustStrip items={trustItems} marginTop={trustMarginTop || '16px'} />
+              )}
+
+              {/* Primary Call to Action */}
+              <div className="military-hero-cta" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px', marginTop: '20px', marginBottom: urgentHint ? '16px' : '24px' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px' }}>
                   <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '15px 36px', fontSize: '15px', color: '#FFFFFF', backgroundColor: '#10273B', border: '1px solid #9B7E55', boxShadow: '0 4px 14px rgba(16, 39, 59, 0.25)' }} data-analytics={primaryCtaAnalytics || "military_hero_consultation_click"}>
                     {primaryCtaText}
@@ -140,8 +147,10 @@ export default function MilitaryHero({
                 </div>
               )}
 
-              {/* Three Bullet USPs (TrustStrip) - NOW PLACED AFTER CTA */}
-              {trustItems && trustItems.length > 0 && <TrustStrip items={trustItems} marginTop={trustMarginTop || '16px'} />}
+              {/* Three Bullet USPs (TrustStrip) - IF SPECIFIED BELOW CTA */}
+              {trustPosition === 'below-cta' && trustItems && trustItems.length > 0 && (
+                <TrustStrip items={trustItems} marginTop={trustMarginTop || '16px'} />
+              )}
             </div>
             
             {/* Right Column for Photo or Unconstrained Creative */}
