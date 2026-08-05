@@ -16,7 +16,7 @@ export default function ServiceUnavailable503Page() {
     <main style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header />
       
-      <section style={{ 
+      <section className="tech-page-section" style={{ 
         flex: 1, 
         paddingTop: '160px', 
         paddingBottom: '100px', 
@@ -71,6 +71,14 @@ export default function ServiceUnavailable503Page() {
       </section>
 
       <Footer />
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 768px) {
+          .tech-page-section {
+            padding-top: 100px !important;
+            padding-bottom: 60px !important;
+          }
+        }
+      `}} />
     </main>
   );
 }

@@ -180,7 +180,7 @@ export default function Header() {
             
             <div style={{ width: '1px', height: '24px', backgroundColor: 'var(--color-border)' }} />
 
-            <div className="contact-dropdown" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+            <div className="contact-dropdown" style={{ position: 'relative', display: 'flex', alignItems: 'center', visibility: 'hidden' }}>
               <button className="btn btn-outline contact-btn" style={{ padding: '8px 20px', fontSize: '13px', borderRadius: '4px', whiteSpace: 'nowrap', textDecoration: 'none', cursor: 'pointer' }}>
                 Написать
               </button>
