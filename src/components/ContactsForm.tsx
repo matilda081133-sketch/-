@@ -6,20 +6,110 @@ import PhoneInput from './PhoneInput';
 
 interface ContactsFormProps {
   title?: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
+  buttonText?: string;
+  commentPlaceholder?: string;
   hiddenFields?: { name: string; value: string }[];
+  subtext?: string;
 }
 
 export default function ContactsForm({ 
   title = "Написать нам", 
   subtitle = "Оставьте имя и номер телефона. При желании кратко опишите ситуацию — это поможет юристу подготовиться к разговору.",
-  hiddenFields
+  buttonText = "Оставить заявку",
+  commentPlaceholder = "Кратко опишите ситуацию или вопрос…",
+  hiddenFields,
+  subtext = "Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
 }: ContactsFormProps = {}) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
+
+    const name = formData.get('name')?.toString() || '';
+    const phone = formData.get('phone')?.toString() || '';
+    const message = formData.get('message')?.toString() || '';
+
+    // Собираем все служебные и скрытые поля из формы и пропса hiddenFields
+    const extraData: Record<string, string> = {};
+    if (hiddenFields && hiddenFields.length > 0) {
+      hiddenFields.forEach(f => {
+        if (f.name && f.value) {
+          extraData[f.name] = f.value;
+        }
+      });
+    }
+
+    formData.forEach((value, key) => {
+      if (!['name', 'phone', 'message', 'agreement'].includes(key)) {
+        extraData[key] = value.toString();
+      }
+    });
+
+    let specialist = extraData.specialist || extraData.lawyer || '';
+    if (!specialist) {
+      const rawTitle = typeof window !== 'undefined' ? document.title : '';
+      const cleanTitle = rawTitle.replace(/\s*\|.*$/, '').replace(/—.*$/, '').trim();
+      const path = typeof window !== 'undefined' ? window.location.pathname : '';
+
+      if (path.includes('/voennyj-yurist')) {
+        specialist = `Конопкин Д. С. (${cleanTitle || 'Военное право'})`;
+      } else if (cleanTitle) {
+        specialist = cleanTitle;
+      } else {
+        specialist = 'Заявка с сайта';
+      }
+    }
+
+    const payload = {
+      name,
+      phone: phone ? (phone.startsWith('+') ? "'" + phone : phone) : '',
+      message,
+      specialist,
+      pageId: extraData.pageId || 'CIV-05',
+      ctaSource: extraData.ctaSource || 'form_submit',
+      pricingFormat: extraData.pricingFormat || '',
+      ...extraData,
+      page_url: typeof window !== 'undefined' ? window.location.href : '',
+      page_title: typeof window !== 'undefined' ? document.title : ''
+    };
+
+    const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbwGuCuHnGFoVmIk1QBGw1v_O2FYIiu9PfsctqFtXLbXah45wrQfR3ez0NJF_Wt0kU36/exec';
+
+    try {
+      if (scriptUrl) {
+        const response = await fetch(scriptUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          },
+          body: JSON.stringify(payload),
+          redirect: 'follow'
+        });
+
+        if (response.ok) {
+          setLoading(false);
+          setSubmitted(true);
+        } else {
+          throw new Error(`Ответ сервера: ${response.status} ${response.statusText}`);
+        }
+      } else {
+        console.log('Заявка принята (Google Script URL не задан):', payload);
+        setLoading(false);
+        setSubmitted(true);
+      }
+    } catch (err: any) {
+      console.error('Ошибка отправки заявки:', err);
+      setLoading(false);
+      setError('Не удалось отправить форму. Проверьте соединение или позвоните нам прямо сейчас.');
+    }
   };
 
   if (submitted) {
@@ -40,8 +130,8 @@ export default function ContactsForm({
           <polyline points="22 4 12 14.01 9 11.01"></polyline>
         </svg>
         <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 12px 0', lineHeight: 1.2 }}>Заявка отправлена</h3>
-        <p style={{ margin: 0, color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, maxWidth: '280px' }}>
-          Мы свяжемся с вами для уточнения деталей.
+        <p style={{ margin: 0, color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, maxWidth: '320px' }}>
+          Мы получили ваши данные и перезвоним вам в ближайшее время.
         </p>
       </div>
     );
@@ -63,18 +153,44 @@ export default function ContactsForm({
         </p>
       )}
       
+      {error && (
+        <div style={{ 
+          background: '#FFF5F5', 
+          border: '1px solid #FEB2B2', 
+          color: '#C53030', 
+          padding: '16px', 
+          marginBottom: '20px', 
+          fontSize: '14px', 
+          lineHeight: 1.5 
+        }}>
+          <div style={{ fontWeight: 'bold', marginBottom: '6px' }}>Не удалось отправить форму</div>
+          <div style={{ marginBottom: '10px' }}>{error}</div>
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+            <a href="tel:+79103503111" style={{ color: '#9B2C2C', fontWeight: 'bold', textDecoration: 'underline' }}>
+              📞 +7 (910) 350-31-11
+            </a>
+            <a href="https://max.ru/join/j5TVaYjQLyJwXfW1azJJ84YZToaXviRu-YFPDy8gMBI" target="_blank" rel="noopener noreferrer" style={{ color: '#9B2C2C', fontWeight: 'bold', textDecoration: 'underline' }}>
+              MAX
+            </a>
+            <a href="https://vk.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#9B2C2C', fontWeight: 'bold', textDecoration: 'underline' }}>
+              ВКонтакте
+            </a>
+          </div>
+        </div>
+      )}
+
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         {hiddenFields?.map((field, i) => (
           <input key={i} type="hidden" name={field.name} value={field.value} />
         ))}
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <label htmlFor="name" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Имя <span style={{ color: 'var(--color-gold)' }}>*</span></label>
+          <label htmlFor="name" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Имя (необязательно)</label>
           <input 
             type="text" 
             id="name"
-            name="name"
-            required 
+            name="name" 
+            autoComplete="name"
             placeholder="Иван Иванов" 
             style={{ 
               padding: '14px 16px', 
@@ -97,6 +213,7 @@ export default function ContactsForm({
           <PhoneInput 
             id="phone"
             name="phone"
+            autoComplete="tel"
             required
             pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
             style={{ 
@@ -119,7 +236,7 @@ export default function ContactsForm({
             id="message" 
             name="message"
             rows={3}
-            placeholder="Например: Вопрос о выплатах за ранение..."
+            placeholder={commentPlaceholder}
             style={{ 
               padding: '14px 16px', 
               border: '1px solid rgba(23, 50, 77, 0.2)', 
@@ -144,28 +261,49 @@ export default function ContactsForm({
           </span>
         </label>
         
-        <button type="submit" style={{ 
-          width: '100%', 
-          padding: '16px', 
-          fontSize: '15px', 
-          marginTop: '8px',
-          background: 'var(--color-gold)',
-          color: 'var(--color-white)',
-          border: 'none',
-          fontWeight: 600,
-          cursor: 'pointer',
-          transition: 'opacity 0.3s'
-        }}
-        onMouseOver={(e) => e.currentTarget.style.opacity = '0.9'}
-        onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
+        <button 
+          type="submit" 
+          disabled={loading}
+          style={{ 
+            width: '100%', 
+            padding: '16px', 
+            fontSize: '16px', 
+            marginTop: '8px',
+            background: loading ? '#6C7A89' : '#10273B',
+            color: '#FFFFFF',
+            border: '1px solid #9B7E55',
+            borderRadius: '0',
+            whiteSpace: 'nowrap',
+            fontWeight: 600,
+            cursor: loading ? 'not-allowed' : 'pointer',
+            transition: 'all 0.3s ease',
+            boxShadow: '0 4px 12px rgba(16, 39, 59, 0.15)',
+            opacity: loading ? 0.8 : 1
+          }}
+          onMouseOver={(e) => {
+            if (!loading) {
+              e.currentTarget.style.background = '#9B7E55';
+              e.currentTarget.style.borderColor = '#9B7E55';
+            }
+          }}
+          onMouseOut={(e) => {
+            if (!loading) {
+              e.currentTarget.style.background = '#10273B';
+              e.currentTarget.style.borderColor = '#9B7E55';
+            }
+          }}
         >
-          Оставить заявку
+          {loading ? 'Отправка...' : buttonText}
         </button>
         
-        <div style={{ marginTop: '4px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4, textAlign: 'left' }}>
-          * Если вы оставите заявку вечером или в выходной день, мы перезвоним вам в ближайший рабочий день.
-        </div>
+        {subtext && (
+          <div style={{ marginTop: '4px', fontSize: '12px', color: 'var(--color-text-secondary)', lineHeight: 1.4, textAlign: 'center' }}>
+            {subtext}
+          </div>
+        )}
       </form>
     </div>
   );
 }
+
+

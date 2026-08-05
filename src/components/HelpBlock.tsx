@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 interface HelpItem {
   title: string;
@@ -83,3 +83,4 @@ export default function HelpBlock({
     </section>
   );
 }
+

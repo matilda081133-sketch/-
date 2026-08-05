@@ -37,7 +37,25 @@ export default function ExtendedContactStrip() {
               Необязательно самостоятельно определять вид услуги. Опишите обстоятельства — мы разберём ситуацию, уточним необходимые документы и определим, какой специалист должен подключиться.
             </p>
             <div style={{ marginBottom: '32px' }}>
-              <a href="#form" className="btn btn-light" style={{ padding: '12px 24px', fontSize: '15px', display: 'inline-block', width: 'auto', background: 'rgba(255,255,255,0.1)', color: 'var(--color-white)', border: '1px solid rgba(255,255,255,0.3)' }}>
+              <a 
+                href="#form" 
+                style={{ 
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '12px 24px', 
+                  fontSize: '15px',
+                  fontWeight: 700,
+                  color: '#10273B',
+                  backgroundColor: '#FFFFFF',
+                  border: '2px solid #FFFFFF',
+                  borderRadius: '4px',
+                  textDecoration: 'none',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
+                  whiteSpace: 'nowrap',
+                  transition: 'all 0.2s ease'
+                }}
+              >
                 Описать ситуацию
               </a>
             </div>
@@ -55,3 +73,4 @@ export default function ExtendedContactStrip() {
     </section>
   );
 }
+

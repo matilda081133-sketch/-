@@ -52,25 +52,37 @@ export default function VoennyjYuristPage() {
   ];
 
   const directions = [
-    { title: 'Выплаты за ранение', desc: 'Помощь, если выплату не назначили, задерживают либо документы не подтверждают обстоятельства и тяжесть ранения.', link: '/-/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/', slug: 'vyplaty-ranenie' },
-    { title: 'Выплаты семье погибшего', desc: 'Определение права на выплаты, сбор документов и обжалование отказа или неверного расчёта.', link: '/-/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/', slug: 'vyplaty-semya' },
-    { title: 'Оспаривание заключений ВВК', desc: 'Анализ медицинских документов и заключений комиссии, подготовка жалобы и сопровождение пересмотра.', link: '/-/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/', slug: 'vvk' },
-    { title: 'Споры с военкоматом', desc: 'Помощь при несогласии с решением призывной комиссии и нарушениях процедуры со стороны военкомата.', link: '/-/grazhdanam/voennyj-yurist/spory-s-voenkomatom/', slug: 'voenkomat' },
-    { title: 'Признание военнослужащего безвестно отсутствующим или объявление умершим', desc: 'Помощь семье в выборе правовой процедуры, подготовке доказательств и обращении в суд.', link: '/-/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/', slug: 'bezvestno' },
+    { title: <><span style={{ display: 'inline-block' }}>Выплаты</span> <br /><span style={{ display: 'inline-block' }}>за ранение</span></>, desc: 'Помощь, если выплату не назначили, задерживают либо документы не подтверждают обстоятельства и тяжесть ранения.', link: '/-/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/', slug: 'vyplaty-ranenie' },
+    { title: <><span style={{ display: 'inline-block' }}>Выплаты семье</span> <br /><span style={{ display: 'inline-block' }}>погибшего</span></>, desc: 'Определение права на выплаты, сбор документов и обжалование отказа или неверного расчёта.', link: '/-/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/', slug: 'vyplaty-semya' },
+    { title: <><span style={{ display: 'inline-block' }}>Оспаривание</span> <br /><span style={{ display: 'inline-block' }}>заключений ВВК</span></>, desc: 'Анализ медицинских документов и заключений комиссии, подготовка жалобы и сопровождение пересмотра.', link: '/-/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/', slug: 'vvk' },
+    { title: <><span style={{ display: 'inline-block' }}>Споры</span> <br /><span style={{ display: 'inline-block' }}>с военкоматом</span></>, desc: 'Помощь при несогласии с решением призывной комиссии и нарушениях процедуры со стороны военкомата.', link: '/-/grazhdanam/voennyj-yurist/spory-s-voenkomatom/', slug: 'voenkomat' },
+    { title: <><span style={{ display: 'inline-block' }}>Признание военнослужащего</span> <br /><span style={{ display: 'inline-block' }}>безвестно отсутствующим</span> <br /><span style={{ display: 'inline-block' }}>или объявление умершим</span></>, desc: 'Помощь семье в выборе правовой процедуры, подготовке доказательств и обращении в суд.', link: '/-/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/', slug: 'bezvestno' },
   ];
 
   const situations = [
-    { who: 'Контрактникам, мобилизованным и добровольцам', situation: 'Если проводится проверка или возбуждено уголовное дело', help: 'Оценим обстоятельства и процессуальный статус, изучим документы и определим порядок защиты до объяснений, допроса или задержания.' },
-    { who: 'Военнослужащим после ранения', situation: 'Если выплату не назначили, задерживают или рассчитали неверно', help: 'Проверим основания и документы, подготовим обращения и поможем обжаловать отказ или неверный расчёт.' },
-    { who: 'Военнослужащим с заболеваниями и последствиями ранений', situation: 'Если заключение ВВК не соответствует состоянию здоровья', help: 'Изучим медицинские документы, оценим основания для обжалования и поможем добиться повторного рассмотрения.' },
-    { who: 'Призывникам и допризывникам', situation: 'Если вы не согласны с решением призывной комиссии', help: 'Проверим процедуру и основания для отсрочки или освобождения, подготовим жалобу либо обращение в суд.' },
-    { who: 'Родственникам погибших военнослужащих', situation: 'Если возникли сложности с оформлением положенных выплат', help: 'Определим круг получателей и комплект документов, поможем обжаловать отказ, задержку или неправильный расчёт.' },
-    { who: 'Родственникам военнослужащих, местонахождение которых неизвестно', situation: 'Если необходимо установить статус и оформить юридические последствия', help: 'Поможем собрать документы, выбрать правовую процедуру и обратиться в компетентные органы или суд.' },
+    { who: 'Контрактникам, мобилизованным и добровольцам', situation: <><span style={{ display: 'inline-block' }}>Если проводится проверка</span> <br /><span style={{ display: 'inline-block' }}>или возбуждено уголовное дело</span></>, help: 'Оценим обстоятельства и\nпроцессуальный статус,\nизучим документы и определим\nпорядок защиты до объяснений,\nдопроса или задержания.' },
+    { who: 'Военнослужащим после ранения', situation: <><span style={{ display: 'inline-block' }}>Если выплату не назначили,</span> <br /><span style={{ display: 'inline-block' }}>задерживают или рассчитали неверно</span></>, help: 'Проверим основания и документы, подготовим обращения\nи поможем обжаловать отказ или неверный расчёт.' },
+    { who: 'Военнослужащим с заболеваниями и последствиями ранений', situation: <><span style={{ display: 'inline-block' }}>Если заключение ВВК</span> <br /><span style={{ display: 'inline-block' }}>не соответствует состоянию здоровья</span></>, help: 'Изучим медицинские документы, оценим основания для обжалования\nи поможем добиться повторного рассмотрения.' },
+    { who: 'Призывникам и допризывникам', situation: <><span style={{ display: 'inline-block' }}>Если вы не согласны</span> <br /><span style={{ display: 'inline-block' }}>с решением призывной комиссии</span></>, help: 'Проверим процедуру и\nоснования для отсрочки\nили освобождения, подготовим\nжалобу либо обращение в суд.' },
+    { who: 'Родственникам погибших военнослужащих', situation: <><span style={{ display: 'inline-block' }}>Если возникли сложности</span> <br /><span style={{ display: 'inline-block' }}>с оформлением положенных выплат</span></>, help: 'Определим круг получателей и комплект документов, поможем\nобжаловать отказ, задержку или неправильный расчёт.' },
+    { who: 'Родственникам военнослужащих, местонахождение которых неизвестно', situation: <><span style={{ display: 'inline-block' }}>Если необходимо установить статус</span> <br /><span style={{ display: 'inline-block' }}>и оформить юридические последствия</span></>, help: 'Поможем собрать документы,\nвыбрать правовую процедуру\nи обратиться в компетентные\nорганы или суд.' },
   ];
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dejure-help.ru/#organization",
+        "name": "Юридическая компания «Де-Юре»",
+        "url": "https://dejure-help.ru/",
+        "logo": "https://dejure-help.ru/images/logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Липецк",
+          "addressCountry": "RU"
+        }
+      },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
@@ -81,9 +93,18 @@ export default function VoennyjYuristPage() {
       },
       {
         "@type": "LegalService",
-        "name": "ЮК «Де-Юре»",
-        "description": "Юридическая помощь военнослужащим в Липецке",
-        "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/"
+        "@id": "https://dejure-help.ru/grazhdanam/voennyj-yurist/#service",
+        "name": "Юридическая помощь военнослужащим в Липецке",
+        "description": "Защита по уголовным делам, ВВК, выплаты и споры с военкоматом в Липецке",
+        "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/",
+        "provider": { "@id": "https://dejure-help.ru/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/",
+        "name": "Военный юрист в Липецке — помощь военнослужащим | ЮК «Де-Юре»",
+        "about": { "@id": "https://dejure-help.ru/grazhdanam/voennyj-yurist/#service" },
+        "mainEntity": { "@id": "https://dejure-help.ru/grazhdanam/voennyj-yurist/#service" }
       },
       {
         "@type": "FAQPage",
@@ -97,7 +118,8 @@ export default function VoennyjYuristPage() {
         "@type": "Person",
         "name": "Дмитрий Сергеевич Конопкин",
         "jobTitle": "Адвокат",
-        "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/"
+        "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
+        "worksFor": { "@id": "https://dejure-help.ru/#organization" }
       }
     ]
   };
@@ -120,21 +142,21 @@ export default function VoennyjYuristPage() {
           </>
         }
         superTitle="Помощь военнослужащим в Липецке и по России"
-        title={<>Военный юрист <br />в Липецке</>}
+        title={<><span style={{ display: 'inline-block' }}>Военный юрист</span> <br /><span style={{ display: 'inline-block' }}>в Липецке</span></>}
         subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
-            Защита по уголовным делам, оспаривание<br />
-            заключений ВВК и решений призывных комиссий,<br />
-            помощь в получении положенных выплат<br />
-            для военнослужащих и членов их семей.
+          <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
+            <span style={{ display: 'inline-block' }}>Защита по уголовным делам, оспаривание</span> <br />
+            <span style={{ display: 'inline-block' }}>заключений ВВК и решений призывных комиссий,</span> <br />
+            <span style={{ display: 'inline-block' }}>помощь в получении положенных выплат</span> <br />
+            <span style={{ display: 'inline-block' }}>для военнослужащих и членов их семей.</span>
           </span>
         }
         primaryCtaText="Обсудить ситуацию"
         primaryCtaLink="#form"
-        primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         imageUrl="/-/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, партнёр ЮК «Де-Юре»"
+        imageSubtitle="Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»"
         trustItems={[]}
       />
 
@@ -142,7 +164,7 @@ export default function VoennyjYuristPage() {
       <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
-            Когда юридическая<br />помощь нужна срочно
+            <span style={{ display: 'inline-block' }}>Когда юридическая помощь</span> <br /><span style={{ display: 'inline-block' }}>нужна срочно</span>
           </h2>
           <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '620px', lineHeight: 1.6 }}>
@@ -170,7 +192,7 @@ export default function VoennyjYuristPage() {
                   <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
                 <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
-                  Военнослужащего задержали
+                  Военнослужащего<br />задержали
                 </div>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
@@ -198,7 +220,7 @@ export default function VoennyjYuristPage() {
                   <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
                 <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
-                  Возбуждено уголовное дело или вызывают на допрос
+                  Возбуждено уголовное дело <br />или вызывают на допрос
                 </div>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
@@ -280,7 +302,7 @@ export default function VoennyjYuristPage() {
               Описать ситуацию
             </a>
             <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
-              Перезвоним в течение 15 минут в рабочее время
+              Перезвоним вам в течение 15 минут в рабочее время
             </span>
           </div>
         </div>
@@ -293,8 +315,8 @@ export default function VoennyjYuristPage() {
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Кому мы помогаем
             </h2>
-            <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              Комплексная защита прав военнослужащих, призывников и их семей. Поможем разобрать вашу ситуацию и выстроить правовую позицию.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Комплексная защита прав военнослужащих, призывников и их семей. Поможем разобрать Вашу ситуацию и выстроить правовую позицию.
             </p>
           </div>
 
@@ -337,7 +359,7 @@ export default function VoennyjYuristPage() {
                   {sit.situation}
                 </h3>
 
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1, whiteSpace: 'pre-line' }}>
                   {sit.help}
                 </p>
               </div>
@@ -347,13 +369,13 @@ export default function VoennyjYuristPage() {
       </section>
 
       {/* ═══ 4. Направления помощи ═══ */}
-      <section id="directions" className="section" style={{ padding: '64px 0', background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)' }}>
+      <section id="directions" className="section" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Направления помощи
             </h2>
-            <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Специализированная юридическая защита для военнослужащих, призывников и их семей. 
               Полное сопровождение от консультации до представительства в суде.
             </p>
@@ -418,9 +440,9 @@ export default function VoennyjYuristPage() {
                 <style>
                   {`
                     .white-btn-custom {
-                      background-color: var(--color-white);
-                      color: var(--color-deep-blue);
-                      border: 1px solid var(--color-white);
+                      background-color: var(--color-white) !important;
+                      color: #10273B !important;
+                      border: 1px solid var(--color-white) !important;
                     }
                     .white-btn-custom:hover {
                       background-color: var(--color-primary) !important;
@@ -452,7 +474,7 @@ export default function VoennyjYuristPage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position="Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        position={<>Адвокат, партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
         imageUrl="/-/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
@@ -520,7 +542,7 @@ export default function VoennyjYuristPage() {
         steps={[
           { num: '01', title: 'Первичная консультация', desc: 'Обсуждаем ситуацию в офисе, по телефону или видеосвязи, уточняем обстоятельства и срочность.' },
           { num: '02', title: 'Изучение документов', desc: 'Анализируем имеющиеся материалы. Документы можно передать лично или направить в электронном виде.' },
-          { num: '03', title: 'План действий', desc: 'Оцениваем правовые основания, риски и предлагаем порядок защиты, обжалования или получения положенных выплат.' },
+          { num: '03', title: 'План действий', desc: <>Оцениваем правовые основания,<br />риски и предлагаем порядок<br />защиты, обжалования или<br />получения положенных выплат.</> },
           { num: '04', title: 'Юридическая работа', desc: 'Готовим документы, обращения и жалобы; при необходимости участвуем в процессуальных действиях и представляем интересы клиента.' },
           { num: '05', title: 'Информирование', desc: 'Сообщаем о ходе работы, объясняем результаты и заранее согласовываем дальнейшие действия.' },
           { isBanner: true, title: 'Дистанционный формат', desc: 'Значительную часть работы можно организовать дистанционно. Если требуется личное участие адвоката или юриста, заранее согласуем место и порядок работы.' }
@@ -533,7 +555,7 @@ export default function VoennyjYuristPage() {
         subtitle="Точная стоимость зависит от состояния документов, стадии дела и необходимости обжалования. После первичной консультации специалист определит объём работы и назовёт стоимость до заключения договора."
         tiers={[
           {
-            title: 'Консультация и анализ',
+            title: <><span style={{ display: 'inline-block' }}>Консультация</span> <br /><span style={{ display: 'inline-block' }}>и анализ</span></>,
             subtitle: 'Первичный разбор',
             popular: false,
             price: 'ХХХ ₽',
@@ -546,9 +568,10 @@ export default function VoennyjYuristPage() {
             buttonHref: '#form'
           },
           {
-            title: 'Досудебная работа',
+            title: <><span style={{ display: 'inline-block' }}>Досудебная</span> <br /><span style={{ display: 'inline-block' }}>работа</span></>,
             subtitle: 'Запросы и жалобы',
             popular: true,
+            badgeText: 'ВОСТРЕБОВАНО',
             price: 'ХХХ ₽',
             features: [
               { name: 'Подготовка адвокатских запросов', value: '✓' },
@@ -559,7 +582,7 @@ export default function VoennyjYuristPage() {
             buttonHref: '#form'
           },
           {
-            title: 'Судебная защита',
+            title: <><span style={{ display: 'inline-block' }}>Судебная</span> <br /><span style={{ display: 'inline-block' }}>защита</span></>,
             subtitle: 'Судебное обжалование',
             popular: false,
             price: 'ХХХ ₽',
@@ -578,7 +601,7 @@ export default function VoennyjYuristPage() {
       {/* ═══ 9. Ответы на частые вопросы ═══ */}
       <FAQBlock 
         faqs={faqs} 
-        title="Ответы на частые вопросы"
+        title={<><span style={{ display: 'inline-block' }}>Ответы на</span> <br /><span style={{ display: 'inline-block' }}>частые вопросы</span></>}
         subtitle="Собрали ответы на частые вопросы о защите военнослужащих, прохождении ВВК, выплатах, призыве и дистанционной работе. Если вы не нашли ответа, опишите свою ситуацию специалисту."
         ctaText="Задать свой вопрос"
         ctaLink="#form"
@@ -588,7 +611,7 @@ export default function VoennyjYuristPage() {
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
@@ -597,14 +620,17 @@ export default function VoennyjYuristPage() {
                 Получите первичную оценку ситуации
               </h2>
               
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
                 Опишите ситуацию и оставьте контактные данные. Обращение передадим Дмитрию Сергеевичу Конопкину. Он изучит обстоятельства и предложит возможный порядок действий.
               </p>
               
               <div style={{ marginTop: '32px' }}>
                 <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  Перезвоним в течение 15 минут в рабочее время
+                  <span>
+                    Перезвоним вам в течение<br />
+                    15 минут в рабочее время
+                  </span>
                 </div>
               </div>
             </div>
@@ -621,3 +647,4 @@ export default function VoennyjYuristPage() {
     </main>
   );
 }
+

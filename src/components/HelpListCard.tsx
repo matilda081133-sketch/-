@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 interface HelpListCardProps {
   title: string;
@@ -30,3 +30,4 @@ export default function HelpListCard({ title, items, className = '' }: HelpListC
     </div>
   );
 }
+

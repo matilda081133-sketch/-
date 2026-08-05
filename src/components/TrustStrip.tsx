@@ -2,7 +2,7 @@ import React from 'react';
 
 type TrustItem = {
   icon?: React.ReactNode;
-  text: string;
+  text: React.ReactNode;
 };
 
 const defaultIcons = [
@@ -32,63 +32,33 @@ const defaultIcons = [
   </svg>
 ];
 
-export default function TrustStrip({ items }: { items: TrustItem[] }) {
+export default function TrustStrip({ items, marginTop }: { items: TrustItem[]; marginTop?: string }) {
   if (!items || items.length === 0) return null;
   
   return (
-    <>
-      <style dangerouslySetInnerHTML={{ __html: `
-        .hero-bullet-item:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 20px 35px rgba(23, 50, 77, 0.12) !important;
-          background: rgba(255, 255, 255, 0.95) !important;
-          border-color: var(--color-gold) !important;
-        }
-        .hero-bullet-item:hover svg {
-          transform: scale(1.1);
-          transition: transform 0.3s ease;
-        }
-      `}} />
-      <div style={{ 
-        display: 'flex', 
-        gap: '20px', 
-        marginTop: '32px',
-        flexWrap: 'wrap',
-        width: '100%'
-      }}>
-        {items.map((bullet, i) => {
-          const iconToRender = bullet.icon || defaultIcons[i % defaultIcons.length];
-          return (
-            <div key={i} className="hero-bullet-item" style={{ 
-              flex: '1 1 200px',
-              minHeight: '60px',
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: '16px',
-              background: 'rgba(255, 255, 255, 0.7)',
-              backdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255, 255, 255, 0.9)',
-              padding: '14px 20px',
-              boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease',
-              cursor: 'default'
-            }}>
-              <div style={{ 
-                color: 'var(--color-primary)', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center', 
-                flexShrink: 0 
-              }}>
-                {iconToRender}
-              </div>
-              <div style={{ color: 'var(--color-deep-blue)', fontSize: '13px', fontWeight: 600, lineHeight: 1.4, whiteSpace: 'pre-line' }}>
-                {bullet.text}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </>
+    <div style={{ 
+      display: 'flex',
+      flexDirection: 'column', 
+      gap: '14px', 
+      marginTop: marginTop || '20px',
+      marginBottom: '24px',
+      width: '100%',
+      maxWidth: '640px'
+    }}>
+      {items.map((bullet, i) => (
+        <div key={i} style={{ 
+          paddingLeft: '16px', 
+          borderLeft: '3px solid var(--color-gold)', 
+          fontSize: '15px', 
+          color: 'var(--color-deep-blue)', 
+          lineHeight: 1.45,
+          fontWeight: 500,
+          whiteSpace: 'pre-line'
+        }}>
+          {bullet.text}
+        </div>
+      ))}
+    </div>
   );
 }
+

@@ -68,12 +68,11 @@ export default function SochPage() {
                 margin: '0 0 32px 0', 
                 lineHeight: 1.1 
               }}>
-                Адвокат по делам <br/>о самовольном оставлении части в Липецке
+                <span style={{ display: 'inline-block' }}>Адвокат по делам</span> <br /><span style={{ display: 'inline-block' }}>о самовольном оставлении части</span> <br /><span style={{ display: 'inline-block' }}>в Липецке</span>
               </h1>
               
               <p style={{ 
-                fontSize: '18px', 
-                color: 'var(--color-text-secondary)', 
+                fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, 
                 marginBottom: '40px', 
                 maxWidth: '750px', 
                 lineHeight: 1.6 
@@ -89,7 +88,7 @@ export default function SochPage() {
                   <a href="tel:+74742527752" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
                     +7 (4742) 52-77-52
                   </a>
-                  <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>• Перезвоним в течение 15 минут в рабочее время</span>
+                  <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>• Постараемся перезвонить в течение 15 минут в рабочее время</span>
                 </div>
               </div>
             </div>
@@ -183,7 +182,7 @@ export default function SochPage() {
         <div className="container">
           <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '24px' }}>Ответственность за самовольное<br />оставление части</h2>
           <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--color-gold)', marginBottom: '24px' }}></div>
-          <p style={{ textAlign: 'left', color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '40px', maxWidth: '900px' }}>
+          <p style={{ textAlign: 'left', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '40px', maxWidth: '900px' }}>
             Статья 337 УК РФ предусматривает ответственность за самовольное оставление части или места службы, а также за неявку в срок без уважительных причин. Квалификация зависит не только от продолжительности отсутствия, но и от статуса военнослужащего, периода совершения деяния и других обстоятельств.
           </p>
 
@@ -286,7 +285,7 @@ export default function SochPage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position="Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        position={<>Адвокат, партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
         imageUrl="/-/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
@@ -383,10 +382,10 @@ export default function SochPage() {
                 Добровольная явка при самовольном оставлении части
               </h2>
               <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--color-gold)', marginBottom: '24px' }}></div>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
+              <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, marginBottom: '24px' }}>
                 Добровольная явка может иметь значение для оценки поведения военнослужащего, но <span style={{ color: 'var(--color-deep-blue)' }}>сама по себе не прекращает уголовное дело</span> и не гарантирует освобождение от ответственности.
               </p>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '0' }}>
+              <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, marginBottom: '0' }}>
                 До принятия решения необходимо разобраться в продолжительности и причинах отсутствия, процессуальном статусе и имеющихся документах.
               </p>
             </div>
@@ -436,7 +435,7 @@ export default function SochPage() {
         subtitle="Стоимость зависит от стадии дела, срочности, объёма материалов, количества процессуальных действий и необходимого формата участия. До начала работы согласуем объём поручения и фиксируем условия в соглашении."
         tiers={[
           {
-            title: 'Разовые действия',
+            title: <><span style={{ display: 'inline-block' }}>Разовые</span> <br /><span style={{ display: 'inline-block' }}>действия</span></>,
             subtitle: 'Оценка и отдельные действия',
             popular: false,
             price: 'ХХХ ₽',
@@ -448,9 +447,10 @@ export default function SochPage() {
             ]
           },
           {
-            title: 'Защита на следствии',
+            title: <><span style={{ display: 'inline-block' }}>Защита</span> <br /><span style={{ display: 'inline-block' }}>на следствии</span></>,
             subtitle: 'Предварительное расследование',
             popular: true,
+            badgeText: 'ВОСТРЕБОВАНО',
             price: 'ХХХ ₽',
             features: [
               { name: 'Составление плана защиты', value: '✓' },
@@ -460,7 +460,7 @@ export default function SochPage() {
             ]
           },
           {
-            title: 'Защита в суде',
+            title: <><span style={{ display: 'inline-block' }}>Защита</span> <br /><span style={{ display: 'inline-block' }}>в суде</span></>,
             subtitle: 'Судебное разбирательство',
             popular: false,
             price: 'ХХХ ₽',
@@ -482,12 +482,12 @@ export default function SochPage() {
       <FAQBlock 
         faqs={faqs} 
         superTitle="FAQ" 
-        title="Частые вопросы"
+        title={<><span style={{ display: 'inline-block' }}>Частые вопросы</span> <br /><span style={{ display: 'inline-block' }}>по делам о СОЧ</span></>}
         subtitle=""
       />
 
       {/* Блок 11. Связанные услуги */}
-      <section className="section bg-white" style={{ paddingTop: '40px' }}>
+      <section className="section bg-cream" style={{ paddingTop: '40px', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '40px' }}>Другие услуги военного адвоката</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
@@ -517,7 +517,7 @@ export default function SochPage() {
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
@@ -526,18 +526,18 @@ export default function SochPage() {
                 Если человека задержали или он готовится явиться,<br /> не откладывайте связь<br /> с адвокатом
               </h2>
               
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
                 Уточним срочность, местонахождение<br />и необходимые документы.
               </p>
               
               <div style={{ marginTop: '32px' }}>
                 <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  Перезвоним в течение 15 минут
+                  Постараемся перезвонить в течение 15 минут
                 </div>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
               <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
                 <ContactsForm title="Написать нам" subtitle="" />
               </div>
@@ -550,3 +550,4 @@ export default function SochPage() {
     </main>
   );
 }
+

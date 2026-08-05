@@ -7,7 +7,7 @@ import Image from 'next/image';
 export interface SpecialistBlockProps {
   title?: string;
   name: string;
-  position: string;
+  position: string | React.ReactNode;
   description: (string | React.ReactNode)[];
   photoPlaceholder?: string;
   imageUrl?: string;
@@ -74,7 +74,7 @@ export default function SpecialistBlock({
             
             <div style={{ marginBottom: '32px' }}>
               {description.map((paragraph, idx) => (
-                <div key={idx} style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: idx === description.length - 1 ? 0 : '16px' }}>
+                <div key={idx} style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, marginBottom: idx === description.length - 1 ? 0 : '16px' }}>
                   {paragraph}
                 </div>
               ))}
@@ -107,3 +107,4 @@ export default function SpecialistBlock({
     </section>
   );
 }
+

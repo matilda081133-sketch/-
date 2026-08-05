@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Специалист не найден' };
   }
 
-  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : 'logo_dark.png'}`;
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : 'logo_dark.png'}`;
 
   return {
     title: member.seo.title,
@@ -33,18 +33,33 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: `https://dejure-help.ru/specialisty/${member.slug}/`,
     },
     openGraph: {
-      title: member.seo.title,
-      description: member.seo.description,
+      title: member.slug === 'bobkin-arkadiy-evgenevich' ? 'Бобкин Аркадий Евгеньевич — управляющий партнёр ЮК «Де-Юре»' : member.seo.title,
+      description: member.slug === 'bobkin-arkadiy-evgenevich' ? 'Управляющий партнёр ЮК «Де-Юре». Сложные уголовно-правовые и налоговые ситуации, экономические, налоговые и коррупционные преступления.' : member.seo.description,
+      type: 'profile',
       url: `https://dejure-help.ru/specialisty/${member.slug}/`,
       images: [
         {
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${member.name} — адвокат, партнёр ЮК «Де-Юре»`
+          alt: member.slug === 'bobkin-arkadiy-evgenevich'
+            ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
+            : member.slug === 'konopkin-dmitriy-sergeevich'
+            ? 'Конопкин Дмитрий Сергеевич — адвокат, партнёр ЮК «Де-Юре»'
+            : member.slug === 'gusev-oleg-yurevich'
+            ? 'Гусев Олег Юрьевич — адвокат ЮК «Де-Юре»'
+            : member.slug === 'nacheshnikov-vladimir-viktorovich'
+            ? 'Владимир Викторович Начешников — специалист ЮК «Де-Юре»'
+            : `${member.name} — специалист ЮК «Де-Юре»`
         }
       ],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: member.slug === 'bobkin-arkadiy-evgenevich' ? 'Бобкин Аркадий Евгеньевич — управляющий партнёр ЮК «Де-Юре»' : member.seo.title,
+      description: member.slug === 'bobkin-arkadiy-evgenevich' ? 'Сложные уголовно-правовые и налоговые ситуации. 22 года следственного опыта.' : member.seo.description,
+      images: [imageUrl]
+    }
   };
 }
 
@@ -56,16 +71,59 @@ export default async function SpecialistPage({ params }: PageProps) {
     notFound();
   }
 
-  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : 'logo_dark.png'}`;
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : 'logo_dark.png'}`;
 
   // Generate JSON-LD Person
-  const jsonLdPerson = {
+  const jsonLdPerson = member.slug === 'bobkin-arkadiy-evgenevich' ? {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Аркадий Евгеньевич Бобкин',
+    jobTitle: 'Директор, управляющий партнёр ЮК «Де-Юре»',
+    url: 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/',
+    image: 'https://dejure-help.ru/images/bobkin.jpg',
+    worksFor: {
+      '@type': 'LegalService',
+      name: 'ООО ЮК «Де-Юре»',
+      url: 'https://dejure-help.ru/'
+    },
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: 'Воронежский государственный университет'
+    }
+  } : member.slug === 'gusev-oleg-yurevich' ? {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Гусев Олег Юрьевич',
+    jobTitle: 'Адвокат ЮК «Де-Юре»',
+    url: 'https://dejure-help.ru/specialisty/gusev-oleg-yurevich/',
+    image: 'https://dejure-help.ru/images/gusev.jpg',
+    worksFor: {
+      '@type': 'LegalService',
+      name: 'ООО ЮК «Де-Юре»',
+      url: 'https://dejure-help.ru/'
+    },
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: 'Воронежский государственный университет'
+    }
+  } : member.slug === 'nacheshnikov-vladimir-viktorovich' ? {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Начешников Владимир Викторович',
+    jobTitle: 'Специалист ЮК «Де-Юре»',
+    url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+    image: 'https://dejure-help.ru/images/nacheshnikov.jpg',
+    worksFor: {
+      '@type': 'LegalService',
+      name: 'ООО ЮК «Де-Юре»',
+      url: 'https://dejure-help.ru/'
+    }
+  } : {
     '@context': 'https://schema.org',
     '@type': 'Person',
     '@id': `https://dejure-help.ru/specialisty/${member.slug}/#person`,
     name: member.name,
-    jobTitle: 'Адвокат',
-    description: 'Реестровый номер 48/812',
+    jobTitle: member.slug === 'konopkin-dmitriy-sergeevich' ? 'Адвокат, партнёр ЮК «Де-Юре»' : member.status,
     image: imageUrl,
     url: `https://dejure-help.ru/specialisty/${member.slug}/`,
     worksFor: {
@@ -81,8 +139,9 @@ export default async function SpecialistPage({ params }: PageProps) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
-      { '@type': 'ListItem', position: 2, name: 'Специалисты', item: 'https://dejure-help.ru/specialisty/' },
-      { '@type': 'ListItem', position: 3, name: member.name, item: `https://dejure-help.ru/specialisty/${member.slug}/` }
+      { '@type': 'ListItem', position: 2, name: 'О компании', item: 'https://dejure-help.ru/o-kompanii/' },
+      { '@type': 'ListItem', position: 3, name: 'Специалисты', item: 'https://dejure-help.ru/specialisty/' },
+      { '@type': 'ListItem', position: 4, name: member.name, item: `https://dejure-help.ru/specialisty/${member.slug}/` }
     ]
   };
 
@@ -114,6 +173,8 @@ export default async function SpecialistPage({ params }: PageProps) {
           <div style={{ display: 'flex', gap: '8px', fontSize: '13px', color: 'var(--color-text-secondary)', flexWrap: 'wrap', paddingTop: '160px', paddingBottom: '40px' }}>
             <Link href="/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Главная</Link>
             <span>/</span>
+            <Link href="/o-kompanii" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>О компании</Link>
+            <span>/</span>
             <Link href="/specialisty" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Специалисты</Link>
             <span>/</span>
             <span>{member.name}</span>
@@ -123,12 +184,39 @@ export default async function SpecialistPage({ params }: PageProps) {
             {/* Info Column */}
             <div>
               <h1 style={{ fontSize: 'clamp(32px, 4vw, 48px)', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1.2 }}>
-                {member.name}
+                {member.slug === 'konopkin-dmitriy-sergeevich' ? (
+                  <>
+                    <span style={{ display: 'block' }}>Конопкин</span>
+                    <span style={{ display: 'block' }}>Дмитрий Сергеевич</span>
+                  </>
+                ) : member.slug === 'smolyaninova-marina-valerevna' ? (
+                  <>
+                    <span style={{ display: 'block' }}>Смольянинова</span>
+                    <span style={{ display: 'block' }}>Марина Валерьевна</span>
+                  </>
+                ) : member.slug === 'bobkin-arkadiy-evgenevich' ? (
+                  <>
+                    <span style={{ display: 'block' }}>Бобкин</span>
+                    <span style={{ display: 'block' }}>Аркадий Евгеньевич</span>
+                  </>
+                ) : member.slug === 'gusev-oleg-yurevich' ? (
+                  <>
+                    <span style={{ display: 'block' }}>Гусев</span>
+                    <span style={{ display: 'block' }}>Олег Юрьевич</span>
+                  </>
+                ) : member.slug === 'nacheshnikov-vladimir-viktorovich' ? (
+                  <>
+                    <span style={{ display: 'block' }}>Начешников</span>
+                    <span style={{ display: 'block' }}>Владимир Викторович</span>
+                  </>
+                ) : (
+                  member.name
+                )}
               </h1>
               <div style={{ fontSize: '18px', color: 'var(--color-primary)', fontWeight: 600, marginBottom: '8px', lineHeight: 1.4, whiteSpace: 'pre-line' }}>
                 {member.status}
               </div>
-              <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, marginBottom: '24px', whiteSpace: 'pre-line' }}>
+              <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', fontWeight: 500, marginBottom: '24px', whiteSpace: 'pre-line', lineHeight: 1.6 }}>
                 {member.shortDescription}
               </div>
 
@@ -140,10 +228,41 @@ export default async function SpecialistPage({ params }: PageProps) {
                     fontSize: '15px', 
                     color: 'var(--color-deep-blue)', 
                     lineHeight: 1.4,
-                    fontWeight: 500,
-                    whiteSpace: 'pre-line'
+                    fontWeight: 500
                   }}>
-                    {fact}
+                    {fact === '22 года в следственных подразделениях налоговой полиции и МВД' ? (
+                      <>
+                        <span style={{ whiteSpace: 'nowrap' }}>22 года в следственных подразделениях</span><br />
+                        <span style={{ whiteSpace: 'nowrap' }}>налоговой полиции и МВД</span>
+                      </>
+                    ) : fact.includes('Следователь по особо важным делам') ? (
+                      <>
+                        <span style={{ whiteSpace: 'nowrap' }}>Следователь по особо важным делам;</span><br />
+                        <span style={{ whiteSpace: 'nowrap' }}>руководитель следственной части</span>
+                      </>
+                    ) : fact.includes('в том\nчисле') || fact.includes('в том числе') ? (
+                      <>
+                        <span style={{ whiteSpace: 'nowrap' }}>Более 13 лет работы в ФССП, в том</span><br />
+                        <span style={{ whiteSpace: 'nowrap' }}>числе на руководящих должностях</span>
+                      </>
+                    ) : fact.includes('юридической практики') ? (
+                      <>
+                        <span style={{ whiteSpace: 'nowrap' }}>Более пяти лет юридической практики</span><br />
+                        <span style={{ whiteSpace: 'nowrap' }}>и судебного представительства</span>
+                      </>
+                    ) : fact.includes('исполнительное') || fact.includes('Трудовые и семейные споры') ? (
+                      <>
+                        <span style={{ whiteSpace: 'nowrap' }}>Трудовые и семейные споры,</span><br />
+                        <span style={{ whiteSpace: 'nowrap' }}>исполнительное производство</span>
+                      </>
+                    ) : fact.includes('структуры решения') || fact.includes('структуры') ? (
+                      <>
+                        <span style={{ whiteSpace: 'nowrap' }}>Комплексное сопровождение от структуры</span><br />
+                        <span style={{ whiteSpace: 'nowrap' }}>решения до регистрации изменений</span>
+                      </>
+                    ) : (
+                      fact
+                    )}
                   </div>
                 ))}
               </div>
@@ -159,15 +278,27 @@ export default async function SpecialistPage({ params }: PageProps) {
                 borderRadius: '0',
                 overflow: 'hidden',
                 position: 'relative',
-                boxShadow: '0 4px 12px rgba(23, 50, 77, 0.12)',
+                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)',
                 zIndex: 1,
-                display: 'block'
+                display: 'block',
+                background: 'transparent'
               }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
-                  src={member.image} 
-                  alt={`${member.name} — адвокат, партнёр ЮК «Де-Юре»`}
-                  style={{ width: '100%', height: '520px', objectFit: 'cover', objectPosition: 'center 35%', display: 'block', filter: 'brightness(1.05)' }}
+                  src={member.image.startsWith('/-/') ? member.image : `/-${member.image}`} 
+                  alt={
+                    member.slug === 'konopkin-dmitriy-sergeevich'
+                      ? 'Конопкин Дмитрий Сергеевич — адвокат, партнёр ЮК «Де-Юре»'
+                      : member.slug === 'gusev-oleg-yurevich'
+                      ? 'Гусев Олег Юрьевич — адвокат ЮК «Де-Юре»'
+                      : member.slug === 'bobkin-arkadiy-evgenevich'
+                      ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
+                      : member.slug === 'smolyaninova-marina-valerevna'
+                      ? 'Марина Валерьевна Смольянинова — ведущий юрист ЮК «Де-Юре»'
+                      : member.slug === 'nacheshnikov-vladimir-viktorovich'
+                      ? 'Владимир Викторович Начешников — специалист ЮК «Де-Юре»'
+                      : `${member.name} — специалист ЮК «Де-Юре»`
+                  }
+                  style={{ width: '100%', height: '540px', objectFit: 'cover', objectPosition: member.slug === 'gusev-oleg-yurevich' ? 'center 32%' : member.slug === 'smolyaninova-marina-valerevna' ? 'center 28%' : member.slug === 'konopkin-dmitriy-sergeevich' ? 'center 35%' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 20%' : 'center 25%', display: 'block', filter: 'brightness(1.05)' }}
                 />
               </div>
             </div>
@@ -175,10 +306,12 @@ export default async function SpecialistPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* 3. Направления юридической помощи */}
+      {/* 3. Направления работы / юридической помощи */}
       <section className="section" style={{ background: 'transparent', paddingBottom: '40px' }}>
         <div className="container">
-          <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>Направления юридической помощи</h2>
+          <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>
+            {member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'Направления работы' : 'Направления юридической помощи'}
+          </h2>
           <div className="grid grid-3" style={{ gap: '24px' }}>
             {member.specializations.map((spec, i) => (
               <div key={i} className="hover-lift" style={{ 
@@ -197,24 +330,28 @@ export default async function SpecialistPage({ params }: PageProps) {
                 </p>
                 <div style={{ flexGrow: 1, marginBottom: '32px' }}>
                   {spec.items.map((item, j) => (
-                    <div key={j} style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5, marginBottom: '8px' }}>
-                      {item}
+                    <div key={j} style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5, marginBottom: '10px', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                      <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: 'var(--color-gold)', flexShrink: 0, marginTop: '7px' }}></span>
+                      <span style={{ flex: 1 }}>{item}</span>
                     </div>
                   ))}
                 </div>
-                {spec.link && (
-                  <Link href={spec.link.url} className="btn-outline" style={{ display: 'block', textAlign: 'center', width: '100%', padding: '12px', fontSize: '14px' }} data-analytics="specialization-click" data-direction={spec.title}>
+                {spec.link ? (
+                  <Link href={spec.link.url} className="btn-outline" style={{ display: 'block', textAlign: 'center', width: '100%', padding: '12px', fontSize: '14px', marginTop: 'auto' }} data-analytics="specialization-click" data-direction={spec.title}>
                     {spec.link.text}
                   </Link>
-                )}
-                {spec.links && spec.links.length > 0 && (
-                  <div style={{ display: 'flex', gap: '12px' }}>
+                ) : spec.links && spec.links.length > 0 ? (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: 'auto', width: '100%' }}>
                     {spec.links.map((lnk, k) => (
-                      <Link key={k} href={lnk.url} className="btn-outline" style={{ flex: 1, textAlign: 'center', padding: '12px 8px', fontSize: '14px' }} data-analytics="specialization-click" data-direction={spec.title}>
+                      <Link key={k} href={lnk.url} className="btn-outline" style={{ display: 'block', textAlign: 'center', width: '100%', padding: '10px 12px', fontSize: '13px', lineHeight: 1.35 }} data-analytics="specialization-click" data-direction={spec.title}>
                         {lnk.text}
                       </Link>
                     ))}
                   </div>
+                ) : (
+                  <a href="#consultation" className="btn-outline" style={{ display: 'block', textAlign: 'center', width: '100%', padding: '12px', fontSize: '14px', marginTop: 'auto' }} data-analytics="specialization-click" data-direction={spec.title}>
+                    Получить консультацию →
+                  </a>
                 )}
               </div>
             ))}
@@ -222,25 +359,82 @@ export default async function SpecialistPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* 4. Профессиональный опыт и квалификация */}
+      {/* 4. Опыт и профессиональный путь / Практический опыт */}
       <section className="section" style={{ background: 'transparent' }}>
         <div className="container">
-          <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>Профессиональный опыт и квалификация</h2>
-          
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '60px', marginBottom: '60px' }}>
-            <div style={{ flex: '1.5 1 400px' }}>
-              <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '24px', marginTop: 0 }}>От следственной работы к адвокатской защите</h3>
+          <div className="grid grid-2" style={{ gap: '40px', marginBottom: '60px', alignItems: 'flex-start' }}>
+            {/* Left Column: Section H2 + H3 + text block */}
+            <div style={{ width: '100%' }}>
+              <h2 style={{ fontSize: '30px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '24px', marginTop: 0, whiteSpace: 'pre-line' }}>
+                {member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'Практический опыт' : 'Опыт и профессиональный путь'}
+              </h2>
+
+              <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '20px', marginTop: 0, lineHeight: 1.35, whiteSpace: 'pre-line' }}>
+                {member.slug === 'gusev-oleg-yurevich'
+                  ? 'Опыт работы в прокуратуре\nи адвокатская практика'
+                  : member.slug === 'bobkin-arkadiy-evgenevich'
+                  ? 'От следственной работы\nк управлению сложными юридическими проектами'
+                  : 'Опыт и принципы работы'}
+              </h3>
+              
               <div 
-                style={{ fontSize: '16px', color: 'var(--color-deep-blue)', lineHeight: 1.6, whiteSpace: 'pre-line' }}
+                style={{ fontSize: '16px', color: 'var(--color-deep-blue)', lineHeight: 1.7, margin: 0, textAlign: 'justify' }}
                 dangerouslySetInnerHTML={{ __html: member.experienceText || '' }}
               />
             </div>
-            {/* Right Column: Geography */}
-            <div style={{ flex: '1 1 300px', alignSelf: 'flex-start' }}>
-                <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', margin: '0 0 24px 0', fontFamily: 'var(--font-serif)' }}>Работа по делам в разных регионах</h3>
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {member.geography}
-                </p>
+
+            {/* Right Column: Professional Info Card */}
+            <div style={{ width: '100%' }}>
+              {(member.profileFacts || member.awards) && (
+                <div style={{ 
+                  width: '100%',
+                  background: 'var(--color-white)', 
+                  padding: '32px 36px', 
+                  borderLeft: '4px solid var(--color-gold)', 
+                  boxShadow: '0 4px 18px rgba(23, 50, 77, 0.06)'
+                }}>
+                {member.profileFacts && member.profileFacts.length > 0 && (
+                  <div>
+                    <h2 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                      Профессиональные сведения
+                    </h2>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                      {member.profileFacts.map((pf, i) => (
+                        <div key={i}>
+                          <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '2px', fontWeight: 600 }}>
+                            {pf.label}
+                          </div>
+                          <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 600, lineHeight: 1.3 }}>
+                            {pf.label === 'Регистрационные сведения' && member.registryLink ? (
+                              <a href={member.registryLink} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
+                                {pf.text} ↗
+                              </a>
+                            ) : (
+                              pf.text
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {member.awards && member.awards.length > 0 && (
+                  <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid rgba(193, 160, 102, 0.2)' }}>
+                    <h3 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                      Профессиональные награды
+                    </h3>
+                    <ul style={{ margin: 0, paddingLeft: '18px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      {member.awards.map((award, i) => (
+                        <li key={i} style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
+                          <span>{award}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                </div>
+              )}
             </div>
           </div>
 
@@ -273,24 +467,26 @@ export default async function SpecialistPage({ params }: PageProps) {
               <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0 }}>Примеры из практики</h2>
             </div>
             
-            <div style={{ 
-              background: 'rgba(23, 50, 77, 0.03)', 
-              padding: '16px 24px', 
-              color: 'var(--color-text-secondary)',
-              fontSize: '14px',
-              marginBottom: '30px',
-              borderLeft: '4px solid var(--color-primary)',
-              fontStyle: 'italic'
-            }}>
-              Внимание: Ниже представлены демонстрационные макеты кейсов (заглушки) до утверждения фактуры адвокатом.
-            </div>
+            {member.slug !== 'nacheshnikov-vladimir-viktorovich' && member.slug !== 'smolyaninova-marina-valerevna' && (
+              <div style={{ 
+                background: 'rgba(23, 50, 77, 0.03)', 
+                padding: '16px 24px', 
+                color: 'var(--color-text-secondary)',
+                fontSize: '14px',
+                marginBottom: '30px',
+                borderLeft: '4px solid var(--color-primary)',
+                fontStyle: 'italic'
+              }}>
+                Внимание: Ниже представлены демонстрационные макеты кейсов (заглушки) {member.slug === 'bobkin-arkadiy-evgenevich' ? 'до утверждения фактуры Аркадием Евгеньевичем Бобкиным.' : 'до утверждения фактуры адвокатом.'}
+              </div>
+            )}
 
             <div className="grid grid-3" style={{ gap: '30px' }}>
               {member.cases.slice(0, 3).map((c, i) => (
                 <div key={i} className="card" style={{ padding: '40px', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', boxShadow: '0 25px 50px -12px rgba(23, 50, 77, 0.25), 0 8px 24px rgba(23, 50, 77, 0.08)' }} data-analytics="case-click">
                   <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
                     <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>{c.category}</span>
-                    <h3 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>{c.title}</h3>
+                    <h3 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4, whiteSpace: 'pre-line' }}>{c.title}</h3>
                   </div>
                   
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
@@ -324,13 +520,23 @@ export default async function SpecialistPage({ params }: PageProps) {
 
       {/* 6. Process Steps */}
       <ProcessBlock 
-        title="Как проходит работа по делу"
-        subtitle="Каждая юридическая ситуация требует отдельной стратегии, но работа по делу строится последовательно: от первичной оценки и анализа документов до защиты интересов доверителя и контроля результата."
-        steps={member.process.map(s => ({
-          num: s.step.replace(/^0+/, ''),
-          title: s.title,
-          desc: s.description
-        }))}
+        title={member.slug === 'nacheshnikov-vladimir-viktorovich' ? "Как проходит работа над корпоративной задачей" : "Как проходит работа по делу"}
+        subtitle={member.slug === 'nacheshnikov-vladimir-viktorovich' 
+          ? "Корпоративная задача обычно включает несколько взаимосвязанных действий. Работа строится последовательно: от анализа структуры бизнеса и определения необходимых изменений до подготовки документов, согласования действий участников и регистрации изменений."
+          : "Каждая юридическая ситуация требует отдельной стратегии, но работа по делу строится последовательно: от первичной оценки и анализа документов до защиты интересов доверителя и контроля результата."
+        }
+        steps={[
+          ...member.process.map(s => ({
+            num: s.step.replace(/^0+/, ''),
+            title: s.title,
+            desc: s.description
+          })),
+          ...(member.slug === 'gusev-oleg-yurevich' ? [{
+            isBanner: true,
+            title: 'Дистанционный\nформат работы',
+            desc: 'Работаем с доверителями по всей России. Первичный анализ документов, согласование позиции и подготовка процессуальных обращений проходят в удобном дистанционном формате.'
+          }] : [])
+        ]}
         ctaTitle=""
       />
 
@@ -338,14 +544,14 @@ export default async function SpecialistPage({ params }: PageProps) {
       <section className="section bg-cream" id="consultation" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: '40px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
                   Связаться с нами
                 </span>
               </div>
-              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0 }}>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, whiteSpace: 'pre-line' }}>
                 {member.consultationTitle || `Запишитесь на консультацию к ${member.name}`}
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '32px', textWrap: 'balance' }}>
@@ -353,14 +559,34 @@ export default async function SpecialistPage({ params }: PageProps) {
               </p>
               
               <div style={{ marginBottom: '32px', borderLeft: '4px solid var(--color-gold)', paddingLeft: '16px' }}>
-                <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', fontSize: '18px', marginBottom: '4px' }}>{member.name}</div>
+                <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', fontSize: '18px', marginBottom: '4px' }}>
+                  {member.slug === 'nacheshnikov-vladimir-viktorovich' ? (
+                    <>
+                      <span style={{ display: 'block' }}>Начешников</span>
+                      <span style={{ display: 'block' }}>Владимир Викторович</span>
+                    </>
+                  ) : member.slug === 'konopkin-dmitriy-sergeevich' ? (
+                    <>Конопкин <br />Дмитрий Сергеевич</>
+                  ) : member.slug === 'smolyaninova-marina-valerevna' ? (
+                    <>Смольянинова <br />Марина Валерьевна</>
+                  ) : (
+                    member.name
+                  )}
+                </div>
                 <div style={{ color: 'var(--color-text-secondary)', fontSize: '15px' }}>{member.status}</div>
               </div>
 
               <div>
                 <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  Перезвоним вам в течение 15 минут<br/>в рабочее время
+                  {member.slug === 'bobkin-arkadiy-evgenevich' ? (
+                    'Свяжемся с вами в рабочее время'
+                  ) : (
+                    <span>
+                      Перезвоним в течение<br />
+                      15 минут в рабочее время
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -368,6 +594,8 @@ export default async function SpecialistPage({ params }: PageProps) {
               <ContactsForm 
                 title="Отправить обращение" 
                 subtitle="" 
+                buttonText="Получить консультацию"
+                commentPlaceholder="Кратко опишите ситуацию или вопрос…"
                 hiddenFields={[
                   { name: 'specialist', value: member.name },
                   { name: 'page_url', value: `/specialisty/${member.slug}/` }

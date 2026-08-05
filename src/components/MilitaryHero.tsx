@@ -6,13 +6,13 @@ type HeroProps = {
   superTitle: React.ReactNode;
   title: React.ReactNode;
   subtitle: React.ReactNode;
-  primaryCtaText: string;
-  primaryCtaSubtext?: string;
+  primaryCtaText: React.ReactNode;
+  primaryCtaSubtext?: React.ReactNode;
   primaryCtaLink?: string;
-  secondaryCtaText?: string;
+  secondaryCtaText?: React.ReactNode;
   secondaryCtaLink?: string;
   urgentHint?: string;
-  trustItems?: { icon?: React.ReactNode; text: string }[];
+  trustItems?: { icon?: React.ReactNode; text: React.ReactNode }[];
 };
 
 import Image from 'next/image';
@@ -22,6 +22,10 @@ type ExtendedHeroProps = HeroProps & {
   imageUrl?: string; 
   imageName?: string;
   imageSubtitle?: string;
+  trustMarginTop?: string;
+  imageMarginTop?: string;
+  imageObjectPosition?: string;
+  rightContent?: React.ReactNode;
 };
 
 export default function MilitaryHero({
@@ -38,15 +42,21 @@ export default function MilitaryHero({
   trustItems = [],
   imageUrl,
   imageName,
-  imageSubtitle
+  imageSubtitle,
+  trustMarginTop,
+  imageMarginTop,
+  imageObjectPosition,
+  rightContent
 }: ExtendedHeroProps) {
+  const hasRight = Boolean(imageUrl || rightContent);
+
   return (
     <section style={{ 
       position: 'relative', 
       minHeight: '85vh', 
       display: 'flex', 
       alignItems: 'center',
-      paddingTop: '100px',
+      paddingTop: '130px',
       paddingBottom: '80px',
       background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
       overflow: 'hidden'
@@ -58,16 +68,17 @@ export default function MilitaryHero({
         borderRadius: '50%', zIndex: 0
       }} />
 
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div className={imageUrl ? "grid grid-2" : ""} style={{ display: imageUrl ? 'grid' : 'flex', flexDirection: 'column', gap: '40px', alignItems: 'flex-start', ...(imageUrl && { gridTemplateColumns: '1.3fr 0.7fr' }) }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '20px' }}>
+          {breadcrumbs && (
+            <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '32px' }}>
+              {breadcrumbs}
+            </div>
+          )}
+
+          <div className={hasRight ? "grid grid-2 land-hero-grid" : ""} style={{ display: hasRight ? 'grid' : 'flex', flexDirection: hasRight ? 'row' : 'column', gap: '40px', alignItems: 'center' }}>
             {/* Left Column */}
-            <div style={{ flex: '1 1 0%', paddingTop: '80px' }}>
-              {breadcrumbs && (
-                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
-                  {breadcrumbs}
-                </div>
-              )}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+            <div style={{ flex: '1 1 0%' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#9B7E55' }}>
                   {superTitle}
@@ -75,28 +86,30 @@ export default function MilitaryHero({
               </div>
               
               <h1 style={{ 
-                fontSize: 'clamp(36px, 5vw, 56px)', 
+                fontSize: 'clamp(28px, 5vw, 56px)', 
                 color: 'var(--color-deep-blue)', 
                 fontFamily: 'var(--font-serif)', 
-                margin: '0 0 32px 0', 
-                lineHeight: 1.1 
+                margin: '0 0 20px 0', 
+                lineHeight: 1.15 
               }}>
                 {title}
               </h1>
               
               <p style={{ 
-                fontSize: '18px', 
-                color: 'var(--color-text-secondary)', 
-                marginBottom: '40px', 
+                fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, 
+                marginBottom: '20px', 
                 maxWidth: '750px', 
                 lineHeight: 1.6 
               }}>
                 {subtitle}
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '12px', marginTop: '48px', marginBottom: urgentHint ? '24px' : '32px' }}>
+              {trustItems && trustItems.length > 0 && <TrustStrip items={trustItems} marginTop={trustMarginTop || '24px'} />}
+
+              {/* Primary Call to Action */}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '14px', marginTop: '24px', marginBottom: urgentHint ? '24px' : '32px' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px' }}>
-                  <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '15px' }} data-analytics="military_hero_consultation_click">
+                  <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '15px', color: '#FFFFFF', backgroundColor: '#10273B', border: '1px solid #9B7E55', boxShadow: '0 4px 14px rgba(16, 39, 59, 0.25)' }} data-analytics="military_hero_consultation_click">
                     {primaryCtaText}
                   </a>
                   {secondaryCtaText && secondaryCtaLink && (
@@ -117,7 +130,7 @@ export default function MilitaryHero({
                   background: 'rgba(200, 169, 126, 0.1)',
                   borderLeft: '4px solid var(--color-gold)',
                   padding: '16px 24px',
-                  marginBottom: '48px',
+                  marginBottom: '24px',
                   fontSize: '15px',
                   color: 'var(--color-deep-blue)',
                   lineHeight: 1.5
@@ -126,49 +139,68 @@ export default function MilitaryHero({
                   {urgentHint}
                 </div>
               )}
-
-              {trustItems && trustItems.length > 0 && <TrustStrip items={trustItems} />}
             </div>
             
-            {/* Right Column for Photo */}
-            <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '16px', paddingTop: breadcrumbs ? '122px' : '80px', marginTop: 0 }}>
-              <div style={{ 
-                width: '100%', 
-                aspectRatio: '3/4', 
-                backgroundColor: 'var(--color-white)', 
-                overflow: 'hidden',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--color-text-secondary)',
-                fontSize: '14px',
-                border: '1px solid var(--color-border)',
-                position: 'relative'
-              }} className="hero-photo-hover">
-                {imageUrl ? (
-                  <img src={imageUrl} alt={imageName || title?.toString() || 'Специалист'} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} className="hero-photo-img" />
-                ) : (
-                  <span style={{ padding: '20px', textAlign: 'center', fontStyle: 'italic' }}>
-                    [Фото специалиста]
-                  </span>
-                )}
-              </div>
-              <style dangerouslySetInnerHTML={{__html: `
-                .hero-photo-hover {
-                  transition: all 0.4s ease;
-                }
-                .hero-photo-hover:hover {
-                  box-shadow: 0 20px 40px rgba(23, 50, 77, 0.15);
-                  transform: translateY(-4px);
-                }
-              `}} />
-              {(imageName || imageSubtitle) && (
-                <div>
-                  {imageName && <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px' }}>{imageName}</div>}
-                  {imageSubtitle && <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)' }}>{imageSubtitle}</div>}
+            {/* Right Column for Photo or Unconstrained Creative */}
+            <div className="military-hero-right" style={{ width: '100%', maxWidth: '440px', margin: '0 auto', flexShrink: 0, display: 'flex', flexDirection: 'column', paddingTop: imageMarginTop || 0, marginTop: 0 }}>
+              {rightContent ? (
+                rightContent
+              ) : (
+                <div className="hero-photo-hover" style={{ 
+                  width: '100%',
+                  borderRadius: '0',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)',
+                  zIndex: 1,
+                  display: 'block',
+                  background: 'transparent'
+                }}>
+                  {imageUrl ? (
+                    <img src={imageUrl} alt={imageName || title?.toString() || 'Специалист'} style={{ width: '100%', height: '460px', objectFit: 'cover', objectPosition: imageObjectPosition || 'center 20%', display: 'block', filter: 'brightness(1.05)' }} className="hero-photo-img" />
+                  ) : (
+                    <div style={{ padding: '40px', textAlign: 'center', fontStyle: 'italic', color: 'var(--color-text-secondary)' }}>
+                      [Фото специалиста]
+                    </div>
+                  )}
+                  {(imageName || imageSubtitle) && (
+                    <div style={{
+                      padding: '16px 20px',
+                      background: 'rgba(255, 255, 255, 0.75)',
+                      backdropFilter: 'blur(10px)',
+                      borderTop: '3px solid var(--color-gold)',
+                      borderLeft: '1px solid rgba(255, 255, 255, 0.9)',
+                      borderRight: '1px solid rgba(255, 255, 255, 0.9)',
+                      borderBottom: '1px solid rgba(255, 255, 255, 0.9)',
+                      boxShadow: '0 4px 14px rgba(16, 39, 59, 0.08)'
+                    }}>
+                      {imageName && (
+                        <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '2px', lineHeight: 1.3 }}>
+                          {imageName === 'Дмитрий Сергеевич Конопкин' || imageName === 'Конопкин Дмитрий Сергеевич' ? (
+                            <>Конопкин <br />Дмитрий Сергеевич</>
+                          ) : (
+                            imageName
+                          )}
+                        </div>
+                      )}
+                      {imageSubtitle && (
+                        <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontWeight: 500, lineHeight: 1.35 }}>
+                          {typeof imageSubtitle === 'string' && imageSubtitle.includes('куратор') ? (
+                            <>
+                              {imageSubtitle.split('куратор')[0].trim().replace(/,$/, '')},<br />
+                              куратор{imageSubtitle.split('куратор')[1]}
+                            </>
+                          ) : (
+                            imageSubtitle
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               )}
             </div>
+
           </div>
         </div>
     </section>

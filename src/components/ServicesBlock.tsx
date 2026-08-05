@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -85,7 +85,7 @@ export default function ServicesBlock() {
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ textAlign: 'left', marginBottom: '60px' }}>
           <h2 style={{ marginTop: 0, marginBottom: '16px' }}>Приоритетные направления</h2>
-          <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', maxWidth: '800px', margin: '0' }}>
+          <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, maxWidth: '800px', margin: '0' }}>
             Основные направления юридической помощи гражданам и бизнесу.
           </p>
         </div>
@@ -220,3 +220,4 @@ export default function ServicesBlock() {
     </section>
   );
 }
+

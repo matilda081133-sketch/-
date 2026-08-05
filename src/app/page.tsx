@@ -423,7 +423,7 @@ export default function Home() {
       <section className="section bg-white" id="consultation" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
@@ -432,7 +432,7 @@ export default function Home() {
                 Обсудите ситуацию с юристом
               </h2>
               
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
                 Кратко опишите ситуацию. Юрист уточнит обстоятельства и сообщит, какие документы потребуются для дальнейшего разбора.
               </p>
 
@@ -452,9 +452,9 @@ export default function Home() {
               </div>
             </div>
             
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
               <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
-                <ContactsForm title="Оставить заявку" subtitle="Перезвоним вам в течение 15 минут в рабочее время." />
+                <ContactsForm title="Оставить заявку" subtitle={<>Перезвоним вам в течение <br />15 минут в рабочее время.</>} />
               </div>
             </div>
           </div>
@@ -466,3 +466,4 @@ export default function Home() {
     </main>
   );
 }
+

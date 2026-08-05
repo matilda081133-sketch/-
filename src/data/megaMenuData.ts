@@ -1,4 +1,4 @@
-export const megaMenuB2C = [
+﻿export const megaMenuB2C = [
   {
     "title": "Банкротство и долги",
     "links": [
@@ -634,3 +634,4 @@ export const megaMenuB2B = [
     ]
   }
 ];
+

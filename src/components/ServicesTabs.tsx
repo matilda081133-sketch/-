@@ -33,7 +33,7 @@ export default function ServicesTabs() {
           <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
             Ключевые направления юридической помощи
           </h2>
-          <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+          <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
             Профессиональные услуги юриста и адвоката в Липецке. Предоставляем комплексное правовое обслуживание для бизнеса и частных лиц: от первичной юридической консультации до представительства в суде.
           </p>
         </div>
@@ -44,14 +44,12 @@ export default function ServicesTabs() {
             role="tab"
             aria-selected={activeTab === 'b2c'}
             onClick={() => setActiveTab('b2c')}
+            className={`tab-btn ${activeTab === 'b2c' ? 'tab-btn-active' : 'tab-btn-inactive'}`}
             style={{
-              padding: '12px 24px',
+              padding: '12px 28px',
               fontSize: '16px',
               fontWeight: 600,
-              borderRadius: '4px',
-              border: activeTab === 'b2c' ? '1px solid var(--color-deep-blue)' : '1px solid var(--color-border)',
-              background: activeTab === 'b2c' ? 'var(--color-deep-blue)' : 'var(--color-white)',
-              color: activeTab === 'b2c' ? 'var(--color-white)' : 'var(--color-text-primary)',
+              borderRadius: '0px',
               cursor: 'pointer',
               transition: 'all 0.3s'
             }}
@@ -62,14 +60,12 @@ export default function ServicesTabs() {
             role="tab"
             aria-selected={activeTab === 'b2b'}
             onClick={() => setActiveTab('b2b')}
+            className={`tab-btn ${activeTab === 'b2b' ? 'tab-btn-active' : 'tab-btn-inactive'}`}
             style={{
-              padding: '12px 24px',
+              padding: '12px 28px',
               fontSize: '16px',
               fontWeight: 600,
-              borderRadius: '4px',
-              border: activeTab === 'b2b' ? '1px solid var(--color-deep-blue)' : '1px solid var(--color-border)',
-              background: activeTab === 'b2b' ? 'var(--color-deep-blue)' : 'var(--color-white)',
-              color: activeTab === 'b2b' ? 'var(--color-white)' : 'var(--color-text-primary)',
+              borderRadius: '0px',
               cursor: 'pointer',
               transition: 'all 0.3s'
             }}
@@ -77,6 +73,23 @@ export default function ServicesTabs() {
             Бизнесу
           </button>
         </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .tab-btn-active {
+            background-color: #10273B !important;
+            color: #FFFFFF !important;
+            border: 1px solid #10273B !important;
+          }
+          .tab-btn-inactive {
+            background-color: #FFFFFF !important;
+            color: #10273B !important;
+            border: 1px solid #D7E0E6 !important;
+          }
+          .tab-btn-inactive:hover {
+            background-color: #F7F4ED !important;
+            color: #10273B !important;
+            border-color: #10273B !important;
+          }
+        `}} />
 
         {/* Grid */}
         <div 
@@ -148,3 +161,4 @@ export default function ServicesTabs() {
     </section>
   );
 }
+

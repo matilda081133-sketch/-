@@ -36,8 +36,15 @@ export default function DesertirstvoPage() {
           </>
         }
         superTitle="Уголовная защита военнослужащих • статья 338 УК РФ"
-        title="Адвокат по делам о дезертирстве в Липецке"
-        subtitle="Адвокат оценит факты, связанные с намерением и продолжительностью отсутствия, подключится при задержании или добровольной явке и будет вести защиту на текущей стадии дела."
+        title={<><span style={{ display: 'inline-block' }}>Адвокат по делам</span> <br /><span style={{ display: 'inline-block' }}>о дезертирстве</span> <br /><span style={{ display: 'inline-block' }}>в Липецке</span></>}
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
+            <span style={{ display: 'inline-block' }}>Адвокат оценит факты, связанные</span> <br />
+            <span style={{ display: 'inline-block' }}>с намерением и продолжительностью отсутствия,</span> <br />
+            <span style={{ display: 'inline-block' }}>подключится при задержании или добровольной явке</span> <br />
+            <span style={{ display: 'inline-block' }}>и будет вести защиту на текущей стадии дела.</span>
+          </span>
+        }
         primaryCtaText="Связаться с адвокатом"
         secondaryCtaText="Разобраться в отличиях"
         secondaryCtaLink="#differences"
@@ -118,10 +125,10 @@ export default function DesertirstvoPage() {
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
             <div>
               <h2 className="section-title">Добровольная явка и задержание</h2>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '24px' }}>
+              <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, marginBottom: '24px' }}>
                 Добровольная явка может учитываться как смягчающее обстоятельство, но не гарантирует конкретного исхода. Мы рекомендуем согласовывать явку с адвокатом.
               </p>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '24px' }}>
+              <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, marginBottom: '24px' }}>
                 При задержании адвокат в первую очередь проверяет меру пресечения и риск помещения в СИЗО, чтобы оперативно подготовить позицию защиты.
               </p>
             </div>
@@ -150,14 +157,14 @@ export default function DesertirstvoPage() {
       <FAQBlock 
         faqs={faqs} 
         superTitle="Частые вопросы" 
-        title="Вопросы по делам о дезертирстве"
+        title={<><span style={{ display: 'inline-block' }}>Частые вопросы</span> <br /><span style={{ display: 'inline-block' }}>по делам о дезертирстве</span></>}
         subtitle="Ответы на частые вопросы. Информация носит общий характер. Возможный порядок действий зависит от обстоятельств и документов."
       />
 
       <section className="section bg-white" id="form">
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'center' }}>
-            <div>
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', paddingTop: 0 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
@@ -167,7 +174,7 @@ export default function DesertirstvoPage() {
               <h2 style={{ fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.1 }}>
                 Обсудите обстоятельства с адвокатом<br /> до объяснений, допроса или явки
               </h2>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '0' }}>
+              <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, marginBottom: '0' }}>
                 Срочная связь. Уточним местонахождение и необходимые документы.
               </p>
             </div>
@@ -182,3 +189,4 @@ export default function DesertirstvoPage() {
     </main>
   );
 }
+

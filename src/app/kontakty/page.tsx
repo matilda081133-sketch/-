@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
@@ -97,10 +97,10 @@ export default function ContactsPage() {
               </h1>
               
               <div style={{ marginBottom: '48px' }}>
-                <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 16px 0', maxWidth: '750px' }}>
+                <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: '0 0 16px 0', maxWidth: '750px' }}>
                   Позвоните или напишите нам либо приезжайте в офис юридической компании «Де&#8209;Юре» в центре Липецка.
                 </p>
-                <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, maxWidth: '750px' }}>
+                <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: 0, maxWidth: '750px' }}>
                   Личные встречи с юристами проводятся по предварительной записи — пожалуйста, согласуйте время визита заранее.
                 </p>
               </div>
@@ -378,3 +378,4 @@ export default function ContactsPage() {
     </main>
   );
 }
+

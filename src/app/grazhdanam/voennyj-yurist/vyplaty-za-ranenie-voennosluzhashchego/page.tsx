@@ -83,27 +83,27 @@ export default function VyplatyRaneniePage() {
 
   const situations = [
     {
-      title: "Выплату после ранения\nне назначили",
+      title: <><span style={{ display: 'inline-block' }}>Выплату после ранения</span> <br /><span style={{ display: 'inline-block' }}>не назначили</span></>,
       desc: 'Проверим основания отказа и имеющиеся документы. Определим, что необходимо получить или исправить и в каком порядке обжаловать решение.'
     },
     {
-      title: 'Оформление или перечисление выплаты затягивается',
+      title: <><span style={{ display: 'inline-block' }}>Оформление</span> <br /><span style={{ display: 'inline-block' }}>или перечисление выплаты затягивается</span></>,
       desc: 'Установим, на каком этапе остановилась процедура. Подготовим обращения и поможем добиться рассмотрения документов.'
     },
     {
-      title: 'Не выдают необходимые документы',
+      title: <><span style={{ display: 'inline-block' }}>Не выдают</span> <br /><span style={{ display: 'inline-block' }}>необходимые документы</span></>,
       desc: 'Определим, каких медицинских или служебных документов не хватает, и поможем обратиться за их оформлением или восстановлением.'
     },
     {
-      title: 'В документах допущены ошибки',
+      title: <><span style={{ display: 'inline-block' }}>В документах</span> <br /><span style={{ display: 'inline-block' }}>допущены ошибки</span></>,
       desc: 'Проверим справки, заключения и выписки. Поможем исправить сведения об обстоятельствах, характере или последствиях ранения.'
     },
     {
-      title: 'Размер выплаты вызывает сомнения',
+      title: <><span style={{ display: 'inline-block' }}>Размер выплаты</span> <br /><span style={{ display: 'inline-block' }}>вызывает сомнения</span></>,
       desc: 'Проверим, какие выплаты применимы в вашей ситуации и правильно ли определены основания и размер назначенных сумм.'
     },
     {
-      title: 'Непонятно, какие выплаты положены',
+      title: <><span style={{ display: 'inline-block' }}>Непонятно, какие выплаты</span> <br /><span style={{ display: 'inline-block' }}>положены</span></>,
       desc: 'Изучим обстоятельства ранения и имеющиеся документы, объясним возможные основания для выплат и порядок их оформления.'
     }
   ];
@@ -111,6 +111,18 @@ export default function VyplatyRaneniePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dejure-help.ru/#organization",
+        "name": "Юридическая компания «Де-Юре»",
+        "url": "https://dejure-help.ru/",
+        "logo": "https://dejure-help.ru/images/logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Липецк",
+          "addressCountry": "RU"
+        }
+      },
       {
         "@type": "BreadcrumbList",
         "@id": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/#breadcrumb",
@@ -123,13 +135,11 @@ export default function VyplatyRaneniePage() {
       },
       {
         "@type": "LegalService",
-        "@id": "https://dejure-help.ru/#legalservice",
-        "name": "ЮК «Де-Юре»",
-        "description": "Юридическая помощь по выплатам за ранение военнослужащих в Липецке",
+        "@id": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/#service",
+        "name": "Юридическая помощь по выплатам за ранение военнослужащих в Липецке",
+        "description": "Помощь с выплатами за ранение: проверка справок и оснований, запрос документов, обжалование задержки или отказа, представительство в суде.",
         "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/",
-        "employee": {
-          "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person"
-        }
+        "provider": { "@id": "https://dejure-help.ru/#organization" }
       },
       {
         "@type": "Person",
@@ -139,9 +149,7 @@ export default function VyplatyRaneniePage() {
         "description": "Реестровый номер 48/812",
         "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
         "image": "https://dejure-help.ru/images/konopkin.jpg",
-        "worksFor": {
-          "@id": "https://dejure-help.ru/#legalservice"
-        }
+        "worksFor": { "@id": "https://dejure-help.ru/#organization" }
       },
       {
         "@type": "FAQPage",
@@ -174,41 +182,27 @@ export default function VyplatyRaneniePage() {
           </>
         }
         superTitle="Военные выплаты • анализ документов и обжалование"
-        title={
-          <>
-            Юрист по выплатам <br />
-            за ранение <br />
-            военнослужащего <br />
-            в Липецке
-          </>
-        }
+        title={<><span style={{ display: 'inline-block' }}>Юрист по выплатам</span> <br /><span style={{ display: 'inline-block' }}>за ранение военнослужащего</span> <br /><span style={{ display: 'inline-block' }}>в Липецке</span></>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
-            Проверим документы и виды положенных выплат,<br />
-            запросим недостающие сведения и определим<br />
-            порядок действий при задержке, отказе, неверной<br />
-            квалификации ранения или неполной выплате.
+            <span style={{ display: 'inline-block' }}>Проверим документы и виды положенных выплат,</span> <br />
+            <span style={{ display: 'inline-block' }}>запросим недостающие сведения</span> <br />
+            <span style={{ display: 'inline-block' }}>и определим порядок действий при задержке,</span> <br />
+            <span style={{ display: 'inline-block' }}>отказе, неверно определённой степени</span> <br />
+            <span style={{ display: 'inline-block' }}>тяжести ранения или неполной выплате.</span>
           </span>
         }
         primaryCtaText="Получить консультацию"
         primaryCtaLink="#form"
-        primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         imageUrl="/-/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, партнёр ЮК «Де-Юре»"
+        imageSubtitle="Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        imageMarginTop="64px"
         trustItems={[
-          { 
-            icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
-            text: 'Проверяем несколько оснований выплат' 
-          },
-          { 
-            icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>, 
-            text: 'Начинаем со справок и решений' 
-          },
-          { 
-            icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>, 
-            text: "Условия работы —\nв договоре" 
-          }
+          { text: <><span style={{ display: 'inline-block' }}>Проверяем правовые основания</span> <span style={{ display: 'inline-block' }}>для получения выплат</span></> },
+          { text: <><span style={{ display: 'inline-block' }}>Начинаем с проверки медицинских и служебных документов,</span> <span style={{ display: 'inline-block' }}>а также заключений ВВК — если они относятся к выплате.</span></> },
+          { text: <><span style={{ display: 'inline-block' }}>Фиксируем объём и стоимость правовой помощи</span> <span style={{ display: 'inline-block' }}>в договоре</span></> }
         ]}
       />
 
@@ -219,7 +213,7 @@ export default function VyplatyRaneniePage() {
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               В каких ситуациях <br />мы можем помочь
             </h2>
-            <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Найдите свою проблему — мы подскажем, с каких документов начать и как восстановить ваши права.
             </p>
           </div>
@@ -287,39 +281,17 @@ export default function VyplatyRaneniePage() {
             position: 'relative',
             overflow: 'hidden'
           }}>
-            {/* Vector watermark graphic */}
-            <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.08, pointerEvents: 'none' }}>
-              <svg width="140" height="140" viewBox="0 0 24 24" fill="#FFFFFF">
-                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-              </svg>
-            </div>
 
             <div style={{ maxWidth: '680px', position: 'relative', zIndex: 1 }}>
               <h3 style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', margin: '0 0 10px 0', lineHeight: 1.3 }}>
-                Не уверены, относится ли ваша ситуация <br />к одному из этих случаев?
+                <span style={{ display: 'inline-block' }}>Не уверены, относится ли ваша ситуация</span> <br /><span style={{ display: 'inline-block' }}>к одному из этих случаев?</span>
               </h3>
               <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.5, textWrap: 'pretty' }}>
                 Опишите обстоятельства и укажите, какие документы у вас есть. Дмитрий Сергеевич Конопкин изучит информацию и определит возможный порядок действий.
               </p>
             </div>
             <div style={{ position: 'relative', zIndex: 1 }}>
-              <style dangerouslySetInnerHTML={{__html: `
-                .btn-cta-gold {
-                  background-color: var(--color-gold) !important;
-                  color: var(--color-deep-blue) !important;
-                  border: 1px solid var(--color-gold) !important;
-                  transition: all 0.3s ease !important;
-                  display: inline-block;
-                  text-decoration: none;
-                }
-                .btn-cta-gold:hover {
-                  background-color: transparent !important;
-                  color: #FFFFFF !important;
-                  border-color: var(--color-gold) !important;
-                  box-shadow: 0 0 10px rgba(200, 169, 126, 0.3) !important;
-                }
-              `}} />
-              <a href="#form" className="btn btn-cta-gold" style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 700, whiteSpace: 'nowrap' }}>
+              <a href="#form" className="btn white-btn-custom" style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 700, whiteSpace: 'nowrap' }}>
                 Обсудить ситуацию
               </a>
             </div>
@@ -331,7 +303,7 @@ export default function VyplatyRaneniePage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position="Адвокат, партнёр ЮК «Де-Юре»,\nкуратор направления «Военное право»"
+        position={<>Адвокат, партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
         imageUrl="/-/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
@@ -366,26 +338,26 @@ export default function VyplatyRaneniePage() {
         cases={[
           {
             category: "ВЫПЛАТЫ ВОЕННОСЛУЖАЩИМ",
-            title: "Выплата после восстановления недостающих документов",
-            problem: "После лечения военнослужащий не получил выплату за ранение. Выяснилось, что часть медицинских и служебных документов не была оформлена или передана в установленном порядке.",
-            action: "Проверили имеющиеся документы, определили, каких сведений не хватает, подготовили обращения в медицинскую организацию и воинскую часть и проконтролировали оформление необходимого комплекта.",
-            result: "Недостающие документы были оформлены и направлены для рассмотрения вопроса о назначении выплаты.",
+            title: "Добились назначения выплаты после отказа из-за расхождений в документах",
+            problem: "Военнослужащий получил ранение, прошёл лечение и представил документы для оформления единовременной выплаты. Выплату не назначили из-за расхождений в дате и обстоятельствах ранения, указанных в медицинских и служебных документах.",
+            action: "Сопоставили медицинские выписки, справку о ранении и сведения воинской части. Установили, какие документы содержат противоречия, подготовили обращения об их исправлении и повторно направили материалы на выплату с юридическим обоснованием.",
+            result: "Расхождения в документах устранили. Право военнослужащего на выплату подтвердили, выплату назначили и перечислили.",
             isDemo: true
           },
           {
             category: "ВОЕННО-ВРАЧЕБНАЯ ЭКСПЕРТИЗА",
-            title: "Пересмотр документов о тяжести ранения",
-            problem: "Характер и последствия ранения были отражены в документах неполно, из-за чего военнослужащий не мог подтвердить право на выплату в соответствующем размере.",
-            action: "Изучили медицинские документы, сопоставили диагнозы и последствия травмы, подготовили обращения для исправления и дополнения сведений.",
-            result: "Документы были рассмотрены повторно с учётом ранее неотражённых медицинских обстоятельств.",
+            title: "Добились пересмотра тяжести ранения и увеличения выплаты",
+            problem: "Ранение военнослужащего отнесли к лёгким, хотя последствия травмы и данные медицинских обследований указывали на признаки тяжёлого увечья. Из-за этого ему назначили выплату в меньшем размере.",
+            action: "Изучили медицинскую документацию и сопоставили установленный диагноз с действующим перечнем увечий. Собрали недостающие медицинские сведения, подготовили обращение о пересмотре степени тяжести и сопровождали повторное рассмотрение материалов.",
+            result: "Степень тяжести ранения пересмотрели. Военнослужащему назначили выплату в надлежащем размере и перечислили разницу.",
             isDemo: true
           },
           {
             category: "ОБЖАЛОВАНИЕ ОТКАЗОВ",
-            title: "Обжалование отказа в назначении выплаты",
-            problem: "Военнослужащему отказали в выплате, несмотря на наличие документов, подтверждающих ранение и обстоятельства его получения.",
-            action: "Проверили основания отказа, собрали подтверждающие документы, подготовили жалобу и представляли интересы военнослужащего при её рассмотрении.",
-            result: "Первоначальное решение было пересмотрено, документы направлены на повторное рассмотрение вопроса о выплате.",
+            title: "Добились отдельной выплаты за повторное ранение",
+            problem: "Военнослужащий получил два ранения в разное время. Выплату назначили только по первому случаю, а второе ранение посчитали продолжением прежнего лечения и отдельно не рассмотрели.",
+            action: "Разделили два страховых случая по датам, обстоятельствам и медицинским документам. Подтвердили, что второе ранение было получено в другой период и оформлено самостоятельными медицинскими материалами. Подготовили обращение о назначении выплаты по второму случаю.",
+            result: "Второе ранение признали самостоятельным основанием. Военнослужащему назначили и перечислили дополнительную выплату.",
             isDemo: true
           }
         ]}
@@ -408,11 +380,11 @@ export default function VyplatyRaneniePage() {
 
       {/* ═══ 8. Стоимость ═══ */}
       <PricingBlock 
-        title="Стоимость"
+        title="Стоимость юридической помощи"
         subtitle="Точная стоимость зависит от состояния документов, стадии оформления и необходимости обжалования. После первичной консультации специалист определит объём работы и назовёт стоимость до заключения договора."
         tiers={[
           {
-            title: 'Консультация и анализ',
+            title: <>Консультация <br />и анализ</>,
             subtitle: 'Первичный разбор',
             popular: false,
             price: 'ХХХ ₽',
@@ -425,9 +397,10 @@ export default function VyplatyRaneniePage() {
             buttonHref: '#form'
           },
           {
-            title: 'Досудебная работа',
+            title: <>Досудебная <br />работа</>,
             subtitle: 'Запросы и жалобы',
             popular: true,
+            badgeText: 'ВОСТРЕБОВАНО',
             price: 'ХХХ ₽',
             features: [
               { name: 'Подготовка адвокатских запросов', value: '✓' },
@@ -438,14 +411,14 @@ export default function VyplatyRaneniePage() {
             buttonHref: '#form'
           },
           {
-            title: 'Судебная защита',
-            subtitle: 'Судебное обжалование',
+            title: <>Судебное <br />обжалование</>,
+            subtitle: 'Судебная защита',
             popular: false,
             price: 'ХХХ ₽',
             features: [
               { name: 'Подготовка иска или жалобы в суд.', value: '✓' },
               { name: 'Сбор доказательной базы', value: '✓' },
-              { name: 'Представительство в военном суде', value: '✓' }
+              { name: 'Представительство в суде', value: '✓' }
             ],
             buttonText: 'Уточнить стоимость',
             buttonHref: '#form'
@@ -457,20 +430,20 @@ export default function VyplatyRaneniePage() {
       {/* ═══ 9. Ответы на частые вопросы ═══ */}
       <FAQBlock 
         faqs={faqs} 
-        title="Частые вопросы о выплатах за ранение"
+        title={<><span style={{ display: 'inline-block' }}>Частые вопросы</span> <br /><span style={{ display: 'inline-block' }}>о выплатах за ранение</span> <br /><span style={{ display: 'inline-block' }}>военнослужащего</span></>}
         subtitle="Ответы на частые вопросы о проверке справок, причинах задержек, обжаловании отказов и дистанционном ведении дела. Если у вас остался вопрос, задайте его специалисту."
         ctaText="Задать свой вопрос"
         ctaLink="#form"
       />
 
       {/* ═══ 10. Связанные услуги ═══ */}
-      <section className="section bg-white" style={{ padding: '64px 0', borderTop: '1px solid var(--color-border)' }}>
+      <section className="section bg-cream" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '32px' }}>
-            <h2 className="with-accent" style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '12px', marginTop: 0 }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '12px', marginTop: 0 }}>
               Связанные услуги
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Соседние направления юридической помощи военнослужащим и их семьям.
             </p>
           </div>
@@ -488,8 +461,9 @@ export default function VyplatyRaneniePage() {
             <a href="/-/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/" className="related-card-link" style={{ textDecoration: 'none' }}>
               <div className="card hover-lift" style={{ 
                 padding: '28px 24px', 
-                background: 'var(--color-cream)', 
+                background: '#FFFFFF', 
                 borderLeft: '4px solid var(--color-primary)',
+                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.06)',
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -513,8 +487,9 @@ export default function VyplatyRaneniePage() {
             <a href="/-/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/" className="related-card-link" style={{ textDecoration: 'none' }}>
               <div className="card hover-lift" style={{ 
                 padding: '28px 24px', 
-                background: 'var(--color-cream)', 
+                background: '#FFFFFF', 
                 borderLeft: '4px solid var(--color-primary)',
+                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.06)',
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -542,7 +517,7 @@ export default function VyplatyRaneniePage() {
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
@@ -551,18 +526,21 @@ export default function VyplatyRaneniePage() {
                 Расскажите о ситуации с выплатой
               </h2>
               
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
                 Кратко опишите, что произошло, и оставьте контактные данные. <span style={{ color: 'var(--color-deep-blue)', fontWeight: 600 }}>Обращение будет передано Дмитрию Сергеевичу Конопкину.</span> Он уточнит, какие документы у вас есть, изучит обстоятельства и согласует с вами консультацию.
               </p>
               
               <div style={{ marginTop: '32px' }}>
                 <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  Перезвоним в течение 15 минут в рабочее время
+                  <span>
+                    Перезвоним вам в течение<br />
+                    15 минут в рабочее время
+                  </span>
                 </div>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
               <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
                 <ContactsForm title="Написать нам" subtitle="" />
               </div>
@@ -575,3 +553,4 @@ export default function VyplatyRaneniePage() {
     </main>
   );
 }
+

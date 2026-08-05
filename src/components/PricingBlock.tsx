@@ -7,7 +7,7 @@ export interface PricingFeature {
 }
 
 export interface PricingTier {
-  title: string;
+  title: string | React.ReactNode;
   subtitle: string | React.ReactNode;
   popular?: boolean;
   badgeText?: string;
@@ -27,6 +27,7 @@ interface PricingBlockProps {
   ctaButtonLink?: string;
   disclaimer?: string;
   guaranteeText?: string;
+  sectionStyle?: React.CSSProperties;
 }
 
 export default function PricingBlock({
@@ -38,7 +39,8 @@ export default function PricingBlock({
   ctaButtonText,
   ctaButtonLink,
   disclaimer,
-  guaranteeText
+  guaranteeText,
+  sectionStyle
 }: PricingBlockProps) {
   const defaultTiers: PricingTier[] = [
     {
@@ -85,12 +87,12 @@ export default function PricingBlock({
   const tiers = propTiers || defaultTiers;
 
   return (
-    <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)' }}>
+    <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--gradient-cream)', ...sectionStyle }}>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <h2 style={{ 
             marginTop: 0, 
-            fontSize: '48px', 
+            fontSize: 'clamp(32px, 4vw, 42px)', 
             fontFamily: 'var(--font-serif)', 
             color: 'var(--color-deep-blue)',
             marginBottom: '20px'
@@ -99,7 +101,9 @@ export default function PricingBlock({
           </h2>
           <p style={{ 
             fontSize: '16px', 
-            color: 'var(--color-text-secondary)',
+            color: 'var(--color-deep-blue)',
+            opacity: 0.9,
+            fontWeight: 500,
             maxWidth: '700px',
             margin: '0 auto',
             lineHeight: 1.6
@@ -109,12 +113,15 @@ export default function PricingBlock({
         </div>
 
         <div 
-          className={tiers.length >= 3 ? "grid grid-3" : "grid grid-2"} 
+          className={tiers.length === 4 ? "grid grid-4" : tiers.length >= 3 ? "grid grid-3" : "grid grid-2"} 
           style={{ 
-            gap: '30px', 
+            display: 'grid',
+            gridTemplateColumns: tiers.length === 4 ? 'repeat(4, minmax(0, 1fr))' : tiers.length >= 3 ? 'repeat(3, minmax(0, 1fr))' : 'repeat(2, minmax(0, 1fr))',
+            gap: tiers.length === 4 ? '16px' : '30px', 
             alignItems: 'stretch',
             maxWidth: tiers.length === 2 ? '850px' : 'none',
-            margin: tiers.length === 2 ? '0 auto' : '0'
+            margin: tiers.length === 2 ? '0 auto' : '0',
+            width: '100%'
           }}
         >
           {tiers.map((tier, idx) => (
@@ -122,14 +129,17 @@ export default function PricingBlock({
               background: tier.popular ? 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)' : 'var(--color-white)',
               color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)',
               borderRadius: '0',
-              padding: '40px 30px',
+              padding: tiers.length === 4 ? '32px 16px' : '40px 30px',
               boxShadow: tier.popular ? '0 20px 40px rgba(16, 39, 59, 0.15)' : '0 10px 30px rgba(0,0,0,0.05)',
-              border: tier.popular ? 'none' : '1px solid rgba(23, 50, 77, 0.1)',
+              border: tier.popular ? '1px solid transparent' : '1px solid rgba(23, 50, 77, 0.1)',
               position: 'relative',
               transition: 'transform 0.4s ease, box-shadow 0.4s ease',
               display: 'flex',
               flexDirection: 'column',
-              height: '100%'
+              height: '100%',
+              width: '100%',
+              minWidth: 0,
+              boxSizing: 'border-box'
             }}
             className="pricing-tier-card"
             >
@@ -153,7 +163,7 @@ export default function PricingBlock({
               )}
               
               <div style={{ minHeight: '185px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', marginBottom: '24px' }}>
-                <h3 style={{ fontSize: '22px', margin: '0 0 8px 0', color: 'inherit', textAlign: 'center', lineHeight: 1.3 }}>{tier.title}</h3>
+                <h3 style={{ fontSize: tiers.length === 4 ? '20px' : '22px', margin: '0 0 8px 0', color: 'inherit', textAlign: 'center', lineHeight: 1.3 }}>{tier.title}</h3>
                 <p style={{ fontSize: '14px', opacity: 0.8, margin: '0 0 12px 0', textAlign: 'center', lineHeight: 1.5 }}>{tier.subtitle}</p>
                 
                 {tier.price && (
@@ -163,12 +173,12 @@ export default function PricingBlock({
                 )}
               </div>
 
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 40px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {tier.features.map((feature, fIdx) => (
-                  <li key={fIdx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', fontSize: '14px', opacity: 0.9 }}>
-                    <div style={{ display: 'flex', gap: '10px' }}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={tier.popular ? "rgba(255,255,255,0.5)" : "var(--color-primary)"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '1px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span style={{ lineHeight: 1.3 }}>{feature.name}</span>
+                  <li key={fIdx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '8px', fontSize: '13px', opacity: 0.9 }}>
+                    <div style={{ display: 'flex', gap: '8px', flex: '1 1 0%', minWidth: 0 }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={tier.popular ? "rgba(255,255,255,0.5)" : "var(--color-primary)"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span style={{ lineHeight: 1.35, wordBreak: 'break-word' }}>{feature.name}</span>
                     </div>
                     <span style={{ fontWeight: 600, whiteSpace: 'nowrap', color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)' }}>{feature.value}</span>
                   </li>
@@ -178,7 +188,13 @@ export default function PricingBlock({
               <a href={tier.buttonHref || "#form"} className={`btn ${tier.popular ? 'btn-popular' : 'btn-regular'}`} style={{ 
                 width: '100%', 
                 textAlign: 'center',
-                borderRadius: '0'
+                borderRadius: '0',
+                fontSize: '15px',
+                padding: '14px 16px',
+                whiteSpace: 'normal',
+                textWrap: 'balance',
+                lineHeight: 1.3,
+                minHeight: '52px'
               }}>
                 {tier.buttonText || 'Узнать точную стоимость'}
               </a>
@@ -189,12 +205,12 @@ export default function PricingBlock({
         {(disclaimer || guaranteeText) && (
           <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {disclaimer && (
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: 1.6, margin: 0, textAlign: 'center' }}>
+              <p style={{ color: 'var(--color-deep-blue)', fontSize: '14px', lineHeight: 1.6, margin: 0, textAlign: 'center', opacity: 0.9 }}>
                 {disclaimer}
               </p>
             )}
             {guaranteeText && (
-              <p style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '14px', lineHeight: 1.5, margin: 0, textAlign: 'center' }}>
+              <p style={{ color: 'var(--color-deep-blue)', fontWeight: 600, fontSize: '14px', lineHeight: 1.5, margin: 0, textAlign: 'center' }}>
                 ✓ {guaranteeText}
               </p>
             )}
@@ -205,7 +221,7 @@ export default function PricingBlock({
           <div style={{ marginTop: '40px', background: 'var(--color-white)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', padding: '40px', borderRadius: '4px', display: 'flex', flexWrap: 'wrap', gap: '32px', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ flex: '1 1 400px' }}>
               <h3 style={{ fontSize: '24px', marginBottom: '16px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>{ctaTitle}</h3>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, textWrap: 'balance' }}>{ctaSubtitle}</p>
+              <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, textWrap: 'balance' }}>{ctaSubtitle}</p>
             </div>
             <div>
               <a href={ctaButtonLink || '#form'} className="btn btn-primary" style={{ padding: '16px 40px' }}>{ctaButtonText}</a>
@@ -213,33 +229,53 @@ export default function PricingBlock({
           </div>
         )}
       </div>
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         .pricing-tier-card:hover {
           transform: translateY(-10px);
           box-shadow: 0 30px 60px rgba(0,0,0,0.1) !important;
         }
         .btn-regular {
-          background: transparent;
-          color: var(--color-primary);
-          border: 1px solid var(--color-primary);
-          transition: all 0.3s ease;
+          background: #10273B !important;
+          color: #FFFFFF !important;
+          border: 1px solid #10273B !important;
+          transition: all 0.3s ease !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          font-size: 15px !important;
+          white-space: normal !important;
+          text-wrap: balance !important;
+          text-align: center !important;
+          line-height: 1.3 !important;
+          min-height: 52px !important;
         }
         .btn-regular:hover {
-          background: var(--color-primary) !important;
-          color: var(--color-white) !important;
+          background: #174269 !important;
+          color: #FFFFFF !important;
+          border-color: #174269 !important;
         }
         .btn-popular {
-          background: var(--color-white);
-          color: var(--color-deep-blue);
-          border: 1px solid var(--color-white);
-          transition: all 0.3s ease;
+          background: #FFFFFF !important;
+          color: #10273B !important;
+          border: 1px solid #FFFFFF !important;
+          transition: all 0.3s ease !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          font-size: 15px !important;
+          white-space: normal !important;
+          text-wrap: balance !important;
+          text-align: center !important;
+          line-height: 1.3 !important;
+          min-height: 52px !important;
         }
         .btn-popular:hover {
-          background: rgba(255, 255, 255, 0.12) !important;
-          color: var(--color-white) !important;
-          border: 1px solid #ffffff !important;
+          background: #174269 !important;
+          color: #FFFFFF !important;
+          border-color: #FFFFFF !important;
         }
-      `}</style>
+      `}} />
     </section>
   );
 }
+

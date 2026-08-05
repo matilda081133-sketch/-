@@ -50,7 +50,22 @@ export default function UrgentContactStrip() {
             
             <a 
               href="#form" 
-              style={{ color: 'var(--color-gold-light)', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}
+              style={{ 
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '12px 24px', 
+                fontSize: '15px',
+                fontWeight: 700,
+                color: '#10273B',
+                backgroundColor: '#FFFFFF',
+                border: '2px solid #FFFFFF',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
+                whiteSpace: 'nowrap',
+                transition: 'all 0.2s ease'
+              }}
             >
               Описать ситуацию
             </a>
@@ -61,3 +76,4 @@ export default function UrgentContactStrip() {
     </section>
   );
 }
+

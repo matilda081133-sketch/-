@@ -4,212 +4,681 @@ import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import MilitaryHero from '@/components/MilitaryHero';
+import SpecialistBlock from '@/components/SpecialistBlock';
+import ProcessBlock from '@/components/ProcessBlock';
+import PricingBlock from '@/components/PricingBlock';
+import CasesBlock from '@/components/CasesBlock';
 
 export const metadata = {
-  title: 'Признание военнослужащего умершим в Липецке | Де-Юре',
-  description: 'Помощь семье пропавшего военнослужащего в Липецке: запросы, доказательства, заявление в компетентный суд, признание безвестно отсутствующим или объявление умершим.'
+  title: 'Признание безвестно отсутствующим и объявление умершим | Де-Юре',
+  description: 'Помощь семье пропавшего военнослужащего в Липецке: проверка обстоятельств и сроков, подготовка заявления, сбор доказательств и представительство в суде.',
+  alternates: {
+    canonical: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
+  },
+  openGraph: {
+    title: 'Признание безвестно отсутствующим и объявление умершим | Де-Юре',
+    description: 'Помощь семье пропавшего военнослужащего в Липецке: проверка обстоятельств и сроков, подготовка заявления, сбор доказательств и представительство в суде.',
+    url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
+    siteName: 'ЮК «Де-Юре»',
+    images: [{ url: 'https://dejure-help.ru/images/konopkin.jpg', width: 1200, height: 630 }],
+    locale: 'ru_RU',
+    type: 'website'
+  }
 };
 
 export default function PriznanieUmershimPage() {
   const faqs = [
-    { q: 'Чем пропавший без вести отличается от безвестно отсутствующего?', a: '«Пропавший без вести» — это фактический статус, когда нет связи, но юридически человек жив, пока суд не установит иное. «Признание безвестно отсутствующим» — это правовой статус, установленный решением суда.' },
-    { q: 'Чем признание безвестно отсутствующим отличается от объявления умершим?', a: 'Это две разные юридические процедуры с разными основаниями, сроками и правовыми последствиями. Признание безвестно отсутствующим позволяет назначить управляющего имуществом, а объявление умершим открывает наследство и дает право на выплаты в связи с гибелью.' },
-    { q: 'Кто может обратиться в суд?', a: 'Заявление могут подать заинтересованные лица — супруги, дети, родители или иные родственники, чьи права зависят от установления этого статуса (например, для получения выплат или оформления наследства).' },
-    { q: 'Какие документы обычно нужны семье?', a: 'Справка об обстоятельствах безвестного отсутствия или гибели, извещения, официальные ответы из воинской части, ответы на запросы из военной прокуратуры и документы, подтверждающие ваше родство.' },
-    { q: 'В какой суд подаётся заявление?', a: 'Подсудность зависит от специфики дела. В связи с режимом государственной тайны и особенностями участия военнослужащих, такие дела могут относиться к компетенции суда субъекта РФ (например, Липецкого областного суда). Мы определяем компетентный суд перед подачей заявления.' },
-    { q: 'Когда можно начинать судебную процедуру?', a: 'Сроки зависят от конкретных обстоятельств исчезновения и наличия справок об обстоятельствах, угрожавших смертью. Возможны специальные, сокращенные сроки (например, 6 месяцев). Точка отсчета определяется по официальным документам.' },
-    { q: 'Нужно ли сначала направлять запросы в воинскую часть и другие органы?', a: 'Да, перед обращением в суд необходимо собрать доказательства того, что были предприняты меры к розыску, но местонахождение военнослужащего установить не удалось.' },
-    { q: 'Поможет ли решение суда обратиться за выплатами и наследством?', a: 'Да, вступившее в законную силу решение суда об объявлении умершим является основанием для получения свидетельства о смерти в ЗАГСе, открытия наследства и обращения за страховыми и федеральными выплатами.' }
+    { q: 'Чем статус «пропал без вести» отличается от признания безвестно отсутствующим?', a: 'Сообщение воинской части или иной официальный документ фиксирует имеющиеся сведения о военнослужащем, но не заменяет судебное решение. Безвестно отсутствующим гражданина признаёт суд. Для обращения важно проверить формулировки документов, срок отсутствия сведений и юридическую цель заявителя.' },
+    { q: 'Как понять, нужно признавать военнослужащего безвестно отсутствующим или объявлять умершим?', a: 'Это зависит не только от цели семьи, но и от обстоятельств исчезновения и доказательств. Безвестное отсутствие применяется при длительном отсутствии сведений. Для объявления умершим нужны предусмотренные законом основания: например, обстоятельства, угрожавшие смертью, либо ранее установленный статус безвестно отсутствующего и истечение специального срока. Процедуру выбирают после анализа документов.' },
+    { q: 'Когда можно обращаться в суд?', a: 'Для участников СВО и других лиц, прямо указанных в специальном законе, действуют особые сроки. Признание безвестно отсутствующим возможно при отсутствии сведений в течение шести месяцев. Объявление умершим возможно после шести месяцев со дня обстоятельств, угрожавших смертью или позволявших предполагать гибель, либо по истечении трёх месяцев после вступления в силу решения о признании безвестно отсутствующим. Для других ситуаций могут действовать общие правила, поэтому срок нужно определять по статусу лица и основаниям заявления.' },
+    { q: 'Нужно ли сначала обязательно признавать военнослужащего безвестно отсутствующим?', a: 'Нет. Предварительное признание безвестно отсутствующим — не обязательная ступень во всех делах. Если имеются предусмотренные законом обстоятельства, позволяющие предполагать гибель, вопрос об объявлении умершим может ставиться непосредственно. Если таких доказательств недостаточно, может быть обоснован другой маршрут.' },
+    { q: 'В какой суд подаётся заявление?', a: 'По общему правилу заявление подаётся по месту жительства или месту нахождения заинтересованного лица. Однако при определении родовой подсудности нужно учитывать, потребуется ли суду исследовать сведения, составляющие государственную тайну: такие гражданские дела рассматриваются судом субъекта Российской Федерации как судом первой инстанции (например, Липецким областным судом). Поэтому конкретный суд определяется после анализа предмета заявления и необходимых доказательств.' },
+    { q: 'Что делать, если воинская часть не отвечает или не выдаёт документы?', a: 'Нужно зафиксировать обращения и полученные ответы, определить надлежащего адресата и повторно запросить конкретные документы. При подготовке дела можно заявить ходатайство об истребовании сведений, которые заявитель не может получить самостоятельно. Суд при подготовке дела также выясняет, кто располагает сведениями, и направляет запросы в соответствующие организации, включая воинские части.' },
+    { q: 'Обязательно ли иметь розыскное дело?', a: 'Само по себе отсутствие заведённого розыскного дела не исключает объявления гражданина умершим. Суд оценивает отсутствие сведений о месте пребывания и обстоятельства, угрожавшие смертью или позволявшие предполагать гибель. При этом конкретный набор доказательств определяется обстоятельствами дела.' },
+    { q: 'Прекращается ли поиск после обращения в суд?', a: 'Обращение за установлением юридического статуса не является заявлением семьи о прекращении поиска и не подтверждает само по себе, что судьба человека достоверно известна. Если появляются новые сведения о месте пребывания, они должны учитываться судом и государственными органами.' },
+    { q: 'Что меняется после решения суда?', a: 'Последствия зависят от установленного статуса. Признание безвестно отсутствующим позволяет решать отдельные вопросы управления имуществом и защиты прав заинтересованных лиц. Решение об объявлении умершим является основанием для государственной регистрации смерти и влечёт последствия, связанные со смертью гражданина. Конкретные дальнейшие действия — выплаты, наследство, семейные и имущественные вопросы — рассматриваются отдельно.' },
+    { q: 'Что произойдёт, если военнослужащий вернётся или будет найден?', a: 'При явке гражданина или обнаружении его места пребывания суд новым решением отменяет ранее принятое решение о признании безвестно отсутствующим или объявлении умершим. Дальнейшие имущественные и иные последствия разрешаются по применимым нормам и обстоятельствам конкретного случая.' }
+  ];
+
+  const jsonLdGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': 'https://dejure-help.ru/#organization',
+        name: 'Юридическая компания «Де-Юре»',
+        url: 'https://dejure-help.ru/',
+        logo: 'https://dejure-help.ru/images/logo.png',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        }
+      },
+      {
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/#service',
+        name: 'Признание военнослужащего безвестно отсутствующим или объявление умершим',
+        serviceType: 'Юридическая помощь по признанию военнослужащего безвестно отсутствующим или объявлению умершим',
+        url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
+        description: 'Помощь семье пропавшего военнослужащего: разграничение процедур, сбор доказательств, истребование документов и судебная защита в Липецке.',
+        provider: { '@id': 'https://dejure-help.ru/#organization' },
+        areaServed: ['Липецк', 'Липецкая область', 'Россия']
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
+        name: 'Дмитрий Сергеевич Конопкин',
+        jobTitle: 'Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»',
+        description: 'Реестровый номер 48/812 в реестре адвокатов Липецкой области. Специалист по защите прав военнослужащих и их семей.',
+        image: 'https://dejure-help.ru/images/konopkin.jpg',
+        url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
+        worksFor: { '@id': 'https://dejure-help.ru/#organization' }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/#breadcrumb',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', position: 2, name: 'Гражданам', item: 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', position: 3, name: 'Военный юрист', item: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/' },
+          { '@type': 'ListItem', position: 4, name: 'Признание безвестно отсутствующим или объявление умершим', item: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/' }
+        ]
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/#webpage',
+        url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
+        name: 'Признание военнослужащего безвестно отсутствующим или объявление умершим — юрист в Липецке | Де-Юре',
+        description: 'Помощь семье пропавшего военнослужащего: разграничение процедур, сбор доказательств, истребование документов и судебная защита в Липецке.',
+        breadcrumb: { '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/#breadcrumb' },
+        mainEntity: { '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/#service' }
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: { '@type': 'Answer', text: faq.a }
+        }))
+      }
+    ]
+  };
+
+  const situations = [
+    { tag: 'Ситуация 1', title: 'Военнослужащий числится пропавшим без вести', desc: 'Есть извещение, выписка или устная информация от части, но дальнейших достоверных сведений о месте пребывания нет.' },
+    { tag: 'Ситуация 2', title: 'Воинская часть не выдаёт документы', desc: 'Ответы не поступают, содержат неполные сведения либо семья не понимает, какую справку нужно получить для суда.' },
+    { tag: 'Ситуация 3', title: 'Семье нужно защитить права при сохраняющейся неопределённости', desc: 'Требуется решить имущественный, семейный или социальный вопрос, но объявлять человека умершим оснований пока нет.' },
+    { tag: 'Ситуация 4', title: 'Обстоятельства позволяют предполагать гибель', desc: 'Имеются сведения об опасных обстоятельствах исчезновения, однако государственная регистрация смерти не произведена.' },
+    { tag: 'Ситуация 5', title: 'Военнослужащий уже признан безвестно отсутствующим', desc: 'После вступления решения в силу сведений о месте пребывания не появилось, и требуется оценить основания для следующего обращения в суд.' },
+    { tag: 'Ситуация 6', title: 'Дело уже начато другим заинтересованным лицом', desc: 'Нужно понять последствия заявленного требования, представить позицию семьи и проверить доказательства, на которых оно основано.' }
   ];
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
+      />
       <Header />
       
+      {/* ═══ 1. ПЕРВЫЙ ЭКРАН (MILITARY HERO) ═══ */}
       <MilitaryHero 
         breadcrumbs={
           <>
-            <a href="/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <a href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <a href="/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <span style={{ color: 'var(--color-text-main)' }}>Признание безвестно отсутствующим или умершим</span>
+            <a href="/-/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/-/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/-/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <span style={{ color: 'var(--color-text-main)' }}>Признание безвестно отсутствующим или объявление умершим</span>
           </>
         }
-        superTitle="Помощь семье пропавшего военнослужащего"
-        title="Признание военнослужащего безвестно отсутствующим или умершим в Липецке"
-        subtitle="Проверим официальный статус и документы, направим необходимые запросы, определим подходящий судебный порядок и представим интересы семьи в деле о признании безвестно отсутствующим или объявлении умершим."
-        primaryCtaText="Обсудить документы"
-        secondaryCtaText="Как проходит процедура"
-        secondaryCtaLink="#procedure"
+        superTitle="Военное право • помощь семье пропавшего военнослужащего"
+        title={<><span style={{ display: 'inline-block' }}>Признание военнослужащего</span> <span style={{ display: 'inline-block' }}>безвестно отсутствующим</span> <br /><span style={{ display: 'inline-block' }}>или объявление умершим</span></>}
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
+            <span style={{ display: 'inline-block' }}>Проверим официальный статус и документы,</span> <br />
+            <span style={{ display: 'inline-block' }}>объясним различия между двумя судебными процедурами,</span> <br />
+            <span style={{ display: 'inline-block' }}>подготовим доказательства и представим интересы семьи в суде.</span>
+          </span>
+        }
+        primaryCtaText="Обсудить ситуацию"
+        primaryCtaLink="#form"
+        primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
+        imageUrl="/-/images/konopkin.jpg"
+        imageName="Дмитрий Сергеевич Конопкин"
+        imageSubtitle="Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        imageMarginTop="20px"
         trustItems={[
-          { text: 'Два разных правовых статуса' },
-          { text: 'Запросы и судебное представительство' },
-          { text: 'Состав работы — в договоре' }
+          { text: <><span style={{ display: 'inline-block' }}>Определяем подходящий</span> <span style={{ display: 'inline-block' }}>юридический статус</span></> },
+          { text: <><span style={{ display: 'inline-block' }}>Собираем доказательства</span> <span style={{ display: 'inline-block' }}>и направляем запросы</span></> },
+          { text: <><span style={{ display: 'inline-block' }}>Представляем интересы семьи</span> <span style={{ display: 'inline-block' }}>в судебном процессе</span></> }
         ]}
       />
 
-      <section className="section bg-white">
-        <div className="container grid grid-2" style={{ gap: '60px' }}>
-          <div>
-            <h2 className="section-title">С какой ситуацией обращаются</h2>
-            <ul style={{ listStyle: 'none', padding: 0, marginTop: '24px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {[
-                'Нет связи с военнослужащим длительное время',
-                'Получено официальное уведомление (извещение) о пропаже',
-                'Имеется справка об обстоятельствах безвестного отсутствия',
-                'От разных ведомств приходят противоречивые ответы',
-                'Требуется установить юридический статус для оформления выплат, наследства или решения семейных вопросов'
-              ].map((item, i) => (
-                <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <div style={{ color: 'var(--color-gold)', marginTop: '2px' }}>✓</div>
-                  <span style={{ color: 'var(--color-text-main)', fontSize: '16px' }}>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <h2 className="section-title" style={{ marginTop: '48px', fontSize: '24px' }}>Какие запросы мы делаем</h2>
-            <p style={{ color: 'var(--color-text-secondary)', marginBottom: '16px' }}>Мы не занимаемся фактическим розыском, но проводим юридически значимую подготовку. Направляем запросы в:</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
-              <div className="hover-lift" style={{ background: 'var(--color-cream)', padding: '24px', fontWeight: 600, color: 'var(--color-deep-blue)', borderLeft: '4px solid var(--color-gold)', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.06)', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>Воинская часть</div>
-              <div className="hover-lift" style={{ background: 'var(--color-cream)', padding: '24px', fontWeight: 600, color: 'var(--color-deep-blue)', borderLeft: '4px solid var(--color-gold)', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.06)', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>Военно-следственный отдел</div>
-              <div className="hover-lift" style={{ background: 'var(--color-cream)', padding: '24px', fontWeight: 600, color: 'var(--color-deep-blue)', borderLeft: '4px solid var(--color-gold)', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.06)', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>Военная комендатура</div>
-              <div className="hover-lift" style={{ background: 'var(--color-cream)', padding: '24px', fontWeight: 600, color: 'var(--color-deep-blue)', borderLeft: '4px solid var(--color-gold)', boxShadow: '0 4px 12px rgba(23, 50, 77, 0.06)', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>Военная прокуратура</div>
-            </div>
-          </div>
-          <div>
-            <div style={{ background: 'var(--color-white)', padding: '32px', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
-              <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '16px' }}>Два судебных маршрута</h3>
-              <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                Понятие «признание погибшим» в быту часто путают. В праве есть две процедуры:
-                <br/><br/>
-                <strong style={{ color: 'var(--color-deep-blue)' }}>1. Признание безвестно отсутствующим.</strong> Требует меньше времени с момента потери связи, но не приравнивается к смерти.
-                <br/><br/>
-                <strong style={{ color: 'var(--color-deep-blue)' }}>2. Объявление умершим.</strong> Приравнивается к смерти. Основанием может быть справка об обстоятельствах, угрожавших смертью, или истечение установленного законом срока.
-              </p>
-              
-              <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '16px' }}>Когда возможно обращение</h3>
-              <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                Возможны специальные правила. Точка отсчёта и применимые сроки определяются юристом только по официальным документам (извещениям, ответам из части). 
-              </p>
-
-              <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '16px' }}>Какой суд рассматривает дело</h3>
-              <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                С учетом последних изменений законодательства и практики по защите сведений о военнослужащих, такие дела могут быть подсудны областному суду. Мы определим компетентный суд по действующим правилам на момент подачи.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="procedure" className="section" style={{ background: 'var(--color-cream)' }}>
+      {/* ═══ 2. С КАКОЙ СИТУАЦИЕЙ ОБРАЩАЮТСЯ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'flex-end' }}>
-            <div>
-              <h2 className="section-title">Документы и доказательства</h2>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '24px' }}>
-                Для суда необходимо подготовить базу.
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <div style={{ color: 'var(--color-primary)' }}>•</div>
-                  <span>Справка об обстоятельствах безвестного отсутствия или смерти</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <div style={{ color: 'var(--color-primary)' }}>•</div>
-                  <span>Уведомления родственников (извещения)</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <div style={{ color: 'var(--color-primary)' }}>•</div>
-                  <span>Ответы воинской части и следственных органов</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <div style={{ color: 'var(--color-primary)' }}>•</div>
-                  <span>Документы о родстве (свидетельства)</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <div style={{ color: 'var(--color-primary)' }}>•</div>
-                  <span>Документы, подтверждающие юридическую заинтересованность (для чего нужен статус)</span>
-                </li>
-              </ul>
-              
-              <div style={{ padding: '24px', background: 'var(--color-white)', borderLeft: '4px solid var(--color-primary)' }}>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '8px' }}>Что меняется после решения?</h3>
-                <p style={{ color: 'var(--color-text-secondary)' }}>
-                  Вступившее в силу решение суда дает возможность решать вопросы выплат, наследства и семейных отношений. Однако оно не означает автоматического назначения всех выплат — за ними нужно будет обращаться отдельно.
+          <div style={{ maxWidth: '700px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              <span style={{ display: 'inline-block' }}>С какой ситуацией</span> <br /><span style={{ display: 'inline-block' }}>обращаются</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Поможем разобрать Вашу ситуацию, проверить имеющиеся извещения и выстроить<br />
+              правовую позицию для обращения в компетентный суд.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '28px' }}>
+            {situations.map((sit, i) => (
+              <div key={i} className="hover-lift" style={{ 
+                padding: '36px 30px', 
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', 
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start'
+                }}>
+                  {sit.tag}
+                </div>
+
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                  {sit.title}
+                </h3>
+
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {sit.desc}
                 </p>
               </div>
-            </div>
-            
-            <div style={{ background: 'var(--color-deep-blue)', padding: '40px', color: 'var(--color-white)' }}>
-              <h3 style={{ fontSize: '24px', marginBottom: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)' }}>Этапы работы</h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div style={{ display: 'flex', gap: '16px' }}>
-                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-gold)', flexShrink: 0, fontSize: '18px', fontFamily: 'var(--font-serif)' }}>1</div>
-                  <div>
-                    <strong style={{ display: 'block', color: 'var(--color-white)', marginBottom: '4px' }}>Анализ статуса</strong>
-                    <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>Оцениваем имеющиеся документы и определяем правовой маршрут.</span>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', gap: '16px' }}>
-                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-gold)', flexShrink: 0, fontSize: '18px', fontFamily: 'var(--font-serif)' }}>2</div>
-                  <div>
-                    <strong style={{ display: 'block', color: 'var(--color-white)', marginBottom: '4px' }}>Запросы</strong>
-                    <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>Истребуем ответы от ведомств.</span>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', gap: '16px' }}>
-                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-gold)', flexShrink: 0, fontSize: '18px', fontFamily: 'var(--font-serif)' }}>3</div>
-                  <div>
-                    <strong style={{ display: 'block', color: 'var(--color-white)', marginBottom: '4px' }}>Подготовка заявления</strong>
-                    <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>Формируем доказательную базу и подаем заявление в компетентный суд.</span>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', gap: '16px' }}>
-                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-gold)', flexShrink: 0, fontSize: '18px', fontFamily: 'var(--font-serif)' }}>4</div>
-                  <div>
-                    <strong style={{ display: 'block', color: 'var(--color-white)', marginBottom: '4px' }}>Судебное представительство</strong>
-                    <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>Участвуем в заседаниях и добиваемся решения.</span>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', gap: '16px' }}>
-                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-gold)', flexShrink: 0, fontSize: '18px', fontFamily: 'var(--font-serif)' }}>5</div>
-                  <div>
-                    <strong style={{ display: 'block', color: 'var(--color-white)', marginBottom: '4px' }}>Дальнейшие действия</strong>
-                    <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>Помогаем использовать решение для выплат или наследства.</span>
-                  </div>
-                </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 3. КАКОЙ СУДЕБНЫЙ СТАТУС ТРЕБУЕТСЯ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0 }}>
+              <span style={{ display: 'inline-block' }}>Какой судебный статус</span> <br /><span style={{ display: 'inline-block' }}>требуется</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Формулировка «пропал без вести» описывает фактическую ситуацию или служебный статус,<br />
+              но сама по себе не заменяет решение суда. Признание безвестно отсутствующим<br />
+              и объявление умершим имеют разные основания и последствия.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Card 1 */}
+            <div style={{ 
+              background: 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)', 
+              padding: '40px', 
+              borderRadius: '0', 
+              color: 'var(--color-white)', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              height: '100%', 
+              position: 'relative', 
+              overflow: 'hidden',
+              boxShadow: '0 10px 30px rgba(23, 50, 77, 0.15)'
+            }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', position: 'relative', zIndex: 1 }}>
+                Первый маршрут
               </div>
+              <h3 style={{ fontSize: '24px', color: '#D2B282', marginBottom: '20px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
+                Признание<br />безвестно отсутствующим
+              </h3>
+              <p style={{ fontSize: '16px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+                Подходит, когда длительное время нет сведений о месте пребывания, но обстоятельства не дают достаточных оснований считать гибель установленной.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.1)', padding: '16px 20px', borderLeft: '4px solid var(--color-gold)', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, marginTop: 'auto', position: 'relative', zIndex: 1 }}>
+                Такой статус позволяет защищать права семьи и имущество пропавшего без юридического признания смерти.
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div style={{ 
+              background: 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)', 
+              padding: '40px', 
+              borderRadius: '0', 
+              color: 'var(--color-white)', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              height: '100%', 
+              position: 'relative', 
+              overflow: 'hidden',
+              boxShadow: '0 10px 30px rgba(23, 50, 77, 0.15)'
+            }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', position: 'relative', zIndex: 1 }}>
+                Второй маршрут
+              </div>
+              <h3 style={{ fontSize: '24px', color: '#D2B282', marginBottom: '20px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
+                Объявление умершим
+              </h3>
+              <p style={{ fontSize: '16px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+                Рассматривается, когда документы и обстоятельства позволяют предполагать гибель либо когда после признания безвестно отсутствующим прошёл предусмотренный законом период и сведений о человеке не появилось.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.1)', padding: '16px 20px', borderLeft: '4px solid var(--color-gold)', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, marginTop: 'auto', position: 'relative', zIndex: 1 }}>
+                Решение влечёт последствия, связанные со смертью, поэтому доказательства и цель обращения нужно оценить особенно внимательно.
+              </div>
+            </div>
+          </div>
+
+          <div style={{ 
+            background: 'var(--color-white)', 
+            padding: '16px 24px', 
+            border: '1px solid var(--color-border)',
+            color: 'var(--color-text-secondary)',
+            fontSize: '14px',
+            margin: '32px 0',
+            borderLeft: '4px solid var(--color-primary)',
+            maxWidth: '800px',
+            fontStyle: 'italic'
+          }}>
+            <strong style={{ fontStyle: 'normal', color: 'var(--color-deep-blue)' }}>Не нужно заранее выбирать процедуру.</strong> Сначала проверяем, какой статус подтверждается документами, какие последствия он создаст и какой суд компетентен рассматривать дело.
+          </div>
+
+          {/* ═══ ПРОМЕЖУТОЧНЫЙ CTA CARD ═══ */}
+          <div 
+            className="card service-card cta-banner-card" 
+            style={{ 
+              width: '100%', 
+              padding: '36px 40px', 
+              background: 'var(--color-deep-blue)', 
+              borderRadius: '0',
+              display: 'flex', 
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '32px',
+              flexWrap: 'wrap',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 12px 36px rgba(11, 28, 42, 0.22)'
+            }}
+          >
+            <div style={{ flex: '1 1 500px' }}>
+              <h3 style={{ margin: '0 0 12px 0', fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                Не знаете, какая процедура подходит вашей семье?
+              </h3>
+              <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, maxWidth: '780px' }}>
+                Расскажите, когда пропал военнослужащий, какой официальный статус указан в документах и какие ответы уже получены. Дмитрий Сергеевич Конопкин проверит материалы и определит, что необходимо сделать в первую очередь.
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a href="#form" className="btn white-btn-custom" style={{ padding: '14px 32px', fontSize: '15px', display: 'inline-block' }}>
+                Проверить основания
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <FAQBlock 
-        faqs={faqs} 
-        superTitle="Вопросы и ответы" 
-        title="Частые вопросы о судебной процедуре"
-        subtitle="Ответы на популярные вопросы. Информация носит общий характер. Возможный порядок действий зависит от обстоятельств и документов."
+      {/* ═══ 4. БЛОК КУРАТОРА НАПРАВЛЕНИЯ ═══ */}
+      <SpecialistBlock 
+        title="Куратор направления"
+        name="Дмитрий Сергеевич Конопкин"
+        position={<>Адвокат, партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
+        imageUrl="/-/images/konopkin.jpg"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Дмитрий Сергеевич Конопкин курирует судебные процессы по установлению юридического статуса военнослужащих. Он помогает правильно квалифицировать ситуацию, составить запросы в ведомства и сформировать убедительную доказательную базу для обращения в суд.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
+              Адвокат, реестровый номер 48/812 в реестре адвокатов Липецкой области
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
+              С 2016 по 2022 год работал в СК РФ; прошёл путь до старшего следователя по особо важным делам
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
+              Специализируется на сложных судебных делах с участием государственных и силовых органов
+            </li>
+          </ul>,
+          <a key="3" href="/-/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о Дмитрии Сергеевиче Конопкине →
+          </a>
+        ]}
+        buttonText="Обсудить ситуацию с адвокатом"
+        buttonHref="#form"
       />
 
-      <section className="section bg-white" id="form">
+      {/* ═══ ДОКУМЕНТЫ ДЛЯ ОБРАЩЕНИЯ В СУД ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'center' }}>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Какие документы нужны <br />для обращения в суд
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Состав документов зависит от выбранной процедуры. Если части документов нет, адвокат запросит их до или во время процесса.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1 */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                Официальные извещения <br />и ответы ведомств
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Извещение о статусе пропавшего</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Справки или извещения из воинской части, военкомата или МО РФ с датой и местом последнего контакту.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Ответы государственных органов</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Письменные ответы военной прокуратуры, СК РФ, Красного Креста и аппарата уполномоченного.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Карточка 2 */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                Документы о родстве <br />и материальной зависимости
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Документы, подтверждающие родство</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Свидетельства о рождении, браке, установлении отцовства или судебные решения.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Доказательства юридической цели</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Документы на имущество, банковские счета, договоры и выписки, подтверждающие необходимость признания статуса.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div style={{
+            background: 'var(--color-white)',
+            padding: '20px 28px',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+            fontSize: '15px',
+            color: 'var(--color-deep-blue)',
+            fontWeight: 500,
+            lineHeight: 1.6
+          }}>
+            Если часть документов отсутствует, не откладывайте обращение. Адвокат сформирует официальные запросы и заявит ходатайство об истребовании материалов суд.
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 5. ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
+      <CasesBlock 
+        title="Примеры из практики"
+        showDemoWarning={true}
+        cases={[
+          {
+            category: 'ПРИЗНАНИЕ БЕЗВЕСТНО ОТСУТСТВУЮЩИМ',
+            title: 'Признание военнослужащего безвестно отсутствующим через суд',
+            problem: 'Военнослужащий пропал в зоне боевых действий. Извещение от воинской части подтверждало отсутствие сведений, но не заменяло судебное решение. Семье требовалось официально установить статус военнослужащего, чтобы решить вопрос управления его имуществом.',
+            action: 'Изучили имеющиеся извещения и ответы ведомств, направили адвокатские запросы для укомплектования материалов и подготовили заявление в суд. В процессе обосновали наличие оснований для признания военнослужащего безвестно отсутствующим.',
+            result: 'Суд удовлетворил заявление и признал военнослужащего безвестно отсутствующим. Решение вступило в законную силу.',
+            isDemo: true
+          },
+          {
+            category: 'ОБЪЯВЛЕНИЕ УМЕРШИМ',
+            title: 'Объявление военнослужащего умершим при наличии сведений о гибели',
+            problem: 'Сведения и материалы дела указывали, что военнослужащий пропал без вести при обстоятельствах, угрожавших смертью. Государственная регистрация смерти не была произведена, из-за чего семья не могла реализовать свои права.',
+            action: 'Собрали доказательственную базу, подтверждающую обстоятельства исчезновения, определили подсудность дела, подготовили заявление и заявили необходимые ходатайства об истребовании сведений. Представляли интересы семьи во всех судебных заседаниях.',
+            result: 'Суд оценил совокупность доказательств и вынес решение об объявлении военнослужащего умершим.',
+            isDemo: true
+          },
+          {
+            category: 'СМЕНА СТАТУСА',
+            title: 'Объявление военнослужащего умершим после признания безвестно отсутствующим',
+            problem: 'Ранее военнослужащий был признан безвестно отсутствующим. По истечении установленного законом периода сведений о месте его пребывания так и не появилось.',
+            action: 'Проверили применимые сроки, подготовили заявление об объявлении гражданина умершим, собрали подтверждения того, что новые сведения о месте пребывания не поступали, и провели процесс в суде.',
+            result: 'Суд объявил военнослужащего умершим. Решение суда стало основанием для государственной регистрации смерти.',
+            isDemo: true
+          }
+        ]}
+      />
+
+      {/* ═══ 6. КАК ПРОХОДИТ РАБОТА ═══ */}
+      <ProcessBlock 
+        title="Как проходит работа"
+        subtitle=""
+        ctaTitle=""
+        steps={[
+          { num: '01', title: 'Разбираем ситуацию', desc: 'Уточняем, когда и при каких обстоятельствах пропал военнослужащий, какой статус указан в документах и для защиты какого права требуется судебное решение.' },
+          { num: '02', title: 'Проверяем документы', desc: 'Изучаем извещения, справки, ответы воинской части и государственных органов. Определяем, какие документы можно запросить до суда и какие сведения потребуется истребовать в процессе.' },
+          { num: '03', title: 'Выбираем процедуру', desc: 'Разграничиваем признание безвестно отсутствующим, объявление умершим и иные возможные процедуры. Проверяем сроки и подсудность.' },
+          { num: '04', title: 'Готовим заявление', desc: 'Формируем доказательственную позицию, указываем юридическую цель обращения, подаём заявление и представляем интересы доверителя в суде.' },
+          { num: '05', title: 'Получаем решение', desc: 'Контролируем вступление решения в законную силу, объясняем порядок его использования и помогаем с дальнейшими шагами.' },
+          { isBanner: true, title: 'Дистанционный формат', desc: 'Начать работу можно дистанционно: провести консультацию, проверить документы и подготовить обращения. Формат участия в суде определяется отдельно.' }
+        ]}
+      />
+
+      {/* ═══ 7. СТОИМОСТЬ ═══ */}
+      <PricingBlock 
+        title="Стоимость юридической помощи"
+        subtitle="Точная стоимость зависит от выбранной процедуры, объёма отсутствующих документов, подсудности и сложности доказательственной базы."
+        tiers={[
+          {
+            title: <><span style={{ display: 'inline-block' }}>Первичный</span> <br /><span style={{ display: 'inline-block' }}>анализ</span></>,
+            subtitle: <>Проверка имеющегося комплекта<br />и выбор процедуры</>,
+            features: [
+              { name: 'Правовой анализ извещений и ответов', value: '✓' },
+              { name: 'Определение подсудности и применимого срока', value: '✓' },
+              { name: 'Формирование стратегии для суда', value: '✓' }
+            ],
+            buttonText: 'Запросить расчет',
+            buttonHref: '#form',
+            popular: false
+          },
+          {
+            title: <><span style={{ display: 'inline-block' }}>Подготовка</span> <br /><span style={{ display: 'inline-block' }}>документов</span></>,
+            subtitle: <>Формирование доказательств<br />и заявления в суд</>,
+            badgeText: 'ВОСТРЕБОВАНО',
+            features: [
+              { name: 'Составление адвокатских запросов', value: '✓' },
+              { name: 'Подготовка заявления в компетентный суд', value: '✓' },
+              { name: 'Формирование комплекта приложений и ходатайств', value: '✓' }
+            ],
+            buttonText: 'Обсудить объём',
+            buttonHref: '#form',
+            popular: true
+          },
+          {
+            title: <><span style={{ display: 'inline-block' }}>Судебное</span> <br /><span style={{ display: 'inline-block' }}>представительство</span></>,
+            subtitle: 'Полное ведение дела в суде до решения',
+            features: [
+              { name: 'Участие адвоката в судебных заседаниях', value: '✓' },
+              { name: 'Истребование сведений через суд', value: '✓' },
+              { name: 'Получение решения суда с отметкой о вступлении', value: '✓' }
+            ],
+            buttonText: 'Начать процедуру',
+            buttonHref: '#form',
+            popular: false
+          }
+        ]}
+      />
+
+      {/* ═══ 8. ЧАСТЫЕ ВОПРОСЫ ═══ */}
+      <FAQBlock 
+        faqs={faqs} 
+        title={<><span style={{ display: 'inline-block' }}>Частые вопросы</span> <br /><span style={{ display: 'inline-block' }}>о признании военнослужащего</span> <br /><span style={{ display: 'inline-block' }}>безвестно отсутствующим</span> <br /><span style={{ display: 'inline-block' }}>или объявлении умершим</span></>}
+        subtitle="Ответы на популярные вопросы. Информация носит общий характер. Возможный порядок действий зависит от обстоятельств и документов."
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
+      />
+
+      {/* ═══ 9. СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section" style={{ background: 'var(--gradient-cream)', padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
+              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                Связанные услуги
+              </span>
+            </div>
+            <h2 style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+              Сопутствующие направления правовой помощи
+            </h2>
+          </div>
+
+          <style>{`
+            .related-card-link:hover .related-more-btn {
+              color: var(--color-gold) !important;
+              transform: translateX(4px);
+              transition: all 0.3s ease;
+            }
+          `}</style>
+          <div className="grid grid-2" style={{ gap: '28px' }}>
+            <a href="/-/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/" className="related-card-link" style={{ textDecoration: 'none' }}>
+              <div className="card hover-lift" style={{ 
+                padding: '28px 24px', 
+                background: '#FFFFFF', 
+                borderLeft: '4px solid var(--color-primary)',
+                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.06)',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                transition: 'all 0.3s ease'
+              }}>
+                <div>
+                  <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                    Выплаты семье погибшего военнослужащего
+                  </h3>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                    Если после гибели военнослужащего семье требуется помощь с оформлением положенных выплат.
+                  </p>
+                </div>
+                <div className="related-more-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>
+                  Подробнее →
+                </div>
+              </div>
+            </a>
+
+            <a href="/-/grazhdanam/voennyj-yurist/" className="related-card-link" style={{ textDecoration: 'none' }}>
+              <div className="card hover-lift" style={{ 
+                padding: '28px 24px', 
+                background: '#FFFFFF', 
+                borderLeft: '4px solid var(--color-primary)',
+                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.06)',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                transition: 'all 0.3s ease'
+              }}>
+                <div>
+                  <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                    Военный юрист
+                  </h3>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                    Комплексная правовая помощь военнослужащим и их семьям по вопросам службы, выплат и обжалования решений.
+                  </p>
+                </div>
+                <div className="related-more-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>
+                  Подробнее →
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 10. ФОРМА ОБРАЩЕНИЯ ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
                   Связаться с нами
                 </span>
               </div>
-              <h2 style={{ fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.1 }}>
-                Обсудить ситуацию<br /> с адвокатом
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0 }}>
+                Нужно определить юридический статус пропавшего военнослужащего?
               </h2>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '18px', lineHeight: 1.6, marginBottom: '0' }}>
-                Уточним, сколько времени прошло с момента исчезновения, есть ли ответ из части и в какой суд нужно обращаться. Перезвоним в течение 15 минут.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
+                Кратко опишите, когда пропал военнослужащий,<br />
+                какой статус указан в документах и какие ответы<br />
+                уже получены. Для первичного разговора не<br />
+                требуется полный комплект документов.
               </p>
+
+              <div style={{ marginTop: '32px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>
+                    Перезвоним вам в течение<br />
+                    15 минут в рабочее время
+                  </span>
+                </div>
+              </div>
             </div>
-            <div>
-              <ContactsForm title="Написать нам" subtitle="" />
+
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm title="Написать нам" subtitle="" />
+              </div>
             </div>
           </div>
         </div>

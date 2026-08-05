@@ -8,7 +8,7 @@ interface FAQ {
 interface FAQBlockProps {
   faqs?: FAQ[];
   superTitle?: string;
-  title?: string;
+  title?: string | React.ReactNode;
   subtitle?: string;
   ctaText?: string;
   ctaLink?: string;
@@ -73,7 +73,7 @@ export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые в
                 {superTitle}
               </span>
             </div>
-            <h2 style={{ fontSize: '48px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '32px', lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '32px', lineHeight: 1.1 }}>
               {title}
             </h2>
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '40px', maxWidth: '400px' }}>
@@ -155,3 +155,4 @@ export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые в
     </section>
   );
 }
+

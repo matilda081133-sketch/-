@@ -16,7 +16,7 @@ export default function ReviewsBlock() {
           <h2 style={{ fontSize: '42px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0, lineHeight: 1.2, maxWidth: '600px' }}>
             Отзывы<br />и независимые оценки
           </h2>
-          <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', margin: 0, maxWidth: '400px', fontWeight: 500, fontStyle: 'italic', borderLeft: '3px solid var(--color-primary)', paddingLeft: '16px' }}>
+          <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', margin: 0, maxWidth: '400px', fontStyle: 'italic', borderLeft: '3px solid var(--color-primary)', paddingLeft: '16px' }}>
             Строго соблюдаем конфиденциальность, поэтому публикуем отзывы только с согласия доверителей.
           </p>
         </div>
@@ -91,3 +91,4 @@ export default function ReviewsBlock() {
     </section>
   );
 }
+

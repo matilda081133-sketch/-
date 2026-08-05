@@ -10,6 +10,7 @@
     "deploy": "npm run build && npx -y gh-pages -d out -t"
   },
   "dependencies": {
+    "docx": "^9.7.1",
     "jimp": "^0.16.13",
     "lenis": "^1.3.25",
     "mammoth": "^1.12.0",

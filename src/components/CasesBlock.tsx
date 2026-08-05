@@ -14,16 +14,18 @@ export interface CaseData {
 
 interface CasesBlockProps {
   cases: CaseData[];
-  title?: string;
+  title?: string | React.ReactNode;
   showAllLink?: string;
   showDemoWarning?: boolean;
+  resultLabel?: string;
 }
 
 export default function CasesBlock({ 
   cases, 
   title = "Результаты нашей работы", 
   showAllLink = "/praktika",
-  showDemoWarning = true
+  showDemoWarning = true,
+  resultLabel = "Результат"
 }: CasesBlockProps) {
   return (
     <section className="section bg-white">
@@ -94,7 +96,7 @@ export default function CasesBlock({
               )}
               
               <div style={{ paddingBottom: '20px', marginBottom: '24px', paddingTop: caseItem.isDemo ? '28px' : '0' }}>
-                <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>
+                <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600, whiteSpace: 'nowrap' }}>
                   {caseItem.category}
                 </span>
                 <h3 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>
@@ -104,18 +106,42 @@ export default function CasesBlock({
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
                 <div>
-                  <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Проблема</h4>
-                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>{caseItem.problem}</p>
+                  <div style={{ 
+                    display: 'inline-block', 
+                    background: 'rgba(23, 50, 77, 0.08)', 
+                    color: 'var(--color-deep-blue)', 
+                    padding: '3px 10px', 
+                    fontSize: '11px', 
+                    fontWeight: 700, 
+                    letterSpacing: '0.06em', 
+                    borderRadius: '3px', 
+                    marginBottom: '10px' 
+                  }}>
+                    ПРОБЛЕМА
+                  </div>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6, color: 'var(--color-text-main)' }}>{caseItem.problem}</p>
                 </div>
                 
                 <div>
-                  <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>Что сделали</h4>
-                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>{caseItem.action}</p>
+                  <div style={{ 
+                    display: 'inline-block', 
+                    background: 'rgba(193, 160, 102, 0.16)', 
+                    color: '#8C6F34', 
+                    padding: '3px 10px', 
+                    fontSize: '11px', 
+                    fontWeight: 700, 
+                    letterSpacing: '0.06em', 
+                    borderRadius: '3px', 
+                    marginBottom: '10px' 
+                  }}>
+                    ЧТО СДЕЛАЛИ
+                  </div>
+                  <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6, color: 'var(--color-text-main)' }}>{caseItem.action}</p>
                 </div>
               </div>
               
               <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '0', border: '1px solid rgba(193, 160, 102, 0.2)', borderLeft: '4px solid var(--color-gold)' }}>
-                <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>Ключевой результат</h4>
+                <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>{resultLabel}</h4>
                 <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
                   {caseItem.result}
                 </p>
@@ -140,3 +166,4 @@ export default function CasesBlock({
     </section>
   );
 }
+
