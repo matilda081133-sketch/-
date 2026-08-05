@@ -567,7 +567,7 @@ export default function RazdelUchastkaClient() {
               gap: '24px'
             }}>
               <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                Объекты, соглашения <br />и предшествующие отклики
+                Объекты, соглашения <br />и полученные отказы
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>

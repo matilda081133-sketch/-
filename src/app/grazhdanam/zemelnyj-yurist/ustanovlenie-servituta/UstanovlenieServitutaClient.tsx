@@ -692,7 +692,7 @@ export default function UstanovlenieServitutaClient() {
               price: 'от ХХХ ₽',
               features: [
                 { name: 'Исковое заявление или отзыв', value: '✓' },
-                { name: 'Доказательства отсуствия альтернатив', value: '✓' },
+                { name: 'Доказательства отсутствия альтернатив', value: '✓' },
                 { name: 'Работа с оценкой и экспертизой', value: '✓' },
                 { name: 'Представительство в суде', value: '✓' }
               ],
