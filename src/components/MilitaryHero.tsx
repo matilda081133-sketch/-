@@ -203,42 +203,42 @@ export default function MilitaryHero({
             </div>
 
           </div>
-        </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 1440px) {
+            .military-hero-section {
+              padding-top: 110px !important;
+              padding-bottom: 50px !important;
+              min-height: auto !important;
+            }
+            .military-hero-h1 {
+              font-size: clamp(24px, 3.4vw, 44px) !important;
+              margin-bottom: 12px !important;
+            }
+            .military-hero-subtitle {
+              margin-bottom: 12px !important;
+              font-size: 15px !important;
+              line-height: 1.5 !important;
+            }
+            .military-hero-cta {
+              margin-top: 12px !important;
+              margin-bottom: 16px !important;
+            }
+          }
+          @media (max-width: 768px) {
+            .military-hero-section {
+              padding-top: 90px !important;
+              padding-bottom: 40px !important;
+            }
+            .military-hero-cta {
+              width: 100% !important;
+            }
+            .military-hero-cta .btn {
+              width: 100% !important;
+              text-align: center !important;
+            }
+          }
+        `}} />
+      </div>
     </section>
-    <style dangerouslySetInnerHTML={{ __html: `
-      @media (max-width: 1440px) {
-        .military-hero-section {
-          padding-top: 110px !important;
-          padding-bottom: 50px !important;
-          min-height: auto !important;
-        }
-        .military-hero-h1 {
-          font-size: clamp(24px, 3.4vw, 44px) !important;
-          margin-bottom: 12px !important;
-        }
-        .military-hero-subtitle {
-          margin-bottom: 12px !important;
-          font-size: 15px !important;
-          line-height: 1.5 !important;
-        }
-        .military-hero-cta {
-          margin-top: 12px !important;
-          margin-bottom: 16px !important;
-        }
-      }
-      @media (max-width: 768px) {
-        .military-hero-section {
-          padding-top: 90px !important;
-          padding-bottom: 40px !important;
-        }
-        .military-hero-cta {
-          width: 100% !important;
-        }
-        .military-hero-cta .btn {
-          width: 100% !important;
-          text-align: center !important;
-        }
-      }
-    `}} />
   );
 }
