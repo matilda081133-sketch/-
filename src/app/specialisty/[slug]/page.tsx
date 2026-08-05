@@ -180,9 +180,9 @@ export default async function SpecialistPage({ params }: PageProps) {
             <span>{member.name}</span>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'center' }}>
+          <div className="grid grid-2 specialist-detail-grid" style={{ gap: '60px', alignItems: 'center' }}>
             {/* Info Column */}
-            <div>
+            <div className="specialist-detail-info">
               <h1 style={{ fontSize: 'clamp(32px, 4vw, 48px)', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1.2 }}>
                 {member.slug === 'konopkin-dmitriy-sergeevich' ? (
                   <>
@@ -222,7 +222,7 @@ export default async function SpecialistPage({ params }: PageProps) {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '32px' }}>
                 {member.facts.map((fact, i) => (
-                  <div key={i} style={{ 
+                  <div key={i} className="specialist-fact-block" style={{ 
                     paddingLeft: '16px', 
                     borderLeft: '3px solid var(--color-gold)', 
                     fontSize: '15px', 
@@ -232,33 +232,33 @@ export default async function SpecialistPage({ params }: PageProps) {
                   }}>
                     {fact === '22 года в следственных подразделениях налоговой полиции и МВД' ? (
                       <>
-                        <span style={{ whiteSpace: 'nowrap' }}>22 года в следственных подразделениях</span><br />
-                        <span style={{ whiteSpace: 'nowrap' }}>налоговой полиции и МВД</span>
+                        <span className="nowrap-desk">22 года в следственных подразделениях</span><br className="nowrap-desk" />
+                        <span className="nowrap-desk">налоговой полиции и МВД</span>
                       </>
                     ) : fact.includes('Следователь по особо важным делам') ? (
                       <>
-                        <span style={{ whiteSpace: 'nowrap' }}>Следователь по особо важным делам;</span><br />
-                        <span style={{ whiteSpace: 'nowrap' }}>руководитель следственной части</span>
+                        <span className="nowrap-desk">Следователь по особо важным делам;</span><br className="nowrap-desk" />
+                        <span className="nowrap-desk">руководитель следственной части</span>
                       </>
                     ) : fact.includes('в том\nчисле') || fact.includes('в том числе') ? (
                       <>
-                        <span style={{ whiteSpace: 'nowrap' }}>Более 13 лет работы в ФССП, в том</span><br />
-                        <span style={{ whiteSpace: 'nowrap' }}>числе на руководящих должностях</span>
+                        <span className="nowrap-desk">Более 13 лет работы в ФССП, в том</span><br className="nowrap-desk" />
+                        <span className="nowrap-desk">числе на руководящих должностях</span>
                       </>
                     ) : fact.includes('юридической практики') ? (
                       <>
-                        <span style={{ whiteSpace: 'nowrap' }}>Более пяти лет юридической практики</span><br />
-                        <span style={{ whiteSpace: 'nowrap' }}>и судебного представительства</span>
+                        <span className="nowrap-desk">Более пяти лет юридической практики</span><br className="nowrap-desk" />
+                        <span className="nowrap-desk">и судебного представительства</span>
                       </>
                     ) : fact.includes('исполнительное') || fact.includes('Трудовые и семейные споры') ? (
                       <>
-                        <span style={{ whiteSpace: 'nowrap' }}>Трудовые и семейные споры,</span><br />
-                        <span style={{ whiteSpace: 'nowrap' }}>исполнительное производство</span>
+                        <span className="nowrap-desk">Трудовые и семейные споры,</span><br className="nowrap-desk" />
+                        <span className="nowrap-desk">исполнительное производство</span>
                       </>
                     ) : fact.includes('структуры решения') || fact.includes('структуры') ? (
                       <>
-                        <span style={{ whiteSpace: 'nowrap' }}>Комплексное сопровождение от структуры</span><br />
-                        <span style={{ whiteSpace: 'nowrap' }}>решения до регистрации изменений</span>
+                        <span className="nowrap-desk">Комплексное сопровождение от структуры</span><br className="nowrap-desk" />
+                        <span className="nowrap-desk">решения до регистрации изменений</span>
                       </>
                     ) : (
                       fact
@@ -271,7 +271,7 @@ export default async function SpecialistPage({ params }: PageProps) {
             </div>
 
             {/* Photo Column */}
-            <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+            <div className="specialist-detail-photo" style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
               <div className="photo-hover-shadow" style={{ 
                 width: '100%',
                 maxWidth: '440px',
@@ -285,6 +285,7 @@ export default async function SpecialistPage({ params }: PageProps) {
               }}>
                 <img 
                   src={member.image.startsWith('/-/') ? member.image : `/-${member.image}`} 
+                  className="specialist-img-responsive"
                   alt={
                     member.slug === 'konopkin-dmitriy-sergeevich'
                       ? 'Конопкин Дмитрий Сергеевич — адвокат, партнёр ЮК «Де-Юре»'
@@ -304,6 +305,27 @@ export default async function SpecialistPage({ params }: PageProps) {
             </div>
           </div>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 991px) {
+            .specialist-detail-grid {
+              display: flex !important;
+              flex-direction: column-reverse !important;
+              gap: 32px !important;
+            }
+            .specialist-detail-photo {
+              width: 100% !important;
+              max-width: 360px !important;
+              margin: 0 auto !important;
+            }
+            .specialist-img-responsive {
+              height: 380px !important;
+            }
+            .nowrap-desk {
+              white-space: normal !important;
+            }
+          }
+        `}} />
       </section>
 
       {/* 3. Направления работы / юридической помощи */}

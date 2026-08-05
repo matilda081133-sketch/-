@@ -266,18 +266,21 @@ export default function SpecialistyPage() {
                     alignItems: 'stretch',
                     minHeight: '330px'
                   }}
-                  className="specialist-card-hover"
+                  className="specialist-card-hover specialist-card-container"
                 >
                   {/* Photo Column (~33% width, 330px) */}
-                  <div style={{ 
-                    flex: '0 0 330px',
-                    width: '330px',
-                    maxWidth: '35%',
-                    position: 'relative', 
-                    overflow: 'hidden',
-                    background: 'var(--color-cream)',
-                    userSelect: 'none'
-                  }}>
+                  <div 
+                    className="specialist-photo-col"
+                    style={{ 
+                      flex: '0 0 330px',
+                      width: '330px',
+                      maxWidth: '35%',
+                      position: 'relative', 
+                      overflow: 'hidden',
+                      background: 'var(--color-cream)',
+                      userSelect: 'none'
+                    }}
+                  >
                       <img 
                         src={sp.image.startsWith('/-/') ? sp.image : `/-${sp.image.startsWith('/') ? '' : '/'}${sp.image}`} 
                         alt={altText}
@@ -295,14 +298,17 @@ export default function SpecialistyPage() {
                   </div>
 
                   {/* Content Column */}
-                  <div style={{ 
-                    flex: '1 1 auto',
-                    padding: '32px 36px', 
-                    display: 'flex', 
-                    flexDirection: 'column', 
-                    justifyContent: 'space-between',
-                    gap: '16px'
-                  }}>
+                  <div 
+                    className="specialist-content-col"
+                    style={{ 
+                      flex: '1 1 auto',
+                      padding: '32px 36px', 
+                      display: 'flex', 
+                      flexDirection: 'column', 
+                      justifyContent: 'space-between',
+                      gap: '16px'
+                    }}
+                  >
                     <div>
                       {/* 1. Full Name (FIO) */}
                       <h3 style={{ 
@@ -452,6 +458,21 @@ export default function SpecialistyPage() {
           }
           .detail-text-link:hover .detail-arrow {
             transform: translateX(4px) !important;
+          }
+          @media (max-width: 991px) {
+            .specialist-card-container {
+              flex-direction: column !important;
+              min-height: auto !important;
+            }
+            .specialist-photo-col {
+              width: 100% !important;
+              max-width: 100% !important;
+              flex: 0 0 300px !important;
+              height: 300px !important;
+            }
+            .specialist-content-col {
+              padding: 24px 20px !important;
+            }
           }
         `}} />
       </section>
