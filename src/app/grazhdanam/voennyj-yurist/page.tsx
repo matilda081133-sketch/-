@@ -141,7 +141,12 @@ export default function VoennyjYuristPage() {
             <span style={{ color: 'var(--color-text-main)' }}>Военный юрист</span>
           </>
         }
-        superTitle="Помощь военнослужащим в Липецке и по России"
+        superTitle={
+          <>
+            <span style={{ display: 'inline-block' }}>Помощь военнослужащим</span> <br />
+            <span style={{ display: 'inline-block' }}>в Липецке и по России</span>
+          </>
+        }
         title={<><span style={{ display: 'inline-block' }}>Военный юрист</span> <br /><span style={{ display: 'inline-block' }}>в Липецке</span></>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
