@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
@@ -177,7 +177,7 @@ export default function ContactsPage() {
               Как добраться
             </h2>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.3fr) minmax(0, 1fr)', gap: '40px', alignItems: 'stretch' }}>
+            <div className="how-to-get-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.3fr) minmax(0, 1fr)', gap: '40px', alignItems: 'stretch' }}>
               {/* Единая карточка информации о здании и маршруте (40-45%) */}
               <div style={{ display: 'flex', flexDirection: 'column', order: 2 }}>
                 
@@ -329,7 +329,7 @@ export default function ContactsPage() {
         {/* 3. Форма и Реквизиты */}
         <section className="section" style={{ padding: '80px 0', background: 'var(--color-white)' }}>
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '60px', alignItems: 'flex-start' }}>
+            <div className="contacts-form-req-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '60px', alignItems: 'flex-start' }}>
               
               {/* Левая колонка: Реквизиты */}
               <div>
@@ -375,6 +375,16 @@ export default function ContactsPage() {
 
       </div>
       <Footer />
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 991px) {
+          .how-to-get-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .contacts-form-req-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}} />
     </main>
   );
 }
