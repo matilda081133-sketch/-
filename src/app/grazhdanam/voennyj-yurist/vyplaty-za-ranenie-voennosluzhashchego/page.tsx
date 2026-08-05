@@ -152,6 +152,15 @@ export default function VyplatyRaneniePage() {
         "worksFor": { "@id": "https://dejure-help.ru/#organization" }
       },
       {
+        "@type": "WebPage",
+        "@id": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/#webpage",
+        "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/",
+        "name": "Выплаты за ранение военнослужащего — юрист в Липецке | ЮК «Де-Юре»",
+        "description": "Помощь с выплатами за ранение: проверка справок и оснований, запрос документов, обжалование задержки или отказа, представительство в суде.",
+        "breadcrumb": { "@id": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/#breadcrumb" },
+        "mainEntity": { "@id": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/#service" }
+      },
+      {
         "@type": "FAQPage",
         "@id": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/#faq",
         "mainEntity": faqs.map(faq => ({

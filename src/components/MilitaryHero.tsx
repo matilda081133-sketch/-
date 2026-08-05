@@ -51,7 +51,7 @@ export default function MilitaryHero({
   const hasRight = Boolean(imageUrl || rightContent);
 
   return (
-    <section style={{ 
+    <section className="military-hero-section" style={{ 
       position: 'relative', 
       minHeight: '85vh', 
       display: 'flex', 
@@ -78,48 +78,46 @@ export default function MilitaryHero({
           <div className={hasRight ? "grid grid-2 land-hero-grid" : ""} style={{ display: hasRight ? 'grid' : 'flex', flexDirection: hasRight ? 'row' : 'column', gap: '40px', alignItems: 'center' }}>
             {/* Left Column */}
             <div style={{ flex: '1 1 0%' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-gold-text, #80633F)' }}>
                   {superTitle}
                 </span>
               </div>
               
-              <h1 style={{ 
-                fontSize: 'clamp(28px, 5vw, 56px)', 
+              <h1 className="military-hero-h1" style={{ 
+                fontSize: 'clamp(26px, 3.8vw, 50px)', 
                 color: 'var(--color-deep-blue)', 
                 fontFamily: 'var(--font-serif)', 
-                margin: '0 0 20px 0', 
+                margin: '0 0 16px 0', 
                 lineHeight: 1.15 
               }}>
                 {title}
               </h1>
               
-              <p style={{ 
+              <p className="military-hero-subtitle" style={{ 
                 fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, 
-                marginBottom: '20px', 
+                marginBottom: '16px', 
                 maxWidth: '750px', 
-                lineHeight: 1.6 
+                lineHeight: 1.55 
               }}>
                 {subtitle}
               </p>
 
-              {trustItems && trustItems.length > 0 && <TrustStrip items={trustItems} marginTop={trustMarginTop || '24px'} />}
-
-              {/* Primary Call to Action */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '14px', marginTop: '24px', marginBottom: urgentHint ? '24px' : '32px' }}>
+              {/* Primary Call to Action - IMMEDIATELY AFTER INTRO TEXT */}
+              <div className="military-hero-cta" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px', marginTop: '16px', marginBottom: urgentHint ? '16px' : '24px' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px' }}>
-                  <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '15px', color: '#FFFFFF', backgroundColor: '#10273B', border: '1px solid #9B7E55', boxShadow: '0 4px 14px rgba(16, 39, 59, 0.25)' }} data-analytics="military_hero_consultation_click">
+                  <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '15px 36px', fontSize: '15px', color: '#FFFFFF', backgroundColor: '#10273B', border: '1px solid #9B7E55', boxShadow: '0 4px 14px rgba(16, 39, 59, 0.25)' }} data-analytics="military_hero_consultation_click">
                     {primaryCtaText}
                   </a>
                   {secondaryCtaText && secondaryCtaLink && (
-                    <a href={secondaryCtaLink} className="btn btn-outline" style={{ padding: '16px 40px', fontSize: '15px' }}>
+                    <a href={secondaryCtaLink} className="btn btn-outline" style={{ padding: '15px 36px', fontSize: '15px' }}>
                       {secondaryCtaText}
                     </a>
                   )}
                 </div>
                 {primaryCtaSubtext && (
-                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
+                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginTop: '2px' }}>
                     {primaryCtaSubtext}
                   </div>
                 )}
@@ -129,9 +127,9 @@ export default function MilitaryHero({
                 <div style={{
                   background: 'rgba(200, 169, 126, 0.1)',
                   borderLeft: '4px solid var(--color-gold)',
-                  padding: '16px 24px',
-                  marginBottom: '24px',
-                  fontSize: '15px',
+                  padding: '14px 20px',
+                  marginBottom: '20px',
+                  fontSize: '14px',
                   color: 'var(--color-deep-blue)',
                   lineHeight: 1.5
                 }}>
@@ -139,6 +137,9 @@ export default function MilitaryHero({
                   {urgentHint}
                 </div>
               )}
+
+              {/* Three Bullet USPs (TrustStrip) - NOW PLACED AFTER CTA */}
+              {trustItems && trustItems.length > 0 && <TrustStrip items={trustItems} marginTop={trustMarginTop || '16px'} />}
             </div>
             
             {/* Right Column for Photo or Unconstrained Creative */}
@@ -204,5 +205,40 @@ export default function MilitaryHero({
           </div>
         </div>
     </section>
+    <style dangerouslySetInnerHTML={{ __html: `
+      @media (max-width: 1440px) {
+        .military-hero-section {
+          padding-top: 110px !important;
+          padding-bottom: 50px !important;
+          min-height: auto !important;
+        }
+        .military-hero-h1 {
+          font-size: clamp(24px, 3.4vw, 44px) !important;
+          margin-bottom: 12px !important;
+        }
+        .military-hero-subtitle {
+          margin-bottom: 12px !important;
+          font-size: 15px !important;
+          line-height: 1.5 !important;
+        }
+        .military-hero-cta {
+          margin-top: 12px !important;
+          margin-bottom: 16px !important;
+        }
+      }
+      @media (max-width: 768px) {
+        .military-hero-section {
+          padding-top: 90px !important;
+          padding-bottom: 40px !important;
+        }
+        .military-hero-cta {
+          width: 100% !important;
+        }
+        .military-hero-cta .btn {
+          width: 100% !important;
+          text-align: center !important;
+        }
+      }
+    `}} />
   );
 }
