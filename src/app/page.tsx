@@ -42,7 +42,7 @@ export default function Home() {
                 Юридическая компания в Липецке
               </span>
             </div>
-            <h1 style={{ 
+            <h1 className="main-hero-h1" style={{ 
               marginBottom: '24px', 
               lineHeight: '1.2', 
               whiteSpace: 'pre', 
@@ -62,13 +62,13 @@ export default function Home() {
               Подключаем специалиста с опытом именно <br />в вашей категории дел — от оценки ситуации <br />до защиты интересов в суде.
             </p>
             
-            <div className="flex gap-4" style={{ marginBottom: '40px' }}>
+            <div className="flex gap-4 main-hero-btns" style={{ marginBottom: '40px' }}>
               <a href="#consultation" className="btn">Обсудить ситуацию</a>
               <a href="#services" className="btn btn-outline">Выбрать направление</a>
             </div>
 
             {/* Hero USPs Row */}
-            <div style={{ 
+            <div className="hero-usps-row" style={{ 
               display: 'flex', 
               gap: '20px', 
               marginTop: '50px' 
@@ -301,7 +301,7 @@ export default function Home() {
             Почему мы?
           </h2>
           
-          <div style={{ 
+          <div className="main-usp-grid" style={{ 
             display: 'grid', 
             gridTemplateColumns: 'repeat(3, 1fr)', 
             borderTop: '1px solid var(--color-primary)', 
@@ -463,6 +463,38 @@ export default function Home() {
 
       {/* 11. FOOTER */}
       <Footer />
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 991px) {
+          .main-usp-grid {
+            grid-template-columns: 1fr !important;
+            border-left: none !important;
+            border-bottom: none !important;
+          }
+          .main-usp-grid .usp-card {
+            border-right: none !important;
+            border-bottom: 1px solid rgba(23, 50, 77, 0.1) !important;
+            padding: 24px 20px !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .main-hero-h1 {
+            white-space: pre-line !important;
+          }
+          .hero-usps-row {
+            flex-direction: column !important;
+            margin-top: 30px !important;
+            gap: 12px !important;
+          }
+          .main-hero-btns {
+            flex-direction: column !important;
+            width: 100% !important;
+          }
+          .main-hero-btns .btn {
+            width: 100% !important;
+            text-align: center !important;
+          }
+        }
+      `}} />
     </main>
   );
 }
