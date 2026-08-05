@@ -784,7 +784,6 @@ export default function PerevodKategoriiClient() {
                   subtitle=""
                   buttonText="Получить консультацию"
                   commentPlaceholder="Участок относится к сельхозземлям; планируется включение в границы населённого пункта…"
-                  subtext="Перезвоним вам в течение 15 минут в рабочее время."
                   hiddenFields={[
                     { name: 'pageId', value: 'CIV-05-07' },
                     { name: 'pageTitle', value: 'Перевод земельного участка в другую категорию в Липецке' },

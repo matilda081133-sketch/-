@@ -80,7 +80,7 @@ export default function MilitaryHero({
             <div style={{ flex: '1 1 0%' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#9B7E55' }}>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-gold-text, #80633F)' }}>
                   {superTitle}
                 </span>
               </div>

@@ -796,7 +796,6 @@ export default function OformleniePravClient() {
                   subtitle=""
                   buttonText="Получить консультацию"
                   commentPlaceholder="Есть старое постановление и дом, но право на землю не зарегистрировано…"
-                  subtext="Перезвоним вам в течение 15 минут в рабочее время."
                   hiddenFields={[
                     { name: 'pageId', value: 'CIV-05-02' },
                     { name: 'pageTitle', value: 'Оформление прав на земельный участок в Липецке' },

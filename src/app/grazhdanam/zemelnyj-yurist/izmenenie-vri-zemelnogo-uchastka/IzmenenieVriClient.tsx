@@ -784,7 +784,6 @@ export default function IzmenenieVriClient() {
                   subtitle=""
                   buttonText="Получить консультацию"
                   commentPlaceholder="Хочу использовать участок под магазин; сейчас в ЕГРН указано ИЖС…"
-                  subtext="Перезвоним вам в течение 15 минут в рабочее время."
                   hiddenFields={[
                     { name: 'pageId', value: 'CIV-05-06' },
                     { name: 'pageTitle', value: 'Изменение вида разрешённого использования земельного участка в Липецке' },

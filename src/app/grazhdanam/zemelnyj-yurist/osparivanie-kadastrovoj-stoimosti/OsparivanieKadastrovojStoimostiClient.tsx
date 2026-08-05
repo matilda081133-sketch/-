@@ -784,7 +784,6 @@ export default function OsparivanieKadastrovojStoimostiClient() {
                   subtitle=""
                   buttonText="Получить консультацию"
                   commentPlaceholder="Кадастровая стоимость участка влияет на аренду; ежегодный платёж составляет…"
-                  subtext="Перезвоним вам в течение 15 минут в рабочее время."
                   hiddenFields={[
                     { name: 'pageId', value: 'CIV-05-05' },
                     { name: 'pageTitle', value: 'Оспаривание кадастровой стоимости в Липецке' },

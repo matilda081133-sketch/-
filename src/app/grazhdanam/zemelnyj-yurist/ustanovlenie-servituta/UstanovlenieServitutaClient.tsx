@@ -808,7 +808,6 @@ export default function UstanovlenieServitutaClient() {
                   subtitle=""
                   buttonText="Получить консультацию"
                   commentPlaceholder="К дому нет другого проезда; сосед предложил маршрут, который проходит рядом с домом…"
-                  subtext="Перезвоним вам в течение 15 минут в рабочее время."
                   hiddenFields={[
                     { name: 'pageId', value: 'CIV-05-04' },
                     { name: 'pageTitle', value: 'Установление земельного сервитута в Липецке' },

@@ -789,7 +789,6 @@ export default function RazdelUchastkaClient() {
                   subtitle=""
                   buttonText="Получить консультацию"
                   commentPlaceholder="У участка два собственника, хотим оформить отдельные части, на земле стоит дом…"
-                  subtext="Перезвоним вам в течение 15 минут в рабочее время."
                   hiddenFields={[
                     { name: 'pageId', value: 'CIV-05-03' },
                     { name: 'pageTitle', value: 'Раздел земельного участка в Липецке' },
