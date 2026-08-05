@@ -166,19 +166,19 @@ export default function SporyOGranicahClient() {
 
   const relatedServices = [
     {
-      title: 'Раздел земельного участка и определение порядка пользования',
+      title: 'Раздел земельного участка',
       desc: 'Помощь при разделе земли между собственниками, образовании самостоятельных участков и определении порядка использования общего участка.',
       link: '/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/'
     },
     {
       title: 'Земельный сервитут',
       desc: 'Помощь в оформлении права прохода, проезда или прокладки коммуникаций через соседний участок, если использовать землю без этого невозможно.',
-      link: '/-/grazhdanam/zemelnyj-yurist/zemelnyj-servitut/'
+      link: '/-/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/'
     },
     {
       title: 'Оформление земли в собственность',
       desc: 'Помощь при оформлении права на участок, взаимодействии с администрацией и устранении препятствий к государственной регистрации.',
-      link: '/-/grazhdanam/zemelnyj-yurist/oformlenie-zemli-v-sobstvennost/'
+      link: '/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/'
     }
   ];
 
@@ -210,6 +210,7 @@ export default function SporyOGranicahClient() {
           }
           primaryCtaText="Обсудить спор о границе"
           primaryCtaLink="#form"
+          primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
           secondaryCtaText="С какими ситуациями помогаем"
           secondaryCtaLink="#situations"
           rightContent={
