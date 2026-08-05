@@ -281,10 +281,9 @@ export default function VyplatySemePogibshegoPage() {
         superTitle="Военные выплаты • проверка права и документов"
         title={
           <>
-            <span style={{ display: 'block' }}>Юрист по выплатам</span>
-            <span style={{ display: 'block' }}>семье погибшего</span>
-            <span style={{ display: 'block' }}>военнослужащего</span>
-            <span style={{ display: 'block' }}>в Липецке</span>
+            <span style={{ display: 'inline-block' }}>Юрист по выплатам семье погибшего</span> <br />
+            <span style={{ display: 'inline-block' }}>военнослужащего</span> <br />
+            <span style={{ display: 'inline-block' }}>в Липецке</span>
           </>
         }
         subtitle={
