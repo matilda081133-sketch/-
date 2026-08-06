@@ -94,7 +94,7 @@ export default function GrazhdanamClient() {
     <main>
       <Header />
 
-      {/* ═══ 1. ПЕРВЫЙ ЭКРАН (MilitaryHero - Шаблонный компонент первого экрана) ═══ */}
+      {/* ═══ 1. ПЕРВЫЙ ЭКРАН (MilitaryHero - Эталонный шаблонный компонент) ═══ */}
       <MilitaryHero
         breadcrumbs={
           <>
@@ -120,7 +120,126 @@ export default function GrazhdanamClient() {
             </a>
           </>
         }
-        trustItems={[]}
+        trustItems={[
+          { text: 'Изучим документы и оценим перспективы дела' },
+          { text: 'Подберём подходящий способ решения' },
+          { text: 'Сопроводим до нужного результата в суде и органах' }
+        ]}
+        rightContent={
+          <div className="hero-right-col" style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
+            <div className="mockup-container" style={{ position: 'relative', width: '100%', maxWidth: '440px', height: '420px' }}>
+              <div className="doc-wrapper-float-4">
+                <div className="doc-sheet doc-sheet-4">
+                  <div style={{ padding: '30px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '25px', right: '25px', width: '80px', height: '80px', border: '1px solid rgba(23, 50, 77, 0.08)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}></div>
+                    <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 30px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-3">
+                <div className="doc-sheet doc-sheet-3">
+                  <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '95px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
+                      <span style={{ fontSize: '4px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>ЮК ДЕ-ЮРЕ № 14/2026</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '35px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '95px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '55px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+                    <div style={{ width: '130px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 30px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '95%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '80%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-2">
+                <div className="doc-sheet doc-sheet-2">
+                  <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '110px', height: '30px', border: '1px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.2 }}>
+                        ИСКОВОЕ ЗАЯВЛЕНИЕ<br/>
+                        В СУД ОБЩЕЙ ЮРИСДИКЦИИ
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+
+                    <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 16px auto' }}></div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                      <div style={{ width: '40%', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Истец / Заявитель:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Представитель по доверенности:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-1">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
+                      <img src="/-/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ЮРИДИЧЕСКАЯ ПОМОЩЬ</span>
+                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>Правовая защита граждан</span>
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '14px' }}>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.15)' }}></div>
+                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '85%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                        <div style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ООО ЮК «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Защита прав граждан • Липецк</div>
+                      </div>
+                      <div style={{ position: 'relative', width: '42px', height: '42px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ width: '38px', height: '38px', borderRadius: '50%', border: '1.25px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-12deg)', opacity: 0.9 }}>
+                          <div style={{ width: '31px', height: '31px', borderRadius: '50%', border: '0.5px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <span style={{ fontSize: '3.5px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.1 }}>
+                              ДЕ-ЮРЕ<br/>ЛИПЕЦК
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
       />
 
       {/* ═══ 2. КАТАЛОГ НАПРАВЛЕНИЙ (В точном стиле ServicesTabs с Главной страницы) ═══ */}
@@ -277,39 +396,52 @@ export default function GrazhdanamClient() {
               );
             })}
 
-            {/* Завершающая темная карточка CTA — заполняет сетку без остатка */}
-            <a href="#form" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div 
-                className="card service-card" 
-                style={{ 
-                  height: '100%', 
-                  minHeight: '210px',
-                  padding: '28px', 
-                  background: 'var(--color-deep-blue)', 
-                  border: '1px solid transparent',
-                  borderRadius: '0',
-                  display: 'flex', 
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  transition: 'all 0.3s',
-                  position: 'relative',
-                  borderTop: '3px solid var(--color-gold)'
-                }}
-              >
-                <div>
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: '#FFFFFF', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                    Не нашли свою ситуацию?
-                  </h3>
-                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.55 }}>
-                    Опишите вопрос своими словами. Мы изучим имеющиеся документы и подберём профильного специалиста.
-                  </p>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
-                  <span>Оставить заявку</span>
-                  <span>→</span>
-                </div>
+            {/* Завершающая темная карточка CTA — в стиле шаблонной карточки cta-card с кнопкой white-btn-custom */}
+            <div 
+              className="card service-card" 
+              style={{ 
+                height: '100%', 
+                minHeight: '210px',
+                padding: '28px', 
+                background: 'var(--color-deep-blue)', 
+                border: '1px solid transparent',
+                borderRadius: '0',
+                display: 'flex', 
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                transition: 'all 0.3s',
+                position: 'relative',
+                borderTop: '3px solid var(--color-gold)'
+              }}
+            >
+              <div>
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: '#FFFFFF', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                  Не нашли свою ситуацию?
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.55 }}>
+                  Опишите вопрос своими словами. Мы изучим имеющиеся документы и подберём профильного специалиста.
+                </p>
               </div>
-            </a>
+              <div style={{ marginTop: 'auto', paddingTop: '12px' }}>
+                <a 
+                  href="#form" 
+                  className="btn white-btn-custom" 
+                  style={{ 
+                    padding: '12px 24px', 
+                    fontSize: '14px', 
+                    fontWeight: 600,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    width: '100%',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Оставить заявку
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
