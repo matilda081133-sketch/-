@@ -280,7 +280,8 @@ export default function GrazhdanamClient() {
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '32px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Юридическая помощь по разным направлениям
+              <span style={{ display: 'inline-block' }}>Юридическая помощь</span> <br />
+              <span style={{ display: 'inline-block' }}>по разным направлениям</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Профессиональные услуги юристов и адвокатов Липецка. Каждым делом занимается профильный специалист.
