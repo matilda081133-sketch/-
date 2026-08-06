@@ -81,7 +81,7 @@ export default function MilitaryHero({
 
           <div className={hasRight ? "grid grid-2 land-hero-grid" : ""} style={{ display: hasRight ? 'grid' : 'flex', flexDirection: hasRight ? 'row' : 'column', gap: '40px', alignItems: 'flex-start' }}>
             {/* Left Column */}
-            <div style={{ flex: '1 1 0%' }}>
+            <div style={{ flex: '1 1 0%', paddingTop: '8px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-gold-text, #80633F)' }}>
