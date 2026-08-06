@@ -452,7 +452,8 @@ export default function GrazhdanamClient() {
       {/* ═══ 4. ПРАКТИКА (CasesBlock - Шаблонный компонент) ═══ */}
       <CasesBlock
         title="Примеры дел из нашей практики"
-        showAllLink=""
+        showAllLink="#form"
+        showAllText="Получить консультацию"
         showDemoWarning={false}
         cases={cases.map(c => ({
           category: 'Гражданское право',
@@ -466,7 +467,7 @@ export default function GrazhdanamClient() {
       {/* ═══ 5. FAQ (FAQBlock - Шаблонный компонент) ═══ */}
       <FAQBlock
         superTitle="Частые вопросы граждан"
-        title="Ответы на частые вопросы"
+        title={<><span style={{ display: 'inline-block' }}>Ответы на</span> <br /><span style={{ display: 'inline-block' }}>частые вопросы</span></>}
         subtitle="Ответы на популярные вопросы о предоставлении юридической помощи гражданам."
         ctaText="Описать ситуацию"
         ctaLink="#form"

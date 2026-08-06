@@ -16,6 +16,7 @@ interface CasesBlockProps {
   cases: CaseData[];
   title?: string | React.ReactNode;
   showAllLink?: string;
+  showAllText?: string;
   showDemoWarning?: boolean;
   resultLabel?: string;
 }
@@ -24,6 +25,7 @@ export default function CasesBlock({
   cases, 
   title = "Результаты нашей работы", 
   showAllLink = "/praktika",
+  showAllText = "Смотреть все дела",
   showDemoWarning = true,
   resultLabel = "Результат"
 }: CasesBlockProps) {
@@ -43,9 +45,9 @@ export default function CasesBlock({
             </h2>
           </div>
           {showAllLink && (
-            <Link href={showAllLink} className="btn btn-outline" style={{ padding: '12px 24px', height: 'fit-content' }}>
-              Смотреть все дела
-            </Link>
+            <a href={showAllLink} className="btn btn-outline" style={{ padding: '12px 24px', height: 'fit-content' }}>
+              {showAllText}
+            </a>
           )}
         </div>
         
