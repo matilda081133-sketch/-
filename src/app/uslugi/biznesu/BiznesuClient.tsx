@@ -376,163 +376,7 @@ export default function BiznesuClient() {
         }
       />
 
-      {/* ═══ 1. ПЕРВЫЙ ЭКРАН (Hero - В точном эталонном стиле /grazhdanam/) ═══ */}
-      <MilitaryHero
-        breadcrumbs={
-          <>
-            <Link href="/">Главная</Link>
-            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <span style={{ color: 'var(--color-text-main)' }}>Бизнесу</span>
-          </>
-        }
-        superTitle="Юридическая компания «Де-Юре»"
-        title={
-          <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>Юридические услуги</span>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>для бизнеса в Липецке</span>
-          </span>
-        }
-        subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
-            Каждым направлением занимается профильный специалист. Помогаем компаниям и предпринимателям решать разовые юридические задачи и сопровождаем бизнес в судебных, договорных, корпоративных и иных правовых вопросах.
-          </span>
-        }
-        primaryCtaText="Обсудить задачу"
-        primaryCtaLink="#form"
-        secondaryCtaText="Или позвоните: +7 (4742) 28-68-38"
-        secondaryCtaLink="tel:+74742286838"
-        trustItems={[]}
-        rightContent={
-          <div className="hero-right-col" style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
-            {/* Darkening gradient glow under the creative */}
-            <div style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: '150%',
-              height: '150%',
-              background: 'radial-gradient(circle, rgba(23, 50, 77, 0.12) 0%, rgba(23, 50, 77, 0.05) 30%, transparent 60%)',
-              zIndex: 0,
-              pointerEvents: 'none'
-            }} />
-            
-            {/* Background Vector Graphic: Courthouse (Protrudes nicely beyond creative right edge) */}
-            <svg className="hero-vector-svg" style={{ 
-              position: 'absolute', 
-              top: '38%', 
-              left: '98%', 
-              transform: 'translate(-50%, -50%)', 
-              width: '580px', 
-              height: '580px', 
-              opacity: 0.10, 
-              zIndex: 0, 
-              pointerEvents: 'none' 
-            }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
-              <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
-            </svg>
 
-            {/* RICH ELEGANT B2B DOCUMENT SHEET */}
-            <div className="mockup-container" style={{ position: 'relative', width: '100%', maxWidth: '440px', zIndex: 1 }}>
-              
-              <div className="doc-wrapper-main">
-                <div className="doc-sheet doc-sheet-main" style={{
-                  background: '#FFFFFF',
-                  boxShadow: '0 24px 48px rgba(16, 39, 59, 0.16), 0 2px 6px rgba(0,0,0,0.06)',
-                  border: '1px solid rgba(16, 39, 59, 0.12)',
-                  position: 'relative',
-                  borderRadius: '2px',
-                  overflow: 'hidden'
-                }}>
-                  {/* Decorative Gold Header Bar */}
-                  <div style={{ width: '100%', height: '4px', background: 'linear-gradient(90deg, var(--color-deep-blue) 0%, var(--color-gold) 50%, var(--color-deep-blue) 100%)' }}></div>
-
-                  <div style={{ padding: '24px 22px 20px', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
-                    
-                    {/* Official Document Header */}
-                    <div style={{ borderBottom: '2px solid var(--color-deep-blue)', paddingBottom: '12px', marginBottom: '16px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                        <img src="/-/images/logo_dark.png" alt="Де-Юре" style={{ height: '28px', width: 'auto', display: 'block' }} />
-                        <div style={{ textAlign: 'right', fontSize: '9px', color: 'var(--color-text-secondary)', fontWeight: 600 }}>
-                          Исх. № B2B-2026/48<br />
-                          Липецк • 06.08.2026
-                        </div>
-                      </div>
-                      <div style={{ fontSize: '12px', fontWeight: 800, color: 'var(--color-deep-blue)', textTransform: 'uppercase', letterSpacing: '0.04em', fontFamily: 'var(--font-serif)' }}>
-                        ЮРИДИЧЕСКАЯ КОМПАНИЯ «ДЕ-ЮРЕ»
-                      </div>
-                      <div style={{ fontSize: '10px', color: 'var(--color-gold-text, #80633F)', fontWeight: 600, marginTop: '2px' }}>
-                        Комплексная правовая защита и сопровождение бизнеса
-                      </div>
-                    </div>
-
-                    {/* Document Title Banner */}
-                    <div style={{ background: 'rgba(23, 50, 77, 0.04)', borderLeft: '3px solid var(--color-gold)', padding: '10px 14px', marginBottom: '16px' }}>
-                      <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-deep-blue)', textTransform: 'uppercase', letterSpacing: '0.02em' }}>
-                        ПРАВОВОЙ АУДИТ И ЗАЩИТА АКТИВОВ
-                      </div>
-                      <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)', marginTop: '2px' }}>
-                        Подтверждённая практика в Арбитражном суде и органах контроля
-                      </div>
-                    </div>
-
-                    {/* Key Services Checklist */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: 'var(--color-deep-blue)', fontWeight: 600 }}>
-                        <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> Арбитражные споры и взыскание задолженности
-                      </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: 'var(--color-deep-blue)', fontWeight: 600 }}>
-                        <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> Договорная работа и налоговый аудит (ФНС)
-                      </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: 'var(--color-deep-blue)', fontWeight: 600 }}>
-                        <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> Корпоративные процедуры и сделки с бизнесом
-                      </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: 'var(--color-deep-blue)', fontWeight: 600 }}>
-                        <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> Защита при проверках, 115-ФЗ и уголовных рисках
-                      </div>
-                    </div>
-
-                    {/* Signatures & Seal Section */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '12px', borderTop: '1px solid rgba(16, 39, 59, 0.1)' }}>
-                      <div style={{ fontSize: '8.5px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
-                        <strong style={{ color: 'var(--color-deep-blue)' }}>ООО ЮК «Де-Юре»</strong><br />
-                        Управляющий партнёр / А. Е. Бобкин<br />
-                        <span style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600 }}>Липецкая область, г. Липецк</span>
-                      </div>
-                      
-                      {/* Realistic Seal Stamp */}
-                      <div style={{ 
-                        width: '56px', 
-                        height: '56px', 
-                        borderRadius: '50%', 
-                        border: '2px stroke #10273B', 
-                        outline: '1px dashed #10273B',
-                        outlineOffset: '-4px',
-                        display: 'flex', 
-                        flexDirection: 'column',
-                        alignItems: 'center', 
-                        justifyContent: 'center',
-                        color: '#10273B',
-                        transform: 'rotate(-8deg)',
-                        opacity: 0.9,
-                        background: 'rgba(16, 39, 59, 0.03)',
-                        flexShrink: 0,
-                        boxSizing: 'border-box'
-                      }}>
-                        <div style={{ fontSize: '7px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.02em', textAlign: 'center', lineHeight: 1 }}>ДЕ-ЮРЕ</div>
-                        <div style={{ fontSize: '5px', fontWeight: 700, margin: '1px 0' }}>ЛИПЕЦК</div>
-                        <div style={{ fontSize: '4.5px', textTransform: 'uppercase', letterSpacing: '0.01em' }}>БИЗНЕС-ПРАВО</div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        }
-      />
 
       {/* ═══ 2. КАТАЛОГ 13 НАПРАВЛЕНИЙ БИЗНЕСУ ═══ */}
       <section className="section bg-light" id="catalog" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
@@ -687,6 +531,46 @@ export default function BiznesuClient() {
                 </a>
               );
             })}
+
+            {/* CTA Card - Не нашли направление */}
+            <a
+              href="#form"
+              style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
+            >
+              <div
+                className="card service-card"
+                style={{
+                  height: '100%',
+                  minHeight: '210px',
+                  padding: '28px',
+                  background: 'var(--color-deep-blue)',
+                  border: '1px solid var(--color-deep-blue)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  position: 'relative',
+                  borderTop: '3px solid var(--color-gold)',
+                  cursor: 'pointer'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: '#FFFFFF', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                    Не нашли подходящее направление?
+                  </h3>
+                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55 }}>
+                    Юридическая задача бизнеса может затрагивать сразу несколько областей. Кратко опишите ситуацию — мы уточним обстоятельства и определим, кто из специалистов должен подключиться.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', transition: 'all 0.3s' }}>
+                  <span>Описать задачу</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </a>
 
                       </div>
         </div>
