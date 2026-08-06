@@ -1,4 +1,4 @@
-﻿name: Deploy to Timeweb
+name: Deploy to Timeweb
 
 on:
   push:
@@ -16,12 +16,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: dejure-web/package-lock.json
+          node-version: '24'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
         working-directory: dejure-web
 
       - name: Build Next.js static export
