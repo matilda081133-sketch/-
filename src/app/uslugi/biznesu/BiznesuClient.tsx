@@ -571,7 +571,6 @@ export default function BiznesuClient() {
       {/* ═══ 6. ПРИМЕРЫ ДЕЛ ИЗ ПРАКТИКИ (3 B2B-кейса из ТЗ п. 7) ═══ */}
       <CasesBlock 
         title="Примеры дел из нашей практики"
-        subtitle="Практические результаты правовой защиты бизнеса в Липецке и арбитражных судах."
         cases={cases}
         showAllText="Смотреть все дела"
         showAllLink="/-/praktika/"
