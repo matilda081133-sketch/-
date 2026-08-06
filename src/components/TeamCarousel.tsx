@@ -138,7 +138,7 @@ export default function TeamCarousel() {
                 width: '300px',
                 minWidth: '280px',
                 maxWidth: '320px',
-                height: '570px',
+                height: '600px',
                 flex: '0 0 300px',
                 background: '#FFFFFF',
                 border: '1px solid rgba(16, 39, 59, 0.08)',
@@ -156,7 +156,7 @@ export default function TeamCarousel() {
                       </div>
                     )}
                   </div>
-                  <h3 style={{ margin: '0 0 6px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.25, minHeight: '44px', display: 'flex', alignItems: 'flex-start' }}>{person.name}</h3>
+                  <h3 style={{ margin: '0 0 8px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, minHeight: '52px', display: 'block' }}>{person.name}</h3>
                   <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start' }}>{person.role}</p>
                   <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: 0, lineHeight: 1.45, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>{person.desc}</p>
                 </div>
@@ -175,9 +175,9 @@ export default function TeamCarousel() {
           <style dangerouslySetInnerHTML={{ __html: `
             .team-card {
               transition: all 0.3s ease;
-              height: 570px !important;
-              min-height: 570px !important;
-              max-height: 570px !important;
+              height: 600px !important;
+              min-height: 600px !important;
+              max-height: 600px !important;
               display: flex !important;
               flex-direction: column !important;
               justify-content: space-between !important;
