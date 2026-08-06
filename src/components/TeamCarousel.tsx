@@ -3,7 +3,13 @@
 import { useRef } from 'react';
 import Link from 'next/link';
 
-export default function TeamCarousel() {
+interface TeamCarouselProps {
+  customTitle?: string;
+  customSubtitle?: string;
+  filterSlugs?: string[];
+}
+
+export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs }: TeamCarouselProps = {}) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -78,13 +84,17 @@ export default function TeamCarousel() {
         </>
       ),
       rawName: 'Начешников Владимир Викторович',
-      role: 'Ведущий юрист ЮК «Де-Юре»',
-      desc: 'Специализация: корпоративное право и банкротство. Опыт работы более 20 лет в сферах налогового законодательства и комплексного сопровождения процедур банкротства физических и юридических лиц.',
+      role: 'Специалист по корпоративным процедурам и сопровождению бизнеса',
+      desc: 'Специализация: корпоративные процедуры, налоговое законодательство и комплексное сопровождение процедур банкротства физических и юридических лиц.',
       img: '/-/images/nacheshnikov.jpg',
       link: '/specialisty/nacheshnikov-vladimir-viktorovich/',
       imgPosition: 'center 12%'
     }
   ];
+
+  const displayedTeam = filterSlugs && filterSlugs.length > 0
+    ? team.filter(p => filterSlugs.some(slug => p.link.includes(slug)))
+    : team;
 
   return (
     <section className="section bg-cream" id="team">
@@ -95,11 +105,11 @@ export default function TeamCarousel() {
             <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>Команда компании</span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '20px', flexWrap: 'wrap', marginBottom: '16px' }}>
-            <h2 style={{ margin: 0, fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>Наши специалисты</h2>
+            <h2 style={{ margin: 0, fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>{customTitle || 'Наши специалисты'}</h2>
             <Link href="/specialisty/" className="btn btn-outline" style={{ fontSize: '15px', display: 'inline-block', whiteSpace: 'nowrap' }}>Все специалисты</Link>
           </div>
           <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, maxWidth: '800px' }}>
-            Опытные юристы и адвокаты Липецка с профильной специализацией. Бывшие сотрудники прокуратуры, Следственного комитета и службы судебных приставов, обеспечивающие надежную правовую защиту по гражданским, арбитражным и уголовным делам.
+            {customSubtitle || 'Опытные юристы и адвокаты Липецка с профильной специализацией. Бывшие сотрудники прокуратуры, Следственного комитета и службы судебных приставов, обеспечивающие надежную правовую защиту по гражданским, арбитражным и уголовным делам.'}
           </p>
         </div>
         
@@ -132,7 +142,7 @@ export default function TeamCarousel() {
           </button>
           
           <div className="carousel-container" ref={scrollRef} style={{ display: 'flex', alignItems: 'stretch', gap: '24px', overflowX: 'auto', scrollBehavior: 'smooth', paddingBottom: '16px' }}>
-            {team.map((person, index) => (
+            {displayedTeam.map((person, index) => (
               <div key={index} className="card team-card carousel-item" style={{ 
                 padding: '24px', 
                 display: 'flex', 
