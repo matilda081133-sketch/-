@@ -145,15 +145,15 @@ export default function GrazhdanamClient() {
               pointerEvents: 'none'
             }} />
             
-            {/* Background Vector Graphic: Courthouse (Z-index 0 behind mockup) */}
+            {/* Background Vector Graphic: Courthouse (Shifted right to protrude nicely beyond creative) */}
             <svg style={{ 
               position: 'absolute', 
-              top: '45%', 
-              left: '50%', 
+              top: '40%', 
+              left: '90%', 
               transform: 'translate(-50%, -50%)', 
-              width: '580px', 
-              height: '580px', 
-              opacity: 0.09, 
+              width: '600px', 
+              height: '600px', 
+              opacity: 0.11, 
               zIndex: 0, 
               pointerEvents: 'none' 
             }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
