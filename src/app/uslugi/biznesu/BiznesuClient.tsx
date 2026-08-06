@@ -247,6 +247,191 @@ export default function BiznesuClient() {
               <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
             </svg>
 
+            {/* ANIMATED DOC STACK */}
+            <div className="mockup-container" style={{ zIndex: 1 }}>
+              <div style={{ position: 'absolute', width: '250px', height: '250px', background: 'var(--color-primary)', filter: 'blur(100px)', opacity: 0.15, borderRadius: '50%' }}></div>
+
+              <div className="doc-wrapper-float-4">
+                <div className="doc-sheet doc-sheet-4">
+                  <div style={{ padding: '40px 30px', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+                    <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '60%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-3">
+                <div className="doc-sheet doc-sheet-3">
+                  <div style={{ padding: '40px 30px', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+                    <div style={{ width: '140px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '80%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-2">
+                <div className="doc-sheet doc-sheet-2">
+                  <div style={{ padding: '30px 25px', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '30px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+                    <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 20px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        <div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        <div style={{ width: '50%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px dashed rgba(23,50,77,0.1)' }}>
+                      <div>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)' }}>Заказчик:</div>
+                        <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
+                      </div>
+                      <div>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)' }}>Исполнитель:</div>
+                        <div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-1">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '30px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', opacity: 0.03, width: '150px' }}>
+                      <img src="/-/images/logo_dark.png" alt="" style={{ width: '100%', height: 'auto' }} />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '12px', marginBottom: '20px' }}>
+                      <img src="/-/images/logo_dark.png" alt="" style={{ width: '60px', height: 'auto', opacity: 0.8 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+                    <div style={{ width: '120px', height: '8px', background: 'var(--color-deep-blue)', margin: '0 auto 20px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '16px' }}>
+                      <div style={{ display: 'flex', gap: '8px' }}>
+                        <div style={{ width: '12px', height: '4px', background: 'var(--color-primary)', marginTop: '4px', flexShrink: 0 }}></div>
+                        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                          <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                          <div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        </div>
+                      </div>
+                      <div style={{ display: 'flex', gap: '8px' }}>
+                        <div style={{ width: '12px', height: '4px', background: 'var(--color-primary)', marginTop: '4px', flexShrink: 0 }}></div>
+                        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                          <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                          <div style={{ width: '70%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px solid rgba(23,50,77,0.2)' }}>
+                      <div>
+                        <div style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ООО «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)' }}>ИНН 4826145890</div>
+                      </div>
+                      <div style={{ width: '45px', height: '45px', borderRadius: '50%', border: '1.5px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-15deg)', opacity: 0.85 }}>
+                        <div style={{ width: '37px', height: '37px', borderRadius: '50%', border: '0.5px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <span style={{ fontSize: '4px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.1 }}>ДЕ-ЮРЕ ЛИПЕЦК</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        }
+      />
+
+      {/* ═══ 1. ПЕРВЫЙ ЭКРАН (Hero - В точном эталонном стиле /grazhdanam/) ═══ */}
+      <MilitaryHero
+        breadcrumbs={
+          <>
+            <Link href="/">Главная</Link>
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Бизнесу</span>
+          </>
+        }
+        superTitle="Юридическая компания «Де-Юре»"
+        title={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>Юридические услуги</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>для бизнеса в Липецке</span>
+          </span>
+        }
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
+            Каждым направлением занимается профильный специалист. Помогаем компаниям и предпринимателям решать разовые юридические задачи и сопровождаем бизнес в судебных, договорных, корпоративных и иных правовых вопросах.
+          </span>
+        }
+        primaryCtaText="Обсудить задачу"
+        primaryCtaLink="#form"
+        secondaryCtaText="Или позвоните: +7 (4742) 28-68-38"
+        secondaryCtaLink="tel:+74742286838"
+        trustItems={[]}
+        rightContent={
+          <div className="hero-right-col" style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
+            {/* Darkening gradient glow under the creative */}
+            <div style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '150%',
+              height: '150%',
+              background: 'radial-gradient(circle, rgba(23, 50, 77, 0.12) 0%, rgba(23, 50, 77, 0.05) 30%, transparent 60%)',
+              zIndex: 0,
+              pointerEvents: 'none'
+            }} />
+            
+            {/* Background Vector Graphic: Courthouse (Protrudes nicely beyond creative right edge) */}
+            <svg className="hero-vector-svg" style={{ 
+              position: 'absolute', 
+              top: '38%', 
+              left: '98%', 
+              transform: 'translate(-50%, -50%)', 
+              width: '580px', 
+              height: '580px', 
+              opacity: 0.10, 
+              zIndex: 0, 
+              pointerEvents: 'none' 
+            }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
+              <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
+            </svg>
+
             {/* RICH ELEGANT B2B DOCUMENT SHEET */}
             <div className="mockup-container" style={{ position: 'relative', width: '100%', maxWidth: '440px', zIndex: 1 }}>
               
@@ -492,7 +677,7 @@ export default function BiznesuClient() {
                       </p>
                     </div>
                     <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', transition: 'all 0.3s' }}>
-                      <span>Описать ситуацию</span>
+                      <span>Подробнее</span>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
@@ -503,56 +688,7 @@ export default function BiznesuClient() {
               );
             })}
 
-            {/* Завершающая темная карточка CTA — с бейджем Индивидуальный вопрос и кнопкой white-btn-custom */}
-            <div 
-              className="card service-card" 
-              style={{ 
-                height: '100%', 
-                minHeight: '210px',
-                padding: '28px', 
-                background: 'var(--color-deep-blue)', 
-                border: '1px solid transparent',
-                borderRadius: '0',
-                display: 'flex', 
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                transition: 'all 0.3s',
-                position: 'relative',
-                borderTop: '3px solid var(--color-gold)'
-              }}
-            >
-              <div>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
-                  Индивидуальный вопрос
-                </div>
-                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: '#FFFFFF', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                  Не нашли подходящее направление?
-                </h3>
-                <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.55 }}>
-                  Юридическая задача бизнеса может затрагивать сразу несколько областей. Кратко опишите ситуацию — мы уточним обстоятельства и определим, кто из специалистов должен подключиться.
-                </p>
-              </div>
-              <div style={{ marginTop: 'auto', paddingTop: '12px' }}>
-                <a 
-                  href="#form" 
-                  className="btn white-btn-custom" 
-                  style={{ 
-                    padding: '12px 24px', 
-                    fontSize: '14px', 
-                    fontWeight: 600,
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px',
-                    width: '100%',
-                    textDecoration: 'none'
-                  }}
-                >
-                  Оставить заявку
-                </a>
-              </div>
-            </div>
-          </div>
+                      </div>
         </div>
       </section>
 
@@ -765,10 +901,7 @@ export default function BiznesuClient() {
       <section className="section bg-light" style={{ padding: '60px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ background: '#FFFFFF', padding: '40px', border: '1px solid rgba(16, 39, 59, 0.1)', boxShadow: '0 6px 20px rgba(16, 39, 59, 0.06)', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '20px', maxWidth: '900px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-              <div style={{ width: '32px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 700, color: 'var(--color-primary)' }}>Индивидуальный вопрос</span>
-            </div>
+
             
             <h2 style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', margin: 0 }}>
               Не нашли подходящее направление?
