@@ -103,7 +103,12 @@ export default function GrazhdanamClient() {
           </>
         }
         superTitle="Юридическая компания «Де-Юре»"
-        title={<><span style={{ display: 'inline-block' }}>Юридическая помощь</span> <br /><span style={{ display: 'inline-block' }}>гражданам в Липецке</span></>}
+        title={
+          <>
+            <span style={{ display: 'block' }}>Юридическая помощь</span>
+            <span style={{ display: 'block' }}>гражданам в Липецке</span>
+          </>
+        }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
             Каждым направлением занимается профильный юрист. Помогаем разобраться в ситуации, подготовить необходимые документы и защитить ваши интересы в суде и государственных органах.
