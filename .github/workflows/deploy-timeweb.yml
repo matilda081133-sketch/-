@@ -24,6 +24,25 @@ jobs:
       - name: Build Next.js static export
         run: npm run build
 
+      - name: Fix image paths for Timeweb (replace /-/images/ with /images/)
+        run: |
+          echo "Fixing /-/ paths in HTML files..."
+          find out/ -name "*.html" | xargs sed -i \
+            's|src="/-/|src="/|g;
+             s|href="/-/|href="/|g;
+             s|srcset="/-/|srcset="/|g;
+             s|content="/-/|content="/|g;
+             s|url(/-/|url(/|g'
+          echo "Fixing /-/ paths in JS files..."
+          find out/ -name "*.js" | xargs sed -i \
+            's|"/-/images/|"/images/|g;
+             s|'\''/-/images/|'\''/images/|g;
+             s|`/-/images/|`/images/|g'
+          echo "Fixing /-/ paths in CSS files..."
+          find out/ -name "*.css" | xargs sed -i \
+            's|/-/images/|/images/|g'
+          echo "Done fixing paths."
+
       - name: Deploy to Timeweb via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
