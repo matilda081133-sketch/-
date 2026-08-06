@@ -399,7 +399,7 @@ export const teamData: Record<string, TeamMember> = {
     id: 'gusev',
     slug: 'gusev-oleg-yurevich',
     name: 'Гусев Олег Юрьевич',
-    status: 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
+    status: 'Адвокат, управляющий партнёр\nКоллегии адвокатов «Де-Юре»',
     companyRole: 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
     orgType: 'barAssociationLawyer',
     curatedDirection: 'Адвокат по уголовным делам',

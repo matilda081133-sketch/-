@@ -169,11 +169,11 @@ export default function VoennyjYuristPage() {
       <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
-            <span style={{ display: 'inline-block' }}>Когда юридическая помощь</span> <br /><span style={{ display: 'inline-block' }}>нужна срочно</span>
+            <span style={{ display: 'inline-block' }}>Когда юридическая</span> <br /><span style={{ display: 'inline-block' }}>помощь нужна срочно</span>
           </h2>
           <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '620px', lineHeight: 1.6 }}>
-            Типичные ситуации, в которых важно<br />подключить специалиста как можно раньше.
+            Типичные ситуации, в которых важно подключить<br/>специалиста как можно раньше.
           </p>
 
           <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
@@ -547,7 +547,7 @@ export default function VoennyjYuristPage() {
         steps={[
           { num: '01', title: 'Первичная консультация', desc: 'Обсуждаем ситуацию в офисе, по телефону или видеосвязи, уточняем обстоятельства и срочность.' },
           { num: '02', title: 'Изучение документов', desc: 'Анализируем имеющиеся материалы. Документы можно передать лично или направить в электронном виде.' },
-          { num: '03', title: 'План действий', desc: <>Оцениваем правовые основания,<br />риски и предлагаем порядок<br />защиты, обжалования или<br />получения положенных выплат.</> },
+          { num: '03', title: 'План действий', desc: <>Оцениваем правовые основания и риски,<br/>предлагаем порядок защиты, обжалования<br/>или получения положенных выплат.</> },
           { num: '04', title: 'Юридическая работа', desc: 'Готовим документы, обращения и жалобы; при необходимости участвуем в процессуальных действиях и представляем интересы клиента.' },
           { num: '05', title: 'Информирование', desc: 'Сообщаем о ходе работы, объясняем результаты и заранее согласовываем дальнейшие действия.' },
           { isBanner: true, title: 'Дистанционный формат', desc: 'Значительную часть работы можно организовать дистанционно. Если требуется личное участие адвоката или юриста, заранее согласуем место и порядок работы.' }

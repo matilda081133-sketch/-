@@ -343,16 +343,6 @@ export default async function SpecialistPage({ params }: PageProps) {
               <div style={{ width: '100%', maxWidth: '440px', background: 'var(--color-deep-blue)', padding: '16px 20px', marginTop: '0' }}>
                 <div style={{ fontSize: '16px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>{member.name}</div>
                 <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.75)', marginTop: '4px', lineHeight: 1.4 }}>{member.status}</div>
-                {member.orgType === 'barAssociationLawyer' && (
-                  <div style={{ fontSize: '11px', color: 'var(--color-gold)', marginTop: '6px', fontWeight: 600, letterSpacing: '0.02em', textTransform: 'uppercase' }}>
-                    Коллегия адвокатов «Де-Юре»
-                  </div>
-                )}
-                {member.orgType === 'legalCompanySpecialist' && (
-                  <div style={{ fontSize: '11px', color: 'var(--color-gold)', marginTop: '6px', fontWeight: 600, letterSpacing: '0.02em', textTransform: 'uppercase' }}>
-                    ЮК «Де-Юре»
-                  </div>
-                )}
               </div>
             </div>
           </div>
@@ -642,10 +632,7 @@ export default async function SpecialistPage({ params }: PageProps) {
                   {member.slug === 'bobkin-arkadiy-evgenevich' ? (
                     'Свяжемся с вами в рабочее время'
                   ) : (
-                    <span>
-                      Перезвоним в течение<br />
-                      15 минут в рабочее время
-                    </span>
+                    <span>Перезвоним в течение 15 минут в рабочее время</span>
                   )}
                 </div>
               </div>

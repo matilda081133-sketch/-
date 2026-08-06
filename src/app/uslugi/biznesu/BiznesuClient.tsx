@@ -562,12 +562,27 @@ export default function BiznesuClient() {
                     Юридическая задача бизнеса может затрагивать сразу несколько областей. Кратко опишите ситуацию — мы уточним обстоятельства и определим, кто из специалистов должен подключиться.
                   </p>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', transition: 'all 0.3s' }}>
-                  <span>Описать задачу</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
+                <div style={{ marginTop: 'auto' }}>
+                  <style dangerouslySetInnerHTML={{ __html: `
+                    .btn-cta-catalog {
+                      display: inline-block;
+                      padding: 11px 24px;
+                      font-size: 14px;
+                      font-weight: 700;
+                      background: #FFFFFF;
+                      color: var(--color-deep-blue);
+                      border: 1px solid #FFFFFF;
+                      text-decoration: none;
+                      transition: all 0.3s ease;
+                      cursor: pointer;
+                    }
+                    .btn-cta-catalog:hover {
+                      background: var(--color-deep-blue);
+                      color: #FFFFFF;
+                      border-color: #FFFFFF;
+                    }
+                  `}} />
+                  <a href="#form" className="btn-cta-catalog">Описать задачу</a>
                 </div>
               </div>
             </a>
@@ -781,29 +796,11 @@ export default function BiznesuClient() {
         </div>
       </section>
 
-      {/* ═══ 4. БЛОК "ЕСЛИ ЗАДАЧА НЕ ПОПАЛА В КАТАЛОГ" (Из ТЗ п. 5) ═══ */}
-      <section className="section bg-light" style={{ padding: '60px 0', background: 'var(--gradient-cream)' }}>
-        <div className="container">
-          <div style={{ background: '#FFFFFF', padding: '40px', border: '1px solid rgba(16, 39, 59, 0.1)', boxShadow: '0 6px 20px rgba(16, 39, 59, 0.06)', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '20px', maxWidth: '900px', margin: '0 auto' }}>
 
-            
-            <h2 style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', margin: 0 }}>
-              Не нашли подходящее направление?
-            </h2>
-            
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, maxWidth: '750px' }}>
-              Юридическая задача бизнеса может затрагивать сразу несколько областей. Кратко опишите ситуацию — мы уточним обстоятельства и определим, кто из специалистов должен подключиться.
-            </p>
-
-            <a href="#form" className="btn btn-outline" style={{ padding: '12px 28px', fontSize: '15px' }}>
-              Описать задачу
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 5. СПЕЦИАЛИСТЫ ПО РАБОТЕ С БИЗНЕСОМ (Точный состав из ТЗ п. 6: Бобкин, Смолянинова, Начешников) ═══ */}
+            {/* ═══ 5. СПЕЦИАЛИСТЫ ПО РАБОТЕ С БИЗНЕСОМ (Точный состав из ТЗ п. 6: Бобкин, Смолянинова, Начешников) ═══ */}
       <TeamCarousel 
+        hideSectionLabel={true}
+        titleAlign="center"
         customTitle="Специалисты по работе с бизнесом"
         customSubtitle={
           <>
