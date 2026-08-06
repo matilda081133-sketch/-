@@ -20,11 +20,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: dejure-web
 
       - name: Build Next.js static export
         run: npm run build
-        working-directory: dejure-web
 
       - name: Deploy to Timeweb via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -32,7 +30,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dejure-web/out/
+          local-dir: out/
           server-dir: /public_html/
           dangerous-clean-slate: false
           exclude: |
