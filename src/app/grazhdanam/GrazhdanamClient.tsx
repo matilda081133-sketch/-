@@ -333,7 +333,7 @@ export default function GrazhdanamClient() {
         faqs={faqs}
       />
 
-      {/* ═══ 7. СВЯЗАТЬСЯ С НАМИ (Шаблонный 2-колоночный блок формы) ═══ */}
+      {/* ═══ 7. СВЯЗАТЬСЯ С НАМИ (Эталонный 2-колоночный шаблонный блок формы) ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
@@ -343,42 +343,39 @@ export default function GrazhdanamClient() {
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                Обсудите ситуацию с юристом
+                Получите первичную оценку ситуации
               </h2>
               
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Кратко опишите, что произошло. Мы свяжемся с вами, уточним детали и определим, какой специалист сможет помочь.
+                Кратко опишите ситуацию и оставьте контактные данные. Обращение передадим профильному юристу. Он изучит обстоятельства и предложит возможный порядок действий.
               </p>
 
-              <div style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <a href="tel:+74742286838" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  +7 (4742) 28-68-38
-                </a>
-                <span style={{ fontSize: '15px', color: 'var(--color-text-secondary)' }}>г. Липецк, ул. Советская, д. 35, оф. 213</span>
-              </div>
-              
-              <div style={{ marginTop: '16px' }}>
-                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                  Перезвоним в течение 15 минут в рабочее время
+              <div style={{ marginTop: '32px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>
+                    Перезвоним в течение<br />
+                    15 минут в рабочее время
+                  </span>
                 </div>
               </div>
             </div>
 
-            <div style={{ background: '#FFFFFF', padding: '40px', borderTop: '4px solid var(--color-gold)', boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}>
-              <ContactsForm
-                title=""
-                subtitle=""
-                buttonText="Оставить заявку"
-                commentPlaceholder="Кратко опишите вашу ситуацию…"
-                subtext="Перезвоним вам в течение 15 минут в рабочее время."
-                hiddenFields={[
-                  { name: 'pageId', value: 'TOP-02' },
-                  { name: 'pageTitle', value: 'Юридическая помощь гражданам в Липецке' },
-                  { name: 'practice', value: 'Юридическая помощь гражданам' }
-                ]}
-              />
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm
+                  title="Написать нам"
+                  subtitle=""
+                  buttonText="Оставить заявку"
+                  commentPlaceholder="Кратко опишите вашу ситуацию или вопрос…"
+                  subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                  hiddenFields={[
+                    { name: 'pageId', value: 'TOP-02' },
+                    { name: 'pageTitle', value: 'Юридическая помощь гражданам в Липецке' },
+                    { name: 'practice', value: 'Юридическая помощь гражданам' }
+                  ]}
+                />
+              </div>
             </div>
           </div>
         </div>

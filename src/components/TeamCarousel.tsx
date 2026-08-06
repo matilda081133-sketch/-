@@ -13,37 +13,42 @@ export default function TeamCarousel() {
     }
   };
 
-  const team = [
+  const team: { name: React.ReactNode; rawName: string; role: string; desc: string; img: string; link: string }[] = [
     {
-      name: 'Бобкин Аркадий Евгеньевич',
+      name: <>Бобкин<br />Аркадий Евгеньевич</>,
+      rawName: 'Бобкин Аркадий Евгеньевич',
       role: 'Директор, управляющий партнёр ЮК «Де-Юре»',
       desc: 'Специализация: уголовно-правовые, налоговые и сложные коммерческие споры. Юридический стаж с 1997 года. Более 22 лет работы в следственных подразделениях МВД и налоговой полиции.',
       img: '/-/images/bobkin.jpg',
       link: '/-/team/bobkin-arkadiy-evgenevich/'
     },
     {
-      name: 'Конопкин Дмитрий Сергеевич',
+      name: <>Конопкин<br />Дмитрий Сергеевич</>,
+      rawName: 'Конопкин Дмитрий Сергеевич',
       role: 'Адвокат, партнёр ЮК «Де-Юре»',
       desc: 'Специализация: военное право, защита по уголовным делам. Юридический стаж с 2016 года. Опыт работы в Следственном комитете РФ. Статус адвоката с 2022 года.',
       img: '/-/images/konopkin.jpg',
       link: '/-/team/konopkin-dmitriy-sergeevich/'
     },
     {
-      name: 'Смольянинова Марина Валерьевна',
+      name: <>Смольянинова<br />Марина Валерьевна</>,
+      rawName: 'Смольянинова Марина Валерьевна',
       role: 'Старший юрист ЮК «Де-Юре»',
       desc: 'Специализация: гражданские и семейные споры, недвижимость, взыскание задолженности. Опыт работы в УФССП России более 10 лет, из них 6 лет на руководящих должностях.',
       img: '/-/images/smolyaninova.jpg',
       link: '/-/team/smolyaninova-marina-valerevna/'
     },
     {
-      name: 'Гусев Олег Юрьевич',
+      name: <>Гусев<br />Олег Юрьевич</>,
+      rawName: 'Гусев Олег Юрьевич',
       role: 'Ведущий юрист ЮК «Де-Юре»',
       desc: 'Специализация: земельные споры, недвижимость, оформление прав на землю, градостроительное право. Опыт судебной работы по земельным и имущественным спорам.',
       img: '/-/images/gusev.jpg',
       link: '/-/team/gusev-oleg-yurevich/'
     },
     {
-      name: 'Начешников Владимир Викторович',
+      name: <>Начешников<br />Владимир Викторович</>,
+      rawName: 'Начешников Владимир Викторович',
       role: 'Ведущий юрист ЮК «Де-Юре»',
       desc: 'Специализация: корпоративное право и банкротство. Опыт работы более 20 лет в сферах налогового законодательства и комплексного сопровождения процедур банкротства физических и юридических лиц.',
       img: '/-/images/nacheshnikov.jpg',
@@ -118,7 +123,7 @@ export default function TeamCarousel() {
                 <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
                   <div style={{ height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)' }}>
                     {person.img ? (
-                      <img src={person.img} alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+                      <img src={person.img} alt={person.rawName} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
                     ) : (
                       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)' }}>
                         <div style={{ width: '40px', height: '40px', border: '1px solid rgba(212, 175, 55, 0.4)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', fontSize: '20px' }}>DJ</div>
