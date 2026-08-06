@@ -15,7 +15,12 @@ export default function TeamCarousel() {
 
   const team: { name: React.ReactNode; rawName: string; role: string; desc: string; img: string; link: string }[] = [
     {
-      name: <>Бобкин<br />Аркадий Евгеньевич</>,
+      name: (
+        <>
+          <span style={{ display: 'block' }}>Бобкин</span>
+          <span style={{ display: 'block' }}>Аркадий Евгеньевич</span>
+        </>
+      ),
       rawName: 'Бобкин Аркадий Евгеньевич',
       role: 'Директор, управляющий партнёр ЮК «Де-Юре»',
       desc: 'Специализация: уголовно-правовые, налоговые и сложные коммерческие споры. Юридический стаж с 1997 года. Более 22 лет работы в следственных подразделениях МВД и налоговой полиции.',
@@ -23,7 +28,12 @@ export default function TeamCarousel() {
       link: '/-/team/bobkin-arkadiy-evgenevich/'
     },
     {
-      name: <>Конопкин<br />Дмитрий Сергеевич</>,
+      name: (
+        <>
+          <span style={{ display: 'block' }}>Конопкин</span>
+          <span style={{ display: 'block' }}>Дмитрий Сергеевич</span>
+        </>
+      ),
       rawName: 'Конопкин Дмитрий Сергеевич',
       role: 'Адвокат, партнёр ЮК «Де-Юре»',
       desc: 'Специализация: военное право, защита по уголовным делам. Юридический стаж с 2016 года. Опыт работы в Следственном комитете РФ. Статус адвоката с 2022 года.',
@@ -31,7 +41,12 @@ export default function TeamCarousel() {
       link: '/-/team/konopkin-dmitriy-sergeevich/'
     },
     {
-      name: <>Смольянинова<br />Марина Валерьевна</>,
+      name: (
+        <>
+          <span style={{ display: 'block' }}>Смольянинова</span>
+          <span style={{ display: 'block' }}>Марина Валерьевна</span>
+        </>
+      ),
       rawName: 'Смольянинова Марина Валерьевна',
       role: 'Старший юрист ЮК «Де-Юре»',
       desc: 'Специализация: гражданские и семейные споры, недвижимость, взыскание задолженности. Опыт работы в УФССП России более 10 лет, из них 6 лет на руководящих должностях.',
@@ -39,7 +54,12 @@ export default function TeamCarousel() {
       link: '/-/team/smolyaninova-marina-valerevna/'
     },
     {
-      name: <>Гусев<br />Олег Юрьевич</>,
+      name: (
+        <>
+          <span style={{ display: 'block' }}>Гусев</span>
+          <span style={{ display: 'block' }}>Олег Юрьевич</span>
+        </>
+      ),
       rawName: 'Гусев Олег Юрьевич',
       role: 'Ведущий юрист ЮК «Де-Юре»',
       desc: 'Специализация: земельные споры, недвижимость, оформление прав на землю, градостроительное право. Опыт судебной работы по земельным и имущественным спорам.',
@@ -47,7 +67,12 @@ export default function TeamCarousel() {
       link: '/-/team/gusev-oleg-yurevich/'
     },
     {
-      name: <>Начешников<br />Владимир Викторович</>,
+      name: (
+        <>
+          <span style={{ display: 'block' }}>Начешников</span>
+          <span style={{ display: 'block' }}>Владимир Викторович</span>
+        </>
+      ),
       rawName: 'Начешников Владимир Викторович',
       role: 'Ведущий юрист ЮК «Де-Юре»',
       desc: 'Специализация: корпоративное право и банкротство. Опыт работы более 20 лет в сферах налогового законодательства и комплексного сопровождения процедур банкротства физических и юридических лиц.',
