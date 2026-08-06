@@ -132,7 +132,7 @@ export default function TeamCarousel() {
                 </div>
                 <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
                   {person.link && (
-                    <Link href={person.link} style={{ fontSize: '13px', color: 'var(--color-primary, #10273B)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                    <Link href={person.link} className="spec-card-link" style={{ fontSize: '13px', color: 'var(--color-primary, #10273B)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
                       <span>Подробнее о специалисте</span>
                       <span>→</span>
                     </Link>
@@ -141,6 +141,30 @@ export default function TeamCarousel() {
               </div>
             ))}
           </div>
+
+          <style dangerouslySetInnerHTML={{ __html: `
+            .team-card {
+              transition: all 0.3s ease;
+            }
+            .team-card:hover {
+              transform: translateY(-4px);
+              box-shadow: 0 12px 28px rgba(16, 39, 59, 0.12) !important;
+              border-color: rgba(155, 126, 85, 0.5) !important;
+            }
+            .spec-card-link {
+              transition: color 0.3s ease;
+            }
+            .team-card:hover .spec-card-link {
+              color: var(--color-gold, #9B7E55) !important;
+            }
+            .spec-card-link span:last-child {
+              transition: transform 0.3s ease;
+              display: inline-block;
+            }
+            .team-card:hover .spec-card-link span:last-child {
+              transform: translateX(4px);
+            }
+          ` }} />
 
           <button 
             onClick={() => scroll('right')} 
