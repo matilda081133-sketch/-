@@ -579,7 +579,7 @@ export default function BiznesuClient() {
       {/* ═══ 7. FAQ (7 вопросов из ТЗ п. 8) ═══ */}
       <FAQBlock 
         title="Ответы на частые вопросы"
-        items={faqs}
+        faqs={faqs}
       />
 
       {/* ═══ 8. ФИНАЛЬНАЯ ФОРМА (Из ТЗ п. 9) ═══ */}
