@@ -485,8 +485,8 @@ export default function GrazhdanamClient() {
       {/* ═══ 4. ПРАКТИКА (CasesBlock - Шаблонный компонент) ═══ */}
       <CasesBlock
         title="Примеры дел из нашей практики"
-        showAllLink="#form"
-        showAllText="Получить консультацию"
+        showAllLink="/-/praktika/"
+        showAllText="Смотреть все дела"
         showDemoWarning={false}
         cases={cases.map(c => ({
           category: 'Гражданское право',
