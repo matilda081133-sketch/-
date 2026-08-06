@@ -171,8 +171,8 @@ export default function GrazhdanamClient() {
               <div className="doc-wrapper-float-2">
                 <div className="doc-sheet doc-sheet-2">
                   <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '110px', height: '30px', border: '1px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
-                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.2 }}>
+                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '150px', height: '38px', border: '1.5px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '8px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.25, letterSpacing: '0.04em' }}>
                         ИСКОВОЕ ЗАЯВЛЕНИЕ<br/>
                         В СУД ОБЩЕЙ ЮРИСДИКЦИИ
                       </div>
@@ -195,11 +195,11 @@ export default function GrazhdanamClient() {
 
                     <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Истец / Заявитель:</div>
+                        <div style={{ fontSize: '8px', color: 'rgba(23,50,77,0.7)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Истец / Заявитель:</div>
                         <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
                       </div>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Представитель по доверенности:</div>
+                        <div style={{ fontSize: '8px', color: 'rgba(23,50,77,0.7)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Представитель по доверенности:</div>
                         <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
                       </div>
                     </div>
@@ -211,10 +211,10 @@ export default function GrazhdanamClient() {
                 <div className="doc-sheet doc-sheet-1">
                   <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
-                      <img src="/-/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
-                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ЮРИДИЧЕСКАЯ ПОМОЩЬ</span>
-                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>Правовая защита граждан</span>
+                      <img src="/-/images/logo_dark.png" alt="Де-Юре" style={{ width: '70px', height: 'auto', opacity: 0.95 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', alignItems: 'flex-end' }}>
+                        <span style={{ fontSize: '9px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ЮРИДИЧЕСКАЯ ПОМОЩЬ</span>
+                        <span style={{ fontSize: '8px', color: 'var(--color-primary)', fontWeight: 600 }}>Правовая защита граждан</span>
                       </div>
                     </div>
 
@@ -225,14 +225,14 @@ export default function GrazhdanamClient() {
                     </div>
 
                     <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                        <div style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ООО ЮК «ДЕ-ЮРЕ»</div>
-                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Защита прав граждан • Липецк</div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '11px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', letterSpacing: '0.02em' }}>ООО ЮК «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '9px', color: 'rgba(23,50,77,0.75)', fontFamily: 'var(--font-sans)', fontWeight: 500 }}>Защита прав граждан • Липецк</div>
                       </div>
-                      <div style={{ position: 'relative', width: '42px', height: '42px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <div style={{ width: '38px', height: '38px', borderRadius: '50%', border: '1.25px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-12deg)', opacity: 0.9 }}>
-                          <div style={{ width: '31px', height: '31px', borderRadius: '50%', border: '0.5px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <span style={{ fontSize: '3.5px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.1 }}>
+                      <div style={{ position: 'relative', width: '56px', height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ width: '52px', height: '52px', borderRadius: '50%', border: '1.5px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-12deg)', opacity: 0.95 }}>
+                          <div style={{ width: '42px', height: '42px', borderRadius: '50%', border: '0.8px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <span style={{ fontSize: '6.5px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.15, letterSpacing: '0.04em' }}>
                               ДЕ-ЮРЕ<br/>ЛИПЕЦК
                             </span>
                           </div>
