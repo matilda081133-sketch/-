@@ -145,6 +145,13 @@ export default function TeamCarousel() {
           <style dangerouslySetInnerHTML={{ __html: `
             .team-card {
               transition: all 0.3s ease;
+              height: 570px !important;
+              min-height: 570px !important;
+              max-height: 570px !important;
+              display: flex !important;
+              flex-direction: column !important;
+              justify-content: space-between !important;
+              box-sizing: border-box !important;
             }
             .team-card:hover {
               transform: translateY(-4px);
