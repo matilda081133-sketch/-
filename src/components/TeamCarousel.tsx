@@ -108,15 +108,15 @@ export default function TeamCarousel() {
                 width: '300px',
                 minWidth: '280px',
                 maxWidth: '320px',
-                flex: '0 0 auto',
-                alignSelf: 'stretch',
-                minHeight: '560px',
+                height: '570px',
+                flex: '0 0 300px',
                 background: '#FFFFFF',
                 border: '1px solid rgba(16, 39, 59, 0.08)',
-                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)'
+                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
+                boxSizing: 'border-box'
               }}>
-                <div>
-                  <div style={{ height: '320px', marginBottom: '20px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
+                  <div style={{ height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)' }}>
                     {person.img ? (
                       <img src={person.img} alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
                     ) : (
@@ -126,16 +126,18 @@ export default function TeamCarousel() {
                       </div>
                     )}
                   </div>
-                  <h3 style={{ margin: '0 0 6px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>{person.name}</h3>
-                  <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 12px 0', fontSize: '13px', lineHeight: 1.4 }}>{person.role}</p>
-                  <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: '0 0 16px 0', lineHeight: 1.5 }}>{person.desc}</p>
+                  <h3 style={{ margin: '0 0 6px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.25, minHeight: '44px', display: 'flex', alignItems: 'flex-start' }}>{person.name}</h3>
+                  <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start' }}>{person.role}</p>
+                  <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: 0, lineHeight: 1.45, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>{person.desc}</p>
                 </div>
-                {person.link && (
-                  <Link href={person.link} style={{ fontSize: '13px', color: 'var(--color-primary, #10273B)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px', marginTop: '16px' }}>
-                    <span>Подробнее о специалисте</span>
-                    <span>→</span>
-                  </Link>
-                )}
+                <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
+                  {person.link && (
+                    <Link href={person.link} style={{ fontSize: '13px', color: 'var(--color-primary, #10273B)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                      <span>Подробнее о специалисте</span>
+                      <span>→</span>
+                    </Link>
+                  )}
+                </div>
               </div>
             ))}
           </div>
