@@ -1,18 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
-import Image from 'next/image';
+import FAQBlock from '@/components/FAQBlock';
+import MilitaryHero from '@/components/MilitaryHero';
+import TeamCarousel from '@/components/TeamCarousel';
+import CasesBlock from '@/components/CasesBlock';
 
 export default function GrazhdanamClient() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
-
   const group1Cards = [
     {
       title: 'Семейный юрист',
@@ -244,58 +241,34 @@ export default function GrazhdanamClient() {
     <main>
       <Header />
 
-      {/* ═══ 1. ПЕРВЫЙ ЭКРАН ═══ */}
-      <section
-        style={{
-          position: 'relative',
-          paddingTop: '130px',
-          paddingBottom: '80px',
-          background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
-          overflow: 'hidden'
-        }}
-      >
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          {/* Breadcrumbs */}
-          <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '32px' }}>
+      {/* ═══ 1. ПЕРВЫЙ ЭКРАН (MilitaryHero - Шаблонный компонент первого экрана) ═══ */}
+      <MilitaryHero
+        breadcrumbs={
+          <>
             <a href="/-/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
             <span style={{ color: 'var(--color-text-main)' }}>Гражданам</span>
-          </div>
-
-          <div style={{ maxWidth: '820px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-gold-text, #80633F)' }}>
-                Юридическая компания «Де-Юре»
-              </span>
-            </div>
-
-            <h1 style={{ fontSize: 'clamp(28px, 4vw, 50px)', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 20px 0', lineHeight: 1.15 }}>
-              Юридическая помощь гражданам в Липецке
-            </h1>
-
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, marginBottom: '28px', lineHeight: 1.6, maxWidth: '750px' }}>
-              Каждым направлением занимается профильный юрист. Помогаем разобраться в ситуации, подготовить необходимые документы и защитить ваши интересы в суде и государственных органах.
-            </p>
-
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '14px' }}>
-              <a
-                href="#form"
-                className="btn btn-primary"
-                style={{ padding: '16px 36px', fontSize: '15px', color: '#FFFFFF', backgroundColor: '#10273B', border: '1px solid #9B7E55', boxShadow: '0 4px 14px rgba(16, 39, 59, 0.25)' }}
-                data-analytics="click_citizens_hero_cta"
-              >
-                Описать ситуацию
-              </a>
-              <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
-                Или позвоните:{' '}
-                <a href="tel:+74742286838" style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 600 }} data-analytics="click_citizens_phone" data-placement="hero">
-                  +7 (4742) 28-68-38
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        superTitle="Юридическая компания «Де-Юре»"
+        title={<><span style={{ display: 'inline-block' }}>Юридическая помощь</span> <br /><span style={{ display: 'inline-block' }}>гражданам в Липецке</span></>}
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
+            Каждым направлением занимается профильный юрист. Помогаем разобраться в ситуации, подготовить необходимые документы и защитить ваши интересы в суде и государственных органах.
+          </span>
+        }
+        primaryCtaText="Описать ситуацию"
+        primaryCtaLink="#form"
+        primaryCtaAnalytics="click_citizens_hero_cta"
+        primaryCtaSubtext={
+          <>
+            Или позвоните:{' '}
+            <a href="tel:+74742286838" style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 600 }} data-analytics="click_citizens_phone" data-placement="hero">
+              +7 (4742) 28-68-38
+            </a>
+          </>
+        }
+        trustItems={[]}
+      />
 
       {/* ═══ 2. КАТАЛОГ ИЗ 14 НАПРАВЛЕНИЙ ═══ */}
       <section className="section bg-white" id="catalog" style={{ padding: '80px 0' }}>
@@ -362,157 +335,34 @@ export default function GrazhdanamClient() {
         </div>
       </section>
 
-      {/* ═══ 4. СПЕЦИАЛИСТЫ ПО ДЕЛАМ ГРАЖДАН ═══ */}
-      <section className="section bg-white" id="specialists" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0 }}>
-            Специалисты по делам граждан
-          </h2>
-          <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '40px' }}></div>
+      {/* ═══ 4. СПЕЦИАЛИСТЫ (TeamCarousel - Шаблонный компонент команды) ═══ */}
+      <TeamCarousel />
 
-          <div className="citizens-specialists-slider">
-            {specialists.map((spec, idx) => (
-              <div key={idx} className="citizens-spec-card">
-                <div style={{ width: '100%', aspectRatio: '3/4', position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-cream)', marginBottom: '16px', border: '1px solid rgba(16, 39, 59, 0.1)' }}>
-                  <img
-                    src={spec.image}
-                    alt={spec.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    loading="lazy"
-                  />
-                </div>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '6px', marginTop: 0, lineHeight: 1.3 }}>
-                  {spec.name}
-                </h3>
-                <div style={{ fontSize: '13px', color: 'var(--color-gold-text, #80633F)', fontWeight: 600, marginBottom: '10px', lineHeight: 1.4 }}>
-                  {spec.status}
-                </div>
-                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45, marginBottom: '16px', flex: 1 }}>
-                  {spec.directions}
-                </p>
-                <a
-                  href={spec.link}
-                  style={{ fontSize: '13px', color: 'var(--color-primary, #10273B)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
-                  data-analytics="click_citizens_specialist"
-                >
-                  <span>Подробнее о специалисте</span>
-                  <span>→</span>
-                </a>
-              </div>
-            ))}
-          </div>
+      {/* ═══ 5. ПРАКТИКА (CasesBlock - Шаблонный компонент) ═══ */}
+      <CasesBlock
+        title="Примеры дел из нашей практики"
+        showAllLink=""
+        showDemoWarning={false}
+        cases={cases.map(c => ({
+          category: 'Гражданское право',
+          title: c.title,
+          problem: c.situation,
+          action: c.action,
+          result: c.result
+        }))}
+      />
 
-          <div style={{ marginTop: '36px', textAlign: 'center' }}>
-            <a
-              href="/-/team/"
-              className="btn btn-outline"
-              style={{ padding: '12px 28px', fontSize: '14px' }}
-            >
-              Все специалисты
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* ═══ 6. FAQ (FAQBlock - Шаблонный компонент) ═══ */}
+      <FAQBlock
+        superTitle="Частые вопросы граждан"
+        title="Ответы на частые вопросы"
+        subtitle="Ответы на популярные вопросы о предоставлении юридической помощи гражданам."
+        ctaText="Описать ситуацию"
+        ctaLink="#form"
+        faqs={faqs}
+      />
 
-      {/* ═══ 5. ПРАКТИКА ═══ */}
-      <section style={{ background: 'var(--color-cream)', padding: '80px 0' }} id="cases">
-        <div className="container">
-          <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0 }}>
-            Примеры дел из нашей практики
-          </h2>
-          <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '40px' }}></div>
-
-          <div className="grid grid-3" style={{ gap: '24px' }}>
-            {cases.map((c, idx) => (
-              <div
-                key={idx}
-                style={{
-                  background: '#FFFFFF',
-                  padding: '32px 24px',
-                  borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 16px rgba(16, 39, 59, 0.06)',
-                  display: 'flex',
-                  flexDirection: 'column'
-                }}
-              >
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.35 }}>
-                  {c.title}
-                </h3>
-                <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '14px', lineHeight: 1.55 }}>
-                  <strong style={{ color: 'var(--color-deep-blue)' }}>Ситуация:</strong> {c.situation}
-                </div>
-                <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '14px', lineHeight: 1.55 }}>
-                  <strong style={{ color: 'var(--color-deep-blue)' }}>Что сделали:</strong> {c.action}
-                </div>
-                <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 600, background: 'rgba(200, 169, 126, 0.12)', padding: '12px 14px', borderLeft: '3px solid var(--color-gold)', marginTop: 'auto' }}>
-                  <strong>Результат:</strong> {c.result}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 6. FAQ ═══ */}
-      <section className="section bg-white" id="faq" style={{ padding: '80px 0' }}>
-        <div className="container" style={{ maxWidth: '860px' }}>
-          <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, textAlign: 'center' }}>
-            Ответы на частые вопросы
-          </h2>
-          <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', margin: '0 auto 48px' }}></div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            {faqs.map((faq, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div
-                  key={idx}
-                  style={{
-                    border: '1px solid rgba(16, 39, 59, 0.12)',
-                    borderRadius: '4px',
-                    overflow: 'hidden',
-                    background: isOpen ? 'var(--color-cream)' : '#FFFFFF',
-                    transition: 'background-color 0.2s ease'
-                  }}
-                >
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    style={{
-                      width: '100%',
-                      padding: '20px 24px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      background: 'none',
-                      border: 'none',
-                      cursor: 'pointer',
-                      textAlign: 'left',
-                      fontSize: '17px',
-                      fontWeight: 600,
-                      color: 'var(--color-deep-blue)',
-                      fontFamily: 'var(--font-serif)'
-                    }}
-                    aria-expanded={isOpen}
-                    data-analytics="expand_citizens_faq"
-                  >
-                    <span>{faq.q}</span>
-                    <span style={{ fontSize: '22px', fontWeight: 300, marginLeft: '16px', color: 'var(--color-gold)' }}>
-                      {isOpen ? '−' : '+'}
-                    </span>
-                  </button>
-                  {isOpen && (
-                    <div style={{ padding: '0 24px 24px 24px', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 7. ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ 7. ФИНАЛЬНАЯ ФОРМА (ContactsForm - Шаблонный компонент) ═══ */}
       <section style={{ background: 'var(--color-cream)', padding: '80px 0' }} id="form">
         <div className="container" style={{ maxWidth: '800px' }}>
           <div style={{ background: '#FFFFFF', padding: '48px 40px', borderTop: '4px solid var(--color-gold)', boxShadow: '0 12px 36px rgba(16, 39, 59, 0.08)' }}>
