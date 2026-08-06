@@ -105,8 +105,8 @@ export default function GrazhdanamClient() {
         superTitle="Юридическая компания «Де-Юре»"
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>Юридическая помощь</span>
-            <span style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>гражданам в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>Юридическая помощь</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>гражданам в Липецке</span>
           </span>
         }
         subtitle={
@@ -290,7 +290,7 @@ export default function GrazhdanamClient() {
           </div>
 
           {/* Фильтр-табы (как в ServicesTabs) */}
-          <div style={{ display: 'flex', gap: '10px', marginBottom: '36px', flexWrap: 'wrap' }} role="tablist">
+          <div className="grazhdanam-tab-list" style={{ display: 'flex', gap: '10px', marginBottom: '36px', flexWrap: 'wrap' }} role="tablist">
             <button 
               onClick={() => setActiveTab('all')}
               className={`tab-btn ${activeTab === 'all' ? 'tab-btn-active' : 'tab-btn-inactive'}`}
@@ -543,7 +543,7 @@ export default function GrazhdanamClient() {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
-              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+              <div className="grazhdanam-contact-card" style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
                 <ContactsForm
                   title="Написать нам"
                   subtitle=""
@@ -561,6 +561,34 @@ export default function GrazhdanamClient() {
           </div>
         </div>
       </section>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 768px) {
+          .grazhdanam-contact-card {
+            padding: 24px 18px !important;
+          }
+          .grazhdanam-tab-list {
+            flex-wrap: nowrap !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            padding-bottom: 8px !important;
+            margin-bottom: 24px !important;
+            scrollbar-width: none !important;
+          }
+          .grazhdanam-tab-list::-webkit-scrollbar {
+            display: none !important;
+          }
+          .grazhdanam-tab-list button {
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+          }
+        }
+        @media (max-width: 576px) {
+          .hero-title-span-mobile {
+            white-space: normal !important;
+          }
+        }
+      `}} />
 
       <Footer />
     </main>

@@ -25,7 +25,7 @@ export default function TeamCarousel() {
       role: 'Директор, управляющий партнёр ЮК «Де-Юре»',
       desc: 'Специализация: уголовно-правовые, налоговые и сложные коммерческие споры. Юридический стаж с 1997 года. Более 22 лет работы в следственных подразделениях МВД и налоговой полиции.',
       img: '/-/images/bobkin.jpg',
-      link: '/-/team/bobkin-arkadiy-evgenevich/',
+      link: '/specialisty/bobkin-arkadiy-evgenevich/',
       imgPosition: 'center 15%'
     },
     {
@@ -39,7 +39,7 @@ export default function TeamCarousel() {
       role: 'Адвокат, партнёр ЮК «Де-Юре»',
       desc: 'Специализация: военное право, защита по уголовным делам. Юридический стаж с 2016 года. Опыт работы в Следственном комитете РФ. Статус адвоката с 2022 года.',
       img: '/-/images/konopkin.jpg',
-      link: '/-/team/konopkin-dmitriy-sergeevich/',
+      link: '/specialisty/konopkin-dmitriy-sergeevich/',
       imgPosition: 'center 18%'
     },
     {
@@ -53,7 +53,7 @@ export default function TeamCarousel() {
       role: 'Старший юрист ЮК «Де-Юре»',
       desc: 'Специализация: гражданские и семейные споры, недвижимость, взыскание задолженности. Опыт работы в УФССП России более 10 лет, из них 6 лет на руководящих должностях.',
       img: '/-/images/smolyaninova.jpg',
-      link: '/-/team/smolyaninova-marina-valerevna/',
+      link: '/specialisty/smolyaninova-marina-valerevna/',
       imgPosition: 'center 20%'
     },
     {
@@ -67,7 +67,7 @@ export default function TeamCarousel() {
       role: 'Ведущий юрист ЮК «Де-Юре»',
       desc: 'Специализация: земельные споры, недвижимость, оформление прав на землю, градостроительное право. Опыт судебной работы по земельным и имущественным спорам.',
       img: '/-/images/gusev.jpg',
-      link: '/-/team/gusev-oleg-yurevich/',
+      link: '/specialisty/gusev-oleg-yurevich/',
       imgPosition: 'center 15%'
     },
     {
@@ -81,7 +81,7 @@ export default function TeamCarousel() {
       role: 'Ведущий юрист ЮК «Де-Юре»',
       desc: 'Специализация: корпоративное право и банкротство. Опыт работы более 20 лет в сферах налогового законодательства и комплексного сопровождения процедур банкротства физических и юридических лиц.',
       img: '/-/images/nacheshnikov.jpg',
-      link: '/-/team/nacheshnikov-vladimir-viktorovich/',
+      link: '/specialisty/nacheshnikov-vladimir-viktorovich/',
       imgPosition: 'center 12%'
     }
   ];
@@ -96,7 +96,7 @@ export default function TeamCarousel() {
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '20px', flexWrap: 'wrap', marginBottom: '16px' }}>
             <h2 style={{ margin: 0, fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>Наши специалисты</h2>
-            <Link href="/-/team/" className="btn btn-outline" style={{ fontSize: '15px', display: 'inline-block', whiteSpace: 'nowrap' }}>Все специалисты</Link>
+            <Link href="/specialisty/" className="btn btn-outline" style={{ fontSize: '15px', display: 'inline-block', whiteSpace: 'nowrap' }}>Все специалисты</Link>
           </div>
           <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, maxWidth: '800px' }}>
             Опытные юристы и адвокаты Липецка с профильной специализацией. Бывшие сотрудники прокуратуры, Следственного комитета и службы судебных приставов, обеспечивающие надежную правовую защиту по гражданским, арбитражным и уголовным делам.
@@ -149,7 +149,7 @@ export default function TeamCarousel() {
                 boxSizing: 'border-box'
               }}>
                 <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
-                  <div style={{ height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)' }}>
+                  <Link href={person.link} style={{ display: 'block', height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)', textDecoration: 'none' }}>
                     {person.img ? (
                       <img src={person.img} alt={person.rawName} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} loading="lazy" />
                     ) : (
@@ -158,8 +158,12 @@ export default function TeamCarousel() {
                         <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Фото ожидается</span>
                       </div>
                     )}
-                  </div>
-                  <h3 style={{ margin: '0 0 8px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, minHeight: '52px', display: 'block' }}>{person.name}</h3>
+                  </Link>
+                  <h3 style={{ margin: '0 0 8px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, minHeight: '52px', display: 'block' }}>
+                    <Link href={person.link} style={{ color: 'inherit', textDecoration: 'none' }}>
+                      {person.name}
+                    </Link>
+                  </h3>
                   <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start' }}>{person.role}</p>
                   <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: 0, lineHeight: 1.45, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>{person.desc}</p>
                 </div>
