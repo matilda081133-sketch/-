@@ -26,7 +26,7 @@ export default function CasesBlock({
   title = "Результаты нашей работы", 
   showAllLink = "/praktika",
   showAllText = "Смотреть все дела",
-  showDemoWarning = true,
+  showDemoWarning = false,
   resultLabel = "Результат"
 }: CasesBlockProps) {
   return (
@@ -50,22 +50,6 @@ export default function CasesBlock({
             </a>
           )}
         </div>
-        
-        {showDemoWarning && (
-          <div style={{ 
-            background: 'var(--color-white)', 
-            padding: '16px 24px', 
-            border: '1px solid var(--color-border)',
-            color: 'var(--color-text-secondary)',
-            fontSize: '14px',
-            marginBottom: '40px',
-            borderLeft: '4px solid var(--color-primary)',
-            maxWidth: '800px',
-            fontStyle: 'italic'
-          }}>
-            Внимание: Ниже представлены демонстрационные макеты кейсов. Они будут заменены реальной практикой после утверждения фактуры.
-          </div>
-        )}
         
         <div className="grid grid-3" style={{ gap: '30px' }}>
           {cases.map((caseItem, idx) => (

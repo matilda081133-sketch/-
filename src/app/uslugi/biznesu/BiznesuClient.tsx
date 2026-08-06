@@ -232,15 +232,15 @@ export default function BiznesuClient() {
               pointerEvents: 'none'
             }} />
             
-            {/* Background Vector Graphic: Courthouse (Shifted right to protrude nicely beyond creative) */}
+            {/* Background Vector Graphic: Courthouse (Protrudes nicely beyond creative right edge) */}
             <svg className="hero-vector-svg" style={{ 
               position: 'absolute', 
-              top: '35%', 
-              left: '115%', 
+              top: '38%', 
+              left: '98%', 
               transform: 'translate(-50%, -50%)', 
-              width: '620px', 
-              height: '620px', 
-              opacity: 0.14, 
+              width: '580px', 
+              height: '580px', 
+              opacity: 0.10, 
               zIndex: 0, 
               pointerEvents: 'none' 
             }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
@@ -249,47 +249,95 @@ export default function BiznesuClient() {
 
             {/* INTERACTIVE ANIMATED CSS MOCKUP */}
             <div className="mockup-container" style={{ position: 'relative', width: '100%', maxWidth: '440px', height: '420px', zIndex: 1 }}>
-              <div className="doc-wrapper-float-4">
-                <div className="doc-sheet doc-sheet-4">
-                  <div style={{ padding: '40px 30px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
-                        <div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
-                        <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      </div>
-                    </div>
-                    <div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
-                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="doc-wrapper-float-3">
-                <div className="doc-sheet doc-sheet-3">
-                  <div style={{ padding: '30px 24px' }}>
-                    <div style={{ width: '70px', height: '4px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.15)' }}></div>
-                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.15)' }}></div>
-                      <div style={{ width: '60%', height: '3px', background: 'rgba(23,50,77,0.15)' }}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+              
+              {/* SECONDARY BACKGROUND LAYER SHEET */}
               <div className="doc-wrapper-float-2">
                 <div className="doc-sheet doc-sheet-2">
-                  <div style={{ padding: '24px 20px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-                      <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'var(--color-primary)', opacity: 0.2 }}></div>
-                      <div style={{ width: '80px', height: '4px', background: 'var(--color-primary)', opacity: 0.3 }}></div>
+                  <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
+                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '150px', height: '38px', border: '1.5px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '8px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.25, letterSpacing: '0.04em' }}>
+                        ДОГОВОР СОПРОВОЖДЕНИЯ<br/>
+                        ЮРИДИЧЕСКИХ ЛИЦ И ИП
+                      </div>
                     </div>
-                    <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)', marginBottom: '4px' }}></div>
-                    <div style={{ width: '80%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+
+                    <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 16px auto' }}></div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                      <div style={{ width: '40%', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '8px', color: 'rgba(23,50,77,0.7)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Заказчик / Компания:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '8px', color: 'rgba(23,50,77,0.7)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Исполнитель / ЮК «Де-Юре»:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* FIRST BACKGROUND LAYER SHEET */}
+              <div className="doc-wrapper-float-1">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
+                      <img src="/-/images/logo_dark.png" alt="Де-Юре" style={{ width: '70px', height: 'auto', opacity: 0.95 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', alignItems: 'flex-end' }}>
+                        <span style={{ fontSize: '9px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ПРАВОВАЯ ЗАЩИТА БИЗНЕСА</span>
+                        <span style={{ fontSize: '8px', color: 'var(--color-primary)', fontWeight: 600 }}>Арбитраж • Налоги • Договоры</span>
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '14px' }}>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.15)' }}></div>
+                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '85%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '11px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', letterSpacing: '0.02em' }}>ООО ЮК «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '9px', color: 'rgba(23,50,77,0.75)', fontFamily: 'var(--font-sans)', fontWeight: 500 }}>Сопровождение бизнеса • Липецк</div>
+                      </div>
+                      <div style={{ position: 'relative', width: '56px', height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ 
+                          width: '52px', 
+                          height: '52px', 
+                          borderRadius: '50%', 
+                          border: '2px stroke #10273B', 
+                          outline: '1px dashed #10273B',
+                          outlineOffset: '-4px',
+                          display: 'flex', 
+                          flexDirection: 'column',
+                          alignItems: 'center', 
+                          justifyContent: 'center',
+                          color: '#10273B',
+                          transform: 'rotate(-12deg)',
+                          opacity: 0.88,
+                          background: 'rgba(16, 39, 59, 0.03)',
+                          flexShrink: 0,
+                          boxSizing: 'border-box'
+                        }}>
+                          <div style={{ fontSize: '6.5px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.02em', textAlign: 'center', lineHeight: 1 }}>ДЕ-ЮРЕ</div>
+                          <div style={{ fontSize: '5px', fontWeight: 700, margin: '1px 0' }}>ЛИПЕЦК</div>
+                          <div style={{ fontSize: '4.5px', textTransform: 'uppercase', letterSpacing: '0.01em' }}>БИЗНЕС-ПРАВО</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -417,7 +465,7 @@ export default function BiznesuClient() {
             </p>
           </div>
 
-          {/* Фильтр-табы по 3 группам из ТЗ */}
+          {/* Фильтр-табы (как в GrazhdanamClient) */}
           <div className="grazhdanam-tab-list" style={{ display: 'flex', gap: '10px', marginBottom: '36px', flexWrap: 'wrap' }} role="tablist">
             <button 
               onClick={() => setActiveTab('all')}
@@ -449,86 +497,368 @@ export default function BiznesuClient() {
             </button>
           </div>
 
-          {/* Сетка 13 карточек (Информационные карточки без ссылки согласно ТЗ v1) */}
-          <div className="grid grid-3" style={{ gap: '24px' }}>
-            {filteredDirections.map((dir) => (
-              <div 
-                key={dir.id}
-                className="card card-service" 
-                style={{ 
-                  padding: '32px 28px', 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'space-between',
-                  background: '#FFFFFF',
-                  border: '1px solid rgba(16, 39, 59, 0.08)',
-                  boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
-                  cursor: 'default'
-                }}
-              >
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
-                    <span style={{ color: 'var(--color-gold)', fontSize: '14px' }}>◆</span>
-                    <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-gold-text, #80633F)' }}>
-                      {dir.groupName}
-                    </span>
-                  </div>
-                  
-                  <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', margin: '0 0 12px 0', lineHeight: 1.35, fontWeight: 700 }}>
-                    {dir.title}
-                  </h3>
+          <style dangerouslySetInnerHTML={{ __html: `
+            .tab-btn-active {
+              background-color: #10273B !important;
+              color: #FFFFFF !important;
+              border: 1px solid #10273B !important;
+            }
+            .tab-btn-inactive {
+              background-color: #FFFFFF !important;
+              color: #10273B !important;
+              border: 1px solid #D7E0E6 !important;
+            }
+            .tab-btn-inactive:hover {
+              background-color: #F7F4ED !important;
+              color: #10273B !important;
+              border-color: #10273B !important;
+            }
+          `}} />
 
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-                    {dir.desc}
-                  </p>
+          {/* Сетка шаблонных карточек service-card (Точно в дизайне хаба GrazhdanamClient) */}
+          <div className="grid grid-3" style={{ gap: '24px' }}>
+            {filteredDirections.map((card) => {
+              if (card.link) {
+                return (
+                  <a
+                    key={card.id}
+                    href={card.link}
+                    style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
+                  >
+                    <div 
+                      className="card service-card" 
+                      style={{ 
+                        height: '100%', 
+                        minHeight: '210px',
+                        padding: '28px', 
+                        background: 'var(--color-white)', 
+                        border: '1px solid var(--color-border)',
+                        borderRadius: '0',
+                        display: 'flex', 
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        position: 'relative',
+                        borderTop: '3px solid var(--color-primary)',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <div>
+                        <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                          {card.title}
+                        </h3>
+                        <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                          {card.desc}
+                        </p>
+                      </div>
+                      <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', transition: 'all 0.3s' }}>
+                        <span>Подробнее</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </div>
+                    </div>
+                  </a>
+                );
+              }
+
+              return (
+                <a
+                  key={card.id}
+                  href="#form"
+                  style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
+                >
+                  <div 
+                    className="card service-card" 
+                    style={{ 
+                      height: '100%', 
+                      minHeight: '210px',
+                      padding: '28px', 
+                      background: 'var(--color-white)', 
+                      border: '1px solid var(--color-border)',
+                      borderRadius: '0',
+                      display: 'flex', 
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      position: 'relative',
+                      borderTop: '3px solid var(--color-primary)',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <div>
+                      <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                        {card.title}
+                      </h3>
+                      <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                        {card.desc}
+                      </p>
+                    </div>
+                    <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', transition: 'all 0.3s' }}>
+                      <span>Описать ситуацию</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+
+            {/* Завершающая темная карточка CTA — с бейджем Индивидуальный вопрос и кнопкой white-btn-custom */}
+            <div 
+              className="card service-card" 
+              style={{ 
+                height: '100%', 
+                minHeight: '210px',
+                padding: '28px', 
+                background: 'var(--color-deep-blue)', 
+                border: '1px solid transparent',
+                borderRadius: '0',
+                display: 'flex', 
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                transition: 'all 0.3s',
+                position: 'relative',
+                borderTop: '3px solid var(--color-gold)'
+              }}
+            >
+              <div>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
+                  Индивидуальный вопрос
                 </div>
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: '#FFFFFF', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                  Не нашли подходящее направление?
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.55 }}>
+                  Юридическая задача бизнеса может затрагивать сразу несколько областей. Кратко опишите ситуацию — мы уточним обстоятельства и определим, кто из специалистов должен подключиться.
+                </p>
               </div>
-            ))}
+              <div style={{ marginTop: 'auto', paddingTop: '12px' }}>
+                <a 
+                  href="#form" 
+                  className="btn white-btn-custom" 
+                  style={{ 
+                    padding: '12px 24px', 
+                    fontSize: '14px', 
+                    fontWeight: 600,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    width: '100%',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Оставить заявку
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ 3. БЛОК СРОЧНЫХ СИТУАЦИЙ (Из ТЗ п. 4) ═══ */}
-      <section className="section bg-white" style={{ padding: '64px 0', borderTop: '1px solid rgba(16, 39, 59, 0.08)', borderBottom: '1px solid rgba(16, 39, 59, 0.08)' }}>
+      {/* ═══ 3. Когда юридическая помощь нужна срочно (В точном дизайне /grazhdanam/voennyj-yurist/) ═══ */}
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
-          <div style={{ maxWidth: '850px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-gold)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 700, color: 'var(--color-gold-text, #80633F)' }}>Срочная помощь</span>
-            </div>
-            
-            <h2 style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0 }}>
-              Когда юридическая помощь нужна без промедления
-            </h2>
+          <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
+            <span style={{ display: 'inline-block' }}>Когда юридическая помощь</span> <br /><span style={{ display: 'inline-block' }}>нужна без промедления</span>
+          </h2>
+          <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '660px', lineHeight: 1.6 }}>
+            <span style={{ display: 'inline-block' }}>Срок на&nbsp;ответ, обжалование или&nbsp;процессуальное действие может быть ограничен.</span> <br />
+            <span style={{ display: 'inline-block' }}>Сообщите, какой документ или&nbsp;требование вы&nbsp;получили и&nbsp;какая дата в&nbsp;нём указана.</span>
+          </p>
 
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, marginBottom: '28px', lineHeight: 1.6 }}>
-              Срок на ответ, обжалование или процессуальное действие может быть ограничен. Сообщите, какой документ или требование вы получили и какая дата в нём указана.
-            </p>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '32px' }}>
-              {[
-                'Компания получила иск, судебное определение, претензию или исполнительный документ.',
-                'ФНС, МВД, ГИТ, банк или другой орган запросил документы либо начал проверку.',
-                'Банк отказал в операции, ограничил дистанционное обслуживание или заблокировал счёт по 115-ФЗ.',
-                'В офисе проходит обыск, руководителя или сотрудника вызывают на допрос.',
-                'Обнаружена попытка смены директора, участников или контроля над компанией.'
-              ].map((scenario, index) => (
-                <div key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', background: 'var(--gradient-cream)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 800, fontSize: '16px', lineHeight: 1 }}>0{index + 1}</span>
-                  <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 600, lineHeight: 1.45 }}>{scenario}</span>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
+            {/* Карточка 1 */}
+            <div 
+              className="urgent-card"
+              style={{ 
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                padding: '32px 28px', 
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Судебный иск или <br />исполнительный документ
                 </div>
-              ))}
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                Компания получила иск, судебное определение, претензию или исполнительный документ с ограниченным сроком на ответ.
+              </p>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              <a href="#form" className="btn btn-primary" style={{ padding: '14px 28px', fontSize: '16px' }}>
-                Обсудить срочную ситуацию
-              </a>
-              <a href="tel:+74742286838" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-primary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                Или позвоните: +7 (4742) 28-68-38
-              </a>
+            {/* Карточка 2 */}
+            <div 
+              className="urgent-card"
+              style={{ 
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                padding: '32px 28px', 
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Проверки <br />контролирующих органов
+                </div>
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                ФНС, МВД, ГИТ, банк или иной орган запросил документы либо начал выездную или камеральную проверку.
+              </p>
             </div>
+
+            {/* Карточка 3 */}
+            <div 
+              className="urgent-card"
+              style={{ 
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                padding: '32px 28px', 
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Блокировка счёта <br />по 115-ФЗ
+                </div>
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                Банк отказал в проведении операции, ограничил дистанционное обслуживание или заблокировал расчётный счёт компании.
+              </p>
+            </div>
+
+            {/* Карточка 4 */}
+            <div 
+              className="urgent-card"
+              style={{ 
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                padding: '32px 28px', 
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Обыски и <br />вызовы на допрос
+                </div>
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                В офисе проходит обыск или осмотр, либо руководителя и сотрудников компании вызывают на допрос в правоохранительные органы.
+              </p>
+            </div>
+
+            {/* Карточка 5 */}
+            <div 
+              className="urgent-card"
+              style={{ 
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                padding: '32px 28px', 
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Попытка захвата <br />контроля над компанией
+                </div>
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                Обнаружена попытка незаконной смены генерального директора, участников ООО или иных действий по перехвату контроля.
+              </p>
+            </div>
+          </div>
+
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 16px 36px rgba(0,0,0,0.22) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              transition: all 0.3s ease !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.3s ease !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <a href="tel:+74742286838" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
+              +7 (4742) 28-68-38
+            </a>
+            <a href="tel:+74742286838" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Обсудить срочную ситуацию
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
+              Перезвоним вам в течение 15 минут в рабочее время
+            </span>
           </div>
         </div>
       </section>
@@ -560,7 +890,12 @@ export default function BiznesuClient() {
       {/* ═══ 5. СПЕЦИАЛИСТЫ ПО РАБОТЕ С БИЗНЕСОМ (Точный состав из ТЗ п. 6: Бобкин, Смолянинова, Начешников) ═══ */}
       <TeamCarousel 
         customTitle="Специалисты по работе с бизнесом"
-        customSubtitle="Профильные юристы ЮК «Де-Юре» по сопровождению компаний, арбитражным спорам, налоговому и корпоративному праву."
+        customSubtitle={
+          <>
+            <span style={{ display: 'inline-block' }}>Профильные юристы ЮК «Де-Юре» по&nbsp;сопровождению компаний,</span> <br />
+            <span style={{ display: 'inline-block' }}>арбитражным спорам, налоговому и&nbsp;корпоративному праву.</span>
+          </>
+        }
         filterSlugs={[
           'bobkin-arkadiy-evgenevich',
           'smolyaninova-marina-valerevna',
@@ -578,7 +913,12 @@ export default function BiznesuClient() {
 
       {/* ═══ 7. FAQ (7 вопросов из ТЗ п. 8) ═══ */}
       <FAQBlock 
-        title="Ответы на частые вопросы"
+        title={
+          <>
+            <span style={{ display: 'inline-block' }}>Ответы на</span> <br />
+            <span style={{ display: 'inline-block' }}>частые вопросы</span>
+          </>
+        }
         faqs={faqs}
       />
 

@@ -243,7 +243,7 @@ export default function SporySVoenkomatomPage() {
           </>
         }
         superTitle="Военное право • жалобы и судебная защита"
-        title={<><span style={{ display: 'inline-block' }}>Оспаривание решений</span> <br /><span style={{ display: 'inline-block' }}>и действий военкомата</span> <br /><span style={{ display: 'inline-block' }}>в Липецке</span></>}
+        title={<><span style={{ display: 'block' }}>Оспаривание</span><span style={{ display: 'block' }}>решений и действий</span><span style={{ display: 'block' }}>военкомата в Липецке</span></>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
             <span style={{ display: 'inline-block' }}>Проверим решение и документы,</span> <br />

@@ -145,15 +145,15 @@ export default function GrazhdanamClient() {
               pointerEvents: 'none'
             }} />
             
-            {/* Background Vector Graphic: Courthouse (Shifted right to protrude nicely beyond creative) */}
-            <svg style={{ 
+            {/* Background Vector Graphic: Courthouse (Protrudes nicely beyond creative right edge) */}
+            <svg className="hero-vector-svg" style={{ 
               position: 'absolute', 
-              top: '35%', 
-              left: '115%', 
+              top: '38%', 
+              left: '98%', 
               transform: 'translate(-50%, -50%)', 
-              width: '620px', 
-              height: '620px', 
-              opacity: 0.14, 
+              width: '580px', 
+              height: '580px', 
+              opacity: 0.10, 
               zIndex: 0, 
               pointerEvents: 'none' 
             }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
@@ -361,7 +361,6 @@ export default function GrazhdanamClient() {
                         display: 'flex', 
                         flexDirection: 'column',
                         justifyContent: 'space-between',
-                        transition: 'all 0.3s',
                         position: 'relative',
                         borderTop: '3px solid var(--color-primary)',
                         cursor: 'pointer'
@@ -375,9 +374,9 @@ export default function GrazhdanamClient() {
                           {card.desc}
                         </p>
                       </div>
-                      <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
+                      <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', transition: 'all 0.3s' }}>
                         <span>Подробнее</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
                           <line x1="5" y1="12" x2="19" y2="12"></line>
                           <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
@@ -405,7 +404,6 @@ export default function GrazhdanamClient() {
                       display: 'flex', 
                       flexDirection: 'column',
                       justifyContent: 'space-between',
-                      transition: 'all 0.3s',
                       position: 'relative',
                       borderTop: '3px solid var(--color-primary)',
                       cursor: 'pointer'
@@ -419,9 +417,9 @@ export default function GrazhdanamClient() {
                         {card.desc}
                       </p>
                     </div>
-                    <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
+                    <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', transition: 'all 0.3s' }}>
                       <span>Описать ситуацию</span>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                       </svg>

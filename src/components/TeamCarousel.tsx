@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 interface TeamCarouselProps {
   customTitle?: string;
-  customSubtitle?: string;
+  customSubtitle?: React.ReactNode;
   filterSlugs?: string[];
 }
 
@@ -114,34 +114,51 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
         </div>
         
         <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-          <button 
-            onClick={() => scroll('left')} 
-            className="carousel-arrow" 
-            style={{ 
-              position: 'absolute', 
-              left: '-25px', 
-              zIndex: 10, 
-              width: '50px',
-              height: '50px',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: '#FFFFFF', 
-              boxShadow: '0 4px 12px rgba(23, 50, 77, 0.15)',
-              border: '1px solid var(--color-border)',
-              color: 'var(--color-primary)',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            aria-label="Предыдущие"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
+          {displayedTeam.length > 3 && (
+            <>
+              <button 
+                onClick={() => scroll('left')} 
+                className="carousel-arrow" 
+                style={{ 
+                  position: 'absolute', 
+                  left: '-25px', 
+                  zIndex: 10, 
+                  width: '50px',
+                  height: '50px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: '#FFFFFF', 
+                  boxShadow: '0 4px 12px rgba(23, 50, 77, 0.15)',
+                  border: '1px solid var(--color-border)',
+                  color: 'var(--color-primary)',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+                aria-label="Предыдущие"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+            </>
+          )}
           
-          <div className="carousel-container" ref={scrollRef} style={{ display: 'flex', alignItems: 'stretch', gap: '24px', overflowX: 'auto', scrollBehavior: 'smooth', paddingBottom: '16px' }}>
+          <div 
+            className="carousel-container" 
+            ref={scrollRef} 
+            style={{ 
+              display: 'flex', 
+              alignItems: 'stretch', 
+              justifyContent: displayedTeam.length <= 3 ? 'center' : 'flex-start',
+              gap: '24px', 
+              overflowX: 'auto', 
+              scrollBehavior: 'smooth', 
+              paddingBottom: '16px',
+              width: '100%'
+            }}
+          >
             {displayedTeam.map((person, index) => (
               <div key={index} className="card team-card carousel-item" style={{ 
                 padding: '24px', 
@@ -220,32 +237,34 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
             }
           ` }} />
 
-          <button 
-            onClick={() => scroll('right')} 
-            className="carousel-arrow" 
-            style={{ 
-              position: 'absolute', 
-              right: '-25px', 
-              zIndex: 10, 
-              width: '50px',
-              height: '50px',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: '#FFFFFF', 
-              boxShadow: '0 4px 12px rgba(23, 50, 77, 0.15)',
-              border: '1px solid var(--color-border)',
-              color: 'var(--color-primary)',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            aria-label="Следующие"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
+          {displayedTeam.length > 3 && (
+            <button 
+              onClick={() => scroll('right')} 
+              className="carousel-arrow" 
+              style={{ 
+                position: 'absolute', 
+                right: '-25px', 
+                zIndex: 10, 
+                width: '50px',
+                height: '50px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: '#FFFFFF', 
+                boxShadow: '0 4px 12px rgba(23, 50, 77, 0.15)',
+                border: '1px solid var(--color-border)',
+                color: 'var(--color-primary)',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              aria-label="Следующие"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          )}
         </div>
       </div>
     </section>

@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     openGraph: {
       title: member.slug === 'bobkin-arkadiy-evgenevich' ? 'Бобкин Аркадий Евгеньевич — управляющий партнёр ЮК «Де-Юре»' : member.seo.title,
-      description: member.slug === 'bobkin-arkadiy-evgenevich' ? 'Управляющий партнёр ЮК «Де-Юре». Сложные уголовно-правовые и налоговые ситуации, экономические, налоговые и коррупционные преступления.' : member.seo.description,
+      description: member.slug === 'bobkin-arkadiy-evgenevich' ? 'Управляющий партнёр ЮК «Де-Юре». Сложные уголовные дела, в том числе экономической и коррупционной направленности.' : member.seo.description,
       type: 'profile',
       url: `https://dejure-help.ru/specialisty/${member.slug}/`,
       images: [
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     twitter: {
       card: 'summary_large_image',
       title: member.slug === 'bobkin-arkadiy-evgenevich' ? 'Бобкин Аркадий Евгеньевич — управляющий партнёр ЮК «Де-Юре»' : member.seo.title,
-      description: member.slug === 'bobkin-arkadiy-evgenevich' ? 'Сложные уголовно-правовые и налоговые ситуации. 22 года следственного опыта.' : member.seo.description,
+      description: member.slug === 'bobkin-arkadiy-evgenevich' ? 'Сложные уголовные дела, в том числе экономической и коррупционной направленности. 22 года следственного опыта.' : member.seo.description,
       images: [imageUrl]
     }
   };
@@ -489,20 +489,6 @@ export default async function SpecialistPage({ params }: PageProps) {
               <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0 }}>Примеры из практики</h2>
             </div>
             
-            {member.slug !== 'nacheshnikov-vladimir-viktorovich' && member.slug !== 'smolyaninova-marina-valerevna' && (
-              <div style={{ 
-                background: 'rgba(23, 50, 77, 0.03)', 
-                padding: '16px 24px', 
-                color: 'var(--color-text-secondary)',
-                fontSize: '14px',
-                marginBottom: '30px',
-                borderLeft: '4px solid var(--color-primary)',
-                fontStyle: 'italic'
-              }}>
-                Внимание: Ниже представлены демонстрационные макеты кейсов (заглушки) {member.slug === 'bobkin-arkadiy-evgenevich' ? 'до утверждения фактуры Аркадием Евгеньевичем Бобкиным.' : 'до утверждения фактуры адвокатом.'}
-              </div>
-            )}
-
             <div className="grid grid-3" style={{ gap: '30px' }}>
               {member.cases.slice(0, 3).map((c, i) => (
                 <div key={i} className="card" style={{ padding: '40px', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', boxShadow: '0 25px 50px -12px rgba(23, 50, 77, 0.25), 0 8px 24px rgba(23, 50, 77, 0.08)' }} data-analytics="case-click">
