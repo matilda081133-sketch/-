@@ -40,7 +40,7 @@ export default function TeamCarousel() {
       desc: 'Специализация: военное право, защита по уголовным делам. Юридический стаж с 2016 года. Опыт работы в Следственном комитете РФ. Статус адвоката с 2022 года.',
       img: '/-/images/konopkin.jpg',
       link: '/-/team/konopkin-dmitriy-sergeevich/',
-      imgPosition: 'center 12%'
+      imgPosition: 'center 18%'
     },
     {
       name: (
@@ -54,7 +54,7 @@ export default function TeamCarousel() {
       desc: 'Специализация: гражданские и семейные споры, недвижимость, взыскание задолженности. Опыт работы в УФССП России более 10 лет, из них 6 лет на руководящих должностях.',
       img: '/-/images/smolyaninova.jpg',
       link: '/-/team/smolyaninova-marina-valerevna/',
-      imgPosition: 'center 15%'
+      imgPosition: 'center 20%'
     },
     {
       name: (

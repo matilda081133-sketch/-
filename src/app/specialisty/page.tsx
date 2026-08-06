@@ -291,7 +291,7 @@ export default function SpecialistyPage() {
                           width: '100%', 
                           height: '100%', 
                           objectFit: 'cover', 
-                          objectPosition: sp.slug === 'gusev-oleg-yurevich' ? 'center 15%' : sp.slug === 'konopkin-dmitriy-sergeevich' ? 'center 12%' : sp.slug === 'smolyaninova-marina-valerevna' ? 'center 15%' : sp.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 12%' : 'center 15%',
+                          objectPosition: sp.slug === 'gusev-oleg-yurevich' ? 'center 15%' : sp.slug === 'konopkin-dmitriy-sergeevich' ? 'center 18%' : sp.slug === 'smolyaninova-marina-valerevna' ? 'center 20%' : sp.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 12%' : 'center 15%',
                           display: 'block' 
                         }}
                       />
