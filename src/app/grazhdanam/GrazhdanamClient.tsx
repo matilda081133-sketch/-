@@ -120,8 +120,8 @@ export default function GrazhdanamClient() {
         primaryCtaSubtext={
           <>
             Или позвоните:{' '}
-            <a href="tel:+74742286838" style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 600 }} data-analytics="click_citizens_phone" data-placement="hero">
-              +7 (4742) 28-68-38
+            <a href="tel:+79103503111" style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 600 }} data-analytics="click_citizens_phone" data-placement="hero">
+              +7 (910) 350-31-11
             </a>
           </>
         }
@@ -479,8 +479,16 @@ export default function GrazhdanamClient() {
         </div>
       </section>
 
-      {/* ═══ 3. СПЕЦИАЛИСТЫ (TeamCarousel - Шаблонный компонент команды) ═══ */}
       <TeamCarousel />
+
+      {/* ═══ 3b. ДИСКЛЕЙМЕР ═══ */}
+      <div style={{ background: 'var(--gradient-cream)', borderTop: '1px solid rgba(16,39,59,0.07)' }}>
+        <div className="container" style={{ padding: '16px 0' }}>
+          <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.6, opacity: 0.85 }}>
+            ЮК «Де-Юре» и Коллегия адвокатов «Де-Юре» являются самостоятельными организациями. Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
+          </p>
+        </div>
+      </div>
 
       {/* ═══ 4. ПРАКТИКА (CasesBlock - Шаблонный компонент) ═══ */}
       <CasesBlock
@@ -525,9 +533,9 @@ export default function GrazhdanamClient() {
               </p>
 
               <div style={{ marginBottom: '28px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <a href="tel:+74742286838" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
+                <a href="tel:+79103503111" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  +7 (4742) 28-68-38
+                  +7 (910) 350-31-11
                 </a>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-text-secondary)' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>

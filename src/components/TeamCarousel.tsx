@@ -71,25 +71,12 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
       ),
       rawName: 'Гусев Олег Юрьевич',
       role: 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
-      desc: 'Специализация: земельные споры, недвижимость, оформление прав на землю, градостроительное право. Опыт судебной работы по земельным и имущественным спорам.',
+      desc: 'Специализация: адвокат по уголовным делам. Опыт работы в прокуратуре 7 лет, в том числе заместителем прокурора района. Адвокатская практика с 2015 года.',
       img: '/-/images/gusev.jpg',
       link: '/specialisty/gusev-oleg-yurevich/',
       imgPosition: 'center 15%'
     },
-    {
-      name: (
-        <>
-          <span style={{ display: 'block' }}>Начешников</span>
-          <span style={{ display: 'block' }}>Владимир Викторович</span>
-        </>
-      ),
-      rawName: 'Начешников Владимир Викторович',
-      role: 'Специалист по корпоративным процедурам и сопровождению бизнеса',
-      desc: 'Специализация: корпоративные процедуры, налоговое законодательство и комплексное сопровождение процедур банкротства физических и юридических лиц.',
-      img: '/-/images/nacheshnikov.jpg',
-      link: '/specialisty/nacheshnikov-vladimir-viktorovich/',
-      imgPosition: 'center 12%'
-    },
+
     {
       name: (
         <>
@@ -116,7 +103,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
         <div style={{ marginBottom: '40px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
             <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-            <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>Команда компании</span>
+            <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>Юристы и адвокаты</span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '20px', flexWrap: 'wrap', marginBottom: '16px' }}>
             <h2 style={{ margin: 0, fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>{customTitle || 'Наши специалисты'}</h2>
