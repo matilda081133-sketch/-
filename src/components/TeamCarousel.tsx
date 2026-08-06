@@ -89,6 +89,20 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
       img: '/-/images/nacheshnikov.jpg',
       link: '/specialisty/nacheshnikov-vladimir-viktorovich/',
       imgPosition: 'center 12%'
+    },
+    {
+      name: (
+        <>
+          <span style={{ display: 'block' }}>Полозова</span>
+          <span style={{ display: 'block' }}>Елена Анатольевна</span>
+        </>
+      ),
+      rawName: 'Полозова Елена Анатольевна',
+      role: 'Юрист ЮК «Де-Юре»',
+      desc: 'Специализация: военное и трудовое право. Консультации, досудебная работа, подготовка юридических документов и помощь при обжаловании.',
+      img: '/-/images/polozova.jpg',
+      link: '/specialisty/polozova-elena-anatolevna/',
+      imgPosition: 'center 20%'
     }
   ];
 

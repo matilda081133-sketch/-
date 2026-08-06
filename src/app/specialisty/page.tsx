@@ -29,7 +29,8 @@ const specialistListRoles: Record<string, string> = {
   'konopkin-dmitriy-sergeevich': 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
   'smolyaninova-marina-valerevna': 'Ведущий юрист ЮК «Де-Юре»',
   'gusev-oleg-yurevich': 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
-  'nacheshnikov-vladimir-viktorovich': 'Специалист ЮК «Де-Юре»'
+  'nacheshnikov-vladimir-viktorovich': 'Специалист ЮК «Де-Юре»',
+  'polozova-elena-anatolevna': 'Юрист ЮК «Де-Юре»'
 };
 
 const specialistListDescriptions: Record<string, string> = {
@@ -37,7 +38,8 @@ const specialistListDescriptions: Record<string, string> = {
   'konopkin-dmitriy-sergeevich': 'С 2016 по 2022 год работал в Следственном комитете РФ,\nрасследовал коррупционные и экономические преступления.\nС 2022 года осуществляет адвокатскую деятельность.\nПредставляет интересы доверителей по военным и уголовным делам.',
   'smolyaninova-marina-valerevna': 'Более 13 лет работала в службе судебных приставов,\nв том числе на руководящих должностях. Более пяти лет\nпредставляет интересы граждан по семейным и трудовым\nспорам, а также вопросам исполнительного производства.',
   'gusev-oleg-yurevich': 'Более 15 лет работал в органах прокуратуры Липецкой области,\nв том числе заместителем прокурора района. С 2015 года\nосуществляет адвокатскую деятельность. Защищает доверителей по уголовным делам общеуголовной и экономической направленности.',
-  'nacheshnikov-vladimir-viktorovich': 'С 1997 года сопровождает корпоративные процедуры и проекты по изменению структуры бизнеса. Работал в различных регионах России и Республике Беларусь. Консультирует, готовит документы и координирует досудебные этапы корпоративных процедур.'
+  'nacheshnikov-vladimir-viktorovich': 'С 1997 года сопровождает корпоративные процедуры и проекты по изменению структуры бизнеса. Работал в различных регионах России и Республике Беларусь. Консультирует, готовит документы и координирует досудебные этапы корпоративных процедур.',
+  'polozova-elena-anatolevna': 'Специалист по гражданским делам. Оказывает юридическую помощь по вопросам военного и трудового права — от консультации и подготовки документов до досудебной работы и обжалования.'
 };
 
 const specialistAreas: Record<string, { name: string; href?: string }[]> = {
@@ -62,6 +64,10 @@ const specialistAreas: Record<string, { name: string; href?: string }[]> = {
     { name: 'Корпоративные процедуры и сопровождение бизнеса', href: '/biznesu/yuridicheskoe-soprovozhdenie-biznesa/' },
     { name: 'Создание, реорганизация и ликвидация компаний', href: '/biznesu/korporativnyj-yurist/' },
     { name: 'Корпоративное управление и сделки с долями', href: '/biznesu/korporativnyj-yurist/' }
+  ],
+  'polozova-elena-anatolevna': [
+    { name: 'Военное право', href: '/grazhdanam/voennyj-yurist/' },
+    { name: 'Трудовое право' }
   ]
 };
 
@@ -70,7 +76,8 @@ const specialistAlts: Record<string, string> = {
   'konopkin-dmitriy-sergeevich': 'Дмитрий Сергеевич Конопкин — адвокат, председатель Коллегии адвокатов «Де-Юре»',
   'smolyaninova-marina-valerevna': 'Марина Валерьевна Смольянинова — ведущий юрист ЮК Де-Юре',
   'gusev-oleg-yurevich': 'Олег Юрьевич Гусев — адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
-  'nacheshnikov-vladimir-viktorovich': 'Владимир Викторович Начешников — специалист ЮК Де-Юре'
+  'nacheshnikov-vladimir-viktorovich': 'Владимир Викторович Начешников — специалист ЮК Де-Юре',
+  'polozova-elena-anatolevna': 'Елена Анатольевна Полозова — юрист ЮК Де-Юре'
 };
 
 export default function SpecialistyPage() {
@@ -338,6 +345,11 @@ export default function SpecialistyPage() {
                               <>
                                 <span style={{ display: 'block' }}>Бобкин</span>
                                 <span style={{ display: 'block' }}>Аркадий Евгеньевич</span>
+                              </>
+                            ) : sp.slug === 'polozova-elena-anatolevna' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Полозова</span>
+                                <span style={{ display: 'block' }}>Елена Анатольевна</span>
                               </>
                             ) : sp.slug === 'gusev-oleg-yurevich' ? (
                               <>

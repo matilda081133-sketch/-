@@ -71,7 +71,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     notFound();
   }
 
-  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : 'logo_dark.png'}`;
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'polozova-elena-anatolevna' ? 'polozova.jpg' : 'logo_dark.png'}`;
 
   // Generate JSON-LD Person
   const jsonLdPerson = member.slug === 'bobkin-arkadiy-evgenevich' ? {
@@ -133,6 +133,23 @@ export default async function SpecialistPage({ params }: PageProps) {
       '@type': 'LegalService',
       name: 'ООО ЮК «Де-Юре»',
       url: 'https://dejure-help.ru/'
+    }
+  } : member.slug === 'polozova-elena-anatolevna' ? {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': 'https://dejure-help.ru/specialisty/polozova-elena-anatolevna/#person',
+    name: 'Полозова Елена Анатольевна',
+    jobTitle: 'Юрист ЮК «Де-Юре»',
+    url: 'https://dejure-help.ru/specialisty/polozova-elena-anatolevna/',
+    image: 'https://dejure-help.ru/images/polozova.jpg',
+    worksFor: {
+      '@type': 'LegalService',
+      '@id': 'https://dejure-help.ru/#legalservice',
+      name: 'ООО ЮК «Де-Юре»'
+    },
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: 'Российская академия народного хозяйства и государственной службы при Президенте Российской Федерации'
     }
   } : {
     '@context': 'https://schema.org',
@@ -219,6 +236,11 @@ export default async function SpecialistPage({ params }: PageProps) {
                   <>
                     <span style={{ display: 'block' }}>Гусев</span>
                     <span style={{ display: 'block' }}>Олег Юрьевич</span>
+                  </>
+                ) : member.slug === 'polozova-elena-anatolevna' ? (
+                  <>
+                    <span style={{ display: 'block' }}>Полозова</span>
+                    <span style={{ display: 'block' }}>Елена Анатольевна</span>
                   </>
                 ) : member.slug === 'nacheshnikov-vladimir-viktorovich' ? (
                   <>
