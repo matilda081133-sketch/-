@@ -132,7 +132,35 @@ export default function GrazhdanamClient() {
         ]}
         rightContent={
           <div className="hero-right-col" style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
-            <div className="mockup-container" style={{ position: 'relative', width: '100%', maxWidth: '440px', height: '420px' }}>
+            {/* Darkening gradient glow under the creative */}
+            <div style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '150%',
+              height: '150%',
+              background: 'radial-gradient(circle, rgba(23, 50, 77, 0.12) 0%, rgba(23, 50, 77, 0.05) 30%, transparent 60%)',
+              zIndex: 0,
+              pointerEvents: 'none'
+            }} />
+            
+            {/* Background Vector Graphic: Courthouse (Z-index 0 behind mockup) */}
+            <svg style={{ 
+              position: 'absolute', 
+              top: '45%', 
+              left: '50%', 
+              transform: 'translate(-50%, -50%)', 
+              width: '580px', 
+              height: '580px', 
+              opacity: 0.09, 
+              zIndex: 0, 
+              pointerEvents: 'none' 
+            }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
+              <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
+            </svg>
+
+            <div className="mockup-container" style={{ position: 'relative', width: '100%', maxWidth: '440px', height: '420px', zIndex: 1 }}>
               <div className="doc-wrapper-float-4">
                 <div className="doc-sheet doc-sheet-4">
                   <div style={{ padding: '30px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
