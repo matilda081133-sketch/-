@@ -8,6 +8,7 @@ import FAQBlock from '@/components/FAQBlock';
 import MilitaryHero from '@/components/MilitaryHero';
 import TeamCarousel from '@/components/TeamCarousel';
 import CasesBlock from '@/components/CasesBlock';
+import CtaCard from '@/components/CtaCard';
 
 export default function GrazhdanamClient() {
   const group1Cards = [
@@ -89,37 +90,6 @@ export default function GrazhdanamClient() {
     }
   ];
 
-  const specialists = [
-    {
-      name: 'Бобкин Аркадий Евгеньевич',
-      status: 'Директор, управляющий партнёр ЮК «Де-Юре»',
-      directions: 'Уголовное право, налоговые и сложные имущественные споры',
-      link: '/-/team/bobkin-arkadiy-evgenevich/',
-      image: '/-/images/bobkin.jpg'
-    },
-    {
-      name: 'Конопкин Дмитрий Сергеевич',
-      status: 'Адвокат, партнёр ЮК «Де-Юре»',
-      directions: 'Военное право, защита по уголовным делам, споры с госорганами',
-      link: '/-/team/konopkin-dmitriy-sergeevich/',
-      image: '/-/images/konopkin.jpg'
-    },
-    {
-      name: 'Смольянинова Марина Валерьевна',
-      status: 'Старший юрист ЮК «Де-Юре»',
-      directions: 'Гражданские и семейные споры, недвижимость, взыскание задолженности',
-      link: '/-/team/smolyaninova-marina-valerevna/',
-      image: '/-/images/smolyaninova.jpg'
-    },
-    {
-      name: 'Гусев Олег Юрьевич',
-      status: 'Ведущий юрист ЮК «Де-Юре»',
-      directions: 'Земельные споры, недвижимость, оформление прав на землю',
-      link: '/-/team/gusev-oleg-yurevich/',
-      image: '/-/images/gusev.jpg'
-    }
-  ];
-
   const cases = [
     {
       title: 'Признали право на наследство после пропуска срока',
@@ -178,36 +148,43 @@ export default function GrazhdanamClient() {
         <a
           key={idx}
           href={card.link}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            background: '#FFFFFF',
-            padding: '28px 24px',
-            border: '1px solid rgba(16, 39, 59, 0.12)',
-            borderTop: '4px solid var(--color-gold, #9B7E55)',
-            textDecoration: 'none',
-            color: 'inherit',
-            transition: 'all 0.3s ease',
-            boxShadow: '0 4px 16px rgba(16, 39, 59, 0.05)',
-            cursor: 'pointer'
-          }}
-          className="citizens-direction-card clickable"
+          style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
+          data-analytics="click_citizens_direction"
+          data-direction-id={card.title}
+          data-target-url={card.link}
         >
-          <div>
-            <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue, #10273B)', marginBottom: '12px', marginTop: 0, lineHeight: 1.3 }}>
-              {card.title}
-            </h3>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary, #55606E)', lineHeight: 1.55, margin: '0 0 20px 0' }}>
-              {card.desc}
-            </p>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary, #10273B)', fontWeight: 600, fontSize: '14px', marginTop: 'auto' }}>
-            <span>Подробнее</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+          <div
+            className="card service-card"
+            style={{
+              height: '100%',
+              padding: '30px',
+              background: 'var(--color-white)',
+              border: '1px solid var(--color-border)',
+              borderRadius: '0',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              transition: 'all 0.3s ease',
+              position: 'relative',
+              borderTop: '3px solid var(--color-primary)',
+              cursor: 'pointer'
+            }}
+          >
+            <div>
+              <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                {card.title}
+              </h3>
+              <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                {card.desc}
+              </p>
+            </div>
+            <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
+              <span>Подробнее</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
           </div>
         </a>
       );
@@ -216,21 +193,24 @@ export default function GrazhdanamClient() {
     return (
       <div
         key={idx}
+        className="card service-card info-only"
         style={{
+          height: '100%',
+          padding: '30px',
+          background: '#FAF7F2',
+          border: '1px solid var(--color-border)',
+          borderRadius: '0',
           display: 'flex',
           flexDirection: 'column',
-          background: '#FAF7F2',
-          padding: '28px 24px',
-          border: '1px solid rgba(16, 39, 59, 0.08)',
-          borderTop: '4px solid rgba(16, 39, 59, 0.15)',
+          position: 'relative',
+          borderTop: '3px solid rgba(23, 50, 77, 0.2)',
           cursor: 'default'
         }}
-        className="citizens-direction-card info-only"
       >
-        <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue, #10273B)', marginBottom: '12px', marginTop: 0, lineHeight: 1.3 }}>
+        <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
           {card.title}
         </h3>
-        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary, #55606E)', lineHeight: 1.55, margin: 0 }}>
+        <p style={{ margin: '0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
           {card.desc}
         </p>
       </div>
@@ -270,7 +250,7 @@ export default function GrazhdanamClient() {
         trustItems={[]}
       />
 
-      {/* ═══ 2. КАТАЛОГ ИЗ 14 НАПРАВЛЕНИЙ ═══ */}
+      {/* ═══ 2. КАТАЛОГ ИЗ 14 НАПРАВЛЕНИЙ (Шаблонные карточки service-card) ═══ */}
       <section className="section bg-white" id="catalog" style={{ padding: '80px 0' }}>
         <div className="container">
           <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, textAlign: 'left' }}>
@@ -284,7 +264,7 @@ export default function GrazhdanamClient() {
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-gold)' }}></span>
               Группа 1. Семья, жильё и имущество
             </h3>
-            <div className="citizens-grid-cards">
+            <div className="grid grid-3" style={{ gap: '24px' }}>
               {group1Cards.map(renderCard)}
             </div>
           </div>
@@ -295,7 +275,7 @@ export default function GrazhdanamClient() {
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-gold)' }}></span>
               Группа 2. Долги и обязательства
             </h3>
-            <div className="citizens-grid-cards">
+            <div className="grid grid-3" style={{ gap: '24px' }}>
               {group2Cards.map(renderCard)}
             </div>
           </div>
@@ -306,32 +286,23 @@ export default function GrazhdanamClient() {
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-gold)' }}></span>
               Группа 3. Защита прав в отдельных ситуациях
             </h3>
-            <div className="citizens-grid-cards">
+            <div className="grid grid-3" style={{ gap: '24px' }}>
               {group3Cards.map(renderCard)}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ 3. ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ОПРЕДЕЛИЛСЯ ═══ */}
-      <section style={{ background: 'var(--color-cream)', padding: '64px 0', borderTop: '1px solid rgba(16, 39, 59, 0.08)', borderBottom: '1px solid rgba(16, 39, 59, 0.08)' }}>
+      {/* ═══ 3. ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ОПРЕДЕЛИЛСЯ (CtaCard - Шаблонный компонент карточки CTA) ═══ */}
+      <section style={{ background: 'var(--color-cream)', padding: '50px 0', borderTop: '1px solid rgba(16, 39, 59, 0.08)', borderBottom: '1px solid rgba(16, 39, 59, 0.08)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px' }}>
-            <h2 style={{ fontSize: '30px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '14px', marginTop: 0 }}>
-              Не знаете, какое направление выбрать?
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-              Опишите ситуацию своими словами. Мы уточним обстоятельства и определим, какой специалист сможет помочь.
-            </p>
-            <a
-              href="#form"
-              className="btn btn-primary"
-              style={{ padding: '14px 32px', fontSize: '15px', color: '#FFFFFF', backgroundColor: '#10273B', border: '1px solid #9B7E55' }}
-              data-analytics="click_citizens_help_cta"
-            >
-              Описать ситуацию
-            </a>
-          </div>
+          <CtaCard
+            title="Не знаете, какое направление выбрать?"
+            subtitle="Опишите ситуацию своими словами. Мы уточним обстоятельства и определим, какой специалист сможет помочь."
+            buttonText="Описать ситуацию"
+            buttonLink="#form"
+            style={{ marginTop: 0 }}
+          />
         </div>
       </section>
 
@@ -390,56 +361,6 @@ export default function GrazhdanamClient() {
       </section>
 
       <Footer />
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        .citizens-grid-cards {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
-        }
-        @media (max-width: 991px) {
-          .citizens-grid-cards {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-        @media (max-width: 600px) {
-          .citizens-grid-cards {
-            grid-template-columns: 1fr;
-          }
-        }
-
-        .citizens-specialists-slider {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 24px;
-        }
-        @media (max-width: 991px) {
-          .citizens-specialists-slider {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-        @media (max-width: 576px) {
-          .citizens-specialists-slider {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 16px;
-            gap: 16px;
-          }
-          .citizens-spec-card {
-            flex: 0 0 85%;
-            scroll-snap-align: start;
-          }
-        }
-
-        .citizens-spec-card {
-          background: #FFFFFF;
-          border: 1px solid rgba(16, 39, 59, 0.08);
-          padding: 20px;
-          display: flex;
-          flex-direction: column;
-        }
-      `}} />
     </main>
   );
 }
