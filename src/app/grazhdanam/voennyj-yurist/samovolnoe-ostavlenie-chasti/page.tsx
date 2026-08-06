@@ -126,7 +126,7 @@ export default function SochPage() {
               `}} />
               <div>
                 <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Дмитрий Сергеевич Конопкин</div>
-                <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)' }}>Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»</div>
+                <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)' }}>Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»</div>
               </div>
             </div>
           </div>
@@ -285,7 +285,7 @@ export default function SochPage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position={<>Адвокат, партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
+        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Военное право»</>}
         imageUrl="/-/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

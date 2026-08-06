@@ -42,7 +42,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
         </>
       ),
       rawName: 'Конопкин Дмитрий Сергеевич',
-      role: 'Адвокат, партнёр ЮК «Де-Юре»',
+      role: 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
       desc: 'Специализация: военное право, защита по уголовным делам. Юридический стаж с 2016 года. Опыт работы в Следственном комитете РФ. Статус адвоката с 2022 года.',
       img: '/-/images/konopkin.jpg',
       link: '/specialisty/konopkin-dmitriy-sergeevich/',
@@ -56,7 +56,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
         </>
       ),
       rawName: 'Смольянинова Марина Валерьевна',
-      role: 'Старший юрист ЮК «Де-Юре»',
+      role: 'Ведущий юрист ЮК «Де-Юре»',
       desc: 'Специализация: гражданские и семейные споры, недвижимость, взыскание задолженности. Опыт работы в УФССП России более 10 лет, из них 6 лет на руководящих должностях.',
       img: '/-/images/smolyaninova.jpg',
       link: '/specialisty/smolyaninova-marina-valerevna/',
@@ -70,7 +70,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
         </>
       ),
       rawName: 'Гусев Олег Юрьевич',
-      role: 'Ведущий юрист ЮК «Де-Юре»',
+      role: 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
       desc: 'Специализация: земельные споры, недвижимость, оформление прав на землю, градостроительное право. Опыт судебной работы по земельным и имущественным спорам.',
       img: '/-/images/gusev.jpg',
       link: '/specialisty/gusev-oleg-yurevich/',

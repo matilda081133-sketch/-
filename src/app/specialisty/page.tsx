@@ -6,29 +6,29 @@ import ContactsForm from '@/components/ContactsForm';
 import { teamData } from '@/data/team';
 
 export const metadata: Metadata = {
-  title: 'Юристы и адвокаты в Липецке | ЮК «Де-Юре»',
-  description: 'Специалисты юридической компании «Де-Юре» в Липецке: юристы и адвокаты по гражданским, уголовным, военным и бизнес-спорам. Опыт, направления работы и персональные страницы.',
+  title: 'Специалисты «Де-Юре»',
+  description: 'Специалисты «Де-Юре» в Липецке: юристы ЮК «Де-Юре» и адвокаты Коллегии адвокатов «Де-Юре» по гражданским, уголовным, военным и бизнес-спорам. Опыт, направления работы и персональные страницы.',
   alternates: {
     canonical: 'https://dejure-help.ru/specialisty/',
   },
   openGraph: {
-    title: 'Юристы и адвокаты в Липецке | ЮК «Де-Юре»',
-    description: 'Специалисты юридической компании «Де-Юре» в Липецке: юристы и адвокаты по гражданским, уголовным, военным и бизнес-спорам.',
+    title: 'Специалисты «Де-Юре»',
+    description: 'Специалисты «Де-Юре» в Липецке: юристы ЮК «Де-Юре» и адвокаты Коллегии адвокатов «Де-Юре» по гражданским, уголовным, военным и бизнес-спорам.',
     url: 'https://dejure-help.ru/specialisty/',
     images: [{
       url: 'https://dejure-help.ru/images/og/specialisty.jpg',
       width: 1200,
       height: 630,
-      alt: 'Специалисты юридической компании «Де-Юре»'
+      alt: 'Специалисты «Де-Юре»'
     }],
   },
 };
 
 const specialistListRoles: Record<string, string> = {
   'bobkin-arkadiy-evgenevich': 'Директор, управляющий партнёр ЮК «Де-Юре»',
-  'konopkin-dmitriy-sergeevich': 'Адвокат, партнёр ЮК «Де-Юре»',
+  'konopkin-dmitriy-sergeevich': 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
   'smolyaninova-marina-valerevna': 'Ведущий юрист ЮК «Де-Юре»',
-  'gusev-oleg-yurevich': 'Адвокат ЮК «Де-Юре»',
+  'gusev-oleg-yurevich': 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
   'nacheshnikov-vladimir-viktorovich': 'Специалист ЮК «Де-Юре»'
 };
 
@@ -67,9 +67,9 @@ const specialistAreas: Record<string, { name: string; href?: string }[]> = {
 
 const specialistAlts: Record<string, string> = {
   'bobkin-arkadiy-evgenevich': 'Аркадий Евгеньевич Бобкин — управляющий партнёр ЮК Де-Юре',
-  'konopkin-dmitriy-sergeevich': 'Дмитрий Сергеевич Конопкин — адвокат, партнёр ЮК Де-Юре',
+  'konopkin-dmitriy-sergeevich': 'Дмитрий Сергеевич Конопкин — адвокат, председатель Коллегии адвокатов «Де-Юре»',
   'smolyaninova-marina-valerevna': 'Марина Валерьевна Смольянинова — ведущий юрист ЮК Де-Юре',
-  'gusev-oleg-yurevich': 'Олег Юрьевич Гусев — адвокат ЮК Де-Юре',
+  'gusev-oleg-yurevich': 'Олег Юрьевич Гусев — адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
   'nacheshnikov-vladimir-viktorovich': 'Владимир Викторович Начешников — специалист ЮК Де-Юре'
 };
 
@@ -83,8 +83,8 @@ export default function SpecialistyPage() {
         '@type': 'CollectionPage',
         '@id': 'https://dejure-help.ru/specialisty/#webpage',
         'url': 'https://dejure-help.ru/specialisty/',
-        'name': 'Специалисты юридической компании «Де-Юре»',
-        'description': 'Специалисты юридической компании «Де-Юре» в Липецке: юристы и адвокаты по гражданским, уголовным, военным и бизнес-спорам.'
+        'name': 'Специалисты «Де-Юре»',
+        'description': 'Специалисты «Де-Юре» в Липецке: юристы ЮК «Де-Юре» и адвокаты Коллегии адвокатов «Де-Юре» по гражданским, уголовным, военным и бизнес-спорам.'
       },
       {
         '@type': 'ItemList',
@@ -112,13 +112,12 @@ export default function SpecialistyPage() {
             'item': {
               '@type': 'Person',
               'name': 'Конопкин Дмитрий Сергеевич',
-              'jobTitle': 'Адвокат, партнёр ЮК «Де-Юре»',
+              'jobTitle': 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
               'image': 'https://dejure-help.ru/images/konopkin.jpg',
               'url': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
-              'worksFor': {
-                '@type': 'LegalService',
-                'name': 'ООО ЮК «Де-Юре»',
-                'url': 'https://dejure-help.ru/'
+              'memberOf': {
+                '@type': 'Organization',
+                'name': 'Коллегия адвокатов «Де-Юре»'
               }
             }
           },
@@ -144,13 +143,12 @@ export default function SpecialistyPage() {
             'item': {
               '@type': 'Person',
               'name': 'Гусев Олег Юрьевич',
-              'jobTitle': 'Адвокат ЮК «Де-Юре»',
+              'jobTitle': 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
               'image': 'https://dejure-help.ru/images/gusev.jpg',
               'url': 'https://dejure-help.ru/specialisty/gusev-oleg-yurevich/',
-              'worksFor': {
-                '@type': 'LegalService',
-                'name': 'ООО ЮК «Де-Юре»',
-                'url': 'https://dejure-help.ru/'
+              'memberOf': {
+                '@type': 'Organization',
+                'name': 'Коллегия адвокатов «Де-Юре»'
               }
             }
           },
@@ -217,7 +215,7 @@ export default function SpecialistyPage() {
             lineHeight: 1.2,
             maxWidth: '900px' 
           }}>
-            Специалисты юридической <br />компании «Де-Юре»
+            Специалисты «Де-Юре»
           </h1>
           <p style={{ 
             fontSize: '18px', 
@@ -235,200 +233,418 @@ export default function SpecialistyPage() {
       {/* 2. List of Specialist Cards */}
       <section className="section bg-white" style={{ padding: '48px 0 28px 0' }}>
         <div className="container">
+          {/* Group 1: ЮК «Де-Юре» */}
           <h2 className="with-accent" style={{ 
-            fontSize: 'clamp(28px, 3.2vw, 36px)', 
+            fontSize: 'clamp(26px, 3vw, 32px)', 
             fontFamily: 'var(--font-serif)', 
             color: 'var(--color-deep-blue)', 
-            marginBottom: '36px', 
+            marginBottom: '32px', 
             marginTop: 0 
           }}>
-            Наши специалисты
+            Специалисты ЮК «Де-Юре»
           </h2>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            {specialists.map((sp) => {
-              const areas = specialistAreas[sp.slug] || [];
-              const altText = specialistAlts[sp.slug] || `${sp.name} — ${sp.companyRole || sp.status}`;
+            {specialists
+              .filter((sp) => sp.orgType === 'legalCompanySpecialist' || (sp.slug !== 'konopkin-dmitriy-sergeevich' && sp.slug !== 'gusev-oleg-yurevich'))
+              .map((sp) => {
+                const areas = specialistAreas[sp.slug] || [];
+                const altText = specialistAlts[sp.slug] || `${sp.name} — ${sp.companyRole || sp.status}`;
 
-              return (
-                <article 
-                  key={sp.id} 
-                  style={{ 
-                    background: 'var(--color-white)', 
-                    border: '1px solid rgba(23, 50, 77, 0.12)',
-                    borderRadius: '4px',
-                    boxShadow: '0 4px 14px rgba(16, 39, 59, 0.08), 0 1px 3px rgba(16, 39, 59, 0.04)',
-                    overflow: 'hidden',
-                    transition: 'border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'stretch',
-                    minHeight: '330px'
-                  }}
-                  className="specialist-card-hover specialist-card-container"
-                >
-                  {/* Photo Column (~33% width, 330px) */}
-                  <div 
-                    className="specialist-photo-col"
+                return (
+                  <article 
+                    key={sp.id} 
                     style={{ 
-                      flex: '0 0 330px',
-                      width: '330px',
-                      maxWidth: '35%',
-                      position: 'relative', 
+                      background: 'var(--color-white)', 
+                      border: '1px solid rgba(23, 50, 77, 0.12)',
+                      borderRadius: '4px',
+                      boxShadow: '0 4px 14px rgba(16, 39, 59, 0.08), 0 1px 3px rgba(16, 39, 59, 0.04)',
                       overflow: 'hidden',
-                      background: 'var(--color-cream)',
-                      userSelect: 'none'
+                      transition: 'border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease',
+                      display: 'flex',
+                      flexDirection: 'row',
+                      alignItems: 'stretch',
+                      minHeight: '330px'
                     }}
+                    className="specialist-card-hover specialist-card-container"
                   >
-                      <img 
-                        src={sp.image.startsWith('/-/') ? sp.image : `/-${sp.image.startsWith('/') ? '' : '/'}${sp.image}`} 
-                        alt={altText}
-                        style={{ 
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          width: '100%', 
-                          height: '100%', 
-                          objectFit: 'cover', 
-                          objectPosition: sp.slug === 'gusev-oleg-yurevich' ? 'center 15%' : sp.slug === 'konopkin-dmitriy-sergeevich' ? 'center 18%' : sp.slug === 'smolyaninova-marina-valerevna' ? 'center 20%' : sp.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 12%' : 'center 15%',
-                          display: 'block' 
-                        }}
-                      />
-                  </div>
+                    {/* Photo Column (~33% width, 330px) */}
+                    <div 
+                      className="specialist-photo-col"
+                      style={{ 
+                        flex: '0 0 330px',
+                        width: '330px',
+                        maxWidth: '35%',
+                        position: 'relative', 
+                        overflow: 'hidden',
+                        background: 'var(--color-cream)',
+                        userSelect: 'none'
+                      }}
+                    >
+                        <img 
+                          src={sp.image.startsWith('/-/') ? sp.image : `/-${sp.image.startsWith('/') ? '' : '/'}${sp.image}`} 
+                          alt={altText}
+                          style={{ 
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%', 
+                            height: '100%', 
+                            objectFit: 'cover', 
+                            objectPosition: sp.slug === 'gusev-oleg-yurevich' ? 'center 15%' : sp.slug === 'konopkin-dmitriy-sergeevich' ? 'center 18%' : sp.slug === 'smolyaninova-marina-valerevna' ? 'center 20%' : sp.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 12%' : 'center 15%',
+                            display: 'block' 
+                          }}
+                        />
+                    </div>
 
-                  {/* Content Column */}
-                  <div 
-                    className="specialist-content-col"
-                    style={{ 
-                      flex: '1 1 auto',
-                      padding: '32px 36px', 
-                      display: 'flex', 
-                      flexDirection: 'column', 
-                      justifyContent: 'space-between',
-                      gap: '16px'
-                    }}
-                  >
-                    <div>
-                      {/* 1. Full Name (FIO) */}
-                      <h3 style={{ 
-                        fontSize: 'clamp(22px, 2.3vw, 26px)', 
-                        fontFamily: 'var(--font-serif)', 
-                        color: 'var(--color-deep-blue)', 
-                        margin: '0 0 4px 0', 
-                        lineHeight: 1.3 
-                      }}>
-                        <Link href={`/specialisty/${sp.slug}/`} style={{ color: 'inherit', textDecoration: 'none' }}>
-                          {sp.slug === 'nacheshnikov-vladimir-viktorovich' ? (
-                            <>
-                              <span style={{ display: 'block' }}>Начешников</span>
-                              <span style={{ display: 'block' }}>Владимир Викторович</span>
-                            </>
-                          ) : sp.slug === 'konopkin-dmitriy-sergeevich' ? (
-                            <>
-                              <span style={{ display: 'block' }}>Конопкин</span>
-                              <span style={{ display: 'block' }}>Дмитрий Сергеевич</span>
-                            </>
-                          ) : sp.slug === 'smolyaninova-marina-valerevna' ? (
-                            <>
-                              <span style={{ display: 'block' }}>Смольянинова</span>
-                              <span style={{ display: 'block' }}>Марина Валерьевна</span>
-                            </>
-                          ) : sp.slug === 'bobkin-arkadiy-evgenevich' ? (
-                            <>
-                              <span style={{ display: 'block' }}>Бобкин</span>
-                              <span style={{ display: 'block' }}>Аркадий Евгеньевич</span>
-                            </>
-                          ) : sp.slug === 'gusev-oleg-yurevich' ? (
-                            <>
-                              <span style={{ display: 'block' }}>Гусев</span>
-                              <span style={{ display: 'block' }}>Олег Юрьевич</span>
-                            </>
-                          ) : (
-                            sp.name
-                          )}
-                        </Link>
-                      </h3>
-
-                      {/* 2. Position / Role */}
-                      <div style={{ 
-                        fontSize: '14px', 
-                        color: '#4A607A', 
-                        fontWeight: 500, 
-                        marginBottom: '16px'
-                      }}>
-                        {specialistListRoles[sp.slug] || sp.status}
-                      </div>
-
-                      {/* 3. Substantive Description */}
-                      <p style={{ 
-                        fontSize: '15px', 
-                        color: 'var(--color-text-secondary)', 
-                        lineHeight: 1.6, 
-                        margin: '0 0 20px 0', 
-                        maxWidth: '740px',
-                        whiteSpace: 'pre-line'
-                      }}>
-                        {specialistListDescriptions[sp.slug] || sp.shortDescription}
-                      </p>
-
-                      {/* 4. Main Practice Areas (Single vertical column list) */}
-                      <div style={{ marginBottom: '8px' }}>
-                        <div style={{ 
-                          fontSize: '13px', 
-                          fontWeight: 600, 
+                    {/* Content Column */}
+                    <div 
+                      className="specialist-content-col"
+                      style={{ 
+                        flex: '1 1 auto',
+                        padding: '32px 36px', 
+                        display: 'flex', 
+                        flexDirection: 'column', 
+                        justifyContent: 'space-between',
+                        gap: '16px'
+                      }}
+                    >
+                      <div>
+                        {/* 1. Full Name (FIO) */}
+                        <h3 style={{ 
+                          fontSize: 'clamp(22px, 2.3vw, 26px)', 
+                          fontFamily: 'var(--font-serif)', 
                           color: 'var(--color-deep-blue)', 
-                          marginBottom: '10px',
-                          letterSpacing: '0.02em'
+                          margin: '0 0 4px 0', 
+                          lineHeight: 1.3 
                         }}>
-                          Основные направления работы
+                          <Link href={`/specialisty/${sp.slug}/`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                            {sp.slug === 'nacheshnikov-vladimir-viktorovich' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Начешников</span>
+                                <span style={{ display: 'block' }}>Владимир Викторович</span>
+                              </>
+                            ) : sp.slug === 'konopkin-dmitriy-sergeevich' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Конопкин</span>
+                                <span style={{ display: 'block' }}>Дмитрий Сергеевич</span>
+                              </>
+                            ) : sp.slug === 'smolyaninova-marina-valerevna' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Смольянинова</span>
+                                <span style={{ display: 'block' }}>Марина Валерьевна</span>
+                              </>
+                            ) : sp.slug === 'bobkin-arkadiy-evgenevich' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Бобкин</span>
+                                <span style={{ display: 'block' }}>Аркадий Евгеньевич</span>
+                              </>
+                            ) : sp.slug === 'gusev-oleg-yurevich' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Гусев</span>
+                                <span style={{ display: 'block' }}>Олег Юрьевич</span>
+                              </>
+                            ) : (
+                              sp.name
+                            )}
+                          </Link>
+                        </h3>
+
+                        {/* 2. Position / Role */}
+                        <div style={{ 
+                          fontSize: '14px', 
+                          color: '#4A607A', 
+                          fontWeight: 500, 
+                          marginBottom: '16px'
+                        }}>
+                          {specialistListRoles[sp.slug] || sp.status}
                         </div>
-                        
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                          {areas.map((area, idx) => (
-                            <li key={idx} style={{ display: 'flex', alignItems: 'center', fontSize: '14px', color: 'var(--color-deep-blue)' }}>
-                              <span style={{ color: 'var(--color-gold)', marginRight: '10px', fontSize: '12px' }}>◆</span>
-                              {area.href ? (
-                                <Link 
-                                  href={area.href} 
-                                  className="area-link"
-                                  style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', transition: 'color 0.2s ease' }}
-                                >
-                                  {area.name} <span className="area-arrow" style={{ opacity: 0, display: 'inline-block', transform: 'translateX(-4px)', transition: 'all 0.2s ease', color: 'var(--color-primary)' }}>→</span>
-                                </Link>
-                              ) : (
-                                <span>{area.name}</span>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
+
+                        {/* 3. Substantive Description */}
+                        <p style={{ 
+                          fontSize: '15px', 
+                          color: 'var(--color-text-secondary)', 
+                          lineHeight: 1.6, 
+                          margin: '0 0 20px 0', 
+                          maxWidth: '740px',
+                          whiteSpace: 'pre-line'
+                        }}>
+                          {specialistListDescriptions[sp.slug] || sp.shortDescription}
+                        </p>
+
+                        {/* 4. Main Practice Areas */}
+                        <div style={{ marginBottom: '8px' }}>
+                          <div style={{ 
+                            fontSize: '13px', 
+                            fontWeight: 600, 
+                            color: 'var(--color-deep-blue)', 
+                            marginBottom: '10px',
+                            letterSpacing: '0.02em'
+                          }}>
+                            Основные направления работы
+                          </div>
+                          
+                          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                            {areas.map((area, idx) => (
+                              <li key={idx} style={{ display: 'flex', alignItems: 'center', fontSize: '14px', color: 'var(--color-deep-blue)' }}>
+                                <span style={{ color: 'var(--color-gold)', marginRight: '10px', fontSize: '12px' }}>◆</span>
+                                {area.href ? (
+                                  <Link 
+                                    href={area.href} 
+                                    className="area-link"
+                                    style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', transition: 'color 0.2s ease' }}
+                                  >
+                                    {area.name} <span className="area-arrow" style={{ opacity: 0, display: 'inline-block', transform: 'translateX(-4px)', transition: 'all 0.2s ease', color: 'var(--color-primary)' }}>→</span>
+                                  </Link>
+                                ) : (
+                                  <span>{area.name}</span>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* 5. Detail Page Text Link */}
+                      <div style={{ alignSelf: 'flex-start', marginTop: '12px' }}>
+                        <Link 
+                          href={`/specialisty/${sp.slug}/`} 
+                          className="detail-text-link"
+                          style={{ 
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            fontSize: '15px',
+                            fontWeight: 600,
+                            color: 'var(--color-deep-blue)',
+                            textDecoration: 'none',
+                            transition: 'color 0.2s ease'
+                          }}
+                        >
+                          <span>Подробнее о специалисте</span>
+                          <span className="detail-arrow" style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>
+                        </Link>
                       </div>
                     </div>
-
-                    {/* 5. Detail Page Text Link */}
-                    <div style={{ alignSelf: 'flex-start', marginTop: '12px' }}>
-                      <Link 
-                        href={`/specialisty/${sp.slug}/`} 
-                        className="detail-text-link"
-                        style={{ 
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '6px',
-                          fontSize: '15px',
-                          fontWeight: 600,
-                          color: 'var(--color-deep-blue)',
-                          textDecoration: 'none',
-                          transition: 'color 0.2s ease'
-                        }}
-                      >
-                        <span>Подробнее о специалисте</span>
-                        <span className="detail-arrow" style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
+                  </article>
+                );
+              })}
           </div>
+
+          {/* Neutral Divider Line between groups */}
+          <hr style={{ border: 'none', borderTop: '1px solid rgba(23, 50, 77, 0.1)', margin: '48px 0' }} />
+
+          {/* Group 2: Коллегия адвокатов «Де-Юре» */}
+          <h2 className="with-accent" style={{ 
+            fontSize: 'clamp(26px, 3vw, 32px)', 
+            fontFamily: 'var(--font-serif)', 
+            color: 'var(--color-deep-blue)', 
+            marginBottom: '32px', 
+            marginTop: 0 
+          }}>
+            Адвокаты Коллегии адвокатов «Де-Юре»
+          </h2>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+            {specialists
+              .filter((sp) => sp.orgType === 'barAssociationLawyer' || sp.slug === 'konopkin-dmitriy-sergeevich' || sp.slug === 'gusev-oleg-yurevich')
+              .map((sp) => {
+                const areas = specialistAreas[sp.slug] || [];
+                const altText = specialistAlts[sp.slug] || `${sp.name} — ${sp.companyRole || sp.status}`;
+
+                return (
+                  <article 
+                    key={sp.id} 
+                    style={{ 
+                      background: 'var(--color-white)', 
+                      border: '1px solid rgba(23, 50, 77, 0.12)',
+                      borderRadius: '4px',
+                      boxShadow: '0 4px 14px rgba(16, 39, 59, 0.08), 0 1px 3px rgba(16, 39, 59, 0.04)',
+                      overflow: 'hidden',
+                      transition: 'border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease',
+                      display: 'flex',
+                      flexDirection: 'row',
+                      alignItems: 'stretch',
+                      minHeight: '330px'
+                    }}
+                    className="specialist-card-hover specialist-card-container"
+                  >
+                    {/* Photo Column (~33% width, 330px) */}
+                    <div 
+                      className="specialist-photo-col"
+                      style={{ 
+                        flex: '0 0 330px',
+                        width: '330px',
+                        maxWidth: '35%',
+                        position: 'relative', 
+                        overflow: 'hidden',
+                        background: 'var(--color-cream)',
+                        userSelect: 'none'
+                      }}
+                    >
+                        <img 
+                          src={sp.image.startsWith('/-/') ? sp.image : `/-${sp.image.startsWith('/') ? '' : '/'}${sp.image}`} 
+                          alt={altText}
+                          style={{ 
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%', 
+                            height: '100%', 
+                            objectFit: 'cover', 
+                            objectPosition: sp.slug === 'gusev-oleg-yurevich' ? 'center 15%' : sp.slug === 'konopkin-dmitriy-sergeevich' ? 'center 18%' : sp.slug === 'smolyaninova-marina-valerevna' ? 'center 20%' : sp.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 12%' : 'center 15%',
+                            display: 'block' 
+                          }}
+                        />
+                    </div>
+
+                    {/* Content Column */}
+                    <div 
+                      className="specialist-content-col"
+                      style={{ 
+                        flex: '1 1 auto',
+                        padding: '32px 36px', 
+                        display: 'flex', 
+                        flexDirection: 'column', 
+                        justifyContent: 'space-between',
+                        gap: '16px'
+                      }}
+                    >
+                      <div>
+                        {/* 1. Full Name (FIO) */}
+                        <h3 style={{ 
+                          fontSize: 'clamp(22px, 2.3vw, 26px)', 
+                          fontFamily: 'var(--font-serif)', 
+                          color: 'var(--color-deep-blue)', 
+                          margin: '0 0 4px 0', 
+                          lineHeight: 1.3 
+                        }}>
+                          <Link href={`/specialisty/${sp.slug}/`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                            {sp.slug === 'nacheshnikov-vladimir-viktorovich' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Начешников</span>
+                                <span style={{ display: 'block' }}>Владимир Викторович</span>
+                              </>
+                            ) : sp.slug === 'konopkin-dmitriy-sergeevich' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Конопкин</span>
+                                <span style={{ display: 'block' }}>Дмитрий Сергеевич</span>
+                              </>
+                            ) : sp.slug === 'smolyaninova-marina-valerevna' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Смольянинова</span>
+                                <span style={{ display: 'block' }}>Марина Валерьевна</span>
+                              </>
+                            ) : sp.slug === 'bobkin-arkadiy-evgenevich' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Бобкин</span>
+                                <span style={{ display: 'block' }}>Аркадий Евгеньевич</span>
+                              </>
+                            ) : sp.slug === 'gusev-oleg-yurevich' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Гусев</span>
+                                <span style={{ display: 'block' }}>Олег Юрьевич</span>
+                              </>
+                            ) : (
+                              sp.name
+                            )}
+                          </Link>
+                        </h3>
+
+                        {/* 2. Position / Role */}
+                        <div style={{ 
+                          fontSize: '14px', 
+                          color: '#4A607A', 
+                          fontWeight: 500, 
+                          marginBottom: '16px'
+                        }}>
+                          {specialistListRoles[sp.slug] || sp.status}
+                        </div>
+
+                        {/* 3. Substantive Description */}
+                        <p style={{ 
+                          fontSize: '15px', 
+                          color: 'var(--color-text-secondary)', 
+                          lineHeight: 1.6, 
+                          margin: '0 0 20px 0', 
+                          maxWidth: '740px',
+                          whiteSpace: 'pre-line'
+                        }}>
+                          {specialistListDescriptions[sp.slug] || sp.shortDescription}
+                        </p>
+
+                        {/* 4. Main Practice Areas */}
+                        <div style={{ marginBottom: '8px' }}>
+                          <div style={{ 
+                            fontSize: '13px', 
+                            fontWeight: 600, 
+                            color: 'var(--color-deep-blue)', 
+                            marginBottom: '10px',
+                            letterSpacing: '0.02em'
+                          }}>
+                            Основные направления работы
+                          </div>
+                          
+                          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                            {areas.map((area, idx) => (
+                              <li key={idx} style={{ display: 'flex', alignItems: 'center', fontSize: '14px', color: 'var(--color-deep-blue)' }}>
+                                <span style={{ color: 'var(--color-gold)', marginRight: '10px', fontSize: '12px' }}>◆</span>
+                                {area.href ? (
+                                  <Link 
+                                    href={area.href} 
+                                    className="area-link"
+                                    style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', transition: 'color 0.2s ease' }}
+                                  >
+                                    {area.name} <span className="area-arrow" style={{ opacity: 0, display: 'inline-block', transform: 'translateX(-4px)', transition: 'all 0.2s ease', color: 'var(--color-primary)' }}>→</span>
+                                  </Link>
+                                ) : (
+                                  <span>{area.name}</span>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* 5. Detail Page Text Link */}
+                      <div style={{ alignSelf: 'flex-start', marginTop: '12px' }}>
+                        <Link 
+                          href={`/specialisty/${sp.slug}/`} 
+                          className="detail-text-link"
+                          style={{ 
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            fontSize: '15px',
+                            fontWeight: 600,
+                            color: 'var(--color-deep-blue)',
+                            textDecoration: 'none',
+                            transition: 'color 0.2s ease'
+                          }}
+                        >
+                          <span>Подробнее о специалисте</span>
+                          <span className="detail-arrow" style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+          </div>
+
+          {/* Organization Relationship Disclaimer (rendered conditionally if advocates exist) */}
+          {specialists.some((sp) => sp.orgType === 'barAssociationLawyer' || sp.slug === 'konopkin-dmitriy-sergeevich' || sp.slug === 'gusev-oleg-yurevich') && (
+            <p style={{ 
+              fontSize: '14px', 
+              color: 'var(--color-text-secondary)', 
+              lineHeight: 1.6, 
+              maxWidth: '850px', 
+              marginTop: '24px', 
+              marginBottom: 0 
+            }}>
+              Юридическая компания «Де-Юре» взаимодействует с адвокатами Коллегии адвокатов «Де-Юре» по делам, требующим участия адвоката. ЮК и Коллегия являются самостоятельными организациями; адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
+            </p>
+          )}
         </div>
 
         {/* Global hover styles for card, links, and arrow transitions */}

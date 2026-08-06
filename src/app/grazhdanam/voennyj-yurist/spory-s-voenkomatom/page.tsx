@@ -113,7 +113,7 @@ export default function SporySVoenkomatomPage() {
         '@type': 'Person',
         '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
         name: 'Конопкин Дмитрий Сергеевич',
-        jobTitle: 'Адвокат, партнёр ЮК «Де-Юре»',
+        jobTitle: 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
         url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
         image: 'https://dejure-help.ru/images/konopkin.jpg',
         worksFor: { '@id': 'https://dejure-help.ru/#organization' },
@@ -257,7 +257,7 @@ export default function SporySVoenkomatomPage() {
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         imageUrl="/-/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
         trustItems={[
           { text: 'Проверяем принятое решение и имеющиеся материалы' },
           { text: <>Выбираем порядок обжалования — в призывной<br />комиссии субъекта РФ или в суде</> },
@@ -469,7 +469,7 @@ export default function SporySVoenkomatomPage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position={<>Адвокат, партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
+        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Военное право»</>}
         imageUrl="/-/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

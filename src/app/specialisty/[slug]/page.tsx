@@ -45,9 +45,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           alt: member.slug === 'bobkin-arkadiy-evgenevich'
             ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
             : member.slug === 'konopkin-dmitriy-sergeevich'
-            ? 'Конопкин Дмитрий Сергеевич — адвокат, партнёр ЮК «Де-Юре»'
+            ? 'Конопкин Дмитрий Сергеевич — адвокат, председатель Коллегии адвокатов «Де-Юре»'
             : member.slug === 'gusev-oleg-yurevich'
-            ? 'Гусев Олег Юрьевич — адвокат ЮК «Де-Юре»'
+            ? 'Гусев Олег Юрьевич — адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»'
             : member.slug === 'nacheshnikov-vladimir-viktorovich'
             ? 'Владимир Викторович Начешников — специалист ЮК «Де-Юре»'
             : `${member.name} — специалист ЮК «Де-Юре»`
@@ -90,17 +90,33 @@ export default async function SpecialistPage({ params }: PageProps) {
       '@type': 'CollegeOrUniversity',
       name: 'Воронежский государственный университет'
     }
+  } : member.slug === 'konopkin-dmitriy-sergeevich' ? {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
+    name: 'Конопкин Дмитрий Сергеевич',
+    jobTitle: 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
+    url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
+    image: 'https://dejure-help.ru/images/konopkin.jpg',
+    memberOf: {
+      '@type': 'Organization',
+      name: 'Коллегия адвокатов «Де-Юре»'
+    },
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: 'Елецкий государственный университет им. И. А. Бунина'
+    }
   } : member.slug === 'gusev-oleg-yurevich' ? {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': 'https://dejure-help.ru/specialisty/gusev-oleg-yurevich/#person',
     name: 'Гусев Олег Юрьевич',
-    jobTitle: 'Адвокат ЮК «Де-Юре»',
+    jobTitle: 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
     url: 'https://dejure-help.ru/specialisty/gusev-oleg-yurevich/',
     image: 'https://dejure-help.ru/images/gusev.jpg',
-    worksFor: {
-      '@type': 'LegalService',
-      name: 'ООО ЮК «Де-Юре»',
-      url: 'https://dejure-help.ru/'
+    memberOf: {
+      '@type': 'Organization',
+      name: 'Коллегия адвокатов «Де-Юре»'
     },
     alumniOf: {
       '@type': 'CollegeOrUniversity',
@@ -123,7 +139,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     '@type': 'Person',
     '@id': `https://dejure-help.ru/specialisty/${member.slug}/#person`,
     name: member.name,
-    jobTitle: member.slug === 'konopkin-dmitriy-sergeevich' ? 'Адвокат, партнёр ЮК «Де-Юре»' : member.status,
+    jobTitle: member.status,
     image: imageUrl,
     url: `https://dejure-help.ru/specialisty/${member.slug}/`,
     worksFor: {
@@ -288,9 +304,9 @@ export default async function SpecialistPage({ params }: PageProps) {
                   className="specialist-img-responsive"
                   alt={
                     member.slug === 'konopkin-dmitriy-sergeevich'
-                      ? 'Конопкин Дмитрий Сергеевич — адвокат, партнёр ЮК «Де-Юре»'
+                      ? 'Конопкин Дмитрий Сергеевич — адвокат, председатель Коллегии адвокатов «Де-Юре»'
                       : member.slug === 'gusev-oleg-yurevich'
-                      ? 'Гусев Олег Юрьевич — адвокат ЮК «Де-Юре»'
+                      ? 'Гусев Олег Юрьевич — адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»'
                       : member.slug === 'bobkin-arkadiy-evgenevich'
                       ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
                       : member.slug === 'smolyaninova-marina-valerevna'
@@ -609,6 +625,11 @@ export default async function SpecialistPage({ params }: PageProps) {
                   { name: 'page_url', value: `/specialisty/${member.slug}/` }
                 ]}
               />
+              {(member.slug === 'konopkin-dmitriy-sergeevich' || member.slug === 'gusev-oleg-yurevich' || member.orgType === 'barAssociationLawyer') && (
+                <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'center' }}>
+                  Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
+                </div>
+              )}
             </div>
           </div>
         </div>
