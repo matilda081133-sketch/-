@@ -293,7 +293,7 @@ export default function ZemelnyjYuristClient() {
               Если возник спор, сложности с оформлением земли или её использованием, изучим документы, оценим возможные варианты решения и предложим порядок действий.
             </span>
           }
-          primaryCtaText={<>Оценить перспективы <br />дела</>}
+          primaryCtaText="Оценить перспективы дела"
           primaryCtaLink="#form"
           primaryCtaAnalytics="land_hero_consultation_click"
           primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
