@@ -184,7 +184,7 @@ export default function GrazhdanamClient() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            justify: 'space-between',
+            justifyContent: 'space-between',
             background: '#FFFFFF',
             padding: '28px 24px',
             border: '1px solid rgba(16, 39, 59, 0.12)',
