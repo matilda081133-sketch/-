@@ -89,20 +89,18 @@ export default function TeamCarousel() {
   return (
     <section className="section bg-cream" id="team">
       <div className="container">
-        <div className="flex justify-between items-start" style={{ marginBottom: '50px', gap: '40px', flexWrap: 'wrap' }}>
-          <div style={{ maxWidth: '800px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>Команда компании</span>
-            </div>
-            <h2 style={{ margin: 0, marginBottom: '16px', fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>Наши специалисты</h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Опытные юристы и адвокаты Липецка с профильной специализацией. Бывшие сотрудники прокуратуры, Следственного комитета и службы судебных приставов, обеспечивающие надежную правовую защиту по гражданским, арбитражным и уголовным делам.
-            </p>
+        <div style={{ marginBottom: '40px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+            <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+            <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>Команда компании</span>
           </div>
-          <div style={{ marginTop: '8px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '20px', flexWrap: 'wrap', marginBottom: '16px' }}>
+            <h2 style={{ margin: 0, fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>Наши специалисты</h2>
             <Link href="/-/team/" className="btn btn-outline" style={{ fontSize: '15px', display: 'inline-block', whiteSpace: 'nowrap' }}>Все специалисты</Link>
           </div>
+          <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, maxWidth: '800px' }}>
+            Опытные юристы и адвокаты Липецка с профильной специализацией. Бывшие сотрудники прокуратуры, Следственного комитета и службы судебных приставов, обеспечивающие надежную правовую защиту по гражданским, арбитражным и уголовным делам.
+          </p>
         </div>
         
         <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
