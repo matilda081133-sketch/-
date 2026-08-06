@@ -247,180 +247,78 @@ export default function BiznesuClient() {
               <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
             </svg>
 
-            {/* INTERACTIVE ANIMATED CSS MOCKUP */}
-            <div className="mockup-container" style={{ position: 'relative', width: '100%', maxWidth: '440px', height: '420px', zIndex: 1 }}>
+            {/* RICH ELEGANT B2B DOCUMENT SHEET */}
+            <div className="mockup-container" style={{ position: 'relative', width: '100%', maxWidth: '440px', zIndex: 1 }}>
               
-              {/* SECONDARY BACKGROUND LAYER SHEET */}
-              <div className="doc-wrapper-float-2">
-                <div className="doc-sheet doc-sheet-2">
-                  <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
-                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '150px', height: '38px', border: '1.5px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
-                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '8px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.25, letterSpacing: '0.04em' }}>
-                        ДОГОВОР СОПРОВОЖДЕНИЯ<br/>
-                        ЮРИДИЧЕСКИХ ЛИЦ И ИП
-                      </div>
-                    </div>
-
-                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
-                        <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
-                        <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      </div>
-                    </div>
-
-                    <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 16px auto' }}></div>
-
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
-                      <div style={{ width: '40%', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
-                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                    </div>
-
-                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                        <div style={{ fontSize: '8px', color: 'rgba(23,50,77,0.7)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Заказчик / Компания:</div>
-                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
-                      </div>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                        <div style={{ fontSize: '8px', color: 'rgba(23,50,77,0.7)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Исполнитель / ЮК «Де-Юре»:</div>
-                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* FIRST BACKGROUND LAYER SHEET */}
-              <div className="doc-wrapper-float-1">
-                <div className="doc-sheet doc-sheet-1">
-                  <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
-                      <img src="/-/images/logo_dark.png" alt="Де-Юре" style={{ width: '70px', height: 'auto', opacity: 0.95 }} />
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', alignItems: 'flex-end' }}>
-                        <span style={{ fontSize: '9px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ПРАВОВАЯ ЗАЩИТА БИЗНЕСА</span>
-                        <span style={{ fontSize: '8px', color: 'var(--color-primary)', fontWeight: 600 }}>Арбитраж • Налоги • Договоры</span>
-                      </div>
-                    </div>
-
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '14px' }}>
-                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.15)' }}></div>
-                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '85%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                    </div>
-
-                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                        <div style={{ fontSize: '11px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', letterSpacing: '0.02em' }}>ООО ЮК «ДЕ-ЮРЕ»</div>
-                        <div style={{ fontSize: '9px', color: 'rgba(23,50,77,0.75)', fontFamily: 'var(--font-sans)', fontWeight: 500 }}>Сопровождение бизнеса • Липецк</div>
-                      </div>
-                      <div style={{ position: 'relative', width: '56px', height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <div style={{ 
-                          width: '52px', 
-                          height: '52px', 
-                          borderRadius: '50%', 
-                          border: '2px stroke #10273B', 
-                          outline: '1px dashed #10273B',
-                          outlineOffset: '-4px',
-                          display: 'flex', 
-                          flexDirection: 'column',
-                          alignItems: 'center', 
-                          justifyContent: 'center',
-                          color: '#10273B',
-                          transform: 'rotate(-12deg)',
-                          opacity: 0.88,
-                          background: 'rgba(16, 39, 59, 0.03)',
-                          flexShrink: 0,
-                          boxSizing: 'border-box'
-                        }}>
-                          <div style={{ fontSize: '6.5px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.02em', textAlign: 'center', lineHeight: 1 }}>ДЕ-ЮРЕ</div>
-                          <div style={{ fontSize: '5px', fontWeight: 700, margin: '1px 0' }}>ЛИПЕЦК</div>
-                          <div style={{ fontSize: '4.5px', textTransform: 'uppercase', letterSpacing: '0.01em' }}>БИЗНЕС-ПРАВО</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* MAIN FOREGROUND DOCUMENT SHEET */}
               <div className="doc-wrapper-main">
                 <div className="doc-sheet doc-sheet-main" style={{
                   background: '#FFFFFF',
-                  boxShadow: '0 20px 40px rgba(16, 39, 59, 0.15), 0 1px 3px rgba(0,0,0,0.05)',
-                  border: '1px solid rgba(16, 39, 59, 0.08)',
-                  position: 'relative'
+                  boxShadow: '0 24px 48px rgba(16, 39, 59, 0.16), 0 2px 6px rgba(0,0,0,0.06)',
+                  border: '1px solid rgba(16, 39, 59, 0.12)',
+                  position: 'relative',
+                  borderRadius: '2px',
+                  overflow: 'hidden'
                 }}>
-                  <div style={{ padding: '22px 18px', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', boxSizing: 'border-box' }}>
+                  {/* Decorative Gold Header Bar */}
+                  <div style={{ width: '100%', height: '4px', background: 'linear-gradient(90deg, var(--color-deep-blue) 0%, var(--color-gold) 50%, var(--color-deep-blue) 100%)' }}></div>
+
+                  <div style={{ padding: '24px 22px 20px', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
                     
-                    {/* Header line of document */}
-                    <div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px', borderBottom: '1px solid rgba(16, 39, 59, 0.08)', paddingBottom: '10px' }}>
-                        <div>
-                          <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-deep-blue)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>ООО ЮК «ДЕ-ЮРЕ»</div>
-                          <div style={{ fontSize: '9px', color: 'var(--color-gold-text, #80633F)', fontWeight: 600, marginTop: '1px' }}>Правовая защита бизнеса • Липецк</div>
-                        </div>
-                        <div style={{ textAlign: 'right', fontSize: '8px', color: 'var(--color-text-secondary)' }}>
-                          Исх. № B2B-2026<br />от {new Date().toLocaleDateString('ru-RU')}
+                    {/* Official Document Header */}
+                    <div style={{ borderBottom: '2px solid var(--color-deep-blue)', paddingBottom: '12px', marginBottom: '16px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                        <img src="/-/images/logo_dark.png" alt="Де-Юре" style={{ height: '28px', width: 'auto', display: 'block' }} />
+                        <div style={{ textAlign: 'right', fontSize: '9px', color: 'var(--color-text-secondary)', fontWeight: 600 }}>
+                          Исх. № B2B-2026/48<br />
+                          Липецк • 06.08.2026
                         </div>
                       </div>
-
-                      {/* Mockup Map Box */}
-                      <div className="doc-map-box" style={{ 
-                        width: '100%', 
-                        height: '105px', 
-                        background: '#F4F6F8', 
-                        border: '1px solid rgba(16, 39, 59, 0.12)', 
-                        marginBottom: '10px',
-                        position: 'relative',
-                        overflow: 'hidden',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                      }}>
-                        <svg width="100%" height="100%" viewBox="0 0 200 100" style={{ opacity: 0.85 }}>
-                          {/* Commercial District CADASTRAL / COURT VECTOR GRAPHIC */}
-                          <line x1="10" y1="20" x2="190" y2="20" stroke="#17324D" strokeWidth="1" strokeDasharray="3 3" opacity="0.3"/>
-                          <line x1="10" y1="50" x2="190" y2="50" stroke="#17324D" strokeWidth="1.5" opacity="0.4"/>
-                          <line x1="10" y1="80" x2="190" y2="80" stroke="#17324D" strokeWidth="1" strokeDasharray="3 3" opacity="0.3"/>
-                          
-                          <line x1="40" y1="10" x2="40" y2="90" stroke="#17324D" strokeWidth="1" opacity="0.3"/>
-                          <line x1="100" y1="10" x2="100" y2="90" stroke="#17324D" strokeWidth="1.5" opacity="0.4"/>
-                          <line x1="160" y1="10" x2="160" y2="90" stroke="#17324D" strokeWidth="1" opacity="0.3"/>
-
-                          {/* Commercial Complex Building Polygons */}
-                          <polygon points="45,25 95,25 95,45 45,45" fill="rgba(23, 50, 77, 0.12)" stroke="#17324D" strokeWidth="1.2"/>
-                          <polygon points="105,25 155,25 155,45 105,45" fill="rgba(128, 99, 63, 0.15)" stroke="#80633F" strokeWidth="1.2"/>
-                          <polygon points="45,55 95,55 95,75 45,75" fill="rgba(128, 99, 63, 0.15)" stroke="#80633F" strokeWidth="1.2"/>
-                          <polygon points="105,55 155,55 155,75 105,75" fill="rgba(23, 50, 77, 0.12)" stroke="#17324D" strokeWidth="1.2"/>
-
-                          {/* Verified Check Badge */}
-                          <circle cx="100" cy="50" r="14" fill="#FFFFFF" stroke="#17324D" strokeWidth="1.5"/>
-                          <path d="M94 50 L98 54 L106 44" fill="none" stroke="#80633F" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                        <div style={{ position: 'absolute', bottom: '4px', right: '6px', fontSize: '7.5px', background: 'rgba(255,255,255,0.9)', padding: '1px 4px', fontWeight: 700, color: 'var(--color-deep-blue)' }}>
-                          B2B-ЮК «ДЕ-ЮРЕ»
-                        </div>
+                      <div style={{ fontSize: '12px', fontWeight: 800, color: 'var(--color-deep-blue)', textTransform: 'uppercase', letterSpacing: '0.04em', fontFamily: 'var(--font-serif)' }}>
+                        ЮРИДИЧЕСКАЯ КОМПАНИЯ «ДЕ-ЮРЕ»
                       </div>
-
-                      {/* Mockup Lines */}
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
-                        <div style={{ fontSize: '8.5px', fontWeight: 700, color: 'var(--color-deep-blue)' }}>ПРАВОВАЯ ЗАЩИТА И СОПРОВОЖДЕНИЕ БИЗНЕСА</div>
-                        <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.12)' }}></div>
-                        <div style={{ width: '92%', height: '3px', background: 'rgba(23,50,77,0.12)' }}></div>
+                      <div style={{ fontSize: '10px', color: 'var(--color-gold-text, #80633F)', fontWeight: 600, marginTop: '2px' }}>
+                        Комплексная правовая защита и сопровождение бизнеса
                       </div>
                     </div>
 
-                    {/* Blue Official Stamp Seal at Bottom Right */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '4px' }}>
-                      <div style={{ fontSize: '7.5px', color: 'var(--color-text-secondary)', lineHeight: 1.2 }}>
-                        Юридическая компания «Де-Юре»<br />
-                        Арбитраж • Договоры • Налоги • 115-ФЗ
+                    {/* Document Title Banner */}
+                    <div style={{ background: 'rgba(23, 50, 77, 0.04)', borderLeft: '3px solid var(--color-gold)', padding: '10px 14px', marginBottom: '16px' }}>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-deep-blue)', textTransform: 'uppercase', letterSpacing: '0.02em' }}>
+                        ПРАВОВОЙ АУДИТ И ЗАЩИТА АКТИВОВ
+                      </div>
+                      <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)', marginTop: '2px' }}>
+                        Подтверждённая практика в Арбитражном суде и органах контроля
+                      </div>
+                    </div>
+
+                    {/* Key Services Checklist */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: 'var(--color-deep-blue)', fontWeight: 600 }}>
+                        <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> Арбитражные споры и взыскание задолженности
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: 'var(--color-deep-blue)', fontWeight: 600 }}>
+                        <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> Договорная работа и налоговый аудит (ФНС)
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: 'var(--color-deep-blue)', fontWeight: 600 }}>
+                        <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> Корпоративные процедуры и сделки с бизнесом
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: 'var(--color-deep-blue)', fontWeight: 600 }}>
+                        <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> Защита при проверках, 115-ФЗ и уголовных рисках
+                      </div>
+                    </div>
+
+                    {/* Signatures & Seal Section */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '12px', borderTop: '1px solid rgba(16, 39, 59, 0.1)' }}>
+                      <div style={{ fontSize: '8.5px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
+                        <strong style={{ color: 'var(--color-deep-blue)' }}>ООО ЮК «Де-Юре»</strong><br />
+                        Управляющий партнёр / А. Е. Бобкин<br />
+                        <span style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600 }}>Липецкая область, г. Липецк</span>
                       </div>
                       
                       {/* Realistic Seal Stamp */}
                       <div style={{ 
-                        width: '52px', 
-                        height: '52px', 
+                        width: '56px', 
+                        height: '56px', 
                         borderRadius: '50%', 
                         border: '2px stroke #10273B', 
                         outline: '1px dashed #10273B',
@@ -430,15 +328,15 @@ export default function BiznesuClient() {
                         alignItems: 'center', 
                         justifyContent: 'center',
                         color: '#10273B',
-                        transform: 'rotate(-12deg)',
-                        opacity: 0.88,
+                        transform: 'rotate(-8deg)',
+                        opacity: 0.9,
                         background: 'rgba(16, 39, 59, 0.03)',
                         flexShrink: 0,
                         boxSizing: 'border-box'
                       }}>
-                        <div style={{ fontSize: '6.5px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.02em', textAlign: 'center', lineHeight: 1 }}>ДЕ-ЮРЕ</div>
+                        <div style={{ fontSize: '7px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.02em', textAlign: 'center', lineHeight: 1 }}>ДЕ-ЮРЕ</div>
                         <div style={{ fontSize: '5px', fontWeight: 700, margin: '1px 0' }}>ЛИПЕЦК</div>
-                        <div style={{ fontSize: '4.5px', textTransform: 'uppercase', letterSpacing: '0.01em' }}>ОГРН 1234800008464</div>
+                        <div style={{ fontSize: '4.5px', textTransform: 'uppercase', letterSpacing: '0.01em' }}>БИЗНЕС-ПРАВО</div>
                       </div>
                     </div>
 
