@@ -148,12 +148,12 @@ export default function GrazhdanamClient() {
             {/* Background Vector Graphic: Courthouse (Shifted right to protrude nicely beyond creative) */}
             <svg style={{ 
               position: 'absolute', 
-              top: '40%', 
-              left: '90%', 
+              top: '35%', 
+              left: '115%', 
               transform: 'translate(-50%, -50%)', 
-              width: '600px', 
-              height: '600px', 
-              opacity: 0.11, 
+              width: '620px', 
+              height: '620px', 
+              opacity: 0.14, 
               zIndex: 0, 
               pointerEvents: 'none' 
             }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
