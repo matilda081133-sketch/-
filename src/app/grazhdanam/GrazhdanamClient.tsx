@@ -284,7 +284,8 @@ export default function GrazhdanamClient() {
               <span style={{ display: 'inline-block' }}>по разным направлениям</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Профессиональные услуги юристов и адвокатов Липецка. Каждым делом занимается профильный специалист.
+              <span style={{ display: 'inline-block' }}>Профессиональные услуги юристов и адвокатов Липецка.</span> <br />
+              <span style={{ display: 'inline-block' }}>Каждым делом занимается профильный специалист.</span>
             </p>
           </div>
 
