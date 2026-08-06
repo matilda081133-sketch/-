@@ -211,8 +211,8 @@ export default function BiznesuClient() {
         }
         primaryCtaText="Обсудить задачу"
         primaryCtaLink="#form"
-        secondaryContactText="Или позвоните: +7 (4742) 28-68-38"
-        secondaryContactLink="tel:+74742286838"
+        secondaryCtaText="Или позвоните: +7 (4742) 28-68-38"
+        secondaryCtaLink="tel:+74742286838"
         trustItems={[]}
         rightContent={
           <div className="hero-right-col" style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
