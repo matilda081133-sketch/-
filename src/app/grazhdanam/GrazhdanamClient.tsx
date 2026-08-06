@@ -105,8 +105,8 @@ export default function GrazhdanamClient() {
         superTitle="Юридическая компания «Де-Юре»"
         title={
           <>
-            <span style={{ display: 'block' }}>Юридическая помощь</span>
-            <span style={{ display: 'block' }}>гражданам в Липецке</span>
+            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Юридическая помощь</span>
+            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>гражданам в Липецке</span>
           </>
         }
         subtitle={
