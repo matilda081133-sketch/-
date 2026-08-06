@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
@@ -8,87 +8,35 @@ import FAQBlock from '@/components/FAQBlock';
 import MilitaryHero from '@/components/MilitaryHero';
 import TeamCarousel from '@/components/TeamCarousel';
 import CasesBlock from '@/components/CasesBlock';
-import CtaCard from '@/components/CtaCard';
 
 export default function GrazhdanamClient() {
-  const group1Cards = [
-    {
-      title: 'Семейный юрист',
-      desc: 'Алименты, расторжение брака через суд, раздел имущества супругов, установление и оспаривание отцовства, споры о детях, брачные договоры.',
-      link: null
-    },
-    {
-      title: 'Наследственный юрист',
-      desc: 'Вступление в наследство через суд, восстановление срока принятия наследства, оспаривание завещания, признание наследника недостойным.',
-      link: null
-    },
-    {
-      title: 'Жилищный юрист',
-      desc: 'Выселение и выписка через суд, залив квартиры, споры с управляющими компаниями и ЖКХ, раздел порядка оплаты коммунальных услуг, узаконение перепланировки.',
-      link: null
-    },
-    {
-      title: 'Юрист по недвижимости',
-      desc: 'Сопровождение сделок с недвижимостью, проверка документов и рисков, споры с застройщиками, признание прав на недвижимость, легализация самовольных построек.',
-      link: null
-    },
-    {
-      title: 'Земельный юрист',
-      desc: 'Споры о границах участков, оформление прав на землю, раздел участка и определение порядка пользования, установление сервитута, изменение категории и вида разрешённого использования.',
-      link: '/-/grazhdanam/zemelnyj-yurist/'
-    }
+  const [activeTab, setActiveTab] = useState<'all' | 'group1' | 'group2' | 'group3'>('all');
+
+  const allDirections = [
+    // Группа 1
+    { id: 1, group: 'group1', title: 'Семейный юрист', desc: 'Алименты, расторжение брака через суд, раздел имущества супругов, установление и оспаривание отцовства, споры о детях, брачные договоры.', link: null },
+    { id: 2, group: 'group1', title: 'Наследственный юрист', desc: 'Вступление в наследство через суд, восстановление срока принятия наследства, оспаривание завещания, признание наследника недостойным.', link: null },
+    { id: 3, group: 'group1', title: 'Жилищный юрист', desc: 'Выселение и выписка через суд, залив квартиры, споры с управляющими компаниями и ЖКХ, раздел порядка оплаты коммунальных услуг, узаконение перепланировки.', link: null },
+    { id: 4, group: 'group1', title: 'Юрист по недвижимости', desc: 'Сопровождение сделок с недвижимостью, проверка документов и рисков, споры с застройщиками по ДДУ, признание прав на недвижимость.', link: null },
+    { id: 5, group: 'group1', title: 'Земельный юрист', desc: 'Споры о границах участков, оформление прав на землю, раздел участка и определение порядка пользования, сервитут, изменение ВРИ.', link: '/-/grazhdanam/zemelnyj-yurist/' },
+
+    // Группа 2
+    { id: 6, group: 'group2', title: 'Банкротство физических лиц', desc: 'Оценка оснований для банкротства, подготовка заявления и документов, сопровождение процедуры, взаимодействие с финансовым управляющим.', link: null },
+    { id: 7, group: 'group2', title: 'Кредитный юрист', desc: 'Споры с банками и коллекторами, отмена судебного приказа, проверка требований по кредиту, оспаривание незаконных начислений.', link: null },
+    { id: 8, group: 'group2', title: 'Взыскание долгов', desc: 'Взыскание долгов по договорам и распискам, возврат займов, взыскание неосновательного обогащения, подготовка претензий и исков.', link: null },
+    { id: 9, group: 'group2', title: 'Юрист по исполнительному производству', desc: 'Обжалование действий и бездействия приставов (ФССП), возврат незаконно списанных средств, снятие ареста со счетов и имущества.', link: null },
+
+    // Группа 3
+    { id: 10, group: 'group3', title: 'Автоюрист', desc: 'Лишение водительских прав и оставление места ДТП, споры по ОСАГО и КАСКО, взыскание ущерба после ДТП, оспаривание виновности в аварии.', link: null },
+    { id: 11, group: 'group3', title: 'Трудовой юрист', desc: 'Незаконное увольнение и сокращение, восстановление на работе, взыскание задолженности по заработной плате, производственные травмы.', link: null },
+    { id: 12, group: 'group3', title: 'Адвокат по уголовным делам', desc: 'Защита при задержании, обыске и допросе, участие на следствии и в суде. Защита по мошенничеству, имущественным и экономическим преступлениям.', link: null },
+    { id: 13, group: 'group3', title: 'Военный юрист', desc: 'Выплаты за ранение и выплаты семьям погибших, оспаривание заключений ВВК, споры с военкоматами, статус военнослужащего.', link: '/-/grazhdanam/voennyj-yurist/' },
+    { id: 14, group: 'group3', title: 'Миграционный юрист', desc: 'Отмена запрета на въезд в РФ, обжалование депортации и административного выдворения, получение РВП и ВНЖ, сопровождение миграционных споров.', link: null }
   ];
 
-  const group2Cards = [
-    {
-      title: 'Банкротство физических лиц',
-      desc: 'Оценка оснований для банкротства, подготовка заявления и документов, сопровождение процедуры, взаимодействие с финансовым управляющим и кредиторами, защита законных интересов должника.',
-      link: null
-    },
-    {
-      title: 'Кредитный юрист',
-      desc: 'Споры с банками и коллекторами, отмена судебного приказа, проверка требований по кредиту, оспаривание незаконных начислений, урегулирование кредитной задолженности.',
-      link: null
-    },
-    {
-      title: 'Взыскание долгов',
-      desc: 'Взыскание долгов по договорам и распискам, возврат займов, взыскание неосновательного обогащения, подготовка претензий и исков, представительство в суде.',
-      link: null
-    },
-    {
-      title: 'Юрист по исполнительному производству',
-      desc: 'Обжалование действий и бездействия приставов, возврат незаконно списанных денег, снятие ареста со счетов и имущества, взыскание по исполнительному листу.',
-      link: null
-    }
-  ];
-
-  const group3Cards = [
-    {
-      title: 'Автоюрист',
-      desc: 'Лишение водительских прав и оставление места ДТП, споры по ОСАГО и КАСКО, взыскание ущерба после ДТП, оспаривание виновности в аварии.',
-      link: null
-    },
-    {
-      title: 'Трудовой юрист',
-      desc: 'Незаконное увольнение и сокращение, восстановление на работе, взыскание заработной платы, производственные травмы, другие споры работника с работодателем.',
-      link: null
-    },
-    {
-      title: 'Адвокат по уголовным делам',
-      desc: 'Защита при задержании, обыске и допросе, участие на следствии и в суде, защита по делам о мошенничестве, наркотиках, имущественных, должностных и экономических преступлениях.',
-      link: null
-    },
-    {
-      title: 'Военный юрист',
-      desc: 'Выплаты за ранение и выплаты семьям погибших, оспаривание заключений ВВК, споры с военкоматами, признание военнослужащего умершим.',
-      link: '/-/grazhdanam/voennyj-yurist/'
-    },
-    {
-      title: 'Миграционный юрист',
-      desc: 'Отмена запрета на въезд в Россию, обжалование депортации и административного выдворения, получение РВП и вида на жительство, сопровождение миграционных споров.',
-      link: null
-    }
-  ];
+  const filteredDirections = activeTab === 'all'
+    ? allDirections
+    : allDirections.filter(d => d.group === activeTab);
 
   const cases = [
     {
@@ -142,81 +90,6 @@ export default function GrazhdanamClient() {
     }
   ];
 
-  const renderCard = (card: { title: string; desc: string; link: string | null }, idx: number) => {
-    if (card.link) {
-      return (
-        <a
-          key={idx}
-          href={card.link}
-          style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
-          data-analytics="click_citizens_direction"
-          data-direction-id={card.title}
-          data-target-url={card.link}
-        >
-          <div
-            className="card service-card"
-            style={{
-              height: '100%',
-              padding: '30px',
-              background: 'var(--color-white)',
-              border: '1px solid var(--color-border)',
-              borderRadius: '0',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              transition: 'all 0.3s ease',
-              position: 'relative',
-              borderTop: '3px solid var(--color-primary)',
-              cursor: 'pointer'
-            }}
-          >
-            <div>
-              <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                {card.title}
-              </h3>
-              <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                {card.desc}
-              </p>
-            </div>
-            <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
-              <span>Подробнее</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </div>
-          </div>
-        </a>
-      );
-    }
-
-    return (
-      <div
-        key={idx}
-        className="card service-card info-only"
-        style={{
-          height: '100%',
-          padding: '30px',
-          background: '#FAF7F2',
-          border: '1px solid var(--color-border)',
-          borderRadius: '0',
-          display: 'flex',
-          flexDirection: 'column',
-          position: 'relative',
-          borderTop: '3px solid rgba(23, 50, 77, 0.2)',
-          cursor: 'default'
-        }}
-      >
-        <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-          {card.title}
-        </h3>
-        <p style={{ margin: '0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-          {card.desc}
-        </p>
-      </div>
-    );
-  };
-
   return (
     <main>
       <Header />
@@ -250,66 +123,201 @@ export default function GrazhdanamClient() {
         trustItems={[]}
       />
 
-      {/* ═══ 2. КАТАЛОГ ИЗ 14 НАПРАВЛЕНИЙ (Шаблонные карточки service-card) ═══ */}
-      <section className="section bg-white" id="catalog" style={{ padding: '80px 0' }}>
+      {/* ═══ 2. КАТАЛОГ НАПРАВЛЕНИЙ (В точном стиле ServicesTabs с Главной страницы) ═══ */}
+      <section className="section bg-light" id="catalog" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, textAlign: 'left' }}>
-            Юридическая помощь по разным направлениям
-          </h2>
-          <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '48px' }}></div>
-
-          {/* Группа 1 */}
-          <div style={{ marginBottom: '56px' }}>
-            <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-gold-text, #80633F)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-gold)' }}></span>
-              Группа 1. Семья, жильё и имущество
-            </h3>
-            <div className="grid grid-3" style={{ gap: '24px' }}>
-              {group1Cards.map(renderCard)}
-            </div>
+          <div style={{ maxWidth: '750px', marginBottom: '32px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Юридическая помощь по разным направлениям
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Профессиональные услуги юристов и адвокатов Липецка. Каждым делом занимается профильный специалист.
+            </p>
           </div>
 
-          {/* Группа 2 */}
-          <div style={{ marginBottom: '56px' }}>
-            <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-gold-text, #80633F)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-gold)' }}></span>
-              Группа 2. Долги и обязательства
-            </h3>
-            <div className="grid grid-3" style={{ gap: '24px' }}>
-              {group2Cards.map(renderCard)}
-            </div>
+          {/* Фильтр-табы (как в ServicesTabs) */}
+          <div style={{ display: 'flex', gap: '10px', marginBottom: '36px', flexWrap: 'wrap' }} role="tablist">
+            <button 
+              onClick={() => setActiveTab('all')}
+              className={`tab-btn ${activeTab === 'all' ? 'tab-btn-active' : 'tab-btn-inactive'}`}
+              style={{ padding: '12px 24px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s' }}
+            >
+              Все направления ({allDirections.length})
+            </button>
+            <button 
+              onClick={() => setActiveTab('group1')}
+              className={`tab-btn ${activeTab === 'group1' ? 'tab-btn-active' : 'tab-btn-inactive'}`}
+              style={{ padding: '12px 24px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s' }}
+            >
+              Семья, жильё и недвижимость
+            </button>
+            <button 
+              onClick={() => setActiveTab('group2')}
+              className={`tab-btn ${activeTab === 'group2' ? 'tab-btn-active' : 'tab-btn-inactive'}`}
+              style={{ padding: '12px 24px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s' }}
+            >
+              Долги и обязательства
+            </button>
+            <button 
+              onClick={() => setActiveTab('group3')}
+              className={`tab-btn ${activeTab === 'group3' ? 'tab-btn-active' : 'tab-btn-inactive'}`}
+              style={{ padding: '12px 24px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s' }}
+            >
+              Защита и особые права
+            </button>
           </div>
 
-          {/* Группа 3 */}
-          <div>
-            <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-gold-text, #80633F)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-gold)' }}></span>
-              Группа 3. Защита прав в отдельных ситуациях
-            </h3>
-            <div className="grid grid-3" style={{ gap: '24px' }}>
-              {group3Cards.map(renderCard)}
-            </div>
+          <style dangerouslySetInnerHTML={{ __html: `
+            .tab-btn-active {
+              background-color: #10273B !important;
+              color: #FFFFFF !important;
+              border: 1px solid #10273B !important;
+            }
+            .tab-btn-inactive {
+              background-color: #FFFFFF !important;
+              color: #10273B !important;
+              border: 1px solid #D7E0E6 !important;
+            }
+            .tab-btn-inactive:hover {
+              background-color: #F7F4ED !important;
+              color: #10273B !important;
+              border-color: #10273B !important;
+            }
+          `}} />
+
+          {/* Сетка шаблонных карточек service-card без пустого пространства */}
+          <div className="grid grid-3" style={{ gap: '24px' }}>
+            {filteredDirections.map((card) => {
+              if (card.link) {
+                return (
+                  <a
+                    key={card.id}
+                    href={card.link}
+                    style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
+                  >
+                    <div 
+                      className="card service-card" 
+                      style={{ 
+                        height: '100%', 
+                        minHeight: '210px',
+                        padding: '28px', 
+                        background: 'var(--color-white)', 
+                        border: '1px solid var(--color-border)',
+                        borderRadius: '0',
+                        display: 'flex', 
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        transition: 'all 0.3s',
+                        position: 'relative',
+                        borderTop: '3px solid var(--color-primary)',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <div>
+                        <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                          {card.title}
+                        </h3>
+                        <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                          {card.desc}
+                        </p>
+                      </div>
+                      <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
+                        <span>Подробнее</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </div>
+                    </div>
+                  </a>
+                );
+              }
+
+              return (
+                <a
+                  key={card.id}
+                  href="#form"
+                  style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
+                >
+                  <div 
+                    className="card service-card" 
+                    style={{ 
+                      height: '100%', 
+                      minHeight: '210px',
+                      padding: '28px', 
+                      background: 'var(--color-white)', 
+                      border: '1px solid var(--color-border)',
+                      borderRadius: '0',
+                      display: 'flex', 
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      transition: 'all 0.3s',
+                      position: 'relative',
+                      borderTop: '3px solid var(--color-primary)',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <div>
+                      <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                        {card.title}
+                      </h3>
+                      <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                        {card.desc}
+                      </p>
+                    </div>
+                    <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
+                      <span>Описать ситуацию</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+
+            {/* Завершающая темная карточка CTA — заполняет сетку без остатка */}
+            <a href="#form" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '210px',
+                  padding: '28px', 
+                  background: 'var(--color-deep-blue)', 
+                  border: '1px solid transparent',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  transition: 'all 0.3s',
+                  position: 'relative',
+                  borderTop: '3px solid var(--color-gold)'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: '#FFFFFF', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                    Не нашли свою ситуацию?
+                  </h3>
+                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.55 }}>
+                    Опишите вопрос своими словами. Мы изучим имеющиеся документы и подберём профильного специалиста.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
+                  <span>Оставить заявку</span>
+                  <span>→</span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ═══ 3. ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ОПРЕДЕЛИЛСЯ (CtaCard - Шаблонный компонент карточки CTA) ═══ */}
-      <section style={{ background: 'var(--color-cream)', padding: '50px 0', borderTop: '1px solid rgba(16, 39, 59, 0.08)', borderBottom: '1px solid rgba(16, 39, 59, 0.08)' }}>
-        <div className="container">
-          <CtaCard
-            title="Не знаете, какое направление выбрать?"
-            subtitle="Опишите ситуацию своими словами. Мы уточним обстоятельства и определим, какой специалист сможет помочь."
-            buttonText="Описать ситуацию"
-            buttonLink="#form"
-            style={{ marginTop: 0 }}
-          />
-        </div>
-      </section>
-
-      {/* ═══ 4. СПЕЦИАЛИСТЫ (TeamCarousel - Шаблонный компонент команды) ═══ */}
+      {/* ═══ 3. СПЕЦИАЛИСТЫ (TeamCarousel - Шаблонный компонент команды) ═══ */}
       <TeamCarousel />
 
-      {/* ═══ 5. ПРАКТИКА (CasesBlock - Шаблонный компонент) ═══ */}
+      {/* ═══ 4. ПРАКТИКА (CasesBlock - Шаблонный компонент) ═══ */}
       <CasesBlock
         title="Примеры дел из нашей практики"
         showAllLink=""
@@ -323,7 +331,7 @@ export default function GrazhdanamClient() {
         }))}
       />
 
-      {/* ═══ 6. FAQ (FAQBlock - Шаблонный компонент) ═══ */}
+      {/* ═══ 5. FAQ (FAQBlock - Шаблонный компонент) ═══ */}
       <FAQBlock
         superTitle="Частые вопросы граждан"
         title="Ответы на частые вопросы"
@@ -333,7 +341,7 @@ export default function GrazhdanamClient() {
         faqs={faqs}
       />
 
-      {/* ═══ 7. СВЯЗАТЬСЯ С НАМИ (Эталонный 2-колоночный шаблонный блок формы) ═══ */}
+      {/* ═══ 6. СВЯЗАТЬСЯ С НАМИ (Эталонный 2-колоночный шаблонный блок формы) ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
