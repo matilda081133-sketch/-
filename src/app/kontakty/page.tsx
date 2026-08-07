@@ -96,11 +96,11 @@ export default function ContactsPage() {
                 Контакты
               </h1>
               
-              <div style={{ marginBottom: '48px' }}>
-                <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: '0 0 16px 0', maxWidth: '750px' }}>
+              <div style={{ marginBottom: '48px', maxWidth: '100%' }}>
+                <p style={{ fontSize: 'clamp(16px, 1.8vw, 18px)', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: '0 0 16px 0', maxWidth: '85%' }}>
                   Позвоните или напишите нам либо приезжайте в офис юридической компании «Де&#8209;Юре» в центре Липецка.
                 </p>
-                <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: 0, maxWidth: '750px' }}>
+                <p style={{ fontSize: 'clamp(15px, 1.6vw, 17px)', color: 'var(--color-text-secondary)', fontWeight: 500, lineHeight: 1.6, margin: 0, maxWidth: '85%' }}>
                   Личные встречи с юристами проводятся по предварительной записи — пожалуйста, согласуйте время визита заранее.
                 </p>
               </div>
