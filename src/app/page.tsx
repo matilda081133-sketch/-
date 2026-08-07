@@ -62,17 +62,12 @@ export default function Home() {
               Подключаем специалиста с опытом именно <br />в вашей категории дел — от оценки ситуации <br />до защиты интересов в суде.
             </p>
             
-            <div className="flex gap-4 main-hero-btns" style={{ marginBottom: '40px' }}>
-              <a href="#consultation" className="btn">Обсудить ситуацию</a>
-              <a href="#services" className="btn btn-outline">Выбрать направление</a>
-            </div>
-
             {/* Hero USPs Row */}
             <div className="hero-usps-row" style={{ 
               display: 'flex', 
               flexDirection: 'column', 
               gap: '14px', 
-              marginTop: '36px',
+              marginTop: '28px',
               marginBottom: '36px' 
             }}>
               {[
@@ -91,6 +86,11 @@ export default function Home() {
                   {bulletText}
                 </div>
               ))}
+            </div>
+
+            <div className="flex gap-4 main-hero-btns" style={{ marginBottom: '20px' }}>
+              <a href="#consultation" className="btn">Обсудить ситуацию</a>
+              <a href="#services" className="btn btn-outline">Выбрать направление</a>
             </div>
           </div>
           
