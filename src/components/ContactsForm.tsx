@@ -253,11 +253,25 @@ export default function ContactsForm({
             onBlur={(e) => e.target.style.borderColor = 'rgba(23, 50, 77, 0.2)'}
           />
         </div>
-        
+
+        <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0', padding: '8px 12px', background: 'rgba(245,241,235,0.7)', borderLeft: '2px solid rgba(155,126,85,0.5)' }}>
+          Не указывайте в форме паспортные данные, сведения о здоровье и другие конфиденциальные сведения. Их можно передать юристу после установления защищённого способа связи.
+          <span style={{ display: 'block', marginTop: '4px', color: 'rgba(44,51,64,0.45)', fontSize: '11px' }}>Основание: статья 10 № 152-ФЗ.</span>
+        </p>
+
+
         <label style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', marginTop: '4px' }}>
-          <input type="checkbox" name="agreement" required style={{ marginTop: '3px', accentColor: 'var(--color-gold)' }} />
-          <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
-            Я даю согласие на <Link href="/privacy" style={{ color: 'var(--color-deep-blue)', textDecoration: 'underline' }}>обработку персональных данных</Link>
+          <input
+            type="checkbox"
+            name="agreement"
+            required
+            aria-required="true"
+            style={{ marginTop: '3px', accentColor: 'var(--color-gold)', flexShrink: 0 }}
+          />
+          <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+            <Link href="/consent/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-deep-blue)', textDecoration: 'underline' }}>Я даю согласие на обработку персональных данных</Link>
+            {' '}и подтверждаю, что ознакомлен с{' '}
+            <Link href="/privacy/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-deep-blue)', textDecoration: 'underline' }}>Политикой в отношении обработки персональных данных</Link>.
           </span>
         </label>
         

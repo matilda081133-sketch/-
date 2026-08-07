@@ -494,7 +494,7 @@ export default function SpecialistyPage() {
                       }}
                     >
                         <img 
-                          src={sp.image.startsWith('/-/') ? sp.image : `/-${sp.image.startsWith('/') ? '' : '/'}${sp.image}`} 
+                          src={sp.image} 
                           alt={altText}
                           style={{ 
                             position: 'absolute',
