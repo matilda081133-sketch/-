@@ -23,7 +23,7 @@ export default function Home() {
         minHeight: '85vh', 
         display: 'flex', 
         alignItems: 'center',
-        paddingTop: '160px',
+        paddingTop: 'clamp(80px, 8vw, 160px)',
         background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
         overflow: 'hidden'
       }}>

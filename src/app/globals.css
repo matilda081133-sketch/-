@@ -83,9 +83,35 @@ h4 { font-size: 1.25rem; }
 }
 
 @media (max-width: 768px) {
-  .section { padding: 60px 0; }
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
+  .section { padding: 40px 0; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.75rem; }
+
+  /* Hide document/paper creatives and background vector graphics on mobile across ALL pages */
+  .hero-vector-svg,
+  .mockup-container,
+  .doc-wrapper-float,
+  .doc-wrapper-float-1,
+  .doc-wrapper-float-2,
+  .doc-wrapper-float-3,
+  .doc-wrapper-float-4,
+  .doc-sheet,
+  .doc-sheet-1,
+  .doc-sheet-2,
+  .doc-sheet-3,
+  .doc-sheet-4,
+  .land-law-creative-wrapper,
+  .hero-right-col,
+  .hero-right-col-creative {
+    display: none !important;
+  }
+
+  /* Compact top spacing between mobile header and hero titles */
+  .military-hero-section,
+  main > section:first-of-type {
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
+  }
 }
 
 /* Backgrounds */

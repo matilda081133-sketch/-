@@ -60,7 +60,7 @@ export default function MilitaryHero({
       minHeight: '85vh', 
       display: 'flex', 
       alignItems: 'center',
-      paddingTop: '130px',
+      paddingTop: 'clamp(80px, 8vw, 130px)',
       paddingBottom: '80px',
       background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
       overflow: 'hidden'
@@ -72,7 +72,7 @@ export default function MilitaryHero({
         borderRadius: '50%', zIndex: 0
       }} />
 
-        <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '20px' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '0px' }}>
           {breadcrumbs && (
             <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '32px' }}>
               {breadcrumbs}

@@ -81,7 +81,7 @@ export default function ContactsPage() {
         {/* 1. Главный экран (Hero) */}
         <section style={{ 
           position: 'relative',
-          paddingTop: '160px', 
+          paddingTop: 'clamp(80px, 8vw, 160px)', 
           paddingBottom: '80px'
         }}>
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
