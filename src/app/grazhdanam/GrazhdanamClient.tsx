@@ -479,7 +479,25 @@ export default function GrazhdanamClient() {
         </div>
       </section>
 
-      <TeamCarousel />
+      <TeamCarousel filterSlugs={['bobkin-arkadiy-evgenevich', 'konopkin-dmitriy-sergeevich', 'smolyaninova-marina-valerevna', 'gusev-oleg-yurevich']} />
+
+      {/* Пояснение об организациях */}
+      <div style={{ background: 'var(--color-cream)', borderTop: '1px solid rgba(16,39,59,0.07)' }}>
+        <div className="container" style={{ padding: '18px 0' }}>
+          <p style={{
+            margin: 0,
+            fontSize: '14px',
+            color: 'var(--color-text-secondary)',
+            lineHeight: 1.65,
+            fontStyle: 'italic',
+            borderLeft: '3px solid rgba(23,50,77,0.2)',
+            paddingLeft: '14px',
+            maxWidth: '860px'
+          }}>
+            ЮК «Де-Юре» и Коллегия адвокатов «Де-Юре» являются самостоятельными организациями. Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
+          </p>
+        </div>
+      </div>
 
       {/* ═══ 3b. ДИСКЛЕЙМЕР ═══ */}
       <div style={{ background: 'var(--color-cream)', borderTop: '1px solid rgba(16,39,59,0.07)' }}>

@@ -623,7 +623,7 @@ export default async function SpecialistPage({ params }: PageProps) {
                     member.name
                   )}
                 </div>
-                <div style={{ color: 'var(--color-text-secondary)', fontSize: '15px' }}>{member.status}</div>
+                <div style={{ color: 'var(--color-text-secondary)', fontSize: '15px' }}>{member.companyRole || member.status}</div>
               </div>
 
               <div>

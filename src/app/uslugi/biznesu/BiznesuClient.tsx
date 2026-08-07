@@ -214,8 +214,8 @@ export default function BiznesuClient() {
         }
         primaryCtaText="Обсудить задачу"
         primaryCtaLink="#form"
-        secondaryCtaText="Или позвоните: +7 (4742) 28-68-38"
-        secondaryCtaLink="tel:+74742286838"
+        secondaryCtaText="Или позвоните: +7 (910) 350-31-11"
+        secondaryCtaLink="tel:+79103503111"
         trustItems={[]}
         rightContent={
           <div className="hero-right-col" style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
@@ -780,10 +780,10 @@ export default function BiznesuClient() {
 
           {/* Зона связи */}
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <a href="tel:+74742286838" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
-              +7 (4742) 28-68-38
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
+              +7 (910) 350-31-11
             </a>
-            <a href="tel:+74742286838" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Позвонить юристу
             </a>
             <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
@@ -853,9 +853,9 @@ export default function BiznesuClient() {
               </p>
 
               <div style={{ marginBottom: '28px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <a href="tel:+74742286838" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
+                <a href="tel:+79103503111" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  +7 (4742) 28-68-38
+                  +7 (910) 350-31-11
                 </a>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-text-secondary)' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
