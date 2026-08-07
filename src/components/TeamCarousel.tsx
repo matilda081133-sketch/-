@@ -9,9 +9,10 @@ interface TeamCarouselProps {
   filterSlugs?: string[];
   hideSectionLabel?: boolean;
   titleAlign?: 'left' | 'center';
+  sectionPaddingTop?: string;
 }
 
-export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs, hideSectionLabel = false, titleAlign = 'left' }: TeamCarouselProps = {}) {
+export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs, hideSectionLabel = false, titleAlign = 'left', sectionPaddingTop }: TeamCarouselProps = {}) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -114,7 +115,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs,
     : team;
 
   return (
-    <section className="section bg-cream" id="team">
+    <section className="section bg-cream" id="team" style={sectionPaddingTop ? { paddingTop: sectionPaddingTop } : undefined}>
       <div className="container">
         <div style={{ marginBottom: '40px', textAlign: titleAlign === 'center' ? 'center' : 'left' }}>
           {!hideSectionLabel && (

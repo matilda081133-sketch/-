@@ -599,8 +599,8 @@ export default function BiznesuClient() {
           </h2>
           <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '660px', lineHeight: 1.6 }}>
-            <span style={{ display: 'inline-block' }}>Срок на&nbsp;ответ, обжалование или&nbsp;процессуальное действие может быть ограничен.</span> <br />
-            <span style={{ display: 'inline-block' }}>Сообщите, какой документ или&nbsp;требование вы&nbsp;получили и&nbsp;какая дата в&nbsp;нём указана.</span>
+            <span style={{ whiteSpace: 'nowrap' }}>Срок на&nbsp;ответ, обжалование или&nbsp;процессуальное действие может быть ограничен.</span><br />
+            <span style={{ whiteSpace: 'nowrap' }}>Сообщите, какой документ или&nbsp;требование вы&nbsp;получили и&nbsp;какая дата в&nbsp;нём указана.</span>
           </p>
 
           <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
@@ -797,8 +797,7 @@ export default function BiznesuClient() {
       </section>
 
 
-      <div style={{ paddingTop: '80px' }}>
-            {/* ═══ 5. СПЕЦИАЛИСТЫ ПО РАБОТЕ С БИЗНЕСОМ (Точный состав из ТЗ п. 6: Бобкин, Смолянинова, Начешников) ═══ */}
+      {/* ═══ 5. СПЕЦИАЛИСТЫ ПО РАБОТЕ С БИЗНЕСОМ (Точный состав из ТЗ п. 6: Бобкин, Смолянинова, Начешников) ═══ */}
       <TeamCarousel 
         hideSectionLabel={true}
         titleAlign="center"
@@ -814,8 +813,8 @@ export default function BiznesuClient() {
           'smolyaninova-marina-valerevna',
           'nacheshnikov-vladimir-viktorovich'
         ]}
+        sectionPaddingTop="100px"
       />
-      </div>
 
       {/* ═══ 6. ПРИМЕРЫ ДЕЛ ИЗ ПРАКТИКИ (3 B2B-кейса из ТЗ п. 7) ═══ */}
       <CasesBlock 
