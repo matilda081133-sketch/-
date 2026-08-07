@@ -20,7 +20,7 @@ export default function PrivacyPage() {
       {/* Hero */}
       <section style={{
         background: 'var(--color-deep-blue)',
-        padding: '60px 0 48px',
+        padding: '160px 0 48px',
       }}>
         <div className="container" style={{ maxWidth: '900px' }}>
           <nav style={{ marginBottom: '20px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>

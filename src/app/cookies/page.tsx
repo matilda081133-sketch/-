@@ -68,7 +68,7 @@ export default function CookiesPolicyPage() {
 
       <main className="flex-grow bg-slate-50">
         {/* Hero */}
-        <section style={{ background: 'var(--color-deep-blue, #10273B)', color: '#ffffff', padding: '40px 0 48px' }}>
+        <section style={{ background: 'var(--color-deep-blue, #10273B)', color: '#ffffff', padding: '160px 0 48px' }}>
           <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 24px' }}>
             <nav style={{ fontSize: '13px', marginBottom: '20px', color: 'rgba(255,255,255,0.65)' }}>
               <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Главная</Link>
