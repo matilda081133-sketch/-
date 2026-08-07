@@ -366,9 +366,49 @@ export default function ContactsPage() {
                     </div>
                   </div>
                   
-                  <a href="/docs/kartochka-predpriyatiya.pdf" download target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14px', borderColor: 'rgba(23, 50, 77, 0.2)', color: 'var(--color-deep-blue)', display: 'inline-block' }}>
-                    Скачать карточку организации
-                  </a>
+                  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                    <a 
+                      href="/docs/kartochka-predpriyatiya.pdf" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="btn" 
+                      style={{ 
+                        padding: '12px 20px', 
+                        fontSize: '14px', 
+                        display: 'inline-flex', 
+                        alignItems: 'center', 
+                        gap: '8px' 
+                      }}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                      Открыть карточку
+                    </a>
+
+                    <a 
+                      href="/docs/kartochka-predpriyatiya.pdf" 
+                      download="kartochka-predpriyatiya-dejure.pdf" 
+                      className="btn btn-outline" 
+                      style={{ 
+                        padding: '12px 20px', 
+                        fontSize: '14px', 
+                        borderColor: 'rgba(23, 50, 77, 0.2)', 
+                        color: 'var(--color-deep-blue)', 
+                        display: 'inline-flex', 
+                        alignItems: 'center', 
+                        gap: '8px' 
+                      }}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                      </svg>
+                      Скачать (PDF)
+                    </a>
+                  </div>
                 </div>
               </div>
 
