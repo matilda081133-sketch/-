@@ -75,13 +75,7 @@ export default function CasesBlock({
                 transition: 'height 0.4s ease'
               }} className="case-accent-line"></div>
               
-              {caseItem.isDemo && (
-                <div style={{ position: 'absolute', top: '14px', right: '14px', background: 'rgba(23, 50, 77, 0.05)', border: '1px solid rgba(23, 50, 77, 0.12)', color: 'var(--color-text-secondary)', padding: '4px 10px', fontSize: '11px', borderRadius: '4px', fontWeight: 500, letterSpacing: '0.02em', zIndex: 2 }}>
-                  Демонстрация формата
-                </div>
-              )}
-              
-              <div style={{ paddingBottom: '20px', marginBottom: '24px', paddingTop: caseItem.isDemo ? '28px' : '0' }}>
+              <div style={{ paddingBottom: '20px', marginBottom: '24px', paddingTop: '0' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600, whiteSpace: 'nowrap' }}>
                   {caseItem.category}
                 </span>
