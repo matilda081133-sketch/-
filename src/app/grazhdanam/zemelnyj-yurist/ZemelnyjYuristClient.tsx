@@ -281,8 +281,8 @@ export default function ZemelnyjYuristClient() {
         <MilitaryHero 
           breadcrumbs={
             <>
-              <a href="/-/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
-              <a href="/-/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
+              <a href="/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
+              <a href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
               <span style={{ color: 'var(--color-text-main)' }}>Земельный юрист</span>
             </>
           }

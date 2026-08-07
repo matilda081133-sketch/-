@@ -179,9 +179,9 @@ export default function IzmenenieVriClient() {
         <MilitaryHero 
           breadcrumbs={
             <>
-              <a href="/-/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
-              <a href="/-/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
-              <a href="/-/grazhdanam/zemelnyj-yurist/" style={{ color: 'var(--color-primary)' }}>Земельный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
+              <a href="/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
+              <a href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
+              <a href="/grazhdanam/zemelnyj-yurist/" style={{ color: 'var(--color-primary)' }}>Земельный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
               <span style={{ color: 'var(--color-text-main)' }}>Изменение ВРИ земельного участка</span>
             </>
           }
@@ -705,7 +705,7 @@ export default function IzmenenieVriClient() {
           </div>
 
           <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            <a href="/-/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/" style={{ textDecoration: 'none' }}>
+            <a href="/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/" style={{ textDecoration: 'none' }}>
               <div className="card service-card" style={{ padding: '28px', background: '#FFFFFF', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
                   Перевод участка в другую категорию
@@ -717,7 +717,7 @@ export default function IzmenenieVriClient() {
               </div>
             </a>
 
-            <a href="/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/" style={{ textDecoration: 'none' }}>
+            <a href="/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/" style={{ textDecoration: 'none' }}>
               <div className="card service-card" style={{ padding: '28px', background: '#FFFFFF', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
                   Оформление прав на участок
@@ -729,7 +729,7 @@ export default function IzmenenieVriClient() {
               </div>
             </a>
 
-            <a href="/-/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/" style={{ textDecoration: 'none' }}>
+            <a href="/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/" style={{ textDecoration: 'none' }}>
               <div className="card service-card" style={{ padding: '28px', background: '#FFFFFF', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
                   Оспаривание кадастровой стоимости
@@ -743,7 +743,7 @@ export default function IzmenenieVriClient() {
           </div>
 
           <div>
-            <a href="/-/grazhdanam/zemelnyj-yurist/" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            <a href="/grazhdanam/zemelnyj-yurist/" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
               Все услуги по земельным вопросам → Земельный юрист
             </a>
           </div>

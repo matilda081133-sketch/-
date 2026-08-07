@@ -217,9 +217,9 @@ export default function VvkPage() {
       <MilitaryHero 
         breadcrumbs={
           <>
-            <a href="/-/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <a href="/-/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <a href="/-/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
             <span style={{ color: 'var(--color-text-main)' }}>Оспаривание ВВК</span>
           </>
         }
@@ -598,7 +598,7 @@ export default function VvkPage() {
             }
           `}} />
           <div className="grid grid-2" style={{ gap: '24px' }}>
-            <a href="/-/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/" style={{ textDecoration: 'none', display: 'block' }}>
+            <a href="/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/" style={{ textDecoration: 'none', display: 'block' }}>
               <div 
                 className="card related-service-card" 
                 style={{ 
@@ -631,7 +631,7 @@ export default function VvkPage() {
               </div>
             </a>
 
-            <a href="/-/grazhdanam/voennyj-yurist/spory-s-voenkomatom/" style={{ textDecoration: 'none', display: 'block' }}>
+            <a href="/grazhdanam/voennyj-yurist/spory-s-voenkomatom/" style={{ textDecoration: 'none', display: 'block' }}>
               <div 
                 className="card related-service-card" 
                 style={{ 

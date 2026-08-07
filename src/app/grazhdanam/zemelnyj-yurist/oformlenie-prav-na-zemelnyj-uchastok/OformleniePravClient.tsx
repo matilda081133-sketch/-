@@ -187,9 +187,9 @@ export default function OformleniePravClient() {
         <MilitaryHero 
           breadcrumbs={
             <>
-              <a href="/-/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
-              <a href="/-/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
-              <a href="/-/grazhdanam/zemelnyj-yurist/" style={{ color: 'var(--color-primary)' }}>Земельный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
+              <a href="/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
+              <a href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
+              <a href="/grazhdanam/zemelnyj-yurist/" style={{ color: 'var(--color-primary)' }}>Земельный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
               <span style={{ color: 'var(--color-text-main)' }}>Оформление прав на земельный участок</span>
             </>
           }
@@ -717,7 +717,7 @@ export default function OformleniePravClient() {
           </div>
 
           <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            <a href="/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/" style={{ textDecoration: 'none' }}>
+            <a href="/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/" style={{ textDecoration: 'none' }}>
               <div className="card service-card" style={{ padding: '28px', background: '#FFFFFF', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
                   Споры о границах земельного участка
@@ -729,7 +729,7 @@ export default function OformleniePravClient() {
               </div>
             </a>
 
-            <a href="/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/" style={{ textDecoration: 'none' }}>
+            <a href="/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/" style={{ textDecoration: 'none' }}>
               <div className="card service-card" style={{ padding: '28px', background: '#FFFFFF', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
                   Раздел земельного участка
@@ -741,7 +741,7 @@ export default function OformleniePravClient() {
               </div>
             </a>
 
-            <a href="/-/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/" style={{ textDecoration: 'none' }}>
+            <a href="/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/" style={{ textDecoration: 'none' }}>
               <div className="card service-card" style={{ padding: '28px', background: '#FFFFFF', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
                   Изменение вида разрешённого использования
@@ -755,7 +755,7 @@ export default function OformleniePravClient() {
           </div>
 
           <div>
-            <a href="/-/grazhdanam/zemelnyj-yurist/" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            <a href="/grazhdanam/zemelnyj-yurist/" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
               Все услуги по земельным вопросам → Земельный юрист
             </a>
           </div>

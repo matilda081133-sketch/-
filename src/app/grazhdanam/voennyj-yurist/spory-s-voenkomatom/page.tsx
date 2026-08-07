@@ -236,9 +236,9 @@ export default function SporySVoenkomatomPage() {
       <MilitaryHero
         breadcrumbs={
           <>
-            <a href="/-/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <a href="/-/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <a href="/-/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
             <span style={{ color: 'var(--color-text-main)' }}>Споры с военкоматом</span>
           </>
         }
@@ -489,7 +489,7 @@ export default function SporySVoenkomatomPage() {
               Ведёт военные дела в Липецкой области и представляет интересы доверителей в других регионах России
             </li>
           </ul>,
-          <a key="3" href="/-/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+          <a key="3" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
             Подробнее о Дмитрии Сергеевиче Конопкине →
           </a>
         ]}
@@ -600,7 +600,7 @@ export default function SporySVoenkomatomPage() {
           
           <div className="grid grid-2" style={{ gap: '28px' }}>
             {/* Card 1: Оспаривание заключения ВВК */}
-            <a href="/-/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/" style={{ textDecoration: 'none', display: 'block' }}>
+            <a href="/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/" style={{ textDecoration: 'none', display: 'block' }}>
               <div 
                 className="card related-service-card" 
                 style={{ 
@@ -630,7 +630,7 @@ export default function SporySVoenkomatomPage() {
             </a>
 
             {/* Card 2: Военный юрист (переход в раздел) */}
-            <a href="/-/grazhdanam/voennyj-yurist/" style={{ textDecoration: 'none', display: 'block' }}>
+            <a href="/grazhdanam/voennyj-yurist/" style={{ textDecoration: 'none', display: 'block' }}>
               <div 
                 className="card related-service-card" 
                 style={{ 

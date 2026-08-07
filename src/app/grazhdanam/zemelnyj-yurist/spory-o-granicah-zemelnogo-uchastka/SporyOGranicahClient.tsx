@@ -195,9 +195,9 @@ export default function SporyOGranicahClient() {
         <MilitaryHero 
           breadcrumbs={
             <>
-              <a href="/-/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
-              <a href="/-/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
-              <a href="/-/grazhdanam/zemelnyj-yurist/" style={{ color: 'var(--color-primary)' }}>Земельный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
+              <a href="/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
+              <a href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
+              <a href="/grazhdanam/zemelnyj-yurist/" style={{ color: 'var(--color-primary)' }}>Земельный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
               <span style={{ color: 'var(--color-text-main)' }}>Споры о границах участка</span>
             </>
           }
@@ -789,7 +789,7 @@ export default function SporyOGranicahClient() {
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <a href="/-/grazhdanam/zemelnyj-yurist/" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-primary)', textDecoration: 'underline' }}>
+            <a href="/grazhdanam/zemelnyj-yurist/" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-primary)', textDecoration: 'underline' }}>
               Все услуги по земельным вопросам → Земельный юрист
             </a>
           </div>

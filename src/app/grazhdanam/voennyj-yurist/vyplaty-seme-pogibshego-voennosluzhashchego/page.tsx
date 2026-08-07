@@ -272,9 +272,9 @@ export default function VyplatySemePogibshegoPage() {
       <MilitaryHero 
         breadcrumbs={
           <>
-            <a href="/-/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <a href="/-/grazhdanam/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <a href="/-/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/grazhdanam/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
             <span style={{ color: 'var(--color-text-main)' }}>Выплаты семье погибшего</span>
           </>
         }
@@ -484,7 +484,7 @@ export default function VyplatySemePogibshegoPage() {
               <span>Реестровый номер 48/812</span>
             </li>
           </ul>,
-          <a key="3" href="/-/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+          <a key="3" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
             Подробнее о Дмитрии Сергеевиче Конопкине →
           </a>
         ]}
@@ -598,7 +598,7 @@ export default function VyplatySemePogibshegoPage() {
             }
           `}} />
           <div style={{ maxWidth: '560px' }}>
-            <a href="/-/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/" style={{ textDecoration: 'none', display: 'block' }}>
+            <a href="/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/" style={{ textDecoration: 'none', display: 'block' }}>
               <div 
                 className="card related-service-card" 
                 style={{ 
@@ -633,7 +633,7 @@ export default function VyplatySemePogibshegoPage() {
           </div>
 
           <div style={{ marginTop: '32px' }}>
-            <a href="/-/grazhdanam/voennyj-yurist/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
+            <a href="/grazhdanam/voennyj-yurist/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
               Смотреть все услуги военного юриста →
             </a>
           </div>

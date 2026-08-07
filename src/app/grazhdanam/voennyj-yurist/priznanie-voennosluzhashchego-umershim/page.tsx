@@ -128,9 +128,9 @@ export default function PriznanieUmershimPage() {
       <MilitaryHero 
         breadcrumbs={
           <>
-            <a href="/-/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <a href="/-/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
-            <a href="/-/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/" style={{ color: 'var(--color-primary)' }}>Главная</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</a> <span style={{ margin: '0 8px' }}>/</span> 
+            <a href="/grazhdanam/voennyj-yurist/" style={{ color: 'var(--color-primary)' }}>Военный юрист</a> <span style={{ margin: '0 8px' }}>/</span> 
             <span style={{ color: 'var(--color-text-main)' }}>Признание безвестно отсутствующим или объявление умершим</span>
           </>
         }
@@ -354,7 +354,7 @@ export default function PriznanieUmershimPage() {
               Специализируется на сложных судебных делах с участием государственных и силовых органов
             </li>
           </ul>,
-          <a key="3" href="/-/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+          <a key="3" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
             Подробнее о Дмитрии Сергеевиче Конопкине →
           </a>
         ]}
@@ -588,7 +588,7 @@ export default function PriznanieUmershimPage() {
             }
           `}</style>
           <div className="grid grid-2" style={{ gap: '28px' }}>
-            <a href="/-/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/" className="related-card-link" style={{ textDecoration: 'none' }}>
+            <a href="/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/" className="related-card-link" style={{ textDecoration: 'none' }}>
               <div className="card hover-lift" style={{ 
                 padding: '28px 24px', 
                 background: '#FFFFFF', 
@@ -614,7 +614,7 @@ export default function PriznanieUmershimPage() {
               </div>
             </a>
 
-            <a href="/-/grazhdanam/voennyj-yurist/" className="related-card-link" style={{ textDecoration: 'none' }}>
+            <a href="/grazhdanam/voennyj-yurist/" className="related-card-link" style={{ textDecoration: 'none' }}>
               <div className="card hover-lift" style={{ 
                 padding: '28px 24px', 
                 background: '#FFFFFF', 

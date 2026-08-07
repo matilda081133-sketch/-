@@ -322,7 +322,7 @@ export default async function SpecialistPage({ params }: PageProps) {
                 background: 'transparent'
               }}>
                 <img 
-                  src={member.image.startsWith('/-/') ? member.image : `/-${member.image}`} 
+                  src={member.image} 
                   className="specialist-img-responsive"
                   alt={
                     member.slug === 'konopkin-dmitriy-sergeevich'
@@ -340,9 +340,9 @@ export default async function SpecialistPage({ params }: PageProps) {
                   style={{ width: '100%', height: '540px', objectFit: 'cover', objectPosition: member.slug === 'gusev-oleg-yurevich' ? 'center 32%' : member.slug === 'smolyaninova-marina-valerevna' ? 'center 28%' : member.slug === 'konopkin-dmitriy-sergeevich' ? 'center 35%' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 20%' : 'center 25%', display: 'block', filter: 'brightness(1.05)' }}
                 />
               </div>
-              <div style={{ width: '100%', maxWidth: '440px', background: 'var(--color-deep-blue)', padding: '16px 20px', marginTop: '0' }}>
-                <div style={{ fontSize: '16px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>{member.name}</div>
-                <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.75)', marginTop: '4px', lineHeight: 1.4 }}>{member.status}</div>
+              <div style={{ width: '100%', maxWidth: '440px', background: '#FFFFFF', padding: '14px 20px', marginTop: '0', borderTop: '3px solid var(--color-primary)', boxShadow: '0 4px 12px rgba(16, 39, 59, 0.08)' }}>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>{member.name}</div>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '4px', lineHeight: 1.4 }}>{member.companyRole || member.status}</div>
               </div>
             </div>
           </div>
