@@ -70,49 +70,28 @@ export default function Home() {
             {/* Hero USPs Row */}
             <div className="hero-usps-row" style={{ 
               display: 'flex', 
-              gap: '20px', 
-              marginTop: '50px' 
+              flexDirection: 'column', 
+              gap: '14px', 
+              marginTop: '36px',
+              marginBottom: '36px' 
             }}>
               {[
-                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>, 
-                  text: 'Юристы и адвокаты под профиль вашего дела' },
-                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>, 
-                  text: 'Опыт изнутри системы: СК, ФССП, госорганы' },
-                { value: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>, 
-                  text: 'Честный договор: фиксируем план работ и цены' }
-              ].map((bullet, i) => (
-                <div key={i} className="hero-bullet-item" style={{ 
-                  flex: 1,
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  gap: '16px',
-                  background: 'rgba(255, 255, 255, 0.7)',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255, 255, 255, 0.9)',
-                  padding: '20px 24px',
-                  boxShadow: '0 15px 35px rgba(23, 50, 77, 0.04)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease',
-                  cursor: 'default'
+                'Юристы и адвокаты под профиль вашего дела',
+                'Опыт изнутри системы: СК, ФССП, госорганы',
+                'Честный договор: фиксируем план работ и цены'
+              ].map((bulletText, i) => (
+                <div key={i} className="specialist-fact-block" style={{ 
+                  paddingLeft: '16px', 
+                  borderLeft: '3px solid var(--color-gold)', 
+                  fontSize: '15px', 
+                  color: 'var(--color-deep-blue)', 
+                  lineHeight: 1.4,
+                  fontWeight: 500
                 }}>
-                  <div style={{ color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{bullet.value}</div>
-                  <div style={{ color: 'var(--color-deep-blue)', fontSize: '13px', fontWeight: 600, lineHeight: 1.4 }}>
-                    {bullet.text}
-                  </div>
+                  {bulletText}
                 </div>
               ))}
             </div>
-            <style dangerouslySetInnerHTML={{__html: `
-              .hero-bullet-item:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 20px 35px rgba(23, 50, 77, 0.12) !important;
-                background: rgba(255, 255, 255, 0.95) !important;
-                border-color: var(--color-gold) !important;
-              }
-              .hero-bullet-item:hover svg {
-                transform: scale(1.1);
-                transition: transform 0.3s ease;
-              }
-            `}} />
           </div>
           
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
