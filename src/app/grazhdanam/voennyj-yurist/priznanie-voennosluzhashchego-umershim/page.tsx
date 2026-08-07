@@ -146,7 +146,7 @@ export default function PriznanieUmershimPage() {
         primaryCtaText="Обсудить ситуацию"
         primaryCtaLink="#form"
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
-        imageUrl="/-/images/konopkin.jpg"
+        imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
         imageMarginTop="20px"
@@ -335,7 +335,7 @@ export default function PriznanieUmershimPage() {
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
         position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Военное право»</>}
-        imageUrl="/-/images/konopkin.jpg"
+        imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Дмитрий Сергеевич Конопкин курирует судебные процессы по установлению юридического статуса военнослужащих. Он помогает правильно квалифицировать ситуацию, составить запросы в ведомства и сформировать убедительную доказательную базу для обращения в суд.

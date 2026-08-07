@@ -58,7 +58,7 @@ export default function HelpBlock({
           
           <div style={{ position: 'relative', borderRadius: '4px', overflow: 'hidden', minHeight: '300px' }} className="d-none d-md-block">
             <img 
-              src="/-/images/team.jpg" 
+              src="/images/team.jpg" 
               alt={title}
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
             />

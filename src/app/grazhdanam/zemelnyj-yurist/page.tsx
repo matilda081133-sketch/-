@@ -14,7 +14,7 @@ export const metadata = {
     siteName: 'ЮК «Де-Юре»',
     images: [
       {
-        url: 'https://matilda081133-sketch.github.io/-/images/land_law_hero_pro.jpg',
+        url: 'https://matilda081133-sketch.github.io/images/land_law_hero_pro.jpg',
         width: 1200,
         height: 630,
         alt: 'Земельный юрист в Липецке'
@@ -27,7 +27,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Земельный юрист в Липецке — помощь по земельным вопросам | Де-Юре',
     description: 'Помощь земельного юриста в Липецке: споры о границах, оформление прав, сервитут, кадастровая стоимость, изменение ВРИ и перевод земли в другую категорию.',
-    images: ['https://matilda081133-sketch.github.io/-/images/land_law_hero_pro.jpg']
+    images: ['https://matilda081133-sketch.github.io/images/land_law_hero_pro.jpg']
   }
 };
 

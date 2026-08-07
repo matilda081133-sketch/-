@@ -68,7 +68,7 @@ export default function Footer() {
             <div style={{ marginBottom: '24px', marginTop: '-20px' }}>
               <Link href="/" style={{ display: 'inline-block' }}>
                 <img 
-                  src="/-/images/logo_dark.png" 
+                  src="/images/logo_dark.png" 
                   alt="Де-Юре" 
                   className="footer-logo-img"
                   style={{ height: '130px', width: 'auto', transform: 'scale(1.4)', transformOrigin: 'left center', filter: 'brightness(0) invert(1)' }} 

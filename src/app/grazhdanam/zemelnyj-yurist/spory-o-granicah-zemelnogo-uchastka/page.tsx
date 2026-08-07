@@ -14,7 +14,7 @@ export const metadata = {
     siteName: 'ЮК «Де-Юре»',
     images: [
       {
-        url: 'https://matilda081133-sketch.github.io/-/images/land_law_hero_pro.jpg',
+        url: 'https://matilda081133-sketch.github.io/images/land_law_hero_pro.jpg',
         width: 1200,
         height: 630,
         alt: 'Юрист по спорам о границах земельного участка в Липецке'
@@ -27,7 +27,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Юрист по спорам о границах земельного участка в Липецке | Де-Юре',
     description: 'Юридическая помощь при наложении границ, реестровой ошибке, захвате части участка и споре с соседом в Липецке.',
-    images: ['https://matilda081133-sketch.github.io/-/images/land_law_hero_pro.jpg']
+    images: ['https://matilda081133-sketch.github.io/images/land_law_hero_pro.jpg']
   }
 };
 

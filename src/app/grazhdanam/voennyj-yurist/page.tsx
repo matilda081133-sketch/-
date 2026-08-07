@@ -159,7 +159,7 @@ export default function VoennyjYuristPage() {
         primaryCtaText="Обсудить ситуацию"
         primaryCtaLink="#form"
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
-        imageUrl="/-/images/konopkin.jpg"
+        imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
         trustItems={[]}
@@ -480,7 +480,7 @@ export default function VoennyjYuristPage() {
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
         position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Военное право»</>}
-        imageUrl="/-/images/konopkin.jpg"
+        imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Дмитрий Сергеевич Конопкин курирует работу по военному праву: определяет правовую позицию, контролирует ведение дел и подключается к сложным вопросам, связанным с выплатами, заключениями ВВК, спорами с военкоматами и уголовной защитой военнослужащих. Опыт работы в Следственном комитете помогает оценивать правовые риски и выстраивать защиту по делам, связанным с уголовным преследованием.

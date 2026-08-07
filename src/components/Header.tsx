@@ -84,13 +84,13 @@ export default function Header() {
         {/* Логотип */}
         <Link href="/" onClick={closeMobileMenu} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <img 
-            src="/-/images/logo_dark.png" 
+            src="/images/logo_dark.png" 
             alt="Де-Юре" 
             className="desktop-logo"
             style={{ height: '110px', width: 'auto', transform: 'scale(1.25)', transformOrigin: 'left center' }} 
           />
           <img 
-            src="/-/images/logo_dark.png" 
+            src="/images/logo_dark.png" 
             alt="Де-Юре" 
             className="mobile-logo"
             style={{ height: '56px', width: 'auto', display: 'none', objectFit: 'contain' }} 

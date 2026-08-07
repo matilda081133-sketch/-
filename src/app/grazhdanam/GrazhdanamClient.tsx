@@ -239,7 +239,7 @@ export default function GrazhdanamClient() {
                 <div className="doc-sheet doc-sheet-1">
                   <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
-                      <img src="/-/images/logo_dark.png" alt="Де-Юре" style={{ width: '70px', height: 'auto', opacity: 0.95 }} />
+                      <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '70px', height: 'auto', opacity: 0.95 }} />
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', alignItems: 'flex-end' }}>
                         <span style={{ fontSize: '9px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ЮРИДИЧЕСКАЯ ПОМОЩЬ</span>
                         <span style={{ fontSize: '8px', color: 'var(--color-primary)', fontWeight: 600 }}>Правовая защита граждан</span>

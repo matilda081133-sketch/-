@@ -24,31 +24,24 @@ jobs:
       - name: Build Next.js static export
         run: npm run build
 
-      - name: Fix /-/ paths in HTML files
+      - name: Fix /-/ navigation paths in HTML (links, hrefs, breadcrumbs)
         run: |
-          echo "=== Fixing HTML files ==="
+          echo "=== Fixing navigation paths in HTML ==="
           find out/ -name "*.html" | xargs sed -i \
-            's|src="/-/|src="/|g;
-             s|href="/-/|href="/|g;
-             s|srcset="/-/|srcset="/|g;
-             s|content="/-/|content="/|g;
-             s|url(/-/|url(/|g'
+            -e 's|href="/-/|href="/|g' \
+            -e 's|src="/-/|src="/|g' \
+            -e 's|srcset="/-/|srcset="/|g' \
+            -e 's|content="/-/|content="/|g' \
+            -e 's|url(/-/|url(/|g'
           echo "HTML done."
 
-      - name: Fix /-/ paths in JS bundles (router + image refs)
+      - name: Fix /-/ navigation paths in JS bundles (Next.js router)
         run: |
-          echo "=== Fixing JS bundles ==="
-          find out/_next/ -name "*.js" | xargs sed -i \
-            's|"/-/|"/|g;
-             s|'"'"'/-/|'"'"'/|g;
-             s|`/-/|`/|g'
+          echo "=== Fixing JS router bundles ==="
+          find out/_next/ -name "*.js" -print0 | xargs -0 sed -i \
+            -e 's|"/-/|"/|g' \
+            -e "s|'/-/|'/|g"
           echo "JS done."
-
-      - name: Fix /-/ paths in CSS files
-        run: |
-          echo "=== Fixing CSS files ==="
-          find out/ -name "*.css" | xargs sed -i 's|/-/images/|/images/|g'
-          echo "CSS done."
 
       - name: Deploy to Timeweb via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5

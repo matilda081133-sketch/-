@@ -109,7 +109,7 @@ export default function SochPage() {
                 position: 'relative'
               }} className="hero-photo-hover">
                 <img 
-                  src="/-/images/konopkin.jpg" 
+                  src="/images/konopkin.jpg" 
                   alt="Дмитрий Сергеевич Конопкин"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                   className="hero-photo-img"
@@ -286,7 +286,7 @@ export default function SochPage() {
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
         position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Военное право»</>}
-        imageUrl="/-/images/konopkin.jpg"
+        imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Дмитрий Сергеевич Конопкин курирует работу по военному праву: определяет правовую позицию, контролирует ведение дел и подключается к сложным вопросам, связанным с выплатами, заключениями ВВК, спорами с военкоматами и уголовной защитой военнослужащих. Опыт работы в Следственном комитете помогает оценивать правовые риски и выстраивать защиту по делам, связанным с уголовным преследованием.

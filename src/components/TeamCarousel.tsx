@@ -30,7 +30,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
       rawName: 'Бобкин Аркадий Евгеньевич',
       role: 'Директор, управляющий партнёр ЮК «Де-Юре»',
       desc: 'Специализация: уголовно-правовые, налоговые и сложные коммерческие споры. Юридический стаж с 1997 года. Более 22 лет работы в следственных подразделениях МВД и налоговой полиции.',
-      img: '/-/images/bobkin.jpg',
+      img: '/images/bobkin.jpg',
       link: '/specialisty/bobkin-arkadiy-evgenevich/',
       imgPosition: 'center 15%'
     },
@@ -44,7 +44,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
       rawName: 'Конопкин Дмитрий Сергеевич',
       role: 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
       desc: 'Специализация: военное право, защита по уголовным делам. Юридический стаж с 2016 года. Опыт работы в Следственном комитете РФ. Статус адвоката с 2022 года.',
-      img: '/-/images/konopkin.jpg',
+      img: '/images/konopkin.jpg',
       link: '/specialisty/konopkin-dmitriy-sergeevich/',
       imgPosition: 'center 18%'
     },
@@ -58,7 +58,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
       rawName: 'Смольянинова Марина Валерьевна',
       role: 'Ведущий юрист ЮК «Де-Юре»',
       desc: 'Специализация: гражданские и семейные споры, недвижимость, взыскание задолженности. Опыт работы в УФССП России более 10 лет, из них 6 лет на руководящих должностях.',
-      img: '/-/images/smolyaninova.jpg',
+      img: '/images/smolyaninova.jpg',
       link: '/specialisty/smolyaninova-marina-valerevna/',
       imgPosition: 'center 20%'
     },
@@ -72,7 +72,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
       rawName: 'Гусев Олег Юрьевич',
       role: 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
       desc: 'Специализация: адвокат по уголовным делам. Опыт работы в прокуратуре 7 лет, в том числе заместителем прокурора района. Адвокатская практика с 2015 года.',
-      img: '/-/images/gusev.jpg',
+      img: '/images/gusev.jpg',
       link: '/specialisty/gusev-oleg-yurevich/',
       imgPosition: 'center 15%'
     },
@@ -87,7 +87,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
       rawName: 'Полозова Елена Анатольевна',
       role: 'Юрист ЮК «Де-Юре»',
       desc: 'Специализация: военное и трудовое право. Консультации, досудебная работа, подготовка юридических документов и помощь при обжаловании.',
-      img: '/-/images/polozova.jpg',
+      img: '/images/polozova.jpg',
       link: '/specialisty/polozova-elena-anatolevna/',
       imgPosition: 'center 20%'
     }

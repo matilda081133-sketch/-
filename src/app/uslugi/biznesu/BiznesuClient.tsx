@@ -330,10 +330,10 @@ export default function BiznesuClient() {
                 <div className="doc-sheet doc-sheet-1">
                   <div style={{ padding: '30px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', opacity: 0.03, width: '150px' }}>
-                      <img src="/-/images/logo_dark.png" alt="" style={{ width: '100%', height: 'auto' }} />
+                      <img src="/images/logo_dark.png" alt="" style={{ width: '100%', height: 'auto' }} />
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '12px', marginBottom: '20px' }}>
-                      <img src="/-/images/logo_dark.png" alt="" style={{ width: '60px', height: 'auto', opacity: 0.8 }} />
+                      <img src="/images/logo_dark.png" alt="" style={{ width: '60px', height: 'auto', opacity: 0.8 }} />
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
                         <div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div>
                         <div style={{ width: '50px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div>

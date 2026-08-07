@@ -15,7 +15,7 @@ export const metadata = {
     title: 'Контакты юридической компании «Де-Юре» в Липецке',
     description: 'Телефон, адрес офиса, режим работы и реквизиты ЮК «Де-Юре» в Липецке. Свяжитесь с нами или постройте маршрут до офиса.',
     url: 'https://dejure-help.ru/kontakty/',
-    images: [{ url: 'https://dejure-help.ru/-/images/office-building.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://dejure-help.ru/images/office-building.jpg', width: 1200, height: 630 }],
   }
 };
 
@@ -26,8 +26,8 @@ export default function ContactsPage() {
     name: 'ЮК «Де-Юре»',
     legalName: 'ООО ЮК «Де-Юре»',
     url: 'https://dejure-help.ru/',
-    logo: 'https://dejure-help.ru/-/images/logo_dark.png',
-    image: 'https://dejure-help.ru/-/images/office-building.jpg',
+    logo: 'https://dejure-help.ru/images/logo_dark.png',
+    image: 'https://dejure-help.ru/images/office-building.jpg',
     description: 'Юридическая помощь гражданам и бизнесу в Липецке.',
     telephone: '+7 (910) 350-31-11',
     email: 'info@dejure-help.ru',
@@ -287,7 +287,7 @@ export default function ContactsPage() {
                 <div style={{ background: 'var(--color-white)', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.06)', border: '1px solid rgba(23, 50, 77, 0.08)' }}>
                   <div style={{ height: '280px', overflow: 'hidden', position: 'relative' }}>
                     <img 
-                      src="/-/images/office-building.jpg" 
+                      src="/images/office-building.jpg" 
                       alt="Здание бизнес-центра Антарес в Липецке" 
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
@@ -306,7 +306,7 @@ export default function ContactsPage() {
                 <div style={{ background: 'var(--color-white)', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(23, 50, 77, 0.06)', border: '1px solid rgba(23, 50, 77, 0.08)' }}>
                   <div style={{ height: '280px', overflow: 'hidden', position: 'relative' }}>
                     <img 
-                      src="/-/images/office-entrance.jpg" 
+                      src="/images/office-entrance.jpg" 
                       alt="Вход в офис 213 юридической компании Де-Юре" 
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />

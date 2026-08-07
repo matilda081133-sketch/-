@@ -53,7 +53,7 @@ export default function OsparivanieKadastrovojStoimostiClient() {
         "@id": "https://dejure-help.ru/#organization",
         "name": "Юридическая компания «Де-Юре»",
         "url": "https://dejure-help.ru/",
-        "logo": "https://matilda081133-sketch.github.io/-/images/logo_dark.png"
+        "logo": "https://matilda081133-sketch.github.io/images/logo_dark.png"
       },
       {
         "@type": "Service",
@@ -300,7 +300,7 @@ export default function OsparivanieKadastrovojStoimostiClient() {
                   <div className="doc-sheet doc-sheet-1">
                     <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
-                        <img src="/-/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
+                        <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
                           <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>КАДАСТРОВАЯ СТОИМОСТЬ</span>
                           <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>Расчёт налогооблагаемой базы</span>
