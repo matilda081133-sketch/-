@@ -7,9 +7,11 @@ interface TeamCarouselProps {
   customTitle?: string;
   customSubtitle?: React.ReactNode;
   filterSlugs?: string[];
+  hideSectionLabel?: boolean;
+  titleAlign?: 'left' | 'center';
 }
 
-export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs }: TeamCarouselProps = {}) {
+export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs, hideSectionLabel = false, titleAlign = 'left' }: TeamCarouselProps = {}) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -100,16 +102,20 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs 
   return (
     <section className="section bg-cream" id="team">
       <div className="container">
-        <div style={{ marginBottom: '40px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-            <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>Юристы и адвокаты</span>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '20px', flexWrap: 'wrap', marginBottom: '16px' }}>
+        <div style={{ marginBottom: '40px', textAlign: titleAlign === 'center' ? 'center' : 'left' }}>
+          {!hideSectionLabel && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px', justifyContent: titleAlign === 'center' ? 'center' : 'flex-start' }}>
+              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>Юристы и адвокаты</span>
+            </div>
+          )}
+          <div style={{ display: 'flex', justifyContent: titleAlign === 'center' ? 'center' : 'space-between', alignItems: 'center', gap: '20px', flexWrap: 'wrap', marginBottom: '16px' }}>
             <h2 style={{ margin: 0, fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>{customTitle || 'Наши специалисты'}</h2>
-            <Link href="/specialisty/" className="btn btn-outline" style={{ fontSize: '15px', display: 'inline-block', whiteSpace: 'nowrap' }}>Все специалисты</Link>
+            {titleAlign !== 'center' && (
+              <Link href="/specialisty/" className="btn btn-outline" style={{ fontSize: '15px', display: 'inline-block', whiteSpace: 'nowrap' }}>Все специалисты</Link>
+            )}
           </div>
-          <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, maxWidth: '800px' }}>
+          <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, maxWidth: titleAlign === 'center' ? '100%' : '800px' }}>
             {customSubtitle || 'Опытные юристы и адвокаты Липецка с профильной специализацией. Бывшие сотрудники прокуратуры, Следственного комитета и службы судебных приставов, обеспечивающие надежную правовую защиту по гражданским, арбитражным и уголовным делам.'}
           </p>
         </div>
