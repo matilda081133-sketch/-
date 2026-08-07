@@ -36,8 +36,7 @@ export default function ConsentPage() {
             lineHeight: 1.25,
             margin: 0,
           }}>
-            <span style={{ display: 'block' }}>Согласие</span>
-            <span style={{ display: 'block' }}>на обработку</span>
+            <span style={{ display: 'block' }}>Согласие на обработку</span>
             <span style={{ display: 'block' }}>персональных данных</span>
           </h1>
           <p style={{ marginTop: '12px', color: 'rgba(255,255,255,0.6)', fontSize: '14px' }}>
