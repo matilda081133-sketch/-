@@ -175,6 +175,27 @@ export default function Footer() {
             <Link href="/privacy">Политика обработки персональных данных</Link>
             <Link href="/consent">Согласие на обработку персональных данных</Link>
             <Link href="/cookies">Политика использования cookie</Link>
+            <button
+              onClick={() => {
+                const fn = (window as Window & { __deJureOpenCookieSettings?: () => void }).__deJureOpenCookieSettings;
+                if (typeof fn === 'function') fn();
+              }}
+              style={{
+                background: 'none',
+                border: 'none',
+                padding: 0,
+                color: 'inherit',
+                fontSize: 'inherit',
+                cursor: 'pointer',
+                textAlign: 'left',
+                textDecoration: 'underline',
+                fontFamily: 'inherit',
+                opacity: 0.8
+              }}
+              aria-label="Открыть настройки cookie"
+            >
+              Настройки cookie
+            </button>
             <Link href="/terms">Правовой дисклеймер</Link>
             <Link href="/sitemap">Карта сайта</Link>
           </div>

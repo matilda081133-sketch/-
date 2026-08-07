@@ -6,136 +6,172 @@ import Footer from '@/components/Footer';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Политика использования файлов cookie — ЮК «Де-Юре»',
+  title: 'Политика использования файлов cookie — «Де-Юре»',
   description: 'Информация о том, какие файлы cookie использует сайт dejure-help.ru, для каких целей и как управлять ими.',
   alternates: {
     canonical: 'https://dejure-help.ru/cookies/',
   },
 };
 
+// ─── Sub-components ──────────────────────────────────────────────────────────
+
+function Section({ num, title, children }: { num: string; title: string; children: React.ReactNode }) {
+  return (
+    <section style={{ marginBottom: '32px' }}>
+      <h2 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-deep-blue, #10273B)', marginBottom: '12px', marginTop: 0 }}>
+        {num}. {title}
+      </h2>
+      {children}
+    </section>
+  );
+}
+
+function SubSection({ num, title, children }: { num: string; title: string; children: React.ReactNode }) {
+  return (
+    <div style={{ marginBottom: '16px' }}>
+      <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue, #10273B)', marginBottom: '8px', marginTop: 0 }}>
+        {num}. {title}
+      </h3>
+      {children}
+    </div>
+  );
+}
+
+function P({ children }: { children: React.ReactNode }) {
+  return (
+    <p style={{ margin: '0 0 10px', fontSize: '15px', lineHeight: 1.75, color: '#374151' }}>
+      {children}
+    </p>
+  );
+}
+
+function UL({ items }: { items: React.ReactNode[] }) {
+  return (
+    <ul style={{ margin: '0 0 10px', paddingLeft: '20px' }}>
+      {items.map((item, i) => (
+        <li key={i} style={{ fontSize: '15px', lineHeight: 1.75, color: '#374151', marginBottom: '4px' }}>
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// ─── Page ────────────────────────────────────────────────────────────────────
+
 export default function CookiesPolicyPage() {
+  const publicationDate = '07 августа 2026 г.';
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      
+
       <main className="flex-grow bg-slate-50">
-        {/* Hero Section */}
-        <section className="bg-[var(--color-deep-blue)] text-white py-10 md:py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[860px]">
-            <nav className="text-sm mb-6 text-slate-300">
-              <Link href="/" className="hover:text-white transition-colors">Главная</Link>
-              <span className="mx-2">/</span>
-              <span className="text-white">Политика cookie</span>
+        {/* Hero */}
+        <section style={{ background: 'var(--color-deep-blue, #10273B)', color: '#ffffff', padding: '40px 0 48px' }}>
+          <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 24px' }}>
+            <nav style={{ fontSize: '13px', marginBottom: '20px', color: 'rgba(255,255,255,0.65)' }}>
+              <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Главная</Link>
+              <span style={{ margin: '0 8px' }}>/</span>
+              <span style={{ color: '#fff' }}>Политика cookie</span>
             </nav>
-            <h1 className="font-serif text-3xl md:text-5xl font-bold mb-4">
+            <h1 style={{ fontSize: 'clamp(26px, 4vw, 40px)', fontFamily: 'var(--font-serif)', fontWeight: 700, margin: '0 0 12px' }}>
               Политика использования файлов cookie
             </h1>
-            <p className="text-slate-300 text-lg">
-              Редакция от 07 августа 2026 г.
+            <p style={{ margin: 0, color: 'rgba(255,255,255,0.6)', fontSize: '15px' }}>
+              Редакция от {publicationDate}
             </p>
           </div>
         </section>
 
-        {/* Content Section */}
-        <section className="py-10 md:py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[860px]">
-            <div className="bg-white rounded-xl shadow-sm p-6 md:p-12 border border-slate-200">
-              <div 
-                className="prose max-w-none"
-                style={{
-                  fontSize: '16px',
-                  lineHeight: '1.8',
-                  color: 'var(--color-text-main)'
-                }}
-              >
-                <style>{`
-                  .prose h2 {
-                    font-family: var(--font-serif);
-                    color: var(--color-deep-blue);
-                    font-size: 1.5rem;
-                    font-weight: 700;
-                    margin-top: 2.5rem;
-                    margin-bottom: 1rem;
-                    padding-bottom: 0.5rem;
-                    border-bottom: 1px solid #f1f5f9;
-                  }
-                  .prose h3 {
-                    font-size: 1.125rem;
-                    font-weight: 700;
-                    margin-top: 1.5rem;
-                    margin-bottom: 0.5rem;
-                  }
-                  .prose p {
-                    margin-bottom: 1rem;
-                  }
-                  .prose ul {
-                    list-style-type: disc;
-                    padding-left: 1.5rem;
-                    margin-bottom: 1rem;
-                  }
-                `}</style>
-                
-                <h2>1. Общие положения</h2>
-                <p>
-                  Сайт https://dejure-help.ru/ использует cookie и аналогичные технологии. Cookie — фрагменты данных, сохраняемые на устройстве пользователя или получаемые сайтом при посещении. Оператор — ООО ЮК «Де-Юре», ИНН 4800009680, info@dejure-help.ru.
-                </p>
+        {/* Content */}
+        <section style={{ padding: '48px 0 64px' }}>
+          <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 24px' }}>
+            <div style={{ background: '#ffffff', borderRadius: '8px', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', padding: 'clamp(24px, 5vw, 56px)', border: '1px solid rgba(23,50,77,0.08)' }}>
 
-                <h2>2. Категории cookie</h2>
-                
-                <h3>2.1. Технически необходимые</h3>
-                <p>
-                  Нужны для загрузки страниц, авторизации, безопасности и сохранения пользовательских предпочтений. Используются без согласия на основании статьи 6 № 152-ФЗ.<br/>
-                  Примеры: session_id, XSRF-token, выбор языка.
-                </p>
+              <Section num="1" title="Общие положения">
+                <P>
+                  Сайт <a href="https://dejure-help.ru/" style={{ color: 'var(--color-primary, #10273B)' }}>https://dejure-help.ru/</a> использует cookie и аналогичные технологии. Cookie — фрагменты данных, сохраняемые на устройстве или получаемые при посещении.
+                </P>
+                <P>
+                  Оператор — ООО ЮК «Де-Юре», ИНН 4800009680,{' '}
+                  <a href="mailto:info@dejure-help.ru" style={{ color: 'var(--color-primary, #10273B)' }}>info@dejure-help.ru</a>.
+                </P>
+              </Section>
 
-                <h3>2.2. Аналитические</h3>
-                <p>
-                  Позволяют анализировать посещаемость и улучшать сайт. Используются только с согласия пользователя.<br/>
-                  Пример: Яндекс.Метрика (без Вебвизора, параметры в статистике передаются в Яндекс как оператору-обработчику).
-                </p>
+              <Section num="2" title="Категории cookie">
+                <SubSection num="2.1" title="Технически необходимые">
+                  <P>
+                    Нужны для загрузки страниц, безопасности, сохранения выбора, предотвращения повторного баннера, форм и основных функций. Через баннер не отключаются.
+                  </P>
+                </SubSection>
+                <SubSection num="2.2" title="Функциональные">
+                  <P>
+                    Нужны для дополнительных функций, включая Яндекс Карту и настройки. До согласия внешняя карта не загружается; показывается заглушка и кнопка «Показать карту».
+                  </P>
+                </SubSection>
+                <SubSection num="2.3" title="Аналитические">
+                  <P>
+                    Анализируют посещения, источники, страницы, длительность, действия, устройства и ошибки. Сервисы: Яндекс Метрика, Вебвизор, Roistat.
+                  </P>
+                </SubSection>
+                <SubSection num="2.4" title="Маркетинговые">
+                  <P>
+                    Оценивают рекламу и связывают посещение с заявкой или звонком. Включают функции Roistat и пиксели ВКонтакте при подключении. Используются только после согласия.
+                  </P>
+                </SubSection>
+              </Section>
 
-                <h3>2.3. Функциональные</h3>
-                <p>
-                  Запоминают выбор пользователя (наличие баннера cookie). Применяются до получения или отказа в согласии.
-                </p>
+              <Section num="3" title="Используемые сервисы">
+                <P>
+                  Метрика, Вебвизор, Яндекс Карты, Roistat, Sentry, Timeweb и технологии ВКонтакте при подключении.
+                </P>
+                <P>
+                  Обычные ссылки Telegram, MAX и WhatsApp сами cookie не ставят; при добавлении виджетов политика обновляется.
+                </P>
+              </Section>
 
-                <h3>2.4. Рекламные</h3>
-                <p>
-                  На сайте отсутствуют.
-                </p>
+              <Section num="4" title="Сроки хранения">
+                <UL items={[
+                  'выбор пользователя — до 12 месяцев;',
+                  'необходимые cookie — сессия либо до 12 месяцев;',
+                  'функциональные — до 12 месяцев;',
+                  'аналитические и маркетинговые — до 24 месяцев.'
+                ]} />
+              </Section>
 
-                <h2>3. Передача данных третьим лицам</h2>
-                <p>
-                  Мы не продаём и не передаём данные cookie третьим лицам в маркетинговых целях. Яндекс.Метрика является уполномоченным обработчиком по договору. Техническая инфраструктура — Timeweb.
-                </p>
+              <Section num="5" title="Управление cookie">
+                <P>
+                  При первом посещении можно принять или отклонить необязательные cookie. До согласия необязательные технологии не загружаются.
+                </P>
+                <P>
+                  Просмотр, прокрутка и закрытие баннера не считаются согласием. Выбор меняется через «Настройки cookie» в подвале сайта. Отказ не мешает просмотру и подаче заявки.
+                </P>
+              </Section>
 
-                <h2>4. Управление cookie</h2>
-                <p>Вы можете:</p>
-                <ul>
-                  <li>Принять или отклонить аналитические cookie через баннер на сайте;</li>
-                  <li>Отозвать согласие, обновив настройки в баннере;</li>
-                  <li>Отключить или удалить cookie через настройки браузера (инструкции: Chrome, Firefox, Safari, Edge).</li>
-                </ul>
-                <p>
-                  Отключение технически необходимых cookie может нарушить работу сайта.
-                </p>
+              <Section num="6" title="Изменение Политики">
+                <P>
+                  Политика обновляется при новых сервисах или изменении закона. Актуальная редакция:{' '}
+                  <a href="https://dejure-help.ru/cookies/" style={{ color: 'var(--color-primary, #10273B)' }}>
+                    https://dejure-help.ru/cookies/
+                  </a>.
+                </P>
+                <P>
+                  Вопросы:{' '}
+                  <a href="mailto:info@dejure-help.ru" style={{ color: 'var(--color-primary, #10273B)' }}>
+                    info@dejure-help.ru
+                  </a>.
+                </P>
+              </Section>
 
-                <h2>5. Срок хранения</h2>
-                <ul>
-                  <li><strong>Технически необходимые:</strong> от сессии до 1 года.</li>
-                  <li><strong>Аналитические:</strong> в соответствии с условиями Яндекс.Метрики.</li>
-                  <li><strong>Запись о согласии/отказе:</strong> 3 года.</li>
-                </ul>
-
-                <h2>6. Обновление политики</h2>
-                <p>
-                  Мы можем обновлять настоящую Политику. Действующая версия публикуется на этой странице. Продолжение использования сайта после публикации изменений означает принятие обновлённой Политики.
-                </p>
-
-                <h2>7. Контакты</h2>
-                <p>
-                  По вопросам использования cookie и персональных данных обращайтесь: <a href="mailto:info@dejure-help.ru" style={{ color: 'var(--color-primary)' }} className="hover:underline">info@dejure-help.ru</a> или по юридическому адресу: 398902, Липецкая область, г. Липецк, ул. Юношеская, влд. 46Б, пом. 1.
-                </p>
+              {/* Bottom nav */}
+              <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid rgba(23,50,77,0.08)', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+                <Link href="/privacy" style={{ fontSize: '14px', color: 'var(--color-primary, #10273B)', textDecoration: 'underline' }}>
+                  Политика обработки персональных данных
+                </Link>
+                <Link href="/consent" style={{ fontSize: '14px', color: 'var(--color-primary, #10273B)', textDecoration: 'underline' }}>
+                  Согласие на обработку данных
+                </Link>
               </div>
             </div>
           </div>

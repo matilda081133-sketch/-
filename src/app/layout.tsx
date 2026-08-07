@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import CookieConsent from '@/components/CookieConsent';
+import ConsentManager from '@/components/ConsentManager';
 
 export const metadata: Metadata = {
   title: '«Де-Юре» | Юридическая компания в Липецке',
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body>
         {children}
         <CookieConsent />
+        <ConsentManager />
       </body>
     </html>
   );
