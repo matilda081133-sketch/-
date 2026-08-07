@@ -338,18 +338,31 @@ export default function ContactsPage() {
                 </h2>
                 
                 <div style={{ padding: '32px', background: 'var(--color-white)', border: '1px solid rgba(23, 50, 77, 0.12)', borderRadius: '4px', boxShadow: '0 8px 16px -2px rgba(23, 50, 77, 0.12), 0 2px 4px -1px rgba(23, 50, 77, 0.08)', fontSize: '15px', lineHeight: 1.6, color: 'var(--color-deep-blue)' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '32px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '32px' }}>
                     <div>
-                      <strong style={{ fontSize: '16px' }}>ООО ЮК «Де-Юре»</strong><br />
-                      <span style={{ color: 'var(--color-text-secondary)' }}>ИНН/КПП:</span> 4800009680 / 480001001<br />
+                      <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>
+                        ООО ЮК «Де-Юре»
+                      </strong>
+                      <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '12px' }}>
+                        ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ ЮРИДИЧЕСКАЯ КОМПАНИЯ "ДЕ-ЮРЕ"
+                      </div>
+                      <span style={{ color: 'var(--color-text-secondary)' }}>ИНН / КПП:</span> 4800009680 / 480001001<br />
                       <span style={{ color: 'var(--color-text-secondary)' }}>ОГРН:</span> 1234800008464<br />
-                      <span style={{ color: 'var(--color-text-secondary)' }}>Руководитель:</span> Шалавин Д.Г.
+                      <span style={{ color: 'var(--color-text-secondary)' }}>Директор:</span> Бобкин Аркадий Евгеньевич
                     </div>
-                    <div>
-                      <strong>Юридический адрес:</strong><br />
-                      398902, Липецкая обл., г. Липецк,<br />ул. Юношеская, влд. 46Б, пом. 1<br />
-                      <strong style={{ display: 'block', marginTop: '12px' }}>Фактический адрес:</strong>
-                      398059, г. Липецк, ул. Советская, 35, оф. 213
+
+                    <div style={{ borderTop: '1px solid rgba(23, 50, 77, 0.08)', paddingTop: '16px' }}>
+                      <strong style={{ display: 'block', marginBottom: '4px' }}>Адреса:</strong>
+                      <span style={{ color: 'var(--color-text-secondary)' }}>Юридический:</span> 398902, Липецкая область, г. о. город Липецк, г. Липецк, ул. Юношеская, влд. 46Б, помещение 1<br />
+                      <span style={{ color: 'var(--color-text-secondary)' }}>Фактический:</span> 398059, г. Липецк, ул. Советская, д. 35, офис 213
+                    </div>
+
+                    <div style={{ borderTop: '1px solid rgba(23, 50, 77, 0.08)', paddingTop: '16px' }}>
+                      <strong style={{ display: 'block', marginBottom: '4px' }}>Банковские реквизиты:</strong>
+                      <span style={{ color: 'var(--color-text-secondary)' }}>Банк:</span> АО "АЛЬФА-БАНК"<br />
+                      <span style={{ color: 'var(--color-text-secondary)' }}>Р/с:</span> 40702810902930008123<br />
+                      <span style={{ color: 'var(--color-text-secondary)' }}>К/с:</span> 30101810200000000593<br />
+                      <span style={{ color: 'var(--color-text-secondary)' }}>БИК:</span> 044525593 | <span style={{ color: 'var(--color-text-secondary)' }}>ИНН Банка:</span> 7728168971
                     </div>
                   </div>
                   

@@ -358,8 +358,8 @@ export default function BiznesuClient() {
                     </div>
                     <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px solid rgba(23,50,77,0.2)' }}>
                       <div>
-                        <div style={{ fontSize: '10px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ООО «ДЕ-ЮРЕ»</div>
-                        <div style={{ fontSize: '8px', color: 'rgba(23,50,77,0.6)' }}>ИНН 4826145890</div>
+                        <div style={{ fontSize: '10px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ООО ЮК «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '8px', color: 'rgba(23,50,77,0.6)' }}>ИНН 4800009680</div>
                       </div>
                       <div style={{ width: '45px', height: '45px', borderRadius: '50%', border: '1.5px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-15deg)', opacity: 0.85 }}>
                         <div style={{ width: '37px', height: '37px', borderRadius: '50%', border: '0.5px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
