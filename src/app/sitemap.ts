@@ -22,8 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/',
     '/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/',
     '/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/',
-    '/grazhdanam/voennyj-yurist/samovolnoe-ostavlenie-chasti/',
-    '/grazhdanam/voennyj-yurist/dezertirstvo/',
     '/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
   ];
 
