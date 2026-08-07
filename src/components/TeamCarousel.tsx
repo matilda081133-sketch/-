@@ -10,9 +10,10 @@ interface TeamCarouselProps {
   hideSectionLabel?: boolean;
   titleAlign?: 'left' | 'center';
   sectionPaddingTop?: string;
+  showDisclaimer?: boolean;
 }
 
-export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs, hideSectionLabel = false, titleAlign = 'left', sectionPaddingTop }: TeamCarouselProps = {}) {
+export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs, hideSectionLabel = false, titleAlign = 'left', sectionPaddingTop, showDisclaimer = false }: TeamCarouselProps = {}) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -288,6 +289,23 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs,
             </button>
           )}
         </div>
+
+        {showDisclaimer && (
+          <div style={{ marginTop: '36px', paddingTop: '20px', borderTop: '1px solid rgba(16,39,59,0.08)' }}>
+            <p style={{
+              margin: 0,
+              fontSize: '13.5px',
+              color: 'var(--color-text-secondary)',
+              lineHeight: 1.65,
+              fontStyle: 'italic',
+              borderLeft: '3px solid rgba(23,50,77,0.25)',
+              paddingLeft: '14px',
+              maxWidth: '860px'
+            }}>
+              ЮК «Де-Юре» и Коллегия адвокатов «Де-Юре» являются самостоятельными организациями. Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

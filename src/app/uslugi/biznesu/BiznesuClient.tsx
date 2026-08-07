@@ -814,6 +814,7 @@ export default function BiznesuClient() {
           'nacheshnikov-vladimir-viktorovich'
         ]}
         sectionPaddingTop="100px"
+        showDisclaimer={true}
       />
 
       {/* ═══ 6. ПРИМЕРЫ ДЕЛ ИЗ ПРАКТИКИ (3 B2B-кейса из ТЗ п. 7) ═══ */}

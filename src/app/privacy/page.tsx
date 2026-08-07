@@ -36,8 +36,9 @@ export default function PrivacyPage() {
             lineHeight: 1.25,
             margin: 0,
           }}>
-            Политика в отношении<br />
-            обработки персональных данных
+            <span style={{ display: 'block' }}>Политика</span>
+            <span style={{ display: 'block' }}>в отношении обработки</span>
+            <span style={{ display: 'block' }}>персональных данных</span>
           </h1>
           <p style={{ marginTop: '12px', color: 'rgba(255,255,255,0.6)', fontSize: '14px' }}>
             Редакция от 07 августа 2026 г.

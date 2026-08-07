@@ -75,9 +75,9 @@ export default function CookiesPolicyPage() {
               <span style={{ margin: '0 8px' }}>/</span>
               <span style={{ color: '#fff' }}>Политика cookie</span>
             </nav>
-            <h1 style={{ fontSize: 'clamp(26px, 4vw, 40px)', fontFamily: 'var(--font-serif)', fontWeight: 700, margin: '0 0 12px' }}>
-              Политика использования<br />
-              файлов cookie
+            <h1 style={{ fontSize: 'clamp(26px, 4vw, 40px)', fontFamily: 'var(--font-serif)', fontWeight: 700, color: '#FFFFFF', margin: '0 0 12px', lineHeight: 1.25 }}>
+              <span style={{ display: 'block' }}>Политика использования</span>
+              <span style={{ display: 'block' }}>файлов cookie</span>
             </h1>
             <p style={{ margin: 0, color: 'rgba(255,255,255,0.6)', fontSize: '15px' }}>
               Редакция от {publicationDate}
