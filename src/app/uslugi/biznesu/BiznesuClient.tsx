@@ -358,12 +358,12 @@ export default function BiznesuClient() {
                     </div>
                     <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px solid rgba(23,50,77,0.2)' }}>
                       <div>
-                        <div style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ООО «ДЕ-ЮРЕ»</div>
-                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)' }}>ИНН 4826145890</div>
+                        <div style={{ fontSize: '10px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ООО «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '8px', color: 'rgba(23,50,77,0.6)' }}>ИНН 4826145890</div>
                       </div>
                       <div style={{ width: '45px', height: '45px', borderRadius: '50%', border: '1.5px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-15deg)', opacity: 0.85 }}>
                         <div style={{ width: '37px', height: '37px', borderRadius: '50%', border: '0.5px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                          <span style={{ fontSize: '4px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.1 }}>ДЕ-ЮРЕ ЛИПЕЦК</span>
+                          <span style={{ fontSize: '7px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.1 }}>ДЕ-ЮРЕ ЛИПЕЦК</span>
                         </div>
                       </div>
                     </div>
@@ -797,6 +797,7 @@ export default function BiznesuClient() {
       </section>
 
 
+      <div style={{ paddingTop: '80px' }}>
             {/* ═══ 5. СПЕЦИАЛИСТЫ ПО РАБОТЕ С БИЗНЕСОМ (Точный состав из ТЗ п. 6: Бобкин, Смолянинова, Начешников) ═══ */}
       <TeamCarousel 
         hideSectionLabel={true}
@@ -814,6 +815,7 @@ export default function BiznesuClient() {
           'nacheshnikov-vladimir-viktorovich'
         ]}
       />
+      </div>
 
       {/* ═══ 6. ПРИМЕРЫ ДЕЛ ИЗ ПРАКТИКИ (3 B2B-кейса из ТЗ п. 7) ═══ */}
       <CasesBlock 

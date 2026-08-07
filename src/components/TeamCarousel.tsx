@@ -67,6 +67,20 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs,
     {
       name: (
         <>
+          <span style={{ display: 'block' }}>Начешников</span>
+          <span style={{ display: 'block' }}>Владимир Викторович</span>
+        </>
+      ),
+      rawName: 'Начешников Владимир Викторович',
+      role: 'Специалист по корпоративным процедурам и сопровождению бизнеса',
+      desc: 'Сопровождает создание, реорганизацию и прекращение деятельности юридических лиц, изменения в структуре управления, сделки с долями. Опыт с 1997 года.',
+      img: '/images/nacheshnikov.jpg',
+      link: '/specialisty/nacheshnikov-vladimir-viktorovich/',
+      imgPosition: 'center 20%'
+    },
+    {
+      name: (
+        <>
           <span style={{ display: 'block' }}>Гусев</span>
           <span style={{ display: 'block' }}>Олег Юрьевич</span>
         </>
