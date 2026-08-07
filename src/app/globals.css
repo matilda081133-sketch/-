@@ -1190,6 +1190,22 @@ h4 { font-size: 1.25rem; }
   }
 }
 
+/* Fail-safe Desktop/Mobile text wrapping helpers */
+@media (min-width: 769px) {
+  .nowrap-desk {
+    white-space: nowrap !important;
+  }
+}
+@media (max-width: 768px) {
+  br.nowrap-desk {
+    display: none !important;
+  }
+  span.nowrap-desk {
+    white-space: normal !important;
+  }
+}
+
+
 
 
 
