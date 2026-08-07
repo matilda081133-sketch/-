@@ -26,9 +26,9 @@ export const metadata: Metadata = {
 
 const specialistListRoles: Record<string, string> = {
   'bobkin-arkadiy-evgenevich': 'Директор, управляющий партнёр ЮК «Де-Юре»',
-  'konopkin-dmitriy-sergeevich': 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
+  'konopkin-dmitriy-sergeevich': 'Адвокат. Председатель\nКоллегии адвокатов «Де-Юре»',
   'smolyaninova-marina-valerevna': 'Ведущий юрист ЮК «Де-Юре»',
-  'gusev-oleg-yurevich': 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
+  'gusev-oleg-yurevich': 'Адвокат. Управляющий партнёр\nКоллегии адвокатов «Де-Юре»',
   'nacheshnikov-vladimir-viktorovich': 'Специалист ЮК «Де-Юре»',
   'polozova-elena-anatolevna': 'Юрист ЮК «Де-Юре»'
 };

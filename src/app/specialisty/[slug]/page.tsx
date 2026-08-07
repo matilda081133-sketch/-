@@ -631,6 +631,10 @@ export default async function SpecialistPage({ params }: PageProps) {
                     <span>Перезвоним в течение 15 минут в рабочее время</span>
                   )}
                 </div>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '16px 0 0 0', padding: '8px 12px', background: 'rgba(245,241,235,0.7)', borderLeft: '2px solid rgba(155,126,85,0.5)', fontStyle: 'italic' }}>
+                  Не указывайте в форме паспортные данные, сведения о здоровье и другие конфиденциальные сведения. Их можно передать юристу после установления защищённого способа связи.
+                  <span style={{ display: 'block', marginTop: '4px', color: 'rgba(44,51,64,0.45)', fontSize: '11px', fontStyle: 'italic' }}>Основание: статья 10 № 152-ФЗ.</span>
+                </p>
               </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--color-white)', padding: '40px', borderRadius: '4px', boxShadow: '0 8px 16px rgba(16, 39, 59, 0.08)' }}>

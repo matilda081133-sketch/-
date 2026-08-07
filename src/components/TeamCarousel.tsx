@@ -45,7 +45,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs,
         </>
       ),
       rawName: 'Конопкин Дмитрий Сергеевич',
-      role: 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
+      role: 'Адвокат. Председатель\nКоллегии адвокатов «Де-Юре»',
       desc: 'Специализация: военное право, защита по уголовным делам. Юридический стаж с 2016 года. Опыт работы в Следственном комитете РФ. Статус адвоката с 2022 года.',
       img: '/images/konopkin.jpg',
       link: '/specialisty/konopkin-dmitriy-sergeevich/',
@@ -87,7 +87,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs,
         </>
       ),
       rawName: 'Гусев Олег Юрьевич',
-      role: 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
+      role: 'Адвокат. Управляющий партнёр\nКоллегии адвокатов «Де-Юре»',
       desc: 'Специализация: адвокат по уголовным делам. Опыт работы в прокуратуре 7 лет, в том числе заместителем прокурора района. Адвокатская практика с 2015 года.',
       img: '/images/gusev.jpg',
       link: '/specialisty/gusev-oleg-yurevich/',
@@ -213,7 +213,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs,
                       {person.name}
                     </Link>
                   </h3>
-                  <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start' }}>{person.role}</p>
+                  <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start', whiteSpace: 'pre-line' }}>{person.role}</p>
                   <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: 0, lineHeight: 1.45, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>{person.desc}</p>
                 </div>
                 <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
