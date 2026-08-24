@@ -592,8 +592,8 @@ export default function IspolnitelnoeClient() {
               <span style={{ display: 'inline-block' }}>по исполнительному производству</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Перечень конкретных процессуальных действий юриста</span> <span style={{ display: 'inline-block' }}>для&nbsp;защиты интересов компании</span> <br />
-              <span style={{ display: 'inline-block' }}>и&nbsp;достижения реального финансового результата.</span>
+              <span style={{ display: 'inline-block' }}>Перечень конкретных процессуальных действий юриста</span> <br />
+              <span style={{ display: 'inline-block' }}>для&nbsp;защиты интересов компании и&nbsp;достижения реального финансового результата.</span>
             </p>
           </div>
 
