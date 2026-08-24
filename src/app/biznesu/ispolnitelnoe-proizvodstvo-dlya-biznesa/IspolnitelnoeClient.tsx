@@ -418,43 +418,117 @@ export default function IspolnitelnoeClient() {
       </section>
 
       {/* BLOK 3: DVA SCENARIYA */}
-      <section className="section bg-white" style={{ padding: '64px 0' }}>
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, textWrap: 'balance' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               <span style={{ display: 'inline-block' }}>Помощь взыскателю</span> <br />
               <span style={{ display: 'inline-block' }}>и защита компании-должника</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Юрист по&nbsp;исполнительному производству</span> <span style={{ display: 'inline-block' }}>помогает в&nbsp;обоих сценариях:</span> <span style={{ display: 'inline-block' }}>анализ документов, чёткая стратегия</span> <span style={{ display: 'inline-block' }}>и&nbsp;сопровождение до&nbsp;результата.</span>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Юрист по&nbsp;исполнительному производству помогает в&nbsp;обоих сценариях:</span> <br />
+              <span style={{ display: 'inline-block' }}>анализ документов, чёткая стратегия и&nbsp;сопровождение до&nbsp;результата.</span>
             </p>
           </div>
-          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '40px' }}>
-            <div style={{ padding: '36px 32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', borderRadius: '0', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <h3 style={{ margin: 0, fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>Вы — взыскатель</h3>
-              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>У вас есть судебное решение или иной исполнительный документ, но деньги не поступают. Пристав бездействует или должник уклоняется от исполнения.</p>
-              <ul style={{ margin: 0, paddingLeft: '0', listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {['Проверяем правильность оформления документа и сроки', 'Предъявляем лист напрямую в банк или в ФССП', 'Разыскиваем активы и счета должника', 'Контролируем действия пристава, обжалуем бездействие', 'Инициируем арест имущества и запрет регистрационных действий'].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12" /></svg>
-                    {item}
-                  </li>
-                ))}
+
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Вы — взыскатель */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Вы — взыскатель</span>
+              </h3>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                У вас есть судебное решение или исполнительный лист, но деньги не поступают. Пристав бездействует или должник скрывает активы.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Предъявление листа в банк или ФССП</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Выбираем наиболее быстрый способ взыскания, формируем комплект документов и контролируем списание средств.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Розыск счетов и активов контрагента</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Инициируем запросы в банки, Росреестр и ФНС для оперативного обнаружения и ареста имущества.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Контроль и обжалование бездействия пристава</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Пресекаем затягивание производства, подаём жалобы старшему приставу или в суд при нарушении сроков.</span>
+                  </div>
+                </li>
               </ul>
             </div>
-            <div style={{ padding: '36px 32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', borderRadius: '0', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <h3 style={{ margin: 0, fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>Ваша компания — должник</h3>
-              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>На счёт или имущество компании наложен арест, ФССП предъявила требования или исполнительный лист уже в работе. Нужно минимизировать урон для деятельности.</p>
-              <ul style={{ margin: 0, paddingLeft: '0', listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {['Проверяем законность действий приставов и документов', 'Обжалуем незаконный арест счёта или имущества', 'Добиваемся отсрочки или рассрочки исполнения через суд', 'Защищаем имущество, необходимое для текущей деятельности', 'Выстраиваем стратегию при нескольких взыскателях'].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12" /></svg>
-                    {item}
-                  </li>
-                ))}
+
+            {/* Карточка 2: Ваша компания — должник */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Ваша компания — должник</span>
+              </h3>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                На счёт или имущество компании наложен арест, ФССП предъявила требования. Нужно минимизировать урон для операционной деятельности.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Снятие неправомерного ареста со счетов</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Освобождаем средства для выплаты зарплаты, налогов и расчётов с контрагентами; защищаем оборудование.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Отсрочка или рассрочка исполнения в суде</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Готовим мотивированное заявление в арбитражный суд и добиваемся графика поэтапного погашения.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Защита при нескольких взыскателях</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Выстраиваем законную очерёдность выплат и предотвращаем блокировку деятельности компании.</span>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
+
           <div style={{ textAlign: 'center' }}>
             <a href="#form" className="btn btn-primary" style={{ display: 'inline-block' }}>Оценить документы и риски</a>
           </div>
@@ -509,189 +583,79 @@ export default function IspolnitelnoeClient() {
         </div>
       </section>
 
-      {/* BLOK 5: CHTO DELAET YURIST (DEEP BLUE CARDS) */}
-      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 64px', position: 'relative', overflow: 'hidden' }}>
+      {/* BLOK 5: CHTO DELAET YURIST */}
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <h2 style={{ fontSize: 'clamp(28px, 3.8vw, 38px)', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
-            <span style={{ display: 'inline-block' }}>Что делает юрист</span> <br /><span style={{ display: 'inline-block' }}>по исполнительному производству</span>
-          </h2>
-          <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
-          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', marginBottom: '40px', maxWidth: '720px', lineHeight: 1.6, textWrap: 'balance' }}>
-            <span style={{ display: 'inline-block' }}>Перечень конкретных процессуальных действий юриста</span> <span style={{ display: 'inline-block' }}>для&nbsp;защиты интересов компании</span> <br />
-            <span style={{ display: 'inline-block' }}>и&nbsp;достижения реального финансового результата.</span>
-          </p>
-
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            {/* Карточка 1 */}
-            <div 
-              className="urgent-card hover-lift"
-              style={{ 
-                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '32px 28px', 
-                borderTop: '4px solid var(--color-gold)',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                transition: 'all 0.3s ease',
-                display: 'flex',
-                flexDirection: 'column'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                  Проверяет документы <br />и сроки
-                </h3>
-              </div>
-              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                <span style={{ display: 'inline-block' }}>Изучает исполнительный документ,</span> <span style={{ display: 'inline-block' }}>постановления ФССП,</span> <span style={{ display: 'inline-block' }}>проверяет процессуальные сроки</span> <span style={{ display: 'inline-block' }}>и&nbsp;законность требований.</span>
-              </p>
-            </div>
-
-            {/* Карточка 2 */}
-            <div 
-              className="urgent-card hover-lift"
-              style={{ 
-                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '32px 28px', 
-                borderTop: '4px solid var(--color-gold)',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                transition: 'all 0.3s ease',
-                display: 'flex',
-                flexDirection: 'column'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <rect x="3" y="3" width="18" height="18" rx="0"></rect>
-                  <path d="M3 9h18"></path>
-                  <path d="M9 21V9"></path>
-                </svg>
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                  Предъявляет лист <br />в банк или ФССП
-                </h3>
-              </div>
-              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                <span style={{ display: 'inline-block' }}>Выбирает наиболее быстрый способ,</span> <span style={{ display: 'inline-block' }}>формирует пакет документов</span> <span style={{ display: 'inline-block' }}>и&nbsp;контролирует перечисление средств.</span>
-              </p>
-            </div>
-
-            {/* Карточка 3 */}
-            <div 
-              className="urgent-card hover-lift"
-              style={{ 
-                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '32px 28px', 
-                borderTop: '4px solid var(--color-gold)',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                transition: 'all 0.3s ease',
-                display: 'flex',
-                flexDirection: 'column'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                  Розыск счетов <br />и имущества должника
-                </h3>
-              </div>
-              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                <span style={{ display: 'inline-block' }}>Инициирует официальные запросы</span> <span style={{ display: 'inline-block' }}>в&nbsp;банки, Росреестр, ГИБДД</span> <span style={{ display: 'inline-block' }}>для&nbsp;ареста активов.</span>
-              </p>
-            </div>
-
-            {/* Карточка 4 */}
-            <div 
-              className="urgent-card hover-lift"
-              style={{ 
-                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '32px 28px', 
-                borderTop: '4px solid var(--color-gold)',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                transition: 'all 0.3s ease',
-                display: 'flex',
-                flexDirection: 'column'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                  Обжалует незаконные <br />действия приставов
-                </h3>
-              </div>
-              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                <span style={{ display: 'inline-block' }}>Подаёт жалобы на&nbsp;бездействие</span> <span style={{ display: 'inline-block' }}>или&nbsp;неправомерные аресты</span> <span style={{ display: 'inline-block' }}>старшему приставу или&nbsp;в&nbsp;суд.</span>
-              </p>
-            </div>
-
-            {/* Карточка 5 */}
-            <div 
-              className="urgent-card hover-lift"
-              style={{ 
-                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '32px 28px', 
-                borderTop: '4px solid var(--color-gold)',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                transition: 'all 0.3s ease',
-                display: 'flex',
-                flexDirection: 'column'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                  Защищает активы <br />компании-должника
-                </h3>
-              </div>
-              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                <span style={{ display: 'inline-block' }}>Снимает арест со&nbsp;счетов</span> <span style={{ display: 'inline-block' }}>для&nbsp;выплаты зарплаты и&nbsp;налогов,</span> <span style={{ display: 'inline-block' }}>защищает оборудование.</span>
-              </p>
-            </div>
-
-            {/* Карточка 6 */}
-            <div 
-              className="urgent-card hover-lift"
-              style={{ 
-                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '32px 28px', 
-                borderTop: '4px solid var(--color-gold)',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                transition: 'all 0.3s ease',
-                display: 'flex',
-                flexDirection: 'column'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                  Добивается отсрочки <br />или рассрочки в суде
-                </h3>
-              </div>
-              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                <span style={{ display: 'inline-block' }}>Формирует доказательную базу,</span> <span style={{ display: 'inline-block' }}>готовит заявление в&nbsp;суд</span> <span style={{ display: 'inline-block' }}>и&nbsp;добивается поэтапного исполнения.</span>
-              </p>
-            </div>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              <span style={{ display: 'inline-block' }}>Что делает юрист</span> <br />
+              <span style={{ display: 'inline-block' }}>по исполнительному производству</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Перечень конкретных процессуальных действий юриста</span> <span style={{ display: 'inline-block' }}>для&nbsp;защиты интересов компании</span> <br />
+              <span style={{ display: 'inline-block' }}>и&nbsp;достижения реального финансового результата.</span>
+            </p>
           </div>
 
-          <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', backgroundColor: 'var(--color-gold)', color: 'var(--color-deep-blue)', borderColor: 'var(--color-gold)', fontWeight: 700, padding: '14px 32px' }}>
-              Обсудить ситуацию с юристом
-            </a>
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
+            {[
+              {
+                title: <><span style={{ display: 'inline-block' }}>Проверяет документы</span> <br /><span style={{ display: 'inline-block' }}>и сроки</span></>,
+                desc: 'Изучает исполнительный документ, постановления ФССП, проверяет процессуальные сроки и соответствие закону.'
+              },
+              {
+                title: <><span style={{ display: 'inline-block' }}>Предъявляет лист</span> <br /><span style={{ display: 'inline-block' }}>в банк или ФССП</span></>,
+                desc: 'Выбирает наиболее быстрый способ, формирует пакет документов и контролирует перечисление средств.'
+              },
+              {
+                title: <><span style={{ display: 'inline-block' }}>Розыск счетов</span> <br /><span style={{ display: 'inline-block' }}>и имущества должника</span></>,
+                desc: 'Инициирует официальные запросы в банки, Росреестр, ГИБДД для оперативного ареста активов.'
+              },
+              {
+                title: <><span style={{ display: 'inline-block' }}>Обжалует незаконные</span> <br /><span style={{ display: 'inline-block' }}>действия приставов</span></>,
+                desc: 'Подаёт жалобы на бездействие или неправомерные аресты старшему приставу или в суд.'
+              },
+              {
+                title: <><span style={{ display: 'inline-block' }}>Защищает активы</span> <br /><span style={{ display: 'inline-block' }}>компании-должника</span></>,
+                desc: 'Снимает арест со счетов для выплаты зарплаты и налогов, защищает производственное оборудование.'
+              },
+              {
+                title: <><span style={{ display: 'inline-block' }}>Добивается отсрочки</span> <br /><span style={{ display: 'inline-block' }}>или рассрочки в суде</span></>,
+                desc: 'Формирует доказательную базу, готовит заявление в суд и добивается поэтапного исполнения.'
+              }
+            ].map((act, idx) => (
+              <div key={idx} className="hover-lift" style={{
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                padding: '36px 30px 32px 30px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  0{idx + 1}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
+                  {act.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {act.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
