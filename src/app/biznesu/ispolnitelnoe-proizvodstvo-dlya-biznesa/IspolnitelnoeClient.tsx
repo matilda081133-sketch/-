@@ -469,7 +469,8 @@ export default function IspolnitelnoeClient() {
             <span style={{ display: 'inline-block' }}>производству для&nbsp;бизнеса</span>
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: '0 0 40px', maxWidth: '780px' }}>
-            Выберите направление, наиболее близкое к вашей задаче. Если ситуация затрагивает оба — опишите её в форме.
+            <span style={{ display: 'inline-block' }}>Выберите направление, наиболее близкое к&nbsp;вашей задаче.</span> <br />
+            <span style={{ display: 'inline-block' }}>Если ситуация затрагивает оба — опишите её в&nbsp;форме.</span>
           </p>
           <div className="grid grid-2" style={{ gap: '24px' }}>
             <a href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
@@ -696,20 +697,34 @@ export default function IspolnitelnoeClient() {
       </section>
 
       {/* BLOK 6: KURATOR */}
-      <SpecialistBlock
+      <SpecialistBlock 
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
-        position="Ведущий юрист ЮК «Де-Юре»"
+        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
         imageUrl="/images/smolyaninova.jpg"
-        profileHref="/specialisty/smolyaninova-marina-valerevna/"
-        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[
-          '13 лет в Федеральной службе судебных приставов: знает систему изнутри — понимает, какие инструменты реально работают, а какие создают только видимость.',
-          'Специализируется на исполнительном производстве с участием организаций: взыскание по исполнительным листам, защита имущества должника, обжалование действий приставов.',
-          'Опыт работы с многоуровневыми производствами: несколько взыскателей, оспаривание постановлений в арбитражном суде, ходатайства об отсрочке и рассрочке исполнения.',
-          'Сопровождает компании в Липецке и Липецкой области; возможен дистанционный формат работы по всей России.',
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Марина Валерьевна Смольянинова курирует сопровождение исполнительного производства для юридических лиц и индивидуальных предпринимателей. Выстраивает стратегию защиты активов компании, взаимодействия со службой судебных приставов и банками, оспаривания незаконных действий и возврата задолженности.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>13 лет опыта работы в Федеральной службе судебных приставов (ФССП)</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Специализация на защите бизнеса и многоуровневых взысканиях</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Практика оспаривания постановлений и отсрочки исполнения в судах</span>
+            </li>
+          </ul>,
+          <a key="3" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о Марине Валерьевне Смольяниновой →
+          </a>
         ]}
-        buttonText="Обсудить ситуацию с Мариной Валерьевной"
+        buttonText="Задать вопрос Марине Валерьевне"
         buttonHref="#form"
       />
 
