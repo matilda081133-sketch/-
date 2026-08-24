@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/',
     '/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/',
     '/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
+    '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/',
   ];
 
   const specialistRoutes = Object.keys(teamData).map((slug) => `/specialisty/${slug}/`);
