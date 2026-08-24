@@ -13,6 +13,8 @@ export interface SpecialistBlockProps {
   imageUrl?: string;
   buttonText?: string;
   buttonHref?: string;
+  profileHref?: string;
+  profileText?: string;
 }
 
 export default function SpecialistBlock({
@@ -23,7 +25,9 @@ export default function SpecialistBlock({
   photoPlaceholder = "[Фото специалиста]",
   imageUrl,
   buttonText = "Задать вопрос специалисту",
-  buttonHref = "#consultation"
+  buttonHref = "#consultation",
+  profileHref,
+  profileText
 }: SpecialistBlockProps) {
   return (
     <section className="section bg-white" id="specialist">
@@ -72,13 +76,33 @@ export default function SpecialistBlock({
               {position}
             </div>
             
-            <div style={{ marginBottom: '32px' }}>
+            <div style={{ marginBottom: profileHref ? '20px' : '32px' }}>
               {description.map((paragraph, idx) => (
                 <div key={idx} style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, marginBottom: idx === description.length - 1 ? 0 : '16px' }}>
                   {paragraph}
                 </div>
               ))}
             </div>
+
+            {profileHref && (
+              <div style={{ marginBottom: '28px' }}>
+                <a 
+                  href={profileHref} 
+                  style={{ 
+                    fontSize: '15px', 
+                    color: 'var(--color-primary)', 
+                    fontWeight: 600,
+                    textDecoration: 'underline', 
+                    textUnderlineOffset: '4px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px'
+                  }}
+                >
+                  {profileText || `Подробнее о специалисте →`}
+                </a>
+              </div>
+            )}
             
             <a 
               href={buttonHref} 

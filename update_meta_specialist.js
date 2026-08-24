@@ -1,4 +1,8 @@
-import { Metadata } from 'next';
+﻿const fs = require('fs');
+
+// 1. Update page.tsx with Russian Cyrillic Metadata
+const pageFile = 'src/app/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/page.tsx';
+const pageContent = `import { Metadata } from 'next';
 import IspolnitelnoeClient from './IspolnitelnoeClient';
 
 export const metadata: Metadata = {
@@ -68,3 +72,36 @@ export default function IspolnitelnoeProizvodstvoPage() {
     </>
   );
 }
+`;
+
+fs.writeFileSync(pageFile, pageContent, 'utf-8');
+
+// 2. Update IspolnitelnoeClient.tsx with profile link for Smolyaninova
+const clientFile = 'src/app/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/IspolnitelnoeClient.tsx';
+let clientContent = fs.readFileSync(clientFile, 'utf-8');
+
+const oldSpecialist = /\{\/\* BLOK 6: KURATOR \*\/\}[\s\S]*?<CasesBlock/m;
+const newSpecialist = `{/* BLOK 6: KURATOR */}
+      <SpecialistBlock
+        title="Куратор направления"
+        name="Марина Валерьевна Смольянинова"
+        position="Ведущий юрист ЮК «Де-Юре»"
+        imageUrl="/images/smolyaninova.jpg"
+        profileHref="/specialisty/smolyaninova-marina-valerevna/"
+        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
+        description={[
+          '13 лет в Федеральной службе судебных приставов: знает систему изнутри — понимает, какие инструменты реально работают, а какие создают только видимость.',
+          'Специализируется на исполнительном производстве с участием организаций: взыскание по исполнительным листам, защита имущества должника, обжалование действий приставов.',
+          'Опыт работы с многоуровневыми производствами: несколько взыскателей, оспаривание постановлений в арбитражном суде, ходатайства об отсрочке и рассрочке исполнения.',
+          'Сопровождает компании в Липецке и Липецкой области; возможен дистанционный формат работы по всей России.',
+        ]}
+        buttonText="Обсудить ситуацию с Мариной Валерьевной"
+        buttonHref="#form"
+      />
+
+      {/* BLOK 7: KEYSY */}
+      <CasesBlock`;
+
+clientContent = clientContent.replace(oldSpecialist, newSpecialist);
+fs.writeFileSync(clientFile, clientContent, 'utf-8');
+console.log('page.tsx metadata and SpecialistBlock profile link updated successfully');
