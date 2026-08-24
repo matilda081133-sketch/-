@@ -206,7 +206,7 @@ export default function VyplatyRaneniePage() {
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
-        imageMarginTop="64px"
+        imageMarginTop="8px"
         trustItems={[
           { text: <><span style={{ display: 'inline-block' }}>Проверяем правовые основания</span> <span style={{ display: 'inline-block' }}>для получения выплат</span></> },
           { text: <><span style={{ display: 'inline-block' }}>Начинаем с проверки медицинских и служебных документов,</span> <span style={{ display: 'inline-block' }}>а также заключений ВВК — если они относятся к выплате.</span></> },
