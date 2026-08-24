@@ -421,13 +421,13 @@ export default function VyplatySemePogibshegoPage() {
               <div style={{ flex: '1 1 500px', maxWidth: '800px' }}>
                 <h3 style={{
                   color: '#FFFFFF',
-                  fontSize: 'clamp(22px, 2.5vw, 26px)',
+                  fontSize: 'clamp(20px, 2.3vw, 26px)',
                   fontFamily: 'var(--font-serif)',
                   fontWeight: 700,
                   marginBottom: '10px',
                   lineHeight: 1.3
                 }}>
-                  <span style={{ display: 'inline-block' }}>Не уверены, есть ли у вас право</span> <br /><span style={{ display: 'inline-block' }}>на выплаты?</span>
+                  <span style={{ display: 'inline-block' }}>Не уверены, есть ли у вас право на&nbsp;выплаты?</span>
                 </h3>
                 <p style={{
                   color: 'rgba(255, 255, 255, 0.85)',

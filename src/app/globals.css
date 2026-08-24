@@ -109,7 +109,7 @@ h4 { font-size: 1.25rem; }
   /* Compact top spacing between mobile header and hero titles */
   .military-hero-section,
   main > section:first-of-type {
-    padding-top: 80px !important;
+    padding-top: 96px !important;
     padding-bottom: 40px !important;
   }
 }

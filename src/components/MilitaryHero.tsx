@@ -60,7 +60,7 @@ export default function MilitaryHero({
       minHeight: '85vh', 
       display: 'flex', 
       alignItems: 'center',
-      paddingTop: 'clamp(80px, 8vw, 130px)',
+      paddingTop: 'clamp(120px, 9vw, 160px)',
       paddingBottom: '80px',
       background: 'linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)',
       overflow: 'hidden'
@@ -82,9 +82,9 @@ export default function MilitaryHero({
           <div className={hasRight ? "grid grid-2 land-hero-grid" : ""} style={{ display: hasRight ? 'grid' : 'flex', flexDirection: hasRight ? 'row' : 'column', gap: '40px', alignItems: 'flex-start' }}>
             {/* Left Column */}
             <div style={{ flex: '1 1 0%', paddingTop: '8px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}>
-                <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-gold-text, #80633F)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px', flexWrap: 'nowrap' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55', flexShrink: 0 }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.08em', fontSize: 'clamp(11px, 2vw, 14px)', fontWeight: 600, color: 'var(--color-gold-text, #80633F)', whiteSpace: 'nowrap' }}>
                   {superTitle}
                 </span>
               </div>
@@ -217,7 +217,7 @@ export default function MilitaryHero({
         <style dangerouslySetInnerHTML={{ __html: `
           @media (max-width: 1440px) {
             .military-hero-section {
-              padding-top: 110px !important;
+              padding-top: 130px !important;
               padding-bottom: 50px !important;
               min-height: auto !important;
             }
@@ -237,7 +237,7 @@ export default function MilitaryHero({
           }
           @media (max-width: 768px) {
             .military-hero-section {
-              padding-top: 90px !important;
+              padding-top: 100px !important;
               padding-bottom: 40px !important;
             }
             .military-hero-cta {
