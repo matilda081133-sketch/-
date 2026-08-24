@@ -312,21 +312,49 @@ export default function IspolnitelnoeClient() {
       {/* BLOK 2: RISKI */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div className="section-header text-center">
-            <h2 className="section-title">С какими рисками <span className="highlight">сталкивается бизнес</span></h2>
-            <p className="section-subtitle">
-              В исполнительном производстве промедление грозит реальными финансовыми потерями как для должника, так и для взыскателя.
+          <div style={{ maxWidth: '820px', margin: '0 auto 52px auto', textAlign: 'center' }}>
+            <h2 className="section-title" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>С какими рисками</span> <br />
+              <span style={{ display: 'inline-block' }}>сталкивается бизнес</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>В&nbsp;исполнительном производстве промедление</span> <span style={{ display: 'inline-block' }}>грозит реальными финансовыми потерями</span> <br />
+              <span style={{ display: 'inline-block' }}>как для&nbsp;должника,</span> <span style={{ display: 'inline-block' }}>так и&nbsp;для&nbsp;взыскателя.</span>
             </p>
           </div>
           
           <div className="grid grid-3" style={{ gap: '28px' }}>
             {[
-              { tag: 'Риск блокировки', title: 'Арест расчётных счетов', desc: 'Приостановка платежей, невозможность выдачи зарплаты и расчётов с контрагентами.' },
-              { tag: 'Риск изъятия', title: 'Арест имущества', desc: 'Изъятие оборудования, транспорта или товаров в обороте, остановка бизнес-процессов.' },
-              { tag: 'Риск потери', title: 'Утрата активов', desc: 'Реализация имущества должника по заниженной стоимости на торгах.' },
-              { tag: 'Риск руководства', title: 'Субсидиарная ответственность', desc: 'Привлечение директора и учредителей к ответственности по долгам компании.' },
-              { tag: 'Риск репутации', title: 'Блокировка деятельности', desc: 'Падение доверия контрагентов, срыв действующих контрактов.' },
-              { tag: 'Риск бездействия', title: 'Затягивание взыскания', desc: 'Если вы взыскатель — риск вывода активов должником из-за медлительности приставов.' }
+              { 
+                tag: 'Риск блокировки', 
+                title: <><span style={{ display: 'inline-block' }}>Арест</span> <span style={{ display: 'inline-block' }}>расчётных счетов</span></>, 
+                desc: <><span style={{ display: 'inline-block' }}>Приостановка платежей,</span> <span style={{ display: 'inline-block' }}>невозможность выдачи зарплаты</span> <span style={{ display: 'inline-block' }}>и&nbsp;расчётов с&nbsp;контрагентами.</span></> 
+              },
+              { 
+                tag: 'Риск изъятия', 
+                title: <><span style={{ display: 'inline-block' }}>Арест</span> <span style={{ display: 'inline-block' }}>имущества</span></>, 
+                desc: <><span style={{ display: 'inline-block' }}>Изъятие оборудования, транспорта</span> <span style={{ display: 'inline-block' }}>или&nbsp;товаров в&nbsp;обороте,</span> <span style={{ display: 'inline-block' }}>остановка бизнес-процессов.</span></> 
+              },
+              { 
+                tag: 'Риск потери', 
+                title: <><span style={{ display: 'inline-block' }}>Утрата</span> <span style={{ display: 'inline-block' }}>активов</span></>, 
+                desc: <><span style={{ display: 'inline-block' }}>Реализация имущества должника</span> <span style={{ display: 'inline-block' }}>по&nbsp;заниженной стоимости</span> <span style={{ display: 'inline-block' }}>на&nbsp;торгах.</span></> 
+              },
+              { 
+                tag: 'Риск руководства', 
+                title: <><span style={{ display: 'inline-block' }}>Субсидиарная</span> <span style={{ display: 'inline-block' }}>ответственность</span></>, 
+                desc: <><span style={{ display: 'inline-block' }}>Привлечение директора</span> <span style={{ display: 'inline-block' }}>и&nbsp;учредителей к&nbsp;ответственности</span> <span style={{ display: 'inline-block' }}>по&nbsp;долгам компании.</span></> 
+              },
+              { 
+                tag: 'Риск репутации', 
+                title: <><span style={{ display: 'inline-block' }}>Блокировка</span> <span style={{ display: 'inline-block' }}>деятельности</span></>, 
+                desc: <><span style={{ display: 'inline-block' }}>Падение доверия контрагентов,</span> <span style={{ display: 'inline-block' }}>срыв действующих</span> <span style={{ display: 'inline-block' }}>контрактов.</span></> 
+              },
+              { 
+                tag: 'Риск бездействия', 
+                title: <><span style={{ display: 'inline-block' }}>Затягивание</span> <span style={{ display: 'inline-block' }}>взыскания</span></>, 
+                desc: <><span style={{ display: 'inline-block' }}>Риск вывода активов должником</span> <span style={{ display: 'inline-block' }}>из-за&nbsp;медлительности</span> <span style={{ display: 'inline-block' }}>судебных приставов.</span></> 
+              }
             ].map((risk, i) => (
               <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
@@ -353,7 +381,7 @@ export default function IspolnitelnoeClient() {
                 <h3 style={{ 
                   fontFamily: 'var(--font-serif)', 
                   fontSize: '22px', 
-                  color: 'var(--color-text)',
+                  color: 'var(--color-deep-blue)',
                   marginBottom: '16px',
                   lineHeight: 1.3
                 }}>
@@ -361,7 +389,7 @@ export default function IspolnitelnoeClient() {
                 </h3>
                 <p style={{ 
                   fontSize: '15px', 
-                  color: 'var(--color-text-muted)', 
+                  color: 'var(--color-text-secondary)', 
                   lineHeight: 1.6,
                   margin: 0
                 }}>
@@ -378,10 +406,11 @@ export default function IspolnitelnoeClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, textWrap: 'balance' }}>
-              Помощь взыскателю и защита компании-должника
+              <span style={{ display: 'inline-block' }}>Помощь взыскателю</span> <br />
+              <span style={{ display: 'inline-block' }}>и защита компании-должника</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: 0 }}>
-              Юрист по исполнительному производству помогает в обоих сценариях — разные задачи, один подход: анализ документов, чёткая стратегия, сопровождение до результата.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Юрист по&nbsp;исполнительному производству</span> <span style={{ display: 'inline-block' }}>помогает в&nbsp;обоих сценариях:</span> <span style={{ display: 'inline-block' }}>анализ документов, чёткая стратегия</span> <span style={{ display: 'inline-block' }}>и&nbsp;сопровождение до&nbsp;результата.</span>
             </p>
           </div>
           <div className="grid grid-2" style={{ gap: '24px', marginBottom: '40px' }}>
@@ -420,7 +449,8 @@ export default function IspolnitelnoeClient() {
       <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, textWrap: 'balance', maxWidth: '780px' }}>
-            Услуги по исполнительному производству для бизнеса
+            <span style={{ display: 'inline-block' }}>Услуги по&nbsp;исполнительному производству</span> <br />
+            <span style={{ display: 'inline-block' }}>для бизнеса</span>
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: '0 0 40px', maxWidth: '780px' }}>
             Выберите направление, наиболее близкое к вашей задаче. Если ситуация затрагивает оба — опишите её в форме.
@@ -500,7 +530,7 @@ export default function IspolnitelnoeClient() {
                 </h3>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                Изучает исполнительный документ, постановления ФССП, проверяет процессуальные сроки и соответствие требованиям закона.
+                <span style={{ display: 'inline-block' }}>Изучает исполнительный документ,</span> <span style={{ display: 'inline-block' }}>постановления ФССП,</span> <span style={{ display: 'inline-block' }}>проверяет процессуальные сроки</span> <span style={{ display: 'inline-block' }}>и&nbsp;законность требований.</span>
               </p>
             </div>
 
@@ -528,7 +558,7 @@ export default function IspolnitelnoeClient() {
                 </h3>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                Выбирает наиболее быстрый способ взыскания, формирует пакет документов и контролирует фактическое перечисление средств.
+                <span style={{ display: 'inline-block' }}>Выбирает наиболее быстрый способ,</span> <span style={{ display: 'inline-block' }}>формирует пакет документов</span> <span style={{ display: 'inline-block' }}>и&nbsp;контролирует перечисление средств.</span>
               </p>
             </div>
 
@@ -555,7 +585,7 @@ export default function IspolnitelnoeClient() {
                 </h3>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                Инициирует официальные запросы в банки, Росреестр, ГИБДД и налоговые органы для блокировки и ареста активов.
+                <span style={{ display: 'inline-block' }}>Инициирует официальные запросы</span> <span style={{ display: 'inline-block' }}>в&nbsp;банки, Росреестр, ГИБДД</span> <span style={{ display: 'inline-block' }}>для&nbsp;ареста активов.</span>
               </p>
             </div>
 
@@ -581,7 +611,7 @@ export default function IspolnitelnoeClient() {
                 </h3>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                Подаёт мотивированные жалобы на бездействие или неправомерные аресты старшему приставу, в прокуратуру или арбитражный суд.
+                <span style={{ display: 'inline-block' }}>Подаёт жалобы на&nbsp;бездействие</span> <span style={{ display: 'inline-block' }}>или&nbsp;неправомерные аресты</span> <span style={{ display: 'inline-block' }}>старшему приставу или&nbsp;в&nbsp;суд.</span>
               </p>
             </div>
 
@@ -608,7 +638,7 @@ export default function IspolnitelnoeClient() {
                 </h3>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                Снимает арест со счетов для продолжения расчётов по зарплате и налогам, исключает производственные станки и транспорт из описи.
+                <span style={{ display: 'inline-block' }}>Снимает арест со&nbsp;счетов</span> <span style={{ display: 'inline-block' }}>для&nbsp;выплаты зарплаты и&nbsp;налогов,</span> <span style={{ display: 'inline-block' }}>защищает оборудование.</span>
               </p>
             </div>
 
@@ -635,7 +665,7 @@ export default function IspolnitelnoeClient() {
                 </h3>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                Формирует доказательную базу, готовит заявление в суд и добивается поэтапного исполнения без остановки бизнеса.
+                <span style={{ display: 'inline-block' }}>Формирует доказательную базу,</span> <span style={{ display: 'inline-block' }}>готовит заявление в&nbsp;суд</span> <span style={{ display: 'inline-block' }}>и&nbsp;добивается поэтапного исполнения.</span>
               </p>
             </div>
           </div>
@@ -755,7 +785,8 @@ export default function IspolnitelnoeClient() {
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                Обсудите ситуацию с юристом
+                <span style={{ display: 'inline-block' }}>Обсудите ситуацию</span> <br />
+                <span style={{ display: 'inline-block' }}>с юристом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '28px', textWrap: 'balance' }}>
                 Расскажите о задаче — юрист изучит документы, оценит ситуацию и предложит конкретные шаги. Консультация проводится по телефону или очно в офисе.
