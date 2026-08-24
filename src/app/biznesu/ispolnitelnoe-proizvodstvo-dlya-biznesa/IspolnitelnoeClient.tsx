@@ -368,32 +368,35 @@ export default function IspolnitelnoeClient() {
                 overflow: 'hidden',
                 transition: 'all 0.3s ease'
               }}>
-                {/* Одинаковый фирменный фоновый векторный водяной знак как на страницах хаба */}
+                {/* Одинаковый фирменный фоновый векторный водяной знак */}
                 <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
                   <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
                     <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                   </svg>
                 </div>
 
-                <div style={{ marginBottom: '20px', position: 'relative', zIndex: 1 }}>
-                  <span style={{
-                    background: 'rgba(193, 160, 102, 0.1)',
-                    color: 'var(--color-gold)',
-                    padding: '4px 12px',
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em'
-                  }}>
-                    {risk.tag}
-                  </span>
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {risk.tag}
                 </div>
                 <h3 style={{ 
                   fontFamily: 'var(--font-serif)', 
-                  fontSize: '22px', 
+                  fontSize: '18px', 
+                  fontWeight: 600,
                   color: 'var(--color-deep-blue)',
-                  marginBottom: '16px',
-                  lineHeight: 1.3,
+                  margin: '0 0 14px 0',
+                  lineHeight: 1.4,
                   position: 'relative',
                   zIndex: 1
                 }}>

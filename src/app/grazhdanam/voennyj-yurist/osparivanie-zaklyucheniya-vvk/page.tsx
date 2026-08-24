@@ -239,7 +239,7 @@ export default function VvkPage() {
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
-        imageMarginTop="8px"
+        imageMarginTop="0px"
         trustItems={[
           { text: <><span style={{ display: 'inline-block' }}>Проверяем заключение</span> <span style={{ display: 'inline-block' }}>и медицинские документы</span></> },
           { text: <><span style={{ display: 'inline-block' }}>Определяем подходящий</span> <span style={{ display: 'inline-block' }}>порядок обжалования</span></> },

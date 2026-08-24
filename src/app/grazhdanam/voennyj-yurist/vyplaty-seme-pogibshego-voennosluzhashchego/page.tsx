@@ -299,7 +299,7 @@ export default function VyplatySemePogibshegoPage() {
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
-        imageMarginTop="8px"
+        imageMarginTop="0px"
         trustItems={[
           { text: <><span style={{ display: 'inline-block' }}>Проверяем федеральные и региональные выплаты,</span> <span style={{ display: 'inline-block' }}>а также страховое обеспечение</span></> },
           { text: <><span style={{ display: 'inline-block' }}>Оцениваем право каждого заявителя</span> <span style={{ display: 'inline-block' }}>на получение выплат</span></> },
