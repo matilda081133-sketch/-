@@ -426,8 +426,8 @@ export default function IspolnitelnoeClient() {
               <span style={{ display: 'inline-block' }}>и защита компании-должника</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Юрист по&nbsp;исполнительному производству помогает в&nbsp;обоих сценариях:</span> <br />
-              <span style={{ display: 'inline-block' }}>анализ документов, чёткая стратегия и&nbsp;сопровождение до&nbsp;результата.</span>
+              <span style={{ display: 'inline-block' }}>Точный перечень зависит от роли компании и стадии дела. Для первичного</span> <br />
+              <span style={{ display: 'inline-block' }}>анализа достаточно направить документы и материалы, которые уже есть.</span>
             </p>
           </div>
 
@@ -529,8 +529,18 @@ export default function IspolnitelnoeClient() {
             </div>
           </div>
 
-          <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block' }}>Оценить документы и риски</a>
+          <div style={{
+            background: 'var(--color-white)',
+            padding: '20px 28px',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+            fontSize: '15px',
+            color: 'var(--color-deep-blue)',
+            fontWeight: 500,
+            lineHeight: 1.6
+          }}>
+            Если части документов нет, всё равно можно обратиться. Юрист определит, какие сведения необходимо получить <br />и как запросить недостающие материалы в ФССП или кредитных организациях.
           </div>
         </div>
       </section>
