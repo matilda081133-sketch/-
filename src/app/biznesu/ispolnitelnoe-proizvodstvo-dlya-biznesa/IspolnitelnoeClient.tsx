@@ -564,7 +564,7 @@ export default function IspolnitelnoeClient() {
           </p>
           <div className="grid grid-2" style={{ gap: '24px' }}>
             <a href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card service-card" style={{ height: '100%', minHeight: '210px', padding: '28px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '3px solid var(--color-primary)', cursor: 'pointer' }}>
+              <div className="card service-card" style={{ height: '100%', minHeight: '210px', padding: '28px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '3px solid var(--color-primary)', cursor: 'pointer', transition: 'all 0.35s ease' }}>
                 <div>
                   <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
                     <span style={{ display: 'inline-block' }}>Взыскание по исполнительному листу</span> <span style={{ display: 'inline-block' }}>с юридического лица</span>
@@ -573,14 +573,14 @@ export default function IspolnitelnoeClient() {
                     <span style={{ display: 'inline-block' }}>Предъявление листа в банк или ФССП,</span> <span style={{ display: 'inline-block' }}>контроль действий пристава,</span> <span style={{ display: 'inline-block' }}>поиск активов должника,</span> <span style={{ display: 'inline-block' }}>обжалование бездействия —</span> <span style={{ display: 'inline-block' }}>сопровождение взыскателя на всех этапах.</span>
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'all 0.35s ease' }}>
                   <span>Подробнее</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
               </div>
             </a>
             <a href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card service-card" style={{ height: '100%', minHeight: '210px', padding: '28px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '3px solid var(--color-primary)', cursor: 'pointer' }}>
+              <div className="card service-card" style={{ height: '100%', minHeight: '210px', padding: '28px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '3px solid var(--color-primary)', cursor: 'pointer', transition: 'all 0.35s ease' }}>
                 <div>
                   <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
                     <span style={{ display: 'inline-block' }}>Обжалование действий приставов</span> <span style={{ display: 'inline-block' }}>для бизнеса</span>
@@ -589,7 +589,7 @@ export default function IspolnitelnoeClient() {
                     <span style={{ display: 'inline-block' }}>Жалобы на незаконный арест</span> <span style={{ display: 'inline-block' }}>имущества и счёта,</span> <span style={{ display: 'inline-block' }}>бездействие пристава,</span> <span style={{ display: 'inline-block' }}>нарушение сроков</span> <span style={{ display: 'inline-block' }}>и порядка исполнительных действий.</span> <span style={{ display: 'inline-block' }}>Защита компании-должника.</span>
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'all 0.35s ease' }}>
                   <span>Подробнее</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
