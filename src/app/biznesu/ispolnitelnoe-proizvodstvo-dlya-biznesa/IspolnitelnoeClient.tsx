@@ -318,8 +318,8 @@ export default function IspolnitelnoeClient() {
               <span style={{ display: 'inline-block' }}>сталкивается бизнес</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>В&nbsp;исполнительном производстве промедление</span> <span style={{ display: 'inline-block' }}>грозит реальными финансовыми потерями</span> <br />
-              <span style={{ display: 'inline-block' }}>как для&nbsp;должника,</span> <span style={{ display: 'inline-block' }}>так и&nbsp;для&nbsp;взыскателя.</span>
+              <span style={{ display: 'inline-block' }}>В&nbsp;исполнительном производстве промедление грозит</span> <br />
+              <span style={{ display: 'inline-block' }}>реальными финансовыми потерями как для&nbsp;должника, так и&nbsp;для&nbsp;взыскателя.</span>
             </p>
           </div>
           
