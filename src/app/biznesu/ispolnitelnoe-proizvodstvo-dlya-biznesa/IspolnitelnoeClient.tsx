@@ -312,12 +312,12 @@ export default function IspolnitelnoeClient() {
       {/* BLOK 2: RISKI */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', margin: '0 auto 52px auto', textAlign: 'center' }}>
-            <h2 className="section-title" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
               <span style={{ display: 'inline-block' }}>С какими рисками</span> <br />
               <span style={{ display: 'inline-block' }}>сталкивается бизнес</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>В&nbsp;исполнительном производстве промедление</span> <span style={{ display: 'inline-block' }}>грозит реальными финансовыми потерями</span> <br />
               <span style={{ display: 'inline-block' }}>как для&nbsp;должника,</span> <span style={{ display: 'inline-block' }}>так и&nbsp;для&nbsp;взыскателя.</span>
             </p>
@@ -448,9 +448,9 @@ export default function IspolnitelnoeClient() {
       {/* BLOK 4: USLUGI */}
       <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, textWrap: 'balance', maxWidth: '780px' }}>
-            <span style={{ display: 'inline-block' }}>Услуги по&nbsp;исполнительному производству</span> <br />
-            <span style={{ display: 'inline-block' }}>для бизнеса</span>
+          <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, maxWidth: '780px' }}>
+            <span style={{ display: 'inline-block' }}>Услуги по&nbsp;исполнительному</span> <br />
+            <span style={{ display: 'inline-block' }}>производству для&nbsp;бизнеса</span>
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: '0 0 40px', maxWidth: '780px' }}>
             Выберите направление, наиболее близкое к вашей задаче. Если ситуация затрагивает оба — опишите её в форме.
