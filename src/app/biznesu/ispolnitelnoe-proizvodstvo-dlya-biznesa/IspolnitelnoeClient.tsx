@@ -392,8 +392,7 @@ export default function IspolnitelnoeClient() {
                 </div>
                 <h3 style={{ 
                   fontFamily: 'var(--font-serif)', 
-                  fontSize: '18px', 
-                  fontWeight: 600,
+                  fontSize: '17px !important', fontWeight: 600,
                   color: 'var(--color-deep-blue)',
                   margin: '0 0 14px 0',
                   lineHeight: 1.4,
