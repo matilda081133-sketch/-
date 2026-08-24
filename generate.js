@@ -1,4 +1,7 @@
-'use client';
+﻿const fs = require('fs');
+const path = require('path');
+
+const content = 'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -61,10 +64,9 @@ export default function IspolnitelnoeClient() {
   return (
     <>
       <Header />
-      <main className="b2b-page">
+      <main className=\"b2b-page\">
         {/* Блок 1: Hero */}
         <MilitaryHero
-          superTitle="Исполнительное производство"
           title={
             <>
               Юридическое сопровождение<br />
@@ -72,81 +74,86 @@ export default function IspolnitelnoeClient() {
               для бизнеса
             </>
           }
-          subtitle="Защита интересов взыскателя и должника. Снятие арестов, обжалование действий судебных приставов, розыск активов и реальное взыскание долгов."
-          rightContent={
-             <div className="military-hero-creative">
-               <div className="creative-doc-stack">
-                 <div className="creative-doc doc-back">
-                   <div className="doc-header">
-                     <div className="doc-seal"></div>
-                     <div className="doc-lines">
-                       <div className="line w-80"></div>
-                       <div className="line w-60"></div>
+          subtitle=\"Защита интересов взыскателя и должника. Снятие арестов, обжалование действий судебных приставов, розыск активов и реальное взыскание долгов.\"
+          imageNode={
+             <div className=\"military-hero-creative\">
+               <div className=\"creative-doc-stack\">
+                 <div className=\"creative-doc doc-back\">
+                   <div className=\"doc-header\">
+                     <div className=\"doc-seal\"></div>
+                     <div className=\"doc-lines\">
+                       <div className=\"line w-80\"></div>
+                       <div className=\"line w-60\"></div>
                      </div>
                    </div>
-                   <div className="doc-title">ПОСТАНОВЛЕНИЕ ФССП</div>
-                   <div className="doc-body">
-                     <div className="line w-100"></div>
-                     <div className="line w-90"></div>
-                     <div className="line w-90"></div>
-                     <div className="line w-70"></div>
+                   <div className=\"doc-title\">ПОСТАНОВЛЕНИЕ ФССП</div>
+                   <div className=\"doc-body\">
+                     <div className=\"line w-100\"></div>
+                     <div className=\"line w-90\"></div>
+                     <div className=\"line w-90\"></div>
+                     <div className=\"line w-70\"></div>
                    </div>
                  </div>
                  
-                 <div className="creative-doc doc-middle">
-                   <div className="doc-header">
-                     <div className="doc-seal"></div>
-                     <div className="doc-lines">
-                       <div className="line w-80"></div>
-                       <div className="line w-60"></div>
+                 <div className=\"creative-doc doc-middle\">
+                   <div className=\"doc-header\">
+                     <div className=\"doc-seal\"></div>
+                     <div className=\"doc-lines\">
+                       <div className=\"line w-80\"></div>
+                       <div className=\"line w-60\"></div>
                      </div>
                    </div>
-                   <div className="doc-title">АКТ АРЕСТА</div>
-                   <div className="doc-body">
-                     <div className="line w-100"></div>
-                     <div className="line w-90"></div>
-                     <div className="line w-90"></div>
-                     <div className="line w-70"></div>
+                   <div className=\"doc-title\">АКТ АРЕСТА</div>
+                   <div className=\"doc-body\">
+                     <div className=\"line w-100\"></div>
+                     <div className=\"line w-90\"></div>
+                     <div className=\"line w-90\"></div>
+                     <div className=\"line w-70\"></div>
                    </div>
                  </div>
 
-                 <div className="creative-doc doc-front">
-                   <div className="doc-header">
-                     <div className="doc-seal"></div>
-                     <div className="doc-lines">
-                       <div className="line w-80"></div>
-                       <div className="line w-60"></div>
+                 <div className=\"creative-doc doc-front\">
+                   <div className=\"doc-header\">
+                     <div className=\"doc-seal\"></div>
+                     <div className=\"doc-lines\">
+                       <div className=\"line w-80\"></div>
+                       <div className=\"line w-60\"></div>
                      </div>
                    </div>
-                   <div className="doc-title">ИСПОЛНИТЕЛЬНЫЙ ЛИСТ</div>
-                   <div className="doc-body">
-                     <div className="line w-100"></div>
-                     <div className="line w-90"></div>
-                     <div className="line w-90"></div>
-                     <div className="line w-70"></div>
+                   <div className=\"doc-title\">ИСПОЛНИТЕЛЬНЫЙ ЛИСТ</div>
+                   <div className=\"doc-body\">
+                     <div className=\"line w-100\"></div>
+                     <div className=\"line w-90\"></div>
+                     <div className=\"line w-90\"></div>
+                     <div className=\"line w-70\"></div>
                    </div>
-                   <div className="doc-stamp-approved">ПОДЛЕЖИТ ИСПОЛНЕНИЮ</div>
+                   <div className=\"doc-stamp-approved\">ПОДЛЕЖИТ ИСПОЛНЕНИЮ</div>
                  </div>
                </div>
              </div>
           }
-          primaryCtaText="Обсудить ситуацию"
-          primaryCtaLink="#form"
+          primaryCtaText=\"Обсудить ситуацию\"
+          primaryCtaLink=\"#form\"
+          features={[
+            'Защита активов',
+            'Снятие арестов',
+            'Контроль ФССП'
+          ]}
         />
 
         {/* Блок 2: Риски */}
-        <section className="section bg-white" style={{ padding: '80px 0' }}>
-          <div className="container">
-            <div className="section-header text-center">
-              <h2 className="section-title">С какими рисками <span className="highlight">сталкивается бизнес</span></h2>
-              <p className="section-subtitle">
+        <section className=\"section bg-white\" style={{ padding: '80px 0' }}>
+          <div className=\"container\">
+            <div className=\"section-header text-center\">
+              <h2 className=\"section-title\">С какими рисками <span className=\"highlight\">сталкивается бизнес</span></h2>
+              <p className=\"section-subtitle\">
                 В исполнительном производстве промедление грозит реальными финансовыми потерями как для должника, так и для взыскателя.
               </p>
             </div>
             
-            <div className="grid grid-3" style={{ gap: '28px' }}>
+            <div className=\"grid grid-3\" style={{ gap: '28px' }}>
               {risks.map((risk, i) => (
-                <div key={i} className="hover-lift" style={{
+                <div key={i} className=\"hover-lift\" style={{
                   padding: '36px 30px',
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
@@ -192,35 +199,35 @@ export default function IspolnitelnoeClient() {
         </section>
 
         {/* Блок 3: Услуги */}
-        <section className="section bg-light">
-          <div className="container">
-            <div className="section-header text-center">
-              <h2 className="section-title">Направления <span className="highlight">работы</span></h2>
-              <p className="section-subtitle">
+        <section className=\"section bg-light\">
+          <div className=\"container\">
+            <div className=\"section-header text-center\">
+              <h2 className=\"section-title\">Направления <span className=\"highlight\">работы</span></h2>
+              <p className=\"section-subtitle\">
                 Комплексное сопровождение исполнительного производства на всех стадиях.
               </p>
             </div>
 
-            <div className="grid grid-3">
-              <div className="service-card hover-lift">
-                <h3 className="service-card-title"><span style={{ display: 'inline-block' }}>Для</span> <span style={{ display: 'inline-block' }}>взыскателей</span></h3>
-                <p className="service-card-desc">
+            <div className=\"grid grid-3\">
+              <div className=\"service-card hover-lift\">
+                <h3 className=\"service-card-title\"><span style={{ display: 'inline-block' }}>Для</span> <span style={{ display: 'inline-block' }}>взыскателей</span></h3>
+                <p className=\"service-card-desc\">
                   <span style={{ display: 'inline-block' }}>Розыск счетов</span> <span style={{ display: 'inline-block' }}>и имущества должника.</span> 
                   <span style={{ display: 'inline-block' }}>Предъявление листа</span> <span style={{ display: 'inline-block' }}>в банк.</span>
                   <span style={{ display: 'inline-block' }}>Контроль действий</span> <span style={{ display: 'inline-block' }}>приставов.</span>
                 </p>
               </div>
-              <div className="service-card hover-lift">
-                <h3 className="service-card-title"><span style={{ display: 'inline-block' }}>Для</span> <span style={{ display: 'inline-block' }}>должников</span></h3>
-                <p className="service-card-desc">
+              <div className=\"service-card hover-lift\">
+                <h3 className=\"service-card-title\"><span style={{ display: 'inline-block' }}>Для</span> <span style={{ display: 'inline-block' }}>должников</span></h3>
+                <p className=\"service-card-desc\">
                   <span style={{ display: 'inline-block' }}>Защита активов</span> <span style={{ display: 'inline-block' }}>от необоснованного ареста.</span> 
                   <span style={{ display: 'inline-block' }}>Снятие ограничений</span> <span style={{ display: 'inline-block' }}>со счетов.</span>
                   <span style={{ display: 'inline-block' }}>Отсрочка или рассрочка</span> <span style={{ display: 'inline-block' }}>исполнения.</span>
                 </p>
               </div>
-              <div className="service-card hover-lift">
-                <h3 className="service-card-title"><span style={{ display: 'inline-block' }}>Споры</span> <span style={{ display: 'inline-block' }}>с ФССП</span></h3>
-                <p className="service-card-desc">
+              <div className=\"service-card hover-lift\">
+                <h3 className=\"service-card-title\"><span style={{ display: 'inline-block' }}>Споры</span> <span style={{ display: 'inline-block' }}>с ФССП</span></h3>
+                <p className=\"service-card-desc\">
                   <span style={{ display: 'inline-block' }}>Обжалование незаконных</span> <span style={{ display: 'inline-block' }}>постановлений.</span> 
                   <span style={{ display: 'inline-block' }}>Оспаривание бездействия</span> <span style={{ display: 'inline-block' }}>пристава.</span>
                   <span style={{ display: 'inline-block' }}>Взыскание убытков</span> <span style={{ display: 'inline-block' }}>с казны РФ.</span>
@@ -228,16 +235,16 @@ export default function IspolnitelnoeClient() {
               </div>
             </div>
             
-            <div className="text-center" style={{ marginTop: '40px' }}>
-              <Link href="#form" className="btn btn-primary">Обсудить ситуацию</Link>
+            <div className=\"text-center\" style={{ marginTop: '40px' }}>
+              <Link href=\"#form\" className=\"btn btn-primary\">Обсудить ситуацию</Link>
             </div>
           </div>
         </section>
 
         {/* Блок 4: Процесс работы */}
         <ProcessBlock
-          title="Как проходит работа"
-          subtitle="Четкий алгоритм действий для защиты ваших интересов в исполнительном производстве"
+          title=\"Как проходит работа\"
+          subtitle=\"Четкий алгоритм действий для защиты ваших интересов в исполнительном производстве\"
           steps={[
             {
               num: '01',
@@ -264,8 +271,8 @@ export default function IspolnitelnoeClient() {
 
         {/* Блок 5: Стоимость (PricingBlock по образцу Зем.Юриста) */}
         <PricingBlock
-          title="Форматы работы и стоимость"
-          subtitle="Подберем оптимальный формат участия в зависимости от ваших задач"
+          title=\"Форматы работы и стоимость\"
+          subtitle=\"Подберем оптимальный формат участия в зависимости от ваших задач\"
           tiers={[
             {
               title: 'Консультация',
@@ -312,36 +319,37 @@ export default function IspolnitelnoeClient() {
 
         {/* Блок 6: Практика (Кейсы) */}
         <CasesBlock
-          title="Практика по исполнительным производствам"
+          title=\"Практика по исполнительным производствам\"
+          subtitle=\"Примеры того, как мы помогаем бизнесу защитить свои интересы\"
           cases={cases}
           showDemoWarning={true}
         />
 
         {/* Блок 7: Специалист */}
         <SpecialistBlock
-          name="Смолянинова Марина Викторовна"
-          position="Руководитель практики, ведущий юрист"
-          imageUrl="/images/smolyaninova.jpg"
+          name=\"Смолянинова Марина Викторовна\"
+          position=\"Руководитель практики, ведущий юрист\"
+          imageUrl=\"/images/smolyaninova.jpg\"
           description={[
             'Имеет обширный опыт взаимодействия с органами ФССП.',
             'Специализируется на сложных исполнительных производствах, розыске активов и снятии незаконных арестов с бизнеса.',
             'Успешно обжалует незаконные действия и бездействие судебных приставов-исполнителей.'
           ]}
-          buttonText="Обсудить ситуацию"
-          buttonHref="#form"
+          buttonText=\"Обсудить ситуацию\"
+          buttonHref=\"#form\"
         />
 
         {/* Блок 8: FAQ */}
         <FAQBlock
-          title="Частые вопросы"
+          title=\"Частые вопросы\"
           faqs={faqs}
         />
 
         {/* Блок 9: Контакты */}
-        <div id="form">
+        <div id=\"form\">
           <ContactsForm
-            title="Обсудить ситуацию"
-            subtitle="Оставьте заявку, и мы свяжемся с вами для оценки перспектив вашего дела."
+            title=\"Обсудить ситуацию\"
+            subtitle=\"Оставьте заявку, и мы свяжемся с вами для оценки перспектив вашего дела.\"
           />
         </div>
       </main>
@@ -349,3 +357,7 @@ export default function IspolnitelnoeClient() {
     </>
   );
 }
+\;
+
+fs.writeFileSync(path.join('C:\\\\Users\\\\Honor\\\\.gemini\\\\antigravity\\\\scratch\\\\dejure-web\\\\src\\\\app\\\\biznesu\\\\ispolnitelnoe-proizvodstvo-dlya-biznesa', 'IspolnitelnoeClient.tsx'), content, 'utf-8');
+console.log('File generated successfully');
