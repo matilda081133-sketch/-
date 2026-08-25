@@ -897,41 +897,41 @@ export default function IspolnitelnoeGrazhdanamClient() {
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                <span style={{ display: 'inline-block' }}>Обсудите ситуацию</span> <br />
-                <span style={{ display: 'inline-block' }}>с Мариной Валерьевной</span> <br />
-                <span style={{ display: 'inline-block' }}>Смольяниновой</span>
+                Обсудите ситуацию с юристом по исполнительному производству
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '28px', textWrap: 'balance' }}>
-                Кратко опишите, что произошло и на какой стадии находится исполнительное производство. Обращение передадим Марине Валерьевне Смольяниновой. Она уточнит обстоятельства, подскажет, какие документы подготовить, и согласует с Вами консультацию.
+                Кратко опишите, что произошло и на какой стадии находится исполнительное производство. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит ситуацию и согласует с Вами консультацию.
               </p>
-              <a href="tel:+79103503111" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', marginBottom: '16px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.47 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 5.55 5.55l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                +7 (910) 350-31-11
-              </a>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, marginBottom: '12px' }}>
-                <strong>Адрес:</strong> г. Липецк, пл. Плеханова, д. 1, оф. 213
-              </p>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
-                Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день.
-              </p>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
-              <div className="grazhdanam-contact-card" style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', border: '1px solid rgba(0,0,0,0.06)' }}>
-                <ContactsForm
-                  title="Написать нам"
-                  subtitle=""
-                  buttonText="Обсудить ситуацию"
-                  commentPlaceholder="Кратко опишите, что произошло (списание, арест счёта/автомобиля, бездействие пристава)…"
-                  subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
-                  hiddenFields={[
-                    { name: 'source_page', value: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
-                    { name: 'direction', value: 'ispolnitelnoe_proizvodstvo_fizlica' },
-                    { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
-                  ]}
-                />
+              
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: 'auto', marginBottom: '0' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
+                </div>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+                </p>
               </div>
+            </div>
+
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист перезвонит</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                buttonText="Оценить задачу и документы"
+                commentPlaceholder="Кратко опишите ситуацию: что произошло (списание, арест счёта/автомобиля, бездействие пристава)..."
+                subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                hiddenFields={[
+                  { name: 'source_page', value: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
+                  { name: 'direction', value: 'ispolnitelnoe_proizvodstvo_fizlica' },
+                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
+                ]}
+              />
             </div>
           </div>
         </div>
