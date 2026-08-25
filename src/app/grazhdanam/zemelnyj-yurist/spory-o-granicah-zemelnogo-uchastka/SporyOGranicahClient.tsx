@@ -202,7 +202,13 @@ export default function SporyOGranicahClient() {
             </>
           }
           superTitle="Земельное право • Липецк и Липецкая область"
-          title={<>Юрист по спорам <br />о границах земельного <br />участка в Липецке</>}
+          title={
+            <span style={{ display: 'block' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Юрист по спорам</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>о границах земельного</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>участка в Липецке</span>
+            </span>
+          }
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '640px', textWrap: 'balance' }}>
               Проверим документы и кадастровые сведения, определим причину спора и выстроим защиту границ участка — от переговоров и работы с кадастровым инженером до суда.
