@@ -280,117 +280,162 @@ export default function IspolnitelnoeGrazhdanamClient() {
         rightContent={docStack}
       />
 
-      {/* ═══ БЛОК 2: КОГДА ВАЖНО НЕ ОТКЛАДЫВАТЬ ОБРАЩЕНИЕ (3 карточки) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 2: КОГДА ВАЖНО НЕ ОТКЛАДЫВАТЬ ОБРАЩЕНИЕ ═══ */}
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
-              Когда важно не откладывать обращение
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              В исполнительном производстве отдельные решения и действия обжалуются в короткий срок, а деньги или имущество могут быть перечислены взыскателю либо переданы на реализацию. Чем раньше юрист увидит документы, тем больше доступных способов защиты.
-            </p>
-          </div>
+          <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
+            <span style={{ display: 'inline-block' }}>Когда важно не</span> <br /><span style={{ display: 'inline-block' }}>откладывать обращение</span>
+          </h2>
+          <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '720px', lineHeight: 1.6 }}>
+            В исполнительном производстве отдельные решения и действия обжалуются в короткий срок, а деньги или имущество могут быть перечислены взыскателю либо переданы на реализацию. Чем раньше юрист увидит документы, тем больше доступных способов защиты.
+          </p>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
-            {[
-              {
-                badge: '10 ДНЕЙ НА ЖАЛОБУ',
-                title: 'Получили постановление или узнали о действии пристава',
-                desc: 'Для жалобы на постановление, действие или бездействие обычно предусмотрено десять рабочих дней. Начало срока зависит от того, когда лицо было извещено или узнало о нарушении, поэтому дату нужно определить по документам.'
-              },
-              {
-                badge: 'СПИСАНИЯ И АРЕСТЫ',
-                title: 'Списали защищённые выплаты или арестовали необходимое имущество',
-                desc: 'Нужно установить основание взыскания, источник денег, статус имущества и стадию исполнения, затем оперативно выбрать заявление, жалобу или обращение в суд.'
-              },
-              {
-                badge: 'ПОИСК АКТИВОВ',
-                title: 'Взыскание не движется, а активы должника могут исчезнуть',
-                desc: 'Взыскателю важно проверить материалы производства, заявить конкретные исполнительные действия и оценить, можно ли предъявить документ непосредственно в банк или использовать иной законный маршрут.'
-              }
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="hover-lift"
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  padding: '32px 28px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}
-              >
-                {/* Фоновый водяной знак */}
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.04, pointerEvents: 'none' }}>
-                  <svg width="120" height="120" viewBox="0 0 24 24" fill="var(--color-primary)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                  </svg>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
+            {/* Карточка 1 */}
+            <div 
+              className="urgent-card"
+              style={{ 
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                padding: '32px 28px', 
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Получили постановление или узнали о действии пристава
                 </div>
-
-                <div style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  alignSelf: 'flex-start',
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  letterSpacing: '0.08em',
-                  color: 'var(--color-gold)',
-                  background: 'rgba(193, 160, 102, 0.12)',
-                  padding: '4px 10px',
-                  borderRadius: '2px',
-                  marginBottom: '16px'
-                }}>
-                  {item.badge}
-                </div>
-
-                <h3 style={{
-                  fontSize: '19px',
-                  fontFamily: 'var(--font-serif)',
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 14px 0',
-                  lineHeight: 1.35
-                }}>
-                  {item.title}
-                </h3>
-
-                <p style={{
-                  fontSize: '14px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  margin: 0
-                }}>
-                  {item.desc}
-                </p>
               </div>
-            ))}
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                Для жалобы на постановление, действие или бездействие обычно предусмотрено десять рабочих дней. Начало срока зависит от того, когда лицо было извещено или узнало о нарушении, поэтому дату нужно определить по документам.
+              </p>
+            </div>
+
+            {/* Карточка 2 */}
+            <div 
+              className="urgent-card"
+              style={{ 
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                padding: '32px 28px', 
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Списали защищённые выплаты или арестовали имущество
+                </div>
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                Нужно установить основание взыскания, источник денег, статус имущества и стадию исполнения, затем оперативно выбрать заявление, жалобу или обращение в суд.
+              </p>
+            </div>
+
+            {/* Карточка 3 */}
+            <div 
+              className="urgent-card"
+              style={{ 
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                padding: '32px 28px', 
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Взыскание не движется, а активы могут исчезнуть
+                </div>
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                Взыскателю важно проверить материалы производства, заявить конкретные исполнительные действия и оценить, можно ли предъявить документ непосредственно в банк или использовать иной законный маршрут.
+              </p>
+            </div>
           </div>
 
           <div style={{
-            background: 'var(--color-white)',
-            padding: '20px 28px',
-            border: '1px solid var(--color-border)',
+            background: 'rgba(255, 255, 255, 0.08)',
             borderLeft: '4px solid var(--color-gold)',
-            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+            padding: '16px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
             fontSize: '14px',
-            color: 'var(--color-deep-blue)',
-            lineHeight: 1.6,
-            marginBottom: '32px'
+            lineHeight: 1.6
           }}>
-            <strong>Юридическая справка:</strong> Десятидневный срок следует из статьи 122 Федерального закона № 229-ФЗ и применяется также к судебному оспариванию по части 3 статьи 219 КАС РФ.
+            <strong style={{ color: '#FFFFFF' }}>Юридическая справка:</strong> Десятидневный срок следует из статьи 122 Федерального закона № 229-ФЗ и применяется также к судебному оспариванию по части 3 статьи 219 КАС РФ.
           </div>
 
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" className="btn btn-primary" style={{ padding: '14px 28px', fontSize: '15px' }}>
-              Позвонить юристу: +7 (910) 350-31-11
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 16px 36px rgba(0,0,0,0.22) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              transition: all 0.3s ease !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.3s ease !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
+              +7 (910) 350-31-11
             </a>
-            <a href="#form" className="btn btn-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="b2c_urgent_call_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Описать ситуацию
             </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
+              Перезвоним вам в течение 15 минут в рабочее время
+            </span>
           </div>
         </div>
       </section>
