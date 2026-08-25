@@ -398,8 +398,17 @@ export default function IzmenenieVriClient() {
                 borderTop: '3px solid var(--color-primary)',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 display: 'flex',
-                flexDirection: 'column'
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
+                {/* Каноничный водяной знак */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
                 <div style={{ 
                   fontSize: '12px', 
                   fontWeight: 700, 
@@ -409,16 +418,18 @@ export default function IzmenenieVriClient() {
                   marginBottom: '12px',
                   background: 'rgba(193, 160, 102, 0.1)',
                   padding: '4px 10px',
-                  alignSelf: 'flex-start'
+                  alignSelf: 'flex-start',
+                  position: 'relative',
+                  zIndex: 1
                 }}>
                   {sit.tag}
                 </div>
 
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0', position: 'relative', zIndex: 1 }}>
                   {sit.title}
                 </h3>
 
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
                   {sit.desc}
                 </p>
               </div>
@@ -713,7 +724,8 @@ export default function IzmenenieVriClient() {
               Связанные услуги
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-              Если препятствие связано не с допустимой деятельностью, а с категорией, правом или стоимостью, нужна отдельная услуга.
+              <span style={{ display: 'inline-block' }}>Если препятствие связано не с допустимой деятельностью,</span> <br />
+              <span style={{ display: 'inline-block' }}>а с категорией, правом или стоимостью, нужна отдельная услуга.</span>
             </p>
           </div>
 
