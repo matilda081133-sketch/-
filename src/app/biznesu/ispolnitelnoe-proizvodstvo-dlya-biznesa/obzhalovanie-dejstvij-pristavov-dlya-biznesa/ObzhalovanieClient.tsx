@@ -703,7 +703,7 @@ export default function ObzhalovanieClient() {
 
       {/* ═══ БЛОК 5: ЭТАПЫ ЗАЩИТЫ БИЗНЕСА (Типовой блок этапов) ═══ */}
       <ProcessBlock
-        alignTitle="left"
+        alignTitle="center"
         title={
           <span style={{ display: 'block' }}>
             <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Защищаем бизнес от проверки документов</span>
