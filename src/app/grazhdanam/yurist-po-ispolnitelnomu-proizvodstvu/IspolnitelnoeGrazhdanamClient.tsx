@@ -723,7 +723,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
       <ProcessBlock
         title="Как проходит работа"
         subtitle="От первичного уточнения ситуации до контроля фактического результата."
-        alignTitle="left"
+        alignTitle="center"
         steps={[
           {
             num: '01',
