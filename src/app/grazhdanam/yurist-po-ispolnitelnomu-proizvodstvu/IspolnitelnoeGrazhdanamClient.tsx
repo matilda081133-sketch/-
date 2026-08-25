@@ -442,176 +442,111 @@ export default function IspolnitelnoeGrazhdanamClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: С КАКИМИ СИТУАЦИЯМИ МЫ ПОМОГАЕМ (Должник и Взыскатель) ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 3: С КАКИМИ СИТУАЦИЯМИ МЫ ПОМОГАЕМ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
-              С какими ситуациями мы помогаем
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>С какими ситуациями</span> <br />
+              <span style={{ display: 'inline-block' }}>мы помогаем</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Сначала определяем Вашу роль в производстве и проверяем материалы дела. Дальнейший маршрут зависит от того, нужно ли защититься от взыскания или добиться фактического исполнения решения.
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Сначала определяем Вашу роль в производстве и проверяем материалы дела.</span> <br />
+              <span style={{ display: 'inline-block' }}>Дальнейший маршрут зависит от того, нужно ли защититься от взыскания или добиться исполнения решения.</span>
             </p>
           </div>
 
-          {/* ГРУППА 1: ДОЛЖНИК */}
-          <div style={{ marginBottom: '40px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-              <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'var(--color-gold)' }}></div>
-              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
-                Если Вы должник
-              </h3>
-            </div>
-
-            <div className="grid grid-3" style={{ gap: '24px' }}>
-              {[
-                {
-                  num: '01',
-                  title: 'Списали деньги или удерживают слишком много',
-                  desc: 'Проверим основание взыскания, источник поступлений, размер удержаний и возможность вернуть незаконно взысканное.'
-                },
-                {
-                  num: '02',
-                  title: 'Арестовали счёт, автомобиль или другое имущество',
-                  desc: 'Установим, кем и на каком основании введено ограничение, подготовим документы для его снятия либо оспаривания.'
-                },
-                {
-                  num: '03',
-                  title: 'Ограничили выезд, начислили сбор или не окончили производство',
-                  desc: 'Проверим постановления и фактическое состояние расчётов, определим порядок обращения и снятия ограничений.'
-                }
-              ].map((item) => (
-                <div
-                  key={item.num}
-                  className="hover-lift"
-                  style={{
-                    background: 'var(--color-white)',
-                    border: '1px solid var(--color-border)',
-                    borderTop: '3px solid var(--color-gold)',
-                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-                    padding: '32px 26px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    position: 'relative'
-                  }}
-                >
-                  <div style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '50%',
-                    background: 'rgba(193, 160, 102, 0.15)',
-                    color: 'var(--color-gold)',
-                    fontWeight: 700,
-                    fontSize: '13px',
-                    marginBottom: '16px'
-                  }}>
-                    {item.num}
-                  </div>
-
-                  <h4 style={{
-                    fontSize: '18px',
-                    fontFamily: 'var(--font-serif)',
-                    color: 'var(--color-deep-blue)',
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.35
-                  }}>
-                    {item.title}
-                  </h4>
-
-                  <p style={{
-                    fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: 0
-                  }}>
-                    {item.desc}
-                  </p>
+          <div className="grid grid-3" style={{ gap: '28px' }}>
+            {[
+              { 
+                tag: 'Должник / Списания', 
+                title: <><span style={{ display: 'inline-block' }}>Списали деньги</span> <span style={{ display: 'inline-block' }}>или удерживают доход</span></>, 
+                desc: <><span style={{ display: 'inline-block' }}>Проверим основание взыскания,</span> <span style={{ display: 'inline-block' }}>источник поступлений, размер удержаний</span> <span style={{ display: 'inline-block' }}>и&nbsp;возможность вернуть взысканное.</span></> 
+              },
+              { 
+                tag: 'Должник / Арест', 
+                title: <><span style={{ display: 'inline-block' }}>Арест счёта,</span> <span style={{ display: 'inline-block' }}>автомобиля или имущества</span></>, 
+                desc: <><span style={{ display: 'inline-block' }}>Установим, кем и на каком основании</span> <span style={{ display: 'inline-block' }}>введено ограничение, подготовим документы</span> <span style={{ display: 'inline-block' }}>для&nbsp;его снятия либо оспаривания.</span></> 
+              },
+              { 
+                tag: 'Должник / Ограничения', 
+                title: <><span style={{ display: 'inline-block' }}>Запрет на выезд</span> <span style={{ display: 'inline-block' }}>или исполнительский сбор</span></>, 
+                desc: <><span style={{ display: 'inline-block' }}>Проверим постановления и фактическое</span> <span style={{ display: 'inline-block' }}>состояние расчётов, определим порядок</span> <span style={{ display: 'inline-block' }}>обращения и&nbsp;отмены ограничений.</span></> 
+              },
+              { 
+                tag: 'Взыскатель / Исполнение', 
+                title: <><span style={{ display: 'inline-block' }}>Решение суда есть,</span> <span style={{ display: 'inline-block' }}>но деньги не поступают</span></>, 
+                desc: <><span style={{ display: 'inline-block' }}>Проверим исполнительный документ,</span> <span style={{ display: 'inline-block' }}>его предъявление и действия пристава,</span> <span style={{ display: 'inline-block' }}>сформируем план дальнейшего взыскания.</span></> 
+              },
+              { 
+                tag: 'Взыскатель / Розыск', 
+                title: <><span style={{ display: 'inline-block' }}>Пристав не ищет</span> <span style={{ display: 'inline-block' }}>активы и счета должника</span></>, 
+                desc: <><span style={{ display: 'inline-block' }}>Изучим материалы производства,</span> <span style={{ display: 'inline-block' }}>подготовим ходатайства и при наличии</span> <span style={{ display: 'inline-block' }}>оснований обжалуем бездействие.</span></> 
+              },
+              { 
+                tag: 'Взыскатель / Маршрут', 
+                title: <><span style={{ display: 'inline-block' }}>Выбор способа</span> <span style={{ display: 'inline-block' }}>предъявления документа</span></>, 
+                desc: <><span style={{ display: 'inline-block' }}>Оценим работу через ФССП, банк,</span> <span style={{ display: 'inline-block' }}>работодателя, казначейство</span> <span style={{ display: 'inline-block' }}>или&nbsp;иной законный порядок.</span></> 
+              }
+            ].map((item, i) => (
+              <div key={i} className="hover-lift" style={{
+                padding: '36px 30px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                {/* Одинаковый фирменный фоновый векторный водяной знак */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* ГРУППА 2: ВЗЫСКАТЕЛЬ */}
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-              <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'var(--color-primary)' }}></div>
-              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
-                Если Вы взыскатель
-              </h3>
-            </div>
-
-            <div className="grid grid-3" style={{ gap: '24px' }}>
-              {[
-                {
-                  num: '04',
-                  title: 'Решение суда есть, но деньги не поступают',
-                  desc: 'Проверим исполнительный документ, его предъявление и действия пристава, сформируем план дальнейшего взыскания.'
-                },
-                {
-                  num: '05',
-                  title: 'Пристав не разыскивает счета, доходы и имущество',
-                  desc: 'Изучим материалы, подготовим ходатайства и при наличии оснований обжалуем бездействие должностного лица.'
-                },
-                {
-                  num: '06',
-                  title: 'Нужно выбрать способ предъявления документа',
-                  desc: 'Оценим работу через ФССП, банк, работодателя, казначейство или иной предусмотренный законом порядок.'
-                }
-              ].map((item) => (
-                <div
-                  key={item.num}
-                  className="hover-lift"
-                  style={{
-                    background: 'var(--color-white)',
-                    border: '1px solid var(--color-border)',
-                    borderTop: '3px solid var(--color-primary)',
-                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-                    padding: '32px 26px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    position: 'relative'
-                  }}
-                >
-                  <div style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '50%',
-                    background: 'rgba(23, 50, 77, 0.1)',
-                    color: 'var(--color-primary)',
-                    fontWeight: 700,
-                    fontSize: '13px',
-                    marginBottom: '16px'
-                  }}>
-                    {item.num}
-                  </div>
-
-                  <h4 style={{
-                    fontSize: '18px',
-                    fontFamily: 'var(--font-serif)',
-                    color: 'var(--color-deep-blue)',
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.35
-                  }}>
-                    {item.title}
-                  </h4>
-
-                  <p style={{
-                    fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: 0
-                  }}>
-                    {item.desc}
-                  </p>
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.tag}
                 </div>
-              ))}
-            </div>
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '17px', 
+                  fontWeight: 600,
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 14px 0',
+                  lineHeight: 1.4,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{ 
+                  fontSize: '15px', 
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: 1.6,
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
