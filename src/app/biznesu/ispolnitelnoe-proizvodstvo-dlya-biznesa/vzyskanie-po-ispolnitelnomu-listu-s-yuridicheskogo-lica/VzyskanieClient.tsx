@@ -653,22 +653,32 @@ export default function VzyskanieClient() {
             </div>
           </div>
 
-          {/* Блок документов для старта */}
+          {/* Блок документов для старта (в темно-синем градиенте) */}
           <div style={{
-            background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-            border: '1px solid var(--color-border)',
+            background: 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)',
+            color: '#FFFFFF',
+            border: '1px solid rgba(193, 160, 102, 0.35)',
             borderLeft: '4px solid var(--color-gold)',
             padding: '36px 32px',
             marginBottom: '24px',
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+            boxShadow: '0 20px 40px rgba(16, 39, 59, 0.15)',
+            position: 'relative',
+            overflow: 'hidden'
           }}>
-            <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginTop: 0, marginBottom: '8px' }}>
+            {/* Фоновый гербовый водяной знак */}
+            <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.05, pointerEvents: 'none' }}>
+              <svg width="140" height="140" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+
+            <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginTop: 0, marginBottom: '8px', position: 'relative', zIndex: 1 }}>
               Что подготовить для начала работы
             </h3>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', marginBottom: '24px', lineHeight: 1.5, position: 'relative', zIndex: 1 }}>
               Чем полнее исходный комплект документов, тем быстрее юрист сможет определить наиболее перспективный маршрут взыскания:
             </p>
-            <div className="grid grid-2" style={{ gap: '16px 32px', marginBottom: '28px' }}>
+            <div className="grid grid-2" style={{ gap: '16px 32px', marginBottom: '28px', position: 'relative', zIndex: 1 }}>
               {[
                 'исполнительный лист, судебный приказ или другой исполнительный документ;',
                 'судебный акт, на основании которого выдан документ;',
@@ -679,38 +689,40 @@ export default function VzyskanieClient() {
                 'доверенность и реквизиты счёта компании-взыскателя.'
               ].map((doc, idx) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="var(--color-primary)" strokeWidth="2" fill="none" />
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="rgba(255,255,255,0.4)" strokeWidth="1.8" fill="rgba(255,255,255,0.05)" />
                     <path d="M7 12l3 3 7-7" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+                  <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.5 }}>
                     {doc}
                   </span>
                 </div>
               ))}
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', paddingTop: '20px', borderTop: '1px solid rgba(23,50,77,0.1)' }}>
-              <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', paddingTop: '20px', borderTop: '1px solid rgba(255, 255, 255, 0.15)', position: 'relative', zIndex: 1 }}>
+              <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)' }}>
                 Электронные копии документов можно передать для дистанционной оценки
               </span>
-              <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14px' }} data-analytics="b2b_exec_list_hero_cta">
+              <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14px', background: 'var(--color-gold)', borderColor: 'var(--color-gold)', color: '#FFFFFF' }} data-analytics="b2b_exec_list_hero_cta">
                 Передать документы на проверку
               </a>
             </div>
-          </div>
 
-          <div style={{
-            background: 'var(--color-white)',
-            border: '1px solid var(--color-border)',
-            borderLeft: '4px solid var(--color-gold)',
-            padding: '24px 30px',
-            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
-            fontSize: '14px',
-            color: 'var(--color-text-secondary)',
-            lineHeight: 1.6
-          }}>
-            <strong style={{ color: 'var(--color-deep-blue)' }}>Граница услуги:</strong> Получение судебного решения, оспаривание сделок должника, банкротство, субсидиарная ответственность, уголовно-правовая оценка вывода активов и самостоятельный спор с приставом требуют отдельной оценки и включаются в договор только после согласования.
+            {/* Граница услуги внутри карточки */}
+            <div style={{
+              marginTop: '20px',
+              padding: '16px 20px',
+              background: 'rgba(255, 255, 255, 0.06)',
+              borderLeft: '3px solid var(--color-gold)',
+              fontSize: '13px',
+              color: 'rgba(255, 255, 255, 0.85)',
+              lineHeight: 1.55,
+              position: 'relative',
+              zIndex: 1
+            }}>
+              <strong style={{ color: '#FFFFFF' }}>Граница услуги:</strong> Получение судебного решения, оспаривание сделок должника, банкротство, субсидиарная ответственность, уголовно-правовая оценка вывода активов и самостоятельный спор с приставом требуют отдельной оценки и включаются в договор только после согласования.
+            </div>
           </div>
         </div>
       </section>
