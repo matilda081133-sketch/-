@@ -16,21 +16,36 @@ export default function ObzhalovanieClient() {
   const cases: CaseData[] = [
     {
       category: 'Взыскатель / Отмена окончания',
-      title: 'Отменили преждевременное окончание исполнительного производства',
+      title: (
+        <>
+          <span style={{ display: 'inline-block' }}>Отменили преждевременное окончание</span>{' '}
+          <span style={{ display: 'inline-block' }}>исполнительного производства</span>
+        </>
+      ),
       problem: 'Взыскателю вернули исполнительный лист с актом о невозможности взыскания (якобы имущество и доходы должника не обнаружены). При этом часть обязательных запросов пристав не направил, а сведения об официальном месте работы и автомобиле не проверил.',
       action: 'Ознакомились с материалами производства, составили перечень несовершённых исполнительных действий и подготовили жалобу старшему судебному приставу с требованием отменить постановление об окончании и провести необходимые проверки.',
       result: 'Постановление об окончании отменено, производство возобновлено. После направления запросов обнаружен официальный доход должника, и взыскателю начали поступать удержанные средства.'
     },
     {
       category: 'Должник / Исполнительский сбор',
-      title: 'Оспорили исполнительский сбор после ненадлежащего извещения',
+      title: (
+        <>
+          <span style={{ display: 'inline-block' }}>Оспорили исполнительский сбор</span>{' '}
+          <span style={{ display: 'inline-block' }}>после ненадлежащего извещения</span>
+        </>
+      ),
       problem: 'Гражданин узнал о возбуждении исполнительного производства только после блокировки банковского счёта и вынесения постановления о взыскании исполнительского сбора. Копию постановления о возбуждении он не получал и был лишён возможности добровольного исполнения.',
       action: 'Проверили материалы исполнительного производства, сведения о направлении почтовой корреспонденции и дату фактического получения информации должником. Подготовили и подали в суд административное исковое заявление об отмене сбора.',
       result: 'Суд признал постановление судебного пристава незаконным и отменил исполнительский сбор. Сведения в банке данных исполнительных производств скорректированы.'
     },
     {
       category: 'Алименты / Бездействие',
-      title: 'Добились действий по длительной задолженности по алиментам',
+      title: (
+        <>
+          <span style={{ display: 'inline-block' }}>Добились действий по длительной</span>{' '}
+          <span style={{ display: 'inline-block' }}>задолженности по алиментам</span>
+        </>
+      ),
       problem: 'Исполнительное производство по алиментам длилось более года, однако расчёт задолженности не производился, доходы должника своевременно не устанавливались, а обращения взыскателя оставались без содержательного ответа.',
       action: 'Изучили производство, подготовили ходатайства о проведении полного расчёта задолженности и направлении запросов в ФНС и банки, после чего обжаловали бездействие руководителю подразделения ФССП.',
       result: 'Судебный пристав произвёл актуальный расчёт задолженности, направил запросы и наложил арест на счета; текущие выплаты алиментов возобновились, началось погашение долга.'
@@ -247,7 +262,7 @@ export default function ObzhalovanieClient() {
           { text: 'Куратор — Марина Смольянинова (13 лет в ФССП)' },
           { text: 'Оспаривание постановлений, действий и бездействия' },
           { text: 'Жалоба в порядке подчинённости и административный иск' },
-          { text: 'Защита прав как должников, так и взыскателей' }
+          { text: 'Защита прав должников и взыскателей' }
         ]}
         rightContent={docStack}
       />
@@ -258,12 +273,13 @@ export default function ObzhalovanieClient() {
           <div style={{ maxWidth: '850px', marginBottom: '40px' }}>
             <div style={{ width: '60px', height: '3px', background: 'var(--color-gold)', marginBottom: '24px' }}></div>
             <h2 style={{ fontSize: 'clamp(26px, 3.6vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
-              Когда важно обратиться к юристу без промедления
+              <span style={{ display: 'inline-block' }}>Когда важно обратиться к&nbsp;юристу</span> <br />
+              <span style={{ display: 'inline-block' }}>без промедления</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.6, margin: 0, fontWeight: 400 }}>
+            <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.6, margin: 0, fontWeight: 400, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Для обжалования постановления, действия или бездействия установлен короткий срок.</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>До подготовки жалобы нужно понять, какое право нарушено, чего именно Вы хотите добиться</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>и&nbsp;какой орган вправе принять нужное решение.</span>
+              <span style={{ display: 'inline-block' }}>До подготовки жалобы нужно понять, какое право нарушено, чего именно вы&nbsp;хотите добиться</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>и&nbsp;какой орган вправе принять необходимое процессуальное решение.</span>
             </p>
           </div>
 
@@ -287,7 +303,8 @@ export default function ObzhalovanieClient() {
                   <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
                 <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
-                  Получили постановление, с которым не согласны
+                  <span style={{ display: 'inline-block' }}>Получили постановление,</span> <br />
+                  <span style={{ display: 'inline-block' }}>с которым не согласны</span>
                 </div>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
@@ -314,7 +331,8 @@ export default function ObzhalovanieClient() {
                   <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
                 <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
-                  Пристав совершил действие, нарушающее права
+                  <span style={{ display: 'inline-block' }}>Пристав совершил действие,</span> <br />
+                  <span style={{ display: 'inline-block' }}>нарушающее права</span>
                 </div>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
@@ -341,7 +359,8 @@ export default function ObzhalovanieClient() {
                   <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
                 <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
-                  Пристав не отвечает или не совершает действий
+                  <span style={{ display: 'inline-block' }}>Пристав не отвечает</span> <br />
+                  <span style={{ display: 'inline-block' }}>или не совершает действий</span>
                 </div>
               </div>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
@@ -360,8 +379,8 @@ export default function ObzhalovanieClient() {
             color: 'rgba(255,255,255,0.85)',
             lineHeight: 1.6
           }}>
-            <strong style={{ color: '#FFFFFF' }}>Юридическая опора:</strong> По статье 122 Федерального закона № 229-ФЗ жалобу обычно подают в течение десяти дней. Для судебного <br className="hidden-mobile" />
-            оспаривания гражданином действует специальный срок по части 3 статьи 219 КАС РФ. Начало, исчисление и возможность восстановления срока проверяются по документам.
+            <strong style={{ color: '#FFFFFF' }}>Юридическая справка:</strong> Десятидневный срок следует из статьи 122 Федерального закона № 229-ФЗ и применяется также <br className="hidden-mobile" />
+            к судебному оспариванию по части 3 статьи 219 КАС РФ. Начало, исчисление и возможность восстановления срока проверяются по документам.
           </div>
 
           <style dangerouslySetInnerHTML={{__html: `
@@ -421,7 +440,7 @@ export default function ObzhalovanieClient() {
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
               <span style={{ display: 'inline-block' }}>В каких ситуациях</span> <br />
-              <span style={{ display: 'inline-block' }}>помогаем</span>
+              <span style={{ display: 'inline-block' }}>мы помогаем</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Обжаловать можно не любое неудобное решение, а постановление, действие или бездействие,</span> <br />
@@ -489,7 +508,7 @@ export default function ObzhalovanieClient() {
                 ),
                 desc: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Разберём соблюдение порядка уведомления,</span>{' '}
+                    <span style={{ display: 'inline-block' }}>Разберём соблюдение порядка извещения,</span>{' '}
                     <span style={{ display: 'inline-block' }}>процессуальных сроков, размера требований</span>{' '}
                     <span style={{ display: 'inline-block' }}>и&nbsp;соразмерности применённых мер.</span>
                   </>
@@ -522,7 +541,7 @@ export default function ObzhalovanieClient() {
                 desc: (
                   <>
                     <span style={{ display: 'inline-block' }}>Помогаем гражданам, чьи права затронуты</span>{' '}
-                    <span style={{ display: 'inline-block' }}>исполнительными действиями (неправомерный</span>{' '}
+                    <span style={{ display: 'inline-block' }}>действиями пристава (неправомерный</span>{' '}
                     <span style={{ display: 'inline-block' }}>арест чужого имущества, ошибки в ФИО).</span>
                   </>
                 )
@@ -613,10 +632,12 @@ export default function ObzhalovanieClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              Как выбираем способ обжалования
+              <span style={{ display: 'inline-block' }}>Как выбираем способ</span> <br />
+              <span style={{ display: 'inline-block' }}>обжалования</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Способ зависит не только от нарушения, но и от результата, который нужно получить. До подачи документов сопоставляем полномочия адресата, срок, доказательства и риск продолжения исполнительных действий.
+              <span style={{ display: 'inline-block' }}>Способ зависит не только от характера нарушения, но и от требуемого результата.</span> <br />
+              <span style={{ display: 'inline-block' }}>Сопоставляем полномочия адресата, процессуальный срок, доказательства и риски продолжения взыскания.</span>
             </p>
           </div>
 
@@ -636,11 +657,12 @@ export default function ObzhalovanieClient() {
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" />
                 </svg>
                 <h3 style={{ margin: 0, fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
-                  Жалоба в порядке подчинённости
+                  <span style={{ display: 'inline-block' }}>Жалоба в порядке</span> <br />
+                  <span style={{ display: 'inline-block' }}>подчинённости</span>
                 </h3>
               </div>
               <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Определяем компетентное вышестоящее должностное лицо, формулируем нарушение и требование, подаём жалобу и контролируем срок её рассмотрения. Этот путь может помочь быстрее исправить нарушение внутри системы ФССП.
+                Определяем компетентное вышестоящее должностное лицо, формулируем нарушение и требование, подаём жалобу и контролируем срок её рассмотрения. Этот путь помогает быстро устранить нарушение внутри ведомства.
               </p>
             </div>
 
@@ -659,11 +681,12 @@ export default function ObzhalovanieClient() {
                   <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16" />
                 </svg>
                 <h3 style={{ margin: 0, fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
-                  Оспаривание в суде
+                  <span style={{ display: 'inline-block' }}>Оспаривание</span> <br />
+                  <span style={{ display: 'inline-block' }}>в суде (КАС РФ)</span>
                 </h3>
               </div>
               <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Готовим административное исковое заявление и доказательства того, что решение, действие или бездействие не соответствует закону и нарушает права. Представляем клиента до принятия судебного акта и контролируем устранение нарушения.
+                Готовим административное исковое заявление и доказательства того, что решение, действие или бездействие нарушает закон. Представляем клиента в суде и добиваемся отмены незаконных актов.
               </p>
             </div>
 
@@ -682,11 +705,12 @@ export default function ObzhalovanieClient() {
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
                 <h3 style={{ margin: 0, fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
-                  Дополнительные меры защиты
+                  <span style={{ display: 'inline-block' }}>Дополнительные меры</span> <br />
+                  <span style={{ display: 'inline-block' }}>правовой защиты</span>
                 </h3>
               </div>
               <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                При необходимости отдельно оцениваем заявление о приостановлении исполнительного производства или конкретного действия, обращение в прокуратуру и другие меры. Подача жалобы сама по себе не означает остановки взыскания.
+                Оцениваем необходимость ходатайства о приостановлении исполнительного производства, обращения в прокуратуру и применения обеспечительных мер до принятия итогового решения.
               </p>
             </div>
           </div>
@@ -698,30 +722,127 @@ export default function ObzhalovanieClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              Что входит в юридическую помощь
+              <span style={{ display: 'inline-block' }}>Что входит в юридическую помощь</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Полный цикл юридической защиты — от ознакомления с материалами производства до фактического устранения нарушения.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Полный цикл процессуальных действий юриста — от изучения материалов производства</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>до фактического устранения нарушения и восстановления ваших прав.</span>
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '36px' }}>
+          <div className="grid grid-4" style={{ gap: '28px', position: 'relative', marginBottom: '40px' }}>
             {[
-              { num: '01', title: 'Консультация и оценка срочности', desc: 'Уточняем ситуацию, проверяем процессуальные сроки и определяем первоочередные меры.' },
-              { num: '02', title: 'Ознакомление с материалами', desc: 'Изучаем постановления, извещения, ответы и другие материалы исполнительного производства.' },
-              { num: '03', title: 'Правовая экспертиза решений', desc: 'Проверяем полномочия пристава, основания решения, соблюдение процедуры и сроков.' },
-              { num: '04', title: 'Формирование требований', desc: 'Определяем нарушенное право, требуемый результат и надлежащего адресата для обращения.' },
-              { num: '05', title: 'Подготовка жалобы в ФССП', desc: 'Составляем мотивированную жалобу вышестоящему должностному лицу, заявления и ходатайства.' },
-              { num: '06', title: 'Подготовка иска в суд (КАС РФ)', desc: 'Готовим административное исковое заявление, доказательную базу и комплект приложений.' },
-              { num: '07', title: 'Представительство интересов', desc: 'Представляем доверителя в подразделениях ФССП и судебных заседаниях в согласованном объёме.' },
-              { num: '08', title: 'Контроль устранения нарушения', desc: 'Отслеживаем исполнение решения по жалобе или судебного акта до фактического результата.' }
-            ].map((item) => (
-              <div key={item.num} style={{ display: 'flex', gap: '16px', padding: '24px', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-primary)', background: 'var(--color-white)', borderRadius: '0' }}>
-                <div style={{ fontSize: '24px', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', lineHeight: 1, flexShrink: 0, opacity: 0.4, minWidth: '36px' }}>{item.num}</div>
-                <div>
-                  <h3 style={{ margin: '0 0 6px 0', fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35 }}>{item.title}</h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>{item.desc}</p>
+              {
+                num: '01',
+                title: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Консультация</span> <br />
+                    <span style={{ display: 'inline-block' }}>и оценка срочности</span>
+                  </>
+                ),
+                desc: 'Уточняем ситуацию, проверяем процессуальные сроки и определяем первоочередные меры.'
+              },
+              {
+                num: '02',
+                title: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Ознакомление</span> <br />
+                    <span style={{ display: 'inline-block' }}>с материалами</span>
+                  </>
+                ),
+                desc: 'Изучаем постановления, извещения, ответы и другие материалы исполнительного производства.'
+              },
+              {
+                num: '03',
+                title: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Правовая экспертиза</span> <br />
+                    <span style={{ display: 'inline-block' }}>решений пристава</span>
+                  </>
+                ),
+                desc: 'Проверяем полномочия пристава, основания решения, соблюдение процедуры и сроков.'
+              },
+              {
+                num: '04',
+                title: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Формирование</span> <br />
+                    <span style={{ display: 'inline-block' }}>требований</span>
+                  </>
+                ),
+                desc: 'Определяем нарушенное право, требуемый результат и надлежащего адресата для обращения.'
+              },
+              {
+                num: '05',
+                title: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Подготовка жалобы</span> <br />
+                    <span style={{ display: 'inline-block' }}>в ФССП</span>
+                  </>
+                ),
+                desc: 'Составляем мотивированную жалобу вышестоящему должностному лицу, заявления и ходатайства.'
+              },
+              {
+                num: '06',
+                title: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Подготовка иска</span> <br />
+                    <span style={{ display: 'inline-block' }}>в суд (КАС РФ)</span>
+                  </>
+                ),
+                desc: 'Готовим административное исковое заявление, доказательную базу и комплект приложений.'
+              },
+              {
+                num: '07',
+                title: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Представительство</span> <br />
+                    <span style={{ display: 'inline-block' }}>интересов</span>
+                  </>
+                ),
+                desc: 'Представляем доверителя в подразделениях ФССП и судебных заседаниях в согласованном объёме.'
+              },
+              {
+                num: '08',
+                title: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Контроль устранения</span> <br />
+                    <span style={{ display: 'inline-block' }}>нарушения</span>
+                  </>
+                ),
+                desc: 'Отслеживаем исполнение решения по жалобе или судебного акта до фактического результата.'
+              }
+            ].map((act, idx) => (
+              <div key={idx} className="hover-lift" style={{
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                padding: '36px 24px 28px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {act.num}
                 </div>
+                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.35 }}>
+                  {act.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  {act.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -883,13 +1004,15 @@ export default function ObzhalovanieClient() {
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                Обсудите ситуацию с Мариной Валерьевной Смольяниновой
+                <span style={{ display: 'inline-block' }}>Обсудите ситуацию</span> <br />
+                <span style={{ display: 'inline-block' }}>с Мариной Валерьевной</span> <br />
+                <span style={{ display: 'inline-block' }}>Смольяниновой</span>
               </h2>
-              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '28px', textWrap: 'balance' }}>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
                 Кратко опишите, какое постановление получили, что сделал или не сделал пристав и когда Вы об этом узнали. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит ситуацию и согласует с Вами консультацию.
               </p>
               
-              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: 'auto', marginBottom: '0' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '0' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
