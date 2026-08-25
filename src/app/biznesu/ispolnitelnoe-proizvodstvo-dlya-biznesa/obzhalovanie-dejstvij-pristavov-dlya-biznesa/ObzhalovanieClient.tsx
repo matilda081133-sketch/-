@@ -324,32 +324,69 @@ export default function ObzhalovanieClient() {
               { 
                 tag: 'Риск блокировки', 
                 title: <><span style={{ display: 'inline-block' }}>Ограничены расчёты</span> <br /><span style={{ display: 'inline-block' }}>по основному счёту</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Проверим основание и объём взыскания,</span> <span style={{ display: 'inline-block' }}>последовательность постановлений и возможность</span> <span style={{ display: 'inline-block' }}>срочной защиты без смешения с 115-ФЗ.</span></> 
+                desc: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Проверим основание и объём взыскания,</span>{' '}
+                    <span style={{ display: 'inline-block' }}>последовательность постановлений</span>{' '}
+                    <span style={{ display: 'inline-block' }}>и возможность срочной защиты</span>{' '}
+                    <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>без смешения с 115-ФЗ.</span>
+                  </>
+                )
               },
               { 
                 tag: 'Риск изъятия', 
                 title: <><span style={{ display: 'inline-block' }}>Арестовано имущество,</span> <br /><span style={{ display: 'inline-block' }}>необходимое для работы</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Оценим принадлежность имущества,</span> <span style={{ display: 'inline-block' }}>соразмерность меры, порядок ареста</span> <span style={{ display: 'inline-block' }}>и доказательства последствий для бизнеса.</span></> 
+                desc: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оценим принадлежность имущества,</span>{' '}
+                    <span style={{ display: 'inline-block' }}>соразмерность меры, порядок ареста</span>{' '}
+                    <span style={{ display: 'inline-block' }}>и доказательства последствий для бизнеса.</span>
+                  </>
+                )
               },
               { 
                 tag: 'Риск переплаты', 
                 title: <><span style={{ display: 'inline-block' }}>Начислен</span> <br /><span style={{ display: 'inline-block' }}>исполнительский сбор</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Сверим извещение, срок добровольного</span> <span style={{ display: 'inline-block' }}>исполнения, основания постановления</span> <span style={{ display: 'inline-block' }}>и объективные обстоятельства задержки.</span></> 
+                desc: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Сверим извещение, срок добровольного</span>{' '}
+                    <span style={{ display: 'inline-block' }}>исполнения, основания постановления</span>{' '}
+                    <span style={{ display: 'inline-block' }}>и объективные обстоятельства задержки.</span>
+                  </>
+                )
               },
               { 
                 tag: 'Риск бездействия', 
                 title: <><span style={{ display: 'inline-block' }}>Пристав не исполняет</span> <br /><span style={{ display: 'inline-block' }}>решение в пользу компании</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Установим, какие заявления подавались,</span> <span style={{ display: 'inline-block' }}>какие действия фактически совершены</span> <span style={{ display: 'inline-block' }}>и чего потребовать для продолжения взыскания.</span></> 
+                desc: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Установим, какие заявления подавались,</span>{' '}
+                    <span style={{ display: 'inline-block' }}>какие действия фактически совершены</span>{' '}
+                    <span style={{ display: 'inline-block' }}>и чего потребовать для продолжения взыскания.</span>
+                  </>
+                )
               },
               { 
                 tag: 'Риск закрытия', 
                 title: <><span style={{ display: 'inline-block' }}>Производство окончено</span> <br /><span style={{ display: 'inline-block' }}>или документ возвращён</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Проверим основание решения, полноту</span> <span style={{ display: 'inline-block' }}>исполнительных действий и возможность отмены</span> <span style={{ display: 'inline-block' }}>постановления либо повторного предъявления.</span></> 
+                desc: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Проверим основание решения, полноту</span>{' '}
+                    <span style={{ display: 'inline-block' }}>исполнительных действий и возможность отмены</span>{' '}
+                    <span style={{ display: 'inline-block' }}>постановления либо повторного предъявления.</span>
+                  </>
+                )
               },
               { 
                 tag: 'Риск запретов', 
                 title: <><span style={{ display: 'inline-block' }}>Ограничения сохраняются</span> <br /><span style={{ display: 'inline-block' }}>после исполнения</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Сопоставим фактические поступления,</span> <span style={{ display: 'inline-block' }}>постановления об окончании и сведения</span> <span style={{ display: 'inline-block' }}>банков и регистрирующих органов.</span></> 
+                desc: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Сопоставим фактические поступления,</span>{' '}
+                    <span style={{ display: 'inline-block' }}>постановления об окончании и сведения</span>{' '}
+                    <span style={{ display: 'inline-block' }}>банков и регистрирующих органов.</span>
+                  </>
+                )
               }
             ].map((risk, index) => (
               <div 
