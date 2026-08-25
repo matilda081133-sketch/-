@@ -186,7 +186,13 @@ export default function PerevodKategoriiClient() {
             </>
           }
           superTitle="Земельное право • Липецк и Липецкая область"
-          title={<><span style={{ display: 'inline-block' }}>Перевод земельного участка в другую категорию</span> <br /><span style={{ display: 'inline-block' }}>в Липецке</span></>}
+          title={
+            <span style={{ display: 'block' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Перевод земельного</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>участка в другую</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>категорию в Липецке</span>
+            </span>
+          }
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
               Проверим исходную и требуемую категорию, ограничения, документы территориального планирования и компетентный орган — до подготовки затратного ходатайства.

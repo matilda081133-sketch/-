@@ -186,7 +186,14 @@ export default function IzmenenieVriClient() {
             </>
           }
           superTitle="Земельное право • Липецк и Липецкая область"
-          title={<>Изменение вида разрешённого <br />использования земельного <br />участка в Липецке</>}
+          title={
+            <span style={{ display: 'block' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изменение вида</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>разрешённого использования</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>земельного участка</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в Липецке</span>
+            </span>
+          }
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
               Проверим территориальную зону, действующий ВРИ, регламент и ограничения, чтобы определить: можно ли выбрать нужный вид, требуется разрешение или сначала нужно менять ПЗЗ.
