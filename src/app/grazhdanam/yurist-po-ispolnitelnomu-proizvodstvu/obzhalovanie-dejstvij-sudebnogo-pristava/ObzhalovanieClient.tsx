@@ -178,37 +178,41 @@ export default function ObzhalovanieClient() {
               <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', opacity: 0.03, width: '150px' }}>
                 <img src="/images/logo_dark.png" alt="" style={{ width: '100%', height: 'auto' }} />
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '8px', marginBottom: '12px' }}>
-                <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '50px', height: 'auto', opacity: 0.85 }} />
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
+                <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '68px', height: 'auto', opacity: 0.9 }} />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'flex-end' }}>
-                  <div style={{ width: '70px', height: '3px', background: 'rgba(23,50,77,0.3)' }}></div>
-                  <div style={{ width: '45px', height: '3px', background: 'rgba(23,50,77,0.15)' }}></div>
+                  <span style={{ fontSize: '9px', fontWeight: 700, color: 'var(--color-primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>ФССП РОССИИ</span>
+                  <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
                 </div>
               </div>
-              <div style={{ width: '100px', height: '6px', background: 'var(--color-deep-blue)', margin: '0 auto 12px auto' }}></div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '10px' }}>
-                <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.15)' }}></div>
-                <div style={{ width: '85%', height: '3px', background: 'rgba(23,50,77,0.12)' }}></div>
-                <div style={{ width: '92%', height: '3px', background: 'rgba(23,50,77,0.12)' }}></div>
+
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', textAlign: 'center', marginBottom: '14px', letterSpacing: '0.02em' }}>
+                ПРАВОВАЯ ЗАЩИТА СТОРОН
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
-                <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#C1A066', flexShrink: 0 }}></div>
-                  <span style={{ fontSize: '6px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>Оспаривание постановлений и действий приставов</span>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '16px' }}>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--color-gold)', flexShrink: 0 }}></div>
+                  <span style={{ fontSize: '11px', color: 'var(--color-deep-blue)', fontWeight: 600, lineHeight: 1.3 }}>
+                    Оспаривание постановлений и действий приставов
+                  </span>
                 </div>
-                <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#C1A066', flexShrink: 0 }}></div>
-                  <span style={{ fontSize: '6px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>Жалоба старшему приставу и судебный иск</span>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--color-gold)', flexShrink: 0 }}></div>
+                  <span style={{ fontSize: '11px', color: 'var(--color-deep-blue)', fontWeight: 600, lineHeight: 1.3 }}>
+                    Жалоба старшему приставу и судебный иск
+                  </span>
                 </div>
               </div>
-              <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.2)' }}>
+
+              <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px solid rgba(23,50,77,0.2)' }}>
                 <div>
-                  <div style={{ fontSize: '9px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ООО ЮК «ДЕ-ЮРЕ»</div>
-                  <div style={{ fontSize: '7px', color: 'rgba(23,50,77,0.6)' }}>ИНН 4800009680</div>
+                  <div style={{ fontSize: '12px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ООО ЮК «ДЕ-ЮРЕ»</div>
+                  <div style={{ fontSize: '10px', color: 'rgba(23,50,77,0.7)', fontWeight: 500, marginTop: '2px' }}>ИНН 4800009680</div>
                 </div>
-                <div style={{ width: '42px', height: '42px', borderRadius: '50%', border: '1.5px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-12deg)', opacity: 0.9 }}>
-                  <div style={{ width: '34px', height: '34px', borderRadius: '50%', border: '0.5px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <span style={{ fontSize: '6px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.1 }}>ДЕ-ЮРЕ<br/>ЛИПЕЦК</span>
+                <div style={{ width: '54px', height: '54px', borderRadius: '50%', border: '1.5px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-12deg)', opacity: 0.9 }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '50%', border: '0.75px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <span style={{ fontSize: '8.5px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.15, letterSpacing: '0.04em' }}>ДЕ-ЮРЕ<br/>ЛИПЕЦК</span>
                   </div>
                 </div>
               </div>
@@ -492,7 +496,7 @@ export default function ObzhalovanieClient() {
                 ),
                 desc: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Проверим, какие запросы и действия</span>{' '}
+                    <span style={{ display: 'inline-block' }}>Проверим, какие запросы и&nbsp;действия</span>{' '}
                     <span style={{ display: 'inline-block' }}>должен был совершить пристав, какие обращения</span>{' '}
                     <span style={{ display: 'inline-block' }}>подавались и&nbsp;почему решение не исполняется.</span>
                   </>
@@ -526,7 +530,7 @@ export default function ObzhalovanieClient() {
                   <>
                     <span style={{ display: 'inline-block' }}>Сопоставим содержание ходатайства</span>{' '}
                     <span style={{ display: 'inline-block' }}>и&nbsp;ответа с материалами дела, зафиксируем</span>{' '}
-                    <span style={{ display: 'inline-block' }}>нерассмотренные требования и адресата жалобы.</span>
+                    <span style={{ display: 'inline-block' }}>нерассмотренные требования и&nbsp;адресата жалобы.</span>
                   </>
                 )
               },
@@ -542,7 +546,7 @@ export default function ObzhalovanieClient() {
                   <>
                     <span style={{ display: 'inline-block' }}>Помогаем гражданам, чьи права затронуты</span>{' '}
                     <span style={{ display: 'inline-block' }}>действиями пристава (неправомерный</span>{' '}
-                    <span style={{ display: 'inline-block' }}>арест чужого имущества, ошибки в ФИО).</span>
+                    <span style={{ display: 'inline-block' }}>арест чужого имущества, ошибки в&nbsp;ФИО).</span>
                   </>
                 )
               }
