@@ -914,7 +914,12 @@ export default function ObzhalovanieClient() {
             <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
               <ContactsForm
                 title="Написать нам"
-                subtitle="Оставьте имя и номер телефона. Юрист перезвонит в течение 15 минут в рабочее время."
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист перезвонит</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
                 buttonText="Обсудить ситуацию"
                 commentPlaceholder="Кратко опишите ситуацию: номер производства, взыскатель или должник, наложенные ограничения..."
                 subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
