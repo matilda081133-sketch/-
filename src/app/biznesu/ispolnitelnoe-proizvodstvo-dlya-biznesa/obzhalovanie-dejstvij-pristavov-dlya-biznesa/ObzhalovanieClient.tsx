@@ -362,7 +362,8 @@ export default function ObzhalovanieClient() {
                   <>
                     <span style={{ display: 'inline-block' }}>Установим, какие заявления подавались,</span>{' '}
                     <span style={{ display: 'inline-block' }}>какие действия фактически совершены</span>{' '}
-                    <span style={{ display: 'inline-block' }}>и чего потребовать для продолжения взыскания.</span>
+                    <span style={{ display: 'inline-block' }}>и чего потребовать</span>{' '}
+                    <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>для продолжения взыскания.</span>
                   </>
                 )
               },
@@ -471,8 +472,8 @@ export default function ObzhalovanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ЧТО МОЖНО ОБЖАЛОВАТЬ (Новое оформление с крупной нумерацией) ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 3: ЧТО МОЖНО ОБЖАЛОВАТЬ ═══ */}
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
@@ -485,81 +486,82 @@ export default function ObzhalovanieClient() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px', marginBottom: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
             {[
               {
-                num: '01',
-                title: 'Постановления пристава',
-                desc: 'Возбуждение, отказ, окончание или прекращение производства, исполнительский сбор, оценка имущества и распределение средств проверяем по основаниям и процедуре.'
+                title: <><span style={{ display: 'inline-block' }}>Постановления</span> <br /><span style={{ display: 'inline-block' }}>пристава</span></>,
+                desc: 'Возбуждение, отказ, окончание или прекращение производства, исполнительский сбор, оценка имущества и распределение средств.'
               },
               {
-                num: '02',
-                title: 'Аресты и ограничения имущества',
-                desc: 'Оцениваем принадлежность имущества, объём требований, соразмерность мер, соблюдение процедуры и защиту производственного оборудования.'
+                title: <><span style={{ display: 'inline-block' }}>Аресты и ограничения</span> <br /><span style={{ display: 'inline-block' }}>имущества</span></>,
+                desc: 'Оцениваем принадлежность имущества, объём требований, соразмерность мер, соблюдение процедуры и защиту основных средств.'
               },
               {
-                num: '03',
-                title: 'Списание и распределение денег',
-                desc: 'Сверяем постановления, сумму требования, законную очерёдность списаний и фактическое движение средств по расчётным счетам компании.'
+                title: <><span style={{ display: 'inline-block' }}>Списание и распределение</span> <br /><span style={{ display: 'inline-block' }}>денежных средств</span></>,
+                desc: 'Сверяем постановления, сумму требования, законную очерёдность списаний и фактическое движение средств по счетам.'
               },
               {
-                num: '04',
-                title: 'Отказ совершить действие',
-                desc: 'Проверяем отказ принять исполнительный документ, рассмотреть ходатайство стороны, снять утратившее основание ограничение или запрет.'
+                title: <><span style={{ display: 'inline-block' }}>Отказ совершить</span> <br /><span style={{ display: 'inline-block' }}>действие</span></>,
+                desc: 'Проверяем отказ принять документ, рассмотреть ходатайство стороны, снять утратившее основание ограничение или запрет.'
               },
               {
-                num: '05',
-                title: 'Бездействие пристава по взысканию',
-                desc: 'Для компании-взыскателя фиксируем несовершённые запросы в банки и Росреестр, затягивание сроков и влияние бездействия на возврат долга.'
+                title: <><span style={{ display: 'inline-block' }}>Бездействие пристава</span> <br /><span style={{ display: 'inline-block' }}>по взысканию</span></>,
+                desc: 'Для компании-взыскателя фиксируем несовершённые запросы, затягивание сроков и влияние бездействия на возврат долга.'
               },
               {
-                num: '06',
-                title: 'Нарушение прав иного собственника',
-                desc: 'Если арест затронул имущество третьего лица (лизинг, аренда, хранение), определяем надлежащий судебный иск об освобождении от ареста.'
+                title: <><span style={{ display: 'inline-block' }}>Нарушение прав</span> <br /><span style={{ display: 'inline-block' }}>иного собственника</span></>,
+                desc: 'Если арест затронул имущество третьего лица (лизинг, аренда, хранение), определяем надлежащий иск об освобождении от ареста.'
               }
-            ].map((item) => (
+            ].map((item, index) => (
               <div 
-                key={item.num} 
+                key={index}
                 className="hover-lift"
-                style={{ 
-                  display: 'flex', 
-                  gap: '20px', 
-                  padding: '28px 24px', 
-                  border: '1px solid var(--color-border)', 
-                  borderLeft: '3px solid var(--color-primary)', 
-                  background: 'var(--color-white)', 
-                  borderRadius: '0',
-                  boxShadow: '0 2px 12px rgba(23, 50, 77, 0.04)',
-                  transition: 'all 0.3s ease'
+                style={{
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', lineHeight: 1, flexShrink: 0, opacity: 0.35, minWidth: '38px' }}>
-                  {item.num}
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {String(index + 1).padStart(2, '0')}
                 </div>
-                <div>
-                  <h3 style={{ margin: '0 0 8px 0', fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                    {item.desc}
-                  </p>
-                </div>
+
+                <h3 style={{
+                  fontSize: '18px',
+                  fontFamily: 'var(--font-serif)',
+                  color: 'var(--color-deep-blue)',
+                  margin: '8px 0 14px 0',
+                  lineHeight: 1.35
+                }}>
+                  {item.title}
+                </h3>
+
+                <p style={{
+                  fontSize: '14px',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.6,
+                  margin: 0
+                }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
-          </div>
-
-          <div style={{
-            background: 'var(--color-white)',
-            padding: '20px 28px',
-            border: '1px solid var(--color-border)',
-            borderLeft: '4px solid var(--color-gold)',
-            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
-            fontSize: '15px',
-            color: 'var(--color-deep-blue)',
-            fontWeight: 500,
-            lineHeight: 1.6
-          }}>
-            Для проверки решения пристава достаточно направить копию постановления или имеющиеся материалы. Юрист оценит законность действий и определит перспективу обжалования.
           </div>
         </div>
       </section>
