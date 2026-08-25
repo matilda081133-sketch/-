@@ -634,7 +634,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
               {
                 title: 'Обжалование действий и бездействия судебного пристава',
                 desc: 'Проверка постановлений и материалов производства, жалоба вышестоящему должностному лицу, в прокуратуру или обращение в суд — в зависимости от задачи.',
-                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-i-bezdejstviya-pristava/'
+                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/'
               },
               {
                 title: 'Возврат незаконно списанных приставами денег',
@@ -711,21 +711,19 @@ export default function IspolnitelnoeGrazhdanamClient() {
                   borderTop: '3px solid var(--color-gold)'
                 }}
               >
-                <style>
-                  {`
-                    .white-btn-custom {
-                      background-color: var(--color-white) !important;
-                      color: #10273B !important;
-                      border: 1px solid var(--color-white) !important;
-                      transition: all 0.3s ease !important;
-                    }
-                    .white-btn-custom:hover {
-                      background-color: transparent !important;
-                      color: var(--color-white) !important;
-                      border: 1px solid #FFFFFF !important;
-                    }
-                  `}
-                </style>
+                <style dangerouslySetInnerHTML={{__html: `
+                  .white-btn-custom {
+                    background-color: var(--color-white) !important;
+                    color: #10273B !important;
+                    border: 1px solid var(--color-white) !important;
+                    transition: all 0.3s ease !important;
+                  }
+                  .white-btn-custom:hover {
+                    background-color: transparent !important;
+                    color: var(--color-white) !important;
+                    border: 1px solid #FFFFFF !important;
+                  }
+                `}} />
                 <div>
                   <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-white)', lineHeight: 1.3 }}>
                     Не нашли свою ситуацию?
@@ -923,9 +921,12 @@ export default function IspolnitelnoeGrazhdanamClient() {
                     <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
                   </>
                 }
-                buttonText="Оценить задачу и документы"
-                commentPlaceholder="Кратко опишите ситуацию: что произошло (списание, арест счёта/автомобиля, бездействие пристава)..."
-                subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
                 hiddenFields={[
                   { name: 'source_page', value: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
                   { name: 'direction', value: 'ispolnitelnoe_proizvodstvo_fizlica' },

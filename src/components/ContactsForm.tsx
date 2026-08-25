@@ -10,7 +10,7 @@ interface ContactsFormProps {
   buttonText?: string;
   commentPlaceholder?: string;
   hiddenFields?: { name: string; value: string }[];
-  subtext?: string;
+  subtext?: React.ReactNode;
 }
 
 export default function ContactsForm({ 
