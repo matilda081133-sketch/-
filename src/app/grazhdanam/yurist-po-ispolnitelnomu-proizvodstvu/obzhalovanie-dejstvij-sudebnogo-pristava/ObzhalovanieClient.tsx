@@ -730,7 +730,7 @@ export default function ObzhalovanieClient() {
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '28px', position: 'relative', marginBottom: '40px' }}>
+          <div className="grid grid-4" style={{ gap: '16px', position: 'relative', marginBottom: '40px' }}>
             {[
               {
                 num: '01',
@@ -815,7 +815,7 @@ export default function ObzhalovanieClient() {
             ].map((act, idx) => (
               <div key={idx} className="hover-lift" style={{
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                padding: '36px 24px 28px 24px',
+                padding: '38px 24px 30px 24px',
                 border: '1px solid var(--color-border)',
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
@@ -837,10 +837,10 @@ export default function ObzhalovanieClient() {
                 }}>
                   {act.num}
                 </div>
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.35 }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.35 }}>
                   {act.title}
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {act.desc}
                 </p>
               </div>
