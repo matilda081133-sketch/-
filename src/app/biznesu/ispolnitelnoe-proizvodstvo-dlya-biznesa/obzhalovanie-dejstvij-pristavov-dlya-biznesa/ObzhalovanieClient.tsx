@@ -704,13 +704,13 @@ export default function ObzhalovanieClient() {
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              <span style={{ display: 'inline-block' }}>Защищаем бизнес от проверки документов</span> <br />
-              <span style={{ display: 'inline-block' }}>до устранения нарушения</span>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Защищаем бизнес от проверки документов</span>
+              <span style={{ display: 'block', whiteSpace: 'nowrap' }}>до устранения нарушения</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Комплексная работа юриста включает анализ материалов производства,</span> <br />
-              <span style={{ display: 'inline-block' }}>подготовку процессуальных документов и представительство компании.</span>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Комплексная работа юриста включает анализ материалов производства,</span>
+              <span style={{ display: 'block', whiteSpace: 'nowrap' }}>подготовку процессуальных документов и представительство компании.</span>
             </p>
           </div>
 
