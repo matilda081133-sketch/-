@@ -717,11 +717,12 @@ export default function IspolnitelnoeGrazhdanamClient() {
                       background-color: var(--color-white) !important;
                       color: #10273B !important;
                       border: 1px solid var(--color-white) !important;
+                      transition: all 0.3s ease !important;
                     }
                     .white-btn-custom:hover {
-                      background-color: var(--color-primary) !important;
+                      background-color: transparent !important;
                       color: var(--color-white) !important;
-                      border-color: var(--color-primary) !important;
+                      border: 1px solid #FFFFFF !important;
                     }
                   `}
                 </style>
