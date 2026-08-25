@@ -464,9 +464,9 @@ export default function ObzhalovanieClient() {
                 ),
                 desc: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Проверим постановление о&nbsp;возбуждении,</span>{' '}
-                    <span style={{ display: 'inline-block' }}>окончании или прекращении производства,</span>{' '}
-                    <span style={{ display: 'inline-block' }}>взыскании сбора, ограничении или расчёте долга.</span>
+                    <span style={{ display: 'block' }}>Проверим постановление о&nbsp;возбуждении,</span>
+                    <span style={{ display: 'block' }}>окончании или прекращении производства,</span>
+                    <span style={{ display: 'block' }}>взыскании сбора, ограничении или расчёте долга.</span>
                   </>
                 )
               },
@@ -480,9 +480,9 @@ export default function ObzhalovanieClient() {
                 ),
                 desc: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Оценим отказ возбудить производство,</span>{' '}
-                    <span style={{ display: 'inline-block' }}>принять документ, рассмотреть ходатайство,</span>{' '}
-                    <span style={{ display: 'inline-block' }}>снять ограничение или совершить действие.</span>
+                    <span style={{ display: 'block' }}>Оценим отказ возбудить производство,</span>
+                    <span style={{ display: 'block' }}>принять документ, рассмотреть ходатайство,</span>
+                    <span style={{ display: 'block' }}>снять ограничение или совершить действие.</span>
                   </>
                 )
               },
@@ -496,9 +496,9 @@ export default function ObzhalovanieClient() {
                 ),
                 desc: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Проверим, какие запросы и&nbsp;действия</span>{' '}
-                    <span style={{ display: 'inline-block' }}>должен был совершить пристав, какие обращения</span>{' '}
-                    <span style={{ display: 'inline-block' }}>подавались и&nbsp;почему решение не исполняется.</span>
+                    <span style={{ display: 'block' }}>Проверим, какие запросы и&nbsp;действия должен</span>
+                    <span style={{ display: 'block' }}>был совершить пристав, какие обращения</span>
+                    <span style={{ display: 'block' }}>подавались и&nbsp;почему решение не исполняется.</span>
                   </>
                 )
               },
@@ -512,9 +512,9 @@ export default function ObzhalovanieClient() {
                 ),
                 desc: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Разберём соблюдение порядка извещения,</span>{' '}
-                    <span style={{ display: 'inline-block' }}>процессуальных сроков, размера требований</span>{' '}
-                    <span style={{ display: 'inline-block' }}>и&nbsp;соразмерности применённых мер.</span>
+                    <span style={{ display: 'block' }}>Разберём соблюдение порядка извещения,</span>
+                    <span style={{ display: 'block' }}>процессуальных сроков, размера требований</span>
+                    <span style={{ display: 'block' }}>и&nbsp;соразмерности применённых приставом мер.</span>
                   </>
                 )
               },
@@ -528,9 +528,9 @@ export default function ObzhalovanieClient() {
                 ),
                 desc: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Сопоставим содержание ходатайства</span>{' '}
-                    <span style={{ display: 'inline-block' }}>и&nbsp;ответа с материалами дела, зафиксируем</span>{' '}
-                    <span style={{ display: 'inline-block' }}>нерассмотренные требования и&nbsp;адресата жалобы.</span>
+                    <span style={{ display: 'block' }}>Сопоставим содержание ходатайства и&nbsp;ответа</span>
+                    <span style={{ display: 'block' }}>с материалами дела, выделим нерассмотренные</span>
+                    <span style={{ display: 'block' }}>требования и&nbsp;определим адресата жалобы.</span>
                   </>
                 )
               },
@@ -544,9 +544,9 @@ export default function ObzhalovanieClient() {
                 ),
                 desc: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Помогаем гражданам, чьи права затронуты</span>{' '}
-                    <span style={{ display: 'inline-block' }}>действиями пристава (неправомерный</span>{' '}
-                    <span style={{ display: 'inline-block' }}>арест чужого имущества, ошибки в&nbsp;ФИО).</span>
+                    <span style={{ display: 'block' }}>Помогаем гражданам, чьи права затронуты</span>
+                    <span style={{ display: 'block' }}>действиями пристава: неправомерный арест</span>
+                    <span style={{ display: 'block' }}>чужого имущества либо совпадение по&nbsp;ФИО.</span>
                   </>
                 )
               }
