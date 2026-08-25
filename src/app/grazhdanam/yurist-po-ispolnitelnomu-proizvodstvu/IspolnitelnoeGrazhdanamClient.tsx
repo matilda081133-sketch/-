@@ -287,8 +287,10 @@ export default function IspolnitelnoeGrazhdanamClient() {
             <span style={{ display: 'inline-block' }}>Когда важно не</span> <br /><span style={{ display: 'inline-block' }}>откладывать обращение</span>
           </h2>
           <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '720px', lineHeight: 1.6 }}>
-            В исполнительном производстве отдельные решения и действия обжалуются в короткий срок, а деньги или имущество могут быть перечислены взыскателю либо переданы на реализацию. Чем раньше юрист увидит документы, тем больше доступных способов защиты.
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '850px', lineHeight: 1.6 }}>
+            <span style={{ display: 'inline-block' }}>В исполнительном производстве отдельные решения и действия обжалуются в короткий срок,</span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>а деньги или имущество могут быть перечислены взыскателю либо переданы на реализацию.</span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>Чем раньше юрист увидит документы, тем больше доступных способов защиты.</span>
           </p>
 
           <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
@@ -386,7 +388,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
             fontSize: '14px',
             lineHeight: 1.6
           }}>
-            <strong style={{ color: '#FFFFFF' }}>Юридическая справка:</strong> Десятидневный срок следует из статьи 122 Федерального закона № 229-ФЗ и применяется также к судебному оспариванию по части 3 статьи 219 КАС РФ.
+            <strong style={{ color: '#FFFFFF' }}>Юридическая справка:</strong> Десятидневный срок следует из статьи 122 Федерального закона № 229-ФЗ и применяется также к судебному <br className="hidden-mobile" />оспариванию по части 3 статьи 219 КАС РФ.
           </div>
 
           <style dangerouslySetInnerHTML={{__html: `
