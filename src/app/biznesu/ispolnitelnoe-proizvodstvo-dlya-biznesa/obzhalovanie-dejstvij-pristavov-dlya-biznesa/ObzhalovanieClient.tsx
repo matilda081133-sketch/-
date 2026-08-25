@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -13,6 +13,7 @@ import PricingBlock from '@/components/PricingBlock';
 import ProcessBlock from '@/components/ProcessBlock';
 
 export default function ObzhalovanieClient() {
+  const [activeStepIndex, setActiveStepIndex] = useState(0);
 
   const cases: CaseData[] = [
     {
@@ -700,10 +701,16 @@ export default function ObzhalovanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: ЗАЩИЩАЕМ БИЗНЕС (Структурированный регламент в 2 панели без дробления на карточки) ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 5: ЗАЩИЩАЕМ БИЗНЕС (Интерактивный дорожный навигатор защиты) ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '44px' }}>
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.12em', fontSize: '13px', fontWeight: 700, color: 'var(--color-primary)' }}>
+                Пошаговый регламент работы
+              </span>
+            </div>
             <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
               <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Защищаем бизнес от проверки документов</span>
               <span style={{ display: 'block', whiteSpace: 'nowrap' }}>до устранения нарушения</span>
@@ -714,144 +721,401 @@ export default function ObzhalovanieClient() {
             </p>
           </div>
 
-          {/* 2 тематические панели вместо 8 отдельных карточек */}
-          <div className="grid grid-2" style={{ gap: '32px', marginBottom: '40px', alignItems: 'stretch' }}>
-            {/* Панель 1: Аудит и проверка */}
-            <div style={{
-              background: '#FFFFFF',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-              padding: '36px 32px',
-              display: 'flex',
-              flexDirection: 'column'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '16px', marginBottom: '24px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
-                  I. Правовой анализ и аудит ситуации
-                </h3>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Шаги 01–04</span>
-              </div>
+          {/* Интерактивный переключатель фаз */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '28px' }}>
+            <button
+              type="button"
+              onClick={() => setActiveStepIndex(0)}
+              style={{
+                padding: '12px 24px',
+                background: activeStepIndex < 4 ? 'var(--color-deep-blue)' : '#FFFFFF',
+                color: activeStepIndex < 4 ? '#FFFFFF' : 'var(--color-deep-blue)',
+                border: '1px solid ' + (activeStepIndex < 4 ? 'var(--color-deep-blue)' : 'var(--color-border)'),
+                borderLeft: '4px solid var(--color-gold)',
+                fontSize: '14px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.25s ease',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px'
+              }}
+            >
+              <span>Фаза I: Правовой анализ и аудит</span>
+              <span style={{ fontSize: '11px', opacity: 0.8, background: activeStepIndex < 4 ? 'rgba(255,255,255,0.2)' : 'rgba(23,50,77,0.08)', padding: '2px 8px', borderRadius: '2px' }}>
+                Шаги 01–04
+              </span>
+            </button>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                {[
-                  {
-                    num: '01',
-                    title: 'Определим цель и срочность',
-                    desc: 'Определим срочность, процессуальную роль компании (взыскатель или должник) и требуемый для бизнеса результат.'
-                  },
-                  {
-                    num: '02',
-                    title: 'Изучим документы',
-                    desc: 'Изучим исполнительный документ, постановления, извещения, ходатайства и имеющиеся ответы ФССП.'
-                  },
-                  {
-                    num: '03',
-                    title: 'Ознакомимся с материалами',
-                    desc: 'Ознакомимся с материалами исполнительного производства в согласованном с вами объёме.'
-                  },
-                  {
-                    num: '04',
-                    title: 'Проверим основания',
-                    desc: 'Проверим полномочия пристава, основания решения, соблюдение процедуры, сумму и соразмерность мер.'
-                  }
-                ].map((step, idx) => (
-                  <div key={idx} style={{ display: 'flex', gap: '18px', alignItems: 'flex-start' }}>
+            <button
+              type="button"
+              onClick={() => setActiveStepIndex(4)}
+              style={{
+                padding: '12px 24px',
+                background: activeStepIndex >= 4 ? 'var(--color-deep-blue)' : '#FFFFFF',
+                color: activeStepIndex >= 4 ? '#FFFFFF' : 'var(--color-deep-blue)',
+                border: '1px solid ' + (activeStepIndex >= 4 ? 'var(--color-deep-blue)' : 'var(--color-border)'),
+                borderLeft: '4px solid var(--color-primary)',
+                fontSize: '14px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.25s ease',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px'
+              }}
+            >
+              <span>Фаза II: Процессуальная защита и суд</span>
+              <span style={{ fontSize: '11px', opacity: 0.8, background: activeStepIndex >= 4 ? 'rgba(255,255,255,0.2)' : 'rgba(23,50,77,0.08)', padding: '2px 8px', borderRadius: '2px' }}>
+                Шаги 05–08
+              </span>
+            </button>
+          </div>
+
+          {/* Интерактивная шкала шагов */}
+          <div style={{
+            background: '#FFFFFF',
+            border: '1px solid var(--color-border)',
+            padding: '16px 20px',
+            marginBottom: '32px',
+            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+            overflowX: 'auto'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minWidth: '640px', gap: '8px' }}>
+              {[
+                { num: '01', short: 'Цель и срок' },
+                { num: '02', short: 'Документы' },
+                { num: '03', short: 'Материалы' },
+                { num: '04', short: 'Основания' },
+                { num: '05', short: 'Адресат' },
+                { num: '06', short: 'Жалоба ФССП' },
+                { num: '07', short: 'Иск в суд' },
+                { num: '08', short: 'Результат' }
+              ].map((step, idx) => {
+                const isActive = activeStepIndex === idx;
+                const isPassed = activeStepIndex > idx;
+                return (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setActiveStepIndex(idx)}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      padding: '8px 12px',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: '6px',
+                      flex: 1,
+                      position: 'relative',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
                     <div style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '20px',
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '50%',
+                      background: isActive ? 'var(--color-primary)' : isPassed ? 'var(--color-gold)' : 'rgba(23,50,77,0.06)',
+                      color: isActive || isPassed ? '#FFFFFF' : 'var(--color-deep-blue)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '13px',
                       fontWeight: 700,
-                      color: 'var(--color-gold)',
-                      lineHeight: 1.2,
-                      minWidth: '28px',
-                      flexShrink: 0
+                      fontFamily: 'var(--font-serif)',
+                      boxShadow: isActive ? '0 0 0 4px rgba(193, 160, 102, 0.3)' : 'none',
+                      transition: 'all 0.25s ease'
                     }}>
                       {step.num}
                     </div>
-                    <div>
-                      <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px', lineHeight: 1.35 }}>
-                        {step.title}
-                      </div>
-                      <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                        {step.desc}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Панель 2: Процессуальная защита */}
-            <div style={{
-              background: '#FFFFFF',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-gold)',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-              padding: '36px 32px',
-              display: 'flex',
-              flexDirection: 'column'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '16px', marginBottom: '24px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
-                  II. Процессуальные действия и защита
-                </h3>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Шаги 05–08</span>
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                {[
-                  {
-                    num: '05',
-                    title: 'Определим адресата и срок',
-                    desc: 'Определим срок обжалования, компетентного адресата (ФССП или суд) и процессуальную форму обращения.'
-                  },
-                  {
-                    num: '06',
-                    title: 'Подготовим жалобу в ФССП',
-                    desc: 'Подготовим мотивированную жалобу в порядке подчинённости, адресные заявления и ходатайства.'
-                  },
-                  {
-                    num: '07',
-                    title: 'Подготовим заявление в суд',
-                    desc: 'Подготовим заявление в арбитражный суд либо документы для суда общей юрисдикции и ходатайство о приостановлении мер.'
-                  },
-                  {
-                    num: '08',
-                    title: 'Представим интересы компании',
-                    desc: 'Представим интересы компании в ФССП и суде и проконтролируем фактическое устранение нарушения.'
-                  }
-                ].map((step, idx) => (
-                  <div key={idx} style={{ display: 'flex', gap: '18px', alignItems: 'flex-start' }}>
-                    <div style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '20px',
-                      fontWeight: 700,
-                      color: 'var(--color-primary)',
-                      lineHeight: 1.2,
-                      minWidth: '28px',
-                      flexShrink: 0
+                    <span style={{
+                      fontSize: '11px',
+                      fontWeight: isActive ? 700 : 500,
+                      color: isActive ? 'var(--color-primary)' : 'var(--color-text-secondary)',
+                      whiteSpace: 'nowrap'
                     }}>
-                      {step.num}
-                    </div>
-                    <div>
-                      <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px', lineHeight: 1.35 }}>
-                        {step.title}
-                      </div>
-                      <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                        {step.desc}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                      {step.short}
+                    </span>
+                    {isActive && (
+                      <div style={{ position: 'absolute', bottom: '-8px', width: '24px', height: '3px', background: 'var(--color-gold)' }} />
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ padding: '15px 36px', fontSize: '15px' }} data-analytics="b2b_bailiff_process_cta">
-              Обсудить объём помощи
-            </a>
-          </div>
+          {/* Интерактивный терминал активного этапа */}
+          {[
+            {
+              num: '01',
+              phase: 'Фаза I • Экспресс-аудит',
+              phaseId: 1,
+              title: 'Определим цель и срочность',
+              desc: 'Определим срочность, процессуальную роль компании (взыскатель или должник) и требуемый для бизнеса результат.',
+              actions: [
+                'Фиксируем 10-дневный срок на обжалование с момента получения постановления',
+                'Оцениваем риски списания средств и блокировки операционной деятельности',
+                'Выбираем приоритетный результат: полная отмена, приостановление или рассрочка'
+              ],
+              resultTitle: 'Результат шага для бизнеса',
+              resultDesc: 'Чёткий план срочных действий и гарантированное соблюдение 10-дневного процессуального срока.'
+            },
+            {
+              num: '02',
+              phase: 'Фаза I • Экспресс-аудит',
+              phaseId: 1,
+              title: 'Изучим документы',
+              desc: 'Изучим исполнительный документ, постановления, извещения, ходатайства и имеющиеся ответы ФССП.',
+              actions: [
+                'Проверяем реквизиты исполнительного листа и судебного решения',
+                'Анализируем текст постановления пристава на предмет процедурных дефектов',
+                'Сверяем даты вручения и направления извещений должнику и взыскателю'
+              ],
+              resultTitle: 'Результат шага для бизнеса',
+              resultDesc: 'Полный перечень фактических и процедурных нарушений закона со стороны ФССП.'
+            },
+            {
+              num: '03',
+              phase: 'Фаза I • Экспресс-аудит',
+              phaseId: 1,
+              title: 'Ознакомимся с материалами',
+              desc: 'Ознакомимся с материалами исполнительного производства в согласованном с вами объёме.',
+              actions: [
+                'Запрашиваем и фотофиксируем все тома исполнительного производства в отделе ФССП',
+                'Проверяем ответы банков, регистрирующих органов (Росреестр, ГИБДД, ФНС)',
+                'Выявляем неисполненные запросы и необоснованные задержки пристава'
+              ],
+              resultTitle: 'Результат шага для бизнеса',
+              resultDesc: 'Доступ ко всем скрытым материалам производства и реальной картине действий пристава.'
+            },
+            {
+              num: '04',
+              phase: 'Фаза I • Экспресс-аудит',
+              phaseId: 1,
+              title: 'Проверим основания',
+              desc: 'Проверим полномочия пристава, основания решения, соблюдение процедуры, сумму и соразмерность мер.',
+              actions: [
+                'Оцениваем соразмерность арестованного имущества сумме задолженности',
+                'Проверяем основания для освобождения производственных активов от ареста',
+                'Сверяем правильность расчёта исполнительского сбора и расходов'
+              ],
+              resultTitle: 'Результат шага для бизнеса',
+              resultDesc: 'Сформированная доказательная база для отмены незаконных мер и требований.'
+            },
+            {
+              num: '05',
+              phase: 'Фаза II • Процессуальная защита',
+              phaseId: 2,
+              title: 'Определим адресата и срок',
+              desc: 'Определим срок обжалования, компетентного адресата (ФССП или суд) и процессуальную форму обращения.',
+              actions: [
+                'Определяем подсудность: арбитражный суд субъекта РФ или суд общей юрисдикции',
+                'Оцениваем целесообразность ведомственной жалобы старшему судебному приставу',
+                'Формируем тактику параллельного ведомственного и судебного обжалования'
+              ],
+              resultTitle: 'Результат шага для бизнеса',
+              resultDesc: 'Безошибочный выбор инстанции, исключающий затягивание дела и возврат иска.'
+            },
+            {
+              num: '06',
+              phase: 'Фаза II • Процессуальная защита',
+              phaseId: 2,
+              title: 'Подготовим жалобу в ФССП',
+              desc: 'Подготовим мотивированную жалобу в порядке подчинённости, адресные заявления и ходатайства.',
+              actions: [
+                'Составляем жалобу старшему приставу / главному судебному приставу Липецкой области',
+                'Прикладываем доказательства нарушения прав юридического лица',
+                'Ходатайствуем о немедленной отмене незаконного постановления'
+              ],
+              resultTitle: 'Результат шага для бизнеса',
+              resultDesc: 'Официальное рассмотрение жалобы руководством ведомства в 10-дневный срок.'
+            },
+            {
+              num: '07',
+              phase: 'Фаза II • Процессуальная защита',
+              phaseId: 2,
+              title: 'Подготовим заявление в суд',
+              desc: 'Подготовим заявление в арбитражный суд либо документы для суда общей юрисдикции и ходатайство о приостановлении мер.',
+              actions: [
+                'Формируем заявление по правилам главы 24 АПК РФ / главы 22 КАС РФ',
+                'Заявляем срочное ходатайство о приостановлении исполнительного производства',
+                'Блокируем возможность дальнейшего принудительного списания и реализации имущества'
+              ],
+              resultTitle: 'Результат шага для бизнеса',
+              resultDesc: 'Судебная защита активов и приостановление неправомерного взыскания.'
+            },
+            {
+              num: '08',
+              phase: 'Фаза II • Процессуальная защита',
+              phaseId: 2,
+              title: 'Представим интересы компании',
+              desc: 'Представим интересы компании в ФССП и суде и проконтролируем фактическое устранение нарушения.',
+              actions: [
+                'Участвуем во всех судебных заседаниях и лично взаимодействуем с приставом',
+                'Добиваемся вынесения решения о признании действий/постановлений незаконными',
+                'Контролируем снятие арестов с банковских счетов и возврат денежных средств'
+              ],
+              resultTitle: 'Результат шага для бизнеса',
+              resultDesc: 'Полное восстановление прав бизнеса, разблокировка счетов и защита активов.'
+            }
+          ]
+            .filter((_, idx) => idx === activeStepIndex)
+            .map((currentStep) => (
+              <div
+                key={currentStep.num}
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-primary)',
+                  boxShadow: '0 8px 32px rgba(23, 50, 77, 0.08)',
+                  padding: '40px 36px',
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                  gap: '40px',
+                  alignItems: 'center',
+                  position: 'relative'
+                }}
+              >
+                {/* Левая колонка: Описание и процессуальные действия */}
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
+                    <span style={{
+                      background: 'rgba(193, 160, 102, 0.15)',
+                      color: 'var(--color-deep-blue)',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      padding: '4px 10px',
+                      borderRadius: '2px',
+                      letterSpacing: '0.05em'
+                    }}>
+                      {currentStep.phase}
+                    </span>
+                    <span style={{ fontSize: '13px', color: 'var(--color-gold)', fontWeight: 700 }}>
+                      Шаг {currentStep.num} из 08
+                    </span>
+                  </div>
+
+                  <h3 style={{
+                    fontSize: 'clamp(22px, 2.5vw, 28px)',
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 16px 0',
+                    lineHeight: 1.25
+                  }}>
+                    {currentStep.num}. {currentStep.title}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '15px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    marginBottom: '24px'
+                  }}>
+                    {currentStep.desc}
+                  </p>
+
+                  <div style={{ marginBottom: '28px' }}>
+                    <div style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '12px' }}>
+                      Что делает юрист на этом шаге:
+                    </div>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      {currentStep.actions.map((act, i) => (
+                        <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                            <polyline points="9 11 12 14 22 4" />
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                          </svg>
+                          <span>{act}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Кнопки переключения шагов */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <button
+                      type="button"
+                      disabled={activeStepIndex === 0}
+                      onClick={() => setActiveStepIndex((prev) => Math.max(0, prev - 1))}
+                      style={{
+                        padding: '10px 18px',
+                        background: '#FFFFFF',
+                        border: '1px solid var(--color-border)',
+                        color: activeStepIndex === 0 ? 'rgba(23,50,77,0.3)' : 'var(--color-deep-blue)',
+                        fontSize: '13px',
+                        fontWeight: 600,
+                        cursor: activeStepIndex === 0 ? 'not-allowed' : 'pointer'
+                      }}
+                    >
+                      ← Назад
+                    </button>
+
+                    <button
+                      type="button"
+                      disabled={activeStepIndex === 7}
+                      onClick={() => setActiveStepIndex((prev) => Math.min(7, prev + 1))}
+                      style={{
+                        padding: '10px 22px',
+                        background: activeStepIndex === 7 ? 'rgba(23,50,77,0.2)' : 'var(--color-primary)',
+                        border: 'none',
+                        color: '#FFFFFF',
+                        fontSize: '13px',
+                        fontWeight: 600,
+                        cursor: activeStepIndex === 7 ? 'not-allowed' : 'pointer'
+                      }}
+                    >
+                      {activeStepIndex === 7 ? 'Финальный шаг' : 'Следующий шаг →'}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Правая колонка: Результат для бизнеса */}
+                <div style={{
+                  background: 'linear-gradient(145deg, #10273B 0%, #17375E 100%)',
+                  padding: '36px 30px',
+                  borderTop: '3px solid var(--color-gold)',
+                  boxShadow: '0 8px 24px rgba(16, 39, 59, 0.25)',
+                  color: '#FFFFFF',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '20px'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-gold)' }}></div>
+                    <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-gold)', fontWeight: 700 }}>
+                      {currentStep.resultTitle}
+                    </span>
+                  </div>
+
+                  <div style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', lineHeight: 1.4, color: '#FFFFFF' }}>
+                    «{currentStep.resultDesc}»
+                  </div>
+
+                  <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, borderTop: '1px solid rgba(255, 255, 255, 0.15)', paddingTop: '16px' }}>
+                    Куратор направления — Марина Валерьевна Смольянинова (13 лет опыта в органах ФССП).
+                  </div>
+
+                  <a
+                    href="#form"
+                    className="btn btn-primary"
+                    style={{
+                      background: 'var(--color-gold)',
+                      color: '#10273B',
+                      border: 'none',
+                      fontWeight: 700,
+                      padding: '14px 24px',
+                      textAlign: 'center',
+                      marginTop: '8px'
+                    }}
+                  >
+                    Обсудить этот этап с юристом →
+                  </a>
+                </div>
+              </div>
+            ))}
         </div>
       </section>
 
