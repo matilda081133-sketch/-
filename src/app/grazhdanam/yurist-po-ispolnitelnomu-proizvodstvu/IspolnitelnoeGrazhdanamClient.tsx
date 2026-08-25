@@ -827,47 +827,44 @@ export default function IspolnitelnoeGrazhdanamClient() {
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', color: 'var(--color-primary)', fontWeight: 600 }}>
-                  Связаться с нами
-                </span>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
               </div>
-
-              <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.25, margin: '0 0 20px 0' }}>
-                Обсудите ситуацию с Мариной Валерьевной Смольяниновой
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span style={{ display: 'inline-block' }}>Обсудите ситуацию</span> <br />
+                <span style={{ display: 'inline-block' }}>с Мариной Валерьевной</span> <br />
+                <span style={{ display: 'inline-block' }}>Смольяниновой</span>
               </h2>
-
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 32px 0' }}>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '28px', textWrap: 'balance' }}>
                 Кратко опишите, что произошло и на какой стадии находится исполнительное производство. Обращение передадим Марине Валерьевне Смольяниновой. Она уточнит обстоятельства, подскажет, какие документы подготовить, и согласует с Вами консультацию.
               </p>
-
-              <div style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px', marginTop: 'auto' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>Перезвоним в течение 15 минут в рабочее время</span>
-                </div>
-                <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Если Вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день.
-                </span>
-                <span style={{ fontSize: '12px', color: 'var(--color-text-muted)', lineHeight: 1.4, marginTop: '4px' }}>
-                  Не указывайте в форме паспортные данные, номера банковских счетов и конфиденциальные сведения.
-                </span>
-              </div>
+              <a href="tel:+79103503111" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', marginBottom: '16px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.47 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 5.55 5.55l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                +7 (910) 350-31-11
+              </a>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, marginBottom: '12px' }}>
+                <strong>Адрес:</strong> г. Липецк, пл. Плеханова, д. 1, оф. 213
+              </p>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день.
+              </p>
             </div>
-
-            <div style={{ background: 'var(--color-white)', padding: '40px', border: '1px solid var(--color-border)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <ContactsForm
-                title="Получить консультацию юриста"
-                subtitle="Заполните форму, и мы свяжемся с вами для уточнения деталей"
-                buttonText="Получить консультацию"
-                hiddenFields={[
-                  { name: 'source_page', value: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
-                  { name: 'direction', value: 'ispolnitelnoe_proizvodstvo_fizlica' },
-                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
-                ]}
-              />
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div className="grazhdanam-contact-card" style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm
+                  title="Написать нам"
+                  subtitle=""
+                  buttonText="Обсудить ситуацию"
+                  commentPlaceholder="Кратко опишите, что произошло (списание, арест счёта/автомобиля, бездействие пристава)…"
+                  subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                  hiddenFields={[
+                    { name: 'source_page', value: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
+                    { name: 'direction', value: 'ispolnitelnoe_proizvodstvo_fizlica' },
+                    { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
+                  ]}
+                />
+              </div>
             </div>
           </div>
         </div>
