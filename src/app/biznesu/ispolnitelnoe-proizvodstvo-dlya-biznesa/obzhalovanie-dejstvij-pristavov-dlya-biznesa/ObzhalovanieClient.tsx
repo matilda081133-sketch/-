@@ -701,126 +701,69 @@ export default function ObzhalovanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: ЗАЩИЩАЕМ БИЗНЕС (Чистый нумерованный регламент) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
-              <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Защищаем бизнес от проверки документов</span>
-              <span style={{ display: 'block', whiteSpace: 'nowrap' }}>до устранения нарушения</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Комплексная работа юриста включает анализ материалов производства,</span>
-              <span style={{ display: 'block', whiteSpace: 'nowrap' }}>подготовку процессуальных документов и представительство компании.</span>
-            </p>
-          </div>
-
-          {/* Чистый двухколоночный список без рамок и нагромождений */}
-          <div className="grid grid-2" style={{ gap: '40px 60px', marginBottom: '40px' }}>
-            {/* Колонка 1: Шаги 01–04 */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              {[
-                {
-                  num: '01',
-                  title: 'Определим цель и срочность',
-                  desc: 'Определим срочность, процессуальную роль компании (взыскатель или должник) и требуемый для бизнеса результат.'
-                },
-                {
-                  num: '02',
-                  title: 'Изучим документы',
-                  desc: 'Изучим исполнительный документ, постановления, извещения, ходатайства и имеющиеся ответы ФССП.'
-                },
-                {
-                  num: '03',
-                  title: 'Ознакомимся с материалами',
-                  desc: 'Ознакомимся с материалами исполнительного производства в согласованном с вами объёме.'
-                },
-                {
-                  num: '04',
-                  title: 'Проверим основания',
-                  desc: 'Проверим полномочия пристава, основания решения, соблюдение процедуры, сумму и соразмерность мер.'
-                }
-              ].map((step, idx) => (
-                <div key={idx} style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', paddingBottom: '20px', borderBottom: '1px solid rgba(23, 50, 77, 0.08)' }}>
-                  <span style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '26px',
-                    fontWeight: 700,
-                    color: 'var(--color-gold)',
-                    lineHeight: 1,
-                    minWidth: '34px',
-                    flexShrink: 0
-                  }}>
-                    {step.num}
-                  </span>
-                  <div>
-                    <h3 style={{ fontSize: '17px', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 6px 0', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
-                      {step.title}
-                    </h3>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                      {step.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Колонка 2: Шаги 05–08 */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              {[
-                {
-                  num: '05',
-                  title: 'Определим адресата и срок',
-                  desc: 'Определим срок обжалования, компетентного адресата (ФССП или суд) и процессуальную форму обращения.'
-                },
-                {
-                  num: '06',
-                  title: 'Подготовим жалобу в ФССП',
-                  desc: 'Подготовим мотивированную жалобу в порядке подчинённости, адресные заявления и ходатайства.'
-                },
-                {
-                  num: '07',
-                  title: 'Подготовим заявление в суд',
-                  desc: 'Подготовим заявление в арбитражный суд либо документы для суда общей юрисдикции и ходатайство о приостановлении мер.'
-                },
-                {
-                  num: '08',
-                  title: 'Представим интересы компании',
-                  desc: 'Представим интересы компании в ФССП и суде и проконтролируем фактическое устранение нарушения.'
-                }
-              ].map((step, idx) => (
-                <div key={idx} style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', paddingBottom: '20px', borderBottom: '1px solid rgba(23, 50, 77, 0.08)' }}>
-                  <span style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '26px',
-                    fontWeight: 700,
-                    color: 'var(--color-primary)',
-                    lineHeight: 1,
-                    minWidth: '34px',
-                    flexShrink: 0
-                  }}>
-                    {step.num}
-                  </span>
-                  <div>
-                    <h3 style={{ fontSize: '17px', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 6px 0', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
-                      {step.title}
-                    </h3>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                      {step.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div style={{ textAlign: 'left' }}>
-            <a href="#form" className="btn btn-primary" style={{ padding: '15px 36px', fontSize: '15px' }} data-analytics="b2b_bailiff_process_cta">
-              Обсудить объём помощи
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* ═══ БЛОК 5: ЭТАПЫ ЗАЩИТЫ БИЗНЕСА (Типовой блок этапов) ═══ */}
+      <ProcessBlock
+        alignTitle="left"
+        title={
+          <span style={{ display: 'block' }}>
+            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Защищаем бизнес от проверки документов</span>
+            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>до устранения нарушения</span>
+          </span>
+        }
+        subtitle={
+          <span style={{ display: 'block' }}>
+            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Комплексная работа юриста включает анализ материалов производства,</span>
+            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>подготовку процессуальных документов и представительство компании.</span>
+          </span>
+        }
+        steps={[
+          {
+            num: '01',
+            title: 'Определим цель и срочность',
+            desc: 'Определим срочность, процессуальную роль компании (взыскатель или должник) и требуемый для бизнеса результат.'
+          },
+          {
+            num: '02',
+            title: 'Изучим документы',
+            desc: 'Изучим исполнительный документ, постановления, извещения, ходатайства и имеющиеся ответы ФССП.'
+          },
+          {
+            num: '03',
+            title: 'Ознакомимся с материалами',
+            desc: 'Ознакомимся с материалами исполнительного производства в согласованном с вами объёме.'
+          },
+          {
+            num: '04',
+            title: 'Проверим основания',
+            desc: 'Проверим полномочия пристава, основания решения, соблюдение процедуры, сумму и соразмерность мер.'
+          },
+          {
+            num: '05',
+            title: 'Определим адресата и срок',
+            desc: 'Определим срок обжалования, компетентного адресата (ФССП или суд) и процессуальную форму обращения.'
+          },
+          {
+            num: '06',
+            title: 'Подготовим жалобу в ФССП',
+            desc: 'Подготовим мотивированную жалобу в порядке подчинённости, адресные заявления и ходатайства.'
+          },
+          {
+            num: '07',
+            title: 'Подготовим заявление в суд',
+            desc: 'Подготовим заявление в арбитражный суд либо документы для суда общей юрисдикции и ходатайство о приостановлении мер.'
+          },
+          {
+            num: '08',
+            title: 'Представим интересы компании',
+            desc: 'Представим интересы компании в ФССП и суде и проконтролируем фактическое устранение нарушения.'
+          }
+        ]}
+        ctaTitle="Готовы обсудить вашу ситуацию"
+        ctaSubtitle="Опишите задачу — юрист изучит документы и предложит конкретные шаги."
+        ctaButtonText="Обсудить объём помощи"
+        ctaButtonHref="#form"
+        footerNote="Консультацию, проверку электронных копий и подготовку большинства документов можно начать дистанционно. Необходимость личного участия в ФССП или суде определяется после выбора способа защиты."
+      />
 
       {/* ═══ БЛОК 6: ВЕДУЩИЙ ЮРИСТ ПО УСЛУГЕ ═══ */}
       <SpecialistBlock
