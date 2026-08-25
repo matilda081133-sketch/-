@@ -761,7 +761,12 @@ export default function VzyskanieClient() {
 
       {/* ═══ БЛОК 7: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
       <CasesBlock
-        title="Как можно добиться фактического взыскания с организации"
+        title={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Как можно добиться фактического</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>взыскания с организации</span>
+          </span>
+        }
         showAllLink="/praktika/"
         showAllText="Смотреть практику"
         showDemoWarning={true}
