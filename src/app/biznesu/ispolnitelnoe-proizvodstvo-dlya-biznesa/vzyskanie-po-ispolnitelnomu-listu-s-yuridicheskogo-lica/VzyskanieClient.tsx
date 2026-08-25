@@ -689,9 +689,9 @@ export default function VzyskanieClient() {
                 'доверенность и реквизиты счёта компании-взыскателя.'
               ].map((doc, idx) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="rgba(255,255,255,0.4)" strokeWidth="1.8" fill="rgba(255,255,255,0.05)" />
-                    <path d="M7 12l3 3 7-7" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.5 }}>
                     {doc}
