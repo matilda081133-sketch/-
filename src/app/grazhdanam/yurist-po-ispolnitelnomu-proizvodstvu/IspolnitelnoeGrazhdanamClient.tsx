@@ -551,80 +551,72 @@ export default function IspolnitelnoeGrazhdanamClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: НАПРАВЛЕНИЯ ПОМОЩИ (5 карточек услуг) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 4: НАПРАВЛЕНИЯ ПОМОЩИ (5 карточек + темная 6-я карточка) ═══ */}
+      <section id="directions" className="section" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Направления помощи
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Выберите ситуацию, чтобы узнать, какие документы и обстоятельства имеют значение, какие действия возможны и как строится работа по конкретной услуге.
             </p>
           </div>
-
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
+          
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
             {[
               {
                 title: 'Обжалование действий и бездействия судебного пристава',
                 desc: 'Проверка постановлений и материалов производства, жалоба вышестоящему должностному лицу, в прокуратуру или обращение в суд — в зависимости от задачи.',
-                href: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-i-bezdejstviya-pristava/'
+                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-i-bezdejstviya-pristava/'
               },
               {
                 title: 'Возврат незаконно списанных приставами денег',
                 desc: 'Помощь при списании защищённых выплат, повторном или избыточном взыскании, а также после погашения задолженности.',
-                href: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-pristavami-deneg/'
+                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-pristavami-deneg/'
               },
               {
                 title: 'Снятие ареста со счёта и разблокировка банковской карты',
                 desc: 'Проверка основания ареста, источника поступлений и документов; обращения к приставу, в банк или суд по применимому маршруту.',
-                href: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/'
+                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/'
               },
               {
                 title: 'Снятие ареста с автомобиля и запрета на регистрационные действия',
                 desc: 'Помощь владельцу или добросовестному приобретателю при аресте транспорта, запрете регистрации и притязаниях на имущество другого лица.',
-                href: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/'
+                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/'
               },
               {
                 title: 'Взыскание по исполнительному листу',
                 desc: 'Сопровождение взыскателя после решения суда: предъявление документа, контроль пристава, поиск активов и обжалование бездействия.',
-                href: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/'
+                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/'
               }
-            ].map((srv, idx) => (
-              <a
-                key={idx}
-                href={srv.href}
-                style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
-                data-analytics="click_service_card"
-              >
-                <div
-                  className="card service-card hover-lift"
-                  style={{
-                    height: '100%',
-                    minHeight: '230px',
-                    padding: '32px 28px',
-                    background: 'var(--color-white)',
+            ].map((dir, i) => (
+              <a key={i} href={dir.link} data-analytics="click_service_card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div 
+                  className="card service-card" 
+                  style={{ 
+                    height: '100%', 
+                    minHeight: '160px',
+                    padding: '30px', 
+                    background: 'var(--color-white)', 
                     border: '1px solid var(--color-border)',
-                    borderTop: '3px solid var(--color-primary)',
                     borderRadius: '0',
-                    display: 'flex',
+                    display: 'flex', 
                     flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    cursor: 'pointer',
-                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                    transition: 'all 0.3s',
+                    position: 'relative',
+                    borderTop: '3px solid var(--color-primary)'
                   }}
                 >
-                  <div>
-                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
-                      {srv.title}
-                    </h3>
-                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                      {srv.desc}
-                    </p>
-                  </div>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
-                    <span>Подробнее</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
+                    {dir.title}
+                  </h3>
+                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                    {dir.desc}
+                  </p>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                    Подробнее 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -632,32 +624,56 @@ export default function IspolnitelnoeGrazhdanamClient() {
                 </div>
               </a>
             ))}
-          </div>
 
-          {/* ═══ БЛОК 5: НЕ НАШЛИ СВОЮ СИТУАЦИЮ? ═══ */}
-          <div style={{
-            background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-            border: '1px solid var(--color-border)',
-            borderLeft: '4px solid var(--color-gold)',
-            padding: '32px 36px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '24px',
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
-          }}>
-            <div style={{ maxWidth: '680px' }}>
-              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
-                Не нашли свою ситуацию?
-              </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
-                Кратко опишите, что произошло и на какой стадии находится производство. Юрист изучит обстоятельства и подскажет, относится ли вопрос к исполнительному производству и с каких действий лучше начать.
-              </p>
+            {/* Не нашли свою ситуацию? (3-я карточка во 2-й строке) */}
+            <div style={{ gridColumn: 'span 1' }}>
+              <div 
+                className="card service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '160px',
+                  padding: '30px', 
+                  background: 'var(--color-deep-blue)', 
+                  border: '1px solid transparent',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  gap: '20px',
+                  transition: 'all 0.3s',
+                  position: 'relative',
+                  borderTop: '3px solid var(--color-gold)'
+                }}
+              >
+                <style>
+                  {`
+                    .white-btn-custom {
+                      background-color: var(--color-white) !important;
+                      color: #10273B !important;
+                      border: 1px solid var(--color-white) !important;
+                    }
+                    .white-btn-custom:hover {
+                      background-color: var(--color-primary) !important;
+                      color: var(--color-white) !important;
+                      border-color: var(--color-primary) !important;
+                    }
+                  `}
+                </style>
+                <div>
+                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                    Не нашли свою ситуацию?
+                  </h3>
+                  <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>
+                    Кратко опишите, что произошло и на какой стадии находится производство. Юрист изучит обстоятельства и подскажет, с каких действий лучше начать.
+                  </p>
+                </div>
+                <div>
+                  <a href="#form" className="btn white-btn-custom" style={{ display: 'inline-block', width: '100%', textAlign: 'center', fontSize: '14px', padding: '12px 20px' }}>
+                    Описать ситуацию
+                  </a>
+                </div>
+              </div>
             </div>
-            <a href="#form" className="btn btn-primary" style={{ padding: '14px 28px', fontSize: '14px', whiteSpace: 'nowrap' }}>
-              Описать ситуацию
-            </a>
           </div>
         </div>
       </section>
@@ -666,8 +682,8 @@ export default function IspolnitelnoeGrazhdanamClient() {
       <SpecialistBlock
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
-        position="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
-        imageUrl="/images/specialists/smolyaninova.jpg"
+        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
+        imageUrl="/images/smolyaninova.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Марина Валерьевна более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Занималась организацией и контролем исполнительных производств, рассмотрением обращений и жалоб, участвовала в исполнительных действиях и взаимодействовала с судами и государственными органами. Этот опыт помогает оценивать ситуацию с позиции реальной работы системы принудительного исполнения.
