@@ -466,7 +466,8 @@ export default function IzmenenieVriClient() {
               Как юрист помогает <br />изменить ВРИ участка
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Сначала определяется не заявление, а правовой источник допустимых видов использования для конкретной земли.
+              <span style={{ display: 'inline-block' }}>Сначала определяется не заявление, а правовой</span> <br />
+              <span style={{ display: 'inline-block' }}>источник допустимых видов использования для конкретной земли.</span>
             </p>
           </div>
 
@@ -517,7 +518,8 @@ export default function IzmenenieVriClient() {
               Что понадобится <br />для проверки ВРИ
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Во многих случаях начать можно с кадастрового номера и краткого описания планируемого использования.
+              <span style={{ display: 'inline-block' }}>Во многих случаях начать можно с кадастрового номера</span> <br />
+              <span style={{ display: 'inline-block' }}>и краткого описания планируемого использования.</span>
             </p>
           </div>
 
