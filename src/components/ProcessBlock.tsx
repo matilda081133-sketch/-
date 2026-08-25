@@ -10,7 +10,7 @@ export interface ProcessStep {
 }
 
 interface ProcessBlockProps {
-  title?: string;
+  title?: string | React.ReactNode;
   subtitle?: React.ReactNode;
   steps: ProcessStep[];
   ctaTitle?: string;
@@ -36,7 +36,7 @@ export default function ProcessBlock({
   let gridClass = "grid grid-3";
   if (steps.length === 5) {
     gridClass = "grid grid-5";
-  } else if (steps.length === 4) {
+  } else if (steps.length === 4 || steps.length === 8) {
     gridClass = "grid grid-4";
   } else if (steps.length === 2) {
     gridClass = "grid grid-2";
