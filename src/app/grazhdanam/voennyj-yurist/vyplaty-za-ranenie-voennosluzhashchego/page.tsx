@@ -375,7 +375,6 @@ export default function VyplatyRaneniePage() {
       <ProcessBlock 
         title="Как проходит работа"
         subtitle=""
-        ctaTitle=""
         steps={[
           { num: '01', title: 'Разбираем ситуацию', desc: 'Уточняем обстоятельства ранения, какие выплаты уже оформлялись и на каком этапе возникла проблема.' },
           { num: '02', title: 'Проверяем документы', desc: 'Изучаем медицинские заключения, справки, выписки, решения и полученные отказы.' },
@@ -432,8 +431,7 @@ export default function VyplatyRaneniePage() {
             buttonHref: '#form'
           }
         ]}
-        ctaTitle=""
-      />
+        />
 
       {/* ═══ 9. Ответы на частые вопросы ═══ */}
       <FAQBlock 

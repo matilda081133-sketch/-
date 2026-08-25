@@ -509,7 +509,6 @@ export default function SporySVoenkomatomPage() {
       <ProcessBlock 
         title="Как проходит работа"
         subtitle=""
-        ctaTitle=""
         steps={steps}
       />
 
@@ -559,8 +558,7 @@ export default function SporySVoenkomatomPage() {
             buttonHref: '#form'
           }
         ]}
-        ctaTitle=""
-      />
+        />
 
       {/* ═══ 5. ЧАСТЫЕ ВОПРОСЫ ═══ */}
       <FAQBlock 

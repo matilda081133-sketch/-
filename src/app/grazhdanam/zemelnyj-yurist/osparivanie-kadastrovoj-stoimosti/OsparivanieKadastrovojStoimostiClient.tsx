@@ -614,7 +614,6 @@ export default function OsparivanieKadastrovojStoimostiClient() {
       <ProcessBlock 
         title="Как проходит работа"
         subtitle="Пять шагов для пересмотра кадастровой стоимости."
-        ctaTitle=""
         steps={[
           { num: '01', title: 'Получаем данные об объекте и платеже', desc: 'Уточняем кадастровый номер, текущую стоимость, право, вид и размер платежа.' },
           { num: '02', title: 'Оцениваем целесообразность', desc: 'Сопоставляем возможный эффект, период и все предполагаемые расходы.' },
@@ -683,8 +682,7 @@ export default function OsparivanieKadastrovojStoimostiClient() {
               buttonHref: '#form'
             }
           ]}
-          ctaTitle=""
-        />
+          />
       </div>
 
       {/* ═══ 7. ОТВЕТЫ НА ЧАСТЫЕ ВОПРОСЫ ═══ */}

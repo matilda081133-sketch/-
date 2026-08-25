@@ -583,8 +583,7 @@ export default async function SpecialistPage({ params }: PageProps) {
             desc: 'Работаем с доверителями по всей России. Первичный анализ документов, согласование позиции и подготовка процессуальных обращений проходят в удобном дистанционном формате.'
           }] : [])
         ]}
-        ctaTitle=""
-      />
+        />
 
       {/* 8. CTA Form */}
       <section className="section bg-cream" id="consultation" style={{ scrollMarginTop: '120px' }}>

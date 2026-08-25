@@ -638,7 +638,6 @@ export default function UstanovlenieServitutaClient() {
       <ProcessBlock 
         title="Как проходит работа"
         subtitle="Пять шагов для установления, изменения или оспаривания сервитута."
-        ctaTitle=""
         steps={[
           { num: '01', title: 'Определяем цель и стороны', desc: 'Уточняем, для какого объекта нужен доступ и чьи участки затрагиваются.' },
           { num: '02', title: 'Проверяем необходимость и альтернативы', desc: 'Анализируем документы, окружение, существующие пути и технические ограничения.' },
@@ -707,8 +706,7 @@ export default function UstanovlenieServitutaClient() {
               buttonHref: '#form'
             }
           ]}
-          ctaTitle=""
-        />
+          />
       </div>
 
       {/* ═══ 7. ОТВЕТЫ НА ЧАСТЫЕ ВОПРОСЫ ═══ */}

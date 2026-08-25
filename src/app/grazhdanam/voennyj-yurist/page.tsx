@@ -538,7 +538,6 @@ export default function VoennyjYuristPage() {
       <ProcessBlock 
         title="Как проходит работа"
         subtitle=""
-        ctaTitle=""
         steps={[
           { num: '01', title: 'Первичная консультация', desc: 'Обсуждаем ситуацию в офисе, по телефону или видеосвязи, уточняем обстоятельства и срочность.' },
           { num: '02', title: 'Изучение документов', desc: 'Анализируем имеющиеся материалы. Документы можно передать лично или направить в электронном виде.' },
@@ -595,8 +594,7 @@ export default function VoennyjYuristPage() {
             buttonHref: '#form'
           }
         ]}
-        ctaTitle=""
-      />
+        />
 
       {/* ═══ 9. Ответы на частые вопросы ═══ */}
       <FAQBlock 

@@ -28,7 +28,7 @@ export default function ProcessBlock({
   ctaTitle = "Начните с первичного обращения",
   ctaSubtitle = "Кратко опишите ситуацию — мы уточним обстоятельства, скажем, какие документы потребуются, и определим следующий шаг.",
   ctaButtonText = "Обсудить ситуацию",
-  ctaButtonHref = "#consultation",
+  ctaButtonHref = "#form",
   alignTitle = 'center',
   footerNote
 }: ProcessBlockProps) {
@@ -235,7 +235,8 @@ export default function ProcessBlock({
               justifyContent: 'space-between',
               gap: '24px',
               flexWrap: 'wrap',
-              boxShadow: '0 10px 18px -2px rgba(11, 28, 42, 0.38), 0 4px 8px -2px rgba(0, 0, 0, 0.25)'
+              boxShadow: '0 10px 18px -2px rgba(11, 28, 42, 0.38), 0 4px 8px -2px rgba(0, 0, 0, 0.25)',
+              borderTop: '3px solid var(--color-gold)'
             }}>
               <div style={{ flex: '1 1 300px' }}>
                 <h3 style={{ fontSize: '24px', color: 'var(--color-white)', marginBottom: '10px', fontWeight: '600', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
