@@ -460,33 +460,99 @@ export default function IspolnitelnoeGrazhdanamClient() {
             {[
               { 
                 tag: 'Должник / Списания', 
-                title: <><span style={{ display: 'inline-block' }}>Списали деньги</span> <span style={{ display: 'inline-block' }}>или удерживают доход</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Проверим основание взыскания,</span> <span style={{ display: 'inline-block' }}>источник поступлений, размер удержаний</span> <span style={{ display: 'inline-block' }}>и&nbsp;возможность вернуть взысканное.</span></> 
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Списали деньги</span>
+                    <span style={{ display: 'block' }}>или удерживают доход</span>
+                  </>
+                ), 
+                desc: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Проверим основание взыскания,</span>{' '}
+                    <span style={{ display: 'inline-block' }}>источник поступлений, размер удержаний</span>{' '}
+                    <span style={{ display: 'inline-block' }}>и&nbsp;возможность вернуть взысканное.</span>
+                  </>
+                ) 
               },
               { 
                 tag: 'Должник / Арест', 
-                title: <><span style={{ display: 'inline-block' }}>Арест счёта,</span> <span style={{ display: 'inline-block' }}>автомобиля или имущества</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Установим, кем и на каком основании</span> <span style={{ display: 'inline-block' }}>введено ограничение, подготовим документы</span> <span style={{ display: 'inline-block' }}>для&nbsp;его снятия либо оспаривания.</span></> 
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Арест счёта, автомобиля</span>
+                    <span style={{ display: 'block' }}>или имущества</span>
+                  </>
+                ), 
+                desc: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Установим, кем и на каком основании</span>{' '}
+                    <span style={{ display: 'inline-block' }}>введено ограничение, подготовим</span>{' '}
+                    <span style={{ display: 'inline-block' }}>документы для&nbsp;его снятия либо оспаривания.</span>
+                  </>
+                ) 
               },
               { 
                 tag: 'Должник / Ограничения', 
-                title: <><span style={{ display: 'inline-block' }}>Запрет на выезд</span> <span style={{ display: 'inline-block' }}>или исполнительский сбор</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Проверим постановления и фактическое</span> <span style={{ display: 'inline-block' }}>состояние расчётов, определим порядок</span> <span style={{ display: 'inline-block' }}>обращения и&nbsp;отмены ограничений.</span></> 
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Запрет на выезд</span>
+                    <span style={{ display: 'block' }}>или исполнительский сбор</span>
+                  </>
+                ), 
+                desc: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Проверим постановления</span>{' '}
+                    <span style={{ display: 'inline-block' }}>и&nbsp;фактическое состояние расчётов,</span>{' '}
+                    <span style={{ display: 'inline-block' }}>определим порядок обращения и&nbsp;отмены.</span>
+                  </>
+                ) 
               },
               { 
                 tag: 'Взыскатель / Исполнение', 
-                title: <><span style={{ display: 'inline-block' }}>Решение суда есть,</span> <span style={{ display: 'inline-block' }}>но деньги не поступают</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Проверим исполнительный документ,</span> <span style={{ display: 'inline-block' }}>его предъявление и действия пристава,</span> <span style={{ display: 'inline-block' }}>сформируем план дальнейшего взыскания.</span></> 
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Решение суда есть,</span>
+                    <span style={{ display: 'block' }}>но деньги не поступают</span>
+                  </>
+                ), 
+                desc: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Проверим исполнительный документ,</span>{' '}
+                    <span style={{ display: 'inline-block' }}>его предъявление и действия пристава,</span>{' '}
+                    <span style={{ display: 'inline-block' }}>сформируем план дальнейшего взыскания.</span>
+                  </>
+                ) 
               },
               { 
                 tag: 'Взыскатель / Розыск', 
-                title: <><span style={{ display: 'inline-block' }}>Пристав не ищет</span> <span style={{ display: 'inline-block' }}>активы и счета должника</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Изучим материалы производства,</span> <span style={{ display: 'inline-block' }}>подготовим ходатайства и при наличии</span> <span style={{ display: 'inline-block' }}>оснований обжалуем бездействие.</span></> 
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Пристав не ищет</span>
+                    <span style={{ display: 'block' }}>активы и счета должника</span>
+                  </>
+                ), 
+                desc: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Изучим материалы производства,</span>{' '}
+                    <span style={{ display: 'inline-block' }}>подготовим ходатайства и при наличии</span>{' '}
+                    <span style={{ display: 'inline-block' }}>оснований обжалуем бездействие.</span>
+                  </>
+                ) 
               },
               { 
                 tag: 'Взыскатель / Маршрут', 
-                title: <><span style={{ display: 'inline-block' }}>Выбор способа</span> <span style={{ display: 'inline-block' }}>предъявления документа</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Оценим работу через ФССП, банк,</span> <span style={{ display: 'inline-block' }}>работодателя, казначейство</span> <span style={{ display: 'inline-block' }}>или&nbsp;иной законный порядок.</span></> 
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Выбор способа</span>
+                    <span style={{ display: 'block' }}>предъявления документа</span>
+                  </>
+                ), 
+                desc: (
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оценим работу через ФССП, банк,</span>{' '}
+                    <span style={{ display: 'inline-block' }}>работодателя, казначейство</span>{' '}
+                    <span style={{ display: 'inline-block' }}>или&nbsp;иной законный порядок.</span>
+                  </>
+                ) 
               }
             ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
