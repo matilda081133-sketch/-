@@ -186,7 +186,13 @@ export default function UstanovlenieServitutaClient() {
             </>
           }
           superTitle="Земельное право • Липецк и Липецкая область"
-          title={<><span style={{ display: 'inline-block' }}>Установление земельного сервитута</span> <br /><span style={{ display: 'inline-block' }}>в Липецке</span></>}
+          title={
+            <span style={{ display: 'block' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Установление</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>земельного сервитута</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в Липецке</span>
+            </span>
+          }
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
               Оценим, действительно ли доступ нельзя обеспечить иначе, определим наименее обременительный маршрут, условия и плату — либо выстроим защиту собственника участка.

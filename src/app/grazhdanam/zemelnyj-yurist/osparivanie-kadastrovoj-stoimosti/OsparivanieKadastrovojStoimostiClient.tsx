@@ -186,7 +186,13 @@ export default function OsparivanieKadastrovojStoimostiClient() {
             </>
           }
           superTitle="Земельное право • Липецк и Липецкая область"
-          title={<><span style={{ display: 'inline-block' }}>Оспаривание кадастровой стоимости</span> <br /><span style={{ display: 'inline-block' }}>в Липецке</span></>}
+          title={
+            <span style={{ display: 'block' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оспаривание</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>кадастровой стоимости</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в Липецке</span>
+            </span>
+          }
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
               Сначала сопоставим потенциальную экономию со стоимостью оценки и юридической работы, затем определим актуальный внесудебный и при необходимости судебный маршрут.
