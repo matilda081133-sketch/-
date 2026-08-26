@@ -245,24 +245,20 @@ export default function AvtoyuristClient() {
       </section>
 
       {/* ═══ БЛОК 3: СРОЧНЫЕ СИТУАЦИИ ═══ */}
-      <section className="section bg-dark" style={{ background: '#0B1C2A', color: '#FFFFFF', padding: '64px 0' }}>
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-gold)' }} />
-              <span style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 600 }}>
-                Срочная юридическая помощь
-              </span>
-            </div>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 14px 0', lineHeight: 1.25 }}>
-              Когда важно обратиться без промедления
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'inline-block' }}>Когда важно обратиться</span> <br />
+              <span style={{ display: 'inline-block' }}>без промедления</span>
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>
+            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', marginBottom: '40px', maxWidth: '720px', lineHeight: 1.6 }}>
               В автомобильных делах часть доказательств быстро утрачивается, а срок обжалования постановления по делу об административном правонарушении обычно составляет десять дней со дня вручения или получения его копии.
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '32px' }}>
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '40px' }}>
             {[
               {
                 title: 'Составляют протокол с риском лишения прав',
@@ -286,26 +282,36 @@ export default function AvtoyuristClient() {
               }
             ].map((item, i) => (
               <a key={i} href={item.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }} data-analytics="urgent_card_click">
-                <div style={{
-                  padding: '24px',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  borderTop: '3px solid var(--color-gold)',
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  transition: 'all 0.3s ease'
-                }}>
+                <div
+                  className="urgent-card"
+                  style={{
+                    background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                    padding: '30px 24px',
+                    borderTop: '4px solid var(--color-gold)',
+                    boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                    transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    height: '100%'
+                  }}
+                >
                   <div>
-                    <h3 style={{ fontSize: '16px', color: '#FFFFFF', margin: '0 0 10px 0', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
-                      {item.title}
-                    </h3>
-                    <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                      </svg>
+                      <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                        {item.title}
+                      </div>
+                    </div>
+                    <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
                       {item.desc}
                     </p>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-gold)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px' }}>
                     <span>Подробнее</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </div>
@@ -314,24 +320,50 @@ export default function AvtoyuristClient() {
             ))}
           </div>
 
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.08)',
-            borderLeft: '4px solid var(--color-gold)',
-            padding: '16px 24px',
-            color: 'rgba(255, 255, 255, 0.9)',
-            fontSize: '14px',
-            lineHeight: 1.6,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '16px'
-          }}>
-            <div>
-              <strong style={{ color: '#FFFFFF' }}>Срочная консультация:</strong> Если сотрудники ГИБДД оформляют протокол прямо сейчас — позвоните дежурному адвокату.
-            </div>
-            <a href="tel:+79103503111" className="btn btn-primary" style={{ padding: '10px 20px', fontSize: '13.5px', whiteSpace: 'nowrap', backgroundColor: 'var(--color-gold)', color: 'var(--color-deep-blue)', fontWeight: 700, border: 'none' }} data-analytics="phone_click">
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 16px 36px rgba(0,0,0,0.22) !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+              transform: translateY(-2px);
+            }
+            .service-card-smooth {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease !important;
+            }
+            .service-card-smooth:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 14px 30px rgba(23, 50, 77, 0.08) !important;
+              border-color: rgba(193, 160, 102, 0.45) !important;
+            }
+            .service-card-smooth:hover .card-arrow svg {
+              transform: translateX(4px);
+            }
+            .service-card-smooth .card-arrow svg {
+              transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
               +7 (910) 350-31-11
+            </a>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить адвокату
             </a>
           </div>
         </div>
@@ -389,7 +421,7 @@ export default function AvtoyuristClient() {
               }
             ].map((dir, i) => (
               <a key={i} href={dir.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }} data-analytics="service_card_click">
-                <div className="card service-card" style={{
+                <div className="card service-card service-card-smooth" style={{
                   height: '100%',
                   padding: '26px 24px',
                   background: 'var(--color-white)',
@@ -399,8 +431,7 @@ export default function AvtoyuristClient() {
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   borderTop: '3px solid var(--color-primary)',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease'
+                  cursor: 'pointer'
                 }}>
                   <div>
                     <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
@@ -420,7 +451,7 @@ export default function AvtoyuristClient() {
 
             {/* Карточка 8: Не нашли свою ситуацию? */}
             <Link href="#form" style={{ textDecoration: 'none', color: 'inherit', display: 'flex' }} data-analytics="cta_click">
-              <div className="hover-lift" style={{
+              <div className="hover-lift service-card-smooth" style={{
                 background: 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)',
                 padding: '26px 24px',
                 border: '1px solid var(--color-border)',
@@ -431,8 +462,7 @@ export default function AvtoyuristClient() {
                 justifyContent: 'space-between',
                 position: 'relative',
                 width: '100%',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease'
+                cursor: 'pointer'
               }}>
                 <div>
                   <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 10px 0', lineHeight: 1.35 }}>
@@ -467,18 +497,27 @@ export default function AvtoyuristClient() {
           <span key="2" style={{ color: 'var(--color-deep-blue)', display: 'block', marginTop: '10px' }}>
             Юридическая практика — с 2016 года. Опыт работы в Следственном комитете помогает системно оценивать материалы, доказательства и процессуальные риски.
           </span>,
-          <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Защита при риске лишения водительских прав и по делам об оставлении места ДТП</span>
+              <span>
+                <span style={{ display: 'inline-block' }}>Защита при риске лишения водительских прав</span> <br />
+                <span style={{ display: 'inline-block' }}>и по&nbsp;делам об&nbsp;оставлении места ДТП</span>
+              </span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Споры по ОСАГО и КАСКО со страховыми компаниями и финансовым уполномоченным</span>
+              <span>
+                <span style={{ display: 'inline-block' }}>Споры по ОСАГО и КАСКО со&nbsp;страховыми</span> <br />
+                <span style={{ display: 'inline-block' }}>компаниями и финансовым уполномоченным</span>
+              </span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Взыскание ущерба с виновника ДТП, защита от требований и оспаривание вины</span>
+              <span>
+                <span style={{ display: 'inline-block' }}>Взыскание ущерба с&nbsp;виновника ДТП,</span> <br />
+                <span style={{ display: 'inline-block' }}>защита от&nbsp;требований и оспаривание вины</span>
+              </span>
             </li>
           </ul>,
           <a key="4" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
