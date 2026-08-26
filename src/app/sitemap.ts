@@ -33,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/',
     '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/',
     '/grazhdanam/avtoyurist/',
+    '/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/',
   ];
 
   const specialistRoutes = Object.keys(teamData).map((slug) => `/specialisty/${slug}/`);
