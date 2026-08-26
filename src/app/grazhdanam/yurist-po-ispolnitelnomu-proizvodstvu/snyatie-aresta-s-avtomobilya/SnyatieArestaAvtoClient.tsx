@@ -348,7 +348,8 @@ export default function SnyatieArestaAvtoClient() {
                 </h3>
               </div>
               <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '440px', lineHeight: 1.5 }}>
-                Позволяет безошибочно определить порядок действий: подавать заявление приставу или готовить иск в суд.
+                <span style={{ display: 'block' }}>Позволяет безошибочно определить порядок действий:</span>
+                <span style={{ display: 'block' }}>подавать заявление приставу или готовить иск в суд.</span>
               </div>
             </div>
 
