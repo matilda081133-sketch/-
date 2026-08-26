@@ -323,8 +323,7 @@ export default function SnyatieArestaAvtoClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Заявление приставу</span> <br />
-              <span style={{ display: 'inline-block' }}>или обращение в суд</span>
+              Заявление приставу или обращение в суд?
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               Выбор способа защиты зависит от оснований ограничения, наличия спора о собственности и даты перехода прав на автомобиль.
