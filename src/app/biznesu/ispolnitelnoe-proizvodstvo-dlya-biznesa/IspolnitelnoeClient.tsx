@@ -96,7 +96,7 @@ export default function IspolnitelnoeClient() {
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
               <span style={{ display: 'inline-block' }}>С какими рисками</span> <br />
               <span style={{ display: 'inline-block' }}>сталкивается бизнес</span>
             </h2>
@@ -338,7 +338,7 @@ export default function IspolnitelnoeClient() {
       {/* BLOK 4: USLUGI */}
       <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, maxWidth: '780px' }}>
+          <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, maxWidth: '780px' }}>
             <span style={{ display: 'inline-block' }}>Услуги по&nbsp;исполнительному</span> <br />
             <span style={{ display: 'inline-block' }}>производству для&nbsp;бизнеса</span>
           </h2>
