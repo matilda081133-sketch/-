@@ -311,7 +311,7 @@ export default function AvtoyuristClient() {
                       {item.desc}
                     </p>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px' }}>
+                  <div className="urgent-card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px' }}>
                     <span>Подробнее</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </div>
@@ -321,9 +321,18 @@ export default function AvtoyuristClient() {
           </div>
 
           <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
             .urgent-card:hover {
               transform: translateY(-6px);
-              box-shadow: 0 16px 36px rgba(0,0,0,0.22) !important;
+              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
+            }
+            .urgent-card:hover .urgent-card-arrow svg {
+              transform: translateX(4px);
+            }
+            .urgent-card-arrow svg {
+              transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             }
             .btn-urgent-call {
               display: inline-block !important;
