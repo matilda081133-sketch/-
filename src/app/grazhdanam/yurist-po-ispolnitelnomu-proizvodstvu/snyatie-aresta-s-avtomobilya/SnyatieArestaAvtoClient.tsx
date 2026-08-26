@@ -351,14 +351,11 @@ export default function SnyatieArestaAvtoClient() {
 
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
               <div>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '6px' }}>
-                  Обязательный этап перед подачей документов
-                </div>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0 }}>
+                <h3 style={{ fontSize: 'clamp(20px, 2.5vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
                   3 вещи, которые нужно проверить до обращения
                 </h3>
               </div>
-              <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '440px', lineHeight: 1.5 }}>
+              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '440px', lineHeight: 1.5 }}>
                 Позволяет безошибочно определить порядок действий: подавать заявление приставу или готовить иск в суд.
               </div>
             </div>
