@@ -187,152 +187,7 @@ export default function SnyatieArestaAvtoClient() {
         rightContent={docStack}
       />
 
-      {/* ═══ БЛОК 2: ЧТО ПРОВЕРИТЬ ДО ОБРАЩЕНИЯ ═══ */}
-      <section style={{ background: 'var(--color-deep-blue)', padding: '80px 0', position: 'relative', overflow: 'hidden' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              Что проверить до обращения за снятием ограничения
-            </h2>
-            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
-            <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '16px', lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
-              Перед подготовкой документов важно установить точный вид меры, основание её введения и сопоставить даты сделки и постановлений.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
-            <div className="urgent-card" style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-              padding: '32px 28px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderTop: '3px solid var(--color-gold)',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '14px',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="8" x2="12" y2="12"></line>
-                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                </svg>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
-                  Установите инициатора и вид меры
-                </h3>
-              </div>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                Получите сведения о каждом запрете: орган, подразделение, номер производства, дату и реквизиты постановления. Проверьте, ограничена только регистрация или автомобиль также описан, арестован либо объявлен в розыск.
-              </p>
-            </div>
-
-            <div className="urgent-card" style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-              padding: '32px 28px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderTop: '3px solid var(--color-gold)',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '14px',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
-                  Сопоставьте даты
-                </h3>
-              </div>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                Для покупателя важны даты договора, оплаты, передачи машины и постановки запрета. Для должника — даты возбуждения производства, оплаты долга, окончания или прекращения производства.
-              </p>
-            </div>
-
-            <div className="urgent-card" style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-              padding: '32px 28px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderTop: '3px solid var(--color-gold)',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '14px',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                </svg>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
-                  Соберите документы на авто
-                </h3>
-              </div>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                Подготовьте ПТС или электронную выписку, СТС, договор купли-продажи, документы об оплате и передаче, постановления пристава и подтверждение погашения задолженности.
-              </p>
-            </div>
-          </div>
-
-          <style dangerouslySetInnerHTML={{__html: `
-            .urgent-card:hover {
-              transform: translateY(-6px);
-              box-shadow: 0 16px 36px rgba(0,0,0,0.22) !important;
-            }
-            .btn-urgent-outline {
-              border: 1px solid rgba(255,255,255,0.8) !important;
-              color: #FFFFFF !important;
-              background: transparent !important;
-              transition: all 0.3s ease !important;
-            }
-            .btn-urgent-outline:hover {
-              background: rgba(255,255,255,0.18) !important;
-              color: #FFFFFF !important;
-              border-color: #FFFFFF !important;
-            }
-            .btn-urgent-call {
-              display: inline-block !important;
-              border-radius: 0 !important;
-              text-decoration: none !important;
-              background-color: var(--color-gold) !important;
-              color: var(--color-deep-blue) !important;
-              font-weight: 700 !important;
-              transition: all 0.3s ease !important;
-              border: 1px solid var(--color-gold) !important;
-            }
-            .btn-urgent-call:hover {
-              background-color: #FFFFFF !important;
-              color: #0B1C2A !important;
-              border-color: #FFFFFF !important;
-            }
-          `}} />
-
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="service_car_arrest_phone_click">
-              +7 (910) 350-31-11
-            </a>
-            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="service_car_arrest_phone_click">
-              Позвонить юристу
-            </a>
-            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
-              Проверить ограничение
-            </a>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
-              Перезвоним вам в течение 15 минут в рабочее время
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 3: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ ═══ */}
+      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
@@ -462,78 +317,170 @@ export default function SnyatieArestaAvtoClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: ЗАЯВЛЕНИЕ ПРИСТАВУ ИЛИ ОБРАЩЕНИЕ В СУД ═══ */}
+      {/* ═══ БЛОК 3: ЗАЯВЛЕНИЕ ПРИСТАВУ ИЛИ ОБРАЩЕНИЕ В СУД (2 СЦЕНАРИЯ) ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              Заявление приставу или обращение в суд
+          <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Заявление приставу</span> <br />
+              <span style={{ display: 'inline-block' }}>или обращение в суд</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Выбор способа защиты зависит от оснований введения меры и наличия спора о праве собственности на автомобиль.
+              Выбор способа защиты зависит от оснований ограничения, наличия спора о собственности и даты перехода прав на автомобиль.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            <div style={{ padding: '32px 28px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Внесудебный порядок (ФССП) */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <polyline points="14 2 14 8 20 8"></polyline>
                   <line x1="16" y1="13" x2="8" y2="13"></line>
                   <line x1="16" y1="17" x2="8" y2="17"></line>
                 </svg>
-                <h3 style={{ margin: 0, fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
-                  Бесспорное основание
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Внесудебный порядок (ФССП)
                 </h3>
               </div>
               <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Если долг исполнен, производство завершено, допущена очевидная ошибка либо пристав уже обязан отменить меру, готовим заявление, подтверждающие документы и контролируем исполнение.
+                Применяется при бесспорных основаниях: долг погашен, производство окончено, допущена техническая ошибка либо пристав обязан отменить меру добровольно.
               </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Проверка всех производств и органов</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Устанавливаем инициатора, отдел ФССП, номер производства, дату и реквизиты каждого постановления.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Подготовка заявления об отмене мер</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Формируем мотивированное обращение с приложением квитанций, справок об оплате и процессуальных документов.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Жалоба на бездействие или отказ</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>При затягивании сроков направляем жалобу старшему судебному приставу или иск в суд по КАС РФ.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Контроль выгрузки сведений в ГИБДД</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Отслеживаем фактическую передачу электронного постановления и обновление данных в базе Госавтоинспекции.</span>
+                  </div>
+                </li>
+              </ul>
             </div>
 
-            <div style={{ padding: '32px 28px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="8" x2="12" y2="12"></line>
-                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                </svg>
-                <h3 style={{ margin: 0, fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
-                  Незаконные действия
-                </h3>
-              </div>
-              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Если пристав отказывает, не рассматривает документы или сохраняет несоразмерное ограничение, определяем порядок обжалования руководителю подразделения ФССП либо в суд по КАС РФ.
-              </p>
-            </div>
-
-            <div style={{ padding: '32px 28px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+            {/* Карточка 2: Судебный порядок (Иск в суд) */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                   <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
-                <h3 style={{ margin: 0, fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
-                  Спор о собственности
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Судебный порядок (Иск в суд)
                 </h3>
               </div>
               <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Когда третье лицо заявляет право на машину, одного заявления приставу недостаточно. Готовим иск в суд об освобождении имущества от ареста и определяем надлежащих ответчиков.
+                Необходим, если автомобиль приобретён покупателем до запрета, принадлежит третьему лицу либо возник спор о праве собственности на транспорт.
               </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Сопоставление дат и документов</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Сопоставляем дату заключения ДКП, дату передачи машины, расчётов и момент вынесения постановления пристава.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Иск об освобождении имущества от ареста</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Готовим исковое заявление по ст. 442 ГПК РФ с привлечением должника, взыскателя и подразделения ФССП.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Доказывание добросовестности покупки</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Подтверждаем реальность передачи средств, фактическое владение автомобилем и отсутствие осведомлённости о долгах.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Судебное представительство и решение</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Ведём судебный процесс, получаем решение суда и направляем его в регистрационный орган для снятия запрета.</span>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
 
           <div style={{
             background: 'var(--color-white)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '20px 24px',
+            padding: '22px 28px',
             border: '1px solid var(--color-border)',
             borderLeftColor: 'var(--color-gold)',
             fontSize: '14px',
             color: 'var(--color-deep-blue)',
-            lineHeight: 1.6
+            lineHeight: 1.6,
+            marginBottom: '32px'
           }}>
-            <strong style={{ color: 'var(--color-primary)' }}>Важно:</strong> Если автомобиль куплен после введения запрета либо документы о сделке не подтверждают оплату и передачу машины, обещать снятие ограничения нельзя. Юрист отдельно оценивает требования к продавцу и риски оспаривания сделки.
+            <strong style={{ color: 'var(--color-primary)' }}>Важно:</strong> Если автомобиль куплен после введения запрета либо документы о сделке не подтверждают оплату и передачу машины, обещать снятие ограничения нельзя. Юрист отдельно оценивает требования к продавцу (расторжение ДКП и возврат средств) и риски оспаривания сделки.
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 32px' }}>
+              Оценить основания и риски
+            </a>
           </div>
         </div>
       </section>
