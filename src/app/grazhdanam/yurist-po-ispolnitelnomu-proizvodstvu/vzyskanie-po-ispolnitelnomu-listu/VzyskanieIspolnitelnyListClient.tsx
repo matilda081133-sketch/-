@@ -663,7 +663,7 @@ export default function VzyskanieIspolnitelnyListClient() {
             <Link href="#form" style={{ textDecoration: 'none', color: 'inherit', display: 'flex' }} data-analytics="service_exec_list_hero_cta">
               <div className="hover-lift" style={{
                 background: 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)',
-                padding: '38px 24px 30px 24px',
+                padding: '38px 24px 26px 24px',
                 border: '1px solid var(--color-border)',
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 8px 24px rgba(11, 28, 42, 0.25)',
@@ -690,15 +690,15 @@ export default function VzyskanieIspolnitelnyListClient() {
                   }}>
                     СТАРТ
                   </div>
-                  <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '8px 0 12px 0', lineHeight: 1.35 }}>
+                  <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '8px 0 10px 0', lineHeight: 1.3 }}>
                     <span style={{ display: 'block' }}>Получить план</span>
                     <span style={{ display: 'block' }}>взыскания</span>
                   </h3>
-                  <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
-                    Опишите ситуацию по исполнительному листу — юрист проверит возможности розыска активов и предложит порядок действий.
+                  <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.5, margin: 0 }}>
+                    Опишите ситуацию — юрист проверит должника и&nbsp;составит план.
                   </p>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)', fontSize: '14px', fontWeight: 600, marginTop: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)', fontSize: '14px', fontWeight: 600, marginTop: '12px' }}>
                   <span>Получить</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
