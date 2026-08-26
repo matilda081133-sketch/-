@@ -366,12 +366,9 @@ export default function SnyatieArestaAvtoClient() {
             <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
               {/* Шаг 1 */}
               <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>01</span>
-                  <span style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.5)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Инициатор</span>
-                </div>
-                <h4 style={{ fontSize: '15px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35 }}>
-                  Установите инициатора и вид меры
+                <h4 style={{ fontSize: '15px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>01</span>
+                  <span>Установите инициатора и вид меры</span>
                 </h4>
                 <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
                   Орган, подразделение ФССП, номер ИП, дату и реквизиты. Проверьте: запрет только на регистрацию или авто также описано, арестовано либо в розыске.
@@ -380,12 +377,9 @@ export default function SnyatieArestaAvtoClient() {
 
               {/* Шаг 2 */}
               <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>02</span>
-                  <span style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.5)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Сроки и даты</span>
-                </div>
-                <h4 style={{ fontSize: '15px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35 }}>
-                  Сопоставьте ключевые даты
+                <h4 style={{ fontSize: '15px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>02</span>
+                  <span>Сопоставьте ключевые даты</span>
                 </h4>
                 <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
                   Для покупателя: даты ДКП, оплаты, передачи машины и даты запрета. Для должника: даты возбуждения ИП, оплаты долга и окончания производства.
@@ -394,12 +388,9 @@ export default function SnyatieArestaAvtoClient() {
 
               {/* Шаг 3 */}
               <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>03</span>
-                  <span style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.5)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Документы</span>
-                </div>
-                <h4 style={{ fontSize: '15px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35 }}>
-                  Соберите комплект документов
+                <h4 style={{ fontSize: '15px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>03</span>
+                  <span>Соберите комплект документов</span>
                 </h4>
                 <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
                   ПТС / выписка ЭПТС, СТС, договор купли-продажи, подтверждение оплаты и передачи машины, постановления пристава и справки об оплате долга.
@@ -994,3 +985,4 @@ export default function SnyatieArestaAvtoClient() {
     </main>
   );
 }
+                                                                                                                                                      
