@@ -114,10 +114,13 @@ export default function OsparivanieVinyClient() {
             `}} />
             <span style={{ display: 'inline-block', maxWidth: '100%' }}>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                Проверим схему, объяснения, видео и техническую картину аварии,
+                Проверим схему, объяснения, видео и техническую
               </span>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                определим процессуальный маршрут и подготовим жалобу, позицию для страховщика или суда.
+                картину аварии, определим процессуальный маршрут
+              </span>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                и подготовим жалобу, позицию для страховщика или суда.
               </span>
             </span>
           </>
@@ -136,7 +139,7 @@ export default function OsparivanieVinyClient() {
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
-        imageObjectPosition="center 15%"
+        imageObjectPosition="center 5%"
       />
 
       {/* ═══ БЛОК 2: ЧТО СДЕЛАТЬ КАК МОЖНО РАНЬШЕ ПОСЛЕ ДТП ═══ */}

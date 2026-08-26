@@ -134,7 +134,7 @@ export default function AvtoyuristClient() {
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
-        imageObjectPosition="center 15%"
+        imageObjectPosition="center 5%"
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ, В КОТОРЫХ НУЖНА ПОМОЩЬ АВТОЮРИСТА ═══ */}
@@ -498,7 +498,7 @@ export default function AvtoyuristClient() {
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
         imageUrl="/images/konopkin.jpg"
-        imagePosition="center 15%"
+        imagePosition="center 5%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Дмитрий Сергеевич ведёт автомобильные споры: помогает при взыскании ущерба и защите от требований о его возмещении, в спорах со страховыми компаниями и других делах, связанных с ДТП.
