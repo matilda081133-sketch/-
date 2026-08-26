@@ -277,7 +277,9 @@ export default function IspolnitelnoeGrazhdanamClient() {
           { text: 'Взаимодействие с ФССП, банками, судами' },
           { text: 'Куратор — 13 лет опыта в ФССП' },
         ]}
-        rightContent={docStack}
+        imageUrl="/images/smolyaninova.jpg"
+        imageName="Марина Валерьевна Смольянинова"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
       />
 
       {/* ═══ БЛОК 2: КОГДА ВАЖНО НЕ ОТКЛАДЫВАТЬ ОБРАЩЕНИЕ ═══ */}
