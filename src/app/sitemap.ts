@@ -25,6 +25,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
     '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/',
     '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/',
+    '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/',
+    '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/',
+    '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/',
+    '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/',
   ];
 
   const specialistRoutes = Object.keys(teamData).map((slug) => `/specialisty/${slug}/`);
