@@ -1,0 +1,706 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import MilitaryHero from '@/components/MilitaryHero';
+import FAQBlock from '@/components/FAQBlock';
+import CasesBlock, { CaseData } from '@/components/CasesBlock';
+import SpecialistBlock from '@/components/SpecialistBlock';
+import PricingBlock from '@/components/PricingBlock';
+import ProcessBlock from '@/components/ProcessBlock';
+
+export default function AvtoyuristClient() {
+  const cases: CaseData[] = [
+    {
+      category: 'Лишение прав',
+      title: 'Добились прекращения дела о лишении водительских прав',
+      problem: 'Водителю вменили нарушение, за которое предусмотрено лишение права управления. В материалах были противоречия между схемой, объяснениями и видеозаписью.',
+      action: 'Изучили материалы, сопоставили траекторию движения с видеозаписью, подготовили письменные возражения и ходатайства об исследовании доказательств.',
+      result: 'Обвинение не получило достаточного подтверждения, производство по делу прекратили.'
+    },
+    {
+      category: 'Споры по ОСАГО',
+      title: 'Получили доплату страхового возмещения по ОСАГО',
+      problem: 'Страховая рассчитала ремонт без части повреждений и выплатила сумму, которой не хватало на восстановление автомобиля.',
+      action: 'Проверили материалы осмотра и расчёт, организовали оценку, направили заявление в страховую и подготовили обращение к финансовому уполномоченному.',
+      result: 'Размер страхового возмещения пересмотрели, клиент получил доплату и компенсацию предусмотренных расходов.'
+    },
+    {
+      category: 'ДТП без ОСАГО',
+      title: 'Взыскали ущерб с виновника без ОСАГО',
+      problem: 'Автомобиль клиента был повреждён в ДТП, а ответственность виновника не была застрахована. Добровольно возместить ущерб он отказался.',
+      action: 'Зафиксировали повреждения, проверили расчёт восстановительного ремонта, направили претензию и подготовили иск с доказательствами причинной связи и размера ущерба.',
+      result: 'Суд взыскал подтверждённый ущерб и судебные расходы с ответственного лица.'
+    }
+  ];
+
+  const faqs = [
+    {
+      q: 'Что делать сразу после ДТП?',
+      a: 'Обеспечьте безопасность, выполните обязанности участника ДТП и зафиксируйте обстоятельства: положение автомобилей, повреждения, дорожные знаки и разметку, контакты свидетелей, записи регистратора и камер. Не подписывайте документы, не прочитав их; замечания указывайте письменно. Порядок оформления зависит от наличия пострадавших, разногласий и условий применения европротокола.'
+    },
+    {
+      q: 'Когда к автоюристу нужно обратиться срочно?',
+      a: 'Если составляют протокол с риском лишения прав, вменяют оставление места ДТП, есть пострадавшие, другая сторона искажает обстоятельства или могут быть утрачены видеозаписи и другие доказательства. Также нельзя откладывать оценку уже вынесенного постановления: срок его обжалования обычно составляет десять дней со дня вручения или получения копии.'
+    },
+    {
+      q: 'Можно ли оспорить вину в ДТП?',
+      a: 'Можно оспаривать выводы об обстоятельствах ДТП и распределении ответственности, если они не подтверждаются доказательствами или важные сведения не учтены. Для оценки нужны схема, объяснения, фото и видео, данные о дорожной обстановке, экспертизы и процессуальные документы.'
+    },
+    {
+      q: 'Что делать, если обвиняют в оставлении места ДТП?',
+      a: 'Необходимо установить, было ли событие ДТП, являлись ли Вы его участником, знали ли о происшествии и соблюдались ли предусмотренные правила оформления. До подробных объяснений желательно получить копии материалов и восстановить последовательность событий. Само название протокола ещё не означает, что нарушение доказано.'
+    },
+    {
+      q: 'Можно ли сохранить водительские права, если дело уже передано в суд?',
+      a: 'Это зависит от состава нарушения, доказательств, соблюдения процедуры и возможных видов наказания. Юрист проверит протокол, схему, извещение, видеозаписи и другие материалы, подготовит позицию и ходатайства. Гарантировать сохранение прав до изучения дела нельзя.'
+    },
+    {
+      q: 'Что делать, если страховая по ОСАГО отказала или выплатила мало?',
+      a: 'Нужно получить решение и расчёт страховой, проверить осмотр и учтённые повреждения, при необходимости подтвердить размер ущерба. Для большинства споров потребителя со страховой действует обязательная последовательность: сначала заявление о восстановлении нарушенного права в страховую, затем обращение к финансовому уполномоченному и только после этого — суд.'
+    },
+    {
+      q: 'Чем спор по КАСКО отличается от спора по ОСАГО?',
+      a: 'ОСАГО регулируется специальным законом и возмещает вред в пределах страховой ответственности. КАСКО — добровольное страхование автомобиля, поэтому особенно важны условия конкретного договора и правил страхования: перечень рисков, исключения, сроки уведомления и способ возмещения.'
+    },
+    {
+      q: 'Кто возмещает ущерб, если у виновника нет ОСАГО или выплаты недостаточно?',
+      a: 'При отсутствии действующего полиса имущественный ущерб обычно предъявляется непосредственно ответственному лицу. Если страхового возмещения недостаточно, с причинителя вреда можно требовать подтверждённую разницу между возмещением и фактическим ущербом. В каждом случае нужно проверить участников, основания ответственности и расчёт.'
+    },
+    {
+      q: 'Какие документы нужны автоюристу?',
+      a: 'Желательно подготовить извещение и схему ДТП, протоколы и постановления, фотографии и видеозаписи, полисы, документы страховой, акт осмотра, расчёт или экспертное заключение, претензии и судебные документы. Если части материалов нет, юрист определит, что и где запросить.'
+    },
+    {
+      q: 'Сколько времени занимает автомобильный спор?',
+      a: 'Срок зависит от стадии дела и процедуры. Административное обжалование ограничено специальными сроками; страховой спор может включать рассмотрение заявления страховой, финансового уполномоченного и суда; взыскание с виновника зависит от экспертизы, переговоров и судебного разбирательства. Реалистичный срок можно оценить после изучения документов.'
+    }
+  ];
+
+  return (
+    <main>
+      <Header />
+
+      {/* ═══ БЛОК 1: HERO ═══ */}
+      <MilitaryHero
+        breadcrumbs={
+          <>
+            <Link href="/" style={{ color: 'var(--color-primary)' }}>Главная</Link>
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+            <Link href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</Link>
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Автоюрист</span>
+          </>
+        }
+        superTitle="Автомобильное право"
+        title={
+          <span style={{ display: 'block' }}>
+            <span style={{ display: 'block' }}>Автоюрист</span>
+            <span style={{ display: 'block' }}>в Липецке</span>
+          </span>
+        }
+        subtitle={
+          <>
+            <style dangerouslySetInnerHTML={{__html: `
+              @media (min-width: 992px) {
+                .hero-sub-span-desktop {
+                  white-space: nowrap !important;
+                }
+              }
+            `}} />
+            <span style={{ display: 'inline-block', maxWidth: '100%' }}>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                Помогаем после ДТП, при риске лишения водительских прав
+              </span>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                и в спорах со страховыми компаниями.
+              </span>
+            </span>
+          </>
+        }
+        primaryCtaText="Обсудить ситуацию"
+        primaryCtaLink="#form"
+        primaryCtaAnalytics="cta_click"
+        primaryCtaSubtext={
+          <>Если ситуация требует срочной помощи, позвоните: <a href="tel:+79103503111" data-analytics="phone_click">+7 (910) 350-31-11</a></>
+        }
+        trustItems={[
+          { text: 'Изучим материалы ДТП, постановления и документы страховой' },
+          { text: 'Определим, кому и какие требования можно предъявить' },
+          { text: 'Подготовим документы и представим ваши интересы' },
+        ]}
+        imageUrl="/images/konopkin.jpg"
+        imageName="Дмитрий Сергеевич Конопкин"
+        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
+        imageObjectPosition="center 15%"
+      />
+
+      {/* ═══ БЛОК 2: СИТУАЦИИ, В КОТОРЫХ НУЖНА ПОМОЩЬ АВТОЮРИСТА ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>Ситуации, в которых</span> <br />
+              <span style={{ display: 'inline-block' }}>нужна помощь автоюриста</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Помогаем разобраться в обстоятельствах ДТП, защитить водительские права</span> <br />
+              <span style={{ display: 'inline-block' }}>и определить, с кого и в каком порядке требовать возмещение.</span>
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '28px' }}>
+            {[
+              {
+                tag: 'Лишение прав',
+                title: <><span style={{ display: 'block' }}>Есть риск лишения</span><span style={{ display: 'block' }}>водительских прав</span></>,
+                desc: 'Составлен протокол, дело передают в суд или постановление уже вынесено, но Вы не согласны с обстоятельствами и выводами.'
+              },
+              {
+                tag: 'Оставление места ДТП',
+                title: <><span style={{ display: 'block' }}>Обвиняют в оставлении</span><span style={{ display: 'block' }}>места ДТП</span></>,
+                desc: 'Инспектор считает, что Вы уехали с места происшествия, хотя Вы не заметили столкновение, действовали по правилам либо события ДТП не было.'
+              },
+              {
+                tag: 'Споры со страховой',
+                title: <><span style={{ display: 'block' }}>Страховая отказала</span><span style={{ display: 'block' }}>или выплатила мало</span></>,
+                desc: 'Возмещение по ОСАГО или КАСКО не покрывает ущерб, ремонт затягивается либо страховая исключила часть повреждений.'
+              },
+              {
+                tag: 'ДТП без ОСАГО',
+                title: <><span style={{ display: 'block' }}>У виновника аварии</span><span style={{ display: 'block' }}>нет полиса ОСАГО</span></>,
+                desc: 'Страховая выплата недоступна, и ущерб нужно подтверждать и взыскивать непосредственно с ответственного лица.'
+              },
+              {
+                tag: 'Оспаривание вины',
+                title: <><span style={{ display: 'block' }}>Не согласны с выводами</span><span style={{ display: 'block' }}>о виновности в ДТП</span></>,
+                desc: 'Схема, объяснения, видеозаписи или другие материалы не отражают реальную картину, а ответственность распределена без учёта важных обстоятельств.'
+              },
+              {
+                tag: 'Защита от требований',
+                title: <><span style={{ display: 'block' }}>С Вас требуют</span><span style={{ display: 'block' }}>завышенный ущерб</span></>,
+                desc: 'Потерпевший или страховая предъявили претензию либо иск, но размер, состав повреждений или связь с ДТП вызывают сомнения.'
+              }
+            ].map((item, i) => (
+              <div key={i} className="hover-lift" style={{
+                padding: '36px 30px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.tag}
+                </div>
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '17px',
+                  fontWeight: 600,
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 14px 0',
+                  lineHeight: 1.4,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{
+                  fontSize: '15px',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 3: СРОЧНЫЕ СИТУАЦИИ ═══ */}
+      <section className="section bg-dark" style={{ background: '#0B1C2A', color: '#FFFFFF', padding: '64px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-gold)' }} />
+              <span style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 600 }}>
+                Срочная юридическая помощь
+              </span>
+            </div>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+              Когда важно обратиться без промедления
+            </h2>
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>
+              В автомобильных делах часть доказательств быстро утрачивается, а срок обжалования постановления по делу об административном правонарушении обычно составляет десять дней со дня вручения или получения его копии.
+            </p>
+          </div>
+
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '32px' }}>
+            {[
+              {
+                title: 'Составляют протокол с риском лишения прав',
+                desc: 'Важно проверить формулировки, заявить замечания и ходатайства, получить копии материалов.',
+                link: '/grazhdanam/avtoyurist/lishenie-voditelskih-prav/'
+              },
+              {
+                title: 'Вменяют оставление места ДТП',
+                desc: 'До объяснений нужно восстановить обстоятельства события и оценить, образуют ли действия состав нарушения.',
+                link: '/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/'
+              },
+              {
+                title: 'Не согласны со схемой или объяснениями',
+                desc: 'Следует сохранить записи регистратора, фото, контакты свидетелей и сведения с камер до их удаления.',
+                link: '/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/'
+              },
+              {
+                title: 'В ДТП пострадали люди',
+                desc: 'Нужна отдельная оценка возможной административной или уголовной ответственности.',
+                link: '#form'
+              }
+            ].map((item, i) => (
+              <a key={i} href={item.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }} data-analytics="urgent_card_click">
+                <div style={{
+                  padding: '24px',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.12)',
+                  borderTop: '3px solid var(--color-gold)',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  transition: 'all 0.3s ease'
+                }}>
+                  <div>
+                    <h3 style={{ fontSize: '16px', color: '#FFFFFF', margin: '0 0 10px 0', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                      {item.title}
+                    </h3>
+                    <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                      {item.desc}
+                    </p>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-gold)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
+                    <span>Подробнее</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '16px 24px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
+            lineHeight: 1.6,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '16px'
+          }}>
+            <div>
+              <strong style={{ color: '#FFFFFF' }}>Срочная консультация:</strong> Если сотрудники ГИБДД оформляют протокол прямо сейчас — позвоните дежурному адвокату.
+            </div>
+            <a href="tel:+79103503111" className="btn btn-primary" style={{ padding: '10px 20px', fontSize: '13.5px', whiteSpace: 'nowrap', backgroundColor: 'var(--color-gold)', color: 'var(--color-deep-blue)', fontWeight: 700, border: 'none' }} data-analytics="phone_click">
+              +7 (910) 350-31-11
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 4: НАПРАВЛЕНИЯ ПОМОЩИ (7 КАРТОЧЕК + СТА КАРТОЧКА) ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Направления помощи автоюриста</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Выберите подходящее направление. Если Вы не уверены, к какой услуге относится вопрос,</span> <br />
+              <span style={{ display: 'inline-block' }}>опишите ситуацию — мы изучим материалы и подскажем, с чего начать.</span>
+            </p>
+          </div>
+
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '32px' }}>
+            {[
+              {
+                title: 'Защита при лишении водительских прав',
+                desc: 'Проверим материалы дела, подготовим позицию и представим Ваши интересы в суде или при обжаловании.',
+                link: '/grazhdanam/avtoyurist/lishenie-voditelskih-prav/'
+              },
+              {
+                title: 'Защита при оставлении места ДТП',
+                desc: 'Разберём обстоятельства происшествия и оценим, есть ли основания для привлечения к ответственности.',
+                link: '/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/'
+              },
+              {
+                title: 'Споры по ОСАГО',
+                desc: 'Поможем при отказе, недоплате, споре о ремонте или затягивании страхового возмещения.',
+                link: '/grazhdanam/avtoyurist/spory-po-osago/'
+              },
+              {
+                title: 'Споры по КАСКО',
+                desc: 'Проверим условия договора и основания решения страховой, подготовим претензию и требования.',
+                link: '/grazhdanam/avtoyurist/spory-po-kasko/'
+              },
+              {
+                title: 'Взыскание ущерба с виновника ДТП',
+                desc: 'Поможем взыскать непокрытую часть ущерба или защититься от необоснованных требований.',
+                link: '/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/'
+              },
+              {
+                title: 'Взыскание ущерба при ДТП без ОСАГО',
+                desc: 'Зафиксируем размер ущерба и подготовим требования непосредственно к ответственному лицу.',
+                link: '/grazhdanam/avtoyurist/dtp-bez-osago/'
+              },
+              {
+                title: 'Оспаривание вины в ДТП',
+                desc: 'Проанализируем схему, записи, объяснения и экспертизы, чтобы выстроить позицию по обстоятельствам аварии.',
+                link: '/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/'
+              }
+            ].map((dir, i) => (
+              <a key={i} href={dir.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }} data-analytics="service_card_click">
+                <div className="card service-card" style={{
+                  height: '100%',
+                  padding: '26px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  borderTop: '3px solid var(--color-primary)',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}>
+                  <div>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                      {dir.title}
+                    </h3>
+                    <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {dir.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px' }}>
+                    <span>Подробнее</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </div>
+                </div>
+              </a>
+            ))}
+
+            {/* Карточка 8: Не нашли свою ситуацию? */}
+            <Link href="#form" style={{ textDecoration: 'none', color: 'inherit', display: 'flex' }} data-analytics="cta_click">
+              <div className="hover-lift" style={{
+                background: 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)',
+                padding: '26px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(11, 28, 42, 0.25)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                position: 'relative',
+                width: '100%',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}>
+                <div>
+                  <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 10px 0', lineHeight: 1.35 }}>
+                    <span style={{ display: 'block' }}>Не нашли свою</span>
+                    <span style={{ display: 'block' }}>ситуацию?</span>
+                  </h3>
+                  <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55, margin: 0 }}>
+                    Опишите обстоятельства — юрист изучит вопрос и подскажет, с чего начать.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px' }}>
+                  <span>Обсудить</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
+      <SpecialistBlock
+        title="Куратор направления"
+        name="Дмитрий Сергеевич Конопкин"
+        position="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
+        imageUrl="/images/konopkin.jpg"
+        imagePosition="center 15%"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Дмитрий Сергеевич ведёт автомобильные споры: помогает при взыскании ущерба и защите от требований о его возмещении, в спорах со страховыми компаниями и других делах, связанных с ДТП.
+          </span>,
+          <span key="2" style={{ color: 'var(--color-deep-blue)', display: 'block', marginTop: '10px' }}>
+            Юридическая практика — с 2016 года. Опыт работы в Следственном комитете помогает системно оценивать материалы, доказательства и процессуальные риски.
+          </span>,
+          <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Защита при риске лишения водительских прав и по делам об оставлении места ДТП</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Споры по ОСАГО и КАСКО со страховыми компаниями и финансовым уполномоченным</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Взыскание ущерба с виновника ДТП, защита от требований и оспаривание вины</span>
+            </li>
+          </ul>,
+          <a key="4" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
+            Подробнее об адвокате Дмитрии Сергеевиче Конопкине →
+          </a>
+        ]}
+        buttonText="Задать вопрос Дмитрию Сергеевичу"
+        buttonHref="#form"
+      />
+
+      {/* ═══ БЛОК 6: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
+      <CasesBlock
+        title="Примеры из практики"
+        showAllLink="/praktika/"
+        showAllText="Смотреть все дела"
+        showDemoWarning={true}
+        cases={cases}
+      />
+
+      {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
+      <ProcessBlock
+        title="Как проходит работа"
+        subtitle="Прозрачный пошаговый процесс от первичного анализа материалов до исполнения решения."
+        alignTitle="center"
+        steps={[
+          {
+            num: '01',
+            title: 'Разбираемся в ситуации',
+            desc: 'Уточняем, что произошло, на какой стадии находится дело и какой результат для Вас важен.'
+          },
+          {
+            num: '02',
+            title: 'Изучаем документы и доказательства',
+            desc: 'Проверяем схему ДТП, протоколы, постановления, записи, фотографии, документы страховой, расчёты и экспертизы.'
+          },
+          {
+            num: '03',
+            title: 'Предлагаем правовой маршрут',
+            desc: 'Определяем, кого привлекать к спору, какие требования заявлять, какие сроки учитывать и какие доказательства получить.'
+          },
+          {
+            num: '04',
+            title: 'Готовим документы и ведём переговоры',
+            desc: 'Составляем объяснения, жалобы, претензии и обращения; взаимодействуем со страховой и финансовым уполномоченным.'
+          },
+          {
+            num: '05',
+            title: 'Представляем интересы и сопровождаем',
+            desc: 'Участвуем в суде и обжаловании, а после решения помогаем с его исполнением в согласованном объёме.'
+          }
+        ]}
+        ctaTitle="Готовы обсудить вашу ситуацию"
+        ctaSubtitle="Опишите обстоятельства происшествия — юрист подскажет план дальнейших действий."
+        ctaButtonText="Обсудить ситуацию"
+        ctaButtonHref="#form"
+        footerNote="Начать можно дистанционно: отправить копии материалов и обсудить ситуацию по телефону или видеосвязи. Личное участие согласовывается, если оно необходимо для конкретного дела."
+      />
+
+      {/* ═══ БЛОК 8: СТОИМОСТЬ ═══ */}
+      <PricingBlock
+        title="Стоимость услуг автоюриста"
+        subtitle="Стоимость зависит от стадии дела, объёма материалов, необходимости экспертизы, количества участников и выбранного формата помощи."
+        tiers={[
+          {
+            title: 'Консультация автоюриста',
+            subtitle: 'Первичный разбор ситуации',
+            price: 'от 3 000 ₽',
+            features: [
+              { name: 'Правовой анализ обстоятельств ДТП', value: '✓' },
+              { name: 'Оценка имеющихся документов и рисков', value: '✓' },
+              { name: 'Определение надлежащего адресата требований', value: '✓' },
+              { name: 'Пошаговые рекомендации по дальнейшим действиям', value: '✓' }
+            ],
+            buttonText: 'Заказать консультацию',
+            buttonHref: '#form'
+          },
+          {
+            title: 'Анализ материалов',
+            subtitle: 'Правовая позиция по делу',
+            price: 'от 7 000 ₽',
+            popular: true,
+            badgeText: 'Популярно',
+            features: [
+              { name: 'Детальное изучение схемы, протоколов и видео', value: '✓' },
+              { name: 'Выявление процессуальных нарушений и ошибок', value: '✓' },
+              { name: 'Аудит расчёта ущерба и акта страховой', value: '✓' },
+              { name: 'Подготовка письменной стратегии защиты', value: '✓' }
+            ],
+            buttonText: 'Заказать анализ',
+            buttonHref: '#form'
+          },
+          {
+            title: 'Подготовка документов',
+            subtitle: 'Претензии, жалобы, иски',
+            price: 'от 10 000 ₽',
+            features: [
+              { name: 'Жалоба на постановление по делу об АП', value: '✓' },
+              { name: 'Претензия в страховую компанию по ОСАГО/КАСКО', value: '✓' },
+              { name: 'Обращение к финансовому уполномоченному', value: '✓' },
+              { name: 'Исковое заявление в суд о взыскании ущерба', value: '✓' }
+            ],
+            buttonText: 'Подготовить документы',
+            buttonHref: '#form'
+          },
+          {
+            title: 'Представительство',
+            subtitle: 'Полное ведение спора «под ключ»',
+            price: 'от 25 000 ₽',
+            features: [
+              { name: 'Досудебная работа и переговоры со страховой', value: '✓' },
+              { name: 'Представительство во всех судебных заседаниях', value: '✓' },
+              { name: 'Назначение судебной автотехнической экспертизы', value: '✓' },
+              { name: 'Взыскание судебных расходов с проигравшей стороны', value: '✓' }
+            ],
+            buttonText: 'Комплексная защита',
+            buttonHref: '#form'
+          }
+        ]}
+        disclaimer="Точную стоимость определим после изучения ситуации и заранее согласуем состав работ в договоре. Оплата вознаграждения фиксируется до начала работы и не изменится без согласования с Вами."
+      />
+
+      {/* ═══ БЛОК 9: FAQ ═══ */}
+      <FAQBlock
+        superTitle="Частые вопросы"
+        title="Ответы на частые вопросы"
+        subtitle="Разъяснения автоюриста по ДТП, лишению прав и страховым спорам"
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
+        faqs={faqs}
+      />
+
+      {/* ═══ БЛОК 10: ФИНАЛЬНАЯ ФОРМА ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', background: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Нужна помощь автоюриста?
+              </h2>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко опишите ситуацию. Мы уточним обстоятельства, скажем, какие материалы потребуются, и предложим следующий шаг.
+              </p>
+
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '0' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация автоюриста</strong>
+                </div>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                </p>
+              </div>
+            </div>
+
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <h3 style={{ fontSize: '28px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0', lineHeight: 1.2 }}>
+                  Написать нам
+                </h3>
+                <p style={{ color: 'var(--color-text-secondary)', marginBottom: '24px', fontSize: '15px', lineHeight: 1.6 }}>
+                  <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист перезвонит</span> <br />
+                  <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                </p>
+                <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                  <input type="hidden" name="source_page" value="/grazhdanam/avtoyurist/" />
+                  <input type="hidden" name="direction" value="avtoyurist" />
+                  <input type="hidden" name="service" value="avtoyurist" />
+                  <input type="hidden" name="selected_specialist" value="konopkin-dmitriy-sergeevich" />
+                  <input type="hidden" name="audience" value="citizens" />
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="name" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Имя (необязательно)</label>
+                    <input type="text" id="name" name="name" autoComplete="name" placeholder="Иван Иванов" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
+                  </div>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="phone" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>
+                      Телефон <span style={{ color: 'var(--color-gold)' }}>*</span>
+                    </label>
+                    <input type="tel" id="phone" name="phone" autoComplete="tel" required placeholder="+7 (___) ___-__-__" pattern="^\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}$" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', width: '100%', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
+                  </div>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="message" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Кратко опишите ситуацию (необязательно)</label>
+                    <textarea id="message" name="message" rows={3} placeholder="Кратко укажите дату ДТП, суть спора со страховой или протокола..." style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', fontFamily: 'inherit', resize: 'vertical', background: 'var(--color-white)', color: 'var(--color-deep-blue)' }} />
+                  </div>
+
+                  <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '10px 14px', borderLeft: '3px solid var(--color-gold)', fontSize: '12px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
+                    Безопасность данных: не указывайте в форме паспортные данные, реквизиты полиса и другие конфиденциальные сведения. Безопасный способ передачи документов согласуем после связи.
+                  </div>
+
+                  <label style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', marginTop: '4px' }}>
+                    <input type="checkbox" name="agreement" required style={{ marginTop: '3px', accentColor: 'var(--color-gold)', flexShrink: 0 }} />
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      <Link href="/consent/" target="_blank" style={{ color: 'var(--color-deep-blue)', textDecoration: 'underline' }}>Я даю согласие на обработку персональных данных</Link> и подтверждаю, что ознакомлен с <Link href="/privacy/" target="_blank" style={{ color: 'var(--color-deep-blue)', textDecoration: 'underline' }}>Политикой в отношении обработки персональных данных</Link>.
+                    </span>
+                  </label>
+
+                  <button type="submit" style={{ width: '100%', padding: '16px', fontSize: '16px', marginTop: '8px', background: '#10273B', color: '#FFFFFF', border: '1px solid #9B7E55', borderRadius: '0', whiteSpace: 'nowrap', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s ease', boxShadow: '0 4px 12px rgba(16, 39, 59, 0.15)' }}>
+                    Получить консультацию
+                  </button>
+
+                  <div style={{ marginTop: '4px', fontSize: '12px', color: 'var(--color-text-secondary)', lineHeight: 1.4, textAlign: 'center' }}>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в ближайший рабочий день.</span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}
