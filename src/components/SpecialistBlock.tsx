@@ -5,7 +5,7 @@ import React from 'react';
 import Image from 'next/image';
 
 export interface SpecialistBlockProps {
-  title?: string;
+  title?: string | React.ReactNode;
   name: string;
   position: string | React.ReactNode;
   description: (string | React.ReactNode)[];

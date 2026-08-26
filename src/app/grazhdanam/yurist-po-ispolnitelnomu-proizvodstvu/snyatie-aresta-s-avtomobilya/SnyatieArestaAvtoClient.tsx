@@ -610,10 +610,15 @@ export default function SnyatieArestaAvtoClient() {
 
       {/* ═══ БЛОК 6: ВЕДУЩИЙ ЮРИСТ ПО УСЛУГЕ ═══ */}
       <SpecialistBlock
-        title="Ограничения проверяет юрист с опытом работы в ФССП"
+        title={
+          <span style={{ display: 'block' }}>
+            <span style={{ display: 'block' }}>Ограничения проверяет юрист</span>
+            <span style={{ display: 'block' }}>с опытом работы в ФССП</span>
+          </span>
+        }
         name="Марина Валерьевна Смольянинова"
         position="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
-        imageUrl="/images/specialists/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.jpg"
         description={[
           'Марина Валерьевна Смольянинова более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Этот опыт помогает оценивать не только формальное основание запрета, но и реальный порядок движения постановлений между приставом и регистрационным органом.',
           'Специализируется на защите имущественных прав граждан и бизнеса: снятие незаконных арестов с автотранспорта и счетов, отмена запретов регистрационных действий, освобождение имущества от ареста в судебном порядке.',
@@ -626,7 +631,12 @@ export default function SnyatieArestaAvtoClient() {
 
       {/* ═══ БЛОК 7: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
       <CasesBlock
-        title="Как может решаться вопрос с ограничением автомобиля"
+        title={
+          <span style={{ display: 'block' }}>
+            <span style={{ display: 'block' }}>Как может решаться вопрос</span>
+            <span style={{ display: 'block' }}>с ограничением автомобиля</span>
+          </span>
+        }
         showAllLink="/praktika/"
         showAllText="Смотреть все дела"
         showDemoWarning={true}
@@ -636,7 +646,12 @@ export default function SnyatieArestaAvtoClient() {
       {/* ═══ БЛОК 8: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="От проверки запрета до возможности регистрации"
-        subtitle="Прозрачный пошаговый процесс — от первичного анализа ограничений до фактического снятия запрета."
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '800px', textWrap: 'balance' }}>
+            <span style={{ display: 'block' }}>Прозрачный пошаговый процесс — от первичного</span>
+            <span style={{ display: 'block' }}>анализа ограничений до фактического снятия запрета.</span>
+          </span>
+        }
         alignTitle="center"
         steps={[
           {
@@ -742,8 +757,18 @@ export default function SnyatieArestaAvtoClient() {
       {/* ═══ БЛОК 10: FAQ ═══ */}
       <FAQBlock
         superTitle="Частые вопросы клиентов"
-        title={<><span>Вопросы о снятии ареста</span> <br /><span>и запрета с автомобиля</span></>}
-        subtitle="Разъяснения юриста по исполнительному производству"
+        title={
+          <span style={{ display: 'block' }}>
+            <span style={{ display: 'block' }}>Вопросы о снятии ареста</span>
+            <span style={{ display: 'block' }}>и запрета с автомобиля</span>
+          </span>
+        }
+        subtitle={
+          <span style={{ display: 'block' }}>
+            <span style={{ display: 'block' }}>Разъяснения юриста</span>
+            <span style={{ display: 'block' }}>по исполнительному производству</span>
+          </span>
+        }
         ctaText="Задать свой вопрос"
         ctaLink="#form"
         faqs={faqs}

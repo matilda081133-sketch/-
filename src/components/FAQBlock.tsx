@@ -9,7 +9,7 @@ interface FAQBlockProps {
   faqs?: FAQ[];
   superTitle?: string;
   title?: string | React.ReactNode;
-  subtitle?: string;
+  subtitle?: string | React.ReactNode;
   ctaText?: string;
   ctaLink?: string;
 }
