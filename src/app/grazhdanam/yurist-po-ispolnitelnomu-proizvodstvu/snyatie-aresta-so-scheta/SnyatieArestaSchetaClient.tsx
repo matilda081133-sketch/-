@@ -338,7 +338,8 @@ export default function SnyatieArestaSchetaClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              Заявление приставу или обращение в суд?
+              <span style={{ display: 'inline-block' }}>Заявление приставу</span> <br />
+              <span style={{ display: 'inline-block' }}>или обращение в суд?</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Внешне блокировка карты или счёта выглядит одинаково, но решение зависит</span> <br />
@@ -373,7 +374,10 @@ export default function SnyatieArestaSchetaClient() {
               <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
                   <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>01</span>
-                  <span>Установите инициатора и вид меры</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Установите инициатора</span>
+                    <span style={{ display: 'block' }}>и вид меры</span>
+                  </span>
                 </h4>
                 <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
                   Запросите в банке номер и дату документа, орган-инициатор, сумму ареста и доступный остаток. Это позволит не обращаться не по адресу.
@@ -384,7 +388,10 @@ export default function SnyatieArestaSchetaClient() {
               <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
                   <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>02</span>
-                  <span>Сопоставьте ключевые данные</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Сопоставьте ключевые</span>
+                    <span style={{ display: 'block' }}>данные производства</span>
+                  </span>
                 </h4>
                 <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
                   Сопоставьте номер производства, взыскателя, сумму долга, дату возбуждения и уже произведённые оплаты. Проверьте, нет ли нескольких производств.
@@ -395,7 +402,10 @@ export default function SnyatieArestaSchetaClient() {
               <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
                   <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>03</span>
-                  <span>Соберите комплект документов</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Соберите комплект</span>
+                    <span style={{ display: 'block' }}>документов</span>
+                  </span>
                 </h4>
                 <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
                   Если на счёт поступают зарплата, пенсия, алименты или пособия, сохраните выписку и документы о виде и целевом назначении дохода.
