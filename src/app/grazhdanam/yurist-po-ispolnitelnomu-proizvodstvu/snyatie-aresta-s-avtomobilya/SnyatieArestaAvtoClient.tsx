@@ -391,7 +391,7 @@ export default function SnyatieArestaAvtoClient() {
               }}>
                 <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
                   <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                   </svg>
                 </div>
                 <div style={{
@@ -550,7 +550,7 @@ export default function SnyatieArestaAvtoClient() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginBottom: '40px' }}>
+          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '0' }}>
             {[
               { num: '01', title: 'Проверит сведения об авто', desc: 'Проверит данные об автомобиле, исполнительных производствах и всех инициаторах наложенных ограничений.' },
               { num: '02', title: 'Изучит материалы дела', desc: 'Получит и проанализирует постановления, акт ареста, материалы производства и регистрационные сведения ГИБДД.' },
@@ -577,19 +577,18 @@ export default function SnyatieArestaAvtoClient() {
                   position: 'absolute',
                   top: '-14px',
                   left: '20px',
-                  background: 'var(--color-deep-blue)',
-                  color: 'var(--color-gold)',
-                  fontFamily: 'var(--font-serif)',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
                   fontWeight: 700,
-                  fontSize: '13px',
                   padding: '2px 10px',
-                  letterSpacing: '0.05em',
-                  boxShadow: '0 2px 8px rgba(16, 39, 59, 0.2)'
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
                   {item.num}
                 </div>
                 <div>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                  <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
                     {item.title}
                   </h3>
                   <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
@@ -598,12 +597,51 @@ export default function SnyatieArestaAvtoClient() {
                 </div>
               </div>
             ))}
-          </div>
 
-          <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 32px' }}>
-              Получить план действий
-            </a>
+            {/* Карточка 09: Получить план действий */}
+            <Link href="#form" style={{ textDecoration: 'none', color: 'inherit', display: 'flex' }} data-analytics="click_action_plan_card">
+              <div className="hover-lift" style={{
+                background: 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)',
+                padding: '38px 24px 30px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(11, 28, 42, 0.25)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                position: 'relative',
+                width: '100%',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}>
+                <div>
+                  <div style={{
+                    position: 'absolute',
+                    top: '-14px',
+                    left: '20px',
+                    background: 'var(--color-gold)',
+                    color: 'var(--color-deep-blue)',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    padding: '2px 10px',
+                    borderRadius: '2px',
+                    letterSpacing: '0.05em'
+                  }}>
+                    СТАРТ
+                  </div>
+                  <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '8px 0 12px 0', lineHeight: 1.35 }}>
+                    Получить план действий
+                  </h3>
+                  <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
+                    Опишите ситуацию с автомобилем — юрист проверит основания каждого ограничения и подскажет порядок действий.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)', fontSize: '14px', fontWeight: 600, marginTop: '20px' }}>
+                  <span>Перейти к форме</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
