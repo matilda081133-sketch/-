@@ -172,10 +172,23 @@ export default function SnyatieArestaAvtoClient() {
           </span>
         }
         subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            <span style={{ display: 'block' }}>Проверим, кем и когда введено ограничение, подготовим заявление,</span>
-            <span style={{ display: 'block' }}>жалобу или иск и проконтролируем снятие запрета в регистрационных данных.</span>
-          </span>
+          <>
+            <style dangerouslySetInnerHTML={{__html: `
+              @media (min-width: 992px) {
+                .hero-sub-span-desktop {
+                  white-space: nowrap !important;
+                }
+              }
+            `}} />
+            <span style={{ display: 'inline-block', maxWidth: '100%' }}>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                Проверим, кем и когда введено ограничение, подготовим заявление,
+              </span>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                жалобу или иск и проконтролируем снятие запрета в регистрационных данных.
+              </span>
+            </span>
+          </>
         }
         primaryCtaText="Проверить ограничение"
         primaryCtaLink="#form"
