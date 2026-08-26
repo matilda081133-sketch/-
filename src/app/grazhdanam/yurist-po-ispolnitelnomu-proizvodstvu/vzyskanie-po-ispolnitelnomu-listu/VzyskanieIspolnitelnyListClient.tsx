@@ -157,12 +157,8 @@ export default function VzyskanieIspolnitelnyListClient() {
         superTitle="Исполнительное производство в Липецке"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Взыскание
-            </span>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              по исполнительному листу
-            </span>
+            <span style={{ display: 'block' }}>Взыскание</span>
+            <span style={{ display: 'block' }}>по исполнительному листу</span>
           </span>
         }
         subtitle={
@@ -204,8 +200,8 @@ export default function VzyskanieIspolnitelnyListClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: 'inline-block' }}>Когда стоит подключить юриста</span> <br />
-              <span style={{ display: 'inline-block' }}>к&nbsp;взысканию</span>
+              <span style={{ display: 'inline-block' }}>Когда стоит подключить</span> <br />
+              <span style={{ display: 'inline-block' }}>юриста к&nbsp;взысканию</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Судебный акт подтверждает право на&nbsp;деньги, но&nbsp;исполнение требует активных действий.</span> <br />
@@ -338,8 +334,8 @@ export default function VzyskanieIspolnitelnyListClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Служба приставов</span> <br />
-              <span style={{ display: 'inline-block' }}>или предъявление напрямую в банк?</span>
+              <span style={{ display: 'inline-block' }}>Служба приставов или</span> <br />
+              <span style={{ display: 'inline-block' }}>предъявление напрямую в&nbsp;банк?</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Выбираем маршрут, который повышает шанс реально получить деньги,</span> <br />
