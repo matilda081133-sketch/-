@@ -646,7 +646,12 @@ export default function AvtoyuristClient() {
       {/* ═══ БЛОК 9: FAQ ═══ */}
       <FAQBlock
         superTitle="Частые вопросы"
-        title="Ответы на частые вопросы"
+        title={
+          <span style={{ display: 'block' }}>
+            <span style={{ display: 'block' }}>Ответы на</span>
+            <span style={{ display: 'block' }}>частые вопросы</span>
+          </span>
+        }
         subtitle="Разъяснения автоюриста по ДТП, лишению прав и страховым спорам"
         ctaText="Задать свой вопрос"
         ctaLink="#form"
