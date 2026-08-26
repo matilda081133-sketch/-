@@ -291,8 +291,8 @@ export default function SnyatieArestaAvtoClient() {
           </div>
 
           <div style={{
-            background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-            border: '1px solid var(--color-border)',
+            background: '#FFFFFF',
+            border: '1px solid rgba(23, 50, 77, 0.08)',
             borderLeft: '4px solid var(--color-gold)',
             padding: '28px 32px',
             display: 'flex',
@@ -300,7 +300,7 @@ export default function SnyatieArestaAvtoClient() {
             justifyContent: 'space-between',
             flexWrap: 'wrap',
             gap: '20px',
-            boxShadow: '0 4px 15px rgba(23, 50, 77, 0.04)'
+            boxShadow: '0 10px 30px rgba(23, 50, 77, 0.09), 0 2px 8px rgba(23, 50, 77, 0.04)'
           }}>
             <div style={{ maxWidth: '720px' }}>
               <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
