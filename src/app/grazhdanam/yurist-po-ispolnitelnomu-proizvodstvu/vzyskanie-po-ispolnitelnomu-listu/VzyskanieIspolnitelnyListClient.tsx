@@ -157,8 +157,8 @@ export default function VzyskanieIspolnitelnyListClient() {
         superTitle="Исполнительное производство в Липецке"
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'block' }}>Взыскание</span>
-            <span style={{ display: 'block' }}>по исполнительному листу</span>
+            <span style={{ display: 'block' }}>Взыскание по</span>
+            <span style={{ display: 'block' }}>исполнительному листу</span>
           </span>
         }
         subtitle={
