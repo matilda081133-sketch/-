@@ -660,13 +660,29 @@ export default function SnyatieArestaAvtoClient() {
           </span>
         }
         name="Марина Валерьевна Смольянинова"
-        position="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
+        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
         imageUrl="/images/smolyaninova.jpg"
         description={[
-          'Марина Валерьевна Смольянинова более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Этот опыт помогает оценивать не только формальное основание запрета, но и реальный порядок движения постановлений между приставом и регистрационным органом.',
-          'Специализируется на защите имущественных прав граждан и бизнеса: снятие незаконных арестов с автотранспорта и счетов, отмена запретов регистрационных действий, освобождение имущества от ареста в судебном порядке.',
-          'Лично курирует ведение дел и проверяет ключевые процессуальные документы по каждому делу в направлении исполнительного производства.',
-          'Сопровождает доверителей в Липецке и Липецкой области, а также ведёт дистанционную подготовку процессуальных документов по всей России.'
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Марина Валерьевна Смольянинова более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Этот опыт помогает оценивать не только формальное основание запрета, но и реальный порядок движения постановлений между приставом и регистрационным органом.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Специализируется на защите имущественных прав граждан и бизнеса: снятие незаконных арестов с автотранспорта и счетов, отмена запретов регистрационных действий, освобождение имущества от ареста в судебном порядке.</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Лично курирует ведение дел и проверяет ключевые процессуальные документы по каждому делу в направлении исполнительного производства.</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Сопровождает доверителей в Липецке и Липецкой области, а также ведёт дистанционную подготовку процессуальных документов по всей России.</span>
+            </li>
+          </ul>,
+          <a key="3" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о Марине Валерьевне Смольяниновой →
+          </a>
         ]}
         buttonText="Обратиться к Марине Смольяниновой"
         buttonHref="#form"
