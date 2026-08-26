@@ -522,11 +522,11 @@ export default function SnyatieArestaAvtoClient() {
           </div>
 
           <div style={{
-            background: 'var(--color-white)',
-            borderLeft: '4px solid var(--color-gold)',
+            background: 'rgba(255, 255, 255, 0.65)',
+            backdropFilter: 'blur(6px)',
             padding: '22px 28px',
-            border: '1px solid var(--color-border)',
-            borderLeftColor: 'var(--color-gold)',
+            border: '1px solid rgba(23, 50, 77, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
             fontSize: '14px',
             color: 'var(--color-deep-blue)',
             lineHeight: 1.6,
@@ -642,7 +642,7 @@ export default function SnyatieArestaAvtoClient() {
                   </p>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)', fontSize: '14px', fontWeight: 600, marginTop: '20px' }}>
-                  <span>Перейти к форме</span>
+                  <span>Получить</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
               </div>
