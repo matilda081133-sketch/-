@@ -171,7 +171,12 @@ export default function SnyatieArestaAvtoClient() {
             </span>
           </span>
         }
-        subtitle="Проверим, кем и когда введено ограничение, подготовим заявление, жалобу или иск и проконтролируем снятие запрета в регистрационных данных."
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
+            <span style={{ display: 'block' }}>Проверим, кем и когда введено ограничение, подготовим заявление,</span>
+            <span style={{ display: 'block' }}>жалобу или иск и проконтролируем снятие запрета в регистрационных данных.</span>
+          </span>
+        }
         primaryCtaText="Проверить ограничение"
         primaryCtaLink="#form"
         primaryCtaAnalytics="service_car_arrest_hero_cta"
@@ -354,34 +359,34 @@ export default function SnyatieArestaAvtoClient() {
 
             <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
               {/* Шаг 1 */}
-              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <h4 style={{ fontSize: '15px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                  <span style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>01</span>
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>01</span>
                   <span>Установите инициатора и вид меры</span>
                 </h4>
-                <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
                   Орган, подразделение ФССП, номер ИП, дату и реквизиты. Проверьте: запрет только на регистрацию или авто также описано, арестовано либо в розыске.
                 </p>
               </div>
 
               {/* Шаг 2 */}
-              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <h4 style={{ fontSize: '15px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                  <span style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>02</span>
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>02</span>
                   <span>Сопоставьте ключевые даты</span>
                 </h4>
-                <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
                   Для покупателя: даты ДКП, оплаты, передачи машины и даты запрета. Для должника: даты возбуждения ИП, оплаты долга и окончания производства.
                 </p>
               </div>
 
               {/* Шаг 3 */}
-              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <h4 style={{ fontSize: '15px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                  <span style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>03</span>
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>03</span>
                   <span>Соберите комплект документов</span>
                 </h4>
-                <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
                   ПТС / выписка ЭПТС, СТС, договор купли-продажи, подтверждение оплаты и передачи машины, постановления пристава и справки об оплате долга.
                 </p>
               </div>
