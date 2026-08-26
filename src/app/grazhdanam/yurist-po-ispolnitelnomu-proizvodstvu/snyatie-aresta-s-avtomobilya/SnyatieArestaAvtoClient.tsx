@@ -317,107 +317,10 @@ export default function SnyatieArestaAvtoClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ЧТО ПРОВЕРИТЬ ДО ОБРАЩЕНИЯ ═══ */}
-      <section style={{ background: 'var(--color-deep-blue)', padding: '72px 0 64px', position: 'relative', overflow: 'hidden' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              Что проверить до обращения за снятием ограничения
-            </h2>
-            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
-            <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '16px', lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
-              Перед подготовкой документов важно установить точный вид меры, основание её введения и сопоставить даты сделки и постановлений.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '16px' }}>
-            <div className="urgent-card" style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-              padding: '32px 28px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderTop: '3px solid var(--color-gold)',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '14px',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="8" x2="12" y2="12"></line>
-                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                </svg>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
-                  Установите инициатора и вид меры
-                </h3>
-              </div>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                Получите сведения о каждом запрете: орган, подразделение, номер производства, дату и реквизиты постановления. Проверьте, ограничена только регистрация или автомобиль также описан, арестован либо объявлен в розыск.
-              </p>
-            </div>
-
-            <div className="urgent-card" style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-              padding: '32px 28px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderTop: '3px solid var(--color-gold)',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '14px',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
-                  Сопоставьте даты
-                </h3>
-              </div>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                Для покупателя важны даты договора, оплаты, передачи машины и постановки запрета. Для должника — даты возбуждения производства, оплаты долга, окончания или прекращения производства.
-              </p>
-            </div>
-
-            <div className="urgent-card" style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-              padding: '32px 28px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderTop: '3px solid var(--color-gold)',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '14px',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                </svg>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
-                  Соберите документы на авто
-                </h3>
-              </div>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                Подготовьте ПТС или электронную выписку, СТС, договор купли-продажи, документы об оплате и передаче, постановления пристава и подтверждение погашения задолженности.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 4: ЗАЯВЛЕНИЕ ПРИСТАВУ ИЛИ ОБРАЩЕНИЕ В СУД (2 СЦЕНАРИЯ) ═══ */}
+      {/* ═══ БЛОК 3: ЗАЯВЛЕНИЕ ПРИСТАВУ ИЛИ ОБРАЩЕНИЕ В СУД (2 СЦЕНАРИЯ С ПРОВЕРКОЙ) ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span style={{ display: 'inline-block' }}>Заявление приставу</span> <br />
               <span style={{ display: 'inline-block' }}>или обращение в суд</span>
@@ -425,6 +328,83 @@ export default function SnyatieArestaAvtoClient() {
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               Выбор способа защиты зависит от оснований ограничения, наличия спора о собственности и даты перехода прав на автомобиль.
             </p>
+          </div>
+
+          {/* Темно-синяя карточка-навигатор: 3 вещи, которые нужно проверить */}
+          <div style={{
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            marginBottom: '32px',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            {/* Фоновый водяной знак весов */}
+            <div style={{ position: 'absolute', right: '-15px', bottom: '-15px', opacity: 0.07, pointerEvents: 'none' }}>
+              <svg width="180" height="180" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+              <div>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '6px' }}>
+                  Обязательный этап перед подачей документов
+                </div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0 }}>
+                  3 вещи, которые нужно проверить до обращения
+                </h3>
+              </div>
+              <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '440px', lineHeight: 1.5 }}>
+                Позволяет безошибочно определить порядок действий: подавать заявление приставу или готовить иск в суд.
+              </div>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
+              {/* Шаг 1 */}
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>01</span>
+                  <span style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.5)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Инициатор</span>
+                </div>
+                <h4 style={{ fontSize: '15px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35 }}>
+                  Установите инициатора и вид меры
+                </h4>
+                <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Орган, подразделение ФССП, номер ИП, дату и реквизиты. Проверьте: запрет только на регистрацию или авто также описано, арестовано либо в розыске.
+                </p>
+              </div>
+
+              {/* Шаг 2 */}
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>02</span>
+                  <span style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.5)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Сроки и даты</span>
+                </div>
+                <h4 style={{ fontSize: '15px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35 }}>
+                  Сопоставьте ключевые даты
+                </h4>
+                <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Для покупателя: даты ДКП, оплаты, передачи машины и даты запрета. Для должника: даты возбуждения ИП, оплаты долга и окончания производства.
+                </p>
+              </div>
+
+              {/* Шаг 3 */}
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>03</span>
+                  <span style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.5)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Документы</span>
+                </div>
+                <h4 style={{ fontSize: '15px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35 }}>
+                  Соберите комплект документов
+                </h4>
+                <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  ПТС / выписка ЭПТС, СТС, договор купли-продажи, подтверждение оплаты и передачи машины, постановления пристава и справки об оплате долга.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
