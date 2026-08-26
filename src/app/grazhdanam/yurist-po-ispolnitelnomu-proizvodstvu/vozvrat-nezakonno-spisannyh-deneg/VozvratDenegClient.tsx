@@ -11,67 +11,67 @@ import SpecialistBlock from '@/components/SpecialistBlock';
 import PricingBlock from '@/components/PricingBlock';
 import ProcessBlock from '@/components/ProcessBlock';
 
-export default function SnyatieArestaSchetaClient() {
+export default function VozvratDenegClient() {
   const cases: CaseData[] = [
     {
-      category: 'Погашение долга',
-      title: 'Сняли арест после полного погашения задолженности',
-      problem: 'Клиент полностью оплатил долг и исполнительский сбор, однако спустя две недели банковский счёт оставался заблокирован. В банке ссылались на отсутствие постановления пристава о снятии ареста.',
-      action: 'Сверили платежи и расчёт задолженности, получили постановление об окончании исполнительного производства, направили приставу обращение об отмене ограничений и проконтролировали отправку документа в банк.',
-      result: 'Пристав вынес постановление о снятии ареста и направил его в кредитную организацию. После обработки документа банк восстановил клиенту возможность распоряжаться средствами на счёте.'
+      category: 'Защищённый доход',
+      title: 'Вернули списанную социальную выплату',
+      problem: 'Со счёта должника списали целевую социальную выплату. Из банковской выписки было видно назначение поступления, однако деньги уже ушли в рамках исполнительного производства.',
+      action: 'Получили справку о виде и назначении выплаты, сопоставили дату зачисления и списания, подготовили заявление приставу с подтверждающими документами и проконтролировали рассмотрение требования.',
+      result: 'Происхождение средств подтвердили, взыскание этой суммы признали ошибочным, деньги вернули на счёт клиента; сведения о защищённом доходе учли для последующих операций.'
     },
     {
-      category: 'Излишний арест',
-      title: 'Освободили от ареста сумму сверх размера требований',
-      problem: 'В рамках одного производства ограничения отразились сразу на нескольких счетах клиента, а общая сумма заблокированных средств существенно превысила остаток задолженности.',
-      action: 'Получили сведения по всем счетам и производству, сопоставили остаток долга и объём ограничений, подготовили ходатайство со ссылкой на излишне арестованные денежные средства и приложили банковские документы.',
-      result: 'Арест скорректировали в пределах актуальной суммы требований, с подтверждённого излишка ограничение сняли. Клиент получил доступ к остальным деньгам без прекращения законного взыскания долга.'
+      category: 'Повторное взыскание',
+      title: 'Добились возврата после повторного погашения одного долга',
+      problem: 'Гражданин оплатил задолженность, но до отражения платежа средства дополнительно списали со счёта по тому же требованию. Общая сумма превысила фактический остаток долга.',
+      action: 'Сверили исполнительный документ, постановления, платёжные документы и банковскую выписку, рассчитали переплату и направили приставу заявление о возврате излишне полученной суммы.',
+      result: 'Погашение задолженности учли, излишне взысканную сумму вернули клиенту, размер долга в производстве скорректировали.'
     },
     {
-      category: 'Ошибочная идентификация',
-      title: 'Отменили арест счёта, наложенный из-за ошибочной идентификации',
-      problem: 'Счёт клиента заблокировали по исполнительному производству в отношении человека с совпадающими фамилией, именем и датой рождения. Клиент не был стороной спора и ранее не получал документов о долге.',
-      action: 'Сопоставили идентификаторы должника, подготовили документы о личности и принадлежности счёта, направили обращение в подразделение ФССП и потребовали отменить меры, применённые к ненадлежащему лицу.',
-      result: 'Ошибку идентификации подтвердили, постановление в отношении счёта клиента отменили и передали в банк. Доступ к счёту восстановили; сведения клиента отделили от данных фактического должника.'
+      category: 'Отмена приказа',
+      title: 'Вернули деньги после отмены исполненного судебного приказа',
+      problem: 'Судебный приказ отменили уже после того, как деньги перечислили взыскателю. Обращение к приставу не привело к возврату, поскольку средств на депозитном счёте ФССП не осталось.',
+      action: 'Подтвердили сумму фактического взыскания, подготовили заявление о повороте исполнения судебного приказа и документы для суда, затем сопровождали получение и предъявление исполнительного листа.',
+      result: 'Суд допустил поворот исполнения; полученный исполнительный документ предъявили к взысканию, ранее удержанные деньги вернули клиенту.'
     }
   ];
 
   const faqs = [
     {
-      q: 'Можно ли снять арест со счёта через банк?',
-      a: 'Если ограничение наложено постановлением пристава, банк обычно не вправе отменить его по просьбе клиента. Сначала нужно добиться надлежащего постановления об отмене или корректировке ареста и проверить его поступление в банк.'
+      q: 'Можно ли вернуть деньги, которые приставы уже списали?',
+      a: 'Да, если подтверждено незаконное, ошибочное, повторное или избыточное взыскание либо отменено исполненное основание. Способ зависит от того, где находятся средства и кому они перечислены.'
     },
     {
-      q: 'Сколько времени занимает снятие ареста?',
-      a: 'Единого срока нет. Он зависит от причины ограничения, наличия документов, необходимости подтвердить оплату или защищённый доход, вынесения постановления и его обработки банком. Обещать универсальный срок до проверки нельзя.'
+      q: 'Какие выплаты нельзя списывать?',
+      a: 'Перечень установлен статьёй 101 Закона № 229-ФЗ и включает ряд целевых компенсаций, пособий и иных выплат. Для некоторых требований действуют исключения, поэтому нужно проверить конкретный вид поступления и долг.'
     },
     {
-      q: 'Арест снимется автоматически после оплаты долга?',
-      a: 'Не всегда. Нужно проверить полный расчёт, исполнительский сбор, другие производства, вынесение постановления об окончании производства и отмене ограничений, а также его направление в банк.'
+      q: 'Что делать, если списали пособие или компенсацию?',
+      a: 'Получите банковскую выписку и справку плательщика о виде и назначении выплаты. После этого можно определить, кто допустил ошибку и куда направлять требование о возврате.'
     },
     {
-      q: 'Можно ли снять арест только с зарплатного счёта?',
-      a: 'Сам факт зачисления зарплаты не всегда означает полное снятие ареста. Проверяются допустимый размер взыскания, идентификация дохода и возможность скорректировать порядок удержаний или защитить установленную законом сумму.'
+      q: 'Вернут ли деньги, если их уже перечислили взыскателю?',
+      a: 'Это возможно, но заявление приставу не всегда приводит к возврату. Может потребоваться поворот исполнения отменённого судебного акта или отдельное требование к получателю средств.'
     },
     {
-      q: 'Что делать, если на счёт поступают пособия или алименты?',
-      a: 'Нужно подтвердить вид и назначение поступлений банковской выпиской и документами плательщика. Правовой режим зависит от конкретного дохода и вида взыскиваемого требования, поэтому перечень статьи 101 применяется с учётом исключений.'
+      q: 'Что делать при двойном списании?',
+      a: 'Нужно сопоставить оба платежа, остаток долга, несколько исполнительных производств и дату учёта оплаты. Подтверждённая переплата подлежит возврату в установленном порядке.'
     },
     {
-      q: 'Можно ли снять арест, если долг мне не принадлежит?',
-      a: 'Да, если подтверждена ошибочная идентификация или счёт не принадлежит должнику. Потребуются документы о личности, принадлежности счёта и несоответствии данным фактического должника.'
+      q: 'Можно ли вернуть деньги после отмены судебного приказа?',
+      a: 'Вопрос обычно решается через поворот исполнения. Возможность и порядок зависят от стадии спора и наличия нового искового производства, поэтому документы нужно оценивать индивидуально.'
     },
     {
-      q: 'Почему банк не разблокировал счёт после постановления пристава?',
-      a: 'Нужно проверить, направлено ли постановление именно в этот банк, содержит ли реквизиты нужного счёта и объём снятия ограничения, получено ли оно банком и нет ли другого действующего ареста.'
+      q: 'Кто отвечает за ошибку — банк или пристав?',
+      a: 'Это зависит от постановления, идентификации должника, кода вида дохода, расчёта доступной к взысканию суммы и движения средств. До предъявления требования нужно установить конкретное нарушение каждого участника.'
     },
     {
-      q: 'Нужно ли обжаловать постановление пристава в суде?',
-      a: 'Не всегда. В части случаев вопрос решается заявлением или жалобой руководителю. Судебный порядок нужен, если акт, отказ или бездействие невозможно устранить административным способом либо такой способ уже не дал результата.'
+      q: 'Сколько времени занимает возврат?',
+      a: 'Единого срока нет. Он зависит от того, остались ли деньги на депозитном счёте ФССП, требуется ли получить документы, обжаловать отказ или обращаться в суд.'
     },
     {
       q: 'Какие документы нужны для проверки?',
-      a: 'Обычно нужны уведомление или справка банка об ограничении, выписка по счёту, номер исполнительного производства, постановления, документы об оплате долга и подтверждение происхождения поступлений. Точный перечень определим по ситуации.'
+      a: 'Обычно нужны банковская выписка, сведения об исполнительном производстве, постановления, документы об оплате долга и справка об источнике выплаты. Точный перечень определим после изучения ситуации.'
     }
   ];
 
@@ -85,7 +85,7 @@ export default function SnyatieArestaSchetaClient() {
         <div style={{ position: 'absolute', width: '250px', height: '250px', background: 'var(--color-primary)', filter: 'blur(100px)', opacity: 0.15, borderRadius: '50%' }}></div>
         <div className="doc-wrapper-float-4"><div className="doc-sheet doc-sheet-4"><div style={{ padding: '40px 30px', height: '100%', display: 'flex', flexDirection: 'column' }}><div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}><div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}><div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div><div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div></div></div><div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div><div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}><div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div><div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div><div style={{ width: '60%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div></div></div></div></div>
         <div className="doc-wrapper-float-3"><div className="doc-sheet doc-sheet-3"><div style={{ padding: '40px 30px', height: '100%', display: 'flex', flexDirection: 'column' }}><div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}><div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}><div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div><div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div></div></div><div style={{ width: '140px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 40px auto' }}></div><div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}><div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div><div style={{ width: '95%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div><div style={{ width: '80%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div></div></div></div></div>
-        <div className="doc-wrapper-float-2"><div className="doc-sheet doc-sheet-2"><div style={{ padding: '30px 25px', height: '100%', display: 'flex', flexDirection: 'column' }}><div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '30px' }}><div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}><div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div><div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div><div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div></div></div><div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 20px auto' }}></div><div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}><div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}><div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div><div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div><div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div></div><div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}><div style={{ width: '50%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div><div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div><div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div></div></div><div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px dashed rgba(23,50,77,0.1)' }}><div><div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)' }}>Владелец счёта:</div><div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div></div><div><div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)' }}>Юрист:</div><div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div></div></div></div></div></div>
+        <div className="doc-wrapper-float-2"><div className="doc-sheet doc-sheet-2"><div style={{ padding: '30px 25px', height: '100%', display: 'flex', flexDirection: 'column' }}><div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '30px' }}><div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}><div style={{ width: '100px', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div><div style={{ width: '60px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div><div style={{ width: '80px', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div></div></div><div style={{ width: '160px', height: '8px', background: 'var(--color-primary)', margin: '0 auto 20px auto' }}></div><div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}><div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}><div style={{ width: '40%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div><div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div><div style={{ width: '90%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div></div><div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}><div style={{ width: '50%', height: '4px', background: 'rgba(23,50,77,0.2)' }}></div><div style={{ width: '100%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div><div style={{ width: '85%', height: '4px', background: 'rgba(23,50,77,0.1)' }}></div></div></div><div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '10px', borderTop: '1px dashed rgba(23,50,77,0.1)' }}><div><div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)' }}>Заявитель:</div><div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div></div><div><div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.5)' }}>Юрист:</div><div style={{ width: '80px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '10px' }}></div></div></div></div></div></div>
         
         {/* Верхний лист */}
         <div className="doc-wrapper-float-1">
@@ -151,17 +151,17 @@ export default function SnyatieArestaSchetaClient() {
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
             <Link href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/" style={{ color: 'var(--color-primary)' }}>Юрист по исполнительному производству</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <span style={{ color: 'var(--color-text-main)' }}>Снятие ареста со счёта</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Возврат незаконно списанных денег</span>
           </>
         }
         superTitle="Споры с судебными приставами в Липецке"
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Снятие ареста со счёта
+              Возврат незаконно списанных
             </span>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              или банковской карты
+              приставами денежных средств
             </span>
           </span>
         }
@@ -176,74 +176,74 @@ export default function SnyatieArestaSchetaClient() {
             `}} />
             <span style={{ display: 'inline-block', maxWidth: '100%' }}>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                Установим источник и основание ограничения, подготовим документы
+                Установим, на каком основании и куда перечислены деньги, соберём подтверждения
               </span>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                для его отмены или корректировки и проконтролируем передачу постановления в банк.
+                незаконного списания и выберем способ возврата — через банк, ФССП или суд.
               </span>
             </span>
           </>
         }
-        primaryCtaText="Проверить арест счёта"
+        primaryCtaText="Проверить списание"
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_hero_form"
         primaryCtaSubtext={
-          <>Если доступ к средствам уже заблокирован, позвоните: <a href="tel:+79103503111" data-analytics="click_phone">+7 (910) 350-31-11</a></>
+          <>Если средства уже списаны со счёта, позвоните: <a href="tel:+79103503111" data-analytics="click_phone">+7 (910) 350-31-11</a></>
         }
         trustItems={[
-          { text: 'Проверяем основание каждого ареста' },
-          { text: 'Отмена блокировки счетов и карт' },
-          { text: 'Защита зарплаты, пенсий и пособий' },
+          { text: 'Проверяем основание списания' },
+          { text: 'Возврат социальных и защищённых выплат' },
+          { text: 'Устранение повторных и избыточных удержаний' },
           { text: 'Куратор — 13 лет опыта в ФССП' },
         ]}
         rightContent={docStack}
       />
 
-      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ СНЯТЬ АРЕСТ ═══ */}
+      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ ВЕРНУТЬ ДЕНЬГИ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
               <span style={{ display: 'inline-block' }}>В каких ситуациях</span> <br />
-              <span style={{ display: 'inline-block' }}>помогаем снять арест со&nbsp;счёта</span>
+              <span style={{ display: 'inline-block' }}>помогаем вернуть деньги</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Ограничение снимается не&nbsp;потому, что&nbsp;счёт нужен клиенту, а&nbsp;при&nbsp;наличии подтверждённого правового основания.</span> <br />
-              <span style={{ display: 'inline-block' }}>Сначала определяем, какое именно нарушение или&nbsp;обстоятельство нужно доказать.</span>
+              <span style={{ display: 'inline-block' }}>Одного факта списания недостаточно. Для возврата устанавливаем, какое правило</span> <br />
+              <span style={{ display: 'inline-block' }}>было нарушено, кто допустил ошибку и где находятся средства.</span>
             </p>
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
             {[
               {
-                tag: 'Долг погашен',
-                title: <><span style={{ display: 'block' }}>Долг погашен,</span><span style={{ display: 'block' }}>но счёт не разблокирован</span></>,
-                desc: 'Проверим учёт платежа, остаток основного долга, исполнительского сбора и расходов, а также наличие постановления об окончании производства и отмене ограничений.'
+                tag: 'Защищённый доход',
+                title: <><span style={{ display: 'block' }}>Списали защищённую</span><span style={{ display: 'block' }}>выплату</span></>,
+                desc: 'Проверим пособие, компенсацию, алименты, выплату в возмещение вреда или другое целевое поступление с учётом статьи 101 Закона № 229-ФЗ и предусмотренных исключений.'
               },
               {
-                tag: 'Излишний арест',
-                title: <><span style={{ display: 'block' }}>Арестована сумма</span><span style={{ display: 'block' }}>больше размера долга</span></>,
-                desc: 'Сопоставим размер требований и фактически ограниченные средства, подготовим требование о снятии ареста с подтверждённого излишка.'
+                tag: 'Превышение лимита',
+                title: <><span style={{ display: 'block' }}>Удержали больше</span><span style={{ display: 'block' }}>допустимого размера</span></>,
+                desc: 'Сопоставим вид дохода, размер удержания, требования исполнительных документов и ограничения статьи 99 Закона № 229-ФЗ.'
+              },
+              {
+                tag: 'Двойное списание',
+                title: <><span style={{ display: 'block' }}>Долг взыскали</span><span style={{ display: 'block' }}>повторно</span></>,
+                desc: 'Проверим платежи, несколько производств, взыскание через банк и ФССП, а также дату отражения погашения задолженности.'
+              },
+              {
+                tag: 'Избыточное списание',
+                title: <><span style={{ display: 'block' }}>Списали сумму</span><span style={{ display: 'block' }}>сверх размера долга</span></>,
+                desc: 'Установим актуальный остаток долга, исполнительский сбор, расходы и движение денег; потребуем возврата подтверждённого излишка.'
               },
               {
                 tag: 'Чужой долг',
-                title: <><span style={{ display: 'block' }}>Счёт арестован за долг</span><span style={{ display: 'block' }}>другого человека</span></>,
-                desc: 'Поможем подтвердить ошибочную идентификацию, принадлежность счёта и отсутствие обязанности по чужому исполнительному документу.'
+                title: <><span style={{ display: 'block' }}>Деньги списали</span><span style={{ display: 'block' }}>за чужой долг</span></>,
+                desc: 'Поможем подтвердить ошибочную идентификацию гражданина, направить документы в ФССП и добиться отмены мер и возврата средств доступным способом.'
               },
               {
-                tag: 'Защищённый доход',
-                title: <><span style={{ display: 'block' }}>На счёт поступают</span><span style={{ display: 'block' }}>защищённые выплаты</span></>,
-                desc: 'Проверим вид дохода, назначение и код платежа, исключения закона и документы, которыми подтверждается особый режим поступлений.'
-              },
-              {
-                tag: 'Окончание ИП',
-                title: <><span style={{ display: 'block' }}>Арест не отменён после</span><span style={{ display: 'block' }}>окончания производства</span></>,
-                desc: 'Проверим основание завершения производства, содержание постановления, его отправку в банк и сохранение других законных ограничений.'
-              },
-              {
-                tag: 'Задержка банка',
-                title: <><span style={{ display: 'block' }}>Банк сохраняет блок</span><span style={{ display: 'block' }}>после постановления</span></>,
-                desc: 'Установим, получил ли банк надлежащий документ, соответствует ли он конкретному счёту и сумме, и определим способ добиться его фактического исполнения.'
+                tag: 'Отмена приказа / акта',
+                title: <><span style={{ display: 'block' }}>Судебный акт отменили</span><span style={{ display: 'block' }}>после взыскания</span></>,
+                desc: 'Оценим, возможен ли поворот исполнения, какой суд рассматривает заявление и какие документы подтверждают фактически взысканную сумму.'
               }
             ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
@@ -319,15 +319,15 @@ export default function SnyatieArestaSchetaClient() {
           }}>
             <div style={{ maxWidth: '720px' }}>
               <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
-                <span style={{ display: 'block' }}>Не уверены, кто наложил арест на счёт?</span>
+                <span style={{ display: 'block' }}>Не знаете, почему списали деньги?</span>
               </h4>
               <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                <span style={{ display: 'block' }}>Пришлите уведомление банка или выписку с реквизитами ограничения —</span>
-                <span style={{ display: 'block' }}>юрист проверит основания и подскажет реалистичный порядок действий.</span>
+                <span style={{ display: 'block' }}>Пришлите номер исполнительного производства и банковскую выписку —</span>
+                <span style={{ display: 'block' }}>юрист проверит основания и подскажет порядок действий для возврата.</span>
               </p>
             </div>
             <a href="#form" className="btn btn-primary" style={{ whiteSpace: 'nowrap', padding: '12px 24px', fontSize: '14px' }} data-analytics="click_situation_form">
-              Разобрать вашу ситуацию
+              Разобраться со списанием
             </a>
           </div>
         </div>
@@ -342,12 +342,12 @@ export default function SnyatieArestaSchetaClient() {
               <span style={{ display: 'inline-block' }}>или обращение в суд?</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Внешне блокировка карты или счёта выглядит одинаково, но решение зависит</span> <br />
-              <span style={{ display: 'inline-block' }}>от основания ограничения, органа-инициатора и сохранения задолженности.</span>
+              <span style={{ display: 'inline-block' }}>Одинаковое внешне списание может требовать разных действий. Сначала восстанавливаем</span> <br />
+              <span style={{ display: 'inline-block' }}>движение денег и только затем выбираем процессуальное требование.</span>
             </p>
           </div>
 
-          {/* Темно-синяя карточка-навигатор: 3 действия при блокировке счёта */}
+          {/* Темно-синяя карточка-навигатор: 3 действия сразу после списания */}
           <div style={{
             background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
             border: '1px solid rgba(193, 160, 102, 0.4)',
@@ -360,7 +360,7 @@ export default function SnyatieArestaSchetaClient() {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
               <div>
                 <h3 style={{ fontSize: 'clamp(20px, 2.5vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
-                  3 действия при блокировке счёта или карты
+                  3 действия сразу после списания
                 </h3>
               </div>
               <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '440px', lineHeight: 1.5 }}>
@@ -375,12 +375,12 @@ export default function SnyatieArestaSchetaClient() {
                 <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
                   <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>01</span>
                   <span>
-                    <span style={{ display: 'block' }}>Установите инициатора</span>
-                    <span style={{ display: 'block' }}>и вид меры</span>
+                    <span style={{ display: 'block' }}>Сохраните сведения</span>
+                    <span style={{ display: 'block' }}>об операции</span>
                   </span>
                 </h4>
                 <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
-                  Запросите в банке номер и дату документа, орган-инициатор, сумму ареста и доступный остаток. Это позволит не обращаться не по адресу.
+                  Получите банковскую выписку с датой, суммой, назначением и реквизитами взыскания. Сохраните сообщения банка и данные исполнительного производства.
                 </p>
               </div>
 
@@ -389,12 +389,12 @@ export default function SnyatieArestaSchetaClient() {
                 <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
                   <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>02</span>
                   <span>
-                    <span style={{ display: 'block' }}>Сопоставьте ключевые</span>
-                    <span style={{ display: 'block' }}>данные производства</span>
+                    <span style={{ display: 'block' }}>Подтвердите источник</span>
+                    <span style={{ display: 'block' }}>и назначение средств</span>
                   </span>
                 </h4>
                 <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
-                  Сопоставьте номер производства, взыскателя, сумму долга, дату возбуждения и уже произведённые оплаты. Проверьте, нет ли нескольких производств.
+                  Если списана защищённая выплата, запросите справку у плательщика и документ о зачислении именно этой суммы на счёт.
                 </p>
               </div>
 
@@ -403,12 +403,12 @@ export default function SnyatieArestaSchetaClient() {
                 <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
                   <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>03</span>
                   <span>
-                    <span style={{ display: 'block' }}>Соберите комплект</span>
-                    <span style={{ display: 'block' }}>документов</span>
+                    <span style={{ display: 'block' }}>Не откладывайте проверку</span>
+                    <span style={{ display: 'block' }}>основания списания</span>
                   </span>
                 </h4>
                 <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
-                  Если на счёт поступают зарплата, пенсия, алименты или пособия, сохраните выписку и документы о виде и целевом назначении дохода.
+                  Установите, существует ли долг, кому принадлежит производство и успели ли перечислить деньги взыскателю. От этого зависит адресат заявления.
                 </p>
               </div>
             </div>
@@ -438,7 +438,7 @@ export default function SnyatieArestaSchetaClient() {
                 </h3>
               </div>
               <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Применяется при бесспорных основаниях: долг погашен, производство окончено, арестован подтверждённый излишек либо на счёт поступают социальные выплаты.
+                Применяется, когда средства находятся в банке или на депозитном счёте подразделения ФССП, а основание для возврата является подтверждённым.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -447,8 +447,8 @@ export default function SnyatieArestaSchetaClient() {
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Проверка всех производств и остатка долга</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Сверяем суммы требований, платежей, сбора и наличие иных производств в ФССП.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Проверка движения денежных средств</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Устанавливаем, где находятся списанные суммы — в банке, на депозите ФССП или у взыскателя.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -457,8 +457,8 @@ export default function SnyatieArestaSchetaClient() {
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Заявление или ходатайство приставу</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Готовим мотивированное требование об отмене ареста или соразмерной корректировке суммы.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Подтверждение защищённого дохода (ст. 101)</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Формируем комплект справок и выписок с кодами выплат для отмены неправомерного удержания.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -467,8 +467,8 @@ export default function SnyatieArestaSchetaClient() {
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Защита социальных выплат и доходов</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Подтверждаем специальный статус поступлений по ст. 99 и 101 Закона № 229-ФЗ.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Заявление приставу о возврате излишка</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Требуем возврата переплаты при повторном или избыточном списании по ст. 110 № 229-ФЗ.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -477,14 +477,14 @@ export default function SnyatieArestaSchetaClient() {
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Контроль передачи постановления в банк</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Отслеживаем электронный обмен и фактическое снятие блокировки счёта банком.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Контроль перечисления средств на счёт</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Отслеживаем вынесение постановления о возврате и фактическое зачисление денег клиенту.</span>
                   </div>
                 </li>
               </ul>
             </div>
 
-            {/* Карточка 2: Судебный порядок и обжалование */}
+            {/* Карточка 2: Судебный порядок и поворот исполнения */}
             <div style={{
               background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
@@ -500,11 +500,11 @@ export default function SnyatieArestaSchetaClient() {
                   <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
                 <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
-                  Судебный порядок и обжалование
+                  Судебный порядок и поворот исполнения
                 </h3>
               </div>
               <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Необходим при незаконных действиях пристава, отказе отменить арест, ошибочной идентификации должника либо блокировке по иным основаниям.
+                Необходим, если деньги уже у взыскателя, пристав отказал в возврате, отменён судебный приказ либо допущена ошибка идентификации.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -512,8 +512,17 @@ export default function SnyatieArestaSchetaClient() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Поворот исполнения (ст. 443 ГПК РФ)</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Готовим заявление в суд о возврате взысканных средств после отмены судебного приказа или решения.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
                     <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Жалоба старшему приставу или в УФССП</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Оспариваем бездействие пристава или незаконный отказ в снятии ареста.</span>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Оспариваем незаконные действия, отказ или бездействие должностных лиц службы приставов.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -521,8 +530,8 @@ export default function SnyatieArestaSchetaClient() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Административный иск в суд (КАС РФ)</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Признаём незаконными постановления и действия должностных лиц ФССП.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Административный иск по КАС РФ</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Признаём незаконными постановления пристава и обязываем устранить допущенные нарушения.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -530,17 +539,8 @@ export default function SnyatieArestaSchetaClient() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Защита при ошибке идентификации (двойник)</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Доказываем непричастность к долгу другого лица и добиваемся отмены мер.</span>
-                  </div>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Оценка мер суда, следствия или по 115-ФЗ</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Выстраиваем профильный процессуальный маршрут при ограничениях не от приставов.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Защита при ошибке двойника / чужом долге</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Инициируем процедуру исключения сведений и добиваемся возврата ошибочно списанных сумм.</span>
                   </div>
                 </li>
               </ul>
@@ -559,7 +559,7 @@ export default function SnyatieArestaSchetaClient() {
             lineHeight: 1.6,
             marginBottom: '32px'
           }}>
-            <strong style={{ color: 'var(--color-primary)' }}>Важно:</strong> Не переводите на арестованный счёт новые средства до выяснения оснований. Арест денежных средств регулируется статьёй 81 Федерального закона № 229-ФЗ. Если ограничение наложено судом в обеспечение иска, следователем или банком по 115-ФЗ, общий маршрут ФССП не применяется — требуется отдельная правовая оценка ситуации.
+            <strong style={{ color: 'var(--color-primary)' }}>Важно:</strong> Статья 101 Федерального закона № 229-ФЗ содержит перечень доходов, на которые не обращается взыскание, но имеет исключения по отдельным видам требований. Если деньги уже перечислены взыскателю, простого заявления приставу недостаточно — требуется поворот исполнения или отдельный судебный порядок защиты.
           </div>
 
           <div style={{ textAlign: 'center' }}>
@@ -578,8 +578,8 @@ export default function SnyatieArestaSchetaClient() {
               <span style={{ display: 'inline-block' }}>Что сделает юрист «Де-Юре»</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Комплексная работа по снятию ограничений — от первичного анализа производства</span> <br />
-              <span style={{ display: 'inline-block' }}>до фактической разблокировки счёта в банке.</span>
+              <span style={{ display: 'inline-block' }}>Комплексная работа по возврату денежных средств — от анализа выписок</span> <br />
+              <span style={{ display: 'inline-block' }}>до фактического зачисления денег на счёт клиента.</span>
             </p>
           </div>
 
@@ -588,42 +588,42 @@ export default function SnyatieArestaSchetaClient() {
               {
                 num: '01',
                 title: <><span style={{ display: 'block' }}>Консультация</span><span style={{ display: 'block' }}>и оценка ситуации</span></>,
-                desc: 'Определяем срочность ситуации, основания блокировки и предварительный правовой маршрут действий.'
+                desc: 'Определяем срочность ситуации, основания списания и предварительный правовой маршрут.'
               },
               {
                 num: '02',
-                title: <><span style={{ display: 'block' }}>Проверка производства</span><span style={{ display: 'block' }}>и банка-исполнителя</span></>,
-                desc: 'Запрашиваем данные об исполнительном документе, постановлениях и банке-исполнителе ограничения.'
+                title: <><span style={{ display: 'block' }}>Проверка производства</span><span style={{ display: 'block' }}>и судебного акта</span></>,
+                desc: 'Изучаем материалы исполнительного производства, основания взыскания и судебные документы.'
               },
               {
                 num: '03',
-                title: <><span style={{ display: 'block' }}>Сверка сумм</span><span style={{ display: 'block' }}>и фактических платежей</span></>,
-                desc: 'Сопоставляем размер долга, сбора, фактически арестованные суммы и наличие иных исполнительных производств.'
+                title: <><span style={{ display: 'block' }}>Анализ выписок</span><span style={{ display: 'block' }}>и назначения платежей</span></>,
+                desc: 'Анализируем банковскую выписку, коды выплат, справки плательщика и защищённый статус доходов.'
               },
               {
                 num: '04',
-                title: <><span style={{ display: 'block' }}>Анализ выписок</span><span style={{ display: 'block' }}>и источников доходов</span></>,
-                desc: 'Изучаем банковскую выписку, коды выплат и документы о происхождении защищённых законом средств.'
+                title: <><span style={{ display: 'block' }}>Установление маршрута</span><span style={{ display: 'block' }}>движения денег</span></>,
+                desc: 'Определяем текущее местонахождение средств: банк, депозитный счёт ФССП или счёт взыскателя.'
               },
               {
                 num: '05',
-                title: <><span style={{ display: 'block' }}>Заявление приставу</span><span style={{ display: 'block' }}>о снятии ареста</span></>,
-                desc: 'Составляем мотивированное требование приставу об отмене или соразмерной корректировке ареста со счёта.'
+                title: <><span style={{ display: 'block' }}>Расчёт суммы</span><span style={{ display: 'block' }}>повторного удержания</span></>,
+                desc: 'Рассчитываем точный размер переплаты или избыточно удержанной суммы по ст. 99 и 110 № 229-ФЗ.'
               },
               {
                 num: '06',
-                title: <><span style={{ display: 'block' }}>Жалоба руководству</span><span style={{ display: 'block' }}>при отказе или бездействии</span></>,
-                desc: 'Подаём мотивированную жалобу старшему судебному приставу или в УФССП при отказе либо бездействии.'
+                title: <><span style={{ display: 'block' }}>Заявления в банк</span><span style={{ display: 'block' }}>и подразделение ФССП</span></>,
+                desc: 'Готовим мотивированные требования о возврате средств и жалобы в порядке ведомственной подчинённости.'
               },
               {
                 num: '07',
-                title: <><span style={{ display: 'block' }}>Административный иск</span><span style={{ display: 'block' }}>в суд по КАС РФ</span></>,
-                desc: 'Готовим административное исковое заявление по КАС РФ и доказательную базу, если требуется судебный порядок.'
+                title: <><span style={{ display: 'block' }}>Поворот исполнения</span><span style={{ display: 'block' }}>или административный иск</span></>,
+                desc: 'Составляем процессуальные документы для суда по КАС РФ или ст. 443–445 ГПК РФ при судебном порядке.'
               },
               {
                 num: '08',
-                title: <><span style={{ display: 'block' }}>Контроль исполнения</span><span style={{ display: 'block' }}>постановления банком</span></>,
-                desc: 'Отслеживаем вынесение, направление постановления в банк и фактическое снятие ареста в кредитной организации.'
+                title: <><span style={{ display: 'block' }}>Контроль возврата</span><span style={{ display: 'block' }}>денежных средств</span></>,
+                desc: 'Отслеживаем рассмотрение требований и фактическое поступление денег на счёт доверителя.'
               }
             ].map((item, idx) => (
               <div key={idx} className="hover-lift" style={{
@@ -699,7 +699,7 @@ export default function SnyatieArestaSchetaClient() {
                     <span style={{ display: 'block' }}>действий</span>
                   </h3>
                   <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
-                    Опишите ситуацию с арестом счёта — юрист проверит основания каждого ограничения и подскажет порядок действий.
+                    Опишите ситуацию со списанием денег — юрист проверит основания каждого удержания и подскажет порядок действий.
                   </p>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)', fontSize: '14px', fontWeight: 600, marginTop: '20px' }}>
@@ -721,7 +721,7 @@ export default function SnyatieArestaSchetaClient() {
         imagePosition="center 15%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Марина Валерьевна более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Контролировала исполнительные производства, рассматривала обращения и жалобы, взаимодействовала с судами, банками и государственными органами. Этот опыт помогает определить источник ограничения, проверить правомерность ареста и выстроить маршрут до фактической разблокировки счёта.
+            Марина Валерьевна более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Контролировала исполнительные производства, рассматривала обращения и жалобы, взаимодействовала с судами, банками и государственными органами. Этот опыт помогает быстро восстановить маршрут списания и определить, к кому предъявлять требование о возврате.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
@@ -730,7 +730,7 @@ export default function SnyatieArestaSchetaClient() {
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Практическое знание порядка взаимодействия приставов с банками и вынесения постановлений</span>
+              <span>Понимание порядка учёта, распределения и возврата взысканных средств</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
@@ -756,90 +756,90 @@ export default function SnyatieArestaSchetaClient() {
 
       {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
-        title="Как проходит снятие ареста со счёта"
-        subtitle="Прозрачный пошаговый процесс от первичного анализа до фактического восстановления доступа к деньгам."
+        title="Как проходит работа по возврату денег"
+        subtitle="Прозрачный пошаговый процесс от анализа выписки до зачисления денег на ваш банковский счёт."
         alignTitle="center"
         steps={[
           {
             num: '01',
-            title: 'Уточняем ситуацию',
-            desc: 'Уточняем, как проявляется ограничение, какой банк и известен ли номер исполнительного производства.'
+            title: 'Проверяем операцию',
+            desc: 'Уточняем дату и сумму списания, номер производства, банк, происхождение денег и известное основание взыскания.'
           },
           {
             num: '02',
-            title: 'Получаем и проверяем документы',
-            desc: 'Получаем и проверяем постановления, сведения о долге, платежах, счетах и происхождении поступлений.'
+            title: 'Восстанавливаем движение средств',
+            desc: 'Получаем и сопоставляем выписку, постановления, сведения о долге, зачислении на депозит ФССП и перечислении взыскателю.'
           },
           {
             num: '03',
-            title: 'Определяем основание',
-            desc: 'Определяем основание для полного снятия, частичной корректировки ареста либо другого способа защиты.'
+            title: 'Определяем нарушение',
+            desc: 'Проверяем защищённый доход, предел удержания, повторность, переплату, ошибочную идентификацию или отмену акта.'
           },
           {
             num: '04',
-            title: 'Готовим документы',
-            desc: 'Согласуем состав работы и стоимость; готовим заявление, ходатайство, жалобу или обращение в суд.'
+            title: 'Выбираем адресата',
+            desc: 'Определяем, достаточно ли заявления в банк или ФССП либо требуется жалоба, оспаривание или поворот исполнения через суд.'
           },
           {
             num: '05',
-            title: 'Контролируем пристава',
-            desc: 'Контролируем рассмотрение требования и получение надлежащего постановления об отмене ареста.'
+            title: 'Подаём документы',
+            desc: 'Готовим доказательства и требования, направляем их надлежащему адресату и представляем клиента в согласованном объёме.'
           },
           {
             num: '06',
-            title: 'Проверяем исполнение банком',
-            desc: 'Проверяем направление документа в банк и фактическое изменение статуса счёта до результата.'
+            title: 'Контролируем возврат',
+            desc: 'Проверяем решение по обращению и фактическое поступление денег; при отказе согласуем следующий способ защиты.'
           }
         ]}
         ctaTitle="Готовы обсудить вашу ситуацию"
-        ctaSubtitle="Опишите блокировку счёта — юрист проверит основания и подскажет план действий."
+        ctaSubtitle="Опишите списание средств — юрист проверит основания и подскажет план действий."
         ctaButtonText="Обсудить ситуацию"
         ctaButtonHref="#form"
-        footerNote="Проверку производства, документов банка и подготовку обращений можно начать дистанционно. Необходимость личного участия зависит от причины ареста, стадии обжалования и выбранного способа защиты."
+        footerNote="Проверку выписок, электронных документов и подготовку большинства обращений можно начать дистанционно. Личное участие зависит от способа возврата и согласованного объёма представительства."
       />
 
       {/* ═══ БЛОК 8: СТОИМОСТЬ ═══ */}
       <PricingBlock
-        title="Стоимость снятия ареста со счёта"
-        subtitle="Стоимость зависит от источника ограничения, количества производств и банков, наличия постановлений и необходимости обжалования."
+        title="Стоимость юридической помощи"
+        subtitle="Стоимость зависит от причины списания, объёма документов, стадии перечисления денег и необходимости обращения в суд."
         tiers={[
           {
-            title: 'Заявление приставу',
-            subtitle: 'Внесудебная отмена ареста',
+            title: 'Заявление о возврате',
+            subtitle: 'Внесудебный возврат через ФССП / банк',
             price: 'от 10 000 ₽',
             popular: true,
             badgeText: 'Популярно',
             features: [
-              { name: 'Подготовка мотивированного заявления / ходатайства', value: '✓' },
-              { name: 'Формирование комплекта доказательств и выписок', value: '✓' },
-              { name: 'Контроль вынесения постановления об отмене ареста', value: '✓' },
-              { name: 'Проверка направления документа в конкретный банк', value: '✓' }
+              { name: 'Анализ выписки банка и назначения выплат', value: '✓' },
+              { name: 'Подготовка мотивированного заявления в ФССП / банк', value: '✓' },
+              { name: 'Формирование доказательств защищённого дохода', value: '✓' },
+              { name: 'Контроль вынесения постановления о возврате', value: '✓' }
             ],
             buttonText: 'Заказать услугу',
             buttonHref: '#form'
           },
           {
-            title: 'Жалоба на бездействие',
-            subtitle: 'Оспаривание отказа или задержки',
+            title: 'Жалоба и поворот исполнения',
+            subtitle: 'При отказе или отмене приказа',
             price: 'от 15 000 ₽',
             features: [
-              { name: 'Жалоба старшему приставу / УФССП', value: '✓' },
-              { name: 'Административный иск в суд (КАС РФ)', value: '✓' },
-              { name: 'Устранение излишнего или ошибочного ареста', value: '✓' },
-              { name: 'Защита социальных выплат и доходов', value: '✓' }
+              { name: 'Жалоба старшему приставу / в УФССП', value: '✓' },
+              { name: 'Заявление в суд о повороте исполнения (ст. 443 ГПК РФ)', value: '✓' },
+              { name: 'Устранение двойных и избыточных взысканий', value: '✓' },
+              { name: 'Получение исполнительного листа на возврат', value: '✓' }
             ],
-            buttonText: 'Обсудить жалобу',
+            buttonText: 'Обсудить ситуацию',
             buttonHref: '#form'
           },
           {
-            title: 'Комплексная разблокировка',
-            subtitle: 'Полное правовое сопровождение',
+            title: 'Комплексный возврат',
+            subtitle: 'Полное судебное сопровождение',
             price: 'от 25 000 ₽',
             features: [
-              { name: 'Анализ всех производств и банковских счетов', value: '✓' },
-              { name: 'Взаимодействие с приставом и кредитными организациями', value: '✓' },
-              { name: 'Судебное представительство при необходимости', value: '✓' },
-              { name: 'Сопровождение до фактической разблокировки денег', value: '✓' }
+              { name: 'Административный иск в суд по КАС РФ', value: '✓' },
+              { name: 'Взыскание неосновательного обогащения', value: '✓' },
+              { name: 'Защита при ошибке идентификации (двойник)', value: '✓' },
+              { name: 'Сопровождение до фактического зачисления денег', value: '✓' }
             ],
             buttonText: 'Комплексная защита',
             buttonHref: '#form'
@@ -852,7 +852,7 @@ export default function SnyatieArestaSchetaClient() {
       <FAQBlock
         superTitle="Частые вопросы"
         title="Ответы на частые вопросы"
-        subtitle="Разъяснения юриста по снятию ареста со счетов и карт"
+        subtitle="Разъяснения юриста по возврату незаконно списанных денежных средств"
         ctaText="Задать свой вопрос"
         ctaLink="#form"
         faqs={faqs}
@@ -870,10 +870,10 @@ export default function SnyatieArestaSchetaClient() {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                Обсудите арест счёта с Мариной Валерьевной Смольяниновой
+                Обсудите списание с Мариной Валерьевной Смольяниновой
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Кратко укажите банк, когда обнаружили ограничение, номер исполнительного производства и погашен ли долг, если это известно. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит основания, подскажет необходимые документы и согласует с вами консультацию.
+                Кратко укажите дату и сумму списания, банк, номер исполнительного производства и происхождение денег, если оно известно. Обращение передадим Марине Валерьевне Смольяниновой. Она уточнит обстоятельства, подскажет, какие документы подготовить, и согласует с вами консультацию.
               </p>
 
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '0' }}>
@@ -884,7 +884,7 @@ export default function SnyatieArestaSchetaClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="service_schet_arrest_phone_click">+7 (910) 350-31-11</a>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="service_vozvrat_deneg_phone_click">+7 (910) 350-31-11</a>
                 </p>
               </div>
             </div>
@@ -899,9 +899,9 @@ export default function SnyatieArestaSchetaClient() {
                   <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
                 </p>
                 <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                  <input type="hidden" name="source_page" value="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/" />
+                  <input type="hidden" name="source_page" value="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/" />
                   <input type="hidden" name="direction" value="ispolnitelnoe_proizvodstvo_fizlica" />
-                  <input type="hidden" name="service" value="snyatie_aresta_so_scheta" />
+                  <input type="hidden" name="service" value="vozvrat_nezakonno_spisannyh_deneg" />
                   <input type="hidden" name="selected_specialist" value="smolyaninova-marina-valerevna" />
                   <input type="hidden" name="audience" value="citizens" />
 
@@ -919,7 +919,7 @@ export default function SnyatieArestaSchetaClient() {
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <label htmlFor="message" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Описание ситуации (необязательно)</label>
-                    <textarea id="message" name="message" rows={3} placeholder="Кратко укажите банк, когда возникло ограничение и есть ли данные об ИП..." style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', fontFamily: 'inherit', resize: 'vertical', background: 'var(--color-white)', color: 'var(--color-deep-blue)' }} />
+                    <textarea id="message" name="message" rows={3} placeholder="Кратко укажите дату и сумму списания, банк, назначение выплаты..." style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', fontFamily: 'inherit', resize: 'vertical', background: 'var(--color-white)', color: 'var(--color-deep-blue)' }} />
                   </div>
 
                   <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '10px 14px', borderLeft: '3px solid var(--color-gold)', fontSize: '12px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
@@ -968,9 +968,9 @@ export default function SnyatieArestaSchetaClient() {
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/'
               },
               {
-                title: 'Возврат списанных денег',
-                desc: 'Возврат незаконно списанных пособий, пенсий и излишне удержанных сумм.',
-                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/'
+                title: 'Снятие ареста со счёта',
+                desc: 'Проверка основания ареста, снятие блокировки банковской карты.',
+                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/'
               },
               {
                 title: 'Снятие ареста с авто',

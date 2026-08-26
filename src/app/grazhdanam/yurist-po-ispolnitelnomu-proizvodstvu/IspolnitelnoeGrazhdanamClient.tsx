@@ -641,7 +641,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
               {
                 title: 'Возврат незаконно списанных приставами денег',
                 desc: 'Помощь при списании защищённых выплат, повторном или избыточном взыскании, а также после погашения задолженности.',
-                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-pristavami-deneg/'
+                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/'
               },
               {
                 title: 'Снятие ареста со счёта и разблокировка банковской карты',
