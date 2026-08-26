@@ -11,6 +11,7 @@ export interface SpecialistBlockProps {
   description: (string | React.ReactNode)[];
   photoPlaceholder?: string;
   imageUrl?: string;
+  imagePosition?: string;
   buttonText?: string;
   buttonHref?: string;
   profileHref?: string;
@@ -24,6 +25,7 @@ export default function SpecialistBlock({
   description,
   photoPlaceholder = "[Фото специалиста]",
   imageUrl,
+  imagePosition,
   buttonText = "Задать вопрос специалисту",
   buttonHref = "#consultation",
   profileHref,
@@ -59,7 +61,17 @@ export default function SpecialistBlock({
               position: 'relative'
             }}>
               {imageUrl ? (
-                <img src={imageUrl} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <img 
+                  src={imageUrl} 
+                  alt={name} 
+                  style={{ 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover', 
+                    objectPosition: imagePosition || 'center 15%', 
+                    display: 'block' 
+                  }} 
+                />
               ) : (
                 <span style={{ padding: '20px', textAlign: 'center', fontStyle: 'italic' }}>
                   {photoPlaceholder}
