@@ -687,6 +687,11 @@ export default function AvtoyuristClient() {
                   Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
                 </p>
               </div>
+
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55, marginTop: '20px' }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Безопасность данных:</strong>
+                Не указывайте в форме паспортные данные, реквизиты полиса и другие конфиденциальные сведения. Безопасный способ передачи документов согласуем после связи.
+              </div>
             </div>
 
             <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
@@ -720,10 +725,6 @@ export default function AvtoyuristClient() {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <label htmlFor="message" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Кратко опишите ситуацию (необязательно)</label>
                     <textarea id="message" name="message" rows={3} placeholder="Кратко укажите дату ДТП, суть спора со страховой или протокола..." style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', fontFamily: 'inherit', resize: 'vertical', background: 'var(--color-white)', color: 'var(--color-deep-blue)' }} />
-                  </div>
-
-                  <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '10px 14px', borderLeft: '3px solid var(--color-gold)', fontSize: '12px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
-                    Безопасность данных: не указывайте в форме паспортные данные, реквизиты полиса и другие конфиденциальные сведения. Безопасный способ передачи документов согласуем после связи.
                   </div>
 
                   <label style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', marginTop: '4px' }}>
