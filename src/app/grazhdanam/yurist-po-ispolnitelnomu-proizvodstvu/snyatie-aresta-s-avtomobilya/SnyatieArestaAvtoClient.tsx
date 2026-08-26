@@ -339,16 +339,8 @@ export default function SnyatieArestaAvtoClient() {
             boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
             padding: '36px 32px',
             marginBottom: '32px',
-            position: 'relative',
-            overflow: 'hidden'
+            position: 'relative'
           }}>
-            {/* Фоновый водяной знак весов */}
-            <div style={{ position: 'absolute', right: '-15px', bottom: '-15px', opacity: 0.07, pointerEvents: 'none' }}>
-              <svg width="180" height="180" viewBox="0 0 24 24" fill="#FFFFFF">
-                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-              </svg>
-            </div>
-
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
               <div>
                 <h3 style={{ fontSize: 'clamp(20px, 2.5vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
