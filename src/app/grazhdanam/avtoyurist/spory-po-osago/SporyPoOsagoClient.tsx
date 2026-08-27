@@ -101,11 +101,26 @@ export default function SporyPoOsagoClient() {
           </span>
         }
         subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '750px', lineHeight: 1.6 }}>
-            <span style={{ display: 'inline-block' }}>Если страховая мало выплатила, отказала или нарушила порядок ремонта,</span> <br className="hidden-mobile" />
-            <span style={{ display: 'inline-block' }}>проверим документы и расчёт, определим обязательный досудебный маршрут</span> <br className="hidden-mobile" />
-            <span style={{ display: 'inline-block' }}>и подготовим требования.</span>
-          </span>
+          <>
+            <style dangerouslySetInnerHTML={{__html: `
+              @media (min-width: 992px) {
+                .hero-sub-span-desktop {
+                  white-space: nowrap !important;
+                }
+              }
+            `}} />
+            <span style={{ display: 'inline-block', maxWidth: '100%' }}>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                Если страховая мало выплатила, отказала или нарушила порядок ремонта,
+              </span>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                проверим документы и расчёт, определим обязательный досудебный маршрут
+              </span>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                и подготовим требования.
+              </span>
+            </span>
+          </>
         }
         primaryCtaText="Проверить ситуацию"
         primaryCtaLink="#form"

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import PhoneInput from './PhoneInput';
+import { sendLeadToCRM } from '../lib/crm';
 
 interface ContactsFormProps {
   title?: string;
@@ -81,29 +82,13 @@ export default function ContactsForm({
       page_title: typeof window !== 'undefined' ? document.title : ''
     };
 
-    const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbwGuCuHnGFoVmIk1QBGw1v_O2FYIiu9PfsctqFtXLbXah45wrQfR3ez0NJF_Wt0kU36/exec';
-
     try {
-      if (scriptUrl) {
-        const response = await fetch(scriptUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'text/plain;charset=utf-8',
-          },
-          body: JSON.stringify(payload),
-          redirect: 'follow'
-        });
-
-        if (response.ok) {
-          setLoading(false);
-          setSubmitted(true);
-        } else {
-          throw new Error(`Ответ сервера: ${response.status} ${response.statusText}`);
-        }
-      } else {
-        console.log('Заявка принята (Google Script URL не задан):', payload);
+      const result = await sendLeadToCRM(payload);
+      if (result.success) {
         setLoading(false);
         setSubmitted(true);
+      } else {
+        throw new Error(result.error || 'Ошибка отправки в CRM');
       }
     } catch (err: any) {
       console.error('Ошибка отправки заявки:', err);
