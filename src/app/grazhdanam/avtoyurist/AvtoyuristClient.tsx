@@ -316,6 +316,18 @@ export default function AvtoyuristClient() {
             ))}
           </div>
 
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '16px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
+            lineHeight: 1.6
+          }}>
+            <strong style={{ color: '#FFFFFF' }}>Юридическая справка:</strong> Десятидневный срок следует из статьи 30.3 КоАП РФ для обжалования постановлений по делам об административных правонарушениях.
+          </div>
+
           <style dangerouslySetInnerHTML={{__html: `
             .urgent-card {
               transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -324,11 +336,16 @@ export default function AvtoyuristClient() {
               transform: translateY(-6px);
               box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
             }
-            .urgent-card:hover .urgent-card-arrow svg {
-              transform: translateX(4px);
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              transition: all 0.3s ease !important;
             }
-            .urgent-card-arrow svg {
-              transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
             }
             .btn-urgent-call {
               display: inline-block !important;
@@ -370,6 +387,12 @@ export default function AvtoyuristClient() {
             <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
               Позвонить адвокату
             </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Описать ситуацию
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
+              Перезвоним вам в течение 15 минут в рабочее время
+            </span>
           </div>
         </div>
       </section>
