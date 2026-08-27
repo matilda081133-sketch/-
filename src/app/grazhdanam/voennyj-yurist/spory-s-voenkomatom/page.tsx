@@ -388,22 +388,25 @@ export default function SporySVoenkomatomPage() {
               gap: '24px'
             }}>
               <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                Оспариваемые решения <br />и воинский учёт
+                <span style={{ display: 'inline-block' }}>Оспариваемые решения</span> <br />
+                <span style={{ display: 'inline-block' }}>и воинский учёт</span>
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Решение или выписка протокола</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Выписка из протокола призывной комиссии, письменный отказ, повестка или уведомление.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Материалы воинского учёта</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Военный билет, приписное удостоверение, сведения из реестра воинского учёта.</span>
@@ -416,7 +419,7 @@ export default function SporySVoenkomatomPage() {
             <div style={{
               background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
+              borderTop: '3px solid var(--color-gold)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
               padding: '36px 32px',
               display: 'flex',
@@ -424,22 +427,23 @@ export default function SporySVoenkomatomPage() {
               gap: '24px'
             }}>
               <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                Подтверждающие документы <br />и переписка
+                <span style={{ display: 'inline-block' }}>Подтверждающие документы</span> <br />
+                <span style={{ display: 'inline-block' }}>и переписка</span>
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Документы на отсрочку / освобождение</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Справки об обучении, медицинские заключения, документы о семейном положении.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Подтверждение прошлых обращений</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Копии ранее поданных заявлений, жалоб, ответов и квитанций об отправке.</span>

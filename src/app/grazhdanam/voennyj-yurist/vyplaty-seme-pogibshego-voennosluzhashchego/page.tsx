@@ -324,7 +324,7 @@ export default function VyplatySemePogibshegoPage() {
             {[
               {
                 tag: 'СИТУАЦИЯ 01',
-                title: <><span style={{ display: 'inline-block' }}>Непонятно, кто имеет право</span> <br /><span style={{ display: 'inline-block' }}>на выплаты</span></>,
+                title: <><span style={{ display: 'inline-block' }}>Непонятно, кто имеет</span> <br /><span style={{ display: 'inline-block' }}>право на выплаты</span></>,
                 desc: 'Проверим статус каждого заявителя и условия отдельных выплат. Объясним, кто может обращаться и какие обстоятельства необходимо подтвердить.'
               },
               {
