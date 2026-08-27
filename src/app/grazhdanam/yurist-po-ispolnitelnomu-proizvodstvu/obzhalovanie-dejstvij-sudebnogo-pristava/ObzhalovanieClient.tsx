@@ -969,7 +969,7 @@ export default function ObzhalovanieClient() {
             
 
 {/* ═══ БЛОК 11: ФИНАЛЬНАЯ ФОРМА ═══ */}
-                  {/* ═══ БЛОК: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+                        {/* ═══ БЛОК: НАПРАВЛЕНИЯ ПОМОЩИ ПО ИСПОЛНИТЕЛЬНОМУ ПРОИЗВОДСТВУ ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
@@ -1000,31 +1000,34 @@ export default function ObzhalovanieClient() {
             }
           `}} />
           
-          <div className="grid grid-2" style={{ gap: '24px' }}>
+          <div className="grid grid-4" style={{ gap: '20px' }}>
             <Link href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
                 className="card related-service-card" 
                 style={{ 
                   height: '100%', 
-                  minHeight: '140px',
-                  padding: '32px', 
+                  minHeight: '160px',
+                  padding: '28px 22px', 
                   background: 'var(--color-white)', 
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
                   borderRadius: '0',
                   display: 'flex', 
                   flexDirection: 'column', 
+                  justifyContent: 'space-between',
                   transition: 'all 0.3s',
                   position: 'relative'
                 }}
               >
-                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                  <span style={{ display: 'inline-block' }}>Снятие ареста</span> <br /><span style={{ display: 'inline-block' }}>со счёта</span>
-                </h3>
-                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                  Проверка основания ареста, снятие блокировки банковской карты.
-                </p>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    <span style={{ display: 'inline-block' }}>Снятие ареста</span> <br /><span style={{ display: 'inline-block' }}>со счёта</span>
+                  </h3>
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Проверка основания ареста, снятие блокировки банковской карты.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
                   Подробнее 
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1038,25 +1041,28 @@ export default function ObzhalovanieClient() {
                 className="card related-service-card" 
                 style={{ 
                   height: '100%', 
-                  minHeight: '140px',
-                  padding: '32px', 
+                  minHeight: '160px',
+                  padding: '28px 22px', 
                   background: 'var(--color-white)', 
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
                   borderRadius: '0',
                   display: 'flex', 
                   flexDirection: 'column', 
+                  justifyContent: 'space-between',
                   transition: 'all 0.3s',
                   position: 'relative'
                 }}
               >
-                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                  <span style={{ display: 'inline-block' }}>Снятие ареста</span> <br /><span style={{ display: 'inline-block' }}>с авто</span>
-                </h3>
-                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                  Снятие запрета регистрационных действий и ареста транспортного средства.
-                </p>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    <span style={{ display: 'inline-block' }}>Снятие ареста</span> <br /><span style={{ display: 'inline-block' }}>с авто</span>
+                  </h3>
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Снятие запрета регистрационных действий и ареста транспортного средства.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
                   Подробнее 
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1070,25 +1076,28 @@ export default function ObzhalovanieClient() {
                 className="card related-service-card" 
                 style={{ 
                   height: '100%', 
-                  minHeight: '140px',
-                  padding: '32px', 
+                  minHeight: '160px',
+                  padding: '28px 22px', 
                   background: 'var(--color-white)', 
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
                   borderRadius: '0',
                   display: 'flex', 
                   flexDirection: 'column', 
+                  justifyContent: 'space-between',
                   transition: 'all 0.3s',
                   position: 'relative'
                 }}
               >
-                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                  <span style={{ display: 'inline-block' }}>Взыскание по</span> <br /><span style={{ display: 'inline-block' }}>исполнительному листу</span>
-                </h3>
-                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                  Сопровождение взыскателя, розыск счетов и активов должника через ФССП.
-                </p>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    <span style={{ display: 'inline-block' }}>Взыскание по</span> <br /><span style={{ display: 'inline-block' }}>исполнительному листу</span>
+                  </h3>
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Сопровождение взыскателя, розыск счетов и активов должника через ФССП.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
                   Подробнее 
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1102,25 +1111,28 @@ export default function ObzhalovanieClient() {
                 className="card related-service-card" 
                 style={{ 
                   height: '100%', 
-                  minHeight: '140px',
-                  padding: '32px', 
+                  minHeight: '160px',
+                  padding: '28px 22px', 
                   background: 'var(--color-white)', 
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
                   borderRadius: '0',
                   display: 'flex', 
                   flexDirection: 'column', 
+                  justifyContent: 'space-between',
                   transition: 'all 0.3s',
                   position: 'relative'
                 }}
               >
-                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                  <span style={{ display: 'inline-block' }}>Возврат незаконно</span> <br /><span style={{ display: 'inline-block' }}>списанных денег</span>
-                </h3>
-                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                  Возврат незаконно списанных средств, социальных выплат и пенсий.
-                </p>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    <span style={{ display: 'inline-block' }}>Возврат незаконно</span> <br /><span style={{ display: 'inline-block' }}>списанных денег</span>
+                  </h3>
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Возврат незаконно списанных средств, социальных выплат и пенсий.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
                   Подробнее 
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
