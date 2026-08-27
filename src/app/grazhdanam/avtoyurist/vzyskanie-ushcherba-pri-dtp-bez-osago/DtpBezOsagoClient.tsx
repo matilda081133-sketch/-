@@ -155,8 +155,12 @@ export default function DtpBezOsagoClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Если полиса нет, особенно важно</span> <br />
-              <span style={{ display: 'inline-block' }}>правильно оформить происшествие</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Если полиса нет, особенно важно
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                правильно оформить происшествие
+              </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Чёткий алгоритм действий сразу после аварии защищает право</span> <br className="hidden-mobile" />
@@ -257,7 +261,7 @@ export default function DtpBezOsagoClient() {
           </div>
 
           <div style={{
-            background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+            background: 'var(--color-white)',
             border: '1px solid var(--color-border)',
             borderLeft: '4px solid var(--color-gold)',
             padding: '24px 30px',
@@ -918,7 +922,7 @@ export default function DtpBezOsagoClient() {
           </div>
 
           <div style={{
-            background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+            background: 'var(--color-white)',
             border: '1px solid var(--color-border)',
             borderLeft: '4px solid var(--color-gold)',
             padding: '24px 30px',
@@ -1095,11 +1099,13 @@ export default function DtpBezOsagoClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Другие автомобильные</span> <br />
-              <span style={{ display: 'inline-block' }}>ситуации</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Другие автомобильные ситуации
+              </span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Смежные направления помощи при дорожно-транспортных происшествиях и страховых спорах.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Смежные направления помощи при дорожно-транспортных</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>происшествиях и страховых спорах.</span>
             </p>
           </div>
 
