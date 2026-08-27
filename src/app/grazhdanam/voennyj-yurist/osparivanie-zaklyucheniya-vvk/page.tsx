@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -574,6 +575,7 @@ export default function VvkPage() {
       />
 
       {/* ═══ 8. СВЯЗАННЫЕ УСЛУГИ ═══ */}
+            {/* ═══ БЛОК: СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
@@ -581,7 +583,7 @@ export default function VvkPage() {
               Связанные услуги
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Смежные направления помощи при вопросах, связанных<br />с ВВК и решениями органов военного управления.
+              <span style={{ display: 'inline-block' }}>Смежные направления помощи</span> <br /><span style={{ display: 'inline-block' }}>при вопросах, связанных с ВВК</span> <br /><span style={{ display: 'inline-block' }}>и решениями органов военного управления.</span>
             </p>
           </div>
 
@@ -598,32 +600,36 @@ export default function VvkPage() {
             .related-service-card:hover .card-arrow svg {
               stroke: var(--color-gold) !important;
             }
+            .all-services-link:hover {
+              color: var(--color-gold) !important;
+            }
           `}} />
+          
           <div className="grid grid-2" style={{ gap: '24px' }}>
-            <a href="/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/" style={{ textDecoration: 'none', display: 'block' }}>
+            <Link href="/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
                 className="card related-service-card" 
                 style={{ 
                   height: '100%', 
                   minHeight: '140px',
-                  padding: '30px', 
+                  padding: '32px', 
                   background: 'var(--color-white)', 
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
                   borderRadius: '0',
                   display: 'flex', 
-                  flexDirection: 'column',
+                  flexDirection: 'column', 
                   transition: 'all 0.3s',
                   position: 'relative'
                 }}
               >
-                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
-                  Выплаты за ранение военнослужащего
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  <span style={{ display: 'inline-block' }}>Выплаты за ранение</span> <br /><span style={{ display: 'inline-block' }}>военнослужащего</span>
                 </h3>
-                <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                  Если спорное заключение ВВК влияет на оформление выплаты за ранение или подтверждение тяжести травмы.
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Помощь в получении положенных страховых и единовременных выплат после прохождения ВВК и установления категории годности.
                 </p>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
                   Подробнее 
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -631,40 +637,45 @@ export default function VvkPage() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
+            <Link href="/grazhdanam/voennyj-yurist/spory-s-voenkomatom/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card related-service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '140px',
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  transition: 'all 0.3s',
+                  position: 'relative'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  <span style={{ display: 'inline-block' }}>Споры с военкоматом</span> <br /><span style={{ display: 'inline-block' }}>и командованием</span>
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Обжалование решений призывных комиссий, отказов в направлении на освидетельствование и неправомерных действий командования.
+                </p>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </div>
 
-            <a href="/grazhdanam/voennyj-yurist/spory-s-voenkomatom/" style={{ textDecoration: 'none', display: 'block' }}>
-              <div 
-                className="card related-service-card" 
-                style={{ 
-                  height: '100%', 
-                  minHeight: '140px',
-                  padding: '30px', 
-                  background: 'var(--color-white)', 
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  borderRadius: '0',
-                  display: 'flex', 
-                  flexDirection: 'column',
-                  transition: 'all 0.3s',
-                  position: 'relative'
-                }}
-              >
-                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
-                  Оспаривание решений и действий военкомата
-                </h3>
-                <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                  Если проблема связана с решением, действием или бездействием военкомата, а не только с медицинским заключением.
-                </p>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
-                  Подробнее 
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </div>
-              </div>
-            </a>
+          <div style={{ marginTop: '32px' }}>
+            <Link href="/grazhdanam/voennyj-yurist/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
+              Смотреть все услуги военного юриста →
+            </Link>
           </div>
         </div>
       </section>

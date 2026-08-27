@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -274,247 +275,107 @@ export default function VyplatyRaneniePage() {
       </section>
 
       {/* ═══ 4. Компактная карточка CTA ═══ */}
-      <section className="section bg-white" style={{ padding: '0 0 80px 0' }}>
+            {/* ═══ БЛОК: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ 
-            background: 'var(--color-deep-blue)', 
-            borderTop: '3px solid var(--color-gold)',
-            padding: '36px 40px',
-            boxShadow: '0 12px 35px rgba(23, 50, 77, 0.14)',
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'space-between', 
-            gap: '32px', 
-            flexWrap: 'wrap',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
-
-            <div style={{ maxWidth: '680px', position: 'relative', zIndex: 1 }}>
-              <h3 style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', margin: '0 0 10px 0', lineHeight: 1.3 }}>
-                <span style={{ display: 'inline-block' }}>Не уверены, относится ли ваша ситуация</span> <br /><span style={{ display: 'inline-block' }}>к одному из этих случаев?</span>
-              </h3>
-              <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.5, textWrap: 'pretty' }}>
-                Опишите обстоятельства и укажите, какие документы у вас есть. Дмитрий Сергеевич Конопкин изучит информацию и определит возможный порядок действий.
-              </p>
-            </div>
-            <div style={{ position: 'relative', zIndex: 1 }}>
-              <a href="#form" className="btn white-btn-custom" style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 700, whiteSpace: 'nowrap' }}>
-                Обсудить ситуацию
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 5. Куратор направления ═══ */}
-      <SpecialistBlock 
-        title="Куратор направления"
-        name="Дмитрий Сергеевич Конопкин"
-        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Военное право»</>}
-        imageUrl="/images/konopkin.jpg"
-        description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Дмитрий Сергеевич Конопкин лично ведёт работу по вопросам выплат за ранение военнослужащих. Он проверяет медицинские и служебные документы, определяет возможные основания для получения выплат и порядок действий при задержке, отказе или неверном оформлении документов.
-          </span>,
-          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Опыт работы в Следственном комитете с 2016 по 2022 год</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>С сентября 2022 года — адвокат</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Реестровый номер 48/812</span>
-            </li>
-          </ul>,
-          <a key="3" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-            Подробнее о Дмитрии Сергеевиче Конопкине →
-          </a>
-        ]}
-        buttonText="Задать вопрос Дмитрию Сергеевичу"
-        buttonHref="#form"
-      />
-
-      {/* ═══ 6. Примеры из практики ═══ */}
-      <CasesBlock 
-        title="Примеры из практики"
-        showDemoWarning={true}
-        cases={[
-          {
-            category: "ВЫПЛАТЫ ВОЕННОСЛУЖАЩИМ",
-            title: "Добились назначения выплаты после отказа из-за расхождений в документах",
-            problem: "Военнослужащий получил ранение, прошёл лечение и представил документы для оформления единовременной выплаты. Выплату не назначили из-за расхождений в дате и обстоятельствах ранения, указанных в медицинских и служебных документах.",
-            action: "Сопоставили медицинские выписки, справку о ранении и сведения воинской части. Установили, какие документы содержат противоречия, подготовили обращения об их исправлении и повторно направили материалы на выплату с юридическим обоснованием.",
-            result: "Расхождения в документах устранили. Право военнослужащего на выплату подтвердили, выплату назначили и перечислили.",
-            isDemo: true
-          },
-          {
-            category: "ВОЕННО-ВРАЧЕБНАЯ ЭКСПЕРТИЗА",
-            title: "Добились пересмотра тяжести ранения и увеличения выплаты",
-            problem: "Ранение военнослужащего отнесли к лёгким, хотя последствия травмы и данные медицинских обследований указывали на признаки тяжёлого увечья. Из-за этого ему назначили выплату в меньшем размере.",
-            action: "Изучили медицинскую документацию и сопоставили установленный диагноз с действующим перечнем увечий. Собрали недостающие медицинские сведения, подготовили обращение о пересмотре степени тяжести и сопровождали повторное рассмотрение материалов.",
-            result: "Степень тяжести ранения пересмотрели. Военнослужащему назначили выплату в надлежащем размере и перечислили разницу.",
-            isDemo: true
-          },
-          {
-            category: "ОБЖАЛОВАНИЕ ОТКАЗОВ",
-            title: "Добились отдельной выплаты за повторное ранение",
-            problem: "Военнослужащий получил два ранения в разное время. Выплату назначили только по первому случаю, а второе ранение посчитали продолжением прежнего лечения и отдельно не рассмотрели.",
-            action: "Разделили два страховых случая по датам, обстоятельствам и медицинским документам. Подтвердили, что второе ранение было получено в другой период и оформлено самостоятельными медицинскими материалами. Подготовили обращение о назначении выплаты по второму случаю.",
-            result: "Второе ранение признали самостоятельным основанием. Военнослужащему назначили и перечислили дополнительную выплату.",
-            isDemo: true
-          }
-        ]}
-      />
-
-      {/* ═══ 7. Как проходит работа ═══ */}
-      <ProcessBlock 
-        title="Как проходит работа"
-        subtitle=""
-        steps={[
-          { num: '01', title: 'Разбираем ситуацию', desc: 'Уточняем обстоятельства ранения, какие выплаты уже оформлялись и на каком этапе возникла проблема.' },
-          { num: '02', title: 'Проверяем документы', desc: 'Изучаем медицинские заключения, справки, выписки, решения и полученные отказы.' },
-          { num: '03', title: 'Определяем порядок действий', desc: 'Объясняем, какие документы необходимо получить или исправить и куда следует обращаться.' },
-          { num: '04', title: 'Сопровождаем оформление или обжалование', desc: 'Готовим заявления, запросы и жалобы, взаимодействуем с соответствующими органами, при необходимости обращаемся в суд.' },
-          { num: '05', title: 'Контролируем результат', desc: 'Отслеживаем рассмотрение обращений и информируем клиента о дальнейших действиях.' },
-          { isBanner: true, title: 'Дистанционный формат', desc: 'Значительную часть работы можно организовать дистанционно. Если требуется личное участие адвоката или юриста, заранее согласуем место и порядок работы.' }
-        ]}
-      />
-
-      {/* ═══ 8. Стоимость ═══ */}
-      <PricingBlock 
-        title="Стоимость юридической помощи"
-        subtitle="Точная стоимость зависит от состояния документов, стадии оформления и необходимости обжалования. После первичной консультации специалист определит объём работы и назовёт стоимость до заключения договора."
-        tiers={[
-          {
-            title: <>Консультация <br />и анализ</>,
-            subtitle: 'Первичный разбор',
-            popular: false,
-            price: 'ХХХ ₽',
-            features: [
-              { name: 'Проверка имеющихся справок', value: '✓' },
-              { name: 'Определение оснований для выплат', value: '✓' },
-              { name: 'План первоочередных действий', value: '✓' }
-            ],
-            buttonText: 'Уточнить стоимость',
-            buttonHref: '#form'
-          },
-          {
-            title: <>Досудебная <br />работа</>,
-            subtitle: 'Запросы и жалобы',
-            popular: true,
-            badgeText: 'ВОСТРЕБОВАНО',
-            price: 'ХХХ ₽',
-            features: [
-              { name: 'Подготовка адвокатских запросов', value: '✓' },
-              { name: 'Обращения в ведомства и части', value: '✓' },
-              { name: 'Жалобы при задержке или отказе', value: '✓' }
-            ],
-            buttonText: 'Уточнить стоимость',
-            buttonHref: '#form'
-          },
-          {
-            title: <>Судебное <br />обжалование</>,
-            subtitle: 'Судебная защита',
-            popular: false,
-            price: 'ХХХ ₽',
-            features: [
-              { name: 'Подготовка иска или жалобы в суд.', value: '✓' },
-              { name: 'Сбор доказательной базы', value: '✓' },
-              { name: 'Представительство в суде', value: '✓' }
-            ],
-            buttonText: 'Уточнить стоимость',
-            buttonHref: '#form'
-          }
-        ]}
-        />
-
-      {/* ═══ 9. Ответы на частые вопросы ═══ */}
-      <FAQBlock 
-        faqs={faqs} 
-        title={<><span style={{ display: 'inline-block' }}>Частые вопросы</span> <br /><span style={{ display: 'inline-block' }}>о выплатах за ранение</span> <br /><span style={{ display: 'inline-block' }}>военнослужащего</span></>}
-        subtitle="Ответы на частые вопросы о проверке справок, причинах задержек, обжаловании отказов и дистанционном ведении дела. Если у вас остался вопрос, задайте его специалисту."
-        ctaText="Задать свой вопрос"
-        ctaLink="#form"
-      />
-
-      {/* ═══ 10. Связанные услуги ═══ */}
-      <section className="section bg-cream" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '700px', marginBottom: '32px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '12px', marginTop: 0 }}>
+          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Связанные услуги
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Соседние направления юридической помощи военнослужащим и их семьям.
+              <span style={{ display: 'inline-block' }}>Смежные направления помощи</span> <br /><span style={{ display: 'inline-block' }}>при вопросах, связанных с ранением,</span> <br /><span style={{ display: 'inline-block' }}>ВВК и решениями командования.</span>
             </p>
           </div>
 
-          <style dangerouslySetInnerHTML={{__html: `
-            .related-card-link:hover .related-more-btn {
+          <style dangerouslySetInnerHTML={{ __html: `
+            .related-service-card {
+              border-top: 3px solid var(--color-primary) !important;
+            }
+            .related-service-card:hover {
+              border-top: 3px solid var(--color-primary) !important;
+            }
+            .related-service-card:hover .card-arrow {
               color: var(--color-gold) !important;
             }
-            .related-more-btn {
-              transition: color 0.3s ease !important;
+            .related-service-card:hover .card-arrow svg {
+              stroke: var(--color-gold) !important;
+            }
+            .all-services-link:hover {
+              color: var(--color-gold) !important;
             }
           `}} />
-
+          
           <div className="grid grid-2" style={{ gap: '24px' }}>
-            <a href="/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/" className="related-card-link" style={{ textDecoration: 'none' }}>
-              <div className="card hover-lift" style={{ 
-                padding: '28px 24px', 
-                background: '#FFFFFF', 
-                borderLeft: '4px solid var(--color-primary)',
-                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.06)',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                transition: 'all 0.3s ease'
-              }}>
-                <div>
-                  <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
-                    Оспаривание заключения ВВК
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-                    Если медицинское заключение не отражает характер или последствия ранения.
-                  </p>
-                </div>
-                <div className="related-more-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>
-                  Подробнее →
+            <Link href="/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card related-service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '140px',
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  transition: 'all 0.3s',
+                  position: 'relative'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  <span style={{ display: 'inline-block' }}>Оспаривание заключения</span> <br /><span style={{ display: 'inline-block' }}>ВВК</span>
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Поможем оспорить категорию годности или причинную связь ранения, если от этого зависит назначение и размер положенных выплат.
+                </p>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </div>
               </div>
-            </a>
+            </Link>
+            <Link href="/grazhdanam/voennyj-yurist/spory-s-voenkomatom/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card related-service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '140px',
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  transition: 'all 0.3s',
+                  position: 'relative'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  <span style={{ display: 'inline-block' }}>Споры с военкоматом</span> <br /><span style={{ display: 'inline-block' }}>и командованием</span>
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Защита при задержке выплат, отказе в оформлении справок о ранении и неправомерных решениях органов военного управления.
+                </p>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </div>
 
-            <a href="/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/" className="related-card-link" style={{ textDecoration: 'none' }}>
-              <div className="card hover-lift" style={{ 
-                padding: '28px 24px', 
-                background: '#FFFFFF', 
-                borderLeft: '4px solid var(--color-primary)',
-                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.06)',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                transition: 'all 0.3s ease'
-              }}>
-                <div>
-                  <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
-                    Выплаты семье погибшего военнослужащего
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-                    Если после гибели военнослужащего семье требуется помощь с оформлением положенных выплат.
-                  </p>
-                </div>
-                <div className="related-more-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>
-                  Подробнее →
-                </div>
-              </div>
-            </a>
+          <div style={{ marginTop: '32px' }}>
+            <Link href="/grazhdanam/voennyj-yurist/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
+              Смотреть все услуги военного юриста →
+            </Link>
           </div>
         </div>
       </section>

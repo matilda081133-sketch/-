@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -569,80 +570,75 @@ export default function PriznanieUmershimPage() {
       />
 
       {/* ═══ 9. СВЯЗАННЫЕ УСЛУГИ ═══ */}
-      <section className="section" style={{ background: 'var(--gradient-cream)', padding: '80px 0' }}>
+            {/* ═══ БЛОК: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                Связанные услуги
-              </span>
-            </div>
-            <h2 style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.25 }}>
-              <span style={{ display: 'inline-block' }}>Сопутствующие направления</span> <br />
-              <span style={{ display: 'inline-block' }}>правовой помощи</span>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Связанная услуга
             </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              <span style={{ display: 'inline-block' }}>Смежная услуга при вопросах,</span> <br /><span style={{ display: 'inline-block' }}>связанных с оформлением выплат</span> <br /><span style={{ display: 'inline-block' }}>и защитой прав семьи военнослужащего.</span>
+            </p>
           </div>
 
-          <style>{`
-            .related-card-link:hover .related-more-btn {
-              color: var(--color-gold) !important;
-              transform: translateX(4px);
-              transition: all 0.3s ease;
+          <style dangerouslySetInnerHTML={{ __html: `
+            .related-service-card {
+              border-top: 3px solid var(--color-primary) !important;
             }
-          `}</style>
-          <div className="grid grid-2" style={{ gap: '28px' }}>
-            <a href="/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/" className="related-card-link" style={{ textDecoration: 'none' }}>
-              <div className="card hover-lift" style={{ 
-                padding: '28px 24px', 
-                background: '#FFFFFF', 
-                borderLeft: '4px solid var(--color-primary)',
-                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.06)',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                transition: 'all 0.3s ease'
-              }}>
-                <div>
-                  <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
-                    Выплаты семье погибшего военнослужащего
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-                    Если после гибели военнослужащего семье требуется помощь с оформлением положенных выплат.
-                  </p>
-                </div>
-                <div className="related-more-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>
-                  Подробнее →
+            .related-service-card:hover {
+              border-top: 3px solid var(--color-primary) !important;
+            }
+            .related-service-card:hover .card-arrow {
+              color: var(--color-gold) !important;
+            }
+            .related-service-card:hover .card-arrow svg {
+              stroke: var(--color-gold) !important;
+            }
+            .all-services-link:hover {
+              color: var(--color-gold) !important;
+            }
+          `}} />
+          
+          <div style={{ maxWidth: '560px' }}>
+            <Link href="/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card related-service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '140px',
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  transition: 'all 0.3s',
+                  position: 'relative'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  <span style={{ display: 'inline-block' }}>Выплаты семье погибшего</span> <br /><span style={{ display: 'inline-block' }}>военнослужащего</span>
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Комплексная помощь в оформлении президентских, страховых и региональных выплат членам семьи после вступления решения суда в законную силу.
+                </p>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </div>
               </div>
-            </a>
+            </Link>
+          </div>
 
-            <a href="/grazhdanam/voennyj-yurist/" className="related-card-link" style={{ textDecoration: 'none' }}>
-              <div className="card hover-lift" style={{ 
-                padding: '28px 24px', 
-                background: '#FFFFFF', 
-                borderLeft: '4px solid var(--color-primary)',
-                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.06)',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                transition: 'all 0.3s ease'
-              }}>
-                <div>
-                  <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
-                    Военный юрист
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-                    Комплексная правовая помощь военнослужащим и их семьям по вопросам службы, выплат и обжалования решений.
-                  </p>
-                </div>
-                <div className="related-more-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>
-                  Подробнее →
-                </div>
-              </div>
-            </a>
+          <div style={{ marginTop: '32px' }}>
+            <Link href="/grazhdanam/voennyj-yurist/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
+              Смотреть все услуги военного юриста →
+            </Link>
           </div>
         </div>
       </section>

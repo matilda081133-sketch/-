@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -689,59 +691,171 @@ export default function OsparivanieKadastrovojStoimostiClient() {
       </div>
 
       {/* ═══ 8. СВЯЗАННЫЕ УСЛУГИ ═══ */}
-      <section className="section" style={{ background: 'var(--gradient-cream)', padding: '80px 0' }}>
+            {/* ═══ БЛОК: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Связанные услуги
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-              Если основная проблема относится к праву на участок, его режиму или выкупу, нужна смежная услуга.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              <span style={{ display: 'inline-block' }}>Смежные направления помощи</span> <br /><span style={{ display: 'inline-block' }}>по оформлению прав, межеванию</span> <br /><span style={{ display: 'inline-block' }}>и разрешению земельных споров.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            <a href="/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/" style={{ textDecoration: 'none' }}>
-              <div className="card service-card" style={{ padding: '28px', background: '#FFFFFF', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
-                  Оформление прав на участок
+          <style dangerouslySetInnerHTML={{ __html: `
+            .related-service-card {
+              border-top: 3px solid var(--color-primary) !important;
+            }
+            .related-service-card:hover {
+              border-top: 3px solid var(--color-primary) !important;
+            }
+            .related-service-card:hover .card-arrow {
+              color: var(--color-gold) !important;
+            }
+            .related-service-card:hover .card-arrow svg {
+              stroke: var(--color-gold) !important;
+            }
+            .all-services-link:hover {
+              color: var(--color-gold) !important;
+            }
+          `}} />
+          
+          <div className="grid grid-2" style={{ gap: '24px' }}>
+            <Link href="/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card related-service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '140px',
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  transition: 'all 0.3s',
+                  position: 'relative'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  <span style={{ display: 'inline-block' }}>Споры о границах</span> <br /><span style={{ display: 'inline-block' }}>земельного участка</span>
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5, flexGrow: 1 }}>
-                  Помощь, если стоимость связана с предоставлением или выкупом земли.
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Поможем разобраться с наложением границ, ошибками межевания, самозахватом земли и разногласиями с соседями.
                 </p>
-                <div style={{ color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>Подробнее →</div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
               </div>
-            </a>
-
-            <a href="/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/" style={{ textDecoration: 'none' }}>
-              <div className="card service-card" style={{ padding: '28px', background: '#FFFFFF', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
-                  Изменение вида разрешённого использования
+            </Link>
+            <Link href="/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card related-service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '140px',
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  transition: 'all 0.3s',
+                  position: 'relative'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  <span style={{ display: 'inline-block' }}>Оформление прав</span> <br /><span style={{ display: 'inline-block' }}>на земельный участок</span>
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5, flexGrow: 1 }}>
-                  Проверка режима участка, если платёж изменился вслед за ВРИ.
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Проверим основание права и сопроводим оформление используемого, унаследованного или предоставленного участка.
                 </p>
-                <div style={{ color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>Подробнее →</div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
               </div>
-            </a>
-
-            <a href="/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/" style={{ textDecoration: 'none' }}>
-              <div className="card service-card" style={{ padding: '28px', background: '#FFFFFF', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
-                  Перевод участка в другую категорию
+            </Link>
+            <Link href="/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card related-service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '140px',
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  transition: 'all 0.3s',
+                  position: 'relative'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  <span style={{ display: 'inline-block' }}>Изменение ВРИ</span> <br /><span style={{ display: 'inline-block' }}>земельного участка</span>
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5, flexGrow: 1 }}>
-                  Отдельная процедура изменения категории земли, не являющаяся способом оспаривания оценки.
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Изменим вид разрешённого использования участка для строительства, ведения бизнеса или снижения платежей.
                 </p>
-                <div style={{ color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '16px' }}>Подробнее →</div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
               </div>
-            </a>
+            </Link>
+            <Link href="/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card related-service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '140px',
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  transition: 'all 0.3s',
+                  position: 'relative'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  <span style={{ display: 'inline-block' }}>Перевод участка</span> <br /><span style={{ display: 'inline-block' }}>в другую категорию</span>
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Подготовим ходатайство и обоснуем перевод земель сельхозназначения, населённых пунктов или промышленности.
+                </p>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </Link>
           </div>
 
-          <div>
-            <a href="/grazhdanam/zemelnyj-yurist/" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-              Все услуги по земельным вопросам → Земельный юрист
-            </a>
+          <div style={{ marginTop: '32px' }}>
+            <Link href="/grazhdanam/zemelnyj-yurist/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
+              Смотреть все услуги земельного юриста →
+            </Link>
           </div>
         </div>
       </section>
