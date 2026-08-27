@@ -951,68 +951,68 @@ export default function SnyatieArestaAvtoClient() {
       </section>
 
       {/* ═══ БЛОК 12: ДРУГИЕ НАПРАВЛЕНИЯ ═══ */}
-      <section className="section bg-light" style={{ padding: '64px 0', borderTop: '1px solid var(--color-border)', background: 'var(--gradient-cream)' }}>
+            {/* ═══ БЛОК: НАПРАВЛЕНИЯ ПОМОЩИ ПО ИСПОЛНИТЕЛЬНОМУ ПРОИЗВОДСТВУ ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '32px' }}>
-            <h2 style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '12px', marginTop: 0 }}>
-              Направления помощи по исполнительному производству
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Направления помощи</span> <br />
+              <span style={{ display: 'inline-block' }}>по исполнительному производству</span>
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Помощь должникам и взыскателям по другим вопросам исполнительного производства.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '20px' }}>
-            <Link href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/" style={{ textDecoration: 'none', color: 'inherit' }} data-analytics="service_car_arrest_related_click">
-              <div className="card service-card" style={{ padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 10px 0' }}>
-                    Обжалование действий судебного пристава
-                  </h3>
-                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
-                    Жалобы старшему судебному приставу и в суд на незаконные постановления, аресты и бездействие.
-                  </p>
+          <div className="grid grid-2" style={{ gap: '20px' }}>
+            {[
+          {
+                    "title": "Обжалование действий приставов",
+                    "desc": "Жалобы на незаконные постановления, бездействие и нарушение прав.",
+                    "link": "/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/"
+          },
+          {
+                    "title": "Снятие ареста со счёта",
+                    "desc": "Проверка основания ареста, снятие блокировки банковской карты.",
+                    "link": "/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/"
+          },
+          {
+                    "title": "Возврат списанных денег",
+                    "desc": "Возврат незаконно списанных пособий, пенсий и излишне удержанных сумм.",
+                    "link": "/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/"
+          },
+          {
+                    "title": "Взыскание по исполнительному листу",
+                    "desc": "Сопровождение взыскателя, розыск счетов и активов должника через ФССП.",
+                    "link": "/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/"
+          }
+].map((srv, idx) => (
+              <Link key={idx} href={srv.link} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="hover-lift" style={{
+                  padding: '28px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '4px solid var(--color-primary)',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  gap: '16px'
+                }}>
+                  <div>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>
+                      {srv.title}
+                    </h3>
+                    <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {srv.desc}
+                    </p>
+                  </div>
+                  <div style={{ color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
+                    Подробнее →
+                  </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
-                  <span>Подробнее</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/" style={{ textDecoration: 'none', color: 'inherit' }} data-analytics="service_car_arrest_related_click">
-              <div className="card service-card" style={{ padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 10px 0' }}>
-                    Исполнительное производство для граждан
-                  </h3>
-                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
-                    Комплексная защита прав должников и взыскателей на всех стадиях взаимодействия с ФССП.
-                  </p>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
-                  <span>Подробнее</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/grazhdanam/vzyskanie-dolgov/" style={{ textDecoration: 'none', color: 'inherit' }} data-analytics="service_car_arrest_related_click">
-              <div className="card service-card" style={{ padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 10px 0' }}>
-                    Взыскание долгов с физических лиц
-                  </h3>
-                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
-                    Досудебное урегулирование, получение судебного приказа, ведение дела в суде и исполнение решения.
-                  </p>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
-                  <span>Подробнее</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

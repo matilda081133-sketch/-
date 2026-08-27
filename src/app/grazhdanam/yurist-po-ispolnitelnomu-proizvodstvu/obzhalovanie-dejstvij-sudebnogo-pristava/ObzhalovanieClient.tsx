@@ -966,7 +966,73 @@ export default function ObzhalovanieClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 11: ФИНАЛЬНАЯ ФОРМА ═══ */}
+            {/* ═══ БЛОК: НАПРАВЛЕНИЯ ПОМОЩИ ПО ИСПОЛНИТЕЛЬНОМУ ПРОИЗВОДСТВУ ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Направления помощи</span> <br />
+              <span style={{ display: 'inline-block' }}>по исполнительному производству</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Помощь должникам и взыскателям по другим вопросам исполнительного производства.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '20px' }}>
+            {[
+              {
+                title: 'Снятие ареста со счёта',
+                desc: 'Проверка основания ареста, снятие блокировки банковской карты.',
+                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/'
+              },
+              {
+                title: 'Снятие ареста с авто',
+                desc: 'Снятие запрета регистрационных действий и ареста транспортного средства.',
+                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/'
+              },
+              {
+                title: 'Возврат списанных денег',
+                desc: 'Возврат незаконно списанных пособий, пенсий и излишне удержанных сумм.',
+                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/'
+              },
+              {
+                title: 'Взыскание по исполнительному листу',
+                desc: 'Сопровождение взыскателя, розыск счетов и активов должника через ФССП.',
+                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/'
+              }
+            ].map((srv, idx) => (
+              <Link key={idx} href={srv.link} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="hover-lift" style={{
+                  padding: '28px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '4px solid var(--color-primary)',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  gap: '16px'
+                }}>
+                  <div>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>
+                      {srv.title}
+                    </h3>
+                    <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {srv.desc}
+                    </p>
+                  </div>
+                  <div style={{ color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
+                    Подробнее →
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+{/* ═══ БЛОК 11: ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>

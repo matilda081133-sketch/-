@@ -952,56 +952,67 @@ export default function SnyatieArestaSchetaClient() {
       </section>
 
       {/* ═══ БЛОК 11: ДРУГИЕ НАПРАВЛЕНИЯ ПО ИСПОЛНИТЕЛЬНОМУ ПРОИЗВОДСТВУ ═══ */}
-      <section className="section bg-light" style={{ padding: '64px 0', borderTop: '1px solid var(--color-border)', background: 'var(--gradient-cream)' }}>
+            {/* ═══ БЛОК: НАПРАВЛЕНИЯ ПОМОЩИ ПО ИСПОЛНИТЕЛЬНОМУ ПРОИЗВОДСТВУ ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '32px' }}>
-            <h2 style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '12px', marginTop: 0 }}>
-              Направления помощи по исполнительному производству
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Направления помощи</span> <br />
+              <span style={{ display: 'inline-block' }}>по исполнительному производству</span>
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Помощь должникам и взыскателям по другим вопросам исполнительного производства.
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '20px' }}>
+          <div className="grid grid-2" style={{ gap: '20px' }}>
             {[
-              {
-                title: 'Обжалование действий приставов',
-                desc: 'Жалобы на незаконные постановления, бездействие и нарушение прав.',
-                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/'
-              },
-              {
-                title: 'Возврат списанных денег',
-                desc: 'Возврат незаконно списанных пособий, пенсий и излишне удержанных сумм.',
-                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/'
-              },
-              {
-                title: 'Снятие ареста с авто',
-                desc: 'Снятие запрета регистрационных действий и ареста транспортного средства.',
-                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/'
-              },
-              {
-                title: 'Взыскание по исполнительному листу',
-                desc: 'Сопровождение взыскателя, розыск счетов и активов должника через ФССП.',
-                link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/'
-              }
-            ].map((item, idx) => (
-              <a key={idx} href={item.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-                <div className="card service-card" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '3px solid var(--color-primary)', cursor: 'pointer', transition: 'all 0.3s ease' }}>
+          {
+                    "title": "Обжалование действий приставов",
+                    "desc": "Жалобы на незаконные постановления, бездействие и нарушение прав.",
+                    "link": "/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/"
+          },
+          {
+                    "title": "Возврат списанных денег",
+                    "desc": "Возврат незаконно списанных пособий, пенсий и излишне удержанных сумм.",
+                    "link": "/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/"
+          },
+          {
+                    "title": "Снятие ареста с авто",
+                    "desc": "Снятие запрета регистрационных действий и ареста транспортного средства.",
+                    "link": "/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/"
+          },
+          {
+                    "title": "Взыскание по исполнительному листу",
+                    "desc": "Сопровождение взыскателя, розыск счетов и активов должника через ФССП.",
+                    "link": "/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/"
+          }
+].map((srv, idx) => (
+              <Link key={idx} href={srv.link} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="hover-lift" style={{
+                  padding: '28px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '4px solid var(--color-primary)',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  gap: '16px'
+                }}>
                   <div>
-                    <h3 style={{ margin: '0 0 10px 0', fontSize: '16px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
-                      {item.title}
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>
+                      {srv.title}
                     </h3>
-                    <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                      {item.desc}
+                    <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {srv.desc}
                     </p>
                   </div>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
-                    <span>Подробнее</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  <div style={{ color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
+                    Подробнее →
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
