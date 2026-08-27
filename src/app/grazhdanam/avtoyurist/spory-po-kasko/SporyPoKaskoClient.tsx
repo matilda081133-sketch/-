@@ -289,7 +289,7 @@ export default function SporyPoKaskoClient() {
                   3 этапа стратегии спора
                 </h3>
               </div>
-              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '440px', lineHeight: 1.5 }}>
+              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '520px', lineHeight: 1.5 }}>
                 <span style={{ display: 'block' }}>Позволяет безошибочно определить порядок действий:</span>
                 <span style={{ display: 'block' }}>доукомплектование, претензия страховщику, омбудсмен или иск.</span>
               </div>
@@ -361,12 +361,14 @@ export default function SporyPoKaskoClient() {
                   <line x1="16" y1="13" x2="8" y2="13" />
                   <line x1="16" y1="17" x2="8" y2="17" />
                 </svg>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
-                  Досудебный порядок и омбудсмен (Претензия / Служба)
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
+                  <span style={{ display: 'inline-block' }}>Досудебный порядок и омбудсмен</span>{' '}
+                  <span style={{ display: 'inline-block' }}>(Претензия / Служба)</span>
                 </h3>
               </div>
               <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Фиксация события, истребование документов у страховщика, претензионная работа и обращение к финансовому уполномоченному.
+                <span style={{ display: 'inline-block' }}>Фиксация события, истребование документов у страховщика,</span>{' '}
+                <span style={{ display: 'inline-block' }}>претензионная работа и обращение к финансовому уполномоченному.</span>
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -375,8 +377,13 @@ export default function SporyPoKaskoClient() {
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Сохранение договора и доказательств события</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Сбор полиса, действовавшей редакции правил КАСКО, документов ГИБДД/МВД/МЧС, фото и видеоматериалов.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      <span style={{ display: 'inline-block' }}>Сохранение договора</span>{' '}
+                      <span style={{ display: 'inline-block' }}>и доказательств события</span>
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Сбор полиса, действовавшей редакции правил КАСКО, документов ГИБДД/МВД/МЧС, фото и видеоматериалов.
+                    </span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -385,8 +392,13 @@ export default function SporyPoKaskoClient() {
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Получение официального решения страховщика</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Запрос официального письменного отказа, калькуляции ущерба, направления на ремонт или акта осмотра.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      <span style={{ display: 'inline-block' }}>Получение официального</span>{' '}
+                      <span style={{ display: 'inline-block' }}>решения страховщика</span>
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Запрос официального письменного отказа, калькуляции ущерба, направления на ремонт или акта осмотра.
+                    </span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -395,8 +407,12 @@ export default function SporyPoKaskoClient() {
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Досудебная претензия страховщику</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Составление мотивированного требования со ссылками на закон, правила КАСКО и доказательства необоснованности отказа.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Досудебная претензия страховщику
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Составление мотивированного требования со ссылками на закон, правила КАСКО и доказательства необоснованности отказа.
+                    </span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -405,8 +421,13 @@ export default function SporyPoKaskoClient() {
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Обращение к финансовому уполномоченному</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Формирование обязательного комплекта документов для потребителей при требованиях до 500 000 ₽.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      <span style={{ display: 'inline-block' }}>Обращение к финансовому</span>{' '}
+                      <span style={{ display: 'inline-block' }}>уполномоченному</span>
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Формирование обязательного комплекта документов для потребителей при требованиях до 500 000 ₽.
+                    </span>
                   </div>
                 </li>
               </ul>
@@ -427,12 +448,14 @@ export default function SporyPoKaskoClient() {
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                   <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
-                  Судебная защита и автоэкспертиза (Суд / Экспертиза)
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
+                  <span style={{ display: 'inline-block' }}>Судебная защита и автоэкспертиза</span>{' '}
+                  <span style={{ display: 'inline-block' }}>(Суд / Экспертиза)</span>
                 </h3>
               </div>
               <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Судебное представительство, оспаривание незаконных пунктов правил КАСКО и проведение судебной автоэкспертизы.
+                <span style={{ display: 'inline-block' }}>Судебное представительство, оспаривание незаконных пунктов</span>{' '}
+                <span style={{ display: 'inline-block' }}>правил КАСКО и проведение судебной автоэкспертизы.</span>
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -440,8 +463,13 @@ export default function SporyPoKaskoClient() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Независимая автотехническая экспертиза</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Установление реального размера восстановительного ремонта, проверка калькуляции и расчёта годных остатков.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      <span style={{ display: 'inline-block' }}>Независимая автотехническая</span>{' '}
+                      <span style={{ display: 'inline-block' }}>экспертиза</span>
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Установление реального размера восстановительного ремонта, проверка калькуляции и расчёта годных остатков.
+                    </span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -449,8 +477,13 @@ export default function SporyPoKaskoClient() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Оспаривание незаконных пунктов правил КАСКО</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Применение ст. 943 ГК РФ и практики Верховного Суда РФ для отмены необоснованных исключений и отказов.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      <span style={{ display: 'inline-block' }}>Оспаривание незаконных</span>{' '}
+                      <span style={{ display: 'inline-block' }}>пунктов правил КАСКО</span>
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Применение ст. 943 ГК РФ и практики Верховного Суда РФ для отмены необоснованных исключений и отказов.
+                    </span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -458,8 +491,13 @@ export default function SporyPoKaskoClient() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Подготовка искового заявления в суд</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Расчёт суммы возмещения, неустойки, расходов на экспертизу, морального вреда и 50% потребительского штрафа.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      <span style={{ display: 'inline-block' }}>Подготовка искового</span>{' '}
+                      <span style={{ display: 'inline-block' }}>заявления в суд</span>
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Расчёт суммы возмещения, неустойки, расходов на экспертизу, морального вреда и 50% потребительского штрафа.
+                    </span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -467,8 +505,13 @@ export default function SporyPoKaskoClient() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Представительство в суде и исполнение</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Защита интересов во всех судебных заседаниях, назначение экспертизы и взыскание средств через банк.</span>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      <span style={{ display: 'inline-block' }}>Представительство в суде</span>{' '}
+                      <span style={{ display: 'inline-block' }}>и исполнение</span>
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Защита интересов во всех судебных заседаниях, назначение экспертизы и взыскание средств через банк.
+                    </span>
                   </div>
                 </li>
               </ul>
