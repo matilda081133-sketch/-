@@ -114,10 +114,10 @@ export default function SporyPoOsagoClient() {
                 Если страховая мало выплатила, отказала или нарушила порядок ремонта,
               </span>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                проверим документы и расчёт, определим обязательный досудебный маршрут
+                проверим документы и расчёт, определим обязательный досудебный
               </span>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                и подготовим требования.
+                маршрут и подготовим требования.
               </span>
             </span>
           </>
