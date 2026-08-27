@@ -474,10 +474,10 @@ export default function SporyPoKaskoClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: ЧТО ДЕЛАЕТ ЮРИСТ ПО СПОРАМ ПО КАСКО ═══ */}
+      {/* ═══ БЛОК 4: ЧТО СДЕЛАЕТ ЮРИСТ ПО СПОРАМ ПО КАСКО ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span style={{ display: 'inline-block' }}>Что сделает юрист</span> <br />
               <span style={{ display: 'inline-block' }}>по спорам по КАСКО</span>
@@ -488,67 +488,101 @@ export default function SporyPoKaskoClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '40px' }}>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
             {[
               {
                 num: '01',
-                title: 'Восстановит договорную картину',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Восстановит</span>
+                    <span style={{ display: 'block' }}>договорную картину</span>
+                  </>
+                ),
                 desc: 'Соберёт полис, приложения, правила нужной редакции, заявление о страховом случае и решение страховщика.'
               },
               {
                 num: '02',
-                title: 'Проверит отказ или расчёт',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Проверит отказ</span>
+                    <span style={{ display: 'block' }}>или расчёт</span>
+                  </>
+                ),
                 desc: 'Сопоставит формулировки договора с фактами, доказательствами, причинной связью и применимыми нормами права.'
               },
               {
                 num: '03',
-                title: 'Определит доказательства',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Определит</span>
+                    <span style={{ display: 'block' }}>доказательства</span>
+                  </>
+                ),
                 desc: 'Оценит необходимость осмотра, независимой экспертизы, запроса страхового дела, документов органов и материалов СТО.'
               },
               {
                 num: '04',
-                title: 'Подготовит требования',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Подготовит</span>
+                    <span style={{ display: 'block' }}>требования</span>
+                  </>
+                ),
                 desc: 'Составит заявление страховщику, обращение финансовому уполномоченному, возражения, иск и иные процессуальные документы.'
               },
               {
                 num: '05',
-                title: 'Представит интересы',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Представит</span>
+                    <span style={{ display: 'block' }}>интересы</span>
+                  </>
+                ),
                 desc: 'Организует взаимодействие со страховой компанией, экспертом, финансовым уполномоченным и судом в согласованном объёме.'
               },
               {
                 num: '06',
-                title: 'Разделит требования',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Разделит</span>
+                    <span style={{ display: 'block' }}>требования</span>
+                  </>
+                ),
                 desc: 'Отделит спор по КАСКО от ОСАГО, требования к виновнику ДТП, автосервису, банку или лизинговой компании.'
               }
-            ].map((step) => (
-              <div key={step.num} style={{
+            ].map((item, idx) => (
+              <div key={idx} className="hover-lift" style={{
                 display: 'flex',
-                gap: '16px',
-                padding: '28px 24px',
+                flexDirection: 'column',
+                padding: '38px 24px 30px 24px',
                 border: '1px solid var(--color-border)',
-                borderLeft: '3px solid var(--color-primary)',
-                background: 'var(--color-white)',
+                borderTop: '4px solid var(--color-gold)',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                 borderRadius: '0',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.02)'
+                position: 'relative',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                transition: 'all 0.3s ease'
               }}>
                 <div style={{
-                  fontSize: '24px',
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
                   fontWeight: 700,
-                  color: 'var(--color-primary)',
-                  fontFamily: 'var(--font-serif)',
-                  lineHeight: 1,
-                  flexShrink: 0,
-                  opacity: 0.35,
-                  minWidth: '32px'
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
-                  {step.num}
+                  {item.num}
                 </div>
                 <div>
-                  <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35 }}>
-                    {step.title}
+                  <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                    {item.title}
                   </h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                    {step.desc}
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    {item.desc}
                   </p>
                 </div>
               </div>
@@ -559,9 +593,10 @@ export default function SporyPoKaskoClient() {
           <div className="grid grid-2" style={{ gap: '24px' }}>
             <div style={{
               padding: '28px 30px',
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              background: '#FFFFFF',
               border: '1px solid var(--color-border)',
-              borderLeft: '4px solid var(--color-primary)'
+              borderLeft: '4px solid var(--color-primary)',
+              boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
             }}>
               <h3 style={{ margin: '0 0 12px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
                 Входит в юридическую помощь
@@ -572,9 +607,10 @@ export default function SporyPoKaskoClient() {
             </div>
             <div style={{
               padding: '28px 30px',
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              background: '#FFFFFF',
               border: '1px solid var(--color-border)',
-              borderLeft: '4px solid var(--color-gold)'
+              borderLeft: '4px solid var(--color-gold)',
+              boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
             }}>
               <h3 style={{ margin: '0 0 12px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
                 Оценивается отдельно
