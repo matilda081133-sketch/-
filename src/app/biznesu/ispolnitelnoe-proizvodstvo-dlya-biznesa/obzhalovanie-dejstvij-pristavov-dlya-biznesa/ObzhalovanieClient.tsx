@@ -303,7 +303,10 @@ export default function ObzhalovanieClient() {
           { text: 'Оспаривание в суде и жалоба старшему приставу' },
           { text: 'Срочная оценка рисков для счетов и активов' },
         ]}
-        rightContent={docStack}
+        imageUrl="/images/smolyaninova.jpg"
+        imageName="Марина Валерьевна Смольянинова"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: КОГДА БИЗНЕСУ НЕЛЬЗЯ ОТКЛАДЫВАТЬ ПРОВЕРКУ ═══ */}

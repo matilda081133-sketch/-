@@ -268,7 +268,10 @@ export default function ObzhalovanieClient() {
           { text: 'Жалоба в порядке подчинённости и административный иск' },
           { text: 'Защита прав должников и взыскателей' }
         ]}
-        rightContent={docStack}
+        imageUrl="/images/smolyaninova.jpg"
+        imageName="Марина Валерьевна Смольянинова"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: КОГДА ВАЖНО ОБРАТИТЬСЯ БЕЗ ПРОМЕДЛЕНИЯ ═══ */}

@@ -202,7 +202,10 @@ export default function SnyatieArestaAvtoClient() {
           { text: 'Помощь должникам, собственникам и покупателям' },
           { text: 'Куратор — 13 лет опыта в ФССП' },
         ]}
-        rightContent={docStack}
+        imageUrl="/images/smolyaninova.jpg"
+        imageName="Марина Валерьевна Смольянинова"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ ═══ */}
