@@ -810,12 +810,34 @@ export default function SporyPoKaskoClient() {
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
         imageUrl="/images/konopkin.jpg"
-        imagePosition="center 25%"
+        imagePosition="center 5%"
         description={[
-          'Юридическая практика с 2016 года; опыт следственной работы помогает детально анализировать материалы происшествий, договоры и позиции страховых компаний.',
-          'Специализируется на автомобильных и страховых спорах: споры по КАСКО и ОСАГО, отказ в выплате, некачественный ремонт, полная гибель автомобиля и защита при обвинении в ДТП.',
-          'Оценивает буквальное содержание полиса и правил страхования, выстраивает мотивированную позицию для претензии, службы финансового уполномоченного и суда.',
-          'Защищает интересы автовладельцев в Липецке и Липецкой области, а также ведет дела дистанционно по всей России.'
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Юридическая практика с 2016 года; опыт следственной работы помогает детально анализировать материалы происшествий, договоры и позиции страховых компаний.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Специализируется на автомобильных и страховых спорах: споры по КАСКО и ОСАГО, отказ в выплате, некачественный ремонт, полная гибель автомобиля и защита при обвинении в ДТП.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Оценивает буквальное содержание полиса и правил страхования, выстраивает мотивированную позицию для претензии, службы финансового уполномоченного и суда.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Защищает интересы автовладельцев в Липецке и Липецкой области, а также ведет дела дистанционно по всей России.
+              </span>
+            </li>
+          </ul>,
+          <a key="3" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
+            Подробнее об адвокате Дмитрии Сергеевиче Конопкине →
+          </a>
         ]}
         buttonText="Обсудить спор по КАСКО с Дмитрием Сергеевичем"
         buttonHref="#form"
