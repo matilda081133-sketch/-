@@ -294,7 +294,7 @@ export default function SporyPoKaskoClient() {
             </p>
           </div>
 
-          {/* Темно-синяя карточка-навигатор: 3 этапа стратегии спора по КАСКО */}
+          {/* Темно-синяя карточка-навигатор: Сначала сохраните договор и доказательства события */}
           <div style={{
             background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
             border: '1px solid rgba(193, 160, 102, 0.4)',
@@ -307,57 +307,43 @@ export default function SporyPoKaskoClient() {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
               <div>
                 <h3 style={{ fontSize: 'clamp(20px, 2.5vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
-                  3 этапа стратегии спора
+                  Сначала сохраните договор и доказательства события
                 </h3>
               </div>
-              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '440px', lineHeight: 1.5 }}>
-                <span style={{ display: 'block' }}>Позволяет безошибочно определить порядок действий:</span>
-                <span style={{ display: 'block' }}>доукомплектование, претензия страховщику, омбудсмен или иск.</span>
+              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '480px', lineHeight: 1.5 }}>
+                <span style={{ display: 'block' }}>Действуйте осмотрительно сразу после страхового случая,</span>
+                <span style={{ display: 'block' }}>чтобы исключить формальные поводы для отказа или затягивания спора.</span>
               </div>
             </div>
 
-            <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
-              {/* Шаг 1 */}
-              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>01</span>
-                  <span>
-                    <span style={{ display: 'block' }}>Сохраняем договор</span>
-                    <span style={{ display: 'block' }}>и доказательства</span>
-                  </span>
-                </h4>
-                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
-                  Полис нужной редакции, заявление о страховом случае, документы органов (ГИБДД/МВД/МЧС) и письменное решение страховщика.
-                </p>
-              </div>
+            <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1, marginBottom: '24px' }}>
+              {[
+                { num: '01', title: 'Уведомите страховщика', desc: 'Направьте уведомление способом и в срок, предусмотренные полисом и правилами; обязательно сохраните подтверждение.' },
+                { num: '02', title: 'Не изменяйте авто', desc: 'Не ремонтируйте автомобиль до согласованного осмотра экспертом страховой и фиксации всех повреждений.' },
+                { num: '03', title: 'Сохраните полис и правила', desc: 'Соберите полис, приложения, правила именно действовавшей редакции, заявление и документы об оплате премии.' },
+                { num: '04', title: 'Соберите документы события', desc: 'Документы ГИБДД/МВД/МЧС, фото и видео, сведения о ключах, охранных системах и переписку со страховщиком.' },
+                { num: '05', title: 'Получите отказ или расчёт', desc: 'Запросите официальный отказ, калькуляцию ущерба, направление на ремонт или иной документ с понятными основаниями.' },
+                { num: '06', title: 'Не подписывайте лишнего', desc: 'Не подписывайте соглашение о выплате, отказ от требований, передачу годных остатков или доплату СТО без проверки.' }
+              ].map((step, idx) => (
+                <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <h4 style={{ fontSize: '15.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                    <span style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>{step.num}</span>
+                    <span>{step.title}</span>
+                  </h4>
+                  <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>{step.desc}</p>
+                </div>
+              ))}
+            </div>
 
-              {/* Шаг 2 */}
-              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>02</span>
-                  <span>
-                    <span style={{ display: 'block' }}>Сопоставляем правила</span>
-                    <span style={{ display: 'block' }}>со статьёй 943 ГК РФ</span>
-                  </span>
-                </h4>
-                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
-                  Проверяем законность исключений, франшизы, методики расчёта ущерба, амортизации и условий признания «тотала».
-                </p>
-              </div>
-
-              {/* Шаг 3 */}
-              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>03</span>
-                  <span>
-                    <span style={{ display: 'block' }}>Выбираем маршрут</span>
-                    <span style={{ display: 'block' }}>по стадии спора</span>
-                  </span>
-                </h4>
-                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
-                  Претензия страховщику, обращение к финансовому уполномоченному (до 500 000 ₽) или исковое заявление в суд.
-                </p>
-              </div>
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.08)',
+              borderLeft: '4px solid var(--color-gold)',
+              padding: '14px 18px',
+              fontSize: '13.5px',
+              lineHeight: 1.55,
+              color: 'rgba(255,255,255,0.9)'
+            }}>
+              <strong style={{ color: '#FFFFFF' }}>Важно:</strong> Условия КАСКО различаются в зависимости от программы. Первичный правовой анализ всегда строится на сопоставлении полиса, приложений и действовавшей редакции правил страхования.
             </div>
           </div>
 
