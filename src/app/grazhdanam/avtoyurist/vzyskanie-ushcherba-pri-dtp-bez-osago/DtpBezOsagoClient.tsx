@@ -182,12 +182,22 @@ export default function DtpBezOsagoClient() {
               },
               {
                 tag: 'Фиксация',
-                title: 'Сфотографируйте место происшествия',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Сфотографируйте</span>
+                    <span style={{ display: 'block' }}>место происшествия</span>
+                  </>
+                ),
                 desc: 'Зафиксируйте общий план, положение машин, следы торможения, дорожные знаки, разметку и детали каждого повреждения. Сохраните видеорегистратор.'
               },
               {
                 tag: 'Контакты',
-                title: 'Запишите данные участников и свидетелей',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Запишите данные</span>
+                    <span style={{ display: 'block' }}>участников и свидетелей</span>
+                  </>
+                ),
                 desc: 'Зафиксируйте данные водителя, собственника авто, свидетелей, а также сведения о работодателе или путевом листе, если авто служебное.'
               },
               {
@@ -197,7 +207,12 @@ export default function DtpBezOsagoClient() {
               },
               {
                 tag: 'Сохранность',
-                title: 'Не ремонтируйте авто до осмотра',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Не ремонтируйте</span>
+                    <span style={{ display: 'block' }}>авто до осмотра</span>
+                  </>
+                ),
                 desc: 'До полноценной фиксации повреждений экспертом не разбирайте и не продавайте авто; сохраняйте квитанции эвакуатора и платной стоянки.'
               }
             ].map((item, i) => (
@@ -280,8 +295,12 @@ export default function DtpBezOsagoClient() {
           
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Как проверить отсутствие ОСАГО</span> <br />
-              <span style={{ display: 'inline-block' }}>и кто отвечает за ущерб</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Как проверить отсутствие
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                ОСАГО и кто отвечает за ущерб
+              </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Не всякое отсутствие полиса у водителя означает отсутствие страховки на авто.</span> <br />
