@@ -25,7 +25,7 @@ interface PricingBlockProps {
   ctaSubtitle?: string;
   ctaButtonText?: string;
   ctaButtonLink?: string;
-  disclaimer?: string;
+  disclaimer?: string | React.ReactNode;
   guaranteeText?: string;
   sectionStyle?: React.CSSProperties;
 }
