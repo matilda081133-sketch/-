@@ -325,7 +325,12 @@ export default function AvtoyuristClient() {
             fontSize: '14px',
             lineHeight: 1.6
           }}>
-            <strong style={{ color: '#FFFFFF' }}>Юридическая справка:</strong> Десятидневный срок следует из статьи 30.3 КоАП РФ для обжалования постановлений по делам об административных правонарушениях.
+            <span style={{ display: 'inline-block' }}>
+              <strong style={{ color: '#FFFFFF' }}>Юридическая справка:</strong> Десятидневный срок следует из&nbsp;статьи 30.3 КоАП&nbsp;РФ
+            </span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>
+              для обжалования постановлений по&nbsp;делам об&nbsp;административных правонарушениях.
+            </span>
           </div>
 
           <style dangerouslySetInnerHTML={{__html: `
