@@ -471,8 +471,8 @@ export default function ObzhalovanieClient() {
                 tag: 'Отказ',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Отказ в совершении</span>
-                    <span style={{ display: 'block' }}>действия</span>
+                    <span style={{ display: 'block' }}>Отказ в</span>
+                    <span style={{ display: 'block' }}>совершении действия</span>
                   </>
                 ),
                 desc: 'Оценим отказ возбудить производство, принять документ, рассмотреть ходатайство, снять ограничение или совершить действие.'
@@ -501,8 +501,8 @@ export default function ObzhalovanieClient() {
                 tag: 'Ответы',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Формальные ответы</span>
-                    <span style={{ display: 'block' }}>на обращения</span>
+                    <span style={{ display: 'block' }}>Формальные</span>
+                    <span style={{ display: 'block' }}>ответы на обращения</span>
                   </>
                 ),
                 desc: 'Сопоставим содержание ходатайства и\u00A0ответа с\u00A0материалами дела, зафиксируем нерассмотренные требования и\u00A0адресата жалобы.'
@@ -603,8 +603,8 @@ export default function ObzhalovanieClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Как выбираем способ</span> <br />
-              <span style={{ display: 'inline-block' }}>обжалования</span>
+              <span style={{ display: 'inline-block' }}>Как выбираем</span> <br />
+              <span style={{ display: 'inline-block' }}>способ обжалования</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Способ зависит не только от характера нарушения, но и от требуемого результата.</span> <br />
@@ -693,7 +693,8 @@ export default function ObzhalovanieClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Что входит в юридическую помощь</span>
+              <span style={{ display: 'inline-block' }}>Что входит</span> <br />
+              <span style={{ display: 'inline-block' }}>в юридическую помощь</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Полный цикл процессуальных действий юриста — от изучения материалов производства</span> <br className="hidden-mobile" />
