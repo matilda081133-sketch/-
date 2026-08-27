@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/avtoyurist/spory-po-kasko/',
     '/grazhdanam/avtoyurist/spory-po-osago/',
     '/grazhdanam/avtoyurist/vzyskanie-ushcherba-pri-dtp-bez-osago/',
+    '/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/',
   ];
 
   const specialistRoutes = Object.keys(teamData).map((slug) => `/specialisty/${slug}/`);
