@@ -271,7 +271,7 @@ export default function ObzhalovanieClient() {
         imageUrl="/images/smolyaninova.jpg"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
-        imageObjectPosition="center 15%"
+        imageObjectPosition="center 25%"
       />
 
       {/* ═══ БЛОК 2: КОГДА ВАЖНО ОБРАТИТЬСЯ БЕЗ ПРОМЕДЛЕНИЯ ═══ */}
@@ -280,8 +280,8 @@ export default function ObzhalovanieClient() {
           <div style={{ maxWidth: '850px', marginBottom: '40px' }}>
             <div style={{ width: '60px', height: '3px', background: 'var(--color-gold)', marginBottom: '24px' }}></div>
             <h2 style={{ fontSize: 'clamp(26px, 3.6vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
-              <span style={{ display: 'inline-block' }}>Когда важно обратиться к&nbsp;юристу</span> <br />
-              <span style={{ display: 'inline-block' }}>без промедления</span>
+              <span style={{ display: 'inline-block' }}>Когда важно обратиться</span> <br />
+              <span style={{ display: 'inline-block' }}>к&nbsp;юристу без промедления</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.6, margin: 0, fontWeight: 400, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Для обжалования постановления, действия или бездействия установлен короткий срок.</span> <br className="hidden-mobile" />

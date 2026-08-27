@@ -195,7 +195,7 @@ export default function VzyskanieIspolnitelnyListClient() {
         imageUrl="/images/smolyaninova.jpg"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
-        imageObjectPosition="center 15%"
+        imageObjectPosition="center 25%"
       />
 
       {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ (КОГДА СТОИТ ПОДКЛЮЧИТЬ ЮРИСТА) ═══ */}
@@ -717,7 +717,7 @@ export default function VzyskanieIspolnitelnyListClient() {
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
         imageUrl="/images/smolyaninova.jpg"
-        imagePosition="center 15%"
+        imagePosition="center 25%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Марина Валерьевна более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Этот опыт помогает оценивать не только формальные сроки, но и то, какие конкретные действия действительно могут привести к обнаружению активов и реальному исполнению требования.

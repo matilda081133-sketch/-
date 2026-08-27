@@ -306,7 +306,7 @@ export default function ObzhalovanieClient() {
         imageUrl="/images/smolyaninova.jpg"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
-        imageObjectPosition="center 15%"
+        imageObjectPosition="center 25%"
       />
 
       {/* ═══ БЛОК 2: КОГДА БИЗНЕСУ НЕЛЬЗЯ ОТКЛАДЫВАТЬ ПРОВЕРКУ ═══ */}
