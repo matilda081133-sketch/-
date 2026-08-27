@@ -590,34 +590,74 @@ export default function SporyPoKaskoClient() {
           </div>
 
           {/* ГРАНИЦЫ УСЛУГИ */}
-          <div className="grid grid-2" style={{ gap: '24px' }}>
+          <div className="grid grid-2" style={{ gap: '28px' }}>
+            {/* Карточка 1: Входит в юридическую помощь */}
             <div style={{
-              padding: '28px 30px',
-              background: '#FFFFFF',
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
-              borderLeft: '4px solid var(--color-primary)',
-              boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
             }}>
-              <h3 style={{ margin: '0 0 12px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
-                Входит в юридическую помощь
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Входит в юридическую помощь</span>
               </h3>
-              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Анализ полиса, правил и страхового дела; выработка правовой позиции; подготовка претензии страховщику; обращение к финансовому уполномоченному; подготовка иска и представительство в суде в согласованном объёме.
-              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                {[
+                  { title: 'Анализ полиса, правил и страхового дела', desc: 'Изучение условий договора, действовавшей редакции правил страхования и письменного решения страховщика.' },
+                  { title: 'Выработка правовой позиции', desc: 'Определение законности отказа или расчёта, оценка рисков и выбор наиболее эффективного процессуального маршрута.' },
+                  { title: 'Подготовка претензии страховщику', desc: 'Составление мотивированного досудебного требования со ссылками на закон, правила КАСКО и доказательства.' },
+                  { title: 'Обращение к финансовому уполномоченному', desc: 'Формирование полного комплекта документов и процессуальное сопровождение спора в службе омбудсмена.' },
+                  { title: 'Подготовка иска и представительство в суде', desc: 'Ведение судебного процесса в согласованном объёме — от подачи иска до получения судебного решения.' }
+                ].map((item, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '15.5px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>{item.title}</strong>
+                      <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{item.desc}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
+
+            {/* Карточка 2: Оценивается отдельно */}
             <div style={{
-              padding: '28px 30px',
-              background: '#FFFFFF',
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
-              borderLeft: '4px solid var(--color-gold)',
-              boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
             }}>
-              <h3 style={{ margin: '0 0 12px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
-                Оценивается отдельно
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Оценивается отдельно</span>
               </h3>
-              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Независимая автотехническая экспертиза и оценка; судебные пошлины и почтовые расходы; требования к виновнику аварии или СТО как самостоятельным ответчикам; споры банков и лизингодателей.
-              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                {[
+                  { title: 'Независимая экспертиза и оценка', desc: 'Проведение независимой автотехнической экспертизы, расчёт стоимости восстановительного ремонта и годных остатков.' },
+                  { title: 'Судебные пошлины и почтовые расходы', desc: 'Госпошлина за рассмотрение дела в суде, оплата услуг почты и обязательные процессуальные издержки.' },
+                  { title: 'Требования к виновнику аварии или СТО', desc: 'Взыскание ущерба сверх лимитов или претензии к станции техобслуживания как к самостоятельному ответчику.' },
+                  { title: 'Споры с банками и лизинговыми компаниями', desc: 'Урегулирование правовых вопросов с залогодержателями, банками и лизингодателями при кредитных авто.' }
+                ].map((item, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '15.5px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>{item.title}</strong>
+                      <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{item.desc}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
