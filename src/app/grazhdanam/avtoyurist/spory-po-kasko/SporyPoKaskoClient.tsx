@@ -209,6 +209,13 @@ export default function SporyPoKaskoClient() {
                 overflow: 'hidden',
                 transition: 'all 0.3s ease'
               }}>
+                {/* Фоновый векторный водяной знак */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
                 <div style={{
                   fontSize: '12px',
                   fontWeight: 700,
@@ -252,8 +259,8 @@ export default function SporyPoKaskoClient() {
 
           {/* Плашка CTA с тенью */}
           <div style={{
-            background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-            border: '1px solid var(--color-border)',
+            background: '#FFFFFF',
+            border: '1px solid rgba(23, 50, 77, 0.08)',
             borderLeft: '4px solid var(--color-gold)',
             padding: '28px 32px',
             display: 'flex',
@@ -261,7 +268,7 @@ export default function SporyPoKaskoClient() {
             justifyContent: 'space-between',
             flexWrap: 'wrap',
             gap: '20px',
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
+            boxShadow: '0 10px 30px rgba(23, 50, 77, 0.09), 0 2px 8px rgba(23, 50, 77, 0.04)'
           }}>
             <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6, maxWidth: '720px' }}>
               <strong>Не уверены, относится ли ситуация к этой услуге?</strong> Опишите, какое решение принято страховой компанией, — юрист изучит документы и подскажет порядок действий.
