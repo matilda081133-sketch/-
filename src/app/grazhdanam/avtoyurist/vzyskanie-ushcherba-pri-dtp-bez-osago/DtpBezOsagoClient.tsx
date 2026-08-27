@@ -119,13 +119,13 @@ export default function DtpBezOsagoClient() {
             `}} />
             <span style={{ display: 'inline-block', maxWidth: '100%' }}>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                Проверим, действительно ли ответственность второго участника не застрахована,
+                Проверим, действительно ли ответственность второго участника
               </span>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                определим надлежащего ответчика и размер ущерба,
+                не застрахована, определим надлежащего ответчика
               </span>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                подготовим претензию, соглашение или иск.
+                и размер ущерба, подготовим претензию, соглашение или иск.
               </span>
             </span>
           </>
