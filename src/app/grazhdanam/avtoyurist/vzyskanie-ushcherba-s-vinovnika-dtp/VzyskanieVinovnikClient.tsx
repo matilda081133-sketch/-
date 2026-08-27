@@ -80,20 +80,24 @@ export default function VzyskanieVinovnikClient() {
       <MilitaryHero
         breadcrumbs={
           <>
-            <Link href="/" style={{ color: 'var(--color-primary)' }}>Главная</Link>
+            <Link href="/">Главная</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <Link href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</Link>
+            <Link href="/grazhdanam/">Гражданам</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <Link href="/grazhdanam/avtoyurist/" style={{ color: 'var(--color-primary)' }}>Автоюрист</Link>
+            <Link href="/grazhdanam/avtoyurist/">Автоюрист</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <span style={{ color: 'var(--color-text-main)' }}>Взыскание ущерба с виновника ДТП</span>
+            <span>Взыскание ущерба с виновника ДТП</span>
           </>
         }
         superTitle="Автомобильные споры"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскание ущерба</span>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с виновника ДТП в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Взыскание ущерба с виновника
+            </span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              ДТП в Липецке
+            </span>
           </span>
         }
         subtitle={
@@ -289,16 +293,17 @@ export default function VzyskanieVinovnikClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: КТО ОТВЕЧАЕТ И ОТДЕЛЕНИЕ СТРАХОВОЙ ЧАСТИ ═══ */}
+      {/* ═══ БЛОК 3: ПРОВЕРКА ОСАГО И ОТВЕТЧИКА ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
+          
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Кто отвечает за ущерб
+                Как отделить страховую часть
               </span>
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                и как отделить страховую часть
+                и кто отвечает за ущерб
               </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
@@ -320,54 +325,462 @@ export default function VzyskanieVinovnikClient() {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
               <div>
                 <h3 style={{ fontSize: 'clamp(20px, 2.5vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
-                  Определение надлежащего ответчика
+                  3 этапа правового анализа
                 </h3>
               </div>
-              <span style={{ fontSize: '13px', color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
-                Правовой анализ
-              </span>
+              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '520px', lineHeight: 1.5 }}>
+                <span style={{ display: 'block' }}>Позволяет безошибочно отделить обязательство страховщика</span>
+                <span style={{ display: 'block' }}>от деликтной ответственности причинителя вреда.</span>
+              </div>
             </div>
 
-            <div className="grid grid-2" style={{ gap: '20px', position: 'relative', zIndex: 1 }}>
-              {[
-                {
-                  role: 'Водитель на своём авто',
-                  desc: 'Отвечает лично как непосредственный причинитель вреда и законный владелец источника повышенной опасности.'
-                },
-                {
-                  role: 'Авто принадлежит другому лицу',
-                  desc: 'Проверяются законные основания владения и доверенности; одного свидетельства о регистрации недостаточно для автоматического вывода.'
-                },
-                {
-                  role: 'ДТП при исполнении работы',
-                  desc: 'По ст. 1068 ГК РФ за вред, причинённый работником при исполнении трудовых обязанностей, отвечает работодатель (организация или ИП).'
-                },
-                {
-                  role: 'Несколько участников ДТП',
-                  desc: 'При обоюдной вине или причинении вреда третьему лицу проверяются основания солидарной или долевой ответственности владельцев авто.'
-                }
-              ].map((s, idx) => (
-                <div key={idx} style={{
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  borderLeft: '3px solid var(--color-gold)',
-                  padding: '20px 24px'
-                }}>
-                  <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', color: '#FFFFFF', fontFamily: 'var(--font-serif)' }}>
-                    {s.role}
-                  </h4>
-                  <p style={{ margin: 0, fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55 }}>
-                    {s.desc}
-                  </p>
-                </div>
-              ))}
+            <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>01</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Проверяем выплату</span>
+                    <span style={{ display: 'block' }}>по ОСАГО</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Устанавливаем, выплачен ли лимит и нет ли незаконной недоплаты страховщика, которую нельзя переложить на виновника.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>02</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Устанавливаем</span>
+                    <span style={{ display: 'block' }}>надлежащего ответчика</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Определяем, кто обязан возмещать разницу: непосредственный водитель, собственник машины или работодатель.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>03</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Рассчитываем реальный</span>
+                    <span style={{ display: 'block' }}>размер ущерба</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Определяем рыночную стоимость восстановительного ремонта без страхового износа деталей и сопутствующие расходы.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Алгоритм отделения страховой части */}
-          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '32px' }}>
+          {/* 2 КРУПНЫЕ КАРТОЧКИ */}
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            
+            {/* Карточка 1: Основания требования к причинителю */}
             <div style={{
-              background: 'var(--color-white)',
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
+                  <span style={{ display: 'inline-block' }}>Основания требования</span>{' '}
+                  <span style={{ display: 'inline-block' }}>к причинителю вреда</span>
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>Проверяем, какие суммы превышают страховой лимит</span>{' '}
+                <span style={{ display: 'inline-block' }}>и подлежат взысканию с ответственного лица.</span>
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Ущерб превышает лимит 400 000 ₽
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Страховая выплатила максимальный установленный законом лимит, однако фактическая стоимость ремонта выше.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Разница из-за расчёта по ОСАГО
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Фактический ремонт по реальным рыночным ценам без износа деталей превышает выплату страховщика по Единой методике.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Непокрытые расходы и убытки
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Взыскиваем причинно связанные расходы (эвакуация, платная стоянка, независимая оценка, хранение), не вошедшие в ОСАГО.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Полная гибель автомобиля (тотал)
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Оцениваем доаварийную стоимость авто за вычетом надлежащего страхового возмещения и стоимости годных остатков.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Карточка 2: Определение надлежащего ответчика */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
+                  <span style={{ display: 'inline-block' }}>Кто обязан возмещать</span>{' '}
+                  <span style={{ display: 'inline-block' }}>причинённый вред</span>
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>Ответственность за вред может нести не только водитель,</span>{' '}
+                <span style={{ display: 'inline-block' }}>но и собственник машины, работодатель или арендатор.</span>
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Водитель управлял личным авто
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Иск предъявляется непосредственно водителю как причинителю вреда и владельцу источника повышенной опасности.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      ДТП на служебном автомобиле (ст. 1068 ГК РФ)
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Если виновник выполнял служебные обязанности, ущерб возмещает организация-работодатель, а не наёмный водитель.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Аренда, каршеринг или доверенность
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Изучаем договоры аренды, акты приёма-передачи и законность владения для точного определения ответчика в суде.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Несколько участников и солидарная вина
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      При обоюдной вине или аварии с несколькими машинами проверяем основания солидарного или долевого возмещения вреда.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Важно: полупрозрачная карточка */}
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.65)',
+            backdropFilter: 'blur(6px)',
+            padding: '22px 28px',
+            border: '1px solid rgba(23, 50, 77, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            fontSize: '14px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.6,
+            marginBottom: '32px'
+          }}>
+            <strong style={{ color: 'var(--color-primary)' }}>Правовая рамка:</strong> По статье 1072 ГК РФ застраховавшее ответственность лицо возмещает разницу только тогда, когда страхового возмещения недостаточно для полного возмещения вреда. Если страховщик выплатил меньше, чем должен был по ОСАГО, эта недоплата сама по себе не становится долгом виновника.
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 32px' }}>
+              Оценить страховую часть и ответчика
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 4: ЧТО СДЕЛАЕТ ЮРИСТ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Что сделает юрист</span> <br />
+              <span style={{ display: 'inline-block' }}>по взысканию ущерба с виновника</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Полный комплекс процессуальной работы — от правовой оценки и переговоров</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>до фактического взыскания всей суммы ущерба в судебном порядке.</span>
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '48px' }}>
+            {[
+              {
+                num: '01',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Разделит</span>
+                    <span style={{ display: 'block' }}>ответственных</span>
+                  </>
+                ),
+                desc: 'Проверит страховое обязательство, причинителя, владельца транспорта, работодателя и иных возможных ответчиков.'
+              },
+              {
+                num: '02',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Соберёт</span>
+                    <span style={{ display: 'block' }}>доказательства</span>
+                  </>
+                ),
+                desc: 'Изучит материалы ДТП, страховое дело, осмотры, расчёты, расходы и обоснует необходимость экспертизы.'
+              },
+              {
+                num: '03',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Сформирует</span>
+                    <span style={{ display: 'block' }}>сумму ущерба</span>
+                  </>
+                ),
+                desc: 'Отделит фактический ущерб от уже возмещённого, исключит двойной счёт и необоснованные позиции.'
+              },
+              {
+                num: '04',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Подготовит</span>
+                    <span style={{ display: 'block' }}>документы</span>
+                  </>
+                ),
+                desc: 'Составит претензию, соглашение, иск, возражения, ходатайства и грамотные вопросы эксперту.'
+              },
+              {
+                num: '05',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Представит</span>
+                    <span style={{ display: 'block' }}>интересы в суде</span>
+                  </>
+                ),
+                desc: 'Проведёт переговоры и судебные заседания, сопроводит экспертизу и получение исполнительного документа.'
+              },
+              {
+                num: '06',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Оценит</span>
+                    <span style={{ display: 'block' }}>взыскуемость</span>
+                  </>
+                ),
+                desc: 'До дополнительных расходов объяснит риски доказывания и перспективы фактического исполнения решения.'
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="hover-lift" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '38px 24px 30px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                borderRadius: '0',
+                position: 'relative',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
+                </div>
+                <div>
+                  <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* ГРАНИЦЫ УСЛУГИ */}
+          <div style={{
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            color: '#FFFFFF',
+            position: 'relative'
+          }}>
+            <div className="grid grid-2" style={{ gap: '36px' }}>
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 18px 0', paddingBottom: '12px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <span>Входит в юридическую помощь</span>
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  {[
+                    { title: 'Анализ страховой и деликтной частей ущерба', desc: 'Разделение обязательства страховой компании и прямого требования к виновнику ДТП.' },
+                    { title: 'Определение надлежащего состава ответчиков', desc: 'Установление круга лиц: водитель, собственник автомобиля, работодатель или арендатор.' },
+                    { title: 'Расчёт требований и досудебное урегулирование', desc: 'Подготовка мотивированной претензии или соглашения о добровольном возмещении.' },
+                    { title: 'Формирование иска и судебное представительство', desc: 'Составление иска, участие во всех заседаниях суда, доказывание размера реального ущерба.' },
+                    { title: 'Сопровождение судебной автоэкспертизы', desc: 'Формулирование корректных вопросов эксперту и анализ экспертного заключения.' }
+                  ].map((item, idx) => (
+                    <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                        <polyline points="9 11 12 14 22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                      </svg>
+                      <div>
+                        <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '2px' }}>{item.title}</strong>
+                        <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.5 }}>{item.desc}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 18px 0', paddingBottom: '12px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                  <span>Оценивается отдельно</span>
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  {[
+                    { title: 'Независимая автоэкспертиза и оценка', desc: 'Проведение независимой оценки стоимости восстановительного ремонта и годных остатков.' },
+                    { title: 'Госпошлина и судебные расходы', desc: 'Оплата государственной пошлины за рассмотрение иска в суде и почтовые отправления.' },
+                    { title: 'Спор со страховщиком по ОСАГО или КАСКО', desc: 'Ведение спора со страховой организацией при наличии отдельного страхового спора.' },
+                    { title: 'Исполнительное производство после суда', desc: 'Фактический розыск счетов и имущества должника через службу судебных приставов.' }
+                  ].map((item, idx) => (
+                    <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <div>
+                        <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '2px' }}>{item.title}</strong>
+                        <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.5 }}>{item.desc}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 5: ЕСЛИ ТРЕБОВАНИЕ ПРЕДЪЯВИЛИ ВАМ ═══ */}
+      <section className="section bg-light" id="defense" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Проверим, должны ли отвечать</span> <br />
+              <span style={{ display: 'inline-block' }}>именно Вы и в каком размере</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Если после ДТП претензию или судебный иск предъявили Вам,</span> <br />
+              <span style={{ display: 'inline-block' }}>проверим обоснованность статуса ответчика, вину и расчёт заявленного ущерба.</span>
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-primary)',
               padding: '32px 28px',
@@ -376,204 +789,13 @@ export default function VzyskanieVinovnikClient() {
               gap: '16px'
             }}>
               <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0, fontWeight: 700 }}>
-                Как отделяется страховая часть
+                Проверка оснований иска
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {[
-                  'Определяем размер возмещения, которое страховщик обязан был предоставить по закону',
-                  'Проверяем соблюдение досудебного порядка со страховой компанией',
-                  'Определяем фактический размер ущерба по правилам главы 59 ГК РФ',
-                  'Вычитаем надлежащее страховое возмещение и иные компенсации того же вреда',
-                  'Проверяем возражения о годных остатках, разумности цен и возможном улучшении авто'
-                ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                    <span style={{ color: 'var(--color-primary)', fontWeight: 'bold' }}>—</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div style={{
-              background: 'var(--color-white)',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-gold)',
-              padding: '32px 28px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              gap: '20px'
-            }}>
-              <div>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 12px 0', fontWeight: 700 }}>
-                  Если страховая компания недоплатила
-                </h3>
-                <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                  Суд не взыщет с виновника ту часть ущерба, которая по закону об ОСАГО входит в обязательство страховой компании. В этом случае параллельно или предварительно ведётся спор со страховщиком.
-                </p>
-              </div>
-              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                <Link href="/grazhdanam/avtoyurist/spory-po-osago/" className="btn btn-outline" style={{ padding: '10px 20px', fontSize: '14px' }}>
-                  Споры по ОСАГО →
-                </Link>
-                <a href="#form" className="btn btn-primary" style={{ padding: '10px 20px', fontSize: '14px' }}>
-                  Оценить документы
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 4: ЧТО СДЕЛАЕТ ЮРИСТ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Что сделает юрист
-              </span>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                по взысканию ущерба
-              </span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Комплексное сопровождение спора от правовой оценки до исполнения решения суда.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '32px' }}>
-            {[
-              { num: '01', title: 'Разделит ответственных', desc: 'Проверит страховое обязательство, причинителя, владельца транспорта, работодателя и иных возможных ответчиков.' },
-              { num: '02', title: 'Соберёт доказательства', desc: 'Изучит материалы ДТП, страховое дело, осмотры, расчёты, расходы и обоснует необходимость экспертизы.' },
-              { num: '03', title: 'Сформирует сумму', desc: 'Отделит фактический ущерб от уже возмещённого, исключит двойной счёт и необоснованные позиции.' },
-              { num: '04', title: 'Подготовит документы', desc: 'Составит претензию, соглашение, иск, возражения, ходатайства и грамотные вопросы эксперту.' },
-              { num: '05', title: 'Представит интересы', desc: 'Проведёт переговоры и судебные заседания, сопроводит экспертизу и получение исполнительного документа.' },
-              { num: '06', title: 'Оценит взыскуемость', desc: 'До дополнительных расходов объяснит риски доказывания и перспективы фактического исполнения решения.' }
-            ].map((item) => (
-              <div key={item.num} style={{
-                display: 'flex',
-                gap: '16px',
-                padding: '24px',
-                border: '1px solid var(--color-border)',
-                borderLeft: '3px solid var(--color-primary)',
-                background: 'var(--color-white)',
-                borderRadius: '0'
-              }}>
-                <div style={{
-                  fontSize: '24px',
-                  fontWeight: 700,
-                  color: 'var(--color-primary)',
-                  fontFamily: 'var(--font-serif)',
-                  lineHeight: 1,
-                  flexShrink: 0,
-                  opacity: 0.4,
-                  minWidth: '32px'
-                }}>
-                  {item.num}
-                </div>
-                <div>
-                  <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Состав и границы услуги */}
-          <div style={{
-            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
-            border: '1px solid rgba(193, 160, 102, 0.4)',
-            borderTop: '3px solid var(--color-gold)',
-            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
-            padding: '36px 32px',
-            position: 'relative'
-          }}>
-            <div className="grid grid-2" style={{ gap: '24px' }}>
-              <div>
-                <h4 style={{ margin: '0 0 12px 0', fontSize: '16px', color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                  Входит в юридическую помощь
-                </h4>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {[
-                    'Анализ страховой и деликтной частей ущерба',
-                    'Определение надлежащего состава ответчиков',
-                    'Расчёт требований и подготовка правовой позиции',
-                    'Составление претензии или соглашения об урегулировании',
-                    'Подготовка искового заявления, возражений и ходатайств',
-                    'Судебное представительство и сопровождение экспертизы'
-                  ].map((it, i) => (
-                    <li key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '13.5px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.5 }}>
-                      <span style={{ color: 'var(--color-gold)', fontWeight: 'bold' }}>✓</span>
-                      <span>{it}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h4 style={{ margin: '0 0 12px 0', fontSize: '16px', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                  Оценивается отдельно
-                </h4>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {[
-                    'Независимая автотехническая экспертиза и оценка',
-                    'Оплата государственной пошлины и почтовых отправлений',
-                    'Спор со страховщиком как с отдельным ответчиком',
-                    'Исполнительное производство после вступления решения в силу',
-                    'Споры о возмещении вреда здоровью и уголовные производства'
-                  ].map((it, i) => (
-                    <li key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '13.5px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>
-                      <span style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 'bold' }}>—</span>
-                      <span>{it}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 5: ЕСЛИ ТРЕБОВАНИЕ ПРЕДЪЯВИЛИ ВАМ ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Проверим, должны ли отвечать
-              </span>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                именно Вы и в каком размере
-              </span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Защита владельца, водителя или работодателя от завышенного расчёта, двойного взыскания либо иска к ненадлежащему ответчику.
-            </p>
-          </div>
-
-          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '32px' }}>
-            <div style={{
-              background: 'var(--color-white)',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-gold)',
-              padding: '32px 28px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px'
-            }}>
-              <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0, fontWeight: 700 }}>
-                Правовой статус и ответственность
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {[
-                  'Являетесь ли Вы надлежащим ответчиком: водитель, владелец, работник и собственник имеют разный статус',
                   'Учтено ли надлежащее обязательство страховщика и все уже выплаченные страховые суммы',
-                  'Относятся ли заявленные повреждения к конкретному ДТП и не включён ли прежний износ или дефекты'
+                  'Являетесь ли Вы надлежащим ответчиком: водитель, собственник, работодатель или арендатор',
+                  'Установлена ли вина и причинная связь; относятся ли все заявленные повреждения к этой аварии'
                 ].map((item, i) => (
                   <li key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
                     <span style={{ color: 'var(--color-gold)', fontWeight: 'bold' }}>—</span>
@@ -584,7 +806,7 @@ export default function VzyskanieVinovnikClient() {
             </div>
 
             <div style={{
-              background: 'var(--color-white)',
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-gold)',
               padding: '32px 28px',
@@ -597,8 +819,8 @@ export default function VzyskanieVinovnikClient() {
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {[
-                  'Обоснованы ли способ ремонта, цены деталей, расчёт УТС, хранение и расходы на экспертизу',
-                  'Не превышает ли расчёт доаварийную стоимость авто с учётом годных остатков при тотале',
+                  'Учтены ли выплаты по КАСКО, добровольные платежи и стоимость годных остатков',
+                  'Обоснованы ли способ ремонта, цены деталей, расчёт УТС, хранение и расходы на оценку',
                   'Есть ли основания заявить о грубой неосторожности потерпевшего или снизить возмещение по ст. 1083 ГК РФ'
                 ].map((item, i) => (
                   <li key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
@@ -625,32 +847,31 @@ export default function VzyskanieVinovnikClient() {
               <strong>Получили претензию или иск?</strong> Пришлите документ до подготовки ответа: процессуальные сроки и вопросы эксперту зависят от текущей стадии дела.
             </p>
             <a href="#form" className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '14px', whiteSpace: 'nowrap' }}>
-              Проверить требования
+              Проверить требование
             </a>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 6: ДОКУМЕНТЫ ═══ */}
+      {/* ═══ БЛОК 6: ДОКУМЕНТЫ ДЛЯ ПЕРВИЧНОЙ ОЦЕНКИ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Документы для
-              </span>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                оценки спора с виновником
-              </span>
+              <span style={{ display: 'inline-block' }}>Документы для</span> <br />
+              <span style={{ display: 'inline-block' }}>оценки спора с виновником ДТП</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Подготовьте имеющиеся материалы. Если части документов нет, юрист подскажет, как и где их официально запросить.
+              <span style={{ display: 'inline-block' }}>Чем полнее комплект документов, тем точнее юрист определит</span> <br />
+              <span style={{ display: 'inline-block' }}>правовые перспективы и процессуальный порядок взыскания.</span>
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '28px' }}>
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            
+            {/* Карточка 1: Материалы ДТП и страхования */}
             <div style={{
-              background: 'var(--color-white)',
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-primary)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
@@ -660,7 +881,7 @@ export default function VzyskanieVinovnikClient() {
               gap: '24px'
             }}>
               <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                Документы ДТП и страхования
+                <span style={{ display: 'inline-block' }}>Материалы ДТП и страхования</span>
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
@@ -669,8 +890,8 @@ export default function VzyskanieVinovnikClient() {
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Материалы ДТП</strong>
-                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Извещение о ДТП, схема аварии, определение или постановление ГИБДД, объяснения, фото, видео и данные участников.</span>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Документы происшествия</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Извещение о ДТП, схема аварии, определение или постановление ГИБДД, объяснения участников, фото, видео и контакты свидетелей.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
@@ -679,15 +900,16 @@ export default function VzyskanieVinovnikClient() {
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Страховое дело</strong>
-                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Полисы, акт осмотра страховой, калькуляция, направление на ремонт, выплата или решение финансового уполномоченного.</span>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Страховое дело и выплаты</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Полисы, акт осмотра страховой компании, калькуляция, направление на ремонт, выплата или решение финансового уполномоченного.</span>
                   </div>
                 </li>
               </ul>
             </div>
 
+            {/* Карточка 2: Ущерб, расходы и досудебная стадия */}
             <div style={{
-              background: 'var(--color-white)',
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-gold)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
@@ -697,7 +919,7 @@ export default function VzyskanieVinovnikClient() {
               gap: '24px'
             }}>
               <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                Ущерб и досудебная переписка
+                <span style={{ display: 'inline-block' }}>Ущерб, расходы и досудебная стадия</span>
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
@@ -705,8 +927,8 @@ export default function VzyskanieVinovnikClient() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Оценка и чеки расходов</strong>
-                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Отчёт независимой оценки, заказ-наряды СТО, чеки на эвакуацию, платную стоянку и расчёт утраты товарной стоимости (УТС).</span>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Документы об ущербе и расходах</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Акт осмотра, отчёт независимой оценки, заказ-наряды СТО, чеки на эвакуацию, платную стоянку и расчёт утраты товарной стоимости.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
@@ -714,8 +936,8 @@ export default function VzyskanieVinovnikClient() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Претензии и судебные акты</strong>
-                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Претензия с квитанциями об отправке, ответы второй стороны, проект иска, определения суда или экспертное заключение.</span>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Претензионная и судебная стадия</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Претензия с почтовыми квитанциями, ответы причинителя, соглашения, расписки, исковые материалы и определения суда.</span>
                   </div>
                 </li>
               </ul>
@@ -754,25 +976,25 @@ export default function VzyskanieVinovnikClient() {
         imagePosition="center 5%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Дмитрий Конопкин ведёт автомобильные споры: разделяет страховую и гражданско-правовую ответственность, проверяет доказательства ущерба и формирует позицию для переговоров и суда.
+            Юридическая практика с 2016 года; опыт следственной работы помогает детально анализировать материалы происшествий, договоры и позиции страховых компаний.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
               <span>
-                Юридическая практика с 2016 года; опыт следственной работы помогает детально анализировать материалы ДТП, расчётов страховых компаний и экспертиз.
+                Специализируется на автомобильных спорах: взыскание ущерба с виновников ДТП сверх лимита ОСАГО, споры с работодателями и собственниками транспорта.
               </span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
               <span>
-                Защищает интересы потерпевших по взысканию реального ущерба без износа, а также представляет интересы автовладельцев при защите от завышенных требований.
+                Оценивает реальную рыночную стоимость восстановительного ремонта без учёта износа деталей и формирует мотивированную позицию для суда.
               </span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
               <span>
-                Консультирует и ведёт дела в Липецке и Липецкой области, а также дистанционно по всей России.
+                Защищает интересы потерпевших и автовладельцев в Липецке и Липецкой области, а также ведет дела дистанционно по всей России.
               </span>
             </li>
           </ul>,
@@ -793,87 +1015,85 @@ export default function VzyskanieVinovnikClient() {
         cases={cases}
       />
 
-      {/* ═══ БЛОК 9: ПРОЦЕСС РАБОТЫ ═══ */}
+      {/* ═══ БЛОК 9: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
-        title="Как проходит работа"
-        subtitle="Прозрачные этапы ведения дела от первой консультации до исполнения решения суда."
-        alignTitle="left"
+        title="Как проходит работа по взысканию"
+        subtitle="Прозрачный и последовательный порядок защиты прав потерпевшего"
         steps={[
           {
             num: '01',
-            title: 'Получаем материалы дела',
-            desc: 'Принимаем документы ДТП, страховое дело, калькуляцию ущерба и сведения о статусе предполагаемого ответчика.'
+            title: 'Анализ материалов ДТП и выплаты',
+            desc: 'Получаем документы об аварии, проверяем надлежащую страховую выплату и определяем круг ответственных лиц.'
           },
           {
             num: '02',
-            title: 'Разделяем обязательства',
-            desc: 'Отделяем обязательство страховщика от деликтного требования к причинителю, проверяем состав ответчиков и доказательства.'
+            title: 'Организация осмотра и расчёт ущерба',
+            desc: 'Организуем осмотр с заблаговременным вызовом ответчика, рассчитываем реальную рыночную стоимость ремонта.'
           },
           {
             num: '03',
-            title: 'Согласуем стратегию и цену',
-            desc: 'Определяем план действий, объём юридической помощи, фиксируем стоимость и необходимость привлечения эксперта.'
+            title: 'Согласование стратегии и условий',
+            desc: 'Предлагаем оптимальный процессуальный маршрут, фиксируем состав работ и стоимость юридической помощи в договоре.'
           },
           {
             num: '04',
-            title: 'Ведём досудебную и судебную работу',
-            desc: 'Проводим переговоры, направляем претензию, готовим иск в суд, сопровождаем судебную экспертизу и заседания.'
+            title: 'Досудебная претензия или переговоры',
+            desc: 'Направляем мотивированную претензию либо оформляем соглашение о добровольном возмещении с графиком выплат.'
           },
           {
             num: '05',
-            title: 'Сопровождаем исполнение',
-            desc: 'После вступления решения в силу получаем исполнительный документ и передаём его в банк или службу судебных приставов.'
+            title: 'Судебное представительство и исполнение',
+            desc: 'Ведём дело во всех судебных заседаниях до получения решения суда и исполнительного листа.'
           }
         ]}
-        ctaTitle="Готовы разобрать вашу ситуацию"
-        ctaSubtitle="Опишите обстоятельства аварии и размер ущерба — адвокат изучит документы и предложит понятный план действий."
-        ctaButtonText="Обсудить взыскание"
+        ctaTitle="Готовы разобрать вашу ситуацию по взысканию с виновника"
+        ctaSubtitle="Оставьте номер телефона — адвокат свяжется с вами и подскажет законный порядок действий."
+        ctaButtonText="Обсудить взыскание ущерба"
         ctaButtonHref="#form"
-        footerNote="Для оценки перспектив дела понадобятся: документы ГИБДД, сведения о страховой выплате и отчёт об оценке ущерба. Возможен дистанционный формат работы."
       />
 
       {/* ═══ БЛОК 10: СТОИМОСТЬ ═══ */}
       <PricingBlock
         title="Стоимость юридической помощи"
-        subtitle="Стоимость зависит от числа ответчиков, состава требований и стадии спора."
+        subtitle="Стоимость зависит от стадии спора, объёма доказательств и необходимости судебного представительства."
         tiers={[
           {
-            title: 'Анализ и маршрут',
-            subtitle: 'Первичная правовая оценка документов',
+            title: 'Анализ и стратегия',
+            subtitle: 'Первичная правовая оценка ситуации',
             price: 'от 5 000 ₽',
             features: [
-              { name: 'Проверка страховой выплаты и лимита ОСАГО', value: '✓' },
+              { name: 'Проверка выплаты ОСАГО и статуса ответчика', value: '✓' },
+              { name: 'Анализ материалов ДТП и схемы аварии', value: '✓' },
               { name: 'Определение надлежащего ответчика', value: '✓' },
-              { name: 'Расчёт непокрытой разницы и ущерба', value: '✓' },
-              { name: 'Письменный план действий автоюриста', value: '✓' }
+              { name: 'Письменные рекомендации автоюриста', value: '✓' }
             ],
             buttonText: 'Получить оценку',
             buttonHref: '#form'
           },
           {
             title: 'Претензия или соглашение',
-            subtitle: 'Досудебное урегулирование с причинителем',
+            subtitle: 'Досудебное урегулирование ущерба',
             price: 'от 10 000 ₽',
             popular: true,
             badgeText: 'Популярно',
             features: [
-              { name: 'Формирование доказательственной базы', value: '✓' },
+              { name: 'Расчёт правовой позиции и убытков', value: '✓' },
               { name: 'Подготовка мотивированной претензии', value: '✓' },
-              { name: 'Составление соглашения о добровольной выплате', value: '✓' },
-              { name: 'Ведение переговоров с ответчиком', value: '✓' }
+              { name: 'Составление соглашения о возмещении', value: '✓' },
+              { name: 'Ведение досудебных переговоров', value: '✓' }
             ],
             buttonText: 'Заказать услугу',
             buttonHref: '#form'
           },
           {
             title: 'Судебное представительство',
-            subtitle: 'Полное ведение дела в суде под ключ',
+            subtitle: 'Защита в суде под ключ',
             price: 'от 25 000 ₽',
             features: [
               { name: 'Подготовка и подача искового заявления', value: '✓' },
-              { name: 'Участие адвоката во всех судебных заседаниях', value: '✓' },
-              { name: 'Постановка вопросов и сопровождение экспертизы', value: '✓' },
-              { name: 'Получение решения суда и исполнительного листа', value: '✓' }
+              { name: 'Участие адвоката во всех заседаниях суда', value: '✓' },
+              { name: 'Сопровождение судебной автоэкспертизы', value: '✓' },
+              { name: 'Взыскание ущерба и судебных расходов', value: '✓' }
             ],
             buttonText: 'Судебная защита',
             buttonHref: '#form'
@@ -881,23 +1101,23 @@ export default function VzyskanieVinovnikClient() {
         ]}
         disclaimer={
           <>
-            <span style={{ display: 'inline-block' }}>Сначала проверим страховую часть, ответчика, доказательства и сумму. После этого зафиксируем объём работы в договоре.</span> <br className="hidden-mobile" />
-            <span style={{ display: 'inline-block' }}>Экспертиза, оценка, госпошлина, почтовые, нотариальные и иные внешние расходы согласуются отдельно.</span>
+            <span style={{ display: 'inline-block' }}>Стоимость определяется после изучения документов и фиксируется в договоре.</span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>Независимая экспертиза, оценка, госпошлина и почтовые расходы согласуются отдельно.</span>
           </>
         }
       />
 
-      {/* ═══ БЛОК 11: FAQ ═══ */}
+      {/* ═══ БЛОК 11: ЧАСТЫЕ ВОПРОСЫ ═══ */}
       <FAQBlock
         superTitle="Частые вопросы"
-        title="Ответы на вопросы о взыскании ущерба"
-        subtitle="Разъяснения адвоката Дмитрия Конопкина по вопросам взыскания разницы с виновника ДТП и защиты ответчиков"
+        title="Ответы на частые вопросы"
+        subtitle="Разъяснения адвоката Дмитрия Конопкина по взысканию ущерба с виновника ДТП"
         ctaText="Задать свой вопрос"
         ctaLink="#form"
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 12: ДРУГИЕ АВТОМОБИЛЬНЫЕ СИТУАЦИИ ═══ */}
+      {/* ═══ БЛОК 12: СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
@@ -953,13 +1173,16 @@ export default function VzyskanieVinovnikClient() {
                   <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
                     <span style={{ display: 'inline-block' }}>Споры</span> <br /><span style={{ display: 'inline-block' }}>по ОСАГО</span>
                   </h3>
-                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>
-                    Если проблема заключается в недоплате или отказе страховщика.
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Защита при отказе, занижении выплаты, просрочке или срыве ремонта по ОСАГО.
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
-                  <span>Подробнее</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </div>
               </div>
             </Link>
@@ -986,13 +1209,16 @@ export default function VzyskanieVinovnikClient() {
                   <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
                     <span style={{ display: 'inline-block' }}>Взыскание ущерба</span> <br /><span style={{ display: 'inline-block' }}>при ДТП без ОСАГО</span>
                   </h3>
-                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>
-                    Если ответственность виновника вообще не застрахована.
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Если ответственность виновника аварии не была застрахована.
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
-                  <span>Подробнее</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </div>
               </div>
             </Link>
@@ -1019,13 +1245,16 @@ export default function VzyskanieVinovnikClient() {
                   <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
                     <span style={{ display: 'inline-block' }}>Оспаривание</span> <br /><span style={{ display: 'inline-block' }}>вины в ДТП</span>
                   </h3>
-                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>
-                    Если сначала нужно установить обстоятельства и распределение вины.
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Защита при спорных обстоятельствах аварии, обоюдной вине или необоснованном обвинении.
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
-                  <span>Подробнее</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </div>
               </div>
             </Link>
@@ -1052,35 +1281,24 @@ export default function VzyskanieVinovnikClient() {
                   <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
                     <span style={{ display: 'inline-block' }}>Споры</span> <br /><span style={{ display: 'inline-block' }}>по КАСКО</span>
                   </h3>
-                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>
-                    Если требование основано на договоре добровольного страхования.
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Защита при отказе, недоплате, споре по ремонту, угону или полной гибели авто.
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
-                  <span>Подробнее</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </div>
               </div>
             </Link>
           </div>
 
-          <div style={{ textAlign: 'center', marginTop: '36px' }}>
-            <Link 
-              href="/grazhdanam/avtoyurist/" 
-              className="all-services-link"
-              style={{ 
-                display: 'inline-flex', 
-                alignItems: 'center', 
-                gap: '8px', 
-                color: 'var(--color-primary)', 
-                fontWeight: 600, 
-                fontSize: '15px', 
-                textDecoration: 'none',
-                transition: 'color 0.2s'
-              }}
-            >
-              <span>Все направления помощи автоюриста</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <div style={{ marginTop: '32px' }}>
+            <Link href="/grazhdanam/avtoyurist/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
+              Смотреть все услуги автоюриста →
             </Link>
           </div>
         </div>
@@ -1098,7 +1316,7 @@ export default function VzyskanieVinovnikClient() {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                Проверим, с кого и какую сумму можно требовать
+                Разберём, с кого и какую сумму можно требовать
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
                 Оставьте номер телефона и кратко укажите: была ли выплата ОСАГО, размер предполагаемого ущерба и Вы взыскиваете ущерб или получили требование.
