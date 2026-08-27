@@ -57,32 +57,32 @@ export default function UstanovlenieServitutaClient() {
       },
       {
         "@type": "Service",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#service",
+        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#service",
         "name": "Установление земельного сервитута в Липецке",
         "serviceType": "Установление, изменение и прекращение земельного сервитута",
-        "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/",
+        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/",
         "description": "Помощь в установлении, изменении и прекращении земельного сервитута в Липецке: маршрут, условия, плата, соглашение и представительство в суде.",
         "provider": { "@id": "https://dejure-help.ru/#organization" },
         "areaServed": ["Липецк", "Липецкая область", "Россия"]
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#breadcrumb",
+        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#breadcrumb",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://matilda081133-sketch.github.io/-/" },
-          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/" },
-          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/" },
-          { "@type": "ListItem", "position": 4, "name": "Установление сервитута", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/" }
+          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/grazhdanam/" },
+          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/" },
+          { "@type": "ListItem", "position": 4, "name": "Установление сервитута", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/" }
         ]
       },
       {
         "@type": "WebPage",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#webpage",
-        "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/",
+        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#webpage",
+        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/",
         "name": "Установление земельного сервитута в Липецке | Де-Юре",
         "description": "Помощь в установлении, изменении и прекращении земельного сервитута в Липецке: маршрут, условия, плата, соглашение и представительство в суде.",
-        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#breadcrumb" },
-        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#service" }
+        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#breadcrumb" },
+        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#service" }
       }
     ]
   };
@@ -542,27 +542,21 @@ export default function UstanovlenieServitutaClient() {
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Документы на ваш (господствующий) участок</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Выписка ЕГРН, свидетельство или правоустанавливающий документ на участок, для которого запрашивается или оспаривается доступ.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Сведения о соседнем участке и объектах</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Кадастровые номера, выписки ЕГРН на обременяемую землю, а также на дома, здания или инженерные коммуникации.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Схемы и материалы доступа</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Планы, фотографии, варианты прохода/проезда, межевые, топографические и кадастровые материалы.</span>
@@ -587,27 +581,21 @@ export default function UstanovlenieServitutaClient() {
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Предложения и переписка со сторонами</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Письменные обращения к соседу, проект соглашения, полученный отказ, ответы администрации или сетевых организаций.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Расчёты платы и оценки</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Отчёт об оценке соразмерной платы за сервитут, выкладки соразмерной компенсации или требования владельца земли.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Судебные и экспертные материалы</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Заключения кадастровых инженеров, решения по прежним спорам, исковые заявления и акты об установленном сервитуте.</span>

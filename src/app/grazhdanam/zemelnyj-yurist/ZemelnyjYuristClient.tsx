@@ -226,45 +226,45 @@ export default function ZemelnyjYuristClient() {
   const directions = [
     {
       slug: 'spory-o-granicah-zemelnogo-uchastka',
-      title: 'Споры о границах земельного участка',
+      title: <><span style={{ display: 'inline-block' }}>Споры о границах</span> <br /><span style={{ display: 'inline-block' }}>земельного участка</span></>,
       desc: 'Поможем разобраться с наложением участков, ошибками межевания, захватом земли и разногласиями с соседями.',
-      link: '/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/'
+      link: '/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/'
     },
     {
       slug: 'oformlenie-prav-na-zemelnyj-uchastok',
-      title: 'Оформление прав на земельный участок',
+      title: <><span style={{ display: 'inline-block' }}>Оформление прав</span> <br /><span style={{ display: 'inline-block' }}>на земельный участок</span></>,
       desc: 'Проверим основание права и сопроводим оформление используемого, унаследованного или предоставленного участка.',
-      link: '/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/'
+      link: '/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/'
     },
     {
       slug: 'razdel-zemelnogo-uchastka',
-      title: 'Раздел земельного участка',
+      title: <><span style={{ display: 'inline-block' }}>Раздел</span> <br /><span style={{ display: 'inline-block' }}>земельного участка</span></>,
       desc: 'Оценим, можно ли образовать самостоятельные участки, и сопроводим раздел по соглашению или через суд.',
-      link: '/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/'
+      link: '/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/'
     },
     {
       slug: 'ustanovlenie-servituta',
-      title: 'Установление земельного сервитута',
+      title: <><span style={{ display: 'inline-block' }}>Установление</span> <br /><span style={{ display: 'inline-block' }}>земельного сервитута</span></>,
       desc: 'Поможем установить сервитут для прохода, проезда или коммуникаций либо защитить участок от чрезмерного обременения.',
-      link: '/-/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/'
+      link: '/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/'
     },
     {
       slug: 'osparivanie-kadastrovoj-stoimosti',
-      title: 'Оспаривание кадастровой стоимости',
+      title: <><span style={{ display: 'inline-block' }}>Оспаривание</span> <br /><span style={{ display: 'inline-block' }}>кадастровой стоимости</span></>,
       desc: 'Оценим возможный финансовый эффект и целесообразность установления кадастровой стоимости в размере рыночной.',
-      link: '/-/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/'
+      link: '/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/'
     },
     {
       slug: 'izmenenie-vri-zemelnogo-uchastka',
-      title: 'Изменение вида разрешённого использования участка',
+      title: <><span style={{ display: 'inline-block' }}>Изменение вида</span> <br /><span style={{ display: 'inline-block' }}>разрешённого использования</span></>,
       desc: 'Проверим, допускается ли нужный способ использования земли, и определим процедуру изменения ВРИ.',
-      link: '/-/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/'
+      link: '/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/'
     },
     {
       slug: 'perevod-zemelnogo-uchastka-v-druguyu-kategoriyu',
-      title: 'Перевод земельного участка в другую категорию',
+      title: <><span style={{ display: 'inline-block' }}>Перевод участка</span> <br /><span style={{ display: 'inline-block' }}>в другую категорию</span></>,
       desc: 'Оценим допустимость перевода, определим компетентный орган и сопроводим подготовку и подачу документов.',
-      link: '/-/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/'
+      link: '/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/'
     }
   ];
 

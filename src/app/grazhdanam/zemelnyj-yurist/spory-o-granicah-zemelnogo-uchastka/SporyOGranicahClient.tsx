@@ -166,19 +166,19 @@ export default function SporyOGranicahClient() {
 
   const relatedServices = [
     {
-      title: 'Раздел земельного участка',
+      title: <><span style={{ display: 'inline-block' }}>Раздел</span> <br /><span style={{ display: 'inline-block' }}>земельного участка</span></>,
       desc: 'Помощь при разделе земли между собственниками, образовании самостоятельных участков и определении порядка использования общего участка.',
-      link: '/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/'
+      link: '/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/'
     },
     {
-      title: 'Земельный сервитут',
+      title: <><span style={{ display: 'inline-block' }}>Установление</span> <br /><span style={{ display: 'inline-block' }}>земельного сервитута</span></>,
       desc: 'Помощь в оформлении права прохода, проезда или прокладки коммуникаций через соседний участок, если использовать землю без этого невозможно.',
-      link: '/-/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/'
+      link: '/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/'
     },
     {
-      title: 'Оформление земли в собственность',
+      title: <><span style={{ display: 'inline-block' }}>Оформление прав</span> <br /><span style={{ display: 'inline-block' }}>на земельный участок</span></>,
       desc: 'Помощь при оформлении права на участок, взаимодействии с администрацией и устранении препятствий к государственной регистрации.',
-      link: '/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/'
+      link: '/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/'
     }
   ];
 

@@ -57,32 +57,32 @@ export default function RazdelUchastkaClient() {
       },
       {
         "@type": "Service",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#service",
+        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#service",
         "name": "Раздел земельного участка в Липецке",
         "serviceType": "Раздел земельного участка, выдел доли и определение порядка пользования",
-        "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/",
+        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/",
         "description": "Проверим юридическую и техническую делимость земельного участка в Липецке, подготовим соглашение или судебное дело и сопроводим кадастровый учёт.",
         "provider": { "@id": "https://dejure-help.ru/#organization" },
         "areaServed": ["Липецк", "Липецкая область", "Россия"]
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#breadcrumb",
+        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#breadcrumb",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://matilda081133-sketch.github.io/-/" },
-          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/" },
-          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/" },
-          { "@type": "ListItem", "position": 4, "name": "Раздел земельного участка", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/" }
+          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/grazhdanam/" },
+          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/" },
+          { "@type": "ListItem", "position": 4, "name": "Раздел земельного участка", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/" }
         ]
       },
       {
         "@type": "WebPage",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#webpage",
-        "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/",
+        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#webpage",
+        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/",
         "name": "Раздел земельного участка в Липецке | Де-Юре",
         "description": "Проверим юридическую и техническую делимость земельного участка в Липецке, подготовим соглашение или судебное дело и сопроводим кадастровый учёт.",
-        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#breadcrumb" },
-        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#service" }
+        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#breadcrumb" },
+        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#service" }
       }
     ]
   };
@@ -536,18 +536,14 @@ export default function RazdelUchastkaClient() {
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Правоустанавливающий документ на землю</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Свидетельство, договор, решение о предоставлении или наследственный документ.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Сведения ЕГРН и план участка</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Выписка ЕГРН, межевой план, схема расположения или чертёж фактических границ.</span>
@@ -572,18 +568,14 @@ export default function RazdelUchastkaClient() {
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Документы на здания и сооружения</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Выписки ЕГРН на дома или промышленные объекты, если раздел связан с их использованием.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Предварительные соглашения и отказы</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Проект соглашения сособственников, отказ Росреестра или уведомление администрации, если обращения уже были.</span>

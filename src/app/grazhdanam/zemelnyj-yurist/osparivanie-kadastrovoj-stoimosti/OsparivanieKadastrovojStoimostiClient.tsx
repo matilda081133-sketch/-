@@ -57,32 +57,32 @@ export default function OsparivanieKadastrovojStoimostiClient() {
       },
       {
         "@type": "Service",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/#service",
+        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/#service",
         "name": "Оспаривание кадастровой стоимости в Липецке",
         "serviceType": "Пересмотр и снижение кадастровой стоимости",
-        "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/",
+        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/",
         "description": "Оценим экономический смысл пересмотра кадастровой стоимости в Липецкой области, организуем рыночную оценку и сопроводим внесудебную и судебную процедуру.",
         "provider": { "@id": "https://dejure-help.ru/#organization" },
         "areaServed": ["Липецк", "Липецкая область", "Россия"]
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/#breadcrumb",
+        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/#breadcrumb",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://matilda081133-sketch.github.io/-/" },
-          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/" },
-          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/" },
-          { "@type": "ListItem", "position": 4, "name": "Оспаривание кадастровой стоимости", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/" }
+          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/grazhdanam/" },
+          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/" },
+          { "@type": "ListItem", "position": 4, "name": "Оспаривание кадастровой стоимости", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/" }
         ]
       },
       {
         "@type": "WebPage",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/#webpage",
-        "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/",
+        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/#webpage",
+        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/",
         "name": "Оспаривание кадастровой стоимости в Липецке | Де-Юре",
         "description": "Оценим экономический смысл пересмотра кадастровой стоимости в Липецкой области, организуем рыночную оценку и сопроводим внесудебную и судебную процедуру.",
-        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/#breadcrumb" },
-        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/#service" }
+        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/#breadcrumb" },
+        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/#service" }
       }
     ]
   };
@@ -537,18 +537,14 @@ export default function OsparivanieKadastrovojStoimostiClient() {
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Сведения об объекте</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Кадастровый номер, выписка ЕГРН, назначение, площадь и основные характеристики.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Документы о праве или аренде</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Выписка ЕГРН, договор аренды публичной земли, документы о выкупе и подтверждение статуса заявителя.</span>
@@ -573,18 +569,14 @@ export default function OsparivanieKadastrovojStoimostiClient() {
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Данные о платеже</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Налоговые уведомления, расчёт аренды, выкупной цены или иной платёж, зависящий от стоимости.</span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(193, 160, 102, 0.15)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Оценочные и процедурные материалы</strong>
                     <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Отчёт оценщика, уведомление о стоимости, заявление, решение бюджетного учреждения или судебные документы.</span>
