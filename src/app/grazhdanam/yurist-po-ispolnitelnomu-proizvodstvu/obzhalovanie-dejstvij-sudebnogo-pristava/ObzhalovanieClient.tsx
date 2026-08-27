@@ -30,7 +30,8 @@ export default function ObzhalovanieClient() {
       category: 'Должник / Исполнительский сбор',
       title: (
         <>
-          <span style={{ display: 'inline-block' }}>Оспорили исполнительский сбор</span>{' '}
+          <span style={{ display: 'inline-block' }}>Оспорили</span> <br />
+          <span style={{ display: 'inline-block' }}>исполнительский сбор</span> <br />
           <span style={{ display: 'inline-block' }}>после ненадлежащего извещения</span>
         </>
       ),
