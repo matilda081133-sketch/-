@@ -129,7 +129,10 @@ export default function OsparivanieVinyClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="cta_click"
         primaryCtaSubtext={
-          <>Сообщите дату ДТП, какой документ получен и есть ли видео: <a href="tel:+79103503111" data-analytics="phone_click">+7 (910) 350-31-11</a></>
+          <>
+            <span style={{ display: 'inline-block' }}>Сообщите дату ДТП, какой документ получен</span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>и&nbsp;есть ли видео: <a href="tel:+79103503111" data-analytics="phone_click">+7 (910) 350-31-11</a></span>
+          </>
         }
         trustItems={[
           { text: 'Отделим нарушение ПДД от причинной связи с аварией' },
