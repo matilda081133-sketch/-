@@ -139,7 +139,7 @@ export default function OsparivanieVinyClient() {
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
-        imageObjectPosition="center 5%"
+        imageObjectPosition="center 25%"
       />
 
       {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ ОСПАРИВАТЬ ВИНУ ═══ */}

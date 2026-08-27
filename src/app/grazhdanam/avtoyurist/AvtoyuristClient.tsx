@@ -134,7 +134,7 @@ export default function AvtoyuristClient() {
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
-        imageObjectPosition="center 5%"
+        imageObjectPosition="center 25%"
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ, В КОТОРЫХ НУЖНА ПОМОЩЬ АВТОЮРИСТА ═══ */}
@@ -310,10 +310,6 @@ export default function AvtoyuristClient() {
                     <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
                       {item.desc}
                     </p>
-                  </div>
-                  <div className="urgent-card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px' }}>
-                    <span>Подробнее</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </div>
                 </div>
               </a>
