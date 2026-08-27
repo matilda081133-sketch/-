@@ -1,5 +1,7 @@
 'use client';
 
+import ContactsForm from '@/components/ContactsForm';
+
 import React from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
@@ -1078,55 +1080,12 @@ export default function SnyatieArestaAvtoClient() {
             </div>
 
             <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <h3 style={{ fontSize: '28px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0', lineHeight: 1.2 }}>
-                  Написать нам
-                </h3>
-                <p style={{ color: 'var(--color-text-secondary)', marginBottom: '24px', fontSize: '15px', lineHeight: 1.6 }}>
-                  <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист перезвонит</span> <br />
-                  <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
-                </p>
-                <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                  <input type="hidden" name="source_page" value="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/" />
-                  <input type="hidden" name="direction" value="ispolnitelnoe_snyatie_aresta_avto" />
-                  <input type="hidden" name="selected_specialist" value="smolyaninova-marina-valerevna" />
-                  <input type="hidden" name="service" value="car_arrest_removal" />
-                  <input type="hidden" name="audience" value="citizens" />
-
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <label htmlFor="name" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Имя (необязательно)</label>
-                    <input type="text" id="name" name="name" autoComplete="name" placeholder="Иван Иванов" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
-                  </div>
-
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <label htmlFor="phone" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>
-                      Телефон <span style={{ color: 'var(--color-gold)' }}>*</span>
-                    </label>
-                    <input type="tel" id="phone" name="phone" autoComplete="tel" required placeholder="+7 (___) ___-__-__" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', width: '100%', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
-                  </div>
-
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <label htmlFor="message" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Описание ситуации (необязательно)</label>
-                    <textarea id="message" name="message" rows={3} placeholder="Кратко опишите автомобиль, орган и суть ограничения..." style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', fontFamily: 'inherit', resize: 'vertical', background: 'var(--color-white)', color: 'var(--color-deep-blue)' }} />
-                  </div>
-
-                  <label style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', marginTop: '4px' }}>
-                    <input type="checkbox" name="agreement" required style={{ marginTop: '3px', accentColor: 'var(--color-gold)', flexShrink: 0 }} />
-                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                      <Link href="/consent/" target="_blank" style={{ color: 'var(--color-deep-blue)', textDecoration: 'underline' }}>Я даю согласие на обработку персональных данных</Link> и подтверждаю, что ознакомлен с <Link href="/privacy/" target="_blank" style={{ color: 'var(--color-deep-blue)', textDecoration: 'underline' }}>Политикой в отношении обработки персональных данных</Link>.
-                    </span>
-                  </label>
-
-                  <button type="submit" style={{ width: '100%', padding: '16px', fontSize: '16px', marginTop: '8px', background: '#10273B', color: '#FFFFFF', border: '1px solid #9B7E55', borderRadius: '0', whiteSpace: 'nowrap', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s ease', boxShadow: '0 4px 12px rgba(16, 39, 59, 0.15)' }}>
-                    Проверить документы
-                  </button>
-
-                  <div style={{ marginTop: '4px', fontSize: '12px', color: 'var(--color-text-secondary)', lineHeight: 1.4, textAlign: 'center' }}>
-                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в выходной день,</span> <br />
-                    <span style={{ display: 'inline-block' }}>мы перезвоним в ближайший рабочий день.</span>
-                  </div>
-                </form>
-              </div>
+              <ContactsForm 
+                title="Снять арест с автомобиля"
+                subtitle="Оставьте имя и номер телефона. Юрист по исполнительному производству перезвонит в течение 15 минут."
+                buttonText="Оставить заявку"
+                commentPlaceholder="Кратко опишите ситуацию или вопрос…"
+              />
             </div>
           </div>
         </div>
