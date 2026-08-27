@@ -447,7 +447,7 @@ export default function AvtoyuristClient() {
               {
                 title: 'Взыскание ущерба при ДТП без ОСАГО',
                 desc: 'Зафиксируем размер ущерба и подготовим требования непосредственно к ответственному лицу.',
-                link: '/grazhdanam/avtoyurist/dtp-bez-osago/'
+                link: '/grazhdanam/avtoyurist/vzyskanie-ushcherba-pri-dtp-bez-osago/'
               },
               {
                 title: 'Оспаривание вины в ДТП',

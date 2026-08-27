@@ -35,6 +35,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/avtoyurist/',
     '/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/',
     '/grazhdanam/avtoyurist/spory-po-kasko/',
+    '/grazhdanam/avtoyurist/spory-po-osago/',
+    '/grazhdanam/avtoyurist/vzyskanie-ushcherba-pri-dtp-bez-osago/',
   ];
 
   const specialistRoutes = Object.keys(teamData).map((slug) => `/specialisty/${slug}/`);
