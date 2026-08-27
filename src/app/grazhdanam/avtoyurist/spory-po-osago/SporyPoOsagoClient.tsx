@@ -120,7 +120,7 @@ export default function SporyPoOsagoClient() {
           {
             text: (
               <>
-                <span style={{ display: 'inline-block' }}>Проверим выплату, отказ, направление</span>{' '}
+                <span style={{ display: 'inline-block' }}>Проверим выплату, отказ, направление</span> <br className="hidden-mobile" />
                 <span style={{ display: 'inline-block' }}>на ремонт и материалы осмотра</span>
               </>
             )
@@ -961,7 +961,7 @@ export default function SporyPoOsagoClient() {
         ]}
         disclaimer={
           <>
-            <span style={{ display: 'inline-block' }}>Стоимость определяется после изучения документов и фиксируется в договоре.</span>{' '}
+            <span style={{ display: 'inline-block' }}>Стоимость определяется после изучения документов и фиксируется в договоре.</span> <br className="hidden-mobile" />
             <span style={{ display: 'inline-block' }}>Независимая экспертиза, оценка, почтовые и иные внешние расходы согласуются отдельно.</span>
           </>
         }
