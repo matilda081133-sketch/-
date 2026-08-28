@@ -194,165 +194,85 @@ export default function OstavlenieMestaDtpClient() {
         imageObjectPosition="center 25%"
       />
 
-      {/* ═══ БЛОК 2: ЧТО ГРОЗИТ И ЧТО ДОЛЖНО БЫТЬ ДОКАЗАНО ═══ */}
-      <section style={{ background: 'var(--color-deep-blue)', padding: '80px 0 72px', position: 'relative', overflow: 'hidden' }}>
-        <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '40px', textAlign: 'left' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Ответственность наступает не за любой
-              </span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                отъезд после происшествия
-              </span>
-            </h2>
-            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '24px' }}></div>
-            
-            <div style={{
-              background: 'rgba(255, 255, 255, 0.08)',
-              borderLeft: '4px solid var(--color-gold)',
-              padding: '18px 24px',
-              marginBottom: '24px',
-              color: 'rgba(255, 255, 255, 0.95)',
-              fontSize: '15px',
-              lineHeight: 1.6
-            }}>
-              <strong style={{ color: '#FFFFFF' }}>Правовая рамка (ч. 2 ст. 12.27 КоАП РФ):</strong> Оставление водителем места ДТП в нарушение ПДД при отсутствии признаков преступления влечёт лишение права управления на срок от одного года до полутора лет либо административный арест до пятнадцати суток. <span style={{ opacity: 0.75, fontSize: '13.5px' }}>(редакция проверена 11.08.2026)</span>
-            </div>
-
-            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', margin: 0, lineHeight: 1.65, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Для привлечения к ответственности суд должен установить не только перемещение</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>автомобиля, но и юридически значимые обстоятельства: событие ДТП, причастность водителя,</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>нарушение порядка оформления и умышленную форму вины.</span>
-            </p>
-          </div>
-
-          <div className="grid grid-4" style={{ gap: '20px' }}>
-            {[
-              {
-                num: '01',
-                title: 'Событие ДТП',
-                desc: 'Событие должно возникнуть в процессе движения транспортного средства и повлечь предусмотренные ПДД последствия: вред людям, повреждение транспорта, сооружений, груза или иной материальный ущерб.'
-              },
-              {
-                num: '02',
-                title: 'Причастность водителя',
-                desc: 'Нужно установить связь действий конкретного водителя с происшествием. Механического контакта может не быть, если нарушение водителя стало причиной ДТП и он осознавал произошедшее.'
-              },
-              {
-                num: '03',
-                title: 'Порядок оформления',
-                desc: 'Проверяется, имел ли водитель право переместить автомобиль, оформить происшествие без полиции или следовать указаниям сотрудника полиции о месте оформления.'
-              },
-              {
-                num: '04',
-                title: 'Умышленная вина',
-                desc: 'Суд оценивает, понимал ли водитель, что произошло ДТП, и желал ли покинуть место в нарушение правил. Умысел нельзя подменять предположением.'
-              }
-            ].map((card, i) => (
-              <div key={i} style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                borderTop: '3px solid var(--color-gold)',
-                padding: '28px 22px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '12px'
-              }}>
-                <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)' }}>
-                  {card.num}
-                </span>
-                <h3 style={{ margin: 0, fontSize: '18px', color: 'var(--color-white)', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
-                  {card.title}
-                </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55 }}>
-                  {card.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 3: СИТУАЦИИ, В КОТОРЫХ НУЖЕН АДВОКАТ ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 2: НЕ ТЕРЯЙТЕ ДОКАЗАТЕЛЬСТВА И НЕ ФОРМИРУЙТЕ ВЕРСИЮ НАУГАД (ОБЪЕДИНЕННЫЙ БЛОК) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Когда особенно важно
+                Не теряйте доказательства
               </span>{' '}
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                проверить материалы до суда
+                и не формируйте версию наугад
               </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Фактические обстоятельства каждого случая индивидуальны. Разбираем конкретную</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>ситуацию до дачи объяснений в ГИБДД или первого судебного заседания.</span>
+              <span style={{ display: 'inline-block' }}>Правильная фиксация документов и отказ от поспешных шагов сохраняют</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>доказательственную базу для успешной правовой защиты в ГИБДД и суде.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
             {[
               {
-                tag: 'Касание без повреждений',
+                tag: 'Хронология',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Не заметили касания</span>
-                    <span style={{ display: 'block' }}>или повреждения</span>
+                    <span style={{ display: 'block' }}>Зафиксируйте</span>
+                    <span style={{ display: 'block' }}>хронологию событий</span>
                   </>
                 ),
-                desc: 'Нужно сопоставить характер удара, размер и локализацию повреждений, шум, обзор, габариты автомобиля, видео и последующее поведение.'
+                desc: 'Запишите точный маршрут, время, место остановки, звонки, сообщения и действия сразу после события. Не редактируйте исходные файлы.'
               },
               {
-                tag: 'Освобождение дороги',
+                tag: 'Видеозаписи',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Отъехали, чтобы не</span>
-                    <span style={{ display: 'block' }}>блокировать движение</span>
+                    <span style={{ display: 'block' }}>Сохраните запись</span>
+                    <span style={{ display: 'block' }}>видеорегистратора</span>
                   </>
                 ),
-                desc: 'Важно, насколько далеко переместился автомобиль, была ли зафиксирована обстановка, оставался ли водитель доступен для оформления и имелся ли умысел покинуть место.'
+                desc: 'Сделайте копии записи видеорегистратора, фото автомобиля и места, сохраните данные навигации, парковки, пропускной системы и свидетелей.'
               },
               {
-                tag: 'Парковочный контакт',
+                tag: 'Процессуальный статус',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Задели припаркованный</span>
-                    <span style={{ display: 'block' }}>автомобиль</span>
+                    <span style={{ display: 'block' }}>Уточните вызов</span>
+                    <span style={{ display: 'block' }}>в ГИБДД</span>
                   </>
                 ),
-                desc: 'Отсутствие второго водителя не отменяет обязанностей участника ДТП. Ключевыми становятся записи камер, повреждения, время и действия после контакта.'
+                desc: 'Выясните, куда и в каком качестве Вас вызывают, номер материала, дату явки или заседания. Получите копии составленных документов.'
               },
               {
-                tag: 'Устная договорённость',
+                tag: 'Подписание документов',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Участники договорились</span>
-                    <span style={{ display: 'block' }}>на месте</span>
+                    <span style={{ display: 'block' }}>Не подписывайте</span>
+                    <span style={{ display: 'block' }}>пустые бланки</span>
                   </>
                 ),
-                desc: 'Устная договорённость или расписка не всегда означают, что требования ПДД и правила оформления были соблюдены.'
+                desc: 'Не подписывайте документы, содержание которых непонятно. Замечания излагайте письменно и добивайтесь их внесения в протокол.'
               },
               {
-                tag: 'Помощь пострадавшему',
+                tag: 'Консультация',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Доставляли пострадавшего</span>
-                    <span style={{ display: 'block' }}>в больницу</span>
+                    <span style={{ display: 'block' }}>Обсудите факты</span>
+                    <span style={{ display: 'block' }}>с адвокатом</span>
                   </>
                 ),
-                desc: 'ПДД допускают это в экстренном случае при определённых условиях, но требуют сообщить данные и возвратиться к месту происшествия.'
+                desc: 'До подробных объяснений согласуйте позицию с защитником. Не придумывайте недостоверных версий и не уничтожайте записи.'
               },
               {
-                tag: 'Вызов постфактум',
+                tag: 'Особые ситуации',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Вызвали в ГИБДД</span>
-                    <span style={{ display: 'block' }}>спустя несколько дней</span>
+                    <span style={{ display: 'block' }}>Учтите специфику</span>
+                    <span style={{ display: 'block' }}>происшествия</span>
                   </>
                 ),
-                desc: 'Нужно выяснить, на каких доказательствах основана причастность, запросить материалы и подготовить последовательные объяснения.'
+                desc: 'Касание без повреждений, освобождение дороги, парковочный контакт или доставка пострадавшего требуют отдельной правовой оценки.'
               }
             ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
@@ -414,255 +334,428 @@ export default function OstavlenieMestaDtpClient() {
             ))}
           </div>
 
-          <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 36px' }} data-analytics="cta_click">
-              Разобрать мою ситуацию с адвокатом
-            </a>
+          <div style={{
+            background: 'var(--color-white)',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid #C62828',
+            padding: '24px 30px',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
+          }}>
+            <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>
+              <strong style={{ color: '#C62828' }}>Если люди пострадали:</strong> Окажите помощь, немедленно вызовите скорую медицинскую помощь и полицию. При возможной уголовной квалификации (тяжкий вред здоровью или гибель людей по ст. 264 УК РФ) требуется отдельная срочная защита <a href="/ugolovnye-dela/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>адвоката по уголовным делам</a>.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: ЧТО СДЕЛАТЬ ДО ОБЪЯСНЕНИЙ ИЛИ СУДА ═══ */}
+      {/* ═══ БЛОК 3: ОТВЕТСТВЕННОСТЬ НАСТУПАЕТ НЕ ЗА ЛЮБОЙ ОТЪЕЗД (ТЕМНО-СИНЯЯ КАРТОЧКА-НАВИГАТОР + 2 КАРТОЧКИ) ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          
+          <div style={{ maxWidth: '820px', marginBottom: '40px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Ответственность наступает не за любой
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                отъезд после происшествия
+              </span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Для привлечения по ч. 2 ст. 12.27 КоАП РФ суд должен установить всю совокупность юридически значимых обстоятельств,</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>а не исходить из одного лишь факта перемещения транспортного средства.</span>
+            </p>
+          </div>
+
+          {/* Темно-синяя карточка-навигатор */}
+          <div style={{
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            marginBottom: '32px',
+            position: 'relative'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+              <div>
+                <h3 style={{ fontSize: 'clamp(20px, 2.5vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  4 обязательных элемента доказывания
+                </h3>
+              </div>
+              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '520px', lineHeight: 1.5 }}>
+                <span style={{ display: 'block' }}>Каждый элемент проверяется по материалам дела:</span>
+                <span style={{ display: 'block' }}>отсутствие хотя бы одного исключает состав правонарушения.</span>
+              </div>
+            </div>
+
+            <div className="grid grid-4" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>01</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Событие</span>
+                    <span style={{ display: 'block' }}>ДТП</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Возникло в процессе движения и повлекло вред людям, повреждение авто, сооружений или материальный ущерб.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>02</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Причастность</span>
+                    <span style={{ display: 'block' }}>водителя</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Устанавливается прямая связь между действиями водителя и происшествием (в том числе при бесконтактном ДТП).
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>03</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Порядок</span>
+                    <span style={{ display: 'block' }}>оформления</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Проверяется право освободить проезжую часть, оформить происшествие без полиции или следовать указаниям МВД.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>04</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Умышленная</span>
+                    <span style={{ display: 'block' }}>форма вины</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Осознавал ли водитель факт ДТП и желал ли умышленно скрыться от оформления. Умысел нельзя предполагать.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 2 КРУПНЫЕ КАРТОЧКИ */}
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            
+            {/* Карточка 1: Что исследует суд и защитник */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
+                  <span style={{ display: 'inline-block' }}>Что исследует адвокат</span>{' '}
+                  <span style={{ display: 'inline-block' }}>при проверке умысла</span>
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>Сопоставляем объективные данные для исключения</span>{' '}
+                <span style={{ display: 'inline-block' }}>необоснованного обвинения в умышленном скрытии.</span>
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Характер контакта и повреждения
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Оцениваем силу удара, локализацию, уровень шума, видимость, габариты и возможность реально почувствовать касание.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Поведение водителя сразу после события
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Проверяем остановку, осмотр автомобиля, звонки, сохранение траектории и взаимодействие с другими участниками.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Записи камер и качество видеоматериалов
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Истребуем записи регистраторов и объектовых камер для подтверждения фактических действий водителя на месте.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Карточка 2: Основания прекращения дела */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
+                  <span style={{ display: 'inline-block' }}>Основания для прекращения</span>{' '}
+                  <span style={{ display: 'inline-block' }}>производства по делу</span>
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>Правовые результаты, которых добивается защита</span>{' '}
+                <span style={{ display: 'inline-block' }}>при исследовании материалов в суде.</span>
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Отсутствие события или состава (ст. 24.5 КоАП РФ)
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Доказываем отсутствие материального ущерба либо недоказанность умысла и осведомлённости о факте ДТП.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Малозначительность правонарушения (ст. 2.9 КоАП РФ)
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      При минимальных повреждениях и отсутствии вреда суд вправе ограничиться устным замечанием без лишения прав.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Исключение недопустимых доказательств
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Оспариваем процессуальные нарушения при составлении протокола, схемы и получении первичных объяснений.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Важно: полупрозрачная карточка */}
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.65)',
+            backdropFilter: 'blur(6px)',
+            padding: '22px 28px',
+            border: '1px solid rgba(23, 50, 77, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            fontSize: '14px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.6,
+            marginBottom: '32px'
+          }}>
+            <strong style={{ color: 'var(--color-primary)' }}>Правовая справка (ч. 2 ст. 12.27 КоАП РФ):</strong> Санкция статьи предусматривает лишение права управления на срок от 1 до 1.5 лет либо административный арест до 15 суток. Штраф законом не предусмотрен, поэтому защита выстраивается на доказывании отсутствия умысла, состава либо процессуальных нарушений.
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 36px' }}>
+              Оценить материалы и перспективы дела
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 4: ЧТО СДЕЛАЕТ АДВОКАТ ПРИ ОБВИНЕНИИ В ОСТАВЛЕНИИ МЕСТА ДТП (КАК В ДТП БЕЗ ОСАГО) ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Не теряйте доказательства
-              </span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                и не формируйте версию наугад
-              </span>
+              <span style={{ display: 'inline-block' }}>Что сделает адвокат</span> <br />
+              <span style={{ display: 'inline-block' }}>при обвинении в оставлении места ДТП</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Первые действия после вызова или происшествия определяют возможность</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>доказать отсутствие умысла и защитить водительские права.</span>
+              <span style={{ display: 'inline-block' }}>Полный комплекс процессуальной защиты — от срочного истребования видеозаписей</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>до прекращения производства в суде или обжалования судебного постановления.</span>
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '48px' }}>
             {[
               {
                 num: '01',
-                title: 'Зафиксируйте хронологию событий',
-                text: 'Запишите маршрут, время, место остановки, звонки, сообщения и свои действия сразу после события. Не редактируйте исходные файлы.'
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>До составления</span>
+                    <span style={{ display: 'block' }}>протокола</span>
+                  </>
+                ),
+                desc: 'Уточнит процессуальный статус, изучит первичные документы, поможет сохранить видеозаписи камер и подготовит позицию до дачи объяснений.'
               },
               {
                 num: '02',
-                title: 'Сохраните запись видеорегистратора',
-                text: 'Сделайте копии записи видеорегистратора, фото автомобиля и места, сохраните данные навигации, парковки, пропускной системы и контакты свидетелей.'
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>При оформлении</span>
+                    <span style={{ display: 'block' }}>материалов в ГИБДД</span>
+                  </>
+                ),
+                desc: 'Проверит схему и рапорты, зафиксирует письменные замечания, заявит ходатайства об истребовании записей и допросе очевидцев.'
               },
               {
                 num: '03',
-                title: 'Уточните процессуальный статус',
-                text: 'Выясните, куда и в каком качестве Вас вызывают, номер материала, дату явки или заседания. Получите копии составленных документов.'
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Правовой анализ</span>
+                    <span style={{ display: 'block' }}>доказательств</span>
+                  </>
+                ),
+                desc: 'Сопоставит траекторию, локализацию повреждений, обзорность, габариты и обоснует отсутствие умысла на оставление места происшествия.'
               },
               {
                 num: '04',
-                title: 'Не подписывайте пустые бланки',
-                text: 'Не подписывайте документы, содержание которых непонятно. Замечания излагайте письменно и добивайтесь их внесения в протокол.'
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Защита</span>
+                    <span style={{ display: 'block' }}>в мировом суде</span>
+                  </>
+                ),
+                desc: 'Подготовит письменные возражения, заявит ходатайства об исключении недопустимых доказательств и примет личное участие во всех заседаниях.'
               },
               {
                 num: '05',
-                title: 'Обсудите факты с адвокатом до дачи объяснений',
-                text: 'До подробных объяснений согласуйте позицию с защитником. Не придумывайте недостоверных версий и не уничтожайте записи.'
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Допрос инспекторов</span>
+                    <span style={{ display: 'block' }}>и свидетелей</span>
+                  </>
+                ),
+                desc: 'Выявит противоречия в показаниях заявителя и сотрудников ГИБДД, докажет добросовестность и последовательность поведения водителя.'
+              },
+              {
+                num: '06',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Обжалование</span>
+                    <span style={{ display: 'block' }}>постановления суда</span>
+                  </>
+                ),
+                desc: 'Составит мотивированную жалобу в вышестоящий суд со ссылками на разъяснения ВС РФ и добьётся пересмотра или отмены судебного акта.'
               }
-            ].map((step, i) => (
-              <div key={i} style={{
-                padding: '28px 26px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderLeft: '4px solid var(--color-primary)',
-                boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+            ].map((item, idx) => (
+              <div key={idx} className="hover-lift" style={{
                 display: 'flex',
-                gap: '18px',
-                alignItems: 'flex-start'
+                flexDirection: 'column',
+                padding: '38px 24px 30px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                borderRadius: '0',
+                position: 'relative',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                transition: 'all 0.3s ease'
               }}>
-                <span style={{ fontSize: '22px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>
-                  {step.num}
-                </span>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
+                </div>
                 <div>
-                  <h3 style={{ margin: '0 0 8px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
-                    {step.title}
+                  <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                    {item.title}
                   </h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                    {step.text}
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    {item.desc}
                   </p>
                 </div>
               </div>
             ))}
           </div>
 
+          {/* ГРАНИЦЫ УСЛУГИ */}
           <div style={{
-            background: 'var(--color-white)',
-            border: '1px solid var(--color-border)',
-            borderLeft: '4px solid #C62828',
-            padding: '22px 28px',
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-            fontSize: '15px',
-            color: 'var(--color-deep-blue)',
-            lineHeight: 1.6
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            color: '#FFFFFF',
+            position: 'relative',
+            overflow: 'hidden'
           }}>
-            <strong style={{ color: '#C62828' }}>Если люди пострадали:</strong> Окажите помощь, вызовите скорую медицинскую помощь и полицию. При возможной уголовной квалификации (тяжкий вред здоровью или гибель людей по ст. 264 УК РФ) требуется отдельная срочная защита <a href="/ugolovnye-dela/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>адвоката по уголовным делам</a>.
+            <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.05, pointerEvents: 'none' }}>
+              <svg width="140" height="140" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 12px 0' }}>
+                Границы услуги и уголовно-правовая квалификация
+              </h3>
+              <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
+                Услуга охватывает производство по делам об административных правонарушениях по ч. 2 ст. 12.27 КоАП РФ. При наличии пострадавших с тяжким вредом здоровью или признаках уголовной ответственности по ст. 264 УК РФ защита осуществляется по отдельному соглашению адвокатом по уголовным делам.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: ЧТО ПРОВЕРИТ АДВОКАТ ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Защита строится на фактах,
-              </span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                а не на одной формальной ошибке
-              </span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Анализируем доказательства в совокупности, сопоставляя каждую деталь с требованиями закона</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>и актуальной правоприменительной практикой Верховного Суда РФ.</span>
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
-            {[
-              {
-                title: 'Наличие события ДТП',
-                desc: 'Характер события, движение автомобиля, наличие материального ущерба или вреда, место и время происшествия.'
-              },
-              {
-                title: 'Причастность водителя',
-                desc: 'Траектория, контакты, записи камер, показания, повреждения, причинная связь между действиями водителя и последствиями.'
-              },
-              {
-                title: 'Осведомлённость и умысел',
-                desc: 'Мог ли водитель почувствовать или увидеть событие, его действия сразу после него, остановка, звонки, возвращение, общение с участниками.'
-              },
-              {
-                title: 'Соблюдение норм ПДД',
-                desc: 'Были ли основания освободить проезжую часть, оформить ДТП без полиции, покинуть место по указанию сотрудника либо доставить пострадавшего.'
-              },
-              {
-                title: 'Процессуальные документы',
-                desc: 'Протоколы, схема, объяснения, извещение, разъяснение прав, ходатайства, противоречия и полнота материалов дела.'
-              },
-              {
-                title: 'Допустимость доказательств',
-                desc: 'Источник и содержание видеозаписей, показания свидетелей, осмотры, фототаблицы, экспертные выводы и возможность их проверки.'
-              },
-              {
-                title: 'Сроки давности и стадия',
-                desc: 'Дата составления материалов, срок привлечения к ответственности, судебное заседание, вручение постановления и срок обжалования.'
-              }
-            ].map((check, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '24px 22px',
-                background: '#FFFFFF',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '10px'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                  <h3 style={{ margin: 0, fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
-                    {check.title}
-                  </h3>
-                </div>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                  {check.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 6: ВАРИАНТЫ ПОМОЩИ ПО СТАДИЯМ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Подключимся на текущей
-              </span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                стадии дела
-              </span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Объём участия адвоката определяется стадией административного процесса</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>и поставленными доверителем задачами.</span>
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
-            {[
-              {
-                num: '01',
-                title: 'До составления протокола',
-                desc: 'Уточним стадию, изучим первичные документы, поможем сохранить доказательства и подготовиться к даче объяснений и ходатайствам.'
-              },
-              {
-                num: '02',
-                title: 'При оформлении в ГИБДД',
-                desc: 'Проверим документы, зафиксируем замечания, заявим ходатайства об истребовании видеозаписей и доказательств, не допуская поспешных признаний.'
-              },
-              {
-                num: '03',
-                title: 'В мировом суде',
-                desc: 'Сформируем правовую позицию, представим доказательства, допросим свидетелей и инспекторов, заявим ходатайства и возражения, примем личное участие в заседаниях.'
-              },
-              {
-                num: '04',
-                title: 'При обжаловании',
-                desc: 'Проверим постановление и материалы дела, подготовим мотивированную жалобу по конкретным выводам суда и представим интересы при её рассмотрении.'
-              },
-              {
-                num: '05',
-                title: 'После вступления в силу',
-                desc: 'Оценим предусмотренные законом способы дальнейшего пересмотра и перспективу их применения без обещания гарантированной отмены.'
-              }
-            ].map((stage, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '30px 24px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-gold)',
-                boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '12px'
-              }}>
-                <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                  Стадия {stage.num}
-                </span>
-                <h3 style={{ margin: 0, fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
-                  {stage.title}
-                </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                  {stage.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 36px' }} data-analytics="cta_click">
-              Обсудить стадию дела с адвокатом
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 7: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
+      {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
@@ -696,7 +789,7 @@ export default function OstavlenieMestaDtpClient() {
         buttonHref="#form"
       />
 
-      {/* ═══ БЛОК 8: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
+      {/* ═══ БЛОК 6: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
       <CasesBlock
         title="Примеры из практики"
         showAllLink="/praktika/"
@@ -705,7 +798,7 @@ export default function OstavlenieMestaDtpClient() {
         cases={cases}
       />
 
-      {/* ═══ БЛОК 9: КАК ПРОХОДИТ РАБОТА ═══ */}
+      {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="От первичного анализа до решения по делу"
         subtitle="Последовательная работа адвоката на каждом этапе защиты прав водителя."
@@ -748,14 +841,14 @@ export default function OstavlenieMestaDtpClient() {
         ctaButtonHref="#form"
       />
 
-      {/* ═══ БЛОК 10: СТОИМОСТЬ ═══ */}
+      {/* ═══ БЛОК 8: СТОИМОСТЬ ═══ */}
       <PricingBlock
         title="Стоимость юридической помощи"
         subtitle="На стоимость влияют объём материалов дела, необходимость срочно сохранять и истребовать доказательства, количество судебных заседаний и стадия процесса."
         tiers={pricingTiers}
       />
 
-      {/* ═══ БЛОК 11: ДОКУМЕНТЫ ДЛЯ ПЕРВИЧНОГО АНАЛИЗА ═══ */}
+      {/* ═══ БЛОК 9: ДОКУМЕНТЫ ДЛЯ ПЕРВИЧНОГО АНАЛИЗА ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
@@ -824,14 +917,14 @@ export default function OstavlenieMestaDtpClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 12: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
+      {/* ═══ БЛОК 10: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
         title="Частые вопросы"
         subtitle="Ответы на ключевые вопросы по делам об оставлении места происшествия по части 2 статьи 12.27 КоАП РФ."
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 13: ДРУГИЕ АВТОМОБИЛЬНЫЕ СИТУАЦИИ ═══ */}
+      {/* ═══ БЛОК 11: ДРУГИЕ АВТОМОБИЛЬНЫЕ СИТУАЦИИ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
@@ -952,7 +1045,7 @@ export default function OstavlenieMestaDtpClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 14: ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ БЛОК 12: ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
