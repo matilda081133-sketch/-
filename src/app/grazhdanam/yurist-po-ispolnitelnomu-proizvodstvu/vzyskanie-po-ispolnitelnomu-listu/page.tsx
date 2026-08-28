@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-const faqSchemaData = [
+const faqs = [
   {
     q: 'Куда подавать исполнительный лист?',
     a: 'Адресат зависит от должника и известной информации. Документ можно предъявить приставам, непосредственно в банк, а в предусмотренных законом случаях — работодателю, казначейству или иному органу. Юрист сравнивает маршруты до подачи.'
@@ -58,95 +58,94 @@ const faqSchemaData = [
 ];
 
 export default function VzyskanieIspolnitelnyListPage() {
-  const jsonLd = {
+  const jsonLdGraph = {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'WebPage',
-        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/#webpage',
-        url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/',
-        name: 'Взыскание по исполнительному листу в Липецке | Де-Юре',
-        description: 'Поможем взыскать деньги по исполнительному листу: выберем способ предъявления, найдём активы, проконтролируем пристава или подадим документ в банк.',
-        inLanguage: 'ru-RU',
-        breadcrumb: {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Главная',
-              item: 'https://dejure-help.ru/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: 'Гражданам',
-              item: 'https://dejure-help.ru/grazhdanam/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 3,
-              name: 'Юрист по исполнительному производству',
-              item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 4,
-              name: 'Взыскание по исполнительному листу',
-              item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/',
-            },
-          ],
-        },
-        about: {
-          '@type': 'Service',
-          serviceType: 'Взыскание по исполнительному листу',
-          provider: {
-            '@type': 'LegalService',
-            name: 'ЮК «Де-Юре»',
-            url: 'https://dejure-help.ru',
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: 'Липецк',
-              streetAddress: 'ул. Первомайская, д. 78, офис 305',
-              addressCountry: 'RU',
-            },
-          },
-          areaServed: {
-            '@type': 'AdministrativeArea',
-            name: 'Липецк и Липецкая область',
-          },
-        },
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#organization',
+        name: 'ЮК «Де-Юре»',
+        url: 'https://dejure-help.ru/',
+        logo: 'https://dejure-help.ru/images/logo.png',
+        telephone: '+7 (910) 350-31-11',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        }
       },
       {
         '@type': 'Person',
         '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
         name: 'Марина Валерьевна Смольянинова',
         jobTitle: 'Ведущий юрист',
+        url: 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
         worksFor: {
-          '@type': 'LegalService',
-          name: 'ЮК «Де-Юре»',
-          url: 'https://dejure-help.ru',
+          '@id': 'https://dejure-help.ru/#organization'
+        }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/#breadcrumbs',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', position: 2, name: 'Гражданам', item: 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', position: 3, name: 'Юрист по исполнительному производству', item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
+          { '@type': 'ListItem', position: 4, name: 'Взыскание по исполнительному листу', item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/' },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/#webpage',
+        name: 'Взыскание по исполнительному листу в Липецке | Де-Юре',
+        description: 'Поможем взыскать деньги по исполнительному листу: выберем способ предъявления, найдём активы, проконтролируем пристава или подадим документ в банк.',
+        url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/',
+        about: {
+          '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/#service'
+        }
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/#service',
+        name: 'Взыскание по исполнительному листу в Липецке',
+        description: 'Поможем взыскать деньги по исполнительному листу: выберем способ предъявления, найдём активы, проконтролируем пристава или подадим документ в банк.',
+        url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/',
+        provider: {
+          '@id': 'https://dejure-help.ru/#organization'
         },
+        areaServed: [
+          {
+            '@type': 'AdministrativeArea',
+            name: 'Липецкая область'
+          },
+          {
+            '@type': 'Country',
+            name: 'Россия'
+          }
+        ]
       },
       {
         '@type': 'FAQPage',
-        mainEntity: faqSchemaData.map((item) => ({
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/#faq',
+        mainEntity: faqs.map(faq => ({
           '@type': 'Question',
-          name: item.q,
+          name: faq.q,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: item.a,
-          },
-        })),
-      },
-    ],
+            text: faq.a
+          }
+        }))
+      }
+    ]
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
       <VzyskanieIspolnitelnyListClient />
     </>

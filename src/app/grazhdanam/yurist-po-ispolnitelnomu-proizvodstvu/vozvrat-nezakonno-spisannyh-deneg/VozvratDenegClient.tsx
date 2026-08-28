@@ -222,32 +222,32 @@ export default function VozvratDenegClient() {
             {[
               {
                 tag: 'Защищённый доход',
-                title: <><span style={{ display: 'block' }}>Списали защищённую</span><span style={{ display: 'block' }}>выплату</span></>,
+                title: <><span style={{ display: 'block' }}>Списали защищённую</span>{' '}<span style={{ display: 'block' }}>выплату</span></>,
                 desc: 'Проверим пособие, компенсацию, алименты, выплату в возмещение вреда или другое целевое поступление с учётом статьи 101 Закона № 229-ФЗ и предусмотренных исключений.'
               },
               {
                 tag: 'Превышение лимита',
-                title: <><span style={{ display: 'block' }}>Удержали больше</span><span style={{ display: 'block' }}>допустимого размера</span></>,
+                title: <><span style={{ display: 'block' }}>Удержали больше</span>{' '}<span style={{ display: 'block' }}>допустимого размера</span></>,
                 desc: 'Сопоставим вид дохода, размер удержания, требования исполнительных документов и ограничения статьи 99 Закона № 229-ФЗ.'
               },
               {
                 tag: 'Двойное списание',
-                title: <><span style={{ display: 'block' }}>Долг взыскали</span><span style={{ display: 'block' }}>повторно</span></>,
+                title: <><span style={{ display: 'block' }}>Долг взыскали</span>{' '}<span style={{ display: 'block' }}>повторно</span></>,
                 desc: 'Проверим платежи, несколько производств, взыскание через банк и ФССП, а также дату отражения погашения задолженности.'
               },
               {
                 tag: 'Избыточное списание',
-                title: <><span style={{ display: 'block' }}>Списали сумму</span><span style={{ display: 'block' }}>сверх размера долга</span></>,
+                title: <><span style={{ display: 'block' }}>Списали сумму</span>{' '}<span style={{ display: 'block' }}>сверх размера долга</span></>,
                 desc: 'Установим актуальный остаток долга, исполнительский сбор, расходы и движение денег; потребуем возврата подтверждённого излишка.'
               },
               {
                 tag: 'Чужой долг',
-                title: <><span style={{ display: 'block' }}>Деньги списали</span><span style={{ display: 'block' }}>за чужой долг</span></>,
+                title: <><span style={{ display: 'block' }}>Деньги списали</span>{' '}<span style={{ display: 'block' }}>за чужой долг</span></>,
                 desc: 'Поможем подтвердить ошибочную идентификацию гражданина, направить документы в ФССП и добиться отмены мер и возврата средств доступным способом.'
               },
               {
                 tag: 'Отмена приказа / акта',
-                title: <><span style={{ display: 'block' }}>Судебный акт отменили</span><span style={{ display: 'block' }}>после взыскания</span></>,
+                title: <><span style={{ display: 'block' }}>Судебный акт отменили</span>{' '}<span style={{ display: 'block' }}>после взыскания</span></>,
                 desc: 'Оценим, возможен ли поворот исполнения, какой суд рассматривает заявление и какие документы подтверждают фактически взысканную сумму.'
               }
             ].map((item, i) => (
@@ -592,42 +592,42 @@ export default function VozvratDenegClient() {
             {[
               {
                 num: '01',
-                title: <><span style={{ display: 'block' }}>Консультация</span><span style={{ display: 'block' }}>и оценка ситуации</span></>,
+                title: <><span style={{ display: 'block' }}>Консультация</span>{' '}<span style={{ display: 'block' }}>и оценка ситуации</span></>,
                 desc: 'Определяем срочность ситуации, основания списания и предварительный правовой маршрут.'
               },
               {
                 num: '02',
-                title: <><span style={{ display: 'block' }}>Проверка производства</span><span style={{ display: 'block' }}>и судебного акта</span></>,
+                title: <><span style={{ display: 'block' }}>Проверка производства</span>{' '}<span style={{ display: 'block' }}>и судебного акта</span></>,
                 desc: 'Изучаем материалы исполнительного производства, основания взыскания и судебные документы.'
               },
               {
                 num: '03',
-                title: <><span style={{ display: 'block' }}>Анализ выписок</span><span style={{ display: 'block' }}>и назначения платежей</span></>,
+                title: <><span style={{ display: 'block' }}>Анализ выписок</span>{' '}<span style={{ display: 'block' }}>и назначения платежей</span></>,
                 desc: 'Анализируем банковскую выписку, коды выплат, справки плательщика и защищённый статус доходов.'
               },
               {
                 num: '04',
-                title: <><span style={{ display: 'block' }}>Установление маршрута</span><span style={{ display: 'block' }}>движения денег</span></>,
+                title: <><span style={{ display: 'block' }}>Установление маршрута</span>{' '}<span style={{ display: 'block' }}>движения денег</span></>,
                 desc: 'Определяем текущее местонахождение средств: банк, депозитный счёт ФССП или счёт взыскателя.'
               },
               {
                 num: '05',
-                title: <><span style={{ display: 'block' }}>Расчёт суммы</span><span style={{ display: 'block' }}>повторного удержания</span></>,
+                title: <><span style={{ display: 'block' }}>Расчёт суммы</span>{' '}<span style={{ display: 'block' }}>повторного удержания</span></>,
                 desc: 'Рассчитываем точный размер переплаты или избыточно удержанной суммы по ст. 99 и 110 № 229-ФЗ.'
               },
               {
                 num: '06',
-                title: <><span style={{ display: 'block' }}>Заявления в банк</span><span style={{ display: 'block' }}>и подразделение ФССП</span></>,
+                title: <><span style={{ display: 'block' }}>Заявления в банк</span>{' '}<span style={{ display: 'block' }}>и подразделение ФССП</span></>,
                 desc: 'Готовим мотивированные требования о возврате средств и жалобы в порядке ведомственной подчинённости.'
               },
               {
                 num: '07',
-                title: <><span style={{ display: 'block' }}>Поворот исполнения</span><span style={{ display: 'block' }}>или административный иск</span></>,
+                title: <><span style={{ display: 'block' }}>Поворот исполнения</span>{' '}<span style={{ display: 'block' }}>или административный иск</span></>,
                 desc: 'Составляем процессуальные документы для суда по КАС РФ или ст. 443–445 ГПК РФ при судебном порядке.'
               },
               {
                 num: '08',
-                title: <><span style={{ display: 'block' }}>Контроль возврата</span><span style={{ display: 'block' }}>денежных средств</span></>,
+                title: <><span style={{ display: 'block' }}>Контроль возврата</span>{' '}<span style={{ display: 'block' }}>денежных средств</span></>,
                 desc: 'Отслеживаем рассмотрение требований и фактическое поступление денег на счёт доверителя.'
               }
             ].map((item, idx) => (

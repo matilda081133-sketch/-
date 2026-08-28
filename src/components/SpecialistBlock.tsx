@@ -61,17 +61,43 @@ export default function SpecialistBlock({
               position: 'relative'
             }}>
               {imageUrl ? (
-                <img 
-                  src={imageUrl} 
-                  alt={name} 
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
-                    objectFit: 'cover', 
-                    objectPosition: imagePosition || 'center 15%', 
-                    display: 'block' 
-                  }} 
-                />
+                profileHref ? (
+                  <a href={profileHref} style={{ display: 'block', width: '100%', height: '100%' }}>
+                    <img 
+                      src={imageUrl} 
+                      alt={name} 
+                      width={500}
+                      height={667}
+                      loading="lazy"
+                      decoding="async"
+                      style={{ 
+                        width: '100%', 
+                        height: '100%', 
+                        objectFit: 'cover', 
+                        objectPosition: imagePosition || 'center 15%', 
+                        display: 'block',
+                        aspectRatio: '3/4'
+                      }} 
+                    />
+                  </a>
+                ) : (
+                  <img 
+                    src={imageUrl} 
+                    alt={name} 
+                    width={500}
+                    height={667}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ 
+                      width: '100%', 
+                      height: '100%', 
+                      objectFit: 'cover', 
+                      objectPosition: imagePosition || 'center 15%', 
+                      display: 'block',
+                      aspectRatio: '3/4'
+                    }} 
+                  />
+                )
               ) : (
                 <span style={{ padding: '20px', textAlign: 'center', fontStyle: 'italic' }}>
                   {photoPlaceholder}
@@ -82,7 +108,13 @@ export default function SpecialistBlock({
           
           <div style={{ flex: '1 1 0%' }}>
             <h3 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', marginBottom: '12px', fontFamily: 'var(--font-serif)' }}>
-              {name}
+              {profileHref ? (
+                <a href={profileHref} style={{ color: 'inherit', textDecoration: 'none' }}>
+                  {name}
+                </a>
+              ) : (
+                name
+              )}
             </h3>
             <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', marginBottom: '32px', textTransform: 'uppercase', letterSpacing: '0.05em', whiteSpace: 'pre-line' }}>
               {position}

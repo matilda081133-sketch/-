@@ -80,6 +80,7 @@ export async function sendLeadToCRM(payload: LeadPayload): Promise<{ success: bo
       SOURCE_ID: 'WEB',
       SOURCE_DESCRIPTION: 'Сайт Де Юре',
       STATUS_ID: 'NEW',
+      ASSIGNED_BY_ID: 18,
       OPENED: 'Y',
       UTM_SOURCE: utm.utm_source || '',
       UTM_MEDIUM: utm.utm_medium || '',

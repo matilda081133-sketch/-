@@ -222,32 +222,32 @@ export default function SnyatieArestaSchetaClient() {
             {[
               {
                 tag: 'Долг погашен',
-                title: <><span style={{ display: 'block' }}>Долг погашен,</span><span style={{ display: 'block' }}>но счёт не разблокирован</span></>,
+                title: <><span style={{ display: 'block' }}>Долг погашен,</span>{' '}<span style={{ display: 'block' }}>но счёт не разблокирован</span></>,
                 desc: 'Проверим учёт платежа, остаток основного долга, исполнительского сбора и расходов, а также наличие постановления об окончании производства и отмене ограничений.'
               },
               {
                 tag: 'Излишний арест',
-                title: <><span style={{ display: 'block' }}>Арестована сумма</span><span style={{ display: 'block' }}>больше размера долга</span></>,
+                title: <><span style={{ display: 'block' }}>Арестована сумма</span>{' '}<span style={{ display: 'block' }}>больше размера долга</span></>,
                 desc: 'Сопоставим размер требований и фактически ограниченные средства, подготовим требование о снятии ареста с подтверждённого излишка.'
               },
               {
                 tag: 'Чужой долг',
-                title: <><span style={{ display: 'block' }}>Счёт арестован за долг</span><span style={{ display: 'block' }}>другого человека</span></>,
+                title: <><span style={{ display: 'block' }}>Счёт арестован за долг</span>{' '}<span style={{ display: 'block' }}>другого человека</span></>,
                 desc: 'Поможем подтвердить ошибочную идентификацию, принадлежность счёта и отсутствие обязанности по чужому исполнительному документу.'
               },
               {
                 tag: 'Защищённый доход',
-                title: <><span style={{ display: 'block' }}>На счёт поступают</span><span style={{ display: 'block' }}>защищённые выплаты</span></>,
+                title: <><span style={{ display: 'block' }}>На счёт поступают</span>{' '}<span style={{ display: 'block' }}>защищённые выплаты</span></>,
                 desc: 'Проверим вид дохода, назначение и код платежа, исключения закона и документы, которыми подтверждается особый режим поступлений.'
               },
               {
                 tag: 'Окончание ИП',
-                title: <><span style={{ display: 'block' }}>Арест не отменён после</span><span style={{ display: 'block' }}>окончания производства</span></>,
+                title: <><span style={{ display: 'block' }}>Арест не отменён после</span>{' '}<span style={{ display: 'block' }}>окончания производства</span></>,
                 desc: 'Проверим основание завершения производства, содержание постановления, его отправку в банк и сохранение других законных ограничений.'
               },
               {
                 tag: 'Задержка банка',
-                title: <><span style={{ display: 'block' }}>Банк сохраняет блок</span><span style={{ display: 'block' }}>после постановления</span></>,
+                title: <><span style={{ display: 'block' }}>Банк сохраняет блок</span>{' '}<span style={{ display: 'block' }}>после постановления</span></>,
                 desc: 'Установим, получил ли банк надлежащий документ, соответствует ли он конкретному счёту и сумме, и определим способ добиться его фактического исполнения.'
               }
             ].map((item, i) => (
@@ -592,42 +592,42 @@ export default function SnyatieArestaSchetaClient() {
             {[
               {
                 num: '01',
-                title: <><span style={{ display: 'block' }}>Консультация</span><span style={{ display: 'block' }}>и оценка ситуации</span></>,
+                title: <><span style={{ display: 'block' }}>Консультация</span>{' '}<span style={{ display: 'block' }}>и оценка ситуации</span></>,
                 desc: 'Определяем срочность ситуации, основания блокировки и предварительный правовой маршрут действий.'
               },
               {
                 num: '02',
-                title: <><span style={{ display: 'block' }}>Проверка производства</span><span style={{ display: 'block' }}>и банка-исполнителя</span></>,
+                title: <><span style={{ display: 'block' }}>Проверка производства</span>{' '}<span style={{ display: 'block' }}>и банка-исполнителя</span></>,
                 desc: 'Запрашиваем данные об исполнительном документе, постановлениях и банке-исполнителе ограничения.'
               },
               {
                 num: '03',
-                title: <><span style={{ display: 'block' }}>Сверка сумм</span><span style={{ display: 'block' }}>и фактических платежей</span></>,
+                title: <><span style={{ display: 'block' }}>Сверка сумм</span>{' '}<span style={{ display: 'block' }}>и фактических платежей</span></>,
                 desc: 'Сопоставляем размер долга, сбора, фактически арестованные суммы и наличие иных исполнительных производств.'
               },
               {
                 num: '04',
-                title: <><span style={{ display: 'block' }}>Анализ выписок</span><span style={{ display: 'block' }}>и источников доходов</span></>,
+                title: <><span style={{ display: 'block' }}>Анализ выписок</span>{' '}<span style={{ display: 'block' }}>и источников доходов</span></>,
                 desc: 'Изучаем банковскую выписку, коды выплат и документы о происхождении защищённых законом средств.'
               },
               {
                 num: '05',
-                title: <><span style={{ display: 'block' }}>Заявление приставу</span><span style={{ display: 'block' }}>о снятии ареста</span></>,
+                title: <><span style={{ display: 'block' }}>Заявление приставу</span>{' '}<span style={{ display: 'block' }}>о снятии ареста</span></>,
                 desc: 'Составляем мотивированное требование приставу об отмене или соразмерной корректировке ареста со счёта.'
               },
               {
                 num: '06',
-                title: <><span style={{ display: 'block' }}>Жалоба руководству</span><span style={{ display: 'block' }}>при отказе или бездействии</span></>,
+                title: <><span style={{ display: 'block' }}>Жалоба руководству</span>{' '}<span style={{ display: 'block' }}>при отказе или бездействии</span></>,
                 desc: 'Подаём мотивированную жалобу старшему судебному приставу или в УФССП при отказе либо бездействии.'
               },
               {
                 num: '07',
-                title: <><span style={{ display: 'block' }}>Административный иск</span><span style={{ display: 'block' }}>в суд по КАС РФ</span></>,
+                title: <><span style={{ display: 'block' }}>Административный иск</span>{' '}<span style={{ display: 'block' }}>в суд по КАС РФ</span></>,
                 desc: 'Готовим административное исковое заявление по КАС РФ и доказательную базу, если требуется судебный порядок.'
               },
               {
                 num: '08',
-                title: <><span style={{ display: 'block' }}>Контроль исполнения</span><span style={{ display: 'block' }}>постановления банком</span></>,
+                title: <><span style={{ display: 'block' }}>Контроль исполнения</span>{' '}<span style={{ display: 'block' }}>постановления банком</span></>,
                 desc: 'Отслеживаем вынесение, направление постановления в банк и фактическое снятие ареста в кредитной организации.'
               }
             ].map((item, idx) => (

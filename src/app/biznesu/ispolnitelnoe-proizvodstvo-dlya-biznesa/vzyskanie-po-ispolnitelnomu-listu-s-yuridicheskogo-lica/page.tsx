@@ -1,159 +1,141 @@
-import React from 'react';
+import { Metadata } from 'next';
 import VzyskanieClient from './VzyskanieClient';
 
-export const metadata = {
-  title: 'Взыскание по исполнительному листу с юрлица в Липецке | Де-Юре',
-  description: 'Поможем взыскать деньги с юридического лица по исполнительному листу: проверим счета и активы, выберем банк или ФССП, проконтролируем исполнение.',
-  alternates: {
-    canonical: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/'
-  },
+export const metadata: Metadata = {
+  title: 'Взыскание по исполнительному листу с юридического лица в Липецке | ЮК «Де-Юре»',
+  description: 'Юридическое сопровождение взыскания задолженности по исполнительным листам с юридических лиц в Липецке: предъявление в банки, работа с ФССП, розыск активов должника, обжалование бездействия приставов.',
   openGraph: {
-    title: 'Взыскание по исполнительному листу с юридического лица | Де-Юре',
-    description: 'Проверим организацию-должника, выберем канал исполнения и сопроводим фактическое взыскание.',
+    title: 'Взыскание по исполнительному листу с юридического лица в Липецке | ЮК «Де-Юре»',
+    description: 'Поможем реально получить деньги по исполнительному листу с компании-должника: напрямую через банк или через ФССП с розыском имущества и контролем действий пристава.',
     url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/',
     siteName: 'ЮК «Де-Юре»',
+    locale: 'ru_RU',
+    type: 'website',
     images: [
       {
-        url: 'https://dejure-help.ru/images/og-bailiff-appeal-b2b.jpg',
+        url: 'https://dejure-help.ru/images/og-b2b-exec-list.jpg',
         width: 1200,
         height: 630,
-        alt: 'Взыскание по исполнительному листу с юридического лица в Липецке'
-      }
-    ],
-    locale: 'ru_RU',
-    type: 'website'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Взыскание по исполнительному листу с юрлица в Липецке | Де-Юре',
-    description: 'Поможем взыскать деньги с юридического лица по исполнительному листу: проверим счета и активы, выберем банк или ФССП, проконтролируем исполнение.',
-    images: ['https://dejure-help.ru/images/og-bailiff-appeal-b2b.jpg']
-  }
-};
-
-export default function VzyskaniePage() {
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Главная',
-        item: 'https://dejure-help.ru/'
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Бизнесу',
-        item: 'https://dejure-help.ru/biznesu/'
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Исполнительное производство для бизнеса',
-        item: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/'
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: 'Взыскание по исполнительному листу с юридического лица',
-        item: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/'
+        alt: 'Взыскание по исполнительному листу с юридического лица | ЮК «Де-Юре»'
       }
     ]
-  };
+  },
+  alternates: {
+    canonical: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/',
+  },
+};
 
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Взыскание по исполнительному листу с юридического лица в Липецке',
-    serviceType: 'Юридические услуги бизнесу по взысканию задолженности по исполнительным документам',
-    description: 'Поможем взыскать деньги с юридического лица по исполнительному листу: проверим счета и активы, выберем банк или ФССП, проконтролируем исполнение.',
-    provider: {
-      '@type': 'LegalService',
-      name: 'ЮК «Де-Юре»',
-      url: 'https://dejure-help.ru',
-      telephone: '+7 (910) 350-31-11',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Липецк',
-        addressCountry: 'RU'
-      }
-    },
-    areaServed: {
-      '@type': 'AdministrativeArea',
-      name: 'Липецк и Липецкая область'
-    },
-    url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/'
-  };
+const faqs = [
+  {
+    q: 'Что делать в первую очередь после получения исполнительного листа?',
+    a: 'Не спешите сразу нести лист приставам. Сначала целесообразно запросить в налоговой инспекции сведения об открытых счетах должника и предъявить лист напрямую в банк, где есть остатки. Это может сэкономить недели и месяцы.'
+  },
+  {
+    q: 'Как узнать, в каких банках у должника есть деньги?',
+    a: 'Взыскатель, имеющий на руках подлинник исполнительного листа с неистёкшим сроком, вправе направить запрос в любую налоговую инспекцию. ФНС обязана в течение 7 дней предоставить сведения о банках, в которых у должника открыты счета. Юрист подготовит такой запрос.'
+  },
+  {
+    q: 'Банк вернул исполнительный лист без исполнения. Почему?',
+    a: 'Чаще всего причина — отсутствие или недостаточность денег на счёте. Также возможны ошибки в заявлении или отзыв листа должником. Если на счёте пусто, лист передаётся в ФССП для принудительного розыска иного имущества.'
+  },
+  {
+    q: 'Пристав не принимает никаких мер. Как заставить его работать?',
+    a: 'Законом предусмотрена процедура обжалования бездействия пристава: старшему судебному приставу, в прокуратуру или арбитражный суд. Юрист составит обоснованную жалобу со ссылками на конкретные сроки и нормы Закона об исполнительном производстве.'
+  },
+  {
+    q: 'Должник перевёл активы на другое юрлицо. Что делать?',
+    a: 'Это распространённая схема уклонения. В таких случаях юрист анализирует сделки по выводу активов, инициирует их оспаривание через суд, а при наличии признаков преднамеренного банкротства — ставит вопрос о субсидиарной ответственности руководителей.'
+  },
+  {
+    q: 'Сколько времени действует исполнительный лист?',
+    a: 'Общий срок предъявления исполнительного листа к исполнению — 3 года со дня вступления судебного акта в законную силу. При каждом предъявлении в банк или ФССП срок прерывается и после возврата начинает течь заново.'
+  },
+  {
+    q: 'Каковы условия и стоимость работы юриста?',
+    a: 'Стоимость зависит от объёма задач: от подготовки разовых документов (запрос в ФНС, заявление в банк, жалоба на пристава) до полного комплексного сопровождения взыскания «под ключ». Условия фиксируются в договоре.'
+  }
+];
 
-  const faqSchema = {
+export default function VzyskaniePage() {
+  const jsonLdGraph = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
+    '@graph': [
       {
-        '@type': 'Question',
-        name: 'Куда предъявлять исполнительный лист на организацию?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Если известен банк и нужно взыскать деньги со счёта, документ можно направить непосредственно в банк. Когда требуется искать активы и применять меры принудительного исполнения, обычно нужен пристав. Для бюджетных должников может действовать специальный порядок.'
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#organization',
+        name: 'ЮК «Де-Юре»',
+        url: 'https://dejure-help.ru/',
+        logo: 'https://dejure-help.ru/images/logo.png',
+        telephone: '+7 (910) 350-31-11',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, 35',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
         }
       },
       {
-        '@type': 'Question',
-        name: 'Как узнать, в каких банках у должника открыты счета?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Взыскатель с исполнительным листом, срок предъявления которого не истёк, вправе запросить предусмотренные законом сведения в налоговом органе. Комплект и способ подачи проверяются до направления запроса.'
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
+        name: 'Марина Валерьевна Смольянинова',
+        jobTitle: 'Ведущий юрист',
+        url: 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#organization'
         }
       },
       {
-        '@type': 'Question',
-        name: 'Что будет, если денег на счёте недостаточно?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Банк исполняет документ в пределах доступных средств и продолжает исполнение в предусмотренном законом порядке, если документ не отозван и нет другого основания прекратить операции. Одновременно оценивается целесообразность перехода в ФССП.'
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/#breadcrumbs',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', position: 2, name: 'Бизнесу', item: 'https://dejure-help.ru/biznesu/' },
+          { '@type': 'ListItem', position: 3, name: 'Исполнительное производство для бизнеса', item: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/' },
+          { '@type': 'ListItem', position: 4, name: 'Взыскание по исполнительному листу с юридического лица', item: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/' }
+        ]
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/#webpage',
+        name: 'Взыскание по исполнительному листу с юридического лица в Липецке | ЮК «Де-Юре»',
+        description: 'Юридическое сопровождение взыскания задолженности по исполнительным листам с юридических лиц в Липецке: предъявление в банки, работа с ФССП, розыск активов должника, обжалование бездействия приставов.',
+        url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/',
+        about: {
+          '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/#service'
         }
       },
       {
-        '@type': 'Question',
-        name: 'Можно ли одновременно подать один исполнительный лист в банк и приставам?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Оригинал одного бумажного документа нельзя одновременно предъявить разным адресатам. Маршрут и момент отзыва документа нужно планировать с учётом срока предъявления и уже проведённого частичного взыскания.'
-        }
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/#service',
+        name: 'Взыскание по исполнительному листу с юридического лица',
+        description: 'Взыскание по исполнительному листу с юридического лица в Липецке: предъявление в банки, работа с ФССП, розыск счетов и имущества, обжалование бездействия судебного пристава.',
+        url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/',
+        provider: {
+          '@id': 'https://dejure-help.ru/#organization'
+        },
+        areaServed: [
+          {
+            '@type': 'AdministrativeArea',
+            name: 'Липецкая область'
+          },
+          {
+            '@type': 'Country',
+            name: 'Россия'
+          }
+        ]
       },
       {
-        '@type': 'Question',
-        name: 'Что делать, если у должника несколько взыскателей?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Нужно проверить сводное производство, характер требований, очередь и уже арестованные активы. При недостаточности денег распределение зависит от установленной законом очередности и правил внутри одной очереди.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Обязан ли пристав взыскать долг за два месяца?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Нет. Закон устанавливает общий срок совершения исполнительных действий, но он не гарантирует поступление денег. Фактическая длительность зависит от активов, других требований, обжалований, реализации имущества и поведения должника.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Можно ли повторно предъявить лист после возврата?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Во многих случаях да, но сначала нужно проверить основание возврата и срок нового предъявления. Повторная подача без новых сведений и конкретного плана действий может привести к тому же результату.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Что делать, если должник готовится к банкротству?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Нужно быстро сопоставить индивидуальное взыскание с правилами банкротства: проверить публикации и дело, определить характер требования и момент, когда защита интересов должна продолжаться уже в банкротной процедуре.'
-        }
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };
@@ -162,15 +144,7 @@ export default function VzyskaniePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
       <VzyskanieClient />
     </>

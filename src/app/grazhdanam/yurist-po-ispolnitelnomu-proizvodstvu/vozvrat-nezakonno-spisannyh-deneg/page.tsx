@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-const faqSchemaData = [
+const faqs = [
   {
     q: 'Можно ли вернуть деньги, которые приставы уже списали?',
     a: 'Да, если подтверждено незаконное, ошибочное, повторное или избыточное взыскание либо отменено исполненное основание. Способ зависит от того, где находятся средства и кому они перечислены.'
@@ -58,95 +58,94 @@ const faqSchemaData = [
 ];
 
 export default function VozvratDenegPage() {
-  const jsonLd = {
+  const jsonLdGraph = {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'WebPage',
-        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/#webpage',
-        url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/',
-        name: 'Возврат незаконно списанных приставами денег в Липецке | Де-Юре',
-        description: 'Поможем вернуть деньги, незаконно списанные приставами: защищённые выплаты, повторное или избыточное взыскание, чужой долг. Юрист в Липецке.',
-        inLanguage: 'ru-RU',
-        breadcrumb: {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Главная',
-              item: 'https://dejure-help.ru/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: 'Гражданам',
-              item: 'https://dejure-help.ru/grazhdanam/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 3,
-              name: 'Юрист по исполнительному производству',
-              item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 4,
-              name: 'Возврат незаконно списанных денег',
-              item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/',
-            },
-          ],
-        },
-        about: {
-          '@type': 'Service',
-          serviceType: 'Возврат незаконно списанных приставами денежных средств',
-          provider: {
-            '@type': 'LegalService',
-            name: 'ЮК «Де-Юре»',
-            url: 'https://dejure-help.ru',
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: 'Липецк',
-              streetAddress: 'ул. Первомайская, д. 78, офис 305',
-              addressCountry: 'RU',
-            },
-          },
-          areaServed: {
-            '@type': 'AdministrativeArea',
-            name: 'Липецк и Липецкая область',
-          },
-        },
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#organization',
+        name: 'ЮК «Де-Юре»',
+        url: 'https://dejure-help.ru/',
+        logo: 'https://dejure-help.ru/images/logo.png',
+        telephone: '+7 (910) 350-31-11',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        }
       },
       {
         '@type': 'Person',
         '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
         name: 'Марина Валерьевна Смольянинова',
         jobTitle: 'Ведущий юрист',
+        url: 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
         worksFor: {
-          '@type': 'LegalService',
-          name: 'ЮК «Де-Юре»',
-          url: 'https://dejure-help.ru',
+          '@id': 'https://dejure-help.ru/#organization'
+        }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/#breadcrumbs',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', position: 2, name: 'Гражданам', item: 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', position: 3, name: 'Юрист по исполнительному производству', item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
+          { '@type': 'ListItem', position: 4, name: 'Возврат незаконно списанных денег', item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/' },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/#webpage',
+        name: 'Возврат незаконно списанных приставами денег в Липецке | Де-Юре',
+        description: 'Поможем вернуть деньги, незаконно списанные приставами: защищённые выплаты, повторное или избыточное взыскание, чужой долг. Юрист в Липецке.',
+        url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/',
+        about: {
+          '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/#service'
+        }
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/#service',
+        name: 'Возврат незаконно списанных приставами денежных средств в Липецке',
+        description: 'Проверим основание списания и движение средств, подготовим заявления, жалобу или документы для судебного возврата денег.',
+        url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/',
+        provider: {
+          '@id': 'https://dejure-help.ru/#organization'
         },
+        areaServed: [
+          {
+            '@type': 'AdministrativeArea',
+            name: 'Липецкая область'
+          },
+          {
+            '@type': 'Country',
+            name: 'Россия'
+          }
+        ]
       },
       {
         '@type': 'FAQPage',
-        mainEntity: faqSchemaData.map((item) => ({
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/#faq',
+        mainEntity: faqs.map(faq => ({
           '@type': 'Question',
-          name: item.q,
+          name: faq.q,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: item.a,
-          },
-        })),
-      },
-    ],
+            text: faq.a
+          }
+        }))
+      }
+    ]
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
       <VozvratDenegClient />
     </>

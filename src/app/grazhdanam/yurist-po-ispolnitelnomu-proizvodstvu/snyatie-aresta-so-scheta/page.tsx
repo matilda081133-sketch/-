@@ -61,69 +61,94 @@ export default function SnyatieArestaSchetaPage() {
     }
   ];
 
-  const jsonLd = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
-        { '@type': 'ListItem', position: 2, name: 'Гражданам', item: 'https://dejure-help.ru/grazhdanam/' },
-        { '@type': 'ListItem', position: 3, name: 'Юрист по исполнительному производству', item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
-        { '@type': 'ListItem', position: 4, name: 'Снятие ареста со счёта', item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/' },
-      ],
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      name: 'Снятие ареста со счёта приставами в Липецке | Де-Юре',
-      description: 'Поможем снять арест со счёта или банковской карты: проверим основание, подготовим заявление или жалобу и проконтролируем исполнение банком.',
-      url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/',
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: 'Снятие ареста со счёта в исполнительном производстве',
-      serviceType: 'Снятие ареста со счёта в исполнительном производстве',
-      description: 'Проверка оснований ареста карты и счёта, подготовка заявлений приставу, жалоб и исков в Липецке и по России.',
-      provider: {
+  const jsonLdGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
         '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#organization',
         name: 'ЮК «Де-Юре»',
         url: 'https://dejure-help.ru/',
+        logo: 'https://dejure-help.ru/images/logo.png',
+        telephone: '+7 (910) 350-31-11',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'пл. Плеханова, д. 1, оф. 213',
+          streetAddress: 'ул. Советская, д. 35',
           addressLocality: 'Липецк',
-          addressCountry: 'RU',
-        },
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        }
       },
-      areaServed: 'Липецк, Липецкая область и дистанционно по РФ',
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: 'Марина Валерьевна Смольянинова',
-      jobTitle: 'Ведущий юрист',
-      url: 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs.map(faq => ({
-        '@type': 'Question',
-        name: faq.q,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.a,
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
+        name: 'Марина Валерьевна Смольянинова',
+        jobTitle: 'Ведущий юрист',
+        url: 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#organization'
+        }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/#breadcrumbs',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', position: 2, name: 'Гражданам', item: 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', position: 3, name: 'Юрист по исполнительному производству', item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
+          { '@type': 'ListItem', position: 4, name: 'Снятие ареста со счёта', item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/' },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/#webpage',
+        name: 'Снятие ареста со счёта приставами в Липецке | Де-Юре',
+        description: 'Поможем снять арест со счёта или банковской карты: проверим основание, подготовим заявление или жалобу и проконтролируем исполнение банком.',
+        url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/',
+        about: {
+          '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/#service'
+        }
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/#service',
+        name: 'Снятие ареста со счёта или банковской карты в Липецке',
+        description: 'Проверка оснований ареста карты и счёта, подготовка заявлений приставу, жалоб и исков в Липецке и по России.',
+        url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/',
+        provider: {
+          '@id': 'https://dejure-help.ru/#organization'
         },
-      })),
-    },
-  ];
+        areaServed: [
+          {
+            '@type': 'AdministrativeArea',
+            name: 'Липецкая область'
+          },
+          {
+            '@type': 'Country',
+            name: 'Россия'
+          }
+        ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
+      }
+    ]
+  };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
       <SnyatieArestaSchetaClient />
     </>

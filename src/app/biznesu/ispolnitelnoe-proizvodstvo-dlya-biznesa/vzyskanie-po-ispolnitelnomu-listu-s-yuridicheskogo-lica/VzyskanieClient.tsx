@@ -656,7 +656,21 @@ export default function VzyskanieClient() {
             </div>
           </div>
 
-          {/* Блок документов для старта (в темно-синем градиенте) */}
+                  </div>
+      </section>
+
+      {/* ═══ БЛОК 5: КАКИЕ ДОКУМЕНТЫ НУЖНЫ ДЛЯ ВЗЫСКАНИЯ ═══ */}
+      <section className="section bg-light" style={{ padding: '72px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '36px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              Какие документы нужны для взыскания по исполнительному листу
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Чем полнее исходный комплект документов, тем быстрее юрист сможет определить наиболее перспективный маршрут взыскания задолженности с юридического лица:
+            </p>
+          </div>
+
           <div style={{
             background: 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)',
             color: '#FFFFFF',
@@ -675,12 +689,6 @@ export default function VzyskanieClient() {
               </svg>
             </div>
 
-            <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginTop: 0, marginBottom: '8px', position: 'relative', zIndex: 1 }}>
-              Что подготовить для начала работы
-            </h3>
-            <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', marginBottom: '24px', lineHeight: 1.5, position: 'relative', zIndex: 1 }}>
-              Чем полнее исходный комплект документов, тем быстрее юрист сможет определить наиболее перспективный маршрут взыскания:
-            </p>
             <div className="grid grid-2" style={{ gap: '16px 32px', marginBottom: '28px', position: 'relative', zIndex: 1 }}>
               {[
                 'исполнительный лист, судебный приказ или другой исполнительный документ;',

@@ -282,8 +282,8 @@ export default function ObzhalovanieClient() {
         superTitle="Исполнительное производство для бизнеса"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>Обжалование действий</span>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>судебных приставов в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>Обжалование действий</span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>судебных приставов для бизнеса в Липецке</span>
           </span>
         }
         subtitle={
@@ -510,7 +510,8 @@ export default function ObzhalovanieClient() {
               },
               {
                 title: <><span style={{ display: 'inline-block' }}>Бездействие пристава</span> <br /><span style={{ display: 'inline-block' }}>по взысканию</span></>,
-                desc: 'Для компании-взыскателя фиксируем несовершённые запросы, затягивание сроков и влияние бездействия на возврат долга.'
+                desc: 'Для компании-взыскателя фиксируем несовершённые запросы, затягивание сроков и влияние бездействия на возврат долга. Если основная задача компании — получить деньги по исполнительному документу, посмотрите услугу взыскания по исполнительному листу с юридического лица.',
+                linkHref: '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/'
               },
               {
                 title: <><span style={{ display: 'inline-block' }}>Нарушение прав</span> <br /><span style={{ display: 'inline-block' }}>иного собственника</span></>,

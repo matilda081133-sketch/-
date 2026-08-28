@@ -218,32 +218,32 @@ export default function VzyskanieIspolnitelnyListClient() {
             {[
               {
                 tag: 'Старт взыскания',
-                title: <><span style={{ display: 'block' }}>Исполнительный лист</span><span style={{ display: 'block' }}>получен, но не предъявлен</span></>,
+                title: <><span style={{ display: 'block' }}>Исполнительный лист</span>{' '}<span style={{ display: 'block' }}>получен, но не предъявлен</span></>,
                 desc: 'Проверим срок и реквизиты документа, сведения о должнике и выберем между приставами, банком и специальным порядком исполнения.'
               },
               {
                 tag: 'Бездействие пристава',
-                title: <><span style={{ display: 'block' }}>Пристав возбудил дело,</span><span style={{ display: 'block' }}>но денег нет</span></>,
+                title: <><span style={{ display: 'block' }}>Пристав возбудил дело,</span>{' '}<span style={{ display: 'block' }}>но денег нет</span></>,
                 desc: 'Оценим материалы дела, подготовим конкретные ходатайства о запросах, аресте, розыске имущества и других допустимых мерах.'
               },
               {
                 tag: 'Розыск активов',
-                title: <><span style={{ display: 'block' }}>Должник скрывает</span><span style={{ display: 'block' }}>доходы или имущество</span></>,
+                title: <><span style={{ display: 'block' }}>Должник скрывает</span>{' '}<span style={{ display: 'block' }}>доходы или имущество</span></>,
                 desc: 'Соберём доступные сведения, проверим сделки и активы и определим, какие действия вправе совершить пристав или взыскатель.'
               },
               {
                 tag: 'Повторная подача',
-                title: <><span style={{ display: 'block' }}>Исполнительный лист</span><span style={{ display: 'block' }}>вернули без взыскания</span></>,
+                title: <><span style={{ display: 'block' }}>Исполнительный лист</span>{' '}<span style={{ display: 'block' }}>вернули без взыскания</span></>,
                 desc: 'Проверим основание окончания, срок повторного предъявления и целесообразность новой подачи с подготовленным планом действий.'
               },
               {
                 tag: 'Периодические выплаты',
-                title: <><span style={{ display: 'block' }}>Взыскание алиментов</span><span style={{ display: 'block' }}>и периодических выплат</span></>,
+                title: <><span style={{ display: 'block' }}>Взыскание алиментов</span>{' '}<span style={{ display: 'block' }}>и периодических выплат</span></>,
                 desc: 'Выстроим исполнение с учётом текущих платежей, задолженности, места работы и специальных мер ответственности.'
               },
               {
                 tag: 'Казначейский порядок',
-                title: <><span style={{ display: 'block' }}>Должник — госорган</span><span style={{ display: 'block' }}>или бюджетная организация</span></>,
+                title: <><span style={{ display: 'block' }}>Должник — госорган</span>{' '}<span style={{ display: 'block' }}>или бюджетная организация</span></>,
                 desc: 'Определим, применяется ли казначейский порядок, и подготовим комплект для надлежащего финансового органа.'
               }
             ].map((item, i) => (
@@ -303,6 +303,20 @@ export default function VzyskanieIspolnitelnyListClient() {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Блок разграничения интентов */}
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.95)',
+            border: '1px solid rgba(23, 50, 77, 0.1)',
+            borderLeft: '4px solid var(--color-primary)',
+            padding: '20px 24px',
+            marginBottom: '32px',
+            fontSize: '15px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.6
+          }}>
+            <strong>Обратите внимание:</strong> Если решения суда и исполнительного документа ещё нет, эта услуга не подходит. Сначала необходимо <a href="/grazhdanam/vzyskanie-dolgov/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>взыскать задолженность</a> и получить исполнительный документ.
           </div>
 
           {/* Белая карточка с тенью */}
@@ -415,17 +429,17 @@ export default function VzyskanieIspolnitelnyListClient() {
             </div>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
             {/* Карточка 1: В службу судебных приставов */}
             <div style={{
               background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-primary)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-              padding: '36px 32px',
+              padding: '32px 26px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '20px'
+              gap: '18px'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
@@ -434,52 +448,52 @@ export default function VzyskanieIspolnitelnyListClient() {
                   <line x1="16" y1="13" x2="8" y2="13"></line>
                   <line x1="16" y1="17" x2="8" y2="17"></line>
                 </svg>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
                   В службу судебных приставов (ФССП)
                 </h3>
               </div>
-              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+              <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                 Подходит, когда местонахождение денег неизвестно, требуется розыск активов, арест счетов, транспорта, недвижимости или запрет на выезд.
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <polyline points="9 11 12 14 22 4" />
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Комплексный розыск имущества должника</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Инициируем запросы в банки, ГИБДД, Росреестр, ФНС, СФР и кредитные организации.</span>
+                    <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Ходатайства о розыске имущества и необходимых запросах</strong>
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>Инициируем запросы в банки, ГИБДД, Росреестр, ФНС, СФР и кредитные организации.</span>
                   </div>
                 </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <polyline points="9 11 12 14 22 4" />
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Арест счетов, имущества и запрет на выезд</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Ходатайствуем о наложении ареста на транспорт, недвижимость и ограничении выезда за границу.</span>
+                    <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Ходатайства об аресте имущества и ограничении выезда</strong>
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>Ходатайствуем о наложении ареста на транспорт, недвижимость и ограничении выезда за границу.</span>
                   </div>
                 </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <polyline points="9 11 12 14 22 4" />
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Обращение взыскания на доходы и зарплату</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Направляем постановления по месту работы и контролируем ежемесячные удержания.</span>
+                    <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Обращение взыскания на доходы и зарплату</strong>
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>Направляем постановления по месту работы и контролируем ежемесячные удержания.</span>
                   </div>
                 </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <polyline points="9 11 12 14 22 4" />
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Обжалование бездействия судебного пристава</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Подаём жалобы старшему приставу, в УФССП или суд при волоките и затягивании дела.</span>
+                    <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Обжалование бездействия судебного пристава</strong>
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>Подаём жалобы старшему приставу, в УФССП или суд при волоките и затягивании дела.</span>
                   </div>
                 </li>
               </ul>
@@ -491,57 +505,119 @@ export default function VzyskanieIspolnitelnyListClient() {
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-gold)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-              padding: '36px 32px',
+              padding: '32px 26px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '20px'
+              gap: '18px'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                   <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
                   Непосредственно в банк или работодателю
                 </h3>
               </div>
-              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+              <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                 Применяется, когда известен банк с деньгами на счёте должника либо место его официальной работы (по ст. 8 и 9 Закона № 229-ФЗ).
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Запрос сведений о счетах должника в ФНС</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Используем право взыскателя по ст. 69 № 229-ФЗ на получение данных о банках должника.</span>
+                    <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Запрос сведений о счетах должника в ФНС</strong>
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>Используем право взыскателя по ст. 69 № 229-ФЗ на получение данных о банках должника.</span>
                   </div>
                 </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Прямое предъявление листа в банк должника</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Готовим заявление по ст. 8 Закона № 229-ФЗ для списания средств в 3-дневный срок.</span>
+                    <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Прямое предъявление листа в банк должника</strong>
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>Готовим заявление по ст. 8 Закона № 229-ФЗ для списания средств в 3-дневный срок.</span>
                   </div>
                 </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Исполнение через работодателя должника</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Предъявляем документ по ст. 9 Закона № 229-ФЗ для периодических выплат и сумм до 100 000 ₽.</span>
+                    <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Исполнение через работодателя должника</strong>
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>Предъявляем документ по ст. 9 Закона № 229-ФЗ для периодических выплат и сумм до 100 000 ₽.</span>
                   </div>
                 </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Казначейский порядок для госорганов</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Оформляем исполнение через органы Федерального казначейства при должнике-бюджетополучателе.</span>
+                    <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Контроль за исполнением банком</strong>
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>Следим за списаниями и движением средств по счетам до полного погашения долга.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Карточка 3: Через казначейство или финансовый орган */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-deep-blue)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '32px 26px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '18px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16" />
+                </svg>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
+                  Через казначейство или финансовый орган
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                Применяется, если должник — государственный орган, муниципальный орган или бюджетная организация и исполнительный документ исполняется в специальном порядке. До подачи необходимо определить надлежащий финансовый орган и проверить комплект документов.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Определение надлежащего финоргана</strong>
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>Устанавливаем Управление Федерального казначейства или местный финансовый орган.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Подготовка специального пакета</strong>
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>Формируем заверенную копию решения суда, заявление и банковские реквизиты.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Контроль 3-месячного срока</strong>
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>Контролируем исполнение по гл. 24.1 Бюджетного кодекса РФ и поступление выплаты.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Взыскание процентов при задержке</strong>
+                    <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>При нарушении сроков требуем компенсацию и привлечение к ответственности.</span>
                   </div>
                 </li>
               </ul>
@@ -588,42 +664,42 @@ export default function VzyskanieIspolnitelnyListClient() {
             {[
               {
                 num: '01',
-                title: <><span style={{ display: 'block' }}>Проверка документа</span><span style={{ display: 'block' }}>и срока предъявления</span></>,
+                title: <><span style={{ display: 'block' }}>Проверка документа</span>{' '}<span style={{ display: 'block' }}>и срока предъявления</span></>,
                 desc: 'Проверит исполнительный документ, срок предъявления и историю исполнения.'
               },
               {
                 num: '02',
-                title: <><span style={{ display: 'block' }}>Анализ сведений</span><span style={{ display: 'block' }}>о должнике и доходах</span></>,
+                title: <><span style={{ display: 'block' }}>Анализ сведений</span>{' '}<span style={{ display: 'block' }}>о должнике и доходах</span></>,
                 desc: 'Проанализирует сведения о должнике, его доходах, счетах и имуществе.'
               },
               {
                 num: '03',
-                title: <><span style={{ display: 'block' }}>Выбор адресата</span><span style={{ display: 'block' }}>и подача заявления</span></>,
+                title: <><span style={{ display: 'block' }}>Выбор адресата</span>{' '}<span style={{ display: 'block' }}>и подача заявления</span></>,
                 desc: 'Выберет наиболее результативный канал исполнения и подготовит комплект документов.'
               },
               {
                 num: '04',
-                title: <><span style={{ display: 'block' }}>Запрос счетов</span><span style={{ display: 'block' }}>через налоговые органы</span></>,
+                title: <><span style={{ display: 'block' }}>Запрос счетов</span>{' '}<span style={{ display: 'block' }}>через налоговые органы</span></>,
                 desc: 'Запросит доступные взыскателю по закону сведения о действующих счетах должника.'
               },
               {
                 num: '05',
-                title: <><span style={{ display: 'block' }}>Подготовка ходатайств</span><span style={{ display: 'block' }}>об аресте и розыске</span></>,
+                title: <><span style={{ display: 'block' }}>Подготовка ходатайств</span>{' '}<span style={{ display: 'block' }}>об аресте и розыске</span></>,
                 desc: 'Подготовит ходатайства о конкретных мерах принудительного исполнения.'
               },
               {
                 num: '06',
-                title: <><span style={{ display: 'block' }}>Ознакомление с делом</span><span style={{ display: 'block' }}>и аудит работы ФССП</span></>,
+                title: <><span style={{ display: 'block' }}>Ознакомление с делом</span>{' '}<span style={{ display: 'block' }}>и аудит работы ФССП</span></>,
                 desc: 'Ознакомится с материалами производства и проверит полноту совершенных действий.'
               },
               {
                 num: '07',
-                title: <><span style={{ display: 'block' }}>Обжалование бездействия</span><span style={{ display: 'block' }}>в УФССП или суде</span></>,
+                title: <><span style={{ display: 'block' }}>Обжалование бездействия</span>{' '}<span style={{ display: 'block' }}>в УФССП или суде</span></>,
                 desc: 'Подаст жалобу на незаконное постановление или волокиту пристава.'
               },
               {
                 num: '08',
-                title: <><span style={{ display: 'block' }}>Контроль зачислений</span><span style={{ display: 'block' }}>денежных средств</span></>,
+                title: <><span style={{ display: 'block' }}>Контроль зачислений</span>{' '}<span style={{ display: 'block' }}>денежных средств</span></>,
                 desc: 'Проконтролирует фактическое поступление денег на счёт взыскателя.'
               }
             ].map((item, idx) => (

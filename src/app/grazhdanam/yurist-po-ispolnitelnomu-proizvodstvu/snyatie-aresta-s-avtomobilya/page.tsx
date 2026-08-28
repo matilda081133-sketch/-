@@ -61,63 +61,94 @@ export default function SnyatieArestaAvtoPage() {
     }
   ];
 
-  const jsonLd = [
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
-        { '@type': 'ListItem', position: 2, name: 'Гражданам', item: 'https://dejure-help.ru/grazhdanam/' },
-        { '@type': 'ListItem', position: 3, name: 'Юрист по исполнительному производству', item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
-        { '@type': 'ListItem', position: 4, name: 'Снятие ареста с автомобиля', item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/' },
-      ],
-    },
-    {
-      '@type': 'WebPage',
-      name: 'Снятие ареста с автомобиля приставами в Липецке | Де-Юре',
-      description: 'Поможем снять арест с автомобиля или запрет регистрационных действий: проверим основания, подготовим обращение приставу, жалобу или иск.',
-      url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/',
-    },
-    {
-      '@type': 'Service',
-      name: 'Снятие ареста с автомобиля и запрета на регистрационные действия',
-      description: 'Проверка ограничений, подготовка заявлений приставу, жалоб и исков об освобождении автомобиля от ареста в Липецке и по России.',
-      provider: {
+  const jsonLdGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
         '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#organization',
         name: 'ЮК «Де-Юре»',
         url: 'https://dejure-help.ru/',
+        logo: 'https://dejure-help.ru/images/logo.png',
+        telephone: '+7 (910) 350-31-11',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'пл. Плеханова, д. 1, оф. 213',
+          streetAddress: 'ул. Советская, д. 35',
           addressLocality: 'Липецк',
-          addressCountry: 'RU',
-        },
-      },
-      areaServed: 'Липецк, Липецкая область и дистанционно по РФ',
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: faqs.map(faq => ({
-        '@type': 'Question',
-        name: faq.q,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.a
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
         }
-      }))
-    },
-    {
-      '@type': 'Person',
-      name: 'Смольянинова Марина Валерьевна',
-      jobTitle: 'Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»',
-      url: 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/'
-    }
-  ];
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
+        name: 'Марина Валерьевна Смольянинова',
+        jobTitle: 'Ведущий юрист',
+        url: 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#organization'
+        }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/#breadcrumbs',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', position: 2, name: 'Гражданам', item: 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', position: 3, name: 'Юрист по исполнительному производству', item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
+          { '@type': 'ListItem', position: 4, name: 'Снятие ареста с автомобиля', item: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/' },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/#webpage',
+        name: 'Снятие ареста с автомобиля приставами в Липецке | Де-Юре',
+        description: 'Поможем снять арест с автомобиля или запрет регистрационных действий: проверим основания, подготовим обращение приставу, жалобу или иск.',
+        url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/',
+        about: {
+          '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/#service'
+        }
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/#service',
+        name: 'Снятие ареста с автомобиля и запрета на регистрационные действия',
+        description: 'Проверка ограничений, подготовка заявлений приставу, жалоб и исков об освобождении автомобиля от ареста в Липецке и по России.',
+        url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/',
+        provider: {
+          '@id': 'https://dejure-help.ru/#organization'
+        },
+        areaServed: [
+          {
+            '@type': 'AdministrativeArea',
+            name: 'Липецкая область'
+          },
+          {
+            '@type': 'Country',
+            name: 'Россия'
+          }
+        ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
+      }
+    ]
+  };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': jsonLd }) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
       <SnyatieArestaAvtoClient />
     </>

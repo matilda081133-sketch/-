@@ -39,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/avtoyurist/vzyskanie-ushcherba-pri-dtp-bez-osago/',
     '/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/',
     '/grazhdanam/avtoyurist/lishenie-voditelskih-prav/',
+    '/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/',
   ];
 
   const specialistRoutes = Object.keys(teamData).map((slug) => `/specialisty/${slug}/`);

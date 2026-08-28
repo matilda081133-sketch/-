@@ -1,167 +1,141 @@
-import React from 'react';
+import { Metadata } from 'next';
 import ObzhalovanieClient from './ObzhalovanieClient';
 
-export const metadata = {
-  title: 'Обжалование действий приставов для бизнеса в Липецке | Де-Юре',
-  description: 'Обжалуем постановления, действия и бездействие приставов в отношении бизнеса: защита счетов и имущества, жалоба руководителю или обращение в суд.',
-  alternates: {
-    canonical: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/'
-  },
+export const metadata: Metadata = {
+  title: 'Обжалование действий судебных приставов для бизнеса в Липецке | ЮК «Де-Юре»',
+  description: 'Юридическая помощь бизнесу при незаконных действиях или бездействии судебных приставов в Липецке: обжалование незаконных арестов счетов и имущества, отмена постановлений, жалобы в ФССП, прокуратуру и арбитражный суд.',
   openGraph: {
-    title: 'Обжалование действий приставов для бизнеса | Де-Юре',
-    description: 'Проверим материалы производства, выберем способ обжалования и защитим интересы компании в ФССП или суде.',
+    title: 'Обжалование действий судебных приставов для бизнеса в Липецке | ЮК «Де-Юре»',
+    description: 'Защищаем права компании при нарушениях со стороны ФССП: снимаем незаконные аресты, отменяем неправомерные постановления, добиваемся активных действий по взысканию.',
     url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/',
     siteName: 'ЮК «Де-Юре»',
+    locale: 'ru_RU',
+    type: 'website',
     images: [
       {
         url: 'https://dejure-help.ru/images/og-bailiff-appeal-b2b.jpg',
         width: 1200,
         height: 630,
-        alt: 'Обжалование действий судебных приставов для бизнеса в Липецке'
-      }
-    ],
-    locale: 'ru_RU',
-    type: 'website'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Обжалование действий приставов для бизнеса в Липецке | Де-Юре',
-    description: 'Обжалуем постановления, действия и бездействие приставов в отношении бизнеса: защита счетов и имущества, жалоба руководителю или обращение в суд.',
-    images: ['https://dejure-help.ru/images/og-bailiff-appeal-b2b.jpg']
-  }
-};
-
-export default function ObzhalovaniePage() {
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Главная',
-        item: 'https://dejure-help.ru/'
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Бизнесу',
-        item: 'https://dejure-help.ru/biznesu/'
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Исполнительное производство для бизнеса',
-        item: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/'
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: 'Обжалование действий приставов для бизнеса',
-        item: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/'
+        alt: 'Обжалование действий судебных приставов для бизнеса в Липецке | ЮК «Де-Юре»'
       }
     ]
-  };
+  },
+  alternates: {
+    canonical: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/',
+  },
+};
 
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Обжалование действий приставов для бизнеса в Липецке',
-    serviceType: 'Юридические услуги бизнесу по обжалованию решений, действий и бездействия судебных приставов',
-    description: 'Обжалуем постановления, действия и бездействие приставов в отношении бизнеса: защита счетов и имущества, жалоба руководителю или обращение в суд.',
-    provider: {
-      '@type': 'LegalService',
-      name: 'ЮК «Де-Юре»',
-      url: 'https://dejure-help.ru',
-      telephone: '+7 (910) 350-31-11',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Липецк',
-        addressCountry: 'RU'
-      }
-    },
-    areaServed: {
-      '@type': 'AdministrativeArea',
-      name: 'Липецк и Липецкая область'
-    },
-    url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/'
-  };
+const faqs = [
+  {
+    q: 'В какой срок нужно подать жалобу на действия или бездействие пристава?',
+    a: 'Срок составляет 10 рабочих дней со дня вынесения постановления, совершения действия или установления факта бездействия. Если компания не была извещена вовремя — 10 дней с момента, когда она узнала или должна была узнать о нарушении. Пропущенный по уважительной причине срок можно восстановить через суд.'
+  },
+  {
+    q: 'Кому подавать жалобу: вышестоящему приставу или сразу в суд?',
+    a: 'Закон позволяет использовать оба пути. Жалоба старшему судебному приставу (в порядке подчинённости) рассматривается быстрее — в течение 10 дней, без уплаты госпошлины. Обращение в арбитражный суд требует больше времени, но судебный акт обязателен для ФССП. Юрист оценит, какой маршрут эффективнее.'
+  },
+  {
+    q: 'Пристав арестовал счёт с зарплатными деньгами. Что делать?',
+    a: 'Пристав не имеет права блокировать средства, предназначенные для выплаты заработной платы и уплаты налогов (они имеют приоритетную очерёдность). Необходимо незамедлительно подать приставу ходатайство о снятии ареста в части социально значимых платежей с приложением документов.'
+  },
+  {
+    q: 'Арестовали оборудование, без которого производство остановилось. Это законно?',
+    a: 'Закон об исполнительном производстве устанавливает очерёдность взыскания имущества: сначала денежные средства, затем имущество, не участвующее в производстве, и лишь в последнюю очередь — основные производственные фонды. Если этот порядок нарушен, арест можно оспорить.'
+  },
+  {
+    q: 'Пристав бездействует по нашему исполнительному листу уже 3 месяца. Как реагировать?',
+    a: 'Зафиксируйте отсутствие действий: запросите материалы производства для ознакомления, проверьте, направлялись ли запросы в банки и регистрирующие органы. После этого подайте жалобу на бездействие старшему приставу или административный иск в арбитражный суд.'
+  },
+  {
+    q: 'Приостанавливает ли подача жалобы исполнительные действия?',
+    a: 'Подача жалобы вышестоящему приставу сама по себе не приостанавливает производство. Однако при обращении в суд можно заявить ходатайство о применении мер предварительной защиты (приостановлении исполнительного производства). Юрист подготовит такое ходатайство.'
+  },
+  {
+    q: 'Какие документы нужны для первичной оценки ситуации?',
+    a: 'Постановление о возбуждении исполнительного производства, обжалуемое постановление (об аресте, оценке, взыскании сбора), переписка с ФССП, документы на спорное имущество. Если производство электронное — достаточно номера исполнительного производства.'
+  }
+];
 
-  const faqSchema = {
+export default function ObzhalovaniePage() {
+  const jsonLdGraph = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
+    '@graph': [
       {
-        '@type': 'Question',
-        name: 'Можно ли обжаловать не только постановление, но и бездействие пристава?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Да. Предметом защиты может быть постановление, конкретное действие, отказ либо бездействие. До подачи жалобы нужно определить нарушенную обязанность пристава и тот юридический результат, который должен восстановить нарушенное право компании.'
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#organization',
+        name: 'ЮК «Де-Юре»',
+        url: 'https://dejure-help.ru/',
+        logo: 'https://dejure-help.ru/images/logo.png',
+        telephone: '+7 (910) 350-31-11',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, 35',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
         }
       },
       {
-        '@type': 'Question',
-        name: 'Какой срок установлен для подачи жалобы?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Законом установлен десятидневный срок, но момент его начала зависит от обстоятельств: даты совершения действия, вынесения постановления, отказа либо момента, когда не извещённое лицо фактически узнало о нарушении.'
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
+        name: 'Марина Валерьевна Смольянинова',
+        jobTitle: 'Ведущий юрист',
+        url: 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#organization'
         }
       },
       {
-        '@type': 'Question',
-        name: 'Обязательно ли сначала жаловаться старшему судебному приставу?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Нет, универсального обязательного досудебного порядка нет. Жалоба в порядке подчинённости вышестоящему должностному лицу и обращение в суд — самостоятельные способы защиты.'
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/#breadcrumbs',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', position: 2, name: 'Бизнесу', item: 'https://dejure-help.ru/biznesu/' },
+          { '@type': 'ListItem', position: 3, name: 'Исполнительное производство для бизнеса', item: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/' },
+          { '@type': 'ListItem', position: 4, name: 'Обжалование действий судебных приставов для бизнеса', item: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/' }
+        ]
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/#webpage',
+        name: 'Обжалование действий судебных приставов для бизнеса в Липецке | ЮК «Де-Юре»',
+        description: 'Юридическая помощь бизнесу при незаконных действиях или бездействии судебных приставов в Липецке: обжалование незаконных арестов счетов и имущества, отмена постановлений, жалобы в ФССП, прокуратуру и арбитражный суд.',
+        url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/',
+        about: {
+          '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/#service'
         }
       },
       {
-        '@type': 'Question',
-        name: 'Куда обращаться компании — в арбитражный суд или суд общей юрисдикции?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Подсудность зависит от вида исполнительного документа, характера спорных правоотношений и субъектного состава сторон.'
-        }
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/#service',
+        name: 'Обжалование действий судебных приставов для бизнеса',
+        description: 'Юридическая помощь бизнесу при незаконных действиях или бездействии судебных приставов в Липецке: обжалование незаконных арестов счетов и имущества, отмена постановлений, жалобы в ФССП, прокуратуру и арбитражный суд.',
+        url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/',
+        provider: {
+          '@id': 'https://dejure-help.ru/#organization'
+        },
+        areaServed: [
+          {
+            '@type': 'AdministrativeArea',
+            name: 'Липецкая область'
+          },
+          {
+            '@type': 'Country',
+            name: 'Россия'
+          }
+        ]
       },
       {
-        '@type': 'Question',
-        name: 'Приостанавливает ли подача жалобы списание денег или арест имущества?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Нет, подача жалобы сама по себе автоматически не приостанавливает производство. Основания и порядок приостановления производства оцениваются и заявляются отдельно.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Можно ли оспорить постановление о взыскании исполнительского сбора?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Да, при наличии правовых оснований постановление пристава можно оспорить в суде либо ходатайствовать об уменьшении размера сбора или освобождении от его взыскания.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Что делать, если пристав не предпринимает мер по взысканию долга?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Необходимо изучить материалы исполнительного производства, зафиксировать несовершённые запросы и пропущенные процессуальные сроки. После этого готовится адресная жалоба.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Поможет ли жалоба снять арест с имущества третьего лица?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Не всегда. Если возник спор о принадлежности имущества, надлежащим способом защиты является самостоятельный иск в суд об освобождении имущества от ареста.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Можно ли начать работу дистанционно?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Да. Для первичной правовой оценки достаточно направить электронные копии исполнительного документа, постановлений, извещений и переписки с ФССП.'
-        }
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };
@@ -170,15 +144,7 @@ export default function ObzhalovaniePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
       <ObzhalovanieClient />
     </>

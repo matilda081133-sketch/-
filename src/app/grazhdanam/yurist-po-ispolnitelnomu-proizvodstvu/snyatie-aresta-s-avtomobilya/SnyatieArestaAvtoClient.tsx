@@ -226,32 +226,32 @@ export default function SnyatieArestaAvtoClient() {
             {[
               {
                 tag: 'Долг погашен',
-                title: <><span style={{ display: 'block' }}>Долг погашен,</span><span style={{ display: 'block' }}>но запрет не снят</span></>,
+                title: <><span style={{ display: 'block' }}>Долг погашен,</span>{' '}<span style={{ display: 'block' }}>но запрет не снят</span></>,
                 desc: 'Проверим все производства и постановления, добьёмся вынесения и направления документов об отмене ограничения в ГИБДД.'
               },
               {
                 tag: 'Покупка до ареста',
-                title: <><span style={{ display: 'block' }}>Автомобиль куплен</span><span style={{ display: 'block' }}>до введения запрета</span></>,
+                title: <><span style={{ display: 'block' }}>Автомобиль куплен</span>{' '}<span style={{ display: 'block' }}>до введения запрета</span></>,
                 desc: 'Оценим документы о сделке, оплате и передаче машины; обратимся к приставу, а при споре подготовим иск об освобождении имущества.'
               },
               {
                 tag: 'Прежний владелец',
-                title: <><span style={{ display: 'block' }}>Ограничение относится</span><span style={{ display: 'block' }}>к прежнему владельцу</span></>,
+                title: <><span style={{ display: 'block' }}>Ограничение относится</span>{' '}<span style={{ display: 'block' }}>к прежнему владельцу</span></>,
                 desc: 'Установим связь запрета с должником и проверим, когда право на автомобиль фактически перешло к покупателю.'
               },
               {
                 tag: 'Чужое имущество',
-                title: <><span style={{ display: 'block' }}>Арест наложен на</span><span style={{ display: 'block' }}>чужой автомобиль</span></>,
+                title: <><span style={{ display: 'block' }}>Арест наложен на</span>{' '}<span style={{ display: 'block' }}>чужой автомобиль</span></>,
                 desc: 'Подтвердим принадлежность имущества и выберем административный либо исковой способ защиты собственника.'
               },
               {
                 tag: 'Несколько запретов',
-                title: <><span style={{ display: 'block' }}>На машину действует</span><span style={{ display: 'block' }}>несколько запретов</span></>,
+                title: <><span style={{ display: 'block' }}>На машину действует</span>{' '}<span style={{ display: 'block' }}>несколько запретов</span></>,
                 desc: 'Составим перечень ограничений и отдельный маршрут по каждому инициатору, чтобы снятие одного запрета не оказалось бесполезным.'
               },
               {
                 tag: 'Несоразмерность',
-                title: <><span style={{ display: 'block' }}>Пристав не отменяет</span><span style={{ display: 'block' }}>несоразмерную меру</span></>,
+                title: <><span style={{ display: 'block' }}>Пристав не отменяет</span>{' '}<span style={{ display: 'block' }}>несоразмерную меру</span></>,
                 desc: 'Проверим стоимость автомобиля, размер требований, наличие другого имущества и основания для жалобы или судебного оспаривания.'
               }
             ].map((item, i) => (

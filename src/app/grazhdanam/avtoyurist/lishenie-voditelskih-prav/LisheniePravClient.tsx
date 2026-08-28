@@ -1156,7 +1156,7 @@ export default function LisheniePravClient() {
           `}} />
           
           <div className="grid grid-4" style={{ gap: '20px' }}>
-            <Link href="/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+            <Link href="/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
                 className="card related-service-card" 
                 style={{ 
@@ -1176,10 +1176,10 @@ export default function LisheniePravClient() {
               >
                 <div>
                   <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                    <span style={{ display: 'inline-block' }}>Оспаривание</span> <br /><span style={{ display: 'inline-block' }}>вины в ДТП</span>
+                    <span style={{ display: 'inline-block' }}>Оставление</span> <br /><span style={{ display: 'inline-block' }}>места ДТП</span>
                   </h3>
                   <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                    Защита при спорных обстоятельствах аварии, обоюдной вине или необоснованном обвинении.
+                    Защита по ч. 2 ст. 12.27 КоАП РФ: проверка умысла, анализ видео и процессуальных документов.
                   </p>
                 </div>
                 <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>

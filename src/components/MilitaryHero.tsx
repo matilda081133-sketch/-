@@ -169,7 +169,16 @@ export default function MilitaryHero({
                   background: 'transparent'
                 }}>
                   {imageUrl ? (
-                    <img src={imageUrl} alt={imageName || title?.toString() || 'Специалист'} style={{ width: '100%', height: '460px', objectFit: 'cover', objectPosition: imageObjectPosition || 'center 20%', display: 'block', filter: 'brightness(1.05)' }} className="hero-photo-img" />
+                    <img 
+                      src={imageUrl} 
+                      alt={imageName || title?.toString() || 'Специалист'} 
+                      width={440}
+                      height={460}
+                      fetchPriority="high"
+                      decoding="async"
+                      style={{ width: '100%', height: '460px', objectFit: 'cover', objectPosition: imageObjectPosition || 'center 20%', display: 'block', filter: 'brightness(1.05)', aspectRatio: '440/460' }} 
+                      className="hero-photo-img" 
+                    />
                   ) : (
                     <div style={{ padding: '40px', textAlign: 'center', fontStyle: 'italic', color: 'var(--color-text-secondary)' }}>
                       [Фото специалиста]
