@@ -171,7 +171,14 @@ export default function MigracionnyjClient() {
         trustItems={[
           { text: 'Работаем в Липецке и дистанционно по всей России' },
           { text: 'Разделяем административный и судебный порядок защиты' },
-          { text: 'Сразу оцениваем риски и реальные основания — без пустых обещаний' },
+          {
+            text: (
+              <>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сразу оцениваем риски</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и реальные основания — без пустых обещаний</span>
+              </>
+            )
+          },
           { text: 'Куратор — адвокат Д. С. Конопкин' },
         ]}
         imageUrl="/images/konopkin.jpg"
@@ -180,7 +187,7 @@ export default function MigracionnyjClient() {
         imageObjectPosition="center 25%"
       />
 
-      {/* ═══ БЛОК 2: КОГДА ВАЖНО НЕ ОТКЛАДЫВАТЬ ОБРАЩЕНИЕ ═══ */}
+      {/* ═══ БЛОК 2: КОГДА ВАЖНО НЕ ОТКЛАДЫВАТЬ ОБРАЩЕНИЕ (4 В 1 РЯД) ═══ */}
       <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
@@ -192,32 +199,36 @@ export default function MigracionnyjClient() {
             В миграционных делах действуют жёсткие процессуальные сроки: пропуск 10 дней на обжалование постановления суда или 15 дней на выезд после аннулирования документов приводит к принудительной высылке и многолетнему запрету на въезд.
           </p>
 
-          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '32px' }}>
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '32px' }}>
             {/* Карточка 1 */}
             <div 
               className="urgent-card"
               style={{ 
                 background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '30px 26px', 
+                padding: '26px 20px', 
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                 display: 'flex',
-                flexDirection: 'column'
+                flexDirection: 'column',
+                justifyContent: 'space-between'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="8" x2="12" y2="12"></line>
-                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                </svg>
-                <div style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
-                  Суд вынес постановление об административном выдворении
+              <div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '14px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '42px' }}>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Суд вынес постановление</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>об административном выдворении</span>
+                  </div>
                 </div>
+                <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13px', lineHeight: 1.55, margin: 0 }}>
+                  Срок подачи жалобы по ст. 30.3 КоАП РФ — всего 10 дней со дня получения копии. Требуется срочно составить жалобу и заявить ходатайство о приостановлении выдворения.
+                </p>
               </div>
-              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                Срок подачи жалобы по ст. 30.3 КоАП РФ — всего 10 дней со дня получения копии. Требуется срочно составить жалобу и заявить ходатайство о приостановлении выдворения.
-              </p>
             </div>
 
             {/* Карточка 2 */}
@@ -225,26 +236,30 @@ export default function MigracionnyjClient() {
               className="urgent-card"
               style={{ 
                 background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '30px 26px', 
+                padding: '26px 20px', 
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                 display: 'flex',
-                flexDirection: 'column'
+                flexDirection: 'column',
+                justifyContent: 'space-between'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="8" x2="12" y2="12"></line>
-                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                </svg>
-                <div style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
-                  Узнали о запрете на въезд или нежелательности пребывания
+              <div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '14px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '42px' }}>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Узнали о запрете на въезд</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или нежелательности пребывания</span>
+                  </div>
                 </div>
+                <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13px', lineHeight: 1.55, margin: 0 }}>
+                  Необходимо официально выяснить ведомство-инициатора, статью закона, срок ограничения и собрать доказательства семейных или медицинских оснований для отмены.
+                </p>
               </div>
-              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                Необходимо официально выяснить ведомство-инициатора, статью закона, срок ограничения и собрать доказательства семейных или медицинских оснований для отмены.
-              </p>
             </div>
 
             {/* Карточка 3 */}
@@ -252,26 +267,30 @@ export default function MigracionnyjClient() {
               className="urgent-card"
               style={{ 
                 background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '30px 26px', 
+                padding: '26px 20px', 
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                 display: 'flex',
-                flexDirection: 'column'
+                flexDirection: 'column',
+                justifyContent: 'space-between'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="8" x2="12" y2="12"></line>
-                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                </svg>
-                <div style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
-                  Получили уведомление об отказе или аннулировании РВП / ВНЖ
+              <div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '14px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '42px' }}>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получили уведомление</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>об отказе или аннулировании РВП / ВНЖ</span>
+                  </div>
                 </div>
+                <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13px', lineHeight: 1.55, margin: 0 }}>
+                  Закон отводит 15 дней на выезд. Подача административного иска в суд с обеспечительными мерами позволяет легально приостановить выезд и сохранить право на проживание.
+                </p>
               </div>
-              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                Закон отводит 15 дней на выезд. Подача административного иска в суд с обеспечительными мерами позволяет легально приостановить выезд и сохранить право на проживание.
-              </p>
             </div>
 
             {/* Карточка 4 */}
@@ -279,26 +298,30 @@ export default function MigracionnyjClient() {
               className="urgent-card"
               style={{ 
                 background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '30px 26px', 
+                padding: '26px 20px', 
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                 display: 'flex',
-                flexDirection: 'column'
+                flexDirection: 'column',
+                justifyContent: 'space-between'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '12px' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="8" x2="12" y2="12"></line>
-                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                </svg>
-                <div style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
-                  Сведения появились в реестре контролируемых лиц (режим высылки)
+              <div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '14px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '42px' }}>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сведения появились в реестре</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>контролируемых лиц (режим высылки)</span>
+                  </div>
                 </div>
+                <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13px', lineHeight: 1.55, margin: 0 }}>
+                  Включение в реестр блокирует банковские счета, сделки с недвижимостью и транспортом, регистрацию брака. Требуется срочно установить причину и устранить запись.
+                </p>
               </div>
-              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                Включение в реестр блокирует банковские счета, сделки с недвижимостью и транспортом, регистрацию брака. Требуется срочно установить причину и устранить запись.
-              </p>
             </div>
           </div>
 
