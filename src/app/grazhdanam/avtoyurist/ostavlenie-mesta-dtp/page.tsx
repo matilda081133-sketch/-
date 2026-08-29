@@ -77,7 +77,7 @@ export default function OstavlenieMestaDtpPage() {
         telephone: '+7 (910) 350-31-11',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35',
+          streetAddress: 'ул. Советская, 35',
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
