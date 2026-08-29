@@ -163,7 +163,14 @@ export default function ObzhalovanieAdministrativnogoVydvoreniyaClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_cta_vydvorenie"
         primaryCtaSubtext={
-          <>Если требуется срочная помощь юриста, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a></>
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Если требуется
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              срочная помощь юриста, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
         }
         trustItems={[
         {
