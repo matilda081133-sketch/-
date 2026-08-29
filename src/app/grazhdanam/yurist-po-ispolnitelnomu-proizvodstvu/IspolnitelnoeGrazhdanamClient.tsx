@@ -623,12 +623,17 @@ export default function IspolnitelnoeGrazhdanamClient() {
       {/* ═══ БЛОК 4: НАПРАВЛЕНИЯ ПОМОЩИ (5 карточек + темная 6-я карточка) ═══ */}
       <section id="directions" className="section" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+          <div style={{ maxWidth: '820px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Направления помощи
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Выберите ситуацию, чтобы узнать, какие документы и обстоятельства имеют значение, какие действия возможны и как строится работа по конкретной услуге.
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                Выберите ситуацию, чтобы узнать, какие документы и обстоятельства имеют значение,
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                какие действия возможны и как строится дальнейшая юридическая работа по конкретной услуге.
+              </span>
             </p>
           </div>
           
@@ -641,7 +646,12 @@ export default function IspolnitelnoeGrazhdanamClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и бездействия судебного пристава</span>
                   </>
                 ),
-                desc: 'Проверка постановлений и материалов производства, жалоба вышестоящему должностному лицу, в прокуратуру или обращение в суд — в зависимости от задачи.',
+                desc: (
+                  <>
+                    <span style={{ display: 'block' }}>Проверка постановлений и материалов производства, жалоба</span>{' '}
+                    <span style={{ display: 'block' }}>вышестоящему должностному лицу, в прокуратуру или в суд.</span>
+                  </>
+                ),
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/'
               },
               {
@@ -651,7 +661,12 @@ export default function IspolnitelnoeGrazhdanamClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>списанных приставами денег</span>
                   </>
                 ),
-                desc: 'Помощь при списании защищённых выплат, повторном или избыточном взыскании, а также после погашения задолженности.',
+                desc: (
+                  <>
+                    <span style={{ display: 'block' }}>Помощь при списании защищённых выплат, повторном</span>{' '}
+                    <span style={{ display: 'block' }}>или избыточном взыскании, а также после погашения задолженности.</span>
+                  </>
+                ),
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/'
               },
               {
@@ -661,7 +676,12 @@ export default function IspolnitelnoeGrazhdanamClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и разблокировка банковской карты</span>
                   </>
                 ),
-                desc: 'Проверка основания ареста, источника поступлений и документов; обращения к приставу, в банк или суд по применимому маршруту.',
+                desc: (
+                  <>
+                    <span style={{ display: 'block' }}>Проверка основания ареста, источника поступлений и документов;</span>{' '}
+                    <span style={{ display: 'block' }}>обращения к судебному приставу, в банк или суд по применимому маршруту.</span>
+                  </>
+                ),
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/'
               },
               {
@@ -671,7 +691,12 @@ export default function IspolnitelnoeGrazhdanamClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и запрета на регистрационные действия</span>
                   </>
                 ),
-                desc: 'Помощь владельцу или добросовестному приобретателю при аресте транспорта, запрете регистрации и притязаниях на имущество другого лица.',
+                desc: (
+                  <>
+                    <span style={{ display: 'block' }}>Помощь владельцу или добросовестному приобретателю</span>{' '}
+                    <span style={{ display: 'block' }}>при аресте транспорта, запрете регистрации и притязаниях приставов.</span>
+                  </>
+                ),
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/'
               },
               {
@@ -681,7 +706,12 @@ export default function IspolnitelnoeGrazhdanamClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по исполнительному листу</span>
                   </>
                 ),
-                desc: 'Сопровождение взыскателя после решения суда: предъявление документа, контроль пристава, поиск активов и обжалование бездействия.',
+                desc: (
+                  <>
+                    <span style={{ display: 'block' }}>Сопровождение взыскателя после решения суда:</span>{' '}
+                    <span style={{ display: 'block' }}>предъявление документа, контроль пристава, розыск активов и обжалование.</span>
+                  </>
+                ),
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/'
               }
             ].map((dir, i) => (
@@ -705,9 +735,9 @@ export default function IspolnitelnoeGrazhdanamClient() {
                   <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
                     {dir.title}
                   </h3>
-                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  <div style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
                     {dir.desc}
-                  </p>
+                  </div>
                   <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
                     Подробнее 
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
@@ -758,7 +788,8 @@ export default function IspolnitelnoeGrazhdanamClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
                   </h3>
                   <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>
-                    Кратко опишите, что произошло и на какой стадии находится производство. Юрист изучит обстоятельства и подскажет, с каких действий лучше начать.
+                    <span style={{ display: 'block' }}>Кратко опишите, что произошло и на какой стадии находится производство.</span>{' '}
+                    <span style={{ display: 'block' }}>Юрист изучит обстоятельства дела и подскажет, с каких действий лучше начать.</span>
                   </p>
                 </div>
                 <div>
