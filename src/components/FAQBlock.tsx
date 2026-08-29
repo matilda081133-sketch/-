@@ -67,16 +67,16 @@ export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые в
           
           {/* Left Side: Sticky Header & Info */}
           <div className="reveal-on-scroll" style={{ position: 'sticky', top: '120px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '18px' }}>
               <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
               <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
                 {superTitle}
               </span>
             </div>
-            <h2 style={{ fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '32px', lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '14px', lineHeight: 1.15 }}>
               {title}
             </h2>
-            <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '40px', maxWidth: '400px' }}>
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '36px', maxWidth: '400px' }}>
               {subtitle}
             </p>
             <a href={ctaLink} className="btn btn-outline" style={{ display: 'inline-flex' }}>{ctaText}</a>

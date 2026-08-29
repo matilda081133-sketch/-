@@ -355,10 +355,10 @@ export default function OstavlenieMestaDtpClient() {
           <div style={{ maxWidth: '820px', marginBottom: '40px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Ответственность наступает не за любой
+                Ответственность наступает
               </span>{' '}
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                отъезд после происшествия
+                не за любой отъезд после происшествия
               </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
@@ -617,8 +617,12 @@ export default function OstavlenieMestaDtpClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Что сделает адвокат</span> <br />
-              <span style={{ display: 'inline-block' }}>при обвинении в оставлении места ДТП</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Что сделает адвокат
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                при обвинении в оставлении места ДТП
+              </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Полный комплекс процессуальной защиты — от срочного истребования видеозаписей</span> <br className="hidden-mobile" />
@@ -851,37 +855,37 @@ export default function OstavlenieMestaDtpClient() {
       {/* ═══ БЛОК 9: ДОКУМЕНТЫ ДЛЯ ПЕРВИЧНОГО АНАЛИЗА ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Что подготовить
-              </span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                к первой консультации
-              </span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Чем полнее исходные материалы, тем быстрее адвокат сможет оценить обстоятельства</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>происшествия и определить риски по делу:</span>
-            </p>
-          </div>
-
           <div style={{
             background: 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)',
             color: '#FFFFFF',
             border: '1px solid rgba(193, 160, 102, 0.35)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '36px 32px',
-            marginBottom: '24px',
+            padding: '40px 36px',
+            marginBottom: '0',
             boxShadow: '0 20px 40px rgba(16, 39, 59, 0.15)',
             position: 'relative',
             overflow: 'hidden'
           }}>
             {/* Фоновый гербовый водяной знак */}
             <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.05, pointerEvents: 'none' }}>
-              <svg width="140" height="140" viewBox="0 0 24 24" fill="#FFFFFF">
+              <svg width="180" height="180" viewBox="0 0 24 24" fill="#FFFFFF">
                 <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
               </svg>
+            </div>
+
+            <div style={{ maxWidth: '820px', marginBottom: '32px', position: 'relative', zIndex: 1 }}>
+              <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '14px', marginTop: 0, lineHeight: 1.25 }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                  Что подготовить
+                </span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                  к первой консультации
+                </span>
+              </h2>
+              <p style={{ fontSize: '15.5px', color: 'rgba(255, 255, 255, 0.85)', fontWeight: 400, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+                <span style={{ display: 'inline-block' }}>Чем полнее исходные материалы, тем быстрее адвокат сможет оценить обстоятельства</span> <br className="hidden-mobile" />
+                <span style={{ display: 'inline-block' }}>происшествия и определить риски по делу:</span>
+              </p>
             </div>
 
             <div className="grid grid-2" style={{ gap: '16px 32px', marginBottom: '28px', position: 'relative', zIndex: 1 }}>
@@ -919,6 +923,7 @@ export default function OstavlenieMestaDtpClient() {
 
       {/* ═══ БЛОК 10: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
+        superTitle="Вопросы и ответы"
         title="Частые вопросы"
         subtitle="Ответы на ключевые вопросы по делам об оставлении места происшествия по части 2 статьи 12.27 КоАП РФ."
         faqs={faqs}
@@ -930,10 +935,10 @@ export default function OstavlenieMestaDtpClient() {
           <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Если вопрос связан не только
+                Если вопрос связан
               </span>{' '}
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                с оставлением места ДТП
+                не только с оставлением места ДТП
               </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
@@ -1074,14 +1079,19 @@ export default function OstavlenieMestaDtpClient() {
                   Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
                 </p>
               </div>
+
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55, marginTop: '20px' }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Безопасность данных:</strong>
+                Не указывайте паспортные данные и не прикладывайте материалы дела в открытой форме. Безопасный способ передачи согласуем после связи.
+              </div>
             </div>
 
-            <div>
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
               <ContactsForm
                 title="Получить консультацию адвоката"
-                subtitle="Оставьте номер телефона. Адвокат изучит обстоятельства дела и свяжется с вами."
+                subtitle="Оставьте имя и номер телефона. Адвокат изучит обстоятельства дела и свяжется с вами."
                 buttonText="Получить консультацию"
-                subtext="Перезвоним в течение 15 минут в рабочее время. Вечером или в выходной — в ближайший рабочий день."
+                commentPlaceholder="Кратко укажите стадию дела, дату вызова или заседания…"
               />
             </div>
           </div>
