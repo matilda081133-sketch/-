@@ -764,7 +764,7 @@ export default function MigracionnyjClient() {
 
       {/* ═══ БЛОК 10: FAQ ═══ */}
       <FAQBlock
-        items={faqs}
+        faqs={faqs}
         title="Частые вопросы"
         superTitle="Вопросы и ответы"
       />
