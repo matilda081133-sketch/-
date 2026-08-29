@@ -1,4 +1,4 @@
 :HL["/_next/static/chunks/09w96fmzlzxpz.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap","style"]
 :HL["/images/konopkin.jpg","image",{"fetchPriority":"high"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"grazhdanam","param":null,"prefetchHints":0,"slots":{"children":{"name":"voennyj-yurist","param":null,"prefetchHints":0,"slots":{"children":{"name":"spory-s-voenkomatom","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"cjR1Lo52NQN1Zu-OeVA2a"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"grazhdanam","param":null,"prefetchHints":0,"slots":{"children":{"name":"voennyj-yurist","param":null,"prefetchHints":0,"slots":{"children":{"name":"spory-s-voenkomatom","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"EZ899CqjacV-n5MN7BYop"}
