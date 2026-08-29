@@ -157,7 +157,14 @@ export default function MigracionnyjClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_primary_cta_migration_hub"
         primaryCtaSubtext={
-          <>Если вынесен судебный акт или грозит выдворение, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a></>
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Если вынесен судебный акт
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              или грозит выдворение, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
         }
         trustItems={[
           { text: 'Работаем в Липецке и дистанционно по всей России' },
