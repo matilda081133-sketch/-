@@ -129,7 +129,7 @@ export default function ObzhalovanieClient() {
         imageUrl="/images/smolyaninova.jpg"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
-        imageObjectPosition="center 0%"
+        imageObjectPosition="center 28%"
       />
 
       {/* ═══ БЛОК 2: КОГДА БИЗНЕСУ НЕЛЬЗЯ ОТКЛАДЫВАТЬ ПРОВЕРКУ ═══ */}
@@ -316,28 +316,57 @@ export default function ObzhalovanieClient() {
           <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
             {[
               {
-                title: <><span style={{ display: 'inline-block' }}>Постановления</span> <br /><span style={{ display: 'inline-block' }}>пристава</span></>,
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Постановления</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>судебного пристава</span>
+                  </>
+                ),
                 desc: 'Возбуждение, отказ, окончание или прекращение производства, исполнительский сбор, оценка имущества и распределение средств.'
               },
               {
-                title: <><span style={{ display: 'inline-block' }}>Аресты и ограничения</span> <br /><span style={{ display: 'inline-block' }}>имущества</span></>,
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Аресты и запреты</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в отношении имущества</span>
+                  </>
+                ),
                 desc: 'Оцениваем принадлежность имущества, объём требований, соразмерность мер, соблюдение процедуры и защиту основных средств.'
               },
               {
-                title: <><span style={{ display: 'inline-block' }}>Списание и распределение</span> <br /><span style={{ display: 'inline-block' }}>денежных средств</span></>,
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Списание</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и распределение средств</span>
+                  </>
+                ),
                 desc: 'Сверяем постановления, сумму требования, законную очерёдность списаний и фактическое движение средств по счетам.'
               },
               {
-                title: <><span style={{ display: 'inline-block' }}>Отказ совершить</span> <br /><span style={{ display: 'inline-block' }}>действие</span></>,
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отказ совершить</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исполнительное действие</span>
+                  </>
+                ),
                 desc: 'Проверяем отказ принять документ, рассмотреть ходатайство стороны, снять утратившее основание ограничение или запрет.'
               },
               {
-                title: <><span style={{ display: 'inline-block' }}>Бездействие пристава</span> <br /><span style={{ display: 'inline-block' }}>по взысканию</span></>,
-                desc: 'Для компании-взыскателя фиксируем несовершённые запросы, затягивание сроков и влияние бездействия на возврат долга. Если основная задача компании — получить деньги по исполнительному документу, посмотрите услугу взыскания по исполнительному листу с юридического лица.',
-                linkHref: '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/'
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Бездействие пристава</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по взысканию задолженности</span>
+                  </>
+                ),
+                desc: 'Фиксируем несовершённые запросы, затягивание сроков, нерозыск активов должника и влияние бездействия на возврат долга компании.'
               },
               {
-                title: <><span style={{ display: 'inline-block' }}>Нарушение прав</span> <br /><span style={{ display: 'inline-block' }}>иного собственника</span></>,
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Нарушение прав</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>стороннего собственника</span>
+                  </>
+                ),
                 desc: 'Если арест затронул имущество третьего лица (лизинг, аренда, хранение), определяем надлежащий иск об освобождении от ареста.'
               }
             ].map((item, index) => (
