@@ -97,6 +97,8 @@ export default function MigracionnyjClient() {
     {
       title: 'Правовой анализ и досудебная работа',
       subtitle: 'Истребование актов, подготовка запросов, жалоб в МВД и ведомства',
+      popular: true,
+      badgeText: 'Популярно',
       price: 'от 15 000 ₽',
       features: [
         { name: 'Официальные адвокатские запросы в МВД и ведомства', value: '✓' },

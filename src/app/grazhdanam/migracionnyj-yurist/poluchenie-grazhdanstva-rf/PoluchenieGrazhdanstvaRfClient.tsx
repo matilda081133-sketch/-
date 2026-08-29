@@ -53,6 +53,8 @@ export default function PoluchenieGrazhdanstvaRfClient() {
     ]
   },
   {
+    "popular": true,
+    "badgeText": "Популярно",
     "title": "Комплект документов на гражданство",
     "subtitle": "Заполнение заявления и проверка всех справок",
     "price": "от 20 000 ₽",

@@ -60,6 +60,8 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
     ]
   },
   {
+    "popular": true,
+    "badgeText": "Популярно",
     "title": "Иск и меры предварительной защиты",
     "subtitle": "Составление иска и приостановление высылки через суд",
     "price": "от 25 000 ₽",

@@ -53,6 +53,8 @@ export default function PoluchenieRvpClient() {
     ]
   },
   {
+    "popular": true,
+    "badgeText": "Популярно",
     "title": "Подготовка комплекта на РВП",
     "subtitle": "Формирование полного пакета документов под ключ",
     "price": "от 15 000 ₽",

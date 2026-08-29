@@ -53,6 +53,8 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
     ]
   },
   {
+    "popular": true,
+    "badgeText": "Популярно",
     "title": "Формирование пакета на ВНЖ",
     "subtitle": "Подготовка заявления и сопутствующих документов",
     "price": "от 18 000 ₽",

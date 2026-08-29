@@ -60,6 +60,8 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
     ]
   },
   {
+    "popular": true,
+    "badgeText": "Популярно",
     "title": "Судебный процесс по ст. 25.10",
     "subtitle": "Подготовка иска и ведение дела в суде",
     "price": "от 40 000 ₽",

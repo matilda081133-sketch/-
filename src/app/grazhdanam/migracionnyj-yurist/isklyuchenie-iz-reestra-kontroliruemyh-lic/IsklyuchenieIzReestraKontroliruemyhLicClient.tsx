@@ -53,6 +53,8 @@ export default function IsklyuchenieIzReestraKontroliruemyhLicClient() {
     ]
   },
   {
+    "popular": true,
+    "badgeText": "Популярно",
     "title": "Исключение в досудебном порядке",
     "subtitle": "Подача заявления в УМВД и устранение нарушений",
     "price": "от 15 000 ₽",

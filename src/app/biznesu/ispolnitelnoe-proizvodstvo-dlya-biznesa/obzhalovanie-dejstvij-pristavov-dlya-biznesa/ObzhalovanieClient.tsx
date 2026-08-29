@@ -18,21 +18,21 @@ export default function ObzhalovanieClient() {
   const cases: CaseData[] = [
     {
       category: 'Взыскатель / Незаконное окончание',
-      title: 'Отменили преждевременное окончание производства в пользу компании',
+      title: 'Отменили окончание производства в пользу компании',
       problem: 'Компания-взыскатель получила постановление об окончании производства и возврате исполнительного листа. В материалах не было результатов части запросов, а известные взыскателю сведения о транспорте и контрагентах должника не проверялись.',
       action: 'Ознакомились с материалами, сопоставили заявления взыскателя с действиями пристава и подготовили жалобу с перечнем неисполненных проверок и конкретным требованием отменить постановление.',
       result: 'Постановление отменили, производство возобновили; после дополнительных действий обнаружили денежные поступления, из которых началось погашение требования.'
     },
     {
       category: 'Должник / Исполнительский сбор',
-      title: 'Оспорили исполнительский сбор после ненадлежащего извещения компании',
+      title: 'Оспорили сбор после ненадлежащего извещения компании',
       problem: 'Организация узнала о производстве после ограничений по счёту и получила постановление о взыскании исполнительского сбора, хотя документы о возбуждении производства по надлежащему адресу фактически не поступали.',
       action: 'Проверили адресные данные, способ направления и вручения постановления, дату фактического получения информации и исполнение основного требования. Подготовили заявление в суд и доказательства нарушения порядка извещения.',
       result: 'Суд признал постановление о взыскании исполнительского сбора незаконным; начисление отменили, сведения в производстве скорректировали.'
     },
     {
       category: 'Должник / Снятие ограничений',
-      title: 'Добились снятия ограничений со счетов и транспорта после исполнения',
+      title: 'Добились снятия ареста со счетов и транспорта после исполнения',
       problem: 'Компания исполнила требование, однако постановления об ограничениях по счетам и транспорту продолжали действовать, что мешало расчётам и регистрации техники.',
       action: 'Сверили оплату и остаток требования, зафиксировали сохраняющиеся ограничения, подали адресные заявления, затем обжаловали бездействие с требованием вынести и направить необходимые постановления.',
       result: 'Ограничения сняли и направили сведения в банк и регистрирующий орган; компания восстановила обычные расчёты и возможность регистрационных действий.'
@@ -102,10 +102,10 @@ export default function ObzhalovanieClient() {
               Обжалование действий
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              судебных приставов
+              и решений судебных приставов
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              для бизнеса в Липецке
+              для бизнеса в Липецке и области
             </span>
           </span>
         }
@@ -118,7 +118,14 @@ export default function ObzhalovanieClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="b2b_bailiff_hero_cta"
         primaryCtaSubtext={
-          <>Если ограничения уже мешают расчётам компании, позвоните: <a href="tel:+79103503111">+7 (910) 350-31-11</a></>
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Если ограничения уже мешают
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              расчётам компании, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
         }
         trustItems={[
           { text: 'Опыт куратора направления — более 13 лет в ФССП' },
@@ -150,7 +157,7 @@ export default function ObzhalovanieClient() {
             {[
               { 
                 tag: 'Риск блокировки', 
-                title: <><span style={{ display: 'inline-block' }}>Ограничены расчёты</span> <br /><span style={{ display: 'inline-block' }}>по основному счёту</span></>, 
+                title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ограничены расчёты</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по основному счёту компании</span></>, 
                 desc: (
                   <>
                     <span style={{ display: 'inline-block' }}>Проверим основание и объём взыскания,</span>{' '}
@@ -162,7 +169,7 @@ export default function ObzhalovanieClient() {
               },
               { 
                 tag: 'Риск изъятия', 
-                title: <><span style={{ display: 'inline-block' }}>Арестовано имущество,</span> <br /><span style={{ display: 'inline-block' }}>необходимое для работы</span></>, 
+                title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Арестовано имущество,</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>необходимое для работы бизнеса</span></>, 
                 desc: (
                   <>
                     <span style={{ display: 'inline-block' }}>Оценим принадлежность имущества,</span>{' '}
@@ -173,7 +180,7 @@ export default function ObzhalovanieClient() {
               },
               { 
                 tag: 'Риск переплаты', 
-                title: <><span style={{ display: 'inline-block' }}>Начислен</span> <br /><span style={{ display: 'inline-block' }}>исполнительский сбор</span></>, 
+                title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Незаконно начислен</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>крупный исполнительский сбор</span></>, 
                 desc: (
                   <>
                     <span style={{ display: 'inline-block' }}>Сверим извещение, срок добровольного</span>{' '}
@@ -184,7 +191,7 @@ export default function ObzhalovanieClient() {
               },
               { 
                 tag: 'Риск бездействия', 
-                title: <><span style={{ display: 'inline-block' }}>Пристав не исполняет</span> <br /><span style={{ display: 'inline-block' }}>решение в пользу компании</span></>, 
+                title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Пристав не исполняет</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>решение суда в пользу компании</span></>, 
                 desc: (
                   <>
                     <span style={{ display: 'inline-block' }}>Установим, какие заявления подавались,</span>{' '}
@@ -196,7 +203,7 @@ export default function ObzhalovanieClient() {
               },
               { 
                 tag: 'Риск закрытия', 
-                title: <><span style={{ display: 'inline-block' }}>Производство окончено</span> <br /><span style={{ display: 'inline-block' }}>или документ возвращён</span></>, 
+                title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Производство окончено</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>без фактического взыскания</span></>, 
                 desc: (
                   <>
                     <span style={{ display: 'inline-block' }}>Проверим основание решения, полноту</span>{' '}
@@ -207,7 +214,7 @@ export default function ObzhalovanieClient() {
               },
               { 
                 tag: 'Риск запретов', 
-                title: <><span style={{ display: 'inline-block' }}>Ограничения сохраняются</span> <br /><span style={{ display: 'inline-block' }}>после исполнения</span></>, 
+                title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ограничения сохраняются</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>после полного исполнения долга</span></>, 
                 desc: (
                   <>
                     <span style={{ display: 'inline-block' }}>Сопоставим фактические поступления,</span>{' '}
@@ -304,8 +311,8 @@ export default function ObzhalovanieClient() {
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              <span style={{ display: 'inline-block' }}>Что можно обжаловать</span> <br />
-              <span style={{ display: 'inline-block' }}>в исполнительном производстве</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что можно обжаловать</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в исполнительном производстве</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Недостаточно указать, что решение мешает работе компании. Нужно определить</span> <br />
@@ -428,8 +435,8 @@ export default function ObzhalovanieClient() {
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
-              <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Жалоба руководителю или обращение в суд —</span>
-              <span style={{ display: 'block', whiteSpace: 'nowrap' }}>после проверки цели и подсудности</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Жалоба руководителю или суд —</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>после проверки цели и подсудности</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Вышестоящее должностное лицо и суд имеют разные полномочия, сроки</span> <br />
@@ -450,7 +457,7 @@ export default function ObzhalovanieClient() {
               gap: '24px'
             }}>
               <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                <span style={{ display: 'inline-block' }}>Жалоба в порядке подчинённости (ФССП)</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Жалоба в порядке</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>ведомственной подчинённости (ФССП)</span>
               </h3>
               <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                 Подаётся старшему судебному приставу или главному судебному приставу субъекта РФ. Позволяет оперативно устранить явные процессуальные нарушения внутри ведомства.
@@ -501,7 +508,7 @@ export default function ObzhalovanieClient() {
               gap: '24px'
             }}>
               <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                <span style={{ display: 'inline-block' }}>Судебное оспаривание (Арбитраж / СОЮ)</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Судебное оспаривание</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в арбитражном суде или СОЮ</span>
               </h3>
               <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                 Заявление о признании постановлений, действий или бездействия незаконными по правилам главы 24 АПК РФ либо главы 22 КАС РФ с обязательной силой судебного акта.
@@ -575,42 +582,42 @@ export default function ObzhalovanieClient() {
         steps={[
           {
             num: '01',
-            title: 'Определим цель и срочность',
+            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Определим цель</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и срочность обжалования</span></>,
             desc: 'Определим срочность, процессуальную роль компании (взыскатель или должник) и требуемый для бизнеса результат.'
           },
           {
             num: '02',
-            title: 'Изучим документы',
+            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучим</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>имеющиеся документы</span></>,
             desc: 'Изучим исполнительный документ, постановления, извещения, ходатайства и имеющиеся ответы ФССП.'
           },
           {
             num: '03',
-            title: 'Ознакомимся с материалами',
+            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ознакомимся</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с материалами дела</span></>,
             desc: 'Ознакомимся с материалами исполнительного производства в согласованном с вами объёме.'
           },
           {
             num: '04',
-            title: 'Проверим основания',
+            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Проверим</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>законность оснований</span></>,
             desc: 'Проверим полномочия пристава, основания решения, соблюдение процедуры, сумму и соразмерность мер.'
           },
           {
             num: '05',
-            title: 'Определим адресата и срок',
+            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Определим</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>надлежащего адресата</span></>,
             desc: 'Определим срок обжалования, компетентного адресата (ФССП или суд) и процессуальную форму обращения.'
           },
           {
             num: '06',
-            title: 'Подготовим жалобу в ФССП',
+            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовим жалобу</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>старшему судебному приставу</span></>,
             desc: 'Подготовим мотивированную жалобу в порядке подчинённости, адресные заявления и ходатайства.'
           },
           {
             num: '07',
-            title: 'Подготовим заявление в суд',
+            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовим заявление</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в арбитражный суд</span></>,
             desc: 'Подготовим заявление в арбитражный суд либо документы для суда общей юрисдикции и ходатайство о приостановлении мер.'
           },
           {
             num: '08',
-            title: 'Представим интересы компании',
+            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Представим интересы</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>компании до результата</span></>,
             desc: 'Представим интересы компании в ФССП и суде и проконтролируем фактическое устранение нарушения.'
           }
         ]}
@@ -682,8 +689,9 @@ export default function ObzhalovanieClient() {
           },
           {
             title: 'Жалоба в ФССП',
-            subtitle: 'Порядок подчинённости',
+            subtitle: 'Порядок ведомственной подчинённости',
             popular: true,
+            badgeText: 'Популярно',
             price: 'от 15 000 ₽',
             features: [
               { name: 'Подготовка мотивированной жалобы', value: 'Да' },
@@ -696,7 +704,7 @@ export default function ObzhalovanieClient() {
           },
           {
             title: 'Судебное оспаривание',
-            subtitle: 'Арбитраж / СОЮ',
+            subtitle: 'Защита в арбитражном суде',
             price: 'от 45 000 ₽',
             features: [
               { name: 'Заявление по гл. 24 АПК / 22 КАС', value: 'Да' },

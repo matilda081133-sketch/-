@@ -53,6 +53,8 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
     ]
   },
   {
+    "popular": true,
+    "badgeText": "Популярно",
     "title": "Судебное восстановление РВП / ВНЖ",
     "subtitle": "Административный иск и защита статуса в суде",
     "price": "от 35 000 ₽",

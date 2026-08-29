@@ -79,6 +79,8 @@ export default function ObzhalovanieAdministrativnogoVydvoreniyaClient() {
     ]
   },
   {
+    "popular": true,
+    "badgeText": "Популярно",
     "title": "Подготовка апелляционной жалобы",
     "subtitle": "Составление мотивированной жалобы с ходатайствами",
     "price": "от 18 000 ₽",

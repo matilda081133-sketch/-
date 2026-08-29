@@ -244,7 +244,14 @@ export default function VzyskanieClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="b2b_exec_list_hero_cta"
         primaryCtaSubtext={
-          <>Если должник уклоняется от исполнения, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a></>
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Если должник уклоняется
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              от исполнения, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
         }
         trustItems={[
           { text: 'Проверим счета и реальные активы должника' },

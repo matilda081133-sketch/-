@@ -79,6 +79,8 @@ export default function OtmenaZapretaNaVezdVRossiyuClient() {
     ]
   },
   {
+    "popular": true,
+    "badgeText": "Популярно",
     "title": "Досудебное обжалование",
     "subtitle": "Подготовка мотивированного обращения в ведомство-инициатор",
     "price": "от 15 000 ₽",
