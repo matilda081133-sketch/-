@@ -78,190 +78,6 @@ export default function ObzhalovanieClient() {
     }
   ];
 
-  // Анимированный mock-up документов ФССП
-  const docStack = (
-    <div className="military-hero-right" style={{ width: '100%', maxWidth: '440px', margin: '0 auto', flexShrink: 0, display: 'flex', flexDirection: 'column', paddingTop: '0', marginTop: '0' }}>
-      <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '130%', height: '130%', background: 'radial-gradient(circle, rgba(193, 160, 102, 0.15) 0%, rgba(23, 50, 77, 0.04) 40%, transparent 70%)', zIndex: 0, pointerEvents: 'none' }} />
-        <svg style={{ position: 'absolute', top: '40%', left: '85%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.09, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
-          <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16" />
-        </svg>
-        <div className="mockup-container" style={{ zIndex: 1, margin: 0 }}>
-          <div style={{ position: 'absolute', width: '220px', height: '220px', background: 'var(--color-primary)', filter: 'blur(90px)', opacity: 0.12, borderRadius: '50%' }}></div>
-          
-          {/* Слой 4: Жалоба старшему приставу */}
-          <div className="doc-wrapper-float-4">
-            <div className="doc-sheet doc-sheet-4">
-              <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '25px' }}>
-                  <div style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    УФССП РОССИИ<br />
-                    <span style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)' }}>ЖАЛОБА В ПОРЯДКЕ ПОДЧИНЕННОСТИ</span>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
-                    <div style={{ width: '80px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
-                    <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                  </div>
-                </div>
-                <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 20px auto' }}></div>
-                <div style={{ fontSize: '7px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textAlign: 'center', marginBottom: '14px', fontFamily: 'var(--font-serif)' }}>
-                  ОБ ОТМЕНЕ ПОСТАНОВЛЕНИЯ ПРИСТАВА
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                  <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                  <div style={{ width: '75%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Слой 3: Постановление об отмене мер */}
-          <div className="doc-wrapper-float-3">
-            <div className="doc-sheet doc-sheet-3">
-              <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ position: 'absolute', top: '22px', left: '22px', width: '95px', height: '28px', border: '1.5px solid rgba(23, 50, 77, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)' }}>
-                  <span style={{ fontSize: '5px', fontWeight: 'bold', color: 'rgba(23,50,77,0.7)', fontFamily: 'var(--font-serif)', textAlign: 'center', lineHeight: 1.1 }}>
-                    УФССП ПО ЛИПЕЦКОЙ ОБЛ.<br />СТАРШИЙ СУДЕБНЫЙ ПРИСТАВ
-                  </span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '30px' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
-                    <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
-                    <div style={{ width: '60px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                  </div>
-                </div>
-                <div style={{ width: '130px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 16px auto' }}></div>
-                <div style={{ fontSize: '7px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textAlign: 'center', marginBottom: '14px', fontFamily: 'var(--font-serif)' }}>
-                  ПОСТАНОВЛЕНИЕ ОБ ОТМЕНЕ АРЕСТА
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                  <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                  <div style={{ width: '95%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                  <div style={{ width: '80%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                </div>
-                <div style={{ marginTop: 'auto', paddingTop: '10px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
-                  <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)' }}>Основание: удовлетворение жалобы стороны ИП</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Слой 2: Арбитражный суд — Решение */}
-          <div className="doc-wrapper-float-2">
-            <div className="doc-sheet doc-sheet-2">
-              <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ position: 'absolute', top: '20px', left: '20px', width: '110px', height: '32px', border: '1px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
-                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.2 }}>
-                    АРБИТРАЖНЫЙ СУД<br />ДЕЛО № А36-3942/2026
-                  </div>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
-                    <div style={{ width: '85px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
-                    <div style={{ width: '45px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                  </div>
-                </div>
-                <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 12px auto' }}></div>
-                <div style={{ fontSize: '8px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textAlign: 'center', marginBottom: '4px', fontFamily: 'var(--font-serif)' }}>
-                  РЕШЕНИЕ СУДА
-                </div>
-                <div style={{ fontSize: '6px', color: 'var(--color-gold)', textAlign: 'center', fontWeight: 'bold', marginBottom: '14px', letterSpacing: '0.05em' }}>
-                  ГЛАВА 24 АПК РФ
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '16px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '5px', color: 'rgba(23,50,77,0.8)' }}>
-                    <span>Заявитель: ООО «СтройТех»</span>
-                    <span>Действия ФССП: незаконны</span>
-                  </div>
-                  <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                  <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                </div>
-                <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                    <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Судья арбитражного суда:</div>
-                    <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '6px' }}></div>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                    <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Гербовая печать суда:</div>
-                    <div style={{ width: '40px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '6px' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Слой 1: Лицевая карточка дела */}
-          <div className="doc-wrapper-float-1">
-            <div className="doc-sheet doc-sheet-1">
-              <div style={{ padding: '24px 20px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '12px' }}>
-                  <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', alignItems: 'flex-end' }}>
-                    <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ЗАЩИТА БИЗНЕСА В ФССП</span>
-                    <span style={{ fontSize: '5px', color: 'var(--color-primary)', fontWeight: 600 }}>ЮК «Де-Юре» Липецк</span>
-                  </div>
-                </div>
-                
-                <div style={{ width: '100%', background: 'rgba(247, 244, 237, 0.75)', border: '1px solid rgba(193, 160, 102, 0.35)', borderRadius: '2px', marginBottom: '12px', padding: '10px 12px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textTransform: 'uppercase' }}>Статус обжалования</span>
-                    <span style={{ fontSize: '6px', fontWeight: 'bold', color: '#1B5E20', background: 'rgba(76, 175, 80, 0.15)', padding: '1px 5px', borderRadius: '2px' }}>ЖАЛОБА УДОВЛЕТВОРЕНА</span>
-                  </div>
-                  <svg width="100%" height="48" viewBox="0 0 220 48" fill="none">
-                    <line x1="20" y1="16" x2="80" y2="16" stroke="#C1A066" strokeWidth="2" />
-                    <line x1="80" y1="16" x2="140" y2="16" stroke="#C1A066" strokeWidth="2" />
-                    <line x1="140" y1="16" x2="200" y2="16" stroke="#C1A066" strokeWidth="2" />
-                    <circle cx="20" cy="16" r="6" fill="#10273B" />
-                    <text x="20" y="19" fill="#FFF" fontSize="6" fontWeight="bold" textAnchor="middle">✓</text>
-                    <text x="20" y="32" fill="#10273B" fontSize="5" fontWeight="bold" textAnchor="middle">Анализ</text>
-                    <circle cx="80" cy="16" r="6" fill="#10273B" />
-                    <text x="80" y="19" fill="#FFF" fontSize="6" fontWeight="bold" textAnchor="middle">✓</text>
-                    <text x="80" y="32" fill="#10273B" fontSize="5" fontWeight="bold" textAnchor="middle">Жалоба</text>
-                    <circle cx="140" cy="16" r="6" fill="#10273B" />
-                    <text x="140" y="19" fill="#FFF" fontSize="6" fontWeight="bold" textAnchor="middle">✓</text>
-                    <text x="140" y="32" fill="#10273B" fontSize="5" fontWeight="bold" textAnchor="middle">Суд / ФССП</text>
-                    <circle cx="200" cy="16" r="6" fill="#C1A066" />
-                    <text x="200" y="19" fill="#FFF" fontSize="6" fontWeight="bold" textAnchor="middle">✓</text>
-                    <text x="200" y="32" fill="#10273B" fontSize="5" fontWeight="bold" textAnchor="middle">Отмена мер</text>
-                  </svg>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#FFFFFF', padding: '5px 8px', border: '1px solid rgba(23,50,77,0.08)' }}>
-                    <span style={{ fontSize: '6px', color: 'var(--color-text-secondary)' }}>Результат:</span>
-                    <span style={{ fontSize: '7px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>Арест снят / Постановление отменено</span>
-                  </div>
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
-                  <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#C1A066', flexShrink: 0 }}></div>
-                    <span style={{ fontSize: '6px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>Оспаривание незаконных мер и постановлений</span>
-                  </div>
-                  <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#C1A066', flexShrink: 0 }}></div>
-                    <span style={{ fontSize: '6px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>Защита счетов и активов компании от блокировки</span>
-                  </div>
-                </div>
-
-                <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.2)' }}>
-                  <div>
-                    <div style={{ fontSize: '9px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ООО ЮК «ДЕ-ЮРЕ»</div>
-                    <div style={{ fontSize: '7px', color: 'rgba(23,50,77,0.6)' }}>ИНН 4800009680</div>
-                  </div>
-                  <div style={{ width: '42px', height: '42px', borderRadius: '50%', border: '1.5px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-12deg)', opacity: 0.9 }}>
-                    <div style={{ width: '34px', height: '34px', borderRadius: '50%', border: '0.5px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <span style={{ fontSize: '6px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.1 }}>ДЕ-ЮРЕ<br />ЛИПЕЦК</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <main>
       <Header />
@@ -282,8 +98,15 @@ export default function ObzhalovanieClient() {
         superTitle="Исполнительное производство для бизнеса"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>Обжалование действий</span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>судебных приставов для бизнеса в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Обжалование действий
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              судебных приставов
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              для бизнеса в Липецке
+            </span>
           </span>
         }
         subtitle={
@@ -306,7 +129,7 @@ export default function ObzhalovanieClient() {
         imageUrl="/images/smolyaninova.jpg"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
-        imageObjectPosition="center 25%"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: КОГДА БИЗНЕСУ НЕЛЬЗЯ ОТКЛАДЫВАТЬ ПРОВЕРКУ ═══ */}

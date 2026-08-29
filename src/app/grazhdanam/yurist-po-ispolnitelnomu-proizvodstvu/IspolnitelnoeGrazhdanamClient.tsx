@@ -450,8 +450,8 @@ export default function IspolnitelnoeGrazhdanamClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: 'inline-block' }}>С какими ситуациями</span> <br />
-              <span style={{ display: 'inline-block' }}>мы помогаем</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>С какими ситуациями</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы помогаем гражданам</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Сначала определяем Вашу роль в производстве и проверяем материалы дела.</span> <br />
@@ -635,27 +635,52 @@ export default function IspolnitelnoeGrazhdanamClient() {
           <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
             {[
               {
-                title: 'Обжалование действий и бездействия судебного пристава',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обжалование действий</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и бездействия судебного пристава</span>
+                  </>
+                ),
                 desc: 'Проверка постановлений и материалов производства, жалоба вышестоящему должностному лицу, в прокуратуру или обращение в суд — в зависимости от задачи.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/'
               },
               {
-                title: 'Возврат незаконно списанных приставами денег',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Возврат незаконно</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>списанных приставами денег</span>
+                  </>
+                ),
                 desc: 'Помощь при списании защищённых выплат, повторном или избыточном взыскании, а также после погашения задолженности.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/'
               },
               {
-                title: 'Снятие ареста со счёта и разблокировка банковской карты',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Снятие ареста со счёта</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и разблокировка банковской карты</span>
+                  </>
+                ),
                 desc: 'Проверка основания ареста, источника поступлений и документов; обращения к приставу, в банк или суд по применимому маршруту.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/'
               },
               {
-                title: 'Снятие ареста с автомобиля и запрета на регистрационные действия',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Снятие ареста с автомобиля</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и запрета на регистрационные действия</span>
+                  </>
+                ),
                 desc: 'Помощь владельцу или добросовестному приобретателю при аресте транспорта, запрете регистрации и притязаниях на имущество другого лица.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/'
               },
               {
-                title: 'Взыскание по исполнительному листу',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскание</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по исполнительному листу</span>
+                  </>
+                ),
                 desc: 'Сопровождение взыскателя после решения суда: предъявление документа, контроль пристава, поиск активов и обжалование бездействия.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/'
               }
@@ -729,7 +754,8 @@ export default function IspolnitelnoeGrazhdanamClient() {
                 `}} />
                 <div>
                   <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-white)', lineHeight: 1.3 }}>
-                    Не нашли свою ситуацию?
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не нашли</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
                   </h3>
                   <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>
                     Кратко опишите, что произошло и на какой стадии находится производство. Юрист изучит обстоятельства и подскажет, с каких действий лучше начать.
