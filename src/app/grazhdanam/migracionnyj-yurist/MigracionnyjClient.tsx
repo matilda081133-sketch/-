@@ -643,7 +643,7 @@ export default function MigracionnyjClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: ЧТО ДЕЛАЕТ МИГРАЦИОННЫЙ ЮРИСТ ═══ */}
+      {/* ═══ БЛОК 5: ЧТО ДЕЛАЕТ МИГРАЦИОННЫЙ ЮРИСТ (По шаблону «Что можно обжаловать») ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
@@ -656,25 +656,120 @@ export default function MigracionnyjClient() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px', marginBottom: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative', marginBottom: '32px' }}>
             {[
-              { num: '01', title: 'Анализирует основания и документы', desc: 'Изучает миграционную историю, дату и текст решения, проверяет соблюдение регламентов МВД и сроков обжалования.' },
-              { num: '02', title: 'Разделяет административный и судебный маршрут', desc: 'Определяет, где отмена более эффективна: через вышестоящее ведомство или через подачу административного иска в суд.' },
-              { num: '03', title: 'Готовит обращения, жалобы и иски', desc: 'Составляет процессуальные документы со ссылками на Конституцию РФ, нормы 115-ФЗ, 114-ФЗ, КоАП РФ и позицию Верховного Суда РФ.' },
-              { num: '04', title: 'Собирает доказательственную базу', desc: 'Направляет адвокатские запросы, истребует медицинские справки, свидетельства о браке, рождении детей и документы о доходах.' },
-              { num: '05', title: 'Представляет интересы в суде и органах', desc: 'Лично участвует в судебных заседаниях, взаимодействует с подразделениями по вопросам миграции МВД и пограничной службой.' },
-              { num: '06', title: 'Сопровождает исполнение решения', desc: 'Контролирует фактическое исключение сведений из базы данных пограничной службы, ЦБДУИГ и реестра контролируемых лиц.' },
-              { num: '07', title: 'Информирует на каждом этапе', desc: 'Регулярно сообщает о ходе дела, процессуальных статусах и следующих необходимых шагах до полного урегулирования вопроса.' }
-            ].map((item) => (
-              <div key={item.num} style={{ display: 'flex', gap: '20px', padding: '24px', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-primary)', background: 'var(--color-white)', borderRadius: '0' }}>
-                <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', lineHeight: 1, flexShrink: 0, opacity: 0.35, minWidth: '40px' }}>{item.num}</div>
-                <div>
-                  <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>{item.title}</h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>{item.desc}</p>
+              {
+                num: '01',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Анализ оснований</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и миграционных документов</span>
+                  </>
+                ),
+                desc: 'Изучаем историю пребывания, дату и текст решения госоргана, проверяем соблюдение регламентов МВД и процессуальных сроков обжалования.'
+              },
+              {
+                num: '02',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Выбор порядка</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>защиты прав доверителя</span>
+                  </>
+                ),
+                desc: 'Определяем надлежащий маршрут: досудебное обращение в вышестоящее ведомство либо подача административного иска в суд.'
+              },
+              {
+                num: '03',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовка жалоб,</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>обращений и судебных исков</span>
+                  </>
+                ),
+                desc: 'Составляем процессуальные документы со ссылками на Конституцию РФ, 115-ФЗ, 114-ФЗ, КоАП РФ, КАС РФ и практику Верховного Суда РФ.'
+              },
+              {
+                num: '04',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сбор и фиксация</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>доказательственной базы</span>
+                  </>
+                ),
+                desc: 'Направляем адвокатские запросы, собираем подтверждения семейных связей, медицинские справки и документы об источниках дохода.'
+              },
+              {
+                num: '05',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Личное участие</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в суде и миграционных органах</span>
+                  </>
+                ),
+                desc: 'Представляем интересы на заседаниях, взаимодействуем с подразделениями по вопросам миграции МВД и пограничной службой ФСБ.'
+              },
+              {
+                num: '06',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Контроль фактического</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исполнения решения суда</span>
+                  </>
+                ),
+                desc: 'Добиваемся снятия ограничений в ЦБДУИГ, базе пограничной службы, исключения сведений из реестра контролируемых лиц и защиты статуса.'
+              }
+            ].map((item, index) => (
+              <div 
+                key={index}
+                className="hover-lift"
+                style={{
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
+                }}
+              >
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
                 </div>
+
+                <h3 style={{
+                  fontSize: '18px',
+                  fontFamily: 'var(--font-serif)',
+                  color: 'var(--color-deep-blue)',
+                  margin: '8px 0 14px 0',
+                  lineHeight: 1.35
+                }}>
+                  {item.title}
+                </h3>
+
+                <p style={{
+                  fontSize: '14px',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.6,
+                  margin: 0
+                }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
+
           <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '720px', margin: 0 }}>
             Точный состав работы и стоимость фиксируются в договоре после изучения документов и оценки сложности ситуации.
           </p>
@@ -771,52 +866,76 @@ export default function MigracionnyjClient() {
 
       {/* ═══ БЛОК 10: FAQ ═══ */}
       <FAQBlock
+        superTitle="Частые вопросы клиентов"
+        title={
+          <>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ответы на</span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>частые вопросы</span>
+          </>
+        }
+        subtitle="О миграционном праве и процедурах обжалования"
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
         faqs={faqs}
-        title="Частые вопросы"
-        superTitle="Вопросы и ответы"
       />
 
-      {/* ═══ БЛОК 11: ФОРМА И КОНТАКТЫ ═══ */}
-      <section id="form" className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 11: ФИНАЛЬНАЯ ФОРМА ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '48px', alignItems: 'flex-start' }}>
-            <div>
-              <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '8px' }}>
-                Правовая оценка
-              </span>
-              <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 38px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', lineHeight: 1.25 }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получить консультацию</span>{' '}
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>миграционного юриста</span>
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите ситуацию</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с миграционным юристом</span>
               </h2>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '28px' }}>
-                Опишите ситуацию, укажите гражданство и имеющиеся решения. Адвокат изучит обстоятельства, проверит сроки и свяжется с вами для согласования порядка действий.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Опишите ситуацию, укажите гражданство и имеющиеся решения. Обращение передадим Дмитрию Сергеевичу Конопкину. Он проверит документы, оценит риски и свяжется с вами для согласования порядка действий.
               </p>
-
-              <div style={{ background: 'var(--color-white)', padding: '24px', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-gold)', marginBottom: '24px' }}>
-                <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '6px' }}>
-                  Конфиденциальность и безопасность данных
+              
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация адвоката</strong>
                 </div>
-                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                  Все переданные сведения и документы защищены профессиональной тайной и используются исключительно для правовой оценки вашей ситуации.
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
                 </p>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  <a href="tel:+79103503111" style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 600, fontSize: '15px' }}>+7 (910) 350-31-11</a>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  <span style={{ color: 'var(--color-text-secondary)', fontSize: '14px' }}>г. Липецк, ул. Советская, 35</span>
-                </div>
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
+                Все сведения и документы защищены профессиональной адвокатской тайной. Безопасный способ передачи документов согласуем после первичного контакта.
               </div>
             </div>
 
-            <div style={{ background: 'var(--color-white)', padding: '36px', border: '1px solid var(--color-border)', boxShadow: '0 8px 30px rgba(0,0,0,0.06)' }}>
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
               <ContactsForm
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Адвокат свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
                 buttonText="Отправить обращение"
                 commentPlaceholder="Опишите вашу ситуацию: какое решение вынесено, есть ли семья в РФ, какой документ требуется оформить..."
+                hiddenFields={[
+                  { name: 'source_page', value: '/grazhdanam/migracionnyj-yurist/' },
+                  { name: 'direction', value: 'migracionnyj_yurist' },
+                  { name: 'selected_specialist', value: 'konopkin-dmitriy-sergeevich' }
+                ]}
               />
             </div>
           </div>

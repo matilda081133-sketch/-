@@ -300,97 +300,121 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
       {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
-        subtitle="Работаем структурировано — вы знаете, что происходит на каждом этапе."
+        subtitle="Прозрачный пошаговый процесс от первичного анализа материалов до контроля исполнения решения."
         alignTitle="center"
         steps={[
           {
             num: '01',
-            title: 'Разбираемся в ситуации',
-            desc: 'Уточняем статус, документы, сроки и цель обращения. Определяем неотложные юридические действия.'
+            title: 'Уточняем ситуацию',
+            desc: 'Выясняем, какое решение принято, кем и когда, какие документы есть на руках и какая цель стоит перед доверителем.'
           },
           {
             num: '02',
-            title: 'Проверяем документы',
-            desc: 'Изучаем акты МВД, протоколы, судебные решения и подтверждения семейных или гуманитарных обстоятельств.'
+            title: 'Изучаем материалы дела',
+            desc: 'Проверяем протоколы, постановления, основания применения мер, миграционную историю и основания для правовой защиты.'
           },
           {
             num: '03',
-            title: 'Формируем правовую позицию',
-            desc: 'Определяем административный или судебный порядок, оцениваем риски и фиксируем условия работы.'
+            title: 'Формируем правовой маршрут',
+            desc: 'Определяем досудебный или судебный порядок, оцениваем процессуальные риски, сроки и фиксируем условия работы.'
           },
           {
             num: '04',
             title: 'Защищаем интересы',
-            desc: 'Подаём обращения, жалобы или иск в суд, участвуем в заседаниях и взаимодействуем с ведомствами.'
+            desc: 'Подаём административный иск к Минюсту, МВД или ФСБ, доказываем несоразмерность меры и наличие устойчивых семейных связей.'
           },
           {
             num: '05',
-            title: 'Контролируем результат',
-            desc: 'Отслеживаем фактическое исполнение решения, снятие ограничений или выдачу миграционного документа.'
+            title: 'Дистанционный формат',
+            desc: 'Начать можно дистанционно: направить имеющиеся документы и кратко описать ситуацию. Необходимость личного участия, доверенности или явки определяется индивидуально.'
           }
         ]}
-        ctaTitle="Готовы обсудить вашу задачу"
-        ctaSubtitle="Опишите ситуацию — адвокат изучит документы и подскажет законный порядок действий."
-        ctaButtonText="Получить консультацию"
+        ctaTitle="Готовы обсудить вашу ситуацию"
+        ctaSubtitle="Опишите задачу — адвокат изучит документы и предложит понятный план защиты."
+        ctaButtonText="Обсудить ситуацию"
         ctaButtonHref="#form"
       />
 
-      {/* ═══ БЛОК 6: СТОИМОСТЬ ═══ */}
+      {/* ═══ БЛОК 6: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
       <PricingBlock
         title="Стоимость юридической помощи"
-        subtitle="Фиксируем цену в официальном договоре. Без скрытых платежей и непредвиденных расходов."
+        subtitle="Стоимость зависит от органа-инициатора, стадии рассмотрения, объёма документов и необходимости личного участия адвоката."
         tiers={pricingTiers}
-        disclaimer="Госпошлины, нотариальные переводы и доверенности оплачиваются отдельно по фактическим тарифам."
+        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в соглашении до начала работы. Оплата вознаграждения адвоката не зависит от исхода дела и не включает государственные пошлины, нотариальные переводы и сопутствующие расходы."
       />
 
       {/* ═══ БЛОК 7: FAQ ═══ */}
       <FAQBlock
+        superTitle="Частые вопросы клиентов"
+        title={
+          <>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ответы на</span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>частые вопросы</span>
+          </>
+        }
+        subtitle="Об отмене решений по ст. 25.10 114-ФЗ"
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
         faqs={faqs}
-        title="Частые вопросы"
-        superTitle="Вопросы и ответы"
       />
 
-      {/* ═══ БЛОК 8: ФОРМА И КОНТАКТЫ ═══ */}
-      <section id="form" className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 8: ФИНАЛЬНАЯ ФОРМА ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '48px', alignItems: 'flex-start' }}>
-            <div>
-              <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '8px' }}>
-                Правовая оценка
-              </span>
-              <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 38px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', lineHeight: 1.25 }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получить консультацию</span>{' '}
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по миграционному вопросу</span>
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите ситуацию</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с миграционным юристом</span>
               </h2>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '28px' }}>
-                Опишите ситуацию, укажите гражданство и имеющиеся решения. Адвокат изучит обстоятельства, проверит сроки и свяжется с вами.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко опишите, что произошло, какое решение вынесено и какие документы у вас на руках. Обращение передадим Дмитрию Сергеевичу Конопкину. Он проверит материалы, оценит риски и свяжется с вами для согласования консультации.
               </p>
-
-              <div style={{ background: 'var(--color-white)', padding: '24px', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-gold)', marginBottom: '24px' }}>
-                <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '6px' }}>
-                  Конфиденциальность и безопасность данных
+              
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация адвоката</strong>
                 </div>
-                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                  Все переданные сведения и документы защищены профессиональной адвокатской тайной.
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
                 </p>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  <a href="tel:+79103503111" style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 600, fontSize: '15px' }}>+7 (910) 350-31-11</a>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  <span style={{ color: 'var(--color-text-secondary)', fontSize: '14px' }}>г. Липецк, ул. Советская, 35</span>
-                </div>
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
+                Все сведения и документы защищены профессиональной адвокатской тайной. Безопасный способ передачи документов согласуем после первичного контакта.
               </div>
             </div>
 
-            <div style={{ background: 'var(--color-white)', padding: '36px', border: '1px solid var(--color-border)', boxShadow: '0 8px 30px rgba(0,0,0,0.06)' }}>
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
               <ContactsForm
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Адвокат свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
                 buttonText="Отправить обращение"
-                commentPlaceholder="Опишите вашу задачу: какое решение вынесено, есть ли семья в РФ, какой документ требуется оформить..."
+                commentPlaceholder="Опишите вашу ситуацию: какое решение вынесено, есть ли семья в РФ, какой документ требуется оформить..."
+                hiddenFields={[
+                  { name: 'source_page', value: '/grazhdanam/migracionnyj-yurist/obzhalovanie-nezhelatelnosti-prebyvaniya/' },
+                  { name: 'direction', value: 'obzhalovanie_nezhelatelnosti' },
+                  { name: 'selected_specialist', value: 'konopkin-dmitriy-sergeevich' }
+                ]}
               />
             </div>
           </div>

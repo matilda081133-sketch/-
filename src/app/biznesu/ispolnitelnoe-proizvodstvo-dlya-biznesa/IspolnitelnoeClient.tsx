@@ -88,7 +88,7 @@ export default function IspolnitelnoeClient() {
           { text: 'Куратор — 13 лет опыта в ФССП' },
         ]}
         imageUrl="/images/smolyaninova.jpg"
-        imageObjectPosition="center 28%"
+        imageObjectPosition="50% -75px"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
       />
