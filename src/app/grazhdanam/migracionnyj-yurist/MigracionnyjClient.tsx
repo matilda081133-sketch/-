@@ -773,7 +773,8 @@ export default function MigracionnyjClient() {
           </div>
 
           <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '720px', margin: 0 }}>
-            Точный состав работы и стоимость фиксируются в договоре после изучения документов и оценки сложности ситуации.
+            <span style={{ display: 'inline-block' }}>Точный состав работы и стоимость фиксируются в договоре</span> <br />
+            <span style={{ display: 'inline-block' }}>после изучения документов и оценки сложности ситуации.</span>
           </p>
         </div>
       </section>

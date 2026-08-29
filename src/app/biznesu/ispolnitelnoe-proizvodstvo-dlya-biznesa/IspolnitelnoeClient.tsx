@@ -72,6 +72,26 @@ export default function IspolnitelnoeClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
+            Работаем на стороне взыскателя и должника. Оцениваем операционные риски, взаимодействуем с ФССП, банками и судами. Куратор направления — юрист с 13-летним опытом в службе судебных приставов.
+          </span>
+        }
+        primaryCtaText="Обсудить ситуацию"
+        primaryCtaLink="#form"
+        primaryCtaAnalytics="click_primary_cta_b2b10"
+        primaryCtaSubtext={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Если ограничения уже мешают
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              расчётам компании, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
+        }
+        trustItems={[
+          { text: 'Работаем на стороне взыскателя и должника' },
+          { text: 'Оцениваем операционные риски бизнеса' },
+          { text: 'Взаимодействуем с ФССП, банками, судами' },
           { text: 'Куратор — 13 лет опыта в ФССП' },
         ]}
         imageUrl="/images/smolyaninova.jpg"
