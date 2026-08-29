@@ -466,19 +466,19 @@ export default function MigracionnyjClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: НАПРАВЛЕНИЯ ПОМОЩИ (9 карточек + 1 темная карточка) ═══ */}
-      <section id="directions" className="section" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 4: НАПРАВЛЕНИЯ ПОМОЩИ (9 КАРТОЧЕК + ПОЛНОШИРИННЫЙ БАННЕР) ═══ */}
+      <section id="directions" className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Направления помощи
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Направления помощи</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textAlign: 'left' }}>
               Выберите ситуацию, чтобы узнать основания, сроки обжалования, необходимые документы и как строится юридическая работа.
             </p>
           </div>
           
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
             {[
               {
                 title: (
@@ -571,32 +571,63 @@ export default function MigracionnyjClient() {
                 link: '/grazhdanam/migracionnyj-yurist/poluchenie-grazhdanstva-rf/'
               }
             ].map((dir, i) => (
-              <a key={i} href={dir.link} data-analytics="click_migration_service_card" style={{ textDecoration: 'none', display: 'block' }}>
+              <a 
+                key={i} 
+                href={dir.link} 
+                data-analytics="click_migration_service_card" 
+                style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', height: '100%' }}
+              >
                 <div 
-                  className="card service-card" 
+                  className="card service-card hover-lift" 
                   style={{ 
                     height: '100%', 
-                    minHeight: '170px',
-                    padding: '30px', 
+                    padding: '32px 28px', 
                     background: 'var(--color-white)', 
                     border: '1px solid var(--color-border)',
+                    borderTop: '4px solid var(--color-primary)',
                     borderRadius: '0',
                     display: 'flex', 
                     flexDirection: 'column',
-                    transition: 'all 0.3s',
-                    position: 'relative',
-                    borderTop: '3px solid var(--color-primary)'
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                    transition: 'all 0.3s ease',
+                    position: 'relative'
                   }}
                 >
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
-                    {dir.title}
-                  </h3>
-                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                    {dir.desc}
-                  </p>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
-                    Подробнее 
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
+                  <div>
+                    <h3 style={{ 
+                      margin: '0 0 12px 0', 
+                      fontSize: '18px', 
+                      fontFamily: 'var(--font-serif)',
+                      color: 'var(--color-deep-blue)', 
+                      lineHeight: 1.35,
+                      minHeight: '52px'
+                    }}>
+                      {dir.title}
+                    </h3>
+                    <p style={{ 
+                      margin: '0 0 20px 0', 
+                      fontSize: '14px', 
+                      color: 'var(--color-text-secondary)', 
+                      lineHeight: 1.55,
+                      minHeight: '85px'
+                    }}>
+                      {dir.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    gap: '8px', 
+                    color: 'var(--color-primary)', 
+                    fontSize: '14px', 
+                    fontWeight: 600,
+                    marginTop: 'auto',
+                    paddingTop: '12px',
+                    borderTop: '1px solid rgba(23, 50, 77, 0.06)'
+                  }}>
+                    <span>Подробнее</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -605,37 +636,47 @@ export default function MigracionnyjClient() {
               </a>
             ))}
 
-            {/* Не нашли свою ситуацию? (10-я карточка) */}
-            <div style={{ gridColumn: 'span 1' }}>
+            {/* ═══ 10-я КАРТОЧКА: НЕ НАШЛИ СВОЮ СИТУАЦИЮ (ВО ВСЮ ШИРИНУ) ═══ */}
+            <div style={{ gridColumn: '1 / -1', marginTop: '16px' }}>
               <div 
-                className="card service-card" 
+                className="card service-card hover-lift" 
                 style={{ 
-                  height: '100%', 
-                  minHeight: '170px',
-                  padding: '30px', 
-                  background: 'var(--color-deep-blue)', 
-                  border: '1px solid transparent',
+                  background: 'linear-gradient(135deg, #0B1C2A 0%, #17375E 100%)', 
+                  border: '1px solid rgba(193, 160, 102, 0.3)',
+                  borderTop: '4px solid var(--color-gold)',
                   borderRadius: '0',
-                  display: 'flex', 
-                  flexDirection: 'column',
+                  padding: '36px 40px',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
                   justifyContent: 'space-between',
-                  gap: '20px',
-                  transition: 'all 0.3s',
-                  position: 'relative',
-                  borderTop: '3px solid var(--color-gold)'
+                  gap: '32px',
+                  flexWrap: 'wrap',
+                  boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
                 }}
               >
-                <div>
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
+                  <h3 style={{ margin: '0 0 12px 0', fontSize: '22px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не нашли</span>{' '}
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
                   </h3>
-                  <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>
+                  <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
                     Кратко опишите, что произошло и на какой стадии находится вопрос. Адвокат изучит обстоятельства и предложит законный порядок действий.
                   </p>
                 </div>
-                <div>
-                  <a href="#form" className="btn" style={{ display: 'inline-block', width: '100%', textAlign: 'center', fontSize: '14px', padding: '12px 20px', backgroundColor: 'var(--color-white)', color: '#10273B', border: '1px solid var(--color-white)', fontWeight: 600 }}>
+                <div style={{ flexShrink: 0 }}>
+                  <a 
+                    href="#form" 
+                    className="btn white-btn-custom" 
+                    style={{ 
+                      display: 'inline-block', 
+                      textAlign: 'center', 
+                      fontSize: '15px', 
+                      padding: '14px 28px',
+                      fontWeight: 600,
+                      borderRadius: '0'
+                    }}
+                  >
                     Описать ситуацию
                   </a>
                 </div>
