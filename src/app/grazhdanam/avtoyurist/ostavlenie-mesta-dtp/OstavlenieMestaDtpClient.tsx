@@ -238,8 +238,8 @@ export default function OstavlenieMestaDtpClient() {
                 tag: 'Процессуальный статус',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Уточните вызов</span>
-                    <span style={{ display: 'block' }}>в ГИБДД</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Уточните факт</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>вызова в отдел ГИБДД</span>
                   </>
                 ),
                 desc: 'Выясните, куда и в каком качестве Вас вызывают, номер материала, дату явки или заседания. Получите копии составленных документов.'
@@ -248,8 +248,8 @@ export default function OstavlenieMestaDtpClient() {
                 tag: 'Подписание документов',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Не подписывайте</span>
-                    <span style={{ display: 'block' }}>пустые бланки</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не подписывайте</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>незаполненные бланки</span>
                   </>
                 ),
                 desc: 'Не подписывайте документы, содержание которых непонятно. Замечания излагайте письменно и добивайтесь их внесения в протокол.'
@@ -258,8 +258,8 @@ export default function OstavlenieMestaDtpClient() {
                 tag: 'Консультация',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Обсудите факты</span>
-                    <span style={{ display: 'block' }}>с адвокатом</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите факты</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с профильным адвокатом</span>
                   </>
                 ),
                 desc: 'До подробных объяснений согласуйте позицию с защитником. Не придумывайте недостоверных версий и не уничтожайте записи.'
@@ -268,8 +268,8 @@ export default function OstavlenieMestaDtpClient() {
                 tag: 'Особые ситуации',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Учтите специфику</span>
-                    <span style={{ display: 'block' }}>происшествия</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Учтите специфику</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>дорожного происшествия</span>
                   </>
                 ),
                 desc: 'Касание без повреждений, освобождение дороги, парковочный контакт или доставка пострадавшего требуют отдельной правовой оценки.'
@@ -636,8 +636,8 @@ export default function OstavlenieMestaDtpClient() {
                 num: '01',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>До составления</span>
-                    <span style={{ display: 'block' }}>протокола</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Действия до</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>составления протокола</span>
                   </>
                 ),
                 desc: 'Уточнит процессуальный статус, изучит первичные документы, поможет сохранить видеозаписи камер и подготовит позицию до дачи объяснений.'
@@ -656,8 +656,8 @@ export default function OstavlenieMestaDtpClient() {
                 num: '03',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Правовой анализ</span>
-                    <span style={{ display: 'block' }}>доказательств</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Правовой анализ</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>собранных доказательств</span>
                   </>
                 ),
                 desc: 'Сопоставит траекторию, локализацию повреждений, обзорность, габариты и обоснует отсутствие умысла на оставление места происшествия.'
@@ -676,8 +676,8 @@ export default function OstavlenieMestaDtpClient() {
                 num: '05',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Допрос инспекторов</span>
-                    <span style={{ display: 'block' }}>и свидетелей</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Допрос инспекторов</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и очевидцев происшествия</span>
                   </>
                 ),
                 desc: 'Выявит противоречия в показаниях заявителя и сотрудников ГИБДД, докажет добросовестность и последовательность поведения водителя.'
@@ -979,7 +979,8 @@ export default function OstavlenieMestaDtpClient() {
               {
                 title: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Оспаривание</span> <br /><span style={{ display: 'inline-block' }}>вины в ДТП</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оспаривание вины</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в дорожном происшествии</span>
                   </>
                 ),
                 desc: 'Оспаривание выводов ГИБДД, автотехническая экспертиза, защита при спорных обстоятельствах аварии.',

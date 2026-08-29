@@ -18,8 +18,8 @@ export default function ObzhalovanieClient() {
       category: 'Взыскатель / Отмена окончания',
       title: (
         <>
-          <span style={{ display: 'inline-block' }}>Отменили преждевременное окончание</span>{' '}
-          <span style={{ display: 'inline-block' }}>исполнительного производства</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отменили окончание</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исполнительного производства</span>
         </>
       ),
       problem: 'Взыскателю вернули исполнительный лист с актом о невозможности взыскания (якобы имущество и доходы должника не обнаружены). При этом часть обязательных запросов пристав не направил, а сведения об официальном месте работы и автомобиле не проверил.',
@@ -43,8 +43,8 @@ export default function ObzhalovanieClient() {
       category: 'Алименты / Бездействие',
       title: (
         <>
-          <span style={{ display: 'inline-block' }}>Добились действий по длительной</span>{' '}
-          <span style={{ display: 'inline-block' }}>задолженности по алиментам</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Добились действий</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по задолженности по алиментам</span>
         </>
       ),
       problem: 'Исполнительное производство по алиментам длилось более года, однако расчёт задолженности не производился, доходы должника своевременно не устанавливались, а обращения взыскателя оставались без содержательного ответа.',
@@ -512,8 +512,8 @@ export default function ObzhalovanieClient() {
                 tag: 'Права третьих лиц',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Нарушены права</span>
-                    <span style={{ display: 'block' }}>другого лица</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Нарушены права</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>третьего лица или собственника</span>
                   </>
                 ),
                 desc: 'Помогаем гражданам, чьи права затронуты действиями пристава (неправомерный арест чужого имущества, ошибки в\u00A0ФИО).'
@@ -729,8 +729,8 @@ export default function ObzhalovanieClient() {
                 num: '03',
                 title: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Правовая экспертиза</span> <br />
-                    <span style={{ display: 'inline-block' }}>решений пристава</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Правовая экспертиза</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>постановлений и действий</span>
                   </>
                 ),
                 desc: 'Проверяем полномочия пристава, основания решения, соблюдение процедуры и сроков.'
@@ -739,8 +739,8 @@ export default function ObzhalovanieClient() {
                 num: '04',
                 title: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Формирование</span> <br />
-                    <span style={{ display: 'inline-block' }}>требований</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формирование</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовых требований</span>
                   </>
                 ),
                 desc: 'Определяем нарушенное право, требуемый результат и надлежащего адресата для обращения.'
@@ -749,8 +749,8 @@ export default function ObzhalovanieClient() {
                 num: '05',
                 title: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Подготовка жалобы</span> <br />
-                    <span style={{ display: 'inline-block' }}>в ФССП</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовка жалобы</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в вышестоящие органы ФССП</span>
                   </>
                 ),
                 desc: 'Составляем мотивированную жалобу вышестоящему должностному лицу, заявления и ходатайства.'
@@ -759,8 +759,8 @@ export default function ObzhalovanieClient() {
                 num: '06',
                 title: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Подготовка иска</span> <br />
-                    <span style={{ display: 'inline-block' }}>в суд (КАС РФ)</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовка иска</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в суд общей юрисдикции</span>
                   </>
                 ),
                 desc: 'Готовим административное исковое заявление, доказательную базу и комплект приложений.'
@@ -769,8 +769,8 @@ export default function ObzhalovanieClient() {
                 num: '07',
                 title: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Представительство</span> <br />
-                    <span style={{ display: 'inline-block' }}>интересов</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Представительство</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>интересов в органах и суде</span>
                   </>
                 ),
                 desc: 'Представляем доверителя в подразделениях ФССП и судебных заседаниях в согласованном объёме.'
@@ -779,8 +779,8 @@ export default function ObzhalovanieClient() {
                 num: '08',
                 title: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Контроль устранения</span> <br />
-                    <span style={{ display: 'inline-block' }}>нарушения</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Контроль</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>фактического устранения нарушений</span>
                   </>
                 ),
                 desc: 'Отслеживаем исполнение решения по жалобе или судебного акта до фактического результата.'

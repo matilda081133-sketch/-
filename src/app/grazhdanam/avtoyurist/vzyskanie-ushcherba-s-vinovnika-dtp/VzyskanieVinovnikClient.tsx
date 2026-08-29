@@ -163,8 +163,8 @@ export default function VzyskanieVinovnikClient() {
                 tag: 'Материалы ДТП',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Сохраните материалы</span>
-                    <span style={{ display: 'block' }}>происшествия</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сохраните материалы</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и схему происшествия</span>
                   </>
                 ),
                 desc: 'Схему, определение или постановление ГИБДД, объяснения, фото, видеозаписи, контакты свидетелей и сведения о владельцах авто.'
@@ -173,8 +173,8 @@ export default function VzyskanieVinovnikClient() {
                 tag: 'Страховое дело',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Получите документы</span>
-                    <span style={{ display: 'block' }}>страховой</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получите документы</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>страховой компании</span>
                   </>
                 ),
                 desc: 'Запросите страховой акт, калькуляцию, направление на ремонт, сведения о фактически выплаченной сумме и переписку.'
@@ -193,8 +193,8 @@ export default function VzyskanieVinovnikClient() {
                 tag: 'Уведомление',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Уведомите ответчика</span>
-                    <span style={{ display: 'block' }}>об осмотре</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Уведомите ответчика</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>о независимом осмотре</span>
                   </>
                 ),
                 desc: 'Пригласите предполагаемого ответчика на независимый осмотр способом с подтверждением вручения (телеграмма, заказное письмо).'
@@ -203,8 +203,8 @@ export default function VzyskanieVinovnikClient() {
                 tag: 'Расходы',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Сохраняйте чеки</span>
-                    <span style={{ display: 'block' }}>и квитанции</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сохраняйте чеки</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и квитанции об оплате</span>
                   </>
                 ),
                 desc: 'Счета и чеки на эвакуацию, платную стоянку, дефектовку, независимую оценку, хранение и иные сопутствующие расходы.'
@@ -213,8 +213,8 @@ export default function VzyskanieVinovnikClient() {
                 tag: 'Расписка',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Не подписывайте отказ</span>
-                    <span style={{ display: 'block' }}>от претензий</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не подписывайте отказ</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>от дальнейших претензий</span>
                   </>
                 ),
                 desc: 'Не подписывайте расписку «претензий не имею» или мировое соглашение о полном расчёте до разделения страховой и деликтной частей.'
@@ -624,8 +624,8 @@ export default function VzyskanieVinovnikClient() {
                 num: '04',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Подготовит</span>
-                    <span style={{ display: 'block' }}>документы</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовит</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>комплект документов</span>
                   </>
                 ),
                 desc: 'Составит претензию, соглашение, иск, возражения, ходатайства и грамотные вопросы эксперту.'

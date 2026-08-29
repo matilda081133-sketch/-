@@ -171,8 +171,8 @@ export default function LisheniePravClient() {
                 tag: 'Опьянение',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Управление в состоянии</span>
-                    <span style={{ display: 'block' }}>опьянения</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Управление</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в состоянии опьянения</span>
                   </>
                 ),
                 desc: 'Проверяются основания остановки, соблюдение порядка освидетельствования, разъяснение прав, документы и видеозапись процедуры.'
@@ -181,8 +181,8 @@ export default function LisheniePravClient() {
                 tag: 'Отказ',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Отказ от медицинского</span>
-                    <span style={{ display: 'block' }}>освидетельствования</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отказ от</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>медицинского освидетельствования</span>
                   </>
                 ),
                 desc: 'Важно установить, были ли законные основания и требование, соблюдалась ли последовательность действий и правильно ли оформлены материалы.'
@@ -201,8 +201,8 @@ export default function LisheniePravClient() {
                 tag: 'Скорость',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Превышение скорости</span>
-                    <span style={{ display: 'block' }}>или повторность</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Превышение скорости</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или повторные нарушения</span>
                   </>
                 ),
                 desc: 'Уточняются способ фиксации, вступление предыдущего постановления в силу и применимая часть статьи КоАП.'
@@ -211,8 +211,8 @@ export default function LisheniePravClient() {
                 tag: 'Переезд',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Нарушение на ж/д</span>
-                    <span style={{ display: 'block' }}>переезде</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Нарушение правил</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>на железнодорожном переезде</span>
                   </>
                 ),
                 desc: 'Проверяются фактическая обстановка, сигнализация, расположение автомобиля и доказательства нарушения.'
@@ -619,8 +619,8 @@ export default function LisheniePravClient() {
                 num: '03',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Соблюдение</span>
-                    <span style={{ display: 'block' }}>процедуры</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Соблюдение</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>законной процедуры</span>
                   </>
                 ),
                 desc: 'Разъяснение прав, подписи и замечания, извещение, участие понятых или видеозапись, соблюдение требований закона.'
@@ -649,8 +649,8 @@ export default function LisheniePravClient() {
                 num: '06',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Правовая</span>
-                    <span style={{ display: 'block' }}>позиция</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Правовая</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>позиция защиты</span>
                   </>
                 ),
                 desc: 'Подготовка мотивированных объяснений, ходатайств, запросов, доказательств и доводов для судебного заседания.'

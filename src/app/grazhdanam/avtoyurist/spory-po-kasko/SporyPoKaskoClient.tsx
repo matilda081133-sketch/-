@@ -574,8 +574,8 @@ export default function SporyPoKaskoClient() {
                 num: '02',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Проверит отказ</span>
-                    <span style={{ display: 'block' }}>или расчёт</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Проверит отказ</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или расчёт страховой</span>
                   </>
                 ),
                 desc: 'Сопоставит формулировки договора с фактами, доказательствами, причинной связью и применимыми нормами права.'
@@ -604,8 +604,8 @@ export default function SporyPoKaskoClient() {
                 num: '05',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Представит</span>
-                    <span style={{ display: 'block' }}>интересы</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Представит</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>интересы доверителя</span>
                   </>
                 ),
                 desc: 'Организует взаимодействие со страховой компанией, экспертом, финансовым уполномоченным и судом в согласованном объёме.'

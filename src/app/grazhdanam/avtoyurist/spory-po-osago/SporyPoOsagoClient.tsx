@@ -588,8 +588,8 @@ export default function SporyPoOsagoClient() {
                 num: '04',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Сформулирует</span>
-                    <span style={{ display: 'block' }}>требования</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сформулирует</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовые требования</span>
                   </>
                 ),
                 desc: 'Подготовит заявление страховщику, обращение финансовому уполномоченному, возражения и судебный иск.'
@@ -598,8 +598,8 @@ export default function SporyPoOsagoClient() {
                 num: '05',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Представит</span>
-                    <span style={{ display: 'block' }}>интересы</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Представит</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>интересы в суде</span>
                   </>
                 ),
                 desc: 'Организует профессиональное взаимодействие со страховщиком, финансовым омбудсменом, экспертом и судом.'

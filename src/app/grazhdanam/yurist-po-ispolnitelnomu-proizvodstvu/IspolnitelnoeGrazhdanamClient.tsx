@@ -465,8 +465,8 @@ export default function IspolnitelnoeGrazhdanamClient() {
                 tag: 'Должник / Списания', 
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Списали деньги</span>
-                    <span style={{ display: 'block' }}>или удерживают доход</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Списали деньги</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или удерживают доход</span>
                   </>
                 ), 
                 desc: (
@@ -481,8 +481,8 @@ export default function IspolnitelnoeGrazhdanamClient() {
                 tag: 'Должник / Арест', 
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Арест счёта, автомобиля</span>
-                    <span style={{ display: 'block' }}>или имущества</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Арест счёта</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>автомобиля или имущества</span>
                   </>
                 ), 
                 desc: (
@@ -497,8 +497,8 @@ export default function IspolnitelnoeGrazhdanamClient() {
                 tag: 'Должник / Ограничения', 
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Запрет на выезд</span>
-                    <span style={{ display: 'block' }}>или исполнительский сбор</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Запрет на выезд</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или исполнительский сбор</span>
                   </>
                 ), 
                 desc: (
@@ -513,8 +513,8 @@ export default function IspolnitelnoeGrazhdanamClient() {
                 tag: 'Взыскатель / Исполнение', 
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Решение суда есть,</span>
-                    <span style={{ display: 'block' }}>но деньги не поступают</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Решение суда есть,</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>но деньги не поступают</span>
                   </>
                 ), 
                 desc: (
@@ -529,8 +529,8 @@ export default function IspolnitelnoeGrazhdanamClient() {
                 tag: 'Взыскатель / Розыск', 
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Пристав не ищет</span>
-                    <span style={{ display: 'block' }}>активы и счета должника</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Пристав не ищет</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>активы и счета должника</span>
                   </>
                 ), 
                 desc: (
@@ -545,8 +545,8 @@ export default function IspolnitelnoeGrazhdanamClient() {
                 tag: 'Взыскатель / Маршрут', 
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Выбор способа</span>
-                    <span style={{ display: 'block' }}>предъявления документа</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Выбор способа</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>предъявления документа</span>
                   </>
                 ), 
                 desc: (

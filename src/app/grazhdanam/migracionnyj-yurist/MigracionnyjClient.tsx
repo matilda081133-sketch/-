@@ -389,7 +389,7 @@ export default function MigracionnyjClient() {
                 tag: 'Паспорт / Гражданство',
                 title: (
                   <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получение гражданства</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Приём в гражданство</span>{' '}
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Российской Федерации</span>
                   </>
                 ),
@@ -484,8 +484,8 @@ export default function MigracionnyjClient() {
               {
                 title: (
                   <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обжалование административного</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>выдворения за пределы РФ</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обжалование</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>административного выдворения</span>
                   </>
                 ),
                 desc: 'Срочная жалоба на постановление суда по ст. 18.8, 18.10 КоАП РФ в 10-дневный срок, приостановление высылки, защита от помещения в ЦВСИГ.',
