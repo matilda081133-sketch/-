@@ -466,7 +466,7 @@ export default function MigracionnyjClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: НАПРАВЛЕНИЯ ПОМОЩИ (9 КАРТОЧЕК + ПОЛНОШИРИННЫЙ БАННЕР) ═══ */}
+      {/* ═══ БЛОК 4: НАПРАВЛЕНИЯ ПОМОЩИ (9 КАРТОЧЕК ЕДИНОГО РАЗМЕРА + ПОЛНОШИРИННЫЙ БАННЕР) ═══ */}
       <section id="directions" className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
@@ -487,7 +487,7 @@ export default function MigracionnyjClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>на въезд в Россию</span>
                   </>
                 ),
-                desc: 'Установление оснований ограничения по 114-ФЗ, досудебные обращения в МВД и ФСБ, судебная отмена неразрешения въезда по семейным и гуманитарным основаниям.',
+                desc: 'Основания по 114-ФЗ, запросы в МВД и ФСБ, судебная отмена неразрешения въезда по семейным и гуманитарным причинам.',
                 link: '/grazhdanam/migracionnyj-yurist/otmena-zapreta-na-vezd-v-rossiyu/'
               },
               {
@@ -497,7 +497,7 @@ export default function MigracionnyjClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>административного выдворения</span>
                   </>
                 ),
-                desc: 'Срочная жалоба на постановление суда по ст. 18.8, 18.10 КоАП РФ в 10-дневный срок, приостановление высылки, защита от помещения в ЦВСИГ.',
+                desc: 'Срочная жалоба на постановление суда по ст. 18.8 КоАП РФ в 10-дневный срок, приостановление высылки и защита в суде.',
                 link: '/grazhdanam/migracionnyj-yurist/obzhalovanie-administrativnogo-vydvoreniya/'
               },
               {
@@ -507,17 +507,17 @@ export default function MigracionnyjClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>о депортации из России</span>
                   </>
                 ),
-                desc: 'Оспаривание распоряжений МВД о депортации в порядке КАС РФ с ходатайством о мерах предварительной защиты для приостановления выезда.',
+                desc: 'Оспаривание распоряжений МВД о депортации по КАС РФ с ходатайством о мерах защиты для законного приостановления выезда.',
                 link: '/grazhdanam/migracionnyj-yurist/obzhalovanie-resheniya-o-deportacii/'
               },
               {
                 title: (
                   <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обжалование нежелательности</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>пребывания в РФ (ст. 25.10)</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обжалование</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>нежелательности пребывания</span>
                   </>
                 ),
-                desc: 'Отмена бессрочных и долгосрочных решений Минюста, ФСБ, Роспотребнадзора и МВД по судимости или медицинским показаниям.',
+                desc: 'Отмена решений Минюста, ФСБ и МВД по ст. 25.10 114-ФЗ по семейным основаниям, погашенной судимости или здоровью.',
                 link: '/grazhdanam/migracionnyj-yurist/obzhalovanie-nezhelatelnosti-prebyvaniya/'
               },
               {
@@ -527,7 +527,7 @@ export default function MigracionnyjClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>контролируемых лиц МВД</span>
                   </>
                 ),
-                desc: 'Защита при введении режима высылки: оспаривание незаконной записи, разблокировка банковских счетов и снятие ограничений на сделки.',
+                desc: 'Защита при режиме высылки по 260-ФЗ: оспаривание записи, разблокировка банковских счетов и снятие ограничений.',
                 link: '/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/'
               },
               {
@@ -537,17 +537,17 @@ export default function MigracionnyjClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или аннулирования РВП и ВНЖ</span>
                   </>
                 ),
-                desc: 'Защита статуса при неправомерных действиях миграционных органов, сохранение законного права проживания в России через суд.',
+                desc: 'Защита статуса при неправомерных отказах МВД, сохранение права на постоянное и временное проживание в России.',
                 link: '/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/'
               },
               {
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Помощь в получении</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>разрешения на временное проживание (РВП)</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>разрешения на проживание (РВП)</span>
                   </>
                 ),
-                desc: 'Проверка оснований по квоте и без квоты (брак, рождение, учёба), подготовка заявления, исключение оснований для отказа МВД.',
+                desc: 'Проверка оснований без квоты и по квоте, сбор документов, подготовка заявления и сопровождение подачи в органы МВД.',
                 link: '/grazhdanam/migracionnyj-yurist/poluchenie-rvp/'
               },
               {
@@ -557,17 +557,17 @@ export default function MigracionnyjClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>вида на жительство (ВНЖ)</span>
                   </>
                 ),
-                desc: 'Сопровождение оформления ВНЖ в общем порядке после РВП и по специальным категориям (дети/родители граждан РФ, носители языка, специалисты).',
+                desc: 'Оформление ВНЖ в общем порядке и по льготным основаниям (семья, носители языка, специалисты), защита от отказа.',
                 link: '/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/'
               },
               {
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Помощь в получении</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>гражданства Российской Федерации</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>гражданства России (138-ФЗ)</span>
                   </>
                 ),
-                desc: 'Комплексный анализ права на приём в гражданство по закону № 138-ФЗ, проверка пакета документов, сопровождение подачи в МВД.',
+                desc: 'Анализ права на приём в гражданство по 138-ФЗ, подготовка пакета документов и правовое сопровождение подачи в МВД.',
                 link: '/grazhdanam/migracionnyj-yurist/poluchenie-grazhdanstva-rf/'
               }
             ].map((dir, i) => (
@@ -581,6 +581,7 @@ export default function MigracionnyjClient() {
                   className="card service-card hover-lift" 
                   style={{ 
                     height: '100%', 
+                    minHeight: '260px',
                     padding: '32px 28px', 
                     background: 'var(--color-white)', 
                     border: '1px solid var(--color-border)',
@@ -610,7 +611,7 @@ export default function MigracionnyjClient() {
                       fontSize: '14px', 
                       color: 'var(--color-text-secondary)', 
                       lineHeight: 1.55,
-                      minHeight: '85px'
+                      minHeight: '75px'
                     }}>
                       {dir.desc}
                     </p>
@@ -656,12 +657,12 @@ export default function MigracionnyjClient() {
                 }}
               >
                 <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '22px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не нашли</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
+                  <h3 style={{ margin: '0 0 12px 0', fontSize: '26px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
+                    Не нашли свою ситуацию?
                   </h3>
                   <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
-                    Кратко опишите, что произошло и на какой стадии находится вопрос. Адвокат изучит обстоятельства и предложит законный порядок действий.
+                    <span style={{ display: 'inline-block' }}>Кратко опишите, что произошло и на какой стадии находится вопрос.</span> <br />
+                    <span style={{ display: 'inline-block' }}>Адвокат изучит обстоятельства и предложит законный порядок действий.</span>
                   </p>
                 </div>
                 <div style={{ flexShrink: 0 }}>
