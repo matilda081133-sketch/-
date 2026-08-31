@@ -96,26 +96,31 @@ export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
     "buttonHref": "#form"
   },
   {
-    "title": "Ведение дела в суде «под ключ»",
-    "subtitle": "Полное судебное сопровождение до признания права собственности и Росреестра",
-    "popular": true,
-    "badgeText": "Популярно",
-    "features": [
+    title: (
+      <>
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ведение дела в суде</span>{' '}
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>«под ключ»</span>
+      </>
+    ),
+    subtitle: 'Полное судебное сопровождение до признания права собственности и Росреестра',
+    popular: true,
+    badgeText: 'Популярно',
+    features: [
       {
-        "name": "Участие во всех судебных заседаниях",
-        "value": "[уточняется]"
+        name: 'Участие во всех судебных заседаниях',
+        value: '[уточняется]'
       },
       {
-        "name": "Допрос свидетелей и экспертов",
-        "value": "[уточняется]"
+        name: 'Допрос свидетелей и экспертов',
+        value: '[уточняется]'
       },
       {
-        "name": "Регистрация права собственности в ЕГРН",
-        "value": "[уточняется]"
+        name: 'Регистрация права собственности в ЕГРН',
+        value: '[уточняется]'
       }
     ],
-    "buttonText": "Выбрать тариф",
-    "buttonHref": "#form"
+    buttonText: 'Выбрать тариф',
+    buttonHref: '#form'
   }
 ];
   const steps: ProcessStep[] = [
@@ -296,7 +301,68 @@ export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
-            {[{"tag":"ЖКУ / Квартира","title":"Проживание в квартире после смерти","desc":"Наследник продолжал жить в квартире умершего, оплачивал ЖКУ и налоги, но к нотариусу не ходил."},{"tag":"Дача / Земля","title":"Обработка и содержание дачи/земли","desc":"Пользование земельным участком, посадка урожая, оплата взносов в СНТ и благоустройство территории."},{"tag":"Ремонт / Дом","title":"Ремонт и сохранение имущества","desc":"Установка забора, замена крыши, ремонт техники или поддержание сохранности жилого дома."},{"tag":"Долги / Погашение","title":"Оплата долгов и кредитов умершего","desc":"Погашение кредитов, коммунальных задолженностей или налогов за счёт личных средств наследника."},{"tag":"Автомобиль / ТО","title":"Владение автомобилем наследодателя","desc":"Управление машиной, прохождение ТО, оформление страховок и оплата штрафов после смерти владельца."},{"tag":"Отказ нотариуса","title":"Отказ нотариуса из-за пропуска срока","desc":"Получение постановления нотариуса об отказе в совершении нотариального действия и перевод спора в суд."}].map((item, i) => (
+            {[
+              {
+                tag: 'ЖКУ / Квартира',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Проживание</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в квартире после смерти</span>
+                  </>
+                ),
+                desc: 'Наследник продолжал жить в квартире умершего, оплачивал ЖКУ и налоги, но к нотариусу не ходил.'
+              },
+              {
+                tag: 'Дача / Земля',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обработка</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и содержание дачи/земли</span>
+                  </>
+                ),
+                desc: 'Пользование земельным участком, посадка урожая, оплата взносов в СНТ и благоустройство территории.'
+              },
+              {
+                tag: 'Ремонт / Дом',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ремонт</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и сохранение имущества</span>
+                  </>
+                ),
+                desc: 'Установка забора, замена крыши, ремонт техники или поддержание сохранности жилого дома.'
+              },
+              {
+                tag: 'Долги / Погашение',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оплата долгов</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и кредитов умершего</span>
+                  </>
+                ),
+                desc: 'Погашение кредитов, коммунальных задолженностей или налогов за счёт личных средств наследника.'
+              },
+              {
+                tag: 'Автомобиль / ТО',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Владение</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>автомобилем наследодателя</span>
+                  </>
+                ),
+                desc: 'Управление машиной, прохождение ТО, оформление страховок и оплата штрафов после смерти владельца.'
+              },
+              {
+                tag: 'Отказ нотариуса',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отказ нотариуса</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>из-за пропуска срока</span>
+                  </>
+                ),
+                desc: 'Получение постановления нотариуса об отказе в совершении нотариального действия и перевод спора в суд.'
+              }
+            ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',

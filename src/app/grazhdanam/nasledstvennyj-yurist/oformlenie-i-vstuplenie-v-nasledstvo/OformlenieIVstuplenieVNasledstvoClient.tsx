@@ -55,69 +55,57 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
   }
 ];
   const pricingTiers: PricingTier[] = [
-  {
-    "title": "Консультация и проверка документов",
-    "subtitle": "Анализ оснований, проверка сроков и подготовка комплекта для нотариуса",
-    "features": [
-      {
-        "name": "Проверка состава документов и родства",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Расчёт наследственных долей",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Инструкция по обращению к нотариусу",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Записаться",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Сопровождение у нотариуса",
-    "subtitle": "Ведение дела от первого заявления до получения свидетельств о праве",
-    "popular": true,
-    "badgeText": "Популярно",
-    "features": [
-      {
-        "name": "Открытие наследственного дела",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Запросы в ЗАГС, банки и Росреестр",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Контроль выдачи свидетельств",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Выбрать тариф",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Оформление «под ключ» с регистрацией",
-    "subtitle": "Полный комплекс услуг, включая регистрацию прав в Росреестре",
-    "features": [
-      {
-        "name": "Все нотариальные действия",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Сбор архивных справок",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Регистрация права собственности в ЕГРН",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Оформить под ключ",
-    "buttonHref": "#form"
-  }
-];
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Консультация</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и проверка документов</span>
+        </>
+      ),
+      subtitle: 'Анализ оснований, проверка сроков и подготовка комплекта для нотариуса',
+      features: [
+        { name: 'Проверка состава документов и родства', value: '[уточняется]' },
+        { name: 'Расчёт наследственных долей', value: '[уточняется]' },
+        { name: 'Инструкция по обращению к нотариусу', value: '[уточняется]' }
+      ],
+      buttonText: 'Записаться',
+      buttonHref: '#form'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сопровождение</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>у нотариуса</span>
+        </>
+      ),
+      subtitle: 'Ведение дела от первого заявления до получения свидетельств о праве',
+      popular: true,
+      badgeText: 'Популярно',
+      features: [
+        { name: 'Открытие наследственного дела', value: '[уточняется]' },
+        { name: 'Запросы в ЗАГС, банки и Росреестр', value: '[уточняется]' },
+        { name: 'Контроль выдачи свидетельств', value: '[уточняется]' }
+      ],
+      buttonText: 'Выбрать тариф',
+      buttonHref: '#form'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оформление «под ключ»</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с регистрацией</span>
+        </>
+      ),
+      subtitle: 'Полный комплекс услуг, включая регистрацию прав в Росреестре',
+      features: [
+        { name: 'Все нотариальные действия', value: '[уточняется]' },
+        { name: 'Сбор архивных справок', value: '[уточняется]' },
+        { name: 'Регистрация права собственности в ЕГРН', value: '[уточняется]' }
+      ],
+      buttonText: 'Оформить под ключ',
+      buttonHref: '#form'
+    }
+  ];
   const steps: ProcessStep[] = [
     {
       num: '01',

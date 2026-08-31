@@ -55,69 +55,57 @@ export default function PriznanieNaslednikaNedostojnymClient() {
   }
 ];
   const pricingTiers: PricingTier[] = [
-  {
-    "title": "Правовая оценка оснований",
-    "subtitle": "Проверка фактов по ст. 1117 ГК РФ, анализ судебной практики и рисков",
-    "features": [
-      {
-        "name": "Анализ документов и судебных решений",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Проверка оснований отстранения",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "План доказательной базы",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Оценить ситуацию",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Сбор доказательств и иск",
-    "subtitle": "Истребование справок ФССП, приговоров и подготовка иска в суд",
-    "features": [
-      {
-        "name": "Адвокатские запросы в ведомства",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Подготовка иска по ст. 1117 ГК РФ",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Расчёт перераспределения долей",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Заказать иск",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Судебный процесс «под ключ»",
-    "subtitle": "Полное ведение дела в суде до исключения лица и оформления долей",
-    "popular": true,
-    "badgeText": "Популярно",
-    "features": [
-      {
-        "name": "Представительство на всех заседаниях",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Исключение лица из состава наследников",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Переоформление прав у нотариуса",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Выбрать тариф",
-    "buttonHref": "#form"
-  }
-];
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Правовая оценка</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>законных оснований</span>
+        </>
+      ),
+      subtitle: 'Проверка фактов по ст. 1117 ГК РФ, анализ судебной практики и рисков',
+      features: [
+        { name: 'Анализ документов и судебных решений', value: '[уточняется]' },
+        { name: 'Проверка оснований отстранения', value: '[уточняется]' },
+        { name: 'План доказательной базы', value: '[уточняется]' }
+      ],
+      buttonText: 'Оценить ситуацию',
+      buttonHref: '#form'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сбор доказательств</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и подготовка иска</span>
+        </>
+      ),
+      subtitle: 'Истребование справок ФССП, приговоров и подготовка иска в суд',
+      features: [
+        { name: 'Адвокатские запросы в ведомства', value: '[уточняется]' },
+        { name: 'Подготовка иска по ст. 1117 ГК РФ', value: '[уточняется]' },
+        { name: 'Расчёт перераспределения долей', value: '[уточняется]' }
+      ],
+      buttonText: 'Заказать иск',
+      buttonHref: '#form'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Судебный процесс</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>«под ключ»</span>
+        </>
+      ),
+      subtitle: 'Полное ведение дела в суде до исключения лица и оформления долей',
+      popular: true,
+      badgeText: 'Популярно',
+      features: [
+        { name: 'Представительство на всех заседаниях', value: '[уточняется]' },
+        { name: 'Исключение лица из состава наследников', value: '[уточняется]' },
+        { name: 'Переоформление прав у нотариуса', value: '[уточняется]' }
+      ],
+      buttonText: 'Выбрать тариф',
+      buttonHref: '#form'
+    }
+  ];
   const steps: ProcessStep[] = [
     {
       num: '01',

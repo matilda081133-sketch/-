@@ -55,69 +55,57 @@ export default function OsparivanieZaveschaniyaClient() {
   }
 ];
   const pricingTiers: PricingTier[] = [
-  {
-    "title": "Анализ перспективы оспаривания",
-    "subtitle": "Изучение медицинских справок, завещания и оценка шансов на победу в суде",
-    "features": [
-      {
-        "name": "Анализ медицинских документов",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Проверка оснований недействительности",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Правовое заключение с оценкой рисков",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Оценить шансы",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Подготовка иска и ходатайств",
-    "subtitle": "Формирование доказательной базы и процессуальных документов для суда",
-    "features": [
-      {
-        "name": "Составление иска по ст. 177/179 ГК РФ",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Ходатайства об истребовании медкарты",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Вопросы для судебной экспертизы",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Заказать иск",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Судебное представительство «под ключ»",
-    "subtitle": "Полное ведение дела в суде с назначением экспертиз до вступления решения в силу",
-    "popular": true,
-    "badgeText": "Популярно",
-    "features": [
-      {
-        "name": "Участие во всех заседаниях",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Контроль проведения экспертизы",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Регистрация права собственности по решению",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Выбрать тариф",
-    "buttonHref": "#form"
-  }
-];
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Анализ</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>перспективы оспаривания</span>
+        </>
+      ),
+      subtitle: 'Изучение медицинских справок, завещания и оценка шансов на победу в суде',
+      features: [
+        { name: 'Анализ медицинских документов', value: '[уточняется]' },
+        { name: 'Проверка оснований недействительности', value: '[уточняется]' },
+        { name: 'Правовое заключение с оценкой рисков', value: '[уточняется]' }
+      ],
+      buttonText: 'Оценить шансы',
+      buttonHref: '#form'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовка</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>иска и ходатайств</span>
+        </>
+      ),
+      subtitle: 'Формирование доказательной базы и процессуальных документов для суда',
+      features: [
+        { name: 'Составление иска по ст. 177/179 ГК РФ', value: '[уточняется]' },
+        { name: 'Ходатайства об истребовании медкарты', value: '[уточняется]' },
+        { name: 'Вопросы для судебной экспертизы', value: '[уточняется]' }
+      ],
+      buttonText: 'Заказать иск',
+      buttonHref: '#form'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Судебное представительство</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>«под ключ»</span>
+        </>
+      ),
+      subtitle: 'Полное ведение дела в суде с назначением экспертиз до вступления решения в силу',
+      popular: true,
+      badgeText: 'Популярно',
+      features: [
+        { name: 'Участие во всех заседаниях', value: '[уточняется]' },
+        { name: 'Контроль проведения экспертизы', value: '[уточняется]' },
+        { name: 'Регистрация права собственности по решению', value: '[уточняется]' }
+      ],
+      buttonText: 'Выбрать тариф',
+      buttonHref: '#form'
+    }
+  ];
   const steps: ProcessStep[] = [
     {
       num: '01',

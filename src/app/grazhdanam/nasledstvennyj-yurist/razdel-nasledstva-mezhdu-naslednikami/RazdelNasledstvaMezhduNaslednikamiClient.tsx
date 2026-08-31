@@ -55,69 +55,57 @@ export default function RazdelNasledstvaMezhduNaslednikamiClient() {
   }
 ];
   const pricingTiers: PricingTier[] = [
-  {
-    "title": "Переговоры и проект соглашения",
-    "subtitle": "Разработка вариантов мирного раздела и составление соглашения для нотариуса",
-    "features": [
-      {
-        "name": "Правовой аудит состава имущества",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Проведение переговоров с наследниками",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Подготовка проекта соглашения о разделе",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Обсудить соглашение",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Судебный выдел долей и компенсация",
-    "subtitle": "Взыскание компенсации за долю или реализация преимущественного права",
-    "popular": true,
-    "badgeText": "Популярно",
-    "features": [
-      {
-        "name": "Организация независимой оценки",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Иск о разделе наследственного имущества",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Судебное представительство",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Заказать раздел",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Сложный раздел имущества и бизнеса",
-    "subtitle": "Раздел коммерческой недвижимости, долей ООО, акций и сопутствующих долгов",
-    "features": [
-      {
-        "name": "Аудит корпоративных прав и активов",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Защита от долгов наследодателя",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Полное юридическое сопровождение",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Выбрать тариф",
-    "buttonHref": "#form"
-  }
-];
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Переговоры</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и проект соглашения</span>
+        </>
+      ),
+      subtitle: 'Разработка вариантов мирного раздела и составление соглашения для нотариуса',
+      features: [
+        { name: 'Правовой аудит состава имущества', value: '[уточняется]' },
+        { name: 'Проведение переговоров с наследниками', value: '[уточняется]' },
+        { name: 'Подготовка проекта соглашения о разделе', value: '[уточняется]' }
+      ],
+      buttonText: 'Обсудить соглашение',
+      buttonHref: '#form'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Выдел долей</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и взыскание компенсации</span>
+        </>
+      ),
+      subtitle: 'Взыскание компенсации за долю или реализация преимущественного права',
+      popular: true,
+      badgeText: 'Популярно',
+      features: [
+        { name: 'Организация независимой оценки', value: '[уточняется]' },
+        { name: 'Иск о разделе наследственного имущества', value: '[уточняется]' },
+        { name: 'Судебное представительство', value: '[уточняется]' }
+      ],
+      buttonText: 'Заказать раздел',
+      buttonHref: '#form'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сложный раздел</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>имущества и бизнеса</span>
+        </>
+      ),
+      subtitle: 'Раздел коммерческой недвижимости, долей ООО, акций и сопутствующих долгов',
+      features: [
+        { name: 'Аудит корпоративных прав и активов', value: '[уточняется]' },
+        { name: 'Защита от долгов наследодателя', value: '[уточняется]' },
+        { name: 'Полное юридическое сопровождение', value: '[уточняется]' }
+      ],
+      buttonText: 'Выбрать тариф',
+      buttonHref: '#form'
+    }
+  ];
   const steps: ProcessStep[] = [
     {
       num: '01',
