@@ -444,8 +444,8 @@ export default function NasledstvennyjClient() {
               {
                 title: (
                   <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оформление и вступление</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в наследство</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оформление</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и вступление в наследство</span>
                   </>
                 ),
                 desc: 'Открытие наследственного дела у нотариуса, сбор недостающих справок, подтверждение родства и сопровождение до выдачи свидетельств.',
@@ -474,8 +474,8 @@ export default function NasledstvennyjClient() {
               {
                 title: (
                   <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оспаривание завещания</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в суде</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оспаривание</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>завещания в суде</span>
                   </>
                 ),
                 desc: 'Признание завещания недействительным по ст. 177 ГК РФ (невменяемость), пороку воли или нарушениям формы; проведение экспертиз.',
@@ -494,8 +494,8 @@ export default function NasledstvennyjClient() {
               {
                 title: (
                   <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Признание наследника</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>недостойным</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Признание</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>наследника недостойным</span>
                   </>
                 ),
                 desc: 'Судебное исключение недобросовестных лиц из состава наследников по ст. 1117 ГК РФ за противоправные действия или неуход.',

@@ -55,69 +55,84 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
   }
 ];
   const pricingTiers: PricingTier[] = [
-  {
-    "title": "Оценка уважительности причин",
-    "subtitle": "Анализ документов, расчёт 6-месячного окна и правовое заключение по рискам",
-    "features": [
-      {
-        "name": "Проверка медицинских и командировочных справок",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Расчёт срока подачи иска",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Оценка шансов восстановления срока",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Оценить шансы",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Подготовка иска по ст. 1155 ГК РФ",
-    "subtitle": "Составление искового заявления и сбор доказательной базы для суда",
-    "features": [
-      {
-        "name": "Иск о восстановлении срока и признании права",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Ходатайства об истребовании наследственного дела",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Расчёт перераспределения долей",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Заказать иск",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Судебный процесс «под ключ»",
-    "subtitle": "Полное представительство в суде с аннулированием старых свидетельств и оформлением долей",
-    "popular": true,
-    "badgeText": "Популярно",
-    "features": [
-      {
-        "name": "Участие во всех заседаниях суда",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Аннулирование прав других наследников",
-        "value": "[уточняется]"
-      },
-      {
-        "name": "Регистрация права собственности в ЕГРН",
-        "value": "[уточняется]"
-      }
-    ],
-    "buttonText": "Выбрать тариф",
-    "buttonHref": "#form"
-  }
-];
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оценка</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>уважительности причин</span>
+        </>
+      ),
+      subtitle: 'Анализ документов, расчёт 6-месячного окна и правовое заключение по рискам',
+      features: [
+        {
+          name: 'Проверка медицинских и командировочных справок',
+          value: '[уточняется]'
+        },
+        {
+          name: 'Расчёт срока подачи иска',
+          value: '[уточняется]'
+        },
+        {
+          name: 'Оценка шансов восстановления срока',
+          value: '[уточняется]'
+        }
+      ],
+      buttonText: 'Оценить шансы',
+      buttonHref: '#form'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовка иска</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по ст. 1155 ГК РФ</span>
+        </>
+      ),
+      subtitle: 'Составление искового заявления и сбор доказательной базы для суда',
+      features: [
+        {
+          name: 'Иск о восстановлении срока и признании права',
+          value: '[уточняется]'
+        },
+        {
+          name: 'Ходатайства об истребовании наследственного дела',
+          value: '[уточняется]'
+        },
+        {
+          name: 'Расчёт перераспределения долей',
+          value: '[уточняется]'
+        }
+      ],
+      buttonText: 'Заказать иск',
+      buttonHref: '#form'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Судебный процесс</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>«под ключ»</span>
+        </>
+      ),
+      subtitle: 'Полное представительство в суде с аннулированием старых свидетельств и оформлением долей',
+      popular: true,
+      badgeText: 'Популярно',
+      features: [
+        {
+          name: 'Участие во всех заседаниях суда',
+          value: '[уточняется]'
+        },
+        {
+          name: 'Аннулирование прав других наследников',
+          value: '[уточняется]'
+        },
+        {
+          name: 'Регистрация права собственности в ЕГРН',
+          value: '[уточняется]'
+        }
+      ],
+      buttonText: 'Выбрать тариф',
+      buttonHref: '#form'
+    }
+  ];
   const steps: ProcessStep[] = [
     {
       num: '01',
