@@ -210,7 +210,7 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
                     ],
                     "desc": "Защищаем право на сохранение статуса с опорой на ст. 38 Конституции РФ и позиции Верховного Суда РФ о защите семьи."
           }
-]].map((item, i) => (
+].map((item, i) => (
               <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',

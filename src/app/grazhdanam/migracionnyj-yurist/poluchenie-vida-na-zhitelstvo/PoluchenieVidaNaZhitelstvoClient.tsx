@@ -229,7 +229,7 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
                     ],
                     "desc": "Проводим аудит пакета документов до подачи в УВМ МВД, исключаем риски отказа и аннулирования по формальным основаниям."
           }
-]].map((item, i) => (
+].map((item, i) => (
               <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',

@@ -229,7 +229,7 @@ export default function IsklyuchenieIzReestraKontroliruemyhLicClient() {
                     ],
                     "desc": "Доказываем устойчивые семейные связи, факт совместного проживания и недопустимость разрушения семьи по ст. 38 Конституции РФ."
           }
-]].map((item, i) => (
+].map((item, i) => (
               <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
