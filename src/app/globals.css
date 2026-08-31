@@ -1233,3 +1233,43 @@ h4 { font-size: 1.25rem; }
 
 
 
+
+/* Stage Item Connecting Lines Template */
+.stage-item {
+  position: relative;
+  transition: transform 0.4s ease;
+}
+.stage-item::after {
+  content: '';
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  width: calc(100% + 40px);
+  height: 1px;
+  border-top: 1px dashed rgba(193, 160, 102, 0.5);
+  z-index: 0;
+  pointer-events: none;
+}
+.grid-5 .stage-item:nth-child(5n)::after,
+.grid-4 .stage-item:nth-child(4n)::after,
+.grid-3 .stage-item:nth-child(3n)::after,
+.grid-2 .stage-item:nth-child(2n)::after,
+.stage-item:last-child::after {
+  display: none;
+}
+.stage-item:hover {
+  transform: translateY(-8px);
+}
+.stage-item:hover > div > div {
+  background: var(--color-primary) !important;
+  color: var(--color-white) !important;
+  box-shadow: 0 15px 30px rgba(193, 160, 102, 0.3) !important;
+}
+.stage-item > div > div {
+  transition: all 0.4s ease;
+}
+@media (max-width: 991px) {
+  .stage-item::after {
+    display: none !important;
+  }
+}

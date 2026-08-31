@@ -65,7 +65,6 @@ export default function ProcessBlock({
                 {steps.slice(0, 3).map((step, i) => (
                   <div key={i} className="stage-item" style={{ 
                     position: 'relative',
-                    zIndex: 1,
                     display: 'flex',
                     flexDirection: 'column',
                     background: 'transparent',
@@ -87,7 +86,7 @@ export default function ProcessBlock({
                         fontFamily: 'var(--font-serif)', 
                         boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)', 
                         position: 'relative',
-                        zIndex: 2
+                        zIndex: 2 
                       }}>
                         {step.num || String(i + 1).padStart(2, '0')}
                       </div>
@@ -102,7 +101,7 @@ export default function ProcessBlock({
                 ))}
               </div>
 
-              {/* Ряд 2: 2 этапа по центру (04 и Дистанционный формат) */}
+              {/* Ряд 2: 2 этапа по центру */}
               <div className="grid grid-2" style={{ gap: '40px', maxWidth: '780px', margin: '0 auto', width: '100%' }}>
                 {steps.slice(3, 5).map((step, i) => (
                   step.isBanner ? (
@@ -140,7 +139,6 @@ export default function ProcessBlock({
                   ) : (
                     <div key={i + 3} className="stage-item" style={{ 
                       position: 'relative',
-                      zIndex: 1,
                       display: 'flex',
                       flexDirection: 'column',
                       background: 'transparent',
@@ -162,7 +160,7 @@ export default function ProcessBlock({
                           fontFamily: 'var(--font-serif)', 
                           boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)', 
                           position: 'relative',
-                          zIndex: 2
+                          zIndex: 2 
                         }}>
                           {step.num || String(i + 4).padStart(2, '0')}
                         </div>
@@ -214,14 +212,13 @@ export default function ProcessBlock({
                     </div>
                   </div>
                 ) : (
-                  <div key={i} className="stage-item" style={{ 
+                  <div key={i} style={{ 
                     position: 'relative',
-                    zIndex: 1,
                     display: 'flex',
                     flexDirection: 'column',
                     background: 'transparent',
                     padding: '10px'
-                  }}>
+                  }} className="stage-item">
                     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
                       <div style={{ 
                         width: '56px', 
@@ -305,32 +302,46 @@ export default function ProcessBlock({
         </div>
       </div>
 
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{__html: `
         .stage-item {
           position: relative;
+          transition: transform 0.4s ease;
         }
         .stage-item::after {
           content: '';
           position: absolute;
           top: 38px;
-          left: calc(50% + 36px);
-          width: calc(100% - 72px);
-          border-top: 1.5px dashed rgba(193, 160, 102, 0.6);
+          left: 50%;
+          width: calc(100% + 40px);
+          height: 1px;
+          border-top: 1px dashed rgba(193, 160, 102, 0.5);
           z-index: 0;
+          pointer-events: none;
         }
-        .grid-5 .stage-item:nth-child(5n)::after,
-        .grid-4 .stage-item:nth-child(4n)::after,
-        .grid-3 .stage-item:nth-child(3n)::after,
-        .grid-2 .stage-item:nth-child(2n)::after,
-        .stage-item:last-child::after {
-          display: none !important;
+        .grid-5 .stage-item:nth-child(5n)::after { display: none; }
+        .grid-4 .stage-item:nth-child(4n)::after { display: none; }
+        .grid-3 .stage-item:nth-child(3n)::after { display: none; }
+        .grid-2 .stage-item:nth-child(2n)::after { display: none; }
+        .stage-item:last-child::after { display: none; }
+
+        .stage-item:hover {
+          transform: translateY(-8px);
         }
+        .stage-item:hover > div > div {
+          background: var(--color-primary) !important;
+          color: var(--color-white) !important;
+          box-shadow: 0 15px 30px rgba(193, 160, 102, 0.3) !important;
+        }
+        .stage-item > div > div {
+          transition: all 0.4s ease;
+        }
+
         @media (max-width: 991px) {
           .stage-item::after {
             display: none !important;
           }
         }
-      `}</style>
+      `}} />
     </section>
   );
 }
