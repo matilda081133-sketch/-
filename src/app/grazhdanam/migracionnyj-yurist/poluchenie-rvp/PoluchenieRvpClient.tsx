@@ -244,15 +244,19 @@ export default function PoluchenieRvpClient() {
                 <h3 style={{ 
                   fontFamily: 'var(--font-serif)', 
                   fontSize: '17px', 
-                  fontWeight: 600,
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 14px 0',
-                  lineHeight: 1.4,
-                  position: 'relative',
-                  zIndex: 1
+                  fontWeight: 600, 
+                  color: 'var(--color-deep-blue)', 
+                  margin: '0 0 14px 0', 
+                  lineHeight: 1.35, 
+                  minHeight: '68px',
+                  position: 'relative', 
+                  zIndex: 1 
                 }}>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>{item.title[0]}</span>{' '}
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>{item.title[1]}</span>
+                  {item.title.map((line, idx) => (
+                    <span key={idx} className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                      {line}
+                    </span>
+                  ))}
                 </h3>
                 <p style={{ 
                   fontSize: '15px', 
