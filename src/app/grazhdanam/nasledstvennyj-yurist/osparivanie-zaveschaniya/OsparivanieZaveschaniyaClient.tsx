@@ -14,46 +14,47 @@ import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 
 export default function OsparivanieZaveschaniyaClient() {
   const cases: CaseData[] = [
-  {
-    "category": "Посмертная экспертиза / Ст. 177 ГК",
-    "title": "Признали завещание недействительным из-за невменяемости наследодателя",
-    "problem": "Пожилой собственник за 2 недели до смерти оформил завещание на постороннюю сиделку, страдая тяжёлым сосудистым заболеванием.",
-    "action": "Истребовали медицинские карты из 4 клиник, назначили посмертную судебно-психиатрическую экспертизу, доказали неспособность понимать значение действий.",
-    "result": "Суд признал завещание недействительным; квартира перешла законной наследнице — родной дочери."
-  },
-  {
-    "category": "Защита наследника по завещанию",
-    "title": "Защитили завещание на дом от иска дальних родственников",
-    "problem": "Племянники умершего обратились с иском о признании завещания недействительным, заявляя о якобы оказанном давлении на дядю.",
-    "action": "Привлекли свидетелей, нотариуса, удостоверившего документ, представили справки о полной дееспособности наследодателя на момент сделки.",
-    "result": "Суд отказал в удовлетворении иска в полном объёме, подтвердив законность прав доверителя на жилой дом."
-  },
-  {
-    "category": "Обязательная доля / Ст. 1149 ГК",
-    "title": "Выделили обязательную долю нетрудоспособной матери умершего",
-    "problem": "Сын составил завещание всего имущества на новую супругу, не упомянув 78-летнюю мать-инвалида II группы.",
-    "action": "Подали иск о признании права на обязательную долю в наследстве, доказали статус нетрудоспособности и право на 1/4 долю всего имущества.",
-    "result": "Суд признал за матерью право собственности на обязательную долю в квартире и земельном участке."
-  }
+    {
+        "category": "Ст. 177 ГК РФ / Экспертиза",
+        "title": "Признали завещание в пользу сиделки недействительным",
+        "problem": "Пожилой наследодатель на фоне тяжёлой сосудистой деменции завещал квартиру посторонней сиделке за 2 месяца до смерти.",
+        "action": "Истребовали через суд медицинские карты из 3 клиник, добились назначения посмертной комплексной психолого-психиатрической экспертизы.",
+        "result": "Экспертиза подтвердила неспособность понимать значение действий; завещание отменено, квартира возвращена законной дочери."
+    },
+    {
+        "category": "Обязательная доля / Ст. 1149",
+        "title": "Выделили обязательную долю для нетрудоспособной матери",
+        "problem": "Сын завещал всю недвижимость гражданской супруге, оставив нетрудоспособную мать-инвалида без наследства.",
+        "action": "Подготовили иск о признании права на обязательную долю по ст. 1149 ГК РФ и расчёте стоимости имущества.",
+        "result": "Суд признал право матери на 1/2 законной доли; решение зарегистрировано в ЕГРН."
+    },
+    {
+        "category": "Защита завещания / Отказ в иске",
+        "title": "Отстояли завещание доверителя от претензий дальних родственников",
+        "problem": "Племянники умершего пытались признать завещание на внука недействительным, заявляя о давлении и пороке воли.",
+        "action": "Собрали показания лечащих врачей и нотариуса, подтвердили полную дееспособность и ясность ума наследодателя.",
+        "result": "Суд полностью отказал в удовлетворении иска родственников; права доверителя сохранены."
+    }
 ];
   const faqs = [
   {
-    "q": "Когда можно начать оспаривание завещания?",
-    "a": "Оспаривание завещания допускается ТОЛЬКО после открытия наследства (то есть после смерти наследодателя). При жизни составить иск нельзя (п. 2 ст. 1131 ГК РФ)."
+    "q": "В течение какого срока можно оспорить завещание?",
+    "a": "Срок исковой давности зависит от оснований: 1 год со дня, когда истец узнал об обстоятельствах недействительности сделки (для оспоримых завещаний — ст. 177, 179 ГК РФ), или 3 года со дня открытия наследства (для ничтожных завещаний)."
   },
   {
-    "q": "Какой срок исковой давности установлен для оспаривания завещания?",
-    "a": "Для оспоримых завещаний (по ст. 177, 178, 179 ГК РФ) срок составляет 1 год со дня, когда истец узнал об обстоятельствах недействительности. Для ничтожных завещаний (подделка, нарушение формы) — 3 года."
+    "q": "Можно ли оспорить завещание при жизни завещателя?",
+    "a": "Нет. Закон запрещает оспаривать завещание до момента открытия наследства (смерти гражданина)."
   },
   {
-    "q": "Как доказать, что человек не понимал значения своих действий?",
-    "a": "Главным доказательством является заключение посмертной судебно-психиатрической экспертизы, которая проводится на основании амбулаторных карт, историй болезни и показаний свидетелей."
+    "q": "Как доказать, что человек не понимал свои действия, если он уже умер?",
+    "a": "Через проведение посмертной судебной психолого-психиатрической экспертизы по материалам дела, медицинским картам, выпискам из стационаров, рецептам и показаниям свидетелей (врачей, соседей)."
   },
   {
-    "q": "Что происходит с имуществом, если суд отменяет завещание?",
-    "a": "Если завещание признано недействительным, наследование осуществляется по закону в порядке очерёдности (либо по предыдущему действующему завещанию, если оно существовало)."
+    "q": "Что происходит с имуществом, если суд признаёт завещание недействительным?",
+    "a": "Имущество распределяется между наследниками по закону в порядке очерёдности (ст. 1141 ГК РФ) либо по предыдущему законному завещанию, если оно существовало."
   }
 ];
+
   const pricingTiers: PricingTier[] = [
     {
       title: (
@@ -64,10 +65,19 @@ export default function OsparivanieZaveschaniyaClient() {
       ),
       subtitle: 'Изучение медицинских справок, завещания и оценка шансов на победу в суде',
       features: [
-        { name: 'Анализ медицинских документов', value: '[уточняется]' },
-        { name: 'Проверка оснований недействительности', value: '[уточняется]' },
-        { name: 'Правовое заключение с оценкой рисков', value: '[уточняется]' }
-      ],
+      {
+              "name": "Анализ медицинских документов",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Проверка оснований недействительности",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Правовое заключение с оценкой рисков",
+              "value": "[уточняется]"
+      }
+],
       buttonText: 'Оценить шансы',
       buttonHref: '#form'
     },
@@ -80,10 +90,19 @@ export default function OsparivanieZaveschaniyaClient() {
       ),
       subtitle: 'Формирование доказательной базы и процессуальных документов для суда',
       features: [
-        { name: 'Составление иска по ст. 177/179 ГК РФ', value: '[уточняется]' },
-        { name: 'Ходатайства об истребовании медкарты', value: '[уточняется]' },
-        { name: 'Вопросы для судебной экспертизы', value: '[уточняется]' }
-      ],
+      {
+              "name": "Составление иска по ст. 177/179 ГК РФ",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Ходатайства об истребовании медкарты",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Вопросы для судебной экспертизы",
+              "value": "[уточняется]"
+      }
+],
       buttonText: 'Заказать иск',
       buttonHref: '#form'
     },
@@ -98,41 +117,51 @@ export default function OsparivanieZaveschaniyaClient() {
       popular: true,
       badgeText: 'Популярно',
       features: [
-        { name: 'Участие во всех заседаниях', value: '[уточняется]' },
-        { name: 'Контроль проведения экспертизы', value: '[уточняется]' },
-        { name: 'Регистрация права собственности по решению', value: '[уточняется]' }
-      ],
+      {
+              "name": "Участие во всех заседаниях",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Контроль проведения экспертизы",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Регистрация права собственности по решению",
+              "value": "[уточняется]"
+      }
+],
       buttonText: 'Выбрать тариф',
       buttonHref: '#form'
     }
   ];
+
   const steps: ProcessStep[] = [
     {
       num: '01',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Разбираемся</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в ситуации</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем ситуацию</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и документы</span>
         </>
       ),
-      desc: 'Уточняем круг наследников, состав наследственной массы, наличие завещания, статус нотариального дела и соблюдение 6-месячного срока.'
+      desc: 'Анализируем родственные связи, имеющиеся справки, свидетельства и завещания, проверяем сроки и риски споров.'
     },
     {
       num: '02',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем документы</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и доказательства</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Собираем недостающие</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>доказательства</span>
         </>
       ),
-      desc: 'Проверяем документы о родстве, выписки ЕГРН, материалы нотариуса, квитанции об оплате и основания для возможного судебного спора.'
+      desc: 'Запрашиваем архивные документы из ЗАГС, делаем запросы в банки, Росреестр, медицинские учреждения и к нотариусам.'
     },
     {
       num: '03',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Определяем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовой маршрут</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формируем правовую</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>стратегию</span>
         </>
       ),
       desc: 'Сравниваем нотариальный, переговорный и судебный варианты, оцениваем риски, сроки и согласовываем фиксированную стоимость.'
@@ -184,13 +213,13 @@ export default function OsparivanieZaveschaniyaClient() {
       },
       {
         '@type': 'Service',
-        'name': 'Оспаривание завещания в Липецке | Де-Юре',
+        'name': 'Оспаривание завещания в суде в Липецке | ЮК «Де-Юре»',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Помощь в оспаривании завещания и защите от необоснованного иска в Липецке: экспертиза, сбор доказательств, судебное представительство. Разберём дело и оценим перспективы.'
+        'description': 'Признание завещания недействительным через суд в Липецке по ст. 177, 179 ГК РФ. Посмертные экспертизы, защита обязательной доли и законных прав.'
       },
       {
         '@type': 'FAQPage',
@@ -237,11 +266,11 @@ export default function OsparivanieZaveschaniyaClient() {
         superTitle="Наследственный юрист в Липецке"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Оспаривание завещания
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Оспаривание
             </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              в суде в Липецке
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              завещания в суде в Липецке
             </span>
           </span>
         }
@@ -263,7 +292,28 @@ export default function OsparivanieZaveschaniyaClient() {
             </span>
           </span>
         }
-        trustItems={[
+        trustItems={[{"text":"Оспаривание по ст. 177, 179 ГК РФ"},{"text":"Назначение посмертных судебно-психиатрических экспертиз"},{"text":"Защита обязательной доли по закону"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
+        imageUrl="/images/smolyaninova.jpg"
+        imageName="Марина Валерьевна Смольянинова"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
+        imageObjectPosition="center 20%"
+      />
+
+      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы можем помочь</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Ознакомьтесь с типовыми сценариями. Если ваша ситуация сложнее или включает несколько вопросов — мы разработаем индивидуальный план действий.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
+            {[
               {
                 tag: 'Ст. 177 ГК / Экспертиза',
                 title: (
@@ -434,7 +484,7 @@ export default function OsparivanieZaveschaniyaClient() {
         cases={cases}
       />
 
-      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА (ПО ЦЕНТРУ) ═══ */}
+      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
         subtitle="Чёткий алгоритм действий — вы всегда знаете, что происходит на каждом этапе вашего дела."
@@ -448,17 +498,17 @@ export default function OsparivanieZaveschaniyaClient() {
 
       {/* ═══ БЛОК 6: СТОИМОСТЬ УСЛУГ ═══ */}
       <PricingBlock
-        title="Стоимость услуг юриста"
-        subtitle="Стоимость определяется после уточнения задачи и изучения документов. Состав услуг, цена и порядок оплаты фиксируются в договоре."
+        title="Стоимость услуг наследственного юриста"
+        subtitle="Стоимость зависит от сложности спора, состава имущества, наличия документов и необходимости судебного процесса."
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и иные сопутствующие расходы."
+        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие судебные расходы."
       />
 
       {/* ═══ БЛОК 7: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
         superTitle="Частые вопросы клиентов"
         title={<><span>Ответы на</span> <br /><span>частые вопросы</span></>}
-        subtitle="По оформлению и судебной защите прав наследников"
+        subtitle="О процедурах и юридических тонкостях"
         ctaText="Задать свой вопрос"
         ctaLink="#form"
         faqs={faqs}
@@ -480,48 +530,39 @@ export default function OsparivanieZaveschaniyaClient() {
                 <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с наследственным юристом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Опишите задачу по услуге «Оспаривание завещания». Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами в течение 15 минут в рабочее время.
+                Опишите ситуацию, состав имущества и статус обращения к нотариусу. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами для согласования порядка действий.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
+                <div style={{ fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>
+                  Прямой контакт для срочных вопросов:
                 </div>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
-                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                  <a href="tel:+79103503111" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-primary)', textDecoration: 'none' }}>
+                    +7 (910) 350-31-11
+                  </a>
+                  <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+                    (Пн-Пт 9:00 - 18:00)
+                  </span>
+                </div>
               </div>
 
-              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
-                Все сведения и документы защищены профессиональной тайной. Безопасный способ передачи документов согласуем после первичного контакта.
+              <div style={{ marginTop: 'auto', paddingTop: '10px' }}>
+                <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Гарантируем конфиденциальность. Данные передаются только юристу компании «Де-Юре» для правового анализа.
+                </p>
               </div>
             </div>
 
-            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
-              <ContactsForm
-                title="Написать нам"
-                subtitle={
-                  <>
-                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист свяжется с вами</span> <br />
-                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
-                  </>
-                }
-                subtext={
-                  <>
-                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
-                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
-                  </>
-                }
-                buttonText="Отправить обращение"
-                commentPlaceholder="Опишите вашу ситуацию: состав имущества, наличие завещания, пропущен ли срок..."
-                hiddenFields={[
-                  { name: 'source_page', value: '/grazhdanam/nasledstvennyj-yurist/osparivanie-zaveschaniya/' },
-                  { name: 'direction', value: 'nasledstvennyj_yurist' },
-                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
-                ]}
-              />
+            <div>
+              <div style={{ background: 'var(--color-white)', padding: '40px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 12px 40px rgba(23, 50, 77, 0.08)' }}>
+                <ContactsForm 
+                  title="Заявка на консультацию" 
+                  subtitle="Заполните форму, и юрист свяжется с вами в течение 15 минут"
+                  pageType="nasledstvennyj-yurist/osparivanie-zaveschaniya"
+                  serviceName="Оспаривание завещания в суде в Липецке | ЮК «Де-Юре»"
+                />
+              </div>
             </div>
           </div>
         </div>

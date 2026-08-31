@@ -14,46 +14,47 @@ import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 
 export default function PriznanieNaslednikaNedostojnymClient() {
   const cases: CaseData[] = [
-  {
-    "category": "Уклонение от содержания / Ст. 1117 ГК",
-    "title": "Признали недостойным наследником сына, уклонявшегося от ухода за отцом",
-    "problem": "Сын, обязанный по решению суда выплачивать алименты нетрудоспособному отцу, годами скрывал доходы и накопил долг свыше 400 000 ₽.",
-    "action": "Собрали материалы исполнительного производства, доказали злостный характер неуплаты и подали иск об исключении из наследников.",
-    "result": "Суд признал сына недостойным наследником; квартира полностью перешла сестре, осуществлявшей реальный уход за отцом."
-  },
-  {
-    "category": "Лишение родительских прав",
-    "title": "Исключили биологического отца из наследников погибшего военнослужащего",
-    "problem": "Отец, лишённый родительских прав в 2005 году, обратился к нотариусу за выплатами и наследством погибшего совершеннолетнего сына.",
-    "action": "Истребовали архивное решение суда о лишении прав, доказали отсутствие восстановления в правах и направили мотивированное заявление нотариусу.",
-    "result": "Нотариус отстранил отца от наследования; все выплаты и имущество получила мать погибшего."
-  },
-  {
-    "category": "Защита чести наследника",
-    "title": "Отбили иск о признании наследницы недостойной",
-    "problem": "Родственники пытались отстранить внучку от наследства, заявляя, что она якобы не обеспечивала надлежащее лечение бабушки.",
-    "action": "Предоставили медицинские чеки, договоры с врачами, показания соседей и подтвердили добросовестный и постоянный уход за пожилым человеком.",
-    "result": "Суд отказал в удовлетворении иска в полном объёме; внучка вступила в права наследства по завещанию."
-  }
+    {
+        "category": "Алименты / ФССП",
+        "title": "Отстранили сына от наследства матери за злостное уклонение от алиментов",
+        "problem": "Сын годами уклонялся от уплаты алиментов на содержание нетрудоспособной матери, задолженность превышала 600 000 руб., однако претендовал на квартиру.",
+        "action": "Истребовали материалы исполнительного производства из ФССП, доказали злостный характер уклонения и подали иск по п. 2 ст. 1117 ГК РФ.",
+        "result": "Суд признал наследника недостойным; квартира полностью перешла добросовестной дочери."
+    },
+    {
+        "category": "Родительские права",
+        "title": "Исключили лишённого прав отца из числа наследников погибшего сына",
+        "problem": "Отец, лишённый родительских прав 15 лет назад, подал заявление нотариусу на получение выплат и имущества умершего совершеннолетнего сына.",
+        "action": "Получили архивное решение суда о лишении прав и представили доказательства отсутствия восстановления в правах.",
+        "result": "Нотариус отстранил отца от наследования на основании закона без судебных тяжб."
+    },
+    {
+        "category": "Защита / Отказ в иске",
+        "title": "Защитили добросовестного наследника от попытки признания недостойным",
+        "problem": "Родственники пытались отстранить внука от наследства дедушки, обвиняя его в недостаточном уходе за умершим.",
+        "action": "Доказали отсутствие судебных решений об алиментах и противоправных действий со стороны внука.",
+        "result": "Суд полностью отказал в иске родственников; внук вступил в законные права."
+    }
 ];
   const faqs = [
   {
     "q": "Кого закон относит к недостойным наследникам?",
-    "a": "Лиц, совершивших умышленные противоправные действия против наследодателя, его воли или других наследников; родителей, лишённых родительских прав; граждан, злостно уклонявшихся от законных обязанностей по содержанию наследодателя (ст. 1117 ГК РФ)."
+    "a": "1) Лиц, совершивших умышленные противоправные действия против наследодателя или других наследников; 2) Родителей, лишённых родительских прав; 3) Граждан, злостно уклонявшихся от законных обязанностей по содержанию наследодателя (ст. 1117 ГК РФ)."
   },
   {
-    "q": "Достаточно ли бытовой ссоры или неприязни для признания недостойным?",
-    "a": "Нет. Неприязненные отношения, редкие визиты или обиды не являются законным основанием. Требуется либо приговор суда по уголовному делу, либо решение суда о лишении родительских прав, либо доказанный факт злостного уклонения от алиментов."
+    "q": "Достаточно ли плохих отношений с наследодателем, чтобы признать наследника недостойным?",
+    "a": "Нет. Личная неприязнь, ссоры или отсутствие общения не являются основаниями. Требуются вступившие в силу приговоры суда или доказанный факт злостного неисполнения алиментных обязательств."
   },
   {
-    "q": "Что происходит с долей недостойного наследника после суда?",
-    "a": "Доля недостойного наследника считается непринятой и распределяется между остальными наследниками по закону пропорционально их наследственным долям (приращение долей)."
+    "q": "Что происходит с долей недостойного наследника?",
+    "a": "Его доля переходит к другим наследникам по закону пропорционально их долям (приращение наследственных долей по ст. 1161 ГК РФ)."
   },
   {
-    "q": "Обязан ли недостойный наследник вернуть уже полученное имущество?",
-    "a": "Да. Если наследник уже успел оформить или продать имущество, он обязан вернуть неосновательно полученное в натуре либо возместить его действительную рыночную стоимость (п. 3 ст. 1117 ГК РФ)."
+    "q": "Может ли недостойный наследник претендовать на обязательную долю?",
+    "a": "Нет. Правила ст. 1117 ГК РФ распространяются и на наследников, имеющих право на обязательную долю."
   }
 ];
+
   const pricingTiers: PricingTier[] = [
     {
       title: (
@@ -64,10 +65,19 @@ export default function PriznanieNaslednikaNedostojnymClient() {
       ),
       subtitle: 'Проверка фактов по ст. 1117 ГК РФ, анализ судебной практики и рисков',
       features: [
-        { name: 'Анализ документов и судебных решений', value: '[уточняется]' },
-        { name: 'Проверка оснований отстранения', value: '[уточняется]' },
-        { name: 'План доказательной базы', value: '[уточняется]' }
-      ],
+      {
+              "name": "Анализ документов и судебных решений",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Проверка оснований отстранения",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "План доказательной базы",
+              "value": "[уточняется]"
+      }
+],
       buttonText: 'Оценить ситуацию',
       buttonHref: '#form'
     },
@@ -80,10 +90,19 @@ export default function PriznanieNaslednikaNedostojnymClient() {
       ),
       subtitle: 'Истребование справок ФССП, приговоров и подготовка иска в суд',
       features: [
-        { name: 'Адвокатские запросы в ведомства', value: '[уточняется]' },
-        { name: 'Подготовка иска по ст. 1117 ГК РФ', value: '[уточняется]' },
-        { name: 'Расчёт перераспределения долей', value: '[уточняется]' }
-      ],
+      {
+              "name": "Адвокатские запросы в ведомства",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Подготовка иска по ст. 1117 ГК РФ",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Расчёт перераспределения долей",
+              "value": "[уточняется]"
+      }
+],
       buttonText: 'Заказать иск',
       buttonHref: '#form'
     },
@@ -98,41 +117,51 @@ export default function PriznanieNaslednikaNedostojnymClient() {
       popular: true,
       badgeText: 'Популярно',
       features: [
-        { name: 'Представительство на всех заседаниях', value: '[уточняется]' },
-        { name: 'Исключение лица из состава наследников', value: '[уточняется]' },
-        { name: 'Переоформление прав у нотариуса', value: '[уточняется]' }
-      ],
+      {
+              "name": "Представительство на всех заседаниях",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Исключение лица из состава наследников",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Переоформление прав у нотариуса",
+              "value": "[уточняется]"
+      }
+],
       buttonText: 'Выбрать тариф',
       buttonHref: '#form'
     }
   ];
+
   const steps: ProcessStep[] = [
     {
       num: '01',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Разбираемся</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в ситуации</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем ситуацию</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и документы</span>
         </>
       ),
-      desc: 'Уточняем круг наследников, состав наследственной массы, наличие завещания, статус нотариального дела и соблюдение 6-месячного срока.'
+      desc: 'Анализируем родственные связи, имеющиеся справки, свидетельства и завещания, проверяем сроки и риски споров.'
     },
     {
       num: '02',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем документы</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и доказательства</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Собираем недостающие</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>доказательства</span>
         </>
       ),
-      desc: 'Проверяем документы о родстве, выписки ЕГРН, материалы нотариуса, квитанции об оплате и основания для возможного судебного спора.'
+      desc: 'Запрашиваем архивные документы из ЗАГС, делаем запросы в банки, Росреестр, медицинские учреждения и к нотариусам.'
     },
     {
       num: '03',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Определяем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовой маршрут</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формируем правовую</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>стратегию</span>
         </>
       ),
       desc: 'Сравниваем нотариальный, переговорный и судебный варианты, оцениваем риски, сроки и согласовываем фиксированную стоимость.'
@@ -184,13 +213,13 @@ export default function PriznanieNaslednikaNedostojnymClient() {
       },
       {
         '@type': 'Service',
-        'name': 'Признание наследника недостойным в Липецке | Де-Юре',
+        'name': 'Признание наследника недостойным в Липецке | ЮК «Де-Юре»',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Юридическая помощь по делам о признании наследника недостойным и исключении из наследства в Липецке. Проверим основания по ст. 1117 ГК РФ и представим интересы в суде.'
+        'description': 'Отстранение недостойных наследников от наследования по ст. 1117 ГК РФ в Липецке. Доказывание противоправных действий, уклонения от алиментов в суде.'
       },
       {
         '@type': 'FAQPage',
@@ -237,22 +266,22 @@ export default function PriznanieNaslednikaNedostojnymClient() {
         superTitle="Наследственный юрист в Липецке"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Признание наследника
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Признание
             </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              недостойным в Липецке
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              наследника недостойным в Липецке
             </span>
           </span>
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Поможем через суд исключить недобросовестных лиц из числа наследников и защитить наследственное имущество по нормам статьи 1117 ГК РФ.
+            Исключение недобросовестных лиц из состава наследников по ст. 1117 ГК РФ, отстранение от наследства и перераспределение долей в судебном порядке.
           </span>
         }
         primaryCtaText="Обсудить ситуацию с юристом"
         primaryCtaLink="#form"
-        primaryCtaAnalytics="click_cta_priznanie_naslednika_nedostojnym"
+        primaryCtaAnalytics="click_cta_priznanie_nedostojnym"
         primaryCtaSubtext={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
@@ -263,7 +292,28 @@ export default function PriznanieNaslednikaNedostojnymClient() {
             </span>
           </span>
         }
-        trustItems={[
+        trustItems={[{"text":"Отстранение от наследования по ст. 1117 ГК РФ"},{"text":"Сбор доказательств противоправных действий"},{"text":"Перераспределение долей в пользу законных наследников"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
+        imageUrl="/images/smolyaninova.jpg"
+        imageName="Марина Валерьевна Смольянинова"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
+        imageObjectPosition="center 20%"
+      />
+
+      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы можем помочь</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Ознакомьтесь с типовыми сценариями. Если ваша ситуация сложнее или включает несколько вопросов — мы разработаем индивидуальный план действий.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
+            {[
               {
                 tag: 'Ст. 1117 ГК / Закон',
                 title: (
@@ -434,7 +484,7 @@ export default function PriznanieNaslednikaNedostojnymClient() {
         cases={cases}
       />
 
-      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА (ПО ЦЕНТРУ) ═══ */}
+      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
         subtitle="Чёткий алгоритм действий — вы всегда знаете, что происходит на каждом этапе вашего дела."
@@ -448,17 +498,17 @@ export default function PriznanieNaslednikaNedostojnymClient() {
 
       {/* ═══ БЛОК 6: СТОИМОСТЬ УСЛУГ ═══ */}
       <PricingBlock
-        title="Стоимость услуг юриста"
-        subtitle="Стоимость определяется после уточнения задачи и изучения документов. Состав услуг, цена и порядок оплаты фиксируются в договоре."
+        title="Стоимость услуг наследственного юриста"
+        subtitle="Стоимость зависит от сложности спора, состава имущества, наличия документов и необходимости судебного процесса."
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и иные сопутствующие расходы."
+        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие судебные расходы."
       />
 
       {/* ═══ БЛОК 7: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
         superTitle="Частые вопросы клиентов"
         title={<><span>Ответы на</span> <br /><span>частые вопросы</span></>}
-        subtitle="По оформлению и судебной защите прав наследников"
+        subtitle="О процедурах и юридических тонкостях"
         ctaText="Задать свой вопрос"
         ctaLink="#form"
         faqs={faqs}
@@ -480,48 +530,39 @@ export default function PriznanieNaslednikaNedostojnymClient() {
                 <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с наследственным юристом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Опишите задачу по услуге «Признание наследника недостойным». Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами в течение 15 минут в рабочее время.
+                Опишите ситуацию, состав имущества и статус обращения к нотариусу. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами для согласования порядка действий.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
+                <div style={{ fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>
+                  Прямой контакт для срочных вопросов:
                 </div>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
-                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                  <a href="tel:+79103503111" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-primary)', textDecoration: 'none' }}>
+                    +7 (910) 350-31-11
+                  </a>
+                  <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+                    (Пн-Пт 9:00 - 18:00)
+                  </span>
+                </div>
               </div>
 
-              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
-                Все сведения и документы защищены профессиональной тайной. Безопасный способ передачи документов согласуем после первичного контакта.
+              <div style={{ marginTop: 'auto', paddingTop: '10px' }}>
+                <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Гарантируем конфиденциальность. Данные передаются только юристу компании «Де-Юре» для правового анализа.
+                </p>
               </div>
             </div>
 
-            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
-              <ContactsForm
-                title="Написать нам"
-                subtitle={
-                  <>
-                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист свяжется с вами</span> <br />
-                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
-                  </>
-                }
-                subtext={
-                  <>
-                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
-                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
-                  </>
-                }
-                buttonText="Отправить обращение"
-                commentPlaceholder="Опишите вашу ситуацию: состав имущества, наличие завещания, пропущен ли срок..."
-                hiddenFields={[
-                  { name: 'source_page', value: '/grazhdanam/nasledstvennyj-yurist/priznanie-naslednika-nedostojnym/' },
-                  { name: 'direction', value: 'nasledstvennyj_yurist' },
-                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
-                ]}
-              />
+            <div>
+              <div style={{ background: 'var(--color-white)', padding: '40px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 12px 40px rgba(23, 50, 77, 0.08)' }}>
+                <ContactsForm 
+                  title="Заявка на консультацию" 
+                  subtitle="Заполните форму, и юрист свяжется с вами в течение 15 минут"
+                  pageType="nasledstvennyj-yurist/priznanie-naslednika-nedostojnym"
+                  serviceName="Признание наследника недостойным в Липецке | ЮК «Де-Юре»"
+                />
+              </div>
             </div>
           </div>
         </div>

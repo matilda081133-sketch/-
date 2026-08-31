@@ -14,46 +14,47 @@ import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 
 export default function OformlenieIVstuplenieVNasledstvoClient() {
   const cases: CaseData[] = [
-  {
-    "category": "Нотариус / Архивный поиск",
-    "title": "Оформили наследство на квартиру при утрате свидетельств ЗАГС",
-    "problem": "Наследник не мог подтвердить родство с умершим отцом из-за утраты свидетельства о рождении 1968 года и расхождений в одной букве фамилии.",
-    "action": "Направили адвокатские запросы в региональные архивы ЗАГС, восстановили актовую запись и предоставили нотариусу неопровержимый пакет документов.",
-    "result": "Нотариус принял документы без судебного спора и выдал свидетельство о праве на наследство на квартиру."
-  },
-  {
-    "category": "Супружеская доля / Вклады",
-    "title": "Выделили супружескую долю и оформили права на счета и автомобиль",
-    "problem": "После смерти супруга вдова столкнулась с претензиями дальних родственников на совместно нажитые банковские вклады и автомобиль.",
-    "action": "Выделили 1/2 супружеской доли из общего имущества до раздела наследственной массы, защитили законные интересы вдовы.",
-    "result": "Вдова получила 1/2 долю в праве собственности как переживший супруг и дополнительную долю в составе наследников первой очереди."
-  },
-  {
-    "category": "Дистанционное оформление",
-    "title": "Оформили наследство в Липецке для доверителя, проживающего в Тюмени",
-    "problem": "Доверитель проживал в другом регионе и не имел возможности лично приезжать в Липецк для визитов к нотариусу и сбора справок.",
-    "action": "Оформили нотариальную доверенность, открыли наследственное дело, собрали выписки ЕГРН и оценки, получили свидетельство и зарегистрировали права.",
-    "result": "Право собственности на жилой дом и земельный участок оформлено «под ключ» без единого визита клиента в Липецк."
-  }
+    {
+        "category": "Оформление / ЗАГС",
+        "title": "Подтвердили родство через суд и оформили квартиру у нотариуса",
+        "problem": "В свидетельствах о рождении матери и дочери была допущена ошибка в написании фамилии, нотариус отказал в выдаче свидетельства.",
+        "action": "Истребовали архивные актовые записи, установили факт родственных отношений в суде и передали решение нотариусу.",
+        "result": "Нотариус выдал свидетельство о праве на наследство, квартира успешно переоформлена в собственность."
+    },
+    {
+        "category": "Доли / Супруг",
+        "title": "Выделили супружескую долю и защитили права вдовы",
+        "problem": "Дети наследодателя от первого брака претендовали на весь загородный дом, купленный во втором браке.",
+        "action": "Оформили выдел 1/2 супружеской доли из наследственной массы, разделив между всеми наследниками только оставшуюся половину.",
+        "result": "Доверительница сохранила законные 3/4 доли в доме и избежала неправомерного выселения."
+    },
+    {
+        "category": "Дистанционно / Нотариус",
+        "title": "Оформили наследство в Липецке для доверителя из Санкт-Петербурга",
+        "problem": "Клиент не имел возможности приехать в Липецк для открытия и ведения наследственного дела на квартиру и автомобиль.",
+        "action": "По доверенности открыли дело, собрали выписки из ЕГРН, провели оценку авто и получили свидетельства о праве.",
+        "result": "Право собственности зарегистрировано в Росреестре без единой поездки клиента в Липецк."
+    }
 ];
   const faqs = [
   {
-    "q": "В какой срок нужно подать заявление о принятии наследства?",
-    "a": "Заявление нотариусу по месту открытия наследства необходимо подать в течение 6 месяцев со дня смерти наследодателя (ст. 1154 ГК РФ)."
+    "q": "Какие документы нужны для открытия наследственного дела у нотариуса?",
+    "a": "Свидетельство о смерти, паспорт наследника, документы, подтверждающие родство (свидетельства о рождении, браке), справка с последнего места жительства умершего (или выписка из домовой книги), а также правоустанавливающие документы на имущество (выписки ЕГРН, договоры, ПТС)."
   },
   {
-    "q": "К какому нотариусу обращаться для открытия наследственного дела?",
-    "a": "К любому нотариусу в пределах нотариального округа по последнему месту жительства умершего (в Липецке действует программа «Наследство без границ»)."
+    "q": "К какому нотариусу обращаться для открытия дела?",
+    "a": "Наследственное дело открывается по последнему месту жительства наследодателя. Благодаря программе «Наследство без границ» в Липецке можно обратиться к любому нотариусу города."
   },
   {
-    "q": "Что делать, если в документах о родстве допущены ошибки в буквах?",
-    "a": "Если в свидетельствах ЗАГС расходятся буквы в фамилии или имени, юрист запрашивает актовые книги или подаёт заявление в суд об установлении факта родственных отношений."
+    "q": "Что делать, если утеряно свидетельство о рождении или браке?",
+    "a": "Юрист делает запросы в органы ЗАГС по месту регистрации акта гражданского состояния для получения повторного свидетельства или архивной справки. При отсутствии актовой записи факт родства устанавливается через суд."
   },
   {
-    "q": "Как выделяется супружеская доля пережившего супруга?",
-    "a": "Переживший супруг подаёт нотариусу заявление о выделе 1/2 доли в совместно нажитом имуществе. Эта доля исключается из наследственной массы и не делится между остальными наследниками."
+    "q": "Можно ли оформить наследство по доверенности?",
+    "a": "Да. Нотариальная доверенность даёт юристу право подавать заявления, истребовать справки, представлять интересы у нотариуса, в банках, Росреестре и получать готовые свидетельства."
   }
 ];
+
   const pricingTiers: PricingTier[] = [
     {
       title: (
@@ -64,10 +65,19 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
       ),
       subtitle: 'Анализ оснований, проверка сроков и подготовка комплекта для нотариуса',
       features: [
-        { name: 'Проверка состава документов и родства', value: '[уточняется]' },
-        { name: 'Расчёт наследственных долей', value: '[уточняется]' },
-        { name: 'Инструкция по обращению к нотариусу', value: '[уточняется]' }
-      ],
+      {
+              "name": "Проверка состава документов и родства",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Расчёт наследственных долей",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Инструкция по обращению к нотариусу",
+              "value": "[уточняется]"
+      }
+],
       buttonText: 'Записаться',
       buttonHref: '#form'
     },
@@ -82,10 +92,19 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
       popular: true,
       badgeText: 'Популярно',
       features: [
-        { name: 'Открытие наследственного дела', value: '[уточняется]' },
-        { name: 'Запросы в ЗАГС, банки и Росреестр', value: '[уточняется]' },
-        { name: 'Контроль выдачи свидетельств', value: '[уточняется]' }
-      ],
+      {
+              "name": "Открытие наследственного дела",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Запросы в ЗАГС, банки и Росреестр",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Контроль выдачи свидетельств",
+              "value": "[уточняется]"
+      }
+],
       buttonText: 'Выбрать тариф',
       buttonHref: '#form'
     },
@@ -98,41 +117,51 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
       ),
       subtitle: 'Полный комплекс услуг, включая регистрацию прав в Росреестре',
       features: [
-        { name: 'Все нотариальные действия', value: '[уточняется]' },
-        { name: 'Сбор архивных справок', value: '[уточняется]' },
-        { name: 'Регистрация права собственности в ЕГРН', value: '[уточняется]' }
-      ],
+      {
+              "name": "Все нотариальные действия",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Сбор архивных справок",
+              "value": "[уточняется]"
+      },
+      {
+              "name": "Регистрация права собственности в ЕГРН",
+              "value": "[уточняется]"
+      }
+],
       buttonText: 'Оформить под ключ',
       buttonHref: '#form'
     }
   ];
+
   const steps: ProcessStep[] = [
     {
       num: '01',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Разбираемся</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в ситуации</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем ситуацию</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и документы</span>
         </>
       ),
-      desc: 'Уточняем круг наследников, состав наследственной массы, наличие завещания, статус нотариального дела и соблюдение 6-месячного срока.'
+      desc: 'Анализируем родственные связи, имеющиеся справки, свидетельства и завещания, проверяем сроки и риски споров.'
     },
     {
       num: '02',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем документы</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и доказательства</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Собираем недостающие</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>доказательства</span>
         </>
       ),
-      desc: 'Проверяем документы о родстве, выписки ЕГРН, материалы нотариуса, квитанции об оплате и основания для возможного судебного спора.'
+      desc: 'Запрашиваем архивные документы из ЗАГС, делаем запросы в банки, Росреестр, медицинские учреждения и к нотариусам.'
     },
     {
       num: '03',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Определяем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовой маршрут</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формируем правовую</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>стратегию</span>
         </>
       ),
       desc: 'Сравниваем нотариальный, переговорный и судебный варианты, оцениваем риски, сроки и согласовываем фиксированную стоимость.'
@@ -184,13 +213,13 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
       },
       {
         '@type': 'Service',
-        'name': 'Оформление и вступление в наследство в Липецке | Де-Юре',
+        'name': 'Оформление и вступление в наследство в Липецке | ЮК «Де-Юре»',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Помощь в оформлении наследства по закону и завещанию в Липецке: нотариус, сбор документов, подтверждение родства и прав. Разберём ситуацию и поможем оформить имущество.'
+        'description': 'Юридическая помощь в открытии и ведении наследственного дела у нотариуса в Липецке. Сбор справок, подтверждение родства, оформление прав собственности.'
       },
       {
         '@type': 'FAQPage',
@@ -237,22 +266,22 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
         superTitle="Наследственный юрист в Липецке"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
               Оформление и вступление
             </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
               в наследство в Липецке
             </span>
           </span>
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Поможем открыть наследственное дело у нотариуса, собрать недостающие документы, подтвердить родство и оформить свидетельство о праве на наследство без очередей и возвратов.
+            Открытие наследственного дела у нотариуса, сбор недостающих справок, подтверждение родства и сопровождение до получения свидетельств о праве собственности.
           </span>
         }
         primaryCtaText="Обсудить ситуацию с юристом"
         primaryCtaLink="#form"
-        primaryCtaAnalytics="click_cta_oformlenie_i_vstuplenie_v_nasledstvo"
+        primaryCtaAnalytics="click_cta_oformlenie_nasledstva"
         primaryCtaSubtext={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
@@ -263,7 +292,28 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
             </span>
           </span>
         }
-        trustItems={[
+        trustItems={[{"text":"Открытие наследственного дела в срок"},{"text":"Восстановление утерянных документов ЗАГС"},{"text":"Сопровождение до выдачи свидетельств"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
+        imageUrl="/images/smolyaninova.jpg"
+        imageName="Марина Валерьевна Смольянинова"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
+        imageObjectPosition="center 20%"
+      />
+
+      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы можем помочь</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Ознакомьтесь с типовыми сценариями. Если ваша ситуация сложнее или включает несколько вопросов — мы разработаем индивидуальный план действий.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
+            {[
               {
                 tag: 'Нотариус / Сроки',
                 title: (
@@ -434,7 +484,7 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
         cases={cases}
       />
 
-      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА (ПО ЦЕНТРУ) ═══ */}
+      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
         subtitle="Чёткий алгоритм действий — вы всегда знаете, что происходит на каждом этапе вашего дела."
@@ -448,17 +498,17 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
 
       {/* ═══ БЛОК 6: СТОИМОСТЬ УСЛУГ ═══ */}
       <PricingBlock
-        title="Стоимость услуг юриста"
-        subtitle="Стоимость определяется после уточнения задачи и изучения документов. Состав услуг, цена и порядок оплаты фиксируются в договоре."
+        title="Стоимость услуг наследственного юриста"
+        subtitle="Стоимость зависит от сложности спора, состава имущества, наличия документов и необходимости судебного процесса."
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и иные сопутствующие расходы."
+        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие судебные расходы."
       />
 
       {/* ═══ БЛОК 7: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
         superTitle="Частые вопросы клиентов"
         title={<><span>Ответы на</span> <br /><span>частые вопросы</span></>}
-        subtitle="По оформлению и судебной защите прав наследников"
+        subtitle="О процедурах и юридических тонкостях"
         ctaText="Задать свой вопрос"
         ctaLink="#form"
         faqs={faqs}
@@ -480,48 +530,39 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
                 <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с наследственным юристом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Опишите задачу по услуге «Оформление и вступление в наследство». Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами в течение 15 минут в рабочее время.
+                Опишите ситуацию, состав имущества и статус обращения к нотариусу. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами для согласования порядка действий.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
+                <div style={{ fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>
+                  Прямой контакт для срочных вопросов:
                 </div>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
-                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                  <a href="tel:+79103503111" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-primary)', textDecoration: 'none' }}>
+                    +7 (910) 350-31-11
+                  </a>
+                  <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+                    (Пн-Пт 9:00 - 18:00)
+                  </span>
+                </div>
               </div>
 
-              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
-                Все сведения и документы защищены профессиональной тайной. Безопасный способ передачи документов согласуем после первичного контакта.
+              <div style={{ marginTop: 'auto', paddingTop: '10px' }}>
+                <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Гарантируем конфиденциальность. Данные передаются только юристу компании «Де-Юре» для правового анализа.
+                </p>
               </div>
             </div>
 
-            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
-              <ContactsForm
-                title="Написать нам"
-                subtitle={
-                  <>
-                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист свяжется с вами</span> <br />
-                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
-                  </>
-                }
-                subtext={
-                  <>
-                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
-                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
-                  </>
-                }
-                buttonText="Отправить обращение"
-                commentPlaceholder="Опишите вашу ситуацию: состав имущества, наличие завещания, пропущен ли срок..."
-                hiddenFields={[
-                  { name: 'source_page', value: '/grazhdanam/nasledstvennyj-yurist/oformlenie-i-vstuplenie-v-nasledstvo/' },
-                  { name: 'direction', value: 'nasledstvennyj_yurist' },
-                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
-                ]}
-              />
+            <div>
+              <div style={{ background: 'var(--color-white)', padding: '40px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 12px 40px rgba(23, 50, 77, 0.08)' }}>
+                <ContactsForm 
+                  title="Заявка на консультацию" 
+                  subtitle="Заполните форму, и юрист свяжется с вами в течение 15 минут"
+                  pageType="nasledstvennyj-yurist/oformlenie-i-vstuplenie-v-nasledstvo"
+                  serviceName="Оформление и вступление в наследство в Липецке | ЮК «Де-Юре»"
+                />
+              </div>
             </div>
           </div>
         </div>

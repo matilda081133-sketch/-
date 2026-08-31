@@ -14,39 +14,35 @@ import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 
 export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
   const cases: CaseData[] = [
-  {
-    "category": "Жилой дом / 15 лет после смерти",
-    "title": "Установили факт принятия дома спустя 15 лет после смерти наследодателя",
-    "problem": "Сын после смерти отца в 2008 году не оформил документы у нотариуса, но проживал в доме, газифицировал его и оплачивал налоги.",
-    "action": "Собрали договоры на обслуживание газового оборудования, квитанции об оплате за 15 лет, привлекли соседей в качестве свидетелей.",
-    "result": "Суд установил факт принятия наследства и признал за сыном право собственности на жилой дом и участок."
-  },
-  {
-    "category": "Земельный участок / СНТ",
-    "title": "Оформили права на дачу при отсутствии нотариального дела",
-    "problem": "Дочь пользовалась дачным участком матери, оплачивала членские взносы в СНТ, но столкнулась с риском изъятия земли администрацией.",
-    "action": "Истребовали членскую книжку СНТ, справку от председателя кооператива, подали иск об установлении факта принятия наследства.",
-    "result": "Право собственности признано судом, сведения внесены в ЕГРН без риска изъятия участка."
-  },
-  {
-    "category": "Квартира / Долевая собственность",
-    "title": "Признали факт принятия доли в квартире и избавили от риска выморочного имущества",
-    "problem": "После смерти брата сестра продолжила оплачивать всю квартиру, но нотариус отказал в выдаче свидетельства на 1/2 долю из-за пропуска срока.",
-    "action": "Оспорили отказ в суде, доказали несение бремени содержания всего жилья единым платежом.",
-    "result": "Суд признал право собственности на долю за сестрой, исключив притязания муниципалитета."
-  }
+    {
+        "category": "Фактическое принятие / ЖКУ",
+        "title": "Установили факт принятия квартиры спустя 7 лет после смерти отца",
+        "problem": "Сын проживал в квартире отца, оплачивал счета, но к нотариусу вовремя не обратился; возник риск признания жилья выморочным.",
+        "action": "Собрали чеки об оплате коммунальных услуг, квитанции о замене сантехники и привлекли соседей в качестве свидетелей.",
+        "result": "Суд установил факт принятия наследства и признал право собственности за сыном."
+    },
+    {
+        "category": "Дача / Земельный участок",
+        "title": "Оформили права на дачу и участок в СНТ при отсутствии документов",
+        "problem": "Дочь более 10 лет возделывала земельный участок умершей матери, платила членские взносы, но нотариальное дело не открывалось.",
+        "action": "Получили справки от председателя СНТ, выписки из лицевых счетов и подготовили заявление в суд.",
+        "result": "Право собственности на земельный участок и садовый дом признано судом и зарегистрировано в Росреестре."
+    },
+    {
+        "category": "Автомобиль / Кредиты",
+        "title": "Доказали факт принятия автомобиля через оплату кредита умершего",
+        "problem": "Банк требовал изъятия кредитного автомобиля, на который наследник не оформил документы у нотариуса.",
+        "action": "Предоставили в суд выписки о регулярных платежах по кредиту за счёт средств наследника и полисы ОСАГО.",
+        "result": "Суд признал автомобиль принятым наследством, сохранив имущество за доверителем."
+    }
 ];
   const faqs = [
   {
-    "q": "Что закон считает фактическим принятием наследства?",
-    "a": "Вступление во владение или управление имуществом, принятие мер по его сохранению, оплата расходов на содержание имущества, оплата долгов наследодателя (п. 2 ст. 1153 ГК РФ)."
+    "q": "Какие действия считаются фактическим принятием наследства?",
+    "a": "Вступление во владение или управление имуществом, принятие мер по сохранению имущества (ремонт, установка замков), оплата расходов на содержание (ЖКУ, налоги, взносы) и оплата долгов наследодателя за свой счёт в течение первых 6 месяцев (п. 2 ст. 1153 ГК РФ)."
   },
   {
-    "q": "Обязательно ли действия должны быть совершены в течение 6 месяцев?",
-    "a": "Да. Фактические действия по принятию (оплата ЖКУ, проживание, ремонт, забор вещей) должны быть совершены именно в пределах первых 6 месяцев со дня смерти наследодателя."
-  },
-  {
-    "q": "Какие документы служат главными доказательствами в суде?",
+    "q": "Какие документы подтверждают фактическое принятие?",
     "a": "Квитанции об оплате коммунальных услуг и налогов с датами первых 6 месяцев, справки о совместном проживании, договоры на ремонт, чеки на покупку стройматериалов и показания свидетелей."
   },
   {
@@ -54,102 +50,114 @@ export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
     "a": "Да. Срок давности на установление факта принятия наследства законом не ограничен, если удастся доказать совершение фактических действий в первые 6 месяцев после смерти."
   }
 ];
+
   const pricingTiers: PricingTier[] = [
-  {
-    "title": "Консультация и аудит доказательств",
-    "subtitle": "Оценка квитанций, справок и проверка факта принятия в 6-месячный срок",
-    "features": [
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Консультация</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и аудит доказательств</span>
+        </>
+      ),
+      subtitle: 'Оценка квитанций, справок и проверка факта принятия в 6-месячный срок',
+      features: [
       {
-        "name": "Анализ имеющихся квитанций и справок",
-        "value": "[уточняется]"
+              "name": "Анализ имеющихся квитанций и справок",
+              "value": "[уточняется]"
       },
       {
-        "name": "Определение перечня недостающих доказательств",
-        "value": "[уточняется]"
+              "name": "Определение перечня недостающих доказательств",
+              "value": "[уточняется]"
       },
       {
-        "name": "Правовое заключение",
-        "value": "[уточняется]"
+              "name": "Правовое заключение",
+              "value": "[уточняется]"
       }
-    ],
-    "buttonText": "Проверить шансы",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Подготовка иска в суд",
-    "subtitle": "Составление искового заявления с доказательной базой для признания права",
-    "features": [
+],
+      buttonText: 'Проверить шансы',
+      buttonHref: '#form'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовка</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>иска в суд</span>
+        </>
+      ),
+      subtitle: 'Составление искового заявления с доказательной базой для признания права',
+      features: [
       {
-        "name": "Иск об установлении факта принятия",
-        "value": "[уточняется]"
+              "name": "Иск об установлении факта принятия",
+              "value": "[уточняется]"
       },
       {
-        "name": "Ходатайства о вызове свидетелей",
-        "value": "[уточняется]"
+              "name": "Ходатайства о вызове свидетелей",
+              "value": "[уточняется]"
       },
       {
-        "name": "Запросы в управляющие компании",
-        "value": "[уточняется]"
+              "name": "Запросы в управляющие компании",
+              "value": "[уточняется]"
       }
-    ],
-    "buttonText": "Заказать иск",
-    "buttonHref": "#form"
-  },
-  {
-    title: (
-      <>
-        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ведение дела в суде</span>{' '}
-        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>«под ключ»</span>
-      </>
-    ),
-    subtitle: 'Полное судебное сопровождение до признания права собственности и Росреестра',
-    popular: true,
-    badgeText: 'Популярно',
-    features: [
+],
+      buttonText: 'Заказать иск',
+      buttonHref: '#form'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ведение дела в суде</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>«под ключ»</span>
+        </>
+      ),
+      subtitle: 'Полное судебное сопровождение до признания права собственности и Росреестра',
+      popular: true,
+      badgeText: 'Популярно',
+      features: [
       {
-        name: 'Участие во всех судебных заседаниях',
-        value: '[уточняется]'
+              "name": "Участие во всех судебных заседаниях",
+              "value": "[уточняется]"
       },
       {
-        name: 'Допрос свидетелей и экспертов',
-        value: '[уточняется]'
+              "name": "Допрос свидетелей и экспертов",
+              "value": "[уточняется]"
       },
       {
-        name: 'Регистрация права собственности в ЕГРН',
-        value: '[уточняется]'
+              "name": "Регистрация права собственности в ЕГРН",
+              "value": "[уточняется]"
       }
-    ],
-    buttonText: 'Выбрать тариф',
-    buttonHref: '#form'
-  }
-];
+],
+      buttonText: 'Выбрать тариф',
+      buttonHref: '#form'
+    }
+  ];
+
   const steps: ProcessStep[] = [
     {
       num: '01',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Разбираемся</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в ситуации</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем ситуацию</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и документы</span>
         </>
       ),
-      desc: 'Уточняем круг наследников, состав наследственной массы, наличие завещания, статус нотариального дела и соблюдение 6-месячного срока.'
+      desc: 'Анализируем родственные связи, имеющиеся справки, свидетельства и завещания, проверяем сроки и риски споров.'
     },
     {
       num: '02',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем документы</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и доказательства</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Собираем недостающие</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>доказательства</span>
         </>
       ),
-      desc: 'Проверяем документы о родстве, выписки ЕГРН, материалы нотариуса, квитанции об оплате и основания для возможного судебного спора.'
+      desc: 'Запрашиваем архивные документы из ЗАГС, делаем запросы в банки, Росреестр, медицинские учреждения и к нотариусам.'
     },
     {
       num: '03',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Определяем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовой маршрут</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формируем правовую</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>стратегию</span>
         </>
       ),
       desc: 'Сравниваем нотариальный, переговорный и судебный варианты, оцениваем риски, сроки и согласовываем фиксированную стоимость.'
@@ -207,7 +215,7 @@ export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Помощь в установлении факта принятия наследства через суд в Липецке, если 6-месячный срок у нотариуса пропущен. Сбор доказательств, подготовка иска и признание права собственности.'
+        'description': 'Помощь в установлении факта принятия наследства через суд в Липецке, если 6-месячный срок у нотариуса пропущен. Сбор доказательств и признание права.'
       },
       {
         '@type': 'FAQPage',
@@ -254,22 +262,22 @@ export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
         superTitle="Наследственный юрист в Липецке"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
               Установление факта
             </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
               принятия наследства в суде
             </span>
           </span>
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Поможем доказать фактическое принятие наследства через суд и оформить право собственности на недвижимость, землю или автомобиль, если к нотариусу вовремя не обращались.
+            Признание права собственности на имущество через суд, если 6-месячный срок обращения к нотариусу пропущен, но вы фактически пользуетесь и содержите имущество.
           </span>
         }
         primaryCtaText="Обсудить ситуацию с юристом"
         primaryCtaLink="#form"
-        primaryCtaAnalytics="click_cta_ustanovlenie_fakta_prinyatiya_nasledstva"
+        primaryCtaAnalytics="click_cta_ustanovlenie_fakta"
         primaryCtaSubtext={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
@@ -280,7 +288,28 @@ export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
             </span>
           </span>
         }
-        trustItems={[
+        trustItems={[{"text":"Признание права собственности через суд"},{"text":"Сбор квитанций, справок и свидетельских показаний"},{"text":"Работа при пропуске срока на годы и десятилетия"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
+        imageUrl="/images/smolyaninova.jpg"
+        imageName="Марина Валерьевна Смольянинова"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
+        imageObjectPosition="center 20%"
+      />
+
+      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы можем помочь</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Ознакомьтесь с типовыми сценариями. Если ваша ситуация сложнее или включает несколько вопросов — мы разработаем индивидуальный план действий.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
+            {[
               {
                 tag: 'ЖКУ / Квартира',
                 title: (
@@ -451,7 +480,7 @@ export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
         cases={cases}
       />
 
-      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА (ПО ЦЕНТРУ) ═══ */}
+      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
         subtitle="Чёткий алгоритм действий — вы всегда знаете, что происходит на каждом этапе вашего дела."
@@ -465,17 +494,17 @@ export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
 
       {/* ═══ БЛОК 6: СТОИМОСТЬ УСЛУГ ═══ */}
       <PricingBlock
-        title="Стоимость услуг юриста"
-        subtitle="Стоимость определяется после уточнения задачи и изучения документов. Состав услуг, цена и порядок оплаты фиксируются в договоре."
+        title="Стоимость услуг наследственного юриста"
+        subtitle="Стоимость зависит от сложности спора, состава имущества, наличия документов и необходимости судебного процесса."
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и иные сопутствующие расходы."
+        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие судебные расходы."
       />
 
       {/* ═══ БЛОК 7: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
         superTitle="Частые вопросы клиентов"
         title={<><span>Ответы на</span> <br /><span>частые вопросы</span></>}
-        subtitle="По оформлению и судебной защите прав наследников"
+        subtitle="О процедурах и юридических тонкостях"
         ctaText="Задать свой вопрос"
         ctaLink="#form"
         faqs={faqs}
@@ -497,48 +526,39 @@ export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
                 <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с наследственным юристом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Опишите задачу по услуге «Установление факта принятия наследства». Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами в течение 15 минут в рабочее время.
+                Опишите ситуацию, состав имущества и статус обращения к нотариусу. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами для согласования порядка действий.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
+                <div style={{ fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>
+                  Прямой контакт для срочных вопросов:
                 </div>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
-                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                  <a href="tel:+79103503111" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-primary)', textDecoration: 'none' }}>
+                    +7 (910) 350-31-11
+                  </a>
+                  <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+                    (Пн-Пт 9:00 - 18:00)
+                  </span>
+                </div>
               </div>
 
-              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
-                Все сведения и документы защищены профессиональной тайной. Безопасный способ передачи документов согласуем после первичного контакта.
+              <div style={{ marginTop: 'auto', paddingTop: '10px' }}>
+                <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Гарантируем конфиденциальность. Данные передаются только юристу компании «Де-Юре» для правового анализа.
+                </p>
               </div>
             </div>
 
-            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
-              <ContactsForm
-                title="Написать нам"
-                subtitle={
-                  <>
-                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист свяжется с вами</span> <br />
-                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
-                  </>
-                }
-                subtext={
-                  <>
-                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
-                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
-                  </>
-                }
-                buttonText="Отправить обращение"
-                commentPlaceholder="Опишите вашу ситуацию: состав имущества, наличие завещания, пропущен ли срок..."
-                hiddenFields={[
-                  { name: 'source_page', value: '/grazhdanam/nasledstvennyj-yurist/ustanovlenie-fakta-prinyatiya-nasledstva/' },
-                  { name: 'direction', value: 'nasledstvennyj_yurist' },
-                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
-                ]}
-              />
+            <div>
+              <div style={{ background: 'var(--color-white)', padding: '40px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 12px 40px rgba(23, 50, 77, 0.08)' }}>
+                <ContactsForm 
+                  title="Заявка на консультацию" 
+                  subtitle="Заполните форму, и юрист свяжется с вами в течение 15 минут"
+                  pageType="nasledstvennyj-yurist/ustanovlenie-fakta-prinyatiya-nasledstva"
+                  serviceName="Установление факта принятия наследства в Липецке | Де-Юре"
+                />
+              </div>
             </div>
           </div>
         </div>
