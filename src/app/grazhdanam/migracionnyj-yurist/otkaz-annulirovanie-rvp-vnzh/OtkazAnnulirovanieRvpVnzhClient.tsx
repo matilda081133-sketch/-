@@ -155,7 +155,7 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
-            [
+            {[
           {
                     "tag": "15 дней на выезд",
                     "title": [

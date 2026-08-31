@@ -166,7 +166,7 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
-            [
+            {[
           {
                     "tag": "Минюст / Судимость",
                     "title": [

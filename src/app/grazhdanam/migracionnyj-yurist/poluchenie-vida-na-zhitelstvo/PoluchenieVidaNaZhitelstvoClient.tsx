@@ -174,7 +174,7 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
-            [
+            {[
           {
                     "tag": "После РВП",
                     "title": [

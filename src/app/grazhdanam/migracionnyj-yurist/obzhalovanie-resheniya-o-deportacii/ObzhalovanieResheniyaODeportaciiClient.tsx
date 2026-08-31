@@ -181,7 +181,7 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
-            [
+            {[
           {
                     "tag": "Распоряжение МВД",
                     "title": [

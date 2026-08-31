@@ -174,7 +174,7 @@ export default function PoluchenieRvpClient() {
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
-            [
+            {[
           {
                     "tag": "Брак с гражданином РФ",
                     "title": [
