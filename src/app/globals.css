@@ -139,17 +139,15 @@ h4 { font-size: 1.25rem; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 32px;
+  padding: 16px 36px;
   background-color: var(--color-primary);
   color: #FFFFFF !important;
-  border-radius: 0px;
   font-weight: 600;
-  padding: 16px 36px;
   font-size: 16px;
   border-radius: var(--radius-md);
   border: none;
   cursor: pointer;
-  transition: var(--transition);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -169,7 +167,7 @@ h4 { font-size: 1.25rem; }
   width: 0%;
   height: 100%;
   background-color: var(--color-deep-blue);
-  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: -1;
 }
 
@@ -179,9 +177,9 @@ h4 { font-size: 1.25rem; }
 
 .btn:hover {
   border-color: var(--color-deep-blue);
-  color: var(--color-white);
+  color: var(--color-white) !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(23, 50, 77, 0.2);
+  box-shadow: 0 8px 24px rgba(23, 50, 77, 0.22);
 }
 
 .btn-outline {
@@ -242,7 +240,7 @@ h4 { font-size: 1.25rem; }
   color: #10273B !important;
   border: 1px solid #FFFFFF !important;
   font-weight: 600 !important;
-  transition: all 0.3s ease !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s ease, color 0.35s ease !important;
 }
 .white-btn-custom::before {
   display: none !important;
@@ -252,7 +250,7 @@ h4 { font-size: 1.25rem; }
   color: #FFFFFF !important;
   border: 1px solid #FFFFFF !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
 }
 
 /* Hero Graphic Animation */
@@ -271,7 +269,7 @@ h4 { font-size: 1.25rem; }
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 40px;
-  transition: var(--transition);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
@@ -293,7 +291,7 @@ h4 { font-size: 1.25rem; }
   box-shadow: 0 16px 40px rgba(23, 50, 77, 0.08);
   border-radius: var(--radius-md);
   padding: 40px;
-  transition: var(--transition);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -303,11 +301,31 @@ h4 { font-size: 1.25rem; }
 }
 
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
 }
 .hover-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(23, 50, 77, 0.1) !important;
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
+}
+
+.service-card {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
+}
+.service-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
+}
+.service-card .card-arrow svg {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-card:hover .card-arrow svg {
+  transform: translateX(6px);
+}
+.service-card .card-arrow {
+  transition: color 0.35s ease;
+}
+.service-card:hover .card-arrow {
+  color: var(--color-gold-text);
 }
 
 .border-red {
