@@ -281,10 +281,13 @@ export default function OpredelenieMestaZhitelstvaRebenkaClient() {
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Определение места
+              Определение
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              жительства ребёнка в Липецке
+              места жительства
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              ребёнка в Липецке
             </span>
           </span>
         }

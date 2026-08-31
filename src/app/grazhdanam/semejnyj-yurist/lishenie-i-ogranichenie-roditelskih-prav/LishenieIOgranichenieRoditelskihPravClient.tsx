@@ -274,17 +274,20 @@ export default function LishenieIOgranichenieRoditelskihPravClient() {
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
             <Link href="/grazhdanam/semejnyj-yurist/">Семейный юрист</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <span style={{ color: 'var(--color-text-main)' }}>Лишение и ограничение родительских прав в Липецке</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Лишение и ограничение прав родителей в Липецке</span>
           </>
         }
         superTitle="Семейный юрист в Липецке"
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Лишение и ограничение
+              Лишение и
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              родительских прав в Липецке
+              ограничение прав
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              родителей в Липецке
             </span>
           </span>
         }

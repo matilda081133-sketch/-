@@ -281,10 +281,13 @@ export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Определение порядка
+              Определение
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              общения с ребёнком в Липецке
+              порядка общения
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              с ребёнком в Липецке
             </span>
           </span>
         }

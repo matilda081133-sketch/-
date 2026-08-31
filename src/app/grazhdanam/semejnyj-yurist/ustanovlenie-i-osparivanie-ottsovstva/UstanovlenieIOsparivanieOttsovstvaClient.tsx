@@ -281,10 +281,13 @@ export default function UstanovlenieIOsparivanieOttsovstvaClient() {
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Установление и
+              Установление
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              оспаривание отцовства в Липецке
+              и оспаривание
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              отцовства в Липецке
             </span>
           </span>
         }
