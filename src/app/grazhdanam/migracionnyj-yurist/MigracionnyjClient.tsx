@@ -199,30 +199,33 @@ export default function MigracionnyjClient() {
             В миграционных делах действуют жёсткие процессуальные сроки: пропуск 10 дней на обжалование постановления суда или 15 дней на выезд после аннулирования документов приводит к принудительной высылке и многолетнему запрету на въезд.
           </p>
 
-          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '32px' }}>
+          <div className="grid grid-4" style={{ gap: '16px', marginBottom: '32px' }}>
             {/* Карточка 1 */}
             <div 
               className="urgent-card"
               style={{ 
                 background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '26px 20px', 
+                padding: '24px 16px', 
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                height: '100%',
+                minHeight: '260px',
+                boxSizing: 'border-box'
               }}
             >
               <div>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '14px' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '12px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="12" y1="8" x2="12" y2="12"></line>
                     <line x1="12" y1="16" x2="12.01" y2="16"></line>
                   </svg>
-                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '42px' }}>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Суд вынес постановление</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>об административном выдворении</span>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '44px', wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+                    <span style={{ display: 'block' }}>Суд вынес постановление</span>
+                    <span style={{ display: 'block' }}>об административном выдворении</span>
                   </div>
                 </div>
                 <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13px', lineHeight: 1.55, margin: 0 }}>
@@ -236,24 +239,27 @@ export default function MigracionnyjClient() {
               className="urgent-card"
               style={{ 
                 background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '26px 20px', 
+                padding: '24px 16px', 
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                height: '100%',
+                minHeight: '260px',
+                boxSizing: 'border-box'
               }}
             >
               <div>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '14px' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '12px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="12" y1="8" x2="12" y2="12"></line>
                     <line x1="12" y1="16" x2="12.01" y2="16"></line>
                   </svg>
-                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '42px' }}>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Узнали о запрете на въезд</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или нежелательности пребывания</span>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '44px', wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+                    <span style={{ display: 'block' }}>Узнали о запрете на въезд</span>
+                    <span style={{ display: 'block' }}>или нежелательности пребывания</span>
                   </div>
                 </div>
                 <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13px', lineHeight: 1.55, margin: 0 }}>
@@ -267,24 +273,27 @@ export default function MigracionnyjClient() {
               className="urgent-card"
               style={{ 
                 background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '26px 20px', 
+                padding: '24px 16px', 
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                height: '100%',
+                minHeight: '260px',
+                boxSizing: 'border-box'
               }}
             >
               <div>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '14px' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '12px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="12" y1="8" x2="12" y2="12"></line>
                     <line x1="12" y1="16" x2="12.01" y2="16"></line>
                   </svg>
-                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '42px' }}>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получили уведомление</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>об отказе или аннулировании РВП / ВНЖ</span>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '44px', wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+                    <span style={{ display: 'block' }}>Получили уведомление</span>
+                    <span style={{ display: 'block' }}>об отказе или аннулировании РВП / ВНЖ</span>
                   </div>
                 </div>
                 <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13px', lineHeight: 1.55, margin: 0 }}>
@@ -298,24 +307,27 @@ export default function MigracionnyjClient() {
               className="urgent-card"
               style={{ 
                 background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                padding: '26px 20px', 
+                padding: '24px 16px', 
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                height: '100%',
+                minHeight: '260px',
+                boxSizing: 'border-box'
               }}
             >
               <div>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '14px' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '12px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="12" y1="8" x2="12" y2="12"></line>
                     <line x1="12" y1="16" x2="12.01" y2="16"></line>
                   </svg>
-                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '42px' }}>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сведения появились в реестре</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>контролируемых лиц (режим высылки)</span>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '44px', wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+                    <span style={{ display: 'block' }}>Сведения появились в реестре</span>
+                    <span style={{ display: 'block' }}>контролируемых лиц (режим высылки)</span>
                   </div>
                 </div>
                 <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13px', lineHeight: 1.55, margin: 0 }}>
