@@ -251,42 +251,82 @@ export default function OsparivanieZaveschaniyaClient() {
           </span>
         }
         trustItems={[{"text":"Оспаривание по ст. 177 ГК РФ (порок воли)"},{"text":"Назначение посмертных судебно-психиатрических экспертиз"},{"text":"Защита обязательной доли по ст. 1149 ГК РФ"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        imageUrl="/images/specialists/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.jpg"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
-        imageObjectPosition="center 15%"
+        imageObjectPosition="center 20%"
       />
 
-      {/* ═══ БЛОК 2: СИТУАЦИИ / КОГДА МЫ МОЖЕМ ПОМОЧЬ ═══ */}
+      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, textWrap: 'balance' }}>
-              В каких ситуациях мы помогаем
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы можем помочь</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Ознакомьтесь с типовыми сценариями. Если ваша ситуация сложнее или включает несколько вопросов — мы разработаем индивидуальный план действий.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px', marginBottom: '40px' }}>
-            {[{"title":"Наследодатель не понимал свои действия","desc":"Тяжёлое заболевание, приём сильнодействующих препаратов или деменция на момент оформления завещания."},{"title":"Завещание оформлено под давлением","desc":"Обман, угрозы, введение в заблуждение или психологическое насилие со стороны третьих лиц (ст. 179 ГК РФ)."},{"title":"Нарушена нотариальная форма","desc":"Подделка подписи, отсутствие обязательных реквизитов, подписание ненадлежащим лицом без рукоприкладчика."},{"title":"Лишение права на обязательную долю","desc":"Завещание составлено в пользу постороннего лица в ущерб несовершеннолетним детям или нетрудоспособным родителям."},{"title":"Завещано чужое имущество","desc":"Включение в текст завещания совместной супружеской собственности или неприватизированных объектов."},{"title":"Защита от необоснованного иска","desc":"Правовая защита наследника по завещанию от недобросовестных попыток родственников отменить волю умершего."}].map((sit, i) => (
-              <div 
-                key={i} 
-                className="hover-lift"
-                style={{ 
-                  padding: '28px', 
-                  background: 'var(--color-cream)', 
-                  border: '1px solid var(--color-border)', 
-                  borderLeft: '4px solid var(--color-primary)',
-                  borderRadius: '0' 
-                }}
-              >
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
-                  {sit.title}
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
+            {[{"tag":"Ст. 177 ГК / Экспертиза","title":"Наследодатель не понимал свои действия","desc":"Тяжёлое заболевание, приём сильнодействующих препаратов или деменция на момент оформления завещания."},{"tag":"Ст. 179 ГК / Обман","title":"Завещание оформлено под давлением","desc":"Обман, угрозы, введение в заблуждение или психологическое насилие со стороны третьих лиц."},{"tag":"Форма / Подделка","title":"Нарушена нотариальная форма","desc":"Подделка подписи, отсутствие обязательных реквизитов, подписание ненадлежащим лицом без рукоприкладчика."},{"tag":"Ст. 1149 ГК / Дети","title":"Лишение права на обязательную долю","desc":"Завещание составлено в пользу постороннего лица в ущерб несовершеннолетним детям или нетрудоспособным родителям."},{"tag":"Супруг / Собственность","title":"Завещано чужое имущество","desc":"Включение в текст завещания совместной супружеской собственности или неприватизированных объектов."},{"tag":"Защита воли","title":"Защита от необоснованного иска","desc":"Правовая защита наследника по завещанию от недобросовестных попыток родственников отменить волю умершего."}].map((item, i) => (
+              <div key={i} className="hover-lift" style={{
+                padding: '36px 30px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.tag}
+                </div>
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '17px', 
+                  fontWeight: 600,
+                  color: 'var(--color-deep-blue)', 
+                  margin: '0 0 12px 0', 
+                  lineHeight: 1.35, 
+                  minHeight: '44px',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.title}
                 </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                  {sit.desc}
+                <p style={{ 
+                  color: 'var(--color-text-secondary)', 
+                  fontSize: '14px', 
+                  lineHeight: 1.6, 
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.desc}
                 </p>
               </div>
             ))}
@@ -300,19 +340,38 @@ export default function OsparivanieZaveschaniyaClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
+      {/* ═══ БЛОК 3: КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ ШАБЛОН) ═══ */}
       <SpecialistBlock
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК &#171;Де-Юре&#187;,<br />куратор направления &#171;Наследственное право&#187;</>}
-        imageUrl="/images/specialists/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.jpg"
+        imagePosition="center 20%"
+        profileHref="/specialisty/smolyaninova-marina-valerevna/"
+        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[
-          '13 лет профессионального опыта в сфере правоприменения и защиты прав граждан: глубокое знание процедур, требований нотариата и судебной практики.',
-          'Специализируется на комплексном сопровождении наследственных дел: оформление у нотариуса, восстановление сроков, оспаривание завещаний и выдел долей.',
-          'Успешный опыт мирного досудебного урегулирования споров между наследниками и защиты интересов доверителей в судах всех инстанций.',
-          'Ведёт наследственные дела в Липецке и Липецкой области; доступен дистанционный формат работы для доверителей из любых регионов России и из-за рубежа.'
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            13 лет профессионального опыта в сфере правоприменения и защиты прав граждан: глубокое знание процедур, требований нотариата и судебной практики.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Специализируется на комплексном сопровождении наследственных дел: оформление у нотариуса, восстановление сроков, оспаривание завещаний и выдел долей</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Успешный опыт мирного досудебного урегулирования споров между наследниками и защиты интересов доверителей в судах всех инстанций</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Ведёт наследственные дела в Липецке и Липецкой области; доступен дистанционный формат работы для доверителей из любых регионов России и из-за рубежа</span>
+            </li>
+          </ul>,
+          <a key="3" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о Марине Валерьевне Смольяниновой →
+          </a>
         ]}
-        buttonText="Обсудить ситуацию с Мариной Валерьевной"
+        buttonText="Задать вопрос юристу"
         buttonHref="#form"
       />
 
@@ -325,17 +384,16 @@ export default function OsparivanieZaveschaniyaClient() {
         cases={cases}
       />
 
-      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА ═══ */}
+      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА (ПО ЦЕНТРУ) ═══ */}
       <ProcessBlock
         title="Как проходит работа"
         subtitle="Чёткий алгоритм действий — вы всегда знаете, что происходит на каждом этапе вашего дела."
-        alignTitle="left"
+        alignTitle="center"
         steps={steps}
         ctaTitle="Готовы обсудить вашу ситуацию"
         ctaSubtitle="Опишите задачу — юрист изучит документы и предложит понятный план действий."
         ctaButtonText="Обсудить ситуацию"
         ctaButtonHref="#form"
-        footerNote="Первичное обсуждение и передача копий документов могут пройти дистанционно. Защищённый канал передачи документов согласуется после первичного контакта."
       />
 
       {/* ═══ БЛОК 6: СТОИМОСТЬ УСЛУГ ═══ */}
@@ -356,11 +414,68 @@ export default function OsparivanieZaveschaniyaClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 8: ФОРМА ОБРАЩЕНИЯ ═══ */}
-      <ContactsForm
-        title="Обсудите ситуацию с юристом"
-        subtitle="Опишите вашу задачу: юрист перезвонит вам в течение 15 минут в рабочее время и подскажет законные варианты решения."
-      />
+      {/* ═══ БЛОК 8: ФИНАЛЬНАЯ ФОРМА (СВЯЗАТЬСЯ С НАМИ - ТИПОВОЙ 2-КОЛОНОЧНЫЙ ШАБЛОН) ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите ситуацию</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с наследственным юристом</span>
+              </h2>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Опишите задачу по услуге «Оспаривание завещания». Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами в течение 15 минут в рабочее время.
+              </p>
+              
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
+                </div>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
+                Все сведения и документы защищены профессиональной тайной. Безопасный способ передачи документов согласуем после первичного контакта.
+              </div>
+            </div>
+
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
+                buttonText="Отправить обращение"
+                commentPlaceholder="Опишите вашу ситуацию: состав имущества, наличие завещания, пропущен ли срок..."
+                hiddenFields={[
+                  { name: 'source_page', value: '/grazhdanam/nasledstvennyj-yurist/osparivanie-zaveschaniya/' },
+                  { name: 'direction', value: 'nasledstvennyj_yurist' },
+                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
+                ]}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </main>
