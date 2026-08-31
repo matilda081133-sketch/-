@@ -118,7 +118,10 @@ export default function PoluchenieGrazhdanstvaRfClient() {
               Помощь в получении
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              гражданства Российской Федерации
+              гражданства
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Российской Федерации
             </span>
           </span>
         }
@@ -156,8 +159,8 @@ export default function PoluchenieGrazhdanstvaRfClient() {
 ]}
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
-        imageObjectPosition="center 25%"
+        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: ТИПОВЫЕ СИТУАЦИИ ═══ */}

@@ -118,7 +118,10 @@ export default function PoluchenieRvpClient() {
               Помощь в получении
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              разрешения на временное проживание (РВП)
+              разрешения на временное
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              проживание (РВП)
             </span>
           </span>
         }
@@ -156,8 +159,8 @@ export default function PoluchenieRvpClient() {
 ]}
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
-        imageObjectPosition="center 25%"
+        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: ТИПОВЫЕ СИТУАЦИИ ═══ */}

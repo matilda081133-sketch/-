@@ -580,7 +580,8 @@ export default function MigracionnyjClient() {
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Помощь в получении</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>разрешения на проживание (РВП)</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>разрешения на временное</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>проживание (РВП)</span>
                   </>
                 ),
                 desc: 'Проверка оснований без квоты и по квоте, сбор документов, подготовка заявления и сопровождение подачи в органы МВД.',
@@ -600,7 +601,8 @@ export default function MigracionnyjClient() {
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Помощь в получении</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>гражданства России (138-ФЗ)</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>гражданства</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Российской Федерации</span>
                   </>
                 ),
                 desc: 'Анализ права на приём в гражданство по 138-ФЗ, подготовка пакета документов и правовое сопровождение подачи в МВД.',
