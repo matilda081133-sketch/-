@@ -19,7 +19,8 @@ export default function VzyskanieAlimentovClient() {
       title: (
         <>
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Увеличили алименты</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с 4 500 руб. до 28 000 руб. в месяц</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с 4 500 руб. до</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>28 000 руб. в месяц</span>
         </>
       ),
       problem: 'Отец-предприниматель декларировал нулевую прибыль, перечисляя на ребёнка символические суммы.',
@@ -31,7 +32,8 @@ export default function VzyskanieAlimentovClient() {
       title: (
         <>
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскали долг</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>850 000 руб. и 420 000 руб. неустойки</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>850 000 руб. и</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>420 000 руб. неустойки</span>
         </>
       ),
       problem: 'Должник 4 года уклонялся от выплат, пристав бездействовал и не рассчитывал задолженность.',
@@ -42,8 +44,9 @@ export default function VzyskanieAlimentovClient() {
       category: 'Содержание матери / До 3 лет',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскали алименты на ребёнка</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и ежемесячное содержание матери</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскали алименты</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>на ребёнка и ежемесячное</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>содержание матери</span>
         </>
       ),
       problem: 'После развода муж отказывался материально помогать жене, находящейся в декретном отпуске с 10-месячным ребёнком.',

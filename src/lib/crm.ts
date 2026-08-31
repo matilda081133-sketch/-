@@ -71,17 +71,29 @@ export async function sendLeadToCRM(payload: LeadPayload): Promise<{ success: bo
 
   const bitrixEndpoint = BITRIX24_WEBHOOK_URL.replace(/\/?(profile\.json)?$/, '').replace(/\/$/, '') + '/crm.lead.add.json';
 
-  const isDirect =
-    Boolean(
-      utm.utm_source?.toLowerCase().includes('yandex') ||
-      utm.utm_source?.toLowerCase().includes('direct') ||
-      utm.utm_medium?.toLowerCase().includes('cpc') ||
-      utm.utm_medium?.toLowerCase().includes('cpm') ||
-      (typeof window !== 'undefined' && window.location.search.includes('yclid'))
-    );
+  const utmSrc = (utm.utm_source || '').toLowerCase();
+  const utmMed = (utm.utm_medium || '').toLowerCase();
+  const hasYclid = typeof window !== 'undefined' && window.location.search.includes('yclid');
 
-  const sourceId = isDirect ? 'ADVERTISING' : 'WEB';
-  const sourceDescription = isDirect ? 'Яндекс Директ' : 'Сайт (органика)';
+  let sourceId = 'WEB';
+  let sourceDescription = 'Сайт (органика)';
+
+  if (utmSrc.includes('telegram') || utmSrc.includes('tg')) {
+    sourceId = 'TELEGRAM';
+    sourceDescription = 'Telegram';
+  } else if (utmSrc.includes('whatsapp') || utmSrc.includes('wa')) {
+    sourceId = 'WHATSAPP';
+    sourceDescription = 'WhatsApp';
+  } else if (utmSrc.includes('vk') || utmSrc.includes('vkontakte')) {
+    sourceId = 'VK';
+    sourceDescription = 'ВКонтакте';
+  } else if (utmSrc.includes('max')) {
+    sourceId = 'MAX';
+    sourceDescription = 'MAX';
+  } else if (utmSrc.includes('yandex') || utmSrc.includes('direct') || utmMed.includes('cpc') || utmMed.includes('cpm') || hasYclid) {
+    sourceId = 'ADVERTISING';
+    sourceDescription = 'Яндекс Директ';
+  }
 
   const bitrixBody = {
     fields: {

@@ -18,8 +18,9 @@ export default function SemejnyjClient() {
       category: 'Раздел имущества / Ипотека',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Разделили квартиру и бизнес</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>без ущемления прав доверительницы</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Разделили квартиру</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и бизнес без ущемления</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>прав доверительницы</span>
         </>
       ),
       problem: 'Супруг настаивал на единоличном сохранении 3-комнатной квартиры и доли в торговом ООО, предлагая минимальную компенсацию.',
@@ -31,7 +32,8 @@ export default function SemejnyjClient() {
       title: (
         <>
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскали алименты</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в твёрдой сумме с предпринимателя</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в твёрдой сумме</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с предпринимателя</span>
         </>
       ),
       problem: 'Отец декларировал минимальную заработную плату 19 000 руб., фактически управляя прибыльным автосервисом.',
@@ -42,8 +44,9 @@ export default function SemejnyjClient() {
       category: 'Дети / Место жительства',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отстояли право постоянного</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>проживания двоих детей с матерью</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отстояли право</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>постоянного проживания</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>двоих детей с матерью</span>
         </>
       ),
       problem: 'Отец подал иск об определении места жительства детей с ним, привлекая административный ресурс и заявляя о нехватке дохода у матери.',
