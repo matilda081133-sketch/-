@@ -144,9 +144,14 @@ export default function PoluchenieGrazhdanstvaRfClient() {
           </span>
         }
         trustItems={[
-        {
-                "text": "Работа по новому Федеральному закону № 138-ФЗ «О гражданстве РФ»"
-        },
+          {
+            text: (
+              <>
+                <span style={{ display: 'block' }}>Работа по новому Федеральному закону</span>
+                <span style={{ display: 'block', whiteSpace: 'nowrap' }}>№ 138-ФЗ «О гражданстве РФ»</span>
+              </>
+            )
+          },
         {
                 "text": "Проверка оснований по рождению, браку с детьми, родителям, ВУЗу"
         },
