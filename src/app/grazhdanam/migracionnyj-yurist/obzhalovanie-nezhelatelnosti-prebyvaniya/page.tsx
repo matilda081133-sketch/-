@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
     type: 'website',
-  ,
     images: [
       {
         url: 'https://dejure-help.ru/images/og/migracionnyj-yurist.jpg',
