@@ -191,7 +191,7 @@ export default function PoluchenieGrazhdanstvaRfClient() {
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»"
-        imageObjectPosition="center 15%"
+        imageObjectPosition="center 20%"
       />
 
       {/* ═══ БЛОК 2: ТИПОВЫЕ СИТУАЦИИ ═══ */}

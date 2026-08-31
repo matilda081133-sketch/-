@@ -184,7 +184,7 @@ export default function MigracionnyjClient() {
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
-        imageObjectPosition="center 25%"
+        imageObjectPosition="center 20%"
       />
 
       {/* ═══ БЛОК 2: КОГДА ВАЖНО НЕ ОТКЛАДЫВАТЬ ОБРАЩЕНИЕ (4 В 1 РЯД) ═══ */}
