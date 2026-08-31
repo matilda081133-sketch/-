@@ -326,8 +326,8 @@ export default function MigracionnyjClient() {
                     <line x1="12" y1="16" x2="12.01" y2="16"></line>
                   </svg>
                   <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '44px', wordBreak: 'break-word', overflowWrap: 'break-word' }}>
-                    <span style={{ display: 'block' }}>Сведения появились в реестре</span>
-                    <span style={{ display: 'block' }}>контролируемых лиц (режим высылки)</span>
+                    <span style={{ display: 'block' }}>Сведения появились</span>
+                    <span style={{ display: 'block' }}>в реестре контролируемых лиц (режим высылки)</span>
                   </div>
                 </div>
                 <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13px', lineHeight: 1.55, margin: 0 }}>
