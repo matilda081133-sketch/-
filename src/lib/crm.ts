@@ -71,14 +71,26 @@ export async function sendLeadToCRM(payload: LeadPayload): Promise<{ success: bo
 
   const bitrixEndpoint = BITRIX24_WEBHOOK_URL.replace(/\/?(profile\.json)?$/, '').replace(/\/$/, '') + '/crm.lead.add.json';
 
+  const isDirect =
+    Boolean(
+      utm.utm_source?.toLowerCase().includes('yandex') ||
+      utm.utm_source?.toLowerCase().includes('direct') ||
+      utm.utm_medium?.toLowerCase().includes('cpc') ||
+      utm.utm_medium?.toLowerCase().includes('cpm') ||
+      (typeof window !== 'undefined' && window.location.search.includes('yclid'))
+    );
+
+  const sourceId = isDirect ? 'ADVERTISING' : 'WEB';
+  const sourceDescription = isDirect ? 'Яндекс Директ' : 'Сайт (органика)';
+
   const bitrixBody = {
     fields: {
       TITLE: leadTitle,
       NAME: payload.name || '',
       PHONE: payload.phone ? [{ VALUE: payload.phone.replace(/^'/, ''), VALUE_TYPE: 'WORK' }] : [],
       COMMENTS: commentParts.join('<br>'),
-      SOURCE_ID: 'WEB',
-      SOURCE_DESCRIPTION: 'Сайт Де Юре',
+      SOURCE_ID: sourceId,
+      SOURCE_DESCRIPTION: sourceDescription,
       STATUS_ID: 'NEW',
       ASSIGNED_BY_ID: 18,
       OPENED: 'Y',
