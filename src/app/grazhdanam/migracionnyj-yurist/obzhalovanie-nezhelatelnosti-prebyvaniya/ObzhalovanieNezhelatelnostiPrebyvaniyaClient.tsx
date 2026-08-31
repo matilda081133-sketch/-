@@ -293,8 +293,8 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
             {/* ═══ БЛОК КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ) ═══ */}
       <SpecialistBlock
         title="Куратор направления"
-        name="Конопкин Дмитрий Сергеевич"
-        position="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
+        name="Дмитрий Сергеевич Конопкин"
+        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Миграционное право»</>}
         imageUrl="/images/konopkin.jpg"
         imagePosition="center 15%"
         description={[
@@ -304,11 +304,15 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Статус адвоката, реестровый номер 48/812</span>
+              <span>Опыт работы в Следственном комитете с 2016 по 2022 год</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Председатель Коллегии адвокатов «Де-Юре»</span>
+              <span>С сентября 2022 года — адвокат</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Реестровый номер 48/812</span>
             </li>
           </ul>,
           <a key="3" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
