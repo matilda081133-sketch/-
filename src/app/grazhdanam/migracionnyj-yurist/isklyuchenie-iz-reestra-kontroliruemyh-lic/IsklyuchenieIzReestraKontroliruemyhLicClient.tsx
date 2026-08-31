@@ -302,30 +302,7 @@ export default function IsklyuchenieIzReestraKontroliruemyhLicClient() {
       <SpecialistBlock
         title="Куратор направления"
         name="Конопкин Дмитрий Сергеевич"
-        position={<>Адвокат, председатель<br />Коллегии адвокатов «Де-Юре»</>}
-        imageUrl="/images/konopkin.jpg"
-        imagePosition="center 15%"
-        description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Дмитрий Сергеевич Конопкин имеет 6-летний опыт следственной работы в Следственном комитете РФ и адвокатскую практику с 2022 года. Курирует миграционные споры, требующие судебного оспаривания актов государственных органов и экстренной защиты доверителей.
-          </span>,
-          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Статус адвоката, реестровый номер 48/812</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Председатель Коллегии адвокатов «Де-Юре»</span>
-            </li>
-          </ul>,
-          <a key="3" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-            Подробнее о Дмитрии Сергеевиче Конопкине →
-          </a>
-        ]}
-        buttonText="Задать вопрос адвокату"
-        buttonHref="#form"
-      />Коллегии адвокатов «Де-Юре»</>}
+        position="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
         imageUrl="/images/konopkin.jpg"
         imagePosition="center 15%"
         description={[
@@ -350,7 +327,7 @@ export default function IsklyuchenieIzReestraKontroliruemyhLicClient() {
         buttonHref="#form"
       />
 
-      {/* ═══ БЛОК 4: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
+      {/* ═══ БЛОК: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
       <CasesBlock
         title="Примеры из практики"
         showAllLink="/praktika/"
