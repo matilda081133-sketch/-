@@ -185,7 +185,7 @@ export default function ProcessBlock({
 
               {/* Ряд 2: Шаг 04 и Баннер «Дистанционный формат» по центру */}
               <div className="grid grid-2" style={{ gap: '40px', maxWidth: '780px', margin: '0 auto', width: '100%', alignItems: 'center' }}>
-                <div className="stage-item stage-item-no-line" style={{ 
+                <div className="stage-item" style={{ 
                   position: 'relative',
                   display: 'flex',
                   flexDirection: 'column',

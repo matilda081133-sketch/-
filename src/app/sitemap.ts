@@ -8,7 +8,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = [
     '',
+    '/grazhdanam/',
+    '/biznesu/',
     '/specialisty/',
+    '/praktika/',
+    '/kontakty/',
+    '/privacy/',
+    '/consent/',
+    '/cookies/',
+    // Земля
     '/grazhdanam/zemelnyj-yurist/',
     '/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/',
     '/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/',
@@ -17,21 +25,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/',
     '/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/',
     '/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/',
+    // Военный юрист
     '/grazhdanam/voennyj-yurist/',
     '/grazhdanam/voennyj-yurist/spory-s-voenkomatom/',
     '/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/',
     '/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/',
     '/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/',
     '/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
+    // Исполнительное для бизнеса
     '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/',
     '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/',
     '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/',
+    // Исполнительное для граждан
     '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/',
     '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/',
     '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/',
     '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/',
     '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/',
     '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/',
+    // Автоюрист
     '/grazhdanam/avtoyurist/',
     '/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/',
     '/grazhdanam/avtoyurist/spory-po-kasko/',
@@ -40,6 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/',
     '/grazhdanam/avtoyurist/lishenie-voditelskih-prav/',
     '/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/',
+    // Миграционный юрист
     '/grazhdanam/migracionnyj-yurist/',
     '/grazhdanam/migracionnyj-yurist/otmena-zapreta-na-vezd-v-rossiyu/',
     '/grazhdanam/migracionnyj-yurist/obzhalovanie-administrativnogo-vydvoreniya/',
@@ -60,6 +73,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
-    priority: route === '' ? 1.0 : route.includes('/specialisty/') ? 0.8 : 0.9,
+    priority: route === '' ? 1.0 : route.includes('/specialisty/') ? 0.8 : route.split('/').length <= 3 ? 0.9 : 0.85,
   }));
 }

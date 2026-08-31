@@ -309,7 +309,7 @@ export default function DtpBezOsagoClient() {
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Не всякое отсутствие полиса у водителя означает отсутствие страховки на авто.</span> <br />
-              <span style={{ display: 'inline-block' }}>Проверяем статус договора по базам РСА и определяем надлежащего гражданско-правового ответчика.</span>
+              <span style={{ display: 'inline-block' }}>Проверяем статус договора в АИС страхования через сервис НСИС и определяем надлежащего гражданско-правового ответчика.</span>
             </p>
           </div>
 

@@ -9,12 +9,24 @@ export const metadata: Metadata = {
     canonical: 'https://dejure-help.ru/grazhdanam/avtoyurist/',
   },
   openGraph: {
-    title: 'Автоюрист в Липецке | Де-Юре',
-    description: 'Юридическая помощь после ДТП, при риске лишения прав и в спорах со страховыми компаниями.',
+    title: 'Автоюрист в Липецке — помощь при ДТП и спорах со страховой | Де-Юре',
+    description: 'Юридическая помощь после ДТП, при риске лишения прав и в спорах со страховыми компаниями в Липецке.',
     url: 'https://dejure-help.ru/grazhdanam/avtoyurist/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
     type: 'website',
+    images: [
+      {
+        url: 'https://dejure-help.ru/images/og/avtoyurist.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Автоюрист в Липецке — ЮК «Де-Юре»',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://dejure-help.ru/images/og/avtoyurist.jpg'],
   },
 };
 
@@ -66,68 +78,86 @@ export default function AvtoyuristPage() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'WebPage',
-        '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/#webpage',
-        url: 'https://dejure-help.ru/grazhdanam/avtoyurist/',
-        name: 'Автоюрист в Липецке — помощь при ДТП и спорах со страховой | Де-Юре',
-        description: 'Помощь автоюриста в Липецке: ДТП, лишение водительских прав, споры по ОСАГО и КАСКО, взыскание ущерба и оспаривание вины. Разберём документы и предложим порядок действий.',
-        inLanguage: 'ru-RU',
-        breadcrumb: {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Главная',
-              item: 'https://dejure-help.ru/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: 'Гражданам',
-              item: 'https://dejure-help.ru/grazhdanam/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 3,
-              name: 'Автоюрист',
-              item: 'https://dejure-help.ru/grazhdanam/avtoyurist/',
-            },
-          ],
-        },
-        about: {
-          '@type': 'Service',
-          serviceType: 'Услуги автоюриста',
-          provider: {
-            '@type': 'LegalService',
-            name: 'ЮК «Де-Юре»',
-            url: 'https://dejure-help.ru',
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: 'Липецк',
-              streetAddress: 'ул. Первомайская, д. 78, офис 305',
-              addressCountry: 'RU',
-            },
-          },
-          areaServed: {
-            '@type': 'AdministrativeArea',
-            name: 'Липецк и Липецкая область',
-          },
-        },
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#organization',
+        name: 'ЮК «Де-Юре»',
+        url: 'https://dejure-help.ru/',
+        logo: 'https://dejure-help.ru/images/logo.png',
+        telephone: '+7 (910) 350-31-11',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, 35',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        }
       },
       {
         '@type': 'Person',
         '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
         name: 'Дмитрий Сергеевич Конопкин',
         jobTitle: 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
-        worksFor: {
-          '@type': 'LegalService',
-          name: 'ЮК «Де-Юре»',
-          url: 'https://dejure-help.ru',
+        url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/#breadcrumbs',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Главная',
+            item: 'https://dejure-help.ru/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Гражданам',
+            item: 'https://dejure-help.ru/grazhdanam/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Автоюрист',
+            item: 'https://dejure-help.ru/grazhdanam/avtoyurist/',
+          },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/#webpage',
+        url: 'https://dejure-help.ru/grazhdanam/avtoyurist/',
+        name: 'Автоюрист в Липецке — помощь при ДТП и спорах со страховой | Де-Юре',
+        description: 'Помощь автоюриста в Липецке: ДТП, лишение водительских прав, споры по ОСАГО и КАСКО, взыскание ущерба и оспаривание вины. Разберём документы и предложим порядок действий.',
+        inLanguage: 'ru-RU',
+        about: {
+          '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/#service'
+        }
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/#service',
+        name: 'Услуги автоюриста в Липецке',
+        serviceType: 'Юридическая помощь автовладельцам и пострадавшим в ДТП',
+        description: 'Комплексная защита прав автовладельцев: ДТП, лишение прав, споры со страховыми по ОСАГО и КАСКО, взыскание ущерба с виновников аварии.',
+        url: 'https://dejure-help.ru/grazhdanam/avtoyurist/',
+        provider: {
+          '@id': 'https://dejure-help.ru/#organization'
         },
+        areaServed: [
+          {
+            '@type': 'AdministrativeArea',
+            name: 'Липецкая область'
+          },
+          {
+            '@type': 'Country',
+            name: 'Россия'
+          }
+        ]
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/#faq',
         mainEntity: faqSchemaData.map((item) => ({
           '@type': 'Question',
           name: item.q,

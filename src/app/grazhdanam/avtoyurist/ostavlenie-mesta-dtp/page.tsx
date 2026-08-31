@@ -1,4 +1,5 @@
-import { Metadata } from 'next';
+import React from 'react';
+import type { Metadata } from 'next';
 import OstavlenieMestaDtpClient from './OstavlenieMestaDtpClient';
 
 export const metadata: Metadata = {
@@ -9,12 +10,24 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Защита при оставлении места ДТП | Де-Юре',
+    title: 'Защита при оставлении места ДТП в Липецке | Де-Юре',
     description: 'Проверим обстоятельства, доказательства умысла и соблюдение процедуры, подготовим защиту в суде или при обжаловании.',
     url: 'https://dejure-help.ru/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
     type: 'website',
+    images: [
+      {
+        url: 'https://dejure-help.ru/images/og/avtoyurist.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Защита при оставлении места ДТП в Липецке — ЮК «Де-Юре»',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://dejure-help.ru/images/og/avtoyurist.jpg'],
   },
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/',
@@ -29,7 +42,7 @@ export default function OstavlenieMestaDtpPage() {
     },
     {
       q: 'Что грозит по части 2 статьи 12.27 КоАП РФ?',
-      a: 'По редакции, проверенной 11 августа 2026 года, предусмотрено лишение права управления на срок от одного года до полутора лет либо административный арест до пятнадцати суток. Перед публикацией и при каждом обновлении норму нужно перепроверять.'
+      a: 'Часть 2 статьи 12.27 КоАП РФ предусматривает лишение права управления транспортными средствами на срок от одного года до полутора лет либо административный арест на срок до пятнадцати суток. Штраф как альтернативное наказание этой нормой не предусмотрен.'
     },
     {
       q: 'Если я не заметил ДТП, могут ли лишить прав?',
