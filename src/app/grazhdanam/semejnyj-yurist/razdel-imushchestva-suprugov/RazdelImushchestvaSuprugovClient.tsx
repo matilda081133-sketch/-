@@ -15,27 +15,42 @@ import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 export default function RazdelImushchestvaSuprugovClient() {
   const cases: CaseData[] = [
     {
-        "category": "Недвижимость / Личные средства",
-        "title": "Доказали вложение личных средств и увеличили долю супруги в квартире",
-        "problem": "Супруг требовал раздела квартиры строго 50/50, игнорируя факт продажи добрачной квартиры жены для первоначального взноса.",
-        "action": "Собрали банковские выписки 7-летней давности, связали цепочку расчётов и доказали покупку на личные средства.",
-        "result": "Суд признал за доверительницей 4/5 доли в квартире, выделив бывшему супругу только 1/5."
+      category: 'Недвижимость / Личные средства',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Доказали вложение личных средств</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и увеличили долю супруги в квартире</span>
+        </>
+      ),
+      problem: 'Супруг требовал раздела квартиры строго 50/50, игнорируя факт продажи добрачной квартиры жены для первоначального взноса.',
+      action: 'Собрали банковские выписки 7-летней давности, связали цепочку расчётов и доказали покупку на личные средства.',
+      result: 'Суд признал за доверительницей 4/5 доли в квартире, выделив бывшему супругу только 1/5.'
     },
     {
-        "category": "Фиктивные долги / Защита",
-        "title": "Отбили фиктивный долг на 2,5 млн рублей, предъявленный мужем",
-        "problem": "Муж предоставил расписку о займе у родственника на покупку авто, требуя разделить «общий» долг пополам.",
-        "action": "Инициировали судебную экспертизу давности документа и доказали отсутствие финансовой возможности у заимодавца.",
-        "result": "Суд признал долг личным обязательством супруга; автомобиль разделен пополам без выплат долгов."
+      category: 'Фиктивные долги / Защита',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отбили фиктивный долг</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>на 2,5 млн рублей, предъявленный мужем</span>
+        </>
+      ),
+      problem: 'Муж предоставил расписку о займе у родственника на покупку авто, требуя разделить «общий» долг пополам.',
+      action: 'Инициировали судебную экспертизу давности документа и доказали отсутствие финансовой возможности у заимодавца.',
+      result: 'Суд признал долг личным обязательством супруга; автомобиль разделен пополам без выплат долгов.'
     },
     {
-        "category": "Бизнес / ООО",
-        "title": "Взыскали 5,1 млн рублей за долю в строительном бизнесе",
-        "problem": "Супруг переоформил активы компании на номинала накануне бракоразводного процесса.",
-        "action": "Подали иск о признании сделки недействительной, наложили обеспечительные меры и провели оценку бизнеса.",
-        "result": "Заключено мировое соглашение: доверительница получила 5,1 млн рублей единовременной выплаты."
+      category: 'Бизнес / ООО',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскали 5,1 млн рублей</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>за долю в строительном бизнесе</span>
+        </>
+      ),
+      problem: 'Супруг переоформил активы компании на номинала накануне бракоразводного процесса.',
+      action: 'Подали иск о признании сделки недействительной, наложили обеспечительные меры и провели оценку бизнеса.',
+      result: 'Заключено мировое соглашение: доверительница получила 5,1 млн рублей единовременной выплаты.'
     }
-];
+  ];
   const faqs = [
   {
     "q": "Какое имущество не подлежит разделу при разводе?",
@@ -523,38 +538,44 @@ export default function RazdelImushchestvaSuprugovClient() {
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
-                <div style={{ fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>
-                  Прямой контакт для срочных вопросов:
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                  <a href="tel:+79103503111" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-primary)', textDecoration: 'none' }}>
-                    +7 (910) 350-31-11
-                  </a>
-                  <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
-                    (Пн-Пт 9:00 - 18:00)
-                  </span>
-                </div>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                </p>
               </div>
 
-              <div style={{ marginTop: 'auto', paddingTop: '10px' }}>
-                <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Гарантируем конфиденциальность. Данные передаются только юристу компании «Де-Юре» для правового анализа.
-                </p>
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
+                Все сведения и документы защищены профессиональной тайной. Безопасный способ передачи документов согласуем после первичного контакта.
               </div>
             </div>
 
-            <div>
-              <div style={{ background: 'var(--color-white)', padding: '40px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 12px 40px rgba(23, 50, 77, 0.08)' }}>
-                <ContactsForm 
-                  title="Заявка на консультацию" 
-                  subtitle="Заполните форму, и юрист свяжется с вами в течение 15 минут"
-                  hiddenFields={[
-                    { name: 'service', value: 'Раздел имущества супругов в Липецке | Де-Юре' },
-                    { name: 'category', value: 'semejnyj-yurist/razdel-imushchestva-suprugov' },
-                    { name: 'specialist', value: 'Марина Валерьевна Смольянинова' }
-                  ]}
-                />
-              </div>
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
+                buttonText="Отправить обращение"
+                commentPlaceholder="Опишите вашу ситуацию: ..."
+                hiddenFields={[
+                  { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/razdel-imushchestva-suprugov/' },
+                  { name: 'direction', value: 'semejnyj_yurist' },
+                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
+                ]}
+              />
             </div>
           </div>
         </div>

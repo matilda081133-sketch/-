@@ -15,27 +15,42 @@ import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
   const cases: CaseData[] = [
     {
-        "category": "Отец / График с ночёвками",
-        "title": "Утвердили для отца встречи каждые вторые выходные с ночёвкой и месяц отпуска",
-        "problem": "Мать разрешала отцу видеть 5-летнюю дочь только 1 час в неделю в её присутствии.",
-        "action": "Доказали в суде прекрасные жилищные условия отца, отсутствие вредных привычек и привязанность девочки.",
-        "result": "Суд утвердил график: каждые вторые выходные с ночёвкой, половина каникул и 30 дней летнего отпуска."
+      category: 'Отец / График с ночёвками',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Утвердили для отца встречи</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>каждые вторые выходные с ночёвкой</span>
+        </>
+      ),
+      problem: 'Мать разрешала отцу видеть 5-летнюю дочь только 1 час в неделю в её присутствии.',
+      action: 'Доказали в суде прекрасные жилищные условия отца, отсутствие вредных привычек и привязанность девочки.',
+      result: 'Суд утвердил график: каждые вторые выходные с ночёвкой, половина каникул и 30 дней летнего отпуска.'
     },
     {
-        "category": "Бабушка / Ст. 67 СК РФ",
-        "title": "Защитили право бабушки и дедушки на общение с внуком",
-        "problem": "После гибели сына невестка заблокировала все контакты родителей погибшего с 3-летним внуком.",
-        "action": "Подали иск в порядке ст. 67 СК РФ, доказали участие бабушки и дедушки в воспитании ребёнка с рождения.",
-        "result": "Суд установил еженедельные встречи и право забирать внука на праздники."
+      category: 'Бабушка / Ст. 67 СК РФ',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Защитили право бабушки</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и дедушки на общение с внуком</span>
+        </>
+      ),
+      problem: 'После гибели сына невестка заблокировала все контакты родителей погибшего с 3-летним внуком.',
+      action: 'Подали иск в порядке ст. 67 СК РФ, доказали участие бабушки и дедушки в воспитании ребёнка с рождения.',
+      result: 'Суд установил еженедельные встречи и право забирать внука на праздники.'
     },
     {
-        "category": "Исполнение / Приставы",
-        "title": "Привлекли мать к ответственности за срыв установленных судом встреч",
-        "problem": "Мать систематически прятала ребёнка в дни встреч с отцом, игнорируя решение суда.",
-        "action": "Инициировали выезды приставов, составили протоколы по ч. 2 ст. 5.35 КоАП РФ и предупредили о риске передачи ребёнка отцу.",
-        "result": "Препятствия устранены, график встреч соблюдается в полном объёме."
+      category: 'Исполнение / Приставы',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Привлекли мать</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>к ответственности за срыв встреч</span>
+        </>
+      ),
+      problem: 'Мать систематически прятала ребёнка в дни встреч с отцом, игнорируя решение суда.',
+      action: 'Инициировали выезды приставов, составили протоколы по ч. 2 ст. 5.35 КоАП РФ и предупредили о риске передачи ребёнка отцу.',
+      result: 'Препятствия устранены, график встреч соблюдается в полном объёме.'
     }
-];
+  ];
   const faqs = [
   {
     "q": "Может ли родитель вывозить ребёнка за границу во время своего отпуска по графику?",
@@ -523,38 +538,44 @@ export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
-                <div style={{ fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>
-                  Прямой контакт для срочных вопросов:
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                  <a href="tel:+79103503111" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-primary)', textDecoration: 'none' }}>
-                    +7 (910) 350-31-11
-                  </a>
-                  <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
-                    (Пн-Пт 9:00 - 18:00)
-                  </span>
-                </div>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                </p>
               </div>
 
-              <div style={{ marginTop: 'auto', paddingTop: '10px' }}>
-                <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Гарантируем конфиденциальность. Данные передаются только юристу компании «Де-Юре» для правового анализа.
-                </p>
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
+                Все сведения и документы защищены профессиональной тайной. Безопасный способ передачи документов согласуем после первичного контакта.
               </div>
             </div>
 
-            <div>
-              <div style={{ background: 'var(--color-white)', padding: '40px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 12px 40px rgba(23, 50, 77, 0.08)' }}>
-                <ContactsForm 
-                  title="Заявка на консультацию" 
-                  subtitle="Заполните форму, и юрист свяжется с вами в течение 15 минут"
-                  hiddenFields={[
-                    { name: 'service', value: 'Порядок общения с ребёнком в Липецке | Де-Юре' },
-                    { name: 'category', value: 'semejnyj-yurist/opredelenie-poryadka-obshcheniya-s-rebenkom' },
-                    { name: 'specialist', value: 'Марина Валерьевна Смольянинова' }
-                  ]}
-                />
-              </div>
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
+                buttonText="Отправить обращение"
+                commentPlaceholder="Опишите вашу ситуацию: ..."
+                hiddenFields={[
+                  { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/opredelenie-poryadka-obshcheniya-s-rebenkom/' },
+                  { name: 'direction', value: 'semejnyj_yurist' },
+                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
+                ]}
+              />
             </div>
           </div>
         </div>
