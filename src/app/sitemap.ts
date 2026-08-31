@@ -60,6 +60,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/nasledstvennyj-yurist/razdel-nasledstva-mezhdu-naslednikami/',
     '/grazhdanam/nasledstvennyj-yurist/ustanovlenie-fakta-prinyatiya-nasledstva/',
     '/grazhdanam/nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva/',
+    // Семейный юрист
+    '/grazhdanam/semejnyj-yurist/',
+    '/grazhdanam/semejnyj-yurist/rastorzhenie-braka/',
+    '/grazhdanam/semejnyj-yurist/razdel-imushchestva-suprugov/',
+    '/grazhdanam/semejnyj-yurist/vzyskanie-alimentov/',
+    '/grazhdanam/semejnyj-yurist/opredelenie-mesta-zhitelstva-rebenka/',
+    '/grazhdanam/semejnyj-yurist/opredelenie-poryadka-obshcheniya-s-rebenkom/',
+    '/grazhdanam/semejnyj-yurist/lishenie-i-ogranichenie-roditelskih-prav/',
+    '/grazhdanam/semejnyj-yurist/ustanovlenie-i-osparivanie-ottsovstva/',
+    // Трудовой юрист
+    '/grazhdanam/trudovoj-yurist/',
+    '/grazhdanam/trudovoj-yurist/nezakonnoe-uvolnenie/',
+    '/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/',
+    '/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/',
+    '/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/',
     // Миграционный юрист
     '/grazhdanam/migracionnyj-yurist/',
     '/grazhdanam/migracionnyj-yurist/otmena-zapreta-na-vezd-v-rossiyu/',
