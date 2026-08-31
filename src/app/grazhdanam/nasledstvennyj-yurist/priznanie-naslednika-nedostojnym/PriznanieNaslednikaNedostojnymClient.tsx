@@ -559,8 +559,11 @@ export default function PriznanieNaslednikaNedostojnymClient() {
                 <ContactsForm 
                   title="Заявка на консультацию" 
                   subtitle="Заполните форму, и юрист свяжется с вами в течение 15 минут"
-                  pageType="nasledstvennyj-yurist/priznanie-naslednika-nedostojnym"
-                  serviceName="Признание наследника недостойным в Липецке | ЮК «Де-Юре»"
+                  hiddenFields={[
+                    { name: 'service', value: 'Признание наследника недостойным в Липецке | ЮК «Де-Юре»' },
+                    { name: 'category', value: 'nasledstvennyj-yurist/priznanie-naslednika-nedostojnym' },
+                    { name: 'specialist', value: 'Марина Валерьевна Смольянинова' }
+                  ]}
                 />
               </div>
             </div>

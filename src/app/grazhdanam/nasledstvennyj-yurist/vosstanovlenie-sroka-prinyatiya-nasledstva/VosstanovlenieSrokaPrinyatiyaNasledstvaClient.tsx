@@ -559,8 +559,11 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
                 <ContactsForm 
                   title="Заявка на консультацию" 
                   subtitle="Заполните форму, и юрист свяжется с вами в течение 15 минут"
-                  pageType="nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva"
-                  serviceName="Восстановление срока принятия наследства в Липецке | Де-Юре"
+                  hiddenFields={[
+                    { name: 'service', value: 'Восстановление срока принятия наследства в Липецке | Де-Юре' },
+                    { name: 'category', value: 'nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva' },
+                    { name: 'specialist', value: 'Марина Валерьевна Смольянинова' }
+                  ]}
                 />
               </div>
             </div>

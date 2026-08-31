@@ -559,8 +559,11 @@ export default function OsparivanieZaveschaniyaClient() {
                 <ContactsForm 
                   title="Заявка на консультацию" 
                   subtitle="Заполните форму, и юрист свяжется с вами в течение 15 минут"
-                  pageType="nasledstvennyj-yurist/osparivanie-zaveschaniya"
-                  serviceName="Оспаривание завещания в суде в Липецке | ЮК «Де-Юре»"
+                  hiddenFields={[
+                    { name: 'service', value: 'Оспаривание завещания в суде в Липецке | ЮК «Де-Юре»' },
+                    { name: 'category', value: 'nasledstvennyj-yurist/osparivanie-zaveschaniya' },
+                    { name: 'specialist', value: 'Марина Валерьевна Смольянинова' }
+                  ]}
                 />
               </div>
             </div>

@@ -559,8 +559,11 @@ export default function RazdelNasledstvaMezhduNaslednikamiClient() {
                 <ContactsForm 
                   title="Заявка на консультацию" 
                   subtitle="Заполните форму, и юрист свяжется с вами в течение 15 минут"
-                  pageType="nasledstvennyj-yurist/razdel-nasledstva-mezhdu-naslednikami"
-                  serviceName="Раздел наследства между наследниками в Липецке | Де-Юре"
+                  hiddenFields={[
+                    { name: 'service', value: 'Раздел наследства между наследниками в Липецке | Де-Юре' },
+                    { name: 'category', value: 'nasledstvennyj-yurist/razdel-nasledstva-mezhdu-naslednikami' },
+                    { name: 'specialist', value: 'Марина Валерьевна Смольянинова' }
+                  ]}
                 />
               </div>
             </div>
