@@ -277,33 +277,10 @@ export default function NasledstvennyjClient() {
           </span>
         }
         trustItems={[
-          {
-            text: (
-              <>
-                <span style={{ display: 'block' }}>Сопровождение оформления</span>
-                <span style={{ display: 'block', whiteSpace: 'nowrap' }}>у нотариуса и в суде</span>
-              </>
-            )
-          },
-          {
-            text: (
-              <>
-                <span style={{ display: 'block' }}>Защита при спорах о завещании,</span>
-                <span style={{ display: 'block', whiteSpace: 'nowrap' }}>сроках и долях наследников</span>
-              </>
-            )
-          },
-          {
-            text: (
-              <>
-                <span style={{ display: 'block' }}>Проверка долгов наследодателя</span>
-                <span style={{ display: 'block', whiteSpace: 'nowrap' }}>и состава наследственной массы</span>
-              </>
-            )
-          },
-          {
-            text: 'Куратор — юрист М. В. Смольянинова'
-          }
+          { text: 'Сопровождение оформления у нотариуса и в суде' },
+          { text: 'Защита при спорах о завещании, сроках и долях' },
+          { text: 'Проверка долгов наследодателя и состава наследства' },
+          { text: 'Куратор — юрист М. В. Смольянинова' }
         ]}
         imageUrl="/images/smolyaninova.jpg"
         imageName="Марина Валерьевна Смольянинова"
