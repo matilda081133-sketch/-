@@ -18,8 +18,9 @@ export default function RazdelImushchestvaSuprugovClient() {
       category: 'Недвижимость / Личные средства',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Доказали вложение личных средств</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и увеличили долю супруги в квартире</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Доказали вложение</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>личных средств и увеличили</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>долю супруги в квартире</span>
         </>
       ),
       problem: 'Супруг требовал раздела квартиры строго 50/50, игнорируя факт продажи добрачной квартиры жены для первоначального взноса.',
@@ -31,7 +32,8 @@ export default function RazdelImushchestvaSuprugovClient() {
       title: (
         <>
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отбили фиктивный долг</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>на 2,5 млн рублей, предъявленный мужем</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>на 2,5 млн рублей,</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>предъявленный мужем</span>
         </>
       ),
       problem: 'Муж предоставил расписку о займе у родственника на покупку авто, требуя разделить «общий» долг пополам.',
@@ -43,7 +45,8 @@ export default function RazdelImushchestvaSuprugovClient() {
       title: (
         <>
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскали 5,1 млн рублей</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>за долю в строительном бизнесе</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>за долю доверительницы</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в строительном бизнесе</span>
         </>
       ),
       problem: 'Супруг переоформил активы компании на номинала накануне бракоразводного процесса.',

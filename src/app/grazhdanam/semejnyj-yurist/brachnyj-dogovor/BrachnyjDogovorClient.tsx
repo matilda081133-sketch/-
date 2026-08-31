@@ -18,8 +18,9 @@ export default function BrachnyjDogovorClient() {
       category: 'Ипотека / Банк',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Разработали брачный договор</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>для одобрения льготной ипотеки</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Разработали брачный</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>договор для одобрения</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>льготной ипотеки</span>
         </>
       ),
       problem: 'Банк отказывал в ипотеке из-за просрочек супруга по потребительским кредитам.',
@@ -30,8 +31,9 @@ export default function BrachnyjDogovorClient() {
       category: 'Бизнес / Защита',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Защитили компанию клиента</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>от раздела бизнеса при разводе</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Защитили компанию</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>клиента от раздела</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>бизнеса при разводе</span>
         </>
       ),
       problem: 'Предприниматель планировал привлечь инвесторов, но требовалось исключить корпоративные риски семейных споров.',
@@ -42,8 +44,9 @@ export default function BrachnyjDogovorClient() {
       category: 'Ст. 44 СК РФ / Оспаривание',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оспорили брачный договор,</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>лишавший супругу всего имущества</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оспорили договор,</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>лишавший супругу</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>всего имущества</span>
         </>
       ),
       problem: 'По брачному договору все 3 квартиры и дом отходили мужу, а жене оставался только автомобиль 2012 года.',

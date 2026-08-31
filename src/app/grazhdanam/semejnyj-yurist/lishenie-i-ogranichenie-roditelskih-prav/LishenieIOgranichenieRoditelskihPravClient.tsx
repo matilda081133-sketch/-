@@ -19,7 +19,8 @@ export default function LishenieIOgranichenieRoditelskihPravClient() {
       title: (
         <>
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Лишили отца прав</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>за 5 лет неуплаты алиментов и открыли усыновление</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>за 5 лет неуплаты долга</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и открыли удочерение</span>
         </>
       ),
       problem: 'Биологический отец 5 лет не видел дочь, накопил долг по алиментам 490 000 руб., но не давал согласия на выезд и усыновление отчимом.',
@@ -31,7 +32,8 @@ export default function LishenieIOgranichenieRoditelskihPravClient() {
       title: (
         <>
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ограничили мать в правах</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и спасли двоих детей от опасных условий</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и спасли двоих детей</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>от опасных условий</span>
         </>
       ),
       problem: 'Мать страдала алкоголизмом, в квартире собирались посторонние лица, дети не посещали школу.',
@@ -42,8 +44,9 @@ export default function LishenieIOgranichenieRoditelskihPravClient() {
       category: 'Защита / Отказ в иске',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отстояли права отца и доказали</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>необоснованность обвинений матери</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отстояли права отца</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и доказали необоснованность</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>обвинений матери</span>
         </>
       ),
       problem: 'Бывшая жена пыталась лишить отца прав, заявляя о якобы имевшем место насилии, чтобы увезти ребёнка за границу.',

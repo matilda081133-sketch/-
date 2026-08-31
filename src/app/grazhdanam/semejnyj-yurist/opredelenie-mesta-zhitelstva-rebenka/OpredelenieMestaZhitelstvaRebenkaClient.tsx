@@ -18,8 +18,9 @@ export default function OpredelenieMestaZhitelstvaRebenkaClient() {
       category: 'Отец / Определение с отцом',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Определили проживание</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>8-летнего сына с отцом</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Определили место</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>жительства 8-летнего</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>сына с отцом</span>
         </>
       ),
       problem: 'Мать злоупотребляла спиртным и оставляла ребёнка без присмотра, однако отказывалась передать сына отцу.',
@@ -30,8 +31,9 @@ export default function OpredelenieMestaZhitelstvaRebenkaClient() {
       category: 'Мать / Защита от вывоза',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Вернули 4-летнюю дочь матери</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>после незаконного удержания отцом</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Вернули дочь матери</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>после незаконного</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>удержания отцом</span>
         </>
       ),
       problem: 'Отец забрал дочь на выходные и отказался возвращать матери, сменив замки в квартире.',
@@ -43,7 +45,8 @@ export default function OpredelenieMestaZhitelstvaRebenkaClient() {
       title: (
         <>
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Урегулировали спор</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>о детях нотариальным соглашением</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>о детях нотариальным</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>соглашением сторон</span>
         </>
       ),
       problem: 'Родители 6 месяцев судились за детей, нанося серьёзную психологическую травму сыну и дочери.',

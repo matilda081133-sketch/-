@@ -18,8 +18,9 @@ export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
       category: 'Отец / График с ночёвками',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Утвердили для отца встречи</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>каждые вторые выходные с ночёвкой</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Утвердили для отца</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>встречи каждые вторые</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>выходные с ночёвкой</span>
         </>
       ),
       problem: 'Мать разрешала отцу видеть 5-летнюю дочь только 1 час в неделю в её присутствии.',
@@ -30,8 +31,9 @@ export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
       category: 'Бабушка / Ст. 67 СК РФ',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Защитили право бабушки</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и дедушки на общение с внуком</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Защитили право</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>бабушки и дедушки</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>на общение с внуком</span>
         </>
       ),
       problem: 'После гибели сына невестка заблокировала все контакты родителей погибшего с 3-летним внуком.',
@@ -43,7 +45,8 @@ export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
       title: (
         <>
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Привлекли мать</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>к ответственности за срыв встреч</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>к ответственности</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>за срыв встреч</span>
         </>
       ),
       problem: 'Мать систематически прятала ребёнка в дни встреч с отцом, игнорируя решение суда.',

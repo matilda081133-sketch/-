@@ -18,8 +18,9 @@ export default function UstanovlenieIOsparivanieOttsovstvaClient() {
       category: 'Оспаривание / ДНК',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оспорили отцовство через суд</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и освободили от чужих алиментов</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оспорили отцовство</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>через суд и освободили</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>от чужих алиментов</span>
         </>
       ),
       problem: 'Мужчина состоял в браке и был автоматически записан отцом ребёнка, рождённого супругой от другого мужчины.',
@@ -30,8 +31,9 @@ export default function UstanovlenieIOsparivanieOttsovstvaClient() {
       category: 'Установление / Алименты',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Установили отцовство и взыскали</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>алименты при уклонении отца от ДНК</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Установили отцовство</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и взыскали алименты</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>при отказе отца от ДНК</span>
         </>
       ),
       problem: 'Отец ребёнка категорически отказывался являться в лабораторию для сдачи генетического материала.',
@@ -42,8 +44,9 @@ export default function UstanovlenieIOsparivanieOttsovstvaClient() {
       category: 'Посмертно / Пенсия',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Установили факт признания отцовства</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>после гибели отца и оформили выплаты</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Установили факт отцовства</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>после гибели отца</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и оформили выплаты</span>
         </>
       ),
       problem: 'Отец погиб в ДТП, не успев расписаться с матерью ребёнка; Пенсионный фонд отказал в пенсии по потере кормильца.',
