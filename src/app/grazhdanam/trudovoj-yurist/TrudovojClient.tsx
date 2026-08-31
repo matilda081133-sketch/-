@@ -9,72 +9,292 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
-import PricingBlock from '@/components/PricingBlock';
-import ProcessBlock from '@/components/ProcessBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
+import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 
 export default function TrudovojClient() {
   const cases: CaseData[] = [
     {
       category: 'Увольнение / Восстановление',
       title: (
-        <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Восстановили</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>сотрудника на работе</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и взыскали 480 000 руб.</span>
-        </>
+        <span style={{ display: 'block' }}>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            Восстановили работника
+          </span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            после незаконного увольнения
+          </span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            за неисполнение обязанностей
+          </span>
+        </span>
       ),
-      problem: 'Работника уволили «за прогул», хотя в этот день он находился на больничном, о чем работодатель был извещен.',
-      action: 'Доказали факт уважительности отсутствия, запросили медицинские документы и оспорили приказ об увольнении в суде.',
-      result: 'Суд отменил приказ, восстановил доверителя в должности и взыскал средний заработок за время прогула.'
+      problem: 'Работника уволили после двух дисциплинарных взысканий. Работодатель ссылался на неоднократное неисполнение обязанностей, однако не запросил письменные объяснения по одному из эпизодов и не подтвердил, в чем именно состояло нарушение.',
+      action: 'Изучили приказы, должностную инструкцию, уведомления и переписку. Выявили нарушения порядка применения взысканий, подготовили иск о признании увольнения незаконным и представили интересы работника в суде.',
+      result: 'Увольнение признали незаконным, работника восстановили в должности. В его пользу взыскали средний заработок за время вынужденного прогула и компенсацию морального вреда.'
     },
     {
-      category: 'Зарплата / Серая схема',
+      category: 'Выплаты / Задержка зарплаты',
       title: (
-        <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Доказали размер</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>дохода и взыскали</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>620 000 руб. долга</span>
-        </>
+        <span style={{ display: 'block' }}>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            Взыскали задолженность
+          </span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            по заработной плате и расчет
+          </span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            при увольнении работника
+          </span>
+        </span>
       ),
-      problem: 'При увольнении строительная фирма выплатила расчет только по официальной минималке, отказав в выплате остального долга.',
-      action: 'Собрали переписку, зарплатные ведомости, свидетельские показания и выписки о регулярных безналичных переводах.',
-      result: 'Суд признал реальный размер заработной платы и обязал работодателя выплатить всю сумму долга с процентами.'
+      problem: 'Работодатель несколько месяцев задерживал официально начисленную заработную плату, а в день увольнения не выплатил задолженность и компенсацию за неиспользованный отпуск.',
+      action: 'Проверили трудовой договор, расчетные листки, банковские выписки и сведения о начислениях. Рассчитали задолженность и компенсацию за задержку, подготовили требования и иск, представили интересы работника в суде.',
+      result: 'С работодателя взыскали задолженность по заработной плате, компенсацию за неиспользованный отпуск, компенсацию за задержку выплат и компенсацию морального вреда.'
     },
     {
-      category: 'Травма / Компенсация',
+      category: 'Производственная травма',
       title: (
-        <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Признали травму</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>производственной</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и взыскали 850 000 руб.</span>
-        </>
+        <span style={{ display: 'block' }}>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            Добились расследования
+          </span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            несчастного случая и надлежащего
+          </span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            оформления производственной травмы
+          </span>
+        </span>
       ),
-      problem: 'Работник получил перелом на складе, однако руководство оформило травму как бытовую, отказавшись составлять акт Н-1.',
-      action: 'Инициировали проверку Роструда, опросили свидетелей происшествия и добились проведения официального расследования.',
-      result: 'Акт Н-1 оформлен; с работодателя и СФР взысканы единовременная страховая выплата и компенсация вреда.'
+      problem: 'Работник получил травму во время смены, но работодатель не организовал расследование и предложил указать в медицинских документах, что повреждение получено в быту.',
+      action: 'Собрали медицинские документы, сведения о смене и порученной работе, переписку и контакты свидетелей. Подготовили обращение в государственную инспекцию труда и сопровождали дополнительное расследование обстоятельств несчастного случая.',
+      result: 'Случай признали связанным с производством, оформили акт о несчастном случае. Работник получил возможность обратиться за предусмотренными страховыми выплатами и возмещением причиненного вреда.'
     }
   ];
 
   const faqs = [
     {
-      q: 'В какой срок необходимо обратиться в суд при незаконном увольнении?',
-      a: 'По спорам об увольнении работник имеет право обратиться в суд в течение одного месяца со дня вручения ему копии приказа об увольнении либо со дня выдачи трудовой книжки (или предоставления сведений о трудовой деятельности) — ст. 392 ТК РФ.'
+      q: 'С какими вопросами помогает трудовой юрист?',
+      a: 'С незаконным увольнением и сокращением, невыплатой заработной платы и расчета, дисциплинарными взысканиями, изменением условий труда, неоформленными трудовыми отношениями и производственными травмами. Юрист может провести консультацию, проверить документы, подготовить требования, жалобы и иск, а также представить интересы работника.'
     },
     {
-      q: 'Сколько времени есть для взыскания долга по зарплате?',
-      a: 'За разрешением индивидуального трудового спора о невыплате или неполной выплате заработной платы и других причитающихся выплат работник имеет право обратиться в суд в течение одного года со дня установленного срока выплаты указанных сумм (ч. 2 ст. 392 ТК РФ).'
+      q: 'Какой срок установлен для обращения в суд?',
+      a: 'По спору об увольнении работник обычно может обратиться в суд в течение одного месяца, по требованиям о невыплате или неполной выплате заработной платы и других причитающихся сумм — в течение одного года, по большинству других индивидуальных трудовых споров — в течение трех месяцев. Начало исчисления срока зависит от ситуации. При пропуске по уважительной причине суд может восстановить срок, но откладывать обращение не следует.'
     },
     {
-      q: 'Оплачивает ли работник госпошлину при подаче иска к работодателю?',
-      a: 'Нет! В соответствии со статьей 393 ТК РФ и статьей 333.36 НК РФ работники при обращении в суд с исками о восстановлении на работе, взыскании заработной платы и по любым другим трудовым спорам полностью освобождаются от уплаты государственной пошлины и судебных расходов.'
+      q: 'Нужно ли сначала обращаться в трудовую инспекцию или к работодателю?',
+      a: 'Не во всех случаях. Некоторые требования можно заявить работодателю или в государственную инспекцию труда, а по ряду споров работник вправе обращаться непосредственно в суд. Подача жалобы сама по себе не должна быть причиной пропустить срок судебной защиты, поэтому порядок действий лучше определить после анализа документов.'
     },
     {
-      q: 'Можно ли доказать трудовые отношения, если работал без договора?',
-      a: 'Да. Если работник был допущен к выполнению работы с ведома или по поручению работодателя, трудовой договор считается заключенным (ст. 67 ТК РФ). В суде факт работы подтверждается пропусками, журналом смен, путевыми листами, перепиской в мессенджерах, свидетельскими показаниями и банковскими выписками.'
+      q: 'Можно ли защитить права, если трудовой договор не заключали?',
+      a: 'Да, при наличии доказательств фактической работы можно требовать признания отношений трудовыми и заявлять связанные требования. Значение могут иметь пропуск, графики, переписка, поручения, переводы денег, документы о выполненной работе, свидетельские показания и другие материалы.'
     },
     {
-      q: 'Что можно взыскать с работодателя помимо зарплаты?',
-      a: 'Помимо основного долга, работник имеет право взыскать денежную компенсацию за каждый день задержки по ст. 236 ТК РФ (не ниже 1/150 ключевой ставки ЦБ РФ), компенсацию морального вреда (ст. 237 ТК РФ), а также возмещение расходов на юридическую помощь.'
+      q: 'Какие документы нужны для консультации?',
+      a: 'Подойдут все имеющиеся документы: трудовой договор, должностная инструкция, приказы, уведомления, расчетные листки, сведения о трудовой деятельности, переписка, записи обращений, медицинские документы и ответы государственных органов. Ждать полного комплекта не нужно: юрист определит, чего не хватает и как это получить.'
+    },
+    {
+      q: 'Что можно взыскать с работодателя?',
+      a: 'Состав требований зависит от нарушения. Это могут быть задолженность по заработной плате и другим выплатам, компенсация за задержку, средний заработок за время вынужденного прогула, компенсация за неиспользованный отпуск, возмещение вреда и компенсация морального вреда. Требования и расчет нужно определять по документам конкретного дела.'
+    },
+    {
+      q: 'Можно ли вести трудовой спор дистанционно?',
+      a: 'Да, консультацию, анализ документов и подготовку большинства обращений можно организовать дистанционно. Возможность представительства и необходимость личного участия зависят от стадии дела, места рассмотрения и требуемых процессуальных действий.'
+    },
+    {
+      q: 'От чего зависит стоимость помощи?',
+      a: 'От вида нарушения, срочности, объема документов, необходимости расчетов, переговоров, обращения в государственные органы или суд и количества судебных заседаний. Состав работ и стоимость согласовываются до заключения договора.'
+    }
+  ];
+
+  const pricingTiers: PricingTier[] = [
+    {
+      title: 'Консультация и анализ',
+      subtitle: 'Разбор ситуации и оценка перспектив',
+      features: [
+        { name: 'Правовая консультация юриста', value: '[уточняется]' },
+        { name: 'Анализ имеющихся документов', value: '[уточняется]' },
+        { name: 'Оценка сроков, требований и действий', value: '[уточняется]' }
+      ],
+      buttonText: 'Уточнить стоимость',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Подготовка и досудебная работа',
+      subtitle: 'Документы, претензии и переговоры',
+      badgeText: 'Популярно',
+      features: [
+        { name: 'Расчет задолженности и компенсаций', value: '[уточняется]' },
+        { name: 'Подготовка заявлений, требований и жалоб', value: '[уточняется]' },
+        { name: 'Взаимодействие с работодателем и госорганами', value: '[уточняется]' }
+      ],
+      buttonText: 'Уточнить стоимость',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Судебная защита',
+      subtitle: 'Ведение трудового спора в суде',
+      features: [
+        { name: 'Подготовка искового заявления и доказательств', value: '[уточняется]' },
+        { name: 'Представительство в судебных заседаниях', value: '[уточняется]' },
+        { name: 'Получение судебного акта и исполнение', value: '[уточняется]' }
+      ],
+      buttonText: 'Уточнить стоимость',
+      buttonHref: '#form'
+    }
+  ];
+
+  const steps: ProcessStep[] = [
+    {
+      num: '01',
+      title: (
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+          Консультация
+        </span>
+      ),
+      desc: 'Уточняем обстоятельства, что уже сделал работодатель, какие документы есть у работника и какие сроки необходимо учитывать.'
+    },
+    {
+      num: '02',
+      title: (
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+          Анализ документов
+        </span>
+      ),
+      desc: 'Изучаем трудовой договор, приказы, уведомления, расчеты, переписку, медицинские и другие относящиеся к спору материалы.'
+    },
+    {
+      num: '03',
+      title: (
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+          План защиты
+        </span>
+      ),
+      desc: 'Определяем требования, доказательства, сроки и последовательность действий; оцениваем внесудебный и судебный варианты.'
+    },
+    {
+      num: '04',
+      title: (
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+          Юридическая работа
+        </span>
+      ),
+      desc: 'Готовим заявления, требования, жалобы и иск; проводим переговоры и при необходимости представляем интересы клиента в суде.'
+    },
+    {
+      num: '05',
+      title: (
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+          Контроль результата
+        </span>
+      ),
+      desc: 'Информируем о ходе дела, согласовываем дальнейшие действия и при необходимости сопровождаем фактическое исполнение решения.'
+    }
+  ];
+
+  const situations = [
+    {
+      tag: 'Увольнение',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Вынуждают</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>уволиться</span>
+        </>
+      ),
+      desc: 'Требуют написать заявление по собственному желанию, угрожают увольнением «по статье», предлагают невыгодное соглашение или не допускают к работе.'
+    },
+    {
+      tag: 'Процедура',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Уволили</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или сократили с нарушениями</span>
+        </>
+      ),
+      desc: 'Проверим основание, приказы, уведомления, сроки, предложенные вакансии и соблюдение установленной процедуры.'
+    },
+    {
+      tag: 'Выплаты',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не выплачивают</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>заработанные деньги</span>
+        </>
+      ),
+      desc: 'Поможем взыскать заработную плату, расчет при увольнении, отпускные, премии, компенсацию за задержку и другие причитающиеся суммы.'
+    },
+    {
+      tag: 'Оформление',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Работу не оформили</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>надлежащим образом</span>
+        </>
+      ),
+      desc: 'Оценим, как доказать фактические трудовые отношения, если договора нет, вместо него заключен договор услуг или работника оформили как самозанятого.'
+    },
+    {
+      tag: 'Взыскания',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Применяют</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>взыскания или меняют условия</span>
+        </>
+      ),
+      desc: 'Проверим замечание, выговор, отстранение, перевод, изменение графика, оплаты или обязанностей и определим порядок обжалования.'
+    },
+    {
+      tag: 'Травма',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Произошел</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>несчастный случай на работе</span>
+        </>
+      ),
+      desc: 'Поможем добиться расследования и надлежащего оформления, оспорить выводы комиссии и заявить требования о положенных выплатах и возмещении вреда.'
+    }
+  ];
+
+  const directions = [
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Незаконное</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>увольнение и восстановление</span>
+        </>
+      ),
+      desc: 'Помощь, если Вас уволили без законного основания, с нарушением процедуры либо вынуждают уйти по собственному желанию.',
+      link: '/grazhdanam/trudovoj-yurist/nezakonnoe-uvolnenie/'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскание</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>заработной платы и выплат</span>
+        </>
+      ),
+      desc: 'Взыскание задолженности по зарплате, расчета при увольнении, отпускных, премий, компенсаций и других причитающихся сумм.',
+      link: '/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/'
+    },
+    {
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Незаконное</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>сокращение</span>
+        </>
+      ),
+      desc: 'Проверка процедуры сокращения, предложенных вакансий, преимущественного права и полноты выплат работнику.',
+      link: '/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/'
+    },
+    {
+      title: (
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+          Производственная травма
+        </span>
+      ),
+      desc: 'Помощь с расследованием несчастного случая, оформлением документов, обжалованием выводов комиссии и получением положенных выплат.',
+      link: '/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/'
     }
   ];
 
@@ -82,29 +302,32 @@ export default function TrudovojClient() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'LegalService',
+        '@type': 'Organization',
         '@id': 'https://dejure-help.ru/#organization',
-        'name': 'ЮК «Де-Юре»',
-        'url': 'https://dejure-help.ru',
-        'logo': 'https://dejure-help.ru/images/logo_dark.png',
-        'telephone': '+7 (910) 350-31-11',
+        'name': 'Юридическая компания «Де-Юре»',
+        'url': 'https://dejure-help.ru/',
+        'logo': 'https://dejure-help.ru/images/logo.png',
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': 'пл. Театральная, д. 3, офис 401',
           'addressLocality': 'Липецк',
-          'postalCode': '398001',
           'addressCountry': 'RU'
         }
       },
       {
-        '@type': 'Service',
-        'name': 'Трудовой юрист в Липецке — защита прав работников | Де-Юре',
-        'provider': { '@id': 'https://dejure-help.ru/#organization' },
-        'areaServed': {
-          '@type': 'AdministrativeArea',
-          'name': 'Липецк и Липецкая область'
-        },
-        'description': 'Помощь трудового юриста в Липецке для работников: незаконное увольнение, сокращение, невыплата зарплаты, производственные травмы. Защита в суде.'
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Трудовой юрист', 'item': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/' }
+        ]
+      },
+      {
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/#service',
+        'name': 'Юридическая помощь по трудовым спорам в Липецке',
+        'description': 'Помощь трудового юриста в Липецке: незаконное увольнение, сокращение, взыскание зарплаты и производственные травмы.',
+        'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/',
+        'provider': { '@id': 'https://dejure-help.ru/#organization' }
       },
       {
         '@type': 'FAQPage',
@@ -143,28 +366,28 @@ export default function TrudovojClient() {
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
             <Link href="/grazhdanam/">Гражданам</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <span style={{ color: 'var(--color-text-main)' }}>Трудовой юрист в Липецке</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Трудовой юрист</span>
           </>
         }
         superTitle="Трудовое право в Липецке"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               Трудовой
             </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               юрист в Липецке
             </span>
           </span>
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Защита работников при незаконном увольнении, сокращении, невыплате зарплаты и производственных травмах. Оценка документов, досудебное урегулирование и представительство в суде.
+            Помогаем работникам при незаконном увольнении и сокращении, невыплате заработной платы и производственной травме. Оценим документы, сроки и перспективу спора, подготовим обращения и представим интересы в суде.
           </span>
         }
-        primaryCtaText="Обсудить трудовой спор"
+        primaryCtaText="Обсудить ситуацию"
         primaryCtaLink="#form"
-        primaryCtaAnalytics="click_cta_trudovoy_hub"
+        primaryCtaAnalytics="click_primary_cta_trudovoj"
         primaryCtaSubtext={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
@@ -175,142 +398,180 @@ export default function TrudovojClient() {
             </span>
           </span>
         }
-        trustItems={[{"text":"Защита прав работников в суде и ГИТ"},{"text":"Восстановление на работе и взыскание выплат"},{"text":"Оспаривание незаконных сокращений и травм"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        urgentHint="По трудовым спорам об увольнении срок обращения в суд составляет всего 1 месяц со дня вручения приказа или выдачи трудовой книжки (ст. 392 ТК РФ). Не откладывайте консультацию!"
+        trustItems={[
+          { text: 'Проверка оснований и процедуры увольнения' },
+          { text: 'Расчет задолженности по зарплате и компенсаций' },
+          { text: 'Досудебные претензии и защита в суде' },
+          { text: 'Куратор — юрист М. В. Смольянинова' }
+        ]}
         imageUrl="/images/smolyaninova.jpg"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Трудовое право»"
         imageObjectPosition="center 20%"
       />
 
-      {/* ═══ БЛОК 2: С КАКИМИ СИТУАЦИЯМИ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 2: КОГДА ВАЖНО НЕ ОТКЛАДЫВАТЬ ОБРАЩЕНИЕ (ТЕМНО-СИНИЙ БЛОК ИЗ ШАБЛОНА) ═══ */}
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
+        <div className="container">
+          <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
+            <span style={{ display: 'inline-block' }}>Когда важно</span> <br /><span style={{ display: 'inline-block' }}>не откладывать обращение</span>
+          </h2>
+          <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '640px', lineHeight: 1.6 }}>
+            В трудовых спорах срок обращения в суд может быть коротким, а документы и переписка — утрачены. Чем раньше юрист увидит ситуацию, тем проще сохранить доказательства и не совершить необратимых действий.
+          </p>
+
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
+            <div
+              className="urgent-card"
+              style={{
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                padding: '32px 28px',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Работника уже уволили
+                </div>
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                По спору об увольнении обычно действует месячный срок обращения в суд. Нужно получить документы, проверить основание и процедуру увольнения и определить требования.
+              </p>
+            </div>
+
+            <div
+              className="urgent-card"
+              style={{
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                padding: '32px 28px',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Требуют срочно подписать заявление
+                </div>
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                До подписания важно понять последствия документа, зафиксировать давление и получить копии приказов, уведомлений и предложений работодателя.
+              </p>
+            </div>
+
+            <div
+              className="urgent-card"
+              style={{
+                background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                padding: '32px 28px',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                  Несчастный случай не оформляют
+                </div>
+              </div>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                Нужно сохранить медицинские документы, сведения о месте и времени происшествия, контакты свидетелей и подтверждения того, что работа выполнялась по поручению работодателя.
+              </p>
+            </div>
+          </div>
+
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
+              +7 (910) 350-31-11
+            </a>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="trudovoj_urgent_call_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Описать ситуацию
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
+              Перезвоним вам в течение 15 минут в рабочее время
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 3: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>С какими ситуациями</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы помогаем работникам</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы помогаем</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Трудовые споры требуют оперативной фиксации нарушений и строгого соблюдения процессуальных сроков. Поможем защитить ваши права на любом этапе конфликта.
+              Разберем конфликт с работодателем, оценим документы и сроки, определим, какие требования можно заявить и какой способ защиты подходит в Вашей ситуации.
             </p>
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
-            {[
-              {
-                tag: 'Увольнение / Приказ',
-                title: (
-                  <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Незаконное увольнение</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или принуждение к уходу</span>
-                  </>
-                ),
-                desc: 'Увольнение без оснований, по надуманной статье либо давление руководства с требованием написать заявление «по собственному желанию».'
-              },
-              {
-                tag: 'Сокращение / Штат',
-                title: (
-                  <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Нарушение процедуры</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>сокращения должности</span>
-                  </>
-                ),
-                desc: 'Сокращение без предложения вакансий, нарушение сроков уведомления, игнорирование преимущественного права оставления на работе.'
-              },
-              {
-                tag: 'Зарплата / Долг',
-                title: (
-                  <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Задержка зарплаты,</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>премий или расчета</span>
-                  </>
-                ),
-                desc: 'Невыплата оклада, премий, отпускных или окончательного расчета при увольнении. Взыскание процентов и компенсаций.'
-              },
-              {
-                tag: 'Травма / Производство',
-                title: (
-                  <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Производственная</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>травма и сокрытие</span>
-                  </>
-                ),
-                desc: 'Работодатель отказывается расследовать несчастный случай, искажает акт Н-1 или не оформляет страховые выплаты пострадавшему.'
-              },
-              {
-                tag: 'Договор / Без оформления',
-                title: (
-                  <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Работа без</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>оформления или ГПХ</span>
-                  </>
-                ),
-                desc: 'Отказ работодателя заключить трудовой договор, подмена трудовых отношений договором самозанятого или ГПХ.'
-              },
-              {
-                tag: 'Дисциплина / Взыскания',
-                title: (
-                  <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Незаконные</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>выговоры и штрафы</span>
-                  </>
-                ),
-                desc: 'Наложение необоснованных дисциплинарных взысканий, незаконные удержания из заработной платы, лишение премий.'
-              }
-            ].map((item, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '36px 30px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease'
-              }}>
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
-                  </svg>
-                </div>
-
-                <div style={{ 
-                  fontSize: '12px', 
-                  fontWeight: 700, 
-                  color: 'var(--color-gold)', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.08em', 
-                  marginBottom: '14px',
+            {situations.map((sit, i) => (
+              <div
+                key={i}
+                className="hover-lift"
+                style={{
+                  padding: '36px 30px',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '12px',
                   background: 'rgba(193, 160, 102, 0.1)',
                   padding: '4px 10px',
-                  display: 'inline-block',
                   alignSelf: 'flex-start'
                 }}>
-                  {item.tag}
+                  {sit.tag}
                 </div>
-                
-                <h3 style={{ 
-                  fontFamily: 'var(--font-serif)', 
-                  fontSize: '20px', 
-                  color: 'var(--color-deep-blue)', 
-                  marginBottom: '14px', 
-                  marginTop: 0, 
-                  lineHeight: 1.3 
-                }}>
-                  {item.title}
+
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                  {sit.title}
                 </h3>
-                
-                <p style={{ 
-                  fontSize: '14px', 
-                  color: 'var(--color-text-secondary)', 
-                  lineHeight: 1.6, 
-                  margin: 0,
-                  flexGrow: 1
-                }}>
-                  {item.desc}
+
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
+                  {sit.desc}
                 </p>
               </div>
             ))}
@@ -318,478 +579,195 @@ export default function TrudovojClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: НАПРАВЛЕНИЯ ПОМОЩИ (КАРТОЧКИ УСЛУГ) ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 4: НАПРАВЛЕНИЯ ПОМОЩИ ═══ */}
+      <section id="directions" className="section" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+          <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Услуги трудового юриста</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по направлениям</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Направления</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>помощи</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Выберите специализацию, наиболее точно соответствующую вашей проблеме, чтобы ознакомиться с порядком действий и условиями работы.
+              Выберите ситуацию, чтобы узнать, какие нарушения имеют значение, что можно потребовать и как строится работа по делу.
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '28px' }}>
-            <a href="/grazhdanam/trudovoj-yurist/nezakonnoe-uvolnenie/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }} data-analytics="click_service_card">
-              <div className="card service-card hover-lift" style={{ 
-                height: '100%', 
-                minHeight: '260px', 
-                padding: '36px 30px', 
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', 
-                border: '1px solid var(--color-border)', 
-                borderRadius: '0', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between', 
-                position: 'relative', 
-                borderTop: '3px solid var(--color-primary)', 
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                cursor: 'pointer' 
-              }}>
-                <div>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '14px', background: 'rgba(193, 160, 102, 0.1)', padding: '4px 10px', display: 'inline-block' }}>
-                    Статья 392 ТК РФ / Суд
-                  </div>
-                  <h3 style={{ margin: '0 0 14px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Незаконное увольнение</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и восстановление на работе</span>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
+            {directions.map((dir, i) => (
+              <a key={i} href={dir.link} style={{ textDecoration: 'none', display: 'block' }}>
+                <div
+                  className="card service-card"
+                  style={{
+                    height: '100%',
+                    minHeight: '180px',
+                    padding: '30px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderRadius: '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    transition: 'all 0.3s',
+                    position: 'relative',
+                    borderTop: '3px solid var(--color-primary)'
+                  }}
+                >
+                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
+                    {dir.title}
                   </h3>
-                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                    Правовая экспертиза приказа, подготовка иска, восстановление на работе с выплатой среднего заработка за вынужденный прогул и морального вреда.
+                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                    {dir.desc}
+                  </p>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                    Подробнее
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            ))}
+
+            {/* БЛОК 5: НЕ НАШЛИ СВОЮ СИТУАЦИЮ? (3-я карточка во 2-й строке) */}
+            <div style={{ gridColumn: 'span 2' }}>
+              <div
+                className="card service-card"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '30px',
+                  background: 'var(--color-deep-blue)',
+                  border: '1px solid transparent',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  gap: '20px',
+                  transition: 'all 0.3s',
+                  position: 'relative',
+                  borderTop: '3px solid var(--color-gold)'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-white)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                    Не нашли свою ситуацию?
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.55, maxWidth: '600px' }}>
+                    Кратко опишите, что произошло. Юрист изучит обстоятельства и подскажет, относится ли вопрос к трудовому спору и с каких действий лучше начать.
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
-                  <span>Подробнее об услуге</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <div style={{ marginTop: 'auto' }}>
+                  <a
+                    href="#form"
+                    className="btn"
+                    style={{
+                      display: 'inline-block',
+                      backgroundColor: 'var(--color-white)',
+                      color: 'var(--color-deep-blue)',
+                      border: '1px solid var(--color-white)',
+                      padding: '12px 28px',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      textDecoration: 'none'
+                    }}
+                  >
+                    Описать ситуацию
+                  </a>
                 </div>
               </div>
-            </a>
-            <a href="/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }} data-analytics="click_service_card">
-              <div className="card service-card hover-lift" style={{ 
-                height: '100%', 
-                minHeight: '260px', 
-                padding: '36px 30px', 
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', 
-                border: '1px solid var(--color-border)', 
-                borderRadius: '0', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between', 
-                position: 'relative', 
-                borderTop: '3px solid var(--color-primary)', 
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                cursor: 'pointer' 
-              }}>
-                <div>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '14px', background: 'rgba(193, 160, 102, 0.1)', padding: '4px 10px', display: 'inline-block' }}>
-                    Штат / Гарантии
-                  </div>
-                  <h3 style={{ margin: '0 0 14px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Незаконное</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>сокращение штата</span>
-                  </h3>
-                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                    Проверка реальности сокращения, контроль соблюдения преимущественного права, предложения вакансий и выплата выходного пособия.
-                  </p>
-                </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
-                  <span>Подробнее об услуге</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
-              </div>
-            </a>
-            <a href="/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }} data-analytics="click_service_card">
-              <div className="card service-card hover-lift" style={{ 
-                height: '100%', 
-                minHeight: '260px', 
-                padding: '36px 30px', 
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', 
-                border: '1px solid var(--color-border)', 
-                borderRadius: '0', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between', 
-                position: 'relative', 
-                borderTop: '3px solid var(--color-primary)', 
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                cursor: 'pointer' 
-              }}>
-                <div>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '14px', background: 'rgba(193, 160, 102, 0.1)', padding: '4px 10px', display: 'inline-block' }}>
-                    Расчет / Компенсация
-                  </div>
-                  <h3 style={{ margin: '0 0 14px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскание зарплаты</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и причитающихся выплат</span>
-                  </h3>
-                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                    Расчет задолженности, премий и процентов по ст. 236 ТК РФ, претензионная работа, жалобы в ГИТ и взыскание через суд.
-                  </p>
-                </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
-                  <span>Подробнее об услуге</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
-              </div>
-            </a>
-            <a href="/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }} data-analytics="click_service_card">
-              <div className="card service-card hover-lift" style={{ 
-                height: '100%', 
-                minHeight: '260px', 
-                padding: '36px 30px', 
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', 
-                border: '1px solid var(--color-border)', 
-                borderRadius: '0', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between', 
-                position: 'relative', 
-                borderTop: '3px solid var(--color-primary)', 
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                cursor: 'pointer' 
-              }}>
-                <div>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '14px', background: 'rgba(193, 160, 102, 0.1)', padding: '4px 10px', display: 'inline-block' }}>
-                    Акт Н-1 / Выплаты
-                  </div>
-                  <h3 style={{ margin: '0 0 14px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Юрист по</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>производственным травмам</span>
-                  </h3>
-                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                    Фиксация несчастного случая, обжалование акта расследования, оформление выплат через СФР и взыскание компенсации вреда здоровью.
-                  </p>
-                </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto' }}>
-                  <span>Подробнее об услуге</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
-              </div>
-            </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: ЧТО ДЕЛАЕТ ТРУДОВОЙ ЮРИСТ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что делает трудовой юрист</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>для защиты работника</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Комплексное сопровождение: от сбора доказательств до реального зачисления денег на ваш счет.
-            </p>
-          </div>
-
-          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '36px' }}>
-              <div key="01" className="hover-lift" style={{ 
-                display: 'flex', 
-                gap: '24px', 
-                padding: '30px 26px', 
-                border: '1px solid var(--color-border)', 
-                borderLeft: '4px solid var(--color-primary)', 
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', 
-                boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
-                borderRadius: '0' 
-              }}>
-                <div style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', lineHeight: 1, flexShrink: 0, opacity: 0.35, minWidth: '44px' }}>
-                  01
-                </div>
-                <div>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                    Оцениваем сроки и документы
-                  </h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                    Анализируем трудовой договор, приказы, расчетные листки и акты. Проверяем процессуальные сроки обращения в суд (1 месяц при увольнении, 1 год по зарплате).
-                  </p>
-                </div>
-              </div>
-              <div key="02" className="hover-lift" style={{ 
-                display: 'flex', 
-                gap: '24px', 
-                padding: '30px 26px', 
-                border: '1px solid var(--color-border)', 
-                borderLeft: '4px solid var(--color-primary)', 
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', 
-                boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
-                borderRadius: '0' 
-              }}>
-                <div style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', lineHeight: 1, flexShrink: 0, opacity: 0.35, minWidth: '44px' }}>
-                  02
-                </div>
-                <div>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                    Выстраиваем доказательную базу
-                  </h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                    Собираем доказательства выполнения трудовой функции, переписки, свидетельские показания, справки о доходах и графики смен.
-                  </p>
-                </div>
-              </div>
-              <div key="03" className="hover-lift" style={{ 
-                display: 'flex', 
-                gap: '24px', 
-                padding: '30px 26px', 
-                border: '1px solid var(--color-border)', 
-                borderLeft: '4px solid var(--color-primary)', 
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', 
-                boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
-                borderRadius: '0' 
-              }}>
-                <div style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', lineHeight: 1, flexShrink: 0, opacity: 0.35, minWidth: '44px' }}>
-                  03
-                </div>
-                <div>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                    Готовим требования и претензии
-                  </h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                    Составляем досудебные претензии работодателю, заявления в Государственную инспекцию труда и прокуратуру.
-                  </p>
-                </div>
-              </div>
-              <div key="04" className="hover-lift" style={{ 
-                display: 'flex', 
-                gap: '24px', 
-                padding: '30px 26px', 
-                border: '1px solid var(--color-border)', 
-                borderLeft: '4px solid var(--color-primary)', 
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', 
-                boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
-                borderRadius: '0' 
-              }}>
-                <div style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', lineHeight: 1, flexShrink: 0, opacity: 0.35, minWidth: '44px' }}>
-                  04
-                </div>
-                <div>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                    Защищаем интересы в суде
-                  </h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                    Готовим исковое заявление и полностью представляем интересы работника во всех судебных инстанциях без обязательного присутствия клиента.
-                  </p>
-                </div>
-              </div>
-              <div key="05" className="hover-lift" style={{ 
-                display: 'flex', 
-                gap: '24px', 
-                padding: '30px 26px', 
-                border: '1px solid var(--color-border)', 
-                borderLeft: '4px solid var(--color-primary)', 
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', 
-                boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
-                borderRadius: '0' 
-              }}>
-                <div style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', lineHeight: 1, flexShrink: 0, opacity: 0.35, minWidth: '44px' }}>
-                  05
-                </div>
-                <div>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                    Добиваемся исполнения решения
-                  </h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                    Контролируем фактическое восстановление в должности, внесение записей в трудовую книжку и перечисление всех присужденных сумм.
-                  </p>
-                </div>
-              </div>
-          </div>
-
-          <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '720px', margin: 0 }}>
-            Конкретный состав работ определяется после изучения документов и уточнения обстоятельств дела.
-          </p>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
+      {/* ═══ БЛОК 6: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
-        position="Ведущий юрист ЮК «Де-Юре»"
+        position="Ведущий юрист ЮК &#171;Де-Юре&#187;"
         imageUrl="/images/smolyaninova.jpg"
         description={[
-          'Специализируется на защите прав работников в сложных и конфликтных трудовых спорах: незаконное увольнение, принуждение к уходу, сокращение штата и невыплата зарплаты.',
-          'Глубокий практический опыт в доказывании факта трудовых отношений при работе без договора («серая зарплата», подмена трудового договора гражданско-правовым).',
-          'Успешная практика обжалования сокрытых несчастных случаев на производстве и взыскания компенсации тяжкого вреда здоровью с работодателей и Социального фонда РФ.',
-          'Ведет дела в Липецке и Липецкой области; доступен дистанционный формат правовой помощи по всей территории России.'
+          'Более пяти лет юридической практики и судебного представительства по защите прав граждан.',
+          'Специализируется на защите работников в спорах об увольнении, невыплате заработной платы и дисциплинарных взысканиях.',
+          'Подготовка мотивированных претензий, расчетов компенсаций, исковых заявлений и представительство в судах и государственных органах.',
+          'Сопровождает доверителей в Липецке и Липецкой области; возможен дистанционный формат работы.'
         ]}
-        buttonText="Обсудить трудовой спор с Мариной Валерьевной"
+        buttonText="Задать вопрос юристу"
         buttonHref="#form"
       />
 
-      {/* ═══ БЛОК 6: ПРИМЕРЫ ДЕЛ ИЗ ПРАКТИКИ ═══ */}
+      {/* ═══ БЛОК 7: КЕЙСЫ ═══ */}
       <CasesBlock
-        title="Примеры дел из практики"
+        title="Примеры из практики"
         showAllLink="/praktika/"
         showAllText="Смотреть все дела"
         showDemoWarning={true}
         cases={cases}
       />
 
-      {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
+      {/* ═══ БЛОК 8: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
-        subtitle="Прозрачный и понятный процесс защиты прав работника на каждом этапе взаимодействия."
+        subtitle="Начать работу можно в офисе, по телефону или видеосвязи. Документы можно передать лично либо направить в электронном виде."
         alignTitle="left"
-        steps={[
-          {
-            num: '01',
-            title: 'Первичный анализ ситуации',
-            desc: 'Изучаем трудовой договор, приказы, переписку и расчетные листки. Оцениваем риски и соблюдение сроков обращения.'
-          },
-          {
-            num: '02',
-            title: 'Сбор доказательной базы',
-            desc: 'Запрашиваем недостающие документы у работодателя, в медицинских учреждениях и госорганах, фиксируем показания свидетелей.'
-          },
-          {
-            num: '03',
-            title: 'Претензия и досудебный этап',
-            desc: 'Направляем работодателю мотивированное требование, при необходимости привлекаем трудовую инспекцию и прокуратуру.'
-          },
-          {
-            num: '04',
-            title: 'Судебная защита интересов',
-            desc: 'Подаем исковое заявление в суд, участвуем во всех заседаниях, ходатайствуем об истребовании доказательств и экспертизах.'
-          },
-          {
-            num: '05',
-            title: 'Контроль исполнения решения',
-            desc: 'Получаем исполнительный лист, контролируем внесение записей в трудовую книжку и фактическое перечисление денежных средств.'
-          }
-        ]}
-        ctaTitle="Нужна помощь по трудовому спору?"
-        ctaSubtitle="Опишите ситуацию — юрист оценит сроки обращения, риски и подготовит пошаговый план защиты."
-        ctaButtonText="Обсудить ситуацию с юристом"
+        steps={steps}
+        ctaTitle="Обсудите трудовой спор с юристом"
+        ctaSubtitle="Опишите ситуацию — юрист изучит документы и предложит план защиты ваших прав."
+        ctaButtonText="Обсудить ситуацию"
         ctaButtonHref="#form"
-        footerNote="Для первичного анализа понадобятся: трудовой договор, приказы, расчетные листки или выписки со счетов. Возможен полностью дистанционный формат работы."
+        footerNote="Для оценки ситуации понадобятся: трудовой договор, приказы, уведомления, расчетные листки или переписка. Возможен дистанционный формат работы."
       />
 
-      {/* ═══ БЛОК 8: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
+      {/* ═══ БЛОК 9: СТОИМОСТЬ ═══ */}
       <PricingBlock
         title="Стоимость юридической помощи"
-        subtitle="Честные и прозрачные цены. Точная стоимость фиксируется в договоре до начала работы."
-        tiers={[
-          {
-            title: (
-              <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Консультация</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и правовой анализ</span>
-              </>
-            ),
-            subtitle: 'Изучение документов, расчет сроков давности и выработка плана защиты',
-            
-            features: [
-              { name: 'Правовой анализ трудового договора и приказов', value: '[уточняется]' },
-              { name: 'Проверка процессуальных сроков по ст. 392 ТК РФ', value: '[уточняется]' },
-              { name: 'Расчет положенных выплат и компенсаций', value: '[уточняется]' }
-            ],
-            buttonText: 'Оценить ситуацию',
-            buttonHref: '#form'
-          },
-          {
-            title: (
-              <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Досудебная защита</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и претензионная работа</span>
-              </>
-            ),
-            subtitle: 'Подготовка документов работодателю, в ГИТ и органы прокуратуры',
-            
-            features: [
-              { name: 'Составление мотивированной претензии', value: '[уточняется]' },
-              { name: 'Жалобы в Государственную инспекцию труда', value: '[уточняется]' },
-              { name: 'Переговоры с работодателем о мирном расчете', value: '[уточняется]' }
-            ],
-            buttonText: 'Заказать претензию',
-            buttonHref: '#form'
-          },
-          {
-            title: (
-              <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Судебное ведение</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>трудового спора «под ключ»</span>
-              </>
-            ),
-            subtitle: 'Полное представительство в суде до фактического решения и выплат',
-            popular: true,
-            badgeText: 'Популярно',
-            features: [
-              { name: 'Подготовка иска и формирование доказательств', value: '[уточняется]' },
-              { name: 'Участие во всех судебных заседаниях', value: '[уточняется]' },
-              { name: 'Исполнение решения и получение денег', value: '[уточняется]' }
-            ],
-            buttonText: 'Выбрать тариф',
-            buttonHref: '#form'
-          }
-        ]}
-        disclaimer="Стоимость услуг определяется индивидуально после изучения трудового договора и документов спора. В соответствии со статьей 393 ТК РФ работники освобождены от уплаты госпошлины и судебных расходов."
+        subtitle="Стоимость зависит от вида нарушения, стадии спора, объема документов и необходимого состава работы. После консультации юрист определит задачи и согласует стоимость до заключения договора."
+        tiers={pricingTiers}
+        disclaimer="Стоимость определяется после уточнения обстоятельств дела и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения не включает судебные расходы и государственные пошлины (при наличии)."
       />
 
-      {/* ═══ БЛОК 9: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
+      {/* ═══ БЛОК 10: FAQ ═══ */}
       <FAQBlock
         superTitle="Частые вопросы"
-        title={
-          <>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ответы на вопросы</span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по трудовому праву</span>
-          </>
-        }
-        subtitle="О сроках, документах, порядке выплат и судебной защите работников"
-        ctaText="Задать вопрос юристу"
+        title={<><span>Ответы на</span> <br /><span>частые вопросы</span></>}
+        subtitle="О трудовых спорах и защите прав работников"
+        ctaText="Задать свой вопрос"
         ctaLink="#form"
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 10: КОНТАКТНАЯ ФОРМА (КАНОНИЧЕСКИЙ ШАБЛОН) ═══ */}
-      <section className="section" id="form" style={{ padding: '80px 0', background: 'var(--color-bg-light)' }}>
+      {/* ═══ БЛОК 11: ФОРМА ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '48px', alignItems: 'center' }}>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-gold)' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.08em', fontSize: '13px', fontWeight: 600, color: 'var(--color-gold-text)' }}>
-                  Запись на консультацию
-                </span>
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
               </div>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '20px', lineHeight: 1.2 }}>
-                Обсудите ваш трудовой спор с юристом
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Обсудите трудовой спор с Мариной Валерьевной Смольяниновой
               </h2>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '32px' }}>
-                Опишите ситуацию, и юрист по трудовому праву свяжется с вами в течение 15 минут, чтобы оценить перспективы дела, сроки обращения и составить план защиты.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '28px', textWrap: 'balance' }}>
+                Кратко опишите, что произошло, и оставьте контактные данные. Обращение будет передано Марине Валерьевне Смольяниновой. Она уточнит, какие документы у Вас есть, изучит обстоятельства и согласует с Вами консультацию.
               </p>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-gold)' }}></div>
-                  <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
-                    Соблюдение строгой конфиденциальности
-                  </span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-gold)' }}></div>
-                  <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
-                    Оценка перспектив дела и расчет компенсаций
-                  </span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-gold)' }}></div>
-                  <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
-                    Возможность дистанционного ведения процесса
-                  </span>
-                </div>
+              <a href="tel:+79103503111" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', marginBottom: '16px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.47 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 5.55 5.55l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                +7 (910) 350-31-11
+              </a>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                </svg>
+                <span>Перезвоним в течение 15 минут в рабочее время</span>
               </div>
             </div>
-
-            <div style={{ background: 'var(--color-white)', padding: '40px', borderRadius: '0', border: '1px solid var(--color-border)', boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}>
-              <ContactsForm
-                title="Получить оценку трудового спора"
-                subtitle="Заполните форму для связи с профильным юристом"
-                buttonText="Отправить заявку на консультацию"
-              />
+            <div>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 8px 24px rgba(0,0,0,0.15)' }}>
+                <ContactsForm buttonText="Получить консультацию" />
+              </div>
             </div>
           </div>
         </div>

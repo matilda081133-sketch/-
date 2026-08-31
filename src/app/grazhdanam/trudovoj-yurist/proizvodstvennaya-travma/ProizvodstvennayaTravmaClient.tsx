@@ -9,64 +9,311 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
-import PricingBlock from '@/components/PricingBlock';
-import ProcessBlock from '@/components/ProcessBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
+import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 
 export default function ProizvodstvennayaTravmaClient() {
   const cases: CaseData[] = [
     {
-      category: 'Сокрытие / Акт Н-1',
+      category: 'Сокрытие травмы',
       title: (
-        <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Добились</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>расследования травмы</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и взыскали 980 000 руб.</span>
-        </>
+        <span style={{ display: 'block' }}>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            Добились расследования
+          </span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            травмы, которую работодатель
+          </span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            пытался скрыть от комиссии
+          </span>
+        </span>
       ),
-      problem: 'Монтажник упал с лесов, работодатель заставил заявить о бытовой травме, пообещав оплатить лечение, но обманул.',
-      action: 'Привлекли трудовую инспекцию, установили свидетелей и добились составления официального акта Н-1.',
-      result: 'Назначены выплаты СФР, с работодателя взыскано 600 000 руб. морального вреда.'
+      problem: 'Оператор повредил кисть на производственной линии. Руководитель предложил оформить происшествие как бытовое и не создавал комиссию. В медицинской карте было зафиксировано, что травма получена во время смены, а происшествие видели коллеги.',
+      action: 'Собрали медицинские записи, сведения о смене, переписку и объяснения очевидцев, подготовили заявление работодателю и обращение в трудовую инспекцию, участвовали в дополнительном расследовании.',
+      result: 'Несчастный случай признали связанным с производством, оформили акт установленной формы и передали материалы для назначения страхового обеспечения.'
     },
     {
-      category: 'Утрата трудоспособности',
+      category: 'Оспаривание вины',
       title: (
-        <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскали ущерб</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и пожизненные выплаты</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>при утрате трудоспособности</span>
-        </>
+        <span style={{ display: 'block' }}>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            Оспорили вывод
+          </span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            о грубой неосторожности
+          </span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            пострадавшего работника
+          </span>
+        </span>
       ),
-      problem: 'Станочник потерял пальцы руки из-за отсутствия защитного кожуха; комиссия пыталась списать вину на работника.',
-      action: 'Доказали грубое нарушение работодателем норм охраны труда и добились исключения вины работника из акта.',
-      result: 'СФР назначил ежемесячные выплаты; с предприятия взыскана компенсация ущерба.'
+      problem: 'Работник получил тяжелую травму при работе на высоте. Комиссия указала на его грубую неосторожность, хотя обязательный инструктаж документально не подтверждался, а выданные средства защиты не соответствовали условиям работ.',
+      action: 'Проверили материалы расследования, документы об обучении и выдаче средств защиты, собрали показания коллег и технические сведения, подготовили разногласия и добились дополнительной проверки выводов комиссии.',
+      result: 'Вывод о грубой неосторожности исключили из материалов расследования; страховое обеспечение назначили без уменьшения по вине пострадавшего.'
     },
     {
-      category: 'Смертельный случай',
+      category: 'ДТП в поездке',
       title: (
-        <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отсудили</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>2 млн руб. выплат семье</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>погибшего на стройке рабочего</span>
-        </>
+        <span style={{ display: 'block' }}>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            Признали производственным
+          </span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            ДТП во время служебной
+          </span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            поездки на автомобиле
+          </span>
+        </span>
       ),
-      problem: 'Предприятие пыталось доказать, что рабочий погиб в нерабочее время, находясь на территории самовольно.',
-      action: 'Истребовали путевые листы, журналы въезда и доказали выполнение трудовых обязанностей в интересах фирмы.',
-      result: 'Семье выплачено 2 млн руб. от СФР и 1,5 млн руб. морального вреда с работодателя.'
+      problem: 'Сотрудник получил травмы в ДТП по пути между объектами на автомобиле работодателя. Комиссия сочла происшествие обычным дорожным случаем и не связала его с выполнением трудовых обязанностей.',
+      action: 'Собрали служебное задание, маршрутные документы, переписку с руководителем и данные о передвижении автомобиля, оспорили квалификацию происшествия и подготовили требования по выплатам и компенсации.',
+      result: 'Происшествие признали несчастным случаем на производстве, оформили акт; пострадавший получил страховые выплаты, а с работодателя взыскали компенсацию морального вреда.'
     }
   ];
 
   const faqs = [
     {
-      q: 'Что делать работнику сразу после получения производственной травмы?',
-      a: 'Немедленно обратитесь в медицинское учреждение и обязательно сообщите врачу, что травма получена на рабочем месте во время выполнения трудовых обязанностей. Известите руководство, сохраните контакты свидетелей и ни при каких обстоятельствах не соглашайтесь оформлять «бытовую» травму.'
+      q: 'Что делать сразу после травмы на работе?',
+      a: 'Получите медицинскую помощь и сообщите, что травма связана с работой. По возможности уведомите руководителя письменно, сохраните контакты свидетелей, фотографии, переписку и сведения о камерах. Не подписывайте объяснения с неверными обстоятельствами без замечаний и не соглашайтесь оформлять травму как бытовую.'
     },
     {
-      q: 'Какие выплаты положены пострадавшему при несчастном случае на производстве?',
-      a: 'Пострадавшему положены: 1) Пособие по временной нетрудоспособности в размере 100% среднего заработка; 2) Единовременная страховая выплата от СФР; 3) Ежемесячные страховые выплаты при утрате трудоспособности; 4) Оплата медицинских и реабилитационных расходов; 5) Компенсация морального вреда от работодателя.'
+      q: 'Что делать, если работодатель не проводит расследование?',
+      a: 'Потребуйте расследование письменно и сохраните подтверждение обращения. При отказе или уклонении можно обращаться в государственную инспекцию труда и, в зависимости от задачи, в суд. Государственный инспектор вправе проводить дополнительное расследование при выявлении сокрытого случая или нарушений.'
     },
     {
-      q: 'В какой срок работодатель обязан расследовать несчастный случай?',
-      a: 'Расследование легкого несчастного случая проводится комиссией в течение 3 дней. Расследование тяжелого несчастного случая или со смертельным исходом проводится в течение 15 дней (ст. 229.1 ТК РФ). Если работодатель скрыл происшествие, расследование проводится государственным инспектором труда по заявлению пострадавшего.'
+      q: 'Можно ли признать травму производственной, если в больницу обратились не сразу?',
+      a: 'Позднее обращение само по себе не отменяет обязанность установить обстоятельства. Но доказать связь с работой может быть сложнее, поэтому важны медицинские записи, свидетели, документы о смене и задании, переписка и иные следы происшествия.'
+    },
+    {
+      q: 'Если я нарушил инструкцию, выплаты не положены?',
+      a: 'Не автоматически. Комиссия должна установить причины, нарушения и наличие именно грубой неосторожности пострадавшего. Даже при ее установлении закон ограничивает возможное уменьшение ежемесячной страховой выплаты; отказ во всем обеспечении только по этой причине недопустимо считать универсальным правилом.'
+    },
+    {
+      q: 'Какие выплаты возможны при производственной травме?',
+      a: 'В зависимости от последствий и подтверждающих документов возможны пособие по временной нетрудоспособности, единовременная и ежемесячная страховые выплаты, оплата отдельных дополнительных расходов на медицинскую, социальную и профессиональную реабилитацию. Отдельно оцениваются требования о возмещении вреда и компенсации морального вреда.'
+    },
+    {
+      q: 'Кто платит компенсацию морального вреда?',
+      a: 'Компенсация морального вреда не относится к страховым выплатам СФР. Требование обычно заявляется к лицу, ответственному за причинение вреда, с учетом обстоятельств происшествия и оснований ответственности.'
+    },
+    {
+      q: 'Можно ли оспорить акт и выводы комиссии?',
+      a: 'Да. Разногласия по расследованию, оформлению и учету несчастного случая рассматриваются трудовой инспекцией, а ее решения могут быть обжалованы. Конкретный способ защиты зависит от того, что именно оспаривается и какие документы уже оформлены.'
+    },
+    {
+      q: 'Можно ли получить помощь дистанционно?',
+      a: 'Да. Консультацию, анализ материалов, подготовку обращений и большинства процессуальных документов можно организовать дистанционно. Осмотр материалов, участие в расследовании и представительство согласуются с учетом региона и стадии дела.'
+    }
+  ];
+
+  const pricingTiers: PricingTier[] = [
+    {
+      title: 'Консультация и анализ',
+      subtitle: 'Оценка происшествия и расследования',
+      features: [
+        { name: 'Правовая консультация юриста', value: '[уточняется]' },
+        { name: 'Проверка документов и статуса расследования', value: '[уточняется]' },
+        { name: 'Оценка доказательств, выплат и требований', value: '[уточняется]' }
+      ],
+      buttonText: 'Уточнить стоимость',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Подготовка документов',
+      subtitle: 'Обращения и правовая позиция',
+      badgeText: 'Популярно',
+      features: [
+        { name: 'Заявления, разногласия и жалобы в ГИТ', value: '[уточняется]' },
+        { name: 'Требования по выплатам и возмещению вреда', value: '[уточняется]' },
+        { name: 'Исковое заявление и комплект доказательств', value: '[уточняется]' }
+      ],
+      buttonText: 'Уточнить стоимость',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Комплексное сопровождение',
+      subtitle: 'Расследование и судебная защита',
+      features: [
+        { name: 'Сопровождение работы с комиссией и СФР', value: '[уточняется]' },
+        { name: 'Представительство в суде во всех инстанциях', value: '[уточняется]' },
+        { name: 'Контроль оформления акта и выплат', value: '[уточняется]' }
+      ],
+      buttonText: 'Уточнить стоимость',
+      buttonHref: '#form'
+    }
+  ];
+
+  const steps: ProcessStep[] = [
+    {
+      num: '01',
+      title: (
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+          Консультация
+        </span>
+      ),
+      desc: 'Уточняем обстоятельства травмы, состояние расследования, медицинские последствия, действия работодателя и уже полученные документы.'
+    },
+    {
+      num: '02',
+      title: (
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+          Правовая оценка
+        </span>
+      ),
+      desc: 'Определяем, подлежит ли случай расследованию, какие выводы и нарушения можно оспаривать, какие виды обеспечения и требования возможны.'
+    },
+    {
+      num: '03',
+      title: (
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+          План действий
+        </span>
+      ),
+      desc: 'Фиксируем доказательства, выбираем порядок взаимодействия с работодателем, инспекцией, СФР, прокуратурой или судом и определяем последовательность требований.'
+    },
+    {
+      num: '04',
+      title: (
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+          Подготовка и сопровождение
+        </span>
+      ),
+      desc: 'Готовим заявления, разногласия, жалобы, расчеты и процессуальные документы; сопровождаем расследование и получение необходимых заключений.'
+    },
+    {
+      num: '05',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Представительство</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и фактическое исполнение</span>
+        </>
+      ),
+      desc: 'Представляем клиента в согласованном объеме и контролируем оформление акта, назначение выплат и исполнение судебного или иного решения.'
+    }
+  ];
+
+  const situations = [
+    {
+      tag: 'Сокрытие',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Работодатель</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>скрывает травму</span>
+        </>
+      ),
+      desc: 'Просит указать бытовую причину, не сообщает о происшествии, не создает комиссию или предлагает лечение и деньги без официального оформления.'
+    },
+    {
+      tag: 'Квалификация',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Случай признали</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>непроизводственным</span>
+        </>
+      ),
+      desc: 'Комиссия отрицает связь с работой, хотя травма произошла при выполнении задания, в служебной поездке, на территории работодателя или при иных связанных с работой обстоятельствах.'
+    },
+    {
+      tag: 'Акт Н-1',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В акте</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>искажены обстоятельства</span>
+        </>
+      ),
+      desc: 'Не отражены свидетели, состояние оборудования, отсутствие инструктажа или средств защиты; ответственность необоснованно перекладывают на пострадавшего.'
+    },
+    {
+      tag: 'Нарушения',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Расследование</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>проведено с нарушениями</span>
+        </>
+      ),
+      desc: 'Пострадавшего не знакомят с материалами, нарушен состав комиссии, не собраны важные документы или не выдан экземпляр акта.'
+    },
+    {
+      tag: 'Сроки',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Травма</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>проявилась позднее</span>
+        </>
+      ),
+      desc: 'За медицинской помощью обратились не сразу, последствия усилились после смены или работодатель ссылается на позднее сообщение как на основание для отказа.'
+    },
+    {
+      tag: 'Выплаты СФР',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не назначены</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>страховые выплаты</span>
+        </>
+      ),
+      desc: 'Несчастный случай оформлен, но возникли проблемы с пособием, единовременной или ежемесячной выплатой, подтверждением утраты профессиональной трудоспособности.'
+    },
+    {
+      tag: 'Лечение',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не оплачивают</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>лечение и реабилитацию</span>
+        </>
+      ),
+      desc: 'Нужно определить, какие дополнительные расходы могут быть оплачены в системе обязательного страхования и чем их подтвердить.'
+    },
+    {
+      tag: 'Вред здоровью',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Требуется</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>возмещение вреда здоровью</span>
+        </>
+      ),
+      desc: 'Травма привела к длительному лечению, утрате заработка, инвалидности или нравственным и физическим страданиям, и требуется определить требования к работодателю и другим ответственным лицам.'
+    }
+  ];
+
+  const whatLawyerDoes = [
+    'восстановит хронологию происшествия и определит, какие доказательства важно сохранить в первую очередь;',
+    'проверит, подлежит ли событие расследованию как несчастный случай на производстве и кто должен его расследовать;',
+    'поможет потребовать расследование или дополнительное расследование при сокрытии случая и нарушениях комиссии;',
+    'изучит акт, материалы расследования, медицинские документы, объяснения свидетелей, записи камер, документы об инструктаже и состоянии оборудования;',
+    'подготовит разногласия, заявления и обращения в государственную инспекцию труда, СФР, прокуратуру или суд — в зависимости от задачи;',
+    'поможет оспорить квалификацию случая и необоснованный вывод о грубой неосторожности пострадавшего;',
+    'определит возможные виды страхового обеспечения, дополнительные расходы и требования о возмещении вреда и компенсации морального вреда;',
+    'представит интересы клиента в переговорах, государственных органах и суде в согласованном объеме и поможет проконтролировать исполнение результата.'
+  ];
+
+  const whatToPrepare = [
+    'дату, время, место и краткую последовательность событий происшествия;',
+    'сведения о свидетелях, камерах, фотографиях, переписке и документах о задании;',
+    'медицинские документы с обстоятельствами травмы, больничный лист и степень тяжести;',
+    'трудовой договор, должностную инструкцию, наряд, путевой лист или сменный журнал;',
+    'извещения, приказ о комиссии, акт, протоколы и другие материалы расследования;',
+    'документы об инструктажах, обучении, средствах защиты и состоянии оборудования;',
+    'решения СФР, заключения МСЭ и индивидуальную программу реабилитации;',
+    'чеки, договоры и назначения, подтверждающие расходы на лечение и реабилитацию.'
+  ];
+
+  const relatedServices = [
+    {
+      title: 'Взыскание заработной платы и других выплат',
+      desc: 'Если спор касается зарплаты, окончательного расчета, отпускных, премии или компенсации за задержку.',
+      link: '/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/'
+    },
+    {
+      title: 'Незаконное увольнение и восстановление на работе',
+      desc: 'Если после травмы вынуждают уйти, увольняют по инициативе работодателя или требуется восстановление.',
+      link: '/grazhdanam/trudovoj-yurist/nezakonnoe-uvolnenie/'
+    },
+    {
+      title: 'Трудовой юрист в Липецке',
+      desc: 'Если ситуация включает несколько нарушений или требуется помощь по другому трудовому спору.',
+      link: '/grazhdanam/trudovoj-yurist/'
     }
   ];
 
@@ -74,29 +321,33 @@ export default function ProizvodstvennayaTravmaClient() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'LegalService',
+        '@type': 'Organization',
         '@id': 'https://dejure-help.ru/#organization',
-        'name': 'ЮК «Де-Юре»',
-        'url': 'https://dejure-help.ru',
-        'logo': 'https://dejure-help.ru/images/logo_dark.png',
-        'telephone': '+7 (910) 350-31-11',
+        'name': 'Юридическая компания «Де-Юре»',
+        'url': 'https://dejure-help.ru/',
+        'logo': 'https://dejure-help.ru/images/logo.png',
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': 'пл. Театральная, д. 3, офис 401',
           'addressLocality': 'Липецк',
-          'postalCode': '398001',
           'addressCountry': 'RU'
         }
       },
       {
-        '@type': 'Service',
-        'name': 'Юрист по производственным травмам в Липецке | Де-Юре',
-        'provider': { '@id': 'https://dejure-help.ru/#organization' },
-        'areaServed': {
-          '@type': 'AdministrativeArea',
-          'name': 'Липецк и Липецкая область'
-        },
-        'description': 'Помощь юриста при производственной травме и несчастных случаях на производстве в Липецке: оформление акта Н-1, страховые выплаты СФР, компенсация морального вреда.'
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Трудовой юрист', 'item': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/' },
+          { '@type': 'ListItem', 'position': 4, 'name': 'Производственная травма', 'item': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/' }
+        ]
+      },
+      {
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/#service',
+        'name': 'Помощь юриста при производственной травме в Липецке',
+        'description': 'Расследование несчастного случая, проверка акта Н-1, оформление выплат СФР и возмещение вреда здоровью.',
+        'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/',
+        'provider': { '@id': 'https://dejure-help.ru/#organization' }
       },
       {
         '@type': 'FAQPage',
@@ -137,31 +388,28 @@ export default function ProizvodstvennayaTravmaClient() {
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
             <Link href="/grazhdanam/trudovoj-yurist/">Трудовой юрист</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <span style={{ color: 'var(--color-text-main)' }}>Юрист по производственным травмам в Липецке</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Производственная травма</span>
           </>
         }
-        superTitle="Трудовой юрист в Липецке"
+        superTitle="Трудовые споры • расследование и выплаты"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Юрист по
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Юрист по производственной
             </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              производственным
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              травмам в Липецке
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              травме в Липецке
             </span>
           </span>
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Официальная фиксация несчастного случая, обжалование акта Н-1, получение единовременных и ежемесячных выплат от Социального фонда и взыскание компенсации вреда здоровью с работодателя.
+            Поможем добиться расследования несчастного случая, проверить акт и выводы комиссии, оформить страховые выплаты и потребовать возмещение вреда, причиненного здоровью.
           </span>
         }
-        primaryCtaText="Обсудить ситуацию с юристом"
+        primaryCtaText="Обсудить ситуацию"
         primaryCtaLink="#form"
-        primaryCtaAnalytics="click_cta_proizvodstvennaya_travma"
+        primaryCtaAnalytics="click_primary_cta_travma"
         primaryCtaSubtext={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
@@ -172,142 +420,102 @@ export default function ProizvodstvennayaTravmaClient() {
             </span>
           </span>
         }
-        trustItems={[{"text":"Оформление акта Н-1 и расследование случая"},{"text":"Получение выплат по обязательному страхованию"},{"text":"Взыскание компенсации вреда здоровью и морального вреда"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        urgentHint="Ни в коем случае не соглашайтесь оформлять травму как «бытовую»! Это лишит вас права на страховые выплаты, оплату лечения и компенсацию утраченного заработка."
+        trustItems={[
+          { text: 'Официальное расследование и оформление акта Н-1' },
+          { text: 'Оспаривание выводов о вине или грубой неосторожности' },
+          { text: 'Оформление страховых выплат СФР и возмещения вреда' },
+          { text: 'Куратор — юрист М. В. Смольянинова' }
+        ]}
         imageUrl="/images/smolyaninova.jpg"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Трудовое право»"
         imageObjectPosition="center 20%"
       />
 
-      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы помогаем гражданам</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы помогаем</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Ознакомьтесь с типовыми сценариями. Если ваша ситуация сложнее или включает несколько спорных вопросов — мы разработаем индивидуальную стратегию защиты.
+              Окажем правовую помощь на любой стадии: от фиксации несчастного случая до взыскания компенсаций за причиненный вред здоровью.
             </p>
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
-            {[
-              {
-                tag: 'Сокрытие / Давление',
-                title: (
-                  <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Работодатель</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>скрывает происшествие</span>
-                  </>
-                ),
-                desc: 'Руководство просит сказать врачам, что упали дома, не создает комиссию по расследованию и не извещает ГИТ.'
-              },
-              {
-                tag: 'Акт Н-1 / Оспаривание',
-                title: (
-                  <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отказ признать</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>травму производственной</span>
-                  </>
-                ),
-                desc: 'Комиссия составила акт произвольной формы, указав, что травма якобы не связана с производством, либо возложила всю вину на работника.'
-              },
-              {
-                tag: 'СФР / Выплаты',
-                title: (
-                  <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отказ или занижение</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>страховых выплат СФР</span>
-                  </>
-                ),
-                desc: 'Отказ Социального фонда РФ назначить единовременное или ежемесячное страховое обеспечение по потере трудоспособности.'
-              },
-              {
-                tag: 'Лечение / Расходы',
-                title: (
-                  <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскание расходов на</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>лечение и реабилитацию</span>
-                  </>
-                ),
-                desc: 'Компенсация стоимости платных операций, лекарств, протезирования, санаторно-курортного лечения и постороннего ухода.'
-              },
-              {
-                tag: 'Моральный вред',
-                title: (
-                  <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскание компенсации</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>тяжкого морального вреда</span>
-                  </>
-                ),
-                desc: 'Судебное взыскание с работодателя существенной компенсации физических и нравственных страданий пострадавшего.'
-              },
-              {
-                tag: 'Гибель / Семья',
-                title: (
-                  <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Смертельный несчастный</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>случай на производстве</span>
-                  </>
-                ),
-                desc: 'Помощь семьям и родственникам погибшего работника: получение 2 млн руб. страховой выплаты и компенсация вреда семье.'
-              }
-            ].map((item, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '36px 30px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease'
-              }}>
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
-                  </svg>
-                </div>
-
-                <div style={{ 
-                  fontSize: '12px', 
-                  fontWeight: 700, 
-                  color: 'var(--color-gold)', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.08em', 
-                  marginBottom: '14px',
+            {situations.map((sit, i) => (
+              <div
+                key={i}
+                className="hover-lift"
+                style={{
+                  padding: '36px 30px',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '12px',
                   background: 'rgba(193, 160, 102, 0.1)',
                   padding: '4px 10px',
-                  display: 'inline-block',
                   alignSelf: 'flex-start'
                 }}>
-                  {item.tag}
+                  {sit.tag}
                 </div>
-                
-                <h3 style={{ 
-                  fontFamily: 'var(--font-serif)', 
-                  fontSize: '20px', 
-                  color: 'var(--color-deep-blue)', 
-                  marginBottom: '14px', 
-                  marginTop: 0, 
-                  lineHeight: 1.3 
-                }}>
-                  {item.title}
+
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                  {sit.title}
                 </h3>
-                
-                <p style={{ 
-                  fontSize: '14px', 
-                  color: 'var(--color-text-secondary)', 
-                  lineHeight: 1.6, 
-                  margin: 0,
-                  flexGrow: 1
-                }}>
-                  {item.desc}
+
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
+                  {sit.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block' }}>
+              Получить оценку ситуации
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 3: ЧЕМ ПОМОЖЕТ ЮРИСТ ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              Чем поможет юрист
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              Комплексное сопровождение расследования и защита интересов пострадавшего работника.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+            {whatLawyerDoes.map((item, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '20px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-primary)' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '3px' }}>
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+                  {item}
                 </p>
               </div>
             ))}
@@ -315,192 +523,173 @@ export default function ProizvodstvennayaTravmaClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
+      {/* ═══ БЛОК 4: ЧТО ПОДГОТОВИТЬ ДЛЯ КОНСУЛЬТАЦИИ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              Что подготовить для консультации
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              Не нужно ждать полного комплекта. Сообщите юристу, что уже есть:
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+            {whatToPrepare.map((item, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '20px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-gold)' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '3px' }}>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 5: СПЕЦИАЛИСТ ПО ДЕЛУ ═══ */}
       <SpecialistBlock
-        title="Куратор направления"
+        title="Вашим делом займется Марина Валерьевна Смольянинова"
         name="Марина Валерьевна Смольянинова"
-        position="Ведущий юрист ЮК «Де-Юре»"
+        position="Ведущий юрист ЮК &#171;Де-Юре&#187;"
         imageUrl="/images/smolyaninova.jpg"
         description={[
-          'Специализируется на защите интересов работников в спорах с работодателями любой сложности: незаконные увольнения, дискриминация, сокращения и взыскание задолженностей.',
-          'Успешный опыт судебного представительства по спорам о восстановлении на работе с взысканием полного среднего заработка за вынужденный прогул и компенсации морального вреда.',
-          'Доскональное знание процессуальных особенностей доказывания трудовых отношений, оспаривания дисциплинарных взысканий и признания несчастных случаев производственными.',
-          'Защита прав работников в Липецке и Липецкой области; возможность дистанционного ведения дел по всей России.'
+          'Специализируется на трудовых спорах и защите прав работников при несчастных случаях.',
+          'Анализирует материалы расследования, выводы комиссии и медицинские документы.',
+          'Сопровождает взаимодействие с Государственной инспекцией труда, СФР и представляет интересы в суде.',
+          'Более 5 лет юридической и судебной практики в сфере защиты прав граждан.'
         ]}
-        buttonText="Обсудить ситуацию с Мариной Валерьевной"
+        buttonText="Задать вопрос юристу"
         buttonHref="#form"
       />
 
-      {/* ═══ БЛОК 4: СТОИМОСТЬ УСЛУГ ═══ */}
-      <PricingBlock
-        title="Стоимость юридической помощи"
-        subtitle="Прозрачные тарифы без скрытых доплат. Состав услуг и условия фиксируются в договоре."
-        tiers={[
-          {
-            title: (
-              <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Анализ материалов</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>расследования травмы</span>
-              </>
-            ),
-            subtitle: 'Экспертиза акта Н-1, медицинских документов и заключений экспертиз',
-            
-            features: [
-              { name: 'Проверка правильности квалификации травмы', value: '[уточняется]' },
-              { name: 'Анализ степени вины работника в акте', value: '[уточняется]' },
-              { name: 'Расчет всех положенных видов выплат', value: '[уточняется]' }
-            ],
-            buttonText: 'Оценить ситуацию',
-            buttonHref: '#form'
-          },
-          {
-            title: (
-              <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оспаривание выводов</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>комиссии в ГИТ и СФР</span>
-              </>
-            ),
-            subtitle: 'Проведение независимой проверки и принудительное оформление акта Н-1',
-            
-            features: [
-              { name: 'Жалоба в Государственную инспекцию труда', value: '[уточняется]' },
-              { name: 'Повторное расследование государственным инспектором', value: '[уточняется]' },
-              { name: 'Оформление пакета для страховых выплат СФР', value: '[уточняется]' }
-            ],
-            buttonText: 'Оспорить акт',
-            buttonHref: '#form'
-          },
-          {
-            title: (
-              <>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Судебное взыскание</span>
-                      <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>компенсации «под ключ»</span>
-              </>
-            ),
-            subtitle: 'Взыскание утраченного заработка, морального вреда и расходов на лечение',
-            popular: true,
-            badgeText: 'Популярно',
-            features: [
-              { name: 'Иск к работодателю и Социальному фонду РФ', value: '[уточняется]' },
-              { name: 'Назначение судебно-медицинской экспертизы', value: '[уточняется]' },
-              { name: 'Взыскание компенсации морального вреда и расходов', value: '[уточняется]' }
-            ],
-            buttonText: 'Выбрать тариф',
-            buttonHref: '#form'
-          }
-        ]}
-        disclaimer="Стоимость определяется после первичного анализа документов. Согласно ст. 393 ТК РФ работники полностью освобождаются от оплаты госпошлины и судебных расходов при любых спорах с работодателем."
-      />
-
-      {/* ═══ БЛОК 5: ПРИМЕРЫ ДЕЛ ИЗ ПРАКТИКИ ═══ */}
+      {/* ═══ БЛОК 6: ПРИМЕРЫ ДЕЛ ═══ */}
       <CasesBlock
-        title="Примеры дел из практики"
+        title="Примеры дел по производственным травмам"
         showAllLink="/praktika/"
-        showAllText="Смотреть все дела"
+        showAllText="Смотреть другие дела"
         showDemoWarning={true}
         cases={cases}
       />
 
-      {/* ═══ БЛОК 6: КАК ПРОХОДИТ РАБОТА ═══ */}
+      {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
-        subtitle="Понятные шаги и прозрачный контроль на каждом этапе ведения вашего дела."
+        subtitle="Начать можно в офисе, по телефону или видеосвязи. Документы передаются лично либо согласованным защищенным способом."
         alignTitle="left"
-        steps={[
-          {
-            num: '01',
-            title: 'Анализ документов и сроков',
-            desc: 'Изучаем трудовой договор, приказы, расчетные листки и переписку. Оцениваем риски и соблюдение сроков обращения.'
-          },
-          {
-            num: '02',
-            title: 'Сбор доказательной базы',
-            desc: 'Запрашиваем недостающие документы у работодателя и в госорганах, фиксируем показания свидетелей.'
-          },
-          {
-            num: '03',
-            title: 'Досудебные требования',
-            desc: 'Направляем работодателю мотивированную претензию, при необходимости привлекаем ГИТ и прокуратуру.'
-          },
-          {
-            num: '04',
-            title: 'Судебное представительство',
-            desc: 'Подаем иск в суд, участвуем во всех заседаниях, доказываем неправомерность действий работодателя.'
-          },
-          {
-            num: '05',
-            title: 'Получение результата',
-            desc: 'Получаем исполнительный лист, контролируем восстановление в должности и выплату всех присужденных сумм.'
-          }
-        ]}
-        ctaTitle="Готовы защитить ваши трудовые права"
-        ctaSubtitle="Опишите задачу — юрист изучит документы и предложит конкретные шаги для победы."
-        ctaButtonText="Обсудить ситуацию с юристом"
+        steps={steps}
+        ctaTitle="Обсудите ситуацию с травмой"
+        ctaSubtitle="Опишите обстоятельства происшествия — юрист оценит перспективы официального расследования."
+        ctaButtonText="Обсудить ситуацию"
         ctaButtonHref="#form"
-        footerNote="Для правовой оценки понадобятся: трудовой договор, приказы, расчетные листки. Возможен дистанционный формат работы."
+        footerNote="Для первичного разбора понадобятся медицинские справки, сведения о свидетелях или материалы комиссии (при наличии)."
       />
 
-      {/* ═══ БЛОК 7: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
+      {/* ═══ БЛОК 8: СТОИМОСТЬ ═══ */}
+      <PricingBlock
+        title="Стоимость юридической помощи"
+        subtitle="Стоимость зависит от стадии расследования, объема материалов, медицинских последствий, числа органов и требований, необходимости экспертиз и судебного спора. Состав работы и цена согласовываются до заключения договора."
+        tiers={pricingTiers}
+        disclaimer="Стоимость определяется после уточнения обстоятельств дела и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы."
+      />
+
+      {/* ═══ БЛОК 9: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              Другие трудовые споры работников
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              Смежные направления помощи при нарушении трудовых прав.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '24px' }}>
+            {relatedServices.map((srv, i) => (
+              <Link key={i} href={srv.link} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                <div
+                  className="card related-service-card"
+                  style={{
+                    height: '100%',
+                    minHeight: '160px',
+                    padding: '30px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-primary)',
+                    borderRadius: '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    transition: 'all 0.3s',
+                    position: 'relative'
+                  }}
+                >
+                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    {srv.title}
+                  </h3>
+                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                    {srv.desc}
+                  </p>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
+                    Подробнее
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 10: FAQ ═══ */}
       <FAQBlock
         superTitle="Частые вопросы"
-        title={
-          <>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ответы на вопросы</span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по трудовому спору</span>
-          </>
-        }
-        subtitle="Разъяснения юриста о правах работника и судебной практике"
-        ctaText="Задать вопрос юристу"
+        title={<><span>Ответы на</span> <br /><span>частые вопросы</span></>}
+        subtitle="О расследовании травм и выплатах"
+        ctaText="Задать свой вопрос"
         ctaLink="#form"
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 8: КОНТАКТНАЯ ФОРМА (КАНОНИЧЕСКИЙ ШАБЛОН) ═══ */}
-      <section className="section" id="form" style={{ padding: '80px 0', background: 'var(--color-bg-light)' }}>
+      {/* ═══ БЛОК 11: ФОРМА ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '48px', alignItems: 'center' }}>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-gold)' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.08em', fontSize: '13px', fontWeight: 600, color: 'var(--color-gold-text)' }}>
-                  Запись на консультацию
-                </span>
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
               </div>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '20px', lineHeight: 1.2 }}>
-                Обсудите ваш трудовой спор с юристом
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Обсудите производственную травму с Мариной Валерьевной Смольяниновой
               </h2>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '32px' }}>
-                Опишите ситуацию, и юрист по трудовому праву свяжется с вами в течение 15 минут, чтобы оценить перспективы дела, сроки обращения и составить план защиты.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '28px', textWrap: 'balance' }}>
+                Кратко опишите, когда и при каких обстоятельствах произошла травма и проводит ли работодатель расследование. Обращение будет передано Марине Валерьевне Смольяниновой. Она уточнит обстоятельства, имеющиеся документы и согласует с Вами консультацию.
               </p>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-gold)' }}></div>
-                  <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
-                    Соблюдение строгой конфиденциальности
-                  </span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-gold)' }}></div>
-                  <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
-                    Оценка перспектив дела и расчет компенсаций
-                  </span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-gold)' }}></div>
-                  <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
-                    Возможность дистанционного ведения процесса
-                  </span>
-                </div>
+              <a href="tel:+79103503111" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', marginBottom: '16px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.47 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 5.55 5.55l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                +7 (910) 350-31-11
+              </a>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                </svg>
+                <span>Перезвоним в течение 15 минут в рабочее время</span>
               </div>
             </div>
-
-            <div style={{ background: 'var(--color-white)', padding: '40px', borderRadius: '0', border: '1px solid var(--color-border)', boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}>
-              <ContactsForm
-                title="Получить оценку ситуации"
-                subtitle="Заполните форму для связи с профильным юристом"
-                buttonText="Отправить заявку на консультацию"
-              />
+            <div>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 8px 24px rgba(0,0,0,0.15)' }}>
+                <ContactsForm buttonText="Получить консультацию" />
+              </div>
             </div>
           </div>
         </div>
