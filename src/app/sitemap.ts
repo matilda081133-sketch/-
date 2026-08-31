@@ -52,6 +52,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/',
     '/grazhdanam/avtoyurist/lishenie-voditelskih-prav/',
     '/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/',
+    // Наследственный юрист
+    '/grazhdanam/nasledstvennyj-yurist/',
+    '/grazhdanam/nasledstvennyj-yurist/oformlenie-i-vstuplenie-v-nasledstvo/',
+    '/grazhdanam/nasledstvennyj-yurist/osparivanie-zaveschaniya/',
+    '/grazhdanam/nasledstvennyj-yurist/priznanie-naslednika-nedostojnym/',
+    '/grazhdanam/nasledstvennyj-yurist/razdel-nasledstva-mezhdu-naslednikami/',
+    '/grazhdanam/nasledstvennyj-yurist/ustanovlenie-fakta-prinyatiya-nasledstva/',
+    '/grazhdanam/nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva/',
     // Миграционный юрист
     '/grazhdanam/migracionnyj-yurist/',
     '/grazhdanam/migracionnyj-yurist/otmena-zapreta-na-vezd-v-rossiyu/',
