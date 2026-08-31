@@ -32,13 +32,8 @@ export default function ProcessBlock({
   alignTitle = 'center',
   footerNote
 }: ProcessBlockProps) {
-  // Determine grid class based on number of steps
-  let gridClass = "grid grid-3";
-  if (steps.length === 4 || steps.length === 8) {
-    gridClass = "grid grid-4";
-  } else if (steps.length === 2) {
-    gridClass = "grid grid-2";
-  }
+  const regularSteps = steps.filter(s => !s.isBanner);
+  const bannerSteps = steps.filter(s => s.isBanner);
 
   return (
     <section className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
@@ -58,11 +53,12 @@ export default function ProcessBlock({
         </div>
 
         <div style={{ position: 'relative' }}>
-          {steps.length === 5 ? (
+          {/* Сценарий А: 5 регулярных шагов (3 в 1-м ряду + 2 по центру во 2-м ряду) */}
+          {regularSteps.length === 5 ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-              {/* Ряд 1: 3 этапа */}
+              {/* Ряд 1: 3 этапа с линией 01 -> 02 -> 03 */}
               <div className="grid grid-3" style={{ gap: '40px' }}>
-                {steps.slice(0, 3).map((step, i) => (
+                {regularSteps.slice(0, 3).map((step, i) => (
                   <div key={i} className="stage-item" style={{ 
                     position: 'relative',
                     display: 'flex',
@@ -101,124 +97,16 @@ export default function ProcessBlock({
                 ))}
               </div>
 
-              {/* Ряд 2: 2 этапа по центру */}
+              {/* Ряд 2: 2 этапа по центру с линией 04 -> 05 */}
               <div className="grid grid-2" style={{ gap: '40px', maxWidth: '780px', margin: '0 auto', width: '100%' }}>
-                {steps.slice(3, 5).map((step, i) => (
-                  step.isBanner ? (
-                    <div key={i + 3} style={{ 
-                      position: 'relative',
-                      zIndex: 1,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      textAlign: 'center',
-                      background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                      border: '1px solid var(--color-border)', 
-                      borderLeft: '4px solid var(--color-primary)', 
-                      padding: '28px 24px', 
-                      boxShadow: '0 4px 12px rgba(23, 50, 77, 0.05)',
-                      height: '100%'
-                    }} className="stage-banner-item">
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%', alignItems: 'center', textAlign: 'center' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}>
-                          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="12" y1="16" x2="12" y2="12"></line>
-                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                          </svg>
-                          <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: 0, fontFamily: 'var(--font-serif)', lineHeight: 1.3, fontWeight: 700, whiteSpace: 'pre-line', textAlign: 'center' }}>
-                            {step.title}
-                          </h3>
-                        </div>
-                        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0, textAlign: 'center' }}>
-                          {step.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ) : (
-                    <div key={i + 3} className="stage-item" style={{ 
-                      position: 'relative',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      background: 'transparent',
-                      padding: '10px'
-                    }}>
-                      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
-                        <div style={{ 
-                          width: '56px', 
-                          height: '56px', 
-                          borderRadius: '50%', 
-                          background: 'linear-gradient(135deg, #FFFFFF 0%, #FBF8F3 100%)', 
-                          border: '2px solid var(--color-gold)', 
-                          display: 'flex', 
-                          alignItems: 'center', 
-                          justifyContent: 'center', 
-                          color: 'var(--color-deep-blue)', 
-                          fontWeight: 700, 
-                          fontSize: '20px', 
-                          fontFamily: 'var(--font-serif)', 
-                          boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)', 
-                          position: 'relative',
-                          zIndex: 2 
-                        }}>
-                          {step.num || String(i + 4).padStart(2, '0')}
-                        </div>
-                      </div>
-                      <h3 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
-                        {typeof step.title === 'string' ? step.title.replace(/^\d+\.\s*/, '') : step.title}
-                      </h3>
-                      <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center', whiteSpace: 'pre-line' }}>
-                        {step.desc}
-                      </p>
-                    </div>
-                  )
-                ))}
-              </div>
-            </div>
-          ) : (
-            <div className={gridClass} style={{ gap: '40px' }}>
-              {steps.map((step, i) => 
-                step.isBanner ? (
-                  <div key={i} style={{ 
-                    position: 'relative',
-                    zIndex: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textAlign: 'center',
-                    background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
-                    border: '1px solid var(--color-border)', 
-                    borderLeft: '4px solid var(--color-primary)', 
-                    padding: '28px 24px', 
-                    boxShadow: '0 4px 12px rgba(23, 50, 77, 0.05)',
-                    height: '100%'
-                  }} className="stage-banner-item">
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%', alignItems: 'center', textAlign: 'center' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}>
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                          <circle cx="12" cy="12" r="10"></circle>
-                          <line x1="12" y1="16" x2="12" y2="12"></line>
-                          <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                        </svg>
-                        <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: 0, fontFamily: 'var(--font-serif)', lineHeight: 1.3, fontWeight: 700, whiteSpace: 'pre-line', textAlign: 'center' }}>
-                          {step.title}
-                        </h3>
-                      </div>
-                      <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0, textAlign: 'center' }}>
-                        {step.desc}
-                      </p>
-                    </div>
-                  </div>
-                ) : (
-                  <div key={i} style={{ 
+                {regularSteps.slice(3, 5).map((step, i) => (
+                  <div key={i + 3} className="stage-item" style={{ 
                     position: 'relative',
                     display: 'flex',
                     flexDirection: 'column',
                     background: 'transparent',
                     padding: '10px'
-                  }} className="stage-item">
+                  }}>
                     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
                       <div style={{ 
                         width: '56px', 
@@ -235,12 +123,11 @@ export default function ProcessBlock({
                         fontFamily: 'var(--font-serif)', 
                         boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)', 
                         position: 'relative',
-                        zIndex: 2
+                        zIndex: 2 
                       }}>
-                        {step.num || String(i + 1).padStart(2, '0')}
+                        {step.num || String(i + 4).padStart(2, '0')}
                       </div>
                     </div>
-
                     <h3 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
                       {typeof step.title === 'string' ? step.title.replace(/^\d+\.\s*/, '') : step.title}
                     </h3>
@@ -248,8 +135,204 @@ export default function ProcessBlock({
                       {step.desc}
                     </p>
                   </div>
-                )
-              )}
+                ))}
+              </div>
+
+              {/* Выделенный баннер: Дистанционный формат под двумя рядами */}
+              {bannerSteps.map((step, idx) => (
+                <div key={idx} style={{ 
+                  marginTop: '10px',
+                  position: 'relative',
+                  zIndex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                  border: '1px solid var(--color-border)', 
+                  borderLeft: '4px solid var(--color-gold)', 
+                  padding: '28px 32px', 
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+                  width: '100%',
+                  boxSizing: 'border-box'
+                }} className="stage-banner-item">
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%', alignItems: 'center', textAlign: 'center' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}>
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                      </svg>
+                      <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, fontFamily: 'var(--font-serif)', lineHeight: 1.3, fontWeight: 700, whiteSpace: 'pre-line', textAlign: 'center' }}>
+                        {step.title}
+                      </h3>
+                    </div>
+                    <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center', maxWidth: '820px' }}>
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : regularSteps.length === 4 && bannerSteps.length > 0 ? (
+            /* Сценарий Б: 4 регулярных шага + 1 баннер (3 в 1-м ряду + 04 и Баннер по центру во 2-м ряду) */
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+              {/* Ряд 1: 3 этапа с линией 01 -> 02 -> 03 */}
+              <div className="grid grid-3" style={{ gap: '40px' }}>
+                {regularSteps.slice(0, 3).map((step, i) => (
+                  <div key={i} className="stage-item" style={{ 
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    background: 'transparent',
+                    padding: '10px'
+                  }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
+                      <div style={{ 
+                        width: '56px', 
+                        height: '56px', 
+                        borderRadius: '50%', 
+                        background: 'linear-gradient(135deg, #FFFFFF 0%, #FBF8F3 100%)', 
+                        border: '2px solid var(--color-gold)', 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center', 
+                        color: 'var(--color-deep-blue)', 
+                        fontWeight: 700, 
+                        fontSize: '20px', 
+                        fontFamily: 'var(--font-serif)', 
+                        boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)', 
+                        position: 'relative',
+                        zIndex: 2 
+                      }}>
+                        {step.num || String(i + 1).padStart(2, '0')}
+                      </div>
+                    </div>
+                    <h3 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
+                      {typeof step.title === 'string' ? step.title.replace(/^\d+\.\s*/, '') : step.title}
+                    </h3>
+                    <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center', whiteSpace: 'pre-line' }}>
+                      {step.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Ряд 2: Шаг 04 и Баннер «Дистанционный формат» по центру */}
+              <div className="grid grid-2" style={{ gap: '40px', maxWidth: '780px', margin: '0 auto', width: '100%', alignItems: 'center' }}>
+                <div className="stage-item stage-item-no-line" style={{ 
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  background: 'transparent',
+                  padding: '10px'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
+                    <div style={{ 
+                      width: '56px', 
+                      height: '56px', 
+                      borderRadius: '50%', 
+                      background: 'linear-gradient(135deg, #FFFFFF 0%, #FBF8F3 100%)', 
+                      border: '2px solid var(--color-gold)', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center', 
+                      color: 'var(--color-deep-blue)', 
+                      fontWeight: 700, 
+                      fontSize: '20px', 
+                      fontFamily: 'var(--font-serif)', 
+                      boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)', 
+                      position: 'relative',
+                      zIndex: 2 
+                    }}>
+                      {regularSteps[3].num || '04'}
+                    </div>
+                  </div>
+                  <h3 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
+                    {typeof regularSteps[3].title === 'string' ? regularSteps[3].title.replace(/^\d+\.\s*/, '') : regularSteps[3].title}
+                  </h3>
+                  <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center', whiteSpace: 'pre-line' }}>
+                    {regularSteps[3].desc}
+                  </p>
+                </div>
+
+                {/* Баннер Дистанционный формат рядом */}
+                <div style={{ 
+                  position: 'relative',
+                  zIndex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                  border: '1px solid var(--color-border)', 
+                  borderLeft: '4px solid var(--color-gold)', 
+                  padding: '28px 24px', 
+                  boxShadow: '0 4px 12px rgba(23, 50, 77, 0.05)',
+                  minHeight: '220px',
+                  boxSizing: 'border-box'
+                }} className="stage-banner-item">
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%', alignItems: 'center', textAlign: 'center' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}>
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                      </svg>
+                      <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, fontFamily: 'var(--font-serif)', lineHeight: 1.3, fontWeight: 700, whiteSpace: 'pre-line', textAlign: 'center' }}>
+                        {bannerSteps[0].title}
+                      </h3>
+                    </div>
+                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0, textAlign: 'center' }}>
+                      {bannerSteps[0].desc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            /* Стандартная сетка (для 3, 4 или других количеств шагов) */
+            <div className={steps.length === 4 ? "grid grid-4" : steps.length === 2 ? "grid grid-2" : "grid grid-3"} style={{ gap: '40px' }}>
+              {steps.map((step, i) => (
+                <div key={i} className="stage-item" style={{ 
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  background: 'transparent',
+                  padding: '10px'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
+                    <div style={{ 
+                      width: '56px', 
+                      height: '56px', 
+                      borderRadius: '50%', 
+                      background: 'linear-gradient(135deg, #FFFFFF 0%, #FBF8F3 100%)', 
+                      border: '2px solid var(--color-gold)', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center', 
+                      color: 'var(--color-deep-blue)', 
+                      fontWeight: 700, 
+                      fontSize: '20px', 
+                      fontFamily: 'var(--font-serif)', 
+                      boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)', 
+                      position: 'relative',
+                      zIndex: 2
+                    }}>
+                      {step.num || String(i + 1).padStart(2, '0')}
+                    </div>
+                  </div>
+
+                  <h3 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '16px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
+                    {typeof step.title === 'string' ? step.title.replace(/^\d+\.\s*/, '') : step.title}
+                  </h3>
+                  <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textAlign: 'center', whiteSpace: 'pre-line' }}>
+                    {step.desc}
+                  </p>
+                </div>
+              ))}
             </div>
           )}
           
@@ -322,7 +405,8 @@ export default function ProcessBlock({
         .grid-4 .stage-item:nth-child(4n)::after { display: none; }
         .grid-3 .stage-item:nth-child(3n)::after { display: none; }
         .grid-2 .stage-item:nth-child(2n)::after { display: none; }
-        .stage-item:last-child::after { display: none; }
+        .stage-item:last-child::after,
+        .stage-item-no-line::after { display: none !important; }
 
         .stage-item:hover {
           transform: translateY(-8px);
