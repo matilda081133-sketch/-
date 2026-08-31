@@ -263,28 +263,68 @@ export default function RazdelNasledstvaMezhduNaslednikamiClient() {
             </span>
           </span>
         }
-        trustItems={[{"text":"Раздел квартир, домов, земли и авто"},{"text":"Реализация преимущественного права по ст. 1168 ГК РФ"},{"text":"Мирные соглашения и судебный раздел"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        imageUrl="/images/smolyaninova.jpg"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
-        imageObjectPosition="center 20%"
-      />
-
-      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы можем помочь</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Ознакомьтесь с типовыми сценариями. Если ваша ситуация сложнее или включает несколько вопросов — мы разработаем индивидуальный план действий.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
-            {[{"tag":"Жильё / Доли","title":"Споры о долях в квартире или доме","desc":"Невозможность совместного проживания и пользования объектом несколькими наследниками."},{"tag":"Ст. 1168 ГК / Право","title":"Преимущественное право на имущество","desc":"Оформление неделимой вещи (квартиры, машины) за наследником, проживавшим в ней или пользовавшимся ею."},{"tag":"Выкуп доли","title":"Выплата денежной компенсации за долю","desc":"Взыскание справедливой рыночной компенсации взамен незначительной доли в общем имуществе."},{"tag":"Нотариус / Мир","title":"Мирное соглашение о разделе","desc":"Грамотное составление соглашения у нотариуса: распределение конкретных объектов без долевой собственности."},{"tag":"Бизнес / ООО","title":"Раздел неделимых вещей и бизнеса","desc":"Раздел долей в ООО, коммерческой недвижимости, техники и оборудования умершего."},{"tag":"Кредиты / Банки","title":"Раздел долгов наследодателя","desc":"Пропорциональное распределение кредитных обязательств наследодателя между всеми наследниками."}].map((item, i) => (
+        trustItems={[
+              {
+                tag: 'Жильё / Доли',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Споры о долях</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в квартире или доме</span>
+                  </>
+                ),
+                desc: 'Невозможность совместного проживания и пользования объектом несколькими наследниками.'
+              },
+              {
+                tag: 'Ст. 1168 ГК / Право',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Преимущественное</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>право на имущество</span>
+                  </>
+                ),
+                desc: 'Оформление неделимой вещи (квартиры, машины) за наследником, проживавшим в ней или пользовавшимся ею.'
+              },
+              {
+                tag: 'Выкуп доли',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Выплата компенсации</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>за наследственную долю</span>
+                  </>
+                ),
+                desc: 'Взыскание справедливой рыночной компенсации взамен незначительной доли в общем имуществе.'
+              },
+              {
+                tag: 'Нотариус / Мир',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Мирное соглашение</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>о разделе имущества</span>
+                  </>
+                ),
+                desc: 'Грамотное составление соглашения у нотариуса: распределение конкретных объектов без долевой собственности.'
+              },
+              {
+                tag: 'Бизнес / ООО',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Раздел имущества</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и долей в бизнесе</span>
+                  </>
+                ),
+                desc: 'Раздел долей в ООО, коммерческой недвижимости, техники и оборудования умершего.'
+              },
+              {
+                tag: 'Кредиты / Банки',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Раздел долгов</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и кредитов наследодателя</span>
+                  </>
+                ),
+                desc: 'Пропорциональное распределение кредитных обязательств наследодателя между всеми наследниками.'
+              }
+            ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',

@@ -263,28 +263,68 @@ export default function OsparivanieZaveschaniyaClient() {
             </span>
           </span>
         }
-        trustItems={[{"text":"Оспаривание по ст. 177 ГК РФ (порок воли)"},{"text":"Назначение посмертных судебно-психиатрических экспертиз"},{"text":"Защита обязательной доли по ст. 1149 ГК РФ"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        imageUrl="/images/smolyaninova.jpg"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
-        imageObjectPosition="center 20%"
-      />
-
-      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы можем помочь</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Ознакомьтесь с типовыми сценариями. Если ваша ситуация сложнее или включает несколько вопросов — мы разработаем индивидуальный план действий.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
-            {[{"tag":"Ст. 177 ГК / Экспертиза","title":"Наследодатель не понимал свои действия","desc":"Тяжёлое заболевание, приём сильнодействующих препаратов или деменция на момент оформления завещания."},{"tag":"Ст. 179 ГК / Обман","title":"Завещание оформлено под давлением","desc":"Обман, угрозы, введение в заблуждение или психологическое насилие со стороны третьих лиц."},{"tag":"Форма / Подделка","title":"Нарушена нотариальная форма","desc":"Подделка подписи, отсутствие обязательных реквизитов, подписание ненадлежащим лицом без рукоприкладчика."},{"tag":"Ст. 1149 ГК / Дети","title":"Лишение права на обязательную долю","desc":"Завещание составлено в пользу постороннего лица в ущерб несовершеннолетним детям или нетрудоспособным родителям."},{"tag":"Супруг / Собственность","title":"Завещано чужое имущество","desc":"Включение в текст завещания совместной супружеской собственности или неприватизированных объектов."},{"tag":"Защита воли","title":"Защита от необоснованного иска","desc":"Правовая защита наследника по завещанию от недобросовестных попыток родственников отменить волю умершего."}].map((item, i) => (
+        trustItems={[
+              {
+                tag: 'Ст. 177 ГК / Экспертиза',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Наследодатель</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>не понимал свои действия</span>
+                  </>
+                ),
+                desc: 'Тяжёлое заболевание, приём сильнодействующих препаратов или деменция на момент оформления завещания.'
+              },
+              {
+                tag: 'Ст. 179 ГК / Обман',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Завещание</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>оформлено под давлением</span>
+                  </>
+                ),
+                desc: 'Обман, угрозы, введение в заблуждение или психологическое насилие со стороны третьих лиц.'
+              },
+              {
+                tag: 'Форма / Подделка',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Нарушена</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>нотариальная форма</span>
+                  </>
+                ),
+                desc: 'Подделка подписи, отсутствие обязательных реквизитов, подписание ненадлежащим лицом без рукоприкладчика.'
+              },
+              {
+                tag: 'Ст. 1149 ГК / Дети',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Лишение права</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>на обязательную долю</span>
+                  </>
+                ),
+                desc: 'Завещание составлено в пользу постороннего лица в ущерб несовершеннолетним детям или нетрудоспособным родителям.'
+              },
+              {
+                tag: 'Супруг / Собственность',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Завещано</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>чужое имущество</span>
+                  </>
+                ),
+                desc: 'Включение в текст завещания совместной супружеской собственности или неприватизированных объектов.'
+              },
+              {
+                tag: 'Защита воли',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Защита</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>от необоснованного иска</span>
+                  </>
+                ),
+                desc: 'Правовая защита наследника по завещанию от недобросовестных попыток родственников отменить волю умершего.'
+              }
+            ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',

@@ -263,28 +263,68 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
             </span>
           </span>
         }
-        trustItems={[{"text":"Оформление по закону и завещанию"},{"text":"Запросы в ЗАГС, Росреестр, банки и архивы"},{"text":"Защита от пропуска 6-месячного срока"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        imageUrl="/images/smolyaninova.jpg"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
-        imageObjectPosition="center 20%"
-      />
-
-      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы можем помочь</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Ознакомьтесь с типовыми сценариями. Если ваша ситуация сложнее или включает несколько вопросов — мы разработаем индивидуальный план действий.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
-            {[{"tag":"Нотариус / Сроки","title":"Открытие дела у нотариуса","desc":"Подача заявления в установленный 6-месячный срок, выбор нотариальной конторы по месту открытия наследства."},{"tag":"ЗАГС / Родство","title":"Утеряны документы о родстве","desc":"Истребование повторных свидетельств, архивных справок и актовых записей через органы ЗАГС по всей России."},{"tag":"Росреестр / Ошибки","title":"Не оформлены права умершего","desc":"Включение имущества в наследственную массу, исправление ошибок в договорах, приватизация и кадастровый учёт."},{"tag":"Доли / Супруг","title":"Несколько наследников","desc":"Определение долей каждого наследника, выделение супружеской доли и согласование порядка оформления."},{"tag":"Дистанционно","title":"Наследство в другом регионе","desc":"Дистанционное ведение наследственного дела по доверенности без необходимости поездок доверителя."},{"tag":"Отказ / Суд","title":"Отказ нотариуса в оформлении","desc":"Устранение замечаний нотариуса, правовой аудит спорных справок либо признание права собственности через суд."}].map((item, i) => (
+        trustItems={[
+              {
+                tag: 'Нотариус / Сроки',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Открытие</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>дела у нотариуса</span>
+                  </>
+                ),
+                desc: 'Подача заявления в установленный 6-месячный срок, выбор нотариальной конторы по месту открытия наследства.'
+              },
+              {
+                tag: 'ЗАГС / Родство',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Утеряны</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>документы о родстве</span>
+                  </>
+                ),
+                desc: 'Истребование повторных свидетельств, архивных справок и актовых записей через органы ЗАГС по всей России.'
+              },
+              {
+                tag: 'Росреестр / Ошибки',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не оформлены</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>права умершего</span>
+                  </>
+                ),
+                desc: 'Включение имущества в наследственную массу, исправление ошибок в договорах, приватизация и кадастровый учёт.'
+              },
+              {
+                tag: 'Доли / Супруг',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Несколько</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>наследников</span>
+                  </>
+                ),
+                desc: 'Определение долей каждого наследника, выделение супружеской доли и согласование порядка оформления.'
+              },
+              {
+                tag: 'Дистанционно',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Наследство</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в другом регионе</span>
+                  </>
+                ),
+                desc: 'Дистанционное ведение наследственного дела по доверенности без необходимости поездок доверителя.'
+              },
+              {
+                tag: 'Отказ / Суд',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отказ</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>нотариуса в оформлении</span>
+                  </>
+                ),
+                desc: 'Устранение замечаний нотариуса, правовой аудит спорных справок либо признание права собственности через суд.'
+              }
+            ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',

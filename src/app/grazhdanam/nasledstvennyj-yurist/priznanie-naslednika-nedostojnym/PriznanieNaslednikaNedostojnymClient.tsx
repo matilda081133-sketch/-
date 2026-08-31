@@ -263,28 +263,68 @@ export default function PriznanieNaslednikaNedostojnymClient() {
             </span>
           </span>
         }
-        trustItems={[{"text":"Исключение по ст. 1117 ГК РФ"},{"text":"Доказывание уклонения от содержания наследодателя"},{"text":"Перераспределение долей в пользу добросовестных наследников"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        imageUrl="/images/smolyaninova.jpg"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
-        imageObjectPosition="center 20%"
-      />
-
-      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы можем помочь</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Ознакомьтесь с типовыми сценариями. Если ваша ситуация сложнее или включает несколько вопросов — мы разработаем индивидуальный план действий.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
-            {[{"tag":"Ст. 1117 ГК / Закон","title":"Противоправные действия против наследодателя","desc":"Умышленные преступления или незаконные попытки склонить к составлению завещания в свою пользу."},{"tag":"Алименты / ФССП","title":"Злостное уклонение от алиментов","desc":"Неисполнение судебного решения об уплате алиментов или содержания престарелого наследодателя."},{"tag":"Родительские права","title":"Лишение родительских прав","desc":"Родители, лишённые родительских прав и не восстановленные в них ко дню открытия наследства."},{"tag":"Подделка / Скрытие","title":"Подделка или сокрытие завещания","desc":"Попытки скрыть существование законного завещания или подделать подпись умершего."},{"tag":"Захват имущества","title":"Необоснованное завладение имуществом","desc":"Незаконное присвоение ценностей, денег со счетов или транспорта до выдачи свидетельств нотариусом."},{"tag":"Защита чести","title":"Защита от ложных обвинений","desc":"Защита добросовестного наследника от попыток родственников объявить его недостойным из личной неприязни."}].map((item, i) => (
+        trustItems={[
+              {
+                tag: 'Ст. 1117 ГК / Закон',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Противоправные действия</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>против наследодателя</span>
+                  </>
+                ),
+                desc: 'Умышленные преступления или незаконные попытки склонить к составлению завещания в свою пользу.'
+              },
+              {
+                tag: 'Алименты / ФССП',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Злостное уклонение</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>от уплаты алиментов</span>
+                  </>
+                ),
+                desc: 'Неисполнение судебного решения об уплате алиментов или содержания престарелого наследодателя.'
+              },
+              {
+                tag: 'Родительские права',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Лишение</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>родительских прав</span>
+                  </>
+                ),
+                desc: 'Родители, лишённые родительских прав и не восстановленные в них ко дню открытия наследства.'
+              },
+              {
+                tag: 'Подделка / Скрытие',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подделка</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или сокрытие завещания</span>
+                  </>
+                ),
+                desc: 'Попытки скрыть существование законного завещания или подделать подпись умершего.'
+              },
+              {
+                tag: 'Захват имущества',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Необоснованное</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>завладение имуществом</span>
+                  </>
+                ),
+                desc: 'Незаконное присвоение ценностей, денег со счетов или транспорта до выдачи свидетельств нотариусом.'
+              },
+              {
+                tag: 'Защита чести',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Защита</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>от ложных обвинений</span>
+                  </>
+                ),
+                desc: 'Защита добросовестного наследника от попыток родственников объявить его недостойным из личной неприязни.'
+              }
+            ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',

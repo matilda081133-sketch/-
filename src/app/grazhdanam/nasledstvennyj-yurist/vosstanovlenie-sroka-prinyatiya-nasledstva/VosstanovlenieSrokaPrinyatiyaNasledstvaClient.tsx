@@ -290,28 +290,68 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
             </span>
           </span>
         }
-        trustItems={[{"text":"Судебное восстановление по ст. 1155 ГК РФ"},{"text":"Доказывание уважительности причин пропуска"},{"text":"Соблюдение 6-месячного окна после отпадения причин"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        imageUrl="/images/smolyaninova.jpg"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
-        imageObjectPosition="center 20%"
-      />
-
-      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы можем помочь</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Ознакомьтесь с типовыми сценариями. Если ваша ситуация сложнее или включает несколько вопросов — мы разработаем индивидуальный план действий.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
-            {[{"tag":"Лечение / Больница","title":"Тяжёлая болезнь или госпитализация","desc":"Нахождение на стационарном лечении, беспомощное состояние или длительная реабилитация."},{"tag":"Сокрытие / Незнание","title":"Неизвещение о смерти родственника","desc":"Наследник объективно не знал и не должен был знать об открытии наследства из-за сокрытия факта другими лицами."},{"tag":"Служба / СВО","title":"Длительная командировка или служба","desc":"Служба в Вооружённых Силах, участие в СВО, нахождение в дальнем плавании или заграничной экспедиции."},{"tag":"Несовершеннолетние","title":"Несовершеннолетие наследника","desc":"Непринятие наследства законными представителями ребёнка в установленный законом срок."},{"tag":"Нотариус / Согласие","title":"Согласие остальных наследников","desc":"Оформление наследства без суда при письменном согласии всех остальных наследников у нотариуса."},{"tag":"Суд / Передел","title":"Перераспределение уже оформленных долей","desc":"Аннулирование выданных нотариусом свидетельств и признание прав на долю за восстановленным наследником."}].map((item, i) => (
+        trustItems={[
+              {
+                tag: 'Лечение / Больница',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Тяжёлая болезнь</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или госпитализация</span>
+                  </>
+                ),
+                desc: 'Нахождение на стационарном лечении, беспомощное состояние или длительная реабилитация.'
+              },
+              {
+                tag: 'Сокрытие / Незнание',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Неизвещение</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>о смерти родственника</span>
+                  </>
+                ),
+                desc: 'Наследник объективно не знал и не должен был знать об открытии наследства из-за сокрытия факта другими лицами.'
+              },
+              {
+                tag: 'Служба / СВО',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Длительная</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>командировка или служба</span>
+                  </>
+                ),
+                desc: 'Служба в Вооружённых Силах, участие в СВО, нахождение в дальнем плавании или заграничной экспедиции.'
+              },
+              {
+                tag: 'Несовершеннолетние',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Пропуск срока</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>за несовершеннолетнего</span>
+                  </>
+                ),
+                desc: 'Непринятие наследства законными представителями ребёнка в установленный законом срок.'
+              },
+              {
+                tag: 'Нотариус / Согласие',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Согласие</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>остальных наследников</span>
+                  </>
+                ),
+                desc: 'Оформление наследства без суда при письменном согласии всех остальных наследников у нотариуса.'
+              },
+              {
+                tag: 'Суд / Передел',
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Перераспределение</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>уже оформленных долей</span>
+                  </>
+                ),
+                desc: 'Аннулирование выданных нотариусом свидетельств и признание прав на долю за восстановленным наследником.'
+              }
+            ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
