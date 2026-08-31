@@ -100,7 +100,7 @@ export default function ProcessBlock({
                     </div>
                   </div>
                 ) : (
-                  <div key={i} className={`stage-item ${i === 4 ? 'stage-item-before-banner' : ''}`} style={{ 
+                  <div key={i} className="stage-item" style={{ 
                     position: 'relative',
                     display: 'flex',
                     flexDirection: 'column',
