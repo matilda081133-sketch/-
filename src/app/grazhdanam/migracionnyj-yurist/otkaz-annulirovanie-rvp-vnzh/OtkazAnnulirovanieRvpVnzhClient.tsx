@@ -55,7 +55,7 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
   {
     "popular": true,
     "badgeText": "Популярно",
-    "title": "Судебное восстановление РВП / ВНЖ",
+    "title": <>Судебное восстановление<br />РВП / ВНЖ</>,
     "subtitle": "Административный иск и защита статуса в суде",
     "price": "от 35 000 ₽",
     "features": [
@@ -99,7 +99,10 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
               Обжалование отказа
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              или аннулирования РВП и ВНЖ
+              или аннулирования
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              РВП и ВНЖ
             </span>
           </span>
         }

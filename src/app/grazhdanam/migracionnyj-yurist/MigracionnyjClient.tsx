@@ -569,7 +569,8 @@ export default function MigracionnyjClient() {
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обжалование отказа</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или аннулирования РВП и ВНЖ</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или аннулирования</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>РВП и ВНЖ</span>
                   </>
                 ),
                 desc: 'Защита статуса при неправомерных отказах МВД, сохранение права на постоянное и временное проживание в России.',
