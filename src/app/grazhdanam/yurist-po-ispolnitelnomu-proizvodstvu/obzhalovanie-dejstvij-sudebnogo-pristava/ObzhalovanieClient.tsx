@@ -472,42 +472,42 @@ export default function ObzhalovanieClient() {
             {[
               {
                 num: '01',
-                title: <><span style={{ display: 'inline-block' }}>Консультация</span> <br /><span style={{ display: 'inline-block' }}>и оценка срочности</span></>,
+                title: <><span style={{ display: 'block' }}>Консультация</span><span style={{ display: 'block' }}>и оценка срочности</span></>,
                 desc: 'Уточняем ситуацию, проверяем процессуальные сроки и определяем первоочередные меры.'
               },
               {
                 num: '02',
-                title: <><span style={{ display: 'inline-block' }}>Ознакомление</span> <br /><span style={{ display: 'inline-block' }}>с материалами</span></>,
+                title: <><span style={{ display: 'block' }}>Ознакомление</span><span style={{ display: 'block' }}>с материалами</span></>,
                 desc: 'Изучаем постановления, извещения, ответы и другие материалы производства.'
               },
               {
                 num: '03',
-                title: <><span style={{ display: 'inline-block' }}>Правовая экспертиза</span> <br /><span style={{ display: 'inline-block' }}>решений пристава</span></>,
+                title: <><span style={{ display: 'block' }}>Правовая экспертиза</span><span style={{ display: 'block' }}>решений пристава</span></>,
                 desc: 'Проверяем полномочия пристава, основания решения, соблюдение процедуры и сроков.'
               },
               {
                 num: '04',
-                title: <><span style={{ display: 'inline-block' }}>Формирование</span> <br /><span style={{ display: 'inline-block' }}>требований</span></>,
+                title: <><span style={{ display: 'block' }}>Формирование</span><span style={{ display: 'block' }}>требований</span></>,
                 desc: 'Определяем нарушенное право, требуемый результат и надлежащего адресата.'
               },
               {
                 num: '05',
-                title: <><span style={{ display: 'inline-block' }}>Подготовка жалобы</span> <br /><span style={{ display: 'inline-block' }}>в ФССП</span></>,
+                title: <><span style={{ display: 'block' }}>Подготовка жалобы</span><span style={{ display: 'block' }}>в ФССП</span></>,
                 desc: 'Составляем мотивированную жалобу вышестоящему лицу ФССП, заявления и ходатайства.'
               },
               {
                 num: '06',
-                title: <><span style={{ display: 'inline-block' }}>Подготовка иска</span> <br /><span style={{ display: 'inline-block' }}>в суд (КАС РФ)</span></>,
+                title: <><span style={{ display: 'block' }}>Подготовка иска</span><span style={{ display: 'block' }}>в суд (КАС РФ)</span></>,
                 desc: 'Готовим административное исковое заявление, доказательную базу и комплект документов.'
               },
               {
                 num: '07',
-                title: <><span style={{ display: 'inline-block' }}>Представительство</span> <br /><span style={{ display: 'inline-block' }}>интересов</span></>,
+                title: <><span style={{ display: 'block' }}>Представительство</span><span style={{ display: 'block' }}>интересов</span></>,
                 desc: 'Представляем доверителя в подразделениях ФССП и судебных заседаниях.'
               },
               {
                 num: '08',
-                title: <><span style={{ display: 'inline-block' }}>Контроль устранения</span> <br /><span style={{ display: 'inline-block' }}>нарушения</span></>,
+                title: <><span style={{ display: 'block' }}>Контроль устранения</span><span style={{ display: 'block' }}>нарушения</span></>,
                 desc: 'Отслеживаем исполнение решения по жалобе или судебного акта до результата.'
               }
             ].map((act, idx) => (
@@ -538,7 +538,7 @@ export default function ObzhalovanieClient() {
                 }}>
                   {act.num}
                 </div>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.35, minHeight: '48px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.25, minHeight: '46px' }}>
                   {act.title}
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, minHeight: '68px' }}>
