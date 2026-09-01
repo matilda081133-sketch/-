@@ -121,7 +121,7 @@ export default function IspolnitelnoeClient() {
         imageUrl="/images/smolyaninova.jpg"
         imageObjectPosition="50% -75px"
         imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
       />
 
       {/* BLOK 2: RISKI */}
@@ -383,7 +383,7 @@ export default function IspolnitelnoeClient() {
               <div className="card service-card" style={{ height: '100%', minHeight: '210px', padding: '28px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '3px solid var(--color-primary)', cursor: 'pointer', transition: 'all 0.35s ease' }}>
                 <div>
                   <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                    <span style={{ display: 'inline-block' }}>Взыскание по исполнительному листу</span> <span style={{ display: 'inline-block' }}>с юридического лица</span>
+                    <span style={{ display: 'inline-block' }}>Взыскание по исполнительному</span> <br /><span style={{ display: 'inline-block' }}>листу с юридического лица</span>
                   </h3>
                   <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                     <span style={{ display: 'inline-block' }}>Предъявление листа в банк или ФССП,</span> <span style={{ display: 'inline-block' }}>контроль действий пристава,</span> <span style={{ display: 'inline-block' }}>поиск активов должника,</span> <span style={{ display: 'inline-block' }}>обжалование бездействия —</span> <span style={{ display: 'inline-block' }}>сопровождение взыскателя на всех этапах.</span>
@@ -399,7 +399,7 @@ export default function IspolnitelnoeClient() {
               <div className="card service-card" style={{ height: '100%', minHeight: '210px', padding: '28px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '3px solid var(--color-primary)', cursor: 'pointer', transition: 'all 0.35s ease' }}>
                 <div>
                   <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                    <span style={{ display: 'inline-block' }}>Обжалование действий приставов</span> <span style={{ display: 'inline-block' }}>для бизнеса</span>
+                    <span style={{ display: 'inline-block' }}>Обжалование действий</span> <br /><span style={{ display: 'inline-block' }}>приставов для бизнеса</span>
                   </h3>
                   <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                     <span style={{ display: 'inline-block' }}>Жалобы на незаконный арест</span> <span style={{ display: 'inline-block' }}>имущества и счёта,</span> <span style={{ display: 'inline-block' }}>бездействие пристава,</span> <span style={{ display: 'inline-block' }}>нарушение сроков</span> <span style={{ display: 'inline-block' }}>и порядка исполнительных действий.</span> <span style={{ display: 'inline-block' }}>Защита компании-должника.</span>
@@ -432,7 +432,7 @@ export default function IspolnitelnoeClient() {
           <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
             {[
               {
-                title: <><span style={{ display: 'inline-block' }}>Проверяет документы</span> <br /><span style={{ display: 'inline-block' }}>и сроки</span></>,
+                title: <><span style={{ display: 'inline-block' }}>Проверяет</span> <br /><span style={{ display: 'inline-block' }}>документы и сроки</span></>,
                 desc: 'Изучает исполнительный документ, постановления ФССП, проверяет процессуальные сроки и соответствие закону.'
               },
               {

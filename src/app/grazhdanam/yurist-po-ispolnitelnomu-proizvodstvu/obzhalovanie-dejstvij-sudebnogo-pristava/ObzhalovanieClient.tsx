@@ -250,10 +250,10 @@ export default function ObzhalovanieClient() {
               Обжалование действий
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              и бездействия судебного пристава
+              и бездействия судебного
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              в Липецке
+              пристава в Липецке
             </span>
           </span>
         }
@@ -276,14 +276,14 @@ export default function ObzhalovanieClient() {
           </span>
         }
         trustItems={[
-          { text: 'Куратор — Марина Смольянинова (13 лет в ФССП)' },
+          { text: 'Куратор — Марина Смольянинова' },
           { text: 'Оспаривание постановлений, действий и бездействия' },
           { text: 'Жалоба в порядке подчинённости и административный иск' },
           { text: 'Защита прав должников и взыскателей' }
         ]}
         imageUrl="/images/smolyaninova.jpg"
         imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
         imageObjectPosition="center 25%"
       />
 

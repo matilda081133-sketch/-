@@ -205,7 +205,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#FFFFFF', padding: '5px 8px', border: '1px solid rgba(23,50,77,0.08)' }}>
                   <span style={{ fontSize: '6px', color: 'var(--color-text-secondary)' }}>Куратор направления:</span>
-                  <span style={{ fontSize: '7px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>Смольянинова М. В. (13 лет в ФССП)</span>
+                  <span style={{ fontSize: '7px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>Смольянинова М. В.</span>
                 </div>
               </div>
 
@@ -287,7 +287,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
         imageUrl="/images/smolyaninova.jpg"
         imageObjectPosition="center 25%"
         imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство» (13 лет опыта в ФССП)"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
       />
 
       {/* ═══ БЛОК 2: КОГДА ВАЖНО НЕ ОТКЛАДЫВАТЬ ОБРАЩЕНИЕ ═══ */}
