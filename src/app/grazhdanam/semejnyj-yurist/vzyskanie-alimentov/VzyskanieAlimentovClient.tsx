@@ -57,7 +57,7 @@ export default function VzyskanieAlimentovClient() {
   const faqs = [
   {
     "q": "Как быстрее взыскать алименты: через приказ или через иск?",
-    "a": "Судебный приказ выдаётся в течение 5 дней без заседаний, но только если алименты взыскиваются в долях от дохода и должник не оспаривает отцовство. Если нужен твёрдый размер (ТДС) или должник отменил приказ — подаётся исковое заявление в районный суд."
+    "a": "Судебный приказ выносится в течение 10 дней со дня поступления заявления без вызова взыскателя и должника. Приказное производство применяется, когда алименты взыскиваются в долях от дохода и отсутствует спор об отцовстве. Если требуется твёрдая денежная сумма, смешанный способ взыскания или должник отменил приказ, подаётся исковое заявление."
   },
   {
     "q": "Можно ли взыскать алименты за прошедший период?",
@@ -154,56 +154,56 @@ export default function VzyskanieAlimentovClient() {
       num: '01',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>ситуацию и документы</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Проверяем основания</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и документы</span>
         </>
       ),
-      desc: 'Анализируем свидетельства, выписки по счетам, договоры на имущество и определяем правовую перспективу дела.'
+      desc: 'Анализируем свидетельство о рождении, соглашения, судебные акты, сведения о выплатах, доходах и образовавшейся задолженности.'
     },
     {
       num: '02',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ищем варианты</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мирного соглашения</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Выбираем способ</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>взыскания</span>
         </>
       ),
-      desc: 'Если вторая сторона готова к диалогу, проводим переговоры и готовим проект нотариального соглашения без суда.'
+      desc: 'Определяем, подходит ли судебный приказ, взыскание в долях, твёрдой денежной сумме или смешанном виде.'
     },
     {
       num: '03',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формируем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовую стратегию</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Собираем доказательства</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и выполняем расчёты</span>
         </>
       ),
-      desc: 'Собираем доказательства, запрашиваем архивные справки, выписки ЕГРН, рассчитываем госпошлину и согласуем план.'
+      desc: 'Подтверждаем расходы на ребёнка, фактический уровень дохода плательщика, рассчитываем задолженность и неустойку.'
     },
     {
       num: '04',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Готовим</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>документы и ведём процесс</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Готовим документы</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и представляем в суде</span>
         </>
       ),
-      desc: 'Составляем иск, ходатайства об обеспечительных мерах, экспертизах и защищаем ваши интересы во всех заседаниях суда.'
+      desc: 'Составляем заявление или иск, отзыв, расчёты и ходатайства об истребовании сведений.'
     },
     {
       num: '05',
       title: (
         <>
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сопровождаем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исполнение решения</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>взыскание</span>
         </>
       ),
-      desc: 'Получаем готовый судебный акт, исполнительный лист и сопровождаем регистрацию прав в Росреестре или работу с ФССП.'
+      desc: 'Получаем судебный приказ или исполнительный лист, передаём его в ФССП и контролируем расчёт задолженности и применение исполнительных мер.'
     },
     {
       isBanner: true,
-      title: 'Дистанционный формат',
-      desc: 'Первичное обсуждение и передача копий документов могут пройти дистанционно. Защищённый канал связи согласуется после первичного контакта.'
+      title: 'Работаем дистанционно',
+      desc: 'Первичное обсуждение и передача копий документов могут пройти дистанционно.'
     }
   ];
 
@@ -274,7 +274,7 @@ export default function VzyskanieAlimentovClient() {
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
             <Link href="/grazhdanam/semejnyj-yurist/">Семейный юрист</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <span style={{ color: 'var(--color-text-main)' }}>Взыскание алиментов на ребёнка в Липецке</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Взыскание алиментов в Липецке</span>
           </>
         }
         superTitle="Семейный юрист в Липецке"
@@ -284,7 +284,7 @@ export default function VzyskanieAlimentovClient() {
               Взыскание алиментов
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              на ребёнка в Липецке
+              в Липецке
             </span>
           </span>
         }
@@ -533,11 +533,11 @@ export default function VzyskanieAlimentovClient() {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите ситуацию</span>{' '}
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с семейным юристом</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите взыскание</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>алиментов с юристом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Опишите ситуацию, состав имущества или спорные вопросы о детях. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами для согласования порядка действий.
+                Укажите, установлены ли алименты, как сейчас производятся выплаты, известны ли доходы плательщика и образовалась ли задолженность. Марина Валерьевна Смольянинова оценит подходящий способ взыскания и необходимые документы.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>

@@ -66,6 +66,10 @@ export default function LishenieIOgranichenieRoditelskihPravClient() {
   {
     "q": "Теряет ли ребёнок право на наследство после лишения родителя прав?",
     "a": "Нет. Ребёнок сохраняет право собственности на жилое помещение, право пользования жильём и право наследования имущества лишенного прав родителя (п. 4 ст. 71 СК РФ). А вот сам лишенный прав родитель наследовать за ребёнком больше не может."
+  },
+  {
+    "q": "Можно ли лишить родительских прав после совершеннолетия ребёнка?",
+    "a": "По общему правилу лишение родительских прав применяется в отношении родителей несовершеннолетних детей. Исключение сформулировано Конституционным судом РФ: совершеннолетний гражданин вправе обратиться с таким требованием, если родитель до достижения ребёнком 18 лет совершил против его жизни или здоровья умышленное преступление (Постановление КС РФ № 49-П от 16.07.2026). Это защищает взрослого ребёнка от последующих алиментных притязаний такого родителя."
   }
 ];
 
@@ -154,56 +158,61 @@ export default function LishenieIOgranichenieRoditelskihPravClient() {
       num: '01',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>ситуацию и документы</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оцениваем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>основания</span>
         </>
       ),
-      desc: 'Анализируем свидетельства, выписки по счетам, договоры на имущество и определяем правовую перспективу дела.'
+      desc: 'Анализируем, есть ли основания по ст. 69 СК РФ для лишения прав либо ситуация требует ограничения по ст. 73 СК РФ или защиты от необоснованного иска.'
     },
     {
       num: '02',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ищем варианты</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мирного соглашения</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Собираем официальные</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>доказательства</span>
         </>
       ),
-      desc: 'Если вторая сторона готова к диалогу, проводим переговоры и готовим проект нотариального соглашения без суда.'
+      desc: 'Запрашиваем сведения ФССП о долге по алиментам, документы из МВД, наркологии, медицинских и образовательных организаций.'
     },
     {
       num: '03',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формируем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовую стратегию</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Готовим</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>обращение в суд</span>
         </>
       ),
-      desc: 'Собираем доказательства, запрашиваем архивные справки, выписки ЕГРН, рассчитываем госпошлину и согласуем план.'
+      desc: 'Составляем иск или возражения, определяем круг лиц с привлечением органа опеки и прокурора.'
     },
     {
       num: '04',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Готовим</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>документы и ведём процесс</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взаимодействуем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с опекой и прокурором</span>
         </>
       ),
-      desc: 'Составляем иск, ходатайства об обеспечительных мерах, экспертизах и защищаем ваши интересы во всех заседаниях суда.'
+      desc: 'Сопровождаем проверку условий проживания и анализируем заключения опеки и заключение прокурора.'
     },
     {
       num: '05',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сопровождаем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исполнение решения</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Представляем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>интересы в заседаниях</span>
         </>
       ),
-      desc: 'Получаем готовый судебный акт, исполнительный лист и сопровождаем регистрацию прав в Росреестре или работу с ФССП.'
+      desc: 'Доказываем факты уклонения от обязанностей либо опровергаем обвинения, отстаивая позицию доверителя.'
     },
     {
-      isBanner: true,
-      title: 'Дистанционный формат',
-      desc: 'Первичное обсуждение и передача копий документов могут пройти дистанционно. Защищённый канал связи согласуется после первичного контакта.'
+      num: '06',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оформляем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>последствия решения</span>
+        </>
+      ),
+      desc: 'Разъясняем правовой режим: сохранение алиментов и наследственных прав ребёнка, прекращение родительских прав и возможность их восстановления.'
     }
   ];
 
@@ -274,20 +283,17 @@ export default function LishenieIOgranichenieRoditelskihPravClient() {
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
             <Link href="/grazhdanam/semejnyj-yurist/">Семейный юрист</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <span style={{ color: 'var(--color-text-main)' }}>Лишение и ограничение прав родителей в Липецке</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Лишение и ограничение родительских прав в Липецке</span>
           </>
         }
         superTitle="Семейный юрист в Липецке"
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Лишение и
+              Лишение и ограничение
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              ограничение прав
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              родителей в Липецке
+              родительских прав в Липецке
             </span>
           </span>
         }
@@ -536,11 +542,11 @@ export default function LishenieIOgranichenieRoditelskihPravClient() {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите ситуацию</span>{' '}
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с семейным юристом</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите лишение</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>родительских прав с юристом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Опишите ситуацию, состав имущества или спорные вопросы о детях. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами для согласования порядка действий.
+                Укажите возраст ребёнка, основания для лишения или ограничения прав, позицию второго родителя и привлекался ли он к ответственности. Юрист оценит судебную перспективу и необходимые документы.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>

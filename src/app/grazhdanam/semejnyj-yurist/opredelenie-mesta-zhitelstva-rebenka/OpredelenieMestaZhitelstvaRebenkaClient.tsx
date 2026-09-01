@@ -154,56 +154,61 @@ export default function OpredelenieMestaZhitelstvaRebenkaClient() {
       num: '01',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>ситуацию и документы</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем положение</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>ребёнка и родителей</span>
         </>
       ),
-      desc: 'Анализируем свидетельства, выписки по счетам, договоры на имущество и определяем правовую перспективу дела.'
+      desc: 'Анализируем, с кем ребёнок фактически живёт, кто осуществляет ежедневный уход, его возраст, режим, привязанности и отношения с каждым родителем.'
     },
     {
       num: '02',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ищем варианты</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мирного соглашения</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Определяем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>требования и риски</span>
         </>
       ),
-      desc: 'Если вторая сторона готова к диалогу, проводим переговоры и готовим проект нотариального соглашения без суда.'
+      desc: 'Формируем позицию по постоянному и, при необходимости, временному месту жительства ребёнка на период рассмотрения дела.'
     },
     {
       num: '03',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формируем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовую стратегию</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Собираем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>доказательства</span>
         </>
       ),
-      desc: 'Собираем доказательства, запрашиваем архивные справки, выписки ЕГРН, рассчитываем госпошлину и согласуем план.'
+      desc: 'Подготавливаем характеристики, сведения об условиях проживания, занятости родителей, медицинские и образовательные документы.'
     },
     {
       num: '04',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Готовим</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>документы и ведём процесс</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взаимодействуем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с органом опеки</span>
         </>
       ),
-      desc: 'Составляем иск, ходатайства об обеспечительных мерах, экспертизах и защищаем ваши интересы во всех заседаниях суда.'
+      desc: 'Готовимся к обследованию условий проживания, анализируем акт и заключение органа опеки.'
     },
     {
       num: '05',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Представляем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>интересы в суде</span>
+        </>
+      ),
+      desc: 'Готовим иск или возражения, заявляем ходатайства об экспертизе и обеспечиваем защиту позиции в заседаниях.'
+    },
+    {
+      num: '06',
       title: (
         <>
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сопровождаем</span>{' '}
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исполнение решения</span>
         </>
       ),
-      desc: 'Получаем готовый судебный акт, исполнительный лист и сопровождаем регистрацию прав в Росреестре или работу с ФССП.'
-    },
-    {
-      isBanner: true,
-      title: 'Дистанционный формат',
-      desc: 'Первичное обсуждение и передача копий документов могут пройти дистанционно. Защищённый канал связи согласуется после первичного контакта.'
+      desc: 'Помогаем организовать исполнение установленного порядка и при необходимости отдельно определить порядок общения второго родителя.'
     }
   ];
 
@@ -378,11 +383,11 @@ export default function OpredelenieMestaZhitelstvaRebenkaClient() {
                 tag: 'Мир / Соглашение',
                 title: (
                   <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Мирное соглашение</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>о детях у нотариуса</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Соглашение родителей</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>о месте жительства ребёнка</span>
                   </>
                 ),
-                desc: 'Фиксация договорённостей родителей о месте проживания и воспитании детей без судебных разбирательств.'
+                desc: 'Подготовка письменного соглашения о месте проживания, воспитании и участии родителей в жизни ребёнка без судебного разбирательства. При необходимости стороны могут удостоверить документ у нотариуса.'
               }
             ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
@@ -443,6 +448,12 @@ export default function OpredelenieMestaZhitelstvaRebenkaClient() {
                 </p>
               </div>
             ))}
+          </div>
+
+          <div style={{ background: 'var(--gradient-cream)', padding: '20px 24px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)', marginBottom: '32px' }}>
+            <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              Если спор касается не постоянного проживания ребёнка, а графика встреч со вторым родителем, изучите услугу <Link href="/grazhdanam/semejnyj-yurist/opredelenie-poryadka-obshcheniya-s-rebenkom/" style={{ color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px', fontWeight: 600 }}>«Определение порядка общения с ребёнком» →</Link>
+            </p>
           </div>
 
           <div style={{ textAlign: 'center' }}>
@@ -536,11 +547,11 @@ export default function OpredelenieMestaZhitelstvaRebenkaClient() {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите ситуацию</span>{' '}
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с семейным юристом</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите спор</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>о месте жительства ребёнка</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Опишите ситуацию, состав имущества или спорные вопросы о детях. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами для согласования порядка действий.
+                Укажите возраст ребёнка, с кем он живёт сейчас, в чём состоит спор и обращался ли уже второй родитель в суд или орган опеки. Юрист оценит обстоятельства и состав необходимых доказательств.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>

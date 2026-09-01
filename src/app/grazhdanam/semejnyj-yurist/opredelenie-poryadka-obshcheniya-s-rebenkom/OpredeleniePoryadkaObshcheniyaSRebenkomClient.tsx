@@ -65,7 +65,7 @@ export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
   },
   {
     "q": "С какого возраста ребёнок может оставаться с отцом с ночёвкой?",
-    "a": "Судебная практика обычно разрешает ночёвки с 3–4 лет при условии наличия спального места и опыта самостоятельного ухода отца за ребёнком."
+    "a": "Закон не устанавливает возраст, с которого ребёнок может оставаться у отдельно проживающего родителя с ночёвкой. Суд оценивает возраст и состояние здоровья ребёнка, его привязанность к родителю, прежний опыт общения, бытовые условия и способность родителя самостоятельно обеспечивать уход. Поэтому возможность ночёвок определяется индивидуально."
   }
 ];
 
@@ -154,56 +154,61 @@ export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
       num: '01',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>ситуацию и документы</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Анализируем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>порядок общения</span>
         </>
       ),
-      desc: 'Анализируем свидетельства, выписки по счетам, договоры на имущество и определяем правовую перспективу дела.'
+      desc: 'Выясняем, как происходили встречи раньше, какие препятствия возникли и существует ли соглашение или судебное решение.'
     },
     {
       num: '02',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ищем варианты</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мирного соглашения</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Разрабатываем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исполнимый график</span>
         </>
       ),
-      desc: 'Если вторая сторона готова к диалогу, проводим переговоры и готовим проект нотариального соглашения без суда.'
+      desc: 'Определяем дни, время, место встреч, ночёвки, праздники, каникулы, дистанционную связь и порядок передачи ребёнка.'
     },
     {
       num: '03',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формируем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовую стратегию</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Собираем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>доказательства</span>
         </>
       ),
-      desc: 'Собираем доказательства, запрашиваем архивные справки, выписки ЕГРН, рассчитываем госпошлину и согласуем план.'
+      desc: 'Подтверждаем участие родителя в жизни ребёнка, случаи препятствования общению и условия для безопасных встреч.'
     },
     {
       num: '04',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Готовим</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>документы и ведём процесс</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Проводим</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>переговоры</span>
         </>
       ),
-      desc: 'Составляем иск, ходатайства об обеспечительных мерах, экспертизах и защищаем ваши интересы во всех заседаниях суда.'
+      desc: 'Предлагаем второму родителю письменное соглашение, учитывающее режим, возраст и интересы ребёнка.'
     },
     {
       num: '05',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сопровождаем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исполнение решения</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Представляем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>интересы в суде</span>
         </>
       ),
-      desc: 'Получаем готовый судебный акт, исполнительный лист и сопровождаем регистрацию прав в Росреестре или работу с ФССП.'
+      desc: 'Готовим иск или возражения, взаимодействуем с органом опеки и добиваемся конкретного исполнимого порядка.'
     },
     {
-      isBanner: true,
-      title: 'Дистанционный формат',
-      desc: 'Первичное обсуждение и передача копий документов могут пройти дистанционно. Защищённый канал связи согласуется после первичного контакта.'
+      num: '06',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сопровождаем исполнение</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или изменение порядка</span>
+        </>
+      ),
+      desc: 'Помогаем при неисполнении решения либо при необходимости изменить устаревший график.'
     }
   ];
 
@@ -445,6 +450,12 @@ export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
             ))}
           </div>
 
+          <div style={{ background: 'var(--gradient-cream)', padding: '20px 24px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)', marginBottom: '32px' }}>
+            <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              Если спор касается того, с кем ребёнок должен постоянно проживать, изучите услугу <Link href="/grazhdanam/semejnyj-yurist/opredelenie-mesta-zhitelstva-rebenka/" style={{ color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px', fontWeight: 600 }}>«Определение места жительства ребёнка» →</Link>
+            </p>
+          </div>
+
           <div style={{ textAlign: 'center' }}>
             <a href="#form" className="btn btn-primary" style={{ display: 'inline-block' }}>
               Получить правовую оценку
@@ -536,11 +547,11 @@ export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите ситуацию</span>{' '}
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с семейным юристом</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите порядок</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>общения с ребёнком</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Опишите ситуацию, состав имущества или спорные вопросы о детях. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами для согласования порядка действий.
+                Укажите возраст ребёнка, как сейчас проходят встречи, кто препятствует общению и какой график требуется установить или изменить. Юрист оценит ситуацию и предложит исполнимый порядок действий.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>

@@ -154,56 +154,61 @@ export default function BrachnyjDogovorClient() {
       num: '01',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучаем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>ситуацию и документы</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Определяем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>цели и задачи</span>
         </>
       ),
-      desc: 'Анализируем свидетельства, выписки по счетам, договоры на имущество и определяем правовую перспективу дела.'
+      desc: 'Выясняем, какие активы, обязательства и сценарии стороны хотят урегулировать: ипотека, бизнес, личная недвижимость или защита от долгов.'
     },
     {
       num: '02',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ищем варианты</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мирного соглашения</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Проверяем активы</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и статус имущества</span>
         </>
       ),
-      desc: 'Если вторая сторона готова к диалогу, проводим переговоры и готовим проект нотариального соглашения без суда.'
+      desc: 'Анализируем выписки ЕГРН, кредитные договоры, учредительные документы и брачный статус сторон.'
     },
     {
       num: '03',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формируем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовую стратегию</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Разрабатываем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>проект договора</span>
         </>
       ),
-      desc: 'Собираем доказательства, запрашиваем архивные справки, выписки ЕГРН, рассчитываем госпошлину и согласуем план.'
+      desc: 'Формулируем индивидуальные условия без кабальных положений и формулировок, создающих риски оспаривания по ст. 44 СК РФ.'
     },
     {
       num: '04',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Готовим</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>документы и ведём процесс</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Согласовываем текст</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>со сторонами и банком</span>
         </>
       ),
-      desc: 'Составляем иск, ходатайства об обеспечительных мерах, экспертизах и защищаем ваши интересы во всех заседаниях суда.'
+      desc: 'При наличии ипотеки учитываем регламенты кредитной организации; устраняем разногласия сторон.'
     },
     {
       num: '05',
       title: (
         <>
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сопровождаем</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исполнение решения</span>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>удостоверение</span>
         </>
       ),
-      desc: 'Получаем готовый судебный акт, исполнительный лист и сопровождаем регистрацию прав в Росреестре или работу с ФССП.'
+      desc: 'Готовим комплект документов, организуем запись к нотариусу и проверяем итоговую нотариальную редакцию.'
     },
     {
-      isBanner: true,
-      title: 'Дистанционный формат',
-      desc: 'Первичное обсуждение и передача копий документов могут пройти дистанционно. Защищённый канал связи согласуется после первичного контакта.'
+      num: '06',
+      title: (
+        <>
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сопровождаем</span>{' '}
+          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>оспаривание или изменение</span>
+        </>
+      ),
+      desc: 'При необходимости представляем интересы в суде по делам о признании договора недействительным.'
     }
   ];
 
@@ -329,7 +334,7 @@ export default function BrachnyjDogovorClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>для оформления ипотеки</span>
                   </>
                 ),
-                desc: 'Исключение супруга с плохой кредитной историей из созаёмщиков или закрепление квартиры за плательщиком.'
+                desc: 'Определение раздельной или долевой собственности на ипотечное жильё и распределение кредитных обязательств между супругами с учётом требований банка-кредитора.'
               },
               {
                 tag: 'Бизнес / Активы',
@@ -359,7 +364,7 @@ export default function BrachnyjDogovorClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>от долгов и кредитов</span>
                   </>
                 ),
-                desc: 'Разграничение кредитных обязательств, исключающее обращение взыскания на имущество второго супруга.'
+                desc: 'Разграничение личных и общих долгов супругов на будущее время. Брачный договор не изменяет существующие обязательства перед банком без его согласия.'
               },
               {
                 tag: 'Аудит / Анализ',
@@ -533,11 +538,11 @@ export default function BrachnyjDogovorClient() {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите ситуацию</span>{' '}
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с семейным юристом</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите брачный</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>договор с юристом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Опишите ситуацию, состав имущества или спорные вопросы о детях. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами для согласования порядка действий.
+                Укажите, планируется ли заключение договора до брака или в браке, какие активы требуется урегулировать и есть ли ипотечные обязательства. Юрист предложит проект сбалансированных условий.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>

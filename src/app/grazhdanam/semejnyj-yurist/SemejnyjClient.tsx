@@ -193,7 +193,7 @@ export default function SemejnyjClient() {
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>ситуацию и документы</span>
         </>
       ),
-      desc: 'Анализируем свидетельства, выписки по счетам, договоры на имущество и определяем правовую перспективу дела.'
+      desc: 'Анализируем обстоятельства семейного спора, судебные акты и соглашения, документы о детях, доходах, алиментах, браке и имуществе. Определяем правовую перспективу и основные риски.'
     },
     {
       num: '02',
@@ -213,7 +213,7 @@ export default function SemejnyjClient() {
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовую стратегию</span>
         </>
       ),
-      desc: 'Собираем доказательства, запрашиваем архивные справки, выписки ЕГРН, рассчитываем госпошлину и согласуем план.'
+      desc: 'Определяем подходящую процедуру, состав доказательств и требования. При необходимости готовим запросы, взаимодействуем с органом опеки, экспертами, банками и государственными органами.'
     },
     {
       num: '04',
@@ -233,7 +233,7 @@ export default function SemejnyjClient() {
           <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исполнение решения</span>
         </>
       ),
-      desc: 'Получаем готовый судебный акт, исполнительный лист и сопровождаем регистрацию прав в Росреестре или работу с ФССП.'
+      desc: 'Получаем судебный акт и исполнительные документы, сопровождаем внесение изменений в ЗАГС и Росреестр, взаимодействие с органом опеки или ФССП — в зависимости от предмета спора.'
     },
     {
       isBanner: true,
@@ -323,7 +323,7 @@ export default function SemejnyjClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Раздел имущества, алименты, определение места жительства и порядка общения с детьми, лишение прав и брачные договоры. Куратор направления — юрист с 13-летним опытом.
+            Расторжение брака, раздел имущества, алименты, установление отцовства, определение места жительства и порядка общения с ребёнком, родительские права и брачные договоры. Куратор направления — юрист с 13-летним опытом.
           </span>
         }
         primaryCtaText="Обсудить ситуацию с юристом"
@@ -492,6 +492,16 @@ export default function SemejnyjClient() {
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
             {[
+              {
+                title: (
+                  <>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Расторжение брака</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>через суд</span>
+                  </>
+                ),
+                desc: 'Подготовка иска и представительство в суде, если есть несовершеннолетние дети, второй супруг не согласен на развод или уклоняется от участия.',
+                link: '/grazhdanam/semejnyj-yurist/rastorzhenie-braka/'
+              },
               {
                 title: (
                   <>
