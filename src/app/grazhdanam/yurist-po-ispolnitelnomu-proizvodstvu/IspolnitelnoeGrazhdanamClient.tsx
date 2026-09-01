@@ -640,107 +640,61 @@ export default function IspolnitelnoeGrazhdanamClient() {
           <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
             {[
               {
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обжалование действий</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и бездействия судебного пристава</span>
-                  </>
-                ),
-                desc: (
-                  <>
-                    <span style={{ display: 'block' }}>Проверка постановлений и материалов производства, жалоба</span>{' '}
-                    <span style={{ display: 'block' }}>вышестоящему должностному лицу, в прокуратуру или в суд.</span>
-                  </>
-                ),
+                title: 'Обжалование действий судебного пристава',
+                desc: 'Проверка постановлений и материалов производства, жалоба старшему приставу, в УФССП или в суд.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/'
               },
               {
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Возврат незаконно</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>списанных приставами денег</span>
-                  </>
-                ),
-                desc: (
-                  <>
-                    <span style={{ display: 'block' }}>Помощь при списании защищённых выплат, повторном</span>{' '}
-                    <span style={{ display: 'block' }}>или избыточном взыскании, а также после погашения задолженности.</span>
-                  </>
-                ),
+                title: 'Возврат незаконно списанных денег',
+                desc: 'Помощь при списании защищённых выплат, повторном или избыточном взыскании и после погашения долга.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/'
               },
               {
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Снятие ареста со счёта</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и разблокировка банковской карты</span>
-                  </>
-                ),
-                desc: (
-                  <>
-                    <span style={{ display: 'block' }}>Проверка основания ареста, источника поступлений и документов;</span>{' '}
-                    <span style={{ display: 'block' }}>обращения к судебному приставу, в банк или суд по применимому маршруту.</span>
-                  </>
-                ),
+                title: 'Снятие ареста со счёта и карты',
+                desc: 'Проверка основания ареста, источника поступлений, обращение к судебному приставу, в банк или суд.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/'
               },
               {
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Снятие ареста с автомобиля</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и запрета на регистрационные действия</span>
-                  </>
-                ),
-                desc: (
-                  <>
-                    <span style={{ display: 'block' }}>Помощь владельцу или добросовестному приобретателю</span>{' '}
-                    <span style={{ display: 'block' }}>при аресте транспорта, запрете регистрации и притязаниях приставов.</span>
-                  </>
-                ),
+                title: 'Снятие ареста с автомобиля',
+                desc: 'Помощь владельцу или приобретателю при аресте транспорта, запрете регистрации и притязаниях приставов.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/'
               },
               {
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскание</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по исполнительному листу</span>
-                  </>
-                ),
-                desc: (
-                  <>
-                    <span style={{ display: 'block' }}>Сопровождение взыскателя после решения суда:</span>{' '}
-                    <span style={{ display: 'block' }}>предъявление документа, контроль пристава, розыск активов и обжалование.</span>
-                  </>
-                ),
+                title: 'Взыскание по исполнительному листу',
+                desc: 'Сопровождение взыскателя: предъявление документа, контроль пристава, розыск активов и обжалование.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/'
               }
             ].map((dir, i) => (
-              <a key={i} href={dir.link} data-analytics="click_service_card" style={{ textDecoration: 'none', display: 'block' }}>
+              <a key={i} href={dir.link} data-analytics="click_service_card" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', height: '100%' }}>
                 <div 
-                  className="card service-card" 
+                  className="card service-card hover-lift" 
                   style={{ 
                     height: '100%', 
-                    minHeight: '160px',
-                    padding: '30px', 
+                    minHeight: '220px',
+                    padding: '30px 28px', 
                     background: 'var(--color-white)', 
                     border: '1px solid var(--color-border)',
                     borderRadius: '0',
                     display: 'flex', 
                     flexDirection: 'column',
+                    justifyContent: 'space-between',
                     transition: 'all 0.3s',
                     position: 'relative',
-                    borderTop: '3px solid var(--color-primary)'
+                    borderTop: '3px solid var(--color-primary)',
+                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
                   }}
                 >
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
-                    {dir.title}
-                  </h3>
-                  <div style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                    {dir.desc}
+                  <div>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '48px' }}>
+                      {dir.title}
+                    </h3>
+                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {dir.desc}
+                    </p>
                   </div>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
-                    Подробнее 
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', paddingTop: '12px', borderTop: '1px solid rgba(23, 50, 77, 0.06)' }}>
+                    <span>Подробнее</span> 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -749,51 +703,51 @@ export default function IspolnitelnoeGrazhdanamClient() {
               </a>
             ))}
 
-            {/* Не нашли свою ситуацию? (3-я карточка во 2-й строке) */}
-            <div style={{ gridColumn: 'span 1' }}>
+            {/* Не нашли свою ситуацию? (Расширен на всю ширину) */}
+            <div style={{ gridColumn: '1 / -1', width: '100%', marginTop: '12px' }}>
               <div 
-                className="card service-card" 
+                className="card service-card hover-lift" 
                 style={{ 
-                  height: '100%', 
-                  minHeight: '160px',
-                  padding: '30px', 
+                  width: '100%', 
+                  boxSizing: 'border-box',
+                  padding: '36px 40px', 
                   background: 'var(--color-deep-blue)', 
-                  border: '1px solid transparent',
+                  border: '1px solid var(--color-deep-blue)',
                   borderRadius: '0',
                   display: 'flex', 
-                  flexDirection: 'column',
+                  flexDirection: 'row', 
+                  alignItems: 'center',
                   justifyContent: 'space-between',
-                  gap: '20px',
+                  gap: '32px',
+                  flexWrap: 'wrap',
                   transition: 'all 0.3s',
                   position: 'relative',
-                  borderTop: '3px solid var(--color-gold)'
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 8px 24px rgba(11, 28, 42, 0.15)'
                 }}
               >
-                <style dangerouslySetInnerHTML={{__html: `
-                  .white-btn-custom {
-                    background-color: var(--color-white) !important;
-                    color: #10273B !important;
-                    border: 1px solid var(--color-white) !important;
-                    transition: all 0.3s ease !important;
-                  }
-                  .white-btn-custom:hover {
-                    background-color: transparent !important;
-                    color: var(--color-white) !important;
-                    border: 1px solid #FFFFFF !important;
-                  }
-                `}} />
-                <div>
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-white)', lineHeight: 1.3 }}>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не нашли</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
+                <div style={{ flex: '1 1 500px' }}>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '22px', color: 'var(--color-white)', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
+                    Не нашли свою ситуацию?
                   </h3>
-                  <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>
-                    <span style={{ display: 'block' }}>Кратко опишите, что произошло и на какой стадии находится производство.</span>{' '}
-                    <span style={{ display: 'block' }}>Юрист изучит обстоятельства дела и подскажет, с каких действий лучше начать.</span>
+                  <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+                    Кратко опишите, что произошло и на какой стадии находится производство. Юрист изучит обстоятельства дела и подскажет, с каких действий лучше начать.
                   </p>
                 </div>
-                <div>
-                  <a href="#form" className="btn white-btn-custom" style={{ display: 'inline-block', width: '100%', textAlign: 'center', fontSize: '14px', padding: '12px 20px' }}>
+                <div style={{ flexShrink: 0 }}>
+                  <a 
+                    href="#form" 
+                    className="btn btn-gold" 
+                    style={{ 
+                      display: 'inline-flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center', 
+                      fontSize: '15px', 
+                      padding: '16px 36px', 
+                      whiteSpace: 'nowrap',
+                      borderRadius: 0 
+                    }}
+                  >
                     Описать ситуацию
                   </a>
                 </div>
