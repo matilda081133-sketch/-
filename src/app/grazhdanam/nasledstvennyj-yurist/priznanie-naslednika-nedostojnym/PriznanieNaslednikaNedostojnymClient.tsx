@@ -369,14 +369,14 @@ export default function PriznanieNaslednikaNedostojnymClient() {
                 desc: 'Попытки скрыть существование законного завещания или подделать подпись умершего.'
               },
               {
-                tag: 'Захват имущества',
+                tag: 'Ст. 1117 ГК / Наследство',
                 title: (
                   <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Необоснованное</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>завладение имуществом</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Противоправные действия</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>ради получения наследства</span>
                   </>
                 ),
-                desc: 'Незаконное присвоение ценностей, денег со счетов или транспорта до выдачи свидетельств нотариусом.'
+                desc: 'Проверим, были ли умышленные противоправные действия направлены на призвание к наследованию, увеличение доли или устранение других наследников; соберём доказательства для суда либо защитим от необоснованных требований.'
               },
               {
                 tag: 'Защита чести',

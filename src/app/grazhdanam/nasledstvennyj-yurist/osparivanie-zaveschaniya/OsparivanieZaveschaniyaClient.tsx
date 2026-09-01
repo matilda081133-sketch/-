@@ -359,14 +359,14 @@ export default function OsparivanieZaveschaniyaClient() {
                 desc: 'Подделка подписи, отсутствие обязательных реквизитов, подписание ненадлежащим лицом без рукоприкладчика.'
               },
               {
-                tag: 'Ст. 1149 ГК / Дети',
+                tag: 'Ст. 1149 ГК / Доля',
                 title: (
                   <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Лишение права</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>на обязательную долю</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Право на обязательную</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>долю в наследстве</span>
                   </>
                 ),
-                desc: 'Завещание составлено в пользу постороннего лица в ущерб несовершеннолетним детям или нетрудоспособным родителям.'
+                desc: 'Проверим, есть ли право на обязательную долю, рассчитаем её размер и выберем способ защиты. Для этого не всегда требуется признавать завещание недействительным.'
               },
               {
                 tag: 'Супруг / Собственность',
