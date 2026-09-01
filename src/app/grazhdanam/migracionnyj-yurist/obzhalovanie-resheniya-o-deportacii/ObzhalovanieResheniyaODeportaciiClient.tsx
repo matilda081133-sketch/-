@@ -146,7 +146,7 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Проверим решение о депортации и основания его вынесения, подготовим административный иск по КАС РФ, при наличии оснований заявим ходатайство о применении мер предварительной защиты и представим интересы в суде.
+            Проверим решение МВД о депортации, основание, дату получения и стадию исполнения. При наличии оснований подготовим административный иск и отдельное заявление о мерах предварительной защиты. Решение о временном приостановлении принимает суд.
           </span>
         }
         primaryCtaText="Обсудить ситуацию"
@@ -222,7 +222,7 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
                               "в продлении или отмены",
                               "РВП, ВНЖ или статуса беженца"
                     ],
-                    "desc": "Оспариваем первопричину — акт об аннулировании статуса, что автоматически блокирует исполнение распоряжения о депортации."
+                    "desc": "Проверяем и при наличии оснований оспариваем первичный акт об аннулировании статуса. Само обращение в суд не блокирует депортацию автоматически: необходимость предварительной защиты оценивается отдельно, а решение принимает суд."
           },
           {
                     "tag": "Срочная защита",
@@ -249,7 +249,7 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
                               "в центр содержания (ЦВСИГ)",
                               "до исполнения депортации"
                     ],
-                    "desc": "Подаём административную жалобу на незаконное содержание в спецучреждении и добиваемся освобождения под судебный контроль."
+                    "desc": "Получаем решение о депортации, акт о помещении в ЦВСИГ и решения о продлении срока содержания. Проверяем основание, срок, действия МВД по фактическому исполнению депортации и при наличии оснований обжалуем соответствующий судебный акт. Спор о содержании рассматривается отдельно от спора о депортации."
           }
 ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
@@ -317,6 +317,39 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
           </div>
         </div>
       </section>
+      {/* ═══ БЛОК: ЧТО ПРОВЕРИТ АДВОКАТ ═══ */}
+      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '32px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что проверит адвокат</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>при оценке депортации</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0 }}>
+              До подачи иска или жалобы адвокат проводит юридический анализ всех обстоятельств дела:
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
+            {[
+              'Решение о депортации, орган, дата вынесения, нормативное основание и порядок вручения',
+              'Связанные решения об аннулировании РВП/ВНЖ, нежелательности пребывания, запрете на въезд',
+              'Текущий миграционный статус и точную дату возникновения обязанности выехать из РФ',
+              'Наличие помещения в ЦВСИГ и отдельных судебных актов о продлении срока содержания',
+              'Семейные, медицинские и другие гуманитарные обстоятельства доверителя в РФ',
+              'Основания, процессуальные риски и доказательства для заявления о мерах предварительной защиты'
+            ].map((item, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px 20px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-primary)' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <polyline points="9 11 12 14 22 4" />
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                </svg>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* ═══ БЛОК 3: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
             {/* ═══ БЛОК КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ) ═══ */}
