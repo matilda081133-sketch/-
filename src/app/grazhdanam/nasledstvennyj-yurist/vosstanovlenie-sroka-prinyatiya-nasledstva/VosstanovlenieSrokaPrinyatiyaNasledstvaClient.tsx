@@ -206,21 +206,36 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'ул. Советская, д. 35',
+          'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
         }
       },
       {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva/#breadcrumbs',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Наследственный юрист', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/' },
+          { '@type': 'ListItem', 'position': 4, 'name': 'Восстановление срока принятия наследства', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva/' }
+        ]
+      },
+      {
         '@type': 'Service',
-        'name': 'Восстановление срока принятия наследства в Липецке | Де-Юре',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva/#service',
+        'url': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva/',
+        'name': 'Восстановление срока принятия наследства',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Судебное восстановление пропущенного 6-месячного срока принятия наследства по ст. 1155 ГК РФ в Липецке. Доказывание уважительности причин пропуска.'
+        'description': 'Помощь в восстановлении пропущенного 6-месячного срока принятия наследства через суд в Липецке по ст. 1155 ГК РФ. Докажем уважительность причин и защитим вашу долю.'
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -232,6 +247,7 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
       },
       {
         '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
         'name': 'Марина Валерьевна Смольянинова',
         'jobTitle': 'Ведущий юрист',
         'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
@@ -431,6 +447,25 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Блок перехода к установлению факта принятия */}
+          <div style={{
+            marginTop: '32px',
+            marginBottom: '36px',
+            padding: '24px 28px',
+            background: 'var(--color-white)',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+            fontSize: '15px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.6
+          }}>
+            До подготовки иска проверим, не было ли фактического принятия наследства: проживания в квартире, оплаты расходов, содержания имущества или погашения долгов наследодателя. При наличии таких действий может подойти{' '}
+            <Link href="/grazhdanam/nasledstvennyj-yurist/ustanovlenie-fakta-prinyatiya-nasledstva/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}>
+              установление факта принятия наследства
+            </Link>.
           </div>
 
           <div style={{ textAlign: 'center' }}>

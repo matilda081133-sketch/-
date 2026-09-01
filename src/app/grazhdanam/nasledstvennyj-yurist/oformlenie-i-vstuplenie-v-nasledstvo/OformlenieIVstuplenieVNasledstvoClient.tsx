@@ -206,21 +206,36 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'ул. Советская, д. 35',
+          'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
         }
       },
       {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/oformlenie-i-vstuplenie-v-nasledstvo/#breadcrumbs',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Наследственный юрист', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/' },
+          { '@type': 'ListItem', 'position': 4, 'name': 'Оформление и вступление в наследство', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/oformlenie-i-vstuplenie-v-nasledstvo/' }
+        ]
+      },
+      {
         '@type': 'Service',
-        'name': 'Оформление и вступление в наследство в Липецке | ЮК «Де-Юре»',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/oformlenie-i-vstuplenie-v-nasledstvo/#service',
+        'url': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/oformlenie-i-vstuplenie-v-nasledstvo/',
+        'name': 'Оформление и вступление в наследство',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Юридическая помощь в открытии и ведении наследственного дела у нотариуса в Липецке. Сбор справок, подтверждение родства, оформление прав собственности.'
+        'description': 'Помощь в оформлении наследства по закону и завещанию в Липецке: нотариус, сбор документов, подтверждение родства и прав. Разберём ситуацию и поможем оформить имущество.'
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/oformlenie-i-vstuplenie-v-nasledstvo/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -232,6 +247,7 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
       },
       {
         '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
         'name': 'Марина Валерьевна Смольянинова',
         'jobTitle': 'Ведущий юрист',
         'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
@@ -431,6 +447,38 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Блок переходов при пропуске срока */}
+          <div style={{
+            marginTop: '32px',
+            marginBottom: '36px',
+            padding: '24px 28px',
+            background: 'var(--color-white)',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+            fontSize: '15px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.6
+          }}>
+            <p style={{ margin: '0 0 10px 0', fontWeight: 600 }}>
+              Если срок обращения к нотариусу уже пропущен, сначала важно определить правовой маршрут:
+            </p>
+            <ul style={{ margin: 0, paddingLeft: '20px', listStyleType: 'disc' }}>
+              <li style={{ marginBottom: '8px' }}>
+                вы пользовались имуществом, оплачивали расходы или содержали его в течение шести месяцев —{' '}
+                <Link href="/grazhdanam/nasledstvennyj-yurist/ustanovlenie-fakta-prinyatiya-nasledstva/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}>
+                  Установление факта принятия наследства
+                </Link>;
+              </li>
+              <li>
+                наследство фактически не принимали и есть причины пропуска срока —{' '}
+                <Link href="/grazhdanam/nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}>
+                  Восстановление срока принятия наследства
+                </Link>.
+              </li>
+            </ul>
           </div>
 
           <div style={{ textAlign: 'center' }}>

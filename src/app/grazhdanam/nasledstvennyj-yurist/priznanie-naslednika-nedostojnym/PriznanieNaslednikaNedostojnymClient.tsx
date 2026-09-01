@@ -206,21 +206,36 @@ export default function PriznanieNaslednikaNedostojnymClient() {
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'ул. Советская, д. 35',
+          'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
         }
       },
       {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/priznanie-naslednika-nedostojnym/#breadcrumbs',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Наследственный юрист', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/' },
+          { '@type': 'ListItem', 'position': 4, 'name': 'Признание наследника недостойным', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/priznanie-naslednika-nedostojnym/' }
+        ]
+      },
+      {
         '@type': 'Service',
-        'name': 'Признание наследника недостойным в Липецке | ЮК «Де-Юре»',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/priznanie-naslednika-nedostojnym/#service',
+        'url': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/priznanie-naslednika-nedostojnym/',
+        'name': 'Признание наследника недостойным',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Отстранение недостойных наследников от наследования по ст. 1117 ГК РФ в Липецке. Доказывание противоправных действий, уклонения от алиментов в суде.'
+        'description': 'Юридическая помощь по делам о признании наследника недостойным и исключении из наследства в Липецке. Проверим основания по ст. 1117 ГК РФ и представим интересы в суде.'
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/priznanie-naslednika-nedostojnym/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -232,6 +247,7 @@ export default function PriznanieNaslednikaNedostojnymClient() {
       },
       {
         '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
         'name': 'Марина Валерьевна Смольянинова',
         'jobTitle': 'Ведущий юрист',
         'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',

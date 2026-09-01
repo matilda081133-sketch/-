@@ -192,21 +192,35 @@ export default function NasledstvennyjClient() {
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'ул. Советская, д. 35',
+          'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
         }
       },
       {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/#breadcrumbs',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Наследственный юрист', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/' }
+        ]
+      },
+      {
         '@type': 'Service',
-        'name': 'Юридическая помощь по наследственным вопросам в Липецке',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/#service',
+        'url': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/',
+        'name': 'Наследственный юрист в Липецке',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Помощь наследственного юриста в Липецке: оформление у нотариуса, восстановление срока, споры о завещании и раздел наследства.'
+        'description': 'Помощь наследственного юриста в Липецке: оформление у нотариуса, восстановление срока, установление факта принятия, оспаривание завещания и раздел наследства.'
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -218,6 +232,7 @@ export default function NasledstvennyjClient() {
       },
       {
         '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
         'name': 'Марина Валерьевна Смольянинова',
         'jobTitle': 'Ведущий юрист',
         'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
@@ -496,7 +511,7 @@ export default function NasledstvennyjClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>наследника недостойным</span>
                   </>
                 ),
-                desc: 'Судебное исключение недобросовестных лиц из состава наследников по ст. 1117 ГК РФ за противоправные действия или неуход.',
+                desc: 'Судебное исключение наследника при наличии законных оснований: умышленных противоправных действий ради получения наследства, лишения родительских прав или злостного уклонения от содержания наследодателя.',
                 link: '/grazhdanam/nasledstvennyj-yurist/priznanie-naslednika-nedostojnym/'
               }
             ].map((dir, i) => (

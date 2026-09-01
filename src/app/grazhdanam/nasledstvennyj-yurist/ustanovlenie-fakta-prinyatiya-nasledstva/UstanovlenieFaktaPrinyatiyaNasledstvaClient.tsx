@@ -202,21 +202,36 @@ export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'ул. Советская, д. 35',
+          'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
         }
       },
       {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/ustanovlenie-fakta-prinyatiya-nasledstva/#breadcrumbs',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Наследственный юрист', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/' },
+          { '@type': 'ListItem', 'position': 4, 'name': 'Установление факта принятия наследства', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/ustanovlenie-fakta-prinyatiya-nasledstva/' }
+        ]
+      },
+      {
         '@type': 'Service',
-        'name': 'Установление факта принятия наследства в Липецке | Де-Юре',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/ustanovlenie-fakta-prinyatiya-nasledstva/#service',
+        'url': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/ustanovlenie-fakta-prinyatiya-nasledstva/',
+        'name': 'Установление факта принятия наследства',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Помощь в установлении факта принятия наследства через суд в Липецке, если 6-месячный срок у нотариуса пропущен. Сбор доказательств и признание права.'
+        'description': 'Помощь в установлении факта принятия наследства через суд в Липецке, если 6-месячный срок у нотариуса пропущен. Сбор доказательств, подготовка иска и признание права собственности.'
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/ustanovlenie-fakta-prinyatiya-nasledstva/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -228,6 +243,7 @@ export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
       },
       {
         '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
         'name': 'Марина Валерьевна Смольянинова',
         'jobTitle': 'Ведущий юрист',
         'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
@@ -427,6 +443,25 @@ export default function UstanovlenieFaktaPrinyatiyaNasledstvaClient() {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Блок перехода к восстановлению срока */}
+          <div style={{
+            marginTop: '32px',
+            marginBottom: '36px',
+            padding: '24px 28px',
+            background: 'var(--color-white)',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+            fontSize: '15px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.6
+          }}>
+            Если вы не подавали заявление нотариусу и не совершали действий, подтверждающих фактическое принятие наследства в течение шести месяцев, установление факта принятия может не подойти. В такой ситуации проверьте возможность{' '}
+            <Link href="/grazhdanam/nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}>
+              восстановить срок принятия наследства
+            </Link>.
           </div>
 
           <div style={{ textAlign: 'center' }}>

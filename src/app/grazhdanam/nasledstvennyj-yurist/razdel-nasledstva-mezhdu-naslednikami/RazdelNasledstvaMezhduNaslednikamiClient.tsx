@@ -206,21 +206,36 @@ export default function RazdelNasledstvaMezhduNaslednikamiClient() {
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'ул. Советская, д. 35',
+          'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
         }
       },
       {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/razdel-nasledstva-mezhdu-naslednikami/#breadcrumbs',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Наследственный юрист', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/' },
+          { '@type': 'ListItem', 'position': 4, 'name': 'Раздел наследства между наследниками', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/razdel-nasledstva-mezhdu-naslednikami/' }
+        ]
+      },
+      {
         '@type': 'Service',
-        'name': 'Раздел наследства между наследниками в Липецке | Де-Юре',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/razdel-nasledstva-mezhdu-naslednikami/#service',
+        'url': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/razdel-nasledstva-mezhdu-naslednikami/',
+        'name': 'Раздел наследства между наследниками',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Помощь в мирном и судебном разделе наследственного имущества в Липецке. Соглашения о разделе, выдел долей, преимущественные права по ст. 1168 ГК РФ.'
+        'description': 'Помощь в разделе наследственного имущества в Липецке: мирное соглашение, расчёт компенсации, преимущественное право и судебный раздел. Сопроводим до регистрации прав.'
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/razdel-nasledstva-mezhdu-naslednikami/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -232,6 +247,7 @@ export default function RazdelNasledstvaMezhduNaslednikamiClient() {
       },
       {
         '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
         'name': 'Марина Валерьевна Смольянинова',
         'jobTitle': 'Ведущий юрист',
         'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',

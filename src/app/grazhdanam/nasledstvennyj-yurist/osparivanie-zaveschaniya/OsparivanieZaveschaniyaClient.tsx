@@ -206,21 +206,36 @@ export default function OsparivanieZaveschaniyaClient() {
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'ул. Советская, д. 35',
+          'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
         }
       },
       {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/osparivanie-zaveschaniya/#breadcrumbs',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Наследственный юрист', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/' },
+          { '@type': 'ListItem', 'position': 4, 'name': 'Оспаривание завещания', 'item': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/osparivanie-zaveschaniya/' }
+        ]
+      },
+      {
         '@type': 'Service',
-        'name': 'Оспаривание завещания в суде в Липецке | ЮК «Де-Юре»',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/osparivanie-zaveschaniya/#service',
+        'url': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/osparivanie-zaveschaniya/',
+        'name': 'Оспаривание завещания',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Признание завещания недействительным через суд в Липецке по ст. 177, 179 ГК РФ. Посмертные экспертизы, защита обязательной доли и законных прав.'
+        'description': 'Помощь в оспаривании завещания и защите от необоснованного иска в Липецке: экспертиза, сбор доказательств, судебное представительство. Разберём дело и оценим перспективы.'
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/osparivanie-zaveschaniya/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -232,6 +247,7 @@ export default function OsparivanieZaveschaniyaClient() {
       },
       {
         '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
         'name': 'Марина Валерьевна Смольянинова',
         'jobTitle': 'Ведущий юрист',
         'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
