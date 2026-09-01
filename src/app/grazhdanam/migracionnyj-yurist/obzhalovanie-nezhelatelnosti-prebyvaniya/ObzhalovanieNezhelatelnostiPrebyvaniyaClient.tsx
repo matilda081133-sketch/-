@@ -169,17 +169,7 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»"
         imageObjectPosition="center 20%"
       />
-      {/* ═══ БЛОК: СРОКИ И ПРЕДВАРИТЕЛЬНАЯ ЗАЩИТА ═══ */}
-      <section className="section bg-light" style={{ padding: '48px 0', background: 'var(--gradient-cream)', borderBottom: '1px solid var(--color-border)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '840px', margin: '0 auto', background: 'var(--color-white)', padding: '24px 28px', borderLeft: '4px solid var(--color-primary)', boxShadow: '0 2px 12px rgba(23, 50, 77, 0.05)' }}>
-            <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>Сроки обжалования и меры предварительной защиты</h3>
-            <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, lineHeight: 1.6 }}>
-              Для обращения в суд обычно применяется трёхмесячный срок со дня, когда человек узнал или должен был узнать о нарушении права, если специальная норма не устанавливает иное. Жалоба в ведомство и административный иск сами по себе не приостанавливают последствия решения. При риске срочного исполнения отдельно оцениваются меры предварительной защиты.
-            </p>
-          </div>
-        </div>
-      </section>
+      
 
 
       {/* ═══ БЛОК 2: ТИПОВЫЕ СИТУАЦИИ ═══ */}
@@ -436,7 +426,7 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
           <div className="grid grid-3" style={{ gap: '20px' }}>
 
             <a href="/grazhdanam/migracionnyj-yurist/otmena-zapreta-na-vezd-v-rossiyu/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div className="card service-card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
                     Отмена запрета на въезд в Россию
@@ -445,7 +435,7 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
                     Устранение препятствий для въезда в РФ в ведомственном и судебном порядке.
                   </p>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px', transition: 'color 0.35s ease' }}>
                   <span>Перейти к услуге</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
@@ -453,7 +443,7 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
             </a>
 
             <a href="/grazhdanam/migracionnyj-yurist/obzhalovanie-resheniya-o-deportacii/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div className="card service-card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
                     Обжалование решения о депортации
@@ -462,7 +452,7 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
                     Судебная защита от исполнения решений о депортации за пределы России.
                   </p>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px', transition: 'color 0.35s ease' }}>
                   <span>Перейти к услуге</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
@@ -470,7 +460,7 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
             </a>
 
             <a href="/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div className="card service-card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
                     Исключение из реестра контролируемых лиц
@@ -479,7 +469,7 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
                     Снятие режима высылки и разблокировка операций по счетам.
                   </p>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px', transition: 'color 0.35s ease' }}>
                   <span>Перейти к услуге</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
