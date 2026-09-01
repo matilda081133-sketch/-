@@ -224,15 +224,27 @@ export default function BrachnyjDogovorClient() {
         'telephone': '+7 (910) 350-31-11',
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': 'пл. Театральная, д. 3, офис 401',
+          'streetAddress': 'ул. Советская, д. 35',
           'addressLocality': 'Липецк',
-          'postalCode': '398001',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
         }
       },
       {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/brachnyj-dogovor/#breadcrumbs',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Семейный юрист', 'item': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/' },
+          { '@type': 'ListItem', 'position': 4, 'name': 'Брачный договор', 'item': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/brachnyj-dogovor/' }
+        ]
+      },
+      {
         '@type': 'Service',
-        'name': 'Брачный договор в Липецке — составление и проверка | Де-Юре',
+        '@id': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/brachnyj-dogovor/#service',
+        'url': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/brachnyj-dogovor/',
+        'name': 'Брачный договор',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
@@ -242,6 +254,7 @@ export default function BrachnyjDogovorClient() {
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/brachnyj-dogovor/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -253,6 +266,7 @@ export default function BrachnyjDogovorClient() {
       },
       {
         '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
         'name': 'Марина Валерьевна Смольянинова',
         'jobTitle': 'Ведущий юрист',
         'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',

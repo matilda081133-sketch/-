@@ -201,24 +201,37 @@ export default function RastorzhenieBrakaClient() {
         'telephone': '+7 (910) 350-31-11',
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': 'пл. Театральная, д. 3, офис 401',
+          'streetAddress': 'ул. Советская, д. 35',
           'addressLocality': 'Липецк',
-          'postalCode': '398001',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
         }
       },
       {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/rastorzhenie-braka/#breadcrumbs',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Семейный юрист', 'item': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/' },
+          { '@type': 'ListItem', 'position': 4, 'name': 'Расторжение брака через суд', 'item': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/rastorzhenie-braka/' }
+        ]
+      },
+      {
         '@type': 'Service',
-        'name': 'Расторжение брака через суд в Липецке | Де-Юре',
+        '@id': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/rastorzhenie-braka/#service',
+        'url': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/rastorzhenie-braka/',
+        'name': 'Расторжение брака через суд',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Юридическая помощь при расторжении брака через суд в Липецке: развод при наличии несовершеннолетних детей, при несогласии супруга, без вашего личного присутствия.'
+        'description': 'Помощь семейного юриста по расторжению брака через суд в Липецке. Развод при наличии несовершеннолетних детей, несогласии супруга или без присутствия в суде.'
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/rastorzhenie-braka/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -230,6 +243,7 @@ export default function RastorzhenieBrakaClient() {
       },
       {
         '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
         'name': 'Марина Валерьевна Смольянинова',
         'jobTitle': 'Ведущий юрист',
         'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',

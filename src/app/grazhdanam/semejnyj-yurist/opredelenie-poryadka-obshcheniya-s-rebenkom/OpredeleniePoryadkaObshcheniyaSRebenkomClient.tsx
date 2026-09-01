@@ -224,15 +224,27 @@ export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
         'telephone': '+7 (910) 350-31-11',
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': 'пл. Театральная, д. 3, офис 401',
+          'streetAddress': 'ул. Советская, д. 35',
           'addressLocality': 'Липецк',
-          'postalCode': '398001',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
         }
       },
       {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/opredelenie-poryadka-obshcheniya-s-rebenkom/#breadcrumbs',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Семейный юрист', 'item': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/' },
+          { '@type': 'ListItem', 'position': 4, 'name': 'Определение порядка общения с ребёнком', 'item': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/opredelenie-poryadka-obshcheniya-s-rebenkom/' }
+        ]
+      },
+      {
         '@type': 'Service',
-        'name': 'Порядок общения с ребёнком в Липецке | Де-Юре',
+        '@id': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/opredelenie-poryadka-obshcheniya-s-rebenkom/#service',
+        'url': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/opredelenie-poryadka-obshcheniya-s-rebenkom/',
+        'name': 'Определение порядка общения с ребёнком',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
         'areaServed': {
           '@type': 'AdministrativeArea',
@@ -242,6 +254,7 @@ export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/opredelenie-poryadka-obshcheniya-s-rebenkom/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -253,6 +266,7 @@ export default function OpredeleniePoryadkaObshcheniyaSRebenkomClient() {
       },
       {
         '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
         'name': 'Марина Валерьевна Смольянинова',
         'jobTitle': 'Ведущий юрист',
         'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',

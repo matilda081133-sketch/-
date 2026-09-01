@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
     type: 'website',
+    images: [
+      {
+        url: 'https://dejure-help.ru/images/smolyaninova.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Определение места жительства ребёнка в Липецке',
+      },
+    ],
   },
 };
 

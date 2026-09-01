@@ -69,6 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/semejnyj-yurist/opredelenie-poryadka-obshcheniya-s-rebenkom/',
     '/grazhdanam/semejnyj-yurist/lishenie-i-ogranichenie-roditelskih-prav/',
     '/grazhdanam/semejnyj-yurist/ustanovlenie-i-osparivanie-ottsovstva/',
+    '/grazhdanam/semejnyj-yurist/brachnyj-dogovor/',
     // Трудовой юрист
     '/grazhdanam/trudovoj-yurist/',
     '/grazhdanam/trudovoj-yurist/nezakonnoe-uvolnenie/',

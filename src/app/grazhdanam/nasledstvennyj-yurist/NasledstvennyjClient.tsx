@@ -191,9 +191,7 @@ export default function NasledstvennyjClient() {
         'telephone': '+7 (910) 350-31-11',
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': 'пл. Театральная, д. 3, офис 401',
-          'addressLocality': 'Липецк',
-          'postalCode': '398001',
+          'streetAddress': 'ул. Советская, д. 35',
           'addressCountry': 'RU'
         }
       },
