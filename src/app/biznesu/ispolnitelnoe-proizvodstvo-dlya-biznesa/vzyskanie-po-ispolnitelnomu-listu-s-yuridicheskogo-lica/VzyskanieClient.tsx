@@ -440,12 +440,12 @@ export default function VzyskanieClient() {
             {[
               {
                 num: '01',
-                title: <><span style={{ display: 'inline-block' }}>Предъявление исполнительного</span> <br /><span style={{ display: 'inline-block' }}>листа в банк</span></>,
+                title: <><span style={{ display: 'inline-block' }}>Предъявление</span> <br /><span style={{ display: 'inline-block' }}>исполнительного листа в банк</span></>,
                 desc: 'Подходит, когда известен банк и задача сводится к взысканию денег со счёта. При наличии средств банк исполняет документ в установленном порядке; при их недостаточности стратегия может потребовать смены канала.'
               },
               {
                 num: '02',
-                title: <><span style={{ display: 'inline-block' }}>Исполнительное производство</span> <br /><span style={{ display: 'inline-block' }}>в ФССП</span></>,
+                title: <><span style={{ display: 'inline-block' }}>Исполнительное</span> <br /><span style={{ display: 'inline-block' }}>производство в ФССП</span></>,
                 desc: 'Нужно, когда требуется искать активы, накладывать аресты, проверять транспорт, недвижимость, оборудование и имущественные права, а также координировать несколько мер принудительного исполнения.'
               },
               {
@@ -673,7 +673,8 @@ export default function VzyskanieClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '36px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
-              Какие документы нужны для взыскания по исполнительному листу
+              <span style={{ display: 'inline-block' }}>Какие документы нужны</span> <br />
+              <span style={{ display: 'inline-block' }}>для взыскания по исполнительному листу</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Чем полнее исходный комплект документов, тем быстрее юрист сможет определить наиболее перспективный маршрут взыскания задолженности с юридического лица:
@@ -796,7 +797,12 @@ export default function VzyskanieClient() {
       <ProcessBlock
         alignTitle="center"
         title="От проверки должника до контроля поступлений"
-        subtitle="Пошаговый процесс взыскания от первого анализа документов до зачисления денег на счёт компании."
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
+            <span style={{ display: 'block' }}>Пошаговый процесс взыскания от первого анализа</span>
+            <span style={{ display: 'block' }}>документов до зачисления денег на счёт компании.</span>
+          </span>
+        }
         steps={[
           {
             num: '01',

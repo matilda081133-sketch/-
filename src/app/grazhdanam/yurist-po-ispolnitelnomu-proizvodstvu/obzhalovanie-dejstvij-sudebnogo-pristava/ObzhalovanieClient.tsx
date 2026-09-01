@@ -276,7 +276,7 @@ export default function ObzhalovanieClient() {
           </span>
         }
         trustItems={[
-          { text: 'Куратор — Марина Смольянинова' },
+          { text: 'Куратор — Марина Смольянинова (13 лет в ФССП)' },
           { text: 'Оспаривание постановлений, действий и бездействия' },
           { text: 'Жалоба в порядке подчинённости и административный иск' },
           { text: 'Защита прав должников и взыскателей' }
@@ -706,8 +706,8 @@ export default function ObzhalovanieClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Что входит</span> <br />
-              <span style={{ display: 'inline-block' }}>в юридическую помощь</span>
+              <span style={{ display: 'inline-block' }}>Что входит в обжалование</span> <br />
+              <span style={{ display: 'inline-block' }}>действий судебного пристава</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Полный цикл процессуальных действий юриста — от изучения материалов производства</span> <br className="hidden-mobile" />
@@ -715,101 +715,57 @@ export default function ObzhalovanieClient() {
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '16px', position: 'relative', marginBottom: '40px' }}>
+          <div className="grid grid-4" style={{ gap: '20px', position: 'relative', marginBottom: '40px' }}>
             {[
               {
                 num: '01',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Консультация</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и оценка срочности</span>
-                  </>
-                ),
+                title: <><span style={{ display: 'inline-block' }}>Консультация</span> <br /><span style={{ display: 'inline-block' }}>и оценка срочности</span></>,
                 desc: 'Уточняем ситуацию, проверяем процессуальные сроки и определяем первоочередные меры.'
               },
               {
                 num: '02',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ознакомление</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с материалами</span>
-                  </>
-                ),
+                title: <><span style={{ display: 'inline-block' }}>Ознакомление</span> <br /><span style={{ display: 'inline-block' }}>с материалами</span></>,
                 desc: 'Изучаем постановления, извещения, ответы и другие материалы исполнительного производства.'
               },
               {
                 num: '03',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Правовая экспертиза</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>постановлений и действий</span>
-                  </>
-                ),
+                title: <><span style={{ display: 'inline-block' }}>Правовая экспертиза</span> <br /><span style={{ display: 'inline-block' }}>решений пристава</span></>,
                 desc: 'Проверяем полномочия пристава, основания решения, соблюдение процедуры и сроков.'
               },
               {
                 num: '04',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формирование</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>правовых требований</span>
-                  </>
-                ),
+                title: <><span style={{ display: 'inline-block' }}>Формирование</span> <br /><span style={{ display: 'inline-block' }}>требований</span></>,
                 desc: 'Определяем нарушенное право, требуемый результат и надлежащего адресата для обращения.'
               },
               {
                 num: '05',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовка жалобы</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в вышестоящие органы ФССП</span>
-                  </>
-                ),
+                title: <><span style={{ display: 'inline-block' }}>Подготовка жалобы</span> <br /><span style={{ display: 'inline-block' }}>в ФССП</span></>,
                 desc: 'Составляем мотивированную жалобу вышестоящему должностному лицу, заявления и ходатайства.'
               },
               {
                 num: '06',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовка иска</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в суд общей юрисдикции</span>
-                  </>
-                ),
+                title: <><span style={{ display: 'inline-block' }}>Подготовка иска</span> <br /><span style={{ display: 'inline-block' }}>в суд (КАС РФ)</span></>,
                 desc: 'Готовим административное исковое заявление, доказательную базу и комплект приложений.'
               },
               {
                 num: '07',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Представительство</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>интересов в органах и суде</span>
-                  </>
-                ),
+                title: <><span style={{ display: 'inline-block' }}>Представительство</span> <br /><span style={{ display: 'inline-block' }}>интересов</span></>,
                 desc: 'Представляем доверителя в подразделениях ФССП и судебных заседаниях в согласованном объёме.'
               },
               {
                 num: '08',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Контроль</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>фактического устранения</span>
-                  </>
-                ),
+                title: <><span style={{ display: 'inline-block' }}>Контроль устранения</span> <br /><span style={{ display: 'inline-block' }}>нарушения</span></>,
                 desc: 'Отслеживаем исполнение решения по жалобе или судебного акта до фактического результата.'
               }
             ].map((act, idx) => (
               <div key={idx} className="hover-lift" style={{
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                padding: '38px 24px 28px 24px',
+                padding: '36px 24px 28px 24px',
                 border: '1px solid var(--color-border)',
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'flex-start',
-                height: '100%',
-                minHeight: '235px',
-                boxSizing: 'border-box',
                 position: 'relative'
               }}>
                 <div style={{
@@ -826,10 +782,10 @@ export default function ObzhalovanieClient() {
                 }}>
                   {act.num}
                 </div>
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.35, minHeight: '48px' }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.35 }}>
                   {act.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, minHeight: '68px' }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {act.desc}
                 </p>
               </div>
