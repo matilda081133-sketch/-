@@ -159,7 +159,7 @@ export default function VzyskanieIspolnitelnyListClient() {
         superTitle="Исполнительное производство в Липецке"
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'block' }}>Взыскание по</span>
+            <span style={{ display: 'block' }}>Взыскание по</span>{' '}
             <span style={{ display: 'block' }}>исполнительному листу</span>
           </span>
         }
@@ -772,7 +772,7 @@ export default function VzyskanieIspolnitelnyListClient() {
                     СТАРТ
                   </div>
                   <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '8px 0 10px 0', lineHeight: 1.3 }}>
-                    <span style={{ display: 'block' }}>Получить план</span>
+                    <span style={{ display: 'block' }}>Получить план</span>{' '}
                     <span style={{ display: 'block' }}>взыскания</span>
                   </h3>
                   <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.5, margin: 0 }}>

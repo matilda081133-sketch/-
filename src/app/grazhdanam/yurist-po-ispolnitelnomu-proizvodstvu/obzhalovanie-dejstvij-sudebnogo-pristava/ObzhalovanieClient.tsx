@@ -246,9 +246,9 @@ export default function ObzhalovanieClient() {
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               Обжалование действий
-            </span>
+            </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              и бездействия пристава
+              и бездействия судебного пристава в Липецке
             </span>
           </span>
         }
@@ -462,7 +462,7 @@ export default function ObzhalovanieClient() {
                 tag: 'Постановление',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Незаконное</span>
+                    <span style={{ display: 'block' }}>Незаконное</span>{' '}
                     <span style={{ display: 'block' }}>постановление</span>
                   </>
                 ),
@@ -472,7 +472,7 @@ export default function ObzhalovanieClient() {
                 tag: 'Отказ',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Отказ в</span>
+                    <span style={{ display: 'block' }}>Отказ в</span>{' '}
                     <span style={{ display: 'block' }}>совершении действия</span>
                   </>
                 ),
@@ -482,7 +482,7 @@ export default function ObzhalovanieClient() {
                 tag: 'Бездействие',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Бездействие</span>
+                    <span style={{ display: 'block' }}>Бездействие</span>{' '}
                     <span style={{ display: 'block' }}>по взысканию</span>
                   </>
                 ),
@@ -492,7 +492,7 @@ export default function ObzhalovanieClient() {
                 tag: 'Нарушения',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Нарушения</span>
+                    <span style={{ display: 'block' }}>Нарушения</span>{' '}
                     <span style={{ display: 'block' }}>при взыскании</span>
                   </>
                 ),
@@ -502,7 +502,7 @@ export default function ObzhalovanieClient() {
                 tag: 'Ответы',
                 title: (
                   <>
-                    <span style={{ display: 'block' }}>Формальные</span>
+                    <span style={{ display: 'block' }}>Формальные</span>{' '}
                     <span style={{ display: 'block' }}>ответы на обращения</span>
                   </>
                 ),
@@ -834,6 +834,8 @@ export default function ObzhalovanieClient() {
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
         imageUrl="/images/smolyaninova.jpg"
+        profileHref="/specialisty/smolyaninova-marina-valerevna/"
+        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Марина Валерьевна более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Рассматривала обращения и жалобы, контролировала исполнительные производства и работу сотрудников, участвовала во взаимодействии с судами и государственными органами. Этот опыт помогает оценивать не только формальное нарушение, но и то, какое требование способно привести к реальному действию.

@@ -365,7 +365,11 @@ export default function ObzhalovanieClient() {
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по взысканию задолженности</span>
                   </>
                 ),
-                desc: 'Фиксируем несовершённые запросы, затягивание сроков, нерозыск активов должника и влияние бездействия на возврат долга компании.'
+                desc: (
+                  <>
+                    Фиксируем несовершённые запросы, затягивание сроков, нерозыск активов должника и влияние бездействия на возврат долга компании. Если основная задача компании — получить деньги по исполнительному документу, посмотрите услугу <Link href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/" style={{ color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>взыскания по исполнительному листу с юридического лица</Link>.
+                  </>
+                )
               },
               {
                 title: (
@@ -569,8 +573,8 @@ export default function ObzhalovanieClient() {
         alignTitle="center"
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Защищаем бизнес от проверки документов</span>
-            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>до устранения нарушения</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что входит в обжалование</span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>действий судебного пристава</span>
           </span>
         }
         subtitle={

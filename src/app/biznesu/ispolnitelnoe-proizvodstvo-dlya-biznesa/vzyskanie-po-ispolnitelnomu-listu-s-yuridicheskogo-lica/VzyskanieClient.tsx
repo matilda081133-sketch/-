@@ -646,7 +646,9 @@ export default function VzyskanieClient() {
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Ознакомление и обжалование</strong>
-                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Ознакомимся с материалами дела, проконтролируем постановления и при необходимости обжалуем бездействие.</span>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Ознакомимся с материалами дела, проконтролируем постановления и при необходимости обжалуем бездействие. Если пристав вынес незаконное постановление, бездействует или применил несоразмерные ограничения, может потребоваться отдельное <Link href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/" style={{ color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>обжалование действий судебных приставов для бизнеса</Link>.
+                    </span>
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>

@@ -66,7 +66,7 @@ export default function IspolnitelnoeClient() {
         superTitle="Юридическая помощь бизнесу"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>Исполнительное производство</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>Исполнительное производство</span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>для бизнеса в Липецке</span>
           </span>
         }
@@ -132,14 +132,14 @@ export default function IspolnitelnoeClient() {
                 desc: <><span style={{ display: 'inline-block' }}>Реализация имущества должника</span> <span style={{ display: 'inline-block' }}>по&nbsp;заниженной стоимости</span> <span style={{ display: 'inline-block' }}>на&nbsp;торгах.</span></> 
               },
               { 
-                tag: 'Риск руководства', 
-                title: <><span style={{ display: 'inline-block' }}>Субсидиарная</span> <span style={{ display: 'inline-block' }}>ответственность</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Привлечение директора</span> <span style={{ display: 'inline-block' }}>и&nbsp;учредителей к&nbsp;ответственности</span> <span style={{ display: 'inline-block' }}>по&nbsp;долгам компании.</span></> 
+                tag: 'Риск возврата документа', 
+                title: <><span style={{ display: 'inline-block' }}>Исполнительный лист</span> <span style={{ display: 'inline-block' }}>вернули без взыскания</span></>, 
+                desc: 'Пристав окончил производство или вернул исполнительный документ, хотя не все сведения о счетах и имуществе должника были проверены.'
               },
               { 
-                tag: 'Риск репутации', 
-                title: <><span style={{ display: 'inline-block' }}>Блокировка</span> <span style={{ display: 'inline-block' }}>деятельности</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Падение доверия контрагентов,</span> <span style={{ display: 'inline-block' }}>срыв действующих</span> <span style={{ display: 'inline-block' }}>контрактов.</span></> 
+                tag: 'Риск дополнительных расходов', 
+                title: <><span style={{ display: 'inline-block' }}>Начислен</span> <span style={{ display: 'inline-block' }}>исполнительский сбор</span></>, 
+                desc: 'Компания получила постановление о взыскании исполнительского сбора либо не согласна с его размером и основаниями начисления.'
               },
               { 
                 tag: 'Риск бездействия', 

@@ -87,12 +87,16 @@ export default function Header() {
             src="/images/logo_dark.png" 
             alt="Де-Юре" 
             className="desktop-logo"
+            width={389}
+            height={404}
             style={{ height: '110px', width: 'auto', transform: 'scale(1.25)', transformOrigin: 'left center' }} 
           />
           <img 
             src="/images/logo_dark.png" 
             alt="Де-Юре" 
             className="mobile-logo"
+            width={389}
+            height={404}
             style={{ height: '56px', width: 'auto', display: 'none', objectFit: 'contain' }} 
           />
         </Link>

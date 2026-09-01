@@ -167,9 +167,9 @@ export default function SnyatieArestaAvtoClient() {
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               Снятие ареста с автомобиля
-            </span>
+            </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              и запрета на регистрацию
+              и запрета на регистрационные действия
             </span>
           </span>
         }
@@ -688,7 +688,7 @@ export default function SnyatieArestaAvtoClient() {
       <SpecialistBlock
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'block' }}>Ограничения проверяет юрист</span>
+            <span style={{ display: 'block' }}>Ограничения проверяет юрист</span>{' '}
             <span style={{ display: 'block' }}>с опытом работы в ФССП</span>
           </span>
         }
@@ -725,7 +725,7 @@ export default function SnyatieArestaAvtoClient() {
       <CasesBlock
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'block' }}>Как может решаться вопрос</span>
+            <span style={{ display: 'block' }}>Как может решаться вопрос</span>{' '}
             <span style={{ display: 'block' }}>с ограничением автомобиля</span>
           </span>
         }
@@ -851,7 +851,7 @@ export default function SnyatieArestaAvtoClient() {
         superTitle="Частые вопросы клиентов"
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'block' }}>Вопросы о снятии ареста</span>
+            <span style={{ display: 'block' }}>Вопросы о снятии ареста</span>{' '}
             <span style={{ display: 'block' }}>и запрета с автомобиля</span>
           </span>
         }

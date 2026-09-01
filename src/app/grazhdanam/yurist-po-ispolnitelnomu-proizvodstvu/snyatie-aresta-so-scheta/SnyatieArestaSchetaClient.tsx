@@ -161,9 +161,9 @@ export default function SnyatieArestaSchetaClient() {
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               Снятие ареста со счёта
-            </span>
+            </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              или банковской карты
+              или банковской карты в Липецке
             </span>
           </span>
         }
@@ -700,7 +700,7 @@ export default function SnyatieArestaSchetaClient() {
                     СТАРТ
                   </div>
                   <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '8px 0 12px 0', lineHeight: 1.35 }}>
-                    <span style={{ display: 'block' }}>Получить план</span>
+                    <span style={{ display: 'block' }}>Получить план</span>{' '}
                     <span style={{ display: 'block' }}>действий</span>
                   </h3>
                   <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
