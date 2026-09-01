@@ -1352,3 +1352,21 @@ summary:focus-visible {
   border-color: #FFFFFF !important;
   transform: translateY(-2px);
 }
+
+
+/* Thin white border on hover for hero CTA and primary buttons */
+.military-hero-primary-btn,
+.military-hero-cta .btn-primary {
+  transition: all 0.3s ease !important;
+}
+
+.military-hero-primary-btn:hover,
+.military-hero-cta .btn-primary:hover,
+.military-hero-cta a.btn:hover {
+  background-color: #17324D !important;
+  border: 1px solid #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(16, 39, 59, 0.35) !important;
+}

@@ -116,7 +116,7 @@ export default function MilitaryHero({
               {/* Primary Call to Action */}
               <div className="military-hero-cta" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px', marginTop: '20px', marginBottom: urgentHint ? '16px' : '24px' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px' }}>
-                  <a href={primaryCtaLink} className="btn btn-primary" style={{ padding: '15px 36px', fontSize: '15px', color: '#FFFFFF', backgroundColor: '#10273B', border: '1px solid #9B7E55', boxShadow: '0 4px 14px rgba(16, 39, 59, 0.25)' }} data-analytics={primaryCtaAnalytics || "military_hero_consultation_click"}>
+                  <a href={primaryCtaLink} className="btn btn-primary military-hero-primary-btn" data-analytics={primaryCtaAnalytics || "military_hero_consultation_click"}>
                     {primaryCtaText}
                   </a>
                   {secondaryCtaText && secondaryCtaLink && (
@@ -226,6 +226,30 @@ export default function MilitaryHero({
 
           </div>
         <style dangerouslySetInnerHTML={{ __html: `
+          .military-hero-primary-btn {
+            padding: 15px 36px !important;
+            font-size: 15px !important;
+            color: #FFFFFF !important;
+            background-color: #10273B !important;
+            border: 1px solid #9B7E55 !important;
+            box-shadow: 0 4px 14px rgba(16, 39, 59, 0.25) !important;
+            transition: all 0.3s ease !important;
+            border-radius: var(--radius-md) !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+          }
+          .military-hero-primary-btn:hover {
+            background-color: #17324D !important;
+            border: 1px solid #FFFFFF !important;
+            border-color: #FFFFFF !important;
+            color: #FFFFFF !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 24px rgba(16, 39, 59, 0.35) !important;
+          }
+
           @media (max-width: 1440px) {
             .military-hero-section {
               padding-top: 130px !important;
