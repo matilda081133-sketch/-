@@ -266,7 +266,14 @@ export default function ObzhalovanieClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_primary_cta_obzhalovanie"
         primaryCtaSubtext={
-          <>Если установленный срок уже идёт, позвоните прямо сейчас: <a href="tel:+79103503111">+7 (910) 350-31-11</a></>
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Если установленный срок уже идёт,
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
         }
         trustItems={[
           { text: 'Куратор — Марина Смольянинова (13 лет в ФССП)' },
