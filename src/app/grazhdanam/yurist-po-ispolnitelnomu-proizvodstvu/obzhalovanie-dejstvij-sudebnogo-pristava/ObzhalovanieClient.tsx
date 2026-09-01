@@ -18,8 +18,9 @@ export default function ObzhalovanieClient() {
       category: 'Взыскатель / Отмена окончания',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отменили окончание</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исполнительного производства</span>
+          <span style={{ display: 'block' }}>Отменили окончание</span>
+          <span style={{ display: 'block' }}>исполнительного</span>
+          <span style={{ display: 'block' }}>производства</span>
         </>
       ),
       problem: 'Взыскателю вернули исполнительный лист с актом о невозможности взыскания (якобы имущество и доходы должника не обнаружены). При этом часть обязательных запросов пристав не направил, а сведения об официальном месте работы и автомобиле не проверил.',
@@ -30,9 +31,9 @@ export default function ObzhalovanieClient() {
       category: 'Должник / Исполнительский сбор',
       title: (
         <>
-          <span style={{ display: 'inline-block' }}>Оспорили</span> <br />
-          <span style={{ display: 'inline-block' }}>исполнительский сбор</span> <br />
-          <span style={{ display: 'inline-block' }}>после ненадлежащего извещения</span>
+          <span style={{ display: 'block' }}>Оспорили</span>
+          <span style={{ display: 'block' }}>исполнительский сбор</span>
+          <span style={{ display: 'block' }}>после извещения</span>
         </>
       ),
       problem: 'Гражданин узнал о возбуждении исполнительного производства только после блокировки банковского счёта и вынесения постановления о взыскании исполнительского сбора. Копию постановления о возбуждении он не получал и был лишён возможности добровольного исполнения.',
@@ -43,8 +44,9 @@ export default function ObzhalovanieClient() {
       category: 'Алименты / Бездействие',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Добились действий</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по задолженности по алиментам</span>
+          <span style={{ display: 'block' }}>Добились действий</span>
+          <span style={{ display: 'block' }}>по задолженности</span>
+          <span style={{ display: 'block' }}>по алиментам</span>
         </>
       ),
       problem: 'Исполнительное производство по алиментам длилось более года, однако расчёт задолженности не производился, доходы должника своевременно не устанавливались, а обращения взыскателя оставались без содержательного ответа.',
@@ -248,7 +250,10 @@ export default function ObzhalovanieClient() {
               Обжалование действий
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              и бездействия судебного пристава в Липецке
+              и бездействия судебного пристава
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              в Липецке
             </span>
           </span>
         }
@@ -709,8 +714,8 @@ export default function ObzhalovanieClient() {
                 num: '01',
                 title: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Консультация</span> <br />
-                    <span style={{ display: 'inline-block' }}>и оценка срочности</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Консультация</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и оценка срочности</span>
                   </>
                 ),
                 desc: 'Уточняем ситуацию, проверяем процессуальные сроки и определяем первоочередные меры.'
@@ -719,8 +724,8 @@ export default function ObzhalovanieClient() {
                 num: '02',
                 title: (
                   <>
-                    <span style={{ display: 'inline-block' }}>Ознакомление</span> <br />
-                    <span style={{ display: 'inline-block' }}>с материалами</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ознакомление</span>{' '}
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с материалами</span>
                   </>
                 ),
                 desc: 'Изучаем постановления, извещения, ответы и другие материалы исполнительного производства.'
@@ -780,7 +785,7 @@ export default function ObzhalovanieClient() {
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Контроль</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>фактического устранения нарушений</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>фактического устранения</span>
                   </>
                 ),
                 desc: 'Отслеживаем исполнение решения по жалобе или судебного акта до фактического результата.'
@@ -788,12 +793,16 @@ export default function ObzhalovanieClient() {
             ].map((act, idx) => (
               <div key={idx} className="hover-lift" style={{
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                padding: '38px 24px 30px 24px',
+                padding: '38px 24px 28px 24px',
                 border: '1px solid var(--color-border)',
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 display: 'flex',
                 flexDirection: 'column',
+                justifyContent: 'flex-start',
+                height: '100%',
+                minHeight: '235px',
+                boxSizing: 'border-box',
                 position: 'relative'
               }}>
                 <div style={{
@@ -810,10 +819,10 @@ export default function ObzhalovanieClient() {
                 }}>
                   {act.num}
                 </div>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.35 }}>
+                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.35, minHeight: '48px' }}>
                   {act.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, minHeight: '68px' }}>
                   {act.desc}
                 </p>
               </div>
@@ -871,7 +880,12 @@ export default function ObzhalovanieClient() {
       {/* ═══ БЛОК 8: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
-        subtitle="Прозрачный пошаговый процесс — от первой консультации до фактического устранения нарушения."
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '780px', textWrap: 'balance' }}>
+            <span style={{ display: 'block' }}>Прозрачный пошаговый процесс — от первой консультации</span>
+            <span style={{ display: 'block' }}>до фактического устранения нарушения.</span>
+          </span>
+        }
         alignTitle="center"
         steps={[
           {

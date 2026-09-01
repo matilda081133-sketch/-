@@ -131,6 +131,10 @@ export default function CasesBlock({
         </div>
       </div>
       <style dangerouslySetInnerHTML={{__html: `
+        .case-card h3 span {
+          word-break: break-word !important;
+          overflow-wrap: break-word !important;
+        }
         .case-card {
           transition: all 0.4s ease;
         }

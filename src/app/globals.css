@@ -1370,3 +1370,18 @@ summary:focus-visible {
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 24px rgba(16, 39, 59, 0.35) !important;
 }
+
+
+/* Global protection: Case card titles never overflow or clip */
+.case-card h3 {
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  line-height: 1.35 !important;
+}
+
+.case-card h3 span,
+.case-card h3 div {
+  white-space: normal !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}

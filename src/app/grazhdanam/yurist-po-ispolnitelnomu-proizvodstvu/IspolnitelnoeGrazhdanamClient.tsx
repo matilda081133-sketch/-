@@ -704,54 +704,52 @@ export default function IspolnitelnoeGrazhdanamClient() {
               </a>
             ))}
 
-            {/* Не нашли свою ситуацию? (Расширен на всю ширину) */}
-            <div style={{ gridColumn: '1 / -1', width: '100%', marginTop: '12px' }}>
-              <div 
-                className="card service-card hover-lift" 
-                style={{ 
-                  width: '100%', 
-                  boxSizing: 'border-box',
-                  padding: '36px 40px', 
-                  background: 'var(--color-deep-blue)', 
-                  border: '1px solid var(--color-deep-blue)',
-                  borderRadius: '0',
-                  display: 'flex', 
-                  flexDirection: 'row', 
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '32px',
-                  flexWrap: 'wrap',
-                  transition: 'all 0.3s',
-                  position: 'relative',
-                  borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 8px 24px rgba(11, 28, 42, 0.15)'
-                }}
-              >
-                <div style={{ flex: '1 1 500px' }}>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '22px', color: 'var(--color-white)', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
-                    Не нашли свою ситуацию?
-                  </h3>
-                  <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
-                    Кратко опишите, что произошло и на какой стадии находится производство. Юрист изучит обстоятельства дела и подскажет, с каких действий лучше начать.
-                  </p>
-                </div>
-                <div style={{ flexShrink: 0 }}>
-                  <a 
-                    href="#form" 
-                    className="btn btn-gold" 
-                    style={{ 
-                      display: 'inline-flex', 
-                      alignItems: 'center', 
-                      justifyContent: 'center', 
-                      fontSize: '15px', 
-                      padding: '16px 36px', 
-                      whiteSpace: 'nowrap',
-                      borderRadius: 0 
-                    }}
-                  >
-                    Описать ситуацию
-                  </a>
-                </div>
+            {/* 6-я карточка: Не нашли свою ситуацию? (в одной строке с 4 и 5) */}
+            <div 
+              className="card service-card hover-lift" 
+              style={{ 
+                height: '100%', 
+                minHeight: '260px',
+                padding: '32px 28px', 
+                background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)', 
+                border: '1px solid var(--color-deep-blue)',
+                borderRadius: '0',
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between',
+                transition: 'all 0.3s',
+                position: 'relative',
+                borderTop: '3px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(11, 28, 42, 0.15)',
+                boxSizing: 'border-box'
+              }}
+            >
+              <div>
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.35, minHeight: '52px' }}>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не нашли</span>{' '}
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55, minHeight: '68px' }}>
+                  Кратко опишите, что произошло и на какой стадии находится производство. Юрист изучит обстоятельства дела и подскажет, с каких действий лучше начать.
+                </p>
+              </div>
+              <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                <a 
+                  href="#form" 
+                  className="btn btn-gold" 
+                  style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    width: '100%',
+                    textAlign: 'center',
+                    fontSize: '14px', 
+                    padding: '12px 20px', 
+                    borderRadius: 0 
+                  }}
+                >
+                  Описать ситуацию
+                </a>
               </div>
             </div>
           </div>
