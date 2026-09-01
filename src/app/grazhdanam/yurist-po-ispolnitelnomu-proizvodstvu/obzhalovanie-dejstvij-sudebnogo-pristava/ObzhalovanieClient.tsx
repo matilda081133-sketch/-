@@ -457,253 +457,6 @@ export default function ObzhalovanieClient() {
       {/* ═══ БЛОК 3: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: 'inline-block' }}>В каких ситуациях</span> <br />
-              <span style={{ display: 'inline-block' }}>мы помогаем</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Обжаловать можно не любое неудобное решение, а постановление, действие или бездействие,</span> <br />
-              <span style={{ display: 'inline-block' }}>которое нарушает права и принято с нарушением закона. Перед обращением определяем конкретное требование.</span>
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
-            {[
-              {
-                tag: 'Постановление',
-                title: (
-                  <>
-                    <span style={{ display: 'block' }}>Незаконное</span>{' '}
-                    <span style={{ display: 'block' }}>постановление</span>
-                  </>
-                ),
-                desc: 'Проверим постановление о\u00A0возбуждении, окончании или прекращении производства, взыскании сбора, ограничении или расчёте долга.'
-              },
-              {
-                tag: 'Отказ',
-                title: (
-                  <>
-                    <span style={{ display: 'block' }}>Отказ в</span>{' '}
-                    <span style={{ display: 'block' }}>совершении действия</span>
-                  </>
-                ),
-                desc: 'Оценим отказ возбудить производство, принять документ, рассмотреть ходатайство, снять ограничение или совершить действие.'
-              },
-              {
-                tag: 'Бездействие',
-                title: (
-                  <>
-                    <span style={{ display: 'block' }}>Бездействие</span>{' '}
-                    <span style={{ display: 'block' }}>по взысканию</span>
-                  </>
-                ),
-                desc: 'Проверим, какие запросы и\u00A0действия должен был совершить пристав, какие обращения подавались и\u00A0почему решение не исполняется.'
-              },
-              {
-                tag: 'Нарушения',
-                title: (
-                  <>
-                    <span style={{ display: 'block' }}>Нарушения</span>{' '}
-                    <span style={{ display: 'block' }}>при взыскании</span>
-                  </>
-                ),
-                desc: 'Разберём соблюдение порядка извещения, процессуальных сроков, размера требований и\u00A0соразмерности применённых мер.'
-              },
-              {
-                tag: 'Ответы',
-                title: (
-                  <>
-                    <span style={{ display: 'block' }}>Формальные</span>{' '}
-                    <span style={{ display: 'block' }}>ответы на обращения</span>
-                  </>
-                ),
-                desc: 'Сопоставим содержание ходатайства и\u00A0ответа с\u00A0материалами дела, зафиксируем нерассмотренные требования и\u00A0адресата жалобы.'
-              },
-              {
-                tag: 'Права третьих лиц',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Нарушены права</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>третьего лица или собственника</span>
-                  </>
-                ),
-                desc: 'Помогаем гражданам, чьи права затронуты действиями пристава (неправомерный арест чужого имущества, ошибки в\u00A0ФИО).'
-              }
-            ].map((item, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '36px 30px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease'
-              }}>
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                  </svg>
-                </div>
-                <div style={{
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.tag}
-                </div>
-                <h3 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '17px',
-                  fontWeight: 600,
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 14px 0',
-                  lineHeight: 1.4,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.title}
-                </h3>
-                <p style={{
-                  fontSize: '15px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  margin: 0,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div style={{
-            background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-            border: '1px solid var(--color-border)',
-            borderLeft: '4px solid var(--color-gold)',
-            padding: '28px 32px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '20px',
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
-          }}>
-            <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6, maxWidth: '720px' }}>
-              <strong>Не уверены, относится ли ситуация к этой услуге?</strong> Опишите, какое постановление получили или какое действие не совершено, — юрист определит подходящий маршрут.
-            </p>
-            <a href="#form" className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '14px', whiteSpace: 'nowrap' }}>
-              Проверить ситуацию
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 4: КАК ВЫБИРАЕМ СПОСОБ ОБЖАЛОВАНИЯ ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Как выбираем</span> <br />
-              <span style={{ display: 'inline-block' }}>способ обжалования</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Способ зависит не только от характера нарушения, но и от требуемого результата.</span> <br />
-              <span style={{ display: 'inline-block' }}>Сопоставляем полномочия адресата, процессуальный срок, доказательства и риски продолжения взыскания.</span>
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '28px' }}>
-            <div style={{
-              background: 'var(--color-white)',
-              padding: '36px 30px',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" />
-                </svg>
-                <h3 style={{ margin: 0, fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
-                  <span style={{ display: 'inline-block' }}>Жалоба в порядке</span> <br />
-                  <span style={{ display: 'inline-block' }}>подчинённости</span>
-                </h3>
-              </div>
-              <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Определяем компетентное вышестоящее должностное лицо, формулируем нарушение и требование, подаём жалобу и контролируем срок её рассмотрения. Этот путь помогает быстро устранить нарушение внутри ведомства.
-              </p>
-            </div>
-
-            <div style={{
-              background: 'var(--color-white)',
-              padding: '36px 30px',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16" />
-                </svg>
-                <h3 style={{ margin: 0, fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
-                  <span style={{ display: 'inline-block' }}>Оспаривание</span> <br />
-                  <span style={{ display: 'inline-block' }}>в суде (КАС РФ)</span>
-                </h3>
-              </div>
-              <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Готовим административное исковое заявление и доказательства того, что решение, действие или бездействие нарушает закон. Представляем клиента в суде и добиваемся отмены незаконных актов.
-              </p>
-            </div>
-
-            <div style={{
-              background: 'var(--color-white)',
-              padding: '36px 30px',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-gold)',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-                <h3 style={{ margin: 0, fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
-                  <span style={{ display: 'inline-block' }}>Дополнительные меры</span> <br />
-                  <span style={{ display: 'inline-block' }}>правовой защиты</span>
-                </h3>
-              </div>
-              <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                Оцениваем необходимость ходатайства о приостановлении исполнительного производства, обращения в прокуратуру и применения обеспечительных мер до принятия итогового решения.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 5: ЧТО ВХОДИТ В ЮРИДИЧЕСКУЮ ПОМОЩЬ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span style={{ display: 'inline-block' }}>Что входит в обжалование</span> <br />
@@ -725,7 +478,7 @@ export default function ObzhalovanieClient() {
               {
                 num: '02',
                 title: <><span style={{ display: 'inline-block' }}>Ознакомление</span> <br /><span style={{ display: 'inline-block' }}>с материалами</span></>,
-                desc: 'Изучаем постановления, извещения, ответы и другие материалы исполнительного производства.'
+                desc: 'Изучаем постановления, извещения, ответы и другие материалы производства.'
               },
               {
                 num: '03',
@@ -735,27 +488,27 @@ export default function ObzhalovanieClient() {
               {
                 num: '04',
                 title: <><span style={{ display: 'inline-block' }}>Формирование</span> <br /><span style={{ display: 'inline-block' }}>требований</span></>,
-                desc: 'Определяем нарушенное право, требуемый результат и надлежащего адресата для обращения.'
+                desc: 'Определяем нарушенное право, требуемый результат и надлежащего адресата.'
               },
               {
                 num: '05',
                 title: <><span style={{ display: 'inline-block' }}>Подготовка жалобы</span> <br /><span style={{ display: 'inline-block' }}>в ФССП</span></>,
-                desc: 'Составляем мотивированную жалобу вышестоящему должностному лицу, заявления и ходатайства.'
+                desc: 'Составляем мотивированную жалобу вышестоящему лицу ФССП, заявления и ходатайства.'
               },
               {
                 num: '06',
                 title: <><span style={{ display: 'inline-block' }}>Подготовка иска</span> <br /><span style={{ display: 'inline-block' }}>в суд (КАС РФ)</span></>,
-                desc: 'Готовим административное исковое заявление, доказательную базу и комплект приложений.'
+                desc: 'Готовим административное исковое заявление, доказательную базу и комплект документов.'
               },
               {
                 num: '07',
                 title: <><span style={{ display: 'inline-block' }}>Представительство</span> <br /><span style={{ display: 'inline-block' }}>интересов</span></>,
-                desc: 'Представляем доверителя в подразделениях ФССП и судебных заседаниях в согласованном объёме.'
+                desc: 'Представляем доверителя в подразделениях ФССП и судебных заседаниях.'
               },
               {
                 num: '08',
                 title: <><span style={{ display: 'inline-block' }}>Контроль устранения</span> <br /><span style={{ display: 'inline-block' }}>нарушения</span></>,
-                desc: 'Отслеживаем исполнение решения по жалобе или судебного акта до фактического результата.'
+                desc: 'Отслеживаем исполнение решения по жалобе или судебного акта до результата.'
               }
             ].map((act, idx) => (
               <div key={idx} className="hover-lift" style={{
@@ -766,6 +519,9 @@ export default function ObzhalovanieClient() {
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 display: 'flex',
                 flexDirection: 'column',
+                height: '100%',
+                minHeight: '235px',
+                boxSizing: 'border-box',
                 position: 'relative'
               }}>
                 <div style={{
@@ -782,10 +538,10 @@ export default function ObzhalovanieClient() {
                 }}>
                   {act.num}
                 </div>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.35 }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.35, minHeight: '48px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
                   {act.title}
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, minHeight: '68px' }}>
                   {act.desc}
                 </p>
               </div>
