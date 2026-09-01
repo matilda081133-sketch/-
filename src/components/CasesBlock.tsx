@@ -79,7 +79,7 @@ export default function CasesBlock({
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600, whiteSpace: 'nowrap' }}>
                   {caseItem.category}
                 </span>
-                <h3 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4 }}>
+                <h3 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4, wordBreak: 'break-word', overflowWrap: 'break-word' }}>
                   {caseItem.title}
                 </h3>
               </div>

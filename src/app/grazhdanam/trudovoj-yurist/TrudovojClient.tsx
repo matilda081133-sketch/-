@@ -54,19 +54,7 @@ export default function TrudovojClient() {
     },
     {
       category: 'Производственная травма',
-      title: (
-        <span style={{ display: 'block' }}>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-            Добились расследования
-          </span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-            несчастного случая и надлежащего
-          </span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-            оформления производственной травмы
-          </span>
-        </span>
-      ),
+      title: 'Добились расследования несчастного случая и надлежащего оформления производственной травмы',
       problem: 'Работник получил травму во время смены, но работодатель не организовал расследование и предложил указать в медицинских документах, что повреждение получено в быту.',
       action: 'Собрали медицинские документы, сведения о смене и порученной работе, переписку и контакты свидетелей. Подготовили обращение в государственную инспекцию труда и сопровождали дополнительное расследование обстоятельств несчастного случая.',
       result: 'Случай признали связанным с производством, оформили акт о несчастном случае. Работник получил возможность обратиться за предусмотренными страховыми выплатами и возмещением причиненного вреда.'
@@ -508,7 +496,7 @@ export default function TrudovojClient() {
             <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
               +7 (910) 350-31-11
             </a>
-            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="trudovoj_urgent_call_click">
+            <a href="tel:+79103503111" className="btn btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="trudovoj_urgent_call_click">
               Позвонить юристу
             </a>
             <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
@@ -659,12 +647,9 @@ export default function TrudovojClient() {
                 <div style={{ marginTop: 'auto' }}>
                   <a
                     href="#form"
-                    className="btn"
+                    className="btn btn-gold"
                     style={{
                       display: 'inline-block',
-                      backgroundColor: 'var(--color-white)',
-                      color: 'var(--color-deep-blue)',
-                      border: '1px solid var(--color-white)',
                       padding: '12px 28px',
                       fontSize: '14px',
                       fontWeight: 600,
@@ -684,13 +669,29 @@ export default function TrudovojClient() {
       <SpecialistBlock
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
-        position="Ведущий юрист ЮК &#171;Де-Юре&#187;"
+        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Трудовое право»</>}
         imageUrl="/images/smolyaninova.jpg"
+        imagePosition="center 20%"
+        profileHref="/specialisty/smolyaninova-marina-valerevna/"
+        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[
-          'Более пяти лет юридической практики и судебного представительства по защите прав граждан.',
-          'Специализируется на защите работников в спорах об увольнении, невыплате заработной платы и дисциплинарных взысканиях.',
-          'Подготовка мотивированных претензий, расчетов компенсаций, исковых заявлений и представительство в судах и государственных органах.',
-          'Сопровождает доверителей в Липецке и Липецкой области; возможен дистанционный формат работы.'
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Более пяти лет юридической практики и судебного представительства по защите прав граждан.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Специализируется на защите работников в спорах об увольнении, невыплате заработной платы и дисциплинарных взысканиях.</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Подготовка мотивированных претензий, расчетов компенсаций, исковых заявлений и представительство в судах и государственных органах.</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Сопровождает доверителей в Липецке и Липецкой области; возможен дистанционный формат работы.</span>
+            </li>
+          </ul>
         ]}
         buttonText="Задать вопрос юристу"
         buttonHref="#form"
@@ -709,7 +710,7 @@ export default function TrudovojClient() {
       <ProcessBlock
         title="Как проходит работа"
         subtitle="Начать работу можно в офисе, по телефону или видеосвязи. Документы можно передать лично либо направить в электронном виде."
-        alignTitle="left"
+        alignTitle="center"
         steps={steps}
         ctaTitle="Обсудите трудовой спор с юристом"
         ctaSubtitle="Опишите ситуацию — юрист изучит документы и предложит план защиты ваших прав."
