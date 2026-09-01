@@ -318,34 +318,69 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
         </div>
       </section>
       {/* ═══ БЛОК: ЧТО ПРОВЕРИТ АДВОКАТ ═══ */}
-      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
+      <section className="section bg-light" style={{ padding: '72px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '32px' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что проверит адвокат</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>при оценке депортации</span>
+          <div style={{ maxWidth: '780px', marginBottom: '36px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Что проверит адвокат
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                при оценке депортации
+              </span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               До подачи иска или жалобы адвокат проводит юридический анализ всех обстоятельств дела:
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
-            {[
-              'Решение о депортации, орган, дата вынесения, нормативное основание и порядок вручения',
-              'Связанные решения об аннулировании РВП/ВНЖ, нежелательности пребывания, запрете на въезд',
-              'Текущий миграционный статус и точную дату возникновения обязанности выехать из РФ',
-              'Наличие помещения в ЦВСИГ и отдельных судебных актов о продлении срока содержания',
-              'Семейные, медицинские и другие гуманитарные обстоятельства доверителя в РФ',
-              'Основания, процессуальные риски и доказательства для заявления о мерах предварительной защиты'
-            ].map((item, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px 20px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-primary)' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <polyline points="9 11 12 14 22 4" />
-                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                </svg>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>{item}</p>
-              </div>
-            ))}
+
+          <div style={{
+            background: 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)',
+            color: '#FFFFFF',
+            border: '1px solid rgba(193, 160, 102, 0.35)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '36px 32px',
+            marginBottom: '24px',
+            boxShadow: '0 20px 40px rgba(16, 39, 59, 0.15)',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            {/* Фоновый гербовый водяной знак */}
+            <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.05, pointerEvents: 'none' }}>
+              <svg width="140" height="140" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '16px 32px', marginBottom: '28px', position: 'relative', zIndex: 1 }}>
+              {[
+                'Решение о депортации, орган, дата вынесения, нормативное основание и порядок вручения',
+                'Связанные решения об аннулировании РВП/ВНЖ, нежелательности пребывания, запрете на въезд',
+                'Текущий миграционный статус и точную дату возникновения обязанности выехать из РФ',
+                'Наличие помещения в ЦВСИГ и отдельных судебных актов о продлении срока содержания',
+                'Семейные, медицинские и другие гуманитарные обстоятельства доверителя в РФ',
+                'Основания, процессуальные риски и доказательства для заявления о мерах предварительной защиты'
+              ].map((doc, idx) => (
+                <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.5 }}>
+                    {doc}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', paddingTop: '20px', borderTop: '1px solid rgba(255, 255, 255, 0.15)', position: 'relative', zIndex: 1 }}>
+              <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)' }}>
+                Электронные копии документов можно передать для дистанционной оценки
+              </span>
+              <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14px', background: 'var(--color-gold)', borderColor: 'var(--color-gold)', color: '#FFFFFF' }} data-analytics="migr_deport_docs_cta">
+                Передать документы на проверку
+              </a>
+            </div>
           </div>
         </div>
       </section>

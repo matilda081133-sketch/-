@@ -142,151 +142,76 @@ export default function ObzhalovanieClient() {
         imageObjectPosition="50% -75px"
       />
 
-      {/* ═══ БЛОК 2: КОГДА БИЗНЕСУ НЕЛЬЗЯ ОТКЛАДЫВАТЬ ПРОВЕРКУ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 2: КОГДА ДЕЙСТВИЯ ПРИСТАВА СОЗДАЮТ ПРЯМОЙ РИСК ДЛЯ БИЗНЕСА (КОГДА СРОЧНО) ═══ */}
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: 'inline-block' }}>Когда действия пристава</span> <br />
-              <span style={{ display: 'inline-block' }}>создают прямой риск для бизнеса</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>В исполнительном производстве промедление грозит</span> <br />
-              <span style={{ display: 'inline-block' }}>реальными финансовыми потерями как для должника, так и для взыскателя.</span>
-            </p>
-          </div>
-          
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
+          <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
+            <span style={{ display: 'inline-block' }}>Когда действия пристава</span> <br /><span style={{ display: 'inline-block' }}>создают прямой риск для бизнеса</span>
+          </h2>
+          <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '850px', lineHeight: 1.6 }}>
+            <span style={{ display: 'inline-block' }}>В исполнительном производстве промедление грозит</span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>реальными финансовыми потерями как для должника, так и для взыскателя.</span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>Чем раньше юрист увидит документы, тем больше доступных способов защиты.</span>
+          </p>
+
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
             {[
               { 
                 tag: 'Риск блокировки', 
-                title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ограничены расчёты</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по основному счёту компании</span></>, 
-                desc: (
-                  <>
-                    <span style={{ display: 'inline-block' }}>Проверим основание и объём взыскания,</span>{' '}
-                    <span style={{ display: 'inline-block' }}>последовательность постановлений</span>{' '}
-                    <span style={{ display: 'inline-block' }}>и возможность срочной защиты</span>{' '}
-                    <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>без смешения с 115-ФЗ.</span>
-                  </>
-                )
+                title: 'Ограничены расчёты по основному счёту компании', 
+                desc: 'Проверим основание и объём взыскания, последовательность постановлений и возможность срочной защиты без смешения с 115-ФЗ.'
               },
               { 
                 tag: 'Риск изъятия', 
-                title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Арестовано имущество,</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>необходимое для работы бизнеса</span></>, 
-                desc: (
-                  <>
-                    <span style={{ display: 'inline-block' }}>Оценим принадлежность имущества,</span>{' '}
-                    <span style={{ display: 'inline-block' }}>соразмерность меры, порядок ареста</span>{' '}
-                    <span style={{ display: 'inline-block' }}>и доказательства последствий для бизнеса.</span>
-                  </>
-                )
+                title: 'Арестовано имущество, необходимое для работы бизнеса', 
+                desc: 'Оценим принадлежность имущества, соразмерность меры, порядок ареста и доказательства последствий для бизнеса.'
               },
               { 
                 tag: 'Риск переплаты', 
-                title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Незаконно начислен</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>крупный исполнительский сбор</span></>, 
-                desc: (
-                  <>
-                    <span style={{ display: 'inline-block' }}>Сверим извещение, срок добровольного</span>{' '}
-                    <span style={{ display: 'inline-block' }}>исполнения, основания постановления</span>{' '}
-                    <span style={{ display: 'inline-block' }}>и объективные обстоятельства задержки.</span>
-                  </>
-                )
+                title: 'Незаконно начислен крупный исполнительский сбор', 
+                desc: 'Сверим извещение, срок добровольного исполнения, основания постановления и объективные обстоятельства задержки.'
               },
               { 
                 tag: 'Риск бездействия', 
-                title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Пристав не исполняет</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>решение суда в пользу компании</span></>, 
-                desc: (
-                  <>
-                    <span style={{ display: 'inline-block' }}>Установим, какие заявления подавались,</span>{' '}
-                    <span style={{ display: 'inline-block' }}>какие действия фактически совершены</span>{' '}
-                    <span style={{ display: 'inline-block' }}>и чего потребовать</span>{' '}
-                    <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>для продолжения взыскания.</span>
-                  </>
-                )
+                title: 'Пристав не исполняет решение суда в пользу компании', 
+                desc: 'Установим, какие заявления подавались, какие действия фактически совершены и чего потребовать для продолжения взыскания.'
               },
               { 
                 tag: 'Риск закрытия', 
-                title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Производство окончено</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>без фактического взыскания</span></>, 
-                desc: (
-                  <>
-                    <span style={{ display: 'inline-block' }}>Проверим основание решения, полноту</span>{' '}
-                    <span style={{ display: 'inline-block' }}>исполнительных действий и возможность отмены</span>{' '}
-                    <span style={{ display: 'inline-block' }}>постановления либо повторного предъявления.</span>
-                  </>
-                )
+                title: 'Производство окончено без фактического взыскания', 
+                desc: 'Проверим основание решения, полноту исполнительных действий и возможность отмены постановления либо повторного предъявления.'
               },
               { 
                 tag: 'Риск запретов', 
-                title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ограничения сохраняются</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>после полного исполнения долга</span></>, 
-                desc: (
-                  <>
-                    <span style={{ display: 'inline-block' }}>Сопоставим фактические поступления,</span>{' '}
-                    <span style={{ display: 'inline-block' }}>постановления об окончании и сведения</span>{' '}
-                    <span style={{ display: 'inline-block' }}>банков и регистрирующих органов.</span>
-                  </>
-                )
+                title: 'Ограничения сохраняются после полного исполнения долга', 
+                desc: 'Сопоставим фактические поступления, постановления об окончании и сведения банков и регистрирующих органов.'
               }
             ].map((risk, index) => (
               <div 
                 key={index}
-                className="hover-lift"
-                style={{
-                  padding: '36px 30px',
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                className="urgent-card"
+                style={{ 
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
+                  padding: '32px 28px', 
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  transition: 'all 0.3s ease',
                   display: 'flex',
-                  flexDirection: 'column',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  transition: 'all 0.3s ease'
+                  flexDirection: 'column'
                 }}
               >
-                {/* Каноничный водяной знак */}
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '48px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
                   </svg>
+                  <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
+                    {risk.title}
+                  </div>
                 </div>
-
-                <div style={{ 
-                  fontSize: '12px', 
-                  fontWeight: 700, 
-                  color: 'var(--color-gold)', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.08em', 
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {risk.tag}
-                </div>
-
-                <h3 style={{ 
-                  fontFamily: 'var(--font-serif)', 
-                  fontSize: '17px !important', 
-                  fontWeight: 600, 
-                  color: 'var(--color-deep-blue)', 
-                  margin: '0 0 14px 0', 
-                  lineHeight: 1.4,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {risk.title}
-                </h3>
-
-                <p style={{ 
-                  fontSize: '15px', 
-                  color: 'var(--color-text-secondary)', 
-                  lineHeight: 1.6, 
-                  margin: 0,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
+                <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                   {risk.desc}
                 </p>
               </div>
@@ -294,17 +219,38 @@ export default function ObzhalovanieClient() {
           </div>
 
           <div style={{
-            background: 'var(--color-white)',
-            padding: '20px 28px',
-            border: '1px solid var(--color-border)',
+            background: 'rgba(255, 255, 255, 0.08)',
             borderLeft: '4px solid var(--color-gold)',
-            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
-            fontSize: '15px',
-            color: 'var(--color-deep-blue)',
-            fontWeight: 500,
+            padding: '16px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
             lineHeight: 1.6
           }}>
-            Срок на подачу жалобы обычно составляет 10 дней с даты постановления, действия или момента, когда компании стало известно о нарушении. Юрист проверит сроки по материалам дела.
+            <strong style={{ color: '#FFFFFF' }}>Юридическая справка:</strong> Срок на подачу жалобы обычно составляет 10 дней с даты постановления, действия или момента, когда компании стало известно о нарушении. Юрист проверит сроки по материалам дела.
+          </div>
+
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 16px 36px rgba(0,0,0,0.22) !important;
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
+              +7 (910) 350-31-11
+            </a>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="b2b_urgent_call_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Описать ситуацию
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
+              Перезвоним вам в течение 15 минут в рабочее время
+            </span>
           </div>
         </div>
       </section>
