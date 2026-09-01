@@ -474,6 +474,8 @@ export default function IspolnitelnoeClient() {
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
         imageUrl="/images/smolyaninova.jpg"
+        profileHref="/specialisty/smolyaninova-marina-valerevna/"
+        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Марина Валерьевна Смольянинова курирует сопровождение исполнительного производства для юридических лиц и индивидуальных предпринимателей. Выстраивает стратегию защиты активов компании, взаимодействия со службой судебных приставов и банками, оспаривания незаконных действий и возврата задолженности.
@@ -491,10 +493,7 @@ export default function IspolnitelnoeClient() {
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
               <span>Практика оспаривания постановлений и отсрочки исполнения в судах</span>
             </li>
-          </ul>,
-          <a key="3" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-            Подробнее о Марине Валерьевне Смольяниновой →
-          </a>
+          </ul>
         ]}
         buttonText="Задать вопрос Марине Валерьевне"
         buttonHref="#form"

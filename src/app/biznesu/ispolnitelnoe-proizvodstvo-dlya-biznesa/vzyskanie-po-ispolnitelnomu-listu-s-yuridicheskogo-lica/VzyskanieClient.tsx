@@ -753,6 +753,8 @@ export default function VzyskanieClient() {
         name="Марина Валерьевна Смольянинова"
         position="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
         imageUrl="/images/smolyaninova.jpg"
+        profileHref="/specialisty/smolyaninova-marina-valerevna/"
+        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Марина Валерьевна Смольянинова более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Этот опыт помогает оценивать не только формальные сроки, но и практическую последовательность действий: какой источник исполнения проверять первым, какие ходатайства имеют смысл и когда нужно менять маршрут.
@@ -770,10 +772,7 @@ export default function VzyskanieClient() {
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
               <span>Лично проверяет стратегию, ходатайства и ключевые процессуальные документы</span>
             </li>
-          </ul>,
-          <a key="3" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-            Подробнее о Марине Валерьевне Смольяниновой →
-          </a>
+          </ul>
         ]}
         buttonText="Обратиться к Марине Смольяниновой"
         buttonHref="#form"
