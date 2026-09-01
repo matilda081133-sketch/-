@@ -640,28 +640,28 @@ export default function IspolnitelnoeGrazhdanamClient() {
           <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
             {[
               {
-                title: 'Обжалование действий судебного пристава',
-                desc: 'Проверка постановлений и материалов производства, жалоба старшему приставу, в УФССП или в суд.',
+                title: 'Обжалование действий и бездействия судебного пристава',
+                desc: 'Проверка постановлений и материалов производства, жалоба вышестоящему должностному лицу, в прокуратуру или в суд.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/'
               },
               {
-                title: 'Возврат незаконно списанных денег',
-                desc: 'Помощь при списании защищённых выплат, повторном или избыточном взыскании и после погашения долга.',
+                title: 'Возврат незаконно списанных приставами денег',
+                desc: 'Помощь при списании защищённых выплат, повторном или избыточном взыскании, а также после погашения задолженности.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/'
               },
               {
-                title: 'Снятие ареста со счёта и карты',
-                desc: 'Проверка основания ареста, источника поступлений, обращение к судебному приставу, в банк или суд.',
+                title: 'Снятие ареста со счёта и разблокировка карты',
+                desc: 'Проверка основания ареста, источника поступлений и документов; обращения к судебному приставу, в банк или суд.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/'
               },
               {
-                title: 'Снятие ареста с автомобиля',
-                desc: 'Помощь владельцу или приобретателю при аресте транспорта, запрете регистрации и притязаниях приставов.',
+                title: 'Снятие ареста с автомобиля и запрета на регистрацию',
+                desc: 'Помощь владельцу или добросовестному приобретателю при аресте транспорта, запрете регистрации и притязаниях приставов.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/'
               },
               {
-                title: 'Взыскание по исполнительному листу',
-                desc: 'Сопровождение взыскателя: предъявление документа, контроль пристава, розыск активов и обжалование.',
+                title: 'Взыскание задолженности по исполнительному листу',
+                desc: 'Сопровождение взыскателя после решения суда: предъявление документа, контроль пристава, розыск активов и обжалование.',
                 link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/'
               }
             ].map((dir, i) => (
@@ -670,29 +670,30 @@ export default function IspolnitelnoeGrazhdanamClient() {
                   className="card service-card hover-lift" 
                   style={{ 
                     height: '100%', 
-                    minHeight: '220px',
-                    padding: '30px 28px', 
+                    minHeight: '260px',
+                    padding: '32px 28px', 
                     background: 'var(--color-white)', 
                     border: '1px solid var(--color-border)',
                     borderRadius: '0',
                     display: 'flex', 
-                    flexDirection: 'column',
+                    flexDirection: 'column', 
                     justifyContent: 'space-between',
                     transition: 'all 0.3s',
                     position: 'relative',
                     borderTop: '3px solid var(--color-primary)',
-                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
+                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                    boxSizing: 'border-box'
                   }}
                 >
                   <div>
-                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '48px' }}>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '52px' }}>
                       {dir.title}
                     </h3>
-                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, minHeight: '68px' }}>
                       {dir.desc}
                     </p>
                   </div>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', paddingTop: '12px', borderTop: '1px solid rgba(23, 50, 77, 0.06)' }}>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(23, 50, 77, 0.06)' }}>
                     <span>Подробнее</span> 
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
