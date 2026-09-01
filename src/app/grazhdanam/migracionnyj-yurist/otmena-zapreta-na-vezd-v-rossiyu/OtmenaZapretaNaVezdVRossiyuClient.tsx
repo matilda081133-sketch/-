@@ -358,9 +358,7 @@ export default function OtmenaZapretaNaVezdVRossiyuClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
-            {/* ═══ БЛОК КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ) ═══ */}
-            {/* ═══ БЛОК КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ) ═══ */}
+                  {/* ═══ БЛОК: КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ) ═══ */}
       <SpecialistBlock
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
@@ -384,11 +382,10 @@ export default function OtmenaZapretaNaVezdVRossiyuClient() {
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
               <span>Реестровый номер 48/812</span>
             </li>
-          </ul>,
-          <a key="3" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-            Подробнее о Дмитрии Сергеевиче Конопкине →
-          </a>
+          </ul>
         ]}
+        profileHref="/specialisty/konopkin-dmitriy-sergeevich/"
+        profileText="Подробнее о Дмитрии Сергеевиче Конопкине →"
         buttonText="Задать вопрос адвокату"
         buttonHref="#form"
       />

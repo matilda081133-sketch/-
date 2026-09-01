@@ -122,10 +122,13 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Обжалование нежелательности
+              Обжалование
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              пребывания в РФ (ст. 25.10)
+              нежелательности пребывания
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              в РФ (ст. 25.10)
             </span>
           </span>
         }
@@ -315,9 +318,7 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
-            {/* ═══ БЛОК КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ) ═══ */}
-            {/* ═══ БЛОК КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ) ═══ */}
+                  {/* ═══ БЛОК: КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ) ═══ */}
       <SpecialistBlock
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
@@ -341,11 +342,10 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
               <span>Реестровый номер 48/812</span>
             </li>
-          </ul>,
-          <a key="3" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-            Подробнее о Дмитрии Сергеевиче Конопкине →
-          </a>
+          </ul>
         ]}
+        profileHref="/specialisty/konopkin-dmitriy-sergeevich/"
+        profileText="Подробнее о Дмитрии Сергеевиче Конопкине →"
         buttonText="Задать вопрос адвокату"
         buttonHref="#form"
       />
