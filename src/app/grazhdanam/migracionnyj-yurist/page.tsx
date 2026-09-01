@@ -31,8 +31,7 @@ export default function MigracionnyjPage() {
       'streetAddress': 'ул. Советская, 35',
       'addressLocality': 'Липецк',
       'addressRegion': 'Липецкая область',
-      'postalCode': '398001',
-      'addressCountry': 'RU'
+            'addressCountry': 'RU'
     },
     'geo': {
       '@type': 'GeoCoordinates',
