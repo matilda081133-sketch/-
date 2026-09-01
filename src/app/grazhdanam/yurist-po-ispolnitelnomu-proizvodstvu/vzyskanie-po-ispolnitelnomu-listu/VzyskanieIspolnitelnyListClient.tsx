@@ -186,7 +186,14 @@ export default function VzyskanieIspolnitelnyListClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="service_exec_list_hero_cta"
         primaryCtaSubtext={
-          <>Если судебный акт уже получен, позвоните: <a href="tel:+79103503111" data-analytics="service_exec_list_phone_click">+7 (910) 350-31-11</a></>
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Если судебный акт уже получен,
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              позвоните: <a href="tel:+79103503111" data-analytics="service_exec_list_phone_click" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
         }
         trustItems={[
           { text: 'Проверяем должника и имущество' },

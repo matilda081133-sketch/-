@@ -163,7 +163,10 @@ export default function VozvratDenegClient() {
               Возврат незаконно списанных
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              приставами денежных средств в Липецке
+              приставами денежных средств
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              в Липецке
             </span>
           </span>
         }
@@ -190,7 +193,14 @@ export default function VozvratDenegClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_hero_form"
         primaryCtaSubtext={
-          <>Если средства уже списаны со счёта, позвоните: <a href="tel:+79103503111" data-analytics="click_phone">+7 (910) 350-31-11</a></>
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Если средства уже списаны со счёта,
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              позвоните: <a href="tel:+79103503111" data-analytics="click_phone" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
         }
         trustItems={[
           { text: 'Проверяем основание списания' },

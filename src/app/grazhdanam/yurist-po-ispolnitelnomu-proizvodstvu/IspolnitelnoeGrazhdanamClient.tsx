@@ -269,7 +269,14 @@ export default function IspolnitelnoeGrazhdanamClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_primary_cta_b2c_hub"
         primaryCtaSubtext={
-          <>Если ограничения или списания уже начались, позвоните: <a href="tel:+79103503111">+7 (910) 350-31-11</a></>
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Если ограничения или списания уже начались,
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
         }
         trustItems={[
           { text: 'Помощь должникам и взыскателям' },

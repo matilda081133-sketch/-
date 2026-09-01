@@ -169,7 +169,10 @@ export default function SnyatieArestaAvtoClient() {
               Снятие ареста с автомобиля
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              и запрета на регистрационные действия
+              и запрета на регистрационные
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              действия в Липецке
             </span>
           </span>
         }
@@ -196,7 +199,14 @@ export default function SnyatieArestaAvtoClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="service_car_arrest_hero_cta"
         primaryCtaSubtext={
-          <>Если ограничение препятствует сделке, позвоните: <a href="tel:+79103503111" data-analytics="service_car_arrest_phone_click">+7 (910) 350-31-11</a></>
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Если ограничение препятствует сделке,
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              позвоните: <a href="tel:+79103503111" data-analytics="service_car_arrest_phone_click" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
         }
         trustItems={[
           { text: 'Проверяем основания каждого запрета' },

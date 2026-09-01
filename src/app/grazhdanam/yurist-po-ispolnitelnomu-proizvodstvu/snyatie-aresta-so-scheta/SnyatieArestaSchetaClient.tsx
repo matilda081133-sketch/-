@@ -163,7 +163,10 @@ export default function SnyatieArestaSchetaClient() {
               Снятие ареста со счёта
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              или банковской карты в Липецке
+              или банковской карты
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              в Липецке
             </span>
           </span>
         }
@@ -190,7 +193,14 @@ export default function SnyatieArestaSchetaClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_hero_form"
         primaryCtaSubtext={
-          <>Если доступ к средствам уже заблокирован, позвоните: <a href="tel:+79103503111" data-analytics="click_phone">+7 (910) 350-31-11</a></>
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Если доступ к средствам уже заблокирован,
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              позвоните: <a href="tel:+79103503111" data-analytics="click_phone" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
         }
         trustItems={[
           { text: 'Проверяем основание каждого ареста' },
