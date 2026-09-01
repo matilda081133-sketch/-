@@ -673,8 +673,15 @@ export default function VzyskanieClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '36px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
-              <span style={{ display: 'inline-block' }}>Какие документы нужны</span> <br />
-              <span style={{ display: 'inline-block' }}>для взыскания по исполнительному листу</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Какие документы нужны
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                для взыскания по
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                исполнительному листу
+              </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Чем полнее исходный комплект документов, тем быстрее юрист сможет определить наиболее перспективный маршрут взыскания задолженности с юридического лица:

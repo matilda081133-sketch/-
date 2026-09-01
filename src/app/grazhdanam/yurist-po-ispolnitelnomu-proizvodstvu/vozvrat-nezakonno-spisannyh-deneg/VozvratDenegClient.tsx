@@ -160,13 +160,13 @@ export default function VozvratDenegClient() {
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Возврат незаконно списанных
+              Возврат незаконно
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              приставами денежных средств
+              списанных приставами
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              в Липецке
+              денежных средств в Липецке
             </span>
           </span>
         }
@@ -181,10 +181,13 @@ export default function VozvratDenegClient() {
             `}} />
             <span style={{ display: 'inline-block', maxWidth: '100%' }}>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                Установим, на каком основании и куда перечислены деньги, соберём подтверждения
+                Установим, на каком основании и куда перечислены деньги,
               </span>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                незаконного списания и выберем способ возврата — через банк, ФССП или суд.
+                соберём подтверждения незаконного списания и выберем
+              </span>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                способ возврата — через банк, ФССП или суд.
               </span>
             </span>
           </>
