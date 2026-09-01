@@ -150,7 +150,7 @@ export default function IsklyuchenieIzReestraKontroliruemyhLicClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Защитим права иностранного гражданина при включении в реестр контролируемых лиц: оспорим незаконную запись, устраним основания режима высылки и снимем ограничения на счета и сделки.
+            Установим основание включения в реестр контролируемых лиц и определим законный маршрут: исправление ошибочных сведений, получение законного основания пребывания, отмена исходного решения либо судебное оспаривание. После появления основания для исключения проконтролируем изменение записи и прекращение ограничений.
           </span>
         }
         primaryCtaText="Обсудить ситуацию"
@@ -202,13 +202,13 @@ export default function IsklyuchenieIzReestraKontroliruemyhLicClient() {
           <div className="grid grid-3" style={{ gap: '28px' }}>
             {[
           {
-                    "tag": "Блокировка счетов",
+                    "tag": "Банковские ограничения",
                     "title": [
-                              "Банк заблокировал счета,",
-                              "карты и переводы средств",
-                              "из-за включения в реестр"
+                              "Ограничение операций",
+                              "по счетам и картам",
+                              "при режиме высылки"
                     ],
-                    "desc": "По закону № 260-ФЗ лица в реестре лишаются права открывать счета и совершать банковские операции. Оспариваем законность ограничений."
+                    "desc": "Режим высылки существенно ограничивает открытие счетов и проведение банковских операций. Точный объём ограничений и предусмотренные законом исключения необходимо проверять по актуальной норме и конкретной операции. После исключения из реестра прекращение ограничений зависит от обновления данных в информационных системах."
           },
           {
                     "tag": "Запрет на авто",
@@ -253,7 +253,7 @@ export default function IsklyuchenieIzReestraKontroliruemyhLicClient() {
                               "или законный супруг —",
                               "граждане Российской Федерации"
                     ],
-                    "desc": "Доказываем устойчивые семейные связи, факт совместного проживания и недопустимость разрушения семьи по ст. 38 Конституции РФ."
+                    "desc": "Семейные связи сами по себе не являются основанием для исключения из реестра. Они могут иметь значение при обжаловании исходного решения о запрете, депортации, выдворении или нежелательности пребывания. Сначала необходимо установить, какой акт стал основанием режима высылки."
           }
 ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
@@ -318,6 +318,76 @@ export default function IsklyuchenieIzReestraKontroliruemyhLicClient() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      
+      {/* ═══ БЛОК: КОГДА СВЕДЕНИЯ ИСКЛЮЧАЮТСЯ ИЗ РЕЕСТРА ═══ */}
+      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.5vw, 38px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Когда сведения</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исключаются из реестра</span>
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Сведения исключаются из реестра не по свободному заявлению, а при наступлении предусмотренного законом основания (п. 7 ст. 31.2 закона № 115-ФЗ):
+            </p>
+            <ul style={{ margin: '0 0 24px 0', paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {[
+                'человек выехал из России;',
+                'появилось законное основание для пребывания или проживания;',
+                'отменено решение, из-за которого применён режим высылки;',
+                'суд признал исходное решение незаконным;',
+                'запись основана на ошибочных сведениях, которые удалось подтвердить и исправить.'
+              ].map((item, i) => (
+                <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div style={{ padding: '16px 20px', background: 'var(--color-white)', borderLeft: '3px solid var(--color-gold)', border: '1px solid var(--color-border)', borderLeftWidth: '3px', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+              Если основанием является действующий запрет, депортация, выдворение, нежелательность пребывания или аннулирование статуса, простое обращение об удалении записи не заменяет обжалование исходного акта.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      {/* ═══ БЛОК: КОГДА СВЕДЕНИЯ ИСКЛЮЧАЮТСЯ ИЗ РЕЕСТРА ═══ */}
+      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.5vw, 38px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Когда сведения</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>исключаются из реестра</span>
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Сведения исключаются из реестра не по свободному заявлению, а при наступлении предусмотренного законом основания (п. 7 ст. 31.2 закона № 115-ФЗ):
+            </p>
+            <ul style={{ margin: '0 0 24px 0', paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {[
+                'человек выехал из России;',
+                'появилось законное основание для пребывания или проживания;',
+                'отменено решение, из-за которого применён режим высылки;',
+                'суд признал исходное решение незаконным;',
+                'запись основана на ошибочных сведениях, которые удалось подтвердить и исправить.'
+              ].map((item, i) => (
+                <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div style={{ padding: '16px 20px', background: 'var(--color-white)', borderLeft: '3px solid var(--color-gold)', border: '1px solid var(--color-border)', borderLeftWidth: '3px', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+              Если основанием является действующий запрет, депортация, выдворение, нежелательность пребывания или аннулирование статуса, простое обращение об удалении записи не заменяет обжалование исходного акта.
+            </div>
           </div>
         </div>
       </section>
