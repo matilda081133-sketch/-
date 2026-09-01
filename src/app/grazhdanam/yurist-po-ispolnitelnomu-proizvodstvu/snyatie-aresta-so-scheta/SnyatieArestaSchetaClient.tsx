@@ -181,10 +181,13 @@ export default function SnyatieArestaSchetaClient() {
             `}} />
             <span style={{ display: 'inline-block', maxWidth: '100%' }}>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                Установим источник и основание ограничения, подготовим документы
+                Установим источник и основание ограничения,
               </span>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                для его отмены или корректировки и проконтролируем передачу постановления в банк.
+                подготовим документы для его отмены или корректировки
+              </span>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                и проконтролируем передачу постановления в банк.
               </span>
             </span>
           </>
