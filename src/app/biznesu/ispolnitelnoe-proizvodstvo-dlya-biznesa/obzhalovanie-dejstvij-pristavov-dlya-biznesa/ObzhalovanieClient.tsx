@@ -310,22 +310,23 @@ export default function ObzhalovanieClient() {
       </section>
 
       {/* ═══ БЛОК 3: ЧТО МОЖНО ОБЖАЛОВАТЬ ═══ */}
-      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что можно обжаловать</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в исполнительном производстве</span>
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>Что можно обжаловать</span> <br />
+              <span style={{ display: 'inline-block' }}>в исполнительном производстве</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               <span style={{ display: 'inline-block' }}>Недостаточно указать, что решение мешает работе компании. Нужно определить</span> <br />
               <span style={{ display: 'inline-block' }}>конкретное постановление, нарушение закона и требуемый способ защиты.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
             {[
               {
+                tag: 'Постановления',
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Постановления</span>{' '}
@@ -335,6 +336,7 @@ export default function ObzhalovanieClient() {
                 desc: 'Возбуждение, отказ, окончание или прекращение производства, исполнительский сбор, оценка имущества и распределение средств.'
               },
               {
+                tag: 'Имущество',
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Аресты и запреты</span>{' '}
@@ -344,6 +346,7 @@ export default function ObzhalovanieClient() {
                 desc: 'Оцениваем принадлежность имущества, объём требований, соразмерность мер, соблюдение процедуры и защиту основных средств.'
               },
               {
+                tag: 'Денежные средства',
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Списание</span>{' '}
@@ -353,6 +356,7 @@ export default function ObzhalovanieClient() {
                 desc: 'Сверяем постановления, сумму требования, законную очерёдность списаний и фактическое движение средств по счетам.'
               },
               {
+                tag: 'Отказы',
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отказ совершить</span>{' '}
@@ -362,6 +366,7 @@ export default function ObzhalovanieClient() {
                 desc: 'Проверяем отказ принять документ, рассмотреть ходатайство стороны, снять утратившее основание ограничение или запрет.'
               },
               {
+                tag: 'Бездействие',
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Бездействие пристава</span>{' '}
@@ -375,6 +380,7 @@ export default function ObzhalovanieClient() {
                 )
               },
               {
+                tag: 'Третьи лица',
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Нарушение прав</span>{' '}
@@ -388,46 +394,61 @@ export default function ObzhalovanieClient() {
                 key={index}
                 className="hover-lift"
                 style={{
+                  padding: '36px 30px',
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  padding: '36px 30px 32px 30px',
                   border: '1px solid var(--color-border)',
-                  borderTop: '4px solid var(--color-gold)',
+                  borderTop: '3px solid var(--color-primary)',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
-                  position: 'relative'
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
                 }}
               >
-                <div style={{
-                  position: 'absolute',
-                  top: '-14px',
-                  left: '24px',
-                  background: 'var(--color-gold)',
-                  color: '#FFFFFF',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  padding: '2px 10px',
-                  borderRadius: '2px',
-                  letterSpacing: '0.05em'
-                }}>
-                  {String(index + 1).padStart(2, '0')}
+                {/* Каноничный водяной знак */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
                 </div>
 
-                <h3 style={{
-                  fontSize: '18px',
-                  fontFamily: 'var(--font-serif)',
-                  color: 'var(--color-deep-blue)',
-                  margin: '8px 0 14px 0',
-                  lineHeight: 1.35
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.tag}
+                </div>
+
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '17px !important', 
+                  fontWeight: 600, 
+                  color: 'var(--color-deep-blue)', 
+                  margin: '0 0 14px 0', 
+                  lineHeight: 1.4,
+                  position: 'relative',
+                  zIndex: 1
                 }}>
                   {item.title}
                 </h3>
 
-                <p style={{
-                  fontSize: '14px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  margin: 0
+                <p style={{ 
+                  fontSize: '15px', 
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: 1.6, 
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
                 }}>
                   {item.desc}
                 </p>
