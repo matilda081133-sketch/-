@@ -571,69 +571,126 @@ export default function ObzhalovanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: ЭТАПЫ ЗАЩИТЫ БИЗНЕСА (Типовой блок этапов) ═══ */}
-      <ProcessBlock
-        alignTitle="center"
-        title={
-          <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что входит в обжалование</span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>действий судебного пристава</span>
-          </span>
-        }
-        subtitle={
-          <span style={{ display: 'block' }}>
-            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Комплексная работа юриста включает анализ материалов производства,</span>
-            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>подготовку процессуальных документов и представительство компании.</span>
-          </span>
-        }
-        steps={[
-          {
-            num: '01',
-            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Определим цель</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и срочность обжалования</span></>,
-            desc: 'Определим срочность, процессуальную роль компании (взыскатель или должник) и требуемый для бизнеса результат.'
-          },
-          {
-            num: '02',
-            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Изучим</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>имеющиеся документы</span></>,
-            desc: 'Изучим исполнительный документ, постановления, извещения, ходатайства и имеющиеся ответы ФССП.'
-          },
-          {
-            num: '03',
-            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ознакомимся</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с материалами дела</span></>,
-            desc: 'Ознакомимся с материалами исполнительного производства в согласованном с вами объёме.'
-          },
-          {
-            num: '04',
-            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Проверим</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>законность оснований</span></>,
-            desc: 'Проверим полномочия пристава, основания решения, соблюдение процедуры, сумму и соразмерность мер.'
-          },
-          {
-            num: '05',
-            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Определим</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>надлежащего адресата</span></>,
-            desc: 'Определим срок обжалования, компетентного адресата (ФССП или суд) и процессуальную форму обращения.'
-          },
-          {
-            num: '06',
-            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовим жалобу</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>старшему судебному приставу</span></>,
-            desc: 'Подготовим мотивированную жалобу в порядке подчинённости, адресные заявления и ходатайства.'
-          },
-          {
-            num: '07',
-            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовим заявление</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в арбитражный суд</span></>,
-            desc: 'Подготовим заявление в арбитражный суд либо документы для суда общей юрисдикции и ходатайство о приостановлении мер.'
-          },
-          {
-            num: '08',
-            title: <><span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Представим интересы</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>компании до результата</span></>,
-            desc: 'Представим интересы компании в ФССП и суде и проконтролируем фактическое устранение нарушения.'
-          }
-        ]}
-        ctaTitle="Готовы обсудить вашу ситуацию"
-        ctaSubtitle="Опишите задачу — юрист изучит документы и предложит конкретные шаги."
-        ctaButtonText="Обсудить объём помощи"
-        ctaButtonHref="#form"
-        footerNote="Консультацию, проверку электронных копий и подготовку большинства документов можно начать дистанционно. Необходимость личного участия в ФССП или суде определяется после выбора способа защиты."
-      />
+      {/* ═══ БЛОК 5: ЗАЩИЩАЕМ БИЗНЕС (Исходное оформление с парящими золотыми номерами 01–08) ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что входит в обжалование</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>действий судебного пристава</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Комплексная работа юриста включает анализ материалов производства,</span> <br />
+              <span style={{ display: 'inline-block' }}>подготовку процессуальных документов и представительство компании.</span>
+            </p>
+          </div>
+
+          <div className="grid grid-4" style={{ gap: '20px', position: 'relative', marginBottom: '40px' }}>
+            {[
+              {
+                num: '01',
+                title: <><span style={{ display: 'block' }}>Определим цель</span><span style={{ display: 'block' }}>и срочность обжалования</span></>,
+                desc: 'Определим срочность, процессуальную роль компании (взыскатель или должник) и требуемый для бизнеса результат.'
+              },
+              {
+                num: '02',
+                title: <><span style={{ display: 'block' }}>Изучим</span><span style={{ display: 'block' }}>имеющиеся документы</span></>,
+                desc: 'Изучим исполнительный документ, постановления, извещения, ходатайства и имеющиеся ответы ФССП.'
+              },
+              {
+                num: '03',
+                title: <><span style={{ display: 'block' }}>Ознакомимся</span><span style={{ display: 'block' }}>с материалами дела</span></>,
+                desc: 'Ознакомимся с материалами исполнительного производства в согласованном с вами объёме.'
+              },
+              {
+                num: '04',
+                title: <><span style={{ display: 'block' }}>Проверим</span><span style={{ display: 'block' }}>законность оснований</span></>,
+                desc: 'Проверим полномочия пристава, основания решения, соблюдение процедуры, сумму и соразмерность мер.'
+              },
+              {
+                num: '05',
+                title: <><span style={{ display: 'block' }}>Определим</span><span style={{ display: 'block' }}>надлежащего адресата</span></>,
+                desc: 'Определим срок обжалования, компетентного адресата (ФССП или суд) и процессуальную форму обращения.'
+              },
+              {
+                num: '06',
+                title: <><span style={{ display: 'block' }}>Подготовим жалобу</span><span style={{ display: 'block' }}>старшему судебному приставу</span></>,
+                desc: 'Подготовим мотивированную жалобу в порядке подчинённости, адресные заявления и ходатайства.'
+              },
+              {
+                num: '07',
+                title: <><span style={{ display: 'block' }}>Подготовим заявление</span><span style={{ display: 'block' }}>в арбитражный суд</span></>,
+                desc: 'Подготовим заявление в арбитражный суд либо документы для суда общей юрисдикции и ходатайство о приостановлении мер.'
+              },
+              {
+                num: '08',
+                title: <><span style={{ display: 'block' }}>Представим интересы</span><span style={{ display: 'block' }}>компании до результата</span></>,
+                desc: 'Представим интересы компании в ФССП и суде и проконтролируем фактическое устранение нарушения.'
+              }
+            ].map((item, index) => (
+              <div 
+                key={index}
+                className="hover-lift"
+                style={{
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 24px 28px 24px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
+                  minHeight: '235px',
+                  boxSizing: 'border-box',
+                  position: 'relative'
+                }}
+              >
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
+                </div>
+
+                <h3 style={{
+                  fontSize: '18px',
+                  fontFamily: 'var(--font-serif)',
+                  color: 'var(--color-deep-blue)',
+                  margin: '8px 0 12px 0',
+                  lineHeight: 1.25,
+                  minHeight: '46px'
+                }}>
+                  {item.title}
+                </h3>
+
+                <p style={{
+                  fontSize: '14px',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.55,
+                  margin: 0,
+                  minHeight: '68px'
+                }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ padding: '14px 32px' }} data-analytics="b2b_bailiff_risk_cta">
+              Обсудить объём помощи
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* ═══ БЛОК 6: ВЕДУЩИЙ ЮРИСТ ПО УСЛУГЕ ═══ */}
       <SpecialistBlock
