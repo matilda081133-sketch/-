@@ -664,15 +664,46 @@ export default function NezakonnoeUvolnenieClient() {
 
       {/* ═══ БЛОК 6: СПЕЦИАЛИСТ ПО ДЕЛУ ═══ */}
       <SpecialistBlock
-        title="Вашим делом займется Марина Валерьевна Смольянинова"
+        title={
+          <>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Вашим делом займется
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Марина Валерьевна Смольянинова
+            </span>
+          </>
+        }
         name="Марина Валерьевна Смольянинова"
-        position="Ведущий юрист ЮК &#171;Де-Юре&#187;"
+        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Трудовое право»</>}
         imageUrl="/images/smolyaninova.jpg"
+        imagePosition="center 20%"
+        profileHref="/specialisty/smolyaninova-marina-valerevna/"
+        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[
-          'Специализируется на трудовых спорах и защите прав работников.',
-          'Анализирует документы и доказательства, готовит правовую позицию и процессуальные документы.',
-          'Сопровождает переговоры с работодателем и представляет интересы клиентов в суде.',
-          'Более 5 лет юридической и судебной практики в сфере гражданского и трудового права.'
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Более пяти лет юридической практики и судебного представительства по защите прав граждан и работников.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Специализируется на трудовых спорах: оспаривание незаконного увольнения, восстановление на работе и взыскание среднего заработка.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Анализирует кадровые приказы, акты и доказательства, формирует правовую позицию и готовит процессуальные документы.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Сопровождает переговоры с работодателем и представляет интересы доверителей в судах всех инстанций.
+              </span>
+            </li>
+          </ul>
         ]}
         buttonText="Задать вопрос юристу"
         buttonHref="#form"
@@ -680,9 +711,18 @@ export default function NezakonnoeUvolnenieClient() {
 
       {/* ═══ БЛОК 7: ПРИМЕРЫ ДЕЛ ═══ */}
       <CasesBlock
-        title="Примеры дел по незаконному увольнению"
+        title={
+          <>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Примеры дел по
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              незаконному увольнению
+            </span>
+          </>
+        }
         showAllLink="/praktika/"
-        showAllText="Смотреть другие дела"
+        showAllText="Смотреть все дела"
         showDemoWarning={true}
         cases={cases}
       />
