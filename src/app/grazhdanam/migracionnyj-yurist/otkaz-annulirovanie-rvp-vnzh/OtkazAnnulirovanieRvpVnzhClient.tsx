@@ -299,36 +299,21 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-      {/* ═══ БЛОК: ОТКАЗ И АННУЛИРОВАНИЕ ═══ */}
-      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '820px' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.5vw, 38px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отказ и аннулирование:</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>разные правовые последствия</span>
-            </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.65, margin: 0 }}>
-              Отказ означает, что РВП или ВНЖ ещё не были выданы. Аннулирование прекращает уже действующий статус и может повлечь обязанность выехать в течение 15 дней. Поэтому для аннулирования сначала проверяются срочные последствия и меры защиты, а при отказе — мотивировка, документы и возможность административного или судебного обжалования.
-            </p>
-          </div>
-        </div>
-      </section>
 
-
-      
-      {/* ═══ БЛОК: ОТКАЗ И АННУЛИРОВАНИЕ ═══ */}
-      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '820px' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.5vw, 38px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отказ и аннулирование:</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>разные правовые последствия</span>
-            </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.65, margin: 0 }}>
-              Отказ означает, что РВП или ВНЖ ещё не были выданы. Аннулирование прекращает уже действующий статус и может повлечь обязанность выехать в течение 15 дней. Поэтому для аннулирования сначала проверяются срочные последствия и меры защиты, а при отказе — мотивировка, документы и возможность административного или судебного обжалования.
-            </p>
+          {/* Сноска-плашка: Отказ и аннулирование */}
+          <div style={{ 
+            background: 'rgba(23, 50, 77, 0.04)', 
+            padding: '20px 24px', 
+            borderLeft: '4px solid var(--color-gold)', 
+            fontSize: '14px', 
+            color: 'var(--color-deep-blue)', 
+            lineHeight: 1.6,
+            marginTop: '32px'
+          }}>
+            <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '15px', marginBottom: '6px' }}>
+              Отказ и аннулирование: разные правовые последствия
+            </strong>
+            Отказ означает, что РВП или ВНЖ ещё не были выданы. Аннулирование прекращает уже действующий статус и может повлечь обязанность выехать в течение 15 дней. Поэтому для аннулирования сначала проверяются срочные последствия и меры защиты, а при отказе — мотивировка, документы и возможность административного или судебного обжалования.
           </div>
         </div>
       </section>
