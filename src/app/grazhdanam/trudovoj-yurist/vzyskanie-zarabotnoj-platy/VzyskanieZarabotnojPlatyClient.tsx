@@ -638,7 +638,7 @@ export default function VzyskanieZarabotnojPlatyClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '48px' }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             {[
               {
                 num: '01',
@@ -738,79 +738,6 @@ export default function VzyskanieZarabotnojPlatyClient() {
               </div>
             ))}
           </div>
-
-          {/* ГРАНИЦЫ УСЛУГИ */}
-          <div style={{
-            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
-            border: '1px solid rgba(193, 160, 102, 0.4)',
-            borderTop: '3px solid var(--color-gold)',
-            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
-            padding: '36px 32px',
-            color: '#FFFFFF',
-            position: 'relative'
-          }}>
-            <div className="grid grid-2" style={{ gap: '36px' }}>
-              <div>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 18px 0', paddingBottom: '12px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                  <span>Входит в юридическую помощь</span>
-                </h3>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  {[
-                    { title: 'Анализ трудового договора и выписок', desc: 'Сверка условий оплаты труда, расчетных листков и фактических поступлений.' },
-                    { title: 'Расчет задолженности и процентов по ст. 236 ТК РФ', desc: 'Детализированный расчет по каждой дате выплаты с учетом ставки ЦБ РФ.' },
-                    { title: 'Досудебная претензия и жалобы в органы', desc: 'Составление требований работодателю, обращений в ГИТ и прокуратуру.' },
-                    { title: 'Подготовка иска и обеспечительных мер', desc: 'Формирование искового заявления с ходатайством об аресте счетов должника.' },
-                    { title: 'Судебное представительство и исполнение', desc: 'Защита в суде и предъявление исполнительного листа напрямую в банк работодателя.' }
-                  ].map((item, idx) => (
-                    <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                        <polyline points="9 11 12 14 22 4" />
-                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                      </svg>
-                      <div>
-                        <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '2px' }}>{item.title}</strong>
-                        <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.5 }}>{item.desc}</span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 18px 0', paddingBottom: '12px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="12" y1="8" x2="12" y2="12" />
-                    <line x1="12" y1="16" x2="12.01" y2="16" />
-                  </svg>
-                  <span>Оценивается отдельно</span>
-                </h3>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  {[
-                    { title: 'Судебно-бухгалтерская экспертиза', desc: 'Назначение финансово-экономической экспертизы при сложных схемах начислений.' },
-                    { title: 'Установление факта трудовых отношений', desc: 'Отдельное доказывание факта работы при неофициальном трудоустройстве.' },
-                    { title: 'Взыскание при банкротстве работодателя', desc: 'Включение требований работника во 2-ю очередь реестра требований кредиторов.' },
-                    { title: 'Привлечение руководства к субсидиарной ответственности', desc: 'Взыскание долга лично с директора или учредителей ликвидированной фирмы.' }
-                  ].map((item, idx) => (
-                    <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                      <div>
-                        <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '2px' }}>{item.title}</strong>
-                        <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.5 }}>{item.desc}</span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -819,8 +746,7 @@ export default function VzyskanieZarabotnojPlatyClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что подготовить</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>для консультации</span>
+              Что подготовить для консультации
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               Подготовьте имеющиеся финансовые и трудовые документы для точного расчета задолженности и процентов по ст. 236 ТК РФ.
@@ -1060,7 +986,16 @@ export default function VzyskanieZarabotnojPlatyClient() {
         title="Стоимость юридической помощи"
         subtitle="Стоимость зависит от периода задолженности, числа видов выплат, объема документов, необходимости восстанавливать учет рабочего времени и стадии спора. Состав работы и цена согласовываются до заключения договора."
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения обстоятельств дела и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы."
+        disclaimer={
+          <>
+            <span style={{ display: 'block' }}>
+              Стоимость определяется после уточнения обстоятельств дела и изучения имеющихся документов.
+            </span>
+            <span style={{ display: 'block' }}>
+              Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы.
+            </span>
+          </>
+        }
       />
 
             {/* ═══ БЛОК 10: СВЯЗАННЫЕ СИТУАЦИИ И СМЕЖНЫЕ УСЛУГИ ═══ */}
