@@ -108,7 +108,7 @@ export default function NezakonnoeUvolnenieClient() {
     }
   ];
 
-    const pricingTiers: PricingTier[] = [
+      const pricingTiers: PricingTier[] = [
     {
       title: 'Консультация и анализ',
       subtitle: 'Оценка увольнения и сроков',
@@ -302,7 +302,7 @@ export default function NezakonnoeUvolnenieClient() {
     'ответы работодателя, трудовой инспекции, прокуратуры или других органов.'
   ];
 
-    const relatedServices = [
+      const relatedServices = [
     {
       title: 'Взыскание заработной платы и других выплат',
       desc: 'Если работодатель не выплатил расчет, зарплату, отпускные, премию или компенсацию.',
