@@ -550,6 +550,238 @@ export default function NezakonnoeUvolnenieClient() {
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              В каких ситуациях мы помогаем
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Оценим обстоятельства увольнения, законность приказов и соблюдение установленных законом процедур.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '28px' }}>
+            {situations.map((sit, i) => (
+              <div
+                key={i}
+                className="hover-lift"
+                style={{
+                  padding: '36px 30px',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start'
+                }}>
+                  {sit.tag}
+                </div>
+
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                  {sit.title}
+                </h3>
+
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
+                  {sit.desc}
+                </p>
+              </div>
+            ))}
+
+            {/* Карточка 9: Описать свою ситуацию (в одном ряду с Расчет) */}
+            <div 
+              className="card service-card hover-lift" 
+              style={{ 
+                height: '100%', 
+                minHeight: '260px',
+                padding: '36px 30px', 
+                background: 'var(--color-deep-blue)', 
+                border: '1px solid var(--color-deep-blue)', 
+                borderTop: '3px solid var(--color-gold)', 
+                boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between',
+                boxSizing: 'border-box'
+              }}
+            >
+              <div>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '4px 10px',
+                  display: 'inline-block'
+                }}>
+                  Другая ситуация
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: '#FFFFFF', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                  Описать свою ситуацию
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
+                  Не нашли свой случай? Опишите обстоятельства увольнения — юрист оценит ситуацию, проверит документы и подскажет порядок действий.
+                </p>
+              </div>
+
+              <div style={{ marginTop: '24px' }}>
+                <a 
+                  href="#form" 
+                  className="btn btn-gold" 
+                  style={{ 
+                    display: 'block', 
+                    width: '100%', 
+                    textAlign: 'center',
+                    padding: '14px 20px',
+                    fontSize: '15px',
+                    borderRadius: '0',
+                    boxSizing: 'border-box'
+                  }}
+                >
+                  Описать свою ситуацию
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 4: НА ЧЁМ СТРОИТСЯ ЗАЩИТА / ЧЕМ ПОМОЖЕТ ЮРИСТ (ТОЧНЫЙ ШАБЛОН) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Чем поможет юрист</span> <br />
+              <span style={{ display: 'inline-block' }}>по незаконному увольнению</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Правовой, процедурный и доказательственный анализ материалов увольнения</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>для восстановления на работе и взыскания всех положенных выплат.</span>
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '24px' }}>
+            {[
+              {
+                num: '01',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Основание</span>
+                    <span style={{ display: 'block' }}>и процедура</span>
+                  </>
+                ),
+                desc: 'Проверка законности приказа, оснований расторжения договора и соблюдения обязательной процедуры увольнения.'
+              },
+              {
+                num: '02',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Сбор</span>
+                    <span style={{ display: 'block' }}>доказательств</span>
+                  </>
+                ),
+                desc: 'Фиксация переписки, аудиозаписей, табелей и истребование обязательных кадровых документов по ст. 62 ТК РФ.'
+              },
+              {
+                num: '03',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Соблюдение</span>
+                    <span style={{ display: 'block' }}>законных сроков</span>
+                  </>
+                ),
+                desc: 'Соблюдение месячного срока обращения в суд по ст. 392 ТК РФ и своевременная подача всех процессуальных документов.'
+              },
+              {
+                num: '04',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Выявление</span>
+                    <span style={{ display: 'block' }}>нарушений</span>
+                  </>
+                ),
+                desc: 'Поиск фальсификаций, несоответствий в актах, отсутствия уведомлений и нарушений порядка применения дисциплинарных взысканий.'
+              },
+              {
+                num: '05',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Расчет</span>
+                    <span style={{ display: 'block' }}>всех выплат</span>
+                  </>
+                ),
+                desc: 'Точный расчет среднего заработка за время вынужденного прогула, компенсации морального вреда и процентов за задержку.'
+              },
+              {
+                num: '06',
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Правовая</span>
+                    <span style={{ display: 'block' }}>позиция в суде</span>
+                  </>
+                ),
+                desc: 'Подготовка иска, ходатайств, доказывание незаконности действий работодателя и фактическое восстановление на работе.'
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="hover-lift" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '38px 24px 30px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                borderRadius: '0',
+                position: 'relative',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
+                </div>
+                <div>
+                  <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 5: ЧТО ПОДГОТОВИТЬ ДЛЯ КОНСУЛЬТАЦИИ (2 КАРТОЧКИ) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, whiteSpace: 'nowrap' }}>
               Что подготовить для консультации
             </h2>
@@ -710,10 +942,11 @@ export default function NezakonnoeUvolnenieClient() {
 
           {/* Плашка Важно: срок 1 месяц */}
           <div style={{
-            background: 'var(--gradient-cream)',
+            background: 'var(--color-white)',
             padding: '24px 28px',
             border: '1px solid var(--color-border)',
             borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
             fontSize: '14.5px',
             color: 'var(--color-deep-blue)',
             lineHeight: 1.65,
