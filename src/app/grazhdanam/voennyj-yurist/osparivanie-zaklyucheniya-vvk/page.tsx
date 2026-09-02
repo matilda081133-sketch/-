@@ -605,7 +605,7 @@ export default function VvkPage() {
             }
           `}} />
           
-          <div className="grid grid-2" style={{ gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 380px))', gap: '20px' }}>
             <Link href="/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
                 className="card related-service-card" 

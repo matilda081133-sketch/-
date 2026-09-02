@@ -509,7 +509,8 @@ export default function MigracionnyjClient() {
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Направления помощи</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textAlign: 'left' }}>
-              Выберите ситуацию, чтобы узнать основания, сроки обжалования, необходимые документы и как строится юридическая работа.
+              <span style={{ display: 'block' }}>Выберите ситуацию, чтобы узнать основания, сроки обжалования,</span>
+              <span style={{ display: 'block' }}>необходимые документы и как строится юридическая работа.</span>
             </p>
           </div>
           
@@ -601,8 +602,7 @@ export default function MigracionnyjClient() {
                 title: (
                   <>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Помощь в получении</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>гражданства</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Российской Федерации</span>
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>гражданства РФ</span>
                   </>
                 ),
                 desc: 'Анализ права на приём в гражданство по 138-ФЗ, подготовка пакета документов и правовое сопровождение подачи в МВД.',

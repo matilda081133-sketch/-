@@ -1150,7 +1150,7 @@ export default function VzyskanieVinovnikClient() {
             }
           `}} />
           
-          <div className="grid grid-4" style={{ gap: '20px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 380px))', gap: '20px' }}>
             <Link href="/grazhdanam/avtoyurist/spory-po-osago/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
                 className="card related-service-card" 

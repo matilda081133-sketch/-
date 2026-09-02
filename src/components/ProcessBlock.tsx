@@ -387,7 +387,7 @@ export default function ProcessBlock({
           {ctaTitle && (
             <div className="process-cta-banner" style={{ 
               marginTop: '40px', 
-              background: 'var(--color-deep-blue)', 
+              background: 'var(--color-white)', 
               padding: '38px 40px',
               minHeight: '120px',
               display: 'flex',
@@ -395,21 +395,22 @@ export default function ProcessBlock({
               justifyContent: 'space-between',
               gap: '24px',
               flexWrap: 'wrap',
-              boxShadow: '0 10px 18px -2px rgba(11, 28, 42, 0.38), 0 4px 8px -2px rgba(0, 0, 0, 0.25)',
-              borderTop: '3px solid var(--color-gold)'
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)'
             }}>
               <div style={{ flex: '1 1 300px' }}>
-                <h3 style={{ fontSize: '24px', color: 'var(--color-white)', marginBottom: '10px', fontWeight: '600', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
+                <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', marginBottom: '10px', fontWeight: '600', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
                   {ctaTitle}
                 </h3>
                 {ctaSubtitle && (
-                  <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.85)', margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+                  <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
                     {ctaSubtitle}
                   </p>
                 )}
               </div>
               <div style={{ flexShrink: 0 }}>
-                <a href={ctaButtonHref} className="btn btn-gold" style={{ 
+                <a href={ctaButtonHref} className="btn btn-primary" style={{ 
                   display: 'inline-block',
                   whiteSpace: 'nowrap',
                   padding: '16px 36px',

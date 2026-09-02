@@ -123,7 +123,8 @@ export default function ProizvodstvennayaTravmaClient() {
     {
       title: 'Подготовка документов',
       subtitle: 'Обращения и правовая позиция',
-      badgeText: 'Популярно',
+      popular: true,
+      badgeText: 'Востребовано',
       features: [
         { name: 'Заявления, разногласия и жалобы в ГИТ', value: '[уточняется]' },
         { name: 'Требования по выплатам и возмещению вреда', value: '[уточняется]' },
@@ -299,21 +300,21 @@ export default function ProizvodstvennayaTravmaClient() {
     'чеки, договоры и назначения, подтверждающие расходы на лечение и реабилитацию.'
   ];
 
-  const relatedServices = [
+    const relatedServices = [
     {
-      title: 'Взыскание заработной платы и других выплат',
-      desc: 'Если спор касается зарплаты, окончательного расчета, отпускных, премии или компенсации за задержку.',
-      link: '/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/'
-    },
-    {
-      title: 'Незаконное увольнение и восстановление на работе',
-      desc: 'Если после травмы вынуждают уйти, увольняют по инициативе работодателя или требуется восстановление.',
+      title: 'Незаконное увольнение',
+      desc: 'Оспаривание увольнения по статье, за прогул, принуждения к уходу и восстановление на работе.',
       link: '/grazhdanam/trudovoj-yurist/nezakonnoe-uvolnenie/'
     },
     {
-      title: 'Трудовой юрист в Липецке',
-      desc: 'Если ситуация включает несколько нарушений или требуется помощь по другому трудовому спору.',
-      link: '/grazhdanam/trudovoj-yurist/'
+      title: 'Взыскание заработной платы',
+      desc: 'Взыскание задолженности, расчетных выплат, отпускных и компенсации по ст. 236 ТК РФ.',
+      link: '/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/'
+    },
+    {
+      title: 'Незаконное сокращение',
+      desc: 'Защита при сокращении штата: преимущественное право, предложение вакансий и выплаты.',
+      link: '/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/'
     }
   ];
 
@@ -496,26 +497,115 @@ export default function ProizvodstvennayaTravmaClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ЧЕМ ПОМОЖЕТ ЮРИСТ ═══ */}
+      {/* ═══ БЛОК 3: ЧЕМ ПОМОЖЕТ ЮРИСТ (ШАБЛОННЫЙ С НУМЕРАЦИЕЙ) ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              Чем поможет юрист
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Чем поможет юрист</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>при производственной травме</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              Комплексное сопровождение расследования и защита интересов пострадавшего работника.
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Защитим права пострадавшего работника: от надлежащего расследования несчастного случая до полного взыскания компенсаций и страховых выплат.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
-            {whatLawyerDoes.map((item, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '20px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-primary)' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '3px' }}>
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-                  {item}
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative', marginBottom: '32px' }}>
+            {[
+              {
+                num: '01',
+                title: [
+                  'Анализ обстоятельств',
+                  'несчастного случая'
+                ],
+                desc: 'Устанавливаем связь травмы с выполнением трудовых обязанностей и соблюдение работодателем ст. 227-231 ТК РФ.'
+              },
+              {
+                num: '02',
+                title: [
+                  'Контроль расследования',
+                  'и акта формы Н-1'
+                ],
+                desc: 'Участвуем в расследовании комиссии, добиваемся составления формы Н-1 и исключения необоснованной вины работника.'
+              },
+              {
+                num: '03',
+                title: [
+                  'Оспаривание сокрытия',
+                  'травмы работодателем'
+                ],
+                desc: 'Инициируем проверку ГИТ и прокуратуры при попытках работодателя оформить травму как «бытовую».'
+              },
+              {
+                num: '04',
+                title: [
+                  'Расчет ущерба',
+                  'и морального вреда'
+                ],
+                desc: 'Рассчитываем утраченный заработок, расходы на лечение, реабилитацию и размер компенсации морального вреда.'
+              },
+              {
+                num: '05',
+                title: [
+                  'Судебное взыскание',
+                  'всех компенсаций'
+                ],
+                desc: 'Защищаем права пострадавшего в суде Липецка против работодателя и Социального фонда России.'
+              },
+              {
+                num: '06',
+                title: [
+                  'Контроль страховых',
+                  'выплат (125-ФЗ)'
+                ],
+                desc: 'Сопровождаем получение единовременных и ежемесячных страховых выплат по закону № 125-ФЗ.'
+              }
+            ].map((item, index) => (
+              <div 
+                key={index}
+                className="hover-lift"
+                style={{
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
+                }}
+              >
+                <div style={{
+                  fontSize: '18px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  fontFamily: 'var(--font-serif)',
+                  marginBottom: '12px'
+                }}>
+                  {item.num}
+                </div>
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '17px',
+                  fontWeight: 600,
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 12px 0',
+                  lineHeight: 1.35,
+                  minHeight: '46px'
+                }}>
+                  {item.title.map((line, idx) => (
+                    <span key={idx} className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                      {line}
+                    </span>
+                  ))}
+                </h3>
+                <p style={{
+                  fontSize: '14.5px',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.6,
+                  margin: 0
+                }}>
+                  {item.desc}
                 </p>
               </div>
             ))}
@@ -523,47 +613,214 @@ export default function ProizvodstvennayaTravmaClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: ЧТО ПОДГОТОВИТЬ ДЛЯ КОНСУЛЬТАЦИИ ═══ */}
+      {/* ═══ БЛОК 4: ЧТО ПОДГОТОВИТЬ ДЛЯ КОНСУЛЬТАЦИИ (2 КАРТОЧКИ) ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              Что подготовить для консультации
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что подготовить</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>для консультации</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              Не нужно ждать полного комплекта. Сообщите юристу, что уже есть:
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              Предоставьте медицинские и рабочие документы для оценки перспективы признания травмы производственной и взыскания компенсаций.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
-            {whatToPrepare.map((item, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '20px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-gold)' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '3px' }}>
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1 */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
                 </svg>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-                  {item}
-                </p>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Медицинские и официальные документы
+                </h3>
               </div>
-            ))}
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Фиксируют факт повреждения здоровья, степень тяжести травмы и понесенные расходы на лечение.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Медицинские заключения и выписки</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Справка формы 315/у о характере и тяжести повреждений, выписные эпикризы.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Листки нетрудоспособности</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Больничные листы с кодом производственной травмы (код 02 или 04).</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Акт расследования несчастного случая</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Акт по форме Н-1 либо протоколы заседаний комиссии работодателя.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Чеки и квитанции на лечение</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Платежные документы на покупку лекарств, платные операции и реабилитацию.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Карточка 2 */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Доказательства производственного характера
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Подтверждают, что несчастный случай произошел во время работы по заданию работодателя.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Трудовой договор и сменные листы</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Договор, наряды-допуски, сменные задания и журналы инструктажей по ТБ.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Контакты и показания свидетелей</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Данные коллег и очевидцев, присутствовавших при происшествии на производстве.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Фото и видеозаписи с места</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Записи камер видеонаблюдения, фото неисправного оборудования и места травмы.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Переписка с руководством</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Сообщения и звонки руководству сразу после получения повреждения здоровья.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Важно: полупрозрачная карточка */}
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.65)',
+            backdropFilter: 'blur(6px)',
+            padding: '22px 28px',
+            border: '1px solid rgba(23, 50, 77, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            fontSize: '14px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.6,
+            marginBottom: '32px'
+          }}>
+            <strong style={{ color: 'var(--color-primary)' }}>Важно:</strong> Не соглашайтесь оформлять травму как «бытовую» под обещания работодателя оплатить лечение — это лишает вас установленных законом пожизненных страховых гарантий и выплат Социального фонда РФ.
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 32px' }}>
+              Оценить основания и риски
+            </a>
           </div>
         </div>
       </section>
 
       {/* ═══ БЛОК 5: СПЕЦИАЛИСТ ПО ДЕЛУ ═══ */}
+            {/* ═══ БЛОК: СПЕЦИАЛИСТ ПО ДЕЛУ (ШАБЛОННЫЙ) ═══ */}
       <SpecialistBlock
         title="Вашим делом займется Марина Валерьевна Смольянинова"
         name="Марина Валерьевна Смольянинова"
-        position="Ведущий юрист ЮК &#171;Де-Юре&#187;"
+        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Трудовое право»</>}
         imageUrl="/images/smolyaninova.jpg"
+        imagePosition="center 20%"
+        profileHref="/specialisty/smolyaninova-marina-valerevna/"
+        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[
-          'Специализируется на трудовых спорах и защите прав работников при несчастных случаях.',
-          'Анализирует материалы расследования, выводы комиссии и медицинские документы.',
-          'Сопровождает взаимодействие с Государственной инспекцией труда, СФР и представляет интересы в суде.',
-          'Более 5 лет юридической и судебной практики в сфере защиты прав граждан.'
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Более пяти лет юридической практики и судебного представительства по защите прав граждан.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Специализируется на защите прав работников при несчастных случаях на производстве, оформлении акта Н-1 и взыскании страховых выплат и морального вреда.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Анализирует кадровые документы и доказательства, готовит мотивированную правовую позицию и рассчитывает положенные выплаты.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Представляет интересы доверителей в судах Липецка и Липецкой области, а также ведет дела дистанционно по всей России.
+              </span>
+            </li>
+          </ul>,
+          <a key="3" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
+            Подробнее о Марине Валерьевне Смольяниновой →
+          </a>
         ]}
-        buttonText="Задать вопрос юристу"
+        buttonText="Задать вопрос Марине Валерьевне"
         buttonHref="#form"
       />
 
@@ -597,46 +854,70 @@ export default function ProizvodstvennayaTravmaClient() {
         disclaimer="Стоимость определяется после уточнения обстоятельств дела и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы."
       />
 
-      {/* ═══ БЛОК 9: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+            {/* ═══ БЛОК: СВЯЗАННЫЕ УСЛУГИ (ШАБЛОН АВТОЮРИСТА) ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              Другие трудовые споры работников
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Другие трудовые споры
+              </span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              Смежные направления помощи при нарушении трудовых прав.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Смежные направления помощи при нарушении трудовых прав,</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>спорах об увольнении и взыскании выплат.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          <style dangerouslySetInnerHTML={{ __html: `
+            .related-service-card {
+              border-top: 3px solid var(--color-primary) !important;
+            }
+            .related-service-card:hover {
+              border-top: 3px solid var(--color-primary) !important;
+            }
+            .related-service-card:hover .card-arrow {
+              color: var(--color-gold) !important;
+            }
+            .related-service-card:hover .card-arrow svg {
+              stroke: var(--color-gold) !important;
+            }
+            .all-services-link:hover {
+              color: var(--color-gold) !important;
+            }
+          `}} />
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 380px))', gap: '20px' }}>
             {relatedServices.map((srv, i) => (
               <Link key={i} href={srv.link} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                <div
-                  className="card related-service-card"
-                  style={{
-                    height: '100%',
+                <div 
+                  className="card related-service-card" 
+                  style={{ 
+                    height: '100%', 
                     minHeight: '160px',
-                    padding: '30px',
-                    background: 'var(--color-white)',
-                    border: '1px solid var(--color-border)',
+                    padding: '28px 22px', 
+                    background: 'var(--color-white)', 
+                    border: '1px solid var(--color-border)', 
                     borderTop: '3px solid var(--color-primary)',
                     borderRadius: '0',
-                    display: 'flex',
-                    flexDirection: 'column',
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    justifyContent: 'space-between',
                     transition: 'all 0.3s',
                     position: 'relative'
                   }}
                 >
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                    {srv.title}
-                  </h3>
-                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                    {srv.desc}
-                  </p>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
-                    Подробнее
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <div>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                      {srv.title}
+                    </h3>
+                    <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      {srv.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                    Подробнее 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -644,6 +925,29 @@ export default function ProizvodstvennayaTravmaClient() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          <div style={{ marginTop: '36px', textAlign: 'center' }}>
+            <Link 
+              href="/grazhdanam/trudovoj-yurist/" 
+              className="all-services-link"
+              style={{ 
+                display: 'inline-flex', 
+                alignItems: 'center', 
+                gap: '8px', 
+                color: 'var(--color-primary)', 
+                fontSize: '15px', 
+                fontWeight: 600, 
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}
+            >
+              Все услуги трудового юриста в Липецке
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

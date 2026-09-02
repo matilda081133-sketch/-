@@ -108,39 +108,43 @@ export default function NezakonnoeUvolnenieClient() {
     }
   ];
 
-  const pricingTiers: PricingTier[] = [
+    const pricingTiers: PricingTier[] = [
     {
       title: 'Консультация и анализ',
       subtitle: 'Оценка увольнения и сроков',
+      price: 'от 3 000 ₽',
       features: [
-        { name: 'Правовая консультация юриста', value: '[уточняется]' },
-        { name: 'Проверка оснований, документов и срока', value: '[уточняется]' },
-        { name: 'Оценка возможных требований и доказательств', value: '[уточняется]' }
+        { name: 'Правовая консультация юриста', value: '✓' },
+        { name: 'Проверка оснований, документов и срока', value: '✓' },
+        { name: 'Оценка возможных требований и доказательств', value: '✓' }
       ],
-      buttonText: 'Уточнить стоимость',
+      buttonText: 'Выбрать тариф',
       buttonHref: '#form'
     },
     {
       title: 'Подготовка документов',
       subtitle: 'Досудебная и процессуальная работа',
-      badgeText: 'Популярно',
+      price: 'от 15 000 ₽',
+      popular: true,
+      badgeText: 'Востребовано',
       features: [
-        { name: 'Подготовка требований и обращений', value: '[уточняется]' },
-        { name: 'Исковое заявление и расчет выплат', value: '[уточняется]' },
-        { name: 'Формирование доказательной базы', value: '[уточняется]' }
+        { name: 'Подготовка требований и обращений', value: '✓' },
+        { name: 'Исковое заявление и расчет выплат', value: '✓' },
+        { name: 'Формирование доказательной базы', value: '✓' }
       ],
-      buttonText: 'Уточнить стоимость',
+      buttonText: 'Выбрать тариф',
       buttonHref: '#form'
     },
     {
       title: 'Судебная защита',
       subtitle: 'Ведение дела об увольнении в суде',
+      price: 'от 35 000 ₽',
       features: [
-        { name: 'Подготовка правовой позиции', value: '[уточняется]' },
-        { name: 'Представительство в суде во всех инстанциях', value: '[уточняется]' },
-        { name: 'Сопровождение исполнения судебного акта', value: '[уточняется]' }
+        { name: 'Подготовка правовой позиции', value: '✓' },
+        { name: 'Представительство в суде во всех инстанциях', value: '✓' },
+        { name: 'Сопровождение исполнения судебного акта', value: '✓' }
       ],
-      buttonText: 'Уточнить стоимость',
+      buttonText: 'Выбрать тариф',
       buttonHref: '#form'
     }
   ];
@@ -298,7 +302,7 @@ export default function NezakonnoeUvolnenieClient() {
     'ответы работодателя, трудовой инспекции, прокуратуры или других органов.'
   ];
 
-  const relatedServices = [
+    const relatedServices = [
     {
       title: 'Взыскание заработной платы и других выплат',
       desc: 'Если работодатель не выплатил расчет, зарплату, отпускные, премию или компенсацию.',
@@ -435,7 +439,7 @@ export default function NezakonnoeUvolnenieClient() {
       <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
-            <span style={{ display: 'inline-block' }}>Когда нельзя</span> <br /><span style={{ display: 'inline-block' }}>откладывать</span>
+            <span style={{ display: 'block' }}>Когда нельзя откладывать</span>
           </h2>
           <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '640px', lineHeight: 1.6 }}>

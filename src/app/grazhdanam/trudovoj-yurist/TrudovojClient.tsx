@@ -111,7 +111,8 @@ export default function TrudovojClient() {
     {
       title: 'Подготовка и досудебная работа',
       subtitle: 'Документы, претензии и переговоры',
-      badgeText: 'Популярно',
+      popular: true,
+      badgeText: 'Востребовано',
       features: [
         { name: 'Расчет задолженности и компенсаций', value: '[уточняется]' },
         { name: 'Подготовка заявлений, требований и жалоб', value: '[уточняется]' },
