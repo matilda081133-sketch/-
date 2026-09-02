@@ -624,119 +624,193 @@ export default function VzyskanieZarabotnojPlatyClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: ЧЕМ ПОМОЖЕТ ЮРИСТ (ШАБЛОННЫЙ С НУМЕРАЦИЕЙ) ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 4: НА ЧЁМ СТРОИТСЯ ЗАЩИТА / ЧЕМ ПОМОЖЕТ ЮРИСТ (ТОЧНЫЙ ШАБЛОН) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Чем поможет юрист</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по взысканию зарплаты</span>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Чем поможет юрист</span> <br />
+              <span style={{ display: 'inline-block' }}>по взысканию зарплаты</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Взыщем всю сумму задолженности, компенсацию за задержку по ст. 236 ТК РФ, моральный вред и расходы на юриста.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Финансовый, трудовой и доказательственный анализ задолженности</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>для полного взыскания невыплаченных сумм и процентов по ст. 236 ТК РФ.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', position: 'relative', marginBottom: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '48px' }}>
             {[
               {
                 num: '01',
-                title: [
-                  'Правовой аудит',
-                  'начислений и долга'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Правовой аудит</span>
+                    <span style={{ display: 'block' }}>начислений и долга</span>
+                  </>
+                ),
                 desc: 'Сверяем трудовой договор, оклад, премии, фактически отработанное время и расчетные листки.'
               },
               {
                 num: '02',
-                title: [
-                  'Расчет процентов',
-                  'по ст. 236 ТК РФ'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Расчет процентов</span>
+                    <span style={{ display: 'block' }}>по ст. 236 ТК РФ</span>
+                  </>
+                ),
                 desc: 'Рассчитываем денежную компенсацию за каждый день задержки в размере не ниже 1/150 ключевой ставки ЦБ РФ.'
               },
               {
                 num: '03',
-                title: [
-                  'Досудебная претензия',
-                  'и жалобы в органы'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Досудебная претензия</span>
+                    <span style={{ display: 'block' }}>и жалобы в органы</span>
+                  </>
+                ),
                 desc: 'Направляем аргументированную претензию, обращения в трудовую инспекцию, прокуратуру и следственные органы.'
               },
               {
                 num: '04',
-                title: [
-                  'Подготовка иска',
-                  'и обеспечительных мер'
-                ],
-                desc: 'Формируем иск в суд с ходатайством об аресте счетов работодателя для гарантии выплаты.'
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Подготовка иска</span>
+                    <span style={{ display: 'block' }}>и арест счетов</span>
+                  </>
+                ),
+                desc: 'Формируем иск в суд с ходатайством об обеспечительных мерах для гарантии фактической выплаты.'
               },
               {
                 num: '05',
-                title: [
-                  'Судебная защита',
-                  'в суде Липецка'
-                ],
-                desc: 'Доказываем в суде размер невыплаченной суммы, компенсацию морального вреда и расходы на юриста.'
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Судебная защита</span>
+                    <span style={{ display: 'block' }}>в суде Липецка</span>
+                  </>
+                ),
+                desc: 'Доказываем в суде размер задолженности, компенсацию морального вреда и взыскиваем расходы на юриста.'
               },
               {
                 num: '06',
-                title: [
-                  'Исполнение через',
-                  'банк и ФССП'
-                ],
-                desc: 'Предъявляем исполнительный лист напрямую в банк работодателя для быстрого списания денег.'
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Исполнение через</span>
+                    <span style={{ display: 'block' }}>банк и ФССП</span>
+                  </>
+                ),
+                desc: 'Предъявляем исполнительный лист напрямую в банк работодателя для быстрого безакцептного списания средств.'
               }
-            ].map((item, index) => (
-              <div 
-                key={index}
-                className="hover-lift"
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  padding: '36px 30px 32px 30px',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  position: 'relative'
-                }}
-              >
+            ].map((item, idx) => (
+              <div key={idx} className="hover-lift" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '38px 24px 30px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                borderRadius: '0',
+                position: 'relative',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                transition: 'all 0.3s ease'
+              }}>
                 <div style={{
-                  fontSize: '18px',
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
                   fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  fontFamily: 'var(--font-serif)',
-                  marginBottom: '12px'
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
                   {item.num}
                 </div>
-                <h3 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '17px',
-                  fontWeight: 600,
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 12px 0',
-                  lineHeight: 1.35,
-                  minHeight: '46px'
-                }}>
-                  {item.title.map((line, idx) => (
-                    <span key={idx} className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                      {line}
-                    </span>
-                  ))}
-                </h3>
-                <p style={{
-                  fontSize: '14.5px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  margin: 0
-                }}>
-                  {item.desc}
-                </p>
+                <div>
+                  <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
+
+          {/* ГРАНИЦЫ УСЛУГИ */}
+          <div style={{
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            color: '#FFFFFF',
+            position: 'relative'
+          }}>
+            <div className="grid grid-2" style={{ gap: '36px' }}>
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 18px 0', paddingBottom: '12px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <span>Входит в юридическую помощь</span>
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  {[
+                    { title: 'Анализ трудового договора и выписок', desc: 'Сверка условий оплаты труда, расчетных листков и фактических поступлений.' },
+                    { title: 'Расчет задолженности и процентов по ст. 236 ТК РФ', desc: 'Детализированный расчет по каждой дате выплаты с учетом ставки ЦБ РФ.' },
+                    { title: 'Досудебная претензия и жалобы в органы', desc: 'Составление требований работодателю, обращений в ГИТ и прокуратуру.' },
+                    { title: 'Подготовка иска и обеспечительных мер', desc: 'Формирование искового заявления с ходатайством об аресте счетов должника.' },
+                    { title: 'Судебное представительство и исполнение', desc: 'Защита в суде и предъявление исполнительного листа напрямую в банк работодателя.' }
+                  ].map((item, idx) => (
+                    <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                        <polyline points="9 11 12 14 22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                      </svg>
+                      <div>
+                        <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '2px' }}>{item.title}</strong>
+                        <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.5 }}>{item.desc}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 18px 0', paddingBottom: '12px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                  <span>Оценивается отдельно</span>
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  {[
+                    { title: 'Судебно-бухгалтерская экспертиза', desc: 'Назначение финансово-экономической экспертизы при сложных схемах начислений.' },
+                    { title: 'Установление факта трудовых отношений', desc: 'Отдельное доказывание факта работы при неофициальном трудоустройстве.' },
+                    { title: 'Взыскание при банкротстве работодателя', desc: 'Включение требований работника во 2-ю очередь реестра требований кредиторов.' },
+                    { title: 'Привлечение руководства к субсидиарной ответственности', desc: 'Взыскание долга лично с директора или учредителей ликвидированной фирмы.' }
+                  ].map((item, idx) => (
+                    <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <div>
+                        <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '2px' }}>{item.title}</strong>
+                        <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.5 }}>{item.desc}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

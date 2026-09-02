@@ -283,7 +283,8 @@ export default function VyplatyRaneniePage() {
               Связанные услуги
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              <span style={{ display: 'inline-block' }}>Смежные направления помощи</span> <br /><span style={{ display: 'inline-block' }}>при вопросах, связанных с ранением,</span> <br /><span style={{ display: 'inline-block' }}>ВВК и решениями командования.</span>
+              <span style={{ display: 'block' }}>Смежные направления помощи при вопросах,</span>
+              <span style={{ display: 'block' }}>связанных с ранением, ВВК и решениями командования.</span>
             </p>
           </div>
 
