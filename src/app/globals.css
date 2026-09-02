@@ -328,6 +328,26 @@ h4 { font-size: 1.25rem; }
   color: var(--color-gold-text);
 }
 
+.related-service-card {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
+}
+.related-service-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
+}
+.related-service-card .card-arrow svg {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.related-service-card:hover .card-arrow svg {
+  transform: translateX(6px);
+}
+.related-service-card .card-arrow {
+  transition: color 0.35s ease;
+}
+.related-service-card:hover .card-arrow {
+  color: var(--color-gold-text) !important;
+}
+
 .border-red {
   border-top: 3px solid #D9534F;
 }

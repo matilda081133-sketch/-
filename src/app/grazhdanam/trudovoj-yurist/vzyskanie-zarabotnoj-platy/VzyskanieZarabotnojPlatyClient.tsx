@@ -478,7 +478,7 @@ export default function VzyskanieZarabotnojPlatyClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
+          <div className="grid grid-3" style={{ gap: '28px' }}>
             {situations.map((sit, i) => (
               <div
                 key={i}
@@ -519,12 +519,64 @@ export default function VzyskanieZarabotnojPlatyClient() {
                 </p>
               </div>
             ))}
-          </div>
 
-          <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block' }}>
-              Проверить, что можно взыскать
-            </a>
+            {/* Карточка 9: Описать свою ситуацию */}
+            <div 
+              className="card service-card hover-lift" 
+              style={{ 
+                height: '100%', 
+                minHeight: '260px',
+                padding: '36px 30px', 
+                background: 'var(--color-deep-blue)', 
+                border: '1px solid var(--color-deep-blue)', 
+                borderTop: '3px solid var(--color-gold)', 
+                boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between',
+                boxSizing: 'border-box'
+              }}
+            >
+              <div>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '4px 10px',
+                  display: 'inline-block'
+                }}>
+                  Другая ситуация
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: '#FFFFFF', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                  Описать свою ситуацию
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
+                  Не нашли свой случай? Опишите ситуацию с выплатами — юрист рассчитает долг, проверит документы и подскажет порядок действий.
+                </p>
+              </div>
+
+              <div style={{ marginTop: '24px' }}>
+                <a 
+                  href="#form" 
+                  className="btn btn-gold" 
+                  style={{ 
+                    display: 'block', 
+                    width: '100%', 
+                    textAlign: 'center',
+                    padding: '14px 20px',
+                    fontSize: '15px',
+                    borderRadius: '0',
+                    boxSizing: 'border-box'
+                  }}
+                >
+                  Описать свою ситуацию
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -534,7 +586,8 @@ export default function VzyskanieZarabotnojPlatyClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              Какие выплаты можно потребовать
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Какие выплаты</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>можно потребовать</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
               Точный состав требований определяется по трудовому договору, локальным актам, расчетам работодателя и фактически выполненной работе.
@@ -545,19 +598,21 @@ export default function VzyskanieZarabotnojPlatyClient() {
             {paymentTypes.map((item, i) => (
               <div
                 key={i}
+                className="hover-lift"
                 style={{
-                  padding: '30px',
-                  background: 'var(--color-white)',
+                  padding: '32px 28px',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column'
                 }}
               >
-                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
                   {item.title}
                 </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                   {item.desc}
                 </p>
               </div>
@@ -566,7 +621,7 @@ export default function VzyskanieZarabotnojPlatyClient() {
         </div>
       </section>
 
-            {/* ═══ БЛОК 4: ЧЕМ ПОМОЖЕТ ЮРИСТ (ШАБЛОННЫЙ С НУМЕРАЦИЕЙ) ═══ */}
+      {/* ═══ БЛОК 4: ЧЕМ ПОМОЖЕТ ЮРИСТ (ШАБЛОННЫЙ С НУМЕРАЦИЕЙ) ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
@@ -769,7 +824,7 @@ export default function VzyskanieZarabotnojPlatyClient() {
             <div style={{
               background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-gold)',
+              borderTop: '3px solid var(--color-primary)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
               padding: '36px 32px',
               display: 'flex',
@@ -777,7 +832,7 @@ export default function VzyskanieZarabotnojPlatyClient() {
               gap: '20px'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                   <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
                 <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
@@ -789,8 +844,9 @@ export default function VzyskanieZarabotnojPlatyClient() {
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Табели учета рабочего времени</strong>
@@ -798,8 +854,9 @@ export default function VzyskanieZarabotnojPlatyClient() {
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Рабочая переписка и поручения</strong>
@@ -807,8 +864,9 @@ export default function VzyskanieZarabotnojPlatyClient() {
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Документы с подписями работника</strong>
@@ -816,8 +874,9 @@ export default function VzyskanieZarabotnojPlatyClient() {
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Свидетельские показания коллег</strong>
@@ -828,33 +887,31 @@ export default function VzyskanieZarabotnojPlatyClient() {
             </div>
           </div>
 
-          {/* Важно: полупрозрачная карточка */}
+          {/* Важно */}
           <div style={{
-            background: 'rgba(255, 255, 255, 0.65)',
-            backdropFilter: 'blur(6px)',
-            padding: '22px 28px',
-            border: '1px solid rgba(23, 50, 77, 0.08)',
+            background: 'var(--gradient-cream)',
+            padding: '24px 28px',
+            border: '1px solid var(--color-border)',
             borderLeft: '4px solid var(--color-gold)',
-            fontSize: '14px',
+            fontSize: '14.5px',
             color: 'var(--color-deep-blue)',
-            lineHeight: 1.6,
+            lineHeight: 1.65,
             marginBottom: '32px'
           }}>
-            <strong style={{ color: 'var(--color-primary)' }}>Важно:</strong> Срок обращения в суд по спорам о невыплате заработной платы составляет <strong>1 год</strong> со дня установленного срока выплаты указанных сумм (ч. 2 ст. 392 ТК РФ).
+            <strong style={{ color: 'var(--color-primary)' }}>Важно:</strong> Срок обращения в суд по спорам о невыплате заработной платы составляет <strong>1 год</strong> со дня установленного срока выплаты указанных сумм (ч. 2 ст. 392 ТК РФ). Обратитесь к юристу своевременно, чтобы не пропустить срок.
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 32px' }}>
-              Оценить основания и риски
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block' }}>
+              Отправить документы на проверку
             </a>
           </div>
         </div>
       </section>
 
       {/* ═══ БЛОК 6: СПЕЦИАЛИСТ ПО ДЕЛУ ═══ */}
-            {/* ═══ БЛОК: СПЕЦИАЛИСТ ПО ДЕЛУ (ШАБЛОННЫЙ) ═══ */}
       <SpecialistBlock
-        title="Вашим делом займется Марина Валерьевна Смольянинова"
+        title={<><span style={{ display: 'block' }}>Вашим делом займется</span><span style={{ display: 'block' }}>Марина Валерьевна Смольянинова</span></>}
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Трудовое право»</>}
         imageUrl="/images/smolyaninova.jpg"
@@ -863,7 +920,7 @@ export default function VzyskanieZarabotnojPlatyClient() {
         profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Более пяти лет юридической практики и судебного представительства по защите прав граждан.
+            Более пяти лет юридической практики и судебного представительства по защите прав работников.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
@@ -884,20 +941,26 @@ export default function VzyskanieZarabotnojPlatyClient() {
                 Представляет интересы доверителей в судах Липецка и Липецкой области, а также ведет дела дистанционно по всей России.
               </span>
             </li>
-          </ul>,
-          <a key="3" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
-            Подробнее о Марине Валерьевне Смольяниновой →
-          </a>
+          </ul>
         ]}
-        buttonText="Задать вопрос Марине Валерьевне"
+        buttonText="Задать вопрос юристу"
         buttonHref="#form"
       />
 
       {/* ═══ БЛОК 7: ПРИМЕРЫ ДЕЛ ═══ */}
       <CasesBlock
-        title="Примеры дел о взыскании выплат"
+        title={
+          <>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Примеры дел по
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              взысканию выплат
+            </span>
+          </>
+        }
         showAllLink="/praktika/"
-        showAllText="Смотреть другие дела"
+        showAllText="Смотреть все дела"
         showDemoWarning={true}
         cases={cases}
       />
@@ -923,100 +986,58 @@ export default function VzyskanieZarabotnojPlatyClient() {
         disclaimer="Стоимость определяется после уточнения обстоятельств дела и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы."
       />
 
-            {/* ═══ БЛОК: СВЯЗАННЫЕ УСЛУГИ (ШАБЛОН АВТОЮРИСТА) ═══ */}
-      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+            {/* ═══ БЛОК 10: СВЯЗАННЫЕ СИТУАЦИИ И СМЕЖНЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Другие трудовые споры
-              </span>
+          <div style={{ maxWidth: '780px', marginBottom: '32px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 36px)', color: 'var(--color-deep-blue)', marginBottom: '12px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Связанные ситуации</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и смежные услуги</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Смежные направления помощи при нарушении трудовых прав,</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>спорах об увольнении и взыскании выплат.</span>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                В трудовых спорах проблемы часто взаимосвязаны.
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Ознакомьтесь с правовыми решениями для сопутствующих задач:
+              </span>
             </p>
           </div>
 
-          <style dangerouslySetInnerHTML={{ __html: `
-            .related-service-card {
-              border-top: 3px solid var(--color-primary) !important;
-            }
-            .related-service-card:hover {
-              border-top: 3px solid var(--color-primary) !important;
-            }
-            .related-service-card:hover .card-arrow {
-              color: var(--color-gold) !important;
-            }
-            .related-service-card:hover .card-arrow svg {
-              stroke: var(--color-gold) !important;
-            }
-            .all-services-link:hover {
-              color: var(--color-gold) !important;
-            }
-          `}} />
-          
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 380px))', gap: '20px' }}>
+          <div className="grid grid-3" style={{ gap: '20px' }}>
             {relatedServices.map((srv, i) => (
-              <Link key={i} href={srv.link} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                <div 
-                  className="card related-service-card" 
-                  style={{ 
-                    height: '100%', 
-                    minHeight: '160px',
-                    padding: '28px 22px', 
-                    background: 'var(--color-white)', 
-                    border: '1px solid var(--color-border)', 
+              <Link key={i} href={srv.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+                <div
+                  className="card related-service-card hover-lift"
+                  style={{
+                    height: '100%',
+                    minHeight: '180px',
+                    padding: '24px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
                     borderTop: '3px solid var(--color-primary)',
                     borderRadius: '0',
-                    display: 'flex', 
-                    flexDirection: 'column', 
+                    display: 'flex',
+                    flexDirection: 'column',
                     justifyContent: 'space-between',
-                    transition: 'all 0.3s',
-                    position: 'relative'
+                    transition: 'all 0.3s'
                   }}
                 >
                   <div>
-                    <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
                       {srv.title}
-                    </h3>
-                    <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    </h4>
+                    <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                       {srv.desc}
                     </p>
                   </div>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
-                    Подробнее 
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px', transition: 'color 0.35s ease' }}>
+                    <span>Перейти к услуге</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </div>
                 </div>
               </Link>
             ))}
-          </div>
-
-          <div style={{ marginTop: '36px', textAlign: 'center' }}>
-            <Link 
-              href="/grazhdanam/trudovoj-yurist/" 
-              className="all-services-link"
-              style={{ 
-                display: 'inline-flex', 
-                alignItems: 'center', 
-                gap: '8px', 
-                color: 'var(--color-primary)', 
-                fontSize: '15px', 
-                fontWeight: 600, 
-                textDecoration: 'none',
-                transition: 'color 0.2s ease'
-              }}
-            >
-              Все услуги трудового юриста в Липецке
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </Link>
           </div>
         </div>
       </section>

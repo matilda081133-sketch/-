@@ -556,7 +556,7 @@ export default function NezakonnoeUvolnenieClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
+          <div className="grid grid-3" style={{ gap: '28px' }}>
             {situations.map((sit, i) => (
               <div
                 key={i}
@@ -597,12 +597,64 @@ export default function NezakonnoeUvolnenieClient() {
                 </p>
               </div>
             ))}
-          </div>
 
-          <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block' }}>
-              Описать свою ситуацию
-            </a>
+            {/* Карточка 9: Описать свою ситуацию (в одном ряду с Расчет) */}
+            <div 
+              className="card service-card hover-lift" 
+              style={{ 
+                height: '100%', 
+                minHeight: '260px',
+                padding: '36px 30px', 
+                background: 'var(--color-deep-blue)', 
+                border: '1px solid var(--color-deep-blue)', 
+                borderTop: '3px solid var(--color-gold)', 
+                boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between',
+                boxSizing: 'border-box'
+              }}
+            >
+              <div>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '4px 10px',
+                  display: 'inline-block'
+                }}>
+                  Другая ситуация
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: '#FFFFFF', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                  Описать свою ситуацию
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
+                  Не нашли свой случай? Опишите обстоятельства увольнения — юрист оценит ситуацию, проверит документы и подскажет порядок действий.
+                </p>
+              </div>
+
+              <div style={{ marginTop: '24px' }}>
+                <a 
+                  href="#form" 
+                  className="btn btn-gold" 
+                  style={{ 
+                    display: 'block', 
+                    width: '100%', 
+                    textAlign: 'center',
+                    padding: '14px 20px',
+                    fontSize: '15px',
+                    borderRadius: '0',
+                    boxSizing: 'border-box'
+                  }}
+                >
+                  Описать свою ситуацию
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -664,16 +716,7 @@ export default function NezakonnoeUvolnenieClient() {
 
       {/* ═══ БЛОК 6: СПЕЦИАЛИСТ ПО ДЕЛУ ═══ */}
       <SpecialistBlock
-        title={
-          <>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Вашим делом займется
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Марина Валерьевна Смольянинова
-            </span>
-          </>
-        }
+        title={<><span style={{ display: 'block' }}>Вашим делом займется</span><span style={{ display: 'block' }}>Марина Валерьевна Смольянинова</span></>}
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Трудовое право»</>}
         imageUrl="/images/smolyaninova.jpg"
@@ -748,49 +791,54 @@ export default function NezakonnoeUvolnenieClient() {
         disclaimer="Стоимость определяется после уточнения обстоятельств дела и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы."
       />
 
-      {/* ═══ БЛОК 10: СВЯЗАННЫЕ УСЛУГИ ═══ */}
-      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+            {/* ═══ БЛОК 10: СВЯЗАННЫЕ СИТУАЦИИ И СМЕЖНЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              Другие трудовые споры работников
+          <div style={{ maxWidth: '780px', marginBottom: '32px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 36px)', color: 'var(--color-deep-blue)', marginBottom: '12px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Связанные ситуации</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и смежные услуги</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              Смежные направления помощи при нарушении трудовых прав.
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                В трудовых спорах проблемы часто взаимосвязаны.
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Ознакомьтесь с правовыми решениями для сопутствующих задач:
+              </span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '20px' }}>
             {relatedServices.map((srv, i) => (
-              <Link key={i} href={srv.link} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <Link key={i} href={srv.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                 <div
-                  className="card related-service-card"
+                  className="card related-service-card hover-lift"
                   style={{
                     height: '100%',
-                    minHeight: '160px',
-                    padding: '30px',
+                    minHeight: '180px',
+                    padding: '24px',
                     background: 'var(--color-white)',
                     border: '1px solid var(--color-border)',
                     borderTop: '3px solid var(--color-primary)',
                     borderRadius: '0',
                     display: 'flex',
                     flexDirection: 'column',
-                    transition: 'all 0.3s',
-                    position: 'relative'
+                    justifyContent: 'space-between',
+                    transition: 'all 0.3s'
                   }}
                 >
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                    {srv.title}
-                  </h3>
-                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                    {srv.desc}
-                  </p>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
-                    Подробнее
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
+                  <div>
+                    <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                      {srv.title}
+                    </h4>
+                    <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {srv.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px', transition: 'color 0.35s ease' }}>
+                    <span>Перейти к услуге</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </div>
                 </div>
               </Link>

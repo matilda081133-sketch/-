@@ -57,7 +57,12 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
   const pricingTiers: PricingTier[] = [
   {
     "title": "Правовая экспертиза отказа",
-    "subtitle": "Анализ уведомления МВД и оценка шансов на отмену",
+    "subtitle": (
+      <>
+        <span style={{ display: 'block' }}>Анализ уведомления МВД</span>
+        <span style={{ display: 'block' }}>и оценка шансов на отмену</span>
+      </>
+    ),
     "price": "от 5 000 ₽",
     "features": [
       {

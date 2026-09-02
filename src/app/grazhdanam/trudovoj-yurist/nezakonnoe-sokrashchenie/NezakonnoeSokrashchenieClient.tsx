@@ -892,7 +892,7 @@ export default function NezakonnoeSokrashchenieClient() {
       {/* ═══ БЛОК 6: СПЕЦИАЛИСТ ПО ДЕЛУ ═══ */}
             {/* ═══ БЛОК: СПЕЦИАЛИСТ ПО ДЕЛУ (ШАБЛОННЫЙ) ═══ */}
       <SpecialistBlock
-        title="Вашим делом займется Марина Валерьевна Смольянинова"
+        title={<><span style={{ display: 'block' }}>Вашим делом займется</span><span style={{ display: 'block' }}>Марина Валерьевна Смольянинова</span></>}
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Трудовое право»</>}
         imageUrl="/images/smolyaninova.jpg"
