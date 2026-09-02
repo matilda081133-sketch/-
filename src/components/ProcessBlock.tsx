@@ -395,7 +395,7 @@ export default function ProcessBlock({
               justifyContent: 'space-between',
               gap: '24px',
               flexWrap: 'wrap',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+              boxShadow: '0 10px 30px rgba(16, 39, 59, 0.12), 0 2px 8px rgba(16, 39, 59, 0.08)',
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-primary)'
             }}>
@@ -406,6 +406,11 @@ export default function ProcessBlock({
                 {ctaSubtitle && (
                   <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
                     {ctaSubtitle}
+                  </p>
+                )}
+                {footerNote && (
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: '10px 0 0 0' }}>
+                    {footerNote}
                   </p>
                 )}
               </div>
@@ -423,7 +428,7 @@ export default function ProcessBlock({
             </div>
           )}
 
-          {footerNote && (
+          {!ctaTitle && footerNote && (
             <div style={{ marginTop: '24px', textAlign: 'center' }}>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
                 {footerNote}

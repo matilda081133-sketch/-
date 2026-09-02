@@ -76,13 +76,8 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
   },
   {
     "popular": true,
-    "badgeText": "Востребовано",
-    title: (
-      <>
-        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формирование</span>{' '}
-        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>пакета на ВНЖ</span>
-      </>
-    ),
+    "badgeText": "Популярно",
+    "title": "Формирование пакета на ВНЖ",
     "subtitle": "Подготовка заявления и сопутствующих документов",
     "price": "от 18 000 ₽",
     "features": [
@@ -160,10 +155,7 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
         primaryCtaSubtext={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Чтобы проверить основание и документы до подачи,
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+              Чтобы проверить</span> <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>основание и документы до подачи, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
             </span>
           </span>
         }
@@ -195,15 +187,256 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>С какими ситуациями</span>{' '}
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>к нам обращаются доверители</span>
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              <span style={{ display: 'block' }}>В миграционных делах процедуры часто взаимосвязаны.</span>
-              <span style={{ display: 'block' }}>Ознакомьтесь с правовыми решениями для сопутствующих задач:</span>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Каждая миграционная процедура требует индивидуальной проверки оснований, точного соблюдения регламентов и сроков обжалования.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 380px))', gap: '20px' }}>
+
+          <div className="grid grid-3" style={{ gap: '28px' }}>
+            {[
+          {
+                    "tag": "После РВП",
+                    "title": [
+                              "Проживание по РВП",
+                              "не менее 8 месяцев",
+                              "на территории России"
+                    ],
+                    "desc": "Подаём заявление на бессрочный ВНЖ не позднее чем за 4 месяца до истечения трёхлетнего срока действия РВП."
+          },
+          {
+                    "tag": "По родителям / детям",
+                    "title": [
+                              "Родители или дети —",
+                              "граждане России,",
+                              "постоянно живущие в РФ"
+                    ],
+                    "desc": "Оформляем ВНЖ напрямую без предварительного получения РВП по прямой линии родства первой степени."
+          },
+          {
+                    "tag": "Красный диплом РФ",
+                    "title": [
+                              "Окончание очного отделения",
+                              "российского ВУЗа",
+                              "с дипломом с отличием"
+                    ],
+                    "desc": "Выпускники российских государственных ВУЗов с красным дипломом имеют право на получение ВНЖ без РВП."
+          },
+          {
+                    "tag": "Специалисты / ВКС",
+                    "title": [
+                              "Высококвалифицированные",
+                              "специалисты (ВКС)",
+                              "и члены их семей в РФ"
+                    ],
+                    "desc": "Проверяем право высококвалифицированного специалиста и членов его семьи на ВНЖ, требования к работодателю, периоду работы, страховым взносам и сроку документа. Миграционное сопровождение работодателя относится к отдельному направлению для бизнеса."
+          },
+          {
+                    "tag": "РВПО, образование и специальные основания",
+                    "title": [
+                              "РВПО, образование",
+                              "и специальные основания",
+                              "для получения ВНЖ"
+                    ],
+                    "desc": "Проверяем специальные условия получения ВНЖ для обладателей РВПО, выпускников с отличием, граждан Беларуси и других категорий, предусмотренных ст. 8 закона № 115-ФЗ."
+          },
+          {
+                    "tag": "Защита от отказа",
+                    "title": [
+                              "Претензии к справкам,",
+                              "сертификатам языка",
+                              "или источникам доходов"
+                    ],
+                    "desc": "Проводим аудит пакета документов до подачи в УВМ МВД, исключаем риски отказа и аннулирования по формальным основаниям."
+          }
+].map((item, i) => (
+              <div key={i} className="hover-lift" style={{
+                padding: '36px 30px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.tag}
+                </div>
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '17px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-deep-blue)', 
+                  margin: '0 0 14px 0', 
+                  lineHeight: 1.35, 
+                  minHeight: '68px',
+                  position: 'relative', 
+                  zIndex: 1 
+                }}>
+                  {item.title.map((line, idx) => (
+                    <span key={idx} className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                      {line}
+                    </span>
+                  ))}
+                </h3>
+                <p style={{ 
+                  fontSize: '15px', 
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: 1.6,
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 3: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
+            {/* ═══ БЛОК КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ) ═══ */}
+            {/* ═══ БЛОК КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ) ═══ */}
+      <SpecialistBlock
+        title="Куратор направления"
+        name="Дмитрий Сергеевич Конопкин"
+        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Миграционное право»</>}
+        imageUrl="/images/konopkin.jpg"
+        imagePosition="center 15%"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Дмитрий Сергеевич Конопкин имеет 6-летний опыт следственной работы в Следственном комитете РФ и адвокатскую практику с 2022 года. Курирует миграционные споры, требующие судебного оспаривания актов государственных органов и экстренной защиты доверителей.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Опыт работы в Следственном комитете с 2016 по 2022 год</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>С сентября 2022 года — адвокат</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Реестровый номер 48/812</span>
+            </li>
+          </ul>,
+          <a key="3" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о Дмитрии Сергеевиче Конопкине →
+          </a>
+        ]}
+        buttonText="Задать вопрос адвокату"
+        buttonHref="#form"
+      />
+
+      {/* ═══ БЛОК: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
+      <CasesBlock
+        title="Примеры из практики"
+        showAllLink="/praktika/"
+        showAllText="Смотреть все дела"
+        showDemoWarning={true}
+        cases={cases}
+      />
+
+      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА ═══ */}
+      <ProcessBlock
+        title="Как проходит работа"
+        subtitle="Прозрачный пошаговый процесс от первичного анализа материалов до контроля исполнения решения."
+        alignTitle="center"
+        steps={[
+          {
+            num: '01',
+            title: 'Определяем маршрут: после РВП или напрямую без РВП',
+            desc: 'Анализируем основания по ст. 8 закона № 115-ФЗ: проживание по РВП не менее 8 месяцев либо специальные основания прямого получения ВНЖ.'
+          },
+          {
+            num: '02',
+            title: 'Проверяем основание, текущий статус и окно подачи',
+            desc: 'Проверяем сроки действия текущих документов (подача не позднее 4 месяцев до окончания РВП), отсутствие ограничений и запретов.'
+          },
+          {
+            num: '03',
+            title: 'Составляем персональный перечень документов и проверяем противоречия',
+            desc: 'Формируем комплект подтверждения доходов, медицинских сертификатов, переводов паспорта и исключаем любые разночтения.'
+          },
+          {
+            num: '04',
+            title: 'Готовим заявление и сопровождаем подачу в МВД',
+            desc: 'Заполняем заявление строго по регламенту МВД, координируем подачу в подразделение по вопросам миграции и контролируем выдачу ВНЖ.'
+          },
+          {
+            isBanner: true,
+            title: 'Дистанционный формат',
+            desc: 'Начать можно дистанционно: направить имеющиеся документы и кратко описать ситуацию. Необходимость личного участия, доверенности или явки определяется индивидуально.'
+          }
+        ]}
+        ctaTitle="Готовы обсудить вашу ситуацию"
+        ctaSubtitle="Опишите задачу — адвокат изучит документы и предложит понятный план защиты."
+        ctaButtonText="Обсудить ситуацию"
+        ctaButtonHref="#form"
+      />
+
+      {/* ═══ БЛОК 6: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
+      <PricingBlock
+        title="Стоимость юридической помощи"
+        subtitle="Стоимость зависит от органа-инициатора, стадии рассмотрения, объёма документов и необходимости личного участия адвоката."
+        tiers={pricingTiers}
+        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в соглашении до начала работы. Оплата вознаграждения адвоката не зависит от исхода дела и не включает государственные пошлины, нотариальные переводы и сопутствующие расходы."
+      />
+
+      {/* ═══ БЛОК 7: FAQ ═══ */}
+      <FAQBlock
+        superTitle="Частые вопросы клиентов"
+        title={
+          <>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ответы на</span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>частые вопросы</span>
+          </>
+        }
+        subtitle="Об оформлении вида на жительство в РФ"
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
+        faqs={faqs}
+      />
+
+      
+      {/* ═══ БЛОК: СВЯЗАННЫЕ СИТУАЦИИ ═══ */}
+      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '32px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 36px)', color: 'var(--color-deep-blue)', marginBottom: '12px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Связанные ситуации</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и смежные услуги</span>
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              В миграционных делах процедуры часто взаимосвязаны. Ознакомьтесь с правовыми решениями для сопутствующих задач:
+            </p>
+          </div>
+          <div className="grid grid-3" style={{ gap: '20px' }}>
 
             <a href="/grazhdanam/migracionnyj-yurist/poluchenie-rvp/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card service-card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
                     Помощь в получении РВП
@@ -212,7 +445,7 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
                     Определение оснований для разрешения на временное проживание по квоте и без квоты.
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px', transition: 'color 0.35s ease' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
                   <span>Перейти к услуге</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
@@ -220,17 +453,16 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
             </a>
 
             <a href="/grazhdanam/migracionnyj-yurist/poluchenie-grazhdanstva-rf/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card service-card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Помощь в получении</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>гражданства РФ</span>
+                    Помощь в получении гражданства РФ
                   </h4>
                   <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                     Оформление гражданства Российской Федерации по нормам закона № 138-ФЗ.
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px', transition: 'color 0.35s ease' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
                   <span>Перейти к услуге</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
@@ -238,7 +470,7 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
             </a>
 
             <a href="/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card service-card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
                     Обжалование отказа или аннулирования РВП и ВНЖ
@@ -247,7 +479,7 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
                     Юридическая помощь при отмене вида на жительство или отказе в его выдаче.
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px', transition: 'color 0.35s ease' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
                   <span>Перейти к услуге</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>

@@ -76,18 +76,13 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
   },
   {
     "popular": true,
-    "badgeText": "Востребовано",
+    "badgeText": "Популярно",
     "title": <>Судебное восстановление<br />РВП / ВНЖ</>,
     "subtitle": "Административный иск и защита статуса в суде",
     "price": "от 35 000 ₽",
     "features": [
       {
-        "name": (
-          <>
-            <span style={{ display: 'block' }}>Составление административного</span>
-            <span style={{ display: 'block' }}>иска по КАС РФ</span>
-          </>
-        ),
+        "name": "Составление административного иска по КАС РФ",
         "value": "✓"
       },
       {
@@ -171,7 +166,7 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
         imageObjectPosition="center 20%"
       />
 
-            {/* ═══ БЛОК 2: ТИПОВЫЕ СИТУАЦИИ ═══ */}
+      {/* ═══ БЛОК 2: ТИПОВЫЕ СИТУАЦИИ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
@@ -179,71 +174,349 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>С какими ситуациями</span>{' '}
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>к нам обращаются доверители</span>
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Каждая миграционная процедура требует индивидуальной проверки оснований, точного соблюдения регламентов и сроков обжалования.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 380px))', gap: '20px', marginBottom: '24px' }}>
-            {/* Карточка 1: 15 дней на выезд */}
-            <div className="card service-card hover-lift" style={{ height: '100%', padding: '28px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
-              <div>
-                <div style={{ display: 'inline-block', padding: '4px 10px', background: 'rgba(23, 50, 77, 0.08)', color: 'var(--color-primary)', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '14px' }}>
-                  15 дней на выезд
+          <div className="grid grid-3" style={{ gap: '28px' }}>
+            {[
+          {
+                    "tag": "15 дней на выезд",
+                    "title": [
+                              "Уведомление об отмене",
+                              "или аннулировании РВП",
+                              "либо вида на жительство в РФ"
+                    ],
+                    "desc": "Подача административного иска сама по себе не приостанавливает обязанность выехать. Для временной защиты необходимо отдельное заявление, а решение о применении мер принимает суд."
+          },
+          {
+                    "tag": "Отказ в выдаче",
+                    "title": [
+                              "МВД вынесло отказ",
+                              "в предоставлении РВП",
+                              "или вида на жительство (ВНЖ)"
+                    ],
+                    "desc": "Проверяем законность отказа, выявляем необоснованные ссылки на подложные сведения или ошибки в межведомственных базах."
+          },
+          {
+                    "tag": "Выезд за границу",
+                    "title": [
+                              "Аннулировали за выезд",
+                              "за пределы России",
+                              "сроком более 6 месяцев"
+                    ],
+                    "desc": "Доказываем уважительность причин отсутствия: экстренное лечение, уход за тяжелобольным родственником или форс-мажор."
+          },
+          {
+                    "tag": "Подтверждение дохода",
+                    "title": [
+                              "Претензии к ежегодному",
+                              "уведомлению о доходах",
+                              "или проживанию в регионе"
+                    ],
+                    "desc": "Подтверждаем законные источники средств, подаём уточнённые справки 2-НДФЛ, банковские выписки и оспариваем претензии МВД."
+          },
+          {
+                    "tag": "Штрафы и правонарушения",
+                    "title": [
+                              "Аннулирование из-за двух",
+                              "административных штрафов",
+                              "в течение одного года"
+                    ],
+                    "desc": "Аннулирование из-за повторного привлечения к административной ответственности. Проверяем точные статьи КоАП РФ, даты вступления постановлений в силу и относятся ли нарушения к категориям, прямо указанным в статьях 7 и 9 закона № 115-ФЗ. Не любые два штрафа, включая обычные нарушения ПДД, образуют основание для аннулирования."
+          },
+          {
+                    "tag": "Семья в России",
+                    "title": [
+                              "В РФ проживают близкие",
+                              "родственники и дети —",
+                              "граждане Российской Федерации"
+                    ],
+                    "desc": "Защищаем право на сохранение статуса с опорой на ст. 38 Конституции РФ и позиции Верховного Суда РФ о защите семьи."
+          }
+].map((item, i) => (
+              <div key={i} className="hover-lift" style={{
+                padding: '36px 30px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
                 </div>
-                <h4 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
-                  Уведомление об отмене или аннулировании РВП либо вида на жительство в РФ
-                </h4>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                  Подача административного иска сама по себе не приостанавливает обязанность выехать. Для временной защиты необходимо отдельное заявление, а решение о применении мер принимает суд.
-                </p>
-              </div>
-              <a href="#form" style={{ textDecoration: 'none' }}>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '20px', transition: 'color 0.35s ease' }}>
-                  <span>Получить защиту</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
-              </a>
-            </div>
 
-            {/* Карточка 2: Отказ в приеме / выдаче */}
-            <div className="card service-card hover-lift" style={{ height: '100%', padding: '28px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
-              <div>
-                <div style={{ display: 'inline-block', padding: '4px 10px', background: 'rgba(23, 50, 77, 0.08)', color: 'var(--color-primary)', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '14px' }}>
-                  Отказ в выдаче
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.tag}
                 </div>
-                <h4 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
-                  Отказ в приёме документов или выдаче РВП / ВНЖ
-                </h4>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                  Проверяем законность оснований отказа МВД (доходы, знание языка, сроки пребывания), запрашиваем материалы проверки и готовим досудебную жалобу или административный иск.
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '17px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-deep-blue)', 
+                  margin: '0 0 14px 0', 
+                  lineHeight: 1.35, 
+                  minHeight: '68px',
+                  position: 'relative', 
+                  zIndex: 1 
+                }}>
+                  {item.title.map((line, idx) => (
+                    <span key={idx} className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                      {line}
+                    </span>
+                  ))}
+                </h3>
+                <p style={{ 
+                  fontSize: '15px', 
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: 1.6,
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.desc}
                 </p>
               </div>
-              <a href="#form" style={{ textDecoration: 'none' }}>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '20px', transition: 'color 0.35s ease' }}>
-                  <span>Оценить отказ</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
-              </a>
-            </div>
+            ))}
           </div>
-
-          {/* Длинная плашка под карточками */}
-          <div style={{ 
-            background: 'var(--gradient-cream)', 
-            borderLeft: '4px solid var(--color-gold)', 
-            borderTop: '1px solid var(--color-border)', 
-            borderRight: '1px solid var(--color-border)', 
-            borderBottom: '1px solid var(--color-border)', 
-            padding: '24px 28px',
-            marginTop: '24px'
-          }}>
-            <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.35 }}>
-              Отказ и аннулирование: разные правовые последствия
-            </h4>
-            <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.65 }}>
+        </div>
+      </section>
+      {/* ═══ БЛОК: ОТКАЗ И АННУЛИРОВАНИЕ ═══ */}
+      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.5vw, 38px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отказ и аннулирование:</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>разные правовые последствия</span>
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.65, margin: 0 }}>
               Отказ означает, что РВП или ВНЖ ещё не были выданы. Аннулирование прекращает уже действующий статус и может повлечь обязанность выехать в течение 15 дней. Поэтому для аннулирования сначала проверяются срочные последствия и меры защиты, а при отказе — мотивировка, документы и возможность административного или судебного обжалования.
             </p>
+          </div>
+        </div>
+      </section>
+
+
+      
+      {/* ═══ БЛОК: ОТКАЗ И АННУЛИРОВАНИЕ ═══ */}
+      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.5vw, 38px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отказ и аннулирование:</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>разные правовые последствия</span>
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.65, margin: 0 }}>
+              Отказ означает, что РВП или ВНЖ ещё не были выданы. Аннулирование прекращает уже действующий статус и может повлечь обязанность выехать в течение 15 дней. Поэтому для аннулирования сначала проверяются срочные последствия и меры защиты, а при отказе — мотивировка, документы и возможность административного или судебного обжалования.
+            </p>
+          </div>
+        </div>
+      </section>
+
+                  {/* ═══ БЛОК: КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ) ═══ */}
+      <SpecialistBlock
+        title="Куратор направления"
+        name="Дмитрий Сергеевич Конопкин"
+        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Миграционное право»</>}
+        imageUrl="/images/konopkin.jpg"
+        imagePosition="center 15%"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Дмитрий Сергеевич Конопкин имеет 6-летний опыт следственной работы в Следственном комитете РФ и адвокатскую практику с 2022 года. Курирует миграционные споры, требующие судебного оспаривания актов государственных органов и экстренной защиты доверителей.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Опыт работы в Следственном комитете с 2016 по 2022 год</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>С сентября 2022 года — адвокат</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Реестровый номер 48/812</span>
+            </li>
+          </ul>
+        ]}
+        profileHref="/specialisty/konopkin-dmitriy-sergeevich/"
+        profileText="Подробнее о Дмитрии Сергеевиче Конопкине →"
+        buttonText="Задать вопрос адвокату"
+        buttonHref="#form"
+      />
+
+      {/* ═══ БЛОК: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
+      <CasesBlock
+        title="Примеры из практики"
+        showAllLink="/praktika/"
+        showAllText="Смотреть все дела"
+        showDemoWarning={true}
+        cases={cases}
+      />
+
+      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА ═══ */}
+      <ProcessBlock
+        title="Как проходит работа"
+        subtitle="Прозрачный пошаговый процесс от первичного анализа материалов до контроля исполнения решения."
+        alignTitle="center"
+        steps={[
+          {
+            num: '01',
+            title: 'Уточняем ситуацию',
+            desc: 'Выясняем, какое решение принято, кем и когда, какие документы есть на руках и какая цель стоит перед доверителем.'
+          },
+          {
+            num: '02',
+            title: 'Изучаем материалы дела',
+            desc: 'Проверяем протоколы, постановления, основания применения мер, миграционную историю и основания для правовой защиты.'
+          },
+          {
+            num: '03',
+            title: 'Формируем правовой маршрут',
+            desc: 'Определяем досудебный или судебный порядок, оцениваем процессуальные риски, сроки и фиксируем условия работы.'
+          },
+          {
+            num: '04',
+            title: 'Защищаем интересы',
+            desc: 'Подаём административный иск в суд, заявляем ходатайство о приостановлении 15-дневного срока на выезд и защищаем статус проживания.'
+          },
+          {
+            isBanner: true,
+            title: 'Дистанционный формат',
+            desc: 'Начать можно дистанционно: направить имеющиеся документы и кратко описать ситуацию. Необходимость личного участия, доверенности или явки определяется индивидуально.'
+          }
+        ]}
+        ctaTitle="Готовы обсудить вашу ситуацию"
+        ctaSubtitle="Опишите задачу — адвокат изучит документы и предложит понятный план защиты."
+        ctaButtonText="Обсудить ситуацию"
+        ctaButtonHref="#form"
+      />
+
+      {/* ═══ БЛОК 6: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
+      <PricingBlock
+        title="Стоимость юридической помощи"
+        subtitle="Стоимость зависит от органа-инициатора, стадии рассмотрения, объёма документов и необходимости личного участия адвоката."
+        tiers={pricingTiers}
+        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в соглашении до начала работы. Оплата вознаграждения адвоката не зависит от исхода дела и не включает государственные пошлины, нотариальные переводы и сопутствующие расходы."
+      />
+
+      {/* ═══ БЛОК 7: FAQ ═══ */}
+      <FAQBlock
+        superTitle="Частые вопросы клиентов"
+        title={
+          <>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ответы на</span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>частые вопросы</span>
+          </>
+        }
+        subtitle="О защите статуса временного и постоянного проживания"
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
+        faqs={faqs}
+      />
+
+      
+      {/* ═══ БЛОК: СВЯЗАННЫЕ СИТУАЦИИ ═══ */}
+      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '32px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 36px)', color: 'var(--color-deep-blue)', marginBottom: '12px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Связанные ситуации</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и смежные услуги</span>
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              В миграционных делах процедуры часто взаимосвязаны. Ознакомьтесь с правовыми решениями для сопутствующих задач:
+            </p>
+          </div>
+          <div className="grid grid-2" style={{ gap: '20px' }}>
+
+            <a href="/grazhdanam/migracionnyj-yurist/obzhalovanie-resheniya-o-deportacii/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
+                    Обжалование решения о депортации
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Защита при назначении депортации и применение мер предварительной защиты.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
+                  <span>Перейти к услуге</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
+                    Исключение из реестра контролируемых лиц
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Снятие ограничений режима высылки после аннулирования документов.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
+                  <span>Перейти к услуге</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="/grazhdanam/migracionnyj-yurist/poluchenie-rvp/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
+                    Помощь в получении РВП
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Первичное или повторное оформление разрешения на временное проживание.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
+                  <span>Перейти к услуге</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
+                    Помощь в получении вида на жительство (ВНЖ)
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Подготовка пакета документов и подача заявления на вид на жительство в РФ.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
+                  <span>Перейти к услуге</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </section>

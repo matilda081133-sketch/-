@@ -190,15 +190,321 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>С какими ситуациями</span>{' '}
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>к нам обращаются доверители</span>
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              <span style={{ display: 'block' }}>В миграционных делах процедуры часто взаимосвязаны.</span>
-              <span style={{ display: 'block' }}>Ознакомьтесь с правовыми решениями для сопутствующих задач:</span>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Каждая миграционная процедура требует индивидуальной проверки оснований, точного соблюдения регламентов и сроков обжалования.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 380px))', gap: '20px' }}>
+
+          <div className="grid grid-3" style={{ gap: '28px' }}>
+            {[
+          {
+                    "tag": "Распоряжение МВД",
+                    "title": [
+                              "Получено решение МВД",
+                              "о принудительной высылке",
+                              "и депортации за пределы РФ"
+                    ],
+                    "desc": "Оспариваем решение руководителя территориального органа МВД по КАС РФ и заявляем ходатайство о незамедлительной приостановке депортации."
+          },
+          {
+                    "tag": "После наказания",
+                    "title": [
+                              "Депортация после отбытия",
+                              "уголовного наказания",
+                              "в учреждениях ФСИН России"
+                    ],
+                    "desc": "Проверяем основания применения депортации, оцениваем семейные связи, наличие жилья и работы на территории Российской Федерации."
+          },
+          {
+                    "tag": "Аннулирование статуса",
+                    "title": [
+                              "Депортация из-за отказа",
+                              "в продлении или отмены",
+                              "РВП, ВНЖ или статуса беженца"
+                    ],
+                    "desc": "Проверяем и при наличии оснований оспариваем первичный акт об аннулировании статуса. Само обращение в суд не блокирует депортацию автоматически: необходимость предварительной защиты оценивается отдельно, а решение принимает суд."
+          },
+          {
+                    "tag": "Срочная защита",
+                    "title": [
+                              "Необходимость срочной",
+                              "заморозки выдворения",
+                              "до рассмотрения иска судом"
+                    ],
+                    "desc": "Подаём заявление о мерах предварительной защиты по ст. 85 КАС РФ для законного нахождения доверителя в РФ на время разбирательства."
+          },
+          {
+                    "tag": "Семья и дети в РФ",
+                    "title": [
+                              "В России проживают дети",
+                              "или законный супруг —",
+                              "граждане Российской Федерации"
+                    ],
+                    "desc": "Доказываем, что депортация приведёт к разрушению семьи и нарушению конституционных прав несовершеннолетних граждан России."
+          },
+          {
+                    "tag": "Помещение в ЦВСИГ",
+                    "title": [
+                              "Иностранца поместили",
+                              "в центр содержания (ЦВСИГ)",
+                              "до исполнения депортации"
+                    ],
+                    "desc": "Получаем решение о депортации, акт о помещении в ЦВСИГ и решения о продлении срока содержания. Проверяем основание, срок, действия МВД по фактическому исполнению депортации и при наличии оснований обжалуем соответствующий судебный акт. Спор о содержании рассматривается отдельно от спора о депортации."
+          }
+].map((item, i) => (
+              <div key={i} className="hover-lift" style={{
+                padding: '36px 30px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.tag}
+                </div>
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '17px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-deep-blue)', 
+                  margin: '0 0 14px 0', 
+                  lineHeight: 1.35, 
+                  minHeight: '68px',
+                  position: 'relative', 
+                  zIndex: 1 
+                }}>
+                  {item.title.map((line, idx) => (
+                    <span key={idx} className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                      {line}
+                    </span>
+                  ))}
+                </h3>
+                <p style={{ 
+                  fontSize: '15px', 
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: 1.6,
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* ═══ БЛОК: ЧТО ПРОВЕРИТ АДВОКАТ ═══ */}
+      <section className="section bg-light" style={{ padding: '72px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '36px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Что проверит адвокат
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                при оценке депортации
+              </span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              До подачи иска или жалобы адвокат проводит юридический анализ всех обстоятельств дела:
+            </p>
+          </div>
+
+          <div style={{
+            background: 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)',
+            color: '#FFFFFF',
+            border: '1px solid rgba(193, 160, 102, 0.35)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '36px 32px',
+            marginBottom: '24px',
+            boxShadow: '0 20px 40px rgba(16, 39, 59, 0.15)',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            {/* Фоновый гербовый водяной знак */}
+            <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.05, pointerEvents: 'none' }}>
+              <svg width="140" height="140" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '16px 32px', marginBottom: '28px', position: 'relative', zIndex: 1 }}>
+              {[
+                'Решение о депортации, орган, дата вынесения, нормативное основание и порядок вручения',
+                'Связанные решения об аннулировании РВП/ВНЖ, нежелательности пребывания, запрете на въезд',
+                'Текущий миграционный статус и точную дату возникновения обязанности выехать из РФ',
+                'Наличие помещения в ЦВСИГ и отдельных судебных актов о продлении срока содержания',
+                'Семейные, медицинские и другие гуманитарные обстоятельства доверителя в РФ',
+                'Основания, процессуальные риски и доказательства для заявления о мерах предварительной защиты'
+              ].map((doc, idx) => (
+                <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.5 }}>
+                    {doc}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', paddingTop: '20px', borderTop: '1px solid rgba(255, 255, 255, 0.15)', position: 'relative', zIndex: 1 }}>
+              <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)' }}>
+                Электронные копии документов можно передать для дистанционной оценки
+              </span>
+              <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14px', background: 'var(--color-gold)', borderColor: 'var(--color-gold)', color: '#FFFFFF' }} data-analytics="migr_deport_docs_cta">
+                Передать документы на проверку
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+                  {/* ═══ БЛОК: КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ) ═══ */}
+      <SpecialistBlock
+        title="Куратор направления"
+        name="Дмитрий Сергеевич Конопкин"
+        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Миграционное право»</>}
+        imageUrl="/images/konopkin.jpg"
+        imagePosition="center 15%"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Дмитрий Сергеевич Конопкин имеет 6-летний опыт следственной работы в Следственном комитете РФ и адвокатскую практику с 2022 года. Курирует миграционные споры, требующие судебного оспаривания актов государственных органов и экстренной защиты доверителей.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Опыт работы в Следственном комитете с 2016 по 2022 год</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>С сентября 2022 года — адвокат</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Реестровый номер 48/812</span>
+            </li>
+          </ul>
+        ]}
+        profileHref="/specialisty/konopkin-dmitriy-sergeevich/"
+        profileText="Подробнее о Дмитрии Сергеевиче Конопкине →"
+        buttonText="Задать вопрос адвокату"
+        buttonHref="#form"
+      />
+
+      {/* ═══ БЛОК: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
+      <CasesBlock
+        title="Примеры из практики"
+        showAllLink="/praktika/"
+        showAllText="Смотреть все дела"
+        showDemoWarning={true}
+        cases={cases}
+      />
+
+      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА ═══ */}
+      <ProcessBlock
+        title="Как проходит работа"
+        subtitle="Прозрачный пошаговый процесс от первичного анализа материалов до контроля исполнения решения."
+        alignTitle="center"
+        steps={[
+          {
+            num: '01',
+            title: 'Уточняем ситуацию',
+            desc: 'Выясняем, какое решение принято, кем и когда, какие документы есть на руках и какая цель стоит перед доверителем.'
+          },
+          {
+            num: '02',
+            title: 'Изучаем материалы дела',
+            desc: 'Проверяем протоколы, постановления, основания применения мер, миграционную историю и основания для правовой защиты.'
+          },
+          {
+            num: '03',
+            title: 'Формируем правовой маршрут',
+            desc: 'Определяем досудебный или судебный порядок, оцениваем процессуальные риски, сроки и фиксируем условия работы.'
+          },
+          {
+            num: '04',
+            title: 'Защищаем интересы',
+            desc: 'Оспариваем решение МВД в порядке КАС РФ с ходатайством о мерах предварительной защиты для законного приостановления выезда.'
+          },
+          {
+            isBanner: true,
+            title: 'Дистанционный формат',
+            desc: 'Начать можно дистанционно: направить имеющиеся документы и кратко описать ситуацию. Необходимость личного участия, доверенности или явки определяется индивидуально.'
+          }
+        ]}
+        ctaTitle="Готовы обсудить вашу ситуацию"
+        ctaSubtitle="Опишите задачу — адвокат изучит документы и предложит понятный план защиты."
+        ctaButtonText="Обсудить ситуацию"
+        ctaButtonHref="#form"
+      />
+
+      {/* ═══ БЛОК 6: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
+      <PricingBlock
+        title="Стоимость юридической помощи"
+        subtitle="Стоимость зависит от органа-инициатора, стадии рассмотрения, объёма документов и необходимости личного участия адвоката."
+        tiers={pricingTiers}
+        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в соглашении до начала работы. Оплата вознаграждения адвоката не зависит от исхода дела и не включает государственные пошлины, нотариальные переводы и сопутствующие расходы."
+      />
+
+      {/* ═══ БЛОК 7: FAQ ═══ */}
+      <FAQBlock
+        superTitle="Частые вопросы клиентов"
+        title={
+          <>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Ответы на</span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>частые вопросы</span>
+          </>
+        }
+        subtitle="Об оспаривании распоряжений МВД о депортации"
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
+        faqs={faqs}
+      />
+
+      
+      {/* ═══ БЛОК: СВЯЗАННЫЕ СИТУАЦИИ ═══ */}
+      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '32px' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 36px)', color: 'var(--color-deep-blue)', marginBottom: '12px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Связанные ситуации</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и смежные услуги</span>
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              В миграционных делах процедуры часто взаимосвязаны. Ознакомьтесь с правовыми решениями для сопутствующих задач:
+            </p>
+          </div>
+          <div className="grid grid-3" style={{ gap: '20px' }}>
 
             <a href="/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card service-card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
                     Обжалование отказа или аннулирования РВП и ВНЖ
@@ -207,7 +513,7 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
                     Защита статуса проживания при риске возникновения обязанности выехать из РФ.
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px', transition: 'color 0.35s ease' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
                   <span>Перейти к услуге</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
@@ -215,7 +521,7 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
             </a>
 
             <a href="/grazhdanam/migracionnyj-yurist/obzhalovanie-nezhelatelnosti-prebyvaniya/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card service-card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
                     Обжалование нежелательности пребывания
@@ -224,7 +530,7 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
                     Оспаривание распоряжений ведомств о нежелательности пребывания в РФ.
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px', transition: 'color 0.35s ease' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
                   <span>Перейти к услуге</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
@@ -232,7 +538,7 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
             </a>
 
             <a href="/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card service-card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
                     Исключение из реестра контролируемых лиц
@@ -241,7 +547,7 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
                     Снятие режима высылки и исключение сведений из базы контролируемых лиц.
                   </p>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px', transition: 'color 0.35s ease' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px' }}>
                   <span>Перейти к услуге</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
