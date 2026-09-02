@@ -220,7 +220,7 @@ export default function VyplatyRaneniePage() {
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              В каких ситуациях <br />мы можем помочь
+              В каких ситуациях мы можем помочь
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Найдите свою проблему — мы подскажем, с каких документов начать и как восстановить ваши права.

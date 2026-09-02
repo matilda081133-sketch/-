@@ -253,7 +253,7 @@ export default function VvkPage() {
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              <span style={{ display: 'inline-block' }}>В каких ситуациях</span> <br /><span style={{ display: 'inline-block' }}>мы можем помочь</span>
+              В каких ситуациях мы можем помочь
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Поможем разобрать Вашу ситуацию, проверить документы и выстроить правовую позицию для оспаривания заключения ВВК.
