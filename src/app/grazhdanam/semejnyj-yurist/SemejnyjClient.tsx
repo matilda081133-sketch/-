@@ -606,7 +606,7 @@ export default function SemejnyjClient() {
                     flexDirection: 'column', 
                     justifyContent: 'space-between',
                     boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-                    transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease',
+                    transition: 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease',
                     position: 'relative'
                   }}
                 >
@@ -664,7 +664,7 @@ export default function SemejnyjClient() {
                 flexDirection: 'column', 
                 justifyContent: 'space-between',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.1)',
-                transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease',
+                transition: 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease',
                 position: 'relative',
                 color: 'var(--color-white)'
               }}
