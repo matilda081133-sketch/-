@@ -477,10 +477,10 @@ export default function VzyskanieUshcherbaB2BClient() {
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '3px', lineHeight: 1.35 }}>
-                      ${item.title}
+                      {item.title}
                     </strong>
                     <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.55 }}>
-                      ${item.desc}
+                      {item.desc}
                     </span>
                   </div>
                 </div>
