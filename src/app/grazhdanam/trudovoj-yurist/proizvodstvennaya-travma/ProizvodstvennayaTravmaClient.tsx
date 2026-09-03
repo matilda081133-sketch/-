@@ -438,8 +438,7 @@ export default function ProizvodstvennayaTravmaClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы помогаем</span>
+              В каких ситуациях мы помогаем
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Окажем правовую помощь на любой стадии: от фиксации несчастного случая до взыскания компенсаций за причиненный вред здоровью.
@@ -493,126 +492,187 @@ export default function ProizvodstvennayaTravmaClient() {
                 </p>
               </div>
             ))}
-          </div>
 
-          <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block' }}>
-              Получить оценку ситуации
-            </a>
+            {/* Карточка 9: Получить оценку ситуации (рядом с Вред здоровью / Требуется возмещение вреда здоровью) */}
+            <div 
+              className="card service-card hover-lift" 
+              style={{ 
+                height: '100%', 
+                minHeight: '260px',
+                padding: '36px 30px', 
+                background: 'var(--color-deep-blue)', 
+                border: '1px solid var(--color-deep-blue)', 
+                borderTop: '3px solid var(--color-gold)', 
+                boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)', 
+                position: 'relative',
+                overflow: 'hidden',
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between',
+                boxSizing: 'border-box'
+              }}
+            >
+              {/* Фоновый декоративный вектор как в шаблоне */}
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="#FFFFFF">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+
+              <div>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '4px 10px',
+                  display: 'inline-block'
+                }}>
+                  Другая ситуация
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: '#FFFFFF', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                  Получить оценку ситуации
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
+                  Не нашли свой случай? Опишите обстоятельства происшествия — юрист оценит документы, проверит процедуру расследования и подскажет план действий.
+                </p>
+              </div>
+
+              <div style={{ marginTop: '24px' }}>
+                <a 
+                  href="#form" 
+                  className="btn btn-gold" 
+                  style={{ 
+                    display: 'block', 
+                    width: '100%', 
+                    textAlign: 'center',
+                    padding: '14px 20px',
+                    fontSize: '15px',
+                    borderRadius: '0',
+                    boxSizing: 'border-box'
+                  }}
+                >
+                  Получить оценку ситуации
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ЧЕМ ПОМОЖЕТ ЮРИСТ (ШАБЛОННЫЙ С НУМЕРАЦИЕЙ) ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 3: ЧЕМ ПОМОЖЕТ ЮРИСТ (ТОЧНЫЙ ШАБЛОН С НОМЕРАМИ) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Чем поможет юрист</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>при производственной травме</span>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Чем поможет юрист</span> <br />
+              <span style={{ display: 'inline-block' }}>при производственной травме</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               Защитим права пострадавшего работника: от надлежащего расследования несчастного случая до полного взыскания компенсаций и страховых выплат.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', position: 'relative', marginBottom: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             {[
               {
                 num: '01',
-                title: [
-                  'Анализ обстоятельств',
-                  'несчастного случая'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Анализ обстоятельств</span>
+                    <span style={{ display: 'block' }}>несчастного случая</span>
+                  </>
+                ),
                 desc: 'Устанавливаем связь травмы с выполнением трудовых обязанностей и соблюдение работодателем ст. 227-231 ТК РФ.'
               },
               {
                 num: '02',
-                title: [
-                  'Контроль расследования',
-                  'и акта формы Н-1'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Контроль расследования</span>
+                    <span style={{ display: 'block' }}>и акта формы Н-1</span>
+                  </>
+                ),
                 desc: 'Участвуем в расследовании комиссии, добиваемся составления формы Н-1 и исключения необоснованной вины работника.'
               },
               {
                 num: '03',
-                title: [
-                  'Оспаривание сокрытия',
-                  'травмы работодателем'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Оспаривание сокрытия</span>
+                    <span style={{ display: 'block' }}>травмы работодателем</span>
+                  </>
+                ),
                 desc: 'Инициируем проверку ГИТ и прокуратуры при попытках работодателя оформить травму как «бытовую».'
               },
               {
                 num: '04',
-                title: [
-                  'Расчет ущерба',
-                  'и морального вреда'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Расчет ущерба</span>
+                    <span style={{ display: 'block' }}>и морального вреда</span>
+                  </>
+                ),
                 desc: 'Рассчитываем утраченный заработок, расходы на лечение, реабилитацию и размер компенсации морального вреда.'
               },
               {
                 num: '05',
-                title: [
-                  'Судебное взыскание',
-                  'всех компенсаций'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Судебное взыскание</span>
+                    <span style={{ display: 'block' }}>всех компенсаций</span>
+                  </>
+                ),
                 desc: 'Защищаем права пострадавшего в суде Липецка против работодателя и Социального фонда России.'
               },
               {
                 num: '06',
-                title: [
-                  'Контроль страховых',
-                  'выплат (125-ФЗ)'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Контроль страховых</span>
+                    <span style={{ display: 'block' }}>выплат (125-ФЗ)</span>
+                  </>
+                ),
                 desc: 'Сопровождаем получение единовременных и ежемесячных страховых выплат по закону № 125-ФЗ.'
               }
-            ].map((item, index) => (
-              <div 
-                key={index}
-                className="hover-lift"
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  padding: '36px 30px 32px 30px',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  position: 'relative'
-                }}
-              >
+            ].map((item, idx) => (
+              <div key={idx} className="hover-lift" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '38px 24px 30px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                borderRadius: '0',
+                position: 'relative',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                transition: 'all 0.3s ease'
+              }}>
                 <div style={{
-                  fontSize: '18px',
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
                   fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  fontFamily: 'var(--font-serif)',
-                  marginBottom: '12px'
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
                   {item.num}
                 </div>
-                <h3 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '17px',
-                  fontWeight: 600,
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 12px 0',
-                  lineHeight: 1.35,
-                  minHeight: '46px'
-                }}>
-                  {item.title.map((line, idx) => (
-                    <span key={idx} className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                      {line}
-                    </span>
-                  ))}
-                </h3>
-                <p style={{
-                  fontSize: '14.5px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  margin: 0
-                }}>
-                  {item.desc}
-                </p>
+                <div>
+                  <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

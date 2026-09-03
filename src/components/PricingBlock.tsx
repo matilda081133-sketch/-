@@ -34,10 +34,10 @@ export default function PricingBlock({
   title = "Стоимость юридических услуг в Липецке",
   subtitle = "Честные цены, закрепленные в договоре. Никаких скрытых платежей.",
   tiers: propTiers,
-  ctaTitle,
-  ctaSubtitle,
-  ctaButtonText,
-  ctaButtonLink,
+  ctaTitle = "Точную стоимость определим до начала работы",
+  ctaSubtitle = "Сначала изучим обстоятельства и документы, предложим подходящий формат помощи и согласуем стоимость. Она не изменится без согласования с вами.",
+  ctaButtonText = "Получить расчёт стоимости",
+  ctaButtonLink = "#form",
   disclaimer,
   guaranteeText,
   sectionStyle
@@ -218,13 +218,26 @@ export default function PricingBlock({
         )}
         
         {ctaTitle && (
-          <div style={{ marginTop: '40px', background: 'var(--color-white)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', padding: '40px', borderRadius: '4px', display: 'flex', flexWrap: 'wrap', gap: '32px', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ 
+            marginTop: '40px', 
+            background: 'var(--color-white)', 
+            border: '1px solid var(--color-border)',
+            borderTop: '4px solid var(--color-primary)', 
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)', 
+            padding: '36px 32px', 
+            borderRadius: '0', 
+            display: 'flex', 
+            flexWrap: 'wrap', 
+            gap: '24px', 
+            alignItems: 'center', 
+            justifyContent: 'space-between' 
+          }}>
             <div style={{ flex: '1 1 400px' }}>
-              <h3 style={{ fontSize: '24px', marginBottom: '16px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>{ctaTitle}</h3>
-              <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, textWrap: 'balance' }}>{ctaSubtitle}</p>
+              <h3 style={{ fontSize: '22px', marginBottom: '10px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontWeight: 700 }}>{ctaTitle}</h3>
+              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>{ctaSubtitle}</p>
             </div>
-            <div>
-              <a href={ctaButtonLink || '#form'} className="btn btn-primary" style={{ padding: '16px 40px' }}>{ctaButtonText}</a>
+            <div style={{ flexShrink: 0 }}>
+              <a href={ctaButtonLink || '#form'} className="btn btn-primary" style={{ padding: '14px 32px', fontSize: '15px', display: 'inline-block' }}>{ctaButtonText}</a>
             </div>
           </div>
         )}
