@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -441,7 +441,7 @@ export default function PoluchenieRvpClient() {
               </span>
             </p>
           </div>
-          <div className="grid grid-2" style={{ gap: '20px' }}>
+          <div className="grid grid-3" style={{ gap: '20px' }}>
 
             <a href="/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
               <div className="card related-service-card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
