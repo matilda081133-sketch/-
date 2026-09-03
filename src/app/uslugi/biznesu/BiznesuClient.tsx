@@ -558,8 +558,8 @@ export default function BiznesuClient() {
                   <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: '#FFFFFF', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
                     Не нашли подходящее направление?
                   </h3>
-                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.55 }}>
-                    Юридическая задача бизнеса может затрагивать сразу несколько областей. Кратко опишите ситуацию — мы уточним обстоятельства и определим, кто из специалистов должен подключиться.
+                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.55 }}>
+                    Опишите ваш юридический вопрос бизнесу в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
                   </p>
                 </div>
                 <div style={{ marginTop: 'auto' }}>
@@ -582,7 +582,7 @@ export default function BiznesuClient() {
                       border-color: #FFFFFF;
                     }
                   `}} />
-                  <a href="#form" className="btn-cta-catalog">Описать задачу</a>
+                  <a href="#form" className="btn-cta-catalog">Обсудить ситуацию</a>
                 </div>
               </div>
             </a>

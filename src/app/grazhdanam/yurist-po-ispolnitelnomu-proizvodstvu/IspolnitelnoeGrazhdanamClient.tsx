@@ -737,7 +737,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
                   <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
                 </h3>
                 <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55, minHeight: '68px' }}>
-                  Кратко опишите, что произошло и на какой стадии находится производство. Юрист изучит обстоятельства дела и подскажет, с каких действий лучше начать.
+                  Опишите ваш вопрос по исполнительному производству в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
                 </p>
               </div>
               <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
@@ -755,7 +755,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
                     borderRadius: 0 
                   }}
                 >
-                  Описать ситуацию
+                  Обсудить ситуацию
                 </a>
               </div>
             </div>

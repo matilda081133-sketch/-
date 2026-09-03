@@ -1,5 +1,5 @@
-:root {
-  /* Цветовая палитра из ТЗ */
+﻿:root {
+  /* Р¦РІРµС‚РѕРІР°СЏ РїР°Р»РёС‚СЂР° РёР· РўР— */
   --color-primary: #17324D;
   --color-deep-blue: #10273B;
   --color-gold: #B89C72;
@@ -15,11 +15,11 @@
   --color-accent: #2A4C6E;
   --gradient-light: linear-gradient(145deg, #FFFFFF 0%, #F7F4ED 100%);
 
-  /* Типографика */
+  /* РўРёРїРѕРіСЂР°С„РёРєР° */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Merriweather', 'Georgia', serif;
 
-  /* Тени и эффекты (Современность) */
+  /* РўРµРЅРё Рё СЌС„С„РµРєС‚С‹ (РЎРѕРІСЂРµРјРµРЅРЅРѕСЃС‚СЊ) */
   --shadow-sm: 0 4px 12px rgba(23, 50, 77, 0.04);
   --shadow-md: 0 12px 24px rgba(23, 50, 77, 0.08);
   --shadow-hover: 0 20px 40px rgba(23, 50, 77, 0.12);
@@ -340,22 +340,25 @@ h4 { font-size: 1.25rem; }
   will-change: transform, box-shadow;
   transform: translateZ(0);
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease !important;
+  cursor: pointer;
 }
 .related-service-card:hover {
   transform: translateY(-6px) translateZ(0) !important;
   box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
-}
-.related-service-card .card-arrow svg {
-  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.related-service-card:hover .card-arrow svg {
-  transform: translateX(6px);
+  border-color: rgba(23, 50, 77, 0.25) !important;
 }
 .related-service-card .card-arrow {
-  transition: color 0.35s ease;
+  transition: color 0.35s ease, transform 0.35s ease !important;
 }
 .related-service-card:hover .card-arrow {
-  color: var(--color-gold-text) !important;
+  color: var(--color-gold) !important;
+}
+.related-service-card .card-arrow svg {
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), stroke 0.35s ease !important;
+}
+.related-service-card:hover .card-arrow svg {
+  transform: translateX(6px) !important;
+  stroke: var(--color-gold) !important;
 }
 
 .border-red {
@@ -591,7 +594,7 @@ h4 { font-size: 1.25rem; }
   }
 }
 
-/* Custom Grid for "Другие вопросы" section to handle responsive reordering */
+/* Custom Grid for "Р”СЂСѓРіРёРµ РІРѕРїСЂРѕСЃС‹" section to handle responsive reordering */
 .remote-help-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -755,7 +758,7 @@ h4 { font-size: 1.25rem; }
   gap: 30px;
   scroll-snap-type: x mandatory;
   padding-bottom: 20px;
-  /* Скрываем стандартный скроллбар для эстетики */
+  /* РЎРєСЂС‹РІР°РµРј СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ СЃРєСЂРѕР»Р»Р±Р°СЂ РґР»СЏ СЌСЃС‚РµС‚РёРєРё */
   scrollbar-width: none; 
 }
 .carousel-container::-webkit-scrollbar {
@@ -1332,7 +1335,7 @@ h4 { font-size: 1.25rem; }
   }
 }
 
-/* Отчётливый клавиатурный фокус */
+/* РћС‚С‡С‘С‚Р»РёРІС‹Р№ РєР»Р°РІРёР°С‚СѓСЂРЅС‹Р№ С„РѕРєСѓСЃ */
 input:focus-visible,
 textarea:focus-visible,
 button:focus-visible,

@@ -665,7 +665,7 @@ export default function OsparivanieVinyClient() {
       {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
-        subtitle="Прозрачный пошаговый процесс от первичного анализа материалов аварии до судебного решения."
+        subtitle={<><span style={{ display: 'inline-block' }}>Прозрачный пошаговый процесс от первичного анализа материалов аварии</span> <br /><span style={{ display: 'inline-block' }}>до судебного решения.</span></>}
         alignTitle="center"
         steps={[
           {

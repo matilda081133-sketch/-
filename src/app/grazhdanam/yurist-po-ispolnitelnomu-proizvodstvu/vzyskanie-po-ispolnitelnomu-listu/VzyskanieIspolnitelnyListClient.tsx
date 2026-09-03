@@ -841,7 +841,7 @@ export default function VzyskanieIspolnitelnyListClient() {
       {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит взыскание по исполнительному листу"
-        subtitle="Прозрачный пошаговый процесс от первичного аудита документа до фактического зачисления средств."
+        subtitle={<><span style={{ display: 'inline-block' }}>Прозрачный пошаговый процесс от первичного аудита документа</span> <br /><span style={{ display: 'inline-block' }}>до фактического зачисления средств.</span></>}
         alignTitle="center"
         steps={[
           {

@@ -775,7 +775,7 @@ export default function SnyatieArestaSchetaClient() {
       {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит снятие ареста со счёта"
-        subtitle="Прозрачный пошаговый процесс от первичного анализа до фактического восстановления доступа к деньгам."
+        subtitle={<><span style={{ display: 'inline-block' }}>Прозрачный пошаговый процесс от первичного анализа</span> <br /><span style={{ display: 'inline-block' }}>до фактического восстановления доступа к деньгам.</span></>}
         alignTitle="center"
         steps={[
           {

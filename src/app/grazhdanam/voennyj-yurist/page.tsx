@@ -455,13 +455,13 @@ export default function VoennyjYuristPage() {
                   <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-white)', lineHeight: 1.3 }}>
                     Не нашли свою ситуацию?
                   </h3>
-                  <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>
-                    Кратко опишите обстоятельства — мы изучим вопрос и подскажем, какой специалист сможет помочь.
+                  <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.55 }}>
+                    Опишите ваш военный вопрос в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
                   </p>
                 </div>
                 <div>
                   <a href="#form" className="btn white-btn-custom" style={{ display: 'inline-block', width: '100%', textAlign: 'center', fontSize: '14px', padding: '12px 20px' }}>
-                    Описать ситуацию
+                    Обсудить ситуацию
                   </a>
                 </div>
               </div>

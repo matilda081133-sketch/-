@@ -247,42 +247,23 @@ export default function TrudovojClient() {
 
   const directions = [
     {
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Незаконное</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>увольнение и восстановление</span>
-        </>
-      ),
-      desc: 'Помощь, если Вас уволили без законного основания, с нарушением процедуры либо вынуждают уйти по собственному желанию.',
+      title: 'Незаконное увольнение',
+      desc: 'Оспаривание увольнения по статье, за прогул, принуждения к уходу и восстановление на работе.',
       link: '/grazhdanam/trudovoj-yurist/nezakonnoe-uvolnenie/'
     },
     {
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскание</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>заработной платы и выплат</span>
-        </>
-      ),
-      desc: 'Взыскание задолженности по зарплате, расчета при увольнении, отпускных, премий, компенсаций и других причитающихся сумм.',
+      title: 'Взыскание заработной платы',
+      desc: 'Взыскание задолженности, расчетных выплат, отпускных и компенсации по ст. 236 ТК РФ.',
       link: '/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/'
     },
     {
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Незаконное</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>сокращение</span>
-        </>
-      ),
-      desc: 'Проверка процедуры сокращения, предложенных вакансий, преимущественного права и полноты выплат работнику.',
+      title: 'Незаконное сокращение',
+      desc: 'Защита при сокращении штата: преимущественное право, предложение вакансий и выплаты.',
       link: '/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/'
     },
     {
-      title: (
-        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-          Производственная травма
-        </span>
-      ),
-      desc: 'Помощь с расследованием несчастного случая, оформлением документов, обжалованием выводов комиссии и получением положенных выплат.',
+      title: 'Производственная травма',
+      desc: 'Расследование несчастного случая, акт Н-1, страховые выплаты и компенсация вреда.',
       link: '/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/'
     }
   ];
@@ -589,7 +570,7 @@ export default function TrudovojClient() {
 
           <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
             {directions.map((dir, i) => (
-              <a key={i} href={dir.link} style={{ textDecoration: 'none', display: 'block' }}>
+              <a key={i} href={dir.link} style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', height: '100%' }}>
                 <div
                   className="card service-card"
                   style={{
@@ -601,18 +582,21 @@ export default function TrudovojClient() {
                     borderRadius: '0',
                     display: 'flex',
                     flexDirection: 'column',
+                    justifyContent: 'space-between',
                     transition: 'all 0.3s',
                     position: 'relative',
                     borderTop: '3px solid var(--color-primary)'
                   }}
                 >
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
-                    {dir.title}
-                  </h3>
-                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                    {dir.desc}
-                  </p>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  <div>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
+                      {dir.title}
+                    </h3>
+                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      {dir.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', transition: 'transform 0.3s' }}>
                     Подробнее
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -623,49 +607,67 @@ export default function TrudovojClient() {
               </a>
             ))}
 
-            {/* БЛОК 5: НЕ НАШЛИ СВОЮ СИТУАЦИЮ? (3-я карточка во 2-й строке) */}
-            <div style={{ gridColumn: 'span 2' }}>
-              <div
-                className="card service-card"
-                style={{
-                  height: '100%',
-                  minHeight: '180px',
-                  padding: '30px',
-                  background: 'var(--color-deep-blue)',
-                  border: '1px solid transparent',
-                  borderRadius: '0',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  gap: '20px',
-                  transition: 'all 0.3s',
-                  position: 'relative',
-                  borderTop: '3px solid var(--color-gold)'
-                }}
-              >
-                <div>
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-white)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                    Не нашли свою ситуацию?
-                  </h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.55, maxWidth: '600px' }}>
-                    Кратко опишите, что произошло. Юрист изучит обстоятельства и подскажет, относится ли вопрос к трудовому спору и с каких действий лучше начать.
-                  </p>
-                </div>
-                <div style={{ marginTop: 'auto' }}>
-                  <a
-                    href="#form"
-                    className="btn btn-gold"
-                    style={{
-                      display: 'inline-block',
-                      padding: '12px 28px',
-                      fontSize: '14px',
-                      fontWeight: 600,
-                      textDecoration: 'none'
-                    }}
-                  >
-                    Описать ситуацию
-                  </a>
-                </div>
+            {/* Карточка: «Не нашли свою ситуацию?» */}
+            <div 
+              className="card service-card service-card-span-2" 
+              style={{ 
+                padding: '32px 36px', 
+                background: 'var(--color-deep-blue)', 
+                border: '1px solid transparent',
+                borderRadius: '0',
+                display: 'flex', 
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '28px',
+                transition: 'all 0.3s',
+                position: 'relative',
+                borderTop: '3px solid var(--color-gold)',
+                boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)'
+              }}
+            >
+              <style dangerouslySetInnerHTML={{ __html: `
+                .service-card-span-2 {
+                  grid-column: span 2;
+                }
+                @media (max-width: 991px) {
+                  .service-card-span-2 {
+                    grid-column: span 1 !important;
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                  }
+                }
+                .white-btn-custom {
+                  background-color: var(--color-white) !important;
+                  color: #10273B !important;
+                  border: 1px solid var(--color-white) !important;
+                  white-space: nowrap;
+                  font-weight: 600;
+                  padding: 14px 28px !important;
+                  transition: all 0.3s ease !important;
+                }
+                .white-btn-custom:hover {
+                  background-color: var(--color-primary) !important;
+                  color: var(--color-white) !important;
+                  border-color: var(--color-primary) !important;
+                }
+              `}} />
+              <div style={{ flex: '1 1 300px' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                  Не нашли свою ситуацию?
+                </h3>
+                <p style={{ margin: '0', fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.55, maxWidth: '580px' }}>
+                  Опишите ваш трудовой вопрос в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
+                </p>
+              </div>
+              <div style={{ flexShrink: 0 }}>
+                <a 
+                  href="#form" 
+                  className="btn white-btn-custom" 
+                  style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
+                >
+                  Обсудить ситуацию
+                </a>
               </div>
             </div>
           </div>

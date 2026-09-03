@@ -699,8 +699,7 @@ export default function MigracionnyjClient() {
                     Не нашли свою ситуацию?
                   </h3>
                   <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
-                    <span style={{ display: 'inline-block' }}>Кратко опишите, что произошло и на какой стадии находится вопрос.</span> <br />
-                    <span style={{ display: 'inline-block' }}>Адвокат изучит обстоятельства и предложит законный порядок действий.</span>
+                    Опишите ваш миграционный вопрос в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
                   </p>
                 </div>
                 <div style={{ flexShrink: 0 }}>
@@ -716,7 +715,7 @@ export default function MigracionnyjClient() {
                       borderRadius: '0'
                     }}
                   >
-                    Описать ситуацию
+                    Обсудить ситуацию
                   </a>
                 </div>
               </div>

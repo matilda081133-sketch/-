@@ -367,7 +367,7 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
       {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
-        subtitle="Прозрачный пошаговый процесс от первичного анализа материалов до контроля исполнения решения."
+        subtitle={<><span style={{ display: 'inline-block' }}>Прозрачный пошаговый процесс от первичного анализа материалов</span> <br /><span style={{ display: 'inline-block' }}>до контроля исполнения решения.</span></>}
         alignTitle="center"
         steps={[
           {

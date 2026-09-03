@@ -775,7 +775,7 @@ export default function VozvratDenegClient() {
       {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит работа по возврату денег"
-        subtitle="Прозрачный пошаговый процесс от анализа выписки до зачисления денег на ваш банковский счёт."
+        subtitle={<><span style={{ display: 'inline-block' }}>Прозрачный пошаговый процесс от анализа выписки</span> <br /><span style={{ display: 'inline-block' }}>до зачисления денег на ваш банковский счёт.</span></>}
         alignTitle="center"
         steps={[
           {

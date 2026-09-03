@@ -484,36 +484,69 @@ export default function AvtoyuristClient() {
               </a>
             ))}
 
-            {/* Карточка 8: Не нашли свою ситуацию? */}
-            <Link href="#form" style={{ textDecoration: 'none', color: 'inherit', display: 'flex' }} data-analytics="cta_click">
-              <div className="hover-lift service-card-smooth" style={{
-                background: 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)',
-                padding: '26px 24px',
-                border: '1px solid var(--color-border)',
-                borderTop: '4px solid var(--color-gold)',
-                boxShadow: '0 8px 24px rgba(11, 28, 42, 0.25)',
-                display: 'flex',
-                flexDirection: 'column',
+            {/* Карточка 8: «Не нашли свою ситуацию?», занимающая доступное пространство в строке с 7-й картой */}
+            <div 
+              className="card service-card service-card-span-2" 
+              style={{ 
+                padding: '32px 36px', 
+                background: 'var(--color-deep-blue)', 
+                border: '1px solid transparent',
+                borderRadius: '0',
+                display: 'flex', 
+                flexDirection: 'row',
+                alignItems: 'center',
                 justifyContent: 'space-between',
+                gap: '28px',
+                transition: 'all 0.3s',
                 position: 'relative',
-                width: '100%',
-                cursor: 'pointer'
-              }}>
-                <div>
-                  <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 10px 0', lineHeight: 1.35 }}>
-                    <span style={{ display: 'block' }}>Не нашли свою</span>
-                    <span style={{ display: 'block' }}>ситуацию?</span>
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55, margin: 0 }}>
-                    Опишите обстоятельства — юрист изучит вопрос и подскажет, с чего начать.
-                  </p>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px' }}>
-                  <span>Обсудить</span>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
+                borderTop: '3px solid var(--color-gold)',
+                boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)'
+              }}
+            >
+              <style dangerouslySetInnerHTML={{ __html: `
+                .service-card-span-2 {
+                  grid-column: span 2;
+                }
+                @media (max-width: 991px) {
+                  .service-card-span-2 {
+                    grid-column: span 1 !important;
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                  }
+                }
+                .white-btn-custom {
+                  background-color: var(--color-white) !important;
+                  color: #10273B !important;
+                  border: 1px solid var(--color-white) !important;
+                  white-space: nowrap;
+                  font-weight: 600;
+                  padding: 14px 28px !important;
+                  transition: all 0.3s ease !important;
+                }
+                .white-btn-custom:hover {
+                  background-color: var(--color-primary) !important;
+                  color: var(--color-white) !important;
+                  border-color: var(--color-primary) !important;
+                }
+              `}} />
+              <div style={{ flex: '1 1 300px' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                  Не нашли свою ситуацию?
+                </h3>
+                <p style={{ margin: '0', fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.55, maxWidth: '580px' }}>
+                  Опишите ваш автомобильный вопрос в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
+                </p>
               </div>
-            </Link>
+              <div style={{ flexShrink: 0 }}>
+                <a 
+                  href="#form" 
+                  className="btn white-btn-custom" 
+                  style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
+                >
+                  Обсудить ситуацию
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -575,7 +608,7 @@ export default function AvtoyuristClient() {
       {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
-        subtitle="Прозрачный пошаговый процесс от первичного анализа материалов до исполнения решения."
+        subtitle={<><span style={{ display: 'inline-block' }}>Прозрачный пошаговый процесс от первичного анализа материалов</span> <br /><span style={{ display: 'inline-block' }}>до исполнения решения.</span></>}
         alignTitle="center"
         steps={[
           {

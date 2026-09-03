@@ -378,7 +378,7 @@ export default function IspolnitelnoeClient() {
             <span style={{ display: 'inline-block' }}>Выберите направление, наиболее близкое к&nbsp;вашей задаче.</span> <br />
             <span style={{ display: 'inline-block' }}>Если ситуация затрагивает оба — опишите её в&nbsp;форме.</span>
           </p>
-          <div className="grid grid-2" style={{ gap: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             <a href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
               <div className="card service-card" style={{ height: '100%', minHeight: '210px', padding: '28px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '3px solid var(--color-primary)', cursor: 'pointer', transition: 'all 0.35s ease' }}>
                 <div>
@@ -411,6 +411,54 @@ export default function IspolnitelnoeClient() {
                 </div>
               </div>
             </a>
+            {/* 3-я карточка: Не нашли свою ситуацию? */}
+            <div 
+              className="card service-card hover-lift" 
+              style={{ 
+                height: '100%', 
+                minHeight: '210px',
+                padding: '28px', 
+                background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)', 
+                border: '1px solid var(--color-deep-blue)',
+                borderRadius: '0',
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between',
+                transition: 'all 0.3s',
+                position: 'relative',
+                borderTop: '3px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(11, 28, 42, 0.15)',
+                boxSizing: 'border-box'
+              }}
+            >
+              <div>
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.35 }}>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не нашли</span>{' '}
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55 }}>
+                  Опишите ваш вопрос по исполнительному производству в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
+                </p>
+              </div>
+              <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                <a 
+                  href="#form" 
+                  className="btn btn-gold" 
+                  style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    width: '100%',
+                    textAlign: 'center',
+                    fontSize: '14px', 
+                    padding: '12px 20px', 
+                    borderRadius: 0 
+                  }}
+                >
+                  Обсудить ситуацию
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
