@@ -366,7 +366,15 @@ export default function TrudovyeSporyB2BClient() {
         superTitle="Помощь работодателям в Липецке и области"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Трудовые споры</span> <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с работниками в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Трудовые споры
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              с работниками
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              в Липецке
+            </span>
           </span>
         }
         subtitle={
@@ -407,73 +415,7 @@ export default function TrudovyeSporyB2BClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: "inline-block" }}>Когда работодателю стоит</span> <br /><span style={{ display: "inline-block" }}>подключить трудового юриста</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Чем раньше проверены основания, документы и последовательность действий, тем больше возможностей снизить риск спора, восстановления работника, выплат и санкций.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '28px' }}>
-            {situations.map((sit, i) => (
-              <div
-                key={i}
-                className="hover-lift"
-                style={{
-                  padding: '36px 30px',
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  transition: 'all 0.3s ease'
-                }}
-              >
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                  </svg>
-                </div>
-                {sit.tag && (
-                  <div style={{
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    color: 'var(--color-gold)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    marginBottom: '12px',
-                    background: 'rgba(193, 160, 102, 0.1)',
-                    padding: '4px 10px',
-                    alignSelf: 'flex-start'
-                  }}>
-                    {sit.tag}
-                  </div>
-                )}
-
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0' }}>
-                  {sit.title}
-                </h3>
-
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
-                  {sit.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      
-
-      {/* ═══ БЛОК НАПРАВЛЕНИЙ / СВЯЗАННЫХ УСЛУГ ═══ */}
-      <section id="directions" className="section" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Направления помощи</span>
+              <span style={{ display: "inline-block" }}>Направления помощи</span> <br /><span style={{ display: "inline-block" }}>по трудовым спорам</span> <br /><span style={{ display: "inline-block" }}>для бизнеса</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Подключаемся на стадии подготовки кадрового решения, досудебного конфликта, проверки или судебного разбирательства. Выберите ситуацию, чтобы увидеть порядок и объём помощи.

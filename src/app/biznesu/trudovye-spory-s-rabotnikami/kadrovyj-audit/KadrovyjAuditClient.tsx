@@ -328,7 +328,15 @@ export default function KadrovyjAuditClient() {
         superTitle="Помощь работодателям в Липецке и области"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Кадровый аудит</span> <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>организации в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Кадровый аудит
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              и проверка документов
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              в Липецке
+            </span>
           </span>
         }
         subtitle={
@@ -369,7 +377,7 @@ export default function KadrovyjAuditClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: "inline-block" }}>Когда компании необходим</span> <br /><span style={{ display: "inline-block" }}>кадровый аудит</span>
+              <span style={{ display: "inline-block" }}>Когда компании</span> <br /><span style={{ display: "inline-block" }}>необходим аудит</span> <br /><span style={{ display: "inline-block" }}>кадровых документов</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Своевременный аудит позволяет выявить системные ошибки в кадровом учете и локальных актах до того, как они повлекут штрафы или претензии работников.

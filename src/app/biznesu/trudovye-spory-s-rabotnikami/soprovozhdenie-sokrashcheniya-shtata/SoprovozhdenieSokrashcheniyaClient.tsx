@@ -327,7 +327,15 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
         superTitle="Помощь работодателям в Липецке и области"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сопровождение сокращения</span> <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>штата в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Сопровождение
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              сокращения штата
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              в Липецке
+            </span>
           </span>
         }
         subtitle={
@@ -368,7 +376,7 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: "inline-block" }}>Когда компании необходимо</span> <br /><span style={{ display: "inline-block" }}>юридическое сопровождение</span>
+              <span style={{ display: "inline-block" }}>Когда компании</span> <br /><span style={{ display: "inline-block" }}>требуется сопровождение</span> <br /><span style={{ display: "inline-block" }}>сокращения штата</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Сокращение численности или штата — одна из наиболее строго регламентированных процедур ТК РФ. Любое процедурное упущение ведет к восстановлению сотрудников в суде.

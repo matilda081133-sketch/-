@@ -327,7 +327,15 @@ export default function VzyskanieUshcherbaB2BClient() {
         superTitle="Помощь работодателям в Липецке и области"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Взыскание материального</span> <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>ущерба с работника</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Взыскание ущерба
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              с работника компании
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              в Липецке
+            </span>
           </span>
         }
         subtitle={
@@ -368,7 +376,7 @@ export default function VzyskanieUshcherbaB2BClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: "inline-block" }}>В каких ситуациях</span> <br /><span style={{ display: "inline-block" }}>мы помогаем работодателю</span>
+              <span style={{ display: "inline-block" }}>В каких ситуациях</span> <br /><span style={{ display: "inline-block" }}>взыскивается ущерб</span> <br /><span style={{ display: "inline-block" }}>с сотрудника компании</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Соблюдение процедуры проверки по ТК РФ — главное условие успешного взыскания ущерба. Любое нарушение правил инвентаризации или истребования объяснений лишает компанию шансов в суде.
