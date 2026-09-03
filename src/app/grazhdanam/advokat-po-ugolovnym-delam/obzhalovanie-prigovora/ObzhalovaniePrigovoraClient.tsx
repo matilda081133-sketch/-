@@ -480,53 +480,82 @@ export default function ObzhalovaniePrigovoraClient() {
           </div>
         </section>
 
-        {/* 3. Ситуации, в которых нужна помощь */}
+        {/* 3. С какими ситуациями мы помогаем гражданам (ТИПОВОЙ ШАБЛОН) */}
         <section className="section bg-white" style={{ padding: '80px 0' }}>
           <div className="container">
             <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
               <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-                <span style={{ display: "inline-block" }}>Ситуации, в которых</span> <br /><span style={{ display: "inline-block" }}>необходима помощь</span> <br /><span style={{ display: "inline-block" }}>адвоката</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>С какими ситуациями</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы помогаем гражданам</span>
               </h2>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-                Оценим фактические обстоятельства, определим срочность и предложим оптимальный алгоритм действий.
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+                Оценим фактические обстоятельства, определим срочность и подскажем правильный порядок дальнейших действий.
               </p>
             </div>
 
-            <div className="grid grid-3" style={{ gap: '24px' }}>
-              {situations.map((sit, idx) => (
+            <div className="grid grid-3" style={{ gap: '28px' }}>
+              {situations.map((item, i) => (
                 <div
-                  key={idx}
+                  key={i}
                   className="hover-lift"
                   style={{
-                    padding: '30px 24px',
+                    padding: '36px 30px',
                     background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                     border: '1px solid var(--color-border)',
                     borderTop: '3px solid var(--color-primary)',
-                    boxShadow: '0 4px 16px rgba(16, 39, 59, 0.04)',
+                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                     display: 'flex',
-                    flexDirection: 'column'
+                    flexDirection: 'column',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease'
                   }}
                 >
-                  {sit.tag && (
+                  <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                  </div>
+
+                  {item.tag && (
                     <div style={{
-                      fontSize: '11px',
+                      fontSize: '12px',
                       fontWeight: 700,
                       color: 'var(--color-gold)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.08em',
-                      marginBottom: '10px',
+                      marginBottom: '14px',
                       background: 'rgba(193, 160, 102, 0.1)',
-                      padding: '3px 8px',
-                      alignSelf: 'flex-start'
+                      padding: '4px 10px',
+                      alignSelf: 'flex-start',
+                      position: 'relative',
+                      zIndex: 1
                     }}>
-                      {sit.tag}
+                      {item.tag}
                     </div>
                   )}
-                  <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.35, margin: '0 0 10px 0' }}>
-                    {sit.title}
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '17px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35,
+                    minHeight: '44px',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.title}
                   </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                    {sit.desc}
+                  <p style={{
+                    color: 'var(--color-text-secondary)',
+                    fontSize: '14px',
+                    lineHeight: 1.6,
+                    margin: 0,
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.desc}
                   </p>
                 </div>
               ))}
@@ -539,7 +568,8 @@ export default function ObzhalovaniePrigovoraClient() {
           <div className="container">
             <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
               <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-                <span style={{ display: "inline-block" }}>Выберите свой статус</span> <br /><span style={{ display: "inline-block" }}>в текущей ситуации</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Выберите свой статус</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в текущей ситуации</span>
               </h2>
               <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
                 Задачи и порядок взаимодействия существенно отличаются для обвиняемых, их родственников и потерпевших.
@@ -583,7 +613,8 @@ export default function ObzhalovaniePrigovoraClient() {
           <div className="container">
             <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
               <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-                <span style={{ display: "inline-block" }}>Что входит в работу,</span> <br /><span style={{ display: "inline-block" }}>а что оценивается отдельно</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что входит в работу,</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>а что оценивается отдельно</span>
               </h2>
             </div>
 
@@ -655,7 +686,8 @@ export default function ObzhalovaniePrigovoraClient() {
           <div className="container">
             <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
               <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-                <span style={{ display: "inline-block" }}>Возможные правовые</span> <br /><span style={{ display: "inline-block" }}>маршруты защиты</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Возможные правовые</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>маршруты защиты</span>
               </h2>
             </div>
 
@@ -766,7 +798,7 @@ export default function ObzhalovaniePrigovoraClient() {
           <div className="container">
             <div style={{ maxWidth: '780px', marginBottom: '32px', textAlign: 'left' }}>
               <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '14px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-                <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Смежные услуги направления</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Смежные услуги направления</span>
               </h2>
               <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
                 Если ситуация затрагивает другие составы или процедуры, подключаем смежные услуги практики уголовного права.
