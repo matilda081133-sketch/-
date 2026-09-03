@@ -604,10 +604,15 @@ export default function IsklyuchenieIzReestraKontroliruemyhLicClient() {
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и смежные услуги</span>
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              В миграционных делах процедуры часто взаимосвязаны. Ознакомьтесь с правовыми решениями для сопутствующих задач:
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                В миграционных делах процедуры часто взаимосвязаны.
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Ознакомьтесь с правовыми решениями для сопутствующих задач:
+              </span>
             </p>
           </div>
-          <div className="grid grid-4" style={{ gap: '20px' }}>
+          <div className="grid grid-4" style={{ gap: '20px', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))' }}>
 
             <a href="/grazhdanam/migracionnyj-yurist/otmena-zapreta-na-vezd-v-rossiyu/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
               <div className="card related-service-card hover-lift" style={{ height: '100%', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>

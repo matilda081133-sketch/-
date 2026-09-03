@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -306,18 +306,40 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
           {/* Плашка: Сроки обжалования и меры предварительной защиты */}
           <div style={{
             marginTop: '36px',
-            background: 'var(--color-white)',
-            padding: '24px 28px',
-            border: '1px solid var(--color-border)',
+            background: 'linear-gradient(145deg, #FBF9F5 0%, #F4EFE6 100%)',
+            border: '1px solid rgba(184, 156, 114, 0.4)',
             borderLeft: '4px solid var(--color-gold)',
-            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)'
+            padding: '24px 28px',
+            boxShadow: '0 8px 24px rgba(23, 50, 77, 0.06)',
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '18px'
           }}>
-            <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>
-              Сроки обжалования и меры предварительной защиты
-            </h3>
-            <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, lineHeight: 1.6 }}>
-              Для обращения в суд обычно применяется трёхмесячный срок со дня, когда человек узнал или должен был узнать о нарушении права, если специальная норма не устанавливает иное. Жалоба в ведомство и административный иск сами по себе не приостанавливают последствия решения. При риске срочного исполнения отдельно оцениваются меры предварительной защиты.
-            </p>
+            <div style={{
+              width: '40px',
+              height: '40px',
+              minWidth: '40px',
+              borderRadius: '50%',
+              background: 'rgba(193, 160, 102, 0.15)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'var(--color-gold-text)',
+              marginTop: '2px'
+            }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div>
+              <h3 style={{ margin: '0 0 8px 0', fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
+                Сроки обжалования и меры предварительной защиты
+              </h3>
+              <p style={{ margin: 0, fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, lineHeight: 1.6 }}>
+                Для обращения в суд обычно применяется трёхмесячный срок со дня, когда человек узнал или должен был узнать о нарушении права, если специальная норма не устанавливает иное. Жалоба в ведомство и административный иск сами по себе не приостанавливают последствия решения. При риске срочного исполнения отдельно оцениваются меры предварительной защиты.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -434,7 +456,12 @@ export default function ObzhalovanieNezhelatelnostiPrebyvaniyaClient() {
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и смежные услуги</span>
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              В миграционных делах процедуры часто взаимосвязаны. Ознакомьтесь с правовыми решениями для сопутствующих задач:
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                В миграционных делах процедуры часто взаимосвязаны.
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Ознакомьтесь с правовыми решениями для сопутствующих задач:
+              </span>
             </p>
           </div>
           <div className="grid grid-3" style={{ gap: '20px' }}>

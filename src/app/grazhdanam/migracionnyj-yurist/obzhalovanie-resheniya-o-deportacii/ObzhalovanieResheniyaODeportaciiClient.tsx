@@ -498,7 +498,12 @@ export default function ObzhalovanieResheniyaODeportaciiClient() {
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и смежные услуги</span>
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              В миграционных делах процедуры часто взаимосвязаны. Ознакомьтесь с правовыми решениями для сопутствующих задач:
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                В миграционных делах процедуры часто взаимосвязаны.
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Ознакомьтесь с правовыми решениями для сопутствующих задач:
+              </span>
             </p>
           </div>
           <div className="grid grid-3" style={{ gap: '20px' }}>
