@@ -437,6 +437,192 @@ export default function ProizvodstvennayaTravmaClient() {
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы помогаем</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Окажем правовую помощь на любой стадии: от фиксации несчастного случая до взыскания компенсаций за причиненный вред здоровью.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
+            {situations.map((sit, i) => (
+              <div
+                key={i}
+                className="hover-lift"
+                style={{
+                  padding: '36px 30px',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                {/* Фоновый декоративный вектор как в шаблоне */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start'
+                }}>
+                  {sit.tag}
+                </div>
+
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                  {sit.title}
+                </h3>
+
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
+                  {sit.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block' }}>
+              Получить оценку ситуации
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 3: ЧЕМ ПОМОЖЕТ ЮРИСТ (ШАБЛОННЫЙ С НУМЕРАЦИЕЙ) ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Чем поможет юрист</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>при производственной травме</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Защитим права пострадавшего работника: от надлежащего расследования несчастного случая до полного взыскания компенсаций и страховых выплат.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative', marginBottom: '32px' }}>
+            {[
+              {
+                num: '01',
+                title: [
+                  'Анализ обстоятельств',
+                  'несчастного случая'
+                ],
+                desc: 'Устанавливаем связь травмы с выполнением трудовых обязанностей и соблюдение работодателем ст. 227-231 ТК РФ.'
+              },
+              {
+                num: '02',
+                title: [
+                  'Контроль расследования',
+                  'и акта формы Н-1'
+                ],
+                desc: 'Участвуем в расследовании комиссии, добиваемся составления формы Н-1 и исключения необоснованной вины работника.'
+              },
+              {
+                num: '03',
+                title: [
+                  'Оспаривание сокрытия',
+                  'травмы работодателем'
+                ],
+                desc: 'Инициируем проверку ГИТ и прокуратуры при попытках работодателя оформить травму как «бытовую».'
+              },
+              {
+                num: '04',
+                title: [
+                  'Расчет ущерба',
+                  'и морального вреда'
+                ],
+                desc: 'Рассчитываем утраченный заработок, расходы на лечение, реабилитацию и размер компенсации морального вреда.'
+              },
+              {
+                num: '05',
+                title: [
+                  'Судебное взыскание',
+                  'всех компенсаций'
+                ],
+                desc: 'Защищаем права пострадавшего в суде Липецка против работодателя и Социального фонда России.'
+              },
+              {
+                num: '06',
+                title: [
+                  'Контроль страховых',
+                  'выплат (125-ФЗ)'
+                ],
+                desc: 'Сопровождаем получение единовременных и ежемесячных страховых выплат по закону № 125-ФЗ.'
+              }
+            ].map((item, index) => (
+              <div 
+                key={index}
+                className="hover-lift"
+                style={{
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
+                }}
+              >
+                <div style={{
+                  fontSize: '18px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  fontFamily: 'var(--font-serif)',
+                  marginBottom: '12px'
+                }}>
+                  {item.num}
+                </div>
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '17px',
+                  fontWeight: 600,
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 12px 0',
+                  lineHeight: 1.35,
+                  minHeight: '46px'
+                }}>
+                  {item.title.map((line, idx) => (
+                    <span key={idx} className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                      {line}
+                    </span>
+                  ))}
+                </h3>
+                <p style={{
+                  fontSize: '14.5px',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.6,
+                  margin: 0
+                }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 4: ЧТО ПОДГОТОВИТЬ ДЛЯ КОНСУЛЬТАЦИИ (2 КАРТОЧКИ) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, whiteSpace: 'nowrap' }}>
               Что подготовить для консультации
             </h2>
