@@ -567,11 +567,11 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК НАПРАВЛЕНИЙ / СМЕЖНЫХ УСЛУГ ═══ */}
-      <section id="directions" className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 9: СМЕЖНЫЕ УСЛУГИ НАПРАВЛЕНИЯ (СТРОГИЙ ШАБЛОН) ═══ */}
+      <section id="directions" className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+          <div style={{ maxWidth: '780px', marginBottom: '36px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '14px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
               <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Смежные услуги направления</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
@@ -579,29 +579,29 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '20px' }}>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
             {directions.map((dir, i) => (
               <a key={i} href={dir.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                 <div
-                  className="card service-card hover-lift"
+                  className="card related-service-card hover-lift"
                   style={{
                     height: '100%',
-                    minHeight: '220px',
+                    minHeight: '200px',
                     padding: '28px',
                     background: 'var(--color-white)',
                     border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-primary)',
                     borderRadius: '0',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     position: 'relative',
-                    borderTop: '3px solid var(--color-primary)',
                     cursor: 'pointer',
                     transition: 'all 0.35s ease'
                   }}
                 >
                   <div>
-                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.35 }}>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontWeight: 600 }}>
                       {dir.title}
                     </h3>
                     <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
@@ -618,60 +618,58 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
                 </div>
               </a>
             ))}
+          </div>
 
-            {/* 4-я карточка: Не нашли свою ситуацию? */}
-            <div 
-              className="card service-card hover-lift" 
-              style={{ 
-                height: '100%', 
-                minHeight: '220px',
-                padding: '28px', 
-                background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)', 
-                border: '1px solid var(--color-deep-blue)',
-                borderRadius: '0',
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between',
-                transition: 'all 0.3s',
-                position: 'relative',
-                borderTop: '3px solid var(--color-gold)',
-                boxShadow: '0 4px 20px rgba(11, 28, 42, 0.15)',
-                boxSizing: 'border-box'
-              }}
-            >
-              <div>
-                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.35 }}>
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Не нашли</span>{' '}
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
-                </h3>
-                <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55 }}>
-                  Опишите ваш трудовой вопрос в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
-                </p>
-              </div>
-              <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-                <a 
-                  href="#form" 
-                  className="btn btn-gold" 
-                  style={{ 
-                    display: 'inline-flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center', 
-                    width: '100%',
-                    padding: '12px 20px', 
-                    fontSize: '14px', 
-                    borderRadius: '0',
-                    textAlign: 'center',
-                    boxSizing: 'border-box'
-                  }}
-                >
-                  Обсудить ситуацию
-                </a>
-              </div>
+          {/* Баннер «Не нашли свою ситуацию?» */}
+          <div
+            style={{
+              background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+              padding: '36px 40px',
+              borderTop: '3px solid var(--color-gold)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '32px',
+              flexWrap: 'wrap',
+              boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+          >
+            <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
+              <svg width="120" height="120" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <div style={{ flex: '1 1 500px', minWidth: '280px', position: 'relative', zIndex: 1 }}>
+              <h3 style={{ margin: '0 0 8px 0', fontSize: '22px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
+                Не нашли свою ситуацию?
+              </h3>
+              <p style={{ margin: 0, fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+                Опишите ваш трудовой вопрос в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
+              </p>
+            </div>
+            <div style={{ flexShrink: 0, position: 'relative', zIndex: 1 }}>
+              <a
+                href="#form"
+                className="btn btn-gold"
+                style={{
+                  display: 'inline-block',
+                  textAlign: 'center',
+                  fontSize: '15px',
+                  padding: '14px 28px',
+                  fontWeight: 600,
+                  whiteSpace: 'nowrap',
+                  borderRadius: '0'
+                }}
+              >
+                Обсудить ситуацию
+              </a>
             </div>
           </div>
 
-          <div style={{ marginTop: '32px' }}>
-            <Link href="/biznesu/trudovye-spory-s-rabotnikami/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
+          <div style={{ marginTop: '28px' }}>
+            <Link href="/biznesu/trudovye-spory-s-rabotnikami/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
               Смотреть все услуги практики трудового права →
             </Link>
           </div>
