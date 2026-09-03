@@ -554,10 +554,10 @@ export default function KadrovyjAuditClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 9: СМЕЖНЫЕ УСЛУГИ НАПРАВЛЕНИЯ (СТРОГИЙ ШАБЛОН) ═══ */}
+      {/* ═══ БЛОК 9: СМЕЖНЫЕ УСЛУГИ НАПРАВЛЕНИЯ (ТОЧНЫЙ ШАБЛОН) ═══ */}
       <section id="directions" className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '36px', textAlign: 'left' }}>
+          <div style={{ maxWidth: '780px', marginBottom: '32px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '14px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
               <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Смежные услуги направления</span>
             </h2>
@@ -566,15 +566,15 @@ export default function KadrovyjAuditClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '20px' }}>
             {directions.map((dir, i) => (
               <a key={i} href={dir.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                 <div
                   className="card related-service-card hover-lift"
                   style={{
                     height: '100%',
-                    minHeight: '200px',
-                    padding: '28px',
+                    minHeight: '180px',
+                    padding: '24px',
                     background: 'var(--color-white)',
                     border: '1px solid var(--color-border)',
                     borderTop: '3px solid var(--color-primary)',
@@ -582,22 +582,20 @@ export default function KadrovyjAuditClient() {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    position: 'relative',
-                    cursor: 'pointer',
-                    transition: 'all 0.35s ease'
+                    transition: 'all 0.3s'
                   }}
                 >
                   <div>
-                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontWeight: 600 }}>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
                       {dir.title}
                     </h3>
-                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                       {dir.desc}
                     </p>
                   </div>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(23, 50, 77, 0.06)' }}>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: '16px', transition: 'color 0.35s ease' }}>
                     <span>Подробнее</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -605,54 +603,6 @@ export default function KadrovyjAuditClient() {
                 </div>
               </a>
             ))}
-          </div>
-
-          {/* Баннер «Не нашли свою ситуацию?» */}
-          <div
-            style={{
-              background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
-              padding: '36px 40px',
-              borderTop: '3px solid var(--color-gold)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '32px',
-              flexWrap: 'wrap',
-              boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)',
-              position: 'relative',
-              overflow: 'hidden'
-            }}
-          >
-            <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
-              <svg width="120" height="120" viewBox="0 0 24 24" fill="#FFFFFF">
-                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-              </svg>
-            </div>
-            <div style={{ flex: '1 1 500px', minWidth: '280px', position: 'relative', zIndex: 1 }}>
-              <h3 style={{ margin: '0 0 8px 0', fontSize: '22px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
-                Не нашли свою ситуацию?
-              </h3>
-              <p style={{ margin: 0, fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
-                Опишите ваш трудовой вопрос в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
-              </p>
-            </div>
-            <div style={{ flexShrink: 0, position: 'relative', zIndex: 1 }}>
-              <a
-                href="#form"
-                className="btn btn-gold"
-                style={{
-                  display: 'inline-block',
-                  textAlign: 'center',
-                  fontSize: '15px',
-                  padding: '14px 28px',
-                  fontWeight: 600,
-                  whiteSpace: 'nowrap',
-                  borderRadius: '0'
-                }}
-              >
-                Обсудить ситуацию
-              </a>
-            </div>
           </div>
 
           <div style={{ marginTop: '28px' }}>
