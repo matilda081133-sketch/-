@@ -486,6 +486,71 @@ export default function KadrovyjAuditClient() {
       </section>
       
 
+      {/* ═══ БЛОК: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
+      <SpecialistBlock 
+        title="Куратор направления"
+        name="Марина Валерьевна Смольянинова"
+        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Трудовые споры с работниками»</>}
+        imageUrl="/images/smolyaninova.jpg"
+        imagePosition="50% -75px"
+        profileHref="/specialisty/smolyaninova-marina-valerevna/"
+        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Марина Валерьевна курирует обращения работодателей по трудовым спорам: проводит первичную правовую оценку, определяет необходимые документы и последовательность действий, готовит позицию для переговоров, взаимодействия с государственными органами и судебной защиты.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>2005 год — окончила Институт международного права и экономики имени А. С. Грибоедова</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Более 13 лет работы в Федеральной службе судебных приставов, включая руководящие должности</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Более 5 лет юридической практики с представительством организаций в судах и государственных органах</span>
+            </li>
+          </ul>
+        ]}
+        buttonText="Задать вопрос Марине Валерьевне"
+        buttonHref="#form"
+      />
+
+      {/* ═══ БЛОК: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
+      <CasesBlock
+        title="Примеры дел из практики"
+        showAllLink="/praktika/"
+        showAllText="Смотреть все дела"
+        showDemoWarning={true}
+        cases={cases}
+      />
+
+      {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
+      <ProcessBlock title="Как мы проводим кадровый аудит"
+        subtitle="Поэтапная методика правовой экспертизы кадровых процессов"
+        steps={processSteps}
+      />
+
+      {/* ═══ БЛОК 8: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
+      <PricingBlock
+        title="Стоимость кадрового аудита"
+        subtitle="Стоимость зависит от численности персонала компании и глубины проверки."
+        tiers={pricingTiers}
+        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие расходы."
+      />
+
+      {/* ═══ БЛОК 9: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
+      <FAQBlock
+        superTitle="Вопросы о кадровом аудите"
+        title=<><span>Ответы на вопросы</span> <br /><span>по кадровому аудиту</span></>
+        subtitle="Форматы проведения, конфиденциальность и результаты"
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
+        faqs={faqs}
+      />
+
       {/* ═══ БЛОК НАПРАВЛЕНИЙ / СМЕЖНЫХ УСЛУГ ═══ */}
       <section id="directions" className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
@@ -596,71 +661,6 @@ export default function KadrovyjAuditClient() {
           </div>
         </div>
       </section>
-
-      {/* ═══ БЛОК: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
-      <SpecialistBlock 
-        title="Куратор направления"
-        name="Марина Валерьевна Смольянинова"
-        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Трудовые споры с работниками»</>}
-        imageUrl="/images/smolyaninova.jpg"
-        imagePosition="50% -75px"
-        profileHref="/specialisty/smolyaninova-marina-valerevna/"
-        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
-        description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Марина Валерьевна курирует обращения работодателей по трудовым спорам: проводит первичную правовую оценку, определяет необходимые документы и последовательность действий, готовит позицию для переговоров, взаимодействия с государственными органами и судебной защиты.
-          </span>,
-          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>2005 год — окончила Институт международного права и экономики имени А. С. Грибоедова</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Более 13 лет работы в Федеральной службе судебных приставов, включая руководящие должности</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Более 5 лет юридической практики с представительством организаций в судах и государственных органах</span>
-            </li>
-          </ul>
-        ]}
-        buttonText="Задать вопрос Марине Валерьевне"
-        buttonHref="#form"
-      />
-
-      {/* ═══ БЛОК: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
-      <CasesBlock
-        title="Примеры дел из практики"
-        showAllLink="/praktika/"
-        showAllText="Смотреть все дела"
-        showDemoWarning={true}
-        cases={cases}
-      />
-
-      {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
-      <ProcessBlock title="Как мы проводим кадровый аудит"
-        subtitle="Поэтапная методика правовой экспертизы кадровых процессов"
-        steps={processSteps}
-      />
-
-      {/* ═══ БЛОК 8: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
-      <PricingBlock
-        title="Стоимость кадрового аудита"
-        subtitle="Стоимость зависит от численности персонала компании и глубины проверки."
-        tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие расходы."
-      />
-
-      {/* ═══ БЛОК 9: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
-      <FAQBlock
-        superTitle="Вопросы о кадровом аудите"
-        title=<><span>Ответы на вопросы</span> <br /><span>по кадровому аудиту</span></>
-        subtitle="Форматы проведения, конфиденциальность и результаты"
-        ctaText="Задать свой вопрос"
-        ctaLink="#form"
-        faqs={faqs}
-      />
 
       {/* ═══ БЛОК 10: ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
