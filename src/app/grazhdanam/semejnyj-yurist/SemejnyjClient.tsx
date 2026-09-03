@@ -688,7 +688,7 @@ export default function SemejnyjClient() {
                   lineHeight: 1.55,
                   minHeight: '75px'
                 }}>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Опишите ваш семейный вопрос в форме. Изучим имеющиеся документы</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и предложим возможные варианты решения.</span>
+                  <span style={{ display: 'inline-block' }}>Опишите ваш семейный вопрос в форме. Изучим имеющиеся документы</span> <br /> <span style={{ display: 'inline-block' }}>и предложим возможные варианты решения.</span>
                 </p>
               </div>
               <a 

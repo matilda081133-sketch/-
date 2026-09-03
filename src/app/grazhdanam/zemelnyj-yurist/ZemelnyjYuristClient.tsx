@@ -639,7 +639,7 @@ export default function ZemelnyjYuristClient() {
                   Не нашли свою ситуацию?
                 </h3>
                 <p style={{ margin: '0', fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.55, maxWidth: '580px' }}>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Опишите ваш земельный вопрос в форме. Изучим имеющиеся документы</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и предложим возможные варианты решения.</span>
+                  <span style={{ display: 'inline-block' }}>Опишите ваш земельный вопрос в форме. Изучим имеющиеся документы</span> <br /> <span style={{ display: 'inline-block' }}>и предложим возможные варианты решения.</span>
                 </p>
               </div>
               <div style={{ flexShrink: 0 }}>
