@@ -600,126 +600,187 @@ export default function NezakonnoeSokrashchenieClient() {
                 </p>
               </div>
             ))}
-          </div>
 
-          <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block' }}>
-              Описать свою ситуацию
-            </a>
+            {/* Карточка 9: Описать свою ситуацию (рядом с Суд / Увольнение уже состоялось) */}
+            <div 
+              className="card service-card hover-lift" 
+              style={{ 
+                height: '100%', 
+                minHeight: '260px',
+                padding: '36px 30px', 
+                background: 'var(--color-deep-blue)', 
+                border: '1px solid var(--color-deep-blue)', 
+                borderTop: '3px solid var(--color-gold)', 
+                boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)', 
+                position: 'relative',
+                overflow: 'hidden',
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between',
+                boxSizing: 'border-box'
+              }}
+            >
+              {/* Фоновый декоративный вектор как в шаблоне */}
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="#FFFFFF">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+
+              <div>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '4px 10px',
+                  display: 'inline-block'
+                }}>
+                  Другая ситуация
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: '#FFFFFF', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                  Описать свою ситуацию
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
+                  Не нашли свой случай? Опишите обстоятельства сокращения — юрист оценит документы, проверит процедуру и подскажет порядок действий.
+                </p>
+              </div>
+
+              <div style={{ marginTop: '24px' }}>
+                <a 
+                  href="#form" 
+                  className="btn btn-gold" 
+                  style={{ 
+                    display: 'block', 
+                    width: '100%', 
+                    textAlign: 'center',
+                    padding: '14px 20px',
+                    fontSize: '15px',
+                    borderRadius: '0',
+                    boxSizing: 'border-box'
+                  }}
+                >
+                  Описать свою ситуацию
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-            {/* ═══ БЛОК 4: ЧЕМ ПОМОЖЕТ ЮРИСТ (ШАБЛОННЫЙ С НУМЕРАЦИЕЙ) ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 4: НА ЧЁМ СТРОИТСЯ ЗАЩИТА / ЧЕМ ПОМОЖЕТ ЮРИСТ (ТОЧНЫЙ ШАБЛОН) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Чем поможет юрист</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>при незаконном сокращении</span>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Чем поможет юрист</span> <br />
+              <span style={{ display: 'inline-block' }}>при незаконном сокращении</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               Проверим соблюдение обязательной процедуры сокращения, преимущественное право и защитим право на работу или получение всех выплат.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', position: 'relative', marginBottom: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             {[
               {
                 num: '01',
-                title: [
-                  'Проверка законности',
-                  'процедуры сокращения'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Проверка законности</span>
+                    <span style={{ display: 'block' }}>процедуры сокращения</span>
+                  </>
+                ),
                 desc: 'Проверяем реальность сокращения штата, штатное расписание и соблюдение 2-месячного срока уведомления.'
               },
               {
                 num: '02',
-                title: [
-                  'Оценка преимущественного',
-                  'права на оставление'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Оценка преимущественного</span>
+                    <span style={{ display: 'block' }}>права на оставление</span>
+                  </>
+                ),
                 desc: 'Анализируем квалификацию, производительность труда и семейные обстоятельства по ст. 179 ТК РФ.'
               },
               {
                 num: '03',
-                title: [
-                  'Контроль предложения',
-                  'всех вакансий'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Контроль предложения</span>
+                    <span style={{ display: 'block' }}>всех вакансий</span>
+                  </>
+                ),
                 desc: 'Устанавливаем, все ли подходящие вакантные должности были предложены работнику до даты увольнения.'
               },
               {
                 num: '04',
-                title: [
-                  'Расчет выходных',
-                  'пособий и выплат'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Расчет выходных</span>
+                    <span style={{ display: 'block' }}>пособий и выплат</span>
+                  </>
+                ),
                 desc: 'Контролируем выплату выходного пособия и сохраняемого заработка на период трудоустройства (ст. 178 ТК РФ).'
               },
               {
                 num: '05',
-                title: [
-                  'Судебное оспаривание',
-                  'увольнения в Липецке'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Судебное оспаривание</span>
+                    <span style={{ display: 'block' }}>увольнения в Липецке</span>
+                  </>
+                ),
                 desc: 'Подаем иск о признании увольнения незаконным, восстановлении на работе и взыскании среднего заработка.'
               },
               {
                 num: '06',
-                title: [
-                  'Исполнение решения',
-                  'и взыскание компенсаций'
-                ],
+                title: (
+                  <>
+                    <span style={{ display: 'block' }}>Исполнение решения</span>
+                    <span style={{ display: 'block' }}>и взыскание компенсаций</span>
+                  </>
+                ),
                 desc: 'Добиваемся фактического допуска к работе, выплаты всех компенсаций и компенсации морального вреда.'
               }
-            ].map((item, index) => (
-              <div 
-                key={index}
-                className="hover-lift"
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  padding: '36px 30px 32px 30px',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  position: 'relative'
-                }}
-              >
+            ].map((item, idx) => (
+              <div key={idx} className="hover-lift" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '38px 24px 30px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                borderRadius: '0',
+                position: 'relative',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                transition: 'all 0.3s ease'
+              }}>
                 <div style={{
-                  fontSize: '18px',
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
                   fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  fontFamily: 'var(--font-serif)',
-                  marginBottom: '12px'
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
                   {item.num}
                 </div>
-                <h3 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '17px',
-                  fontWeight: 600,
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 12px 0',
-                  lineHeight: 1.35,
-                  minHeight: '46px'
-                }}>
-                  {item.title.map((line, idx) => (
-                    <span key={idx} className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                      {line}
-                    </span>
-                  ))}
-                </h3>
-                <p style={{
-                  fontSize: '14.5px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  margin: 0
-                }}>
-                  {item.desc}
-                </p>
+                <div>
+                  <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -927,10 +988,7 @@ export default function NezakonnoeSokrashchenieClient() {
                 Представляет интересы доверителей в судах Липецка и Липецкой области, а также ведет дела дистанционно по всей России.
               </span>
             </li>
-          </ul>,
-          <a key="3" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
-            Подробнее о Марине Валерьевне Смольяниновой →
-          </a>
+          </ul>
         ]}
         buttonText="Задать вопрос Марине Валерьевне"
         buttonHref="#form"
@@ -938,9 +996,18 @@ export default function NezakonnoeSokrashchenieClient() {
 
       {/* ═══ БЛОК 7: ПРИМЕРЫ ДЕЛ ═══ */}
       <CasesBlock
-        title="Примеры дел по незаконному сокращению"
+        title={
+          <>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Примеры дел
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              по незаконному сокращению
+            </span>
+          </>
+        }
         showAllLink="/praktika/"
-        showAllText="Смотреть другие дела"
+        showAllText="Смотреть все дела"
         showDemoWarning={true}
         cases={cases}
       />
@@ -955,7 +1022,16 @@ export default function NezakonnoeSokrashchenieClient() {
         ctaSubtitle="Опишите обстоятельства — юрист изучит уведомление и проверит соблюдение гарантий."
         ctaButtonText="Проверить сокращение"
         ctaButtonHref="#form"
-        footerNote="Для оценки ситуации понадобятся имеющиеся документы: уведомление о сокращении, предложения вакансий или расчетные листки."
+        footerNote={
+          <>
+            <span style={{ display: 'block' }}>
+              Для оценки ситуации понадобятся имеющиеся документы: уведомление о сокращении,
+            </span>
+            <span style={{ display: 'block' }}>
+              предложения вакансий или расчетные листки.
+            </span>
+          </>
+        }
       />
 
       {/* ═══ БЛОК 9: СТОИМОСТЬ ═══ */}
@@ -1008,7 +1084,7 @@ export default function NezakonnoeSokrashchenieClient() {
             }
           `}} />
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 380px))', gap: '20px' }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             {relatedServices.map((srv, i) => (
               <Link key={i} href={srv.link} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
                 <div 

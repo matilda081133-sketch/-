@@ -18,7 +18,7 @@ interface ProcessBlockProps {
   ctaButtonText?: string;
   ctaButtonHref?: string;
   alignTitle?: 'left' | 'center';
-  footerNote?: string;
+  footerNote?: string | React.ReactNode;
 }
 
 export default function ProcessBlock({

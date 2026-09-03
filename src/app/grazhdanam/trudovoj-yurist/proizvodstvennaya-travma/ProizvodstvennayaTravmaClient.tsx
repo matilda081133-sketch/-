@@ -820,10 +820,7 @@ export default function ProizvodstvennayaTravmaClient() {
                 Представляет интересы доверителей в судах Липецка и Липецкой области, а также ведет дела дистанционно по всей России.
               </span>
             </li>
-          </ul>,
-          <a key="3" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
-            Подробнее о Марине Валерьевне Смольяниновой →
-          </a>
+          </ul>
         ]}
         buttonText="Задать вопрос Марине Валерьевне"
         buttonHref="#form"
@@ -831,9 +828,18 @@ export default function ProizvodstvennayaTravmaClient() {
 
       {/* ═══ БЛОК 6: ПРИМЕРЫ ДЕЛ ═══ */}
       <CasesBlock
-        title="Примеры дел по производственным травмам"
+        title={
+          <>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Примеры дел по
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              производственным травмам
+            </span>
+          </>
+        }
         showAllLink="/praktika/"
-        showAllText="Смотреть другие дела"
+        showAllText="Смотреть все дела"
         showDemoWarning={true}
         cases={cases}
       />
