@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -677,7 +677,6 @@ export default function IspolnitelnoeGrazhdanamClient() {
                   className="card service-card hover-lift" 
                   style={{ 
                     height: '100%', 
-                    minHeight: '260px',
                     padding: '32px 28px', 
                     background: 'var(--color-white)', 
                     border: '1px solid var(--color-border)',
@@ -716,7 +715,6 @@ export default function IspolnitelnoeGrazhdanamClient() {
               className="card service-card hover-lift" 
               style={{ 
                 height: '100%', 
-                minHeight: '260px',
                 padding: '32px 28px', 
                 background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)', 
                 border: '1px solid var(--color-deep-blue)',
@@ -737,7 +735,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
                   <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
                 </h3>
                 <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55, minHeight: '68px' }}>
-                  <span style={{ display: 'inline-block' }}>Опишите ваш вопрос по исполнительному производству в форме. Изучим имеющиеся документы</span> <br /> <span style={{ display: 'inline-block' }}>и предложим возможные варианты решения.</span>
+                  Опишите ваш вопрос по исполнительному производству в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
                 </p>
               </div>
               <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
