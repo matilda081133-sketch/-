@@ -264,7 +264,7 @@ export default function SoprovozhdenieUvolneniyaClient() {
   },
   {
     "popular": true,
-    "badgeText": "ПОПУЛЯРНЫЙ ВЫБОР",
+    "badgeText": "Востребовано",
     "title": "Полное сопровождение процедуры",
     "subtitle": "Документы и переговоры",
     "price": "от 15 000 ₽",
@@ -479,7 +479,8 @@ export default function SoprovozhdenieUvolneniyaClient() {
             </div>
 
             <p style={{ margin: '0 0 28px 0', fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, maxWidth: '820px' }}>
-              Предотвращаем типичные ошибки оформления, которые приводят к восстановлению работника через суд и взысканию среднего заработка:
+              <span style={{ display: 'inline-block' }}>Предотвращаем типичные ошибки оформления, которые приводят</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>к восстановлению работника через суд и взысканию среднего заработка:</span>
             </p>
 
             <div className="grid grid-2" style={{ gap: '22px', position: 'relative', zIndex: 1 }}>

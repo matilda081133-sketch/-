@@ -256,7 +256,7 @@ export default function VzyskanieUshcherbaB2BClient() {
   },
   {
     "popular": true,
-    "badgeText": "ПОПУЛЯРНЫЙ ВЫБОР",
+    "badgeText": "Востребовано",
     "title": "Соглашение о возмещении",
     "subtitle": "Досудебное урегулирование",
     "price": "от 15 000 ₽",

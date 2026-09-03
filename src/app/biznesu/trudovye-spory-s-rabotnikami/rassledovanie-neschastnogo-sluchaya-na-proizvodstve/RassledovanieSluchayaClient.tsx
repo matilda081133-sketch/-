@@ -256,7 +256,7 @@ export default function RassledovanieSluchayaClient() {
   },
   {
     "popular": true,
-    "badgeText": "ПОПУЛЯРНЫЙ ВЫБОР",
+    "badgeText": "Востребовано",
     "title": "Тяжелый / групповой случай",
     "subtitle": "Срок расследования до 15 дней",
     "price": "от 35 000 ₽",

@@ -256,7 +256,7 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
   },
   {
     "popular": true,
-    "badgeText": "ПОПУЛЯРНЫЙ ВЫБОР",
+    "badgeText": "Востребовано",
     "title": "Полный пакет документов",
     "subtitle": "Документальное сопровождение",
     "price": "от 25 000 ₽",

@@ -286,7 +286,7 @@ export default function TrudovyeSporyB2BClient() {
     "title": "Досудебная работа",
     "subtitle": "Документы и урегулирование",
     "popular": true,
-    "badgeText": "ПОПУЛЯРНЫЙ ВЫБОР",
+    "badgeText": "Востребовано",
     "price": "от 15 000 ₽",
     "features": [
       { name: "подготовка кадровых и правовых документов", value: "Да" },

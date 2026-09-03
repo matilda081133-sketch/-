@@ -256,7 +256,7 @@ export default function SoprovozhdenieProverkiGitClient() {
   },
   {
     "popular": true,
-    "badgeText": "ПОПУЛЯРНЫЙ ВЫБОР",
+    "badgeText": "Востребовано",
     "title": "Полное сопровождение проверки",
     "subtitle": "Под ключ с взаимодействием",
     "price": "от 25 000 ₽",

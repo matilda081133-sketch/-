@@ -256,7 +256,7 @@ export default function KadrovyjAuditClient() {
   },
   {
     "popular": true,
-    "badgeText": "ПОПУЛЯРНЫЙ ВЫБОР",
+    "badgeText": "Востребовано",
     "title": "Комплексный аудит (до 50 чел.)",
     "subtitle": "Полная проверка документации",
     "price": "от 35 000 ₽",
