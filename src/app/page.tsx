@@ -437,7 +437,7 @@ export default function Home() {
             
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
               <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
-                <ContactsForm title="Оставить заявку" subtitle={<>Перезвоним вам в течение <br />15 минут в рабочее время.</>} />
+                <ContactsForm title="Оставить заявку" subtitle={<>Перезвоним вам в течение 15 минут в рабочее время.</>} />
               </div>
             </div>
           </div>

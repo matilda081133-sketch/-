@@ -136,7 +136,12 @@ export default function TrudovyeSporyB2BClient() {
   const situations = [
   {
     "tag": "Претензия или иск",
-    "title": "Работник оспаривает решение компании",
+    "title": (
+      <>
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Работник оспаривает</span>{' '}
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>решение компании</span>
+      </>
+    ),
     "desc": "Получена претензия, жалоба или иск об увольнении, взыскании выплат, изменении условий труда либо дисциплинарном взыскании."
   },
   {
@@ -146,17 +151,32 @@ export default function TrudovyeSporyB2BClient() {
   },
   {
     "tag": "Оптимизация штата",
-    "title": "Компания планирует сокращение",
+    "title": (
+      <>
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Компания</span>{' '}
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>планирует сокращение</span>
+      </>
+    ),
     "desc": "Необходимо определить процедуру, учесть гарантии отдельным категориям работников, вакансии, уведомления и выплаты."
   },
   {
     "tag": "Внимание инспекции",
-    "title": "Поступила жалоба или началась проверка ГИТ",
+    "title": (
+      <>
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Поступила жалоба или</span>{' '}
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>началась проверка ГИТ</span>
+      </>
+    ),
     "desc": "Важно оценить запрос, подготовить документы и объяснения, сопровождать взаимодействие с инспекцией и при необходимости обжаловать результат."
   },
   {
     "tag": "Убытки компании",
-    "title": "Работник причинил компании ущерб",
+    "title": (
+      <>
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Работник причинил</span>{' '}
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>компании ущерб</span>
+      </>
+    ),
     "desc": "До удержания или обращения в суд нужно установить размер прямого ущерба, причины, вину и соблюсти обязательную процедуру проверки."
   },
   {
@@ -265,6 +285,8 @@ export default function TrudovyeSporyB2BClient() {
   {
     "title": "Досудебная работа",
     "subtitle": "Документы и урегулирование",
+    "popular": true,
+    "badgeText": "ПОПУЛЯРНЫЙ ВЫБОР",
     "price": "от 15 000 ₽",
     "features": [
       { name: "подготовка кадровых и правовых документов", value: "Да" },
@@ -357,12 +379,7 @@ export default function TrudovyeSporyB2BClient() {
         primaryCtaAnalytics="click_primary_cta_b2b_labor"
         primaryCtaSubtext={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Перезвоним вам в течение 15 минут
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              в рабочее время
-            </span>
+            <span style={{ whiteSpace: 'nowrap' }}>Перезвоним вам в течение 15 минут в рабочее время</span>
           </span>
         }
         trustItems={[

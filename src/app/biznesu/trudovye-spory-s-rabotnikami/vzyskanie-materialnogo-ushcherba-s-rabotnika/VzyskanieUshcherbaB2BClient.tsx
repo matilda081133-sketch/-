@@ -255,6 +255,8 @@ export default function VzyskanieUshcherbaB2BClient() {
     "analyticsEvent": "click_pricing_audit_damages"
   },
   {
+    "popular": true,
+    "badgeText": "ПОПУЛЯРНЫЙ ВЫБОР",
     "title": "Соглашение о возмещении",
     "subtitle": "Досудебное урегулирование",
     "price": "от 15 000 ₽",
@@ -338,12 +340,7 @@ export default function VzyskanieUshcherbaB2BClient() {
         primaryCtaAnalytics="click_primary_cta_damages"
         primaryCtaSubtext={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Перезвоним вам в течение 15 минут
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              в рабочее время
-            </span>
+            <span style={{ whiteSpace: 'nowrap' }}>Перезвоним вам в течение 15 минут в рабочее время</span>
           </span>
         }
         trustItems={[
@@ -449,20 +446,36 @@ export default function VzyskanieUshcherbaB2BClient() {
                 key={i}
                 className="hover-lift"
                 style={{
-                  padding: '32px 28px',
-                  background: 'var(--color-white)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
                   display: 'flex',
                   flexDirection: 'column',
-                  position: 'relative'
+                  padding: '38px 24px 30px 24px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  borderRadius: '0',
+                  position: 'relative',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                  transition: 'all 0.3s ease'
                 }}
               >
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 12px 0' }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+                <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
                   {cp.title}
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                   {cp.desc}
                 </p>
               </div>
