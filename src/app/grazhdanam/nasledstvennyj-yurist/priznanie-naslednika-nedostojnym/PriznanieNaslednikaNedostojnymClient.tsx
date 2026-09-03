@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -284,7 +284,10 @@ export default function PriznanieNaslednikaNedostojnymClient() {
               Признание
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              наследника недостойным в Липецке
+              наследника недостойным
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              в Липецке
             </span>
           </span>
         }

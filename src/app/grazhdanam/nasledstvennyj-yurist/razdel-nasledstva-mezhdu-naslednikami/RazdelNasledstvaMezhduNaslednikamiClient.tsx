@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -284,7 +284,10 @@ export default function RazdelNasledstvaMezhduNaslednikamiClient() {
               Раздел наследства
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              между наследниками в Липецке
+              между наследниками
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              в Липецке
             </span>
           </span>
         }
