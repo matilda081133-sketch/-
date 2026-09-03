@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -560,8 +560,7 @@ export default function TrudovojClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Направления</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>помощи</span>
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Направления помощи</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Выберите ситуацию, чтобы узнать, какие нарушения имеют значение, что можно потребовать и как строится работа по делу.
