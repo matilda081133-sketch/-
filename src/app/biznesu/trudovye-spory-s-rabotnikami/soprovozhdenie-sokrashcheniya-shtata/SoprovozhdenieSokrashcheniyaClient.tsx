@@ -424,29 +424,15 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      
-      {/* ═══ БЛОК 3: ЧТО ПРОВЕРЯЕМ / ОСОБЕННОСТИ (ТОЧНЫЙ ШАБЛОН «КАКИЕ ВЫПЛАТЫ») ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: "inline-block" }}>Ключевые этапы и контрольные</span> <br /><span style={{ display: "inline-block" }}>точки сокращения штата</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Показываем объём сопровождения и наиболее рискованные элементы обязательной процедуры сокращения.
-            </p>
-          </div>
-
-          {/* Темно-синяя карточка по эталонному шаблону «Какие выплаты можно потребовать» */}
+          {/* Темно-синяя карточка ключевых точек контроля прямо под карточками ситуаций */}
           <div style={{
+            marginTop: '40px',
             background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
             border: '1px solid var(--color-deep-blue)',
             borderTop: '3px solid var(--color-gold)',
             boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)',
-            padding: '36px 32px',
+            padding: '40px 36px',
             position: 'relative',
             overflow: 'hidden',
             marginBottom: '32px'
@@ -458,23 +444,23 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
               </svg>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '16px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', marginBottom: '20px' }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', paddingBottom: '16px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', marginBottom: '20px' }}>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="M12 6v6l4 2"></path>
               </svg>
               <div>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.3 }}>
-                  Контрольные точки процедуры сокращения
+                <h3 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  Ключевые этапы и контрольные точки сокращения штата
                 </h3>
               </div>
             </div>
 
-            <p style={{ margin: '0 0 24px 0', fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+            <p style={{ margin: '0 0 28px 0', fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, maxWidth: '820px' }}>
               Проверяем обязательные процедуры и сроки, нарушение которых влечет признание сокращения незаконным:
             </p>
 
-            <div className="grid grid-2" style={{ gap: '20px', position: 'relative', zIndex: 1 }}>
+            <div className="grid grid-2" style={{ gap: '22px', position: 'relative', zIndex: 1 }}>
               {checkpoints.map((item, idx) => (
                 <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
@@ -483,10 +469,10 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '3px', lineHeight: 1.35 }}>
-                      {item.title}
+                      ${item.title}
                     </strong>
                     <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.55 }}>
-                      {item.desc}
+                      ${item.desc}
                     </span>
                   </div>
                 </div>
