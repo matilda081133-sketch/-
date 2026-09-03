@@ -13,11 +13,210 @@ import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 
 export default function AdvokatKrazhiClient() {
+  const situations = [
+  {
+    "tag": "Кража / ст. 158",
+    "title": "Тайное хищение имущества (из магазина, квартиры, с карты)",
+    "desc": "Оспаривание стоимости похищенного, исключение признаков проникновения в жилище или кражи с банковского счета."
+  },
+  {
+    "tag": "Грабеж / ст. 161",
+    "title": "Открытое хищение имущества без насилия или с насилием",
+    "desc": "Разграничение кражи и грабежа, доказывание отсутствия предварительного сговора и снижения роли участника."
+  },
+  {
+    "tag": "Разбой / ст. 162",
+    "title": "Нападение в целях хищения с угрозой или насилием",
+    "desc": "Исключение квалифицирующих признаков применения оружия или предметов, переквалификация на менее тяжкий состав."
+  },
+  {
+    "tag": "Оценка ущерба",
+    "title": "Завышенная стоимость похищенного имущества потерпевшим",
+    "desc": "Назначение независимой товароведческой экспертизы с учетом фактического износа и реальной рыночной цены."
+  },
+  {
+    "tag": "Примирение",
+    "title": "Возмещение ущерба и прекращение дела за примирением",
+    "desc": "Организация диалога с потерпевшим, возмещение вреда и прекращение дела в суде по ст. 25 УПК РФ."
+  },
+  {
+    "tag": "Потерпевший",
+    "title": "Защита прав потерпевшего от хищения или нападения",
+    "desc": "Доказывание реального размера ущерба, подача гражданского иска и контроль за ходом следствия."
+  }
+];
+  const casesData: CaseData[] = [
+  {
+    "category": "ст. 162 -> ст. 161 УК РФ",
+    "title": "Переквалификация с разбоя на грабёж и освобождение из-под стражи",
+    "problem": "Клиенту вменялся разбой группой лиц с угрозой применения предмета, похожего на нож (до 10 лет строгой колонии).",
+    "action": "Доказали отсутствие применения оружия, обоюдный характер конфликта и отсутствие предварительной договоренности.",
+    "result": "Суд переквалифицировал деяние на ч. 1 ст. 161 УК РФ, назначив наказание, не связанное с лишением свободы."
+  },
+  {
+    "category": "ст. 158 ч. 3 п. «г» УК РФ",
+    "title": "Прекращение дела о краже с банковского счёта",
+    "problem": "Молодой человек нашёл банковскую карту и совершил несколько покупок на сумму 3 200 рублей (тяжкое преступление).",
+    "action": "Возместили ущерб владельцу карты, доказали отсутствие умысла на хищение в крупном размере.",
+    "result": "Суд изменил категорию преступления на среднюю тяжесть и прекратил дело с судебным штрафом."
+  },
+  {
+    "category": "ст. 158 ч. 2 УК РФ",
+    "title": "Прекращение дела за примирением сторон по краже из магазина",
+    "problem": "Доверителю грозило до 5 лет лишения свободы за групповую кражу техники из торгового центра.",
+    "action": "Заключили соглашение о возмещении ущерба с представителем торговой сети и подготовили ходатайство.",
+    "result": "Суд прекратил уголовное дело в первом заседании по ст. 25 УПК РФ."
+  }
+];
+  const processSteps: ProcessStep[] = [
+  {
+    "num": "01",
+    "title": "Изучение протоколов и видеозаписей",
+    "desc": "Анализируем записи камер наблюдения, показания свидетелей и обстоятельства изъятия."
+  },
+  {
+    "num": "02",
+    "title": "Товароведческая экспертиза ущерба",
+    "desc": "Назначаем независимую оценку стоимости имущества с учётом износа для снижения тяжести."
+  },
+  {
+    "num": "03",
+    "title": "Переговоры и возмещение вреда",
+    "desc": "Выстраиваем диалог с потерпевшей стороной для подготовки примирения или смягчения."
+  },
+  {
+    "num": "04",
+    "title": "Защита в суде и минимизация наказания",
+    "desc": "Добиваемся переквалификации, применения ст. 73 УК РФ (условно) или прекращения дела."
+  }
+];
+  const pricingTiers: PricingTier[] = [
+  {
+    "title": "Первичная консультация и анализ дела",
+    "subtitle": "Оценка квалификации, стоимости ущерба и рисков",
+    "price": "от 5 000 ₽",
+    "popular": false,
+    "features": [
+      {
+        "name": "детальный анализ обвинения и квалификации",
+        "value": "Да"
+      },
+      {
+        "name": "оценка возможности примирения сторон",
+        "value": "Да"
+      },
+      {
+        "name": "план первоочередных следственных действий",
+        "value": "Да"
+      }
+    ],
+    "buttonText": "Записаться",
+    "buttonHref": "#form"
+  },
+  {
+    "title": "Защита по ст. 158 УК РФ (Кража)",
+    "subtitle": "Ведение дела на следствии и в суде",
+    "price": "от 35 000 ₽",
+    "popular": true,
+    "badgeText": "Востребовано",
+    "features": [
+      {
+        "name": "участие во всех следственных действиях",
+        "value": "Да"
+      },
+      {
+        "name": "независимая товароведческая экспертиза",
+        "value": "Да"
+      },
+      {
+        "name": "сопровождение примирения с потерпевшим",
+        "value": "Да"
+      },
+      {
+        "name": "защита в судебных заседаниях",
+        "value": "Да"
+      }
+    ],
+    "buttonText": "Выбрать тариф",
+    "buttonHref": "#form"
+  },
+  {
+    "title": "Защита по ст. 161, 162 УК РФ (Грабёж/Разбой)",
+    "subtitle": "Тяжкие составы с угрозой реального срока",
+    "price": "от 55 000 ₽",
+    "popular": false,
+    "features": [
+      {
+        "name": "работа по исключению признаков насилия и оружия",
+        "value": "Да"
+      },
+      {
+        "name": "переквалификация на менее тяжкие статьи",
+        "value": "Да"
+      },
+      {
+        "name": "защита при избрании меры пресечения (арест)",
+        "value": "Да"
+      }
+    ],
+    "buttonText": "Обсудить защиту",
+    "buttonHref": "#form"
+  }
+];
+  const relatedLinks = [
+  {
+    "title": "Задержание, обыск и допрос",
+    "link": "/grazhdanam/advokat-po-ugolovnym-delam/advokat-pri-zaderzhanii-obyske-i-doprose/"
+  },
+  {
+    "title": "Защита прав потерпевшего",
+    "link": "/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/"
+  },
+  {
+    "title": "Адвокат по мошенничеству",
+    "link": "/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-moshennichestvu/"
+  }
+];
+  const faqItems = [
+  {
+    "q": "Чем грабёж отличается от кражи?",
+    "a": "Кража совершается тайно от собственника и окружающих. Если потерпевший или очевидцы заметили изъятие и потребовали прекратить, а виновный продолжил удерживать вещь, деяние переходит в категорию открытого хищения — грабёж (ст. 161 УК РФ)."
+  },
+  {
+    "q": "С какой суммы наступает уголовная ответственность за кражу?",
+    "a": "Уголовная ответственность по ст. 158 УК РФ наступает при сумме хищения свыше 2 500 рублей. Хищение на меньшую сумму образует состав мелкого хищения (ст. 7.27 КоАП РФ), если нет квалифицирующих признаков (из одежды, с проникновением, с карты)."
+  },
+  {
+    "q": "Можно ли примириться с потерпевшим по ст. 158 УК РФ?",
+    "a": "Да, по частям 1 и 2 статьи 158 УК РФ (преступления небольшой и средней тяжести) дело может быть прекращено судом в связи с примирением сторон (ст. 25 УПК РФ), если ущерб полностью заглажен и подсудимый привлекается впервые."
+  },
+  {
+    "q": "Что считается разбоем (ст. 162 УК РФ)?",
+    "a": "Разбой — это нападение в целях хищения, совершенное с применением насилия, опасного для жизни или здоровья, либо с угрозой применения такого насилия. Преступление считается оконченным с момента начала нападения независимо от того, удалось ли завладеть вещью."
+  }
+];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "LegalService",
+        "@id": "https://dejure-help.ru/#organization",
+        "name": "ЮК «Де-Юре»",
+        "url": "https://dejure-help.ru",
+        "logo": "https://dejure-help.ru/images/logo_dark.png",
+        "telephone": "+7 (910) 350-31-11",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Советская, д. 35, оф. 213",
+          "addressLocality": "Липецк",
+          "addressRegion": "Липецкая область",
+          "addressCountry": "RU"
+        }
+      },
+      {
         "@type": "BreadcrumbList",
+        "@id": "https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-krazham-grabezham-i-razboyam/#breadcrumbs",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -47,888 +246,312 @@ export default function AdvokatKrazhiClient() {
       },
       {
         "@type": "Service",
+        "@id": "https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-krazham-grabezham-i-razboyam/#service",
         "name": "Кражи, грабежи и разбои в Липецке",
-        "description": "Подключимся на стадии проверки, следствия или суда. Проверим разграничение открытого и тайного хищения, размер ущерба, квалифицирующие признаки группы и проникновения, оспорим доказательства и проведём защиту.",
+        "description": "Комплексная защита подозреваемых, обвиняемых и потерпевших по делам о хищении имущества (тайном, открытом или с применением насилия). Докажем отсутствие умысла, переквалифицируем обвинение на менее тяжкую статью и добьёмся прекращения дела.",
         "url": "https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-krazham-grabezham-i-razboyam/",
+        "provider": { "@id": "https://dejure-help.ru/#organization" },
         "areaServed": {
           "@type": "AdministrativeArea",
           "name": "Липецк и Липецкая область"
-        },
-        "provider": {
-          "@type": "LegalService",
-          "name": "Юридическая компания «Де-Юре»",
-          "url": "https://dejure-help.ru",
-          "telephone": "+7-910-350-31-11",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "ул. Советская, д. 35, оф. 213",
-            "addressLocality": "Липецк",
-            "addressCountry": "RU"
-          }
         }
       },
       {
         "@type": "FAQPage",
-        "mainEntity": [
-  {
-    "@type": "Question",
-    "name": "Чем грабёж отличается от разбоя?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Грабёж (ст. 161) — открытое хищение без применения опасного для жизни насилия. Разбой (ст. 162) — нападение с применением насилия, опасного для жизни/здоровья, либо с угрозой его применения. Наказание по ст. 162 существенно строже."
-    }
-  },
-  {
-    "@type": "Question",
-    "name": "Можно ли примириться с потерпевшим по ст. 158 УК РФ?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Да, если кража относится к категории небольшой или средней тяжести (ч. 1 или ч. 2 ст. 158), обвиняемый привлекается впервые и полностью возместил ущерб потерпевшему (ст. 25 УПК РФ)."
-    }
-  },
-  {
-    "@type": "Question",
-    "name": "Как определяется стоимость похищенного имущества?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Следствие обязано устанавливать реальную рыночную стоимость имущества на момент хищения с учётом износа, а не по первоначальным чекам покупки."
-    }
-  },
-  {
-    "@type": "Question",
-    "name": "Что считается проникновением в жилище?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Проникновение — незаконное вторжение в жилое помещение против воли проживающих лиц. Если вход был свободным или по приглашению, данный признак подлежит исключению."
-    }
-  }
-]
+        "@id": "https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-krazham-grabezham-i-razboyam/#faq",
+        "mainEntity": faqItems.map(f => ({
+          "@type": "Question",
+          "name": f.q,
+          "acceptedAnswer": { "@type": "Answer", "text": f.a }
+        }))
       }
     ]
   };
 
-  const situations = [
-  {
-    "tag": "Тайное хищение",
-    "title": "Кража (ст. 158 УК РФ)",
-    "desc": "Проверим тайность изъятия имущества, стоимость похищенного без наценок и отсутствие признаков применения насилия."
-  },
-  {
-    "tag": "Открытое хищение",
-    "title": "Грабёж (ст. 161 УК РФ)",
-    "desc": "Оценим, сознавал ли подозреваемый открытый характер действий и применялось ли насилие, не опасное для жизни."
-  },
-  {
-    "tag": "С применением оружия",
-    "title": "Разбой (ст. 162 УК РФ)",
-    "desc": "Проверим реальность угрозы, признаки применения предметов в качестве оружия и направленность умысла."
-  },
-  {
-    "tag": "Проникновение в жилище",
-    "title": "Вменяют незаконное проникновение",
-    "desc": "Проверим законность доступа в помещение, характер объекта (жилое или нежилое) и основания нахождения."
-  },
-  {
-    "tag": "Сговор группы",
-    "title": "Вменяют предварительный сговор",
-    "desc": "Разграничим роли исполнителей, пособников и лиц, случайно оказавшихся на месте происшествия."
-  },
-  {
-    "tag": "Завышенная оценка",
-    "title": "Спор о размере причиненного ущерба",
-    "desc": "Назначим товароведческую экспертизу с учётом фактического износа и реальной рыночной стоимости имущества."
-  }
-];
-  const roles = [
-  {
-    "role": "Подозреваемый / Обвиняемый",
-    "task": "Сформировать согласованную позицию, проверить допустимость улик и добиваться переквалификации.",
-    "btnText": "Срочная защита",
-    "btnHref": "#form"
-  },
-  {
-    "role": "Родственник задержанного",
-    "task": "Установить подразделение полиции, статью и организовать участие независимого адвоката по соглашению.",
-    "btnText": "Помочь близкому",
-    "btnHref": "#form"
-  },
-  {
-    "role": "Потерпевший от хищения",
-    "task": "Добиться возбуждения дела, признания потерпевшим, ареста имущества преступника и возмещения ущерба.",
-    "btnText": "Защитить потерпевшего",
-    "btnHref": "/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/"
-  }
-];
-  const scope = {
-  "included": [
-    "Изучение протоколов следственных действий, допросов и видеозаписей",
-    "Участие в опознаниях, проверках показаний на месте и следственных экспериментах",
-    "Подача ходатайств о проведении товароведческих и криминалистических экспертиз",
-    "Защита в суде первой инстанции и участие в прениях"
-  ],
-  "extra": [
-    "Срочные ночные выезды и защита в следственных изоляторах других регионов",
-    "Привлечение независимых товароведов и экспертов-оценщиков",
-    "Апелляционное обжалование приговора в суде субъекта РФ"
-  ]
-};
-  const matrix = {
-  "title": "Квалификационная матрица: Кража vs Грабёж vs Разбой",
-  "subtitle": "Правильное разграничение способа изъятия и характера примененного насилия принципиально меняет категорию преступления:",
-  "items": [
-    {
-      "title": "Способ изъятия имущества",
-      "desc": "Кража совершается тайно от окружающих; грабёж — открыто; разбой — нападение с целью хищения."
-    },
-    {
-      "title": "Характер примененного насилия",
-      "desc": "Кража — без насилия; грабёж — насилие без опасности для жизни/здоровья; разбой — опасное для жизни насилие."
-    },
-    {
-      "title": "Момент окончания преступления",
-      "desc": "Кража и грабёж окончены при получении возможности распорядиться; разбой окончен с момента самого нападения."
-    },
-    {
-      "title": "Использование предметов как оружия",
-      "desc": "Влияет на вменение ч. 2 ст. 162 УК РФ; необходимо установить реальность использования и свойства предмета."
-    },
-    {
-      "title": "Размер причиненного ущерба",
-      "desc": "Значительный (от 5 тыс. руб.), крупный (от 250 тыс. руб.), особо крупный (от 1 млн руб.). Требует строгой экспертизы."
-    },
-    {
-      "title": "Предварительный сговор группы",
-      "desc": "Требует доказанности договоренности до начала действий; эксцесс исполнителя исключает ответственность группы."
-    }
-  ]
-};
-  const routes = [
-  {
-    "title": "Переквалификация на менее тяжкую статью",
-    "desc": "Доказываем отсутствие признаков разбоя или насилия и добиваемся перевода обвинения на кражу (ст. 158 УК РФ)."
-  },
-  {
-    "title": "Прекращение дела в связи с примирением",
-    "desc": "По делам о кражах небольшой и средней тяжести при возмещении вреда добиваемся закрытия дела в суде (ст. 25 УПК РФ)."
-  },
-  {
-    "title": "Исключение квалифицирующих признаков",
-    "desc": "Исключаем незаконное проникновение, сговор группы и снижаем размер ущерба на основании экспертиз."
-  }
-];
-  const casesData: CaseData[] = [
-  {
-    "category": "ст. 162 → ст. 158 ч. 2 УК РФ",
-    "title": "Переквалификация обвинения с разбоя на кражу",
-    "problem": "Следствие утверждало, что клиент угрожал ножом при изъятии ценностей на улице.",
-    "action": "Истребовали записи видеокамер, доказали отсутствие угроз и нахождения ножа у клиента в момент инцидента.",
-    "result": "Суд переквалифицировал обвинение на ч. 2 ст. 158 УК РФ, назначено наказание, не связанное с лишением свободы."
-  },
-  {
-    "category": "ст. 158 ч. 2 УК РФ",
-    "title": "Прекращение дела о краже в суде за примирением сторон",
-    "problem": "Клиент впервые обвинялся в тайном хищении строительного инструмента стоимостью 45 000 рублей.",
-    "action": "Возместили ущерб потерпевшему, подготовили мировое соглашение и заявление потерпевшего об отсутствии претензий.",
-    "result": "Суд прекратил уголовное дело на основании ст. 25 УПК РФ, судимость отсутствует."
-  },
-  {
-    "category": "ст. 161 ч. 2 УК РФ",
-    "title": "Исключение квалифицирующего признака проникновения в жилище",
-    "problem": "Клиенту вменяли грабёж с проникновением в дачный дом, что утяжеляло категорию преступления.",
-    "action": "Доказали, что постройка являлась хозяйственным строением без статуса жилья, а доступ был свободным.",
-    "result": "Квалифицирующий признак исключён, срок наказания снижен ниже низшего предела."
-  }
-];
-  const processSteps: ProcessStep[] = [
-  {
-    "num": "01",
-    "title": "Анализ протоколов и задержания",
-    "desc": "Изучаем материалы первичной фиксации, основания задержания и досмотра."
-  },
-  {
-    "num": "02",
-    "title": "Участие в допросах и очных ставках",
-    "desc": "Защищаем права доверителя при проведении всех процессуальных мероприятий."
-  },
-  {
-    "num": "03",
-    "title": "Товароведческая и видеоэкспертиза",
-    "desc": "Назначаем независимую оценку имущества и детальный покадровый анализ видеозаписей."
-  },
-  {
-    "num": "04",
-    "title": "Защита в суде и прения",
-    "desc": "Оспариваем недоказанные обвинения, заявляем ходатайства о примирении или переквалификации."
-  }
-];
-  const pricingTiers: PricingTier[] = [
-  {
-    "title": "Защита при следственном действии",
-    "subtitle": "Опознание, допрос, очная ставка",
-    "price": "от 15 000 ₽",
-    "popular": false,
-    "features": [
-      {
-        "name": "подготовка правовой позиции",
-        "value": "Да"
-      },
-      {
-        "name": "личное участие адвоката",
-        "value": "Да"
-      },
-      {
-        "name": "замечания в протокол следственного действия",
-        "value": "Да"
-      }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Защита на предварительном следствии",
-    "subtitle": "Сопровождение уголовного дела под ключ",
-    "price": "от 45 000 ₽",
-    "popular": true,
-    "badgeText": "Востребовано",
-    "features": [
-      {
-        "name": "полное сопровождение стадии следствия",
-        "value": "Да"
-      },
-      {
-        "name": "товароведческая экспертиза ущерба",
-        "value": "Да"
-      },
-      {
-        "name": "ходатайства о переквалификации",
-        "value": "Да"
-      },
-      {
-        "name": "ознакомление со всеми томами дела",
-        "value": "Да"
-      }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form"
-  },
-  {
-    "title": "Защита в суде первой инстанции",
-    "subtitle": "Судебный процесс и участие в прениях",
-    "price": "от 45 000 ₽",
-    "popular": false,
-    "features": [
-      {
-        "name": "исследование доказательств и видеозаписей",
-        "value": "Да"
-      },
-      {
-        "name": "допрос свидетелей и потерпевших",
-        "value": "Да"
-      },
-      {
-        "name": "переговоры о примирении и возмещении",
-        "value": "Да"
-      },
-      {
-        "name": "выступление в прениях сторон",
-        "value": "Да"
-      }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form"
-  }
-];
-  const docsAndDeadlines = {
-  "docs": [
-    "протокол задержания, личного досмотра и изъятия вещей;",
-    "протокол осмотра места происшествия и выемки;",
-    "постановление о возбуждении уголовного дела;",
-    "справка об оценке стоимости имущества и товарные чеки;",
-    "заключения судебно-медицинских и товароведческих экспертиз."
-  ],
-  "deadlines": "Срок задержания до судебного решения об аресте — до 48 часов. Срок предварительного следствия — от 2 месяцев. Срок апелляционного обжалования приговора — 15 дней со дня провозглашения или вручения копии осуждённому."
-};
-  const relatedServices = [
-  {
-    "title": "Адвокат по мошенничеству (ст. 159)",
-    "desc": "Защита при хищениях путём обмана и злоупотребления доверием.",
-    "link": "/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-moshennichestvu/"
-  },
-  {
-    "title": "Адвокат при задержании, обыске и допросе",
-    "desc": "Срочное подключение защитника к неотложным следственным действиям.",
-    "link": "/grazhdanam/advokat-po-ugolovnym-delam/advokat-pri-zaderzhanii-obyske-i-doprose/"
-  },
-  {
-    "title": "Защита прав потерпевшего",
-    "desc": "Представительство потерпевших от грабежей и разбоев, взыскание морального и имущественного вреда.",
-    "link": "/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/"
-  }
-];
-  const faqItems = [
-  {
-    "q": "Чем грабёж отличается от разбоя?",
-    "a": "Грабёж (ст. 161) — открытое хищение без применения опасного для жизни насилия. Разбой (ст. 162) — нападение с применением насилия, опасного для жизни/здоровья, либо с угрозой его применения. Наказание по ст. 162 существенно строже."
-  },
-  {
-    "q": "Можно ли примириться с потерпевшим по ст. 158 УК РФ?",
-    "a": "Да, если кража относится к категории небольшой или средней тяжести (ч. 1 или ч. 2 ст. 158), обвиняемый привлекается впервые и полностью возместил ущерб потерпевшему (ст. 25 УПК РФ)."
-  },
-  {
-    "q": "Как определяется стоимость похищенного имущества?",
-    "a": "Следствие обязано устанавливать реальную рыночную стоимость имущества на момент хищения с учётом износа, а не по первоначальным чекам покупки."
-  },
-  {
-    "q": "Что считается проникновением в жилище?",
-    "a": "Проникновение — незаконное вторжение в жилое помещение против воли проживающих лиц. Если вход был свободным или по приглашению, данный признак подлежит исключению."
-  }
-];
-
   return (
-    <div style={{ backgroundColor: 'var(--color-cream)', minHeight: '100vh' }}>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header />
 
-      <main id="main-content">
-        {/* 1. Хлебные крошки и Hero */}
-        <MilitaryHero
-          breadcrumbs={
-            <>
-              <Link href="/">Главная</Link><span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-              <Link href="/grazhdanam/">Гражданам</Link><span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-              <Link href="/grazhdanam/advokat-po-ugolovnym-delam/">Адвокат по уголовным делам</Link><span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-              <span style={{ color: 'var(--color-text-main)' }}>Кражи, грабежи и разбои</span>
-            </>
-          }
-          superTitle="Защита по ст. 158, 161, 162 УК РФ • Липецк и область"
-          title={
-            <span style={{ display: 'block' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-                Адвокат по кражам, грабежам
-              </span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-                и разбоям (ст. 158–162 УК РФ)
-              </span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-                в Липецке
-              </span>
+      {/* ═══ БЛОК 1: HERO ═══ */}
+      <MilitaryHero
+        breadcrumbs={
+          <>
+            <Link href="/">Главная</Link>
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+            <Link href="/grazhdanam/">Гражданам</Link>
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+            <Link href="/grazhdanam/advokat-po-ugolovnym-delam/">Адвокат по уголовным делам</Link>
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Кражи, грабежи и разбои</span>
+          </>
+        }
+        superTitle="Защита по ст. 158, 161, 162 УК РФ • Липецк"
+        title={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Адвокат по кражам,
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              грабежам и разбоям
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              в Липецке
             </span>
-          }
-          subtitle="Подключимся на стадии проверки, следствия или суда. Проверим разграничение открытого и тайного хищения, размер ущерба, квалифицирующие признаки группы и проникновения, оспорим доказательства и проведём защиту."
-          primaryCtaText="Обсудить ситуацию"
-          primaryCtaLink="#form"
-          primaryCtaAnalytics="click_advokat_po_krazham_grabezham_i_razboyam_hero_cta"
-          primaryCtaSubtext={
-            <span style={{ display: 'block' }}>
-              <span style={{ whiteSpace: 'nowrap' }}>Перезвоним вам в течение 15 минут в рабочее время</span>
-            </span>
-          }
-          trustItems={[
-            { text: 'Стратегию определяет Аркадий Бобкин — 22 года следственного опыта' },
-            { text: 'Защиту и процессуальные действия ведут адвокаты коллегии' },
-            { text: 'Фиксируем состав услуг и условия в соглашении до начала работы' }
-          ]}
-          imageUrl="/images/bobkin.jpg"
-          imageObjectPosition="50% -75px"
-          imageName="Аркадий Евгеньевич Бобкин"
-          imageSubtitle="Куратор практики • Директор, управляющий партнёр ЮК «Де-Юре», более 22 лет следственного опыта"
-        />
+          </span>
+        }
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
+            Комплексная защита подозреваемых, обвиняемых и потерпевших по делам о хищении имущества (тайном, открытом или с применением насилия). Докажем отсутствие умысла, переквалифицируем обвинение на менее тяжкую статью и добьёмся прекращения дела.
+          </span>
+        }
+        primaryCtaText="Обсудить ситуацию с адвокатом"
+        primaryCtaLink="#form"
+        primaryCtaAnalytics="click_cta_advokat_po_krazham_grabezham_i_razboyam"
+        primaryCtaSubtext={
+          <>Если требуется срочная помощь, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a></>
+        }
+        trustItems={[
+          { text: 'Стратегию определяет Аркадий Бобкин — 22 года следственного опыта' },
+          { text: 'Защиту и процессуальные действия ведут адвокаты коллегии' },
+          { text: 'Фиксируем состав услуг и условия в соглашении до начала работы' },
+          { text: 'Полная конфиденциальность и соблюдение адвокатской тайны' }
+        ]}
+        imageUrl="/images/bobkin.jpg"
+        imageName="Аркадий Евгеньевич Бобкин"
+        imageSubtitle="Директор ЮК «Де-Юре», куратор практики уголовного права"
+        imageObjectPosition="50% -75px"
+      />
 
-        {/* 2. Срочный блок: Если вызывают, задержали или проводят обыск */}
-        <section style={{ padding: '40px 0', background: 'var(--color-deep-blue)', color: '#FFFFFF', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '840px', marginBottom: '24px' }}>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(22px, 3vw, 28px)', color: '#FFFFFF', margin: '0 0 10px 0', lineHeight: 1.3 }}>
-                Срочный вызов или задержание по подозрению в хищении
-              </h2>
-              <p style={{ fontSize: '14.5px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, margin: 0 }}>
-                Первые показания и протоколы определяют квалификацию. Не признавайте вину в насилии или сговоре без конфиденциальной консультации с адвокатом.
-              </p>
-            </div>
-
-            <div className="grid grid-3" style={{ gap: '20px' }}>
-              {[{"name":"Задержание сотрудниками полиции","what":"Уточните орган, основания задержания, потребуйте зафиксировать точное время.","btnText":"Адвокат при задержании","btnHref":"/grazhdanam/advokat-po-ugolovnym-delam/advokat-pri-zaderzhanii-obyske-i-doprose/"},{"name":"Вызов на допрос или опознание","what":"Подготовьтесь к процедуре с адвокатом: исключите наводящие вопросы и нарушения правил опознания.","btnText":"Обсудить вызов","btnHref":"#form"},{"name":"Обыск по месту жительства","what":"Требуйте внесения в протокол всех замечаний по упаковке и принадлежности изъятого имущества.","btnText":"Адвокат при обыске","btnHref":"/grazhdanam/advokat-po-ugolovnym-delam/advokat-pri-zaderzhanii-obyske-i-doprose/"}].map((evt, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    backgroundColor: 'rgba(255,255,255,0.06)',
-                    border: '1px solid rgba(255,255,255,0.15)',
-                    borderTop: '3px solid var(--color-gold)',
-                    padding: '20px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between'
-                  }}
-                >
-                  <div>
-                    <h3 style={{ fontSize: '16px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 8px 0' }}>
-                      {evt.name}
-                    </h3>
-                    <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.5, margin: '0 0 14px 0' }}>
-                      {evt.what}
-                    </p>
-                  </div>
-                  <a
-                    href={evt.btnHref}
-                    className="btn white-btn-custom"
-                    style={{ fontSize: '13px', padding: '8px 16px', textAlign: 'center', display: 'block' }}
-                  >
-                    {evt.btnText}
-                  </a>
-                </div>
-              ))}
-            </div>
+      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>В каких ситуациях</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы помогаем гражданам</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Ознакомьтесь с типовыми сценариями. Если ваша ситуация требует срочного выезда, участия в процессуальном действии или защиты в суде — мы предложим оптимальную стратегию.
+            </p>
           </div>
-        </section>
 
-        {/* 3. С какими ситуациями мы помогаем гражданам (ТИПОВОЙ ШАБЛОН) */}
-        <section className="section bg-white" style={{ padding: '80px 0' }}>
-          <div className="container">
-            <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>С какими ситуациями</span>{' '}
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы помогаем гражданам</span>
-              </h2>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-                Оценим фактические обстоятельства, определим срочность и подскажем правильный порядок дальнейших действий.
-              </p>
-            </div>
-
-            <div className="grid grid-3" style={{ gap: '28px' }}>
-              {situations.map((item, i) => (
-                <div
-                  key={i}
-                  className="hover-lift"
-                  style={{
-                    padding: '36px 30px',
-                    background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                    border: '1px solid var(--color-border)',
-                    borderTop: '3px solid var(--color-primary)',
-                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease'
-                  }}
-                >
-                  <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                    <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                      <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                    </svg>
-                  </div>
-
-                  {item.tag && (
-                    <div style={{
-                      fontSize: '12px',
-                      fontWeight: 700,
-                      color: 'var(--color-gold)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      marginBottom: '14px',
-                      background: 'rgba(193, 160, 102, 0.1)',
-                      padding: '4px 10px',
-                      alignSelf: 'flex-start',
-                      position: 'relative',
-                      zIndex: 1
-                    }}>
-                      {item.tag}
-                    </div>
-                  )}
-                  <h3 style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '17px',
-                    fontWeight: 600,
-                    color: 'var(--color-deep-blue)',
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.35,
-                    minHeight: '44px',
-                    position: 'relative',
-                    zIndex: 1
-                  }}>
-                    {item.title}
-                  </h3>
-                  <p style={{
-                    color: 'var(--color-text-secondary)',
-                    fontSize: '14px',
-                    lineHeight: 1.6,
-                    margin: 0,
-                    position: 'relative',
-                    zIndex: 1
-                  }}>
-                    {item.desc}
-                  </p>
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
+            {situations.map((item, i) => (
+              <div key={i} className="hover-lift" style={{
+                padding: '36px 30px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease'
+              }}>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* 4. Маршрутизатор по роли */}
-        <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Выберите свой статус</span>{' '}
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в текущей ситуации</span>
-              </h2>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-                Задачи и порядок взаимодействия существенно отличаются для обвиняемых, их родственников и потерпевших.
-              </p>
-            </div>
-
-            <div className="grid grid-3" style={{ gap: '24px' }}>
-              {roles.map((r, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid var(--color-border)',
-                    borderTop: '3px solid var(--color-gold)',
-                    padding: '28px 24px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    boxShadow: '0 4px 16px rgba(16, 39, 59, 0.04)'
-                  }}
-                >
-                  <div>
-                    <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
-                      {r.role}
-                    </h3>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 20px 0' }}>
-                      {r.task}
-                    </p>
-                  </div>
-                  <a href={r.btnHref} className="btn btn-primary" style={{ fontSize: '14px', padding: '10px 20px', textAlign: 'center' }}>
-                    {r.btnText}
-                  </a>
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.tag}
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Состав и границы услуги */}
-        <section className="section bg-white" style={{ padding: '80px 0', borderTop: '1px solid var(--color-border)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
-              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что входит в работу,</span>{' '}
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>а что оценивается отдельно</span>
-              </h2>
-            </div>
-
-            <div className="grid grid-2" style={{ gap: '32px' }}>
-              <div style={{ backgroundColor: 'var(--color-cream)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', padding: '32px 28px' }}>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0' }}>
-                  Входит в согласованный этап:
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '17px', 
+                  fontWeight: 600,
+                  color: 'var(--color-deep-blue)', 
+                  margin: '0 0 12px 0', 
+                  lineHeight: 1.35, 
+                  minHeight: '44px',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.title}
                 </h3>
-                <ul style={{ margin: 0, paddingLeft: '18px', color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: 1.7 }}>
-                  {scope.included.map((inc, i) => (
-                    <li key={i} style={{ marginBottom: '8px' }}>{inc}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div style={{ backgroundColor: 'var(--color-cream)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', padding: '32px 28px' }}>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0' }}>
-                  Требует отдельного согласования:
-                </h3>
-                <ul style={{ margin: 0, paddingLeft: '18px', color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: 1.7 }}>
-                  {scope.extra.map((ext, i) => (
-                    <li key={i} style={{ marginBottom: '8px' }}>{ext}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 6. Аналитическая матрица / ключевые критерии разбора */}
-        <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
-              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-                {matrix.title}
-              </h2>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-                {matrix.subtitle}
-              </p>
-            </div>
-
-            <div className="grid grid-2" style={{ gap: '24px' }}>
-              {matrix.items.map((it, idx) => (
-                <div
-                  key={idx}
-                  className="hover-lift"
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid var(--color-border)',
-                    borderLeft: '4px solid var(--color-gold)',
-                    padding: '24px 20px',
-                    boxShadow: '0 2px 10px rgba(16, 39, 59, 0.03)'
-                  }}
-                >
-                  <h3 style={{ fontSize: '16.5px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
-                    {it.title}
-                  </h3>
-                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                    {it.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 7. Возможные правовые маршруты */}
-        <section className="section bg-white" style={{ padding: '80px 0', borderTop: '1px solid var(--color-border)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
-              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Возможные правовые</span>{' '}
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>маршруты защиты</span>
-              </h2>
-            </div>
-
-            <div className="grid grid-3" style={{ gap: '24px' }}>
-              {routes.map((rt, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    backgroundColor: 'var(--color-cream)',
-                    border: '1px solid var(--color-border)',
-                    borderTop: '3px solid var(--color-deep-blue)',
-                    padding: '28px 22px'
-                  }}
-                >
-                  <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
-                    {rt.title}
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                    {rt.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 8. Куратор практики */}
-        <SpecialistBlock
-          title="Куратор практики"
-          name="Бобкин Аркадий Евгеньевич"
-          position={<>Директор, управляющий партнёр ЮК «Де-Юре»,<br />куратор практики уголовного права</>}
-          imageUrl="/images/bobkin.jpg"
-          imagePosition="50% -75px"
-          profileHref="/specialisty/bobkin-arkadiy-evgenevich/"
-          profileText="Подробнее об Аркадии Евгеньевиче Бобкине →"
-          description={[
-            <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block', lineHeight: 1.6 }}>
-              Юрист с 1997 года. Более 22 лет работы в следственных подразделениях налоговой полиции и МВД (следователь по ОВД, начальник следственной части). Определяет генеральную стратегию защиты, проверяет процессуальные уязвимости следствия и координирует работу профильных адвокатов.
-            </span>,
-            <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-                <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-                <span>Анализ материалов проверки и доказательств обвинения</span>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-                <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-                <span>Непосредственную защиту ведут адвокаты Коллегии адвокатов «Де-Юре»</span>
-              </li>
-            </ul>
-          ]}
-          buttonText="Обсудить ситуацию с куратором"
-          buttonHref="#form"
-        />
-
-        {/* 9. Примеры из практики */}
-        <CasesBlock
-          title="Примеры дел из практики"
-          showAllLink="/praktika/"
-          showAllText="Смотреть все дела"
-          showDemoWarning={true}
-          cases={casesData}
-        />
-
-        {/* 10. Как строится работа */}
-        <ProcessBlock
-          title="Как строится работа по делу"
-          subtitle="Последовательный процесс защиты с фиксацией каждого шага"
-          steps={processSteps}
-        />
-
-        {/* 11. Стоимость помощи */}
-        <PricingBlock
-          title="Стоимость помощи"
-          subtitle="Фиксируем состав услуг и условия в договоре до начала работы."
-          tiers={pricingTiers}
-          disclaimer="Стоимость определяется после изучения материалов и обстоятельств дела. Вознаграждение исполнителя не зависит от исхода дела и не включает судебные пошлины и расходы на привлечённых специалистов."
-        />
-
-        {/* 12. Документы и сроки */}
-        <section className="section bg-white" style={{ padding: '80px 0', borderTop: '1px solid var(--color-border)' }}>
-          <div className="container">
-            <div className="grid grid-2" style={{ gap: '36px' }}>
-              <div style={{ backgroundColor: 'var(--color-cream)', border: '1px solid var(--color-border)', padding: '32px 28px' }}>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
-                  Что подготовить для консультации:
-                </h3>
-                <ul style={{ margin: 0, paddingLeft: '18px', color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: 1.7 }}>
-                  {docsAndDeadlines.docs.map((doc, i) => (
-                    <li key={i}>{doc}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div style={{ backgroundColor: 'var(--color-deep-blue)', color: '#FFFFFF', padding: '32px 28px', borderTop: '3px solid var(--color-gold)' }}>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 14px 0' }}>
-                  Процессуальные сроки и срочность:
-                </h3>
-                <p style={{ fontSize: '14.5px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.65, margin: 0 }}>
-                  {docsAndDeadlines.deadlines}
+                <p style={{ 
+                  color: 'var(--color-text-secondary)', 
+                  fontSize: '14px', 
+                  lineHeight: 1.6, 
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.desc}
                 </p>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
 
-        {/* 13. Смежные услуги направления */}
-        <section id="directions" className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '780px', marginBottom: '32px', textAlign: 'left' }}>
-              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '14px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Смежные услуги направления</span>
-              </h2>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-                Если ситуация затрагивает другие составы или процедуры, подключаем смежные услуги практики уголовного права.
-              </p>
+          {/* Сопутствующие уголовные услуги */}
+          <div style={{ background: 'var(--gradient-cream)', padding: '24px 28px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)' }}>
+            <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>
+              Сопутствующие услуги уголовной практики:
             </div>
-
-            <div className="grid grid-3" style={{ gap: '20px' }}>
-              {relatedServices.map((dir, i) => (
-                <Link key={i} href={dir.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-                  <div
-                    className="card related-service-card hover-lift"
-                    style={{
-                      height: '100%',
-                      minHeight: '180px',
-                      padding: '24px',
-                      background: 'var(--color-white)',
-                      border: '1px solid var(--color-border)',
-                      borderTop: '3px solid var(--color-primary)',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'space-between',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <div>
-                      <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.35 }}>
-                        {dir.title}
-                      </h3>
-                      <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                        {dir.desc}
-                      </p>
-                    </div>
-                    <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '16px' }}>
-                      <span>Подробнее →</span>
-                    </div>
-                  </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: '14px' }}>
+              {relatedLinks.map((rel, idx) => (
+                <Link key={idx} href={rel.link} style={{ color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+                  {rel.title} →
                 </Link>
               ))}
             </div>
-
-            <div style={{ textAlign: 'center', marginTop: '36px' }}>
-              <Link
-                href="/grazhdanam/advokat-po-ugolovnym-delam/"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: 'var(--color-primary)',
-                  fontSize: '15px',
-                  fontWeight: 600,
-                  textDecoration: 'none'
-                }}
-              >
-                <span>Смотреть все услуги практики уголовного права</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </Link>
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* 14. FAQ */}
-        <FAQBlock
-          superTitle="Вопросы и ответы"
-          title=<><span>Ответы на частые</span> <br /><span>вопросы</span></>
-          subtitle="Разбираем процедурные нюансы, доказательства и права участников"
-          ctaText="Задать свой вопрос"
-          ctaLink="#form"
-          faqs={faqItems}
-        />
+      {/* ═══ БЛОК 3: КУРАТОР ПРАКТИКИ ═══ */}
+      <SpecialistBlock
+        title="Куратор практики"
+        name="Аркадий Евгеньевич Бобкин"
+        position={<>Директор, управляющий партнёр ЮК «Де-Юре»,<br />куратор практики уголовного права</>}
+        imageUrl="/images/bobkin.jpg"
+        imagePosition="50% -75px"
+        profileHref="/specialisty/bobkin-arkadiy-evgenevich/"
+        profileText="Подробнее об Аркадии Евгеньевиче Бобкине →"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Юрист с 1997 года. Более 22 лет работы в следственных подразделениях налоговой полиции и МВД (следователь по ОВД, начальник следственной части). Определяет генеральную стратегию защиты, проверяет процессуальные уязвимости следствия и координирует работу профильных адвокатов.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Анализ материалов доследственных проверок и доказательств обвинения</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Непосредственную защиту в органах следствия и суде ведут адвокаты коллегии</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Строгая конфиденциальность и соблюдение тайны следствия и адвокатской тайны</span>
+            </li>
+          </ul>
+        ]}
+        buttonText="Задать вопрос куратору"
+        buttonHref="#form"
+      />
 
-        {/* 15. Финальная форма */}
-        <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
-          <div className="container">
-            <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-                  <img
-                    src="/images/bobkin.jpg"
-                    alt="Аркадий Евгеньевич Бобкин"
-                    style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--color-gold)' }}
-                  />
-                  <div>
-                    <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 4px 0' }}>
-                      Бобкин Аркадий Евгеньевич
-                    </h3>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
-                      Директор, управляющий партнёр ЮК «Де-Юре» • 22 года следственного опыта
-                    </p>
-                  </div>
+      {/* ═══ БЛОК 4: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
+      <CasesBlock
+        title="Примеры дел из практики"
+        showAllLink="/praktika/"
+        showAllText="Смотреть все дела"
+        showDemoWarning={true}
+        cases={casesData}
+      />
+
+      {/* ═══ БЛОК 5: КАК ПРОХОДИТ РАБОТА ═══ */}
+      <ProcessBlock
+        title="Как проходит работа"
+        subtitle="Чёткий алгоритм действий — вы всегда знаете, что происходит на каждом этапе вашего дела."
+        alignTitle="center"
+        steps={processSteps}
+        ctaTitle="Готовы обсудить вашу ситуацию"
+        ctaSubtitle="Опишите задачу — Аркадий Бобкин изучит обстоятельства и согласует состав защитной группы."
+        ctaButtonText="Обсудить ситуацию"
+        ctaButtonHref="#form"
+      />
+
+      {/* ═══ БЛОК 6: СТОИМОСТЬ УСЛУГ ═══ */}
+      <PricingBlock
+        title="Стоимость помощи адвоката"
+        subtitle="Фиксированная стоимость услуг закрепляется в соглашении до начала работы."
+        tiers={pricingTiers}
+        disclaimer="Стоимость определяется после уточнения обстоятельств и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в соглашении до начала работы. Оплата вознаграждения исполнителя не включает государственные пошлины и сопутствующие экспертные расходы."
+      />
+
+      {/* ═══ БЛОК 7: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
+      <FAQBlock
+        superTitle="Частые вопросы доверителей"
+        title={<><span>Ответы на</span> <br /><span>частые вопросы</span></>}
+        subtitle="О процедурах, правах и следственных действиях"
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
+        faqs={faqItems}
+      />
+
+      {/* ═══ БЛОК 8: ФИНАЛЬНАЯ ФОРМА ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите ситуацию</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с адвокатом</span>
+              </h2>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Укажите, в каком органе проводится проверка или расследование, процессуальный статус и какие документы вручены. Обращение передадим Аркадию Евгеньевичу Бобкину для первичного правового анализа.
+              </p>
+              
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация адвоката</strong>
                 </div>
-
-                <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0 }}>
-                  <span style={{ display: 'block' }}>Обсудите ситуацию</span>{' '}
-                  <span style={{ display: 'block' }}>с адвокатом</span>
-                </h2>
-                <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                  Кратко укажите, что происходит и какие документы есть на руках. В рабочее время свяжемся с вами в течение 15 минут.
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
                 </p>
-
-                <div style={{ marginTop: 'auto', backgroundColor: 'var(--color-cream)', padding: '20px', border: '1px solid var(--color-border)' }}>
-                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '6px' }}>
-                    Адрес офиса:
-                  </div>
-                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                    Липецк, ул. Советская, д. 35, оф. 213 (приём по предварительной записи)
-                  </div>
-                </div>
               </div>
 
-              <div>
-                <ContactsForm
-                  title=""
-                  subtitle=""
-                  buttonText="Отправить обращение"
-                  hiddenFields={[{ name: 'page', value: '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-krazham-grabezham-i-razboyam/' }]}
-                />
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Адвокатская тайна:</strong>
+                Все сведения и документы защищены режимом адвокатской тайны (ст. 8 ФЗ «Об адвокатской деятельности и адвокатуре в РФ»).
               </div>
             </div>
+
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Адвокат свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
+                buttonText="Отправить обращение"
+                commentPlaceholder="Опишите вашу ситуацию: орган, статья, вызов, задержание..."
+                hiddenFields={[
+                  { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-krazham-grabezham-i-razboyam/' },
+                  { name: 'direction', value: 'advokat_ugolovnyj' },
+                  { name: 'selected_specialist', value: 'bobkin-arkadiy-evgenevich' }
+                ]}
+              />
+            </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
       <Footer />
-    </div>
+    </main>
   );
 }
