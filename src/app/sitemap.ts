@@ -95,6 +95,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/migracionnyj-yurist/poluchenie-rvp/',
     '/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/',
     '/grazhdanam/migracionnyj-yurist/poluchenie-grazhdanstva-rf/',
+    // Адвокат по уголовным делам
+    '/grazhdanam/advokat-po-ugolovnym-delam/',
+    '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-moshennichestvu/',
+    '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-delam-o-narkotikah/',
+    '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-krazham-grabezham-i-razboyam/',
+    '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-dtp-s-postradavshimi/',
+    '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-ekonomicheskim-prestupleniyam/',
+    '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-dolzhnostnym-prestupleniyam-i-vzyatkam/',
+    '/grazhdanam/advokat-po-ugolovnym-delam/uslovno-dosrochnoe-osvobozhdenie/',
+    '/grazhdanam/advokat-po-ugolovnym-delam/advokat-pri-zaderzhanii-obyske-i-doprose/',
+    '/grazhdanam/advokat-po-ugolovnym-delam/obzhalovanie-prigovora/',
+    '/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/',
   ];
 
   const specialistRoutes = Object.keys(teamData).map((slug) => `/specialisty/${slug}/`);
