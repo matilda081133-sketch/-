@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -72,7 +72,7 @@ export default function BiznesuClient() {
       groupName: 'Корпоративные, налоговые и кадровые вопросы',
       title: 'Трудовые споры с работниками',
       desc: 'Увольнения и дисциплинарные взыскания, споры с работниками, проверки ГИТ и защита работодателя в суде.',
-      link: null
+      link: '/biznesu/trudovye-spory-s-rabotnikami/'
     },
     {
       id: 'B2B-08',

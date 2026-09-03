@@ -36,6 +36,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/',
     '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/',
     '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/',
+    // Трудовые споры для бизнеса (B2B)
+    '/biznesu/trudovye-spory-s-rabotnikami/',
+    '/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-uvolneniya-rabotnika/',
+    '/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-sokrashcheniya-shtata/',
+    '/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-proverki-trudovoj-inspekcii/',
+    '/biznesu/trudovye-spory-s-rabotnikami/kadrovyj-audit/',
+    '/biznesu/trudovye-spory-s-rabotnikami/vzyskanie-materialnogo-ushcherba-s-rabotnika/',
+    '/biznesu/trudovye-spory-s-rabotnikami/rassledovanie-neschastnogo-sluchaya-na-proizvodstve/',
     // Исполнительное для граждан
     '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/',
     '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/',
