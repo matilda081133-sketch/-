@@ -439,13 +439,11 @@ export default function AdvokatUgolovnyjClient() {
         {/* 1. Хлебные крошки и Hero */}
         <MilitaryHero
           breadcrumbs={
-            <nav aria-label="Хлебные крошки" style={{ display: 'flex', gap: '8px', alignItems: 'center', fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
-              <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Главная</Link>
-              <span>/</span>
-              <Link href="/grazhdanam/" style={{ color: 'inherit', textDecoration: 'none' }}>Гражданам</Link>
-              <span>/</span>
-              <span style={{ color: '#FFFFFF' }}>Адвокат по уголовным делам</span>
-            </nav>
+            <>
+              <Link href="/">Главная</Link><span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+              <Link href="/grazhdanam/">Гражданам</Link><span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+              <span style={{ color: 'var(--color-text-main)' }}>Адвокат по уголовным делам</span>
+            </>
           }
           superTitle="Уголовное право • Защита граждан"
           title={
