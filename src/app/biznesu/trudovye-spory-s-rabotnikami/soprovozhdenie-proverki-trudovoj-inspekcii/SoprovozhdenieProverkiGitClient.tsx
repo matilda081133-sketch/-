@@ -428,62 +428,79 @@ export default function SoprovozhdenieProverkiGitClient() {
       </section>
 
       
-      {/* ═══ БЛОК 3: ЧТО ПРОВЕРЯЕМ / ОСОБЕННОСТИ ═══ */}
-      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 3: ЧТО ПРОВЕРЯЕМ / ОСОБЕННОСТИ (ТОЧНЫЙ ШАБЛОН «КАКИЕ ВЫПЛАТЫ») ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+          <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
               <span style={{ display: "inline-block" }}>Что проверяет юрист</span> <br /><span style={{ display: "inline-block" }}>при получении запроса ГИТ</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Правовой фильтр исключает предоставление лишних документов, которые могут послужить поводом для расширения проверки.
+              Анализируем законность требований инспекции и выстраиваем доказательную позицию работодателя.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px' }}>
-            {checkpoints.map((cp, i) => (
-              <div
-                key={i}
-                className="hover-lift"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  padding: '38px 24px 30px 24px',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '4px solid var(--color-gold)',
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  borderRadius: '0',
-                  position: 'relative',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-                  transition: 'all 0.3s ease'
-                }}
-              >
-                <div style={{
-                  position: 'absolute',
-                  top: '-14px',
-                  left: '20px',
-                  background: 'var(--color-gold)',
-                  color: '#FFFFFF',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  padding: '2px 10px',
-                  borderRadius: '2px',
-                  letterSpacing: '0.05em'
-                }}>
-                  {String(i + 1).padStart(2, '0')}
-                </div>
-                <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
-                  {cp.title}
+          {/* Темно-синяя карточка по эталонному шаблону «Какие выплаты можно потребовать» */}
+          <div style={{
+            background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+            border: '1px solid var(--color-deep-blue)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)',
+            padding: '36px 32px',
+            position: 'relative',
+            overflow: 'hidden',
+            marginBottom: '32px'
+          }}>
+            {/* Фоновый декоративный вектор */}
+            <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
+              <svg width="120" height="120" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '16px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', marginBottom: '20px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.3 }}>
+                  Что проверяет юрист при получении запроса ГИТ
                 </h3>
-                <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                  {cp.desc}
-                </p>
               </div>
-            ))}
+            </div>
+
+            <p style={{ margin: '0 0 24px 0', fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+              Точный состав проверки и перечень действий определяются основанием запроса, требованиями инспектора и кадровыми документами компании:
+            </p>
+
+            <div className="grid grid-2" style={{ gap: '20px', position: 'relative', zIndex: 1 }}>
+              {checkpoints.map((item, idx) => (
+                <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '3px', lineHeight: 1.35 }}>
+                      {item.title}
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.55 }}>
+                      {item.desc}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 32px' }}>
+              Получить консультацию
+            </a>
           </div>
         </div>
       </section>
-      
 
       {/* ═══ БЛОК: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock 
