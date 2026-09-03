@@ -465,7 +465,8 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
             </div>
 
             <p style={{ margin: '0 0 28px 0', fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, maxWidth: '820px' }}>
-              Проверяем обязательные процедуры и сроки, нарушение которых влечет признание сокращения незаконным:
+              <span style={{ display: 'inline-block' }}>Проверяем обязательные процедуры и сроки, нарушение</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>которых влечет признание сокращения незаконным:</span>
             </p>
 
             <div className="grid grid-2" style={{ gap: '22px', position: 'relative', zIndex: 1 }}>
