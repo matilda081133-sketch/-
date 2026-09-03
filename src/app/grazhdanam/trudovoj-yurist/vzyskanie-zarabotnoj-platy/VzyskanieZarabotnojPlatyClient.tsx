@@ -598,45 +598,7 @@ export default function VzyskanieZarabotnojPlatyClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: КАКИЕ ВЫПЛАТЫ МОЖНО ПОТРЕБОВАТЬ ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Какие выплаты</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>можно потребовать</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              Точный состав требований определяется по трудовому договору, локальным актам, расчетам работодателя и фактически выполненной работе.
-            </p>
-          </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
-            {paymentTypes.map((item, i) => (
-              <div
-                key={i}
-                className="hover-lift"
-                style={{
-                  padding: '32px 28px',
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  display: 'flex',
-                  flexDirection: 'column'
-                }}
-              >
-                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
-                  {item.title}
-                </h3>
-                <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ═══ БЛОК 4: НА ЧЁМ СТРОИТСЯ ЗАЩИТА / ЧЕМ ПОМОЖЕТ ЮРИСТ (ТОЧНЫЙ ШАБЛОН) ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
@@ -906,16 +868,70 @@ export default function VzyskanieZarabotnojPlatyClient() {
 
           {/* Важно */}
           <div style={{
-            background: 'var(--gradient-cream)',
+            background: 'var(--color-white)',
             padding: '24px 28px',
             border: '1px solid var(--color-border)',
             borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
             fontSize: '14.5px',
             color: 'var(--color-deep-blue)',
             lineHeight: 1.65,
             marginBottom: '32px'
           }}>
             <strong style={{ color: 'var(--color-primary)' }}>Важно:</strong> Срок обращения в суд по спорам о невыплате заработной платы составляет <strong>1 год</strong> со дня установленного срока выплаты указанных сумм (ч. 2 ст. 392 ТК РФ). Обратитесь к юристу своевременно, чтобы не пропустить срок.
+          </div>
+
+          {/* Темно-синяя карточка: Какие выплаты можно потребовать */}
+          <div style={{
+            background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+            border: '1px solid var(--color-deep-blue)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)',
+            padding: '36px 32px',
+            position: 'relative',
+            overflow: 'hidden',
+            marginBottom: '32px'
+          }}>
+            {/* Фоновый декоративный вектор */}
+            <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
+              <svg width="120" height="120" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '16px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', marginBottom: '20px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.3 }}>
+                  Какие выплаты можно потребовать
+                </h3>
+              </div>
+            </div>
+
+            <p style={{ margin: '0 0 24px 0', fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+              Точный состав требований определяется по трудовому договору, локальным актам, расчетам работодателя и фактически выполненной работе:
+            </p>
+
+            <div className="grid grid-2" style={{ gap: '20px', position: 'relative', zIndex: 1 }}>
+              {paymentTypes.map((item, idx) => (
+                <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '3px', lineHeight: 1.35 }}>
+                      {item.title}
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.55 }}>
+                      {item.desc}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div style={{ textAlign: 'center' }}>
