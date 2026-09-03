@@ -1,4 +1,4 @@
-// !!! FINAL VERSION - FROZEN BY USER REQUEST !!!
+﻿// !!! FINAL VERSION - FROZEN BY USER REQUEST !!!
 // !!! НЕ ИЗМЕНЯТЬ И НЕ ПЕРЕПИСЫВАТЬ ЭТУ СТРАНИЦУ — ФИНАЛЬНАЯ ВЕРСИЯ !!!
 import React from 'react';
 import Header from '@/components/Header';
@@ -456,7 +456,7 @@ export default function VoennyjYuristPage() {
                     Не нашли свою ситуацию?
                   </h3>
                   <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.55 }}>
-                    Опишите ваш военный вопрос в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
+                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Опишите ваш военный вопрос в форме. Изучим имеющиеся документы</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и предложим возможные варианты решения.</span>
                   </p>
                 </div>
                 <div>

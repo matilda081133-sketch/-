@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -657,7 +657,7 @@ export default function TrudovojClient() {
                   Не нашли свою ситуацию?
                 </h3>
                 <p style={{ margin: '0', fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.55, maxWidth: '580px' }}>
-                  Опишите ваш трудовой вопрос в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Опишите ваш трудовой вопрос в форме. Изучим имеющиеся документы</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и предложим возможные варианты решения.</span>
                 </p>
               </div>
               <div style={{ flexShrink: 0 }}>

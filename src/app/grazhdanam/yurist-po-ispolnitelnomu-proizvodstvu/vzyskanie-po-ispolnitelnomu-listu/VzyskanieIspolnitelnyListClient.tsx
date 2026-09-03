@@ -531,7 +531,8 @@ export default function VzyskanieIspolnitelnyListClient() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Запрос сведений о счетах должника в ФНС</strong>
@@ -540,7 +541,8 @@ export default function VzyskanieIspolnitelnyListClient() {
                 </li>
                 <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Прямое предъявление листа в банк должника</strong>
@@ -549,7 +551,8 @@ export default function VzyskanieIspolnitelnyListClient() {
                 </li>
                 <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Исполнение через работодателя должника</strong>
@@ -558,7 +561,8 @@ export default function VzyskanieIspolnitelnyListClient() {
                 </li>
                 <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Контроль за исполнением банком</strong>
@@ -572,7 +576,7 @@ export default function VzyskanieIspolnitelnyListClient() {
             <div style={{
               background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-deep-blue)',
+              borderTop: '3px solid var(--color-primary)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
               padding: '32px 26px',
               display: 'flex',
@@ -580,7 +584,7 @@ export default function VzyskanieIspolnitelnyListClient() {
               gap: '18px'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                   <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16" />
                 </svg>
                 <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
@@ -592,8 +596,9 @@ export default function VzyskanieIspolnitelnyListClient() {
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Определение надлежащего финоргана</strong>
@@ -601,8 +606,9 @@ export default function VzyskanieIspolnitelnyListClient() {
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Подготовка специального пакета</strong>
@@ -610,8 +616,9 @@ export default function VzyskanieIspolnitelnyListClient() {
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Контроль 3-месячного срока</strong>
@@ -619,8 +626,9 @@ export default function VzyskanieIspolnitelnyListClient() {
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Взыскание процентов при задержке</strong>

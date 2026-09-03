@@ -152,10 +152,13 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
         primaryCtaText="Обсудить ситуацию"
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_cta_vnzh"
-        primaryCtaSubtext={
+                primaryCtaSubtext={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Чтобы проверить</span> <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>основание и документы до подачи, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+              Чтобы проверить основание и документы до подачи,
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
             </span>
           </span>
         }

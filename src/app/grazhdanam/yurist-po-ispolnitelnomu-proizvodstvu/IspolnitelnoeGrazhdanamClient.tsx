@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -737,7 +737,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
                   <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
                 </h3>
                 <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55, minHeight: '68px' }}>
-                  Опишите ваш вопрос по исполнительному производству в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Опишите ваш вопрос по исполнительному производству в форме. Изучим имеющиеся документы</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и предложим возможные варианты решения.</span>
                 </p>
               </div>
               <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>

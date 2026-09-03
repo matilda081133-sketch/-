@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -688,7 +688,7 @@ export default function SemejnyjClient() {
                   lineHeight: 1.55,
                   minHeight: '75px'
                 }}>
-                  Опишите ваш семейный вопрос в форме. Изучим имеющиеся документы и предложим возможные варианты решения.
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Опишите ваш семейный вопрос в форме. Изучим имеющиеся документы</span>{' '}<span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и предложим возможные варианты решения.</span>
                 </p>
               </div>
               <a 
