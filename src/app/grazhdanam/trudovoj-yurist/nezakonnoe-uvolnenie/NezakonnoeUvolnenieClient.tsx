@@ -576,6 +576,12 @@ export default function NezakonnoeUvolnenieClient() {
                   transition: 'all 0.3s ease'
                 }}
               >
+                {/* Фоновый вектор как в шаблоне */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
                 <div style={{
                   fontSize: '12px',
                   fontWeight: 700,
@@ -610,13 +616,21 @@ export default function NezakonnoeUvolnenieClient() {
                 background: 'var(--color-deep-blue)', 
                 border: '1px solid var(--color-deep-blue)', 
                 borderTop: '3px solid var(--color-gold)', 
-                boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)', 
+                boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)',
+                position: 'relative',
+                overflow: 'hidden',
                 display: 'flex', 
                 flexDirection: 'column', 
                 justifyContent: 'space-between',
                 boxSizing: 'border-box'
               }}
             >
+                {/* Фоновый вектор как в шаблоне */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="#FFFFFF">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
               <div>
                 <div style={{
                   fontSize: '12px',
