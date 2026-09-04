@@ -1080,7 +1080,7 @@ export default function AdvokatUgolovnyjClient() {
                   href="/specialisty/konopkin-dmitriy-sergeevich/" 
                   style={{ 
                     display: 'block', 
-                    height: '270px', 
+                    height: '360px', 
                     width: '100%', 
                     marginBottom: '16px', 
                     borderRadius: '0', 
@@ -1094,7 +1094,7 @@ export default function AdvokatUgolovnyjClient() {
                   <img 
                     src="/images/konopkin.jpg" 
                     alt="Конопкин Дмитрий Сергеевич" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 18%' }} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }} 
                     loading="lazy" 
                   />
                 </Link>
@@ -1155,7 +1155,7 @@ export default function AdvokatUgolovnyjClient() {
                   href="/specialisty/gusev-oleg-yurevich/" 
                   style={{ 
                     display: 'block', 
-                    height: '270px', 
+                    height: '360px', 
                     width: '100%', 
                     marginBottom: '16px', 
                     borderRadius: '0', 
@@ -1169,7 +1169,7 @@ export default function AdvokatUgolovnyjClient() {
                   <img 
                     src="/images/gusev.jpg" 
                     alt="Гусев Олег Юрьевич" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 12%' }} 
                     loading="lazy" 
                   />
                 </Link>
