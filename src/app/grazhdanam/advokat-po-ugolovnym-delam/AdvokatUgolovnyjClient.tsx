@@ -175,11 +175,7 @@ export default function AdvokatUgolovnyjClient() {
   const situations = [
     {
       tag: 'Вызов / Опрос',
-      title: (
-        <>
-          Вызывают для объяснений<br />или на допрос
-        </>
-      ),
+      title: 'Вызывают для объяснений или на допрос',
       desc: 'Уточним, в каком статусе вызывают, какие обстоятельства будут проверять и требуется ли участие адвоката до начала разговора.',
       link: '#form',
       actionText: 'Оставить заявку'
@@ -682,9 +678,8 @@ export default function AdvokatUgolovnyjClient() {
                   fontSize: '18px', 
                   fontWeight: 600,
                   color: 'var(--color-deep-blue)', 
-                  margin: '0 0 10px 0', 
-                  lineHeight: 1.35, 
-                  minHeight: '48px',
+                  margin: '0 0 8px 0', 
+                  lineHeight: 1.3, 
                   position: 'relative',
                   zIndex: 1
                 }}>
@@ -723,12 +718,11 @@ export default function AdvokatUgolovnyjClient() {
             >
               <div>
                 <h3 style={{ 
-                  margin: '0 0 10px 0', 
+                  margin: '0 0 8px 0', 
                   fontSize: '18px', 
                   fontFamily: 'var(--font-serif)',
                   color: 'var(--color-white)', 
-                  lineHeight: 1.35,
-                  minHeight: '48px'
+                  lineHeight: 1.3
                 }}>
                   Не нашли свою ситуацию?
                 </h3>
