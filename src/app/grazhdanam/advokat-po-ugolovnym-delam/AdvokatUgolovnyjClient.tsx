@@ -795,13 +795,6 @@ export default function AdvokatUgolovnyjClient() {
                 overflow: 'hidden'
               }}
             >
-              {/* Фоновый декоративный вектор как в шаблоне */}
-              <div style={{ position: 'absolute', bottom: '-35px', right: '-35px', opacity: 0.05, pointerEvents: 'none' }}>
-                <svg width="240" height="240" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-              </div>
-
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', position: 'relative', zIndex: 1 }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                   <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
