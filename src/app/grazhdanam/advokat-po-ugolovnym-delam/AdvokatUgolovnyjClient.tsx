@@ -790,10 +790,19 @@ export default function AdvokatUgolovnyjClient() {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '20px',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                position: 'relative',
+                overflow: 'hidden'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+              {/* Фоновый декоративный вектор как в шаблоне */}
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', position: 'relative', zIndex: 1 }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                   <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
                   <circle cx="9" cy="7" r="4"></circle>
@@ -804,10 +813,10 @@ export default function AdvokatUgolovnyjClient() {
                   Позиция доверителя в процессе:
                 </h3>
               </div>
-              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, position: 'relative', zIndex: 1 }}>
                 Тактика и объём правовой помощи выстраиваются строго в зависимости от процессуального статуса:
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px', position: 'relative', zIndex: 1 }}>
                 {statuses.map((st, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
@@ -844,10 +853,10 @@ export default function AdvokatUgolovnyjClient() {
                 overflow: 'hidden'
               }}
             >
-              {/* Фоновый декоративный вектор */}
-              <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.08, pointerEvents: 'none', zIndex: 0 }}>
-                <svg width="180" height="180" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              {/* Фоновый декоративный вектор как в шаблоне */}
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="#FFFFFF">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
               </div>
 
