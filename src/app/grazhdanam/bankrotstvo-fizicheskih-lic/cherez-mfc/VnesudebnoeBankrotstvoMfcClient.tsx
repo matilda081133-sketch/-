@@ -15,119 +15,103 @@ import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 export default function VnesudebnoeBankrotstvoMfcClient() {
   const cases: CaseData[] = [
     {
-      category: 'Пенсионеры / МФЦ',
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Провели пенсионера</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>через банкротство в МФЦ</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>без судебных расходов</span>
-        </>
-      ),
-      problem: 'Задолженность составляла 480 000 ₽ по двум кредитам и кредитной карте. Пенсия — основной доход, исполнительный документ предъявлялся менее года назад и не исполнен полностью.',
-      action: 'Проверили исполнительные производства, подтвердили пенсионное основание ст. 223.2, собрали справки, выверили список кредиторов и помогли подать заявление в МФЦ.',
-      result: 'Сведения включены в ЕФРСБ без возврата. Через 6 месяцев процедура завершена с полным освобождением от указанных долгов.'
+      category: 'Пенсионеры / Ст. 223.2 № 127-ФЗ',
+      title: 'Списание долгов 680 000 ₽ пенсионера через МФЦ',
+      problem: 'Пенсионер имел непогашенные кредиты на 680 000 ₽. Из-за открытого исполнительного производства с пенсии удерживалось 50%, средств на жизнь катастрофически не хватало.',
+      action: 'Проверили соблюдение годичного срока предъявления исполнительного документа, запросили справку СФР о пенсии и справку ФССП, сформировали корректный реестр кредиторов и подали заявление в МФЦ.',
+      result: 'МФЦ включил сведения в ЕФРСБ, удержания с пенсии немедленно прекратились; через 6 месяцев вся сумма долга 680 000 ₽ списана без суда и расходов.'
     },
     {
-      category: 'Пособие на ребёнка / МФО',
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Списали 315 000 ₽</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по микрозаймам для</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>получателя детского пособия</span>
-        </>
-      ),
-      problem: 'У матери двоих детей накопилось 315 000 ₽ по микрозаймам и картам. Клиентка получала единое пособие на детей, имущества для взыскания не имелось.',
-      action: 'Подтвердили статус и срок исполнительного документа, восстановили цепочку уступки долгов коллекторам, указали действующих кредиторов и заполнили заявление.',
-      result: 'МФЦ принял документы с первого раза. По истечении 6 месяцев долги перед всеми включёнными кредиторами были списаны.'
+      category: 'Оконченные ИП / Без имущества',
+      title: 'Списание микрозаймов и кредитов на 420 000 ₽',
+      problem: 'Доверитель накопил задолженность в 8 микрофинансовых организациях и 2 банках на общую сумму 420 000 ₽. Приставы окончили производство по п. 4 ч. 1 ст. 46, но коллекторы продолжали звонки.',
+      action: 'Провели аудит закрытых производств на сайте ФССП, подтвердили отсутствие нового открытого производства, зафиксировали полный список кредиторов с договорами и сопроводили регистрацию в МФЦ.',
+      result: 'Через 6 месяцев все долги перед 10 кредиторами полностью аннулированы, звонки коллекторов и требования прекращены навсегда.'
     },
     {
-      category: 'Длительное взыскание / 7 лет',
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Применили основание</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>длительного неисполнения</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и списали 870 000 ₽</span>
-        </>
-      ),
-      problem: 'Долг 870 000 ₽ тянулся более 7 лет. Производства периодически возобновлялись, сменился взыскатель, и клиент не мог самостоятельно составить список.',
-      action: 'Сопоставили судебный акт, исполнительный документ и историю производств, установили правопреемника банка и сформировали точный реестр обязательств.',
-      result: 'Заявление зарегистрировано в МФЦ по основанию 7-летнего взыскания. Через 6 месяцев процедура успешно завершилась.'
+      category: 'Получатели детских пособий',
+      title: 'Списание 890 000 ₽ матери-одиночке с пособиями',
+      problem: 'Женщина с двумя детьми имела долги по кредитным картам на 890 000 ₽. Единственный доход — единое детское пособие, исполнительный лист находился на исполнении более 1 года.',
+      action: 'Получили справку о назначении единого пособия, справку от судебных приставов о длительности исполнения, составили список кредиторов с точным расчётом процентов и подали комплект в МФЦ.',
+      result: 'Заявление принято с первого раза, публикация в Федресурсе размещена без замечаний; по истечении 6 месяцев долг списан в полном объёме.'
     }
   ];
 
   const faqs = [
     {
-      q: 'Достаточно ли долга от 25 000 до 1 000 000 ₽ для обращения в МФЦ?',
-      a: 'Нет. Одной подходящей суммы долга недостаточно. Гражданин обязан подтвердить одно из четырёх законных оснований, установленных статьёй 223.2 Федерального закона № 127-ФЗ (оконченное производство по п. 4 ч. 1 ст. 46, пенсия/СВО, детское пособие или 7 лет взыскания).'
+      q: 'Какая сумма долга подходит для банкротства через МФЦ?',
+      a: 'По закону № 127-ФЗ сумма всех денежных обязательств гражданина должна составлять от 25 000 до 1 000 000 рублей. В расчёт включаются кредиты, займы в МФО, налоги, штрафы, коммунальные долги и договоры поручительства.'
     },
     {
-      q: 'МФЦ сам найдёт и добавит всех кредиторов?',
-      a: 'Нет. МФЦ лишь принимает заявление. Гражданин самостоятельно несёт ответственность за полноту списка. Долги перед кредиторами, не включёнными в заявление, не прекращаются и останутся за должником.'
+      q: 'Сколько стоит процедура в МФЦ?',
+      a: 'Сама процедура внесудебного банкротства через МФЦ бесплатна: государственная пошлина не взимается, услуги арбитражного управляющего оплачивать не нужно, публикация в ЕФРСБ также осуществляется бесплатно.'
     },
     {
-      q: 'Сколько длится процедура через МФЦ?',
-      a: 'Ровно шесть месяцев со дня включения сведений о возбуждении процедуры в ЕФРСБ, если в течение этого срока кредиторы не инициируют судебное банкротство.'
+      q: 'Сколько длится процедура списания?',
+      a: 'Ровно 6 месяцев со дня включения сведений о возбуждении процедуры в Единый федеральный реестр сведений о банкротстве (ЕФРСБ). По истечении этого срока долги признаются безнадёжными и списываются.'
     },
     {
-      q: 'Нужно ли платить госпошлину или финансовому управляющему?',
-      a: 'Нет. Государственная процедура в МФЦ полностью бесплатна, госпошлина не взимается, финансовый управляющий не привлекается.'
+      q: 'Что будет, если забыть указать кого-то из кредиторов?',
+      a: 'Списываются только те долги и перед теми кредиторами, которые были прямо и корректно указаны заявителем в списке при подаче заявления. Забытый или неуказанный долг останется действующим и не спишется.'
     },
     {
-      q: 'Что делать, если МФЦ вернул заявление?',
-      a: 'Необходимо разобрать причины возврата (ошибки в справках, новые открытые производства в ФССП) и устранить их. Повторно подать заявление в МФЦ можно не ранее чем через один месяц.'
+      q: 'Заберут ли единственное жилье?',
+      a: 'Нет. Единственное пригодное для проживания жилье (если оно не находится в ипотеке или залоге) защищено статьей 446 ГПК РФ и не подлежит изъятию ни при каких обстоятельствах.'
     },
     {
-      q: 'Что будет, если во время процедуры получить наследство или доход?',
-      a: 'Если в течение 6 месяцев имущественное положение существенно улучшилось (получено наследство, подарок, высокооплачиваемая работа), гражданин обязан уведомить МФЦ в течение 5 рабочих дней, после чего процедура прекращается.'
+      q: 'Можно ли выезжать за границу во время процедуры?',
+      a: 'При внесудебном банкротстве через МФЦ автоматического запрета на выезд за пределы РФ не вводится. Приостанавливаются все действующие ограничения, наложенные судебными приставами.'
     },
     {
-      q: 'Все ли долги списываются через МФЦ?',
-      a: 'Прекращаются только обязательства перед кредиторами, указанными в заявлении, и в пределах заявленных сумм. Алименты, возмещение вреда жизни/здоровью и задолженность по неуказанным займам сохраняются.'
+      q: 'Может ли банк перевести процедуру в арбитражный суд?',
+      a: 'Кредитор имеет право подать заявление в суд только при наличии законных оснований: если найдено неучтенное имущество, оспоримые сделки за 3 года или заявитель существенно занизил сумму долга. Мы проверяем эти риски до подачи документов.'
     },
     {
-      q: 'Можно ли обратиться в МФЦ при долге свыше 1 000 000 ₽?',
-      a: 'Нет. Если общая сумма обязательств превышает 1 000 000 ₽, внесудебный маршрут не применим — необходимо оформлять судебное банкротство.'
+      q: 'Когда можно повторно подать на банкротство через МФЦ?',
+      a: 'Повторное обращение с заявлением о внесудебном банкротстве возможно не ранее чем через 5 лет после дня завершения предыдущей процедуры.'
     }
   ];
 
   const pricingTiers: PricingTier[] = [
     {
-      title: 'Процедура в МФЦ',
-      subtitle: 'Государственная услуга в МФЦ по закону № 127-ФЗ',
-      price: '0 ₽ (Бесплатно)',
+      title: 'Анализ и проверка условий',
+      subtitle: 'Первичный аудит возможности списания долгов',
+      price: 'от 3 000 ₽',
       features: [
-        { name: 'Госпошлина за процедуру', value: '0 ₽' },
-        { name: 'Вознаграждение управляющего', value: 'Не требуется' },
-        { name: 'Публикация в реестре ЕФРСБ', value: 'Бесплатно' },
-        { name: 'Срок проведения процедуры', value: '6 месяцев' }
+        { name: 'Проверка баз ФССП и исполнительных производств', value: '✓' },
+        { name: 'Расчёт общей суммы долга и проверка лимитов', value: '✓' },
+        { name: 'Оценка рисков по сделкам и имуществу за 3 года', value: '✓' },
+        { name: 'Письменное заключение о возможности списания', value: '✓' }
       ],
-      buttonText: 'Подать самостоятельно',
+      buttonText: 'Получить аудит',
       buttonHref: '#form'
     },
     {
-      title: 'Проверка оснований и рисков',
-      subtitle: 'Аудит исполнительных производств, справок и права на процедуру в МФЦ',
+      title: 'Подготовка реестра и пакета',
+      subtitle: 'Формирование полного пакета для подачи в МФЦ',
+      price: 'от 9 000 ₽',
       popular: true,
-      badgeText: 'Рекомендуем',
+      badgeText: 'Популярно',
       features: [
-        { name: 'Проверка по ст. 223.2 № 127-ФЗ', value: '[уточняется]' },
-        { name: 'Анализ банка данных ФССП', value: '[уточняется]' },
-        { name: 'Проверка актуальности справок', value: '[уточняется]' },
-        { name: 'Оценка риска возврата МФЦ', value: '[уточняется]' }
+        { name: 'Сбор обязательных справок (СФР, ФССП, банки)', value: '✓' },
+        { name: 'Составление списка кредиторов по форме Минэка', value: '✓' },
+        { name: 'Заполнение заявления о внесудебном банкротстве', value: '✓' },
+        { name: 'Пошаговая инструкция по подаче в МФЦ г. Липецка', value: '✓' }
       ],
-      buttonText: 'Заказать аудит',
+      buttonText: 'Заказать подготовку',
       buttonHref: '#form'
     },
     {
-      title: 'Подготовка заявления «под ключ»',
-      subtitle: 'Формирование безошибочного реестра кредиторов и полного пакета документов',
+      title: 'Полное сопровождение под ключ',
+      subtitle: 'Сопровождение юристом от сбора до списания долга',
+      price: 'от 18 000 ₽',
       features: [
-        { name: 'Восстановление цепочек цессий', value: '[уточняется]' },
-        { name: 'Точный расчёт сумм обязательств', value: '[уточняется]' },
-        { name: 'Заполнение утверждённой формы заявления', value: '[уточняется]' },
-        { name: 'Сопровождение до публикации в ЕФРСБ', value: '[уточняется]' }
+        { name: 'Сбор всех справок и документов без вашего участия', value: '✓' },
+        { name: 'Формирование и подача комплекта в МФЦ', value: '✓' },
+        { name: 'Контроль публикации в Федресурсе (ЕФРСБ)', value: '✓' },
+        { name: 'Защита от претензий кредиторов в течение 6 месяцев', value: '✓' }
       ],
-      buttonText: 'Подготовить документы',
+      buttonText: 'Списание под ключ',
       buttonHref: '#form'
     }
   ];
@@ -135,58 +119,33 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
   const steps: ProcessStep[] = [
     {
       num: '01',
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Проверяем право</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>на банкротство в МФЦ</span>
-        </>
-      ),
-      desc: 'Сопоставляем сумму обязательств с лимитом 25к–1М ₽ и подтверждаем наличие одного из 4 законных оснований статьи 223.2.'
+      title: 'Аудит долгов и производств в ФССП',
+      desc: 'Проверяем основания окончания исполнительных производств по базам ФССП, дату их открытия, сумму долгов и отсутствие запретов.'
     },
     {
       num: '02',
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Формируем список</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>кредиторов и справки</span>
-        </>
-      ),
-      desc: 'Восстанавливаем полные реквизиты банков, МФО, коллекторов и точные суммы долгов, собираем необходимые справки по доходам и ФССП.'
+      title: 'Сбор обязательных справок и сведений',
+      desc: 'Получаем справки от приставов, СФР (о пенсии или детских пособиях), банков и формируем полный перечень долговых обязательств.'
     },
     {
       num: '03',
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Заполняем заявление</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>по форме закона</span>
-        </>
-      ),
-      desc: 'Оформляем заявление и приложения строго по актуальным регламентам, исключая основания для возврата документов специалистами МФЦ.'
+      title: 'Формирование реестра всех кредиторов',
+      desc: 'Составляем список кредиторов строго по установленной форме Минэкономразвития РФ с точным указанием сумм основного долга, штрафов и пеней.'
     },
     {
       num: '04',
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подача в МФЦ</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и контроль публикации</span>
-        </>
-      ),
-      desc: 'Клиент подаёт готовый пакет в МФЦ по месту жительства. Мы контролируем внесение сведений о возбуждении процедуры в ЕФРСБ.'
+      title: 'Подача в МФЦ и публикация в ЕФРСБ',
+      desc: 'Подаем заявление в МФЦ г. Липецка. В течение 3 рабочих дней МФЦ проверяет сведения и публикует сообщение в Федресурсе (ЕФРСБ).'
     },
     {
       num: '05',
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Завершение процедуры</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и списание долгов</span>
-        </>
-      ),
-      desc: 'Через 6 месяцев процедура завершается, а в ЕФРСБ публикуется запись об освобождении гражданина от указанных обязательств.'
+      title: '6 месяцев моратория и списание долга',
+      desc: 'В течение 6 месяцев действует мораторий на взыскание. По истечении срока гражданин полностью освобождается от уплаты всех указанных долгов.'
     },
     {
       isBanner: true,
-      title: 'Дистанционный формат',
-      desc: 'Предварительный аудит производств приставов, проверка справок и составление заявления проводятся дистанционно.'
+      title: 'Дистанционный формат работы',
+      desc: 'Для жителей Липецкой области и других регионов доступно дистанционное оформление документов. Защищенный канал передачи копий согласуем после звонка.'
     }
   ];
 
@@ -215,7 +174,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
           { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
           { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
           { '@type': 'ListItem', 'position': 3, 'name': 'Банкротство физических лиц', 'item': 'https://dejure-help.ru/grazhdanam/bankrotstvo-fizicheskih-lic/' },
-          { '@type': 'ListItem', 'position': 4, 'name': 'Через МФЦ', 'item': 'https://dejure-help.ru/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/' }
+          { '@type': 'ListItem', 'position': 4, 'name': 'Внесудебное банкротство через МФЦ', 'item': 'https://dejure-help.ru/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/' }
         ]
       },
       {
@@ -228,7 +187,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
           '@type': 'AdministrativeArea',
           'name': 'Липецк и Липецкая область'
         },
-        'description': 'Юридическая помощь при внесудебном банкротстве через МФЦ: проверка условий по ст. 223.2, исполнительных производств и подготовка списка кредиторов.'
+        'description': 'Бесплатное внесудебное списание долгов от 25 000 до 1 000 000 рублей через МФЦ в Липецке. Проверка условий, сбор справок, подготовка списка кредиторов по закону № 127-ФЗ.'
       },
       {
         '@type': 'FAQPage',
@@ -244,10 +203,9 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
       },
       {
         '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
-        'name': 'Владимир Викторович Начешников',
-        'jobTitle': 'Специалист ЮК «Де-Юре» по банкротству граждан',
-        'url': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+        '@id': 'https://dejure-help.ru/specialisty/#nacheshnikov',
+        'name': 'Владимир Владимирович Начешников',
+        'jobTitle': 'Ведущий юрист по банкротству',
         'worksFor': { '@id': 'https://dejure-help.ru/#organization' }
       }
     ]
@@ -271,97 +229,111 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
             <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/">Банкротство физических лиц</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <span style={{ color: 'var(--color-text-main)' }}>Через МФЦ</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Внесудебное банкротство через МФЦ</span>
           </>
         }
-        superTitle="Банкротство без суда • предварительная проверка"
+        superTitle="Банкротство физических лиц в Липецке"
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               Внесудебное банкротство
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            </span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               через МФЦ в Липецке
             </span>
           </span>
         }
         subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Проверим, соответствует ли Ваша ситуация условиям бесплатной процедуры, восстановим полный список кредиторов и объясним риски до подачи заявления.
-          </span>
+          <>
+            <style dangerouslySetInnerHTML={{__html: `
+              @media (min-width: 992px) {
+                .hero-sub-span-desktop {
+                  white-space: nowrap !important;
+                }
+              }
+            `}} />
+            <span style={{ display: 'inline-block', maxWidth: '100%' }}>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                Бесплатное списание долгов от 25 000 до 1 000 000 ₽ по ст. 223.2 закона № 127-ФЗ.
+              </span>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                Проверим основания в ФССП, соберем обязательные справки, составим реестр
+              </span>
+              <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
+                кредиторов и сопроводим процедуру до полного списания задолженности.
+              </span>
+            </span>
+          </>
         }
-        primaryCtaText="Проверить условия для МФЦ"
+        primaryCtaText="Проверить условия списания"
         primaryCtaLink="#form"
-        primaryCtaAnalytics="click_cta_mfc_service"
+        primaryCtaAnalytics="cta_click"
         primaryCtaSubtext={
-          <>Если требуется срочная консультация, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a></>
+          <>
+            <span style={{ display: 'inline-block' }}>Сообщите сумму долга, наличие оконченных производств или статус:</span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>пенсионер, получатель пособий: <a href="tel:+79103503111" data-analytics="phone_click">+7 (910) 350-31-11</a></span>
+          </>
         }
         trustItems={[
-          { text: 'Сумма обязательств — от 25 000 до 1 000 000 ₽' },
-          { text: 'Процедура длится 6 месяцев и не требует управляющего' },
-          { text: 'Проверяем 4 законных основания ст. 223.2 № 127-ФЗ' },
-          { text: 'Куратор — специалист В. В. Начешников' }
+          { text: 'Списание долгов от 25 000 до 1 000 000 ₽ без суда и госпошлин' },
+          { text: 'Для граждан с закрытыми ИП, пенсионеров и получателей детских пособий' },
+          { text: 'Точный список кредиторов — ни один долг не останется не списанным' }
         ]}
         imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Специалист ЮК «Де-Юре», куратор направления «Банкротство граждан»"
+        imageName="Владимир Владимирович Начешников"
+        imageSubtitle="Ведущий юрист по банкротству граждан, специалист ЮК «Де-Юре»"
         imageObjectPosition="center 20%"
       />
 
-      {/* ═══ БЛОК 2: 4 ОСНОВАНИЯ ДЛЯ МФЦ (ТИПОВОЙ ШАБЛОН) ═══ */}
+      {/* ═══ БЛОК 2: КОГДА ВОЗМОЖНО ВНЕСУДЕБНОЕ БАНКРОТСТВО ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Кому подходит</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>банкротство через МФЦ</span>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Условия и критерии списания
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                долгов через МФЦ
+              </span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Для подачи заявления через МФЦ сумма долга должна быть от 25 000 до 1 000 000 ₽, а также подтверждено хотя бы одно из четырёх законных оснований статьи 223.2 Закона № 127-ФЗ:
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Внесудебная процедура доступна гражданам, подходящим под один из установленных</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>законом № 127-ФЗ критериев. Проверим соответствие всем требованиям до подачи заявления.</span>
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '28px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
             {[
               {
-                tag: 'Основание 01',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оконченное производство</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>из-за отсутствия имущества</span>
-                  </>
-                ),
-                desc: 'Производство окончено приставом по п. 4 ч. 1 ст. 46 Закона № 229-ФЗ, исполнительный документ возвращён взыскателю, и нет иных открытых производств.'
+                tag: 'Сумма долга',
+                title: 'От 25 000 до 1 000 000 ₽',
+                desc: 'Учитываются кредиты, займы в МФО, кредитные карты, налоги, штрафы, ЖКХ и договоры поручительства.'
               },
               {
-                tag: 'Основание 02',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Пенсионеры или</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>участники СВО</span>
-                  </>
-                ),
-                desc: 'Пенсия является основным доходом (или гражданин участник СВО), исполнительный лист предъявлен от 1 года назад, долг не закрыт, имущества нет.'
+                tag: 'Закрытые ИП',
+                title: 'Окончено по п. 4 ч. 1 ст. 46',
+                desc: 'Приставы вернули исполнительный лист из-за отсутствия имущества, и нет новых открытых исполнительных производств.'
               },
               {
-                tag: 'Основание 03',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получатели пособия</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>на детей до 17 лет</span>
-                  </>
-                ),
-                desc: 'Гражданин получает ежемесячное единое пособие на ребёнка, исполнительный лист старше 1 года не исполнен полностью, имущества для взыскания нет.'
+                tag: 'Пенсионеры',
+                title: 'Пенсия — основной доход',
+                desc: 'Исполнительный документ старше 1 года, нет имущества для взыскания, кроме единственного жилья и пенсии.'
               },
               {
-                tag: 'Основание 04',
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Исполнительный документ</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>старше семи лет</span>
-                  </>
-                ),
-                desc: 'Исполнительный документ имущественного характера предъявлялся к исполнению не позднее 7 лет назад и остаётся неисполненным либо исполнен частично.'
+                tag: 'Детские пособия',
+                title: 'Получатели единого пособия',
+                desc: 'Граждане, получающие пособие на ребенка, при давности исполнительного документа от 1 года.'
+              },
+              {
+                tag: 'Длительные долги',
+                title: 'Исполнение более 7 лет',
+                desc: 'Исполнительный документ находится на исполнении у приставов более 7 лет и не исполнен полностью.'
+              },
+              {
+                tag: 'Без расходов',
+                title: '0 ₽ пошлин и управляющих',
+                desc: 'Процедура абсолютно бесплатна: без оплаты депозита арбитражного управляющего и госпошлин.'
               }
             ].map((item, i) => (
               <div key={i} className="hover-lift" style={{
@@ -374,7 +346,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
                 flexDirection: 'column',
                 position: 'relative',
                 overflow: 'hidden',
-                transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease'
+                transition: 'all 0.3s ease'
               }}>
                 <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
                   <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
@@ -382,12 +354,12 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
                   </svg>
                 </div>
 
-                <div style={{ 
-                  fontSize: '12px', 
-                  fontWeight: 700, 
-                  color: 'var(--color-gold)', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.08em', 
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
                   marginBottom: '14px',
                   background: 'rgba(193, 160, 102, 0.1)',
                   padding: '4px 10px',
@@ -397,23 +369,22 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
                 }}>
                   {item.tag}
                 </div>
-                <h3 style={{ 
-                  fontFamily: 'var(--font-serif)', 
-                  fontSize: '17px', 
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '18px',
                   fontWeight: 600,
-                  color: 'var(--color-deep-blue)', 
-                  margin: '0 0 12px 0', 
-                  lineHeight: 1.35, 
-                  minHeight: '44px',
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 14px 0',
+                  lineHeight: 1.35,
                   position: 'relative',
                   zIndex: 1
                 }}>
                   {item.title}
                 </h3>
-                <p style={{ 
-                  color: 'var(--color-text-secondary)', 
-                  fontSize: '14px', 
-                  lineHeight: 1.6, 
+                <p style={{
+                  fontSize: '15px',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.6,
                   margin: 0,
                   position: 'relative',
                   zIndex: 1
@@ -423,215 +394,982 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
               </div>
             ))}
           </div>
+
+          <div style={{
+            background: 'var(--color-white)',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '24px 30px',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
+          }}>
+            <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>
+              <strong>Важное правило списания:</strong> Через МФЦ списываются обязательства только перед теми кредиторами и только в тех суммах, которые были указаны заявителем в приложении к заявлению. Неуказанные долги продолжат действовать.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: КРИТИЧЕСКИЙ РИСК: СПИСОК КРЕДИТОРОВ ═══ */}
+      {/* ═══ БЛОК 3: КАТЕГОРИИ ГРАЖДАН И СТРАТЕГИЯ ПРОВЕРКИ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>МФЦ не дополнит</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>заявление за Вас</span>
+          
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Кому доступно списание долгов
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                и какие обязательства аннулируются
+              </span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0 }}>
-              Освобождение распространяется исключительно на требования кредиторов, указанных в заявлении, и в пределах заявленной суммы. Долг перед неуказанным банком или МФО не прекращается.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>По статье 223.2 закона № 127-ФЗ процедура имеет четкие основания и требования к документам.</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>Проводим предварительный аудит, чтобы исключить риск возврата заявления из МФЦ.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          {/* Темно-синяя карточка-навигатор */}
+          <div style={{
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            marginBottom: '32px',
+            position: 'relative'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+              <div>
+                <h3 style={{ fontSize: 'clamp(20px, 2.5vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  3 этапа правовой проверки
+                </h3>
+              </div>
+              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '520px', lineHeight: 1.5 }}>
+                <span style={{ display: 'block' }}>Позволяет гарантированно подтвердить право на списание</span>
+                <span style={{ display: 'block' }}>и избежать отказа со стороны сотрудников МФЦ.</span>
+              </div>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>01</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Проверяем базы</span>
+                    <span style={{ display: 'block' }}>ФССП и доходы</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Устанавливаем основания закрытия производств, дату исполнительных листов и отсутствие нового открытого производства.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>02</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Запрашиваем</span>
+                    <span style={{ display: 'block' }}>обязательные справки</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Получаем установленные законом справки из СФР о пенсии/пособиях, банков и службы судебных приставов.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>03</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Формируем точный</span>
+                    <span style={{ display: 'block' }}>реестр кредиторов</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Указываем точные реквизиты всех банков, МФО, налоговых органов и точные суммы долгов с процентами и штрафами.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 2 КРУПНЫЕ КАРТОЧКИ */}
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            
+            {/* Карточка 1: Категории заявителей */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
+                  <span style={{ display: 'inline-block' }}>Категории граждан</span>{' '}
+                  <span style={{ display: 'inline-block' }}>для списания через МФЦ</span>
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>Закон № 127-ФЗ предусматривает 4 основания</span>{' '}
+                <span style={{ display: 'inline-block' }}>для подачи заявления во внесудебном порядке:</span>
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Закрытое производство по п. 4 ч. 1 ст. 46
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Пристав окончил производство из-за отсутствия имущества для взыскания, и нет новых открытых дел.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Пенсионеры с единственным доходом
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Исполнительный документ предъявлен к исполнению более 1 года назад, нет иного имущества.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Получатели детских пособий
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Граждане, получающие единое пособие на ребенка, при длительности исполнительного документа от 1 года.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Долги на исполнении более 7 лет
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Исполнительный документ находится на исполнении у приставов более 7 лет и не погашен полностью.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Карточка 2: Списываемые и несписываемые долги */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
+                  <span style={{ display: 'inline-block' }}>Какие долги списываются,</span>{' '}
+                  <span style={{ display: 'inline-block' }}>а какие сохраняются</span>
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>Разделяем финансовые обязательства</span>{' '}
+                <span style={{ display: 'inline-block' }}>на списываемые и несгораемые по закону:</span>
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Банковские кредиты и карты (Списываются)
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Потребительские кредиты, кредитные карты, овердрафты во всех коммерческих банках.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Микрозаймы и займы физлиц (Списываются)
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Займы в МФО, ломбардах, долги по распискам перед гражданами и организациями.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Налоги, штрафы и долги по ЖКХ (Списываются)
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Транспортный, имущественный налог, штрафы ГИБДД и задолженности перед управляющими компаниями.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(23, 50, 77, 0.4)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Алименты и вред здоровью (Не списываются)
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      Алименты, компенсация вреда жизни/здоровью и субсидиарная ответственность сохраняются.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Важно: полупрозрачная карточка */}
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.65)',
+            backdropFilter: 'blur(6px)',
+            padding: '22px 28px',
+            border: '1px solid rgba(23, 50, 77, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            fontSize: '14px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.6,
+            marginBottom: '32px'
+          }}>
+            <strong style={{ color: 'var(--color-primary)' }}>Правовая рамка:</strong> По статье 223.2 закона № 127-ФЗ гражданин обязан включить в список всех известных ему кредиторов с указанием точного размера требований. Если сумма долга окажется свыше 1 000 000 ₽ или обнаружатся открытые производства, списание возможно только в судебном порядке.
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 32px' }}>
+              Оценить возможность списания через МФЦ
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 4: ЧТО СДЕЛАЕТ ЮРИСТ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Что сделает юрист</span> <br />
+              <span style={{ display: 'inline-block' }}>по внесудебному банкротству</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Комплексное правовое сопровождение от аудита и сбора справок</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>до регистрации заявления в МФЦ и полного аннулирования долгов.</span>
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '48px' }}>
             {[
               {
-                title: 'Официальные наименования',
-                desc: 'Нельзя указывать банки «по памяти» — нужны точные юридические лица, ОГРН, ИНН и юридические адреса.'
+                num: '01',
+                title: 'Проверит базы ФССП',
+                desc: 'Изучит статус всех исполнительных производств, основания их окончания и отсутствие скрытых производств.'
               },
               {
-                title: 'Коллекторы и цессии',
-                desc: 'Если долг был продан, в заявлении должен быть указан действующий кредитор (коллекторское агентство), а не первоначальный банк.'
+                num: '02',
+                title: 'Рассчитает суммы долгов',
+                desc: 'Соберет актуальные справки об остатках задолженности, процентах, неустойках и штрафах во всех банках и МФО.'
               },
               {
-                title: 'Точные суммы долга',
-                desc: 'Если сумма долга занижена, списание произойдёт только в пределах указанной суммы, а остаток долга придётся выплачивать.'
+                num: '03',
+                title: 'Соберет комплект справок',
+                desc: 'Получит справки из СФР о пенсии/пособиях, банков и службы приставов по утвержденным Минэкономразвития формам.'
+              },
+              {
+                num: '04',
+                title: 'Заполнит заявление и реестр',
+                desc: 'Составит список кредиторов строго по утвержденной форме: с ИНН, ОГРН, адресами и точными суммами обязательств.'
+              },
+              {
+                num: '05',
+                title: 'Сопроводит подачу в МФЦ',
+                desc: 'Проконтролирует подачу документов в МФЦ г. Липецка и своевременную публикацию сообщения в Федресурсе (ЕФРСБ).'
+              },
+              {
+                num: '06',
+                title: 'Защитит от кредиторов',
+                desc: 'Остановит звонки коллекторов и банков на период 6-месячного моратория до финального списания всех долгов.'
               }
-            ].map((card, i) => (
-              <div 
-                key={i}
-                className="card service-card hover-lift"
-                style={{
-                  padding: '32px 28px',
-                  background: 'var(--color-white)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '4px solid var(--color-primary)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
-                }}
-              >
-                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
-                  {card.title}
-                </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                  {card.desc}
-                </p>
+            ].map((item, idx) => (
+              <div key={idx} className="hover-lift" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '38px 24px 30px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                borderRadius: '0',
+                position: 'relative',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
+                </div>
+                <div>
+                  <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
+
+          {/* ГРАНИЦЫ УСЛУГИ */}
+          <div style={{
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            color: '#FFFFFF',
+            position: 'relative'
+          }}>
+            <div className="grid grid-2" style={{ gap: '36px' }}>
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 18px 0', paddingBottom: '12px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <span>Входит в юридическое сопровождение</span>
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  {[
+                    { title: 'Анализ соответствия критериям ст. 223.2 закона № 127-ФЗ', desc: 'Проверка долгов, производств ФССП, доходов и оснований списания.' },
+                    { title: 'Сбор обязательного комплекта справок', desc: 'Получение справок СФР, ФССП и банков по установленным законом формам.' },
+                    { title: 'Формирование списка кредиторов по форме Минэка', desc: 'Безошибочное указание всех кредиторов, договоров и сумм задолженностей.' },
+                    { title: 'Подготовка и подача заявления в МФЦ', desc: 'Оформление заявления и сопровождение регистрации в МФЦ г. Липецка.' },
+                    { title: 'Мониторинг публикации в Федресурсе (ЕФРСБ)', desc: 'Контроль внесения записи о банкротстве и завершения процедуры через 6 месяцев.' }
+                  ].map((item, idx) => (
+                    <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                        <polyline points="9 11 12 14 22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                      </svg>
+                      <div>
+                        <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '2px' }}>{item.title}</strong>
+                        <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.5 }}>{item.desc}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 18px 0', paddingBottom: '12px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                  <span>Оценивается отдельно</span>
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  {[
+                    { title: 'Судебное банкротство в Арбитражном суде', desc: 'При долге свыше 1 000 000 ₽ или наличии открытых исполнительных производств.' },
+                    { title: 'Сохранение залогового имущества и ипотеки', desc: 'Разработка отдельной стратегии сохранения жилья при залоговых обязательствах.' },
+                    { title: 'Защита сделок с имуществом за последние 3 года', desc: 'Правовая защита при попытках кредиторов оспорить договоры дарения или купли-продажи.' },
+                    { title: 'Оспаривание незаконных действий судебных приставов', desc: 'Отдельное обжалование незаконных арестов счетов или списания детских пособий.' }
+                  ].map((item, idx) => (
+                    <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <div>
+                        <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '2px' }}>{item.title}</strong>
+                        <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.5 }}>{item.desc}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ ШАБЛОН) ═══ */}
-      <SpecialistBlock
-        title="Куратор направления"
-        name="Владимир Викторович Начешников"
-        position={<>Специалист ЮК &#171;Де-Юре&#187;,<br />куратор направления &#171;Банкротство граждан&#187;</>}
-        imageUrl="/images/nacheshnikov.jpg"
-        imagePosition="center 20%"
-        profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
-        profileText="Подробнее о Владимире Викторовиче Начешникове →"
-        description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Практический опыт в сфере юридических и корпоративных процедур — с 1997 года.
-          </span>,
-          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Проверяет законные основания по ст. 223.2 Закона № 127-ФЗ и исключает риски возврата заявления</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Восстанавливает полный перечень кредиторов, коллекторов и точные суммы требований</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Помогает выбрать между бесплатной процедурой в МФЦ и судебным банкротством</span>
-            </li>
-          </ul>
-        ]}
-        buttonText="Задать вопрос специалисту"
-        buttonHref="#form"
-      />
-
-      {/* ═══ БЛОК 5: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
-      <CasesBlock
-        title="Примеры дел из практики"
-        showAllLink="/praktika/"
-        cases={cases}
-      />
-
-      {/* ═══ БЛОК 6: СТОИМОСТЬ УСЛУГ (ТИПОВОЙ ТАРИФНЫЙ ШАБЛОН) ═══ */}
-      <PricingBlock
-        title="Стоимость внесудебного банкротства"
-        subtitle="Процедура в МФЦ бесплатна по закону. Юридическая проверка и подготовка документов оплачиваются отдельно."
-        tiers={pricingTiers}
-        ctaTitle="Проверьте условия до обращения в МФЦ"
-        ctaSubtitle="Сначала проверим базу ФССП, документы и статус исполнительных производств, чтобы избежать отказа МФЦ и риска сохранения долгов."
-        ctaButtonText="Проверить право на процедуру"
-        ctaButtonLink="#form"
-      />
-
-      {/* ═══ БЛОК 7: ПОРЯДОК РАБОТЫ (ТИПОВОЙ ШАБЛОН) ═══ */}
-      <ProcessBlock
-        title="Как проходит банкротство через МФЦ"
-        subtitle="Прозрачный порядок действий от первичной юридической проверки оснований до внесения итоговой записи в ЕФРСБ."
-        steps={steps}
-      />
-
-      {/* ═══ БЛОК 8: ЧАСТЫЕ ВОПРОСЫ (ТИПОВОЙ ШАБЛОН) ═══ */}
-      <FAQBlock
-        superTitle="Частые вопросы клиентов"
-        title="Ответы на важные вопросы о банкротстве в МФЦ"
-        subtitle="Мы собрали главные вопросы доверителей о бесплатном внесудебном банкротстве. Если вы не нашли ответ — свяжитесь с нами."
-        faqs={faqs}
-      />
-
-      {/* ═══ БЛОК 9: ОФИС В ЛИПЕЦКЕ ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
+      {/* ═══ БЛОК 5: РИСКИ И ПРОВЕРКА ОСНОВАНИЙ ═══ */}
+      <section className="section bg-light" id="defense" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '40px', alignItems: 'center' }}>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                  Офис в Липецке
-                </span>
-              </div>
-              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 38px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-                Проверить условия банкротства через МФЦ в Липецке
-              </h2>
-              <p style={{ fontSize: '15.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                Можно встретиться в офисе «Де-Юре» или начать работу дистанционно. Перед визитом согласуйте время, чтобы специалист подготовился к разбору ситуации.
-              </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '28px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                  <span>г. Липецк, ул. Советская, д. 35, оф. 213</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                  </svg>
-                  <a href="tel:+79103503111" style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 600 }}>
-                    +7 (910) 350-31-11
-                  </a>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-                <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px' }}>
-                  Записаться на встречу
-                </a>
-                <a href="tel:+79103503111" className="btn btn-outline" style={{ padding: '12px 24px' }}>
-                  Позвонить
-                </a>
-              </div>
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Проверим риски и основания</span> <br />
+              <span style={{ display: 'inline-block' }}>до подачи заявления в МФЦ</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Ошибки в заявлении могут привести к возврату документов МФЦ</span> <br />
+              <span style={{ display: 'inline-block' }}>или переходу процедуры в арбитражный суд по инициативе банков.</span>
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              padding: '32px 28px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px'
+            }}>
+              <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0, fontWeight: 700 }}>
+                Причины возврата заявления МФЦ
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {[
+                  'Наличие активных (неоконченных) исполнительных производств в базе ФССП',
+                  'Сумма задолженности менее 25 000 ₽ или превышает лимит в 1 000 000 ₽',
+                  'Неверно оформленные справки из СФР, банков или службы судебных приставов'
+                ].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+                    <span style={{ color: 'var(--color-gold)', fontWeight: 'bold' }}>—</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Карточка-карта */}
             <div style={{
-              background: 'var(--color-white)',
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
-              padding: '24px',
-              boxShadow: '0 8px 30px rgba(23, 50, 77, 0.08)'
+              borderTop: '3px solid var(--color-gold)',
+              padding: '32px 28px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px'
             }}>
-              <div style={{ position: 'relative', width: '100%', height: '260px', background: '#EAEFE9', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <iframe
-                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A9b142eb3df8beaf1922c2a939fbfbfab52ca8cfb0f195d9e5b85a3a41a4a496f&amp;source=constructor"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  title="Офис ЮК Де-Юре в Липецке"
-                  loading="lazy"
-                ></iframe>
-              </div>
+              <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0, fontWeight: 700 }}>
+                Риски перевода дела в суд банками
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {[
+                  'Кредитор не был указан в списке кредиторов либо сумма долга существенно занижена',
+                  'Обнаружение имущества (автомобиль, дача, доли), подлежащего реализации',
+                  'Подозрительные сделки по дарению или продаже имущества родственникам за 3 года'
+                ].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+                    <span style={{ color: 'var(--color-gold)', fontWeight: 'bold' }}>—</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
+          </div>
+
+          <div style={{
+            background: 'var(--color-white)',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '24px 30px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '20px'
+          }}>
+            <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.6, maxWidth: '700px' }}>
+              <strong>Сомневаетесь, подходит ли ситуация под МФЦ?</strong> Проведем бесплатный аудит документов и подскажем оптимальный законный путь списания.
+            </p>
+            <a href="#form" className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '14px', whiteSpace: 'nowrap' }}>
+              Проверить условия
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 10: ФИНАЛЬНАЯ ФОРМА ═══ */}
-      <section id="form" className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 6: ДОКУМЕНТЫ ДЛЯ ПРОВЕРКИ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <ContactsForm
-            title="Проверьте право на внесудебное банкротство до подачи в МФЦ"
-            subtitle="Кратко укажите сумму долга, статус исполнительных производств и основной источник дохода. Юрист определит, какие сведения нужны для предварительной оценки."
-            buttonText="Проверить условия для МФЦ"
-            commentPlaceholder="Сумма долга, есть ли постановления приставов, пенсия или пособие, подавали ли заявление ранее…"
-            hiddenFields={[
-              { name: 'serviceId', value: 'bankruptcy_mfc' },
-              { name: 'pageId', value: 'CIV-06-01' },
-              { name: 'curatorId', value: 'nacheshnikov' }
-            ]}
-            subtext={
-              <>
-                Перезвоним в течение 15 минут в рабочее время; вне рабочего времени — в ближайший рабочий день.
-                <span style={{ display: 'block', marginTop: '6px', fontSize: '12.5px', color: 'var(--color-text-secondary)' }}>
-                  Не указывайте паспортные данные, номера счетов и иные конфиденциальные сведения. Их можно передать после установления защищённого способа связи.
-                </span>
-              </>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Документы для</span> <br />
+              <span style={{ display: 'inline-block' }}>банкротства через МФЦ</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Для подготовки заявления и списка кредиторов потребуется базовый комплект документов.</span> <br />
+              <span style={{ display: 'inline-block' }}>Недостающие справки мы поможем запросить и получить в ведомствах.</span>
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            
+            {/* Карточка 1: Личные документы и долги */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Личные документы и кредиты</span>
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Удостоверение личности</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Паспорт гражданина РФ, СНИЛС, ИНН и свидетельство о постоянной или временной регистрации.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Кредитные договоры и выписки</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Договоры с банками и МФО, справки о задолженности, претензии, судебные приказы и решения.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Карточка 2: Справки и производства */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Справки и документы ФССП</span>
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Справки из СФР и банков</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Справка о назначении пенсии / справка о получении единого пособия на ребенка со сроком действия.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Справки от судебных приставов</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Постановление об окончании ИП или справка о длительности нахождения исполнительного документа на исполнении.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div style={{
+            background: 'var(--color-white)',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '24px 30px',
+            marginTop: '28px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '20px',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
+          }}>
+            <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.6, maxWidth: '720px' }}>
+              <strong>Нет полного комплекта?</strong> Направьте то, что есть на руках (паспорт или список кредитов), — юрист запросит недостающие справки в ведомствах самостоятельно.
+            </p>
+            <a href="#form" className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '14px', whiteSpace: 'nowrap' }}>
+              Отправить документы
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 7: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
+      <SpecialistBlock
+        title="Куратор направления"
+        name="Владимир Владимирович Начешников"
+        position="Ведущий юрист по банкротству граждан, специалист ЮК «Де-Юре»"
+        imageUrl="/images/nacheshnikov.jpg"
+        imagePosition="center 15%"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Профессиональный юридический стаж с 1997 года; глубокая специализация в области защиты прав заемщиков, антикризисного урегулирования и списания задолженностей.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Специализируется на внесудебном банкротстве через МФЦ по закону № 127-ФЗ, а также комплексном судебном банкротстве физических лиц.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Проверяет основания в ФССП, запрашивает справки СФР и формирует безошибочный реестр кредиторов без риска возврата документов.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Успешно сопроводил списание сотен миллионов рублей долгов жителей Липецка, Липецкой области и других регионов России.
+              </span>
+            </li>
+          </ul>,
+          <a key="3" href="/specialisty/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
+            Подробнее о юристе Владимире Владимировиче Начешникове →
+          </a>
+        ]}
+        buttonText="Обсудить ситуацию с Владимиром Владимировичем"
+        buttonHref="#form"
+      />
+
+      {/* ═══ БЛОК 8: КЕЙСЫ ═══ */}
+      <CasesBlock
+        title="Примеры дел из практики"
+        showAllLink="/praktika/"
+        showAllText="Смотреть всю практику"
+        showDemoWarning={true}
+        cases={cases}
+      />
+
+      {/* ═══ БЛОК 9: КАК ПРОХОДИТ РАБОТА ═══ */}
+      <ProcessBlock
+        title="Как проходит внесудебное банкротство"
+        subtitle="Четкий и последовательный алгоритм списания задолженности через МФЦ"
+        steps={steps}
+        ctaTitle="Готовы разобрать вашу ситуацию по списанию долгов"
+        ctaSubtitle="Оставьте номер телефона — специалист по банкротству свяжется с вами и проверит соответствие условиям."
+        ctaButtonText="Обсудить списание долгов"
+        ctaButtonHref="#form"
+      />
+
+      {/* ═══ БЛОК 10: СТОИМОСТЬ ═══ */}
+      <PricingBlock
+        title="Стоимость юридической помощи"
+        subtitle="Сама процедура в МФЦ бесплатна. Стоимость юридического сопровождения фиксируется в договоре."
+        tiers={pricingTiers}
+        disclaimer={
+          <>
+            <span style={{ display: 'inline-block' }}>Стоимость услуг определяется после изучения документов и фиксируется в договоре.</span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>Государственная пошлина и депозит управляющего по закону № 127-ФЗ не взимаются.</span>
+          </>
+        }
+      />
+
+      {/* ═══ БЛОК 11: ЧАСТЫЕ ВОПРОСЫ ═══ */}
+      <FAQBlock
+        superTitle="Частые вопросы"
+        title="Ответы на частые вопросы"
+        subtitle="Разъяснения юриста Владимира Начешникова по внесудебному банкротству через МФЦ"
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
+        faqs={faqs}
+      />
+
+      {/* ═══ БЛОК 12: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Другие направления помощи
+              </span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Смежные юридические услуги по списанию долгов,</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>спорам с приставами и защите имущества.</span>
+            </p>
+          </div>
+
+          <style dangerouslySetInnerHTML={{ __html: `
+            .related-service-card {
+              border-top: 3px solid var(--color-primary) !important;
             }
-          />
+            .related-service-card:hover {
+              border-top: 3px solid var(--color-primary) !important;
+            }
+            .related-service-card:hover .card-arrow {
+              color: var(--color-gold) !important;
+            }
+            .related-service-card:hover .card-arrow svg {
+              stroke: var(--color-gold) !important;
+            }
+            .all-services-link:hover {
+              color: var(--color-gold) !important;
+            }
+          `}} />
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 380px))', gap: '20px' }}>
+            <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card related-service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '160px',
+                  padding: '28px 22px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)', 
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  justifyContent: 'space-between',
+                  transition: 'all 0.3s',
+                  position: 'relative'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    <span style={{ display: 'inline-block' }}>Банкротство</span> <br /><span style={{ display: 'inline-block' }}>физических лиц</span>
+                  </h3>
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Судебное банкротство через Арбитражный суд при долге свыше 500 000 ₽.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card related-service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '160px',
+                  padding: '28px 22px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)', 
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  justifyContent: 'space-between',
+                  transition: 'all 0.3s',
+                  position: 'relative'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    <span style={{ display: 'inline-block' }}>Снятие ареста</span> <br /><span style={{ display: 'inline-block' }}>со счетов и карт</span>
+                  </h3>
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Разблокировка зарплатных, пенсионных и социальных счетов у приставов.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card related-service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '160px',
+                  padding: '28px 22px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)', 
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  justifyContent: 'space-between',
+                  transition: 'all 0.3s',
+                  position: 'relative'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    <span style={{ display: 'inline-block' }}>Обжалование</span> <br /><span style={{ display: 'inline-block' }}>действий приставов</span>
+                  </h3>
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Защита от незаконных списаний, удержаний и превышения полномочий ФССП.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card related-service-card" 
+                style={{ 
+                  height: '100%', 
+                  minHeight: '160px',
+                  padding: '28px 22px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)', 
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  justifyContent: 'space-between',
+                  transition: 'all 0.3s',
+                  position: 'relative'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    <span style={{ display: 'inline-block' }}>Возврат</span> <br /><span style={{ display: 'inline-block' }}>списанных денег</span>
+                  </h3>
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Возврат незаконно списанных социальных выплат, пособий и прожиточного минимума.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                  Подробнее 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div style={{ marginTop: '32px' }}>
+            <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
+              Смотреть все услуги по банкротству граждан →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 13: ФИНАЛЬНАЯ ФОРМА ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', background: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Разберём, подходит ли вам списание долгов через МФЦ
+              </h2>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Оставьте номер телефона и кратко укажите: общую сумму долга, есть ли закрытые производства в ФССП или статус пенсионера / получателя детских пособий. Юрист проверит ситуацию и свяжется с вами.
+              </p>
+
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '0' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация специалиста по банкротству</strong>
+                </div>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55, marginTop: '20px' }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Безопасность данных:</strong>
+                Не указывайте в форме паспортные данные, номера кредитных счетов и иные конфиденциальные сведения. Безопасный способ передачи документов согласуем после звонка.
+              </div>
+            </div>
+
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm 
+                title="Обсудить списание долгов"
+                subtitle="Оставьте имя и номер телефона. Юрист перезвонит в течение 15 минут в рабочее время."
+                buttonText="Обсудить списание через МФЦ"
+                commentPlaceholder="Кратко опишите ситуацию: сумма долга, банки, есть ли производства у приставов…"
+                hiddenFields={[
+                  { name: 'service', value: 'Внесудебное банкротство через МФЦ в Липецке | ЮК «Де-Юре»' },
+                  { name: 'category', value: 'bankrotstvo-fizicheskih-lic/cherez-mfc' },
+                  { name: 'specialist', value: 'Владимир Владимирович Начешников' }
+                ]}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
