@@ -175,7 +175,12 @@ export default function AdvokatUgolovnyjClient() {
   const situations = [
     {
       tag: 'Вызов / Опрос',
-      title: 'Вызывают для объяснений или на допрос',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Вызывают для объяснений</span>
+          <span style={{ display: 'block' }}>или на допрос</span>
+        </>
+      ),
       desc: 'Уточним, в каком статусе вызывают, какие обстоятельства будут проверять и требуется ли участие адвоката до начала разговора.',
       link: '#form',
       actionText: 'Оставить заявку'
@@ -834,10 +839,19 @@ export default function AdvokatUgolovnyjClient() {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '20px',
-                boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
+                boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)',
+                position: 'relative',
+                overflow: 'hidden'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>
+              {/* Фоновый декоративный вектор */}
+              <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.08, pointerEvents: 'none', zIndex: 0 }}>
+                <svg width="180" height="180" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', position: 'relative', zIndex: 1 }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
@@ -852,11 +866,11 @@ export default function AdvokatUgolovnyjClient() {
                   Первые действия, которые помогут не усложнить ситуацию:
                 </h3>
               </div>
-              <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
+              <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
                 Соблюдение этих правил на начальном этапе позволяет защитить ваши законные права и не допустить процессуальных ошибок:
               </p>
 
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px', position: 'relative', zIndex: 1 }}>
                 {memoRules.map((rule, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
