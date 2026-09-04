@@ -175,7 +175,11 @@ export default function AdvokatUgolovnyjClient() {
   const situations = [
     {
       tag: 'Вызов / Опрос',
-      title: 'Вызывают для объяснений или на допрос',
+      title: (
+        <>
+          Вызывают для объяснений<br />или на допрос
+        </>
+      ),
       desc: 'Уточним, в каком статусе вызывают, какие обстоятельства будут проверять и требуется ли участие адвоката до начала разговора.',
       link: '#form',
       actionText: 'Оставить заявку'
@@ -565,8 +569,8 @@ export default function AdvokatUgolovnyjClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Выберите ситуацию —</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>подскажем, какой порядок действий нужен</span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Выберите ситуацию — подскажем,</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>какой порядок действий нужен</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Необязательно знать статью УК РФ и точное название процедуры. Ориентируйтесь на то, что происходит сейчас.
@@ -687,6 +691,16 @@ export default function AdvokatUgolovnyjClient() {
       {/* ═══ БЛОК 3: РОЛЕВОЙ НАВИГАТОР И ПАМЯТКА БЕЗОПАСНОСТИ В ОДНОМ БЛОКЕ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
         <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Помощь зависит не только от статьи,</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>но и от Вашего статуса</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Объём прав и рисков существенно различается на каждом этапе. Адвокат выстраивает работу строго с учётом вашего процессуального положения.
+            </p>
+          </div>
+
           <div className="grid grid-2" style={{ gap: '36px', alignItems: 'stretch' }}>
             {/* Карточка 1: Статусы доверителя */}
             <div 
@@ -701,20 +715,6 @@ export default function AdvokatUgolovnyjClient() {
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
               }}
             >
-              <h3 style={{ 
-                fontFamily: 'var(--font-serif)', 
-                fontSize: '22px', 
-                fontWeight: 600, 
-                color: 'var(--color-deep-blue)', 
-                margin: '0 0 12px 0',
-                lineHeight: 1.3
-              }}>
-                Помощь зависит не только от статьи, но и от Вашего статуса
-              </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 20px 0' }}>
-                Объём прав и рисков существенно различается на каждом этапе. Адвокат выстраивает работу строго с учётом вашего процессуального положения.
-              </p>
-
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 {statuses.map((st, idx) => (
                   <div key={idx} style={{ borderTop: idx > 0 ? '1px solid rgba(23, 50, 77, 0.06)' : 'none', paddingTop: idx > 0 ? '12px' : '0' }}>
@@ -954,7 +954,7 @@ export default function AdvokatUgolovnyjClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          <div className="grid grid-4" style={{ gap: '24px' }}>
             {stages.map((item, idx) => (
               <div key={idx} className="hover-lift" style={{
                 display: 'flex',
@@ -992,6 +992,46 @@ export default function AdvokatUgolovnyjClient() {
                 </div>
               </div>
             ))}
+
+            {/* Карточка: Дистанционный формат (2-й ряд, занимает 2 колонки) */}
+            <div 
+              className="hover-lift span-2-desktop" 
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '38px 24px 30px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                borderRadius: '0',
+                position: 'relative',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <div style={{
+                position: 'absolute',
+                top: '-14px',
+                left: '20px',
+                background: 'var(--color-gold)',
+                color: '#FFFFFF',
+                fontSize: '12px',
+                fontWeight: 700,
+                padding: '2px 10px',
+                borderRadius: '2px',
+                letterSpacing: '0.05em'
+              }}>
+                Формат
+              </div>
+              <div>
+                <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', minHeight: '48px' }}>
+                  Дистанционный формат
+                </h3>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                  Первичное обсуждение, анализ электронных копий и часть подготовки возможны дистанционно. Участие в действиях и суде зависит от места и процессуальной формы.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1002,7 +1042,7 @@ export default function AdvokatUgolovnyjClient() {
         name="Аркадий Евгеньевич Бобкин"
         position={<>Директор, управляющий партнёр ЮК «Де-Юре»,<br />куратор практики уголовного права</>}
         imageUrl="/images/bobkin.jpg"
-        imagePosition="50% -75px"
+        imagePosition="center 15%"
         profileHref="/specialisty/bobkin-arkadiy-evgenevich/"
         profileText="Подробнее об Аркадии Евгеньевиче Бобкине →"
         description={[
@@ -1044,37 +1084,145 @@ export default function AdvokatUgolovnyjClient() {
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '28px' }}>
+          <div className="grid grid-2" style={{ gap: '28px', maxWidth: '760px' }}>
             {/* Конопкин Д.С. */}
-            <div style={{ backgroundColor: 'var(--color-cream)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', padding: '28px' }}>
-              <h4 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
-                Конопкин Дмитрий Сергеевич
-              </h4>
-              <div style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--color-primary)', marginBottom: '14px' }}>
-                Адвокат, председатель Коллегии адвокатов «Де-Юре»
+            <div 
+              className="card team-card" 
+              style={{ 
+                padding: '24px', 
+                display: 'flex', 
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                background: '#FFFFFF',
+                border: '1px solid rgba(16, 39, 59, 0.08)',
+                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
+                boxSizing: 'border-box'
+              }}
+            >
+              <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
+                <Link 
+                  href="/specialisty/konopkin-dmitriy-sergeevich/" 
+                  style={{ 
+                    display: 'block', 
+                    height: '270px', 
+                    width: '100%', 
+                    marginBottom: '16px', 
+                    borderRadius: '0', 
+                    flexShrink: 0, 
+                    overflow: 'hidden', 
+                    position: 'relative', 
+                    background: 'var(--color-cream)', 
+                    textDecoration: 'none' 
+                  }}
+                >
+                  <img 
+                    src="/images/konopkin.jpg" 
+                    alt="Конопкин Дмитрий Сергеевич" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 18%' }} 
+                    loading="lazy" 
+                  />
+                </Link>
+                <h4 style={{ margin: '0 0 8px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, minHeight: '48px', display: 'block' }}>
+                  <Link href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    <span style={{ display: 'block' }}>Конопкин</span>
+                    <span style={{ display: 'block' }}>Дмитрий Сергеевич</span>
+                  </Link>
+                </h4>
+                <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start', whiteSpace: 'pre-line' }}>
+                  Адвокат, председатель Коллегии адвокатов «Де-Юре»
+                </p>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '13.5px', margin: 0, lineHeight: 1.5 }}>
+                  Шесть лет работал в Следственном комитете, в том числе старшим следователем по особо важным делам. Защищает по уголовным делам и помогает потерпевшим.
+                </p>
               </div>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 18px 0' }}>
-                Шесть лет работал в Следственном комитете, в том числе старшим следователем по особо важным делам. Защищает по уголовным делам и помогает потерпевшим.
-              </p>
-              <Link href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)', textDecoration: 'none' }}>
-                Подробнее об адвокате →
-              </Link>
+              <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
+                <Link 
+                  href="/specialisty/konopkin-dmitriy-sergeevich/" 
+                  className="spec-card-link" 
+                  style={{ 
+                    fontSize: '13.5px', 
+                    color: 'var(--color-primary, #10273B)', 
+                    fontWeight: 600, 
+                    textDecoration: 'none', 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    gap: '4px' 
+                  }}
+                >
+                  <span>Подробнее об адвокате</span>
+                  <span>→</span>
+                </Link>
+              </div>
             </div>
 
             {/* Гусев О.Ю. */}
-            <div style={{ backgroundColor: 'var(--color-cream)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', padding: '28px' }}>
-              <h4 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
-                Гусев Олег Юрьевич
-              </h4>
-              <div style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--color-primary)', marginBottom: '14px' }}>
-                Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»
+            <div 
+              className="card team-card" 
+              style={{ 
+                padding: '24px', 
+                display: 'flex', 
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                background: '#FFFFFF',
+                border: '1px solid rgba(16, 39, 59, 0.08)',
+                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
+                boxSizing: 'border-box'
+              }}
+            >
+              <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
+                <Link 
+                  href="/specialisty/gusev-oleg-yurevich/" 
+                  style={{ 
+                    display: 'block', 
+                    height: '270px', 
+                    width: '100%', 
+                    marginBottom: '16px', 
+                    borderRadius: '0', 
+                    flexShrink: 0, 
+                    overflow: 'hidden', 
+                    position: 'relative', 
+                    background: 'var(--color-cream)', 
+                    textDecoration: 'none' 
+                  }}
+                >
+                  <img 
+                    src="/images/gusev.jpg" 
+                    alt="Гусев Олег Юрьевич" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }} 
+                    loading="lazy" 
+                  />
+                </Link>
+                <h4 style={{ margin: '0 0 8px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, minHeight: '48px', display: 'block' }}>
+                  <Link href="/specialisty/gusev-oleg-yurevich/" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    <span style={{ display: 'block' }}>Гусев</span>
+                    <span style={{ display: 'block' }}>Олег Юрьевич</span>
+                  </Link>
+                </h4>
+                <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start', whiteSpace: 'pre-line' }}>
+                  Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»
+                </p>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '13.5px', margin: 0, lineHeight: 1.5 }}>
+                  Юридическая практика с 1995 года, адвокат с 2015 года, семь лет работал заместителем прокурора района. Ведёт общеуголовные и экономические дела, участвует в обжаловании.
+                </p>
               </div>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 18px 0' }}>
-                Юридическая практика с 1995 года, адвокат с 2015 года, семь лет работал заместителем прокурора района. Ведёт общеуголовные и экономические дела, участвует в обжаловании.
-              </p>
-              <Link href="/specialisty/gusev-oleg-yurevich/" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)', textDecoration: 'none' }}>
-                Подробнее об адвокате →
-              </Link>
+              <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
+                <Link 
+                  href="/specialisty/gusev-oleg-yurevich/" 
+                  className="spec-card-link" 
+                  style={{ 
+                    fontSize: '13.5px', 
+                    color: 'var(--color-primary, #10273B)', 
+                    fontWeight: 600, 
+                    textDecoration: 'none', 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    gap: '4px' 
+                  }}
+                >
+                  <span>Подробнее об адвокате</span>
+                  <span>→</span>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -1116,37 +1264,163 @@ export default function AdvokatUgolovnyjClient() {
       {/* ═══ БЛОК 11 (6.12 & 6.13): МАТЕРИАЛЫ ДЛЯ АНАЛИЗА И АДВОКАТСКАЯ ТАЙНА ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '36px' }}>
-            {/* Документы */}
-            <div style={{ backgroundColor: 'var(--color-cream)', border: '1px solid var(--color-border)', padding: '36px 30px' }}>
-              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', lineHeight: 1.3 }}>
-                Что подготовить, если документы уже есть:
-              </h3>
-              <ul style={{ margin: 0, paddingLeft: '18px', color: 'var(--color-text-secondary)', fontSize: '14.5px', lineHeight: 1.7 }}>
-                <li>повестку, запрос, уведомление или сообщение должностного лица;</li>
-                <li>протокол задержания, обыска, выемки, допроса или другого проведённого действия;</li>
-                <li>постановление о возбуждении дела, привлечении в качестве обвиняемого, мере пресечения или экспертизе;</li>
-                <li>обвинительное заключение либо обвинительный акт;</li>
-                <li>приговор и последующие судебные решения — для обжалования;</li>
-                <li>договоры, платёжные документы, переписку, относящиеся к делу;</li>
-                <li>краткую хронологию: даты, участники, уже проведённые действия.</li>
-              </ul>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-muted)', marginTop: '18px', lineHeight: 1.5, margin: '18px 0 0 0' }}>
-                * Не отправляйте через обычную форму полный архив материалов. Сначала оставьте телефон и кратко обозначьте стадию — безопасный способ передачи согласуем отдельно.
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              Что подготовить для консультации
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              Не нужно ждать полного комплекта. Направьте то, что уже есть на руках для проверки оснований и сроков:
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1 */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Что подготовить, если документы уже есть:
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Необходимы для проверки оснований следственных действий, квалификации и определения стратегии защиты.
               </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Повестки, вызовы и запросы</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Повестку, запрос, уведомление или сообщение должностного лица.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Протоколы следственных действий</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Протокол задержания, обыска, выемки, допроса или другого проведённого действия.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Постановления органов следствия</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Постановление о возбуждении дела, привлечении в качестве обвиняемого, мере пресечения или экспертизе.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Судебные решения и акты</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Обвинительное заключение либо обвинительный акт; приговор и последующие решения для обжалования.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Договоры, переписка и хронология</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Договоры, платёжные документы, переписку, относящиеся к делу, и краткую хронологию событий.</span>
+                  </div>
+                </li>
+              </ul>
+              <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(23, 50, 77, 0.08)' }}>
+                <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  * Не отправляйте через обычную форму полный архив материалов. Сначала оставьте телефон и кратко обозначьте стадию — безопасный способ передачи согласуем отдельно.
+                </p>
+              </div>
             </div>
 
-            {/* Адвокатская тайна */}
-            <div style={{ backgroundColor: 'var(--color-deep-blue)', color: '#FFFFFF', padding: '36px 30px', borderTop: '4px solid var(--color-gold)' }}>
-              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 16px 0', lineHeight: 1.3 }}>
-                Обстоятельства дела не становятся содержанием рекламы и аналитики
-              </h3>
-              <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.65, margin: '0 0 16px 0' }}>
+            {/* Карточка 2 */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.3 }}>
+                  Обстоятельства дела не становятся содержанием рекламы и аналитики
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                 Данные, связанные с обращением за адвокатской помощью и её оказанием, защищаются режимом адвокатской тайны. Доступ к материалам внутри команды ограничивается задачами поручения.
               </p>
-              <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.65, margin: 0 }}>
-                Текст обращения не передаётся в системы веб-аналитики, а документы принимаются через согласованный защищённый канал.
-              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Режим адвокатской тайны
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      Защита всех передаваемых сведений и обстоятельств дела с первого обращения.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Ограниченный доступ к материалам
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      Доступ к материалам внутри команды ограничивается исключительно задачами конкретного поручения.
+                    </span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                      Защищённый канал передачи
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      Текст обращения не передаётся в системы веб-аналитики, а документы принимаются через согласованный защищённый канал.
+                    </span>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

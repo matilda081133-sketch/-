@@ -420,7 +420,7 @@ export default function AdvokatNarkotikiClient() {
         name="Аркадий Евгеньевич Бобкин"
         position={<>Директор, управляющий партнёр ЮК «Де-Юре»,<br />куратор практики уголовного права</>}
         imageUrl="/images/bobkin.jpg"
-        imagePosition="50% -75px"
+        imagePosition="center 15%"
         profileHref="/specialisty/bobkin-arkadiy-evgenevich/"
         profileText="Подробнее об Аркадии Евгеньевиче Бобкине →"
         description={[
