@@ -291,16 +291,10 @@ export default function UdoClient() {
         }
         superTitle="УДО и замена наказания (ст. 79, 80 УК РФ) • Липецк"
         title={
-          <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Условно-досрочное освобождение
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              помощь адвоката по УДО
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              в Липецке
-            </span>
+          <span style={{ display: 'block', maxWidth: '100%' }}>
+            <span style={{ display: 'block' }}>Условно-досрочное освобождение</span>
+            <span style={{ display: 'block' }}>помощь адвоката по УДО</span>
+            <span style={{ display: 'block' }}>в Липецке</span>
           </span>
         }
         subtitle={
@@ -312,7 +306,10 @@ export default function UdoClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_cta_uslovno_dosrochnoe_osvobozhdenie"
         primaryCtaSubtext={
-          <>Если требуется срочная помощь, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a></>
+          <>
+            <span>Если требуется срочная помощь,</span><br />
+            <span style={{ whiteSpace: 'nowrap' }}>позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a></span>
+          </>
         }
         trustItems={[
           { text: 'Стратегию определяет Аркадий Бобкин — 22 года следственного опыта' },

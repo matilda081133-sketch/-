@@ -299,16 +299,10 @@ export default function AdvokatZaderzhanieClient() {
         }
         superTitle="Срочная защита при процессуальных действиях • Липецк"
         title={
-          <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Адвокат при задержании,
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              обыске и допросе
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              в Липецке
-            </span>
+          <span style={{ display: 'block', maxWidth: '100%' }}>
+            <span style={{ display: 'block' }}>Адвокат при задержании,</span>
+            <span style={{ display: 'block' }}>обыске и допросе</span>
+            <span style={{ display: 'block' }}>в Липецке</span>
           </span>
         }
         subtitle={
@@ -320,7 +314,10 @@ export default function AdvokatZaderzhanieClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_cta_advokat_pri_zaderzhanii_obyske_i_doprose"
         primaryCtaSubtext={
-          <>Если требуется срочная помощь, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a></>
+          <>
+            <span>Если требуется срочная помощь,</span><br />
+            <span style={{ whiteSpace: 'nowrap' }}>позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a></span>
+          </>
         }
         trustItems={[
           { text: 'Стратегию определяет Аркадий Бобкин — 22 года следственного опыта' },

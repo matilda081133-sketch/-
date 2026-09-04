@@ -295,16 +295,10 @@ export default function AdvokatMoshennichestvoClient() {
         }
         superTitle="Защита по ст. 159 УК РФ • Липецк"
         title={
-          <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Адвокат по мошенничеству
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              (ст. 159 УК РФ)
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              в Липецке
-            </span>
+          <span style={{ display: 'block', maxWidth: '100%' }}>
+            <span style={{ display: 'block' }}>Адвокат по мошенничеству</span>
+            <span style={{ display: 'block' }}>(ст. 159 УК РФ)</span>
+            <span style={{ display: 'block' }}>в Липецке</span>
           </span>
         }
         subtitle={
@@ -316,7 +310,10 @@ export default function AdvokatMoshennichestvoClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_cta_advokat_po_moshennichestvu"
         primaryCtaSubtext={
-          <>Если требуется срочная помощь, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a></>
+          <>
+            <span>Если требуется срочная помощь,</span><br />
+            <span style={{ whiteSpace: 'nowrap' }}>позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a></span>
+          </>
         }
         trustItems={[
           { text: 'Стратегию определяет Аркадий Бобкин — 22 года следственного опыта' },

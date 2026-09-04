@@ -270,6 +270,29 @@ export default function MilitaryHero({
               margin-bottom: 16px !important;
             }
           }
+          @media (max-width: 1200px) {
+            .land-hero-grid {
+              grid-template-columns: minmax(0, 1fr) 360px !important;
+              gap: 28px !important;
+            }
+            .military-hero-h1 {
+              font-size: clamp(22px, 3.1vw, 38px) !important;
+            }
+          }
+          @media (max-width: 1024px) {
+            .land-hero-grid {
+              grid-template-columns: minmax(0, 1fr) 320px !important;
+              gap: 20px !important;
+            }
+            .military-hero-h1 {
+              font-size: clamp(22px, 2.8vw, 32px) !important;
+            }
+          }
+          @media (max-width: 900px) {
+            .land-hero-grid {
+              grid-template-columns: 1fr !important;
+            }
+          }
           @media (max-width: 768px) {
             .military-hero-section {
               padding-top: 100px !important;

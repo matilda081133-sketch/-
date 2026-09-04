@@ -521,16 +521,10 @@ export default function AdvokatUgolovnyjClient() {
         }
         superTitle="Уголовное право • Защита граждан"
         title={
-          <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Адвокат по уголовным делам
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              защита и представительство
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              в Липецке
-            </span>
+          <span style={{ display: 'block', maxWidth: '100%' }}>
+            <span style={{ display: 'block' }}>Адвокат по уголовным делам</span>
+            <span style={{ display: 'block' }}>защита и представительство</span>
+            <span style={{ display: 'block' }}>в Липецке</span>
           </span>
         }
         subtitle={
@@ -542,7 +536,10 @@ export default function AdvokatUgolovnyjClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_cta_advokat_ugolovnyj_hub"
         primaryCtaSubtext={
-          <>Если требуется срочная помощь, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a></>
+          <>
+            <span>Если требуется срочная помощь,</span><br />
+            <span style={{ whiteSpace: 'nowrap' }}>позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a></span>
+          </>
         }
         trustItems={[
           { text: 'Определим срочность, процессуальный статус и ближайшие риски' },
@@ -579,7 +576,6 @@ export default function AdvokatUgolovnyjClient() {
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
                 position: 'relative',
                 overflow: 'hidden',
                 transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease'
@@ -590,66 +586,85 @@ export default function AdvokatUgolovnyjClient() {
                   </svg>
                 </div>
 
-                <div>
-                  <div style={{ 
-                    fontSize: '12px', 
-                    fontWeight: 700, 
-                    color: 'var(--color-gold)', 
-                    textTransform: 'uppercase', 
-                    letterSpacing: '0.08em', 
-                    marginBottom: '14px',
-                    background: 'rgba(193, 160, 102, 0.1)',
-                    padding: '4px 10px',
-                    alignSelf: 'flex-start',
-                    position: 'relative',
-                    zIndex: 1
-                  }}>
-                    {item.tag}
-                  </div>
-                  <h3 style={{ 
-                    fontFamily: 'var(--font-serif)', 
-                    fontSize: '17px', 
-                    fontWeight: 600,
-                    color: 'var(--color-deep-blue)', 
-                    margin: '0 0 12px 0', 
-                    lineHeight: 1.35, 
-                    minHeight: '44px',
-                    position: 'relative',
-                    zIndex: 1
-                  }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ 
-                    color: 'var(--color-text-secondary)', 
-                    fontSize: '14px', 
-                    lineHeight: 1.6, 
-                    margin: '0 0 20px 0',
-                    position: 'relative',
-                    zIndex: 1
-                  }}>
-                    {item.desc}
-                  </p>
-                </div>
-
-                <div style={{ position: 'relative', zIndex: 1, borderTop: '1px solid rgba(23, 50, 77, 0.06)', paddingTop: '14px' }}>
-                  <Link
-                    href={item.link}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      fontSize: '14px',
-                      fontWeight: 600,
-                      color: 'var(--color-primary)',
-                      textDecoration: 'none'
-                    }}
-                  >
-                    <span>{item.actionText}</span>
-                    <span>→</span>
-                  </Link>
-                </div>
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '18px', 
+                  fontWeight: 600,
+                  color: 'var(--color-deep-blue)', 
+                  margin: '0 0 12px 0', 
+                  lineHeight: 1.35, 
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{ 
+                  color: 'var(--color-text-secondary)', 
+                  fontSize: '14px', 
+                  lineHeight: 1.6, 
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
+
+            {/* 9-я карточка: Не нашли свою ситуацию */}
+            <div 
+              className="hover-lift" 
+              style={{ 
+                padding: '36px 30px', 
+                background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)', 
+                border: '1px solid var(--color-deep-blue)',
+                borderTop: '4px solid var(--color-gold)',
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.1)',
+                transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease',
+                position: 'relative',
+                color: 'var(--color-white)'
+              }}
+            >
+              <div>
+                <h3 style={{ 
+                  margin: '0 0 12px 0', 
+                  fontSize: '18px', 
+                  fontFamily: 'var(--font-serif)',
+                  color: 'var(--color-white)', 
+                  lineHeight: 1.35
+                }}>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не нашли</span>{' '}
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
+                </h3>
+                <p style={{ 
+                  margin: '0 0 20px 0', 
+                  fontSize: '14px', 
+                  color: 'rgba(255, 255, 255, 0.85)', 
+                  lineHeight: 1.55
+                }}>
+                  Опишите обстоятельства дела — куратор практики Аркадий Бобкин изучит детали и предложит порядок действий.
+                </p>
+              </div>
+              <a 
+                href="#form" 
+                className="btn btn-gold" 
+                style={{ 
+                  width: '100%', 
+                  textAlign: 'center', 
+                  display: 'inline-flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  padding: '12px 20px',
+                  fontSize: '14px',
+                  marginTop: 'auto'
+                }}
+              >
+                Обсудить ситуацию
+              </a>
+            </div>
           </div>
         </div>
       </section>

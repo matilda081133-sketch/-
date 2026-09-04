@@ -291,16 +291,10 @@ export default function AdvokatNarkotikiClient() {
         }
         superTitle="Защита по ст. 228, 228.1, 229 УК РФ • Липецк"
         title={
-          <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Адвокат по делам
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              о наркотиках (ст. 228, 228.1)
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              в Липецке
-            </span>
+          <span style={{ display: 'block', maxWidth: '100%' }}>
+            <span style={{ display: 'block' }}>Адвокат по делам</span>
+            <span style={{ display: 'block' }}>о наркотиках (ст. 228, 228.1)</span>
+            <span style={{ display: 'block' }}>в Липецке</span>
           </span>
         }
         subtitle={
@@ -312,7 +306,10 @@ export default function AdvokatNarkotikiClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_cta_advokat_po_delam_o_narkotikah"
         primaryCtaSubtext={
-          <>Если требуется срочная помощь, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a></>
+          <>
+            <span>Если требуется срочная помощь,</span><br />
+            <span style={{ whiteSpace: 'nowrap' }}>позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a></span>
+          </>
         }
         trustItems={[
           { text: 'Стратегию определяет Аркадий Бобкин — 22 года следственного опыта' },
