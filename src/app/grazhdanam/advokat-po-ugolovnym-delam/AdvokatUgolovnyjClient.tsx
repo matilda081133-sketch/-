@@ -669,8 +669,8 @@ export default function AdvokatUgolovnyjClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3 (6.4): В КАКОМ СТАТУСЕ НУЖНА ПОМОЩЬ — РОЛЕВОЙ НАВИГАТОР ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
+      {/* ═══ БЛОК 3 (6.4 & 6.5): РОЛЕВОЙ НАВИГАТОР И ПАМЯТКА БЕЗОПАСНОСТИ ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
@@ -682,7 +682,7 @@ export default function AdvokatUgolovnyjClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
             {statuses.map((st, idx) => (
               <div
                 key={idx}
@@ -698,34 +698,37 @@ export default function AdvokatUgolovnyjClient() {
                   justifyContent: 'flex-start'
                 }}
               >
-                <div style={{ display: 'inline-block', backgroundColor: 'rgba(23, 55, 94, 0.08)', color: 'var(--color-deep-blue)', padding: '4px 10px', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '14px', alignSelf: 'flex-start' }}>
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '18px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-deep-blue)', 
+                  margin: '0 0 10px 0',
+                  lineHeight: 1.3
+                }}>
                   {st.role}
-                </div>
+                </h3>
                 <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {st.help}
                 </p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ═══ БЛОК 4 (6.5): ПАМЯТКА БЕЗОПАСНОСТИ — ЧТО СДЕЛАТЬ ДО КОНСУЛЬТАЦИИ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
-        <div className="container">
+          {/* Памятка безопасности */}
           <div style={{
             background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
             color: '#FFFFFF',
-            padding: '44px 38px',
+            padding: '40px 36px',
             borderTop: '4px solid var(--color-gold)',
             boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)',
             position: 'relative',
             overflow: 'hidden'
           }}>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.2vw, 32px)', color: '#FFFFFF', margin: '0 0 16px 0', lineHeight: 1.3 }}>
+            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(22px, 2.8vw, 28px)', color: '#FFFFFF', margin: '0 0 20px 0', lineHeight: 1.3 }}>
               Первые действия, которые помогут не усложнить ситуацию:
-            </h2>
-            <div className="grid grid-2" style={{ gap: '24px', marginTop: '24px' }}>
+            </h3>
+            <div className="grid grid-2" style={{ gap: '24px' }}>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold' }}>•</span>
                 <span style={{ fontSize: '14.5px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)' }}>
