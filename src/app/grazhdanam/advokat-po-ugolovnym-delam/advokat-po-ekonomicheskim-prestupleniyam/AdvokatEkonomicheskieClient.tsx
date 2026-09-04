@@ -399,7 +399,7 @@ export default function AdvokatEkonomicheskieClient() {
           </div>
 
           {/* Сопутствующие уголовные услуги */}
-          <div style={{ background: 'var(--gradient-cream)', padding: '24px 28px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)' }}>
+          <div style={{ background: '#F4F5F7', padding: '24px 28px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)' }}>
             <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>
               Сопутствующие услуги уголовной практики:
             </div>
@@ -436,9 +436,12 @@ export default function AdvokatEkonomicheskieClient() {
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
               <span>Непосредственную защиту в органах следствия и суде ведут адвокаты коллегии</span>
             </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Строгая конфиденциальность и соблюдение тайны следствия и адвокатской тайны</span>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '7px' }}></div>
+              <span style={{ lineHeight: 1.45 }}>
+                Строгая конфиденциальность и соблюдение<br />
+                тайны следствия и адвокатской тайны
+              </span>
             </li>
           </ul>
         ]}

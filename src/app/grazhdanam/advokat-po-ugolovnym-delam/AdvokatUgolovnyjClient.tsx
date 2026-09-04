@@ -266,24 +266,72 @@ export default function AdvokatUgolovnyjClient() {
     }
   ];
 
-  const categories = [
+  const memoRules = [
     {
-      title: 'Мошенничество (ст. 159 УК РФ)',
+      title: 'Уточните основания:',
+      desc: 'кто проводит действие, в каком статусе Вас вызывают или задержали и по какому адресу нужно явиться.'
+    },
+    {
+      title: 'Сообщите близким:',
+      desc: 'передайте, где Вы находитесь, если это разрешено и возможно; контакты подразделения и следователя.'
+    },
+    {
+      title: 'Требуйте адвоката:',
+      desc: 'заявите ходатайство об участии выбранного адвоката до начала первого опроса или допроса.'
+    },
+    {
+      title: 'Внимательно читайте документы:',
+      desc: 'если протокол не совпадает со сказанным, вносите замечания собственноручно до подписи.'
+    },
+    {
+      title: 'Сохраняйте материалы:',
+      desc: 'повестки, запросы, постановления, чеки, видео и переписку. Не редактируйте и не удаляйте файлы.'
+    },
+    {
+      title: 'Не согласовывайте версии:',
+      desc: 'не пытайтесь договариваться с другими участниками и не меняйте показания до консультации.'
+    }
+  ];
+
+
+    const categories = [
+    {
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Мошенничество</span>
+          <span style={{ display: 'block' }}>(ст. 159 УК РФ)</span>
+        </>
+      ),
       desc: 'Защита при обвинении в хищении путём обмана или злоупотребления доверием; анализ умысла, сделок, переписки и движения денежных средств.',
       link: '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-moshennichestvu/'
     },
     {
-      title: 'Дела о наркотиках (ст. 228, 228.1 УК РФ)',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Дела о наркотиках</span>
+          <span style={{ display: 'block' }}>(ст. 228, 228.1 УК РФ)</span>
+        </>
+      ),
       desc: 'Защита по делам о хранении, приобретении, перевозке, изготовлении и сбыте; проверка изъятия, исследований, экспертиз и цифровых материалов.',
       link: '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-delam-o-narkotikah/'
     },
     {
-      title: 'Кражи, грабежи и разбои (ст. 158–162)',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Кражи, грабежи и разбои</span>
+          <span style={{ display: 'block' }}>(ст. 158–162)</span>
+        </>
+      ),
       desc: 'Анализ обстоятельств завладения имуществом, роли участников, показаний, видеозаписей, оценки ущерба и квалифицирующих признаков.',
       link: '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-krazham-grabezham-i-razboyam/'
     },
     {
-      title: 'ДТП с пострадавшими (ст. 264 УК РФ)',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>ДТП с пострадавшими</span>
+          <span style={{ display: 'block' }}>(ст. 264 УК РФ)</span>
+        </>
+      ),
       desc: 'Защита водителя и представительство потерпевшего при уголовно-правовых последствиях ДТП, экспертизах и споре о причинной связи.',
       link: '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-dtp-s-postradavshimi/'
     },
@@ -293,7 +341,12 @@ export default function AdvokatUgolovnyjClient() {
       link: '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-ekonomicheskim-prestupleniyam/'
     },
     {
-      title: 'Должностные составы и взятки (ст. 290, 291)',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Должностные составы</span>
+          <span style={{ display: 'block' }}>и взятки (ст. 290, 291)</span>
+        </>
+      ),
       desc: 'Защита по делам о даче, получении и посредничестве во взяточничестве, злоупотреблении и превышении полномочий.',
       link: '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-dolzhnostnym-prestupleniyam-i-vzyatkam/'
     },
@@ -319,28 +372,34 @@ export default function AdvokatUgolovnyjClient() {
     }
   ];
 
-    const stages = [
+      const stages = [
     {
+      num: '01',
       stage: 'Проверка сообщения о преступлении',
       desc: 'Оценить запросы и объяснения, изучить документы, участвовать в действиях, затрагивающих права, подготовить позицию и обращения.'
     },
     {
+      num: '02',
       stage: 'Задержание и мера пресечения',
       desc: 'Организовать участие адвоката, конфиденциально обсудить ситуацию, проверить процессуальные документы, участвовать в действиях и судебном заседании по мере пресечения.'
     },
     {
+      num: '03',
       stage: 'Предварительное расследование',
       desc: 'Изучать доступные материалы, участвовать в следственных действиях, привлекать специалистов, заявлять ходатайства и жалобы, собирать и представлять сведения в законном порядке.'
     },
     {
+      num: '04',
       stage: 'Суд первой инстанции',
       desc: 'Анализировать обвинение и доказательства, заявлять ходатайства, участвовать в исследовании материалов, представлять позицию и готовить процессуальные документы.'
     },
     {
+      num: '05',
       stage: 'Апелляция и кассация',
       desc: 'Проверить судебные решения и протокол, определить юридически значимые основания, подготовить жалобу и участвовать в рассмотрении.'
     },
     {
+      num: '06',
       stage: 'Исполнение приговора',
       desc: 'Оценить условия УДО и другие применимые механизмы, собрать подтверждающие материалы и представить позицию в суде.'
     }
@@ -778,55 +837,23 @@ export default function AdvokatUgolovnyjClient() {
                 Соблюдение этих правил на начальном этапе позволяет защитить ваши законные права и не допустить процессуальных ошибок:
               </p>
 
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
-                    <strong style={{ color: '#FFFFFF' }}>Уточните основания:</strong> кто проводит действие, в каком статусе Вас вызывают или задержали и по какому адресу нужно явиться.
-                  </span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
-                    <strong style={{ color: '#FFFFFF' }}>Сообщите близким:</strong> передайте, где Вы находитесь, если это разрешено и возможно; контакты подразделения и следователя.
-                  </span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
-                    <strong style={{ color: '#FFFFFF' }}>Требуйте адвоката:</strong> заявите ходатайство об участии выбранного адвоката до начала первого опроса или допроса.
-                  </span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
-                    <strong style={{ color: '#FFFFFF' }}>Внимательно читайте документы:</strong> если протокол не совпадает со сказанным, вносите замечания собственноручно до подписи.
-                  </span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
-                    <strong style={{ color: '#FFFFFF' }}>Сохраняйте материалы:</strong> повестки, запросы, постановления, чеки, видео и переписку. Не редактируйте и не удаляйте файлы.
-                  </span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
-                    <strong style={{ color: '#FFFFFF' }}>Не согласовывайте версии:</strong> не пытайтесь договариваться с другими участниками и не меняйте показания до консультации.
-                  </span>
-                </li>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                {memoRules.map((rule, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '2px' }}>
+                        {rule.title}
+                      </strong>
+                      <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.5 }}>
+                        {rule.desc}
+                      </span>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

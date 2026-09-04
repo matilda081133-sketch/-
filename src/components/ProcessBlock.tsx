@@ -65,7 +65,7 @@ export default function ProcessBlock({
         </div>
 
         <div style={{ position: 'relative' }}>
-          {/* СЦЕНАРИЙ 0: 6 регулярных шагов + 1 баннер (Ряд 1: 4 шага; Ряд 2: 2 шага + Карточка формата на 2 колонки) */}
+          {/* СЦЕНАРИЙ 0: 6 регулярных шагов + 1 баннер (Ряд 1: 4 шага; Ряд 2: 2 шага + Карточка формата по центру в 3 колонки) */}
           {is6Plus1Banner ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
               {/* Ряд 1: 4 этапа 01 -> 02 -> 03 -> 04 */}
@@ -109,10 +109,10 @@ export default function ProcessBlock({
                 ))}
               </div>
 
-              {/* Ряд 2: 2 этапа 05 -> 06 + Карточка «Дистанционный формат» на 2 колонки */}
-              <div className="grid grid-4 process-row-6plus1" style={{ gap: '30px', alignItems: 'stretch' }}>
+              {/* Ряд 2: 2 этапа 05 -> 06 -> Карточка «Дистанционный формат» (3 элемента по центру) */}
+              <div className="grid grid-3 process-row-3-centered" style={{ gap: '30px', maxWidth: '920px', margin: '0 auto', width: '100%', alignItems: 'stretch' }}>
                 {regularSteps.slice(4, 6).map((step, i) => (
-                  <div key={i + 4} className={`stage-item ${i === 1 ? 'stage-item-no-line' : ''}`} style={{ 
+                  <div key={i + 4} className="stage-item" style={{ 
                     position: 'relative',
                     display: 'flex',
                     flexDirection: 'column',
@@ -149,7 +149,7 @@ export default function ProcessBlock({
                   </div>
                 ))}
 
-                {/* Баннер Дистанционный формат на 2 колонки */}
+                {/* Баннер Дистанционный формат (1 колонка, нормального размера, как в шаблоне) */}
                 <div style={{ 
                   position: 'relative',
                   zIndex: 1,
@@ -163,9 +163,10 @@ export default function ProcessBlock({
                   borderLeft: '4px solid var(--color-primary)', 
                   padding: '28px 24px', 
                   boxShadow: '0 4px 12px rgba(23, 50, 77, 0.05)',
-                  minHeight: '200px',
+                  height: '100%',
+                  minHeight: '220px',
                   boxSizing: 'border-box'
-                }} className="stage-banner-item span-2-desktop">
+                }} className="stage-banner-item">
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%', alignItems: 'center', textAlign: 'center' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}>
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>

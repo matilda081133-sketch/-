@@ -13,38 +13,70 @@ import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 
 export default function AdvokatNarkotikiClient() {
-  const situations = [
-  {
-    "tag": "Хранение / ст. 228",
-    "title": "Изъятие запрещенных веществ для личного употребления",
-    "desc": "Обвинение по ст. 228 УК РФ без цели сбыта. Проверка законности личного досмотра, оснований остановки и упаковки изъятого."
-  },
-  {
-    "tag": "Сбыт / ст. 228.1",
-    "title": "Обвинение в покушении на сбыт («закладки», передача)",
-    "desc": "Переквалификация со сбыта на хранение, доказывание отсутствия умысла на распространение и фасовку."
-  },
-  {
-    "tag": "Закупка / Провокация",
-    "title": "Проведение проверочной закупки сотрудниками МВД",
-    "desc": "Выявление признаков полицейской провокации и нарушений ФЗ «Об оперативно-розыскной деятельности»."
-  },
-  {
-    "tag": "Экспертиза / Вес",
-    "title": "Оспаривание размера (значительный, крупный, особо крупный)",
-    "desc": "Проверка методики судебно-химической экспертизы, массы чистого вещества и наличия нейтральных примесей."
-  },
-  {
-    "tag": "Задержание / ИВС",
-    "title": "Человек задержан с поличным и помещен в изолятор",
-    "desc": "Срочный выезд адвоката, исключение самооговора под давлением и участие в судебном заседании по аресту."
-  },
-  {
-    "tag": "Группа / ст. 210",
-    "title": "Вменение совершения преступления группой лиц по сговору",
-    "desc": "Исключение квалифицирующего признака группы, роли соисполнителя или организатора."
-  }
-];
+    const situations = [
+    {
+      tag: "Хранение / ст. 228",
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Изъятие запрещенных веществ</span>
+          <span style={{ display: 'block' }}>для личного употребления</span>
+        </>
+      ),
+      desc: "Обвинение по ст. 228 УК РФ без цели сбыта. Проверка законности личного досмотра, оснований остановки и упаковки изъятого."
+    },
+    {
+      tag: "Сбыт / ст. 228.1",
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Обвинение в покушении на</span>
+          <span style={{ display: 'block' }}>сбыт («закладки», передача)</span>
+        </>
+      ),
+      desc: "Переквалификация со сбыта на хранение, доказывание отсутствия умысла на распространение и фасовку."
+    },
+    {
+      tag: "Закупка / Провокация",
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Проведение проверочной</span>
+          <span style={{ display: 'block' }}>закупки сотрудниками МВД</span>
+        </>
+      ),
+      desc: "Выявление признаков полицейской провокации и нарушений ФЗ «Об оперативно-розыскной деятельности»."
+    },
+    {
+      tag: "Экспертиза / Вес",
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Оспаривание размера</span>
+          <span style={{ display: 'block' }}>(значительный, крупный,</span>
+          <span style={{ display: 'block' }}>особо крупный)</span>
+        </>
+      ),
+      desc: "Проверка методики судебно-химической экспертизы, массы чистого вещества и наличия нейтральных примесей."
+    },
+    {
+      tag: "Задержание / ИВС",
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Человек задержан с поличным</span>
+          <span style={{ display: 'block' }}>и помещен в изолятор</span>
+        </>
+      ),
+      desc: "Срочный выезд адвоката, исключение самооговора под давлением и участие в судебном заседании по аресту."
+    },
+    {
+      tag: "Группа / ст. 210",
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Вменение совершения</span>
+          <span style={{ display: 'block' }}>преступления группой лиц</span>
+          <span style={{ display: 'block' }}>по сговору</span>
+        </>
+      ),
+      desc: "Исключение квалифицирующего признака группы, роли соисполнителя или организатора."
+    }
+  ];
   const casesData: CaseData[] = [
   {
     "category": "ст. 228.1 -> ст. 228 УК РФ",
@@ -293,7 +325,8 @@ export default function AdvokatNarkotikiClient() {
         title={
           <span style={{ display: 'block', maxWidth: '100%' }}>
             <span style={{ display: 'block' }}>Адвокат по делам</span>
-            <span style={{ display: 'block' }}>о наркотиках (ст. 228, 228.1)</span>
+            <span style={{ display: 'block' }}>о наркотиках</span>
+            <span style={{ display: 'block' }}>(ст. 228, 228.1)</span>
             <span style={{ display: 'block' }}>в Липецке</span>
           </span>
         }
@@ -399,7 +432,7 @@ export default function AdvokatNarkotikiClient() {
           </div>
 
           {/* Сопутствующие уголовные услуги */}
-          <div style={{ background: 'var(--gradient-cream)', padding: '24px 28px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)' }}>
+          <div style={{ background: '#F4F5F7', padding: '24px 28px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)' }}>
             <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>
               Сопутствующие услуги уголовной практики:
             </div>
@@ -436,9 +469,12 @@ export default function AdvokatNarkotikiClient() {
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
               <span>Непосредственную защиту в органах следствия и суде ведут адвокаты коллегии</span>
             </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Строгая конфиденциальность и соблюдение тайны следствия и адвокатской тайны</span>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '7px' }}></div>
+              <span style={{ lineHeight: 1.45 }}>
+                Строгая конфиденциальность и соблюдение<br />
+                тайны следствия и адвокатской тайны
+              </span>
             </li>
           </ul>
         ]}
