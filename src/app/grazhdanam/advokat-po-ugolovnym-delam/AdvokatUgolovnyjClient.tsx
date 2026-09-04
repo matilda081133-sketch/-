@@ -235,7 +235,7 @@ export default function AdvokatUgolovnyjClient() {
     }
   ];
 
-  const statuses = [
+    const statuses = [
     {
       role: 'Свидетель',
       help: 'Подготовка к допросу, участие адвоката, оценка риска вопросов о собственных действиях. Не создавать впечатление, что свидетель вправе игнорировать вызовы или давать недостоверные показания.'
@@ -319,34 +319,28 @@ export default function AdvokatUgolovnyjClient() {
     }
   ];
 
-  const stages = [
+    const stages = [
     {
-      num: '01',
       stage: 'Проверка сообщения о преступлении',
       desc: 'Оценить запросы и объяснения, изучить документы, участвовать в действиях, затрагивающих права, подготовить позицию и обращения.'
     },
     {
-      num: '02',
       stage: 'Задержание и мера пресечения',
       desc: 'Организовать участие адвоката, конфиденциально обсудить ситуацию, проверить процессуальные документы, участвовать в действиях и судебном заседании по мере пресечения.'
     },
     {
-      num: '03',
       stage: 'Предварительное расследование',
       desc: 'Изучать доступные материалы, участвовать в следственных действиях, привлекать специалистов, заявлять ходатайства и жалобы, собирать и представлять сведения в законном порядке.'
     },
     {
-      num: '04',
       stage: 'Суд первой инстанции',
       desc: 'Анализировать обвинение и доказательства, заявлять ходатайства, участвовать в исследовании материалов, представлять позицию и готовить процессуальные документы.'
     },
     {
-      num: '05',
       stage: 'Апелляция и кассация',
       desc: 'Проверить судебные решения и протокол, определить юридически значимые основания, подготовить жалобу и участвовать в рассмотрении.'
     },
     {
-      num: '06',
       stage: 'Исполнение приговора',
       desc: 'Оценить условия УДО и другие применимые механизмы, собрать подтверждающие материалы и представить позицию в суде.'
     }
@@ -376,7 +370,7 @@ export default function AdvokatUgolovnyjClient() {
     }
   ];
 
-  const steps: ProcessStep[] = [
+    const steps: ProcessStep[] = [
     {
       num: '01',
       title: 'Проверяем возможность принять поручение',
@@ -701,32 +695,53 @@ export default function AdvokatUgolovnyjClient() {
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '36px', alignItems: 'stretch' }}>
+          <div className="grid grid-2" style={{ gap: '28px', alignItems: 'stretch' }}>
             {/* Карточка 1: Статусы доверителя */}
             <div 
               className="hover-lift"
               style={{
-                backgroundColor: 'var(--color-white)',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                 border: '1px solid var(--color-border)',
-                borderTop: '4px solid var(--color-primary)',
-                padding: '36px 30px',
+                borderTop: '3px solid var(--color-primary)',
+                padding: '36px 32px',
                 display: 'flex',
                 flexDirection: 'column',
+                gap: '20px',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
               }}
             >
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                {statuses.map((st, idx) => (
-                  <div key={idx} style={{ borderTop: idx > 0 ? '1px solid rgba(23, 50, 77, 0.06)' : 'none', paddingTop: idx > 0 ? '12px' : '0' }}>
-                    <strong style={{ display: 'block', fontSize: '14.5px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>
-                      {st.role}
-                    </strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, display: 'block' }}>
-                      {st.help}
-                    </span>
-                  </div>
-                ))}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Позиция доверителя в процессе:
+                </h3>
               </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Тактика и объём правовой помощи выстраиваются строго в зависимости от процессуального статуса:
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                {statuses.map((st, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>
+                        {st.role}
+                      </strong>
+                      <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                        {st.help}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Карточка 2: Памятка безопасности */}
@@ -735,66 +750,84 @@ export default function AdvokatUgolovnyjClient() {
               style={{
                 background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
                 color: '#FFFFFF',
-                padding: '36px 30px',
+                padding: '36px 32px',
                 border: '1px solid var(--color-deep-blue)',
-                borderTop: '4px solid var(--color-gold)',
+                borderTop: '3px solid var(--color-gold)',
                 display: 'flex',
                 flexDirection: 'column',
+                gap: '20px',
                 boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
               }}
             >
-              <h3 style={{ 
-                fontFamily: 'var(--font-serif)', 
-                fontSize: '22px', 
-                fontWeight: 600, 
-                color: '#FFFFFF', 
-                margin: '0 0 16px 0', 
-                lineHeight: 1.3 
-              }}>
-                Первые действия, которые помогут не усложнить ситуацию:
-              </h3>
-              <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55, margin: '0 0 20px 0' }}>
-                Соблюдение этих правил на начальном этапе позволяет защитить ваши законные права и не допустить процессуальных ошибок.
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '20px', 
+                  fontWeight: 600, 
+                  color: '#FFFFFF', 
+                  margin: 0, 
+                  lineHeight: 1.3 
+                }}>
+                  Первые действия, которые помогут не усложнить ситуацию:
+                </h3>
+              </div>
+              <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
+                Соблюдение этих правил на начальном этапе позволяет защитить ваши законные права и не допустить процессуальных ошибок:
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold', lineHeight: 1 }}>•</span>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
                     <strong style={{ color: '#FFFFFF' }}>Уточните основания:</strong> кто проводит действие, в каком статусе Вас вызывают или задержали и по какому адресу нужно явиться.
                   </span>
-                </div>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold', lineHeight: 1 }}>•</span>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
                     <strong style={{ color: '#FFFFFF' }}>Сообщите близким:</strong> передайте, где Вы находитесь, если это разрешено и возможно; контакты подразделения и следователя.
                   </span>
-                </div>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold', lineHeight: 1 }}>•</span>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
                     <strong style={{ color: '#FFFFFF' }}>Требуйте адвоката:</strong> заявите ходатайство об участии выбранного адвоката до начала первого опроса или допроса.
                   </span>
-                </div>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold', lineHeight: 1 }}>•</span>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
                     <strong style={{ color: '#FFFFFF' }}>Внимательно читайте документы:</strong> если протокол не совпадает со сказанным, вносите замечания собственноручно до подписи.
                   </span>
-                </div>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold', lineHeight: 1 }}>•</span>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
                     <strong style={{ color: '#FFFFFF' }}>Сохраняйте материалы:</strong> повестки, запросы, постановления, чеки, видео и переписку. Не редактируйте и не удаляйте файлы.
                   </span>
-                </div>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold', lineHeight: 1 }}>•</span>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
                     <strong style={{ color: '#FFFFFF' }}>Не согласовывайте версии:</strong> не пытайтесь договариваться с другими участниками и не меняйте показания до консультации.
                   </span>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -954,84 +987,26 @@ export default function AdvokatUgolovnyjClient() {
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '24px' }}>
-            {stages.map((item, idx) => (
-              <div key={idx} className="hover-lift" style={{
-                display: 'flex',
-                flexDirection: 'column',
-                padding: '38px 24px 30px 24px',
-                border: '1px solid var(--color-border)',
-                borderTop: '4px solid var(--color-gold)',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                borderRadius: '0',
-                position: 'relative',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-                transition: 'all 0.3s ease'
-              }}>
-                <div style={{
-                  position: 'absolute',
-                  top: '-14px',
-                  left: '20px',
-                  background: 'var(--color-gold)',
-                  color: '#FFFFFF',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  padding: '2px 10px',
-                  borderRadius: '2px',
-                  letterSpacing: '0.05em'
-                }}>
-                  {item.num}
-                </div>
-                <div>
-                  <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', minHeight: '48px' }}>
-                    {item.stage}
-                  </h3>
-                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-
-            {/* Карточка: Дистанционный формат (2-й ряд, занимает 2 колонки) */}
-            <div 
-              className="hover-lift span-2-desktop" 
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                padding: '38px 24px 30px 24px',
-                border: '1px solid var(--color-border)',
-                borderTop: '4px solid var(--color-gold)',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                borderRadius: '0',
-                position: 'relative',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              <div style={{
-                position: 'absolute',
-                top: '-14px',
-                left: '20px',
-                background: 'var(--color-gold)',
-                color: '#FFFFFF',
-                fontSize: '12px',
-                fontWeight: 700,
-                padding: '2px 10px',
-                borderRadius: '2px',
-                letterSpacing: '0.05em'
-              }}>
-                Формат
-              </div>
-              <div>
-                <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', minHeight: '48px' }}>
-                  Дистанционный формат
+          <div className="grid grid-3" style={{ gap: '24px' }}>
+            {stages.map((stg, idx) => (
+              <div
+                key={idx}
+                className="hover-lift"
+                style={{
+                  backgroundColor: 'var(--color-cream)',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '4px solid var(--color-deep-blue)',
+                  padding: '24px 20px'
+                }}
+              >
+                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  {stg.stage}
                 </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                  Первичное обсуждение, анализ электронных копий и часть подготовки возможны дистанционно. Участие в действиях и суде зависит от места и процессуальной формы.
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  {stg.desc}
                 </p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1087,16 +1062,17 @@ export default function AdvokatUgolovnyjClient() {
           <div className="grid grid-2" style={{ gap: '28px', maxWidth: '760px' }}>
             {/* Конопкин Д.С. */}
             <div 
-              className="card team-card" 
+              className="card team-card hover-lift" 
               style={{ 
                 padding: '24px', 
                 display: 'flex', 
-                flexDirection: 'column',
+                flexDirection: 'column', 
                 justifyContent: 'space-between',
                 background: '#FFFFFF',
                 border: '1px solid rgba(16, 39, 59, 0.08)',
                 boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
-                boxSizing: 'border-box'
+                boxSizing: 'border-box',
+                transition: 'all 0.3s ease'
               }}
             >
               <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
@@ -1138,35 +1114,40 @@ export default function AdvokatUgolovnyjClient() {
               <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
                 <Link 
                   href="/specialisty/konopkin-dmitriy-sergeevich/" 
-                  className="spec-card-link" 
+                  className="spec-card-btn" 
                   style={{ 
                     fontSize: '13.5px', 
-                    color: 'var(--color-primary, #10273B)', 
                     fontWeight: 600, 
                     textDecoration: 'none', 
                     display: 'inline-flex', 
                     alignItems: 'center', 
-                    gap: '4px' 
+                    justifyContent: 'center',
+                    width: '100%',
+                    padding: '10px 16px',
+                    border: '1px solid var(--color-primary, #10273B)',
+                    borderRadius: '0px',
+                    gap: '6px'
                   }}
                 >
                   <span>Подробнее об адвокате</span>
-                  <span>→</span>
+                  <span className="spec-card-arrow">→</span>
                 </Link>
               </div>
             </div>
 
             {/* Гусев О.Ю. */}
             <div 
-              className="card team-card" 
+              className="card team-card hover-lift" 
               style={{ 
                 padding: '24px', 
                 display: 'flex', 
-                flexDirection: 'column',
+                flexDirection: 'column', 
                 justifyContent: 'space-between',
                 background: '#FFFFFF',
                 border: '1px solid rgba(16, 39, 59, 0.08)',
                 boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
-                boxSizing: 'border-box'
+                boxSizing: 'border-box',
+                transition: 'all 0.3s ease'
               }}
             >
               <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
@@ -1208,19 +1189,23 @@ export default function AdvokatUgolovnyjClient() {
               <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
                 <Link 
                   href="/specialisty/gusev-oleg-yurevich/" 
-                  className="spec-card-link" 
+                  className="spec-card-btn" 
                   style={{ 
                     fontSize: '13.5px', 
-                    color: 'var(--color-primary, #10273B)', 
                     fontWeight: 600, 
                     textDecoration: 'none', 
                     display: 'inline-flex', 
                     alignItems: 'center', 
-                    gap: '4px' 
+                    justifyContent: 'center',
+                    width: '100%',
+                    padding: '10px 16px',
+                    border: '1px solid var(--color-primary, #10273B)',
+                    borderRadius: '0px',
+                    gap: '6px'
                   }}
                 >
                   <span>Подробнее об адвокате</span>
-                  <span>→</span>
+                  <span className="spec-card-arrow">→</span>
                 </Link>
               </div>
             </div>
@@ -1231,6 +1216,28 @@ export default function AdvokatUgolovnyjClient() {
           </p>
         </div>
       </section>
+
+      <style dangerouslySetInnerHTML={{__html: `
+        .spec-card-btn {
+          background-color: transparent;
+          color: var(--color-primary, #10273B);
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .team-card:hover .spec-card-btn,
+        .spec-card-btn:hover {
+          background-color: var(--color-primary, #10273B) !important;
+          color: #FFFFFF !important;
+          border-color: var(--color-primary, #10273B) !important;
+        }
+        .spec-card-arrow {
+          transition: transform 0.3s ease;
+          display: inline-block;
+        }
+        .team-card:hover .spec-card-arrow,
+        .spec-card-btn:hover .spec-card-arrow {
+          transform: translateX(4px);
+        }
+      `}} />
 
       {/* ═══ БЛОК 8 (6.9): ПРИМЕРЫ ДЕЛ ИЗ ПРАКТИКИ ═══ */}
       <CasesBlock
