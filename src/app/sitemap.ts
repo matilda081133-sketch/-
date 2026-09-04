@@ -16,6 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy/',
     '/consent/',
     '/cookies/',
+    // Банкротство физических лиц
+    '/grazhdanam/bankrotstvo-fizicheskih-lic/',
+    '/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/',
     // Земля
     '/grazhdanam/zemelnyj-yurist/',
     '/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/',
