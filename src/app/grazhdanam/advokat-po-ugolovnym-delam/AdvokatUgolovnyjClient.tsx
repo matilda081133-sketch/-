@@ -294,7 +294,7 @@ export default function AdvokatUgolovnyjClient() {
   ];
 
 
-    const categories = [
+      const categories = [
     {
       title: (
         <>
@@ -336,7 +336,12 @@ export default function AdvokatUgolovnyjClient() {
       link: '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-dtp-s-postradavshimi/'
     },
     {
-      title: 'Экономические и налоговые дела',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Экономические</span>
+          <span style={{ display: 'block' }}>и налоговые дела</span>
+        </>
+      ),
       desc: 'Личная защита руководителей, предпринимателей и бухгалтеров; оценка сделок, отчётности, налоговых материалов и разграничения спора и преступления.',
       link: '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-ekonomicheskim-prestupleniyam/'
     },
@@ -351,22 +356,42 @@ export default function AdvokatUgolovnyjClient() {
       link: '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-dolzhnostnym-prestupleniyam-i-vzyatkam/'
     },
     {
-      title: 'Задержание, обыск и допрос',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Задержание, обыск</span>
+          <span style={{ display: 'block' }}>и допрос</span>
+        </>
+      ),
       desc: 'Срочное подключение адвоката в рабочее время, участие в процессуальных действиях и первичная стабилизация ситуации.',
       link: '/grazhdanam/advokat-po-ugolovnym-delam/advokat-pri-zaderzhanii-obyske-i-doprose/'
     },
     {
-      title: 'Условно-досрочное освобождение (УДО)',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Условно-досрочное</span>
+          <span style={{ display: 'block' }}>освобождение (УДО)</span>
+        </>
+      ),
       desc: 'Оценка формальных условий, поведения за весь период, взысканий и поощрений, возмещения вреда и других материалов для суда.',
       link: '/grazhdanam/advokat-po-ugolovnym-delam/uslovno-dosrochnoe-osvobozhdenie/'
     },
     {
-      title: 'Обжалование приговора в суде',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Обжалование приговора</span>
+          <span style={{ display: 'block' }}>в суде</span>
+        </>
+      ),
       desc: 'Анализ приговора и материалов, подготовка апелляционной или кассационной жалобы и участие в вышестоящем суде.',
       link: '/grazhdanam/advokat-po-ugolovnym-delam/obzhalovanie-prigovora/'
     },
     {
-      title: 'Защита прав потерпевшего',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Защита прав</span>
+          <span style={{ display: 'block' }}>потерпевшего</span>
+        </>
+      ),
       desc: 'Участие при проверке, расследовании и в суде; жалобы, ходатайства, гражданский иск и возмещение причинённого вреда.',
       link: '/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/'
     }
