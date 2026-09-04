@@ -484,68 +484,60 @@ export default function AvtoyuristClient() {
               </a>
             ))}
 
-            {/* Карточка 8: «Не нашли свою ситуацию?», занимающая доступное пространство в строке с 7-й картой */}
+            {/* Карточка 8: «Не нашли свою ситуацию?» в один ряд с 5, 6, 7 */}
             <div 
-              className="card service-card service-card-span-2" 
+              className="card service-card service-card-smooth" 
               style={{ 
-                padding: '32px 36px', 
-                background: 'var(--color-deep-blue)', 
-                border: '1px solid transparent',
+                height: '100%',
+                padding: '26px 24px', 
+                background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)', 
+                border: '1px solid var(--color-deep-blue)',
+                borderTop: '3px solid var(--color-gold)',
                 borderRadius: '0',
                 display: 'flex', 
-                flexDirection: 'row',
-                alignItems: 'center',
+                flexDirection: 'column', 
                 justifyContent: 'space-between',
-                gap: '28px',
-                transition: 'all 0.3s',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.1)',
                 position: 'relative',
-                borderTop: '3px solid var(--color-gold)',
-                boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)'
+                color: 'var(--color-white)'
               }}
             >
-              <style dangerouslySetInnerHTML={{ __html: `
-                .service-card-span-2 {
-                  grid-column: span 2;
-                }
-                @media (max-width: 991px) {
-                  .service-card-span-2 {
-                    grid-column: span 1 !important;
-                    flex-direction: column !important;
-                    align-items: flex-start !important;
-                  }
-                }
-                .white-btn-custom {
-                  background-color: var(--color-white) !important;
-                  color: #10273B !important;
-                  border: 1px solid var(--color-white) !important;
-                  white-space: nowrap;
-                  font-weight: 600;
-                  padding: 14px 28px !important;
-                  transition: all 0.3s ease !important;
-                }
-                .white-btn-custom:hover {
-                  background-color: var(--color-primary) !important;
-                  color: var(--color-white) !important;
-                  border-color: var(--color-primary) !important;
-                }
-              `}} />
-              <div style={{ flex: '1 1 300px' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+              <div>
+                <h3 style={{ 
+                  margin: '0 0 10px 0', 
+                  fontSize: '17px', 
+                  fontFamily: 'var(--font-serif)', 
+                  color: 'var(--color-white)', 
+                  lineHeight: 1.35 
+                }}>
                   Не нашли свою ситуацию?
                 </h3>
-                <p style={{ margin: '0', fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.55, maxWidth: '580px' }}>
-                  <span style={{ display: 'inline-block' }}>Опишите ваш автомобильный вопрос в форме. Изучим имеющиеся документы</span> <br /> <span style={{ display: 'inline-block' }}>и предложим возможные варианты решения.</span>
+                <p style={{ 
+                  margin: 0, 
+                  fontSize: '14px', 
+                  color: 'rgba(255, 255, 255, 0.85)', 
+                  lineHeight: 1.55 
+                }}>
+                  Опишите ваш автомобильный вопрос в&nbsp;форме. Изучим имеющиеся документы и&nbsp;предложим возможные варианты решения.
                 </p>
               </div>
-              <div style={{ flexShrink: 0 }}>
-                <a 
-                  href="#form" 
-                  className="btn white-btn-custom" 
-                  style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
-                >
-                  Обсудить ситуацию
-                </a>
-              </div>
+              <a 
+                href="#form" 
+                className="card-arrow"
+                style={{ 
+                  display: 'inline-flex', 
+                  alignItems: 'center', 
+                  gap: '6px', 
+                  color: 'var(--color-gold)', 
+                  fontSize: '13.5px', 
+                  fontWeight: 600, 
+                  marginTop: '18px',
+                  textDecoration: 'none' 
+                }}
+              >
+                <span>Обсудить ситуацию</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
             </div>
           </div>
         </div>

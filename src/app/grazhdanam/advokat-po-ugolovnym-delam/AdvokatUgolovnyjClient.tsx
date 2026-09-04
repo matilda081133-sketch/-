@@ -1033,22 +1033,42 @@ export default function AdvokatUgolovnyjClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
             {stages.map((stg, idx) => (
               <div
                 key={idx}
                 className="hover-lift"
                 style={{
-                  backgroundColor: 'var(--color-cream)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
                   border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-deep-blue)',
-                  padding: '24px 20px'
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '-14px',
+                    left: '24px',
+                    background: 'var(--color-gold)',
+                    color: '#FFFFFF',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    padding: '2px 10px',
+                    borderRadius: '2px',
+                    letterSpacing: '0.05em'
+                  }}
+                >
+                  {stg.num}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {stg.stage}
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {stg.desc}
                 </p>
               </div>
