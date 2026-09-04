@@ -317,26 +317,32 @@ export default function AdvokatUgolovnyjClient() {
 
   const stages = [
     {
+      num: '01',
       stage: 'Проверка сообщения о преступлении',
       desc: 'Оценить запросы и объяснения, изучить документы, участвовать в действиях, затрагивающих права, подготовить позицию и обращения.'
     },
     {
+      num: '02',
       stage: 'Задержание и мера пресечения',
       desc: 'Организовать участие адвоката, конфиденциально обсудить ситуацию, проверить процессуальные документы, участвовать в действиях и судебном заседании по мере пресечения.'
     },
     {
+      num: '03',
       stage: 'Предварительное расследование',
       desc: 'Изучать доступные материалы, участвовать в следственных действиях, привлекать специалистов, заявлять ходатайства и жалобы, собирать и представлять сведения в законном порядке.'
     },
     {
+      num: '04',
       stage: 'Суд первой инстанции',
       desc: 'Анализировать обвинение и доказательства, заявлять ходатайства, участвовать в исследовании материалов, представлять позицию и готовить процессуальные документы.'
     },
     {
+      num: '05',
       stage: 'Апелляция и кассация',
       desc: 'Проверить судебные решения и протокол, определить юридически значимые основания, подготовить жалобу и участвовать в рассмотрении.'
     },
     {
+      num: '06',
       stage: 'Исполнение приговора',
       desc: 'Оценить условия УДО и другие применимые механизмы, собрать подтверждающие материалы и представить позицию в суде.'
     }
@@ -522,8 +528,9 @@ export default function AdvokatUgolovnyjClient() {
         superTitle="Уголовное право • Защита граждан"
         title={
           <span style={{ display: 'block', maxWidth: '100%' }}>
-            <span style={{ display: 'block' }}>Адвокат по уголовным делам</span>
-            <span style={{ display: 'block' }}>защита и представительство</span>
+            <span style={{ display: 'block' }}>Адвокат по уголовным</span>
+            <span style={{ display: 'block' }}>делам. Защита</span>
+            <span style={{ display: 'block' }}>и представительство</span>
             <span style={{ display: 'block' }}>в Липецке</span>
           </span>
         }
@@ -566,16 +573,18 @@ export default function AdvokatUgolovnyjClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px' }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             {situations.map((item, i) => (
               <div key={i} className="hover-lift" style={{
-                padding: '36px 30px',
+                height: '100%',
+                padding: '28px 24px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                 border: '1px solid var(--color-border)',
                 borderTop: '3px solid var(--color-primary)',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 display: 'flex',
                 flexDirection: 'column',
+                justifyContent: 'flex-start',
                 position: 'relative',
                 overflow: 'hidden',
                 transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease'
@@ -591,8 +600,9 @@ export default function AdvokatUgolovnyjClient() {
                   fontSize: '18px', 
                   fontWeight: 600,
                   color: 'var(--color-deep-blue)', 
-                  margin: '0 0 12px 0', 
+                  margin: '0 0 10px 0', 
                   lineHeight: 1.35, 
+                  minHeight: '48px',
                   position: 'relative',
                   zIndex: 1
                 }}>
@@ -613,9 +623,10 @@ export default function AdvokatUgolovnyjClient() {
 
             {/* 9-я карточка: Не нашли свою ситуацию */}
             <div 
-              className="hover-lift" 
+              className="hover-lift service-card" 
               style={{ 
-                padding: '36px 30px', 
+                height: '100%',
+                padding: '28px 24px', 
                 background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)', 
                 border: '1px solid var(--color-deep-blue)',
                 borderTop: '4px solid var(--color-gold)',
@@ -630,17 +641,17 @@ export default function AdvokatUgolovnyjClient() {
             >
               <div>
                 <h3 style={{ 
-                  margin: '0 0 12px 0', 
+                  margin: '0 0 10px 0', 
                   fontSize: '18px', 
                   fontFamily: 'var(--font-serif)',
                   color: 'var(--color-white)', 
-                  lineHeight: 1.35
+                  lineHeight: 1.35,
+                  minHeight: '48px'
                 }}>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не нашли</span>{' '}
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>свою ситуацию?</span>
+                  Не нашли свою ситуацию?
                 </h3>
                 <p style={{ 
-                  margin: '0 0 20px 0', 
+                  margin: 0, 
                   fontSize: '14px', 
                   color: 'rgba(255, 255, 255, 0.85)', 
                   lineHeight: 1.55
@@ -648,122 +659,141 @@ export default function AdvokatUgolovnyjClient() {
                   Опишите обстоятельства дела — куратор практики Аркадий Бобкин изучит детали и предложит порядок действий.
                 </p>
               </div>
-              <a 
+              <Link 
                 href="#form" 
-                className="btn btn-gold" 
+                className="card-arrow"
                 style={{ 
-                  width: '100%', 
-                  textAlign: 'center', 
-                  display: 'inline-flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  padding: '12px 20px',
-                  fontSize: '14px',
-                  marginTop: 'auto'
+                  display: 'inline-flex', 
+                  alignItems: 'center', 
+                  gap: '8px', 
+                  color: 'var(--color-gold)', 
+                  fontSize: '14px', 
+                  fontWeight: 600,
+                  marginTop: '16px',
+                  textDecoration: 'none'
                 }}
               >
-                Обсудить ситуацию
-              </a>
+                <span>Обсудить ситуацию</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 3 (6.4 & 6.5): РОЛЕВОЙ НАВИГАТОР И ПАМЯТКА БЕЗОПАСНОСТИ ═══ */}
+      {/* ═══ БЛОК 3: РОЛЕВОЙ НАВИГАТОР И ПАМЯТКА БЕЗОПАСНОСТИ В ОДНОМ БЛОКЕ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Помощь зависит не только от статьи,</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>но и от Вашего статуса</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              Объём прав и рисков существенно различается на каждом этапе. Адвокат выстраивает работу строго с учётом вашего процессуального положения.
-            </p>
-          </div>
+          <div className="grid grid-2" style={{ gap: '36px', alignItems: 'stretch' }}>
+            {/* Карточка 1: Статусы доверителя */}
+            <div 
+              className="hover-lift"
+              style={{
+                backgroundColor: 'var(--color-white)',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-primary)',
+                padding: '36px 30px',
+                display: 'flex',
+                flexDirection: 'column',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+              }}
+            >
+              <h3 style={{ 
+                fontFamily: 'var(--font-serif)', 
+                fontSize: '22px', 
+                fontWeight: 600, 
+                color: 'var(--color-deep-blue)', 
+                margin: '0 0 12px 0',
+                lineHeight: 1.3
+              }}>
+                Помощь зависит не только от статьи, но и от Вашего статуса
+              </h3>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 20px 0' }}>
+                Объём прав и рисков существенно различается на каждом этапе. Адвокат выстраивает работу строго с учётом вашего процессуального положения.
+              </p>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
-            {statuses.map((st, idx) => (
-              <div
-                key={idx}
-                className="hover-lift"
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-gold)',
-                  padding: '28px 24px',
-                  boxShadow: '0 4px 16px rgba(16, 39, 59, 0.04)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'flex-start'
-                }}
-              >
-                <h3 style={{ 
-                  fontFamily: 'var(--font-serif)', 
-                  fontSize: '18px', 
-                  fontWeight: 600, 
-                  color: 'var(--color-deep-blue)', 
-                  margin: '0 0 10px 0',
-                  lineHeight: 1.3
-                }}>
-                  {st.role}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {st.help}
-                </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                {statuses.map((st, idx) => (
+                  <div key={idx} style={{ borderTop: idx > 0 ? '1px solid rgba(23, 50, 77, 0.06)' : 'none', paddingTop: idx > 0 ? '12px' : '0' }}>
+                    <strong style={{ display: 'block', fontSize: '14.5px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>
+                      {st.role}
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, display: 'block' }}>
+                      {st.help}
+                    </span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
 
-          {/* Памятка безопасности */}
-          <div style={{
-            background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
-            color: '#FFFFFF',
-            padding: '40px 36px',
-            borderTop: '4px solid var(--color-gold)',
-            boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
-            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(22px, 2.8vw, 28px)', color: '#FFFFFF', margin: '0 0 20px 0', lineHeight: 1.3 }}>
-              Первые действия, которые помогут не усложнить ситуацию:
-            </h3>
-            <div className="grid grid-2" style={{ gap: '24px' }}>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold' }}>•</span>
-                <span style={{ fontSize: '14.5px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)' }}>
-                  <strong>Уточните основания:</strong> кто проводит действие, в каком статусе Вас вызывают или задержали и по какому адресу нужно явиться.
-                </span>
-              </div>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold' }}>•</span>
-                <span style={{ fontSize: '14.5px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)' }}>
-                  <strong>Сообщите близким:</strong> передайте, где Вы находитесь, если это разрешено и возможно; контакты подразделения и следователя.
-                </span>
-              </div>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold' }}>•</span>
-                <span style={{ fontSize: '14.5px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)' }}>
-                  <strong>Требуйте адвоката:</strong> заявите ходатайство об участии выбранного адвоката до начала первого опроса или допроса.
-                </span>
-              </div>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold' }}>•</span>
-                <span style={{ fontSize: '14.5px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)' }}>
-                  <strong>Внимательно читайте документы:</strong> если протокол не совпадает со сказанным, вносите замечания собственноручно до подписи.
-                </span>
-              </div>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold' }}>•</span>
-                <span style={{ fontSize: '14.5px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)' }}>
-                  <strong>Сохраняйте материалы:</strong> повестки, запросы, постановления, чеки, видео и переписку. Не редактируйте и не удаляйте файлы.
-                </span>
-              </div>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold' }}>•</span>
-                <span style={{ fontSize: '14.5px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)' }}>
-                  <strong>Не согласовывайте версии:</strong> не пытайтесь договариваться с другими участниками и не меняйте показания до консультации.
-                </span>
+            {/* Карточка 2: Памятка безопасности */}
+            <div 
+              className="hover-lift"
+              style={{
+                background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+                color: '#FFFFFF',
+                padding: '36px 30px',
+                border: '1px solid var(--color-deep-blue)',
+                borderTop: '4px solid var(--color-gold)',
+                display: 'flex',
+                flexDirection: 'column',
+                boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
+              }}
+            >
+              <h3 style={{ 
+                fontFamily: 'var(--font-serif)', 
+                fontSize: '22px', 
+                fontWeight: 600, 
+                color: '#FFFFFF', 
+                margin: '0 0 16px 0', 
+                lineHeight: 1.3 
+              }}>
+                Первые действия, которые помогут не усложнить ситуацию:
+              </h3>
+              <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55, margin: '0 0 20px 0' }}>
+                Соблюдение этих правил на начальном этапе позволяет защитить ваши законные права и не допустить процессуальных ошибок.
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ display: 'flex', gap: '12px' }}>
+                  <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold', lineHeight: 1 }}>•</span>
+                  <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
+                    <strong style={{ color: '#FFFFFF' }}>Уточните основания:</strong> кто проводит действие, в каком статусе Вас вызывают или задержали и по какому адресу нужно явиться.
+                  </span>
+                </div>
+                <div style={{ display: 'flex', gap: '12px' }}>
+                  <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold', lineHeight: 1 }}>•</span>
+                  <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
+                    <strong style={{ color: '#FFFFFF' }}>Сообщите близким:</strong> передайте, где Вы находитесь, если это разрешено и возможно; контакты подразделения и следователя.
+                  </span>
+                </div>
+                <div style={{ display: 'flex', gap: '12px' }}>
+                  <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold', lineHeight: 1 }}>•</span>
+                  <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
+                    <strong style={{ color: '#FFFFFF' }}>Требуйте адвоката:</strong> заявите ходатайство об участии выбранного адвоката до начала первого опроса или допроса.
+                  </span>
+                </div>
+                <div style={{ display: 'flex', gap: '12px' }}>
+                  <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold', lineHeight: 1 }}>•</span>
+                  <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
+                    <strong style={{ color: '#FFFFFF' }}>Внимательно читайте документы:</strong> если протокол не совпадает со сказанным, вносите замечания собственноручно до подписи.
+                  </span>
+                </div>
+                <div style={{ display: 'flex', gap: '12px' }}>
+                  <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold', lineHeight: 1 }}>•</span>
+                  <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
+                    <strong style={{ color: '#FFFFFF' }}>Сохраняйте материалы:</strong> повестки, запросы, постановления, чеки, видео и переписку. Не редактируйте и не удаляйте файлы.
+                  </span>
+                </div>
+                <div style={{ display: 'flex', gap: '12px' }}>
+                  <span style={{ color: 'var(--color-gold)', fontSize: '18px', fontWeight: 'bold', lineHeight: 1 }}>•</span>
+                  <span style={{ fontSize: '14px', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)' }}>
+                    <strong style={{ color: '#FFFFFF' }}>Не согласовывайте версии:</strong> не пытайтесь договариваться с другими участниками и не меняйте показания до консультации.
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -925,23 +955,41 @@ export default function AdvokatUgolovnyjClient() {
           </div>
 
           <div className="grid grid-3" style={{ gap: '24px' }}>
-            {stages.map((stg, idx) => (
-              <div
-                key={idx}
-                className="hover-lift"
-                style={{
-                  backgroundColor: 'var(--color-cream)',
-                  border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-deep-blue)',
-                  padding: '24px 20px'
-                }}
-              >
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
-                  {stg.stage}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                  {stg.desc}
-                </p>
+            {stages.map((item, idx) => (
+              <div key={idx} className="hover-lift" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '38px 24px 30px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                borderRadius: '0',
+                position: 'relative',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
+                </div>
+                <div>
+                  <h3 style={{ margin: '8px 0 10px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', minHeight: '48px' }}>
+                    {item.stage}
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
