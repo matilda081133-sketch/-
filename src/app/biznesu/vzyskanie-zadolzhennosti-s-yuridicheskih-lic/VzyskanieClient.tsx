@@ -990,12 +990,8 @@ export default function VzyskanieClient() {
               Выбор процессуального порядка
             </div>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Не каждый долг нужно
-              </span>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                взыскивать одинаково
-              </span>
+              <span style={{ display: 'inline-block' }}>Не каждый долг нужно</span> <br />
+              <span style={{ display: 'inline-block' }}>взыскивать одинаково</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Порядок работы зависит от признания долга, позиции должника, наличия встречного спора и финансового состояния контрагента.
@@ -1011,32 +1007,59 @@ export default function VzyskanieClient() {
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
-                  padding: '32px 28px',
+                  padding: '34px 28px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  position: 'relative'
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
+                {/* Фирменный водяной знак */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.05, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
                 <div>
                   <div style={{
-                    fontSize: '12px',
+                    fontSize: '11.5px',
                     fontWeight: 700,
                     color: 'var(--color-gold)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.08em',
                     marginBottom: '14px',
-                    background: 'rgba(193, 160, 102, 0.1)',
+                    background: 'rgba(193, 160, 102, 0.12)',
                     padding: '4px 10px',
-                    display: 'inline-block'
+                    alignSelf: 'flex-start',
+                    display: 'inline-block',
+                    position: 'relative',
+                    zIndex: 1
                   }}>
                     {item.tag}
                   </div>
-                  <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.35 }}>
+                  <h3 style={{
+                    fontSize: '18px',
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35,
+                    fontWeight: 600,
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 20px 0' }}>
+                  <p style={{
+                    fontSize: '14.5px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: '0 0 24px 0',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
                     {item.desc}
                   </p>
                 </div>
@@ -1046,12 +1069,20 @@ export default function VzyskanieClient() {
                   padding: '16px 18px',
                   border: '1px solid var(--color-border)',
                   borderLeft: '3px solid var(--color-gold)',
-                  marginTop: 'auto'
+                  marginTop: 'auto',
+                  position: 'relative',
+                  zIndex: 1,
+                  boxShadow: '0 2px 8px rgba(23, 50, 77, 0.03)'
                 }}>
-                  <strong style={{ display: 'block', fontSize: '12px', color: 'var(--color-primary)', textTransform: 'uppercase', marginBottom: '4px', letterSpacing: '0.05em' }}>
-                    Применимый маршрут:
-                  </strong>
-                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                      Применимый маршрут
+                    </strong>
+                  </div>
+                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
                     {item.route}
                   </span>
                 </div>
@@ -1076,68 +1107,214 @@ export default function VzyskanieClient() {
               Этапы юридического сопровождения
             </div>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Взыскание задолженности
-              </span>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                под конкретную стадию
-              </span>
+              <span style={{ display: 'inline-block' }}>Взыскание задолженности</span> <br />
+              <span style={{ display: 'inline-block' }}>под конкретную стадию</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               Чёткий состав работ и осязаемый результат на каждом этапе правового взаимодействия.
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '32px' }}>
-            {stages.map((step, idx) => (
+          {/* Ряд 1: Первые 3 этапа */}
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '28px' }}>
+            {stages.slice(0, 3).map((step, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-primary)',
-                  padding: '28px 32px',
-                  boxShadow: '0 4px 15px rgba(23, 50, 77, 0.04)',
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                  gap: '24px',
-                  alignItems: 'center'
+                  borderTop: '3px solid var(--color-primary)',
+                  padding: '32px 28px',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  position: 'relative'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                  <span style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '24px',
-                    fontWeight: 700,
-                    color: 'var(--color-gold)',
-                    lineHeight: 1
-                  }}>
-                    {step.num}
-                  </span>
-                  <div>
-                    <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', lineHeight: 1.3 }}>
-                      {step.stage}
-                    </h3>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                      {step.works}
-                    </p>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+                    <span style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '28px',
+                      fontWeight: 700,
+                      color: 'var(--color-gold)',
+                      lineHeight: 1
+                    }}>
+                      {step.num}
+                    </span>
+                    <span style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: 'var(--color-primary)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '3px 8px'
+                    }}>
+                      Этап {step.num}
+                    </span>
                   </div>
+
+                  <h3 style={{
+                    fontSize: '18px',
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35,
+                    fontWeight: 600
+                  }}>
+                    {step.stage}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: '0 0 20px 0'
+                  }}>
+                    {step.works}
+                  </p>
                 </div>
 
                 <div style={{
                   background: '#FAF7F2',
-                  padding: '16px 20px',
-                  borderLeft: '3px solid var(--color-gold)'
+                  border: '1px solid rgba(193, 160, 102, 0.25)',
+                  borderLeft: '3px solid var(--color-gold)',
+                  padding: '14px 16px',
+                  marginTop: 'auto'
                 }}>
-                  <strong style={{ display: 'block', fontSize: '12px', color: 'var(--color-primary)', textTransform: 'uppercase', marginBottom: '4px', letterSpacing: '0.05em' }}>
-                    Результат этапа:
-                  </strong>
-                  <span style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5, fontWeight: 500 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                      Результат этапа
+                    </strong>
+                  </div>
+                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
                     {step.result}
                   </span>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Ряд 2: Этапы 04 и 05 по центру */}
+          <div className="grid grid-2" style={{ gap: '28px', maxWidth: '820px', margin: '0 auto', alignItems: 'stretch' }}>
+            {stages.slice(3, 5).map((step, idx) => (
+              <div
+                key={idx + 3}
+                className="hover-lift"
+                style={{
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  padding: '32px 28px',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  position: 'relative'
+                }}
+              >
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+                    <span style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '28px',
+                      fontWeight: 700,
+                      color: 'var(--color-gold)',
+                      lineHeight: 1
+                    }}>
+                      {step.num}
+                    </span>
+                    <span style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: 'var(--color-primary)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '3px 8px'
+                    }}>
+                      Этап {step.num}
+                    </span>
+                  </div>
+
+                  <h3 style={{
+                    fontSize: '18px',
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35,
+                    fontWeight: 600
+                  }}>
+                    {step.stage}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: '0 0 20px 0'
+                  }}>
+                    {step.works}
+                  </p>
+                </div>
+
+                <div style={{
+                  background: '#FAF7F2',
+                  border: '1px solid rgba(193, 160, 102, 0.25)',
+                  borderLeft: '3px solid var(--color-gold)',
+                  padding: '14px 16px',
+                  marginTop: 'auto'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                      Результат этапа
+                    </strong>
+                  </div>
+                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
+                    {step.result}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Плашка действия под этапами */}
+          <div style={{
+            padding: '24px 32px',
+            background: '#FFFFFF',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '20px',
+            marginTop: '36px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <polyline points="9 11 12 14 22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+              </svg>
+              <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.5 }}>
+                Подключаемся на любой стадии: от анализа документов до арбитражного суда, исполнения решения и банкротства
+              </span>
+            </div>
+            <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px', whiteSpace: 'nowrap' }}>
+              Определить стадию спора
+            </a>
           </div>
         </div>
       </section>
