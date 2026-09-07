@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export interface CaseData {
-  category: string;
+  category: string | React.ReactNode;
   title: string | React.ReactNode;
   problem: string;
   action: string;
@@ -76,7 +76,7 @@ export default function CasesBlock({
               }} className="case-accent-line"></div>
               
               <div style={{ paddingBottom: '20px', marginBottom: '24px', paddingTop: '0' }}>
-                <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600, whiteSpace: 'nowrap' }}>
+                <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600, lineHeight: 1.45 }}>
                   {caseItem.category}
                 </span>
                 <h3 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4, wordBreak: 'break-word', overflowWrap: 'break-word' }}>
