@@ -503,7 +503,12 @@ export default function VzyskanieClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Взыскание задолженности с юридических лиц</span>
           </>
         }
-        superTitle="Взыскание задолженности для бизнеса • Липецк и Липецкая область"
+        superTitle={
+          <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
+            <span style={{ display: 'inline-block' }}>Взыскание задолженности для бизнеса •</span> <br />
+            <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
+          </span>
+        }
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
@@ -887,8 +892,7 @@ export default function VzyskanieClient() {
               gap: '24px'
             }}>
               <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                <span style={{ display: 'inline-block' }}>Юридическая</span> <br />
-                <span style={{ display: 'inline-block' }}>доказуемость</span>
+                Юридическая доказуемость
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 {[
@@ -922,8 +926,7 @@ export default function VzyskanieClient() {
               gap: '24px'
             }}>
               <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                <span style={{ display: 'inline-block' }}>Фактическая</span> <br />
-                <span style={{ display: 'inline-block' }}>взыскиваемость</span>
+                Фактическая взыскиваемость
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 {[
@@ -1115,29 +1118,35 @@ export default function VzyskanieClient() {
             </p>
           </div>
 
-          {/* Ряд 1: Первые 3 этапа */}
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '28px' }}>
-            {stages.slice(0, 3).map((step, idx) => (
+          {/* Все 5 этапов в единой карточке */}
+          <div style={{
+            background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+            border: '1px solid var(--color-border)',
+            borderTop: '3px solid var(--color-primary)',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+            padding: '36px 32px',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            {stages.map((step, idx) => (
               <div
                 key={idx}
-                className="hover-lift"
                 style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  padding: '32px 28px',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  paddingTop: idx === 0 ? '0' : '28px',
+                  paddingBottom: idx === stages.length - 1 ? '0' : '28px',
+                  borderBottom: idx === stages.length - 1 ? 'none' : '1px solid rgba(23, 50, 77, 0.1)',
                   display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  position: 'relative'
+                  flexWrap: 'wrap',
+                  gap: '24px',
+                  alignItems: 'stretch',
+                  justifyContent: 'space-between'
                 }}
               >
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+                <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                     <span style={{
                       fontFamily: 'var(--font-serif)',
-                      fontSize: '28px',
+                      fontSize: '26px',
                       fontWeight: 700,
                       color: 'var(--color-gold)',
                       lineHeight: 1
@@ -1161,7 +1170,7 @@ export default function VzyskanieClient() {
                     fontSize: '18px',
                     fontFamily: 'var(--font-serif)',
                     color: 'var(--color-deep-blue)',
-                    margin: '0 0 12px 0',
+                    margin: '0 0 10px 0',
                     lineHeight: 1.35,
                     fontWeight: 600
                   }}>
@@ -1169,110 +1178,28 @@ export default function VzyskanieClient() {
                   </h3>
 
                   <p style={{
-                    fontSize: '14px',
+                    fontSize: '14.5px',
                     color: 'var(--color-text-secondary)',
                     lineHeight: 1.6,
-                    margin: '0 0 20px 0'
+                    margin: 0
                   }}>
                     {step.works}
                   </p>
                 </div>
 
                 <div style={{
+                  flex: '1 1 320px',
+                  minWidth: '260px',
                   background: '#FAF7F2',
                   border: '1px solid rgba(193, 160, 102, 0.25)',
                   borderLeft: '3px solid var(--color-gold)',
-                  padding: '14px 16px',
-                  marginTop: 'auto'
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                      <polyline points="9 11 12 14 22 4" />
-                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                    </svg>
-                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                      Результат этапа
-                    </strong>
-                  </div>
-                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
-                    {step.result}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Ряд 2: Этапы 04 и 05 по центру */}
-          <div className="grid grid-2" style={{ gap: '28px', maxWidth: '820px', margin: '0 auto', alignItems: 'stretch' }}>
-            {stages.slice(3, 5).map((step, idx) => (
-              <div
-                key={idx + 3}
-                className="hover-lift"
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  padding: '32px 28px',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  padding: '16px 20px',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  position: 'relative'
-                }}
-              >
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-                    <span style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '28px',
-                      fontWeight: 700,
-                      color: 'var(--color-gold)',
-                      lineHeight: 1
-                    }}>
-                      {step.num}
-                    </span>
-                    <span style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      color: 'var(--color-primary)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      background: 'rgba(23, 50, 77, 0.06)',
-                      padding: '3px 8px'
-                    }}>
-                      Этап {step.num}
-                    </span>
-                  </div>
-
-                  <h3 style={{
-                    fontSize: '18px',
-                    fontFamily: 'var(--font-serif)',
-                    color: 'var(--color-deep-blue)',
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.35,
-                    fontWeight: 600
-                  }}>
-                    {step.stage}
-                  </h3>
-
-                  <p style={{
-                    fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: '0 0 20px 0'
-                  }}>
-                    {step.works}
-                  </p>
-                </div>
-
-                <div style={{
-                  background: '#FAF7F2',
-                  border: '1px solid rgba(193, 160, 102, 0.25)',
-                  borderLeft: '3px solid var(--color-gold)',
-                  padding: '14px 16px',
-                  marginTop: 'auto'
+                  justifyContent: 'center',
+                  boxSizing: 'border-box'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                       <polyline points="9 11 12 14 22 4" />
                       <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
@@ -1606,7 +1533,8 @@ export default function VzyskanieClient() {
                 Офис в Липецке
               </div>
               <h2 className="with-accent" style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
-                Обсудить взыскание долга в офисе
+                <span style={{ display: 'inline-block' }}>Обсудить взыскание</span> <br />
+                <span style={{ display: 'inline-block' }}>долга в офисе</span>
               </h2>
               <p style={{ fontSize: '15.5px', color: 'var(--color-deep-blue)', opacity: 0.9, lineHeight: 1.6, marginBottom: '24px' }}>
                 Можно встретиться лично в офисе ЮК «Де-Юре» в центре Липецка либо передать документы в электронном виде для дистанционного анализа.
