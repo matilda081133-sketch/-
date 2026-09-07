@@ -371,7 +371,7 @@ export default function VzyskanieClient() {
     },
     {
       q: 'Вы работаете, если решение суда уже есть?',
-      a: 'Да, применимый объём зависит от исполнительного документа и текущей стадии. Если задача сосредоточена на действиях банка или приставов, она передаётся в профильное направление.'
+      a: 'Да, применимый объём зависит от исполнительного документа и теку стадии. Если задача сосредоточена на действиях банка или приставов, она передаётся в профильное направление.'
     },
     {
       q: 'Можно ли работать дистанционно?',
@@ -675,53 +675,49 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: КОГДА НЕЛЬЗЯ ЗАТЯГИВАТЬ СО ВЗЫСКАНИЕМ (ШАБЛОН «КОГДА СРОЧНО» НА СВЕТЛОМ ФОНЕ) ═══ */}
-      <section className="section bg-white" id="urgent" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 3: СРОЧНЫЕ СИТУАЦИИ (ШАБЛОН «КОГДА ВАЖНО ОБРАТИТЬСЯ БЕЗ ПРОМЕДЛЕНИЯ») ═══ */}
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }} id="urgent">
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Когда нельзя затягивать
-              </span>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                со взысканием
-              </span>
+          <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'inline-block' }}>Когда нельзя затягивать</span> <br />
+              <span style={{ display: 'inline-block' }}>со взысканием</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', marginBottom: '40px', maxWidth: '720px', lineHeight: 1.6 }}>
               В спорах с юридическими лицами промедление грозит утратой активов, ликвидацией или невозможностью исполнить решение суда.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '40px' }}>
             {urgentItems.map((item, i) => (
               <div
                 key={i}
-                className="hover-lift"
+                className="urgent-card"
                 style={{
-                  padding: '32px 28px',
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '30px 24px',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  height: '100%',
-                  boxSizing: 'border-box'
+                  height: '100%'
                 }}
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <circle cx="12" cy="12" r="10" />
-                      <line x1="12" y1="8" x2="12" y2="12" />
-                      <line x1="12" y1="16" x2="12.01" y2="16" />
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
                     </svg>
-                    <div style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
                       {item.title}
                     </div>
                   </div>
-                  <p style={{ color: 'var(--color-text-secondary)', fontSize: '14.5px', lineHeight: 1.55, margin: 0 }}>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
                     {item.desc}
                   </p>
                 </div>
@@ -729,47 +725,74 @@ export default function VzyskanieClient() {
             ))}
           </div>
 
-          {/* Плашка предупреждения */}
           <div style={{
-            background: 'var(--color-white)',
-            border: '1px solid var(--color-border)',
+            background: 'rgba(255, 255, 255, 0.08)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '24px 30px',
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-            marginBottom: '32px'
+            padding: '16px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
+            lineHeight: 1.6
           }}>
-            <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>
-              <strong>Предупреждение:</strong> Срочность не означает автоматическую подачу иска. Сначала определяем действие, которое действительно сохраняет позицию или повышает вероятность взыскания.
-            </p>
+            <span style={{ display: 'inline-block' }}>
+              <strong style={{ color: '#FFFFFF' }}>Предупреждение:</strong> Срочность не означает автоматическую подачу иска.
+            </span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>
+              Сначала определяем действие, которое действительно сохраняет позицию или повышает вероятность взыскания.
+            </span>
           </div>
 
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              transition: all 0.3s ease !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+              transform: translateY(-2px);
+            }
+          `}} />
+
           {/* Зона связи */}
-          <div style={{
-            background: 'var(--gradient-cream)',
-            border: '1px solid var(--color-border)',
-            padding: '24px 30px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '20px',
-            flexWrap: 'wrap'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontSize: '20px', fontWeight: 700, textDecoration: 'none' }}>
-                +7 (910) 350-31-11
-              </a>
-              <span style={{ color: 'var(--color-text-secondary)', fontSize: '14px' }}>
-                Перезвоним вам в рабочее время и оценим риски до утраты активов
-              </span>
-            </div>
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <a href="tel:+79103503111" className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '14px' }}>
-                Позвонить юристу
-              </a>
-              <a href="#form" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14px' }}>
-                Описать ситуацию
-              </a>
-            </div>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+              +7 (910) 350-31-11
+            </a>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Описать ситуацию
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
+              Перезвоним вам в рабочее время и оценим риски до утраты активов
+            </span>
           </div>
         </div>
       </section>
@@ -829,27 +852,20 @@ export default function VzyskanieClient() {
           <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
             {/* Карточка 1: Юридическая доказуемость */}
             <div style={{
-              background: '#FFFFFF',
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-primary)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
               padding: '36px 32px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '20px'
+              gap: '24px'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '14px', borderBottom: '1px solid rgba(23, 50, 77, 0.08)' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                  <polyline points="14 2 14 8 20 8" />
-                  <line x1="16" y1="13" x2="8" y2="13" />
-                  <line x1="16" y1="17" x2="8" y2="17" />
-                </svg>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
-                  Юридическая доказуемость
-                </h3>
-              </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Юридическая</span> <br />
+                <span style={{ display: 'inline-block' }}>доказуемость</span>
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 {[
                   'Основание обязательства и точный срок наступления оплаты',
                   'Договор, приложения, спецификации, дополнительные соглашения и заявки',
@@ -859,10 +875,11 @@ export default function VzyskanieClient() {
                   'Правильность расчёта основного долга, неустойки, штрафов и процентов'
                 ].map((item, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <polyline points="20 6 9 17 4 12" />
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
-                    <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>{item}</span>
+                    <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -870,25 +887,20 @@ export default function VzyskanieClient() {
 
             {/* Карточка 2: Фактическая взыскиваемость */}
             <div style={{
-              background: '#FFFFFF',
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-gold)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
               padding: '36px 32px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '20px'
+              gap: '24px'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '14px', borderBottom: '1px solid rgba(23, 50, 77, 0.08)' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                </svg>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
-                  Фактическая взыскиваемость
-                </h3>
-              </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Фактическая</span> <br />
+                <span style={{ display: 'inline-block' }}>взыскиваемость</span>
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 {[
                   'Действующий статус компании, отсутствие записей о ликвидации или реорганизации',
                   'Количество текущих арбитражных споров и совокупный объём требований',
@@ -899,9 +911,10 @@ export default function VzyskanieClient() {
                 ].map((item, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <polyline points="20 6 9 17 4 12" />
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
-                    <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>{item}</span>
+                    <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -923,7 +936,8 @@ export default function VzyskanieClient() {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                <polyline points="20 6 9 17 4 12" />
+                <polyline points="9 11 12 14 22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
               </svg>
               <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
                 Сопоставляем оба параметра на консультации до начала активных процессуальных действий
@@ -1157,79 +1171,62 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 8: ЧТО ПЕРЕДАТЬ ЮРИСТУ ДЛЯ АНАЛИЗА (ШАБЛОН «ДОКУМЕНТЫ») ═══ */}
+      {/* ═══ БЛОК 8: ДОКУМЕНТЫ ДЛЯ ПРЕДВАРИТЕЛЬНОГО АНАЛИЗА (ШАБЛОН «ДОКУМЕНТЫ») ═══ */}
       <section className="section bg-light" id="documents" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
-            <div style={{
-              fontSize: '13px',
-              fontWeight: 700,
-              color: 'var(--color-gold)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              marginBottom: '12px'
-            }}>
-              Подготовка к консультации
-            </div>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Что передать юристу
-              </span>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                для анализа
-              </span>
+              <span style={{ display: 'inline-block' }}>Документы для</span> <br />
+              <span style={{ display: 'inline-block' }}>предварительного анализа</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Для первичной экспертизы достаточно направить копии документов в электронном виде:
+              <span style={{ display: 'inline-block' }}>Для первичного анализа достаточно сведений и документов, которые есть у вас на руках.</span> <br />
+              <span style={{ display: 'inline-block' }}>Точный перечень и порядок сбора недостающих справок юрист определит на консультации.</span>
             </p>
           </div>
 
           <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
             {/* Карточка 1: Обязательно (при наличии) */}
             <div style={{
-              background: '#FFFFFF',
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-primary)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
               padding: '36px 32px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '20px'
+              gap: '24px'
             }}>
-              <div style={{ paddingBottom: '14px', borderBottom: '1px solid rgba(23, 50, 77, 0.08)' }}>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 6px 0' }}>
-                  Обязательно (при наличии)
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
-                  Базовые первичные документы, подтверждающие факт возникновения задолженности:
-                </p>
-              </div>
-
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Обязательно</span> <br />
+                <span style={{ display: 'inline-block' }}>(при наличии)</span>
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 {[
                   {
                     title: 'Договор и спецификации',
-                    desc: 'Договор со всеми приложениями, спецификациями и доп. соглашениями.'
+                    desc: 'Договор со всеми приложениями, спецификациями и дополнительными соглашениями.'
                   },
                   {
                     title: 'Первичные учётные документы',
-                    desc: 'УПД, товарные накладные, акты выполненных работ, платёжные поручения.'
+                    desc: 'УПД, товарные накладные, акты приёмки выполненных работ, платёжные поручения.'
                   },
                   {
                     title: 'Переписка и расчёт долга',
-                    desc: 'Деловая переписка, акты сверки взаиморасчётов и расчёт задолженности.'
+                    desc: 'Деловая переписка, акты сверки взаиморасчётов и детальный расчёт задолженности.'
                   },
                   {
                     title: 'Судебные и исполнительные документы',
-                    desc: 'Документы из суда или ФССП, если судебный процесс либо исполнительное производство уже начаты.'
+                    desc: 'Материалы из суда или ФССП, если судебный процесс либо исполнительное производство уже начаты.'
                   }
                 ].map((doc, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <polyline points="20 6 9 17 4 12" />
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
                     <div>
-                      <strong style={{ display: 'block', fontSize: '15.5px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>
+                      <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
                         {doc.title}
                       </strong>
                       <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
@@ -1243,25 +1240,20 @@ export default function VzyskanieClient() {
 
             {/* Карточка 2: Дополнительно помогает */}
             <div style={{
-              background: '#FFFFFF',
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-gold)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
               padding: '36px 32px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '20px'
+              gap: '24px'
             }}>
-              <div style={{ paddingBottom: '14px', borderBottom: '1px solid rgba(23, 50, 77, 0.08)' }}>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 6px 0' }}>
-                  Дополнительно помогает
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
-                  Сведения, усиливающие правовую позицию и ускоряющие возврат долга:
-                </p>
-              </div>
-
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Дополнительно</span> <br />
+                <span style={{ display: 'inline-block' }}>помогает</span>
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 {[
                   {
                     title: 'Претензии и гарантийные письма',
@@ -1282,10 +1274,11 @@ export default function VzyskanieClient() {
                 ].map((doc, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <polyline points="20 6 9 17 4 12" />
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
                     <div>
-                      <strong style={{ display: 'block', fontSize: '15.5px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>
+                      <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
                         {doc.title}
                       </strong>
                       <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
@@ -1300,11 +1293,11 @@ export default function VzyskanieClient() {
 
           {/* Плашка действия и предупреждения */}
           <div style={{
-            background: '#FFFFFF',
+            background: 'var(--color-white)',
             border: '1px solid var(--color-border)',
             borderLeft: '4px solid var(--color-gold)',
+            padding: '24px 30px',
             boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-            padding: '24px 32px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -1484,7 +1477,7 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 15: ФИНАЛЬНАЯ ФОРМА ОБРАТНОЙ СВЯЗИ (CANONICAL 2-COLUMN) ═══ */}
+      {/* ═══ БЛОК 15: ФИНАЛЬНАЯ ФОРМА (СВЯЗАТЬСЯ С НАМИ) ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
@@ -1496,40 +1489,51 @@ export default function VzyskanieClient() {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получите первичную</span> <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>оценку перспектив</span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получите первичную</span> <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>оценку ситуации</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Кратко опишите ситуацию и оставьте контакты. Юрист ЮК «Де-Юре» свяжется с вами, уточнит состав документов, проверит должника и обозначит реальные перспективы возврата средств.
+                Кратко опишите ситуацию и оставьте контакты. Юрист проверит должника, изучит первичные документы и свяжется с вами для обсуждения перспектив взыскания.
               </p>
 
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация по долгам юридических лиц</strong>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
                   Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
                 </p>
               </div>
 
-              <div style={{ marginTop: 'auto' }}>
-                <div style={{ display: 'flex', gap: '12px', alignItems: 'center', fontSize: '14px', color: 'var(--color-text-secondary)' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                  <span>Конфиденциальность переданных документов гарантируется законом и договором</span>
-                </div>
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
+                Не указывайте в форме конфиденциальные данные, банковские выписки и закрытые документы. Документы можно передать юристу после согласования защищённого способа связи.
               </div>
             </div>
 
-            <div>
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
               <ContactsForm
-                title="Оставить заявку на анализ долга"
-                subtitle="Заполните форму, и юрист перезвонит вам в рабочее время для предварительной оценки ситуации."
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
                 buttonText="Оценить перспективы взыскания"
-                commentPlaceholder="Укажите сумму долга, контрагента и статус документов…"
+                commentPlaceholder="Кратко опишите ситуацию: сумма долга, контрагент, статус документов…"
                 hiddenFields={[
-                  { name: 'service', value: 'Взыскание задолженности с юридических лиц' },
-                  { name: 'page_type', value: 'b2b_hub' },
-                  { name: 'page_url', value: '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/' }
+                  { name: 'source_page', value: '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/' },
+                  { name: 'page_type', value: 'hub' },
+                  { name: 'direction', value: 'vzyskanie_zadolzhennosti' },
+                  { name: 'service', value: 'vzyskanie_zadolzhennosti_s_yuridicheskih_lic' },
+                  { name: 'curator', value: 'konopkin-dmitriy-sergeevich' }
                 ]}
               />
             </div>
