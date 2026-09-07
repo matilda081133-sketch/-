@@ -1661,22 +1661,23 @@ export default function BankrotstvoFizicheskihLicClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 16: ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ БЛОК 16: ФИНАЛЬНАЯ ФОРМА (СВЯЗАТЬСЯ С НАМИ) ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-                <div style={{ width: '40px', height: '2px', background: 'var(--color-primary)' }}></div>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
                   Связаться с нами
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                Проверьте возможность банкротства и риски до подачи заявления
+                <span style={{ display: 'inline-block' }}>Проверьте возможность банкротства</span> <br />
+                <span style={{ display: 'inline-block' }}>и риски до подачи заявления</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Оставьте номер телефона и кратко опишите ситуацию: примерную сумму долга, есть ли открытые суды, исполнительные производства, имущество или сделки за 3 года. Юрист изучит обстоятельства и свяжется с вами.
+                Кратко опишите ситуацию. Юрист уточнит состав долгов, имущество и другие обстоятельства, необходимые для оценки.
               </p>
 
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '0' }}>
@@ -1684,20 +1685,38 @@ export default function BankrotstvoFizicheskihLicClient() {
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
-                  <span style={{ fontWeight: 600, color: 'var(--color-deep-blue)', fontSize: '15px' }}>Прямой телефон юриста:</span>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
-                <a href="tel:+79103503111" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-primary)', textDecoration: 'none', display: 'inline-block', marginLeft: '32px' }} data-analytics="phone_click">
-                  +7 (910) 350-31-11
-                </a>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                </p>
               </div>
             </div>
 
-            <div style={{ height: '100%' }}>
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
               <ContactsForm
-                title="Получить оценку ситуации"
-                subtitle="Заполните форму для предварительного анализа возможности списания долгов"
-                buttonText="Записаться на разбор ситуации"
-                hiddenFields={[{ name: 'service', value: 'Банкротство физических лиц' }]}
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист перезвонит</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                buttonText="Проверить возможность банкротства"
+                commentPlaceholder="Примерная сумма долга, количество кредиторов, имущество и стадия взыскания…"
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Перезвоним в течение 15 минут в рабочее время. Если заявка оставлена вечером или в выходной день, перезвоним в ближайший рабочий день.</span> <br />
+                    <span style={{ display: 'inline-block', marginTop: '6px', fontSize: '12px', opacity: 0.8 }}>Не указывайте паспортные данные, номера счетов и другие конфиденциальные сведения. Их можно передать юристу после установления защищённого способа связи.</span>
+                  </>
+                }
+                hiddenFields={[
+                  { name: 'source_page', value: '/grazhdanam/bankrotstvo-fizicheskih-lic/' },
+                  { name: 'page_type', value: 'hub' },
+                  { name: 'direction', value: 'bankrotstvo_fizicheskih_lic' },
+                  { name: 'service', value: 'bankrotstvo_fizicheskih_lic' },
+                  { name: 'curator', value: 'nacheshnikov-vladimir-viktorovich' }
+                ]}
               />
             </div>
           </div>
