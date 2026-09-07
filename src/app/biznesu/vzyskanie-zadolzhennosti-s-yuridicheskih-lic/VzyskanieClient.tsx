@@ -504,11 +504,11 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 7.3: КОГДА НЕЛЬЗЯ ЗАТЯГИВАТЬ СО ВЗЫСКАНИЕМ (ШАБЛОН РИСКОВ) ═══ */}
-      <section className="section bg-light" id="urgent" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 7.3: КОГДА НЕЛЬЗЯ ЗАТЯГИВАТЬ СО ВЗЫСКАНИЕМ (ШАБЛОН «КОГДА СРОЧНО») ═══ */}
+      <section className="section bg-primary text-white" id="urgent" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+          <div style={{ maxWidth: '820px', marginBottom: '40px', textAlign: 'left' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
                 Когда нельзя затягивать
               </span>
@@ -516,113 +516,108 @@ export default function VzyskanieClient() {
                 со взысканием
               </span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
+            <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '16px', margin: 0, maxWidth: '720px', lineHeight: 1.6, textWrap: 'balance' }}>
               В спорах с юридическими лицами промедление грозит утратой активов, ликвидацией или невозможностью исполнить решение суда.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
             {[
               {
-                tag: 'Исковая давность',
-                title: 'Приближается срок 3 года',
-                desc: 'Окончание срока исковой давности лишает возможности судебного взыскания при заявлении ответчика.'
+                title: 'Приближается срок исковой давности',
+                desc: 'Окончание 3-летнего срока лишает возможности принудительного взыскания долга при соответствующем заявлении ответчика в суде.'
               },
               {
-                tag: 'Смена контроля',
-                title: 'Должник меняет директора',
-                desc: 'Смена адреса, номинальные руководители или прекращение деятельности часто предшествуют бросанию юрлица.'
+                title: 'Должник меняет директора или адрес',
+                desc: 'Смена контроля, номинальные руководители или прекращение фактической деятельности часто предшествуют бросанию юрлица.'
               },
               {
-                tag: 'Конкуренция',
-                title: 'Новые иски к контрагенту',
-                desc: 'Появление крупных судебных исков от других кредиторов повышает риск исчерпания средств на счетах.'
+                title: 'Новые крупные иски к контрагенту',
+                desc: 'Массовые иски других кредиторов повышают риск ареста счетов конкурентами и исчерпания свободных денежных средств.'
               },
               {
-                tag: 'Ликвидация / Банкротство',
-                title: 'Публикация о ликвидации',
-                desc: 'Опубликованы сообщения на Федресурсе или в Вестнике о ликвидации либо намерении обанкротить компанию.'
+                title: 'Публикация о ликвидации или банкротстве',
+                desc: 'Появление сообщений на Федресурсе или в Вестнике требует срочного включения в реестр требований и применения спецмер.'
               },
               {
-                tag: 'Вывод активов',
-                title: 'Имущество переоформляется',
-                desc: 'Отчуждение недвижимости, автопарка или техники третьим лицам делает последующее взыскание невозможным.'
+                title: 'Имущество и активы выводятся',
+                desc: 'Отчуждение недвижимости, спецтехники или товарных остатков третьим лицам требует немедленного ходатайства об аресте.'
               },
               {
-                tag: 'Утрата доказательств',
-                title: 'Контрагент затягивает сверку',
-                desc: 'Предложения подписать невыгодный зачёт, отсрочку или удаление переписки ухудшают доказательственную базу.'
+                title: 'Контрагент затягивает подписание сверки',
+                desc: 'Попытки навязать неравноценный зачёт, бесконечные отсрочки или удаление переписки критически ослабляют доказательственную базу.'
               }
             ].map((item, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '36px 30px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease'
-              }}>
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                  </svg>
+              <div
+                key={i}
+                className="urgent-card"
+                style={{
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '30px 24px',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%',
+                  boxSizing: 'border-box'
+                }}
+              >
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35 }}>
+                      {item.title}
+                    </div>
+                  </div>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.88, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                    {item.desc}
+                  </p>
                 </div>
-
-                <div style={{
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.tag}
-                </div>
-                <h3 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '18px',
-                  fontWeight: 600,
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 14px 0',
-                  lineHeight: 1.35,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.title}
-                </h3>
-                <p style={{
-                  fontSize: '15px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  margin: 0,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.desc}
-                </p>
               </div>
             ))}
           </div>
 
           <div style={{
-            background: 'var(--color-white)',
-            border: '1px solid var(--color-border)',
+            background: 'rgba(255, 255, 255, 0.08)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '24px 30px',
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
+            padding: '18px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14.5px',
+            lineHeight: 1.6
           }}>
-            <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>
-              <strong>Предупреждение:</strong> Срочность не означает автоматическую подачу иска. Сначала определяем действие, которое действительно сохраняет позицию или повышает вероятность взыскания.
-            </p>
+            <strong style={{ color: '#FFFFFF' }}>Предупреждение:</strong> Срочность не означает автоматическую подачу иска. Сначала определяем действие, которое действительно сохраняет позицию или повышает вероятность взыскания.
+          </div>
+
+          <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
+              +7 (910) 350-31-11
+            </a>
+            <a
+              href="tel:+79103503111"
+              className="btn btn-urgent-call"
+              style={{ padding: '14px 28px', fontSize: '15px' }}
+              data-analytics="debt_urgent_call_click"
+            >
+              Позвонить юристу
+            </a>
+            <a
+              href="#form"
+              className="btn btn-urgent-outline"
+              style={{ padding: '14px 28px', fontSize: '15px' }}
+            >
+              Описать ситуацию
+            </a>
+            <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px' }}>
+              Перезвоним вам в рабочее время и оценим риски до утраты активов
+            </span>
           </div>
         </div>
       </section>
