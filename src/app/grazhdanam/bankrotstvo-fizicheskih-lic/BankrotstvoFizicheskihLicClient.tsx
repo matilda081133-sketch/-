@@ -978,14 +978,13 @@ export default function BankrotstvoFizicheskihLicClient() {
             ].map((item, idx) => (
               <div key={idx} className="hover-lift" style={{
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                padding: '36px 24px 28px 24px',
+                padding: '30px 24px 24px 24px',
                 border: '1px solid var(--color-border)',
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
-                minHeight: '235px',
                 boxSizing: 'border-box',
                 position: 'relative'
               }}>
@@ -1003,10 +1002,10 @@ export default function BankrotstvoFizicheskihLicClient() {
                 }}>
                   {item.num}
                 </div>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.25, minHeight: '46px' }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '4px 0 6px 0', lineHeight: 1.3 }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, minHeight: '68px' }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {item.desc}
                 </p>
               </div>
