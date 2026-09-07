@@ -176,19 +176,39 @@ export default function VzyskanieClient() {
 
   const urgentItems = [
     {
-      title: 'Приближается срок исковой давности',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Приближается срок</span> <br />
+          <span style={{ display: 'inline-block' }}>исковой давности</span>
+        </span>
+      ),
       desc: 'Окончание 3-летнего срока лишает возможности принудительного взыскания долга при заявлении ответчика в суде.'
     },
     {
-      title: 'Должник меняет директора или адрес',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Должник меняет директора</span> <br />
+          <span style={{ display: 'inline-block' }}>или адрес</span>
+        </span>
+      ),
       desc: 'Смена контроля, номинальные руководители или прекращение фактической деятельности часто предшествуют бросанию юрлица.'
     },
     {
-      title: 'Новые крупные иски к контрагенту',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Новые крупные иски</span> <br />
+          <span style={{ display: 'inline-block' }}>к контрагенту</span>
+        </span>
+      ),
       desc: 'Массовые иски других кредиторов повышают риск ареста счетов конкурентами и исчерпания свободных денежных средств.'
     },
     {
-      title: 'Публикация о ликвидации или банкротстве',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Публикация о ликвидации</span> <br />
+          <span style={{ display: 'inline-block' }}>или банкротстве</span>
+        </span>
+      ),
       desc: 'Появление сообщений на Федресурсе или в Вестнике требует срочного включения в реестр требований и применения спецмер.'
     },
     {
