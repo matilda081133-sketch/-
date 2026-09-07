@@ -829,8 +829,8 @@ export default function BankrotstvoFizicheskihLicClient() {
                 </h3>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
-                <div style={{ borderLeft: '3px solid var(--color-gold)', paddingLeft: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div className="risk-card-item risk-card-item--gold">
                   <h4 style={{ fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
                     Кредиты, займы и расписки
                   </h4>
@@ -839,7 +839,7 @@ export default function BankrotstvoFizicheskihLicClient() {
                   </p>
                 </div>
 
-                <div style={{ borderLeft: '3px solid var(--color-gold)', paddingLeft: '16px' }}>
+                <div className="risk-card-item risk-card-item--gold">
                   <h4 style={{ fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
                     Единственное пригодное жильё
                   </h4>
@@ -848,7 +848,7 @@ export default function BankrotstvoFizicheskihLicClient() {
                   </p>
                 </div>
 
-                <div style={{ borderLeft: '3px solid var(--color-gold)', paddingLeft: '16px' }}>
+                <div className="risk-card-item risk-card-item--gold">
                   <h4 style={{ fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
                     Доля супруга в общем имуществе
                   </h4>
@@ -875,8 +875,8 @@ export default function BankrotstvoFizicheskihLicClient() {
                 </h3>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
-                <div style={{ borderLeft: '3px solid var(--color-primary)', paddingLeft: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div className="risk-card-item risk-card-item--navy">
                   <h4 style={{ fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
                     Несписываемые обязательства
                   </h4>
@@ -885,7 +885,7 @@ export default function BankrotstvoFizicheskihLicClient() {
                   </p>
                 </div>
 
-                <div style={{ borderLeft: '3px solid var(--color-primary)', paddingLeft: '16px' }}>
+                <div className="risk-card-item risk-card-item--navy">
                   <h4 style={{ fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
                     Ипотека, авто и залоговые активы
                   </h4>
@@ -894,7 +894,7 @@ export default function BankrotstvoFizicheskihLicClient() {
                   </p>
                 </div>
 
-                <div style={{ borderLeft: '3px solid var(--color-primary)', paddingLeft: '16px' }}>
+                <div className="risk-card-item risk-card-item--navy">
                   <h4 style={{ fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
                     Отказ суда в списании долгов
                   </h4>

@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   /* Р¦РІРµС‚РѕРІР°СЏ РїР°Р»РёС‚СЂР° РёР· РўР— */
   --color-primary: #17324D;
   --color-deep-blue: #10273B;
@@ -1418,3 +1418,63 @@ summary:focus-visible {
   word-break: break-word !important;
   overflow-wrap: break-word !important;
 }
+
+/* Animated vertical line hover effect for risk & diagnostic items */
+.risk-card-item {
+  position: relative;
+  padding: 14px 16px 14px 20px;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 0;
+  cursor: default;
+}
+
+.risk-card-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3.5px;
+  background-color: var(--item-accent-color, var(--color-gold));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  opacity: 0;
+  z-index: 2;
+}
+
+.risk-card-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(23, 50, 77, 0.1);
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.risk-card-item:hover {
+  background: rgba(247, 244, 237, 0.65);
+  transform: translateX(4px);
+}
+
+.risk-card-item:hover::before {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.risk-card-item:hover::after {
+  opacity: 0;
+}
+
+.risk-card-item--gold {
+  --item-accent-color: var(--color-gold);
+}
+
+.risk-card-item--navy {
+  --item-accent-color: var(--color-primary);
+}
+
