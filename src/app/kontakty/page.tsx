@@ -262,8 +262,18 @@ export default function ContactsPage() {
               </div>
 
               {/* Карта (55-60%) */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', order: 1 }}>
-                <div style={{ borderRadius: '4px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', flex: 1, minHeight: '400px' }}>
+              <div style={{
+                background: 'var(--color-white)',
+                border: '1px solid var(--color-border)',
+                borderRadius: '4px',
+                overflow: 'hidden',
+                boxShadow: '0 10px 30px rgba(23, 50, 77, 0.08)',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                order: 1
+              }}>
+                <div style={{ flex: 1, minHeight: '420px', position: 'relative', width: '100%', overflow: 'hidden' }}>
                   {/* Маркер установлен на г. Липецк, ул. Советская, д. 35 (БЦ «Антарес», 52.604024, 39.585799) */}
                   <MapWidget />
                 </div>
@@ -271,23 +281,26 @@ export default function ContactsPage() {
                   href="https://yandex.ru/maps/?pt=39.585799,52.604024&z=17&text=%D0%B3.+%D0%9B%D0%B8%D0%BF%D0%B5%D1%86%D0%BA,+%D1%83%D0%BB.+%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F,+%D0%B4.+35"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-outline"
+                  className="btn btn-route-map"
                   style={{
                     width: '100%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: '10px',
-                    padding: '14px 24px',
+                    padding: '16px 24px',
                     fontSize: '15px',
                     fontWeight: 600,
-                    borderColor: 'rgba(23, 50, 77, 0.2)',
-                    color: 'var(--color-deep-blue)',
-                    boxSizing: 'border-box',
-                    textAlign: 'center'
+                    borderRadius: 0,
+                    borderLeft: 'none',
+                    borderRight: 'none',
+                    borderBottom: 'none',
+                    borderTop: '1px solid var(--color-border)',
+                    textDecoration: 'none',
+                    boxSizing: 'border-box'
                   }}
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="3 11 22 2 13 21 11 13 3 11" />
                   </svg>
                   <span>Построить маршрут до офиса</span>
