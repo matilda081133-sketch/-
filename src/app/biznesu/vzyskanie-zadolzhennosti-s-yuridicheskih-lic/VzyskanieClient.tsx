@@ -1126,7 +1126,7 @@ export default function VzyskanieClient() {
 
       {/* ═══ БЛОК 6: ВЗЫСКАНИЕ ЗАДОЛЖЕННОСТИ ПОД КОНКРЕТНУЮ СТАДИЮ (ТАЙМЛАЙН) ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
-        <div className="container" style={{ maxWidth: '1040px' }}>
+        <div className="container">
           <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
             <div style={{
               fontSize: '13px',
@@ -1152,20 +1152,22 @@ export default function VzyskanieClient() {
             {stages.map((step, idx) => (
               <div
                 key={idx}
-                className="hover-lift"
+                className="hover-lift stage-horizontal-card"
                 style={{
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-primary)',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   padding: '28px 32px',
                   display: 'flex',
                   flexWrap: 'wrap',
                   gap: '28px',
                   alignItems: 'center',
-                  justifyContent: 'space-between'
+                  justifyContent: 'space-between',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
+                <div className="stage-accent" />
                 <div style={{ flex: '1 1 520px', minWidth: '280px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
                     <span style={{

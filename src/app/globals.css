@@ -803,6 +803,30 @@ h4 { font-size: 1.25rem; }
   height: 100% !important;
 }
 
+/* Stage Horizontal Cards Hover Animation */
+.stage-horizontal-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
+}
+.stage-horizontal-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
+}
+.stage-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0%;
+  background: var(--color-primary);
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+.stage-horizontal-card:hover .stage-accent {
+  height: 100% !important;
+}
+
 /* Hero USP Cards */
 .hero-usp-card {
   background: rgba(255, 255, 255, 0.7);
