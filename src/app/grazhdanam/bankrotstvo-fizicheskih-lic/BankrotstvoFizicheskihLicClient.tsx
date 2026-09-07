@@ -440,97 +440,185 @@ export default function BankrotstvoFizicheskihLicClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ЧТО ПРОВЕРИМ ДО НАЧАЛА ПРОЦЕДУРЫ ═══ */}
+      {/* ═══ БЛОК 3: СНАЧАЛА — ДИАГНОСТИКА ДОЛГОВ И РИСКОВ (ORGANIC DIAGNOSTIC AUDIT MATRIX) ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Сначала — диагностика
-              </span>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                долгов и рисков
-              </span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Банкротство подходит не всем. До подачи заявления нужно понять не только размер долга, но и возможный результат процедуры именно при Ваших обстоятельствах.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '20px', position: 'relative', marginBottom: '40px' }}>
-            {[
-              {
-                num: '01',
-                title: <><span style={{ display: 'block' }}>Состав</span><span style={{ display: 'block' }}>обязательств</span></>,
-                desc: 'Кому и сколько Вы должны; какие требования потенциально прекращаются, а какие могут сохраниться.'
-              },
-              {
-                num: '02',
-                title: <><span style={{ display: 'block' }}>Доходы и расходы</span><span style={{ display: 'block' }}>семьи</span></>,
-                desc: 'Источники дохода, иждивенцы, удержания и средства, необходимые для нормальной жизни семьи.'
-              },
-              {
-                num: '03',
-                title: <><span style={{ display: 'block' }}>Имущество</span><span style={{ display: 'block' }}>и активы</span></>,
-                desc: 'Жильё, ипотека, автомобиль, доли, земля, вклады; что может войти в конкурсную массу.'
-              },
-              {
-                num: '04',
-                title: <><span style={{ display: 'block' }}>Семейные</span><span style={{ display: 'block' }}>обстоятельства</span></>,
-                desc: 'Что приобретено в браке, есть ли общие обязательства и как процедура затронет долю супруга.'
-              },
-              {
-                num: '05',
-                title: <><span style={{ display: 'block' }}>Сделки и переводы</span><span style={{ display: 'block' }}>за 3 года</span></>,
-                desc: 'Продажи, дарение, раздел имущества, крупные платежи и предпочтительное погашение долгов.'
-              },
-              {
-                num: '06',
-                title: <><span style={{ display: 'block' }}>Поведение перед</span><span style={{ display: 'block' }}>кредиторами</span></>,
-                desc: 'Полнота сведений, документы при получении кредитов и обстоятельства возникновения задолженности.'
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="hover-lift" style={{
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                padding: '36px 24px 28px 24px',
-                border: '1px solid var(--color-border)',
-                borderTop: '4px solid var(--color-gold)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%',
-                minHeight: '235px',
-                boxSizing: 'border-box',
-                position: 'relative'
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            flexWrap: 'wrap',
+            gap: '28px',
+            marginBottom: '40px',
+            borderBottom: '1px solid rgba(193, 160, 102, 0.3)',
+            paddingBottom: '28px'
+          }}>
+            <div style={{ maxWidth: '620px' }}>
+              <div style={{
+                fontSize: '13px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                marginBottom: '12px'
               }}>
-                <div style={{
-                  position: 'absolute',
-                  top: '-14px',
-                  left: '20px',
-                  background: 'var(--color-gold)',
-                  color: '#FFFFFF',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  padding: '2px 10px',
-                  borderRadius: '2px',
-                  letterSpacing: '0.05em'
-                }}>
-                  {item.num}
-                </div>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.25, minHeight: '46px' }}>
-                  {item.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, minHeight: '68px' }}>
-                  {item.desc}
-                </p>
+                Предварительный правовой аудит
               </div>
-            ))}
+              <h2 className="with-accent" style={{
+                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontFamily: 'var(--font-serif)',
+                color: 'var(--color-primary)',
+                margin: 0,
+                lineHeight: 1.2
+              }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                  Сначала — диагностика
+                </span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                  долгов и рисков
+                </span>
+              </h2>
+            </div>
+            <div style={{ maxWidth: '480px' }}>
+              <p style={{
+                fontSize: '15.5px',
+                color: 'var(--color-deep-blue)',
+                lineHeight: 1.65,
+                margin: 0,
+                opacity: 0.92
+              }}>
+                Банкротство подходит не всем. До подачи заявления нужно понять не только размер долга, но и возможный результат процедуры именно при Ваших обстоятельствах.
+              </p>
+            </div>
           </div>
 
-          <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ padding: '14px 32px' }}>
-              Записаться на разбор ситуации
-            </a>
+          {/* Архитектурный реестр аудита (без однотипных изолированных карточек) */}
+          <div style={{
+            background: '#FFFFFF',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 25px rgba(23, 50, 77, 0.05)',
+            marginBottom: '40px'
+          }}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))'
+            }}>
+              {[
+                {
+                  num: '01',
+                  title: 'Состав обязательств',
+                  desc: 'Кому и сколько Вы должны; какие требования потенциально прекращаются, а какие могут сохраниться.'
+                },
+                {
+                  num: '02',
+                  title: 'Доходы и расходы семьи',
+                  desc: 'Источники дохода, иждивенцы, удержания и средства, необходимые для нормальной жизни семьи.'
+                },
+                {
+                  num: '03',
+                  title: 'Имущество и активы',
+                  desc: 'Жильё, ипотека, автомобиль, доли, земля, вклады; что может войти в конкурсную массу.'
+                },
+                {
+                  num: '04',
+                  title: 'Семейные обстоятельства',
+                  desc: 'Что приобретено в браке, есть ли общие обязательства и как процедура затронет долю супруга.'
+                },
+                {
+                  num: '05',
+                  title: 'Сделки и переводы за 3 года',
+                  desc: 'Продажи, дарение, раздел имущества, крупные платежи и предпочтительное погашение долгов.'
+                },
+                {
+                  num: '06',
+                  title: 'Поведение перед кредиторами',
+                  desc: 'Полнота сведений, документы при получении кредитов и обстоятельства возникновения задолженности.'
+                }
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    padding: '34px 30px',
+                    borderBottom: '1px solid var(--color-border)',
+                    borderRight: (idx % 2 === 0) ? '1px solid var(--color-border)' : 'none',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-start',
+                    position: 'relative'
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '14px', marginBottom: '10px' }}>
+                    <span style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '26px',
+                      fontWeight: 600,
+                      color: 'var(--color-gold)',
+                      lineHeight: 1,
+                      letterSpacing: '-0.02em',
+                      minWidth: '36px'
+                    }}>
+                      {item.num}
+                    </span>
+                    <h3 style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '19px',
+                      fontWeight: 600,
+                      color: 'var(--color-deep-blue)',
+                      margin: 0,
+                      lineHeight: 1.3
+                    }}>
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p style={{
+                    fontSize: '14.5px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0,
+                    paddingLeft: '50px'
+                  }}>
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Интегрированная панель действия */}
+            <div style={{
+              padding: '24px 32px',
+              background: 'linear-gradient(90deg, #FBF8F3 0%, #FFFFFF 100%)',
+              borderTop: '1px solid var(--color-border)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--color-gold)',
+                  flexShrink: 0
+                }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <span style={{ fontSize: '14px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
+                  Проводим диагностику по всем 6 параметрам на консультации до заключения договора
+                </span>
+              </div>
+              <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px' }}>
+                Записаться на разбор ситуации
+              </a>
+            </div>
           </div>
         </div>
       </section>
