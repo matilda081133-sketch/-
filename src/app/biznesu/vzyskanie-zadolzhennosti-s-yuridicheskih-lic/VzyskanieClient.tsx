@@ -1124,7 +1124,7 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 6: ВЗЫСКАНИЕ ЗАДОЛЖЕННОСТИ ПОД КОНКРЕТНУЮ СТАДИЮ ═══ */}
+      {/* ═══ БЛОК 6: ВЗЫСКАНИЕ ЗАДОЛЖЕННОСТИ ПОД КОНКРЕТНУЮ СТАДИЮ (ТАЙМЛАЙН) ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
@@ -1147,175 +1147,128 @@ export default function VzyskanieClient() {
             </p>
           </div>
 
-          {/* Ряд 1: Этапы 01, 02, 03 */}
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '28px', alignItems: 'stretch' }}>
-            {stages.slice(0, 3).map((step, idx) => (
+          {/* Вертикальный таймлайн этапов 01 → 05 */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0', position: 'relative' }}>
+            {stages.map((step, idx) => (
               <div
                 key={idx}
-                className="hover-lift"
                 style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  padding: '32px 28px',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
+                  gap: '24px',
+                  alignItems: 'stretch',
                   position: 'relative'
                 }}
               >
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-                    <span style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '28px',
-                      fontWeight: 700,
-                      color: 'var(--color-gold)',
-                      lineHeight: 1
-                    }}>
-                      {step.num}
-                    </span>
-                    <span style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      color: 'var(--color-primary)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      background: 'rgba(23, 50, 77, 0.06)',
-                      padding: '3px 8px'
-                    }}>
-                      Этап {step.num}
-                    </span>
-                  </div>
-
-                  <h3 style={{
-                    fontSize: '18px',
-                    fontFamily: 'var(--font-serif)',
-                    color: 'var(--color-deep-blue)',
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.35,
-                    fontWeight: 600
-                  }}>
-                    {step.stage}
-                  </h3>
-
-                  <p style={{
-                    fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: '0 0 20px 0'
-                  }}>
-                    {step.works}
-                  </p>
-                </div>
-
+                {/* Левая колонка таймлайна с номером и соединительной линией */}
                 <div style={{
-                  background: '#FAF7F2',
-                  border: '1px solid rgba(193, 160, 102, 0.25)',
-                  borderLeft: '3px solid var(--color-gold)',
-                  padding: '14px 16px',
-                  marginTop: 'auto'
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                      <polyline points="9 11 12 14 22 4" />
-                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                    </svg>
-                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                      Результат этапа
-                    </strong>
-                  </div>
-                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
-                    {step.result}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Ряд 2: Этапы 04 и 05 по центру */}
-          <div className="grid grid-2" style={{ gap: '28px', maxWidth: '820px', margin: '0 auto', alignItems: 'stretch' }}>
-            {stages.slice(3, 5).map((step, idx) => (
-              <div
-                key={idx + 3}
-                className="hover-lift"
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  padding: '32px 28px',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  position: 'relative'
-                }}
-              >
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-                    <span style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '28px',
-                      fontWeight: 700,
-                      color: 'var(--color-gold)',
-                      lineHeight: 1
-                    }}>
-                      {step.num}
-                    </span>
-                    <span style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      color: 'var(--color-primary)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      background: 'rgba(23, 50, 77, 0.06)',
-                      padding: '3px 8px'
-                    }}>
-                      Этап {step.num}
-                    </span>
-                  </div>
-
-                  <h3 style={{
-                    fontSize: '18px',
-                    fontFamily: 'var(--font-serif)',
+                  alignItems: 'center',
+                  width: '52px',
+                  flexShrink: 0
+                }}>
+                  <div style={{
+                    width: '52px',
+                    height: '52px',
+                    borderRadius: '50%',
+                    background: 'linear-gradient(135deg, #FFFFFF 0%, #FBF8F3 100%)',
+                    border: '2px solid var(--color-gold)',
+                    boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     color: 'var(--color-deep-blue)',
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.35,
-                    fontWeight: 600
+                    fontWeight: 700,
+                    fontSize: '20px',
+                    fontFamily: 'var(--font-serif)',
+                    zIndex: 2,
+                    position: 'relative',
+                    flexShrink: 0
                   }}>
-                    {step.stage}
-                  </h3>
-
-                  <p style={{
-                    fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: '0 0 20px 0'
-                  }}>
-                    {step.works}
-                  </p>
+                    {step.num}
+                  </div>
+                  {idx < stages.length - 1 && (
+                    <div style={{
+                      width: '2px',
+                      flex: 1,
+                      minHeight: '28px',
+                      background: 'linear-gradient(to bottom, var(--color-gold) 0%, rgba(193, 160, 102, 0.3) 100%)',
+                      margin: '4px 0'
+                    }} />
+                  )}
                 </div>
 
-                <div style={{
-                  background: '#FAF7F2',
-                  border: '1px solid rgba(193, 160, 102, 0.25)',
-                  borderLeft: '3px solid var(--color-gold)',
-                  padding: '14px 16px',
-                  marginTop: 'auto'
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                      <polyline points="9 11 12 14 22 4" />
-                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                    </svg>
-                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                      Результат этапа
-                    </strong>
+                {/* Правая карточка этапа */}
+                <div
+                  className="hover-lift"
+                  style={{
+                    flex: 1,
+                    background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                    border: '1px solid var(--color-border)',
+                    borderLeft: '4px solid var(--color-primary)',
+                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                    padding: '28px 30px',
+                    marginBottom: idx === stages.length - 1 ? '0' : '24px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    gap: '18px'
+                  }}
+                >
+                  <div>
+                    <div style={{
+                      fontSize: '11.5px',
+                      fontWeight: 700,
+                      color: 'var(--color-gold)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      marginBottom: '8px'
+                    }}>
+                      Этап {step.num}
+                    </div>
+
+                    <h3 style={{
+                      fontSize: '19px',
+                      fontFamily: 'var(--font-serif)',
+                      color: 'var(--color-deep-blue)',
+                      margin: '0 0 10px 0',
+                      lineHeight: 1.35,
+                      fontWeight: 600
+                    }}>
+                      {step.stage}
+                    </h3>
+
+                    <p style={{
+                      fontSize: '15px',
+                      color: 'var(--color-text-secondary)',
+                      lineHeight: 1.6,
+                      margin: 0
+                    }}>
+                      {step.works}
+                    </p>
                   </div>
-                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
-                    {step.result}
-                  </span>
+
+                  {/* Блок результата этапа */}
+                  <div style={{
+                    background: '#FAF7F2',
+                    border: '1px solid rgba(193, 160, 102, 0.25)',
+                    borderLeft: '3px solid var(--color-gold)',
+                    padding: '14px 18px',
+                    boxSizing: 'border-box'
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                        <polyline points="9 11 12 14 22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                      </svg>
+                      <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                        Результат этапа
+                      </strong>
+                    </div>
+                    <span style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
+                      {step.result}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -1351,126 +1304,124 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 7: С КАКИМИ ДЕНЕЖНЫМИ ТРЕБОВАНИЯМИ РАБОТАЕМ ═══ */}
-      <section className="section bg-white" id="claims" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
-            <div style={{
-              fontSize: '13px',
-              fontWeight: 700,
-              color: 'var(--color-gold)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              marginBottom: '12px'
-            }}>
+      {/* ═══ БЛОК 7: С КАКИМИ ДЕНЕЖНЫМИ ТРЕБОВАНИЯМИ РАБОТАЕМ (ШАБЛОН «МОДЕЛЬ РАБОТЫ») ═══ */}
+      <section className="section bg-white" id="claims" style={{ position: 'relative', overflow: 'hidden', padding: '70px 0' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+            <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+            <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
               Категории споров
-            </div>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                С какими денежными
-              </span>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                требованиями работаем
-              </span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Взыскиваем долги организаций и индивидуальных предпринимателей по всем видам коммерческих договоров:
-            </p>
+            </span>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
+          <h2 style={{ 
+            marginBottom: '16px', 
+            fontSize: 'clamp(28px, 3.2vw, 42px)', 
+            fontFamily: 'var(--font-serif)', 
+            color: 'var(--color-deep-blue)',
+            textAlign: 'left',
+            textWrap: 'balance',
+            marginTop: 0
+          }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              С какими денежными
+            </span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              требованиями работаем
+            </span>
+          </h2>
+
+          <p style={{ 
+            fontSize: '16px', 
+            color: 'var(--color-text-secondary)', 
+            lineHeight: 1.7, 
+            maxWidth: '820px', 
+            marginBottom: '40px'
+          }}>
+            Взыскиваем долги организаций и индивидуальных предпринимателей по всем видам коммерческих договоров:
+          </p>
+
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+            borderTop: '1px solid var(--color-primary)', 
+            borderLeft: '1px solid rgba(23, 50, 77, 0.1)',
+            borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
+            marginBottom: '32px'
+          }}>
             {claims.map((item, idx) => (
-              <div
-                key={idx}
-                className="hover-lift"
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  padding: '32px 28px',
+              <div 
+                key={idx} 
+                className="usp-card" 
+                style={{ 
+                  padding: '40px 32px', 
+                  borderRight: '1px solid rgba(23, 50, 77, 0.1)',
+                  borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
+                  background: 'rgba(247, 244, 237, 0.45)',
+                  position: 'relative',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  position: 'relative',
-                  overflow: 'hidden'
+                  justifyContent: 'flex-start'
                 }}
               >
-                {/* Фирменный водяной знак */}
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.05, pointerEvents: 'none' }}>
-                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                  </svg>
-                </div>
-
                 <div>
-                  <div style={{
-                    fontSize: '11.5px',
-                    fontWeight: 700,
-                    color: 'var(--color-gold)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    marginBottom: '14px',
-                    background: 'rgba(193, 160, 102, 0.12)',
-                    padding: '4px 10px',
-                    alignSelf: 'flex-start',
-                    display: 'inline-block',
-                    position: 'relative',
-                    zIndex: 1
+                  <div className="usp-accent"></div>
+                  
+                  <div style={{ 
+                    fontSize: '11px', 
+                    letterSpacing: '0.1em', 
+                    color: 'var(--color-gold)', 
+                    fontWeight: 700, 
+                    marginBottom: '16px', 
+                    textTransform: 'uppercase', 
+                    position: 'relative', 
+                    zIndex: 1 
                   }}>
                     {item.tag}
                   </div>
-
-                  <h3 style={{
-                    fontSize: '18px',
-                    fontFamily: 'var(--font-serif)',
-                    color: 'var(--color-deep-blue)',
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.35,
-                    fontWeight: 600,
-                    position: 'relative',
-                    zIndex: 1
+                  <h3 style={{ 
+                    fontSize: '20px', 
+                    fontWeight: 'bold', 
+                    color: 'var(--color-deep-blue)', 
+                    marginBottom: '16px', 
+                    fontFamily: 'var(--font-serif)', 
+                    lineHeight: 1.3, 
+                    minHeight: '52px', 
+                    display: 'flex', 
+                    alignItems: 'flex-start', 
+                    position: 'relative', 
+                    zIndex: 1 
                   }}>
                     {item.title}
                   </h3>
-
-                  <p style={{
-                    fontSize: '14.5px',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: 0,
-                    position: 'relative',
-                    zIndex: 1
-                  }}>
-                    {item.desc}
-                  </p>
                 </div>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
 
-          {/* Плашка действия под категориями */}
           <div style={{
-            background: '#FFFFFF',
-            border: '1px solid var(--color-border)',
-            borderLeft: '4px solid var(--color-gold)',
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-            padding: '22px 28px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
-            gap: '16px'
+            gap: '24px',
+            marginTop: '8px'
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: '1 1 500px' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                <polyline points="9 11 12 14 22 4" />
-                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-              </svg>
-              <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.5 }}>
-                Взыскиваем задолженность по договорам любой сложности — рассчитываем сумму долга, неустойку, штрафы и проценты по ст. 395 ГК РФ
-              </span>
-            </div>
+            <p style={{ 
+              fontSize: '15px', 
+              color: 'var(--color-text-secondary)', 
+              lineHeight: 1.6, 
+              margin: 0,
+              fontStyle: 'italic',
+              borderLeft: '3px solid var(--color-primary)',
+              paddingLeft: '16px',
+              flex: '1 1 500px'
+            }}>
+              Взыскиваем задолженность по договорам любой сложности — рассчитываем сумму долга, неустойку, штрафы и проценты по ст. 395 ГК РФ
+            </p>
             <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px', whiteSpace: 'nowrap' }}>
               Рассчитать сумму требований
             </a>
