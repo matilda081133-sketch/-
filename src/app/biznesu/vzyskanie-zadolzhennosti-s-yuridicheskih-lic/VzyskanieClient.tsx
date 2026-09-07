@@ -1468,6 +1468,15 @@ export default function VzyskanieClient() {
                   </div>
                 </div>
               </div>
+
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+                <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px' }}>
+                  Записаться на встречу
+                </a>
+                <a href="tel:+79103503111" className="btn btn-outline" style={{ padding: '12px 24px' }}>
+                  Позвонить
+                </a>
+              </div>
             </div>
 
             <div style={{
