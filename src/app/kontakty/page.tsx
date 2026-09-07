@@ -267,11 +267,31 @@ export default function ContactsPage() {
                   {/* Маркер установлен на г. Липецк, ул. Советская, д. 35 (БЦ «Антарес», 52.604024, 39.585799) */}
                   <MapWidget />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                  <a href="https://yandex.ru/maps/?pt=39.585799,52.604024&z=17&text=г.+Липецк,+ул.+Советская,+д.+35" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14px', borderColor: 'rgba(23, 50, 77, 0.2)', color: 'var(--color-deep-blue)', display: 'inline-block' }}>
-                    Построить маршрут до офиса
-                  </a>
-                </div>
+                <a
+                  href="https://yandex.ru/maps/?pt=39.585799,52.604024&z=17&text=%D0%B3.+%D0%9B%D0%B8%D0%BF%D0%B5%D1%86%D0%BA,+%D1%83%D0%BB.+%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F,+%D0%B4.+35"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline"
+                  style={{
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '10px',
+                    padding: '14px 24px',
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    borderColor: 'rgba(23, 50, 77, 0.2)',
+                    color: 'var(--color-deep-blue)',
+                    boxSizing: 'border-box',
+                    textAlign: 'center'
+                  }}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="3 11 22 2 13 21 11 13 3 11" />
+                  </svg>
+                  <span>Построить маршрут до офиса</span>
+                </a>
               </div>
 
             </div>

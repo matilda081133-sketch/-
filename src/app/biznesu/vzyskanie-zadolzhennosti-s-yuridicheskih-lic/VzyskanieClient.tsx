@@ -1147,128 +1147,91 @@ export default function VzyskanieClient() {
             </p>
           </div>
 
-          {/* Вертикальный таймлайн этапов 01 → 05 */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0', position: 'relative' }}>
+          {/* Длинные горизонтальные карточки этапов 01 → 05 */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {stages.map((step, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '4px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  padding: '28px 32px',
                   display: 'flex',
-                  gap: '24px',
-                  alignItems: 'stretch',
-                  position: 'relative'
+                  flexWrap: 'wrap',
+                  gap: '28px',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
                 }}
               >
-                {/* Левая колонка таймлайна с номером и соединительной линией */}
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  width: '52px',
-                  flexShrink: 0
-                }}>
-                  <div style={{
-                    width: '52px',
-                    height: '52px',
-                    borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #FFFFFF 0%, #FBF8F3 100%)',
-                    border: '2px solid var(--color-gold)',
-                    boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--color-deep-blue)',
-                    fontWeight: 700,
-                    fontSize: '20px',
-                    fontFamily: 'var(--font-serif)',
-                    zIndex: 2,
-                    position: 'relative',
-                    flexShrink: 0
-                  }}>
-                    {step.num}
-                  </div>
-                  {idx < stages.length - 1 && (
-                    <div style={{
-                      width: '2px',
-                      flex: 1,
-                      minHeight: '28px',
-                      background: 'linear-gradient(to bottom, var(--color-gold) 0%, rgba(193, 160, 102, 0.3) 100%)',
-                      margin: '4px 0'
-                    }} />
-                  )}
-                </div>
-
-                {/* Правая карточка этапа */}
-                <div
-                  className="hover-lift"
-                  style={{
-                    flex: 1,
-                    background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                    border: '1px solid var(--color-border)',
-                    borderLeft: '4px solid var(--color-primary)',
-                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                    padding: '28px 30px',
-                    marginBottom: idx === stages.length - 1 ? '0' : '24px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    gap: '18px'
-                  }}
-                >
-                  <div>
-                    <div style={{
-                      fontSize: '11.5px',
+                <div style={{ flex: '1 1 520px', minWidth: '280px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                    <span style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '26px',
                       fontWeight: 700,
                       color: 'var(--color-gold)',
+                      lineHeight: 1
+                    }}>
+                      {step.num}
+                    </span>
+                    <span style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: 'var(--color-primary)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.08em',
-                      marginBottom: '8px'
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '3px 8px'
                     }}>
                       Этап {step.num}
-                    </div>
-
-                    <h3 style={{
-                      fontSize: '19px',
-                      fontFamily: 'var(--font-serif)',
-                      color: 'var(--color-deep-blue)',
-                      margin: '0 0 10px 0',
-                      lineHeight: 1.35,
-                      fontWeight: 600
-                    }}>
-                      {step.stage}
-                    </h3>
-
-                    <p style={{
-                      fontSize: '15px',
-                      color: 'var(--color-text-secondary)',
-                      lineHeight: 1.6,
-                      margin: 0
-                    }}>
-                      {step.works}
-                    </p>
-                  </div>
-
-                  {/* Блок результата этапа */}
-                  <div style={{
-                    background: '#FAF7F2',
-                    border: '1px solid rgba(193, 160, 102, 0.25)',
-                    borderLeft: '3px solid var(--color-gold)',
-                    padding: '14px 18px',
-                    boxSizing: 'border-box'
-                  }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                        <polyline points="9 11 12 14 22 4" />
-                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                      </svg>
-                      <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                        Результат этапа
-                      </strong>
-                    </div>
-                    <span style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
-                      {step.result}
                     </span>
                   </div>
+
+                  <h3 style={{
+                    fontSize: '19px',
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 10px 0',
+                    lineHeight: 1.35,
+                    fontWeight: 600
+                  }}>
+                    {step.stage}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '14.5px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0
+                  }}>
+                    {step.works}
+                  </p>
+                </div>
+
+                <div style={{
+                  flex: '1 1 320px',
+                  minWidth: '260px',
+                  background: '#FAF7F2',
+                  border: '1px solid rgba(193, 160, 102, 0.25)',
+                  borderLeft: '3px solid var(--color-gold)',
+                  padding: '16px 20px',
+                  boxSizing: 'border-box'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                      Результат этапа
+                    </strong>
+                  </div>
+                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
+                    {step.result}
+                  </span>
                 </div>
               </div>
             ))}
@@ -1341,9 +1304,10 @@ export default function VzyskanieClient() {
             Взыскиваем долги организаций и индивидуальных предпринимателей по всем видам коммерческих договоров:
           </p>
 
-          <div style={{ 
+          {/* Единая сетка-матрица в стиле «Модель работы ЮК Де-Юре» строго по 3 карточки в ряд */}
+          <div className="claims-matrix-grid" style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+            gridTemplateColumns: 'repeat(3, 1fr)', 
             borderTop: '1px solid var(--color-primary)', 
             borderLeft: '1px solid rgba(23, 50, 77, 0.1)',
             borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
@@ -1830,6 +1794,18 @@ export default function VzyskanieClient() {
       </section>
 
       <Footer />
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 991px) {
+          .claims-matrix-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .claims-matrix-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}} />
     </main>
   );
 }

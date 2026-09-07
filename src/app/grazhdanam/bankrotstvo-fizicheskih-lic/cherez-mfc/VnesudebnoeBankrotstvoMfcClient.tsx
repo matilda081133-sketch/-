@@ -1327,18 +1327,46 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
               height: '100%',
               minHeight: '380px'
             }}>
-              <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '380px', background: '#EAEFE9', overflow: 'hidden', flex: 1 }}>
+              <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '320px', background: '#EAEFE9', overflow: 'hidden', flex: 1 }}>
                 <iframe
                   src="https://yandex.ru/map-widget/v1/?ll=39.585799%2C52.604024&amp;z=17&amp;pt=39.585799%2C52.604024%2Cpm2blm"
                   width="100%"
                   height="100%"
                   frameBorder="0"
-                  style={{ border: 0, width: '100%', height: '100%', minHeight: '380px' }}
+                  style={{ border: 0, width: '100%', height: '100%', minHeight: '320px' }}
                   allowFullScreen={true}
                   title="Офис ЮК Де-Юре: г. Липецк, ул. Советская, д. 35, оф. 213"
                   loading="lazy"
                 ></iframe>
               </div>
+              <a
+                href="https://yandex.ru/maps/?pt=39.585799,52.604024&z=17&text=%D0%B3.+%D0%9B%D0%B8%D0%BF%D0%B5%D1%86%D0%BA,+%D1%83%D0%BB.+%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F,+%D0%B4.+35"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-route-map"
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '10px',
+                  padding: '14px 20px',
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  borderRadius: 0,
+                  borderLeft: 'none',
+                  borderRight: 'none',
+                  borderBottom: 'none',
+                  borderTop: '1px solid var(--color-border)',
+                  textDecoration: 'none',
+                  boxSizing: 'border-box'
+                }}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="3 11 22 2 13 21 11 13 3 11" />
+                </svg>
+                <span>Построить маршрут до офиса</span>
+              </a>
             </div>
           </div>
         </div>
