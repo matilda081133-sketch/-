@@ -68,12 +68,12 @@ export default function ProcessBlock({
         </div>
 
         <div style={{ position: 'relative' }}>
-          {/* СЦЕНАРИЙ 0: 6 регулярных шагов + 1 баннер (Ряд 1: 4 шага; Ряд 2: 2 шага + Карточка формата по центру в 3 колонки) */}
+          {/* СЦЕНАРИЙ 0: 6 регулярных шагов + 1 баннер (Ряд 1: 3 шага 01-03 в grid-3; Ряд 2: 3 шага 04-06 + Баннер в grid-4 в один ряд) */}
           {is6Plus1Banner ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-              {/* Ряд 1: 4 этапа 01 -> 02 -> 03 -> 04 */}
-              <div className="grid grid-4" style={{ gap: '30px' }}>
-                {regularSteps.slice(0, 4).map((step, i) => (
+              {/* Ряд 1: 3 этапа 01 -> 02 -> 03 */}
+              <div className="grid grid-3" style={{ gap: '40px' }}>
+                {regularSteps.slice(0, 3).map((step, i) => (
                   <div key={i} className="stage-item" style={{ 
                     position: 'relative',
                     display: 'flex',
@@ -112,10 +112,10 @@ export default function ProcessBlock({
                 ))}
               </div>
 
-              {/* Ряд 2: 2 этапа 05 -> 06 -> Карточка «Дистанционный формат» (3 элемента по центру) */}
-              <div className="grid grid-3 process-row-3-centered" style={{ gap: '30px', maxWidth: '920px', margin: '0 auto', width: '100%', alignItems: 'stretch' }}>
-                {regularSteps.slice(4, 6).map((step, i) => (
-                  <div key={i + 4} className="stage-item" style={{ 
+              {/* Ряд 2: 3 этапа 04 -> 05 -> 06 + Карточка «Дистанционный формат» в один ряд (grid-4) */}
+              <div className="grid grid-4" style={{ gap: '24px', alignItems: 'stretch' }}>
+                {regularSteps.slice(3, 6).map((step, i) => (
+                  <div key={i + 3} className="stage-item" style={{ 
                     position: 'relative',
                     display: 'flex',
                     flexDirection: 'column',
@@ -140,19 +140,19 @@ export default function ProcessBlock({
                         position: 'relative',
                         zIndex: 2 
                       }}>
-                        {step.num || String(i + 5).padStart(2, '0')}
+                        {step.num || String(i + 4).padStart(2, '0')}
                       </div>
                     </div>
-                    <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '14px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
+                    <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '14px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
                       {typeof step.title === 'string' ? step.title.replace(/^\d+\.\s*/, '') : step.title}
                     </h3>
-                    <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0, textAlign: 'center', whiteSpace: 'pre-line' }}>
+                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0, textAlign: 'center', whiteSpace: 'pre-line' }}>
                       {step.desc}
                     </p>
                   </div>
                 ))}
 
-                {/* Баннер Дистанционный формат (1 колонка, нормального размера, как в шаблоне) */}
+                {/* Баннер Дистанционный формат (4-я колонка в ряду) */}
                 <div style={{ 
                   position: 'relative',
                   zIndex: 1,
@@ -164,7 +164,7 @@ export default function ProcessBlock({
                   background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)', 
                   border: '1px solid var(--color-border)', 
                   borderLeft: '4px solid var(--color-primary)', 
-                  padding: '28px 24px', 
+                  padding: '24px 20px', 
                   boxShadow: '0 4px 12px rgba(23, 50, 77, 0.05)',
                   height: '100%',
                   minHeight: '220px',
@@ -177,13 +177,13 @@ export default function ProcessBlock({
                         <line x1="12" y1="16" x2="12" y2="12"></line>
                         <line x1="12" y1="8" x2="12.01" y2="8"></line>
                       </svg>
-                      <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, fontFamily: 'var(--font-serif)', lineHeight: 1.3, fontWeight: 700, whiteSpace: 'pre-line', textAlign: 'center' }}>
+                      <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: 0, fontFamily: 'var(--font-serif)', lineHeight: 1.3, fontWeight: 700, whiteSpace: 'pre-line', textAlign: 'center' }}>
                         {bannerSteps[0].title}
                       </h3>
                     </div>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0, textAlign: 'center' }}>
+                    <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
                       {bannerSteps[0].desc}
-                    </p>
+                    </div>
                   </div>
                 </div>
               </div>

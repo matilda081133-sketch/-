@@ -409,6 +409,31 @@ export default function VzyskanieClient() {
       num: '06',
       title: 'Исполнение решения суда',
       desc: 'Получаем исполнительный лист, определяем оптимальный порядок предъявления (в банк должника либо в ФССП) и контролируем фактическое поступление средств.'
+    },
+    {
+      isBanner: true,
+      title: 'Дистанционное сопровождение',
+      desc: (
+        <div>
+          <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: '0 0 12px 0', textAlign: 'center' }}>
+            Если должник или суд находятся за пределами Липецка, организуем электронное взаимодействие через систему «Мой Арбитр», дистанционные заседания и обмен документами.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', textAlign: 'left' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--color-deep-blue)' }}>
+              <span style={{ color: 'var(--color-gold)', fontWeight: 700, flexShrink: 0 }}>✓</span>
+              <span>Подача исков через систему «Мой Арбитр»</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--color-deep-blue)' }}>
+              <span style={{ color: 'var(--color-gold)', fontWeight: 700, flexShrink: 0 }}>✓</span>
+              <span>Участие в онлайн-заседаниях судов</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--color-deep-blue)' }}>
+              <span style={{ color: 'var(--color-gold)', fontWeight: 700, flexShrink: 0 }}>✓</span>
+              <span>Электронный документооборот и отчёты</span>
+            </div>
+          </div>
+        </div>
+      )
     }
   ];
 
@@ -1446,31 +1471,25 @@ export default function VzyskanieClient() {
             </div>
 
             <div style={{
-              background: '#FFFFFF',
-              padding: '32px',
+              background: 'var(--color-white)',
               border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-gold)',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+              boxShadow: '0 8px 30px rgba(23, 50, 77, 0.08)',
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%',
+              minHeight: '340px'
             }}>
-              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
-                Дистанционное сопровождение
-              </h3>
-              <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 20px 0' }}>
-                Если должник или суд находятся за пределами Липецка, организуем электронное взаимодействие через систему «Мой Арбитр», дистанционные заседания и обмен документами.
-              </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-deep-blue)' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700 }}>✓</span>
-                  <span>Подача исков через систему «Мой Арбитр»</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-deep-blue)' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700 }}>✓</span>
-                  <span>Участие в онлайн-заседаниях арбитражных судов</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--color-deep-blue)' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700 }}>✓</span>
-                  <span>Электронный документооборот и регулярные отчёты</span>
-                </div>
+              <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '340px', background: '#EAEFE9', overflow: 'hidden', flex: 1 }}>
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?ll=39.585799%2C52.604024&amp;z=17&amp;pt=39.585799%2C52.604024%2Cpm2blm"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  style={{ border: 0, width: '100%', height: '100%', minHeight: '340px' }}
+                  allowFullScreen={true}
+                  title="Офис ЮК Де-Юре: г. Липецк, ул. Советская, д. 35, оф. 213"
+                  loading="lazy"
+                ></iframe>
               </div>
             </div>
           </div>
