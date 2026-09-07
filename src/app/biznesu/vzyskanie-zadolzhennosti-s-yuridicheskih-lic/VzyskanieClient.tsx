@@ -674,103 +674,112 @@ export default function VzyskanieClient() {
             </div>
           </div>
 
-          <div style={{
-            background: '#FFFFFF',
-            border: '1px solid var(--color-border)',
-            borderTop: '3px solid var(--color-primary)',
-            boxShadow: '0 4px 25px rgba(23, 50, 77, 0.05)',
-            marginBottom: '32px'
-          }}>
-            <div className="grid grid-2" style={{ gap: 0 }}>
-              {/* Колонка 1: Юридическая доказуемость */}
-              <div style={{
-                padding: '36px 32px',
-                borderRight: '1px solid var(--color-border)',
-                background: 'linear-gradient(180deg, #FFFFFF 0%, #FAF7F2 100%)'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', paddingBottom: '14px', borderBottom: '1px solid rgba(23, 50, 77, 0.08)' }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <polyline points="14 2 14 8 20 8" />
-                    <line x1="16" y1="13" x2="8" y2="13" />
-                    <line x1="16" y1="17" x2="8" y2="17" />
-                  </svg>
-                  <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
-                    Юридическая доказуемость
-                  </h3>
-                </div>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                  {[
-                    'Основание обязательства и точный срок наступления оплаты',
-                    'Договор, приложения, спецификации, дополнительные соглашения и заявки',
-                    'УПД, товарные накладные, акты приёмки, отчёты и платёжные поручения',
-                    'Деловая переписка, акты сверки, гарантийные письма и частичная оплата',
-                    'Соблюдение досудебного претензионного порядка и срок исковой давности',
-                    'Правильность расчёта основного долга, неустойки, штрафов и процентов'
-                  ].map((item, idx) => (
-                    <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                      <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '15px', lineHeight: 1.4 }}>✓</span>
-                      <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Колонка 2: Фактическая взыскиваемость */}
-              <div style={{
-                padding: '36px 32px',
-                background: 'linear-gradient(180deg, #FFFFFF 0%, #F4EFE6 100%)'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', paddingBottom: '14px', borderBottom: '1px solid rgba(23, 50, 77, 0.08)' }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                  </svg>
-                  <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
-                    Фактическая взыскиваемость
-                  </h3>
-                </div>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                  {[
-                    'Действующий статус компании, отсутствие записей о ликвидации или реорганизации',
-                    'Количество текущих арбитражных споров и совокупный объём требований',
-                    'Открытые исполнительные производства в ФССП и динамика их исполнения',
-                    'Наличие открытых банковских счетов, имущества и реальной хозяйственной деятельности',
-                    'Признаки неплатёжеспособности, преднамеренного вывода имущества или банкротства',
-                    'Экономический смысл и соразмерность расходов выбранному способу взыскания'
-                  ].map((item, idx) => (
-                    <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                      <span style={{ color: 'var(--color-primary)', fontWeight: 700, fontSize: '15px', lineHeight: 1.4 }}>✓</span>
-                      <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Панель действия */}
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Юридическая доказуемость */}
             <div style={{
-              padding: '24px 32px',
-              background: 'linear-gradient(90deg, #FBF8F3 0%, #FFFFFF 100%)',
-              borderTop: '1px solid var(--color-border)',
+              background: '#FFFFFF',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
               display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
+              flexDirection: 'column',
               gap: '20px'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <polyline points="20 6 9 17 4 12" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '14px', borderBottom: '1px solid rgba(23, 50, 77, 0.08)' }}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
                 </svg>
-                <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
-                  Сопоставляем оба параметра на консультации до начала активных процессуальных действий
-                </span>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Юридическая доказуемость
+                </h3>
               </div>
-              <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px' }}>
-                Проверить долг и должника
-              </a>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {[
+                  'Основание обязательства и точный срок наступления оплаты',
+                  'Договор, приложения, спецификации, дополнительные соглашения и заявки',
+                  'УПД, товарные накладные, акты приёмки, отчёты и платёжные поручения',
+                  'Деловая переписка, акты сверки, гарантийные письма и частичная оплата',
+                  'Соблюдение досудебного претензионного порядка и срок исковой давности',
+                  'Правильность расчёта основного долга, неустойки, штрафов и процентов'
+                ].map((item, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
+
+            {/* Карточка 2: Фактическая взыскиваемость */}
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '14px', borderBottom: '1px solid rgba(23, 50, 77, 0.08)' }}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Фактическая взыскиваемость
+                </h3>
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {[
+                  'Действующий статус компании, отсутствие записей о ликвидации или реорганизации',
+                  'Количество текущих арбитражных споров и совокупный объём требований',
+                  'Открытые исполнительные производства в ФССП и динамика их исполнения',
+                  'Наличие открытых банковских счетов, имущества и реальной хозяйственной деятельности',
+                  'Признаки неплатёжеспособности, преднамеренного вывода имущества или банкротства',
+                  'Экономический смысл и соразмерность расходов выбранному способу взыскания'
+                ].map((item, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Панель действия */}
+          <div style={{
+            padding: '24px 32px',
+            background: '#FFFFFF',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '20px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
+                Сопоставляем оба параметра на консультации до начала активных процессуальных действий
+              </span>
+            </div>
+            <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px' }}>
+              Проверить долг и должника
+            </a>
           </div>
         </div>
       </section>
@@ -1008,102 +1017,264 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 7.5 & 7.6: ВИДЫ ТРЕБОВАНИЙ И ДОКУМЕНТЫ ДЛЯ АНАЛИЗА ═══ */}
-      <section className="section bg-white" id="documents" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 7.5: С КАКИМИ ДЕНЕЖНЫМИ ТРЕБОВАНИЯМИ РАБОТАЕМ ═══ */}
+      <section className="section bg-white" id="claims" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '48px', alignItems: 'flex-start' }}>
-            {/* Левая колонка: С какими денежными требованиями работаем */}
-            <div>
-              <div style={{
-                fontSize: '13px',
-                fontWeight: 700,
-                color: 'var(--color-gold)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                marginBottom: '12px'
-              }}>
-                Категории споров
-              </div>
-              <h2 className="with-accent" style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '20px', marginTop: 0, lineHeight: 1.25 }}>
-                С какими денежными требованиями работаем
-              </h2>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                Взыскиваем долги организаций и индивидуальных предпринимателей по всем видам коммерческих договоров:
-              </p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px' }}>
-                {[
-                  'Неоплата поставленного товара',
-                  'Долги по договорам подряда и субподряда',
-                  'Задолженность по аренде помещений и техники',
-                  'Неоплата оказанных услуг и работ',
-                  'Возврат займов, кредитов и процентов',
-                  'Возврат неотработанного аванса',
-                  'Неосновательное обогащение',
-                  'Договорная неустойка и проценты по ст. 395 ГК РФ',
-                  'Портфель просроченной дебиторской задолженности'
-                ].map((item, idx) => (
-                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', background: 'var(--gradient-cream)', padding: '12px 14px', borderLeft: '2px solid var(--color-gold)' }}>
-                    <span style={{ color: 'var(--color-primary)', fontWeight: 700 }}>•</span>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.4 }}>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Правая колонка: Что передать юристу */}
+          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
             <div style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '12px'
+            }}>
+              Категории споров
+            </div>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                С какими денежными
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                требованиями работаем
+              </span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Взыскиваем долги организаций и индивидуальных предпринимателей по всем видам коммерческих договоров:
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '16px' }}>
+            {[
+              {
+                title: 'Неоплата поставленного товара',
+                desc: 'Договоры поставки, разовые отгрузки по счетам-договорам, товарным накладным и УПД.'
+              },
+              {
+                title: 'Долги по договорам подряда и субподряда',
+                desc: 'Строительные, монтажные, проектные и ремонтные работы, споры по актам КС-2 и КС-3.'
+              },
+              {
+                title: 'Задолженность по аренде помещений и техники',
+                desc: 'Коммерческая недвижимость, производственные площади, склады, транспорт и спецтехника.'
+              },
+              {
+                title: 'Неоплата оказанных услуг и работ',
+                desc: 'Транспортные, логистические, экспедиционные, консалтинговые и иные возмездные услуги.'
+              },
+              {
+                title: 'Возврат займов, кредитов и процентов',
+                desc: 'Договоры займа между юридическими лицами, процентные обязательства и штрафные санкции.'
+              },
+              {
+                title: 'Возврат неотработанного аванса',
+                desc: 'Расторжение договоров, односторонний отказ, неисполнение контрагентом встречных обязательств.'
+              },
+              {
+                title: 'Неосновательное обогащение',
+                desc: 'Ошибочные платежи, бездоговорное пользование имуществом, излишне перечисленные средства.'
+              },
+              {
+                title: 'Договорная неустойка и проценты',
+                desc: 'Взыскание штрафов, договорных пеней и процентов за пользование чужими денежными средствами (ст. 395 ГК РФ).'
+              },
+              {
+                title: 'Портфель просроченной дебиторской задолженности',
+                desc: 'Комплексная системная работа с реестром должников компании, сегментация по срокам и рискам.'
+              }
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '4px solid var(--color-gold)',
+                  padding: '24px 22px',
+                  boxShadow: '0 4px 15px rgba(23, 50, 77, 0.04)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', lineHeight: 1.35 }}>
+                  {item.title}
+                </h3>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 7.6: ЧТО ПЕРЕДАТЬ ЮРИСТУ ДЛЯ АНАЛИЗА (ШАБЛОН «ДОКУМЕНТЫ») ═══ */}
+      <section className="section bg-light" id="documents" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '12px'
+            }}>
+              Подготовка к консультации
+            </div>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Что передать юристу
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                для анализа
+              </span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              Для первичной экспертизы достаточно направить копии документов в электронном виде:
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Обязательно (при наличии) */}
+            <div style={{
+              background: '#FFFFFF',
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
               padding: '36px 32px',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
             }}>
-              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
-                Что передать юристу для анализа
-              </h3>
-              <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 20px 0' }}>
-                Для первичной экспертизы достаточно направить копии документов в электронном виде:
-              </p>
-
-              <div style={{ marginBottom: '20px' }}>
-                <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-primary)', textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '0.05em' }}>
-                  Обязательно (при наличии):
-                </strong>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {[
-                    'Договор со всеми приложениями, спецификациями и доп. соглашениями',
-                    'УПД, товарные накладные, акты выполненных работ, платёжные поручения',
-                    'Деловая переписка, акты сверки взаиморасчётов и расчёт задолженности'
-                  ].map((doc, idx) => (
-                    <li key={idx} style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--color-deep-blue)' }}>
-                      <span style={{ color: 'var(--color-gold)', fontWeight: 700 }}>✓</span>
-                      <span>{doc}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div style={{ paddingBottom: '14px', borderBottom: '1px solid rgba(23, 50, 77, 0.08)' }}>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 6px 0' }}>
+                  Обязательно (при наличии)
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
+                  Базовые первичные документы, подтверждающие факт возникновения задолженности:
+                </p>
               </div>
 
-              <div style={{ marginBottom: '24px' }}>
-                <strong style={{ display: 'block', fontSize: '14px', color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '0.05em' }}>
-                  Дополнительно помогает:
-                </strong>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {[
-                    'Претензии и ответы контрагента, гарантийные письма',
-                    'Сведения об известных счетах, имуществе и транспорте должника'
-                  ].map((doc, idx) => (
-                    <li key={idx} style={{ display: 'flex', gap: '10px', fontSize: '13.5px', color: 'var(--color-text-secondary)' }}>
-                      <span style={{ color: 'var(--color-primary)' }}>•</span>
-                      <span>{doc}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <a href="#form" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', padding: '12px 24px', fontSize: '14.5px' }}>
-                Передать документы на анализ
-              </a>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {[
+                  {
+                    title: 'Договор и спецификации',
+                    desc: 'Договор со всеми приложениями, спецификациями и доп. соглашениями.'
+                  },
+                  {
+                    title: 'Первичные учётные документы',
+                    desc: 'УПД, товарные накладные, акты выполненных работ, платёжные поручения.'
+                  },
+                  {
+                    title: 'Переписка и расчёт долга',
+                    desc: 'Деловая переписка, акты сверки взаиморасчётов и расчёт задолженности.'
+                  },
+                  {
+                    title: 'Судебные и исполнительные документы',
+                    desc: 'Документы из суда или ФССП, если судебный процесс либо исполнительное производство уже начаты.'
+                  }
+                ].map((doc, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '15.5px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>
+                        {doc.title}
+                      </strong>
+                      <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                        {doc.desc}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
+
+            {/* Карточка 2: Дополнительно помогает */}
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ paddingBottom: '14px', borderBottom: '1px solid rgba(23, 50, 77, 0.08)' }}>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 6px 0' }}>
+                  Дополнительно помогает
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
+                  Сведения, усиливающие правовую позицию и ускоряющие возврат долга:
+                </p>
+              </div>
+
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {[
+                  {
+                    title: 'Претензии и гарантийные письма',
+                    desc: 'Претензии и ответы контрагента, гарантийные письма и признание долга.'
+                  },
+                  {
+                    title: 'Сведения об имуществе должника',
+                    desc: 'Сведения об известных счетах, имуществе и транспорте должника.'
+                  },
+                  {
+                    title: 'Предложения об урегулировании',
+                    desc: 'Предложения об отсрочке, зачёте или мировом соглашении от контрагента.'
+                  },
+                  {
+                    title: 'Сведения о руководстве и учредителях',
+                    desc: 'Данные о контролирующих лицах для оценки субсидиарной ответственности.'
+                  }
+                ].map((doc, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '15.5px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>
+                        {doc.title}
+                      </strong>
+                      <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                        {doc.desc}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Плашка действия и предупреждения */}
+          <div style={{
+            background: '#FFFFFF',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+            padding: '24px 32px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '20px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: '1 1 500px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+              <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+                <strong>Не откладывайте обращение из-за отсутствия одного документа.</strong> Сначала проверим имеющийся комплект и скажем, что можно восстановить или подтвердить другими доказательствами.
+              </span>
+            </div>
+            <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px', whiteSpace: 'nowrap' }}>
+              Передать документы на анализ
+            </a>
           </div>
         </div>
       </section>
