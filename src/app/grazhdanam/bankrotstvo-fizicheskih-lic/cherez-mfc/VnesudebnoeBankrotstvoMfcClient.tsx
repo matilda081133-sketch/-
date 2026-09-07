@@ -1276,8 +1276,8 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
       {/* ═══ БЛОК 14: ЛОКАЛЬНЫЙ БЛОК И ОФИС ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0', borderBottom: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '40px', alignItems: 'center' }}>
-            <div>
+          <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
@@ -1285,7 +1285,9 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
                 </span>
               </div>
               <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 38px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-                Проверить условия банкротства через МФЦ в Липецке
+                <span style={{ display: 'inline-block' }}>Проверить условия</span> <br />
+                <span style={{ display: 'inline-block' }}>банкротства через МФЦ</span> <br />
+                <span style={{ display: 'inline-block' }}>в Липецке</span>
               </h2>
               <p style={{ fontSize: '15.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
                 Можно встретиться в офисе «Де-Юре» или начать с дистанционного анализа. Перед визитом согласуйте время и подготовьте сведения о долгах и исполнительных производствах.
@@ -1320,18 +1322,21 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
             <div style={{
               background: 'var(--color-white)',
               border: '1px solid var(--color-border)',
-              padding: '24px',
-              boxShadow: '0 8px 30px rgba(23, 50, 77, 0.08)'
+              boxShadow: '0 8px 30px rgba(23, 50, 77, 0.08)',
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%',
+              minHeight: '380px'
             }}>
-              <div style={{ position: 'relative', width: '100%', height: '260px', background: '#EAEFE9', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '380px', background: '#EAEFE9', overflow: 'hidden', flex: 1 }}>
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A9b142eb3df8beaf1922c2a939fbfbfab52ca8cfb0f195d9e5b85a3a41a4a496f&amp;source=constructor"
+                  src="https://yandex.ru/map-widget/v1/?ll=39.585799%2C52.604024&amp;z=17&amp;pt=39.585799%2C52.604024%2Cpm2blm"
                   width="100%"
                   height="100%"
                   frameBorder="0"
-                  style={{ border: 0 }}
+                  style={{ border: 0, width: '100%', height: '100%', minHeight: '380px' }}
                   allowFullScreen={true}
-                  title="Офис ЮК Де-Юре в Липецке"
+                  title="Офис ЮК Де-Юре: г. Липецк, ул. Советская, д. 35, оф. 213"
                   loading="lazy"
                 ></iframe>
               </div>
