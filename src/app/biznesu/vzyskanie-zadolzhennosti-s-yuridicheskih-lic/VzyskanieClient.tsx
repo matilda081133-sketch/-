@@ -295,38 +295,47 @@ export default function VzyskanieClient() {
 
   const claims = [
     {
+      tag: 'Поставка',
       title: 'Неоплата поставленного товара',
       desc: 'Договоры поставки, разовые отгрузки по счетам-договорам, товарным накладным и УПД.'
     },
     {
+      tag: 'Подряд',
       title: 'Долги по договорам подряда и субподряда',
       desc: 'Строительные, монтажные, проектные и ремонтные работы, споры по актам КС-2 и КС-3.'
     },
     {
+      tag: 'Аренда',
       title: 'Задолженность по аренде помещений и техники',
       desc: 'Коммерческая недвижимость, производственные площади, склады, транспорт и спецтехника.'
     },
     {
+      tag: 'Услуги',
       title: 'Неоплата оказанных услуг и работ',
       desc: 'Транспортные, логистические, экспедиционные, консалтинговые и иные возмездные услуги.'
     },
     {
+      tag: 'Займы',
       title: 'Возврат займов, кредитов и процентов',
       desc: 'Договоры займа между юридическими лицами, процентные обязательства и штрафные санкции.'
     },
     {
+      tag: 'Авансы',
       title: 'Возврат неотработанного аванса',
       desc: 'Расторжение договоров, односторонний отказ, неисполнение контрагентом встречных обязательств.'
     },
     {
+      tag: 'Обогащение',
       title: 'Неосновательное обогащение',
       desc: 'Ошибочные платежи, бездоговорное пользование имуществом, излишне перечисленные средства.'
     },
     {
+      tag: 'Санкции',
       title: 'Договорная неустойка и проценты',
       desc: 'Взыскание штрафов, договорных пеней и процентов за пользование чужими денежными средствами (ст. 395 ГК РФ).'
     },
     {
+      tag: 'Портфель',
       title: 'Портфель просроченной дебиторской задолженности',
       desc: 'Комплексная системная работа с реестром должников компании, сегментация по срокам и рискам.'
     }
@@ -1293,29 +1302,102 @@ export default function VzyskanieClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '16px' }}>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
             {claims.map((item, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-gold)',
-                  padding: '24px 22px',
-                  boxShadow: '0 4px 15px rgba(23, 50, 77, 0.04)',
+                  borderTop: '3px solid var(--color-primary)',
+                  padding: '32px 28px',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between'
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', lineHeight: 1.35 }}>
-                  {item.title}
-                </h3>
-                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
-                  {item.desc}
-                </p>
+                {/* Фирменный водяной знак */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.05, pointerEvents: 'none' }}>
+                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
+                <div>
+                  <div style={{
+                    fontSize: '11.5px',
+                    fontWeight: 700,
+                    color: 'var(--color-gold)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    marginBottom: '14px',
+                    background: 'rgba(193, 160, 102, 0.12)',
+                    padding: '4px 10px',
+                    alignSelf: 'flex-start',
+                    display: 'inline-block',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.tag}
+                  </div>
+
+                  <h3 style={{
+                    fontSize: '18px',
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35,
+                    fontWeight: 600,
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.title}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '14.5px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0,
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Плашка действия под категориями */}
+          <div style={{
+            background: '#FFFFFF',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+            padding: '22px 28px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '16px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: '1 1 500px' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <polyline points="9 11 12 14 22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+              </svg>
+              <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.5 }}>
+                Взыскиваем задолженность по договорам любой сложности — рассчитываем сумму долга, неустойку, штрафы и проценты по ст. 395 ГК РФ
+              </span>
+            </div>
+            <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px', whiteSpace: 'nowrap' }}>
+              Рассчитать сумму требований
+            </a>
           </div>
         </div>
       </section>
