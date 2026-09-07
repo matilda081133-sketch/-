@@ -56,27 +56,31 @@ export default function BankrotstvoFizicheskihLicClient() {
     },
     {
       q: 'Что будет с ипотечной квартирой?',
-      a: 'Для единственного ипотечного жилья действуют специальные правила, включая механизмы отдельного урегулирования с залоговым кредитором и правила распределения выручки при продаже. Возможность сохранить жильё зависит от обстоятельств дела и позиции банка.'
+      a: 'Для единственного ипотечного жилья действуют специальные правила, включая механизмы отдельного урегулирования с залоговым кредитором и правила распределения выручки при продаже. Возможность сохранить жильё зависит от обстоятельств и позиции участников; её нужно оценивать до подачи заявления.'
     },
     {
-      q: 'Пострадает ли имущество супруга?',
-      a: 'Доля должника в совместном имуществе входит в конкурсную массу. Личное имущество супруга, приобретённое до брака или полученное по безвозмездным сделкам (дар, наследство), взысканию по личным долгам второго супруга не подлежит.'
+      q: 'Могут ли продать автомобиль?',
+      a: 'Автомобиль обычно входит в конкурсную массу, если на него можно обратить взыскание. Исключения зависят от назначения имущества и конкретных доказательств. Сам факт необходимости машины для семьи не гарантирует её исключение.'
     },
     {
-      q: 'Обязательно ли вводить реализацию имущества?',
-      a: 'Закон предусматривает две основные судебные процедуры: реструктуризацию долгов гражданина и реализацию имущества. Выбор процедуры зависит от уровня дохода, возможности расчётов и финансового плана.'
+      q: 'Что будет с имуществом супруга?',
+      a: 'Личное имущество супруга не становится имуществом должника только из-за брака. Но доля должника в совместно приобретённом имуществе может затрагиваться процедурой, а при общих обязательствах расчёт сложнее. Нужны документы о приобретении имущества и происхождении долга.'
     },
     {
-      q: 'Что будет с зарплатой и картами во время суда?',
-      a: 'С момента признания гражданина банкротом и введения реализации имущества всеми счетами распоряжается финансовый управляющий. Должнику ежемесячно выделяются денежные средства в размере прожиточного минимума на него и иждивенцев.'
+      q: 'Можно ли перед банкротством продать или подарить имущество?',
+      a: 'Сделки перед банкротством могут проверяться и оспариваться. Продажа родственнику, цена ниже рынка, дарение или преимущественный расчёт с одним кредитором повышают риск. Не совершайте новые сделки для сокрытия имущества.'
     },
     {
-      q: 'Можно ли выезжать за границу во время суда?',
-      a: 'Суд вправе временно ограничить право на выезд из РФ по ходатайству кредиторов или управляющего. При наличии уважительных причин (лечение, работа) ограничение может быть отменено досрочно.'
+      q: 'Сколько длится судебное банкротство?',
+      a: 'Закон устанавливает сроки отдельных стадий, но фактическая продолжительность зависит от процедуры, имущества, требований кредиторов, споров и работы финансового управляющего. Реализация имущества вводится на срок до шести месяцев и может продлеваться в предусмотренном законом порядке.'
     },
     {
-      q: 'В чём отличие банкротства через суд от МФЦ?',
-      a: 'Судебное банкротство применяется при любой сумме долга и наличии имущества, требует участия финансового управляющего и депозита. Внесудебное банкротство через МФЦ проводится бесплатно при долге от 25 000 до 1 000 000 ₽ и наличии строго установленных ст. 223.2 оснований.'
+      q: 'Можно ли пройти процедуру без юриста?',
+      a: 'Закон не требует обязательного представителя. Юрист нужен не для формальной подачи шаблона, а для предварительной оценки рисков, подготовки полного комплекта сведений и сопровождения спорных вопросов в суде и процедуре.'
+    },
+    {
+      q: 'Можно ли работать дистанционно?',
+      a: 'Да, консультации, подготовка документов и значительная часть взаимодействия могут проходить дистанционно. Возможность удалённого участия в конкретном заседании определяет суд; при необходимости юрист заранее объяснит формат.'
     }
   ];
 
@@ -134,12 +138,12 @@ export default function BankrotstvoFizicheskihLicClient() {
     },
     {
       num: '03',
-      title: 'Выбор маршрута и согласование',
+      title: 'Выбор маршрута и условий',
       desc: 'Объясняем судебный путь, возможность МФЦ либо альтернативу банкротству; согласовываем состав работ и стоимость.'
     },
     {
       num: '04',
-      title: 'Подготовка дела и подача в суд',
+      title: <><span style={{ display: 'block' }}>Подготовка дела</span><span style={{ display: 'block' }}>и подача в суд</span></>,
       desc: 'Собираем сведения, формируем список кредиторов и имущества, готовим заявление и направляем документы в суд.'
     },
     {
@@ -154,7 +158,7 @@ export default function BankrotstvoFizicheskihLicClient() {
     },
     {
       num: '07',
-      title: 'Завершение дела и списание долгов',
+      title: 'Завершение дела и списание',
       desc: 'Получаем судебный акт и объясняем, какие обязательства прекращены, какие сохранились и какие ограничения действуют дальше.'
     }
   ];
@@ -192,10 +196,10 @@ export default function BankrotstvoFizicheskihLicClient() {
         'url': 'https://dejure-help.ru/grazhdanam/bankrotstvo-fizicheskih-lic/',
         'name': 'Банкротство физических лиц в Липецке',
         'provider': { '@id': 'https://dejure-help.ru/#organization' },
-        'areaServed': {
-          '@type': 'AdministrativeArea',
-          'name': 'Липецк и Липецкая область'
-        },
+        'areaServed': [
+          { '@type': 'AdministrativeArea', 'name': 'Липецкая область' },
+          { '@type': 'Country', 'name': 'Россия' }
+        ],
         'description': 'Юридическая помощь при банкротстве физических лиц в Липецке: оценим долги, имущество и сделки, объясним риски и сопроводим процедуру в суде.'
       },
       {
@@ -302,7 +306,7 @@ export default function BankrotstvoFizicheskihLicClient() {
             text: (
               <>
                 <span style={{ display: 'inline-block' }}>Сопровождаем судебную процедуру</span> <br className="hidden-mobile" />
-                <span style={{ display: 'inline-block' }}>и работу с финансовым управляющим</span>
+                <span style={{ display: 'inline-block' }}>и взаимодействие с финансовым управляющим</span>
               </>
             )
           }
@@ -439,7 +443,7 @@ export default function BankrotstvoFizicheskihLicClient() {
       {/* ═══ БЛОК 3: ЧТО ПРОВЕРИМ ДО НАЧАЛА ПРОЦЕДУРЫ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '40px' }}>
+          <div style={{ maxWidth: '820px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
                 Сначала — диагностика
@@ -453,26 +457,70 @@ export default function BankrotstvoFizicheskihLicClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '20px', position: 'relative', marginBottom: '40px' }}>
             {[
-              { title: 'Состав обязательств', desc: 'Кому и сколько Вы должны; какие требования потенциально прекращаются, а какие могут сохраниться.' },
-              { title: 'Доходы и расходы семьи', desc: 'Источники дохода, иждивенцы, удержания и средства, необходимые для нормальной жизни семьи.' },
-              { title: 'Имущество и активы', desc: 'Жильё, ипотека, автомобиль, доли, земля, вклады; что может войти в конкурсную массу.' },
-              { title: 'Семейные обстоятельства', desc: 'Что приобретено в браке, есть ли общие обязательства и как процедура затронет долю супруга.' },
-              { title: 'Сделки и переводы за 3 года', desc: 'Продажи, дарение, раздел имущества, крупные платежи и предпочтительное погашение долгов.' },
-              { title: 'Поведение перед кредиторами', desc: 'Полнота сведений, документы при получении кредитов и обстоятельства возникновения задолженности.' }
+              {
+                num: '01',
+                title: <><span style={{ display: 'block' }}>Состав</span><span style={{ display: 'block' }}>обязательств</span></>,
+                desc: 'Кому и сколько Вы должны; какие требования потенциально прекращаются, а какие могут сохраниться.'
+              },
+              {
+                num: '02',
+                title: <><span style={{ display: 'block' }}>Доходы и расходы</span><span style={{ display: 'block' }}>семьи</span></>,
+                desc: 'Источники дохода, иждивенцы, удержания и средства, необходимые для нормальной жизни семьи.'
+              },
+              {
+                num: '03',
+                title: <><span style={{ display: 'block' }}>Имущество</span><span style={{ display: 'block' }}>и активы</span></>,
+                desc: 'Жильё, ипотека, автомобиль, доли, земля, вклады; что может войти в конкурсную массу.'
+              },
+              {
+                num: '04',
+                title: <><span style={{ display: 'block' }}>Семейные</span><span style={{ display: 'block' }}>обстоятельства</span></>,
+                desc: 'Что приобретено в браке, есть ли общие обязательства и как процедура затронет долю супруга.'
+              },
+              {
+                num: '05',
+                title: <><span style={{ display: 'block' }}>Сделки и переводы</span><span style={{ display: 'block' }}>за 3 года</span></>,
+                desc: 'Продажи, дарение, раздел имущества, крупные платежи и предпочтительное погашение долгов.'
+              },
+              {
+                num: '06',
+                title: <><span style={{ display: 'block' }}>Поведение перед</span><span style={{ display: 'block' }}>кредиторами</span></>,
+                desc: 'Полнота сведений, документы при получении кредитов и обстоятельства возникновения задолженности.'
+              }
             ].map((item, idx) => (
-              <div key={idx} style={{
-                background: 'var(--color-white)',
+              <div key={idx} className="hover-lift" style={{
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                padding: '36px 24px 28px 24px',
                 border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                padding: '28px 22px',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                minHeight: '235px',
+                boxSizing: 'border-box',
+                position: 'relative'
               }}>
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', fontWeight: 600 }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.25, minHeight: '46px' }}>
                   {item.title}
                 </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, minHeight: '68px' }}>
                   {item.desc}
                 </p>
               </div>
@@ -588,7 +636,7 @@ export default function BankrotstvoFizicheskihLicClient() {
       {/* ═══ БЛОК 5: КАКИЕ ДОЛГИ И РИСКИ ТРЕБУЮТ ОТДЕЛЬНОЙ ОЦЕНКИ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '40px' }}>
+          <div style={{ maxWidth: '820px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
                 Какие долги и риски
@@ -598,51 +646,203 @@ export default function BankrotstvoFizicheskihLicClient() {
               </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Разбираем нюансы законодательства о банкротстве: списываемые долги, исключения, сохранность жилья и права супругов.
+              Разбираем нюансы законодательства о банкротстве: списываемые обязательства, исключения из освобождения, сохранность жилья и защиту прав супругов.
             </p>
           </div>
 
           <div className="grid grid-2" style={{ gap: '28px' }}>
-            <div style={{ background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', padding: '32px 28px' }}>
-              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
-                Списываемые обязательства
+            {/* Карточка 1: Списываемые долги и защита активов */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Списываемые обязательства</span> <br />
+                <span style={{ display: 'inline-block' }}>и защита имущества</span>
               </h3>
-              <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                Кредиты, кредитные карты, микрозаймы, задолженность по налогам и коммунальным платежам, обязательства по распискам и другие денежные требования могут входить в процедуру. Возможность освобождения оценивается по происхождению долга и поведению гражданина.
-              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Кредиты, займы и расписки</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Потребительские кредиты, кредитные карты, займы в МФО, налоги, штрафы, коммунальные долги и требования по распискам.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Единственное пригодное жильё</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Защищено исполнительским иммунитетом по ст. 446 ГПК РФ и исключается из конкурсной массы при отсутствии ипотеки.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Доля супруга в общем имуществе</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>При реализации совместного имущества часть выручки, соответствующая доле супруга, возвращается ему в установленном порядке.</span>
+                  </div>
+                </li>
+              </ul>
             </div>
 
-            <div style={{ background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', padding: '32px 28px' }}>
-              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
-                Требования, которые сохраняются
+            {/* Карточка 2: Исключения и ключевые риски */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Исключения из списания</span> <br />
+                <span style={{ display: 'inline-block' }}>и ключевые риски</span>
               </h3>
-              <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                После процедуры сохраняются требования по текущим платежам, алиментам, возмещению вреда жизни или здоровью, морального вреда и обязательства, неразрывно связанные с личностью кредитора, а также субсидиарная ответственность.
-              </p>
-            </div>
-
-            <div style={{ background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', padding: '32px 28px' }}>
-              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
-                Что будет с имуществом и жильём
-              </h3>
-              <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                Единственное пригодное для постоянного проживания жильё защищено исполнительским иммунитетом по ст. 446 ГПК РФ. Ипотечное жильё, залоговые активы, автомобили и дачи оцениваются отдельно по специальным правилам.
-              </p>
-            </div>
-
-            <div style={{ background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', padding: '32px 28px' }}>
-              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
-                Совместное имущество супругов
-              </h3>
-              <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                Доля гражданина в общем имуществе входит в конкурсную массу. При реализации общего имущества часть выручки, соответствующая доле супруга, возвращается ему, если долг не признан судом общим обязательством семьи.
-              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Несписываемые обязательства</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Алименты, возмещение вреда жизни или здоровью, моральный вред, текущие платежи и субсидиарная ответственность сохраняются.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Ипотека, авто и залоговые активы</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Залоговое имущество и транспортные средства подлежат оценке и реализации по специальным нормам Федерального закона № 127-ФЗ.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Отказ суда в списании долгов</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Наступает при сокрытии имущества или счетов, предоставлении ложных сведений банкам либо недобросовестном поведении.</span>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 6: ЧЕМ ПОМОЖЕТ ЮРИСТ ═══ */}
+      {/* ═══ БЛОК 6: РИСКИ СДЕЛОК И НЕДОБРОСОВЕСТНОСТИ (DARK BANNER) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '44px 36px',
+            color: '#FFFFFF'
+          }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>
+                Ключевые риски процедуры
+              </div>
+              <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 16px 0', lineHeight: 1.25 }}>
+                Почему важна юридическая проверка сделок до подачи
+              </h2>
+              <p style={{ fontSize: '15.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
+                Финансовый управляющий и кредиторы проверяют все сделки должника за 3 года. Сомнительные отчуждения активов или попытки спрятать имущество ставят под угрозу освобождение от обязательств.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              {[
+                { 
+                  title: 'Оспаривание сделок за 3 года', 
+                  desc: 'Продажа имущества родственникам, цена ниже рыночной или дарение перед банкротством будут оспорены управляющим с возвратом имущества.',
+                  icon: (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0BA7A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '1px' }}>
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="8" x2="12" y2="12" />
+                      <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                  )
+                },
+                { 
+                  title: 'Преимущественное погашение долга', 
+                  desc: 'Расчёт только с одним кредитором (например, возврат долга родственнику или знакомому) признаётся судом недействительным.',
+                  icon: (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0BA7A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '1px' }}>
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  )
+                },
+                { 
+                  title: 'Недостоверные сведения банкам', 
+                  desc: 'Искажение сведений о доходах или месте работы при оформлении кредитов может стать основанием для неприменения правила о списании долгов.',
+                  icon: (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0BA7A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '1px' }}>
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <polyline points="14 2 14 8 20 8" />
+                      <line x1="16" y1="13" x2="8" y2="13" />
+                      <line x1="16" y1="17" x2="8" y2="17" />
+                      <polyline points="10 9 9 9 8 9" />
+                    </svg>
+                  )
+                },
+                { 
+                  title: 'Сокрытие имущества и доходов', 
+                  desc: 'Попытки скрыть счета, активы за рубежом или регистрация имущества на третьих лиц ведут к отказу суда в освобождении от обязательств.',
+                  icon: (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0BA7A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '1px' }}>
+                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                      <line x1="12" y1="9" x2="12" y2="13" />
+                      <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                  )
+                }
+              ].map((item, idx) => (
+                <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.12)', padding: '22px 24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    {item.icon}
+                    <h3 style={{ fontSize: '16.5px', color: '#E0BA7A', margin: 0, fontWeight: 700, fontFamily: 'var(--font-serif)', letterSpacing: '0.01em', lineHeight: 1.3 }}>
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55, paddingLeft: '32px' }}>
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 7: ЧЕМ ПОМОЖЕТ ЮРИСТ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
@@ -655,35 +855,85 @@ export default function BankrotstvoFizicheskihLicClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '20px', position: 'relative', marginBottom: '40px' }}>
             {[
-              { title: 'Предварительный анализ', desc: 'Письменно или на консультации обозначаем применимый маршрут, ключевые риски и недостающие документы.' },
-              { title: 'Подготовка позиции', desc: 'Формируем полный перечень кредиторов, обязательств, имущества, доходов и обстоятельств дела.' },
-              { title: 'Подготовка заявления', desc: 'Заявление и приложения готовятся под вашу фактическую ситуацию, а не по универсальному шаблону.' },
-              { title: 'Судебное сопровождение', desc: 'Процессуальные документы подаются в срок; позиция гражданина представляется в суде по согласованной стратегии.' },
-              { title: 'Работа в процедуре', desc: 'Контролируем взаимодействие с финансовым управляющим, требования кредиторов и вопросы конкурсной массы.' },
-              { title: 'Завершение дела', desc: 'Получаем судебный акт, разъясняем прекращенные обязательства и последующие правовые ограничения.' }
+              {
+                num: '01',
+                title: <><span style={{ display: 'block' }}>Предварительный</span><span style={{ display: 'block' }}>анализ</span></>,
+                desc: 'Письменно или на консультации обозначаем применимый маршрут, ключевые риски и недостающие документы.'
+              },
+              {
+                num: '02',
+                title: <><span style={{ display: 'block' }}>Подготовка</span><span style={{ display: 'block' }}>позиции</span></>,
+                desc: 'Формируем полный перечень кредиторов, обязательств, имущества, доходов и обстоятельств дела.'
+              },
+              {
+                num: '03',
+                title: <><span style={{ display: 'block' }}>Подготовка</span><span style={{ display: 'block' }}>заявления</span></>,
+                desc: 'Заявление и приложения готовятся под вашу фактическую ситуацию, а не по универсальному шаблону.'
+              },
+              {
+                num: '04',
+                title: <><span style={{ display: 'block' }}>Судебное</span><span style={{ display: 'block' }}>сопровождение</span></>,
+                desc: 'Процессуальные документы подаются в срок; позиция гражданина представляется в суде по согласованной стратегии.'
+              },
+              {
+                num: '05',
+                title: <><span style={{ display: 'block' }}>Работа</span><span style={{ display: 'block' }}>в процедуре</span></>,
+                desc: 'Контролируем взаимодействие с финансовым управляющим, требования кредиторов и вопросы конкурсной массы.'
+              },
+              {
+                num: '06',
+                title: <><span style={{ display: 'block' }}>Завершение</span><span style={{ display: 'block' }}>дела</span></>,
+                desc: 'Получаем судебный акт, разъясняем прекращенные обязательства и последующие правовые ограничения.'
+              }
             ].map((item, idx) => (
               <div key={idx} className="hover-lift" style={{
-                padding: '30px 24px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                padding: '36px 24px 28px 24px',
                 border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-gold)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                minHeight: '235px',
+                boxSizing: 'border-box',
+                position: 'relative'
               }}>
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', fontWeight: 600 }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.25, minHeight: '46px' }}>
                   {item.title}
                 </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, minHeight: '68px' }}>
                   {item.desc}
                 </p>
               </div>
             ))}
           </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ padding: '14px 32px' }}>
+              Обсудить состав сопровождения
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 7: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
+      {/* ═══ БЛОК 8: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
         title="Куратор направления — Владимир Начешников"
         name="Владимир Викторович Начешников"
@@ -722,7 +972,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         buttonHref="#form"
       />
 
-      {/* ═══ БЛОК 8: ПРИМЕРЫ ИЗ ПРАКТИКИ (3 КЕЙСА ИЗ ТЗ) ═══ */}
+      {/* ═══ БЛОК 9: ПРИМЕРЫ ИЗ ПРАКТИКИ (3 КЕЙСА ИЗ ТЗ) ═══ */}
       <CasesBlock
         title="Примеры дел из практики"
         showAllLink="/praktika/"
@@ -731,7 +981,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         cases={cases}
       />
 
-      {/* ═══ БЛОК 9: КАК ПРОХОДИТ РАБОТА И СУДЕБНАЯ ПРОЦЕДУРА ═══ */}
+      {/* ═══ БЛОК 10: КАК ПРОХОДИТ РАБОТА И СУДЕБНАЯ ПРОЦЕДУРА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
         subtitle="Последовательный алгоритм взаимодействия от первичной консультации до определения суда о списании долгов"
@@ -742,60 +992,136 @@ export default function BankrotstvoFizicheskihLicClient() {
         ctaButtonHref="#form"
       />
 
-      {/* ═══ БЛОК 10: ДОКУМЕНТЫ ДЛЯ ПРЕДВАРИТЕЛЬНОГО АНАЛИЗА ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 11: ДОКУМЕНТЫ ДЛЯ ПРЕДВАРИТЕЛЬНОГО АНАЛИЗА ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span style={{ display: 'inline-block' }}>Что подготовить</span> <br />
               <span style={{ display: 'inline-block' }}>к консультации юриста</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Перечень сведений и документов для детального правового анализа ситуации:
+              <span style={{ display: 'inline-block' }}>Для первичного анализа достаточно сведений и документов, которые есть у вас на руках.</span> <br />
+              <span style={{ display: 'inline-block' }}>Точный перечень и порядок сбора недостающих справок юрист определит на консультации.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            {[
-              { title: 'Долги и кредиты', desc: 'Кредитные договоры, справки, выписки, расписки, судебные приказы и постановления приставов.' },
-              { title: 'Доходы и работа', desc: 'Сведения о работе, пенсии, пособиях, самозанятости и иных доходах; сведения об иждивенцах.' },
-              { title: 'Имущество и счета', desc: 'Сведения о недвижимости, автомобилях, долях, земле, счетах, вкладах и залогах.' },
-              { title: 'Семейное положение', desc: 'Свидетельства о браке/разводе, брачный договор, соглашения о разделе имущества (при наличии).' },
-              { title: 'Сделки за 3 года', desc: 'Договоры купли-продажи, дарения, раздела имущества, крупные переводы и погашения долгов.' },
-              { title: 'Судебный процесс', desc: 'Заявления кредиторов, определения суда, требования управляющего — если дело уже начато.' }
-            ].map((item, idx) => (
-              <div key={idx} style={{
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-gold)',
-                padding: '28px 22px',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
-              }}>
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', fontWeight: 600 }}>
-                  {item.title}
-                </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Долги, доходы и судебные решения */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Документы по долгам,</span> <br />
+                <span style={{ display: 'inline-block' }}>доходам и судебным делам</span>
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Кредитные договоры и долги</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Договоры с банками, МФО, расписки, налоговые требования, квитанции ЖКХ и справки об актуальном остатке задолженности.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Судебные акты и производства</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Судебные приказы, исковые заявления, постановления приставов о возбуждении или окончании исполнительных производств.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Доходы и трудовая занятость</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Справки о доходах (2-НДФЛ), пенсиях, пособиях, статусе самозанятого или безработного; сведения об иждивенцах в семье.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Карточка 2: Имущество, семья и сделки */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Имущество, семья</span> <br />
+                <span style={{ display: 'inline-block' }}>и совершённые сделки</span>
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Имущество, счета и вклады</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Сведения о недвижимости, транспорте, долях в уставном капитале, открытых банковских счетах и залогах.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Семейное положение</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Свидетельства о браке/разводе, рождении детей, брачный договор или соглашения о разделе имущества (при наличии).</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Сделки и переводы за 3 года</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Договоры купли-продажи, дарения, соглашения о разделе активов, крупные банковские переводы и расчёты с кредиторами.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div style={{
             background: 'var(--color-white)',
             border: '1px solid var(--color-border)',
             borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
             padding: '20px 28px',
-            fontSize: '14px',
+            fontSize: '14.5px',
             color: 'var(--color-deep-blue)',
             lineHeight: 1.6
           }}>
-            <strong>Предупреждение по безопасности:</strong> Не загружайте паспорт, банковские выписки, договоры и иные финансовые документы через форму на сайте. Юрист сообщит защищённый способ передачи после первого контакта.
+            <strong>Предупреждение по безопасности:</strong> Не загружайте паспорт, банковские выписки, договоры и иные финансовые документы через открытую форму на сайте. Юрист согласует защищённый способ передачи после первичной консультации.
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 11: СТОИМОСТЬ УСЛУГ И ОБЯЗАТЕЛЬНЫЕ РАСХОДЫ ═══ */}
+      {/* ═══ БЛОК 12: СТОИМОСТЬ УСЛУГ И ОБЯЗАТЕЛЬНЫЕ РАСХОДЫ ═══ */}
       <PricingBlock
         title="Стоимость определяется после анализа ситуации"
         subtitle="На объём работы влияют количество кредиторов, состав имущества, наличие залога и совместной собственности, совершённые сделки, уже начатые споры и необходимый объём представительства. До заключения договора мы определим состав сопровождения и отдельно объясним обязательные расходы процедуры."
@@ -807,48 +1133,189 @@ export default function BankrotstvoFizicheskihLicClient() {
         }
       />
 
-      {/* ═══ БЛОК 12: ПОСЛЕДСТВИЯ БАНКРОТСТВА БЕЗ МИФОВ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 13: ПОСЛЕДСТВИЯ БАНКРОТСТВА БЕЗ МИФОВ ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+          <div style={{ maxWidth: '820px', marginBottom: '44px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span style={{ display: 'inline-block' }}>Последствия банкротства</span> <br />
               <span style={{ display: 'inline-block' }}>без мифов</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Реальные ограничения и правовые последствия после завершения процедуры банкротства:
+              <span style={{ display: 'inline-block' }}>Реальные ограничения, предусмотренные законом № 127-ФЗ,</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>и порядок жизни гражданина во время и после завершения процедуры.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            {[
-              { title: 'Кредиты и займы 5 лет', desc: 'В течение пяти лет после завершения реализации имущества при получении кредита или займа нужно сообщать о факте банкротства.' },
-              { title: 'Повторное обращение 5 лет', desc: 'В течение пяти лет дело о банкротстве не может быть вновь возбуждено по заявлению самого гражданина.' },
-              { title: 'Управление организациями 3 года', desc: 'В течение трёх лет нельзя занимать должности в органах управления юридического лица (для банков — 10 лет).' },
-              { title: 'Доход и работа', desc: 'Статус банкрота не запрещает работать, открывать самозанятость и получать официальную заработную плату.' },
-              { title: 'Публичность сведений', desc: 'Сведения о процедуре публикуются в ЕФРСБ и газете «Коммерсантъ» в установленном законом порядке.' },
-              { title: 'Освобождение от долгов', desc: 'Освобождение охватывает все заявленные кредитные долги, за исключением алиментов, вреда здоровью и текущих платежей.' }
-            ].map((item, idx) => (
-              <div key={idx} style={{
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-gold)',
-                padding: '28px 22px',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
-              }}>
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', fontWeight: 600 }}>
-                  {item.title}
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '36px' }}>
+            {/* Карточка 1: Законные ограничения после списания */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', lineHeight: 1.3 }}>
+                  <span style={{ display: 'inline-block' }}>Законные последствия</span> <br />
+                  <span style={{ display: 'inline-block' }}>после списания долгов</span>
                 </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                  {item.desc}
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                  Официальные последствия и ограничения после завершения судебной процедуры реализации имущества:
                 </p>
               </div>
-            ))}
+
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Освобождение от долгов</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Определение суда освобождает от дальнейшего исполнения заявленных требований банков, МФО, налоговой и иных кредиторов.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Кредиты и займы 5 лет</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>В течение пяти лет при обращении за кредитом или займом гражданин обязан указывать факт прохождения процедуры банкротства.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Повторное банкротство 5 лет</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>В течение пяти лет дело о банкротстве не может быть вновь возбуждено по собственному заявлению гражданина.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Управление организациями 3 года</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>В течение трёх лет нельзя занимать должности в органах управления юридического лица (для банков — 10 лет, для МФО — 5 лет).</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Официальный доход и работа</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Статус банкрота не запрещает работать, открывать самозанятость и получать официальную заработную плату.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Карточка 2: Ограничения в ходе процедуры и риски */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', lineHeight: 1.3 }}>
+                  <span style={{ display: 'inline-block' }}>Ограничения в ходе</span> <br />
+                  <span style={{ display: 'inline-block' }}>судебного процесса</span>
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                  Порядок распоряжения денежными средствами и особенности судебной процедуры:
+                </p>
+              </div>
+
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Распоряжение счетами и картами</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>С момента введения реализации имущества всеми банковскими счетами гражданина распоряжается утверждённый финансовый управляющий.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Выплата прожиточного минимума</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Должнику ежемесячно выделяются средства в размере прожиточного минимума на него и каждого нетрудоспособного иждивенца.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Возможный запрет на выезд</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Суд вправе временно ограничить право на выезд из РФ по ходатайству кредиторов до завершения реализации имущества.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Публичность сведений в реестрах</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Сведения о ходе дела публикуются в ЕФРСБ и газете «Коммерсантъ». Закон не предусматривает закрытых процедур банкротства.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Сохраняющиеся обязательства</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Алименты, вред здоровью и моральный вред не списываются и подлежат дальнейшей выплате после завершения дела.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ padding: '14px 32px' }}>
+              Разобрать риски с юристом
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 13: ЧАСТЫЕ ВОПРОСЫ (10 FAQ ИЗ ТЗ) ═══ */}
+      {/* ═══ БЛОК 14: ЧАСТЫЕ ВОПРОСЫ (11 FAQ ИЗ ТЗ) ═══ */}
       <FAQBlock
         superTitle="Частые вопросы"
         title="Ответы на частые вопросы"
@@ -858,7 +1325,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 14: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      {/* ═══ БЛОК 15: СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
@@ -1044,7 +1511,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 15: ОФИС В ЛИПЕЦКЕ ═══ */}
+      {/* ═══ БЛОК 16: ОФИС В ЛИПЕЦКЕ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0', borderBottom: '1px solid var(--color-border)' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
@@ -1056,7 +1523,9 @@ export default function BankrotstvoFizicheskihLicClient() {
                 </span>
               </div>
               <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 38px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-                Офис «Де-Юре» в Липецке
+                <span style={{ display: 'inline-block' }}>Обсудить банкротство</span> <br />
+                <span style={{ display: 'inline-block' }}>с юристом</span> <br />
+                <span style={{ display: 'inline-block' }}>в Липецке</span>
               </h2>
               <p style={{ fontSize: '15.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
                 Можно встретиться в офисе «Де-Юре» или начать с дистанционного анализа. Перед визитом согласуйте время и подготовьте сведения о долгах и сделках.
@@ -1114,7 +1583,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 16: ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ БЛОК 17: ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
@@ -1126,7 +1595,7 @@ export default function BankrotstvoFizicheskihLicClient() {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                Разберём, подходит ли банкротство в Вашей ситуации
+                Проверьте возможность банкротства и риски до подачи заявления
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
                 Оставьте номер телефона и кратко опишите ситуацию: примерную сумму долга, есть ли открытые суды, исполнительные производства, имущество или сделки за 3 года. Юрист изучит обстоятельства и свяжется с вами.
