@@ -1354,110 +1354,127 @@ export default function VzyskanieClient() {
       {/* ═══ БЛОК 7: С КАКИМИ ДЕНЕЖНЫМИ ТРЕБОВАНИЯМИ РАБОТАЕМ ═══ */}
       <section className="section bg-white" id="claims" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-            <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
+          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '12px'
+            }}>
               Категории споров
-            </span>
+            </div>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                С какими денежными
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                требованиями работаем
+              </span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Взыскиваем долги организаций и индивидуальных предпринимателей по всем видам коммерческих договоров:
+            </p>
           </div>
 
-          <h2 style={{ 
-            marginBottom: '16px', 
-            fontSize: 'clamp(28px, 3.2vw, 42px)', 
-            fontFamily: 'var(--font-serif)', 
-            color: 'var(--color-deep-blue)',
-            textAlign: 'left',
-            textWrap: 'balance',
-            marginTop: 0
-          }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              С какими денежными
-            </span>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              требованиями работаем
-            </span>
-          </h2>
-
-          <p style={{ 
-            fontSize: '16px', 
-            color: 'var(--color-text-secondary)', 
-            lineHeight: 1.7, 
-            maxWidth: '820px', 
-            marginBottom: '40px'
-          }}>
-            Взыскиваем долги организаций и индивидуальных предпринимателей по всем видам коммерческих договоров:
-          </p>
-
-          {/* Единая сетка-матрица в стиле «Модель работы ЮК Де-Юре» с фирменной анимацией */}
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-            borderTop: '2px solid var(--color-primary)', 
-            borderLeft: '1px solid rgba(23, 50, 77, 0.1)',
-            borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
-            marginBottom: '32px'
-          }}>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
             {claims.map((item, idx) => (
-              <div 
-                key={idx} 
-                className="usp-card" 
-                style={{ 
-                  padding: '36px 32px', 
-                  borderRight: '1px solid rgba(23, 50, 77, 0.1)',
-                  borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
-                  background: 'rgba(247, 244, 237, 0.45)',
-                  position: 'relative',
+              <div
+                key={idx}
+                className="hover-lift"
+                style={{
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  padding: '32px 28px',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'flex-start'
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
+                {/* Фирменный водяной знак */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.05, pointerEvents: 'none' }}>
+                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
                 <div>
-                  <div className="usp-accent"></div>
-                  
-                  <div style={{ 
-                    fontSize: '11px', 
-                    letterSpacing: '0.1em', 
-                    color: 'var(--color-gold)', 
-                    fontWeight: 700, 
-                    marginBottom: '14px', 
-                    textTransform: 'uppercase', 
-                    position: 'relative', 
-                    zIndex: 1 
+                  <div style={{
+                    fontSize: '11.5px',
+                    fontWeight: 700,
+                    color: 'var(--color-gold)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    marginBottom: '14px',
+                    background: 'rgba(193, 160, 102, 0.12)',
+                    padding: '4px 10px',
+                    alignSelf: 'flex-start',
+                    display: 'inline-block',
+                    position: 'relative',
+                    zIndex: 1
                   }}>
                     {item.tag}
                   </div>
-                  <h3 style={{ 
-                    fontSize: '19px', 
-                    fontWeight: 'bold', 
-                    color: 'var(--color-deep-blue)', 
-                    marginBottom: '14px', 
-                    fontFamily: 'var(--font-serif)', 
+
+                  <h3 style={{
+                    fontSize: '18px',
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
                     lineHeight: 1.35,
-                    position: 'relative', 
-                    zIndex: 1 
+                    fontWeight: 600,
+                    position: 'relative',
+                    zIndex: 1
                   }}>
                     {item.title}
                   </h3>
+
+                  <p style={{
+                    fontSize: '14.5px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0,
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.desc}
+                  </p>
                 </div>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '14.5px', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
-                  {item.desc}
-                </p>
               </div>
             ))}
           </div>
 
-          <p style={{ 
-            fontSize: '15px', 
-            color: 'var(--color-text-secondary)', 
-            lineHeight: 1.6, 
-            margin: 0,
-            fontStyle: 'italic',
-            borderLeft: '3px solid var(--color-primary)',
-            paddingLeft: '16px'
+          {/* Плашка действия под категориями */}
+          <div style={{
+            background: '#FFFFFF',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+            padding: '22px 28px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '16px'
           }}>
-            Взыскиваем задолженность по договорам любой сложности — рассчитываем сумму долга, неустойку, штрафы и проценты по ст. 395 ГК РФ с момента образования просрочки.
-          </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: '1 1 500px' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <polyline points="9 11 12 14 22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+              </svg>
+              <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.5 }}>
+                Взыскиваем задолженность по договорам любой сложности — рассчитываем сумму долга, неустойку, штрафы и проценты по ст. 395 ГК РФ
+              </span>
+            </div>
+            <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px', whiteSpace: 'nowrap' }}>
+              Рассчитать сумму требований
+            </a>
+          </div>
         </div>
       </section>
 
