@@ -535,99 +535,167 @@ export default function BankrotstvoFizicheskihLicClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: ДВА ЗАКОННЫХ МАРШРУТА: СУД И МФЦ ═══ */}
+      {/* ═══ БЛОК 4: ДВА ЗАКОННЫХ МАРШРУТА: СУД И МФЦ (DARK BANNER) ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Суд или МФЦ:</span> <br />
-              <span style={{ display: 'inline-block' }}>порядок зависит от обстоятельств</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Выбор процессуального порядка зависит от суммы задолженности, наличия имущества и статуса исполнительных производств.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '28px' }}>
-            {/* Карточка 1: Судебное банкротство */}
-            <div className="hover-lift" style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
-              padding: '36px 28px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
-            }}>
-              <div>
-                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '12px' }}>
-                  Основной маршрут
-                </div>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
-                  Судебное банкротство
-                </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 20px 0' }}>
-                  Состав долгов, имущества и ситуации требует процедуры в арбитражном суде. Возможны реструктуризация долгов либо реализация имущества.
-                </p>
+          <div style={{
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '44px 36px',
+            color: '#FFFFFF'
+          }}>
+            <div style={{ maxWidth: '820px', marginBottom: '32px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>
+                Выбор маршрута
               </div>
-              <a href="#form" className="btn btn-primary" style={{ padding: '10px 20px', fontSize: '14px', textAlign: 'center' }}>
-                Оценить судебный путь
-              </a>
+              <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 16px 0', lineHeight: 1.25 }}>
+                Суд или МФЦ: порядок зависит от обстоятельств
+              </h2>
+              <p style={{ fontSize: '15.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
+                Выбор процессуального порядка зависит от суммы задолженности, наличия имущества и статуса исполнительных производств.
+              </p>
             </div>
 
-            {/* Карточка 2: Внесудебное через МФЦ */}
-            <div className="hover-lift" style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-gold)',
-              padding: '36px 28px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
-            }}>
-              <div>
-                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '12px' }}>
-                  Бесплатная процедура
+            <div className="grid grid-3" style={{ gap: '24px' }}>
+              {/* Карточка 1: Судебное банкротство */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                padding: '30px 26px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                transition: 'all 0.3s ease'
+              }}>
+                <div>
+                  <div style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: '#E0BA7A',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    marginBottom: '14px',
+                    background: 'rgba(193, 160, 102, 0.15)',
+                    padding: '3px 10px',
+                    alignSelf: 'flex-start',
+                    display: 'inline-block'
+                  }}>
+                    Основной маршрут
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E0BA7A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                      <path d="M3 21h18" />
+                      <path d="M5 21V10" />
+                      <path d="M19 21V10" />
+                      <path d="M9 21V10" />
+                      <path d="M15 21V10" />
+                      <path d="M2 10h20" />
+                      <path d="M12 3L2 10h20L12 3z" />
+                    </svg>
+                    <h3 style={{ fontSize: '18px', color: '#FFFFFF', margin: 0, fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
+                      Судебное банкротство
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: '0 0 24px 0' }}>
+                    Состав долгов, имущества и ситуации требует процедуры в арбитражном суде. Возможны реструктуризация долгов либо реализация имущества.
+                  </p>
                 </div>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
-                  Банкротство через МФЦ
-                </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 20px 0' }}>
-                  Размер долга от 25 000 до 1 000 000 ₽ и статус производств соответствуют закону. Сама процедура проводится без суда.
-                </p>
+                <a href="#form" className="btn btn-primary" style={{ padding: '12px 20px', fontSize: '14px', textAlign: 'center', width: '100%', boxSizing: 'border-box' }}>
+                  Оценить судебный путь
+                </a>
               </div>
-              <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/" className="btn btn-gold" style={{ padding: '10px 20px', fontSize: '14px', textAlign: 'center', textDecoration: 'none' }}>
-                Проверить условия МФЦ →
-              </Link>
-            </div>
 
-            {/* Карточка 3: Другое решение */}
-            <div className="hover-lift" style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
-              padding: '36px 28px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
-            }}>
-              <div>
-                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '12px' }}>
-                  Альтернатива
+              {/* Карточка 2: Внесудебное через МФЦ */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(193, 160, 102, 0.4)',
+                borderTop: '3px solid var(--color-gold)',
+                padding: '30px 26px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                transition: 'all 0.3s ease'
+              }}>
+                <div>
+                  <div style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: 'var(--color-gold)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    marginBottom: '14px',
+                    background: 'rgba(193, 160, 102, 0.2)',
+                    padding: '3px 10px',
+                    alignSelf: 'flex-start',
+                    display: 'inline-block'
+                  }}>
+                    Бесплатная процедура
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E0BA7A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <polyline points="14 2 14 8 20 8" />
+                      <line x1="16" y1="13" x2="8" y2="13" />
+                      <line x1="16" y1="17" x2="8" y2="17" />
+                      <polyline points="10 9 9 9 8 9" />
+                    </svg>
+                    <h3 style={{ fontSize: '18px', color: '#E0BA7A', margin: 0, fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
+                      Банкротство через МФЦ
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: '0 0 24px 0' }}>
+                    Размер долга от 25 000 до 1 000 000 ₽ и статус производств соответствуют закону. Сама процедура проводится без суда.
+                  </p>
                 </div>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
-                  Другое решение
-                </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 20px 0' }}>
-                  Банкротство несоразмерно проблеме, спорен сам долг либо риски выше пользы. Рассматриваем переговоры или защиту у приставов.
-                </p>
+                <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/" className="btn btn-gold" style={{ padding: '12px 20px', fontSize: '14px', textAlign: 'center', textDecoration: 'none', width: '100%', boxSizing: 'border-box' }}>
+                  Проверить условия МФЦ →
+                </Link>
               </div>
-              <a href="#form" className="btn btn-outline" style={{ padding: '10px 20px', fontSize: '14px', textAlign: 'center' }}>
-                Подобрать альтернативу
-              </a>
+
+              {/* Карточка 3: Другое решение */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                padding: '30px 26px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                transition: 'all 0.3s ease'
+              }}>
+                <div>
+                  <div style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: '#E0BA7A',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    marginBottom: '14px',
+                    background: 'rgba(193, 160, 102, 0.15)',
+                    padding: '3px 10px',
+                    alignSelf: 'flex-start',
+                    display: 'inline-block'
+                  }}>
+                    Альтернатива
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E0BA7A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      <path d="M9 12l2 2 4-4" />
+                    </svg>
+                    <h3 style={{ fontSize: '18px', color: '#FFFFFF', margin: 0, fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
+                      Другое решение
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: '0 0 24px 0' }}>
+                    Банкротство несоразмерно проблеме, спорен сам долг либо риски выше пользы. Рассматриваем переговоры или защиту у приставов.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-outline" style={{ padding: '12px 20px', fontSize: '14px', textAlign: 'center', color: '#FFFFFF', borderColor: 'rgba(255, 255, 255, 0.4)', width: '100%', boxSizing: 'border-box' }}>
+                  Подобрать альтернативу
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -752,97 +820,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 6: РИСКИ СДЕЛОК И НЕДОБРОСОВЕСТНОСТИ (DARK BANNER) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{
-            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
-            border: '1px solid rgba(193, 160, 102, 0.4)',
-            borderTop: '3px solid var(--color-gold)',
-            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
-            padding: '44px 36px',
-            color: '#FFFFFF'
-          }}>
-            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>
-                Ключевые риски процедуры
-              </div>
-              <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: '0 0 16px 0', lineHeight: 1.25 }}>
-                Почему важна юридическая проверка сделок до подачи
-              </h2>
-              <p style={{ fontSize: '15.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
-                Финансовый управляющий и кредиторы проверяют все сделки должника за 3 года. Сомнительные отчуждения активов или попытки спрятать имущество ставят под угрозу освобождение от обязательств.
-              </p>
-            </div>
-
-            <div className="grid grid-2" style={{ gap: '20px' }}>
-              {[
-                { 
-                  title: 'Оспаривание сделок за 3 года', 
-                  desc: 'Продажа имущества родственникам, цена ниже рыночной или дарение перед банкротством будут оспорены управляющим с возвратом имущества.',
-                  icon: (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0BA7A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '1px' }}>
-                      <circle cx="12" cy="12" r="10" />
-                      <line x1="12" y1="8" x2="12" y2="12" />
-                      <line x1="12" y1="16" x2="12.01" y2="16" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Преимущественное погашение долга', 
-                  desc: 'Расчёт только с одним кредитором (например, возврат долга родственнику или знакомому) признаётся судом недействительным.',
-                  icon: (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0BA7A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '1px' }}>
-                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                      <circle cx="9" cy="7" r="4" />
-                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Недостоверные сведения банкам', 
-                  desc: 'Искажение сведений о доходах или месте работы при оформлении кредитов может стать основанием для неприменения правила о списании долгов.',
-                  icon: (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0BA7A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '1px' }}>
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                      <polyline points="14 2 14 8 20 8" />
-                      <line x1="16" y1="13" x2="8" y2="13" />
-                      <line x1="16" y1="17" x2="8" y2="17" />
-                      <polyline points="10 9 9 9 8 9" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Сокрытие имущества и доходов', 
-                  desc: 'Попытки скрыть счета, активы за рубежом или регистрация имущества на третьих лиц ведут к отказу суда в освобождении от обязательств.',
-                  icon: (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0BA7A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '1px' }}>
-                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                      <line x1="12" y1="9" x2="12" y2="13" />
-                      <line x1="12" y1="17" x2="12.01" y2="17" />
-                    </svg>
-                  )
-                }
-              ].map((item, idx) => (
-                <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.12)', padding: '22px 24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                    {item.icon}
-                    <h3 style={{ fontSize: '16.5px', color: '#E0BA7A', margin: 0, fontWeight: 700, fontFamily: 'var(--font-serif)', letterSpacing: '0.01em', lineHeight: 1.3 }}>
-                      {item.title}
-                    </h3>
-                  </div>
-                  <p style={{ margin: 0, fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55, paddingLeft: '32px' }}>
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 7: ЧЕМ ПОМОЖЕТ ЮРИСТ ═══ */}
+      {/* ═══ БЛОК 6: ЧЕМ ПОМОЖЕТ ЮРИСТ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
@@ -933,7 +911,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 8: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
+      {/* ═══ БЛОК 7: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
         title="Куратор направления — Владимир Начешников"
         name="Владимир Викторович Начешников"
@@ -972,7 +950,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         buttonHref="#form"
       />
 
-      {/* ═══ БЛОК 9: ПРИМЕРЫ ИЗ ПРАКТИКИ (3 КЕЙСА ИЗ ТЗ) ═══ */}
+      {/* ═══ БЛОК 8: ПРИМЕРЫ ИЗ ПРАКТИКИ (3 КЕЙСА ИЗ ТЗ) ═══ */}
       <CasesBlock
         title="Примеры дел из практики"
         showAllLink="/praktika/"
@@ -981,7 +959,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         cases={cases}
       />
 
-      {/* ═══ БЛОК 10: КАК ПРОХОДИТ РАБОТА И СУДЕБНАЯ ПРОЦЕДУРА ═══ */}
+      {/* ═══ БЛОК 9: КАК ПРОХОДИТ РАБОТА И СУДЕБНАЯ ПРОЦЕДУРА ═══ */}
       <ProcessBlock
         title="Как проходит работа"
         subtitle="Последовательный алгоритм взаимодействия от первичной консультации до определения суда о списании долгов"
@@ -992,7 +970,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         ctaButtonHref="#form"
       />
 
-      {/* ═══ БЛОК 11: ДОКУМЕНТЫ ДЛЯ ПРЕДВАРИТЕЛЬНОГО АНАЛИЗА ═══ */}
+      {/* ═══ БЛОК 10: ДОКУМЕНТЫ ДЛЯ ПРЕДВАРИТЕЛЬНОГО АНАЛИЗА ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
@@ -1121,7 +1099,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 12: СТОИМОСТЬ УСЛУГ И ОБЯЗАТЕЛЬНЫЕ РАСХОДЫ ═══ */}
+      {/* ═══ БЛОК 11: СТОИМОСТЬ УСЛУГ И ОБЯЗАТЕЛЬНЫЕ РАСХОДЫ ═══ */}
       <PricingBlock
         title="Стоимость определяется после анализа ситуации"
         subtitle="На объём работы влияют количество кредиторов, состав имущества, наличие залога и совместной собственности, совершённые сделки, уже начатые споры и необходимый объём представительства. До заключения договора мы определим состав сопровождения и отдельно объясним обязательные расходы процедуры."
@@ -1133,7 +1111,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         }
       />
 
-      {/* ═══ БЛОК 13: ПОСЛЕДСТВИЯ БАНКРОТСТВА БЕЗ МИФОВ ═══ */}
+      {/* ═══ БЛОК 12: ПОСЛЕДСТВИЯ БАНКРОТСТВА БЕЗ МИФОВ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '820px', marginBottom: '44px' }}>
@@ -1315,7 +1293,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 14: ЧАСТЫЕ ВОПРОСЫ (11 FAQ ИЗ ТЗ) ═══ */}
+      {/* ═══ БЛОК 13: ЧАСТЫЕ ВОПРОСЫ (11 FAQ ИЗ ТЗ) ═══ */}
       <FAQBlock
         superTitle="Частые вопросы"
         title="Ответы на частые вопросы"
@@ -1325,7 +1303,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 15: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      {/* ═══ БЛОК 14: СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
@@ -1511,7 +1489,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 16: ОФИС В ЛИПЕЦКЕ ═══ */}
+      {/* ═══ БЛОК 15: ОФИС В ЛИПЕЦКЕ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0', borderBottom: '1px solid var(--color-border)' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '40px', alignItems: 'stretch' }}>
@@ -1583,7 +1561,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 17: ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ БЛОК 16: ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
