@@ -1248,19 +1248,20 @@ export default function VzyskanieClient() {
             alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
-            gap: '20px',
+            gap: '24px',
             marginTop: '36px'
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: '1 1 520px' }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                 <polyline points="9 11 12 14 22 4" />
                 <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
               </svg>
-              <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.5 }}>
-                Подключаемся на любой стадии: от анализа документов до арбитражного суда, исполнения решения и банкротства
+              <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.55 }}>
+                <span style={{ display: 'inline-block' }}>Подключаемся на любой стадии: от анализа документов до арбитражного суда,</span>{' '}
+                <span style={{ display: 'inline-block' }}>исполнения решения и банкротства</span>
               </span>
             </div>
-            <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px', whiteSpace: 'nowrap' }}>
+            <a href="#form" className="btn btn-primary" style={{ padding: '13px 28px', fontSize: '14.5px', whiteSpace: 'nowrap', flexShrink: 0 }}>
               Определить стадию спора
             </a>
           </div>
