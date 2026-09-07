@@ -1388,7 +1388,7 @@ export default function VzyskanieClient() {
             Взыскиваем долги организаций и индивидуальных предпринимателей по всем видам коммерческих договоров:
           </p>
 
-          {/* Единая сетка-матрица в стиле «Модель работы ЮК Де-Юре» */}
+          {/* Единая сетка-матрица в стиле «Модель работы ЮК Де-Юре» с фирменной анимацией */}
           <div style={{ 
             display: 'grid', 
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
@@ -1398,17 +1398,23 @@ export default function VzyskanieClient() {
             marginBottom: '32px'
           }}>
             {claims.map((item, idx) => (
-              <div key={idx} style={{ 
-                padding: '36px 32px', 
-                borderRight: '1px solid rgba(23, 50, 77, 0.1)',
-                borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
-                background: 'rgba(247, 244, 237, 0.45)',
-                position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-start'
-              }}>
+              <div 
+                key={idx} 
+                className="usp-card" 
+                style={{ 
+                  padding: '36px 32px', 
+                  borderRight: '1px solid rgba(23, 50, 77, 0.1)',
+                  borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
+                  background: 'rgba(247, 244, 237, 0.45)',
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'flex-start'
+                }}
+              >
                 <div>
+                  <div className="usp-accent"></div>
+                  
                   <div style={{ 
                     fontSize: '11px', 
                     letterSpacing: '0.1em', 
