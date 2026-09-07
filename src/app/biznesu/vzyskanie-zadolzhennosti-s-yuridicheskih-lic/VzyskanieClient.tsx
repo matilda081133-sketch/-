@@ -8,6 +8,7 @@ import MilitaryHero from '@/components/MilitaryHero';
 import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
+import SpecialistBlock from '@/components/SpecialistBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 
@@ -140,6 +141,177 @@ export default function VzyskanieClient() {
     ]
   };
 
+  const situations = [
+    {
+      tag: 'Просрочка оплаты',
+      title: 'Контрагент перестал платить',
+      desc: 'Есть договор и документы об исполнении, но срок оплаты прошёл. Требуется мотивированная претензия и подготовка к судебному взысканию.'
+    },
+    {
+      tag: 'Оспаривание долга',
+      title: 'Должник оспаривает долг',
+      desc: 'Не признаёт поставку, объём работ, акт, срок или расчёт. Формируем доказательственную базу и закрываем возражения ответчика.'
+    },
+    {
+      tag: 'Риск потери активов',
+      title: 'Есть риск потери активов',
+      desc: 'У должника новые иски, исполнительные производства, ликвидация или признаки неплатёжеспособности. Необходимы обеспечительные меры.'
+    },
+    {
+      tag: 'Исполнение решения',
+      title: 'Решение суда уже получено',
+      desc: 'Нужно определить, предъявлять исполнительный лист напрямую в банк, приставам (ФССП) или использовать банкротный маршрут.'
+    },
+    {
+      tag: 'Дебиторский портфель',
+      title: 'Должников много (портфель)',
+      desc: 'Нужна единая система работы с пулом просроченной дебиторской задолженности, сегментация по рискам и регулярная отчётность.'
+    },
+    {
+      tag: 'Защита бизнеса',
+      title: 'Требуют деньги с вашей компании',
+      desc: 'Вашей компании предъявили необоснованную претензию или иск. Защитим от завышенных требований и снизим неустойку.'
+    }
+  ];
+
+  const urgentItems = [
+    {
+      title: 'Приближается срок исковой давности',
+      desc: 'Окончание 3-летнего срока лишает возможности принудительного взыскания долга при заявлении ответчика в суде.'
+    },
+    {
+      title: 'Должник меняет директора или адрес',
+      desc: 'Смена контроля, номинальные руководители или прекращение фактической деятельности часто предшествуют бросанию юрлица.'
+    },
+    {
+      title: 'Новые крупные иски к контрагенту',
+      desc: 'Массовые иски других кредиторов повышают риск ареста счетов конкурентами и исчерпания свободных денежных средств.'
+    },
+    {
+      title: 'Публикация о ликвидации или банкротстве',
+      desc: 'Появление сообщений на Федресурсе или в Вестнике требует срочного включения в реестр требований и применения спецмер.'
+    },
+    {
+      title: 'Имущество и активы выводятся',
+      desc: 'Отчуждение недвижимости, спецтехники или товарных остатков третьим лицам требует немедленного ходатайства об аресте.'
+    },
+    {
+      title: 'Контрагент затягивает подписание сверки',
+      desc: 'Попытки навязать неравноценный зачёт, бесконечные отсрочки или удаление переписки критически ослабляют позицию.'
+    }
+  ];
+
+  const routes = [
+    {
+      tag: 'Действующий бизнес',
+      title: 'Долг подтверждён, должник работает',
+      desc: 'Есть подписанные первичные документы, контрагент ведёт деятельность, но задерживает выплату.',
+      route: 'Претензия, структурированные переговоры, затем применимый судебный порядок.'
+    },
+    {
+      tag: 'Просьба об отсрочке',
+      title: 'Должник признаёт долг, но просит время',
+      desc: 'Контрагент не отказывается от оплаты, но предлагает поэтапный график или отсрочку.',
+      route: 'Проверка графика, обеспечение залогом/поручительством, фиксация признания долга.'
+    },
+    {
+      tag: 'Спор по договору',
+      title: 'Есть спор об исполнении обязательств',
+      desc: 'Контрагент заявляет о недостатках товара, нарушении сроков или завышении объёмов работ.',
+      route: 'Формирование доказательственной базы, встречная позиция, претензия и судебный иск.'
+    },
+    {
+      tag: 'Угроза утраты',
+      title: 'Есть риск утраты имущества',
+      desc: 'Появились признаки вывода активов, закрытия счетов или переоформления транспорта и недвижимости.',
+      route: 'Оценка оснований для обеспечительных мер (арест счетов) и срочные процессуальные действия.'
+    },
+    {
+      tag: 'Суд выигран',
+      title: 'Решение суда уже принято',
+      desc: 'Судебный акт вступил в силу, исполнительный лист получен, но долг добровольно не погашен.',
+      route: 'Предъявление исполнительного листа напрямую в банк либо в ФССП и контроль списания.'
+    },
+    {
+      tag: 'Неплатёжеспособность',
+      title: 'Есть признаки банкротства',
+      desc: 'Сумма долга свыше 2 млн ₽, просрочка более 3 месяцев, масса кредиторов и отсутствие активов.',
+      route: 'Оценка очередности, публикация на Федресурсе и переход к банкротному маршруту.'
+    }
+  ];
+
+  const stages = [
+    {
+      num: '01',
+      stage: 'Анализ документов и состояния должника',
+      works: 'Изучаем договоры, первичные документы, основания долга, сроки, переписку и возражения контрагента. Проверяем открытые реестры, суды и исполнительные производства.',
+      result: 'Письменное заключение о перспективах взыскания, правовых рисках и рекомендуемом маршруте.'
+    },
+    {
+      num: '02',
+      stage: 'Досудебная претензионная работа',
+      works: 'Составляем мотивированную претензию с расчётом долга, неустойки и штрафов. Ведём переговоры с должником, фиксируем признание долга и оцениваем проекты соглашений.',
+      result: 'Соблюдение обязательного досудебного порядка либо добровольное погашение задолженности без суда.'
+    },
+    {
+      num: '03',
+      stage: 'Судебное взыскание в арбитраже',
+      works: 'Готовим исковое заявление, доказательственную базу, ходатайства об обеспечительных мерах. Представляем интересы компании во всех судебных заседаниях.',
+      result: 'Судебный акт о взыскании долга, процентов и судебных расходов, получение исполнительного листа.'
+    },
+    {
+      num: '04',
+      stage: 'Исполнение судебного решения',
+      works: 'Определяем оптимальный способ предъявления исполнительного листа (в банк должника либо в ФССП). Контролируем действия пристава и списание средств.',
+      result: 'Фактическое поступление денежных средств на расчётный счёт взыскателя.'
+    },
+    {
+      num: '05',
+      stage: 'Банкротный маршрут и субсидиарная ответственность',
+      works: 'При невозможности взыскания оцениваем экономический смысл банкротства должника, подаём публикацию на Федресурс, инициируем привлечение руководства к субсидиарной ответственности.',
+      result: 'Взыскание задолженности с контролирующих лиц (директоров, учредителей) либо включение в реестр кредиторов.'
+    }
+  ];
+
+  const claims = [
+    {
+      title: 'Неоплата поставленного товара',
+      desc: 'Договоры поставки, разовые отгрузки по счетам-договорам, товарным накладным и УПД.'
+    },
+    {
+      title: 'Долги по договорам подряда и субподряда',
+      desc: 'Строительные, монтажные, проектные и ремонтные работы, споры по актам КС-2 и КС-3.'
+    },
+    {
+      title: 'Задолженность по аренде помещений и техники',
+      desc: 'Коммерческая недвижимость, производственные площади, склады, транспорт и спецтехника.'
+    },
+    {
+      title: 'Неоплата оказанных услуг и работ',
+      desc: 'Транспортные, логистические, экспедиционные, консалтинговые и иные возмездные услуги.'
+    },
+    {
+      title: 'Возврат займов, кредитов и процентов',
+      desc: 'Договоры займа между юридическими лицами, процентные обязательства и штрафные санкции.'
+    },
+    {
+      title: 'Возврат неотработанного аванса',
+      desc: 'Расторжение договоров, односторонний отказ, неисполнение контрагентом встречных обязательств.'
+    },
+    {
+      title: 'Неосновательное обогащение',
+      desc: 'Ошибочные платежи, бездоговорное пользование имуществом, излишне перечисленные средства.'
+    },
+    {
+      title: 'Договорная неустойка и проценты',
+      desc: 'Взыскание штрафов, договорных пеней и процентов за пользование чужими денежными средствами (ст. 395 ГК РФ).'
+    },
+    {
+      title: 'Портфель просроченной дебиторской задолженности',
+      desc: 'Комплексная системная работа с реестром должников компании, сегментация по срокам и рискам.'
+    }
+  ];
+
   const cases: CaseData[] = [
     {
       category: 'Поставка / 2,8 млн ₽',
@@ -244,6 +416,7 @@ export default function VzyskanieClient() {
     {
       title: 'Первичный аудит долга',
       subtitle: 'Правовой анализ документов, проверка должника по реестрам и определение перспектив взыскания',
+      price: 'от 5 000 ₽',
       features: [
         { name: 'Изучение договоров, УПД, накладных и актов', value: '✓' },
         { name: 'Проверка платежеспособности и судов должника', value: '✓' },
@@ -257,6 +430,7 @@ export default function VzyskanieClient() {
     {
       title: 'Судебное взыскание под ключ',
       subtitle: 'Полное ведение дела в арбитражном суде от претензии до получения исполнительного листа',
+      price: 'от 35 000 ₽',
       popular: true,
       badgeText: 'Популярно',
       features: [
@@ -272,6 +446,7 @@ export default function VzyskanieClient() {
     {
       title: 'Сопровождение дебиторского портфеля',
       subtitle: 'Системная работа с пулом просроченных долгов компании на регулярной основе',
+      price: 'Индивидуально',
       features: [
         { name: 'Формирование единого реестра задолженностей', value: '✓' },
         { name: 'Сегментация должников по степени риска', value: '✓' },
@@ -335,11 +510,16 @@ export default function VzyskanieClient() {
         trustItems={[
           { text: 'Оцениваем доказательства и взыскиваемость' },
           { text: 'Согласуем каждый этап до подачи иска' },
-          { text: 'Работаем на результат до фактического исполнения' }
+          { text: 'Работаем на результат до фактического исполнения' },
+          { text: 'Куратор — адвокат Дмитрий Сергеевич Конопкин' }
         ]}
+        imageUrl="/images/konopkin.jpg"
+        imageName="Дмитрий Сергеевич Конопкин"
+        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления"
+        imageObjectPosition="center 25%"
       />
 
-      {/* ═══ БЛОК 7.1: В КАКОЙ СИТУАЦИИ ВАМ НУЖНА ПОМОЩЬ (ШАБЛОН НАПРАВЛЕНИЙ) ═══ */}
+      {/* ═══ БЛОК 2: В КАКОЙ СИТУАЦИИ ВАМ НУЖНА ПОМОЩЬ (ШАБЛОН «СИТУАЦИИ») ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
@@ -351,79 +531,70 @@ export default function VzyskanieClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            {[
-              {
-                title: 'Контрагент перестал платить',
-                desc: 'Есть договор и документы об исполнении, но срок оплаты прошёл. Требуется мотивированная претензия и подготовка к судебному взысканию.',
-                link: '#audit'
-              },
-              {
-                title: 'Должник оспаривает долг',
-                desc: 'Не признаёт поставку, объём работ, акт, срок или расчёт. Формируем доказательственную базу и закрываем возражения ответчика.',
-                link: '#audit'
-              },
-              {
-                title: 'Есть риск потери активов',
-                desc: 'У должника новые иски, исполнительные производства, ликвидация или признаки неплатёжеспособности. Необходимы обеспечительные меры.',
-                link: '#urgent'
-              },
-              {
-                title: 'Решение суда уже получено',
-                desc: 'Нужно определить, предъявлять исполнительный лист напрямую в банк, приставам (ФССП) или использовать банкротный маршрут.',
-                link: '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/'
-              },
-              {
-                title: 'Должников много (портфель)',
-                desc: 'Нужна единая система работы с пулом просроченной дебиторской задолженности, сегментация по рискам и регулярная отчётность.',
-                link: '#portfolio'
-              },
-              {
-                title: 'Требуют деньги с вашей компании',
-                desc: 'Вашей компании предъявили необоснованную претензию или иск. Защитим от завышенных требований и снизим неустойку.',
-                link: '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/'
-              }
-            ].map((item, i) => (
-              <a key={i} href={item.link} style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                <div
-                  className="card service-card"
-                  style={{
-                    height: '100%',
-                    minHeight: '220px',
-                    padding: '28px',
-                    background: 'var(--color-white)',
-                    border: '1px solid var(--color-border)',
-                    borderRadius: '0',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    position: 'relative',
-                    borderTop: '3px solid var(--color-primary)',
-                    cursor: 'pointer',
-                    boxShadow: '0 4px 15px rgba(23, 50, 77, 0.04)'
-                  }}
-                >
-                  <div>
-                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.35 }}>
-                      {item.title}
-                    </h3>
-                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                      {item.desc}
-                    </p>
-                  </div>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(23, 50, 77, 0.06)' }}>
-                    <span>Подробнее</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </div>
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
+            {situations.map((item, i) => (
+              <div key={i} className="hover-lift" style={{
+                padding: '36px 30px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
                 </div>
-              </a>
+
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.tag}
+                </div>
+
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '18px',
+                  fontWeight: 600,
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 14px 0',
+                  lineHeight: 1.35,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.title}
+                </h3>
+
+                <p style={{
+                  fontSize: '15px',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.desc}
+                </p>
+              </div>
             ))}
           </div>
 
-          {/* Переключатель роли на страницу защиты должника */}
+          {/* Переключатель роли на страницу защиты бизнеса */}
           <div style={{
             background: '#FFFFFF',
             border: '1px solid var(--color-border)',
@@ -504,11 +675,11 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 7.3: КОГДА НЕЛЬЗЯ ЗАТЯГИВАТЬ СО ВЗЫСКАНИЕМ (ШАБЛОН «КОГДА СРОЧНО») ═══ */}
-      <section className="section bg-primary text-white" id="urgent" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0' }}>
+      {/* ═══ БЛОК 3: КОГДА НЕЛЬЗЯ ЗАТЯГИВАТЬ СО ВЗЫСКАНИЕМ (ШАБЛОН «КОГДА СРОЧНО» НА СВЕТЛОМ ФОНЕ) ═══ */}
+      <section className="section bg-white" id="urgent" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '40px', textAlign: 'left' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
                 Когда нельзя затягивать
               </span>
@@ -516,48 +687,22 @@ export default function VzyskanieClient() {
                 со взысканием
               </span>
             </h2>
-            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
-            <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '16px', margin: 0, maxWidth: '720px', lineHeight: 1.6, textWrap: 'balance' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               В спорах с юридическими лицами промедление грозит утратой активов, ликвидацией или невозможностью исполнить решение суда.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
-            {[
-              {
-                title: 'Приближается срок исковой давности',
-                desc: 'Окончание 3-летнего срока лишает возможности принудительного взыскания долга при соответствующем заявлении ответчика в суде.'
-              },
-              {
-                title: 'Должник меняет директора или адрес',
-                desc: 'Смена контроля, номинальные руководители или прекращение фактической деятельности часто предшествуют бросанию юрлица.'
-              },
-              {
-                title: 'Новые крупные иски к контрагенту',
-                desc: 'Массовые иски других кредиторов повышают риск ареста счетов конкурентами и исчерпания свободных денежных средств.'
-              },
-              {
-                title: 'Публикация о ликвидации или банкротстве',
-                desc: 'Появление сообщений на Федресурсе или в Вестнике требует срочного включения в реестр требований и применения спецмер.'
-              },
-              {
-                title: 'Имущество и активы выводятся',
-                desc: 'Отчуждение недвижимости, спецтехники или товарных остатков третьим лицам требует немедленного ходатайства об аресте.'
-              },
-              {
-                title: 'Контрагент затягивает подписание сверки',
-                desc: 'Попытки навязать неравноценный зачёт, бесконечные отсрочки или удаление переписки критически ослабляют доказательственную базу.'
-              }
-            ].map((item, i) => (
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
+            {urgentItems.map((item, i) => (
               <div
                 key={i}
-                className="urgent-card"
+                className="hover-lift"
                 style={{
-                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
-                  padding: '30px 24px',
-                  borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                  padding: '32px 28px',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -567,16 +712,16 @@ export default function VzyskanieClient() {
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="12" y1="8" x2="12" y2="12"></line>
-                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="8" x2="12" y2="12" />
+                      <line x1="12" y1="16" x2="12.01" y2="16" />
                     </svg>
-                    <div style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35 }}>
+                    <div style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
                       {item.title}
                     </div>
                   </div>
-                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.88, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                  <p style={{ color: 'var(--color-text-secondary)', fontSize: '14.5px', lineHeight: 1.55, margin: 0 }}>
                     {item.desc}
                   </p>
                 </div>
@@ -584,46 +729,53 @@ export default function VzyskanieClient() {
             ))}
           </div>
 
+          {/* Плашка предупреждения */}
           <div style={{
-            background: 'rgba(255, 255, 255, 0.08)',
+            background: 'var(--color-white)',
+            border: '1px solid var(--color-border)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '18px 24px',
-            marginBottom: '32px',
-            color: 'rgba(255, 255, 255, 0.9)',
-            fontSize: '14.5px',
-            lineHeight: 1.6
+            padding: '24px 30px',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+            marginBottom: '32px'
           }}>
-            <strong style={{ color: '#FFFFFF' }}>Предупреждение:</strong> Срочность не означает автоматическую подачу иска. Сначала определяем действие, которое действительно сохраняет позицию или повышает вероятность взыскания.
+            <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>
+              <strong>Предупреждение:</strong> Срочность не означает автоматическую подачу иска. Сначала определяем действие, которое действительно сохраняет позицию или повышает вероятность взыскания.
+            </p>
           </div>
 
-          <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
-              +7 (910) 350-31-11
-            </a>
-            <a
-              href="tel:+79103503111"
-              className="btn btn-urgent-call"
-              style={{ padding: '14px 28px', fontSize: '15px' }}
-              data-analytics="debt_urgent_call_click"
-            >
-              Позвонить юристу
-            </a>
-            <a
-              href="#form"
-              className="btn btn-urgent-outline"
-              style={{ padding: '14px 28px', fontSize: '15px' }}
-            >
-              Описать ситуацию
-            </a>
-            <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px' }}>
-              Перезвоним вам в рабочее время и оценим риски до утраты активов
-            </span>
+          {/* Зона связи */}
+          <div style={{
+            background: 'var(--gradient-cream)',
+            border: '1px solid var(--color-border)',
+            padding: '24px 30px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '20px',
+            flexWrap: 'wrap'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontSize: '20px', fontWeight: 700, textDecoration: 'none' }}>
+                +7 (910) 350-31-11
+              </a>
+              <span style={{ color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+                Перезвоним вам в рабочее время и оценим риски до утраты активов
+              </span>
+            </div>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <a href="tel:+79103503111" className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '14px' }}>
+                Позвонить юристу
+              </a>
+              <a href="#form" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14px' }}>
+                Описать ситуацию
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 7.2: ДИАГНОСТИКА: ДО НАЧАЛА СПОРА ПРОВЕРЯЕМ ДВЕ ВЕЩИ (COMPARISON MATRIX) ═══ */}
-      <section className="section bg-white" id="audit" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 4: ДИАГНОСТИКА: ДО НАЧАЛА СПОРА ПРОВЕРЯЕМ ДВЕ ВЕЩИ ═══ */}
+      <section className="section bg-light" id="audit" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{
             display: 'flex',
@@ -784,8 +936,8 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 7.7: НЕ КАЖДЫЙ ДОЛГ НУЖНО ВЗЫСКИВАТЬ ОДИНАКОВО (СТРУКТУРИРОВАННЫЕ СЦЕНАРИИ) ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--color-white)' }}>
+      {/* ═══ БЛОК 5: НЕ КАЖДЫЙ ДОЛГ НУЖНО ВЗЫСКИВАТЬ ОДИНАКОВО (ШАБЛОН СЦЕНАРИЕВ) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
             <div style={{
@@ -811,84 +963,49 @@ export default function VzyskanieClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            {[
-              {
-                tag: 'Действующий бизнес',
-                title: 'Долг подтверждён, должник работает',
-                desc: 'Есть подписанные первичные документы, контрагент ведёт деятельность, но задерживает выплату.',
-                route: 'Претензия, структурированные переговоры, затем применимый судебный порядок.'
-              },
-              {
-                tag: 'Просьба об отсрочке',
-                title: 'Должник признаёт долг, но просит время',
-                desc: 'Контрагент не отказывается от оплаты, но предлагает поэтапный график или отсрочку.',
-                route: 'Проверка графика, обеспечение залогом/поручительством, фиксация признания долга.'
-              },
-              {
-                tag: 'Спор по договору',
-                title: 'Есть спор об исполнении обязательств',
-                desc: 'Контрагент заявляет о недостатках товара, нарушении сроков или завышении объёмов работ.',
-                route: 'Формирование доказательственной базы, встречная позиция, претензия и судебный иск.'
-              },
-              {
-                tag: 'Угроза утраты',
-                title: 'Есть риск утраты имущества',
-                desc: 'Появились признаки вывода активов, закрытия счетов или переоформления транспорта и недвижимости.',
-                route: 'Оценка оснований для обеспечительных мер (арест счетов) и срочные процессуальные действия.'
-              },
-              {
-                tag: 'Суд выигран',
-                title: 'Решение суда уже принято',
-                desc: 'Судебный акт вступил в силу, исполнительный лист получен, но долг добровольно не погашен.',
-                route: 'Предъявление исполнительного листа напрямую в банк либо в ФССП и контроль списания.'
-              },
-              {
-                tag: 'Неплатёжеспособность',
-                title: 'Есть признаки банкротства',
-                desc: 'Сумма долга свыше 2 млн ₽, просрочка более 3 месяцев, масса кредиторов и отсутствие активов.',
-                route: 'Оценка очередности, публикация на Федресурсе и переход к банкротному маршруту.'
-              }
-            ].map((item, i) => (
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
+            {routes.map((item, i) => (
               <div
                 key={i}
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
-                  padding: '30px 26px',
+                  padding: '32px 28px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  boxShadow: '0 4px 15px rgba(23, 50, 77, 0.04)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   position: 'relative'
                 }}
               >
                 <div>
                   <div style={{
-                    fontSize: '11.5px',
+                    fontSize: '12px',
                     fontWeight: 700,
                     color: 'var(--color-gold)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.08em',
-                    marginBottom: '12px',
+                    marginBottom: '14px',
                     background: 'rgba(193, 160, 102, 0.1)',
-                    padding: '3px 8px',
+                    padding: '4px 10px',
                     display: 'inline-block'
                   }}>
                     {item.tag}
                   </div>
-                  <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.35 }}>
+                  <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.35 }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 16px 0' }}>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 20px 0' }}>
                     {item.desc}
                   </p>
                 </div>
 
                 <div style={{
-                  background: '#FAF7F2',
-                  padding: '14px 16px',
+                  background: '#FFFFFF',
+                  padding: '16px 18px',
+                  border: '1px solid var(--color-border)',
                   borderLeft: '3px solid var(--color-gold)',
                   marginTop: 'auto'
                 }}>
@@ -905,7 +1022,7 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 7.4: ВЗЫСКАНИЕ ЗАДОЛЖЕННОСТИ ПОД КОНКРЕТНУЮ СТАДИЮ ═══ */}
+      {/* ═══ БЛОК 6: ВЗЫСКАНИЕ ЗАДОЛЖЕННОСТИ ПОД КОНКРЕТНУЮ СТАДИЮ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
@@ -933,38 +1050,7 @@ export default function VzyskanieClient() {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '32px' }}>
-            {[
-              {
-                num: '01',
-                stage: 'Анализ документов и состояния должника',
-                works: 'Изучаем договоры, первичные документы, основания долга, сроки, переписку и возражения контрагента. Проверяем открытые реестры, суды и исполнительные производства.',
-                result: 'Письменное заключение о перспективах взыскания, правовых рисках и рекомендуемом маршруте.'
-              },
-              {
-                num: '02',
-                stage: 'Досудебная претензионная работа',
-                works: 'Составляем мотивированную претензию с расчётом долга, неустойки и штрафов. Ведём переговоры с должником, фиксируем признание долга и оцениваем проекты соглашений.',
-                result: 'Соблюдение обязательного досудебного порядка либо добровольное погашение задолженности без суда.'
-              },
-              {
-                num: '03',
-                stage: 'Судебное взыскание в арбитраже',
-                works: 'Готовим исковое заявление, доказательственную базу, ходатайства об обеспечительных мерах. Представляем интересы компании во всех судебных заседаниях.',
-                result: 'Судебный акт о взыскании долга, процентов и судебных расходов, получение исполнительного листа.'
-              },
-              {
-                num: '04',
-                stage: 'Исполнение судебного решения',
-                works: 'Определяем оптимальный способ предъявления исполнительного листа (в банк должника либо в ФССП). Контролируем действия пристава и списание средств.',
-                result: 'Фактическое поступление денежных средств на расчётный счёт взыскателя.'
-              },
-              {
-                num: '05',
-                stage: 'Банкротный маршрут и субсидиарная ответственность',
-                works: 'При невозможности взыскания оцениваем экономический смысл банкротства должника, подаём публикацию на Федресурс, инициируем привлечение руководства к субсидиарной ответственности.',
-                result: 'Взыскание задолженности с контролирующих лиц (директоров, учредителей) либо включение в реестр кредиторов.'
-              }
-            ].map((step, idx) => (
+            {stages.map((step, idx) => (
               <div
                 key={idx}
                 style={{
@@ -1017,7 +1103,7 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 7.5: С КАКИМИ ДЕНЕЖНЫМИ ТРЕБОВАНИЯМИ РАБОТАЕМ ═══ */}
+      {/* ═══ БЛОК 7: С КАКИМИ ДЕНЕЖНЫМИ ТРЕБОВАНИЯМИ РАБОТАЕМ ═══ */}
       <section className="section bg-white" id="claims" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
@@ -1045,48 +1131,11 @@ export default function VzyskanieClient() {
           </div>
 
           <div className="grid grid-3" style={{ gap: '20px', marginBottom: '16px' }}>
-            {[
-              {
-                title: 'Неоплата поставленного товара',
-                desc: 'Договоры поставки, разовые отгрузки по счетам-договорам, товарным накладным и УПД.'
-              },
-              {
-                title: 'Долги по договорам подряда и субподряда',
-                desc: 'Строительные, монтажные, проектные и ремонтные работы, споры по актам КС-2 и КС-3.'
-              },
-              {
-                title: 'Задолженность по аренде помещений и техники',
-                desc: 'Коммерческая недвижимость, производственные площади, склады, транспорт и спецтехника.'
-              },
-              {
-                title: 'Неоплата оказанных услуг и работ',
-                desc: 'Транспортные, логистические, экспедиционные, консалтинговые и иные возмездные услуги.'
-              },
-              {
-                title: 'Возврат займов, кредитов и процентов',
-                desc: 'Договоры займа между юридическими лицами, процентные обязательства и штрафные санкции.'
-              },
-              {
-                title: 'Возврат неотработанного аванса',
-                desc: 'Расторжение договоров, односторонний отказ, неисполнение контрагентом встречных обязательств.'
-              },
-              {
-                title: 'Неосновательное обогащение',
-                desc: 'Ошибочные платежи, бездоговорное пользование имуществом, излишне перечисленные средства.'
-              },
-              {
-                title: 'Договорная неустойка и проценты',
-                desc: 'Взыскание штрафов, договорных пеней и процентов за пользование чужими денежными средствами (ст. 395 ГК РФ).'
-              },
-              {
-                title: 'Портфель просроченной дебиторской задолженности',
-                desc: 'Комплексная системная работа с реестром должников компании, сегментация по срокам и рискам.'
-              }
-            ].map((item, idx) => (
+            {claims.map((item, idx) => (
               <div
                 key={idx}
                 style={{
-                  background: '#FFFFFF',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   borderLeft: '4px solid var(--color-gold)',
                   padding: '24px 22px',
@@ -1108,7 +1157,7 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 7.6: ЧТО ПЕРЕДАТЬ ЮРИСТУ ДЛЯ АНАЛИЗА (ШАБЛОН «ДОКУМЕНТЫ») ═══ */}
+      {/* ═══ БЛОК 8: ЧТО ПЕРЕДАТЬ ЮРИСТУ ДЛЯ АНАЛИЗА (ШАБЛОН «ДОКУМЕНТЫ») ═══ */}
       <section className="section bg-light" id="documents" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
@@ -1279,7 +1328,39 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК: ПРИМЕРЫ ДЕЛ ИЗ ПРАКТИКИ (КЕЙСЫ) ═══ */}
+      {/* ═══ БЛОК 9: КУРАТОР НАПРАВЛЕНИЯ (SPECIALIST BLOCK) ═══ */}
+      <SpecialistBlock
+        title="Куратор направления"
+        name="Дмитрий Сергеевич Конопкин"
+        position="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления"
+        imageUrl="/images/konopkin.jpg"
+        imagePosition="center 15%"
+        profileHref="/specialisty/konopkin-dmitriy-sergeevich/"
+        profileText="Подробнее об адвокате Дмитрии Сергеевиче Конопкине →"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Дмитрий Сергеевич курирует сложные коммерческие и арбитражные споры по взысканию задолженности с юридических лиц: оценивает доказательственную базу, разрабатывает процессуальную стратегию и представляет интересы бизнеса в суде.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Юридическая практика в сфере защиты интересов бизнеса и арбитражного процесса — с 2016 года</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Опыт работы в Следственном комитете помогает системно выявлять схемы вывода активов должниками</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Успешный опыт ведения дел в Арбитражном суде Липецкой области и арбитражных судах РФ</span>
+            </li>
+          </ul>
+        ]}
+        buttonText="Задать вопрос Дмитрию Сергеевичу"
+        buttonHref="#form"
+      />
+
+      {/* ═══ БЛОК 10: ПРИМЕРЫ ДЕЛ ИЗ ПРАКТИКИ (КЕЙСЫ) ═══ */}
       <CasesBlock
         title="Примеры дел из практики"
         showAllLink="/praktika/"
@@ -1288,7 +1369,7 @@ export default function VzyskanieClient() {
         cases={cases}
       />
 
-      {/* ═══ БЛОК 7.13: СХЕМА РАБОТЫ (ПОЭТАПНЫЙ ПРОЦЕСС) ═══ */}
+      {/* ═══ БЛОК 11: СХЕМА РАБОТЫ (ПОЭТАПНЫЙ ПРОЦЕСС) ═══ */}
       <ProcessBlock
         title="Как строится работа"
         subtitle="Прозрачный и предсказуемый процесс от передачи первых документов до поступления денег на расчётный счёт"
@@ -1298,7 +1379,7 @@ export default function VzyskanieClient() {
         ctaButtonText="Обсудить ситуацию"
       />
 
-      {/* ═══ БЛОК 9: СТОИМОСТЬ ЮРИДИЧЕСКИХ УСЛУГ ═══ */}
+      {/* ═══ БЛОК 12: СТОИМОСТЬ ЮРИДИЧЕСКИХ УСЛУГ ═══ */}
       <PricingBlock
         title="Стоимость взыскания задолженности"
         subtitle="Честные условия и прозрачные этапы. Стоимость фиксируется в официальном договоре до начала работы."
@@ -1306,7 +1387,7 @@ export default function VzyskanieClient() {
         disclaimer="Окончательная стоимость определяется после анализа первичных документов, суммы задолженности, платёжеспособности должника и необходимого объёма процессуальных инстанций."
       />
 
-      {/* ═══ БЛОК 10: FAQ ═══ */}
+      {/* ═══ БЛОК 13: FAQ ═══ */}
       <FAQBlock
         superTitle="Частые вопросы клиентов"
         title="Ответы на вопросы о взыскании задолженности"
@@ -1314,7 +1395,7 @@ export default function VzyskanieClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 11: ЛОКАЛЬНЫЙ ОФИС В ЛИПЕЦКЕ ═══ */}
+      {/* ═══ БЛОК 14: ЛОКАЛЬНЫЙ ОФИС В ЛИПЕЦКЕ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '48px', alignItems: 'center' }}>
@@ -1403,7 +1484,7 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 12: ФИНАЛЬНАЯ ФОРМА ОБРАТНОЙ СВЯЗИ (CANONICAL 2-COLUMN) ═══ */}
+      {/* ═══ БЛОК 15: ФИНАЛЬНАЯ ФОРМА ОБРАТНОЙ СВЯЗИ (CANONICAL 2-COLUMN) ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
