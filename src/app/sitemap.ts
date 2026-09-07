@@ -16,6 +16,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy/',
     '/consent/',
     '/cookies/',
+    // Арбитражный юрист (Кластер BIZ-01)
+    '/biznesu/arbitrazhnyj-yurist/',
+    '/biznesu/arbitrazhnyj-yurist/isk-v-arbitrazhnyj-sud/',
+    '/biznesu/arbitrazhnyj-yurist/zashchita-otvetchika-v-arbitrazhnom-sude/',
+    '/biznesu/arbitrazhnyj-yurist/obzhalovanie-resheniya-arbitrazhnogo-suda/',
+    // Взыскание задолженности с юрлиц (B2B)
+    '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/',
+    '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/',
     // Банкротство физических лиц
     '/grazhdanam/bankrotstvo-fizicheskih-lic/',
     '/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/',

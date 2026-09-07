@@ -22,7 +22,7 @@ export default function BiznesuClient() {
       groupName: 'Споры, взыскание и исполнение',
       title: 'Арбитражный юрист',
       desc: 'Представительство в арбитражном суде по коммерческим спорам, подготовка исков, отзывов, жалоб и обеспечительных мер.',
-      link: null
+      link: '/biznesu/arbitrazhnyj-yurist/'
     },
     {
       id: 'B2B-02',
@@ -30,7 +30,7 @@ export default function BiznesuClient() {
       groupName: 'Споры, взыскание и исполнение',
       title: 'Взыскание задолженности с юридических лиц',
       desc: 'Претензионная работа, досудебное и судебное взыскание дебиторской задолженности, процентов и неустойки.',
-      link: null
+      link: '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/'
     },
     {
       id: 'B2B-03',
