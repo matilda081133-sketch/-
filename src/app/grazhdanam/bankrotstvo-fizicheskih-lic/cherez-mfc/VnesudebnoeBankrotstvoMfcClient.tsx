@@ -833,53 +833,179 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
         ctaButtonHref="#form"
       />
 
-      {/* ═══ БЛОК 8: РИСКИ ВОЗВРАТА И ПРЕКРАЩЕНИЯ ПРОЦЕДУРЫ ═══ */}
+      {/* ═══ БЛОК 8: ВОЗВРАТ, ПРЕКРАЩЕНИЕ И ПОСЛЕДСТВИЯ ПРОЦЕДУРЫ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+          <div style={{ maxWidth: '820px', marginBottom: '44px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Возврат и прекращение</span> <br />
-              <span style={{ display: 'inline-block' }}>внесудебной процедуры</span>
+              <span style={{ display: 'inline-block' }}>Возврат, прекращение</span> <br />
+              <span style={{ display: 'inline-block' }}>и последствия процедуры</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Разбираем юридические основания возврата заявления и ситуации, при которых процедура может быть прекращена.
+              <span style={{ display: 'inline-block' }}>Разбираем основания возврата заявления, риски перехода дела в суд</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>и законные ограничения после признания гражданина банкротом.</span>
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '32px' }}>
-            {[
-              {
-                title: 'Заявление возвращено МФЦ',
-                desc: 'Причину нужно разобрать по документам. После возврата повторное обращение возможно не ранее чем через один месяц; действия и недостоверные межведомственные сведения могут быть обжалованы в установленном порядке.'
-              },
-              {
-                title: 'Появилось имущество или доход',
-                desc: 'Если имущественное положение существенно улучшилось (наследство, дар), гражданин обязан уведомить МФЦ в течение 5 рабочих дней; процедура прекращается.'
-              },
-              {
-                title: 'Обнаружен неуказанный кредитор',
-                desc: 'Его требование не попадает под мораторий и не прекращается по итогам внесудебной процедуры; кредитор может инициировать судебный процесс в арбитражном суде.'
-              },
-              {
-                title: 'Спорная сделка за 3 года',
-                desc: 'Кредитор вправе оспорить подозрительные сделки по дарению или продаже имущества родственникам через обращение в арбитражный суд.'
-              }
-            ].map((item, idx) => (
-              <div key={idx} style={{
-                background: 'var(--color-white)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                padding: '30px 26px',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
-              }}>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', fontWeight: 600 }}>
-                  {item.title}
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '36px' }}>
+            {/* Карточка 1: Возврат и прекращение внесудебной процедуры */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', lineHeight: 1.3 }}>
+                  <span style={{ display: 'inline-block' }}>Возврат и прекращение</span> <br />
+                  <span style={{ display: 'inline-block' }}>внесудебной процедуры</span>
                 </h3>
-                <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                  {item.desc}
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                  Разбираем юридические основания возврата заявления и ситуации, при которых процедура может быть прекращена.
                 </p>
               </div>
-            ))}
+
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="9" y1="15" x2="15" y2="15" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Заявление возвращено МФЦ</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Причину нужно разобрать по документам. После возврата повторное обращение возможно не ранее чем через один месяц; действия и недостоверные межведомственные сведения могут быть обжалованы в установленном порядке.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                    <polyline points="17 6 23 6 23 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Появилось имущество или доход</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Если имущественное положение существенно улучшилось (наследство, дар), гражданин обязан уведомить МФЦ в течение 5 рабочих дней; процедура прекращается.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Обнаружен неуказанный кредитор</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Его требование не попадает под мораторий и не прекращается по итогам внесудебной процедуры; кредитор может инициировать судебный процесс в арбитражном суде.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Спорная сделка за 3 года</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Кредитор вправе оспорить подозрительные сделки по дарению или продаже имущества родственникам через обращение в арбитражный суд.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Карточка 2: Последствия банкротства после завершения процедуры */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', lineHeight: 1.3 }}>
+                  <span style={{ display: 'inline-block' }}>Последствия банкротства</span> <br />
+                  <span style={{ display: 'inline-block' }}>после завершения процедуры</span>
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                  Законные последствия и ограничения после признания гражданина банкротом во внесудебном порядке:
+                </p>
+              </div>
+
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Освобождение от обязательств</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Освобождение касается требований кредиторов, указанных в заявлении, с учётом заявленных сумм и установленных законом исключений.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                    <line x1="1" y1="10" x2="23" y2="10" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Кредиты и займы 5 лет</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>В течение пяти лет при обращении за кредитом или займом в банки и МФО необходимо сообщать о факте внесудебного банкротства.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Повторное банкротство 5 лет</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>В течение пяти лет нельзя повторно инициировать собственное внесудебное банкротство через МФЦ.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Управление организациями 3 года</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>В течение трёх лет нельзя участвовать в управлении юридическим лицом (для банков и страховых действуют более длительные сроки).</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Доход и работа без запретов</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Статус банкрота не запрещает официально работать, получать заработную плату или пенсию после завершения процедуры.</span>
+                  </div>
+                </li>
+
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Публичность сведений</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Сведения о процедуре публикуются в ЕФРСБ. Закон не предусматривает закрытых или секретных процедур банкротства.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div style={{ textAlign: 'center' }}>
@@ -951,48 +1077,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
         }
       />
 
-      {/* ═══ БЛОК 12: ПОСЛЕДСТВИЯ ПРОЦЕДУРЫ ПОСЛЕ ЗАВЕРШЕНИЯ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Последствия банкротства</span> <br />
-              <span style={{ display: 'inline-block' }}>после завершения процедуры</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Законные последствия и ограничения после признания гражданина банкротом во внесудебном порядке:
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            {[
-              { title: 'Освобождение от обязательств', desc: 'Освобождение касается требований кредиторов, указанных в заявлении, с учётом заявленных сумм и установленных законом исключений.' },
-              { title: 'Кредиты и займы 5 лет', desc: 'В течение пяти лет при обращении за кредитом или займом в банки и МФО необходимо сообщать о факте внесудебного банкротства.' },
-              { title: 'Повторное банкротство 5 лет', desc: 'В течение пяти лет нельзя повторно инициировать собственное внесудебное банкротство через МФЦ.' },
-              { title: 'Управление организациями 3 года', desc: 'В течение трёх лет нельзя участвовать в управлении юридическим лицом (для банков и страховых действуют более длительные сроки).' },
-              { title: 'Доход и работа без запретов', desc: 'Статус банкрота не запрещает официально работать, получать заработную плату или пенсию после завершения процедуры.' },
-              { title: 'Публичность сведений', desc: 'Сведения о процедуре публикуются в ЕФРСБ. Закон не предусматривает закрытых или секретных процедур банкротства.' }
-            ].map((item, idx) => (
-              <div key={idx} style={{
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-gold)',
-                padding: '28px 22px',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
-              }}>
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', fontWeight: 600 }}>
-                  {item.title}
-                </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 13: ЧАСТЫЕ ВОПРОСЫ (10 FAQ ИЗ ТЗ) ═══ */}
+      {/* ═══ БЛОК 12: ЧАСТЫЕ ВОПРОСЫ (10 FAQ ИЗ ТЗ) ═══ */}
       <FAQBlock
         superTitle="Частые вопросы"
         title="Ответы на частые вопросы"
@@ -1002,7 +1087,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 14: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      {/* ═══ БЛОК 13: СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
@@ -1188,7 +1273,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 15: ЛОКАЛЬНЫЙ БЛОК И ОФИС ═══ */}
+      {/* ═══ БЛОК 14: ЛОКАЛЬНЫЙ БЛОК И ОФИС ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0', borderBottom: '1px solid var(--color-border)' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '40px', alignItems: 'center' }}>
@@ -1255,7 +1340,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 16: ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ БЛОК 15: ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
