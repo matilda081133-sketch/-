@@ -13,7 +13,6 @@ import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 
 export default function VzyskanieClient() {
-  const [selectedClaim, setSelectedClaim] = React.useState(0);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -298,101 +297,47 @@ export default function VzyskanieClient() {
     {
       tag: 'Поставка',
       title: 'Неоплата поставленного товара',
-      desc: 'Договоры поставки, разовые отгрузки по счетам-договорам, товарным накладным и УПД.',
-      specifics: [
-        'Доказывание надлежащей передачи товара при подписании УПД неуполномоченным лицом по доверенности или без неё',
-        'Опровержение встречных заявлений покупателя о некомплектности, скрытых недостатках или нарушении сроков поставки',
-        'Взыскание полной стоимости партии, договорной неустойки и процентов за пользование денежными средствами'
-      ],
-      docs: 'Договор поставки, спецификации, УПД / ТОРГ-12, транспортные накладные (ТрН), доверенности, акты сверки взаиморасчётов'
+      desc: 'Договоры поставки, разовые отгрузки по счетам-договорам, товарным накладным и УПД.'
     },
     {
       tag: 'Подряд',
       title: 'Долги по договорам подряда и субподряда',
-      desc: 'Строительные, монтажные, проектные и ремонтные работы, споры по актам КС-2 и КС-3.',
-      specifics: [
-        'Взыскание задолженности по односторонним актам КС-2 при уклонении заказчика от приёмки выполненных работ',
-        'Фиксация скрытых и дополнительных объёмов работ, не включённых в первоначальную смету, но согласованных сторонами',
-        'Противодействие необоснованным встречным искам по качеству и назначение судебной строительно-технической экспертизы'
-      ],
-      docs: 'Договор подряда, смета, акты КС-2, справки КС-3, общий журнал работ (КС-6), уведомления о готовности к сдаче'
+      desc: 'Строительные, монтажные, проектные и ремонтные работы, споры по актам КС-2 и КС-3.'
     },
     {
       tag: 'Аренда',
       title: 'Задолженность по аренде помещений и техники',
-      desc: 'Коммерческая недвижимость, производственные площади, склады, транспорт и спецтехника.',
-      specifics: [
-        'Взыскание постоянной и переменной (коммунальные услуги, эксплуатация) частей арендной платы',
-        'Оформление возврата помещений по акту приёма-передачи и взыскание платы за фактическое пользование до дня освобождения',
-        'Правомерное применение обеспечительного платежа и удержание имущества недобросовестного арендатора'
-      ],
-      docs: 'Договор аренды, акты приёма-передачи объекта, счета на коммунальные услуги, переписка по доступу, акты сверки'
+      desc: 'Коммерческая недвижимость, производственные площади, склады, транспорт и спецтехника.'
     },
     {
       tag: 'Услуги',
       title: 'Неоплата оказанных услуг и работ',
-      desc: 'Транспортные, логистические, экспедиционные, консалтинговые и иные возмездные услуги.',
-      specifics: [
-        'Доказывание факта реального оказания услуг при отсутствии подписанных двусторонних актов',
-        'Использование косвенных доказательств: деловая переписка, промежуточные отчёты, данные электронных систем учёта',
-        'Обоснование объёма и рыночной стоимости фактически оказанных услуг в суде'
-      ],
-      docs: 'Договор возмездного оказания услуг, технические задания, отчёты исполнителя, акты сдачи-приёмки, платёжные поручения'
+      desc: 'Транспортные, логистические, экспедиционные, консалтинговые и иные возмездные услуги.'
     },
     {
       tag: 'Займы',
       title: 'Возврат займов, кредитов и процентов',
-      desc: 'Договоры займа между юридическими лицами, процентные обязательства и штрафные санкции.',
-      specifics: [
-        'Взыскание суммы основного долга, предусмотренных договором процентов за пользование займом и штрафных санкций',
-        'Доказывание факта безналичного перечисления средств и проверка корпоративных полномочий лиц, подписавших договор',
-        'Привлечение поручителей к солидарной ответственности и обращение взыскания на заложенное имущество'
-      ],
-      docs: 'Договор займа, платёжные поручения с отметкой банка о списании, график платежей, расчёт начисленных процентов'
+      desc: 'Договоры займа между юридическими лицами, процентные обязательства и штрафные санкции.'
     },
     {
       tag: 'Авансы',
       title: 'Возврат неотработанного аванса',
-      desc: 'Расторжение договоров, односторонний отказ, неисполнение контрагентом встречных обязательств.',
-      specifics: [
-        'Юридически безупречное оформление одностороннего отказа от исполнения договора (ст. 450.1, 715, 717 ГК РФ)',
-        'Прекращение договорных обязательств и квалификация удержанного аванса как неосновательного обогащения',
-        'Начисление процентов по ст. 395 ГК РФ с момента истечения срока на возврат аванса'
-      ],
-      docs: 'Договор, платёжные поручения на перечисление аванса, уведомление о расторжении / отказе от договора, требование о возврате'
+      desc: 'Расторжение договоров, односторонний отказ, неисполнение контрагентом встречных обязательств.'
     },
     {
       tag: 'Обогащение',
       title: 'Неосновательное обогащение',
-      desc: 'Ошибочные платежи, бездоговорное пользование имуществом, излишне перечисленные средства.',
-      specifics: [
-        'Доказывание отсутствия законных или договорных оснований для удержания денежных средств (ст. 1102 ГК РФ)',
-        'Опровержение позиции ответчика о наличии встречного предоставления либо признаков дарения',
-        'Взыскание процентов за неправомерное пользование чужими денежными средствами за весь период удержания'
-      ],
-      docs: 'Банковские выписки, платёжные документы с назначением платежа, переписка о возврате ошибочно зачисленных сумм'
+      desc: 'Ошибочные платежи, бездоговорное пользование имуществом, излишне перечисленные средства.'
     },
     {
       tag: 'Санкции',
       title: 'Договорная неустойка и проценты',
-      desc: 'Взыскание штрафов, договорных пеней и процентов за пользование чужими денежными средствами (ст. 395 ГК РФ).',
-      specifics: [
-        'Подготовка детального помесячного и подневного математического расчёта неустойки по правилам договора',
-        'Противодействие необоснованному снижению неустойки судом по ст. 333 ГК РФ и обоснование её соразмерности',
-        'Взыскание штрафных санкций по день фактической оплаты долга в исполнительном производстве'
-      ],
-      docs: 'Договор с условием о размере неустойки/штрафов, детальный расчёт требований, банковские выписки о датах просрочки'
+      desc: 'Взыскание штрафов, договорных пеней и процентов за пользование чужими денежными средствами (ст. 395 ГК РФ).'
     },
     {
       tag: 'Портфель',
       title: 'Портфель просроченной дебиторской задолженности',
-      desc: 'Комплексная системная работа с реестром должников компании, сегментация по срокам и рискам.',
-      specifics: [
-        'Экспресс-аудит и скоринг портфеля: выявление платёжеспособных должников и зон риска банкротства',
-        'Стандартизация претензионно-исковой работы и пакетная подача заявлений в арбитражные суды',
-        'Сквозной контроль: от направления претензии до исполнительного листа и взаимодействия с банками'
-      ],
-      docs: 'Реестр дебиторской задолженности компании, первичные документы по ключевым должникам, акты сверки'
+      desc: 'Комплексная системная работа с реестром должников компании, сегментация по срокам и рискам.'
     }
   ];
 
@@ -1362,7 +1307,7 @@ export default function VzyskanieClient() {
       {/* ═══ БЛОК 7: С КАКИМИ ДЕНЕЖНЫМИ ТРЕБОВАНИЯМИ РАБОТАЕМ ═══ */}
       <section className="section bg-white" id="claims" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '44px', textAlign: 'left' }}>
+          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
             <div style={{
               fontSize: '13px',
               fontWeight: 700,
@@ -1382,231 +1327,69 @@ export default function VzyskanieClient() {
               </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Взыскиваем долги организаций и индивидуальных предпринимателей по всем видам коммерческих договоров. Выберите категорию спора для просмотра ключевой правовой специфики:
+              Взыскиваем долги организаций и индивидуальных предпринимателей по всем видам коммерческих договоров:
             </p>
           </div>
 
-          {/* Интерактивный реестр / Навигатор по категориям споров */}
-          <div className="claims-interactive-layout" style={{
-            display: 'flex',
-            gap: '32px',
-            alignItems: 'stretch',
-            marginBottom: '36px'
-          }}>
-            {/* Левая колонка: список категорий (навигатор) */}
-            <div style={{
-              flex: '1 1 380px',
-              maxWidth: '420px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '8px'
-            }} className="claims-menu-col">
-              {claims.map((item, idx) => {
-                const isActive = selectedClaim === idx;
-                return (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => setSelectedClaim(idx)}
-                    style={{
-                      width: '100%',
-                      textAlign: 'left',
-                      padding: '14px 18px',
-                      background: isActive ? 'var(--color-primary)' : 'linear-gradient(160deg, #FFFFFF 0%, #FAF8F5 100%)',
-                      color: isActive ? '#FFFFFF' : 'var(--color-deep-blue)',
-                      border: isActive ? '1px solid var(--color-primary)' : '1px solid var(--color-border)',
-                      borderLeft: isActive ? '4px solid var(--color-gold)' : '3px solid transparent',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      gap: '12px',
-                      transition: 'all 0.25s ease',
-                      boxShadow: isActive ? '0 6px 18px rgba(23, 50, 77, 0.12)' : 'none',
-                      outline: 'none',
-                      boxSizing: 'border-box'
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0 }}>
-                      <span style={{
-                        fontSize: '11px',
-                        fontWeight: 700,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.08em',
-                        padding: '3px 8px',
-                        background: isActive ? 'rgba(193, 160, 102, 0.25)' : 'rgba(193, 160, 102, 0.12)',
-                        color: isActive ? '#FFFFFF' : 'var(--color-gold)',
-                        flexShrink: 0
-                      }}>
-                        {item.tag}
-                      </span>
-                      <span style={{
-                        fontSize: '14.5px',
-                        fontWeight: isActive ? 600 : 500,
-                        color: isActive ? '#FFFFFF' : 'var(--color-deep-blue)',
-                        whiteSpace: 'nowrap',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis'
-                      }}>
-                        {item.title}
-                      </span>
-                    </div>
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke={isActive ? 'var(--color-gold)' : 'rgba(23, 50, 77, 0.35)'}
-                      strokeWidth="2.4"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      style={{ flexShrink: 0, transform: isActive ? 'translateX(3px)' : 'none', transition: 'transform 0.25s ease' }}
-                    >
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Правая колонка: фокусное досье и правовая специфика */}
-            <div style={{
-              flex: '1 1 560px',
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FAF8F5 100%)',
-              border: '1px solid var(--color-border)',
-              borderTop: '4px solid var(--color-gold)',
-              boxShadow: '0 8px 30px rgba(23, 50, 77, 0.06)',
-              padding: '36px 34px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              gap: '24px',
-              position: 'relative',
-              boxSizing: 'border-box'
-            }} className="claims-detail-panel">
-              {/* Фоновый водяной знак */}
-              <div style={{ position: 'absolute', bottom: '15px', right: '15px', opacity: 0.04, pointerEvents: 'none' }}>
-                <svg width="140" height="140" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-              </div>
-
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+          {/* Чистый минималистичный реестр без карточек */}
+          <div className="grid grid-3" style={{ gap: '36px 32px', marginBottom: '40px' }}>
+            {claims.map((item, idx) => (
+              <div
+                key={idx}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  paddingBottom: '24px',
+                  borderBottom: '1px solid rgba(193, 160, 102, 0.25)'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                   <span style={{
                     fontSize: '11px',
                     fontWeight: 700,
+                    color: 'var(--color-gold)',
                     textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    padding: '4px 10px',
-                    background: 'rgba(193, 160, 102, 0.15)',
-                    color: 'var(--color-gold)'
+                    letterSpacing: '0.08em'
                   }}>
-                    Категория: {claims[selectedClaim].tag}
+                    {item.tag}
                   </span>
-                  <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 500 }}>
-                    Специализация по спору
-                  </span>
+                  <span style={{
+                    width: '18px',
+                    height: '1px',
+                    background: 'var(--color-gold)',
+                    opacity: 0.6
+                  }} />
                 </div>
 
                 <h3 style={{
-                  fontSize: '24px',
+                  fontSize: '18px',
                   fontFamily: 'var(--font-serif)',
                   color: 'var(--color-deep-blue)',
-                  margin: '0 0 12px 0',
-                  lineHeight: 1.3,
+                  margin: '0 0 8px 0',
+                  lineHeight: 1.35,
                   fontWeight: 600
                 }}>
-                  {claims[selectedClaim].title}
+                  {item.title}
                 </h3>
 
                 <p style={{
-                  fontSize: '15px',
+                  fontSize: '14.5px',
                   color: 'var(--color-text-secondary)',
                   lineHeight: 1.6,
-                  margin: '0 0 24px 0',
-                  paddingBottom: '20px',
-                  borderBottom: '1px solid rgba(23, 50, 77, 0.08)'
+                  margin: 0
                 }}>
-                  {claims[selectedClaim].desc}
+                  {item.desc}
                 </p>
-
-                {/* Юридическая специфика взыскания */}
-                <div style={{ marginBottom: '24px' }}>
-                  <div style={{
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    color: 'var(--color-primary)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.06em',
-                    marginBottom: '14px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px'
-                  }}>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                    Юридическая специфика и тактика взыскания:
-                  </div>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    {claims[selectedClaim].specifics.map((spec, sIdx) => (
-                      <li key={sIdx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        <span style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5, fontWeight: 500 }}>
-                          {spec}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Документы для анализа */}
-                <div style={{
-                  background: '#FAF7F2',
-                  border: '1px solid rgba(193, 160, 102, 0.25)',
-                  borderLeft: '3px solid var(--color-gold)',
-                  padding: '16px 20px',
-                  boxSizing: 'border-box'
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                      <polyline points="14 2 14 8 20 8" />
-                      <line x1="16" y1="13" x2="8" y2="13" />
-                      <line x1="16" y1="17" x2="8" y2="17" />
-                    </svg>
-                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                      Ключевые документы для экспресс-анализа
-                    </strong>
-                  </div>
-                  <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, display: 'block' }}>
-                    {claims[selectedClaim].docs}
-                  </span>
-                </div>
               </div>
-
-              {/* Кнопка действия внутри панели */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap', paddingTop: '16px', borderTop: '1px solid rgba(23, 50, 77, 0.08)' }}>
-                <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontWeight: 500 }}>
-                  Проанализируем договор и сообщим судебную перспективу за 24 часа
-                </span>
-                <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px', whiteSpace: 'nowrap' }}>
-                  Обсудить взыскание по договору
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Плашка действия под категориями */}
           <div style={{
-            background: '#FFFFFF',
+            background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
             border: '1px solid var(--color-border)',
-            borderLeft: '4px solid var(--color-gold)',
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-            padding: '22px 28px',
+            borderLeft: '4px solid var(--color-primary)',
+            padding: '24px 30px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -1614,7 +1397,7 @@ export default function VzyskanieClient() {
             gap: '16px'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: '1 1 500px' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                 <polyline points="9 11 12 14 22 4" />
                 <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
               </svg>
@@ -1627,25 +1410,6 @@ export default function VzyskanieClient() {
             </a>
           </div>
         </div>
-
-        <style dangerouslySetInnerHTML={{__html: `
-          @media (max-width: 900px) {
-            .claims-interactive-layout {
-              flex-direction: column !important;
-              gap: 20px !important;
-            }
-            .claims-menu-col {
-              max-width: 100% !important;
-              flex: 1 1 auto !important;
-              display: grid !important;
-              grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
-              gap: 8px !important;
-            }
-            .claims-detail-panel {
-              padding: 24px 20px !important;
-            }
-          }
-        `}} />
       </section>
 
       {/* ═══ БЛОК 8: ДОКУМЕНТЫ ДЛЯ ПРЕДВАРИТЕЛЬНОГО АНАЛИЗА (ШАБЛОН «ДОКУМЕНТЫ») ═══ */}
