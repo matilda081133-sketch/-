@@ -490,40 +490,101 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
       {/* ═══ БЛОК 4: ЧТО ПРОВЕРИТ ЮРИСТ ДО ПОДАЧИ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+          <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span style={{ display: 'inline-block' }}>Что проверит юрист</span> <br />
               <span style={{ display: 'inline-block' }}>до подачи заявления</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Тщательная юридическая диагностика гарантирует отсутствие рисков возврата документов сотрудниками МФЦ и перехода дела в Арбитражный суд.
+              <span style={{ display: 'inline-block' }}>Комплексная работа юриста включает анализ материалов производства,</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>оснований статьи 223.2, состава долга, кредиторов и рисков прекращения до обращения в МФЦ.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
+          <div className="grid grid-4" style={{ gap: '20px', position: 'relative', marginBottom: '40px' }}>
             {[
-              { title: 'Основание для МФЦ', desc: 'Определено конкретное основание из статьи 223.2, а не только подходящая сумма долга.' },
-              { title: 'Исполнительные производства', desc: 'Проверены даты, основания окончания, новые производства и содержание исполнительных документов.' },
-              { title: 'Доход и статус', desc: 'Для пенсионеров, участников СВО и получателей пособия определён комплект актуальных справок.' },
-              { title: 'Имущество и изменения', desc: 'Оценены зарегистрированное имущество, имущественные права, наследство, подарки и иные обстоятельства.' },
-              { title: 'Кредиторы и суммы', desc: 'Сформирован полный список кредиторов с корректными наименованиями и максимально точными суммами.' },
-              { title: 'Исключения и маршрут', desc: 'Обозначены исключения; если условия МФЦ не соблюдаются — предложен судебный маршрут.' }
+              {
+                num: '01',
+                title: <><span style={{ display: 'block' }}>Основание</span><span style={{ display: 'block' }}>по статье 223.2</span></>,
+                desc: 'Определяем конкретное правовое основание (п. 4 ч. 1 ст. 46, пенсия, пособие или длительность производства).'
+              },
+              {
+                num: '02',
+                title: <><span style={{ display: 'block' }}>Исполнительные</span><span style={{ display: 'block' }}>производства</span></>,
+                desc: 'Проверяем даты, основания окончания, отсутствие новых активных производств и актуальность сведений в ФССП.'
+              },
+              {
+                num: '03',
+                title: <><span style={{ display: 'block' }}>Состав долга</span><span style={{ display: 'block' }}>и диапазон сумм</span></>,
+                desc: 'Сверяем совокупный размер обязательств с установленным законом коридором от 25 000 до 1 000 000 рублей.'
+              },
+              {
+                num: '04',
+                title: <><span style={{ display: 'block' }}>Справки</span><span style={{ display: 'block' }}>и подтверждения</span></>,
+                desc: 'Для пенсионеров, участников СВО и родителей организуем получение актуальных справок установленной формы.'
+              },
+              {
+                num: '05',
+                title: <><span style={{ display: 'block' }}>Список кредиторов</span><span style={{ display: 'block' }}>и реквизиты</span></>,
+                desc: 'Формируем полный список кредиторов по утверждённой Минэкономразвития форме с точными суммами и адресами.'
+              },
+              {
+                num: '06',
+                title: <><span style={{ display: 'block' }}>Имущество</span><span style={{ display: 'block' }}>и доходы</span></>,
+                desc: 'Оцениваем активы и исключаем риски перехода процедуры в Арбитражный суд по инициативе кредиторов.'
+              },
+              {
+                num: '07',
+                title: <><span style={{ display: 'block' }}>Исключения</span><span style={{ display: 'block' }}>из списания</span></>,
+                desc: 'Выделяем обязательства (алименты, вред здоровью и др.), которые по закону не подлежат аннулированию.'
+              },
+              {
+                num: '08',
+                title: <><span style={{ display: 'block' }}>Маршрут</span><span style={{ display: 'block' }}>и подача в МФЦ</span></>,
+                desc: 'Готовим финальный пакет документов и пошаговую инструкцию для успешной регистрации заявления в МФЦ.'
+              }
             ].map((item, idx) => (
               <div key={idx} className="hover-lift" style={{
-                padding: '30px 24px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                padding: '36px 24px 28px 24px',
                 border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                minHeight: '235px',
+                boxSizing: 'border-box',
+                position: 'relative'
               }}>
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', fontWeight: 600 }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.25, minHeight: '46px' }}>
                   {item.title}
                 </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, minHeight: '68px' }}>
                   {item.desc}
                 </p>
               </div>
             ))}
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 32px' }}>
+              Получить консультацию
+            </a>
           </div>
         </div>
       </section>
@@ -531,52 +592,125 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
       {/* ═══ БЛОК 5: ДОКУМЕНТЫ ДЛЯ ПРЕДВАРИТЕЛЬНОГО АНАЛИЗА ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
               <span style={{ display: 'inline-block' }}>Документы для</span> <br />
               <span style={{ display: 'inline-block' }}>предварительного анализа</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Базовые сведения и документы, необходимые для проверки ситуации и подготовки заявления в МФЦ.
+              <span style={{ display: 'inline-block' }}>Для первичной проверки достаточно того, что сохранилось у вас на руках.</span> <br />
+              <span style={{ display: 'inline-block' }}>Точный перечень и недостающие справки юрист определит на консультации.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            {[
-              { title: 'Личность', desc: 'Паспорт, СНИЛС, ИНН; место жительства или пребывания для выбора МФЦ.' },
-              { title: 'Долги', desc: 'Договоры, справки, выписки, расписки, судебные акты, перечень кредиторов и ориентировочные суммы.' },
-              { title: 'Приставы', desc: 'Постановления о возбуждении и окончании производств, сведения о возврате исполнительных документов, данные ФССП.' },
-              { title: 'Доход и статус', desc: 'Сведения о пенсии, участии в СВО, ежемесячном пособии и иных доходах; применимые справки по актуальной форме.' },
-              { title: 'Имущество', desc: 'Недвижимость, транспорт, доли, счета и иные права; сведения о наследстве, дарах и ожидаемых изменениях.' },
-              { title: 'Предыдущие процедуры', desc: 'Даты завершения или прекращения прошлых процедур банкротства и возвратов заявлений.' }
-            ].map((item, idx) => (
-              <div key={idx} style={{
-                background: 'var(--color-white)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-gold)',
-                padding: '28px 22px',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
-              }}>
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', fontWeight: 600 }}>
-                  {item.title}
-                </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Личные документы и сведения об обязательствах */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>Личные документы</span> <br />
+                <span style={{ display: 'inline-block' }}>и сведения об обязательствах</span>
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Паспорт и идентификаторы</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Паспорт РФ, СНИЛС, ИНН; адрес регистрации по месту жительства или пребывания в Липецке либо Липецкой области.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Кредитные договоры и займы</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Договоры с банками, МФО, расписки, налоговые требования, квитанции ЖКХ и справки об актуальном остатке задолженности.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Судебные акты и приказы</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Судебные приказы, решения районных судов и мировых судей о взыскании задолженности, требования коллекторов.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Карточка 2: ФССП, доходы и обязательные справки */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <span style={{ display: 'inline-block' }}>ФССП, доходы</span> <br />
+                <span style={{ display: 'inline-block' }}>и обязательные справки</span>
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Материалы исполнительных производств</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Постановления об окончании по п. 4 ч. 1 ст. 46 Федерального закона № 229-ФЗ, постановления о возбуждении, данные базы ФССП.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Справки о социальном статусе</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Справка СФР о пенсии или едином детском пособии, справка об участии в СВО (выданные не ранее 3 месяцев до подачи).</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Сведения об имуществе и счетах</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Сведения о недвижимости, транспорте, долях в бизнесе, открытых банковских счетах и совершённых сделках за 3 года.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div style={{
             background: 'var(--color-white)',
             border: '1px solid var(--color-border)',
             borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
             padding: '20px 28px',
-            fontSize: '14px',
+            fontSize: '14.5px',
             color: 'var(--color-deep-blue)',
             lineHeight: 1.6
           }}>
-            <strong>Предупреждение по безопасности:</strong> Не отправляйте паспорт, банковские выписки и финансовые документы через обычную форму на сайте. После первичного звонка юрист сообщит защищённый способ передачи.
+            <strong>Предупреждение по безопасности:</strong> Не отправляйте паспорт, банковские выписки и персональные документы через открытые формы на сайте. После первичной консультации юрист согласует защищённый канал передачи документов для правовой экспертизы.
           </div>
         </div>
       </section>
