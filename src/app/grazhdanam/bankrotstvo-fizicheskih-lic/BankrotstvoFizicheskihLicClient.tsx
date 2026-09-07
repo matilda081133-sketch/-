@@ -282,9 +282,30 @@ export default function BankrotstvoFizicheskihLicClient() {
           </>
         }
         trustItems={[
-          { text: 'Оцениваем не только сумму долга, но и имущество, доходы, семью и сделки' },
-          { text: 'Объясняем ограничения до заключения договора и подачи заявления в суд' },
-          { text: 'Сопровождаем судебную процедуру и взаимодействие с финансовым управляющим' }
+          {
+            text: (
+              <>
+                <span style={{ display: 'inline-block' }}>Оцениваем не только сумму долга,</span> <br className="hidden-mobile" />
+                <span style={{ display: 'inline-block' }}>но и имущество, доходы, семью и сделки</span>
+              </>
+            )
+          },
+          {
+            text: (
+              <>
+                <span style={{ display: 'inline-block' }}>Объясняем ограничения до заключения</span> <br className="hidden-mobile" />
+                <span style={{ display: 'inline-block' }}>договора и подачи заявления в суд</span>
+              </>
+            )
+          },
+          {
+            text: (
+              <>
+                <span style={{ display: 'inline-block' }}>Сопровождаем судебную процедуру</span> <br className="hidden-mobile" />
+                <span style={{ display: 'inline-block' }}>и работу с финансовым управляющим</span>
+              </>
+            )
+          }
         ]}
         imageUrl="/images/nacheshnikov.jpg"
         imageName="Владимир Викторович Начешников"
@@ -869,7 +890,7 @@ export default function BankrotstvoFizicheskihLicClient() {
             }
           `}} />
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 380px))', gap: '20px' }}>
+          <div className="grid grid-4" style={{ gap: '20px' }}>
             <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
                 className="card related-service-card" 

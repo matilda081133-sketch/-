@@ -283,8 +283,22 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
         }
         trustItems={[
           { text: 'Сумма обязательств — от 25 000 до 1 000 000 ₽' },
-          { text: 'Процедура в МФЦ длится шесть месяцев и не требует финансового управляющего' },
-          { text: 'Одной подходящей суммы долга недостаточно: нужно одно из четырёх законных оснований' }
+          {
+            text: (
+              <>
+                <span style={{ display: 'inline-block' }}>Процедура в МФЦ длится шесть месяцев</span> <br className="hidden-mobile" />
+                <span style={{ display: 'inline-block' }}>и не требует финансового управляющего</span>
+              </>
+            )
+          },
+          {
+            text: (
+              <>
+                <span style={{ display: 'inline-block' }}>Одной подходящей суммы долга недостаточно:</span> <br className="hidden-mobile" />
+                <span style={{ display: 'inline-block' }}>нужно одно из четырёх законных оснований</span>
+              </>
+            )
+          }
         ]}
         imageUrl="/images/nacheshnikov.jpg"
         imageName="Владимир Викторович Начешников"
@@ -671,7 +685,8 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Материалы исполнительных производств</strong>
@@ -680,7 +695,8 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Справки о социальном статусе</strong>
@@ -689,7 +705,8 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Сведения об имуществе и счетах</strong>
@@ -971,7 +988,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
             }
           `}} />
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 380px))', gap: '20px' }}>
+          <div className="grid grid-4" style={{ gap: '20px' }}>
             <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
                 className="card related-service-card" 
