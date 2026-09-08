@@ -512,8 +512,10 @@ export default function ArbitrazhClient() {
           </span>
         }
         subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Изучим документы и стадию дела, определим процессуальные риски, подготовим правовую позицию и представим интересы компании или ИП в арбитражном суде.
+          <span style={{ display: 'inline-block', maxWidth: '750px' }}>
+            <span style={{ display: 'inline-block' }}>Изучим документы и стадию дела, определим процессуальные риски,</span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>подготовим правовую позицию и представим интересы</span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>компании или ИП в арбитражном суде.</span>
           </span>
         }
         primaryCtaText="Обсудить арбитражный спор"
@@ -699,7 +701,6 @@ export default function ArbitrazhClient() {
                       flexDirection: 'column',
                       justifyContent: 'space-between',
                       position: 'relative',
-                      borderTop: '3px solid var(--color-primary)',
                       cursor: 'pointer',
                       transition: 'all 0.35s ease'
                     }}
@@ -732,8 +733,7 @@ export default function ArbitrazhClient() {
         <div className="container">
           <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
-              <span style={{ display: 'inline-block' }}>Когда нужно действовать</span> <br />
-              <span style={{ display: 'inline-block' }}>без промедления</span>
+              Когда нужно действовать без промедления
             </h2>
             <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', marginBottom: '40px', maxWidth: '720px', lineHeight: 1.6 }}>
@@ -945,8 +945,7 @@ export default function ArbitrazhClient() {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                <polyline points="9 11 12 14 22 4" />
-                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
               <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
                 Конфиденциальные документы передаются после согласования защищённого канала связи
@@ -962,24 +961,40 @@ export default function ArbitrazhClient() {
       {/* ═══ БЛОК 5: ПРОЦЕССУАЛЬНОЕ ПОЛОЖЕНИЕ + 3 ЭТАПА АНАЛИЗА И ЗАЩИТЫ ═══ */}
       <section className="section bg-white" id="routes" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '40px', textAlign: 'left' }}>
-            <div style={{
-              fontSize: '13px',
-              fontWeight: 700,
-              color: 'var(--color-gold)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              marginBottom: '12px'
-            }}>
-              Процессуальное положение
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            flexWrap: 'wrap',
+            gap: '24px',
+            marginBottom: '36px'
+          }}>
+            <div style={{ flex: '1 1 420px', minWidth: '280px' }}>
+              <div style={{
+                fontSize: '13px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                marginBottom: '12px'
+              }}>
+                Процессуальное положение
+              </div>
+              <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2 }}>
+                <span style={{ display: 'inline-block' }}>Помощь в зависимости</span> <br />
+                <span style={{ display: 'inline-block' }}>от вашей роли в суде</span>
+              </h2>
             </div>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Помощь в зависимости</span> <br />
-              <span style={{ display: 'inline-block' }}>от вашей роли в суде</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+            <div style={{
+              flex: '0 1 480px',
+              minWidth: '280px',
+              fontSize: '15.5px',
+              color: 'var(--color-text-secondary)',
+              lineHeight: 1.6,
+              textAlign: 'right'
+            }}>
               Задачи, процессуальные инструменты и доказательства кардинально различаются в зависимости от стороны спора.
-            </p>
+            </div>
           </div>
 
           {/* Компактные карточки процессуального положения */}
@@ -1079,7 +1094,8 @@ export default function ArbitrazhClient() {
             }}>
               <div style={{ flex: '1 1 auto', minWidth: '280px' }}>
                 <h3 style={{ fontSize: 'clamp(19px, 2.2vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
-                  3 этапа правового анализа и процессуальной защиты
+                  <span style={{ display: 'inline-block' }}>3 этапа правового анализа</span> <br />
+                  <span style={{ display: 'inline-block' }}>и процессуальной защиты</span>
                 </h3>
               </div>
               <div className="stages-subtitle-right" style={{
@@ -1092,8 +1108,8 @@ export default function ArbitrazhClient() {
               }}>
                 <span style={{ display: 'block', fontWeight: 500 }}>Позволяет безошибочно определить правовую позицию:</span>
                 <span style={{ display: 'block', color: 'rgba(255, 255, 255, 0.7)' }}>
-                  <span style={{ display: 'inline-block' }}>проверка оснований, ходатайства об исключении доказательств</span> <br className="hidden-mobile" />
-                  <span style={{ display: 'inline-block' }}>или обжалование.</span>
+                  <span style={{ display: 'inline-block' }}>проверка оснований, ходатайства об исключении</span> <br className="hidden-mobile" />
+                  <span style={{ display: 'inline-block' }}>доказательств или обжалование.</span>
                 </span>
               </div>
             </div>
@@ -1145,24 +1161,41 @@ export default function ArbitrazhClient() {
       {/* ═══ БЛОК 6: КАК СТРОИТСЯ РАБОТА (ЭТАПЫ ВЕДЕНИЯ АРБИТРАЖНОГО ДЕЛА) ═══ */}
       <section className="section bg-light" id="process" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
-            <div style={{
-              fontSize: '13px',
-              fontWeight: 700,
-              color: 'var(--color-gold)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              marginBottom: '12px'
-            }}>
-              Этапы юридического сопровождения
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            flexWrap: 'wrap',
+            gap: '24px',
+            marginBottom: '44px'
+          }}>
+            <div style={{ flex: '1 1 480px', minWidth: '280px' }}>
+              <div style={{
+                fontSize: '13px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                marginBottom: '12px'
+              }}>
+                Этапы юридического сопровождения
+              </div>
+              <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', margin: 0, lineHeight: 1.2 }}>
+                Как строится ведение арбитражного дела
+              </h2>
             </div>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Как строится ведение</span> <br />
-              <span style={{ display: 'inline-block' }}>арбитражного дела</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+            <div style={{
+              flex: '0 1 440px',
+              minWidth: '280px',
+              fontSize: '15.5px',
+              color: 'var(--color-deep-blue)',
+              opacity: 0.9,
+              fontWeight: 500,
+              lineHeight: 1.6,
+              textAlign: 'right'
+            }}>
               Чёткий регламент процессуальной работы и прозрачный результат на каждом этапе взаимодействия.
-            </p>
+            </div>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
