@@ -79,6 +79,11 @@ const specialistAlts: Record<string, string> = {
   'polozova-elena-anatolevna': 'Елена Анатольевна Полозова — юрист ЮК Де-Юре'
 };
 
+const specialistRegistryNumbers: Record<string, string> = {
+  'konopkin-dmitriy-sergeevich': '48/812',
+  'gusev-oleg-yurevich': '48/672'
+};
+
 export default function SpecialistyPage() {
   const specialists = Object.values(teamData);
 
@@ -558,9 +563,9 @@ export default function SpecialistyPage() {
                           gap: '2px'
                         }}>
                           <div>{specialistListRoles[sp.slug] || sp.status}</div>
-                          {sp.advocateStatus?.registryNumber && (
+                          {(specialistRegistryNumbers[sp.slug] || sp.advocateStatus?.registryNumber) && (
                             <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
-                              Рег. № {sp.advocateStatus.registryNumber} в реестре адвокатов Липецкой области
+                              Рег. № {specialistRegistryNumbers[sp.slug] || sp.advocateStatus?.registryNumber} в реестре адвокатов Липецкой области
                             </div>
                           )}
                         </div>

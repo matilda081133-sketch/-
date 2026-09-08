@@ -453,6 +453,10 @@ export const teamData: Record<string, TeamMember> = {
       { label: 'Образование', text: 'Воронежский государственный университет, высшее юридическое образование' }
     ],
     registryLink: 'https://aplip.fparf.ru/about/lawyers/gusev-oleg-yurevich/',
+    advocateStatus: {
+      registryNumber: '48/672',
+      chamber: 'Адвокатская палата Липецкой области'
+    },
     awards: [
       'Знак отличия «За верность закону» II степени',
       'Медаль «290 лет прокуратуре России»',

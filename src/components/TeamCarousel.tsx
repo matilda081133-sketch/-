@@ -240,7 +240,7 @@ export default function TeamCarousel({
                 <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
                   {person.link && (
                     <Link href={person.link} className="spec-card-link" style={{ fontSize: '13px', color: 'var(--color-primary, #10273B)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                      <span>Подробнее о специалисте</span>
+                      <span>{customLinkText || 'Подробнее о специалисте'}</span>
                       <span>→</span>
                     </Link>
                   )}
@@ -310,7 +310,7 @@ export default function TeamCarousel({
           )}
         </div>
 
-        {showDisclaimer && (
+        {(showDisclaimer || customDisclaimer) && (
           <div style={{ marginTop: '36px', paddingTop: '20px', borderTop: '1px solid rgba(16,39,59,0.08)' }}>
             <p style={{
               margin: 0,
@@ -322,7 +322,7 @@ export default function TeamCarousel({
               paddingLeft: '14px',
               maxWidth: '860px'
             }}>
-              ЮК «Де-Юре» и Коллегия адвокатов «Де-Юре» являются самостоятельными организациями. Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
+              {customDisclaimer || 'ЮК «Де-Юре» и Коллегия адвокатов «Де-Юре» являются самостоятельными организациями. Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.'}
             </p>
           </div>
         )}
