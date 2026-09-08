@@ -1037,13 +1037,28 @@ export default function ArbitrazhClient() {
             padding: '36px 32px',
             position: 'relative'
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '16px',
+              marginBottom: '24px',
+              position: 'relative',
+              zIndex: 1
+            }}>
               <div>
                 <h3 style={{ fontSize: 'clamp(20px, 2.5vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
                   3 этапа правового анализа и процессуальной защиты
                 </h3>
               </div>
-              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '520px', lineHeight: 1.5 }}>
+              <div className="stages-subtitle-right" style={{
+                fontSize: '13.5px',
+                color: 'rgba(255, 255, 255, 0.8)',
+                maxWidth: '540px',
+                lineHeight: 1.5,
+                textAlign: 'right'
+              }}>
                 <span style={{ display: 'block' }}>Позволяет безошибочно определить правовую позицию:</span>
                 <span style={{ display: 'block' }}>проверка оснований, ходатайства об исключении доказательств или обжалование.</span>
               </div>
@@ -1295,7 +1310,7 @@ export default function ArbitrazhClient() {
                 key={idx} 
                 className="usp-card" 
                 style={{ 
-                  padding: '40px 32px', 
+                  padding: '30px 26px', 
                   borderRight: '1px solid rgba(23, 50, 77, 0.1)',
                   borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
                   background: 'rgba(247, 244, 237, 0.45)',
@@ -1310,10 +1325,10 @@ export default function ArbitrazhClient() {
                   
                   <div style={{ 
                     fontSize: '11px', 
-                    letterSpacing: '0.1em', 
+                    letterSpacing: '0.08em', 
                     color: 'var(--color-gold)', 
                     fontWeight: 700, 
-                    marginBottom: '16px', 
+                    marginBottom: '8px', 
                     textTransform: 'uppercase', 
                     position: 'relative', 
                     zIndex: 1 
@@ -1321,24 +1336,21 @@ export default function ArbitrazhClient() {
                     {item.tag}
                   </div>
                   <h3 style={{ 
-                    fontSize: '20px', 
-                    fontWeight: 'bold', 
+                    fontSize: '19px', 
+                    fontWeight: 600, 
                     color: 'var(--color-deep-blue)', 
-                    marginBottom: '16px', 
+                    marginBottom: '8px', 
                     fontFamily: 'var(--font-serif)', 
                     lineHeight: 1.3, 
-                    minHeight: '52px', 
-                    display: 'flex', 
-                    alignItems: 'flex-start', 
                     position: 'relative', 
                     zIndex: 1 
                   }}>
                     {item.title}
                   </h3>
+                  <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: 1.55, margin: 0, position: 'relative', zIndex: 1 }}>
+                    {item.desc}
+                  </p>
                 </div>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
-                  {item.desc}
-                </p>
               </div>
             ))}
           </div>
@@ -1687,9 +1699,9 @@ export default function ArbitrazhClient() {
             grid-template-columns: repeat(2, 1fr) !important;
           }
         }
-        @media (max-width: 640px) {
-          .claims-matrix-grid {
-            grid-template-columns: 1fr !important;
+        @media (max-width: 768px) {
+          .stages-subtitle-right {
+            text-align: left !important;
           }
         }
       `}} />
