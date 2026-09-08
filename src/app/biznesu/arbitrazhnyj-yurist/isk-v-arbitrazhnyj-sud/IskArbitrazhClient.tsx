@@ -584,12 +584,12 @@ export default function IskArbitrazhClient() {
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '18px', flex: '1 1 540px', minWidth: '280px', position: 'relative' }}>
                   <div style={{
                     fontFamily: 'var(--font-serif)',
-                    fontSize: 'clamp(82px, 8vw, 114px)',
+                    fontSize: 'clamp(64px, 6.5vw, 88px)',
                     fontWeight: 800,
                     color: 'var(--color-gold)',
                     lineHeight: 0.72,
-                    marginLeft: '-36px',
-                    marginTop: '-34px',
+                    marginLeft: '-46px',
+                    marginTop: '-40px',
                     opacity: 0.2,
                     userSelect: 'none',
                     flexShrink: 0,
