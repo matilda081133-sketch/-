@@ -1797,7 +1797,7 @@ export default function ArbitrazhClient() {
               >
                 <div>
                   <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
-                    Исполнительное производство для бизнеса
+                    Исполнительное производство<br />для бизнеса
                   </h3>
                   <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                     Фактическое исполнение решений суда, розыск счетов и имущества должника, работа с банками и контроль действий приставов.
