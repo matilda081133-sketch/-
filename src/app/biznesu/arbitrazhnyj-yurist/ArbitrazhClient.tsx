@@ -525,12 +525,12 @@ export default function ArbitrazhClient() {
           { text: 'Работаем со стороны истца, ответчика и третьего лица' },
           { text: 'Подключаемся до подачи иска и к уже начавшемуся делу' },
           { text: 'Объём, этап и стоимость согласуем до начала работы' },
-          { text: 'Личное и онлайн участие в судах всех инстанций' }
+          { text: 'Куратор — адвокат Дмитрий Сергеевич Конопкин' }
         ]}
-        imageUrl="/images/hero_legal_premium.png"
-        imageName="Судебная практика ЮК «Де-Юре»"
-        imageSubtitle="Комплексное представительство интересов бизнеса в арбитражных судах"
-        imageObjectPosition="center 20%"
+        imageUrl="/images/konopkin.jpg"
+        imageName="Дмитрий Сергеевич Конопкин"
+        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления"
+        imageObjectPosition="center 25%"
       />
 
       {/* ═══ БЛОК 2: С КАКОЙ СИТУАЦИЕЙ СТОЛКНУЛАСЬ КОМПАНИЯ ═══ */}
@@ -632,65 +632,88 @@ export default function ArbitrazhClient() {
             ))}
           </div>
 
-          {/* Карточки дочерних специализированных услуг */}
-          <div style={{
-            background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
-            padding: '36px 40px',
-            borderTop: '3px solid var(--color-gold)',
-            marginBottom: '32px',
-            boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
-          }}>
+          {/* ═══ СПЕЦИАЛИЗИРОВАННЫЕ УСЛУГИ КЛАСТЕРА (ШАБЛОН КАРТОЧЕК НАПРАВЛЕНИЙ) ═══ */}
+          <div style={{ marginTop: '56px', marginBottom: '16px' }}>
             <div style={{ marginBottom: '24px' }}>
-              <span style={{ fontSize: '12px', color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
-                Специализированные услуги кластера
-              </span>
-              <h3 style={{ margin: '8px 0 0 0', fontSize: '24px', fontFamily: 'var(--font-serif)', color: '#FFFFFF' }}>
+              <div style={{
+                fontSize: '12px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                marginBottom: '8px'
+              }}>
+                Специализированные услуги
+              </div>
+              <h3 style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(22px, 3vw, 28px)',
+                color: 'var(--color-deep-blue)',
+                margin: 0
+              }}>
                 Выберите этап или формат помощи
               </h3>
             </div>
 
-            <div className="grid grid-3" style={{ gap: '20px' }}>
-              <div style={{ background: 'rgba(255, 255, 255, 0.06)', padding: '24px', border: '1px solid rgba(255, 255, 255, 0.12)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <h4 style={{ color: '#FFFFFF', fontSize: '17px', margin: '0 0 10px 0', fontFamily: 'var(--font-serif)' }}>
-                    Подготовка и подача иска
-                  </h4>
-                  <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '14px', lineHeight: 1.55, margin: '0 0 16px 0' }}>
-                    Проверим требования, подсудность, претензионный порядок, сформируем комплект доказательств и подадим иск в суд.
-                  </p>
-                </div>
-                <Link href="/biznesu/arbitrazhnyj-yurist/isk-v-arbitrazhnyj-sud/" style={{ color: 'var(--color-gold)', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
-                  Подробнее об услуге →
+            <div className="grid grid-3" style={{ gap: '24px' }}>
+              {[
+                {
+                  title: 'Подготовка и подача иска',
+                  desc: 'Проверим требования, подсудность, претензионный порядок, сформируем комплект доказательств и подадим иск в суд.',
+                  link: '/biznesu/arbitrazhnyj-yurist/isk-v-arbitrazhnyj-sud/'
+                },
+                {
+                  title: 'Защита ответчика в суде',
+                  desc: 'Срочный анализ иска, подготовка отзыва, снижение неустойки по ст. 333 ГК РФ, встречный иск и защита активов.',
+                  link: '/biznesu/arbitrazhnyj-yurist/zashchita-otvetchika-v-arbitrazhnom-sude/'
+                },
+                {
+                  title: 'Обжалование судебных решений',
+                  desc: 'Апелляция в 19 ААС (Воронеж), кассация в АС ЦО (Калуга), приостановление исполнения и восстановление сроков.',
+                  link: '/biznesu/arbitrazhnyj-yurist/obzhalovanie-resheniya-arbitrazhnogo-suda/'
+                }
+              ].map((card, idx) => (
+                <Link
+                  key={idx}
+                  href={card.link}
+                  style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
+                >
+                  <div
+                    className="card service-card"
+                    style={{
+                      height: '100%',
+                      minHeight: '210px',
+                      padding: '28px',
+                      background: 'var(--color-white)',
+                      border: '1px solid var(--color-border)',
+                      borderRadius: '0',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      position: 'relative',
+                      borderTop: '3px solid var(--color-primary)',
+                      cursor: 'pointer',
+                      transition: 'all 0.35s ease'
+                    }}
+                  >
+                    <div>
+                      <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
+                        {card.title}
+                      </h3>
+                      <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                        {card.desc}
+                      </p>
+                    </div>
+                    <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', transition: 'all 0.3s' }}>
+                      <span>Подробнее об услуге</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </div>
+                  </div>
                 </Link>
-              </div>
-
-              <div style={{ background: 'rgba(255, 255, 255, 0.06)', padding: '24px', border: '1px solid rgba(255, 255, 255, 0.12)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <h4 style={{ color: '#FFFFFF', fontSize: '17px', margin: '0 0 10px 0', fontFamily: 'var(--font-serif)' }}>
-                    Защита ответчика в суде
-                  </h4>
-                  <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '14px', lineHeight: 1.55, margin: '0 0 16px 0' }}>
-                    Срочный анализ иска, подготовка отзыва, снижение неустойки по ст. 333 ГК РФ, встречный иск и защита активов.
-                  </p>
-                </div>
-                <Link href="/biznesu/arbitrazhnyj-yurist/zashchita-otvetchika-v-arbitrazhnom-sude/" style={{ color: 'var(--color-gold)', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
-                  Подробнее об услуге →
-                </Link>
-              </div>
-
-              <div style={{ background: 'rgba(255, 255, 255, 0.06)', padding: '24px', border: '1px solid rgba(255, 255, 255, 0.12)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <h4 style={{ color: '#FFFFFF', fontSize: '17px', margin: '0 0 10px 0', fontFamily: 'var(--font-serif)' }}>
-                    Обжалование судебных решений
-                  </h4>
-                  <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '14px', lineHeight: 1.55, margin: '0 0 16px 0' }}>
-                    Апелляция в 19 ААС (Воронеж), кассация в АС ЦО (Калуга), приостановление исполнения и восстановление сроков.
-                  </p>
-                </div>
-                <Link href="/biznesu/arbitrazhnyj-yurist/obzhalovanie-resheniya-arbitrazhnogo-suda/" style={{ color: 'var(--color-gold)', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
-                  Подробнее об услуге →
-                </Link>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -765,10 +788,10 @@ export default function ArbitrazhClient() {
             <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
               +7 (910) 350-31-11
             </a>
-            <a href="tel:+79103503111" className="btn btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Позвонить юристу
             </a>
-            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Сообщить о документе
             </a>
             <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
@@ -1076,9 +1099,6 @@ export default function ArbitrazhClient() {
                 <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
                   Проверяем законность процедуры, основания требований, соблюдение претензионного порядка и корректность расчёта.
                 </p>
-                <div style={{ marginTop: 'auto', paddingTop: '10px', borderTop: '1px solid rgba(255, 255, 255, 0.1)', fontSize: '12px', color: 'var(--color-gold)' }}>
-                  <strong>Применимый сценарий:</strong><br />Досудебный контррасчёт и переговоры
-                </div>
               </div>
 
               <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -1092,9 +1112,6 @@ export default function ArbitrazhClient() {
                 <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
                   Готовим мотивированный отзыв, встречный иск, ходатайства о снижении неустойки (ст. 333 ГК) и экспертизе.
                 </p>
-                <div style={{ marginTop: 'auto', paddingTop: '10px', borderTop: '1px solid rgba(255, 255, 255, 0.1)', fontSize: '12px', color: 'var(--color-gold)' }}>
-                  <strong>Применимый сценарий:</strong><br />Судебная защита и встречный иск
-                </div>
               </div>
 
               <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -1108,9 +1125,6 @@ export default function ArbitrazhClient() {
                 <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
                   Представляем интересы в первой инстанции, 19 ААС, АС ЦО, заявляем процессуальные возражения и жалобы.
                 </p>
-                <div style={{ marginTop: 'auto', paddingTop: '10px', borderTop: '1px solid rgba(255, 255, 255, 0.1)', fontSize: '12px', color: 'var(--color-gold)' }}>
-                  <strong>Применимый сценарий:</strong><br />Мировое соглашение и судебная рассрочка
-                </div>
               </div>
             </div>
           </div>

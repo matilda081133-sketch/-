@@ -1376,9 +1376,10 @@ summary:focus-visible {
 
 
 /* Urgent Section Buttons */
-.btn-urgent-call {
+.btn-urgent-call,
+.btn.btn-urgent-call {
   background-color: var(--color-gold) !important;
-  color: var(--color-deep-blue) !important;
+  color: #0B1C2A !important;
   border: 1px solid var(--color-gold) !important;
   font-weight: 700 !important;
   display: inline-flex;
@@ -1389,13 +1390,25 @@ summary:focus-visible {
   border-radius: 0;
   transition: all 0.3s ease;
 }
-.btn-urgent-call:hover {
-  background-color: var(--color-white) !important;
-  color: var(--color-deep-blue) !important;
-  border-color: var(--color-white) !important;
-  transform: translateY(-2px);
+
+.btn-urgent-call::before,
+.btn.btn-urgent-call::before,
+.btn-urgent-outline::before,
+.btn.btn-urgent-outline::before {
+  display: none !important;
 }
-.btn-urgent-outline {
+
+.btn-urgent-call:hover,
+.btn.btn-urgent-call:hover {
+  background-color: #FFFFFF !important;
+  color: #0B1C2A !important;
+  border-color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+}
+
+.btn-urgent-outline,
+.btn.btn-urgent-outline {
   background-color: transparent !important;
   color: #FFFFFF !important;
   border: 1px solid rgba(255, 255, 255, 0.7) !important;
@@ -1408,7 +1421,9 @@ summary:focus-visible {
   border-radius: 0;
   transition: all 0.3s ease;
 }
-.btn-urgent-outline:hover {
+
+.btn-urgent-outline:hover,
+.btn.btn-urgent-outline:hover {
   background-color: rgba(255, 255, 255, 0.15) !important;
   color: #FFFFFF !important;
   border-color: #FFFFFF !important;

@@ -354,10 +354,10 @@ export default function ZashchitaOtvetchikaClient() {
           { text: 'Встречные иски и снятие арестов с расчётных счетов' },
           { text: 'Судебное представительство и мировые соглашения' }
         ]}
-        imageUrl="/images/hero_legal_premium.png"
-        imageName="Судебная практика ЮК «Де-Юре»"
+        imageUrl="/images/konopkin.jpg"
+        imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Защита интересов ответчиков в арбитражных судах всех инстанций"
-        imageObjectPosition="center 20%"
+        imageObjectPosition="center 25%"
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
@@ -483,10 +483,10 @@ export default function ZashchitaOtvetchikaClient() {
             <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none' }}>
               +7 (910) 350-31-11
             </a>
-            <a href="tel:+79103503111" className="btn btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Срочная консультация
             </a>
-            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Передать иск на анализ
             </a>
           </div>

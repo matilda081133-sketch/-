@@ -367,10 +367,10 @@ export default function IskArbitrazhClient() {
           { text: 'Ходатайства об обеспечительных мерах и аресте счетов' },
           { text: 'Официальная подача через систему «Мой Арбитр»' }
         ]}
-        imageUrl="/images/hero_legal_premium.png"
-        imageName="Судебная практика ЮК «Де-Юре»"
-        imageSubtitle="Подготовка исков и процессуальное представительство в арбитражных судах"
-        imageObjectPosition="center 20%"
+        imageUrl="/images/konopkin.jpg"
+        imageName="Дмитрий Сергеевич Конопкин"
+        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления"
+        imageObjectPosition="center 25%"
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
@@ -533,10 +533,10 @@ export default function IskArbitrazhClient() {
             <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none' }}>
               +7 (910) 350-31-11
             </a>
-            <a href="tel:+79103503111" className="btn btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Позвонить юристу
             </a>
-            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Оценить иск
             </a>
           </div>
