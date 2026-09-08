@@ -47,7 +47,7 @@ export default function GrazhdanamPage() {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Семейный юрист" },
         { "@type": "ListItem", "position": 2, "name": "Наследственный юрист" },
-        { "@type": "ListItem", "position": 3, "name": "Жилищный юрист" },
+        { "@type": "ListItem", "position": 3, "name": "Жилищный юрист", "url": "https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/" },
         { "@type": "ListItem", "position": 4, "name": "Юрист по недвижимости" },
         { "@type": "ListItem", "position": 5, "name": "Земельный юрист", "url": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/" },
         { "@type": "ListItem", "position": 6, "name": "Банкротство физических лиц" },
