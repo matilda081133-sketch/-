@@ -326,7 +326,10 @@ export default function ObzhalovanieClient() {
               Обжалование решения
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              арбитражного суда в Липецке
+              арбитражного суда
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              в Липецке
             </span>
           </span>
         }
@@ -445,7 +448,8 @@ export default function ObzhalovanieClient() {
             </h2>
             <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', marginBottom: '40px', maxWidth: '720px', lineHeight: 1.6 }}>
-              Пропуск срока на подачу жалобы означает вступление решения в силу и начало принудительного исполнения.
+              <span style={{ display: 'inline-block' }}>Пропуск срока на подачу жалобы означает вступление</span> <br />
+              <span style={{ display: 'inline-block' }}>решения в силу и начало принудительного исполнения.</span>
             </p>
           </div>
 
@@ -495,6 +499,9 @@ export default function ObzhalovanieClient() {
             <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Оценить решение суда
             </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
+              Ответим в рабочее время и согласуем процессуальные действия
+            </span>
           </div>
         </div>
       </section>
@@ -507,8 +514,7 @@ export default function ObzhalovanieClient() {
               Порядок обжалования решений
             </div>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Этапы обжалования</span> <br />
-              <span style={{ display: 'inline-block' }}>судебных актов</span>
+              Этапы обжалования судебных актов
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Точная процессуальная работа от аудита решения до защиты доводов в коллегиях апелляционных и кассационных судов.
@@ -545,7 +551,7 @@ export default function ObzhalovanieClient() {
                     color: 'var(--color-gold)',
                     lineHeight: 0.72,
                     marginLeft: '-46px',
-                    marginTop: '-40px',
+                    marginTop: step.num === '05' ? '-26px' : '-40px',
                     opacity: 0.2,
                     userSelect: 'none',
                     flexShrink: 0,
@@ -616,7 +622,12 @@ export default function ObzhalovanieClient() {
 
       {/* ═══ БЛОК 6: КЕЙСЫ ═══ */}
       <CasesBlock
-        title="Примеры отмены решений из практики"
+        title={
+          <span>
+            <span style={{ display: 'inline-block' }}>Примеры отмены решений</span> <br />
+            <span style={{ display: 'inline-block' }}>из практики</span>
+          </span>
+        }
         showAllLink="/praktika/"
         showAllText="Смотреть все дела"
         showDemoWarning={true}
@@ -626,7 +637,13 @@ export default function ObzhalovanieClient() {
       {/* ═══ БЛОК 7: FAQ ═══ */}
       <FAQBlock
         superTitle="Частые вопросы"
-        title="Вопросы об обжаловании судебных актов"
+        title={
+          <span>
+            <span style={{ display: 'inline-block' }}>Вопросы</span> <br />
+            <span style={{ display: 'inline-block' }}>об обжаловании</span> <br />
+            <span style={{ display: 'inline-block' }}>судебных актов</span>
+          </span>
+        }
         subtitle="Сроки апелляции и кассации, приостановление исполнения и порядок подачи жалоб"
         faqs={faqs}
       />
@@ -644,7 +661,8 @@ export default function ObzhalovanieClient() {
                 <span style={{ display: 'inline-block' }}>в офисе «Де-Юре»</span>
               </h2>
               <p style={{ fontSize: '15.5px', color: 'var(--color-deep-blue)', opacity: 0.9, lineHeight: 1.6, marginBottom: '24px' }}>
-                Встретимся в офисе либо передайте решение суда в электронном виде для правового анализа.
+                <span style={{ display: 'inline-block' }}>Встретимся в офисе либо передайте решение суда</span> <br />
+                <span style={{ display: 'inline-block' }}>в электронном виде для правового анализа.</span>
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '24px' }}>
                 <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)' }}><strong>Адрес:</strong> г. Липецк, ул. Советская, д. 35, оф. 213</span>

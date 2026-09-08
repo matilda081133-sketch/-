@@ -258,14 +258,14 @@ export default function IskArbitrazhClient() {
   const cases: CaseData[] = [
     {
       category: 'Поставка оборудования • АС Липецкой области',
-      title: 'Взыскание 7,6 млн ₽ за поставку производственной линии',
+      title: 'Взыскание 7,6\u00A0млн\u00A0₽ за поставку производственной линии',
       problem: 'Покупатель уклонялся от полной оплаты оборудования, утверждая, что накладные подписаны неуполномоченным лицом.',
       action: 'Собрали переписку, акты пусконаладки и доказательства частичной оплаты. Подготовили иск и ходатайство об аресте счетов должника.',
-      result: 'Иск удовлетворён в полном объёме, взыскан долг 7,6 млн ₽ и неустойка 650 000 ₽.'
+      result: 'Иск удовлетворён в полном объёме, взыскан долг 7,6\u00A0млн\u00A0₽ и неустойка 650\u00A0000\u00A0₽.'
     },
     {
       category: 'Строительный подряд • АС Воронежской области',
-      title: 'Взыскание аванса 4,2 млн ₽ с недобросовестного подрядчика',
+      title: 'Взыскание аванса 4,2\u00A0млн\u00A0₽ с недобросовестного подрядчика',
       problem: 'Подрядчик получил предоплату, но к выполнению монолитных работ на объекте так и не приступил.',
       action: 'Оформили односторонний отказ от договора, провели фиксацию состояния объекта и подали иск о возврате аванса и процентов по ст. 395 ГК РФ.',
       result: 'Суд взыскал сумму аванса, проценты и обязал вернуть переданную проектную документацию.'
@@ -275,7 +275,7 @@ export default function IskArbitrazhClient() {
       title: 'Взыскание задолженности по аренде и возмещение ущерба помещению',
       problem: 'Арендатор съехал из помещения без уведомления, оставив долг за 4 месяца и повреждённую отделку.',
       action: 'Провели досудебную строительную экспертизу ущерба, рассчитали задолженность с учётом обеспечительного платежа и подали иск.',
-      result: 'Взыскан долг по арендной плате 1,8 млн ₽ и стоимость восстановительного ремонта 920 000 ₽.'
+      result: 'Взыскан долг по арендной плате 1,8\u00A0млн\u00A0₽ и стоимость восстановительного ремонта 920\u00A0000\u00A0₽.'
     }
   ];
 
@@ -576,45 +576,82 @@ export default function IskArbitrazhClient() {
                 style={{
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  padding: '32px 36px',
+                  padding: '24px 32px 24px 20px',
                   display: 'flex',
-                  gap: '32px',
-                  alignItems: 'flex-start',
+                  flexWrap: 'wrap',
+                  gap: '24px',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
                   position: 'relative',
-                  overflow: 'hidden',
-                  transition: 'all 0.3s ease'
+                  overflow: 'hidden'
                 }}
               >
-                {/* Номер этапа */}
-                <div style={{ flexShrink: 0, width: '56px', height: '56px', borderRadius: '50%', background: 'var(--color-deep-blue)', color: 'var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-serif)', fontSize: '24px', fontWeight: 700, boxShadow: '0 4px 12px rgba(23, 50, 77, 0.15)' }}>
-                  {step.num}
+                <div className="stage-accent" />
+                
+                {/* Левая часть: крупный номер по центру и по левому краю с легким срезом + текст */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '18px', flex: '1 1 540px', minWidth: '280px', position: 'relative' }}>
+                  <div style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: 'clamp(64px, 6.5vw, 88px)',
+                    fontWeight: 800,
+                    color: 'var(--color-gold)',
+                    lineHeight: 0.72,
+                    marginLeft: '-46px',
+                    marginTop: '-40px',
+                    opacity: 0.2,
+                    userSelect: 'none',
+                    flexShrink: 0,
+                    letterSpacing: '-0.05em'
+                  }}>
+                    {step.num}
+                  </div>
+
+                  <div style={{ flex: 1 }}>
+                    <h3 style={{
+                      fontSize: '19px',
+                      fontFamily: 'var(--font-serif)',
+                      color: 'var(--color-deep-blue)',
+                      margin: '0 0 8px 0',
+                      lineHeight: 1.35,
+                      fontWeight: 600
+                    }}>
+                      {step.stage}
+                    </h3>
+
+                    <p style={{
+                      fontSize: '14.5px',
+                      color: 'var(--color-text-secondary)',
+                      lineHeight: 1.55,
+                      margin: 0
+                    }}>
+                      {step.works}
+                    </p>
+                  </div>
                 </div>
 
-                {/* Содержимое */}
-                <div style={{ flexGrow: 1 }}>
-                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '20px', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.3 }}>
-                    {step.stage}
-                  </h3>
-                  <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 16px 0' }}>
-                    {step.works}
-                  </p>
-
-                  <div style={{ background: '#FFFFFF', padding: '12px 16px', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-gold)' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                        <polyline points="9 11 12 14 22 4" />
-                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                      </svg>
-                      <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                        Результат этапа
-                      </strong>
-                    </div>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
-                      {step.result}
-                    </span>
+                {/* Правая часть: Результат этапа */}
+                <div style={{
+                  flex: '0 1 320px',
+                  minWidth: '260px',
+                  background: '#FAF7F2',
+                  border: '1px solid rgba(193, 160, 102, 0.25)',
+                  borderLeft: '3px solid var(--color-gold)',
+                  padding: '16px 20px',
+                  boxSizing: 'border-box'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                      Результат этапа
+                    </strong>
                   </div>
+                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
+                    {step.result}
+                  </span>
                 </div>
               </div>
             ))}
@@ -632,7 +669,12 @@ export default function IskArbitrazhClient() {
 
       {/* ═══ БЛОК 6: КЕЙСЫ ═══ */}
       <CasesBlock
-        title="Примеры поданных исков из практики"
+        title={
+          <span>
+            <span style={{ display: 'inline-block' }}>Примеры поданных исков</span> <br />
+            <span style={{ display: 'inline-block' }}>из практики</span>
+          </span>
+        }
         showAllLink="/praktika/"
         showAllText="Смотреть все дела"
         showDemoWarning={true}

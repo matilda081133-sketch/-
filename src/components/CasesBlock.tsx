@@ -6,9 +6,9 @@ import Link from 'next/link';
 export interface CaseData {
   category: string | React.ReactNode;
   title: string | React.ReactNode;
-  problem: string;
-  action: string;
-  result: string;
+  problem: string | React.ReactNode;
+  action: string | React.ReactNode;
+  result: string | React.ReactNode;
   isDemo?: boolean;
 }
 
