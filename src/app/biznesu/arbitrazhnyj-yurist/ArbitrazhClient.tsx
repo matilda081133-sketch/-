@@ -1603,7 +1603,7 @@ export default function ArbitrazhClient() {
                 gap: '4px'
               }}>
                 <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', lineHeight: 1.35, marginBottom: '2px' }}>
-                  Апелляция: 19 арбитражный апелляционный суд (19 ААС)
+                  Апелляционная инстанция: Девятнадцатый арбитражный апелляционный суд (19 ААС)
                 </strong>
                 <span style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '12.5px', display: 'block', marginBottom: '2px' }}>
                   г. Воронеж, ул. Платонова, д. 8
@@ -1621,7 +1621,7 @@ export default function ArbitrazhClient() {
                 gap: '4px'
               }}>
                 <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', lineHeight: 1.35, marginBottom: '2px' }}>
-                  Кассация: Арбитражный суд Центрального округа (АС ЦО)
+                  Кассационная инстанция: Арбитражный суд Центрального округа (АС ЦО)
                 </strong>
                 <span style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '12.5px', display: 'block', marginBottom: '2px' }}>
                   г. Калуга, ул. Ленина, д. 74
@@ -1639,7 +1639,7 @@ export default function ArbitrazhClient() {
                 gap: '4px'
               }}>
                 <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', lineHeight: 1.35, marginBottom: '2px' }}>
-                  Судебная коллегия ВС РФ: Верховный Суд Российской Федерации
+                  Судебная коллегия по экономическим спорам: Верховный Суд Российской Федерации
                 </strong>
                 <span style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '12.5px', display: 'block', marginBottom: '2px' }}>
                   г. Москва, ул. Поварская, д. 15
