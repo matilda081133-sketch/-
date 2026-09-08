@@ -10,6 +10,10 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
+# Direct aliases / redirects
+RewriteRule ^zhilishchnyj-yurist/?$ /grazhdanam/zhilishchnyj-yurist/ [R=301,L]
+RewriteRule ^zhilishchnyj-yurist/(.*)$ /grazhdanam/zhilishchnyj-yurist/$1 [R=301,L]
+
 # For any path without extension, try adding /index.html
 RewriteCond %{REQUEST_URI} !\.
 RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
