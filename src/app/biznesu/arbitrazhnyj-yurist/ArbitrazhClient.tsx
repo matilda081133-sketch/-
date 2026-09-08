@@ -731,8 +731,8 @@ export default function ArbitrazhClient() {
       {/* ═══ БЛОК 3: КОГДА НУЖНО ДЕЙСТВОВАТЬ БЕЗ ПРОМЕДЛЕНИЯ ═══ */}
       <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }} id="urgent">
         <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+          <div style={{ maxWidth: '1000px', marginBottom: '36px' }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3.8vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
               Когда нужно действовать без промедления
             </h2>
             <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
