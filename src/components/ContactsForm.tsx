@@ -12,6 +12,7 @@ interface ContactsFormProps {
   commentPlaceholder?: string;
   hiddenFields?: { name: string; value: string }[];
   subtext?: React.ReactNode;
+  agreementNotice?: React.ReactNode;
 }
 
 export default function ContactsForm({ 
@@ -20,7 +21,8 @@ export default function ContactsForm({
   buttonText = "Оставить заявку",
   commentPlaceholder = "Кратко опишите ситуацию или вопрос…",
   hiddenFields,
-  subtext = "Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+  subtext = "Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день.",
+  agreementNotice
 }: ContactsFormProps = {}) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -252,6 +254,11 @@ export default function ContactsForm({
             <Link href="/consent/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-deep-blue)', textDecoration: 'underline' }}>Я даю согласие на обработку персональных данных</Link>
             {' '}и подтверждаю, что ознакомлен с{' '}
             <Link href="/privacy/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-deep-blue)', textDecoration: 'underline' }}>Политикой в отношении обработки персональных данных</Link>.
+            {agreementNotice && (
+              <span style={{ display: 'block', marginTop: '6px', color: 'var(--color-text-secondary)' }}>
+                {agreementNotice}
+              </span>
+            )}
           </span>
         </label>
         

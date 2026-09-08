@@ -649,8 +649,8 @@ export default function ArbitrazhClient() {
           </div>
 
           {/* ═══ СПЕЦИАЛИЗИРОВАННЫЕ УСЛУГИ КЛАСТЕРА (ШАБЛОН КАРТОЧЕК НАПРАВЛЕНИЙ) ═══ */}
-          <div style={{ marginTop: '56px', marginBottom: '16px' }}>
-            <div style={{ marginBottom: '24px' }}>
+          <div style={{ marginTop: '64px', marginBottom: '24px' }}>
+            <div style={{ marginBottom: '32px' }}>
               <div style={{
                 fontSize: '12px',
                 fontWeight: 700,
@@ -671,7 +671,7 @@ export default function ArbitrazhClient() {
               </h3>
             </div>
 
-            <div className="grid grid-3" style={{ gap: '24px' }}>
+            <div className="grid grid-3" style={{ gap: '24px', marginTop: '32px', paddingTop: '8px' }}>
               {[
                 {
                   title: 'Подготовка и подача иска',

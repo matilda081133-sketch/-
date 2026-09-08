@@ -6,29 +6,29 @@ import ContactsForm from '@/components/ContactsForm';
 import { teamData } from '@/data/team';
 
 export const metadata: Metadata = {
-  title: 'Специалисты «Де-Юре»',
-  description: 'Специалисты «Де-Юре» в Липецке: юристы ЮК «Де-Юре» и адвокаты Коллегии адвокатов «Де-Юре» по гражданским, уголовным, военным и бизнес-спорам. Опыт, направления работы и персональные страницы.',
+  title: 'Специалисты и адвокаты «Де-Юре»',
+  description: 'Специалисты ЮК «Де-Юре» и независимые адвокаты в Липецке по гражданским, уголовным, военным и бизнес-спорам. Опыт, направления работы и персональные страницы.',
   alternates: {
     canonical: 'https://dejure-help.ru/specialisty/',
   },
   openGraph: {
-    title: 'Специалисты «Де-Юре»',
-    description: 'Специалисты «Де-Юре» в Липецке: юристы ЮК «Де-Юре» и адвокаты Коллегии адвокатов «Де-Юре» по гражданским, уголовным, военным и бизнес-спорам.',
+    title: 'Специалисты и адвокаты «Де-Юре»',
+    description: 'Специалисты ЮК «Де-Юре» и независимые адвокаты в Липецке по гражданским, уголовным, военным и бизнес-спорам.',
     url: 'https://dejure-help.ru/specialisty/',
     images: [{
       url: 'https://dejure-help.ru/images/og/specialisty.jpg',
       width: 1200,
       height: 630,
-      alt: 'Специалисты «Де-Юре»'
+      alt: 'Специалисты и адвокаты «Де-Юре»'
     }],
   },
 };
 
 const specialistListRoles: Record<string, string> = {
   'bobkin-arkadiy-evgenevich': 'Директор, управляющий партнёр ЮК «Де-Юре»',
-  'konopkin-dmitriy-sergeevich': 'Адвокат. Председатель\nКоллегии адвокатов «Де-Юре»',
+  'konopkin-dmitriy-sergeevich': 'Адвокат, председатель\nКоллегии адвокатов «Де-Юре»',
   'smolyaninova-marina-valerevna': 'Ведущий юрист ЮК «Де-Юре»',
-  'gusev-oleg-yurevich': 'Адвокат. Управляющий партнёр\nКоллегии адвокатов «Де-Юре»',
+  'gusev-oleg-yurevich': 'Адвокат, управляющий партнёр\nКоллегии адвокатов «Де-Юре»',
   'nacheshnikov-vladimir-viktorovich': 'Специалист ЮК «Де-Юре»',
   'polozova-elena-anatolevna': 'Юрист ЮК «Де-Юре»'
 };
@@ -89,8 +89,8 @@ export default function SpecialistyPage() {
         '@type': 'CollectionPage',
         '@id': 'https://dejure-help.ru/specialisty/#webpage',
         'url': 'https://dejure-help.ru/specialisty/',
-        'name': 'Специалисты «Де-Юре»',
-        'description': 'Специалисты «Де-Юре» в Липецке: юристы ЮК «Де-Юре» и адвокаты Коллегии адвокатов «Де-Юре» по гражданским, уголовным, военным и бизнес-спорам.'
+        'name': 'Специалисты и адвокаты «Де-Юре»',
+        'description': 'Специалисты ЮК «Де-Юре» и независимые адвокаты в Липецке по гражданским, уголовным, военным и бизнес-спорам.'
       },
       {
         '@type': 'ItemList',
@@ -185,7 +185,7 @@ export default function SpecialistyPage() {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
       { '@type': 'ListItem', position: 2, name: 'О компании', item: 'https://dejure-help.ru/o-kompanii/' },
-      { '@type': 'ListItem', position: 3, name: 'Специалисты', item: 'https://dejure-help.ru/specialisty/' }
+      { '@type': 'ListItem', position: 3, name: 'Специалисты и адвокаты', item: 'https://dejure-help.ru/specialisty/' }
     ]
   };
 
@@ -210,7 +210,7 @@ export default function SpecialistyPage() {
             <span>/</span>
             <Link href="/o-kompanii" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>О компании</Link>
             <span>/</span>
-            <span>Специалисты</span>
+            <span>Специалисты и адвокаты</span>
           </div>
 
           <h1 style={{ 
@@ -221,7 +221,7 @@ export default function SpecialistyPage() {
             lineHeight: 1.2,
             maxWidth: '900px' 
           }}>
-            Специалисты «Де-Юре»
+            Специалисты и адвокаты
           </h1>
           <p style={{ 
             fontSize: '18px', 
@@ -445,7 +445,7 @@ export default function SpecialistyPage() {
           {/* Neutral Divider Line between groups */}
           <hr style={{ border: 'none', borderTop: '1px solid rgba(23, 50, 77, 0.1)', margin: '48px 0' }} />
 
-          {/* Group 2: Коллегия адвокатов «Де-Юре» */}
+          {/* Group 2: Адвокаты, с которыми сотрудничает ЮК «Де-Юре» */}
           <h2 className="with-accent" style={{ 
             fontSize: 'clamp(26px, 3vw, 32px)', 
             fontFamily: 'var(--font-serif)', 
@@ -453,7 +453,7 @@ export default function SpecialistyPage() {
             marginBottom: '32px', 
             marginTop: 0 
           }}>
-            Адвокаты Коллегии адвокатов «Де-Юре»
+            Адвокаты, с которыми сотрудничает ЮК «Де-Юре»
           </h2>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
@@ -531,25 +531,10 @@ export default function SpecialistyPage() {
                           lineHeight: 1.3 
                         }}>
                           <Link href={`/specialisty/${sp.slug}/`} style={{ color: 'inherit', textDecoration: 'none' }}>
-                            {sp.slug === 'nacheshnikov-vladimir-viktorovich' ? (
-                              <>
-                                <span style={{ display: 'block' }}>Начешников</span>
-                                <span style={{ display: 'block' }}>Владимир Викторович</span>
-                              </>
-                            ) : sp.slug === 'konopkin-dmitriy-sergeevich' ? (
+                            {sp.slug === 'konopkin-dmitriy-sergeevich' ? (
                               <>
                                 <span style={{ display: 'block' }}>Конопкин</span>
                                 <span style={{ display: 'block' }}>Дмитрий Сергеевич</span>
-                              </>
-                            ) : sp.slug === 'smolyaninova-marina-valerevna' ? (
-                              <>
-                                <span style={{ display: 'block' }}>Смольянинова</span>
-                                <span style={{ display: 'block' }}>Марина Валерьевна</span>
-                              </>
-                            ) : sp.slug === 'bobkin-arkadiy-evgenevich' ? (
-                              <>
-                                <span style={{ display: 'block' }}>Бобкин</span>
-                                <span style={{ display: 'block' }}>Аркадий Евгеньевич</span>
                               </>
                             ) : sp.slug === 'gusev-oleg-yurevich' ? (
                               <>
@@ -562,14 +547,22 @@ export default function SpecialistyPage() {
                           </Link>
                         </h3>
 
-                        {/* 2. Position / Role */}
+                        {/* 2. Position / Role & Registry Info */}
                         <div style={{ 
                           fontSize: '14px', 
                           color: '#4A607A', 
                           fontWeight: 500, 
-                          marginBottom: '16px'
+                          marginBottom: '16px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '2px'
                         }}>
-                          {specialistListRoles[sp.slug] || sp.status}
+                          <div>{specialistListRoles[sp.slug] || sp.status}</div>
+                          {sp.advocateStatus?.registryNumber && (
+                            <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+                              Рег. № {sp.advocateStatus.registryNumber} в реестре адвокатов Липецкой области
+                            </div>
+                          )}
                         </div>
 
                         {/* 3. Substantive Description */}
@@ -633,7 +626,7 @@ export default function SpecialistyPage() {
                             transition: 'color 0.2s ease'
                           }}
                         >
-                          <span>Подробнее о специалисте</span>
+                          <span>Подробнее об адвокате</span>
                           <span className="detail-arrow" style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>
                         </Link>
                       </div>
@@ -643,19 +636,17 @@ export default function SpecialistyPage() {
               })}
           </div>
 
-          {/* Organization Relationship Disclaimer (rendered conditionally if advocates exist) */}
-          {specialists.some((sp) => sp.orgType === 'barAssociationLawyer' || sp.slug === 'konopkin-dmitriy-sergeevich' || sp.slug === 'gusev-oleg-yurevich') && (
-            <p style={{ 
-              fontSize: '14px', 
-              color: 'var(--color-text-secondary)', 
-              lineHeight: 1.6, 
-              maxWidth: '850px', 
-              marginTop: '24px', 
-              marginBottom: 0 
-            }}>
-              Юридическая компания «Де-Юре» взаимодействует с адвокатами Коллегии адвокатов «Де-Юре» по делам, требующим участия адвоката. ЮК и Коллегия являются самостоятельными организациями; адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
-            </p>
-          )}
+          {/* Organization Relationship Disclaimer */}
+          <p style={{ 
+            fontSize: '14px', 
+            color: 'var(--color-text-secondary)', 
+            lineHeight: 1.6, 
+            maxWidth: '850px', 
+            marginTop: '24px', 
+            marginBottom: 0 
+          }}>
+            Представленные адвокаты не являются сотрудниками ЮК «Де-Юре» и осуществляют адвокатскую деятельность самостоятельно. При необходимости ЮК может рекомендовать или привлечь адвоката соответствующей специализации. Соглашение об оказании адвокатской помощи заключается непосредственно между адвокатом и доверителем.
+          </p>
         </div>
 
         {/* Global hover styles for card, links, and arrow transitions */}
@@ -709,7 +700,7 @@ export default function SpecialistyPage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
             <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
             <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
-              Модель работы ЮК «Де-Юре»
+              Модель работы
             </span>
           </div>
           
@@ -722,7 +713,7 @@ export default function SpecialistyPage() {
             textWrap: 'balance',
             marginTop: 0
           }}>
-            Работа над делом — под контролем профильного куратора
+            Подбираем формат работы под задачу
           </h2>
 
           <p style={{ 
@@ -732,7 +723,7 @@ export default function SpecialistyPage() {
             maxWidth: '820px', 
             marginBottom: '40px'
           }}>
-            После первичного разбора компания определяет ответственного за ведение обращения. Правовую позицию формирует юрист или адвокат соответствующего профиля, а ответственный специалист координирует работу, сроки и взаимодействие с клиентом.
+            В зависимости от характера обращения над задачей работают специалисты ЮК «Де-Юре» либо независимые адвокаты соответствующего профиля. Если требуется адвокатская помощь, условия участия адвоката согласовываются отдельно, а соглашение заключается непосредственно между адвокатом и доверителем.
           </p>
           
           <div style={{ 
@@ -745,39 +736,19 @@ export default function SpecialistyPage() {
           }}>
             {[
               {
-                tag: "Стратегия",
-                title: "Единая правовая стратегия",
-                desc: (
-                  <>
-                    <span>Профильный юрист или адвокат</span><br />
-                    <span>формирует правовую позицию</span><br />
-                    <span>и определяет последовательность</span><br />
-                    <span>действий по делу.</span>
-                  </>
-                )
+                tag: "Специалисты ЮК",
+                title: "Специалисты ЮК",
+                desc: "Компания определяет профильного специалиста и фиксирует состав работ, сроки и стоимость в договоре с клиентом."
               },
               {
-                tag: "Команда",
-                title: "Необходимые компетенции",
-                desc: (
-                  <>
-                    <span style={{ whiteSpace: 'nowrap' }}>Если задача требует знаний</span><br />
-                    <span style={{ whiteSpace: 'nowrap' }}>из нескольких областей права,</span><br />
-                    <span style={{ whiteSpace: 'nowrap' }}>к работе подключаются специалисты</span><br />
-                    <span style={{ whiteSpace: 'nowrap' }}>соответствующего профиля.</span>
-                  </>
-                )
+                tag: "Участие адвоката",
+                title: "Участие адвоката",
+                desc: "Если требуется адвокатский статус, ЮК может рекомендовать или подключить независимого адвоката соответствующей специализации."
               },
               {
-                tag: "Надёжность",
-                title: "Контроль хода работы",
-                desc: (
-                  <>
-                    <span style={{ whiteSpace: 'nowrap' }}>Куратор контролирует сроки,</span><br />
-                    <span style={{ whiteSpace: 'nowrap' }}>документы и согласованность</span><br />
-                    <span style={{ whiteSpace: 'nowrap' }}>действий всех участников.</span>
-                  </>
-                )
+                tag: "Отдельное соглашение",
+                title: "Отдельное соглашение",
+                desc: "Адвокат самостоятельно согласовывает с доверителем условия адвокатской помощи и заключает с ним отдельное соглашение."
               }
             ].map((item, i) => (
               <div key={i} className="usp-card" style={{ 
@@ -815,7 +786,7 @@ export default function SpecialistyPage() {
             borderLeft: '3px solid var(--color-primary)',
             paddingLeft: '16px'
           }}>
-            Такая организация работы позволяет сохранить единую стратегию, контроль над ходом дела и всю собранную по нему информацию.
+            Формат взаимодействия определяется после первичного разбора обращения и зависит от характера задачи и необходимого статуса специалиста.
           </p>
         </div>
       </section>
@@ -835,10 +806,7 @@ export default function SpecialistyPage() {
                 Не знаете, к кому обратиться?
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '32px' }}>
-                Вам не нужно самостоятельно определять<br />
-                специализацию юриста. Расскажите нам о своей<br />
-                ситуации — мы уточним обстоятельства и определим,<br />
-                специалист какого профиля сможет вам помочь.
+                Вам не нужно самостоятельно определять, требуется специалист ЮК или адвокат. Расскажите о ситуации — мы уточним обстоятельства и подскажем подходящий формат дальнейшей работы.
               </p>
 
               <div>
@@ -856,6 +824,7 @@ export default function SpecialistyPage() {
                 title="Отправить обращение" 
                 subtitle="" 
                 buttonText="Получить консультацию"
+                agreementNotice="Первичное обращение обрабатывает ЮК «Де-Юре». Если потребуется передача сведений адвокату, она производится с согласия обратившегося лица."
                 hiddenFields={[
                   { name: 'page_url', value: '/specialisty/' }
                 ]}

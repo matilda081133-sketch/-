@@ -11,10 +11,29 @@ interface TeamCarouselProps {
   titleAlign?: 'left' | 'center';
   sectionPaddingTop?: string;
   showDisclaimer?: boolean;
+  customDisclaimer?: React.ReactNode;
   customSectionLabel?: string;
+  customLinkText?: string;
+  hideAllLink?: boolean;
+  bgClass?: string;
+  id?: string;
 }
 
-export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs, hideSectionLabel = false, titleAlign = 'left', sectionPaddingTop, showDisclaimer = false, customSectionLabel }: TeamCarouselProps = {}) {
+export default function TeamCarousel({ 
+  customTitle, 
+  customSubtitle, 
+  filterSlugs, 
+  hideSectionLabel = false, 
+  titleAlign = 'left', 
+  sectionPaddingTop, 
+  showDisclaimer = false, 
+  customDisclaimer,
+  customSectionLabel,
+  customLinkText,
+  hideAllLink = false,
+  bgClass = 'bg-cream',
+  id = 'team'
+}: TeamCarouselProps = {}) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -47,7 +66,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs,
         </>
       ),
       rawName: 'Конопкин Дмитрий Сергеевич',
-      role: 'Адвокат. Председатель\nКоллегии адвокатов «Де-Юре»',
+      role: 'Адвокат, председатель\nКоллегии адвокатов «Де-Юре»',
       desc: 'Специализация: военное право, защита по уголовным делам. Юридический стаж с 2016 года. Опыт работы в Следственном комитете РФ. Статус адвоката с 2022 года.',
       img: '/images/konopkin.jpg',
       link: '/specialisty/konopkin-dmitriy-sergeevich/',
@@ -89,7 +108,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs,
         </>
       ),
       rawName: 'Гусев Олег Юрьевич',
-      role: 'Адвокат. Управляющий партнёр\nКоллегии адвокатов «Де-Юре»',
+      role: 'Адвокат, управляющий партнёр\nКоллегии адвокатов «Де-Юре»',
       desc: 'Специализация: адвокат по уголовным делам. Опыт работы в прокуратуре 7 лет, в том числе заместителем прокурора района. Адвокатская практика с 2015 года.',
       img: '/images/gusev.jpg',
       link: '/specialisty/gusev-oleg-yurevich/',
@@ -117,7 +136,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs,
     : team;
 
   return (
-    <section className="section bg-cream" id="team" style={sectionPaddingTop ? { paddingTop: sectionPaddingTop } : undefined}>
+    <section className={`section ${bgClass}`} id={id} style={sectionPaddingTop ? { paddingTop: sectionPaddingTop } : undefined}>
       <div className="container">
         <div style={{ marginBottom: '40px', textAlign: titleAlign === 'center' ? 'center' : 'left' }}>
           {!hideSectionLabel && (
@@ -128,7 +147,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs,
           )}
           <div style={{ display: 'flex', justifyContent: titleAlign === 'center' ? 'center' : 'space-between', alignItems: 'center', gap: '20px', flexWrap: 'wrap', marginBottom: '16px' }}>
             <h2 style={{ margin: 0, fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>{customTitle || 'Наши специалисты'}</h2>
-            {titleAlign !== 'center' && (
+            {!hideAllLink && titleAlign !== 'center' && (
               <Link href="/specialisty/" className="btn btn-outline" style={{ fontSize: '15px', display: 'inline-block', whiteSpace: 'nowrap' }}>Все специалисты</Link>
             )}
           </div>
