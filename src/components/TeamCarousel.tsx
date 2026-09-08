@@ -11,9 +11,10 @@ interface TeamCarouselProps {
   titleAlign?: 'left' | 'center';
   sectionPaddingTop?: string;
   showDisclaimer?: boolean;
+  customSectionLabel?: string;
 }
 
-export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs, hideSectionLabel = false, titleAlign = 'left', sectionPaddingTop, showDisclaimer = false }: TeamCarouselProps = {}) {
+export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs, hideSectionLabel = false, titleAlign = 'left', sectionPaddingTop, showDisclaimer = false, customSectionLabel }: TeamCarouselProps = {}) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -122,7 +123,7 @@ export default function TeamCarousel({ customTitle, customSubtitle, filterSlugs,
           {!hideSectionLabel && (
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px', justifyContent: titleAlign === 'center' ? 'center' : 'flex-start' }}>
               <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>Юристы и адвокаты</span>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>{customSectionLabel || 'Юристы и адвокаты'}</span>
             </div>
           )}
           <div style={{ display: 'flex', justifyContent: titleAlign === 'center' ? 'center' : 'space-between', alignItems: 'center', gap: '20px', flexWrap: 'wrap', marginBottom: '16px' }}>
