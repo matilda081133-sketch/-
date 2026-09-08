@@ -1587,7 +1587,7 @@ export default function ArbitrazhClient() {
             }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', lineHeight: 1.35, marginBottom: '2px' }}>
-                  Первая инстанция: Арбитражный суд Липецкой области
+                  Первая инстанция:<br />Арбитражный суд Липецкой области
                 </strong>
                 <span style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '12.5px', display: 'block', marginBottom: '2px' }}>
                   г. Липецк, пл. Петра Великого, д. 7
@@ -1605,7 +1605,7 @@ export default function ArbitrazhClient() {
                 gap: '4px'
               }}>
                 <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', lineHeight: 1.35, marginBottom: '2px' }}>
-                  Апелляционная инстанция: Девятнадцатый арбитражный апелляционный суд (19 ААС)
+                  Апелляционная инстанция:<br />Девятнадцатый арбитражный апелляционный суд (19 ААС)
                 </strong>
                 <span style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '12.5px', display: 'block', marginBottom: '2px' }}>
                   г. Воронеж, ул. Платонова, д. 8
@@ -1623,7 +1623,7 @@ export default function ArbitrazhClient() {
                 gap: '4px'
               }}>
                 <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', lineHeight: 1.35, marginBottom: '2px' }}>
-                  Кассационная инстанция: Арбитражный суд Центрального округа (АС ЦО)
+                  Кассационная инстанция:<br />Арбитражный суд Центрального округа (АС ЦО)
                 </strong>
                 <span style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '12.5px', display: 'block', marginBottom: '2px' }}>
                   г. Калуга, ул. Ленина, д. 74
@@ -1641,7 +1641,7 @@ export default function ArbitrazhClient() {
                 gap: '4px'
               }}>
                 <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', lineHeight: 1.35, marginBottom: '2px' }}>
-                  Судебная коллегия по экономическим спорам: Верховный Суд Российской Федерации
+                  Судебная коллегия по экономическим спорам:<br />Верховный Суд Российской Федерации
                 </strong>
                 <span style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '12.5px', display: 'block', marginBottom: '2px' }}>
                   г. Москва, ул. Поварская, д. 15
