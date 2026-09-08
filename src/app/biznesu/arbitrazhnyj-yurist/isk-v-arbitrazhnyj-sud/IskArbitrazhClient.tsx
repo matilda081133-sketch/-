@@ -568,10 +568,10 @@ export default function IskArbitrazhClient() {
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  padding: '28px 32px',
+                  padding: '24px 32px 24px 20px',
                   display: 'flex',
                   flexWrap: 'wrap',
-                  gap: '28px',
+                  gap: '24px',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   position: 'relative',
@@ -579,23 +579,57 @@ export default function IskArbitrazhClient() {
                 }}
               >
                 <div className="stage-accent" />
-                <div style={{ flex: '1 1 520px', minWidth: '280px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <span style={{ fontFamily: 'var(--font-serif)', fontSize: '26px', fontWeight: 700, color: 'var(--color-gold)', lineHeight: 1 }}>
-                      {step.num}
-                    </span>
-                    <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', background: 'rgba(23, 50, 77, 0.06)', padding: '3px 8px' }}>
-                      Этап {step.num}
-                    </span>
+                
+                {/* Левая часть: крупный номер по центру и по левому краю с легким срезом + текст */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '22px', flex: '1 1 540px', minWidth: '280px' }}>
+                  <div style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: 'clamp(54px, 5.5vw, 78px)',
+                    fontWeight: 700,
+                    color: 'var(--color-gold)',
+                    lineHeight: 0.9,
+                    marginLeft: '-14px',
+                    opacity: 0.9,
+                    userSelect: 'none',
+                    flexShrink: 0,
+                    letterSpacing: '-0.04em'
+                  }}>
+                    {step.num}
                   </div>
-                  <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.35, fontWeight: 600 }}>
-                    {step.stage}
-                  </h3>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                    {step.works}
-                  </p>
+
+                  <div style={{ flex: 1 }}>
+                    <h3 style={{
+                      fontSize: '19px',
+                      fontFamily: 'var(--font-serif)',
+                      color: 'var(--color-deep-blue)',
+                      margin: '0 0 8px 0',
+                      lineHeight: 1.35,
+                      fontWeight: 600
+                    }}>
+                      {step.stage}
+                    </h3>
+
+                    <p style={{
+                      fontSize: '14.5px',
+                      color: 'var(--color-text-secondary)',
+                      lineHeight: 1.55,
+                      margin: 0
+                    }}>
+                      {step.works}
+                    </p>
+                  </div>
                 </div>
-                <div style={{ flex: '1 1 320px', minWidth: '260px', background: '#FAF7F2', border: '1px solid rgba(193, 160, 102, 0.25)', borderLeft: '3px solid var(--color-gold)', padding: '16px 20px', boxSizing: 'border-box' }}>
+
+                {/* Правая часть: Результат этапа */}
+                <div style={{
+                  flex: '0 1 320px',
+                  minWidth: '260px',
+                  background: '#FAF7F2',
+                  border: '1px solid rgba(193, 160, 102, 0.25)',
+                  borderLeft: '3px solid var(--color-gold)',
+                  padding: '16px 20px',
+                  boxSizing: 'border-box'
+                }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                       <polyline points="9 11 12 14 22 4" />

@@ -1163,10 +1163,10 @@ export default function ArbitrazhClient() {
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  padding: '28px 32px',
+                  padding: '24px 32px 24px 20px',
                   display: 'flex',
                   flexWrap: 'wrap',
-                  gap: '28px',
+                  gap: '24px',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   position: 'relative',
@@ -1174,53 +1174,50 @@ export default function ArbitrazhClient() {
                 }}
               >
                 <div className="stage-accent" />
-                <div style={{ flex: '1 1 520px', minWidth: '280px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <span style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '26px',
-                      fontWeight: 700,
-                      color: 'var(--color-gold)',
-                      lineHeight: 1
-                    }}>
-                      {step.num}
-                    </span>
-                    <span style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      color: 'var(--color-primary)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      background: 'rgba(23, 50, 77, 0.06)',
-                      padding: '3px 8px'
-                    }}>
-                      Этап {step.num}
-                    </span>
+                
+                {/* Левая часть: крупный номер по центру и по левому краю с легким срезом + текст */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '22px', flex: '1 1 540px', minWidth: '280px' }}>
+                  <div style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: 'clamp(54px, 5.5vw, 78px)',
+                    fontWeight: 700,
+                    color: 'var(--color-gold)',
+                    lineHeight: 0.9,
+                    marginLeft: '-14px',
+                    opacity: 0.9,
+                    userSelect: 'none',
+                    flexShrink: 0,
+                    letterSpacing: '-0.04em'
+                  }}>
+                    {step.num}
                   </div>
 
-                  <h3 style={{
-                    fontSize: '19px',
-                    fontFamily: 'var(--font-serif)',
-                    color: 'var(--color-deep-blue)',
-                    margin: '0 0 10px 0',
-                    lineHeight: 1.35,
-                    fontWeight: 600
-                  }}>
-                    {step.stage}
-                  </h3>
+                  <div style={{ flex: 1 }}>
+                    <h3 style={{
+                      fontSize: '19px',
+                      fontFamily: 'var(--font-serif)',
+                      color: 'var(--color-deep-blue)',
+                      margin: '0 0 8px 0',
+                      lineHeight: 1.35,
+                      fontWeight: 600
+                    }}>
+                      {step.stage}
+                    </h3>
 
-                  <p style={{
-                    fontSize: '14.5px',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: 0
-                  }}>
-                    {step.works}
-                  </p>
+                    <p style={{
+                      fontSize: '14.5px',
+                      color: 'var(--color-text-secondary)',
+                      lineHeight: 1.55,
+                      margin: 0
+                    }}>
+                      {step.works}
+                    </p>
+                  </div>
                 </div>
 
+                {/* Правая часть: Результат этапа */}
                 <div style={{
-                  flex: '1 1 320px',
+                  flex: '0 1 320px',
                   minWidth: '260px',
                   background: '#FAF7F2',
                   border: '1px solid rgba(193, 160, 102, 0.25)',
@@ -1243,33 +1240,6 @@ export default function ArbitrazhClient() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div style={{
-            padding: '24px 32px',
-            background: '#FFFFFF',
-            border: '1px solid var(--color-border)',
-            borderLeft: '4px solid var(--color-gold)',
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '24px',
-            marginTop: '36px'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: '1 1 520px' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                <polyline points="9 11 12 14 22 4" />
-                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-              </svg>
-              <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.55 }}>
-                Согласуем состав и фиксированную стоимость каждого этапа до начала процессуальных действий
-              </span>
-            </div>
-            <a href="#form" className="btn btn-primary" style={{ padding: '13px 28px', fontSize: '14.5px', whiteSpace: 'nowrap', flexShrink: 0 }}>
-              Начать работу с аудита
-            </a>
           </div>
         </div>
       </section>
@@ -1621,6 +1591,64 @@ export default function ArbitrazhClient() {
                 </svg>
                 <span>Построить маршрут до офиса</span>
               </a>
+            </div>
+          </div>
+
+          {/* СНОСКА: ГЕОГРАФИЯ СУДЕБНОГО ПРЕДСТАВИТЕЛЬСТВА (БЕЗ КАРТОЧЕК) */}
+          <div style={{
+            borderTop: '1px solid rgba(193, 160, 102, 0.35)',
+            paddingTop: '28px',
+            marginTop: '36px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                География судебного представительства
+              </span>
+              <span style={{ color: 'rgba(23, 50, 77, 0.3)' }}>•</span>
+              <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
+                Ведём дела в арбитражных судах Липецка, Воронежа, Калуги и Москвы лично и через онлайн-заседания:
+              </span>
+            </div>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '20px',
+              fontSize: '13px',
+              color: 'var(--color-text-secondary)',
+              lineHeight: 1.55
+            }}>
+              <div>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', marginBottom: '3px' }}>
+                  Первая инстанция: Арбитражный суд Липецкой области
+                </strong>
+                <span style={{ color: 'var(--color-gold)', fontWeight: 600, display: 'block', marginBottom: '3px' }}>г. Липецк, пл. Петра Великого, д. 7</span>
+                <span>Рассмотрение экономических споров между юридическими лицами и ИП Липецкой области по первой инстанции.</span>
+              </div>
+
+              <div>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', marginBottom: '3px' }}>
+                  Апелляция: 19 арбитражный апелляционный суд (19 ААС)
+                </strong>
+                <span style={{ color: 'var(--color-gold)', fontWeight: 600, display: 'block', marginBottom: '3px' }}>г. Воронеж, ул. Платонова, д. 8</span>
+                <span>Проверка законности и обоснованности не вступивших в силу судебных актов Арбитражного суда Липецкой области.</span>
+              </div>
+
+              <div>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', marginBottom: '3px' }}>
+                  Кассация: Арбитражный суд Центрального округа (АС ЦО)
+                </strong>
+                <span style={{ color: 'var(--color-gold)', fontWeight: 600, display: 'block', marginBottom: '3px' }}>г. Калуга, ул. Ленина, д. 74</span>
+                <span>Кассационная проверка вступивших в силу решений и постановлений судов первой и апелляционной инстанций.</span>
+              </div>
+
+              <div>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', marginBottom: '3px' }}>
+                  Судебная коллегия ВС РФ: Верховный Суд Российской Федерации
+                </strong>
+                <span style={{ color: 'var(--color-gold)', fontWeight: 600, display: 'block', marginBottom: '3px' }}>г. Москва, ул. Поварская, д. 15</span>
+                <span>Вторая кассация и надзорное производство по исключительным и прецедентным спорам экономической коллегии ВС РФ.</span>
+              </div>
             </div>
           </div>
         </div>
