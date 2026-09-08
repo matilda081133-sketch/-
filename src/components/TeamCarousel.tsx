@@ -311,18 +311,15 @@ export default function TeamCarousel({
         </div>
 
         {(showDisclaimer || customDisclaimer) && (
-          <div style={{ marginTop: '36px', paddingTop: '20px', borderTop: '1px solid rgba(16,39,59,0.08)' }}>
+          <div style={{ marginTop: '28px', paddingTop: '16px' }}>
             <p style={{
               margin: 0,
-              fontSize: '13.5px',
+              fontSize: '14px',
               color: 'var(--color-text-secondary)',
-              lineHeight: 1.65,
-              fontStyle: 'italic',
-              borderLeft: '3px solid rgba(23,50,77,0.25)',
-              paddingLeft: '14px',
-              maxWidth: '860px'
+              lineHeight: 1.6,
+              maxWidth: '850px'
             }}>
-              {customDisclaimer || 'ЮК «Де-Юре» и Коллегия адвокатов «Де-Юре» являются самостоятельными организациями. Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.'}
+              {customDisclaimer || 'Представленные адвокаты не являются сотрудниками ЮК «Де-Юре» и осуществляют адвокатскую деятельность самостоятельно. При необходимости ЮК может рекомендовать или привлечь адвоката соответствующей специализации. Соглашение об оказании адвокатской помощи заключается непосредственно между адвокатом и доверителем.'}
             </p>
           </div>
         )}
