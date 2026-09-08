@@ -1060,30 +1060,30 @@ export default function ArbitrazhClient() {
             padding: '36px 32px',
             position: 'relative'
           }}>
-            <div style={{
+            <div className="stages-header-row" style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              flexWrap: 'wrap',
-              gap: '16px',
+              gap: '24px',
               marginBottom: '24px',
               position: 'relative',
               zIndex: 1
             }}>
-              <div>
-                <h3 style={{ fontSize: 'clamp(20px, 2.5vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+              <div style={{ flex: '1 1 auto', minWidth: '280px' }}>
+                <h3 style={{ fontSize: 'clamp(19px, 2.2vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
                   3 этапа правового анализа и процессуальной защиты
                 </h3>
               </div>
               <div className="stages-subtitle-right" style={{
                 fontSize: '13.5px',
-                color: 'rgba(255, 255, 255, 0.8)',
-                maxWidth: '540px',
+                color: 'rgba(255, 255, 255, 0.85)',
+                maxWidth: '520px',
                 lineHeight: 1.5,
-                textAlign: 'right'
+                textAlign: 'right',
+                flex: '0 0 auto'
               }}>
-                <span style={{ display: 'block' }}>Позволяет безошибочно определить правовую позицию:</span>
-                <span style={{ display: 'block' }}>проверка оснований, ходатайства об исключении доказательств или обжалование.</span>
+                <span style={{ display: 'block', fontWeight: 500 }}>Позволяет безошибочно определить правовую позицию:</span>
+                <span style={{ display: 'block', color: 'rgba(255, 255, 255, 0.7)' }}>проверка оснований, ходатайства об исключении доказательств или обжалование.</span>
               </div>
             </div>
 
@@ -1179,12 +1179,14 @@ export default function ArbitrazhClient() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '22px', flex: '1 1 540px', minWidth: '280px' }}>
                   <div style={{
                     fontFamily: 'var(--font-serif)',
-                    fontSize: 'clamp(54px, 5.5vw, 78px)',
+                    fontSize: 'clamp(68px, 7vw, 96px)',
                     fontWeight: 700,
                     color: 'var(--color-gold)',
-                    lineHeight: 0.9,
-                    marginLeft: '-14px',
-                    opacity: 0.9,
+                    lineHeight: 0.75,
+                    marginLeft: '-22px',
+                    marginTop: '-24px',
+                    marginBottom: '-16px',
+                    opacity: 0.35,
                     userSelect: 'none',
                     flexShrink: 0,
                     letterSpacing: '-0.04em'
@@ -1366,56 +1368,7 @@ export default function ArbitrazhClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 8: СУДЕБНЫЕ ИНСТАНЦИИ ═══ */}
-      <section className="section bg-light" id="courts" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
-            <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>
-              География судебного представительства
-            </div>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', margin: '0 0 16px 0', lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>В каких судах</span> <br />
-              <span style={{ display: 'inline-block' }}>представляем интересы</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Ведём дела в арбитражных судах Липецка, Воронежа, Калуги и Москвы лично и через онлайн-заседания.
-            </p>
-          </div>
 
-          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '32px' }}>
-            {courts.map((court, idx) => (
-              <div
-                key={idx}
-                className="hover-lift"
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-primary)',
-                  padding: '28px 26px',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
-                }}
-              >
-                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '8px' }}>
-                  {court.instance}
-                </span>
-                <h3 style={{ fontSize: '18.5px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', lineHeight: 1.35 }}>
-                  {court.name}
-                </h3>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', color: 'var(--color-text-secondary)', fontSize: '13.5px' }}>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                  <span>{court.location}</span>
-                </div>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                  {court.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ═══ БЛОК 9: СТОИМОСТЬ УСЛУГ АРБИТРАЖНОГО ЮРИСТА ═══ */}
       <PricingBlock
@@ -1597,57 +1550,103 @@ export default function ArbitrazhClient() {
           {/* СНОСКА: ГЕОГРАФИЯ СУДЕБНОГО ПРЕДСТАВИТЕЛЬСТВА (БЕЗ КАРТОЧЕК) */}
           <div style={{
             borderTop: '1px solid rgba(193, 160, 102, 0.35)',
-            paddingTop: '28px',
+            paddingTop: '32px',
             marginTop: '36px'
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+            <div style={{ marginBottom: '22px' }}>
+              <div style={{
+                fontSize: '12px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                marginBottom: '6px'
+              }}>
                 География судебного представительства
-              </span>
-              <span style={{ color: 'rgba(23, 50, 77, 0.3)' }}>•</span>
-              <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
+              </div>
+              <p style={{
+                fontSize: '15px',
+                color: 'var(--color-deep-blue)',
+                fontWeight: 500,
+                margin: 0,
+                lineHeight: 1.5
+              }}>
                 Ведём дела в арбитражных судах Липецка, Воронежа, Калуги и Москвы лично и через онлайн-заседания:
-              </span>
+              </p>
             </div>
 
-            <div style={{
+            <div className="geography-instances-grid" style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: '20px',
-              fontSize: '13px',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: '24px',
+              fontSize: '13.5px',
               color: 'var(--color-text-secondary)',
               lineHeight: 1.55
             }}>
-              <div>
-                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', marginBottom: '3px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', lineHeight: 1.35, marginBottom: '2px' }}>
                   Первая инстанция: Арбитражный суд Липецкой области
                 </strong>
-                <span style={{ color: 'var(--color-gold)', fontWeight: 600, display: 'block', marginBottom: '3px' }}>г. Липецк, пл. Петра Великого, д. 7</span>
-                <span>Рассмотрение экономических споров между юридическими лицами и ИП Липецкой области по первой инстанции.</span>
+                <span style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '12.5px', display: 'block', marginBottom: '2px' }}>
+                  г. Липецк, пл. Петра Великого, д. 7
+                </span>
+                <span style={{ fontSize: '13px' }}>
+                  Рассмотрение экономических споров между юридическими лицами и ИП Липецкой области по первой инстанции.
+                </span>
               </div>
 
-              <div>
-                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', marginBottom: '3px' }}>
+              <div style={{
+                borderLeft: '1px solid rgba(193, 160, 102, 0.28)',
+                paddingLeft: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '4px'
+              }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', lineHeight: 1.35, marginBottom: '2px' }}>
                   Апелляция: 19 арбитражный апелляционный суд (19 ААС)
                 </strong>
-                <span style={{ color: 'var(--color-gold)', fontWeight: 600, display: 'block', marginBottom: '3px' }}>г. Воронеж, ул. Платонова, д. 8</span>
-                <span>Проверка законности и обоснованности не вступивших в силу судебных актов Арбитражного суда Липецкой области.</span>
+                <span style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '12.5px', display: 'block', marginBottom: '2px' }}>
+                  г. Воронеж, ул. Платонова, д. 8
+                </span>
+                <span style={{ fontSize: '13px' }}>
+                  Проверка законности и обоснованности не вступивших в силу судебных актов Арбитражного суда Липецкой области.
+                </span>
               </div>
 
-              <div>
-                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', marginBottom: '3px' }}>
+              <div style={{
+                borderLeft: '1px solid rgba(193, 160, 102, 0.28)',
+                paddingLeft: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '4px'
+              }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', lineHeight: 1.35, marginBottom: '2px' }}>
                   Кассация: Арбитражный суд Центрального округа (АС ЦО)
                 </strong>
-                <span style={{ color: 'var(--color-gold)', fontWeight: 600, display: 'block', marginBottom: '3px' }}>г. Калуга, ул. Ленина, д. 74</span>
-                <span>Кассационная проверка вступивших в силу решений и постановлений судов первой и апелляционной инстанций.</span>
+                <span style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '12.5px', display: 'block', marginBottom: '2px' }}>
+                  г. Калуга, ул. Ленина, д. 74
+                </span>
+                <span style={{ fontSize: '13px' }}>
+                  Кассационная проверка вступивших в силу решений и постановлений судов первой и апелляционной инстанций.
+                </span>
               </div>
 
-              <div>
-                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', marginBottom: '3px' }}>
+              <div style={{
+                borderLeft: '1px solid rgba(193, 160, 102, 0.28)',
+                paddingLeft: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '4px'
+              }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', fontSize: '13.5px', lineHeight: 1.35, marginBottom: '2px' }}>
                   Судебная коллегия ВС РФ: Верховный Суд Российской Федерации
                 </strong>
-                <span style={{ color: 'var(--color-gold)', fontWeight: 600, display: 'block', marginBottom: '3px' }}>г. Москва, ул. Поварская, д. 15</span>
-                <span>Вторая кассация и надзорное производство по исключительным и прецедентным спорам экономической коллегии ВС РФ.</span>
+                <span style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '12.5px', display: 'block', marginBottom: '2px' }}>
+                  г. Москва, ул. Поварская, д. 15
+                </span>
+                <span style={{ fontSize: '13px' }}>
+                  Вторая кассация и надзорное производство по исключительным и прецедентным спорам экономической коллегии ВС РФ.
+                </span>
               </div>
             </div>
           </div>
@@ -1717,19 +1716,142 @@ export default function ArbitrazhClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 15: SEO-ТЕКСТ И ПЕРЕЛИНКОВКА ═══ */}
-      <section className="section bg-light" style={{ padding: '60px 0', borderTop: '1px solid var(--color-border)', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК: СМЕЖНЫЕ НАПРАВЛЕНИЯ ПРАКТИКИ ДЛЯ БИЗНЕСА (ПО ШАБЛОНУ) ═══ */}
+      <section className="section bg-light" id="related-services" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '900px', margin: '0 auto', fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>
-            <h2 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
+          <div style={{ maxWidth: '840px', marginBottom: '36px', textAlign: 'left' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '10px'
+            }}>
+              Смежные направления практики для бизнеса
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 34px)', color: 'var(--color-deep-blue)', marginBottom: '14px', marginTop: 0, lineHeight: 1.25 }}>
               Представительство в арбитражном суде Липецкой области
             </h2>
-            <p style={{ marginBottom: '16px' }}>
+            <p style={{ fontSize: '15.5px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.65, margin: 0, textWrap: 'balance' }}>
               Арбитражные споры требуют высокой процессуальной точности и безупречного соблюдения сроков, установленных Арбитражным процессуальным кодексом РФ. Юристы компании «Де-Юре» защищают интересы организаций и индивидуальных предпринимателей в Арбитражном суде Липецкой области, Девятнадцатом арбитражном апелляционном суде (Воронеж), Арбитражном суде Центрального округа (Калуга) и Верховном Суде РФ.
             </p>
-            <p style={{ margin: 0 }}>
-              Смежные направления практики для бизнеса: <Link href="/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>взыскание задолженности с юридических лиц</Link>, <Link href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>исполнительное производство для бизнеса</Link>, <Link href="/biznesu/trudovye-spory-s-rabotnikami/" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>трудовые споры с работниками</Link>.
-            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '28px' }}>
+            <Link href="/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Взыскание задолженности с юридических лиц
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Претензионная и судебная работа по возврату основного долга, неустойки и процентов по ст. 395 ГК РФ с контрагентов.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Исполнительное производство для бизнеса
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Фактическое исполнение решений суда, розыск счетов и имущества должника, работа с банками и контроль действий приставов.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/biznesu/trudovye-spory-s-rabotnikami/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Трудовые споры с работниками
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Защита интересов работодателя при проверках ГИТ, спорах об увольнении, сокращении штата и материальном ущербе.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div>
+            <Link href="/biznesu/" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              Смотреть все юридические услуги для бизнеса →
+            </Link>
           </div>
         </div>
       </section>
@@ -1740,10 +1862,14 @@ export default function ArbitrazhClient() {
           .claims-matrix-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
-        }
-        @media (max-width: 768px) {
+          .stages-header-row {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 12px !important;
+          }
           .stages-subtitle-right {
             text-align: left !important;
+            max-width: 100% !important;
           }
         }
       `}} />

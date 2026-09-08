@@ -534,12 +534,14 @@ export default function ObzhalovanieClient() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '22px', flex: '1 1 540px', minWidth: '280px' }}>
                   <div style={{
                     fontFamily: 'var(--font-serif)',
-                    fontSize: 'clamp(54px, 5.5vw, 78px)',
+                    fontSize: 'clamp(68px, 7vw, 96px)',
                     fontWeight: 700,
                     color: 'var(--color-gold)',
-                    lineHeight: 0.9,
-                    marginLeft: '-14px',
-                    opacity: 0.9,
+                    lineHeight: 0.75,
+                    marginLeft: '-22px',
+                    marginTop: '-24px',
+                    marginBottom: '-16px',
+                    opacity: 0.35,
                     userSelect: 'none',
                     flexShrink: 0,
                     letterSpacing: '-0.04em'
