@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -473,6 +473,63 @@ export default function ArbitrazhClient() {
     {
       q: 'Можно ли гарантировать победу в арбитражном суде?',
       a: 'Нет. Решение принимает суд после всесторонней оценки доказательств. Юрист добросовестно оценивает риски, формирует сильную позицию и отстаивает интересы, но закон запрещает гарантировать исход судебного разбирательства.'
+    }
+  ];
+
+  const teamScrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollTeam = (direction: 'left' | 'right') => {
+    if (teamScrollRef.current) {
+      const scrollAmount = direction === 'left' ? -290 : 290;
+      teamScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const arbitrazhTeam = [
+    {
+      name: 'Бобкин Аркадий Евгеньевич',
+      role: 'Управляющий партнёр',
+      badge: 'Юр. стаж с 1997 года',
+      specialization: 'Налоговые споры, сложные коммерческие и корпоративные дела, защита активов.',
+      img: '/images/bobkin.jpg',
+      imgPosition: 'center 15%',
+      link: '/specialisty/bobkin-arkadiy-evgenevich/'
+    },
+    {
+      name: 'Начешников Владимир Викторович',
+      role: 'Корпоративный юрист',
+      badge: 'Опыт с 1997 года',
+      specialization: 'Корпоративные процедуры, споры участников ООО/АО, реорганизация и сделки.',
+      img: '/images/nacheshnikov.jpg',
+      imgPosition: 'center 20%',
+      link: '/specialisty/nacheshnikov-vladimir-viktorovich/'
+    },
+    {
+      name: 'Смольянинова Марина Валерьевна',
+      role: 'Ведущий юрист',
+      badge: 'Опыт в УФССП более 10 лет',
+      specialization: 'Договорные споры, недвижимость, обеспечительные меры и исполнение судебных актов.',
+      img: '/images/smolyaninova.jpg',
+      imgPosition: 'center 20%',
+      link: '/specialisty/smolyaninova-marina-valerevna/'
+    },
+    {
+      name: 'Конопкин Дмитрий Сергеевич',
+      role: 'Адвокат, председатель коллегии',
+      badge: 'Опыт в СК РФ',
+      specialization: 'Судебное представительство, процессуальная защита и комплексное ведение споров.',
+      img: '/images/konopkin.jpg',
+      imgPosition: 'center 18%',
+      link: '/specialisty/konopkin-dmitriy-sergeevich/'
+    },
+    {
+      name: 'Гусев Олег Юрьевич',
+      role: 'Адвокат, управляющий партнёр',
+      badge: 'Опыт в прокуратуре 7 лет',
+      specialization: 'Экономические составы, защита бенефициаров и топ-менеджмента от субсидиарной ответственности.',
+      img: '/images/gusev.jpg',
+      imgPosition: 'center 15%',
+      link: '/specialisty/gusev-oleg-yurevich/'
     }
   ];
 
@@ -1421,33 +1478,295 @@ export default function ArbitrazhClient() {
       />
 
       {/* ═══ БЛОК 10: КОМАНДА СУДЕБНОЙ ПРАКТИКИ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      <section className="section bg-white" style={{ padding: '80px 0', position: 'relative', overflow: 'hidden' }} id="team">
         <div className="container">
           <div style={{
-            background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+            background: 'linear-gradient(145deg, #FFFFFF 0%, #FAF6EE 100%)',
             border: '1px solid var(--color-border)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '40px 48px',
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+            boxShadow: '0 10px 36px rgba(23, 50, 77, 0.06)',
+            padding: '40px 36px',
+            position: 'relative'
           }}>
-            <div style={{ maxWidth: '800px' }}>
-              <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                Судебная практика ЮК «Де-Юре»
-              </span>
-              <h2 style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '12px 0 16px 0', lineHeight: 1.25 }}>
-                Командное ведение арбитражных споров
-              </h2>
-              <p style={{ fontSize: '15.5px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: '0 0 24px 0' }}>
-                К ведению арбитражных дел подключаются профильные процессуалисты и отраслевые эксперты с учётом предмета спора: строительные юристы, специалисты по договорному праву, налоговые консультанты и эксперты по банкротству. Состав команды и распределение задач согласуются после первичного аудита материалов.
-              </p>
-              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-                <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px' }}>
-                  Обсудить задачу с командой
-                </a>
-                <Link href="/specialisty/" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: '14.5px' }}>
-                  Все специалисты компании →
-                </Link>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '36px',
+              alignItems: 'center'
+            }}>
+              
+              {/* Левая колонка: описание, бейджи компетенций и кнопки */}
+              <div>
+                <div style={{
+                  fontSize: '13px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '10px'
+                }}>
+                  Судебная практика ЮК «Де-Юре»
+                </div>
+                <h2 style={{
+                  fontSize: 'clamp(24px, 3.2vw, 34px)',
+                  fontFamily: 'var(--font-serif)',
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 16px 0',
+                  lineHeight: 1.25
+                }}>
+                  Командное ведение арбитражных споров
+                </h2>
+                <p style={{
+                  fontSize: '15px',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.65,
+                  margin: '0 0 20px 0'
+                }}>
+                  К ведению арбитражных дел подключаются профильные процессуалисты и отраслевые эксперты с учётом предмета спора: строительные юристы, специалисты по договорному праву, налоговые консультанты и эксперты по банкротству. Состав команды и распределение задач согласуются после первичного аудита материалов.
+                </p>
+
+                {/* Бейджи ключевых компетенций */}
+                <div style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '8px',
+                  marginBottom: '26px'
+                }}>
+                  {[
+                    'Строительный подряд',
+                    'Корпоративные споры',
+                    'Налоговый аудит',
+                    'Банкротство и субсидиарка',
+                    'Договорные неустойки',
+                    'Судебные экспертизы'
+                  ].map((tag, idx) => (
+                    <span
+                      key={idx}
+                      style={{
+                        background: '#FFFFFF',
+                        border: '1px solid rgba(193, 160, 102, 0.35)',
+                        color: 'var(--color-deep-blue)',
+                        fontSize: '12.5px',
+                        fontWeight: 600,
+                        padding: '5px 12px',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        boxShadow: '0 1px 3px rgba(0,0,0,0.02)'
+                      }}
+                    >
+                      <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--color-gold)' }}></span>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Кнопки и навигация слайдера */}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '16px',
+                  flexWrap: 'wrap'
+                }}>
+                  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                    <a href="#form" className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '14.5px' }}>
+                      Обсудить задачу с командой
+                    </a>
+                    <Link href="/specialisty/" className="btn btn-outline" style={{ padding: '12px 20px', fontSize: '14.5px', whiteSpace: 'nowrap' }}>
+                      Все специалисты компании →
+                    </Link>
+                  </div>
+
+                  {/* Стрелки перелистывания слайдера */}
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    <button
+                      onClick={() => scrollTeam('left')}
+                      aria-label="Предыдущий специалист"
+                      style={{
+                        width: '38px',
+                        height: '38px',
+                        borderRadius: '50%',
+                        background: '#FFFFFF',
+                        border: '1px solid var(--color-border)',
+                        color: 'var(--color-deep-blue)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s ease',
+                        boxShadow: '0 2px 6px rgba(0,0,0,0.05)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--color-gold)';
+                        e.currentTarget.style.color = 'var(--color-gold)';
+                        e.currentTarget.style.transform = 'translateY(-1px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--color-border)';
+                        e.currentTarget.style.color = 'var(--color-deep-blue)';
+                        e.currentTarget.style.transform = 'none';
+                      }}
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                    </button>
+                    <button
+                      onClick={() => scrollTeam('right')}
+                      aria-label="Следующий специалист"
+                      style={{
+                        width: '38px',
+                        height: '38px',
+                        borderRadius: '50%',
+                        background: '#FFFFFF',
+                        border: '1px solid var(--color-border)',
+                        color: 'var(--color-deep-blue)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s ease',
+                        boxShadow: '0 2px 6px rgba(0,0,0,0.05)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--color-gold)';
+                        e.currentTarget.style.color = 'var(--color-gold)';
+                        e.currentTarget.style.transform = 'translateY(-1px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--color-border)';
+                        e.currentTarget.style.color = 'var(--color-deep-blue)';
+                        e.currentTarget.style.transform = 'none';
+                      }}
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
               </div>
+
+              {/* Правая колонка: карусель карточек специалистов */}
+              <div style={{ position: 'relative', minWidth: 0, overflow: 'hidden' }}>
+                <div
+                  ref={teamScrollRef}
+                  style={{
+                    display: 'flex',
+                    gap: '16px',
+                    overflowX: 'auto',
+                    scrollSnapType: 'x mandatory',
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none',
+                    padding: '8px 4px 14px 4px'
+                  }}
+                  className="hide-scrollbar"
+                >
+                  {arbitrazhTeam.map((member, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        flex: '0 0 260px',
+                        scrollSnapAlign: 'start',
+                        background: '#FFFFFF',
+                        border: '1px solid var(--color-border)',
+                        borderTop: '3px solid var(--color-gold)',
+                        boxShadow: '0 4px 16px rgba(23, 50, 77, 0.06)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                        position: 'relative'
+                      }}
+                      className="hover-lift"
+                    >
+                      {/* Фото специалиста */}
+                      <div style={{ position: 'relative', width: '100%', height: '230px', overflow: 'hidden', background: '#ECE7DE' }}>
+                        <img
+                          src={member.img}
+                          alt={member.name}
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            objectPosition: member.imgPosition || 'center top'
+                          }}
+                        />
+                        {/* Бейдж стажа поверх фото */}
+                        <div style={{
+                          position: 'absolute',
+                          bottom: '10px',
+                          left: '10px',
+                          background: 'rgba(16, 39, 59, 0.9)',
+                          backdropFilter: 'blur(4px)',
+                          color: '#FFFFFF',
+                          fontSize: '11px',
+                          fontWeight: 600,
+                          padding: '3px 8px',
+                          borderLeft: '2px solid var(--color-gold)'
+                        }}>
+                          {member.badge}
+                        </div>
+                      </div>
+
+                      {/* Текстовая информация */}
+                      <div style={{ padding: '16px 16px 14px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                        <h3 style={{
+                          margin: '0 0 4px 0',
+                          fontSize: '15.5px',
+                          fontWeight: 700,
+                          fontFamily: 'var(--font-serif)',
+                          color: 'var(--color-deep-blue)',
+                          lineHeight: 1.3
+                        }}>
+                          {member.name}
+                        </h3>
+                        <div style={{
+                          fontSize: '11.5px',
+                          color: 'var(--color-gold)',
+                          fontWeight: 700,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.04em',
+                          marginBottom: '8px'
+                        }}>
+                          {member.role}
+                        </div>
+                        <p style={{
+                          fontSize: '12.5px',
+                          color: 'var(--color-text-secondary)',
+                          lineHeight: 1.45,
+                          margin: '0 0 12px 0',
+                          flexGrow: 1
+                        }}>
+                          {member.specialization}
+                        </p>
+
+                        <Link
+                          href={member.link}
+                          style={{
+                            fontSize: '13px',
+                            fontWeight: 600,
+                            color: 'var(--color-primary)',
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            marginTop: 'auto',
+                            transition: 'color 0.2s'
+                          }}
+                        >
+                          <span>Профиль юриста</span>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
