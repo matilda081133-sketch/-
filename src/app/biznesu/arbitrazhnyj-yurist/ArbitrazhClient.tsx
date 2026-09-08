@@ -513,8 +513,8 @@ export default function ArbitrazhClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px' }}>
-            <span style={{ display: 'inline-block' }}>Изучим документы и стадию дела, определим процессуальные риски,</span> <br className="hidden-mobile" />
-            <span style={{ display: 'inline-block' }}>подготовим правовую позицию и представим интересы</span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>Изучим документы и стадию дела, определим процессуальные</span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>риски, подготовим правовую позицию и представим интересы</span> <br className="hidden-mobile" />
             <span style={{ display: 'inline-block' }}>компании или ИП в арбитражном суде.</span>
           </span>
         }
@@ -696,6 +696,7 @@ export default function ArbitrazhClient() {
                       padding: '28px',
                       background: 'var(--color-white)',
                       border: '1px solid var(--color-border)',
+                      borderTop: '3px solid var(--color-gold)',
                       borderRadius: '0',
                       display: 'flex',
                       flexDirection: 'column',
