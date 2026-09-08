@@ -173,7 +173,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
       { '@type': 'ListItem', position: 2, name: 'О компании', item: 'https://dejure-help.ru/o-kompanii/' },
-      { '@type': 'ListItem', position: 3, name: member.slug === 'gusev-oleg-yurevich' ? 'Специалисты и адвокаты' : 'Специалисты', item: 'https://dejure-help.ru/specialisty/' },
+      { '@type': 'ListItem', position: 3, name: (member.slug === 'gusev-oleg-yurevich' || member.slug === 'konopkin-dmitriy-sergeevich') ? 'Специалисты и адвокаты' : 'Специалисты', item: 'https://dejure-help.ru/specialisty/' },
       { '@type': 'ListItem', position: 4, name: member.name, item: `https://dejure-help.ru/specialisty/${member.slug}/` }
     ]
   };
@@ -209,7 +209,7 @@ export default async function SpecialistPage({ params }: PageProps) {
             <Link href="/o-kompanii" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>О компании</Link>
             <span>/</span>
             <Link href="/specialisty" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>
-              {member.slug === 'gusev-oleg-yurevich' ? 'Специалисты и адвокаты' : 'Специалисты'}
+              {(member.slug === 'gusev-oleg-yurevich' || member.slug === 'konopkin-dmitriy-sergeevich') ? 'Специалисты и адвокаты' : 'Специалисты'}
             </Link>
             <span>/</span>
             <span>{member.name}</span>
@@ -595,7 +595,7 @@ export default async function SpecialistPage({ params }: PageProps) {
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                  {member.slug === 'gusev-oleg-yurevich' ? 'Обращение к адвокату' : 'Связаться с нами'}
+                  {(member.slug === 'gusev-oleg-yurevich' || member.slug === 'konopkin-dmitriy-sergeevich') ? 'Обращение к адвокату' : 'Связаться с нами'}
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, whiteSpace: 'pre-line' }}>
@@ -630,14 +630,14 @@ export default async function SpecialistPage({ params }: PageProps) {
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                   {member.slug === 'bobkin-arkadiy-evgenevich' ? (
                     'Свяжемся с вами в рабочее время'
-                  ) : member.slug === 'gusev-oleg-yurevich' ? (
+                  ) : (member.slug === 'gusev-oleg-yurevich' || member.slug === 'konopkin-dmitriy-sergeevich') ? (
                     <span>С вами свяжутся в течение 15 минут в рабочее время</span>
                   ) : (
                     <span>Перезвоним в течение 15 минут в рабочее время</span>
                   )}
                 </div>
                 <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '16px 0 0 0', padding: '10px 14px', background: 'rgba(16, 39, 59, 0.04)', borderLeft: '3px solid rgba(16, 39, 59, 0.25)', fontStyle: 'italic' }}>
-                  {member.slug === 'gusev-oleg-yurevich' || member.orgType === 'barAssociationLawyer'
+                  {(member.slug === 'gusev-oleg-yurevich' || member.slug === 'konopkin-dmitriy-sergeevich' || member.orgType === 'barAssociationLawyer')
                     ? 'Не указывайте в форме паспортные данные, сведения о здоровье и другие конфиденциальные сведения. Их можно передать адвокату после установления защищённого способа связи.'
                     : 'Не указывайте в форме паспортные данные, сведения о здоровье и другие конфиденциальные сведения. Их можно передать юристу после установления защищённого способа связи.'
                   }
@@ -647,24 +647,31 @@ export default async function SpecialistPage({ params }: PageProps) {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--color-white)', padding: '40px', borderRadius: '4px', boxShadow: '0 8px 16px rgba(16, 39, 59, 0.08)' }}>
               <ContactsForm 
-                title={member.slug === 'gusev-oleg-yurevich' ? "Обратиться к адвокату" : "Отправить обращение"} 
+                title={(member.slug === 'gusev-oleg-yurevich' || member.slug === 'konopkin-dmitriy-sergeevich') ? "Обратиться к адвокату" : "Отправить обращение"} 
                 subtitle="" 
-                buttonText={member.slug === 'gusev-oleg-yurevich' ? "Направить обращение адвокату" : "Получить консультацию"}
+                buttonText={(member.slug === 'gusev-oleg-yurevich' || member.slug === 'konopkin-dmitriy-sergeevich') ? "Направить обращение адвокату" : "Получить консультацию"}
                 commentPlaceholder="Кратко опишите ситуацию или вопрос…"
                 hiddenFields={[
                   { name: 'specialist', value: member.name },
-                  ...(member.slug === 'gusev-oleg-yurevich' ? [
+                  ...(member.slug === 'konopkin-dmitriy-sergeevich' ? [
+                    { name: 'target_recipient', value: 'Конопкин Дмитрий Сергеевич (независимый адвокат)' },
+                    { name: 'routing_type', value: 'advocate_konopkin' }
+                  ] : member.slug === 'gusev-oleg-yurevich' ? [
                     { name: 'target_recipient', value: 'Гусев Олег Юрьевич (независимый адвокат)' },
                     { name: 'routing_type', value: 'advocate_gusev' }
                   ] : []),
                   { name: 'page_url', value: `/specialisty/${member.slug}/` }
                 ]}
               />
-              {member.slug === 'gusev-oleg-yurevich' ? (
+              {member.slug === 'konopkin-dmitriy-sergeevich' ? (
+                <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'center' }}>
+                  Конопкин Дмитрий Сергеевич не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно. Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
+                </div>
+              ) : member.slug === 'gusev-oleg-yurevich' ? (
                 <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'center' }}>
                   Гусев Олег Юрьевич не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно. Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
                 </div>
-              ) : (member.slug === 'konopkin-dmitriy-sergeevich' || member.orgType === 'barAssociationLawyer') && (
+              ) : member.orgType === 'barAssociationLawyer' && (
                 <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'center' }}>
                   Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
                 </div>
