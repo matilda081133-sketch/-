@@ -209,49 +209,29 @@ export default function ArbitrazhClient() {
     }
   ];
 
-  const routes: { tag: string; title: React.ReactNode; desc: string; route: string }[] = [
+  const routes = [
     {
       tag: 'Сторона истца',
-      title: (
-        <span>
-          <span style={{ display: 'inline-block' }}>Истец / Заявитель</span> <br />
-          <span style={{ display: 'inline-block' }}>требований</span>
-        </span>
-      ),
+      title: 'Истец / Заявитель требований',
       desc: 'Проверяем основания, договор, претензионный порядок, доказательства, расчёт неустойки и исполнимость будущего решения.',
       route: 'Досудебная претензия → иск в арбитраж → обеспечительные меры → представительство в заседаниях.'
     },
     {
       tag: 'Сторона ответчика',
-      title: (
-        <span>
-          <span style={{ display: 'inline-block' }}>Ответчик / Защита</span> <br />
-          <span style={{ display: 'inline-block' }}>от необоснованного иска</span>
-        </span>
-      ),
+      title: 'Ответчик / Защита от иска',
       desc: 'Анализируем иск, приложения и определение суда; заявляем контррасчёт, снижение неустойки по ст. 333 ГК РФ или встречный иск.',
       route: 'Мотивированный отзыв → исключение необоснованных сумм → встречный иск / мировое соглашение.'
     },
     {
       tag: 'Третье лицо',
-      title: (
-        <span>
-          <span style={{ display: 'inline-block' }}>Третье лицо / Защита</span> <br />
-          <span style={{ display: 'inline-block' }}>прав компании</span>
-        </span>
-      ),
+      title: 'Третье лицо / Защита прав компании',
       desc: 'Определяем, как судебный акт может повлиять на права и обязанности компании, и формируем самостоятельную позицию.',
       route: 'Письменные пояснения по делу → участие в заседаниях → предотвращение преюдициальных рисков.'
     },
     {
       tag: 'Штатная служба',
-      title: (
-        <span>
-          <span style={{ display: 'inline-block' }}>Компания со штатным</span> <br />
-          <span style={{ display: 'inline-block' }}>юристом</span>
-        </span>
-      ),
-      desc: 'Подключаемся как судебные процессуалисты: аудит позиции, второе экспертное мнение, сложные экспертизы или ведение дел в других регионах.',
+      title: 'Компания со штатным юристом',
+      desc: 'Подключаемся как судебные процессуалисты: аудит позиции, второе экспертное мнение, сложные экспертизы или представительство в других регионах.',
       route: 'Распределение зон ответственности → усиление доказательной базы → совместная судебная работа.'
     }
   ];
@@ -431,7 +411,7 @@ export default function ArbitrazhClient() {
     {
       category: 'Апелляционное обжалование • 19 ААС Воронеж',
       title: 'Отмена решения суда первой инстанции о расторжении договора аренды',
-      problem: 'Суд первой инстанции расторг долгосрочный договор аренды коммерческой недвижимости по формальным основаниям арендодателя.',
+      problem: 'Суд первой инстанции неправомерно расторг долгосрочный договор аренды коммерческих площадей по формальным основаниям арендодателя.',
       action: 'Подали апелляционную жалобу в 19 ААС, доказали нарушение норм материального права и отсутствие существенных нарушений со стороны арендатора.',
       result: 'Решение суда первой инстанции отменено полностью. Договор аренды сохранён, права бизнеса восстановлены.'
     }
@@ -948,10 +928,10 @@ export default function ArbitrazhClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: ПОМОЩЬ В ЗАВИСИМОСТИ ОТ РОЛИ В ДЕЛЕ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 5: ПРОЦЕССУАЛЬНОЕ ПОЛОЖЕНИЕ + 3 ЭТАПА АНАЛИЗА И ЗАЩИТЫ ═══ */}
+      <section className="section bg-white" id="routes" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+          <div style={{ maxWidth: '820px', marginBottom: '40px', textAlign: 'left' }}>
             <div style={{
               fontSize: '13px',
               fontWeight: 700,
@@ -971,7 +951,8 @@ export default function ArbitrazhClient() {
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+          {/* Компактные карточки процессуального положения */}
+          <div className="grid grid-2" style={{ gap: '20px', marginBottom: '32px' }}>
             {routes.map((item, i) => (
               <div
                 key={i}
@@ -980,57 +961,44 @@ export default function ArbitrazhClient() {
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
-                  padding: '34px 28px',
+                  padding: '24px 22px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
                   position: 'relative',
                   overflow: 'hidden'
                 }}
               >
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.05, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                  </svg>
-                </div>
-
                 <div>
                   <div style={{
-                    fontSize: '11.5px',
+                    fontSize: '11px',
                     fontWeight: 700,
                     color: 'var(--color-gold)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.08em',
-                    marginBottom: '14px',
+                    marginBottom: '10px',
                     background: 'rgba(193, 160, 102, 0.12)',
-                    padding: '4px 10px',
-                    alignSelf: 'flex-start',
-                    display: 'inline-block',
-                    position: 'relative',
-                    zIndex: 1
+                    padding: '3px 8px',
+                    display: 'inline-block'
                   }}>
                     {item.tag}
                   </div>
                   <h3 style={{
-                    fontSize: '19px',
+                    fontSize: '18px',
                     fontFamily: 'var(--font-serif)',
                     color: 'var(--color-deep-blue)',
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.35,
-                    fontWeight: 600,
-                    position: 'relative',
-                    zIndex: 1
+                    margin: '0 0 8px 0',
+                    lineHeight: 1.3,
+                    fontWeight: 600
                   }}>
                     {item.title}
                   </h3>
                   <p style={{
-                    fontSize: '14.5px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: '0 0 24px 0',
-                    position: 'relative',
-                    zIndex: 1
+                    lineHeight: 1.55,
+                    margin: '0 0 16px 0'
                   }}>
                     {item.desc}
                   </p>
@@ -1038,28 +1006,98 @@ export default function ArbitrazhClient() {
 
                 <div style={{
                   background: '#FFFFFF',
-                  padding: '16px 18px',
+                  padding: '12px 14px',
                   border: '1px solid var(--color-border)',
                   borderLeft: '3px solid var(--color-gold)',
                   marginTop: 'auto',
-                  position: 'relative',
-                  zIndex: 1,
-                  boxShadow: '0 2px 8px rgba(23, 50, 77, 0.03)'
+                  boxShadow: '0 2px 6px rgba(23, 50, 77, 0.02)'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6" />
                     </svg>
-                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                    <strong style={{ fontSize: '11px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                       Применимый маршрут
                     </strong>
                   </div>
-                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
+                  <span style={{ fontSize: '13px', color: 'var(--color-deep-blue)', lineHeight: 1.4, fontWeight: 500, display: 'block' }}>
                     {item.route}
                   </span>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* 3 ЭТАПА ПРАВОВОГО АНАЛИЗА И ПРОЦЕССУАЛЬНОЙ ЗАЩИТЫ (ШАБЛОН КАРТОЧКИ) */}
+          <div style={{
+            background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            position: 'relative'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+              <div>
+                <h3 style={{ fontSize: 'clamp(20px, 2.5vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  3 этапа правового анализа и процессуальной защиты
+                </h3>
+              </div>
+              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '520px', lineHeight: 1.5 }}>
+                <span style={{ display: 'block' }}>Позволяет безошибочно определить правовую позицию:</span>
+                <span style={{ display: 'block' }}>проверка оснований, ходатайства об исключении доказательств или обжалование.</span>
+              </div>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>01</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Анализ договоров</span>
+                    <span style={{ display: 'block' }}>и актов</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Проверяем законность процедуры, основания требований, соблюдение претензионного порядка и корректность расчёта.
+                </p>
+                <div style={{ marginTop: 'auto', paddingTop: '10px', borderTop: '1px solid rgba(255, 255, 255, 0.1)', fontSize: '12px', color: 'var(--color-gold)' }}>
+                  <strong>Применимый сценарий:</strong><br />Досудебный контррасчёт и переговоры
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>02</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Формирование</span>
+                    <span style={{ display: 'block' }}>правовой позиции</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Готовим мотивированный отзыв, встречный иск, ходатайства о снижении неустойки (ст. 333 ГК) и экспертизе.
+                </p>
+                <div style={{ marginTop: 'auto', paddingTop: '10px', borderTop: '1px solid rgba(255, 255, 255, 0.1)', fontSize: '12px', color: 'var(--color-gold)' }}>
+                  <strong>Применимый сценарий:</strong><br />Судебная защита и встречный иск
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>03</span>
+                  <span>
+                    <span style={{ display: 'block' }}>Защита в суде</span>
+                    <span style={{ display: 'block' }}>или обжалование</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Представляем интересы в первой инстанции, 19 ААС, АС ЦО, заявляем процессуальные возражения и жалобы.
+                </p>
+                <div style={{ marginTop: 'auto', paddingTop: '10px', borderTop: '1px solid rgba(255, 255, 255, 0.1)', fontSize: '12px', color: 'var(--color-gold)' }}>
+                  <strong>Применимый сценарий:</strong><br />Мировое соглашение и судебная рассрочка
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1391,52 +1429,7 @@ export default function ArbitrazhClient() {
         disclaimer="Государственная пошлина, стоимость судебных экспертиз, нотариальные и командировочные расходы не входят в стоимость услуг юриста и рассчитываются отдельно."
       />
 
-      {/* ═══ БЛОК 10: ПРЕДУПРЕЖДЕНИЯ И РИСКИ ═══ */}
-      <section className="section bg-light" id="risks" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
-            <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>
-              Процессуальные последствия
-            </div>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', margin: '0 0 16px 0', lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Риски при отказе</span> <br />
-              <span style={{ display: 'inline-block' }}>от профессиональной защиты</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Арбитражный процесс строго формализован: суд не собирает доказательства за стороны, а оценивает представленные материалы.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            <div style={{ background: '#FFFFFF', padding: '30px 26px', border: '1px solid var(--color-border)', borderTop: '3px solid #C53030' }}>
-              <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 12px 0' }}>
-                Потеря права на возражения
-              </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                Непредставление отзыва или незаявление ходатайства о ст. 333 ГК РФ лишает возможности снизить неустойку в вышестоящих инстанциях.
-              </p>
-            </div>
-            <div style={{ background: '#FFFFFF', padding: '30px 26px', border: '1px solid var(--color-border)', borderTop: '3px solid #C53030' }}>
-              <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 12px 0' }}>
-                Преюдициальный факт
-              </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                Вступившее в силу решение суда установит обстоятельства, которые нельзя оспорить в последующих спорах или при банкротстве.
-              </p>
-            </div>
-            <div style={{ background: '#FFFFFF', padding: '30px 26px', border: '1px solid var(--color-border)', borderTop: '3px solid #C53030' }}>
-              <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 12px 0' }}>
-                Субсидиарная ответственность
-              </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                Проигранный арбитражный процесс и возникший безнадёжный долг создают прямую угрозу личной ответственности директора и учредителей.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 11: КОМАНДА СУДЕБНОЙ ПРАКТИКИ ═══ */}
+      {/* ═══ БЛОК 10: КОМАНДА СУДЕБНОЙ ПРАКТИКИ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{
@@ -1469,7 +1462,7 @@ export default function ArbitrazhClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 12: ПРИМЕРЫ ДЕЛ ИЗ ПРАКТИКИ (КЕЙСЫ) ═══ */}
+      {/* ═══ БЛОК 11: ПРИМЕРЫ ДЕЛ ИЗ ПРАКТИКИ (КЕЙСЫ) ═══ */}
       <CasesBlock
         title="Примеры дел из практики"
         showAllLink="/praktika/"
@@ -1478,7 +1471,7 @@ export default function ArbitrazhClient() {
         cases={cases}
       />
 
-      {/* ═══ БЛОК 13: FAQ ═══ */}
+      {/* ═══ БЛОК 12: FAQ ═══ */}
       <FAQBlock
         superTitle="Частые вопросы клиентов"
         title="Ответы на вопросы об арбитражных спорах"
@@ -1486,7 +1479,7 @@ export default function ArbitrazhClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 14: ЛОКАЛЬНЫЙ ОФИС В ЛИПЕЦКЕ ═══ */}
+      {/* ═══ БЛОК 13: ЛОКАЛЬНЫЙ ОФИС В ЛИПЕЦКЕ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '48px', alignItems: 'center' }}>
@@ -1607,7 +1600,7 @@ export default function ArbitrazhClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 15: ФИНАЛЬНАЯ ФОРМА СВЯЗИ ═══ */}
+      {/* ═══ БЛОК 14: ФИНАЛЬНАЯ ФОРМА (СВЯЗАТЬСЯ С НАМИ) — ШАБЛОН ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
@@ -1618,87 +1611,59 @@ export default function ArbitrazhClient() {
                   Связаться с нами
                 </span>
               </div>
-
-              <h2 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
-                fontFamily: 'var(--font-serif)',
-                color: 'var(--color-deep-blue)',
-                lineHeight: 1.25,
-                marginBottom: '20px',
-                marginTop: 0
-              }}>
-                <span style={{ display: 'inline-block' }}>Обсудите арбитражный спор</span> <br />
-                <span style={{ display: 'inline-block' }}>с юристом</span>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получите первичную</span> <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>оценку ситуации</span>
               </h2>
-
-              <p style={{
-                fontSize: '16px',
-                color: 'var(--color-text-secondary)',
-                lineHeight: 1.6,
-                marginBottom: '32px'
-              }}>
-                Кратко опишите предмет спора, свою процессуальную роль и текущую стадию. Перезвоним вам в рабочее время и согласуем безопасный способ передачи материалов.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко опишите ситуацию и оставьте контакты. Юрист изучит первичные документы и свяжется с вами для обсуждения перспектив арбитражного спора.
               </p>
 
-              <div style={{
-                background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
-                padding: '32px',
-                color: '#FFFFFF',
-                borderLeft: '4px solid var(--color-gold)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '20px',
-                marginTop: 'auto'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '4px' }}>
-                      Конфиденциальность гарантирована
-                    </strong>
-                    <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.5 }}>
-                      Не указывайте коммерческую тайну в форме. Документы передаются по защищённым каналам.
-                    </span>
-                  </div>
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                </p>
+              </div>
 
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '4px' }}>
-                      Прямая связь с дежурным юристом
-                    </strong>
-                    <a href="tel:+79103503111" style={{ color: 'var(--color-gold)', textDecoration: 'none', fontWeight: 700, fontSize: '16px' }}>
-                      +7 (910) 350-31-11
-                    </a>
-                  </div>
-                </div>
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
+                Не указывайте в форме конфиденциальные данные, коммерческую тайну и закрытые документы. Документы можно передать юристу после согласования защищённого способа связи.
               </div>
             </div>
 
-            <div style={{
-              background: '#FFFFFF',
-              border: '1px solid var(--color-border)',
-              boxShadow: '0 12px 40px rgba(23, 50, 77, 0.08)',
-              padding: '40px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center'
-            }}>
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
               <ContactsForm
-                hiddenFields={[{ name: 'service', value: 'arbitrazhnyj-yurist' }]}
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
+                buttonText="Обсудить арбитражный спор"
+                commentPlaceholder="Кратко опишите ситуацию: предмет спора, суд, стадия, сумма требований…"
+                hiddenFields={[
+                  { name: 'source_page', value: '/biznesu/arbitrazhnyj-yurist/' },
+                  { name: 'page_type', value: 'hub' },
+                  { name: 'direction', value: 'arbitrazh' },
+                  { name: 'service', value: 'arbitrazhnyj-yurist' }
+                ]}
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 16: SEO-ТЕКСТ И ПЕРЕЛИНКОВКА ═══ */}
+      {/* ═══ БЛОК 15: SEO-ТЕКСТ И ПЕРЕЛИНКОВКА ═══ */}
       <section className="section bg-light" style={{ padding: '60px 0', borderTop: '1px solid var(--color-border)', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '900px', margin: '0 auto', fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>
@@ -1716,6 +1681,18 @@ export default function ArbitrazhClient() {
       </section>
 
       <Footer />
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 991px) {
+          .claims-matrix-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .claims-matrix-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}} />
     </main>
   );
 }
