@@ -400,7 +400,13 @@ export default function IskArbitrazhClient() {
                 overflow: 'hidden',
                 transition: 'all 0.3s ease'
               }}>
-                <div>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
+                <div style={{ position: 'relative', zIndex: 1 }}>
                   <div style={{
                     fontSize: '12px',
                     fontWeight: 700,
@@ -482,14 +488,14 @@ export default function IskArbitrazhClient() {
       {/* ═══ БЛОК 3: СРОЧНЫЕ СИТУАЦИИ ═══ */}
       <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }} id="urgent">
         <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
-              <span style={{ display: 'inline-block' }}>Когда подачу иска нельзя</span> <br />
-              <span style={{ display: 'inline-block' }}>откладывать</span>
+          <div style={{ maxWidth: '1000px', marginBottom: '36px' }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3.8vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+              Когда подачу иска нельзя откладывать
             </h2>
             <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', marginBottom: '40px', maxWidth: '720px', lineHeight: 1.6 }}>
-              Затягивание с подачей иска ведёт к пропуску сроков и невозможности реального взыскания денег.
+              <span style={{ display: 'inline-block' }}>Затягивание с подачей иска ведёт к пропуску сроков</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>и невозможности реального взыскания денег.</span>
             </p>
           </div>
 
@@ -530,7 +536,7 @@ export default function IskArbitrazhClient() {
           </div>
 
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
               +7 (910) 350-31-11
             </a>
             <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
@@ -539,6 +545,9 @@ export default function IskArbitrazhClient() {
             <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Оценить иск
             </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
+              Ответим в рабочее время и согласуем процессуальные действия
+            </span>
           </div>
         </div>
       </section>
@@ -567,82 +576,45 @@ export default function IskArbitrazhClient() {
                 style={{
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  padding: '24px 32px 24px 20px',
+                  padding: '32px 36px',
                   display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '24px',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
+                  gap: '32px',
+                  alignItems: 'flex-start',
                   position: 'relative',
-                  overflow: 'hidden'
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
                 }}
               >
-                <div className="stage-accent" />
-                
-                {/* Левая часть: крупный номер по центру и по левому краю с легким срезом + текст */}
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '18px', flex: '1 1 540px', minWidth: '280px', position: 'relative' }}>
-                  <div style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: 'clamp(64px, 6.5vw, 88px)',
-                    fontWeight: 800,
-                    color: 'var(--color-gold)',
-                    lineHeight: 0.72,
-                    marginLeft: '-46px',
-                    marginTop: '-40px',
-                    opacity: 0.2,
-                    userSelect: 'none',
-                    flexShrink: 0,
-                    letterSpacing: '-0.05em'
-                  }}>
-                    {step.num}
-                  </div>
-
-                  <div style={{ flex: 1 }}>
-                    <h3 style={{
-                      fontSize: '19px',
-                      fontFamily: 'var(--font-serif)',
-                      color: 'var(--color-deep-blue)',
-                      margin: '0 0 8px 0',
-                      lineHeight: 1.35,
-                      fontWeight: 600
-                    }}>
-                      {step.stage}
-                    </h3>
-
-                    <p style={{
-                      fontSize: '14.5px',
-                      color: 'var(--color-text-secondary)',
-                      lineHeight: 1.55,
-                      margin: 0
-                    }}>
-                      {step.works}
-                    </p>
-                  </div>
+                {/* Номер этапа */}
+                <div style={{ flexShrink: 0, width: '56px', height: '56px', borderRadius: '50%', background: 'var(--color-deep-blue)', color: 'var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-serif)', fontSize: '24px', fontWeight: 700, boxShadow: '0 4px 12px rgba(23, 50, 77, 0.15)' }}>
+                  {step.num}
                 </div>
 
-                {/* Правая часть: Результат этапа */}
-                <div style={{
-                  flex: '0 1 320px',
-                  minWidth: '260px',
-                  background: '#FAF7F2',
-                  border: '1px solid rgba(193, 160, 102, 0.25)',
-                  borderLeft: '3px solid var(--color-gold)',
-                  padding: '16px 20px',
-                  boxSizing: 'border-box'
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                      <polyline points="9 11 12 14 22 4" />
-                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                    </svg>
-                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                      Результат этапа
-                    </strong>
+                {/* Содержимое */}
+                <div style={{ flexGrow: 1 }}>
+                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '20px', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.3 }}>
+                    {step.stage}
+                  </h3>
+                  <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 16px 0' }}>
+                    {step.works}
+                  </p>
+
+                  <div style={{ background: '#FFFFFF', padding: '12px 16px', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-gold)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                        <polyline points="9 11 12 14 22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                      </svg>
+                      <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                        Результат этапа
+                      </strong>
+                    </div>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
+                      {step.result}
+                    </span>
                   </div>
-                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
-                    {step.result}
-                  </span>
                 </div>
               </div>
             ))}
@@ -670,7 +642,12 @@ export default function IskArbitrazhClient() {
       {/* ═══ БЛОК 7: FAQ ═══ */}
       <FAQBlock
         superTitle="Частые вопросы"
-        title="Вопросы о подготовке и подаче иска"
+        title={
+          <>
+            <span style={{ display: 'inline-block' }}>Вопросы о подготовке</span> <br />
+            <span style={{ display: 'inline-block' }}>и подаче иска</span>
+          </>
+        }
         subtitle="Претензионный порядок, расчёт пошлины, подсудность и подача через «Мой Арбитр»"
         faqs={faqs}
       />

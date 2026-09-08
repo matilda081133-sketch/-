@@ -387,7 +387,13 @@ export default function ObzhalovanieClient() {
                 overflow: 'hidden',
                 transition: 'all 0.3s ease'
               }}>
-                <div>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
+                <div style={{ position: 'relative', zIndex: 1 }}>
                   <div style={{
                     fontSize: '12px',
                     fontWeight: 700,
