@@ -581,20 +581,19 @@ export default function IskArbitrazhClient() {
                 <div className="stage-accent" />
                 
                 {/* Левая часть: крупный номер по центру и по левому краю с легким срезом + текст */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '22px', flex: '1 1 540px', minWidth: '280px' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '18px', flex: '1 1 540px', minWidth: '280px', position: 'relative' }}>
                   <div style={{
                     fontFamily: 'var(--font-serif)',
-                    fontSize: 'clamp(68px, 7vw, 96px)',
-                    fontWeight: 700,
+                    fontSize: 'clamp(82px, 8vw, 114px)',
+                    fontWeight: 800,
                     color: 'var(--color-gold)',
-                    lineHeight: 0.75,
-                    marginLeft: '-22px',
-                    marginTop: '-24px',
-                    marginBottom: '-16px',
-                    opacity: 0.35,
+                    lineHeight: 0.72,
+                    marginLeft: '-36px',
+                    marginTop: '-34px',
+                    opacity: 0.2,
                     userSelect: 'none',
                     flexShrink: 0,
-                    letterSpacing: '-0.04em'
+                    letterSpacing: '-0.05em'
                   }}>
                     {step.num}
                   </div>

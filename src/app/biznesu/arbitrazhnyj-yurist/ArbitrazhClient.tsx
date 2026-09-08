@@ -1083,15 +1083,18 @@ export default function ArbitrazhClient() {
                 flex: '0 0 auto'
               }}>
                 <span style={{ display: 'block', fontWeight: 500 }}>Позволяет безошибочно определить правовую позицию:</span>
-                <span style={{ display: 'block', color: 'rgba(255, 255, 255, 0.7)' }}>проверка оснований, ходатайства об исключении доказательств или обжалование.</span>
+                <span style={{ display: 'block', color: 'rgba(255, 255, 255, 0.7)' }}>
+                  <span style={{ display: 'inline-block' }}>проверка оснований, ходатайства об исключении доказательств</span> <br className="hidden-mobile" />
+                  <span style={{ display: 'inline-block' }}>или обжалование.</span>
+                </span>
               </div>
             </div>
 
             <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
               <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>01</span>
-                  <span>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.25, display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0, lineHeight: 1.2 }}>01</span>
+                  <span style={{ lineHeight: 1.25 }}>
                     <span style={{ display: 'block' }}>Анализ договоров</span>
                     <span style={{ display: 'block' }}>и актов</span>
                   </span>
@@ -1102,9 +1105,9 @@ export default function ArbitrazhClient() {
               </div>
 
               <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>02</span>
-                  <span>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.25, display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0, lineHeight: 1.2 }}>02</span>
+                  <span style={{ lineHeight: 1.25 }}>
                     <span style={{ display: 'block' }}>Формирование</span>
                     <span style={{ display: 'block' }}>правовой позиции</span>
                   </span>
@@ -1115,9 +1118,9 @@ export default function ArbitrazhClient() {
               </div>
 
               <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>03</span>
-                  <span>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.25, display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0, lineHeight: 1.2 }}>03</span>
+                  <span style={{ lineHeight: 1.25 }}>
                     <span style={{ display: 'block' }}>Защита в суде</span>
                     <span style={{ display: 'block' }}>или обжалование</span>
                   </span>
@@ -1176,20 +1179,19 @@ export default function ArbitrazhClient() {
                 <div className="stage-accent" />
                 
                 {/* Левая часть: крупный номер по центру и по левому краю с легким срезом + текст */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '22px', flex: '1 1 540px', minWidth: '280px' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '18px', flex: '1 1 540px', minWidth: '280px', position: 'relative' }}>
                   <div style={{
                     fontFamily: 'var(--font-serif)',
-                    fontSize: 'clamp(68px, 7vw, 96px)',
-                    fontWeight: 700,
+                    fontSize: 'clamp(82px, 8vw, 114px)',
+                    fontWeight: 800,
                     color: 'var(--color-gold)',
-                    lineHeight: 0.75,
-                    marginLeft: '-22px',
-                    marginTop: '-24px',
-                    marginBottom: '-16px',
-                    opacity: 0.35,
+                    lineHeight: 0.72,
+                    marginLeft: '-36px',
+                    marginTop: '-34px',
+                    opacity: 0.2,
                     userSelect: 'none',
                     flexShrink: 0,
-                    letterSpacing: '-0.04em'
+                    letterSpacing: '-0.05em'
                   }}>
                     {step.num}
                   </div>
