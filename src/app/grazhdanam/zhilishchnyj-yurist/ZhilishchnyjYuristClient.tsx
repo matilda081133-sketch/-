@@ -706,7 +706,8 @@ export default function ZhilishchnyjYuristClient() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Муниципальное жильё (соцнайм)</strong>
@@ -715,7 +716,8 @@ export default function ZhilishchnyjYuristClient() {
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Служебное жильё и общежития</strong>
@@ -724,7 +726,8 @@ export default function ZhilishchnyjYuristClient() {
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Регистрация без права собственности</strong>
@@ -749,55 +752,65 @@ export default function ZhilishchnyjYuristClient() {
       </section>
 
       {/* ═══ 5. СРОЧНЫЕ ДЕЙСТВИЯ ПРИ ОСТРОМ СПОРЕ ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      <section className="section bg-light" style={{ padding: '72px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Что делать при остром жилищном конфликте
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Первые действия часто предопределяют исход судебного процесса. Важно не совершить ошибок, которые невозможно исправить позже.
-            </p>
-          </div>
+          <div style={{
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            {/* Фоновый водяной знак */}
+            <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.05, pointerEvents: 'none' }}>
+              <svg width="140" height="140" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
 
-          <div className="grid grid-2" style={{ gap: '28px' }}>
-            {urgentActions.map((act, idx) => (
-              <div key={idx} className="hover-lift" style={{
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                padding: '32px 28px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-                position: 'relative',
-                overflow: 'hidden'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', background: 'rgba(193, 160, 102, 0.12)', padding: '4px 10px', borderRadius: '2px' }}>
-                    0{idx + 1}
-                  </span>
-                </div>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.35 }}>
-                  {act.situation}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', marginBottom: '28px', position: 'relative', zIndex: 1 }}>
+              <div>
+                <h3 style={{ fontSize: 'clamp(22px, 2.5vw, 28px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  Что делать при остром жилищном конфликте
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14.5px', color: 'var(--color-text-main)', lineHeight: 1.55 }}>
-                    <span style={{ display: 'inline-block', width: '12px', height: '2.5px', backgroundColor: '#B89C72', flexShrink: 0, marginTop: '9px', borderRadius: '1px' }} />
-                    <div>
-                      <strong style={{ color: 'var(--color-deep-blue)' }}>Что сделать:</strong> {act.dos}
+              </div>
+              <div style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)', maxWidth: '520px', lineHeight: 1.55 }}>
+                <span style={{ display: 'block' }}>Первые действия часто предопределяют исход судебного процесса.</span>
+                <span style={{ display: 'block' }}>Важно не совершить ошибок, которые невозможно исправить позже.</span>
+              </div>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '20px', position: 'relative', zIndex: 1 }}>
+              {urgentActions.map((act, idx) => (
+                <div key={idx} style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  padding: '24px 22px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '14px'
+                }}>
+                  <h4 style={{ fontSize: '17px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '10px' }}>
+                    <span style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>
+                      0{idx + 1}
+                    </span>
+                    <span>{act.situation}</span>
+                  </h4>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.92)', lineHeight: 1.5, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                      <span style={{ display: 'inline-block', width: '10px', height: '2px', backgroundColor: 'var(--color-gold)', flexShrink: 0, marginTop: '8px', borderRadius: '1px' }} />
+                      <div><strong style={{ color: '#FFFFFF' }}>Что сделать:</strong> {act.dos}</div>
                     </div>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                    <span style={{ display: 'inline-block', width: '12px', height: '2.5px', backgroundColor: '#B89C72', flexShrink: 0, marginTop: '9px', borderRadius: '1px' }} />
-                    <div>
-                      <strong style={{ color: 'var(--color-deep-blue)' }}>Чего избегать:</strong> {act.donts}
+                    <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.5, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                      <span style={{ display: 'inline-block', width: '10px', height: '2px', backgroundColor: 'var(--color-gold)', flexShrink: 0, marginTop: '8px', borderRadius: '1px' }} />
+                      <div><strong style={{ color: '#FFFFFF' }}>Чего избегать:</strong> {act.donts}</div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
