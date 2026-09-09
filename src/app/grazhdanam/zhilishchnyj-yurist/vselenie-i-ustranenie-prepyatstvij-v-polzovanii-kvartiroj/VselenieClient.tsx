@@ -426,7 +426,7 @@ export default function VselenieClient() {
             <div style={{ flexShrink: 0 }}>
               <a 
                 href="#form" 
-                className="btn" 
+                className="btn white-btn-custom"
                 style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px', backgroundColor: 'var(--color-white)', color: '#10273B', fontWeight: 600, padding: '14px 28px' }}
                 onClick={() => handleCtaClick('housing_vselenie_banner', 'Защитить право на вселение')}
               >

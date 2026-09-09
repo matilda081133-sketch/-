@@ -599,16 +599,8 @@ export default function ZhilishchnyjYuristClient() {
               <div style={{ flexShrink: 0 }}>
                 <a 
                   href="#form" 
-                  className="btn" 
-                  style={{ 
-                    display: 'inline-block', 
-                    textAlign: 'center', 
-                    fontSize: '15px',
-                    backgroundColor: 'var(--color-white)',
-                    color: '#10273B',
-                    fontWeight: 600,
-                    padding: '14px 28px'
-                  }}
+                  className="btn white-btn-custom" 
+                  style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
                   onClick={() => handleCtaClick('housing_hub_services_other', 'Обсудить нестандартный вопрос')}
                 >
                   Обсудить ситуацию
