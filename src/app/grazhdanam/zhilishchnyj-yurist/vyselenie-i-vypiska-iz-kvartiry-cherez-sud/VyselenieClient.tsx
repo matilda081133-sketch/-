@@ -440,7 +440,7 @@ export default function VyselenieClient() {
       {/* ═══ 3. КАК ПОМОГАЕТ ЮРИСТ ═══ */}
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+          <div style={{ maxWidth: '900px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Порядок выписки и выселения через суд
             </h2>
