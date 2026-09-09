@@ -420,22 +420,22 @@ export default function RazdelClient() {
 
           <div className="card service-card" style={{ 
             width: '100%', 
-            padding: '32px 36px', 
+            padding: '22px 28px', 
             background: 'var(--color-deep-blue)', 
-            borderRadius: '0',
+            borderRadius: '2px',
             borderTop: '3px solid var(--color-gold)',
-            boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
+            boxShadow: '0 4px 16px rgba(16, 39, 59, 0.16)',
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '24px',
+            gap: '18px',
             alignItems: 'center',
             justifyContent: 'space-between'
           }}>
-            <div style={{ flex: '1 1 300px' }}>
-              <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+            <div style={{ flex: '1 1 340px' }}>
+              <h3 style={{ margin: '0 0 6px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
                 Раздел счетов не списывает старый долг автоматически
               </h3>
-              <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
+              <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '780px' }}>
                 Определение порядка оплаты действует на будущее время. Чтобы не платить за прошлые долги других лиц, требуется отдельная правовая работа по отмене приказов или встречному взысканию.
               </p>
             </div>
@@ -443,10 +443,10 @@ export default function RazdelClient() {
               <a 
                 href="#form" 
                 className="btn white-btn-custom"
-                style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px', backgroundColor: 'var(--color-white)', color: '#10273B', fontWeight: 600, padding: '14px 28px' }}
-                onClick={() => handleCtaClick('housing_razdel_debt_banner', 'Разобрать долги по ЖКУ')}
+                style={{ display: 'inline-block', textAlign: 'center', fontSize: '14px', backgroundColor: 'var(--color-white)', color: '#10273B', fontWeight: 600, padding: '12px 24px' }}
+                onClick={() => handleCtaClick('housing_razdel_banner', 'Разделить лицевые счета')}
               >
-                Разобрать долги
+                Разделить счета
               </a>
             </div>
           </div>
@@ -629,8 +629,8 @@ export default function RazdelClient() {
       {/* ═══ 8. СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+          <div style={{ maxWidth: '900px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Связанные услуги жилищного юриста
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>

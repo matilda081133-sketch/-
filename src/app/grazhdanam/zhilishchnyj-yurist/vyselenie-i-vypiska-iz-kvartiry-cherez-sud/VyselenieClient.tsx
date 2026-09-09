@@ -167,7 +167,7 @@ export default function VyselenieClient() {
             </>
           }
           superTitle="Жилищное право • выписка и выселение через суд • Липецк"
-          title={<>Выселение и выписка из квартиры <br />через суд в Липецке</>}
+          title={<>Выселение и выписка <br />из квартиры через суд в Липецке</>}
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '600px', textWrap: 'balance' }}>
               Признаем бывшего супруга, родственника или прежнего владельца утратившим право пользования, снимем с регистрационного учёта в МВД и освободим жильё под ключ.
@@ -353,8 +353,8 @@ export default function VyselenieClient() {
       {/* ═══ 2. СИТУАЦИИ ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+          <div style={{ maxWidth: '960px', marginBottom: '44px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Кого можно выписать из квартиры через суд
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
@@ -404,22 +404,22 @@ export default function VyselenieClient() {
 
           <div className="card service-card" style={{ 
             width: '100%', 
-            padding: '32px 36px', 
+            padding: '22px 28px', 
             background: 'var(--color-deep-blue)', 
-            borderRadius: '0',
+            borderRadius: '2px',
             borderTop: '3px solid var(--color-gold)',
-            boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
+            boxShadow: '0 4px 16px rgba(16, 39, 59, 0.16)',
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '24px',
+            gap: '18px',
             alignItems: 'center',
             justifyContent: 'space-between'
           }}>
-            <div style={{ flex: '1 1 300px' }}>
-              <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+            <div style={{ flex: '1 1 340px' }}>
+              <h3 style={{ margin: '0 0 6px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
                 Выписка проходит без согласия и присутствия ответчика
               </h3>
-              <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
+              <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '780px' }}>
                 Если ответчик уклоняется от явки в суд или его текущее местонахождение неизвестно, дело рассматривается по последнему известному месту жительства с вынесением законного решения.
               </p>
             </div>
@@ -427,7 +427,7 @@ export default function VyselenieClient() {
               <a 
                 href="#form" 
                 className="btn white-btn-custom"
-                style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px', backgroundColor: 'var(--color-white)', color: '#10273B', fontWeight: 600, padding: '14px 28px' }}
+                style={{ display: 'inline-block', textAlign: 'center', fontSize: '14px', backgroundColor: 'var(--color-white)', color: '#10273B', fontWeight: 600, padding: '12px 24px' }}
                 onClick={() => handleCtaClick('housing_vyselenie_banner', 'Выписать непроживающего гражданина')}
               >
                 Выписать через суд
@@ -445,7 +445,7 @@ export default function VyselenieClient() {
               Порядок выписки и выселения через суд
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Полностью берём на себя судебный процесс — от сбора доказательств до получения обновлённой выписки из домовой книги.
+              Полностью берём на себя судебный процесс — от сбора доказательств <br />до получения обновлённой выписки из домовой книги.
             </p>
           </div>
 
@@ -613,8 +613,8 @@ export default function VyselenieClient() {
       {/* ═══ 8. СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+          <div style={{ maxWidth: '900px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Связанные услуги жилищного юриста
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>

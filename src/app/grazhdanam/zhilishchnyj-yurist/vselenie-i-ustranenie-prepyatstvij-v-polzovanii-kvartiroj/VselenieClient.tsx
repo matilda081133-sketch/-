@@ -167,7 +167,7 @@ export default function VselenieClient() {
             </>
           }
           superTitle="Жилищное право • защита права пользования жильём • Липецк"
-          title={<>Вселение и устранение препятствий <br />в пользовании квартирой в Липецке</>}
+          title={<>Вселение <br />и устранение препятствий <br />в пользовании квартирой <br />в Липецке</>}
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '600px', textWrap: 'balance' }}>
               Защитим ваше законное право на проживание: докажем факт чинения препятствий, добьёмся выдачи ключей через суд, определим порядок пользования комнатами и вселим с судебными приставами.
@@ -353,9 +353,9 @@ export default function VselenieClient() {
       {/* ═══ 2. СИТУАЦИИ ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              С какими спорами о вселении и доступе мы помогаем
+          <div style={{ maxWidth: '960px', marginBottom: '44px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              С какими спорами о вселении <br />и доступе мы помогаем
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Никто не имеет права произвольно лишать собственника или нанимателя доступа в жильё. Восстановим ваши законные права в судебном порядке.
@@ -404,22 +404,22 @@ export default function VselenieClient() {
 
           <div className="card service-card" style={{ 
             width: '100%', 
-            padding: '32px 36px', 
+            padding: '22px 28px', 
             background: 'var(--color-deep-blue)', 
-            borderRadius: '0',
+            borderRadius: '2px',
             borderTop: '3px solid var(--color-gold)',
-            boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
+            boxShadow: '0 4px 16px rgba(16, 39, 59, 0.16)',
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '24px',
+            gap: '18px',
             alignItems: 'center',
             justifyContent: 'space-between'
           }}>
-            <div style={{ flex: '1 1 300px' }}>
-              <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+            <div style={{ flex: '1 1 340px' }}>
+              <h3 style={{ margin: '0 0 6px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
                 Не вскрывайте двери силой без юридической фиксации
               </h3>
-              <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
+              <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '780px' }}>
                 Самовольный силовой взлом замков часто приводит к ложным обвинениям в краже или хулиганстве. Законный судебный порядок с приставами гарантирует безопасность и выдачу ключей.
               </p>
             </div>
@@ -427,7 +427,7 @@ export default function VselenieClient() {
               <a 
                 href="#form" 
                 className="btn white-btn-custom"
-                style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px', backgroundColor: 'var(--color-white)', color: '#10273B', fontWeight: 600, padding: '14px 28px' }}
+                style={{ display: 'inline-block', textAlign: 'center', fontSize: '14px', backgroundColor: 'var(--color-white)', color: '#10273B', fontWeight: 600, padding: '12px 24px' }}
                 onClick={() => handleCtaClick('housing_vselenie_banner', 'Защитить право на вселение')}
               >
                 Получить доступ
@@ -440,9 +440,9 @@ export default function VselenieClient() {
       {/* ═══ 3. КАК ПОМОГАЕТ ЮРИСТ ═══ */}
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Как юрист решает проблему с доступом в квартиру
+          <div style={{ maxWidth: '850px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Как юрист решает проблему <br />с доступом в квартиру
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Обеспечиваем комплексную защиту: от официальной фиксации нарушений до реального получения ключей.
@@ -603,7 +603,7 @@ export default function VselenieClient() {
       <div onClickCapture={() => handleCtaClick('housing_vselenie_faq', 'Задать свой вопрос')}>
         <FAQBlock 
           faqs={faqs} 
-          title={<>Частые вопросы по вселению <br />и устранению препятствий</>}
+          title={<>Частые вопросы <br />по вселению и устранению препятствий</>}
           subtitle="Собрали ответы на главные вопросы собственников жилья в Липецке."
           ctaText="Задать свой вопрос"
           ctaLink="#form"
@@ -613,8 +613,8 @@ export default function VselenieClient() {
       {/* ═══ 8. СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+          <div style={{ maxWidth: '900px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Связанные услуги жилищного юриста
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
