@@ -797,9 +797,11 @@ export default function ZhilishchnyjYuristClient() {
                   </h4>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.92)', lineHeight: 1.5 }}>
+                      <span style={{ color: 'var(--color-gold)', marginRight: '6px', fontWeight: 'bold' }}>—</span>
                       <strong style={{ color: '#FFFFFF' }}>Что сделать:</strong> {act.dos}
                     </div>
                     <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.5 }}>
+                      <span style={{ color: 'var(--color-gold)', marginRight: '6px', fontWeight: 'bold' }}>—</span>
                       <strong style={{ color: '#FFFFFF' }}>Чего избегать:</strong> {act.donts}
                     </div>
                   </div>
