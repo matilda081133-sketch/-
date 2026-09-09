@@ -602,7 +602,7 @@ export default function VyselenieClient() {
       <div onClickCapture={() => handleCtaClick('housing_vyselenie_faq', 'Задать свой вопрос')}>
         <FAQBlock 
           faqs={faqs} 
-          title={<>Частые вопросы по выписке <br />и выселению из квартиры</>}
+          title={<>Частые вопросы <br />по выписке и выселению из квартиры</>}
           subtitle="Собрали ответы на главные вопросы собственников жилья в Липецке."
           ctaText="Задать свой вопрос"
           ctaLink="#form"
