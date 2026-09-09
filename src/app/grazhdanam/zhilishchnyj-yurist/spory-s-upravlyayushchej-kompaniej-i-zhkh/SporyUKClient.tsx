@@ -381,7 +381,7 @@ export default function SporyUKClient() {
               }}>
                 <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
                   <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z"/>
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                   </svg>
                 </div>
                 <div style={{ 

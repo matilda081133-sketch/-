@@ -377,7 +377,7 @@ export default function ZalivClient() {
               }}>
                 <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
                   <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                   </svg>
                 </div>
                 <div style={{ 
