@@ -133,7 +133,7 @@ export default function OsparivanieVinyClient() {
         primaryCtaSubtext={
           <>
             <span style={{ display: 'inline-block' }}>Сообщите дату ДТП, какой документ получен</span> <br className="hidden-mobile" />
-            <span style={{ display: 'inline-block' }}>и&nbsp;есть ли видео: <a href="tel:+79103503111" data-analytics="phone_click">+7 (910) 350-31-11</a></span>
+            <span style={{ display: 'inline-block' }}>и&nbsp;есть ли видео: <a href="tel:+74742201525" data-analytics="phone_click">+7 (4742) 20-15-25</a></span>
           </>
         }
         trustItems={[
@@ -937,7 +937,7 @@ export default function OsparivanieVinyClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация автоюриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
                 </p>
               </div>
 

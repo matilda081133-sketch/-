@@ -36,7 +36,7 @@ export default function Page() {
     'name': 'ЮК «Де-Юре» — Помощь в получении гражданства РФ',
     'description': 'Юридическое сопровождение получения гражданства РФ в Липецке по новому закону № 138-ФЗ. Оценка права, сбор документов, проверка анкеты, сопровождение приёма в гражданство.',
     'url': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-grazhdanstva-rf/',
-    'telephone': '+7 (910) 350-31-11',
+    'telephone': '+7 (4742) 20-15-25',
     'priceRange': '$$',
     'address': {
       '@type': 'PostalAddress',

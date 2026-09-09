@@ -36,7 +36,7 @@ export default function Page() {
     'name': 'ЮК «Де-Юре» — Помощь в получении РВП',
     'description': 'Юридическое сопровождение получения разрешения на временное проживание (РВП) в Липецке. Основания по браку, рождению, учёбе, квоте. Проверка документов и защита от отказа.',
     'url': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/',
-    'telephone': '+7 (910) 350-31-11',
+    'telephone': '+7 (4742) 20-15-25',
     'priceRange': '$$',
     'address': {
       '@type': 'PostalAddress',

@@ -213,7 +213,7 @@ export default function AdvokatZaderzhanieClient() {
         "name": "ЮК «Де-Юре»",
         "url": "https://dejure-help.ru",
         "logo": "https://dejure-help.ru/images/logo_dark.png",
-        "telephone": "+7 (910) 350-31-11",
+        "telephone": "+7 (4742) 20-15-25",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "ул. Советская, д. 35, оф. 213",
@@ -316,7 +316,7 @@ export default function AdvokatZaderzhanieClient() {
         primaryCtaSubtext={
           <>
             <span>Если требуется срочная помощь,</span><br />
-            <span style={{ whiteSpace: 'nowrap' }}>позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a></span>
+            <span style={{ whiteSpace: 'nowrap' }}>позвоните: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a></span>
           </>
         }
         trustItems={[
@@ -521,7 +521,7 @@ export default function AdvokatZaderzhanieClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация адвоката</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
                 </p>
               </div>
 

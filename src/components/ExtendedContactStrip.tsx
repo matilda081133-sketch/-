@@ -19,10 +19,10 @@ export default function ExtendedContactStrip() {
               Военнослужащего задержали или его местонахождение неизвестно? Позвоните адвокату и сообщите все, что известно о ситуации.
             </p>
             <div>
-              <a href="tel:+79103503111" style={{ fontSize: '22px', fontWeight: 'bold', color: 'var(--color-white)', textDecoration: 'none', display: 'block', marginBottom: '16px' }}>
-                +7 (910) 350-31-11
+              <a href="tel:+74742201525" style={{ fontSize: '22px', fontWeight: 'bold', color: 'var(--color-white)', textDecoration: 'none', display: 'block', marginBottom: '16px' }}>
+                +7 (4742) 20-15-25
               </a>
-              <a href="tel:+79103503111" className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '15px', display: 'inline-block', width: '100%', textAlign: 'center' }}>
+              <a href="tel:+74742201525" className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '15px', display: 'inline-block', width: '100%', textAlign: 'center' }}>
                 Позвонить адвокату
               </a>
             </div>

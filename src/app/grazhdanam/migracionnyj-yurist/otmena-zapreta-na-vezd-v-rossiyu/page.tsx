@@ -36,7 +36,7 @@ export default function Page() {
     'name': 'ЮК «Де-Юре» — Отмена запрета на въезд в Россию',
     'description': 'Помощь в отмене запрета на въезд в РФ (неразрешения въезда) по 114-ФЗ. Семейные, медицинские, гуманитарные основания. Досудебное и судебное обжалование.',
     'url': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otmena-zapreta-na-vezd-v-rossiyu/',
-    'telephone': '+7 (910) 350-31-11',
+    'telephone': '+7 (4742) 20-15-25',
     'priceRange': '$$',
     'address': {
       '@type': 'PostalAddress',

@@ -81,8 +81,8 @@ export default function Footer() {
               Юридическая помощь гражданам <br />и бизнесу в Липецке.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13px' }}>
-              <a href="tel:+79103503111" style={{ color: 'var(--color-white)', fontWeight: 'bold', textDecoration: 'none', fontSize: '16px' }}>
-                +7 (910) 350-31-11
+              <a href="tel:+74742201525" style={{ color: 'var(--color-white)', fontWeight: 'bold', textDecoration: 'none', fontSize: '16px' }}>
+                +7 (4742) 20-15-25
               </a>
               <span style={{ color: 'rgba(255,255,255,0.6)' }}>г. Липецк, ул. Советская, д. 35, оф. 213</span>
             </div>

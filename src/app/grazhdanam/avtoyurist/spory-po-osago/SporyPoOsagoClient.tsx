@@ -128,7 +128,7 @@ export default function SporyPoOsagoClient() {
         primaryCtaSubtext={
           <>
             <span style={{ display: 'inline-block' }}>Для первичной оценки сообщите дату ДТП, страховую компанию,</span> <br className="hidden-mobile" />
-            <span style={{ display: 'inline-block' }}>форму возмещения и полученный ответ: <a href="tel:+79103503111" data-analytics="phone_click">+7 (910) 350-31-11</a></span>
+            <span style={{ display: 'inline-block' }}>форму возмещения и полученный ответ: <a href="tel:+74742201525" data-analytics="phone_click">+7 (4742) 20-15-25</a></span>
           </>
         }
         trustItems={[
@@ -1205,7 +1205,7 @@ export default function SporyPoOsagoClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация автоюриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
                 </p>
               </div>
 

@@ -60,7 +60,7 @@ export default function ServiceUnavailable503Page() {
           </p>
 
           <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '15px' }}>
+            <a href="tel:+74742201525" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '15px' }}>
               Позвонить адвокату
             </a>
             <a href="/" className="btn btn-outline" style={{ padding: '16px 36px', fontSize: '15px' }}>

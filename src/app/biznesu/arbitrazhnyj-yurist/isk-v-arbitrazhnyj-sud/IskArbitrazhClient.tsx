@@ -20,7 +20,7 @@ export default function IskArbitrazhClient() {
         'name': 'ЮК «Де-Юре»',
         'url': 'https://dejure-help.ru',
         'logo': 'https://dejure-help.ru/images/logo_dark.png',
-        'telephone': '+7 (910) 350-31-11',
+        'telephone': '+7 (4742) 20-15-25',
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'ул. Советская, д. 35, оф. 213',
@@ -357,7 +357,7 @@ export default function IskArbitrazhClient() {
               Перезвоним вам в рабочее время
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              или ответим по телефону: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+              или ответим по телефону: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
             </span>
           </span>
         }
@@ -536,10 +536,10 @@ export default function IskArbitrazhClient() {
           </div>
 
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
-              +7 (910) 350-31-11
+            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
+              +7 (4742) 20-15-25
             </a>
-            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Позвонить юристу
             </a>
             <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
@@ -711,7 +711,7 @@ export default function IskArbitrazhClient() {
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '24px' }}>
                 <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)' }}><strong>Адрес:</strong> г. Липецк, ул. Советская, д. 35, оф. 213</span>
-                <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)' }}><strong>Телефон:</strong> +7 (910) 350-31-11</span>
+                <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)' }}><strong>Телефон:</strong> +7 (4742) 20-15-25</span>
                 <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)' }}>Пн–Пт с 9:00 до 18:00 (по предварительной записи)</span>
               </div>
               <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px' }}>
@@ -769,7 +769,7 @@ export default function IskArbitrazhClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
                 </p>
               </div>
 

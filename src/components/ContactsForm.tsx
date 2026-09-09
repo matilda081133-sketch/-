@@ -153,8 +153,8 @@ export default function ContactsForm({
           <div style={{ fontWeight: 'bold', marginBottom: '6px' }}>Не удалось отправить форму</div>
           <div style={{ marginBottom: '10px' }}>{error}</div>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
-            <a href="tel:+79103503111" style={{ color: '#9B2C2C', fontWeight: 'bold', textDecoration: 'underline' }}>
-              📞 +7 (910) 350-31-11
+            <a href="tel:+74742201525" style={{ color: '#9B2C2C', fontWeight: 'bold', textDecoration: 'underline' }}>
+              📞 +7 (4742) 20-15-25
             </a>
             <a href="https://max.ru/join/j5TVaYjQLyJwXfW1azJJ84YZToaXviRu-YFPDy8gMBI" target="_blank" rel="noopener noreferrer" style={{ color: '#9B2C2C', fontWeight: 'bold', textDecoration: 'underline' }}>
               MAX

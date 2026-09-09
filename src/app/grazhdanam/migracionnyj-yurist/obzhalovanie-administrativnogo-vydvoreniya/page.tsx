@@ -36,7 +36,7 @@ export default function Page() {
     'name': 'ЮК «Де-Юре» — Обжалование административного выдворения',
     'description': 'Срочное обжалование постановления суда об административном выдворении за пределы РФ (ст. 18.8, 18.10 КоАП). 10 дней на подачу жалобы. Защита от высылки и ЦВСИГ.',
     'url': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-administrativnogo-vydvoreniya/',
-    'telephone': '+7 (910) 350-31-11',
+    'telephone': '+7 (4742) 20-15-25',
     'priceRange': '$$',
     'address': {
       '@type': 'PostalAddress',

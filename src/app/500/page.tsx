@@ -63,7 +63,7 @@ export default function Error500Page() {
             <a href="/" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '15px' }}>
               Вернуться на главную
             </a>
-            <a href="tel:+79103503111" className="btn btn-outline" style={{ padding: '16px 36px', fontSize: '15px' }}>
+            <a href="tel:+74742201525" className="btn btn-outline" style={{ padding: '16px 36px', fontSize: '15px' }}>
               Позвонить нам
             </a>
           </div>

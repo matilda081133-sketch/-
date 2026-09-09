@@ -58,7 +58,7 @@ export default function VzyskanieUshcherbaB2BClient() {
         "@type": "LegalService",
         "name": "Юридическая компания «Де-Юре»",
         "url": "https://dejure-help.ru",
-        "telephone": "+7-910-350-31-11",
+        "telephone": "+7-4742-20-15-25",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "пл. Театральная, д. 3, офис 401",
@@ -644,7 +644,7 @@ export default function VzyskanieUshcherbaB2BClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
                 </p>
               </div>
 

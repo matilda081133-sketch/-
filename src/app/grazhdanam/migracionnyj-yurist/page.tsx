@@ -24,7 +24,7 @@ export default function MigracionnyjPage() {
     'name': 'Юридическая компания «Де-Юре» — Миграционный юрист в Липецке',
     'description': 'Юридическая помощь иностранным гражданам: отмена запрета на въезд, обжалование выдворения и депортации, РВП, ВНЖ, гражданство, реестр контролируемых лиц.',
     'url': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/',
-    'telephone': '+7 (910) 350-31-11',
+    'telephone': '+7 (4742) 20-15-25',
     'priceRange': '$$',
     'address': {
       '@type': 'PostalAddress',

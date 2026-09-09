@@ -36,7 +36,7 @@ export default function Page() {
     'name': 'ЮК «Де-Юре» — Обжалование отказа или аннулирования РВП и ВНЖ',
     'description': 'Помощь при отказе в выдаче или аннулировании РВП и вида на жительство (ВНЖ) в Липецке. 15 дней на выезд. Судебная защита и сохранение законного статуса.',
     'url': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/',
-    'telephone': '+7 (910) 350-31-11',
+    'telephone': '+7 (4742) 20-15-25',
     'priceRange': '$$',
     'address': {
       '@type': 'PostalAddress',

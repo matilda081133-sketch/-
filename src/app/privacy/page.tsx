@@ -61,7 +61,7 @@ export default function PrivacyPage() {
               Юридический адрес: 398902, Липецкая область, г. Липецк, ул. Юношеская, влд. 46Б, пом. 1<br />
               Фактический адрес: г. Липецк, ул. Советская, д. 35, оф. 213<br />
               E-mail: <a href="mailto:info@dejure-help.ru" style={{ color: 'var(--color-primary)' }}>info@dejure-help.ru</a><br />
-              Телефон: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)' }}>+7 (910) 350-31-11</a></p>
+              Телефон: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)' }}>+7 (4742) 20-15-25</a></p>
             </PolicySection>
 
             <PolicySection num="3" title="Принципы обработки">

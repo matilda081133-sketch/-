@@ -191,7 +191,7 @@ export default function VzyskanieIspolnitelnyListClient() {
               Если судебный акт уже получен,
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              позвоните: <a href="tel:+79103503111" data-analytics="service_exec_list_phone_click" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+              позвоните: <a href="tel:+74742201525" data-analytics="service_exec_list_phone_click" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
             </span>
           </span>
         }
@@ -1153,7 +1153,7 @@ export default function VzyskanieIspolnitelnyListClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="service_exec_list_phone_click">+7 (910) 350-31-11</a>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="service_exec_list_phone_click">+7 (4742) 20-15-25</a>
                 </p>
               </div>
             </div>

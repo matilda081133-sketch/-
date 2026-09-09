@@ -36,7 +36,7 @@ export default function Page() {
     'name': 'ЮК «Де-Юре» — Исключение из реестра контролируемых лиц',
     'description': 'Помощь в исключении сведений из реестра контролируемых лиц МВД (режим высылки, 260-ФЗ). Снятие блокировки счетов, запрета на вождение, регистрацию брака и сделки.',
     'url': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/',
-    'telephone': '+7 (910) 350-31-11',
+    'telephone': '+7 (4742) 20-15-25',
     'priceRange': '$$',
     'address': {
       '@type': 'PostalAddress',

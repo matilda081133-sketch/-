@@ -36,7 +36,7 @@ export default function Page() {
     'name': 'ЮК «Де-Юре» — Обжалование нежелательности пребывания',
     'description': 'Отмена решений о нежелательности пребывания в РФ (ст. 25.10 114-ФЗ), вынесенных Минюстом, МВД, ФСБ, Роспотребнадзором. Судебное признание незаконным и открытие въезда.',
     'url': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-nezhelatelnosti-prebyvaniya/',
-    'telephone': '+7 (910) 350-31-11',
+    'telephone': '+7 (4742) 20-15-25',
     'priceRange': '$$',
     'address': {
       '@type': 'PostalAddress',

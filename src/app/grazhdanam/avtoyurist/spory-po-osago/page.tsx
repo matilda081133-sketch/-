@@ -63,7 +63,7 @@ export default function SporyPoOsagoPage() {
         name: 'ЮК «Де-Юре»',
         url: 'https://dejure-help.ru/',
         logo: 'https://dejure-help.ru/images/logo.png',
-        telephone: '+7 (910) 350-31-11',
+        telephone: '+7 (4742) 20-15-25',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'ул. Советская, 35',

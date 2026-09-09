@@ -36,7 +36,7 @@ export default function Page() {
     'name': 'ЮК «Де-Юре» — Обжалование решения о депортации',
     'description': 'Юридическая помощь при вынесении решения о депортации иностранного гражданина (115-ФЗ). Подача административного иска, меры предварительной защиты, отмена высылки.',
     'url': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-resheniya-o-deportacii/',
-    'telephone': '+7 (910) 350-31-11',
+    'telephone': '+7 (4742) 20-15-25',
     'priceRange': '$$',
     'address': {
       '@type': 'PostalAddress',

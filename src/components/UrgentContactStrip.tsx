@@ -33,15 +33,15 @@ export default function UrgentContactStrip() {
           }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
               <a 
-                href="tel:+79103503111" 
+                href="tel:+74742201525" 
                 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--color-white)', textDecoration: 'none' }}
               >
-                +7 (910) 350-31-11
+                +7 (4742) 20-15-25
               </a>
             </div>
             
             <a 
-              href="tel:+79103503111" 
+              href="tel:+74742201525" 
               className="btn-gold"
               data-analytics="military_urgent_call_click"
             >

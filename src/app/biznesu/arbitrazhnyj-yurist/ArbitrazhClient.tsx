@@ -21,7 +21,7 @@ export default function ArbitrazhClient() {
         'name': 'ЮК «Де-Юре»',
         'url': 'https://dejure-help.ru',
         'logo': 'https://dejure-help.ru/images/logo_dark.png',
-        'telephone': '+7 (910) 350-31-11',
+        'telephone': '+7 (4742) 20-15-25',
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'ул. Советская, д. 35, оф. 213',
@@ -533,7 +533,7 @@ export default function ArbitrazhClient() {
               Перезвоним вам в рабочее время
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              или ответим по телефону: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+              или ответим по телефону: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
             </span>
           </span>
         }
@@ -800,10 +800,10 @@ export default function ArbitrazhClient() {
 
           {/* Зона связи */}
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
-              +7 (910) 350-31-11
+            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
+              +7 (4742) 20-15-25
             </a>
-            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Позвонить юристу
             </a>
             <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
@@ -1510,7 +1510,7 @@ export default function ArbitrazhClient() {
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)' }}>Прямой телефон:</strong>
-                    <a href="tel:+79103503111" style={{ fontSize: '15px', color: 'var(--color-primary)', fontWeight: 700, textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+                    <a href="tel:+74742201525" style={{ fontSize: '15px', color: 'var(--color-primary)', fontWeight: 700, textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
                   </div>
                 </div>
               </div>
@@ -1519,7 +1519,7 @@ export default function ArbitrazhClient() {
                 <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px' }}>
                   Записаться на встречу
                 </a>
-                <a href="tel:+79103503111" className="btn btn-outline" style={{ padding: '12px 24px' }}>
+                <a href="tel:+74742201525" className="btn btn-outline" style={{ padding: '12px 24px' }}>
                   Позвонить
                 </a>
               </div>
@@ -1707,7 +1707,7 @@ export default function ArbitrazhClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
                 </p>
               </div>
 

@@ -168,7 +168,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
         'name': 'ЮК «Де-Юре»',
         'url': 'https://dejure-help.ru',
         'logo': 'https://dejure-help.ru/images/logo_dark.png',
-        'telephone': '+7 (910) 350-31-11',
+        'telephone': '+7 (4742) 20-15-25',
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'ул. Советская, д. 35, оф. 213',
@@ -278,7 +278,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
         primaryCtaSubtext={
           <>
             <span style={{ display: 'inline-block' }}>Окончательный вывод возможен после проверки исполнительных производств,</span> <br className="hidden-mobile" />
-            <span style={{ display: 'inline-block' }}>доходов, имущества и состава обязательств: <a href="tel:+79103503111" data-analytics="phone_click">+7 (910) 350-31-11</a></span>
+            <span style={{ display: 'inline-block' }}>доходов, имущества и состава обязательств: <a href="tel:+74742201525" data-analytics="phone_click">+7 (4742) 20-15-25</a></span>
           </>
         }
         trustItems={[
@@ -1303,8 +1303,8 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
-                  <a href="tel:+79103503111" style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 600 }}>
-                    +7 (910) 350-31-11
+                  <a href="tel:+74742201525" style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', fontWeight: 600 }}>
+                    +7 (4742) 20-15-25
                   </a>
                 </div>
               </div>
@@ -1312,7 +1312,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
                 <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px' }}>
                   Записаться на встречу
                 </a>
-                <a href="tel:+79103503111" className="btn btn-outline" style={{ padding: '12px 24px' }}>
+                <a href="tel:+74742201525" className="btn btn-outline" style={{ padding: '12px 24px' }}>
                   Позвонить
                 </a>
               </div>
@@ -1398,7 +1398,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста по банкротству</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
                 </p>
               </div>
 

@@ -83,7 +83,7 @@ export default function ZhilishchnyjYuristClient() {
         '@id': 'https://dejure-help.ru/#legalservice',
         name: 'Юридическая компания Де-Юре',
         url: 'https://dejure-help.ru/',
-        telephone: '+7-910-350-31-11',
+        telephone: '+7-4742-20-15-25',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'ул. Советская, д. 35, оф. 213',

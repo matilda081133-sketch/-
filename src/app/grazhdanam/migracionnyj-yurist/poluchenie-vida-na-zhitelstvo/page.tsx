@@ -36,7 +36,7 @@ export default function Page() {
     'name': 'ЮК «Де-Юре» — Помощь в получении вида на жительство',
     'description': 'Юридическая помощь в оформлении вида на жительство (ВНЖ) в Липецке. После РВП и напрямую по родителям, детям, профессии, красному диплому. Без очередей и отказов.',
     'url': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/',
-    'telephone': '+7 (910) 350-31-11',
+    'telephone': '+7 (4742) 20-15-25',
     'priceRange': '$$',
     'address': {
       '@type': 'PostalAddress',

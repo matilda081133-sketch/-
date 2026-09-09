@@ -251,7 +251,7 @@ export default function SemejnyjClient() {
         'name': 'ЮК «Де-Юре»',
         'url': 'https://dejure-help.ru',
         'logo': 'https://dejure-help.ru/images/logo_dark.png',
-        'telephone': '+7 (910) 350-31-11',
+        'telephone': '+7 (4742) 20-15-25',
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'ул. Советская, д. 35',
@@ -343,7 +343,7 @@ export default function SemejnyjClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_cta_semejnyj_hub"
         primaryCtaSubtext={
-          <>Если требуется срочная помощь, позвоните: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a></>
+          <>Если требуется срочная помощь, позвоните: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a></>
         }
         trustItems={[{"text":"Досудебное урегулирование и защита в суде"},{"text":"Сохранение имущества и защита интересов детей"},{"text":"Прозрачные условия и фиксированная стоимость"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
         imageUrl="/images/smolyaninova.jpg"
@@ -808,7 +808,7 @@ export default function SemejnyjClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
                 </p>
               </div>
 

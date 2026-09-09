@@ -41,7 +41,7 @@ export default function ZashchitaPage() {
           '@id': 'https://matilda081133-sketch.github.io/#organization',
           'name': 'Юридическая компания «Де-Юре»',
           'url': 'https://matilda081133-sketch.github.io/',
-          'telephone': '+7 (910) 350-31-11',
+          'telephone': '+7 (4742) 20-15-25',
           'address': {
             '@type': 'PostalAddress',
             'streetAddress': 'ул. Советская, д. 35, оф. 213',

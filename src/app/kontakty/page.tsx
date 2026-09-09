@@ -29,7 +29,7 @@ export default function ContactsPage() {
     logo: 'https://dejure-help.ru/images/logo_dark.png',
     image: 'https://dejure-help.ru/images/office-building.jpg',
     description: 'Юридическая помощь гражданам и бизнесу в Липецке.',
-    telephone: '+7 (910) 350-31-11',
+    telephone: '+7 (4742) 20-15-25',
     email: 'info@dejure-help.ru',
     address: {
       '@type': 'PostalAddress',
@@ -116,10 +116,10 @@ export default function ContactsPage() {
                     </svg>
                     Телефон
                   </div>
-                  <a href="tel:+79103503111" style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
-                    +7 (910) 350-31-11
+                  <a href="tel:+74742201525" style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
+                    +7 (4742) 20-15-25
                   </a>
-                  <a href="tel:+79103503111" className="btn btn-outline" style={{ padding: '10px 24px', fontSize: '14px', alignSelf: 'flex-start', marginTop: 'auto' }}>
+                  <a href="tel:+74742201525" className="btn btn-outline" style={{ padding: '10px 24px', fontSize: '14px', alignSelf: 'flex-start', marginTop: 'auto' }}>
                     Позвонить
                   </a>
                 </div>

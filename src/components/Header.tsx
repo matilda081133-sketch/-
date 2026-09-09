@@ -178,7 +178,7 @@ export default function Header() {
           
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginLeft: 'auto' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', fontSize: '13px', lineHeight: 1.4 }}>
-              <a href="tel:+79103503111" style={{ fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', fontSize: '15px' }}>+7 (910) 350-31-11</a>
+              <a href="tel:+74742201525" style={{ fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', fontSize: '15px' }}>+7 (4742) 20-15-25</a>
               <Link href="/kontakty" className="header-address" style={{ color: 'var(--color-text-secondary)', fontSize: '12px', textDecoration: 'none' }}>Липецк, ул. Советская, 35</Link>
             </div>
             
@@ -222,7 +222,7 @@ export default function Header() {
         {/* Мобильные кнопки действия (< 992px) */}
         <div className="mobile-header-actions" style={{ display: 'none', alignItems: 'center', gap: '8px' }}>
           <a 
-            href="tel:+79103503111" 
+            href="tel:+74742201525" 
             aria-label="Позвонить юристу"
             className="mobile-action-btn"
             style={{ 
@@ -424,8 +424,8 @@ export default function Header() {
           </Link>
 
           <div style={{ marginTop: 'auto', paddingTop: '20px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <a href="tel:+79103503111" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', minHeight: '48px', fontSize: '16px' }}>
-              Позвонить: +7 (910) 350-31-11
+            <a href="tel:+74742201525" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', minHeight: '48px', fontSize: '16px' }}>
+              Позвонить: +7 (4742) 20-15-25
             </a>
             <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', textAlign: 'center' }}>
               г. Липецк, ул. Советская, д. 35, оф. 213
