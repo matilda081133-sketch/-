@@ -90,7 +90,7 @@ export default function PereplanirovkaClient() {
   const situations = [
     {
       tag: 'Планируемый ремонт',
-      title: 'Хотите сделать ремонт и заранее получить разрешение',
+      title: <>Хотите сделать ремонт <br />и заранее получить разрешение</>,
       desc: 'Подготовим проект перепланировки, соберём пакет документов и получим распоряжение администрации Липецка до начала работ.'
     },
     {
@@ -100,7 +100,7 @@ export default function PereplanirovkaClient() {
     },
     {
       tag: 'Предписание ГЖИ',
-      title: 'Получено предписание администрации или жилищной инспекции',
+      title: <>Получено предписание <br />администрации или <br />жилищной инспекции</>,
       desc: 'Защитим от штрафов и требований вернуть всё в исходное состояние, доказав безопасность выполненных изменений.'
     },
     {
@@ -358,9 +358,9 @@ export default function PereplanirovkaClient() {
       {/* ═══ 2. СИТУАЦИИ ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '960px', marginBottom: '44px' }}>
+          <div style={{ maxWidth: '850px', marginBottom: '44px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              С какими случаями перепланировки мы помогаем
+              С какими вопросами <br />по перепланировке к нам обращаются
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Согласуем проект до начала ремонта либо узаконим уже выполненные изменения через суд и внесём данные в ЕГРН.
