@@ -169,10 +169,9 @@ export default function VselenieClient() {
           superTitle="Жилищное право • защита права пользования жильём • Липецк"
           title={
             <>
-              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Вселение</span> <br />
-              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>и устранение препятствий</span> <br />
-              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>в пользовании квартирой</span> <br />
-              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>в Липецке</span>
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Вселение и устранение</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>препятствий в пользовании</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>квартирой в Липецке</span>
             </>
           }
           subtitle={

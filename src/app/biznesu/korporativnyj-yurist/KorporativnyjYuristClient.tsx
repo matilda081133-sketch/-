@@ -11,6 +11,7 @@ import ProcessBlock from '@/components/ProcessBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
+import TrustStrip from '@/components/TrustStrip';
 
 export default function KorporativnyjYuristClient() {
   const [ctaSource, setCtaSource] = useState('corporate_hub_form_direct');
@@ -339,105 +340,222 @@ export default function KorporativnyjYuristClient() {
   ];
 
   return (
-    <>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
       <Header />
 
-      {/* ═══ БЛОК 1: ПЕРВЫЙ ЭКРАН (HERO) ═══ */}
-      <MilitaryHero
-        breadcrumbs={
-          <>
-            <Link href="/">Главная</Link>
-            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <Link href="/biznesu/">Бизнесу</Link>
-            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <span style={{ color: 'var(--color-text-main)' }}>Корпоративный юрист</span>
-          </>
-        }
-        superTitle={
-          <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
-            <span style={{ display: 'inline-block' }}>КОРПОРАТИВНОЕ ПРАВО ДЛЯ БИЗНЕСА •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и арбитражные суды РФ</span>
-          </span>
-        }
-        title={
-          <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Корпоративный юрист для бизнеса
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              в Липецке
-            </span>
-          </span>
-        }
-        subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Защищаем интересы собственников, участников ООО, инвесторов и руководителей в корпоративных спорах, сделках с долями, процедурах выхода, реорганизации и вопросах контроля над компанией.
-          </span>
-        }
-        primaryCtaText="Обсудить корпоративную задачу"
-        primaryCtaLink="#form"
-        primaryCtaAnalytics="click_primary_cta_corp_hub"
-        primaryCtaSubtext={
-          <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Перезвоним в рабочее время
-            </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              или ответим по телефону: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
-            </span>
-          </span>
-        }
-        imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Специалист по корпоративным процедурам, куратор направления"
-        imageObjectPosition="center 15%"
-        trustItems={[
-          {
-            text: (
-              <span>
-                <strong>Практический опыт с 1997 года</strong> в сопровождении корпоративных процедур
-              </span>
-            )
-          },
-          {
-            text: (
-              <span>
-                <strong>Полная конфиденциальность</strong> и защита коммерческой тайны бизнеса
-              </span>
-            )
-          },
-          {
-            text: (
-              <span>
-                <strong>Арбитражный суд Липецкой области</strong> и арбитражные суды РФ
-              </span>
-            )
+      {/* ═══ 1. ПЕРВЫЙ ЭКРАН (MILITARY HERO) ═══ */}
+      <div onClickCapture={() => handleCtaClick('corporate_hub_hero', 'Обсудить корпоративную задачу')}>
+        <MilitaryHero
+          breadcrumbs={
+            <>
+              <Link href="/" style={{ color: 'var(--color-primary)' }}>Главная</Link> <span style={{ margin: '0 8px' }}>/</span>
+              <Link href="/biznesu/" style={{ color: 'var(--color-primary)' }}>Бизнесу</Link> <span style={{ margin: '0 8px' }}>/</span>
+              <span style={{ color: 'var(--color-text-main)' }}>Корпоративный юрист</span>
+            </>
           }
+          superTitle="Корпоративное право • споры участников • сделки с долями ООО"
+          title={
+            <>
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Корпоративный юрист</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>для бизнеса в Липецке</span>
+            </>
+          }
+          subtitle={
+            <span style={{ display: 'inline-block', maxWidth: '640px', textWrap: 'balance' }}>
+              Защищаем интересы собственников, участников ООО, инвесторов и руководителей: от безопасного входа и оформления корпоративных договоров до разрешения тупиковых ситуаций и защиты в арбитражном суде.
+            </span>
+          }
+          primaryCtaText="Обсудить корпоративную задачу"
+          primaryCtaLink="#form"
+          primaryCtaAnalytics="corporate_hero_consultation_click"
+          primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+          secondaryCtaText="Направления помощи"
+          secondaryCtaLink="#directions"
+          rightContent={
+            <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '130%',
+                height: '130%',
+                background: 'radial-gradient(circle, rgba(193, 160, 102, 0.15) 0%, rgba(23, 50, 77, 0.04) 40%, transparent 70%)',
+                zIndex: 0,
+                pointerEvents: 'none'
+              }} />
+
+              <svg style={{ position: 'absolute', top: '40%', left: '85%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.09, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+
+              <div className="mockup-container" style={{ zIndex: 1, margin: 0 }}>
+                <div style={{ position: 'absolute', width: '220px', height: '220px', background: 'var(--color-primary)', filter: 'blur(90px)', opacity: 0.12, borderRadius: '50%' }}></div>
+                
+                {/* 4th Sheet */}
+                <div className="doc-wrapper-float-4">
+                  <div className="doc-sheet doc-sheet-4">
+                    <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '30px' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                          <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                          <div style={{ width: '70px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        </div>
+                      </div>
+                      <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 30px auto' }}></div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 3rd Sheet: ЕГРЮЛ */}
+                <div className="doc-wrapper-float-3">
+                  <div className="doc-sheet doc-sheet-3">
+                    <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                      <div style={{ position: 'absolute', top: '25px', left: '25px', width: '85px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
+                        <span style={{ fontSize: '4.5px', fontWeight: 'bold', color: 'rgba(23,50,77,0.5)', fontFamily: 'var(--font-serif)' }}>ЕГРЮЛ: ВЫПИСКА И ДОЛИ</span>
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '35px' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                          <div style={{ width: '95px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                          <div style={{ width: '55px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        </div>
+                      </div>
+                      <div style={{ width: '130px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 30px auto' }}></div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '95%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '80%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2nd Sheet: Решение Арбитражного суда */}
+                <div className="doc-wrapper-float-2">
+                  <div className="doc-sheet doc-sheet-2">
+                    <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                      <div style={{ position: 'absolute', top: '22px', left: '22px', width: '105px', height: '32px', border: '1px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
+                        <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.2 }}>
+                          РЕШЕНИЕ СУДА<br/>
+                          ПО КОРПОРАТИВНОМУ СПОРУ
+                        </div>
+                      </div>
+
+                      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                          <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                          <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        </div>
+                      </div>
+
+                      <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 16px auto' }}></div>
+
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                        <div style={{ width: '40%', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+
+                      <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                          <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Истец (Участник ООО):</div>
+                          <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                          <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Представитель:</div>
+                          <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 1st Sheet: Устав ООО и печать Де-Юре */}
+                <div className="doc-wrapper-float-1">
+                  <div className="doc-sheet doc-sheet-1">
+                    <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
+                        <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
+                          <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>КОРПОРАТИВНОЕ ПРАВО</span>
+                          <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>Устав • Договор • Защита прав</span>
+                        </div>
+                      </div>
+
+                      <div style={{ width: '120px', height: '6px', background: 'var(--color-deep-blue)', margin: '0 auto 14px auto' }}></div>
+
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '12px' }}>
+                        <div style={{ display: 'flex', gap: '6px' }}>
+                          <div style={{ width: '8px', height: '3px', background: 'var(--color-primary)' }}></div>
+                          <div style={{ width: '85%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        </div>
+                        <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                        <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+
+                      <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                          <div style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ЮК «ДЕ-ЮРЕ»</div>
+                          <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Корпоративная практика • Липецк</div>
+                        </div>
+                        <div style={{ position: 'relative', width: '42px', height: '42px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <div style={{ width: '38px', height: '38px', borderRadius: '50%', border: '1.25px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-12deg)', opacity: 0.9 }}>
+                            <div style={{ width: '31px', height: '31px', borderRadius: '50%', border: '0.5px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                              <span style={{ fontSize: '3.5px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.1 }}>
+                                ДЕ-ЮРЕ<br/>ЛИПЕЦК
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          }
+        />
+      </div>
+
+      {/* ═══ 2. ТРАСТ СТРИП ═══ */}
+      <TrustStrip
+        items={[
+          { text: 'Практический опыт с 1997 года в корпоративных процедурах' },
+          { text: 'Полная конфиденциальность и защита коммерческой тайны' },
+          { text: 'Арбитражный суд Липецкой области и арбитражные суды РФ' },
+          { text: 'Фиксированный состав работ и стоимость в договоре' }
         ]}
       />
 
-      {/* ═══ БЛОК 2: ТИПОВЫЕ СИТУАЦИИ ═══ */}
-      <section className="section bg-light" id="situations">
-        <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontWeight: 600, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' }}>
-              <span style={{ width: '20px', height: '2px', backgroundColor: 'var(--color-primary)' }}></span>
-              Типичные ситуации
-              <span style={{ width: '20px', height: '2px', backgroundColor: 'var(--color-primary)' }}></span>
+      {/* ═══ 3. ТИПОВЫЕ СИТУАЦИИ ═══ */}
+      <section className="section bg-light" id="situations" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ maxWidth: '820px', marginBottom: '40px', textAlign: 'left' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                Типичные ситуации
+              </span>
             </div>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
+            <h2 style={{ marginBottom: '16px', fontSize: 'clamp(28px, 3.2vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', textAlign: 'left', marginTop: 0 }}>
               С какими корпоративными ситуациями обращается бизнес
             </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.7, margin: 0 }}>
               Своевременное привлечение профильного юриста помогает избежать блокировки счетов, потери активов и затяжных судебных разбирательств.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
             {situations.map((sit, idx) => (
               <div
                 key={idx}
@@ -447,26 +565,28 @@ export default function KorporativnyjYuristClient() {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  borderTop: '3px solid var(--color-primary)'
+                  borderTop: '3px solid var(--color-primary)',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)'
                 }}
               >
                 <div>
                   <div
                     style={{
-                      fontSize: '12px',
+                      fontSize: '11px',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: 'var(--color-primary)',
+                      letterSpacing: '0.1em',
+                      color: 'var(--color-gold)',
                       fontWeight: 700,
                       marginBottom: '12px'
                     }}
                   >
                     {sit.tag}
                   </div>
-                  <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '14px', lineHeight: 1.35 }}>
+                  <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.35 }}>
                     {sit.title}
                   </h3>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
                     {sit.desc}
                   </p>
                 </div>
@@ -474,7 +594,7 @@ export default function KorporativnyjYuristClient() {
             ))}
           </div>
 
-          <div style={{ marginTop: '40px', textAlign: 'center' }}>
+          <div style={{ textAlign: 'center', marginTop: '36px' }}>
             <a
               href="#form"
               className="btn btn-primary"
@@ -486,90 +606,128 @@ export default function KorporativnyjYuristClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: НАПРАВЛЕНИЯ ПОМОЩИ (8 ДОЧЕРНИХ УСЛУГ) ═══ */}
-      <section className="section bg-white" id="services">
-        <div className="container">
-          <div className="text-center" style={{ maxWidth: '860px', margin: '0 auto 50px auto' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontWeight: 600, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' }}>
-              <span style={{ width: '20px', height: '2px', backgroundColor: 'var(--color-primary)' }}></span>
-              Направления помощи
-              <span style={{ width: '20px', height: '2px', backgroundColor: 'var(--color-primary)' }}></span>
+      {/* ═══ 4. НАПРАВЛЕНИЯ ПОМОЩИ (8 ДОЧЕРНИХ УСЛУГ) ═══ */}
+      <section className="section bg-white" id="directions" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ maxWidth: '860px', marginBottom: '40px', textAlign: 'left' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                Направления помощи
+              </span>
             </div>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
+            <h2 style={{ marginBottom: '16px', fontSize: 'clamp(28px, 3.2vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', textAlign: 'left', marginTop: 0 }}>
               Услуги по корпоративному праву в Липецке
             </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.7, margin: 0 }}>
               Решаем задачи любой сложности: от подготовки партнёрских договоров до защиты в резонансных корпоративных конфликтах в арбитражном суде.
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '28px' }}>
+          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '32px' }}>
             {services.map((svc) => (
-              <div
+              <Link
                 key={svc.id}
-                className="card service-card group"
-                style={{
-                  padding: '36px 32px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  border: '1px solid var(--color-border)',
-                  transition: 'all 0.3s ease'
-                }}
+                href={svc.link}
+                style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', height: '100%' }}
               >
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-                    <span
+                <div
+                  className="card service-card"
+                  style={{
+                    height: '100%',
+                    padding: '28px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-primary)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  <div>
+                    <div
                       style={{
-                        fontSize: '12px',
-                        padding: '4px 10px',
-                        backgroundColor: 'var(--color-bg-light)',
-                        color: 'var(--color-primary)',
-                        fontWeight: 600,
+                        display: 'inline-block',
+                        fontSize: '11px',
                         textTransform: 'uppercase',
-                        letterSpacing: '0.05em'
+                        letterSpacing: '0.08em',
+                        color: 'var(--color-gold)',
+                        fontWeight: 700,
+                        marginBottom: '10px'
                       }}
                     >
                       {svc.badge}
-                    </span>
-                  </div>
-                  <h3 style={{ fontSize: '22px', color: 'var(--color-deep-blue)', marginBottom: '14px', lineHeight: 1.3 }}>
-                    <Link href={svc.link} style={{ color: 'inherit', textDecoration: 'none' }}>
+                    </div>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.35 }}>
                       {svc.title}
-                    </Link>
-                  </h3>
-                  <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
-                    {svc.desc}
-                  </p>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    {svc.features.map((feat, fIdx) => (
-                      <li key={fIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                        <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    </h3>
+                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {svc.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(23, 50, 77, 0.06)' }}>
+                    <span>Подробнее</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
                 </div>
-                <div>
-                  <Link
-                    href={svc.link}
-                    className="btn btn-outline"
-                    style={{ width: '100%', textAlign: 'center', display: 'block', padding: '12px 20px', fontSize: '14px' }}
-                  >
-                    Подробнее об услуге →
-                  </Link>
-                </div>
-              </div>
+              </Link>
             ))}
+          </div>
+
+          {/* Баннер «Не нашли свою ситуацию?» */}
+          <div
+            style={{
+              marginTop: '32px',
+              background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+              padding: '40px 48px',
+              borderTop: '3px solid var(--color-gold)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '32px',
+              flexWrap: 'wrap',
+              boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
+            }}
+          >
+            <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
+              <h3 style={{ margin: '0 0 12px 0', fontSize: '26px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
+                Не нашли свою ситуацию?
+              </h3>
+              <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>Опишите вашу корпоративную задачу в форме. Изучим имеющиеся документы</span> <br />
+                <span style={{ display: 'inline-block' }}>и предложим безопасный план действий.</span>
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a
+                href="#form"
+                className="btn white-btn-custom"
+                style={{
+                  display: 'inline-block',
+                  textAlign: 'center',
+                  fontSize: '15px',
+                  padding: '14px 28px',
+                  fontWeight: 600,
+                  whiteSpace: 'nowrap'
+                }}
+                onClick={() => handleCtaClick('corporate_hub_banner', 'Описать ситуацию')}
+              >
+                Описать ситуацию
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: КУРАТОР НАПРАВЛЕНИЯ (НАЧЕШНИКОВ В.В.) ═══ */}
+      {/* ═══ 5. КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
-        title="Куратор корпоративного направления"
+        title="Куратор направления"
         name="Владимир Викторович Начешников"
-        position="Специалист по корпоративным процедурам и сопровождению бизнеса, куратор направления"
+        position={<>Специалист по корпоративным процедурам и сопровождению бизнеса ЮК «Де-Юре»</>}
         imageUrl="/images/nacheshnikov.jpg"
         imagePosition="center 15%"
         profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
@@ -578,154 +736,111 @@ export default function KorporativnyjYuristClient() {
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Владимир Викторович организует предварительный анализ корпоративных документов, оценку рисков для учредителей и выстраивает маршрут прохождения корпоративных процедур.
           </span>,
-          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>
-                Практический опыт в сфере юридических и корпоративных процедур — с 1997 года.
-              </span>
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Практический опыт в сфере юридических и корпоративных процедур — с 1997 года</span>
             </li>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>
-                Специализируется на сопровождении корпоративных процедур, реорганизации, сделках с долями и разрешении тупиковых ситуаций.
-              </span>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>Специализируется на сопровождении корпоративных процедур, реорганизации, сделках с долями и разрешении тупиковых ситуаций</span>
             </li>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>
-                В проектах, требующих нотариальных действий, судебной защиты или бухгалтерской экспертизы, работает совместно с профильными специалистами команды «Де-Юре».
-              </span>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
+              <span>В проектах, требующих судебной защиты или бухгалтерской экспертизы, работает совместно с профильными специалистами команды «Де-Юре»</span>
             </li>
           </ul>
         ]}
-        buttonText="Обсудить корпоративную задачу"
+        buttonText="Задать вопрос Владимиру Викторовичу"
         buttonHref="#form"
       />
 
-      {/* ═══ БЛОК 5: ПРИМЕРЫ ИЗ ПРАКТИКИ (3 КЕЙСА) ═══ */}
+      {/* ═══ 6. ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
       <CasesBlock
-        title="Примеры корпоративных задач из практики"
+        title="Примеры дел из практики"
         cases={practiceCases}
-        showAllLink="/praktika"
-        showAllText="Смотреть всю практику →"
+        showAllLink="/praktika/"
+        showAllText="Смотреть все дела"
+        showDemoWarning={false}
       />
 
-      {/* ═══ БЛОК 6: КАК ПРОХОДИТ РАБОТА ═══ */}
-      <section className="section bg-light" id="process">
+      {/* ═══ 7. КАК ПРОХОДИТ РАБОТА ═══ */}
+      <ProcessBlock
+        title="Как проходит работа"
+        subtitle="Прозрачный и понятный процесс от первой консультации до защиты позиции компании"
+        steps={processSteps}
+      />
+
+      {/* ═══ 8. СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
+      <PricingBlock
+        title="Стоимость юридической помощи"
+        subtitle="Стоимость зависит от специфики задачи, объёма документов, структуры владения и необходимости участия в переговорах, нотариате или суде."
+        tiers={pricingTiers}
+        disclaimer="Стоимость определяется после изучения устава, выписки ЕГРЮЛ и имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает нотариальные тарифы, государственные пошлины и сопутствующие расходы."
+      />
+
+      {/* ═══ 9. ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
+      <FAQBlock
+        superTitle="Частые вопросы бизнеса"
+        title={<><span>Ответы на</span> <br /><span>частые вопросы</span></>}
+        subtitle="О корпоративных процедурах, сделках с долями, рисках и порядке работы"
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
+        faqs={faqs}
+      />
+
+      {/* ═══ 10. ФИНАЛЬНАЯ ФОРМА ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontWeight: 600, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' }}>
-              <span style={{ width: '20px', height: '2px', backgroundColor: 'var(--color-primary)' }}></span>
-              Этапы взаимодействия
-              <span style={{ width: '20px', height: '2px', backgroundColor: 'var(--color-primary)' }}></span>
-            </div>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Как проходит работа по корпоративной задаче
-            </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Понятный и прозрачный алгоритм: от конфиденциального анализа ситуации до полного достижения результата.
-            </p>
-          </div>
-
-          <div className="grid grid-4" style={{ gap: '24px' }}>
-            {processSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="card"
-                style={{
-                  padding: '32px 24px',
-                  backgroundColor: 'var(--color-white)',
-                  border: '1px solid var(--color-border)',
-                  position: 'relative'
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: '36px',
-                    fontWeight: 800,
-                    color: 'var(--color-primary)',
-                    opacity: 0.25,
-                    fontFamily: 'var(--font-serif)',
-                    marginBottom: '16px',
-                    lineHeight: 1
-                  }}
-                >
-                  {step.step}
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: "block", whiteSpace: "nowrap" }}>Получите первичную</span> <span className="hero-title-span-mobile" style={{ display: "block", whiteSpace: "nowrap" }}>оценку ситуации</span>
+              </h2>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко опишите корпоративную задачу и оставьте контактные данные. Обращение будет передано Владимиру Викторовичу Начешникову. Он изучит документы и согласует с вами консультацию.
+              </p>
+              
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация корпоративного юриста</strong>
                 </div>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
-                  {step.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {step.desc}
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
                 </p>
               </div>
-            ))}
-          </div>
 
-          {/* CTA Banner inside process */}
-          <div style={{ marginTop: '48px' }}>
-            <div
-              className="card service-card cta-banner-card"
-              style={{
-                padding: '32px 36px',
-                background: 'var(--color-deep-blue)',
-                borderTop: '3px solid var(--color-gold)',
-                boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '24px'
-              }}
-            >
-              <div>
-                <h3 style={{ color: 'var(--color-white)', fontSize: '22px', marginBottom: '8px' }}>
-                  Нужна срочная консультация по корпоративному спору или сделке?
-                </h3>
-                <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '15px', margin: 0 }}>
-                  Проанализируем документы и предложим безопасную стратегию защиты ваших интересов.
-                </p>
+              <div style={{ background: 'rgba(16, 39, 59, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-deep-blue)', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
+                Не указывайте в форме паспортные данные, сведения о здоровье и коммерческую тайну. Документы можно передать юристу после согласования защищённого способа связи.
+                <span style={{ display: 'block', marginTop: '4px', color: 'rgba(44,51,64,0.55)', fontSize: '12px' }}>Основание: статья 10 № 152-ФЗ.</span>
               </div>
-              <a
-                href="#form"
-                className="btn white-btn-custom"
-                onClick={() => handleCtaClick('corporate_hub_banner', 'Получить консультацию')}
-              >
-                Получить консультацию
-              </a>
+            </div>
+
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Оставить заявку"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                hiddenFields={[{ name: 'service', value: 'Корпоративный юрист для бизнеса' }]}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 7: СТОИМОСТЬ УСЛУГ (ТАРИФЫ) ═══ */}
-      <PricingBlock
-        title="Стоимость услуг корпоративного юриста в Липецке"
-        subtitle="Прозрачное ценообразование, фиксированная стоимость в договоре без скрытых доплат."
-        tiers={pricingTiers}
-        ctaTitle="Точная стоимость рассчитывается после анализа документов"
-        ctaSubtitle="Оставьте заявку — куратор направления изучит специфику вашего вопроса и подготовит персональное коммерческое предложение."
-        ctaButtonText="Рассчитать стоимость"
-        ctaButtonLink="#form"
-      />
-
-      {/* ═══ БЛОК 8: FAQ ═══ */}
-      <FAQBlock
-        superTitle="Частые вопросы"
-        title="Вопросы и ответы по корпоративному праву"
-        subtitle="Разъяснения специалистов ЮК «Де-Юре» по ключевым аспектам корпоративных процедур и споров."
-        faqs={faqs}
-      />
-
-      {/* ═══ БЛОК 9: ФИНАЛЬНАЯ ФОРМА ЗАЯВКИ ═══ */}
-      <ContactsForm
-        title="Обсудите корпоративную задачу с юристом"
-        subtitle="Оставьте заявку на конфиденциальную консультацию. Проанализируем документы и определим план действий для вашего бизнеса."
-        hiddenFields={[{ name: 'service', value: 'Корпоративный юрист для бизнеса' }]}
-      />
-
       <Footer />
-    </>
+    </main>
   );
 }
