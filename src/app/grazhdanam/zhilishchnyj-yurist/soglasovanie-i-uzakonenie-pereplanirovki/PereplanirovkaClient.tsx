@@ -445,12 +445,12 @@ export default function PereplanirovkaClient() {
       {/* ═══ 3. КАК ПОМОГАЕТ ЮРИСТ ═══ */}
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Порядок согласования и узаконения перепланировки
+          <div style={{ maxWidth: '900px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Порядок согласования <br />и узаконения перепланировки
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Берём на себя все технические и юридические этапы взаимодействия с проектировщиками, администрацией и судом.
+              Берём на себя все технические и юридические этапы <br />взаимодействия с проектировщиками, администрацией и судом.
             </p>
           </div>
 
