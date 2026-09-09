@@ -236,13 +236,13 @@ export default function ZhilishchnyjYuristClient() {
     },
     {
       situation: 'Получен иск или судебный приказ',
-      dos: 'Зафиксируйте дату получения конверта/документа; отмените приказ в течение 10 дней либо подайте возражения на иск.',
-      donts: 'Не игнорируйте судебные повестки и не надейтесь, что суд разберётся без вашей доказательственной базы.'
+      dos: 'Зафиксируйте дату получения конверта; запросите материалы дела в суде; передайте иск юристу в течение 10 дней.',
+      donts: 'Не игнорируйте судебные заседания и не подписывайте соглашений без консультации с юристом.'
     },
     {
-      situation: 'Требуют узаконить перепланировку',
-      dos: 'Изучите предписание и сроки; закажите техническое заключение о безопасности конструкций; подготовьте проект.',
-      donts: 'Не производите самовольных демонтажей несущих стен и не затягивайте срок ответа на предписание надзорных органов.'
+      situation: 'Отказ в перепланировке или приватизации',
+      dos: 'Сохраните письменный отказ администрации со всеми приложениями и датой вручения.',
+      donts: 'Не подавайте повторно тот же самый пакет документов без устранения правовых оснований отказа.'
     }
   ];
 
@@ -782,14 +782,18 @@ export default function ZhilishchnyjYuristClient() {
                 <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.35 }}>
                   {act.situation}
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <div style={{ fontSize: '14.5px', color: 'var(--color-text-main)', lineHeight: 1.55 }}>
-                    <span style={{ color: 'var(--color-gold)', marginRight: '6px', fontWeight: 'bold' }}>—</span>
-                    <strong style={{ color: 'var(--color-deep-blue)' }}>Что сделать:</strong> {act.dos}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14.5px', color: 'var(--color-text-main)', lineHeight: 1.55 }}>
+                    <span style={{ display: 'inline-block', width: '12px', height: '2.5px', backgroundColor: '#B89C72', flexShrink: 0, marginTop: '9px', borderRadius: '1px' }} />
+                    <div>
+                      <strong style={{ color: 'var(--color-deep-blue)' }}>Что сделать:</strong> {act.dos}
+                    </div>
                   </div>
-                  <div style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                    <span style={{ color: 'var(--color-gold)', marginRight: '6px', fontWeight: 'bold' }}>—</span>
-                    <strong style={{ color: 'var(--color-deep-blue)' }}>Чего избегать:</strong> {act.donts}
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    <span style={{ display: 'inline-block', width: '12px', height: '2.5px', backgroundColor: '#B89C72', flexShrink: 0, marginTop: '9px', borderRadius: '1px' }} />
+                    <div>
+                      <strong style={{ color: 'var(--color-deep-blue)' }}>Чего избегать:</strong> {act.donts}
+                    </div>
                   </div>
                 </div>
               </div>
