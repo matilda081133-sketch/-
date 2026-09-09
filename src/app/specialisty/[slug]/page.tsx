@@ -677,15 +677,15 @@ export default async function SpecialistPage({ params }: PageProps) {
                 ]}
               />
               {member.slug === 'konopkin-dmitriy-sergeevich' ? (
-                <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'center' }}>
+                <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'left', padding: '10px 14px', background: 'rgba(16, 39, 59, 0.04)', borderLeft: '3px solid var(--color-deep-blue, #10273B)' }}>
                   Дмитрий Сергеевич Конопкин не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно в соответствии с <a href="https://www.consultant.ru/document/cons_doc_LAW_36945/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Федеральным законом № 63-ФЗ</a>. ЮК взаимодействует с адвокатом на основании соглашения о сотрудничестве. Адвокатская помощь оказывается по отдельному соглашению между адвокатом и доверителем.
                 </div>
               ) : member.slug === 'gusev-oleg-yurevich' ? (
-                <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'center' }}>
+                <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'left', padding: '10px 14px', background: 'rgba(16, 39, 59, 0.04)', borderLeft: '3px solid var(--color-deep-blue, #10273B)' }}>
                   Олег Юрьевич Гусев не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно в соответствии с <a href="https://www.consultant.ru/document/cons_doc_LAW_36945/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Федеральным законом № 63-ФЗ</a>. ЮК взаимодействует с адвокатом на основании соглашения о сотрудничестве. Адвокатская помощь оказывается по отдельному соглашению между адвокатом и доверителем.
                 </div>
               ) : member.orgType === 'barAssociationLawyer' && (
-                <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'center' }}>
+                <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'left', padding: '10px 14px', background: 'rgba(16, 39, 59, 0.04)', borderLeft: '3px solid var(--color-deep-blue, #10273B)' }}>
                   Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
                 </div>
               )}

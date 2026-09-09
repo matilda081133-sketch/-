@@ -320,25 +320,23 @@ export default function Home() {
               }
             ].map((item, i) => (
               <div key={i} className="usp-card" style={{ 
-                padding: '40px', 
+                padding: '36px 32px', 
                 borderRight: '1px solid rgba(23, 50, 77, 0.1)',
                 borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
                 background: 'rgba(247, 244, 237, 0.45)',
                 position: 'relative',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between'
+                justifyContent: 'flex-start'
               }}>
-                <div>
-                  <div className="usp-accent"></div>
-                  <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
-                    {item.tag}
-                  </div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '24px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1, lineHeight: 1.3 }}>
-                    {item.title}
-                  </h3>
+                <div className="usp-accent"></div>
+                <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '12px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
+                  {item.tag}
                 </div>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', margin: 0, position: 'relative', zIndex: 1, marginTop: 'auto' }}>
+                <h3 style={{ fontSize: '19px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '12px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1, lineHeight: 1.3 }}>
+                  {item.title}
+                </h3>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '14.5px', lineHeight: '1.55', margin: 0, position: 'relative', zIndex: 1 }}>
                   {item.desc}
                 </p>
               </div>
@@ -358,7 +356,7 @@ export default function Home() {
 
       {/* 5. TEAM - БЛОК 1: СПЕЦИАЛИСТЫ ЮК */}
       <TeamCarousel 
-        customSectionLabel="Команда компании"
+        customSectionLabel="Наша команда"
         customTitle="Специалисты ЮК «Де-Юре»"
         customSubtitle="Специалисты компании с практическим опытом работы в следственных органах, службе судебных приставов и сопровождении гражданских и коммерческих споров."
         filterSlugs={[
@@ -373,7 +371,7 @@ export default function Home() {
 
       {/* 5. TEAM - БЛОК 2: НЕЗАВИСИМЫЕ АДВОКАТЫ / ПАРТНЁРЫ */}
       <TeamCarousel 
-        customSectionLabel="ПАРТНЁРЫ «ДЕ-ЮРЕ»"
+        customSectionLabel="Партнёры «Де-Юре»"
         customTitle="Независимые специалисты и организации"
         customSubtitle="В зависимости от задачи ЮК привлекает независимых адвокатов, экспертные, оценочные, аудиторские и иные профильные организации."
         filterSlugs={[

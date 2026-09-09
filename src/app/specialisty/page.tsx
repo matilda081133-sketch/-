@@ -637,12 +637,16 @@ export default function SpecialistyPage() {
 
           {/* Organization Relationship Disclaimer */}
           <p style={{ 
-            fontSize: '14px', 
+            fontSize: '13.5px', 
             color: 'var(--color-text-secondary)', 
-            lineHeight: 1.6, 
-            maxWidth: '850px', 
-            marginTop: '24px', 
-            marginBottom: 0 
+            lineHeight: 1.55, 
+            padding: '12px 16px',
+            background: 'rgba(16, 39, 59, 0.04)',
+            borderLeft: '3px solid var(--color-deep-blue, #10273B)',
+            maxWidth: '880px', 
+            marginTop: '28px', 
+            marginBottom: 0,
+            boxSizing: 'border-box'
           }}>
             Представленные адвокаты не являются сотрудниками ЮК «Де-Юре» и осуществляют адвокатскую деятельность самостоятельно в соответствии с <a href="https://www.consultant.ru/document/cons_doc_LAW_36945/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Федеральным законом № 63-ФЗ</a>. ЮК взаимодействует с ними на основании соглашений о сотрудничестве. Адвокатская помощь оказывается по отдельному соглашению между адвокатом и доверителем.
           </p>

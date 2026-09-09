@@ -194,7 +194,7 @@ export default function TeamCarousel({
             style={{ 
               display: 'flex', 
               alignItems: 'stretch', 
-              justifyContent: displayedTeam.length <= 3 ? 'center' : 'flex-start',
+              justifyContent: 'flex-start',
               gap: '24px', 
               overflowX: 'auto', 
               scrollBehavior: 'smooth', 
@@ -311,14 +311,18 @@ export default function TeamCarousel({
         </div>
 
         {(showDisclaimer || customDisclaimer) && (
-          <div style={{ marginTop: '24px', width: '100%' }}>
+          <div style={{ marginTop: '28px', width: '100%' }}>
             <p style={{
               margin: 0,
-              fontSize: '14.5px',
+              fontSize: '13.5px',
               color: 'var(--color-text-secondary)',
               lineHeight: 1.55,
+              padding: '12px 16px',
+              background: 'rgba(16, 39, 59, 0.04)',
+              borderLeft: '3px solid var(--color-deep-blue, #10273B)',
               maxWidth: '880px',
-              width: '100%'
+              width: '100%',
+              boxSizing: 'border-box'
             }}>
               {customDisclaimer || (
                 <>
