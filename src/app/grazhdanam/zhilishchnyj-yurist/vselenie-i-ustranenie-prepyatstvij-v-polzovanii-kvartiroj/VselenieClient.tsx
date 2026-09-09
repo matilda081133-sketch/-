@@ -167,7 +167,14 @@ export default function VselenieClient() {
             </>
           }
           superTitle="Жилищное право • защита права пользования жильём • Липецк"
-          title={<>Вселение <br />и устранение препятствий <br />в пользовании квартирой <br />в Липецке</>}
+          title={
+            <>
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Вселение</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>и устранение препятствий</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>в пользовании квартирой</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>в Липецке</span>
+            </>
+          }
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '600px', textWrap: 'balance' }}>
               Защитим ваше законное право на проживание: докажем факт чинения препятствий, добьёмся выдачи ключей через суд, определим порядок пользования комнатами и вселим с судебными приставами.

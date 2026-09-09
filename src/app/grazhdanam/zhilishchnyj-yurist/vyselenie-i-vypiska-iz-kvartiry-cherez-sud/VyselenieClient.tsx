@@ -167,7 +167,13 @@ export default function VyselenieClient() {
             </>
           }
           superTitle="Жилищное право • выписка и выселение через суд • Липецк"
-          title={<>Выселение и выписка <br />из квартиры через суд <br />в Липецке</>}
+          title={
+            <>
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Выселение и выписка</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>из квартиры через суд</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>в Липецке</span>
+            </>
+          }
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '600px', textWrap: 'balance' }}>
               Признаем бывшего супруга, родственника или прежнего владельца утратившим право пользования, снимем с регистрационного учёта в МВД и освободим жильё под ключ.

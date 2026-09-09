@@ -167,7 +167,12 @@ export default function ZalivClient() {
             </>
           }
           superTitle="Жилищное право • возмещение ущерба при заливе • Липецк"
-          title={<>Юрист по заливу <br />квартиры в Липецке</>}
+          title={
+            <>
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Юрист по заливу</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>квартиры в Липецке</span>
+            </>
+          }
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '600px', textWrap: 'balance' }}>
               Зафиксируем причину затопления, проведём независимую оценку и взыщем 100% стоимости восстановительного ремонта с виновного соседа или УК, либо защитим от необоснованного иска.

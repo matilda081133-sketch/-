@@ -183,7 +183,13 @@ export default function RazdelClient() {
             </>
           }
           superTitle="Жилищное право • порядок оплаты ЖКУ • Липецк"
-          title={<>Раздел лицевых счетов <br />и порядка оплаты ЖКУ <br />в Липецке</>}
+          title={
+            <>
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Раздел лицевых счетов</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>и порядка оплаты ЖКУ</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>в Липецке</span>
+            </>
+          }
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '600px', textWrap: 'balance' }}>
               Определим, кто и в какой части должен оплачивать жильё и коммунальные услуги. Подготовим соглашение, обращение к расчётной организации или иск и поможем получить отдельные платёжные документы.

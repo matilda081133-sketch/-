@@ -171,7 +171,13 @@ export default function SporyUKClient() {
             </>
           }
           superTitle="Жилищное право • споры с УК и ЖКХ • Липецк"
-          title={<>Споры с управляющей <br />компанией и организациями <br />ЖКХ в Липецке</>}
+          title={
+            <>
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Споры с управляющей</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>компанией и организациями</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>ЖКХ в Липецке</span>
+            </>
+          }
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '600px', textWrap: 'balance' }}>
               Защитим права собственников: добьёмся перерасчёта незаконных начислений, проведения ремонта общего имущества, возмещения ущерба и отмены сфальсифицированных протоколов собраний.

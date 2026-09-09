@@ -167,7 +167,14 @@ export default function PereplanirovkaClient() {
             </>
           }
           superTitle="Жилищное право • перепланировка и переустройство • Липецк"
-          title={<>Согласование <br />и узаконение <br />перепланировки <br />в Липецке</>}
+          title={
+            <>
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>Согласование</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>и узаконение</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>перепланировки</span> <br />
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>в Липецке</span>
+            </>
+          }
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '600px', textWrap: 'balance' }}>
               Комплексное сопровождение: проверим допустимость ремонта, разработаем проект, согласуем с администрацией города Липецка или сохраним помещение через суд с внесением в ЕГРН.
