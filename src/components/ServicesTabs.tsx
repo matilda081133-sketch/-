@@ -27,10 +27,10 @@ export default function ServicesTabs() {
   const currentServices = activeTab === 'b2c' ? b2cServices : b2bServices;
 
   return (
-    <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
+    <section className="section bg-light" style={{ padding: 'clamp(48px, 6vw, 64px) 0', background: 'var(--gradient-cream)' }}>
       <div className="container">
-        <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
-          <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+        <div style={{ maxWidth: '700px', marginBottom: '32px' }}>
+          <h2 className="with-accent" style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
             Ключевые направления юридической помощи
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
@@ -39,7 +39,7 @@ export default function ServicesTabs() {
         </div>
 
         {/* Tabs */}
-        <div style={{ display: 'flex', gap: '12px', marginBottom: '40px' }} role="tablist">
+        <div className="services-tabs-header" style={{ display: 'flex', gap: '12px', marginBottom: '36px' }} role="tablist">
           <button 
             role="tab"
             aria-selected={activeTab === 'b2c'}
@@ -89,13 +89,57 @@ export default function ServicesTabs() {
             color: #10273B !important;
             border-color: #10273B !important;
           }
+          .services-tabs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+          }
+          @media (max-width: 991px) and (min-width: 768px) {
+            .services-tabs-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 20px !important;
+            }
+          }
+          @media (max-width: 767px) {
+            .services-tabs-header {
+              width: 100% !important;
+              gap: 8px !important;
+              margin-bottom: 24px !important;
+            }
+            .services-tabs-header .tab-btn {
+              flex: 1 !important;
+              text-align: center !important;
+              padding: 12px 14px !important;
+              font-size: 15px !important;
+            }
+            .services-tabs-grid {
+              grid-template-columns: 1fr !important;
+              gap: 16px !important;
+              margin-bottom: 28px !important;
+            }
+            .services-tabs-grid .service-card {
+              padding: 24px 20px !important;
+              min-height: auto !important;
+            }
+            .services-tabs-cta-banner {
+              padding: 24px 20px !important;
+              flex-direction: column !important;
+              align-items: stretch !important;
+              text-align: left !important;
+              gap: 18px !important;
+            }
+            .services-tabs-cta-banner .btn {
+              width: 100% !important;
+              text-align: center !important;
+            }
+          }
         `}} />
 
         {/* Grid */}
         <div 
           role="tabpanel" 
-          className="grid grid-3" 
-          style={{ gap: '24px', marginBottom: '40px' }}
+          className="services-tabs-grid"
         >
           {currentServices.map((service, idx) => (
             <Link href={service.href} key={idx} style={{ textDecoration: 'none', display: 'block' }}>
@@ -109,7 +153,7 @@ export default function ServicesTabs() {
                   border: '1px solid var(--color-border)',
                   borderRadius: '0',
                   display: 'flex', 
-                  flexDirection: 'column',
+                  flexDirection: 'column', 
                   transition: 'all 0.3s',
                   position: 'relative',
                   borderTop: '3px solid var(--color-primary)'
@@ -122,7 +166,7 @@ export default function ServicesTabs() {
                   {service.desc}
                 </p>
                 <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
-                  Подробнее 
+                  <span>Подробнее</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -134,7 +178,7 @@ export default function ServicesTabs() {
         </div>
 
         {/* Footer dynamic button */}
-        <div style={{ 
+        <div className="services-tabs-cta-banner" style={{ 
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center', 
@@ -145,12 +189,12 @@ export default function ServicesTabs() {
           flexWrap: 'wrap',
           gap: '16px'
         }}>
-          <span style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-white)', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
+          <span style={{ fontSize: 'clamp(20px, 3.5vw, 24px)', fontWeight: 600, color: 'var(--color-white)', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
             Не нашли нужное направление?
           </span>
           <Link 
             href={activeTab === 'b2c' ? '/grazhdanam/' : '/biznesu/'} 
-            className="btn btn-light"
+            className="btn white-btn-custom"
             style={{ whiteSpace: 'nowrap' }}
           >
             {activeTab === 'b2c' ? 'Все услуги гражданам' : 'Все услуги бизнесу'}

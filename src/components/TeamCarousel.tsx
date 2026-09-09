@@ -278,6 +278,39 @@ export default function TeamCarousel({
             .team-card:hover .spec-card-link span:last-child {
               transform: translateX(4px);
             }
+            .carousel-container {
+              -webkit-overflow-scrolling: touch;
+              scrollbar-width: none;
+              -ms-overflow-style: none;
+            }
+            .carousel-container::-webkit-scrollbar {
+              display: none;
+            }
+            @media (max-width: 1024px) {
+              .carousel-arrow {
+                display: none !important;
+              }
+              .carousel-container {
+                scroll-snap-type: x mandatory;
+                padding-left: 2px !important;
+                padding-right: 2px !important;
+              }
+              .carousel-item {
+                scroll-snap-align: start;
+              }
+            }
+            @media (max-width: 480px) {
+              .team-card {
+                flex: 0 0 280px !important;
+                width: 280px !important;
+                min-width: 280px !important;
+                max-width: 280px !important;
+                height: 580px !important;
+                min-height: 580px !important;
+                max-height: 580px !important;
+                padding: 20px 18px !important;
+              }
+            }
           ` }} />
 
           {displayedTeam.length > 3 && (

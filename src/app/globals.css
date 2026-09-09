@@ -51,6 +51,24 @@ body {
   }
 }
 
+.desktop-only {
+  display: inline;
+}
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+.mobile-only {
+  display: none !important;
+}
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block !important;
+  }
+}
+
 a {
   color: var(--color-primary);
   text-decoration: none;

@@ -61,29 +61,29 @@ export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые в
   const faqs = propFaqs || defaultFaqs;
 
   return (
-    <section className="section bg-white" style={{ padding: '80px 0', borderTop: '1px solid var(--color-border)' }}>
+    <section className="section bg-white" style={{ padding: 'clamp(48px, 6vw, 80px) 0', borderTop: '1px solid var(--color-border)' }}>
       <div className="container">
-        <div className="grid grid-2" style={{ gap: '80px', alignItems: 'flex-start' }}>
+        <div className="grid grid-2 faq-layout-grid" style={{ gap: 'clamp(32px, 5vw, 80px)', alignItems: 'flex-start' }}>
           
           {/* Left Side: Sticky Header & Info */}
-          <div className="reveal-on-scroll" style={{ position: 'sticky', top: '120px' }}>
+          <div className="faq-sticky-col reveal-on-scroll">
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '18px' }}>
               <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
               <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
                 {superTitle}
               </span>
             </div>
-            <h2 style={{ fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '14px', lineHeight: 1.15 }}>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '14px', lineHeight: 1.15 }}>
               {title}
             </h2>
-            <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '36px', maxWidth: '400px' }}>
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '28px', maxWidth: '400px' }}>
               {subtitle}
             </p>
             <a href={ctaLink} className="btn btn-outline" style={{ display: 'inline-flex' }}>{ctaText}</a>
           </div>
 
           {/* Right Side: Accordion */}
-          <div className="reveal-on-scroll delay-200" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div className="reveal-on-scroll delay-200" style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             {faqs.map((faq, index) => (
               <details key={index} className="faq-details" style={{
                 background: 'linear-gradient(to right, #0B1C2A 0%, #17375E 100%)',
@@ -94,24 +94,24 @@ export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые в
                 overflow: 'hidden'
               }}>
                 <summary style={{
-                  padding: '24px 32px',
+                  padding: '20px 24px',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   cursor: 'pointer',
-                  fontSize: '20px',
+                  fontSize: '18px',
                   fontWeight: '500',
                   fontFamily: 'var(--font-sans)',
                   listStyle: 'none',
                   background: 'transparent'
                 }} className="faq-summary">
-                  <span style={{ paddingRight: '20px', lineHeight: 1.4, color: 'var(--color-white)' }}>{faq.q}</span>
+                  <span style={{ paddingRight: '16px', lineHeight: 1.4, color: 'var(--color-white)' }}>{faq.q}</span>
                   <span className="faq-icon" style={{ 
                     display: 'inline-flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    width: '40px',
-                    height: '40px',
+                    width: '36px',
+                    height: '36px',
                     borderRadius: '50%',
                     border: '1px solid rgba(255, 255, 255, 0.2)',
                     transition: 'all 0.3s ease',
@@ -122,12 +122,12 @@ export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые в
                   </span>
                 </summary>
                 
-                <div style={{
-                  padding: '32px',
+                <div className="faq-answer-body" style={{
+                  padding: '24px 28px',
                   background: 'var(--gradient-cream)',
                   color: 'var(--color-text-main)',
                   lineHeight: '1.6',
-                  fontSize: '16px',
+                  fontSize: '15.5px',
                   borderTop: '1px solid var(--color-border)'
                 }}>
                   <div>
@@ -141,6 +141,10 @@ export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые в
         </div>
       </div>
       <style jsx>{`
+        .faq-sticky-col {
+          position: sticky;
+          top: 120px;
+        }
         .faq-summary::-webkit-details-marker {
           display: none;
         }
@@ -150,6 +154,31 @@ export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые в
         }
         details:hover {
           box-shadow: 0 20px 40px rgba(16, 39, 59, 0.15);
+        }
+        @media (max-width: 991px) {
+          .faq-layout-grid {
+            grid-template-columns: 1fr !important;
+            gap: 36px !important;
+          }
+          .faq-sticky-col {
+            position: static !important;
+            top: auto !important;
+          }
+        }
+        @media (max-width: 767px) {
+          .faq-summary {
+            padding: 16px 18px !important;
+            font-size: 16px !important;
+          }
+          .faq-answer-body {
+            padding: 18px 16px !important;
+            font-size: 14.5px !important;
+          }
+          .faq-sticky-col .btn {
+            width: 100% !important;
+            text-align: center !important;
+            justify-content: center !important;
+          }
         }
       `}</style>
     </section>

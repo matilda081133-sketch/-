@@ -113,16 +113,7 @@ export default function PricingBlock({
         </div>
 
         <div 
-          className={tiers.length === 4 ? "grid grid-4" : tiers.length >= 3 ? "grid grid-3" : "grid grid-2"} 
-          style={{ 
-            display: 'grid',
-            gridTemplateColumns: tiers.length === 4 ? 'repeat(4, minmax(0, 1fr))' : tiers.length >= 3 ? 'repeat(3, minmax(0, 1fr))' : 'repeat(2, minmax(0, 1fr))',
-            gap: tiers.length === 4 ? '16px' : '30px', 
-            alignItems: 'stretch',
-            maxWidth: tiers.length === 2 ? '850px' : 'none',
-            margin: tiers.length === 2 ? '0 auto' : '0',
-            width: '100%'
-          }}
+          className={`pricing-grid-container ${tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
         >
           {tiers.map((tier, idx) => (
             <div key={idx} style={{
@@ -218,7 +209,7 @@ export default function PricingBlock({
         )}
         
         {ctaTitle && (
-          <div style={{ 
+          <div className="pricing-cta-banner" style={{ 
             marginTop: '40px', 
             background: 'var(--color-white)', 
             border: '1px solid var(--color-border)',
@@ -243,6 +234,50 @@ export default function PricingBlock({
         )}
       </div>
       <style dangerouslySetInnerHTML={{ __html: `
+        .pricing-grid-container {
+          display: grid;
+          align-items: stretch;
+          width: 100%;
+        }
+        .pricing-grid-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 30px;
+        }
+        .pricing-grid-4 {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 16px;
+        }
+        .pricing-grid-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 30px;
+          max-width: 850px;
+          margin: 0 auto;
+        }
+        @media (max-width: 1024px) and (min-width: 768px) {
+          .pricing-grid-3, .pricing-grid-4 {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 20px !important;
+          }
+        }
+        @media (max-width: 767px) {
+          .pricing-grid-container, .pricing-grid-3, .pricing-grid-4, .pricing-grid-2 {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+          .pricing-tier-card {
+            padding: 28px 20px !important;
+          }
+          .pricing-cta-banner {
+            padding: 24px 20px !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            text-align: left !important;
+          }
+          .pricing-cta-banner .btn {
+            width: 100% !important;
+            text-align: center !important;
+          }
+        }
         .pricing-tier-card:hover {
           transform: translateY(-10px);
           box-shadow: 0 30px 60px rgba(0,0,0,0.1) !important;

@@ -30,17 +30,17 @@ export default function CasesBlock({
   resultLabel = "Результат"
 }: CasesBlockProps) {
   return (
-    <section className="section bg-white">
+    <section className="section bg-white" style={{ padding: 'clamp(48px, 6vw, 80px) 0' }}>
       <div className="container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '50px', flexWrap: 'wrap', gap: '20px', width: '100%' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px', flexWrap: 'wrap', gap: '20px', width: '100%' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
               <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
               <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
                 Практика
               </span>
             </div>
-            <h2 style={{ margin: 0, fontSize: 'clamp(32px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
+            <h2 style={{ margin: 0, fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
               {title}
             </h2>
           </div>
@@ -51,10 +51,10 @@ export default function CasesBlock({
           )}
         </div>
         
-        <div className="grid grid-3" style={{ gap: '30px' }}>
+        <div className="cases-grid">
           {cases.map((caseItem, idx) => (
             <div key={idx} className="case-card group" style={{ 
-              padding: '40px 36px 36px 36px', 
+              padding: '36px 30px 30px 30px', 
               border: '1px solid var(--color-border)', 
               borderRadius: '0', 
               display: 'flex', 
@@ -75,16 +75,16 @@ export default function CasesBlock({
                 transition: 'height 0.4s ease'
               }} className="case-accent-line"></div>
               
-              <div style={{ paddingBottom: '20px', marginBottom: '24px', paddingTop: '0' }}>
+              <div style={{ paddingBottom: '20px', marginBottom: '20px', paddingTop: '0' }}>
                 <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600, lineHeight: 1.45 }}>
                   {caseItem.category}
                 </span>
-                <h3 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.4, wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+                <h3 style={{ margin: 0, color: 'var(--color-deep-blue)', fontSize: '19px', fontFamily: 'var(--font-serif)', lineHeight: 1.4, wordBreak: 'break-word', overflowWrap: 'break-word' }}>
                   {caseItem.title}
                 </h3>
               </div>
               
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '18px', flexGrow: 1 }}>
                 <div>
                   <div style={{ 
                     display: 'inline-block', 
@@ -95,7 +95,7 @@ export default function CasesBlock({
                     fontWeight: 700, 
                     letterSpacing: '0.06em', 
                     borderRadius: '3px', 
-                    marginBottom: '10px' 
+                    marginBottom: '8px' 
                   }}>
                     ПРОБЛЕМА
                   </div>
@@ -112,7 +112,7 @@ export default function CasesBlock({
                     fontWeight: 700, 
                     letterSpacing: '0.06em', 
                     borderRadius: '3px', 
-                    marginBottom: '10px' 
+                    marginBottom: '8px' 
                   }}>
                     ЧТО СДЕЛАЛИ
                   </div>
@@ -120,9 +120,9 @@ export default function CasesBlock({
                 </div>
               </div>
               
-              <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '0', border: '1px solid rgba(193, 160, 102, 0.2)', borderLeft: '4px solid var(--color-gold)' }}>
-                <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600 }}>{resultLabel}</h4>
-                <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+              <div style={{ marginTop: '24px', background: 'rgba(193, 160, 102, 0.05)', padding: '18px', borderRadius: '0', border: '1px solid rgba(193, 160, 102, 0.2)', borderLeft: '4px solid var(--color-gold)' }}>
+                <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '6px', fontWeight: 600 }}>{resultLabel}</h4>
+                <p style={{ fontSize: '14.5px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
                   {caseItem.result}
                 </p>
               </div>
@@ -131,6 +131,26 @@ export default function CasesBlock({
         </div>
       </div>
       <style dangerouslySetInnerHTML={{__html: `
+        .cases-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+        @media (max-width: 1024px) and (min-width: 768px) {
+          .cases-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 20px !important;
+          }
+        }
+        @media (max-width: 767px) {
+          .cases-grid {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+          .case-card {
+            padding: 28px 20px 24px 20px !important;
+          }
+        }
         .case-card h3 span {
           word-break: break-word !important;
           overflow-wrap: break-word !important;

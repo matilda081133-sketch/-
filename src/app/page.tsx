@@ -34,41 +34,41 @@ export default function Home() {
           borderRadius: '50%', zIndex: 0
         }} />
         
-        <div className="container grid grid-2" style={{ gap: '60px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
-          <div className="" style={{ padding: '40px 0', maxWidth: '800px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: '#9B7E55' }}>
+        <div className="container grid grid-2 main-hero-grid" style={{ gap: 'clamp(32px, 5vw, 60px)', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div className="main-hero-content" style={{ padding: 'clamp(20px, 4vw, 40px) 0', maxWidth: '800px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+              <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55', flexShrink: 0 }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: 'clamp(12px, 1.8vw, 14px)', fontWeight: 600, color: '#9B7E55' }}>
                 Юридическая компания в Липецке
               </span>
             </div>
             <h1 className="main-hero-h1" style={{ 
-              marginBottom: '24px', 
-              lineHeight: '1.2', 
+              marginBottom: '20px', 
+              lineHeight: '1.18', 
               whiteSpace: 'pre', 
-              fontSize: 'clamp(36px, 4vw, 64px)',
+              fontSize: 'clamp(28px, 5.2vw, 60px)',
               fontFamily: 'var(--font-serif)',
               color: 'var(--color-deep-blue)'
             }}>
               {`Юридическая помощь\nгражданам и бизнесу\nв Липецке`}
             </h1>
             <p style={{ 
-              fontSize: '20px', 
+              fontSize: 'clamp(16px, 2.2vw, 20px)', 
               color: 'var(--color-text-secondary)', 
-              marginBottom: '30px', 
+              marginBottom: '28px', 
               maxWidth: '600px', 
-              lineHeight: 1.6 
+              lineHeight: 1.55 
             }}>
-              Подключаем специалиста с опытом именно <br />в вашей категории дел — от оценки ситуации <br />до защиты интересов в суде.
+              Подключаем специалиста с опытом именно <br className="desktop-only" />в вашей категории дел — от оценки ситуации <br className="desktop-only" />до защиты интересов в суде.
             </p>
             
             {/* Hero USPs Row */}
             <div className="hero-usps-row" style={{ 
               display: 'flex', 
               flexDirection: 'column', 
-              gap: '14px', 
-              marginTop: '28px',
-              marginBottom: '36px' 
+              gap: '12px', 
+              marginTop: '24px',
+              marginBottom: '32px' 
             }}>
               {[
                 'Подбираем специалиста под профиль вашего дела',
@@ -76,11 +76,11 @@ export default function Home() {
                 'Честный договор: фиксируем план работ и цены'
               ].map((bulletText, i) => (
                 <div key={i} className="specialist-fact-block" style={{ 
-                  paddingLeft: '16px', 
+                  paddingLeft: '14px', 
                   borderLeft: '3px solid var(--color-gold)', 
-                  fontSize: '15px', 
+                  fontSize: 'clamp(14px, 1.8vw, 15px)', 
                   color: 'var(--color-deep-blue)', 
-                  lineHeight: 1.4,
+                  lineHeight: 1.45,
                   fontWeight: 500
                 }}>
                   {bulletText}
@@ -261,7 +261,7 @@ export default function Home() {
       </div>
 
       {/* 3. USP SECTION */}
-      <section className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
+      <section className="section" style={{ position: 'relative', overflow: 'hidden', padding: 'clamp(48px, 6vw, 80px) 0', background: 'var(--color-white)' }}>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
             <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
@@ -272,7 +272,7 @@ export default function Home() {
           
           <h2 style={{ 
             marginBottom: '40px', 
-            fontSize: '42px', 
+            fontSize: 'clamp(28px, 4vw, 42px)', 
             fontFamily: 'var(--font-serif)', 
             color: 'var(--color-deep-blue)',
             textAlign: 'left'
@@ -280,13 +280,7 @@ export default function Home() {
             Почему мы?
           </h2>
           
-          <div className="main-usp-grid" style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(3, 1fr)', 
-            borderTop: '1px solid var(--color-primary)', 
-            borderLeft: '1px solid rgba(23, 50, 77, 0.1)',
-            borderBottom: '1px solid rgba(23, 50, 77, 0.1)'
-          }}>
+          <div className="main-usp-grid">
             {[
               {
                 tag: "Специализация",
@@ -320,9 +314,6 @@ export default function Home() {
               }
             ].map((item, i) => (
               <div key={i} className="usp-card" style={{ 
-                padding: '36px 32px', 
-                borderRight: '1px solid rgba(23, 50, 77, 0.1)',
-                borderBottom: i < 3 ? '1px solid rgba(23, 50, 77, 0.1)' : 'none',
                 background: 'rgba(247, 244, 237, 0.45)',
                 position: 'relative',
                 display: 'flex',
@@ -333,7 +324,7 @@ export default function Home() {
                 <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '12px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
                   {item.tag}
                 </div>
-                <h3 style={{ fontSize: '19px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '12px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1, lineHeight: 1.3 }}>
+                <h3 style={{ fontSize: 'clamp(17px, 2vw, 19px)', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '12px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1, lineHeight: 1.3 }}>
                   {item.title}
                 </h3>
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '14.5px', lineHeight: '1.55', margin: 0, position: 'relative', zIndex: 1 }}>
@@ -410,7 +401,7 @@ export default function Home() {
           },
           {
             category: 'Арбитраж',
-            title: <>Взыскание задолженности по договору подряда<br />через суд</>,
+            title: <>Взыскание задолженности по договору подряда<br className="desktop-only" />через суд</>,
             problem: 'Заказчик отказался оплачивать выполненные строительные работы по договору строительного подряда, ссылаясь на вымышленные недостатки.',
             action: 'Арбитражный юрист собрал документальную базу, подтверждающую приемку этапов, и инициировал судебную строительно-техническую экспертизу.',
             result: 'Основная задолженность и пени по договору взысканы на 100% через Арбитражный суд Липецкой области.',
@@ -429,15 +420,15 @@ export default function Home() {
       <FAQBlock />
 
       {/* 10. CTA SECTION (FORM) */}
-      <section className="section bg-white" id="consultation" style={{ scrollMarginTop: '120px' }}>
+      <section className="section bg-white" id="consultation" style={{ scrollMarginTop: '120px', padding: 'clamp(48px, 6vw, 80px) 0' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+          <div className="grid grid-2 main-consultation-grid" style={{ gap: 'clamp(32px, 5vw, 60px)', alignItems: 'stretch' }}>
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
               </div>
-              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+              <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
                 Обсудите ситуацию с юристом
               </h2>
               
@@ -446,17 +437,17 @@ export default function Home() {
               </p>
 
               <div style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <a href="tel:+74742201525" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  +7 (4742) 20-15-25
+                <a href="tel:+74742201525" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: 'clamp(20px, 4vw, 24px)', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <span>+7 (4742) 20-15-25</span>
                 </a>
                 <span style={{ fontSize: '15px', color: 'var(--color-text-secondary)' }}>г. Липецк, ул. Советская, д. 35, оф. 213</span>
               </div>
               
               <div style={{ marginTop: '16px' }}>
                 <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                  Перезвоним в течение 15 минут в рабочее время
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>Перезвоним в течение 15 минут в рабочее время</span>
                 </div>
                 <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '16px 0 0 0', padding: '10px 14px', background: 'rgba(16, 39, 59, 0.04)', borderLeft: '3px solid rgba(16, 39, 59, 0.25)', fontStyle: 'italic' }}>
                   Не указывайте в форме паспортные данные, сведения о здоровье и другие конфиденциальные сведения. Их можно передать юристу после установления защищённого способа связи.
@@ -466,7 +457,7 @@ export default function Home() {
             </div>
             
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
-              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+              <div className="main-consultation-form-card" style={{ background: 'var(--gradient-cream)', padding: 'clamp(24px, 4vw, 40px)', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)', boxSizing: 'border-box' }}>
                 <ContactsForm title="Оставить заявку" subtitle={<>Перезвоним вам в течение 15 минут в рабочее время.</>} />
               </div>
             </div>
@@ -477,7 +468,63 @@ export default function Home() {
       {/* 11. FOOTER */}
       <Footer />
       <style dangerouslySetInnerHTML={{ __html: `
+        .main-usp-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          border-top: 1px solid var(--color-primary);
+          border-left: 1px solid rgba(23, 50, 77, 0.1);
+          border-bottom: 1px solid rgba(23, 50, 77, 0.1);
+        }
+        .main-usp-grid .usp-card {
+          padding: 36px 32px;
+          border-right: 1px solid rgba(23, 50, 77, 0.1);
+          border-bottom: 1px solid rgba(23, 50, 77, 0.1);
+        }
+        @media (max-width: 1024px) and (min-width: 769px) {
+          .main-hero-grid {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+          }
+          .main-usp-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            border-left: 1px solid rgba(23, 50, 77, 0.1) !important;
+          }
+          .main-usp-grid .usp-card {
+            border-right: 1px solid rgba(23, 50, 77, 0.1) !important;
+            border-bottom: 1px solid rgba(23, 50, 77, 0.1) !important;
+            padding: 28px 24px !important;
+          }
+        }
         @media (max-width: 991px) {
+          .main-hero-grid {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+          }
+          .main-consultation-grid {
+            grid-template-columns: 1fr !important;
+            gap: 36px !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .main-hero-h1 {
+            white-space: pre-line !important;
+            line-height: 1.2 !important;
+          }
+          .hero-usps-row {
+            flex-direction: column !important;
+            margin-top: 24px !important;
+            margin-bottom: 28px !important;
+            gap: 12px !important;
+          }
+          .main-hero-btns {
+            flex-direction: column !important;
+            width: 100% !important;
+            gap: 12px !important;
+          }
+          .main-hero-btns .btn {
+            width: 100% !important;
+            text-align: center !important;
+          }
           .main-usp-grid {
             grid-template-columns: 1fr !important;
             border-left: none !important;
@@ -487,24 +534,6 @@ export default function Home() {
             border-right: none !important;
             border-bottom: 1px solid rgba(23, 50, 77, 0.1) !important;
             padding: 24px 20px !important;
-          }
-        }
-        @media (max-width: 768px) {
-          .main-hero-h1 {
-            white-space: pre-line !important;
-          }
-          .hero-usps-row {
-            flex-direction: column !important;
-            margin-top: 30px !important;
-            gap: 12px !important;
-          }
-          .main-hero-btns {
-            flex-direction: column !important;
-            width: 100% !important;
-          }
-          .main-hero-btns .btn {
-            width: 100% !important;
-            text-align: center !important;
           }
         }
       `}} />
