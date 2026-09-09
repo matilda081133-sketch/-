@@ -456,12 +456,12 @@ export default function RazdelClient() {
       {/* ═══ 3. КАК ПОМОГАЕТ ЮРИСТ ═══ */}
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+          <div style={{ maxWidth: '900px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Как юрист помогает <br />разделить оплату коммунальных услуг
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Подберём оптимальный способ решения — от мирного соглашения до вынесения судебного решения с возложением обязанности на УК.
+              Подберём оптимальный способ решения — от мирного <br />соглашения до вынесения судебного решения с возложением обязанности на УК.
             </p>
           </div>
 
@@ -608,7 +608,7 @@ export default function RazdelClient() {
             }
           ]}
           ctaTitle="Точную стоимость определим до начала работы"
-          ctaSubtitle="Изучим документы и предложим подходящий вариант разделения платежей без лишних судебных издержек."
+          ctaSubtitle={<>Изучим документы и предложим подходящий вариант разделения платежей <br />без лишних судебных издержек.</>}
           ctaButtonText="Получить расчёт стоимости"
           ctaButtonLink="#form"
           disclaimer=""
@@ -619,7 +619,7 @@ export default function RazdelClient() {
       <div onClickCapture={() => handleCtaClick('housing_razdel_faq', 'Задать свой вопрос')}>
         <FAQBlock 
           faqs={faqs} 
-          title={<>Частые вопросы по разделу <br />лицевых счетов и оплате ЖКУ</>}
+          title={<>Частые вопросы <br />по разделу лицевых счетов и оплате ЖКУ</>}
           subtitle="Собрали ответы на ключевые вопросы собственников и нанимателей жилья."
           ctaText="Задать свой вопрос"
           ctaLink="#form"

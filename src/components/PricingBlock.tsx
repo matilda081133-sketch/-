@@ -21,8 +21,8 @@ interface PricingBlockProps {
   title?: string;
   subtitle?: string;
   tiers?: PricingTier[];
-  ctaTitle?: string;
-  ctaSubtitle?: string;
+  ctaTitle?: string | React.ReactNode;
+  ctaSubtitle?: string | React.ReactNode;
   ctaButtonText?: string;
   ctaButtonLink?: string;
   disclaimer?: string | React.ReactNode;
