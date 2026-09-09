@@ -402,32 +402,31 @@ export default function VselenieClient() {
             ))}
           </div>
 
-          <div className="card service-card" style={{ 
-            width: '100%', 
-            padding: '22px 28px', 
-            background: 'var(--color-deep-blue)', 
-            borderRadius: '2px',
-            borderTop: '3px solid var(--color-gold)',
-            boxShadow: '0 4px 16px rgba(16, 39, 59, 0.16)',
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '18px',
-            alignItems: 'center',
-            justifyContent: 'space-between'
-          }}>
-            <div style={{ flex: '1 1 340px' }}>
-              <h3 style={{ margin: '0 0 6px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+          {/* CTA-плашка с атрибуцией cta_source = housing_vselenie_banner */}
+          <div 
+            className="card service-card cta-banner-card" 
+            style={{ 
+              width: '100%', 
+              padding: '32px 36px', 
+              background: 'var(--color-deep-blue)', 
+              borderRadius: '0',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)'
+            }}
+          >
+            <div style={{ flex: '1 1 300px' }}>
+              <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
                 Не вскрывайте двери силой без юридической фиксации
               </h3>
-              <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '780px' }}>
+              <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
                 Самовольный силовой взлом замков часто приводит к ложным обвинениям в краже или хулиганстве. Законный судебный порядок с приставами гарантирует безопасность и выдачу ключей.
               </p>
             </div>
             <div style={{ flexShrink: 0 }}>
               <a 
                 href="#form" 
-                className="btn white-btn-custom"
-                style={{ display: 'inline-block', textAlign: 'center', fontSize: '14px', backgroundColor: 'var(--color-white)', color: '#10273B', fontWeight: 600, padding: '12px 24px' }}
+                className="btn white-btn-custom" 
+                style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
                 onClick={() => handleCtaClick('housing_vselenie_banner', 'Защитить право на вселение')}
               >
                 Получить доступ
@@ -617,7 +616,7 @@ export default function VselenieClient() {
             <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Связанные услуги жилищного юриста
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
               Смежные направления помощи по защите прав на жилое помещение.
             </p>
           </div>
