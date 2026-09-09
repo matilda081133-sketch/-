@@ -111,12 +111,12 @@ export default function RazdelClient() {
     },
     {
       tag: 'Наследники',
-      title: 'Несколько наследников не могут договориться по ЖКУ',
+      title: <>Несколько наследников <br />не могут договориться по ЖКУ</>,
       desc: 'После вступления в наследство возникла долевая собственность, но соглашения по оплате коммунальных услуг нет.'
     },
     {
       tag: 'Отказ УК / ЕПД',
-      title: 'Управляющая компания или РСО отказали в разделении',
+      title: <>Управляющая компания <br />или РСО отказали в разделении</>,
       desc: 'Организации ЖКХ требуют судебное решение или отказываются формировать раздельные квитанции на оплату.'
     },
     {
@@ -183,7 +183,7 @@ export default function RazdelClient() {
             </>
           }
           superTitle="Жилищное право • порядок оплаты ЖКУ • Липецк"
-          title={<>Раздел лицевых счетов <br />и порядка оплаты ЖКУ в Липецке</>}
+          title={<>Раздел лицевых счетов <br />и порядка оплаты ЖКУ <br />в Липецке</>}
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '600px', textWrap: 'balance' }}>
               Определим, кто и в какой части должен оплачивать жильё и коммунальные услуги. Подготовим соглашение, обращение к расчётной организации или иск и поможем получить отдельные платёжные документы.
@@ -369,9 +369,9 @@ export default function RazdelClient() {
       {/* ═══ 2. С КАКИМИ СИТУАЦИЯМИ ОБРАЩАЮТСЯ ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              С какими вопросами по разделу счетов обращаются
+          <div style={{ maxWidth: '850px', marginBottom: '44px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              С какими вопросами <br />по разделу счетов обращаются
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Совместное проживание или наличие долей не должно приводить к оплате чужих долгов. Поможем разделить платежи в добровольном или судебном порядке.
