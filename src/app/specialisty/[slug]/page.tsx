@@ -45,9 +45,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           alt: member.slug === 'bobkin-arkadiy-evgenevich'
             ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
             : member.slug === 'konopkin-dmitriy-sergeevich'
-            ? 'Конопкин Дмитрий Сергеевич — адвокат, председатель Коллегии адвокатов «Де-Юре»'
+            ? 'Конопкин Дмитрий Сергеевич — адвокат'
             : member.slug === 'gusev-oleg-yurevich'
-            ? 'Гусев Олег Юрьевич — адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»'
+            ? 'Гусев Олег Юрьевич — адвокат'
             : member.slug === 'nacheshnikov-vladimir-viktorovich'
             ? 'Владимир Викторович Начешников — специалист ЮК «Де-Юре»'
             : `${member.name} — специалист ЮК «Де-Юре»`
@@ -95,13 +95,10 @@ export default async function SpecialistPage({ params }: PageProps) {
     '@type': 'Person',
     '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
     name: 'Конопкин Дмитрий Сергеевич',
-    jobTitle: 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
+    jobTitle: 'Адвокат',
+    identifier: '48/812',
     url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
     image: 'https://dejure-help.ru/images/konopkin.jpg',
-    memberOf: {
-      '@type': 'Organization',
-      name: 'Коллегия адвокатов «Де-Юре»'
-    },
     alumniOf: {
       '@type': 'CollegeOrUniversity',
       name: 'Елецкий государственный университет им. И. А. Бунина'
@@ -111,13 +108,10 @@ export default async function SpecialistPage({ params }: PageProps) {
     '@type': 'Person',
     '@id': 'https://dejure-help.ru/specialisty/gusev-oleg-yurevich/#person',
     name: 'Гусев Олег Юрьевич',
-    jobTitle: 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
+    jobTitle: 'Адвокат',
+    identifier: '48/672',
     url: 'https://dejure-help.ru/specialisty/gusev-oleg-yurevich/',
     image: 'https://dejure-help.ru/images/gusev.jpg',
-    memberOf: {
-      '@type': 'Organization',
-      name: 'Коллегия адвокатов «Де-Юре»'
-    },
     alumniOf: {
       '@type': 'CollegeOrUniversity',
       name: 'Воронежский государственный университет'
@@ -256,6 +250,11 @@ export default async function SpecialistPage({ params }: PageProps) {
               <div style={{ fontSize: '18px', color: 'var(--color-primary)', fontWeight: 600, marginBottom: '8px', lineHeight: 1.4, whiteSpace: 'pre-line' }}>
                 {member.status}
               </div>
+              {(member.slug === 'konopkin-dmitriy-sergeevich' || member.slug === 'gusev-oleg-yurevich') && (
+                <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', fontWeight: 500, marginBottom: '12px' }}>
+                  Рег. № {member.slug === 'konopkin-dmitriy-sergeevich' ? '48/812' : '48/672'} в реестре адвокатов Липецкой области
+                </div>
+              )}
               <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', fontWeight: 500, marginBottom: '24px', whiteSpace: 'pre-line', lineHeight: 1.6 }}>
                 {member.shortDescription}
               </div>
@@ -328,9 +327,9 @@ export default async function SpecialistPage({ params }: PageProps) {
                   className="specialist-img-responsive"
                   alt={
                     member.slug === 'konopkin-dmitriy-sergeevich'
-                      ? 'Конопкин Дмитрий Сергеевич — адвокат, председатель Коллегии адвокатов «Де-Юре»'
+                      ? 'Конопкин Дмитрий Сергеевич — адвокат'
                       : member.slug === 'gusev-oleg-yurevich'
-                      ? 'Гусев Олег Юрьевич — адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»'
+                      ? 'Гусев Олег Юрьевич — адвокат'
                       : member.slug === 'bobkin-arkadiy-evgenevich'
                       ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
                       : member.slug === 'smolyaninova-marina-valerevna'
@@ -622,7 +621,21 @@ export default async function SpecialistPage({ params }: PageProps) {
                     member.name
                   )}
                 </div>
-                <div style={{ color: 'var(--color-text-secondary)', fontSize: '15px' }}>{member.companyRole || member.status}</div>
+                <div style={{ color: 'var(--color-text-secondary)', fontSize: '15px' }}>
+                  {member.slug === 'konopkin-dmitriy-sergeevich' ? (
+                    <>
+                      <div>Адвокат</div>
+                      <div style={{ fontSize: '14px', marginTop: '2px' }}>Рег. № 48/812 в реестре адвокатов Липецкой области</div>
+                    </>
+                  ) : member.slug === 'gusev-oleg-yurevich' ? (
+                    <>
+                      <div>Адвокат</div>
+                      <div style={{ fontSize: '14px', marginTop: '2px' }}>Рег. № 48/672 в реестре адвокатов Липецкой области</div>
+                    </>
+                  ) : (
+                    member.companyRole || member.status
+                  )}
+                </div>
               </div>
 
               <div>
@@ -665,11 +678,11 @@ export default async function SpecialistPage({ params }: PageProps) {
               />
               {member.slug === 'konopkin-dmitriy-sergeevich' ? (
                 <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'center' }}>
-                  Конопкин Дмитрий Сергеевич не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно. Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
+                  Дмитрий Сергеевич Конопкин не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно в соответствии с <a href="https://www.consultant.ru/document/cons_doc_LAW_36945/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Федеральным законом № 63-ФЗ</a>. ЮК взаимодействует с адвокатом на основании соглашения о сотрудничестве. Адвокатская помощь оказывается по отдельному соглашению между адвокатом и доверителем.
                 </div>
               ) : member.slug === 'gusev-oleg-yurevich' ? (
                 <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'center' }}>
-                  Гусев Олег Юрьевич не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно. Адвокатская помощь оказывается на основании соглашения между адвокатом и доверителем.
+                  Олег Юрьевич Гусев не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно в соответствии с <a href="https://www.consultant.ru/document/cons_doc_LAW_36945/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Федеральным законом № 63-ФЗ</a>. ЮК взаимодействует с адвокатом на основании соглашения о сотрудничестве. Адвокатская помощь оказывается по отдельному соглашению между адвокатом и доверителем.
                 </div>
               ) : member.orgType === 'barAssociationLawyer' && (
                 <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'center' }}>

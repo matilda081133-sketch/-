@@ -26,9 +26,9 @@ export const metadata: Metadata = {
 
 const specialistListRoles: Record<string, string> = {
   'bobkin-arkadiy-evgenevich': 'Директор, управляющий партнёр ЮК «Де-Юре»',
-  'konopkin-dmitriy-sergeevich': 'Адвокат, председатель\nКоллегии адвокатов «Де-Юре»',
+  'konopkin-dmitriy-sergeevich': 'Адвокат',
   'smolyaninova-marina-valerevna': 'Ведущий юрист ЮК «Де-Юре»',
-  'gusev-oleg-yurevich': 'Адвокат, управляющий партнёр\nКоллегии адвокатов «Де-Юре»',
+  'gusev-oleg-yurevich': 'Адвокат',
   'nacheshnikov-vladimir-viktorovich': 'Специалист ЮК «Де-Юре»',
   'polozova-elena-anatolevna': 'Юрист ЮК «Де-Юре»'
 };
@@ -72,9 +72,9 @@ const specialistAreas: Record<string, { name: string; href?: string }[]> = {
 
 const specialistAlts: Record<string, string> = {
   'bobkin-arkadiy-evgenevich': 'Аркадий Евгеньевич Бобкин — управляющий партнёр ЮК Де-Юре',
-  'konopkin-dmitriy-sergeevich': 'Дмитрий Сергеевич Конопкин — адвокат, председатель Коллегии адвокатов «Де-Юре»',
+  'konopkin-dmitriy-sergeevich': 'Дмитрий Сергеевич Конопкин — адвокат',
   'smolyaninova-marina-valerevna': 'Марина Валерьевна Смольянинова — ведущий юрист ЮК Де-Юре',
-  'gusev-oleg-yurevich': 'Олег Юрьевич Гусев — адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
+  'gusev-oleg-yurevich': 'Олег Юрьевич Гусев — адвокат',
   'nacheshnikov-vladimir-viktorovich': 'Владимир Викторович Начешников — специалист ЮК Де-Юре',
   'polozova-elena-anatolevna': 'Елена Анатольевна Полозова — юрист ЮК Де-Юре'
 };
@@ -123,13 +123,10 @@ export default function SpecialistyPage() {
             'item': {
               '@type': 'Person',
               'name': 'Конопкин Дмитрий Сергеевич',
-              'jobTitle': 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
+              'jobTitle': 'Адвокат',
+              'identifier': '48/812',
               'image': 'https://dejure-help.ru/images/konopkin.jpg',
-              'url': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
-              'memberOf': {
-                '@type': 'Organization',
-                'name': 'Коллегия адвокатов «Де-Юре»'
-              }
+              'url': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/'
             }
           },
           {
@@ -154,13 +151,10 @@ export default function SpecialistyPage() {
             'item': {
               '@type': 'Person',
               'name': 'Гусев Олег Юрьевич',
-              'jobTitle': 'Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»',
+              'jobTitle': 'Адвокат',
+              'identifier': '48/672',
               'image': 'https://dejure-help.ru/images/gusev.jpg',
-              'url': 'https://dejure-help.ru/specialisty/gusev-oleg-yurevich/',
-              'memberOf': {
-                '@type': 'Organization',
-                'name': 'Коллегия адвокатов «Де-Юре»'
-              }
+              'url': 'https://dejure-help.ru/specialisty/gusev-oleg-yurevich/'
             }
           },
           {
@@ -650,7 +644,7 @@ export default function SpecialistyPage() {
             marginTop: '24px', 
             marginBottom: 0 
           }}>
-            Представленные адвокаты не являются сотрудниками ЮК «Де-Юре» и осуществляют адвокатскую деятельность самостоятельно. При необходимости ЮК может рекомендовать или привлечь адвоката соответствующей специализации. Соглашение об оказании адвокатской помощи заключается непосредственно между адвокатом и доверителем.
+            Представленные адвокаты не являются сотрудниками ЮК «Де-Юре» и осуществляют адвокатскую деятельность самостоятельно в соответствии с <a href="https://www.consultant.ru/document/cons_doc_LAW_36945/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Федеральным законом № 63-ФЗ</a>. ЮК взаимодействует с ними на основании соглашений о сотрудничестве. Адвокатская помощь оказывается по отдельному соглашению между адвокатом и доверителем.
           </p>
         </div>
 
