@@ -359,7 +359,7 @@ export default function SporyUKClient() {
         <div className="container">
           <div style={{ maxWidth: '960px', marginBottom: '44px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              С какими спорами с УК и ТСЖ мы помогаем
+              С какими спорами в сфере <br />ЖКХ мы помогаем
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Привлечём управляющую организацию к ответственности за ненадлежащее содержание дома и добьёмся перерасчёта.
