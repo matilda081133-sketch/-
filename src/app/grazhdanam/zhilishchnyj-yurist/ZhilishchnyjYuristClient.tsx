@@ -795,18 +795,12 @@ export default function ZhilishchnyjYuristClient() {
                     </span>
                     <span>{act.situation}</span>
                   </h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                      <span style={{ color: '#66BB6A', fontWeight: 'bold', fontSize: '15px', flexShrink: 0, marginTop: '1px' }}>✓</span>
-                      <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.92)', lineHeight: 1.5 }}>
-                        <strong style={{ color: '#FFFFFF' }}>Что сделать:</strong> {act.dos}
-                      </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.92)', lineHeight: 1.5 }}>
+                      <strong style={{ color: '#FFFFFF' }}>Что сделать:</strong> {act.dos}
                     </div>
-                    <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                      <span style={{ color: '#EF5350', fontWeight: 'bold', fontSize: '15px', flexShrink: 0, marginTop: '1px' }}>✕</span>
-                      <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.5 }}>
-                        <strong style={{ color: '#FFFFFF' }}>Чего избегать:</strong> {act.donts}
-                      </div>
+                    <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.5 }}>
+                      <strong style={{ color: '#FFFFFF' }}>Чего избегать:</strong> {act.donts}
                     </div>
                   </div>
                 </div>
