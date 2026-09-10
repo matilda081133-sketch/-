@@ -567,6 +567,20 @@ export const teamData: Record<string, TeamMember> = {
           'Координация взаимодействия с банками, нотариусами, юристами и бухгалтерами'
         ],
         link: { url: '/biznesu/yuridicheskoe-soprovozhdenie-biznesa/', text: 'Переоформление бизнеса →' }
+      },
+      {
+        title: 'Кредитные споры и отмена судебных приказов',
+        items: [
+          'Проверка десятидневного процессуального срока и обстоятельств извещения',
+          'Подготовка возражений относительно исполнения судебного приказа (ст. 129 ГПК РФ)',
+          'Обоснование уважительности причин пропуска срока и подача поздних возражений',
+          'Сопровождение прекращения исполнительного производства и поворота исполнения'
+        ],
+        links: [
+          { url: '/grazhdanam/kreditnyj-yurist/', text: 'Кредитный юрист →' },
+          { url: '/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/', text: 'Отмена судебного приказа →' }
+        ],
+        link: { url: '/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/', text: 'Отмена судебного приказа →' }
       }
     ],
     experience: [],
