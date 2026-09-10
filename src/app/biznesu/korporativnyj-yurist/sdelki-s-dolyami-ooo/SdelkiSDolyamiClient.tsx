@@ -78,7 +78,7 @@ export default function SdelkiSDolyamiClient() {
     },
     {
       tag: 'Опционы на долю',
-      title: <>Предоставление опциона на покупку <br />или продажу доли (Call / Put)</>,
+      title: <>Предоставление опциона <br />на покупку или продажу доли (Call / Put)</>,
       desc: 'Безотзывная оферта для инвесторов или топ-менеджеров с условием акцепта при наступлении определенных KPI или дат.'
     },
     {
@@ -88,29 +88,29 @@ export default function SdelkiSDolyamiClient() {
     }
   ];
 
-  const whatWeCheck = [
+  const whatWeCheck: { title: React.ReactNode; desc: string }[] = [
     {
-      title: 'Устав общества и ограничения',
+      title: <><span style={{ display: 'inline-block' }}>Устав общества</span> <br /><span style={{ display: 'inline-block' }}>и ограничения</span></>,
       desc: 'Наличие прямого запрета на продажу долей третьим лицам, необходимость получения согласия общества или других участников.'
     },
     {
-      title: 'Оплата доли продавцом',
+      title: <><span style={{ display: 'inline-block' }}>Оплата доли</span> <br /><span style={{ display: 'inline-block' }}>продавцом</span></>,
       desc: 'Документальное подтверждение полной оплаты доли в уставном капитале (без этого сделка не может быть удостоверена нотариусом).'
     },
     {
-      title: 'Соблюдение преимущественного права',
+      title: <><span style={{ display: 'inline-block' }}>Соблюдение</span> <br /><span style={{ display: 'inline-block' }}>преимущественного права</span></>,
       desc: 'Корректность направления нотариальной оферты через общество, соблюдение 30-дневного срока и сбор нотариальных отказов.'
     },
     {
-      title: 'Семейный статус и согласия супругов',
+      title: <><span style={{ display: 'inline-block' }}>Семейный статус</span> <br /><span style={{ display: 'inline-block' }}>и согласия супругов</span></>,
       desc: 'Проверка режима совместной собственности и оформление нотариального согласия супруга на покупку или продажу доли.'
     },
     {
-      title: 'Обременения и аресты',
+      title: <><span style={{ display: 'inline-block' }}>Обременения, залоги</span> <br /><span style={{ display: 'inline-block' }}>и судебные аресты</span></>,
       desc: 'Проверка отсутствия залогов, судебных арестов или запретов на регистрационные действия в отношении доли в ЕГРЮЛ.'
     },
     {
-      title: 'Корпоративные одобрения',
+      title: <><span style={{ display: 'inline-block' }}>Корпоративные одобрения</span> <br /><span style={{ display: 'inline-block' }}>крупных сделок</span></>,
       desc: 'Оформление решений об одобрении крупной сделки или сделки с заинтересованностью, если стороной выступает юрлицо.'
     }
   ];
@@ -271,19 +271,14 @@ export default function SdelkiSDolyamiClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Сделки с долями ООО</span>
           </>
         }
-        superTitle={
-          <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
-            <span style={{ display: 'inline-block' }}>ПЕРЕХОД ПРАВ НА ДОЛИ ООО •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и нотариат</span>
-          </span>
-        }
+        superTitle="ПЕРЕХОД ПРАВ НА ДОЛИ ООО • Липецк и нотариат"
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Сопровождение сделок с долями ООО
+              Сопровождение сделок
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              в Липецке
+              с долями ООО в Липецке
             </span>
           </span>
         }
@@ -339,8 +334,8 @@ export default function SdelkiSDolyamiClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: 'inline-block' }}>Типовые ситуации сделок</span> <br />
-              <span style={{ display: 'inline-block' }}>с долями ООО</span>
+              <span style={{ display: 'inline-block' }}>Типовые ситуации</span> <br />
+              <span style={{ display: 'inline-block' }}>сделок с долями ООО</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Любая передача доли требует строгого соблюдения устава, корпоративного законодательства и нотариального удостоверения.
@@ -415,34 +410,55 @@ export default function SdelkiSDolyamiClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ЧТО ПРОВЕРЯЕМ ═══ */}
-      <section className="section bg-white" id="check">
+      {/* ═══ БЛОК 3: ЧТО ВАЖНО ПРОВЕРИТЬ ДО ПОДПИСАНИЯ ДОГОВОРА (ПО ШАБЛОНУ НАПРАВЛЕНИЙ) ═══ */}
+      <section className="section" id="check" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Что важно проверить до подписания договора
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              <span style={{ display: 'inline-block' }}>Что важно проверить</span> <br />
+              <span style={{ display: 'inline-block' }}>до подписания договора</span>
             </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Выявляем скрытые препятствия, которые могут привести к отказу нотариуса или оспариванию сделки в суде.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Выявляем скрытые препятствия, которые могут привести</span> <br />
+              <span style={{ display: 'inline-block' }}>к отказу нотариуса или оспариванию сделки в суде.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
-            {whatWeCheck.map((chk, idx) => (
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
+            {whatWeCheck.map((item, idx) => (
               <div
                 key={idx}
-                className="card"
+                className="hover-lift"
                 style={{
-                  padding: '32px 26px',
-                  backgroundColor: 'var(--color-bg-light)',
-                  border: '1px solid var(--color-border)'
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
-                  {chk.title}
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  0{idx + 1}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
+                  {item.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {chk.desc}
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {item.desc}
                 </p>
               </div>
             ))}
