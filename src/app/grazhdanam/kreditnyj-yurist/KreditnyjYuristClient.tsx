@@ -148,32 +148,6 @@ export default function KreditnyjYuristClient() {
     }
   ];
 
-  const auditItems = [
-    {
-      title: 'Договор и индивидуальные условия',
-      desc: 'Стороны, сумма, ставка, график, дополнительные услуги, порядок изменения условий и уведомления.'
-    },
-    {
-      title: 'Расчёт задолженности',
-      desc: 'Основной долг, проценты, неустойка, комиссии, поступившие платежи и периоды начисления.'
-    },
-    {
-      title: 'Документы кредитора',
-      desc: 'Претензии, уведомления, уступка требования, иск, приложения и доказательства направления документов.'
-    },
-    {
-      title: 'Стадия и сроки',
-      desc: 'Досудебный порядок, судебный приказ, исковое производство, сроки ответа, обжалования и представления доказательств.'
-    },
-    {
-      title: 'Основания требований клиента',
-      desc: 'Есть ли нарушение, которое можно подтвердить документами, и какой порядок защиты обязателен до суда.'
-    },
-    {
-      title: 'Платёжеспособность и цель',
-      desc: 'Временная трудность, спор о размере долга или устойчивая невозможность исполнять все обязательства — это разные маршруты.'
-    }
-  ];
 
   const solutionRoutes = [
     {
@@ -562,71 +536,184 @@ export default function KreditnyjYuristClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ЧТО ПРОВЕРИТ ЮРИСТ ДО ВЫБОРА РЕШЕНИЯ ═══ */}
-      <section className="section" id="audit" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 3: ДИАГНОСТИКА: ПОЧЕМУ СНАЧАЛА НУЖЕН АНАЛИЗ МАТЕРИАЛОВ ═══ */}
+      <section className="section bg-light" id="audit" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)', fontWeight: 600 }}>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+            gap: '28px',
+            marginBottom: '40px',
+            borderBottom: '1px solid rgba(193, 160, 102, 0.3)',
+            paddingBottom: '28px'
+          }}>
+            <div style={{ maxWidth: '620px' }}>
+              <div style={{
+                fontSize: '13px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                marginBottom: '12px'
+              }}>
                 Правовой аудит
-              </span>
+              </div>
+              <h2 className="with-accent" style={{
+                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontFamily: 'var(--font-serif)',
+                color: 'var(--color-primary)',
+                margin: 0,
+                lineHeight: 1.2
+              }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                  Почему сначала нужен
+                </span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                  анализ материалов
+                </span>
+              </h2>
             </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, textAlign: 'left' }}>
-              Сначала — документы и расчёт, затем стратегия
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.65, margin: 0, textAlign: 'left' }}>
-              Нельзя обещать уменьшение долга или расторжение договора, не изучив условия кредита, движение платежей и требования кредитора.
-            </p>
+            <div style={{ maxWidth: '480px', paddingTop: '28px' }}>
+              <p style={{
+                fontSize: '15.5px',
+                color: 'var(--color-deep-blue)',
+                lineHeight: 1.65,
+                margin: 0,
+                opacity: 0.92
+              }}>
+                Нельзя обещать уменьшение долга или расторжение договора, не изучив условия кредита, движение платежей и требования кредитора.
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            {auditItems.map((item, i) => (
-              <div
-                key={i}
-                style={{
-                  background: '#FFFFFF',
-                  padding: '28px 24px',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.04)'
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                  <div style={{ width: '8px', height: '8px', backgroundColor: 'var(--color-gold)', borderRadius: '50%' }}></div>
-                  <h3 style={{ margin: 0, fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', fontWeight: 600 }}>
-                    {item.title}
-                  </h3>
-                </div>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Проверка документов и расчёта */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                Основа отношений и расчёт задолженности
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {[
+                  {
+                    title: 'Договор и индивидуальные условия',
+                    desc: 'Стороны, сумма, процентная ставка, график, дополнительные услуги и страхование, порядок уведомления и изменения условий.'
+                  },
+                  {
+                    title: 'Расчёт задолженности и выписка по счёту',
+                    desc: 'Основной долг, проценты, неустойка, комиссии, фактически поступившие платежи и периоды начисления.'
+                  },
+                  {
+                    title: 'Документы кредитора и основания уступки',
+                    desc: 'Претензии, уведомления, уступка требования (цессия), иск, приложения и доказательства направления документов.'
+                  }
+                ].map((item, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>
+                        {item.title}
+                      </strong>
+                      <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                        {item.desc}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Карточка 2: Процессуальный статус и стратегия */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                Процессуальный статус и риски
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {[
+                  {
+                    title: 'Стадия и процессуальные сроки',
+                    desc: 'Досудебный порядок, судебный приказ, исковое производство, сроки ответа, обжалования и представления доказательств.'
+                  },
+                  {
+                    title: 'Основания требований и нарушений',
+                    desc: 'Есть ли нарушение, которое можно подтвердить документами, и какой порядок защиты обязателен до суда.'
+                  },
+                  {
+                    title: 'Платёжеспособность и цель защиты',
+                    desc: 'Временная трудность, спор о размере долга или устойчивая невозможность исполнять обязательства — выбор точного маршрута.'
+                  }
+                ].map((item, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>
+                        {item.title}
+                      </strong>
+                      <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                        {item.desc}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div style={{
+            padding: '24px 32px',
             background: '#FFFFFF',
             border: '1px solid var(--color-border)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '24px 28px',
-            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)'
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '20px'
           }}>
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                 <circle cx="12" cy="12" r="10"></circle>
                 <line x1="12" y1="8" x2="12" y2="12"></line>
                 <line x1="12" y1="16" x2="12.01" y2="16"></line>
               </svg>
-              <div>
-                <strong style={{ display: 'block', color: 'var(--color-deep-blue)', fontSize: '15px', marginBottom: '4px' }}>
+              <div style={{ maxWidth: '680px' }}>
+                <strong style={{ display: 'block', color: 'var(--color-deep-blue)', fontSize: '14.5px', marginBottom: '2px' }}>
                   Важно учитывать:
                 </strong>
-                <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
                   Сам факт просрочки не делает требования кредитора незаконными, а обращение с жалобой не приостанавливает платежи и взыскание автоматически. Юрист должен отдельно определить юридический эффект каждого действия.
                 </span>
               </div>
             </div>
+            <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px' }}>
+              Передать документы на аудит
+            </a>
           </div>
         </div>
       </section>
