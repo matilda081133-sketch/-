@@ -357,7 +357,8 @@ export default function ReorganizaciyaBiznesaClient() {
                 fontWeight: 400,
                 lineHeight: 1.65,
                 margin: 0,
-                textAlign: 'left'
+                paddingTop: '4px',
+                textAlign: 'right'
               }}>
                 <span style={{ display: 'inline-block' }}>Реорганизация позволяет оптимизировать</span> <br />
                 <span style={{ display: 'inline-block' }}>структуру активов, объединить бизнес</span> <br />
