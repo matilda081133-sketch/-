@@ -271,19 +271,14 @@ export default function KorporativnyjDogovorClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Корпоративный договор</span>
           </>
         }
-        superTitle={
-          <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
-            <span style={{ display: 'inline-block' }}>СОГЛАШЕНИЯ УЧАСТНИКОВ И ПАРТНЕРОВ •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и РФ</span>
-          </span>
-        }
+        superTitle="СОГЛАШЕНИЯ УЧАСТНИКОВ И ПАРТНЕРОВ • Липецк и РФ"
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Разработка корпоративного договора
+              Разработка корпоративного
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              в Липецке
+              договора в Липецке
             </span>
           </span>
         }

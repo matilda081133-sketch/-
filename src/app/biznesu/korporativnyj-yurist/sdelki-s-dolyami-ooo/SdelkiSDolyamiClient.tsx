@@ -520,7 +520,12 @@ export default function SdelkiSDolyamiClient() {
       {/* ═══ БЛОК 8: FAQ ═══ */}
       <FAQBlock
         superTitle="Частые вопросы"
-        title="Вопросы о сделках с долями ООО"
+        title={
+          <>
+            <span style={{ display: 'inline-block' }}>Вопросы о сделках</span> <br />
+            <span style={{ display: 'inline-block' }}>с долями ООО</span>
+          </>
+        }
         subtitle="Ответы на популярные вопросы продавцов, покупателей и учредителей обществ."
         faqs={faqs}
       />

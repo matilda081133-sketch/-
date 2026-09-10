@@ -280,10 +280,10 @@ export default function ReorganizaciyaBiznesaClient() {
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Реорганизация бизнеса
+              Реорганизация
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              в Липецке
+              бизнеса в Липецке
             </span>
           </span>
         }
@@ -337,14 +337,33 @@ export default function ReorganizaciyaBiznesaClient() {
       {/* ═══ БЛОК 2: ТИПОВЫЕ СИТУАЦИИ / КОНФЛИКТЫ ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: 'inline-block' }}>Типовые ситуации проведения</span> <br />
-              <span style={{ display: 'inline-block' }}>реорганизации компании</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Реорганизация позволяет оптимизировать структуру активов, объединить бизнес или разделить доли без налоговых потерь.
-            </p>
+          <div style={{ marginBottom: '48px' }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2, flex: '1 1 480px', minWidth: '280px' }}>
+                <span style={{ display: 'inline-block' }}>Типовые ситуации проведения</span> <br />
+                <span style={{ display: 'inline-block' }}>реорганизации компании</span>
+              </h2>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                textAlign: 'left'
+              }}>
+                <span style={{ display: 'inline-block' }}>Реорганизация позволяет оптимизировать</span> <br />
+                <span style={{ display: 'inline-block' }}>структуру активов, объединить бизнес</span> <br />
+                <span style={{ display: 'inline-block' }}>или разделить доли без налоговых потерь.</span>
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
@@ -505,7 +524,7 @@ export default function ReorganizaciyaBiznesaClient() {
         title={<><span style={{ display: 'inline-block' }}>Этапы сопровождения</span> <br /><span style={{ display: 'inline-block' }}>реорганизации бизнеса</span></>}
         subtitle="Полный контроль всех этапов и сроков взаимодействия с государственными органами."
         steps={processSteps}
-        ctaTitle="Планируете изменение структуры компании или выделение активов?"
+        ctaTitle={<><span style={{ display: 'inline-block' }}>Планируете изменение структуры компании</span> <br /><span style={{ display: 'inline-block' }}>или выделение активов?</span></>}
         ctaSubtitle="Разработаем безопасную дорожную карту реорганизации с защитой от претензий кредиторов и ФНС."
         ctaButtonText="Получить план реорганизации"
         ctaButtonHref="#form"

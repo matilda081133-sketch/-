@@ -4,13 +4,13 @@ import React from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ContactsForm from '@/components/ContactsForm';
-import FAQBlock from '@/components/FAQBlock';
 import MilitaryHero from '@/components/MilitaryHero';
+import SpecialistBlock from '@/components/SpecialistBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
-import SpecialistBlock from '@/components/SpecialistBlock';
+import FAQBlock from '@/components/FAQBlock';
+import ContactsForm from '@/components/ContactsForm';
 
 export default function PokupkaProdazhaBiznesaClient() {
   const jsonLdGraph = {
@@ -18,33 +18,19 @@ export default function PokupkaProdazhaBiznesaClient() {
     '@graph': [
       {
         '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/#legalservice',
-        name: 'Юридическая компания Де-Юре',
-        url: 'https://dejure-help.ru/',
+        name: 'Сопровождение сделок по покупке и продаже бизнеса в Липецке — ЮК «Де-Юре»',
+        description: 'Комплексное юридическое сопровождение M&A сделок, купли-продажи готового бизнеса, due diligence, структурирование и защита расчетов в Липецкой области.',
+        url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/',
         telephone: '+7 (4742) 20-15-25',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
           addressLocality: 'Липецк',
-          addressRegion: 'Липецкая область',
-          addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область']
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/#service',
-        name: 'Юридическое сопровождение покупки и продажи бизнеса в Липецке',
-        serviceType: 'Сопровождение сделок купли-продажи бизнеса и активов (M&A)',
-        provider: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        description: 'Проверка и сопровождение покупки или продажи действующего бизнеса: due diligence, структура сделки, договоры, расчёты, закрытие и переход управления.'
+          streetAddress: 'ул. Советская, д. 35, офис 213',
+          addressRegion: 'Липецкая область'
+        }
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/#breadcrumb',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
           { '@type': 'ListItem', position: 2, name: 'Бизнесу', item: 'https://dejure-help.ru/biznesu/' },
@@ -63,7 +49,7 @@ export default function PokupkaProdazhaBiznesaClient() {
     },
     {
       tag: 'Продажа своего бизнеса',
-      title: <>Подготовка компании к продаже <br />по максимальной цене</>,
+      title: <>Подготовка компании <br />к продаже по максимальной цене</>,
       desc: 'Устранение юридических дефектов, структурирование активов, оформление соглашений о конфиденциальности (NDA) и защита получения оплаты.'
     },
     {
@@ -78,7 +64,7 @@ export default function PokupkaProdazhaBiznesaClient() {
     },
     {
       tag: 'Франшизы и дистрибуция',
-      title: <>Покупка франчайзинговой сети <br />или дилерского центра</>,
+      title: <>Покупка франчайзинговой <br />сети или дилерского центра</>,
       desc: 'Проверка прав на бренды, коммерческую тайну, договоров аренды торговых площадей и действительности дистрибьюторских соглашений.'
     },
     {
@@ -164,88 +150,89 @@ export default function PokupkaProdazhaBiznesaClient() {
 
   const pricingTiers: PricingTier[] = [
     {
-      title: 'Due Diligence (Правовой аудит)',
-      subtitle: 'Комплексная проверка бизнеса перед покупкой',
+      title: 'Экспресс Due Diligence',
+      subtitle: 'Базовая проверка рисков перед внесением задатка',
       popular: false,
-      price: 'от 35 000 ₽',
+      price: 'от 40 000 ₽',
       features: [
-        { name: 'Анализ корпоративной истории и ЕГРЮЛ', value: 'Включено' },
-        { name: 'Проверка судов, залогов, долгов и ФССП', value: 'Включено' },
-        { name: 'Аудит прав на имущество и ключевых договоров', value: 'Включено' },
-        { name: 'Письменный отчет с оценкой рисков', value: 'Включено' }
+        { name: 'Проверка ЕГРЮЛ и истории долей', value: 'Включено' },
+        { name: 'Анализ открытых судебных споров и ФССП', value: 'Включено' },
+        { name: 'Экспресс-анализ залогов и обременений', value: 'Включено' },
+        { name: 'Письменное заключение о стоп-факторах', value: 'Включено' }
       ],
-      buttonText: 'Заказать Due Diligence',
+      buttonText: 'Заказать экспресс-аудит',
       buttonHref: '#form'
     },
     {
-      title: 'Полное сопровождение сделки',
-      subtitle: 'Подготовка документов, расчеты и нотариус',
+      title: 'Комплексный Due Diligence',
+      subtitle: 'Глубокий аудит для средних и крупных предприятий',
       popular: true,
-      badgeText: 'Комплекс под ключ',
-      price: 'от 65 000 ₽',
+      price: 'от 90 000 ₽',
       features: [
-        { name: 'Due Diligence бизнеса и активов', value: 'Включено' },
-        { name: 'Подготовка договора купли-продажи с заверениями', value: 'Включено' },
-        { name: 'Настройка безопасных расчетов (эскроу/аккредитив)', value: 'Включено' },
-        { name: 'Сопровождение у нотариуса и контроль ЕГРЮЛ', value: 'Включено' }
+        { name: 'Полный корпоративный и имущественный аудит', value: 'Включено' },
+        { name: 'Анализ ключевых контрактов и рисков расторжения', value: 'Включено' },
+        { name: 'Оценка налоговых рисков и контрагентов', value: 'Включено' },
+        { name: 'Детальный отчет с картой минимизации рисков', value: 'Включено' },
+        { name: 'Рекомендации по снижению цены сделки', value: 'Включено' }
       ],
-      buttonText: 'Заказать сопровождение сделки',
+      buttonText: 'Заказать полный аудит',
       buttonHref: '#form'
     },
     {
-      title: 'M&A Сопровождение крупного бизнеса',
-      subtitle: 'Сложные холдинговые структуры и сети',
+      title: 'M&A Сделка «Под ключ»',
+      subtitle: 'Полное правовое ведение сделки от аудита до денег',
       popular: false,
-      price: 'от 120 000 ₽',
+      price: 'от 150 000 ₽',
       features: [
-        { name: 'Аудит группы компаний и лицензий', value: 'Включено' },
-        { name: 'Корпоративный договор и опционные соглашения', value: 'Включено' },
-        { name: 'Антимонопольное согласование в ФАС (при необходимости)', value: 'Включено' },
-        { name: 'Поэтапная передача операционного контроля', value: 'Включено' }
+        { name: 'Полный Due Diligence объекта', value: 'Включено' },
+        { name: 'Структурирование сделки и налоговое планирование', value: 'Включено' },
+        { name: 'Договоры, заверения (431.2 ГК РФ) и корпоративный договор', value: 'Включено' },
+        { name: 'Организация расчетов через эскроу / аккредитив', value: 'Включено' },
+        { name: 'Сопровождение у нотариуса и передача управления', value: 'Включено' }
       ],
-      buttonText: 'Обсудить M&A проект',
+      buttonText: 'Заказать сделку под ключ',
       buttonHref: '#form'
     }
   ];
 
   const faqs = [
     {
-      q: 'Что лучше покупать: долю в ООО (Share Deal) или активы компании (Asset Deal)?',
-      a: 'При покупке доли вы приобретаете компанию целиком вместе со всей её историей, контрактами, лицензиями, но и со всеми скрытыми долгами и налоговыми рисками. Покупка активов позволяет приобрести только оборудование, товар или недвижимость без старых обязательств, но требует переоформления всех договоров и лицензий заново.'
+      q: 'Что выгоднее покупать: 100% доли ООО (Share Deal) или активы бизнеса (Asset Deal)?',
+      a: 'При покупке доли вы получаете компанию со всеми лицензиями, договорами и оборотами, но также принимаете на себя все скрытые долги и налоговые риски прошлого периода. Покупка активов (оборудования, недвижимости, товарного знака) исключает риски старого юрлица, но требует переоформления всех договоров и лицензий на вашу новую компанию.'
     },
     {
-      q: 'Как защитить покупателя от внезапно открывшихся долгов после сделки?',
-      a: 'В договор купли-продажи включаются детализированные заверения об обстоятельствах (ст. 431.2 ГК РФ) и обязательство продавца возместить имущественные потери (ст. 406.1 ГК РФ). Также используется удержание части покупной цены на эскроу-счете на срок от 6 до 24 месяцев.'
+      q: 'Как защитить покупателя, если после сделки выяснятся скрытые долги компании?',
+      a: 'В договор купли-продажи включаются детализированные заверения об обстоятельствах (ст. 431.2 ГК РФ) и обязательства продавца по возмещению имущественных потерь (ст. 406.1 ГК РФ). Кроме того, часть стоимости бизнеса удерживается на эскроу-счете или выплачивается в рассрочку после контрольного периода.'
     },
     {
-      q: 'Сколько времени занимает проверка бизнеса (Due Diligence)?',
-      a: 'Стандартный правовой аудит небольшой компании занимает 3–5 рабочих дней с момента предоставления документов. Для крупных предприятий, сетей или производств с большим объемом недвижимости проверка длится от 7 до 14 рабочих дней.'
+      q: 'Сколько времени занимает проведение Due Diligence бизнеса?',
+      a: 'Экспресс-аудит занимает от 2 до 4 рабочих дней с момента предоставления базового пакета документов. Глубокий комплексный аудит среднего производственного или торгового предприятия обычно занимает от 7 до 14 рабочих дней.'
     },
     {
-      q: 'Обязательно ли согласие супруга при продаже или покупке доли ООО?',
-      a: 'Да, если доля приобреталась или отчуждается в период брака (за исключением случаев наличия брачного договора). Нотариально удостоверенное согласие супруга является обязательным требованием закона при совершении сделки у нотариуса.'
+      q: 'Как гарантировать продавцу получение полной оплаты при продаже в рассрочку?',
+      a: 'Применяется залог проданной доли в пользу продавца (запись о залоге вносится нотариусом в ЕГРЮЛ), корпоративный договор с запретом на отчуждение ключевых активов и безотзывные банковские гарантии либо поручительства бенефициаров покупателя.'
     }
   ];
 
   const relatedServices = [
     {
       title: 'Сделки с долями ООО',
-      desc: 'Сопровождение купли-продажи долей у нотариуса.',
+      desc: 'Оформление купли-продажи, дарения и залога долей у нотариуса.',
       link: '/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/'
     },
     {
-      title: 'Реорганизация бизнеса',
-      desc: 'Слияние, присоединение и выделение активов.',
-      link: '/biznesu/korporativnyj-yurist/reorganizaciya-biznesa/'
-    },
-    {
       title: 'Корпоративный договор',
-      desc: 'Согласование прав новых партнеров и инвесторов.',
+      desc: 'Соглашения партнеров, правила голосования и инвестиционные условия.',
       link: '/biznesu/korporativnyj-yurist/korporativnyj-dogovor/'
     },
     {
+      title: 'Реорганизация бизнеса',
+      desc: 'Слияние, присоединение, выделение и преобразование предприятий.',
+      link: '/biznesu/korporativnyj-yurist/reorganizaciya-biznesa/'
+    },
+    {
       title: 'Защита корпоративного контроля',
-      desc: 'Предотвращение потери управления при смене собственников.',
+      desc: 'Противодействие рейдерским захватам и незаконной смене директора.',
       link: '/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/'
     }
   ];
@@ -271,19 +258,14 @@ export default function PokupkaProdazhaBiznesaClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Покупка и продажа бизнеса</span>
           </>
         }
-        superTitle={
-          <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
-            <span style={{ display: 'inline-block' }}>СДЕЛКИ С БИЗНЕСОМ И M&A •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
-          </span>
-        }
+        superTitle="СДЕЛКИ С БИЗНЕСОМ И M&A • Липецк и Липецкая область"
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Покупка и продажа бизнеса
+              Покупка и продажа
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              в Липецке
+              бизнеса в Липецке
             </span>
           </span>
         }
@@ -339,8 +321,8 @@ export default function PokupkaProdazhaBiznesaClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: 'inline-block' }}>Типовые ситуации при покупке</span> <br />
-              <span style={{ display: 'inline-block' }}>и продаже бизнеса</span>
+              <span style={{ display: 'inline-block' }}>Типовые ситуации</span> <br />
+              <span style={{ display: 'inline-block' }}>при покупке и продаже бизнеса</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Сделки M&A требуют глубокого анализа рисков, структуры владения, долговой нагрузки и обеспечения безопасности расчетов.
@@ -552,7 +534,7 @@ export default function PokupkaProdazhaBiznesaClient() {
               gap: '24px'
             }}>
               <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 34px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.25, flex: '1 1 480px', minWidth: '280px' }}>
-                <span style={{ display: "inline-block" }}>Другие услуги</span> <br /><span style={{ display: "inline-block" }}>по сделкам и активам</span>
+                <span style={{ display: "inline-block" }}>Смежные услуги</span> <br /><span style={{ display: "inline-block" }}>по покупке и продаже бизнеса</span>
               </h2>
               <p style={{
                 flex: '0 1 440px',
@@ -565,7 +547,7 @@ export default function PokupkaProdazhaBiznesaClient() {
                 textAlign: 'left',
                 textWrap: 'balance'
               }}>
-                Комплексный аудит Due Diligence, оформление сделок и защита от скрытых рисков.
+                Комплексные решения для структурирования активов, оформления партнерских соглашений и защиты прав инвесторов.
               </p>
             </div>
           </div>
@@ -665,11 +647,11 @@ export default function PokupkaProdazhaBiznesaClient() {
                     <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
                   </>
                 }
-                buttonText="Сопроводить сделку с бизнесом"
-                commentPlaceholder="Кратко опишите объект сделки: сфера бизнеса, форма передачи активов, стадия переговоров…"
+                buttonText="Обсудить сделку с бизнесом"
+                commentPlaceholder="Кратко опишите компанию и параметры планируемой сделки купли-продажи…"
                 hiddenFields={[
                   { name: 'source_page', value: '/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/' },
-                  { name: 'service', value: 'Покупка и продажа готового бизнеса' }
+                  { name: 'service', value: 'Покупка и продажа бизнеса' }
                 ]}
               />
             </div>

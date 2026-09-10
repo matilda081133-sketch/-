@@ -13,8 +13,8 @@ interface ProcessBlockProps {
   title?: string | React.ReactNode;
   subtitle?: React.ReactNode;
   steps: ProcessStep[];
-  ctaTitle?: string;
-  ctaSubtitle?: string;
+  ctaTitle?: string | React.ReactNode;
+  ctaSubtitle?: string | React.ReactNode;
   ctaButtonText?: string;
   ctaButtonHref?: string;
   alignTitle?: 'left' | 'center';
