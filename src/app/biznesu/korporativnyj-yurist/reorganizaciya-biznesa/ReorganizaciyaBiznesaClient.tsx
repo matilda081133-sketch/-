@@ -88,26 +88,30 @@ export default function ReorganizaciyaBiznesaClient() {
     }
   ];
 
-  const formsOfReorg = [
+  const formsOfReorg: { title: React.ReactNode; desc: string }[] = [
     {
-      title: 'Присоединение (самая частая форма)',
+      title: <><span style={{ display: 'inline-block' }}>Присоединение</span> <br /><span style={{ display: 'inline-block' }}>(наиболее частая форма)</span></>,
       desc: 'Одно или несколько обществ прекращают деятельность, а все их права и обязанности переходят к присоединяющему обществу.'
     },
     {
-      title: 'Слияние',
+      title: <><span style={{ display: 'inline-block' }}>Слияние нескольких</span> <br /><span style={{ display: 'inline-block' }}>компаний в одну</span></>,
       desc: 'Несколько компаний прекращают деятельность с возникновением нового юридического лица, получающего все совокупные активы.'
     },
     {
-      title: 'Выделение',
+      title: <><span style={{ display: 'inline-block' }}>Выделение нового</span> <br /><span style={{ display: 'inline-block' }}>юридического лица</span></>,
       desc: 'Создание одного или нескольких новых обществ с передачей им части прав и обязанностей реорганизуемого общества (без его ликвидации).'
     },
     {
-      title: 'Разделение',
+      title: <><span style={{ display: 'inline-block' }}>Разделение бизнеса</span> <br /><span style={{ display: 'inline-block' }}>на независимые компании</span></>,
       desc: 'Прекращение деятельности основного общества с разделением всех прав, обязанностей и активов между несколькими новыми компаниями.'
     },
     {
-      title: 'Преобразование',
-      desc: 'Изменение организационно-правовой формы (например, из АО в ООО или из ООО в АО) с полным сохранением прав и обязательств.'
+      title: <><span style={{ display: 'inline-block' }}>Преобразование формы</span> <br /><span style={{ display: 'inline-block' }}>(АО в ООО / ООО в АО)</span></>,
+      desc: 'Изменение организационно-правовой формы предприятия с полным правопреемством и сохранением всех прав и обязательств.'
+    },
+    {
+      title: <><span style={{ display: 'inline-block' }}>Смешанная и совмещенная</span> <br /><span style={{ display: 'inline-block' }}>реорганизация</span></>,
+      desc: 'Сложные комбинированные процедуры одновременного слияния, выделения и преобразования для холдинговых структур.'
     }
   ];
 
@@ -411,34 +415,55 @@ export default function ReorganizaciyaBiznesaClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ФОРМЫ РЕОРГАНИЗАЦИИ ═══ */}
-      <section className="section bg-white" id="forms">
+      {/* ═══ БЛОК 3: ФОРМЫ РЕОРГАНИЗАЦИИ (ПО ШАБЛОНУ НАПРАВЛЕНИЙ) ═══ */}
+      <section className="section" id="forms" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Пять форм реорганизации: какую выбрать
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              <span style={{ display: 'inline-block' }}>Пять форм реорганизации:</span> <br />
+              <span style={{ display: 'inline-block' }}>какую выбрать для бизнеса</span>
             </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Подбираем форму, идеально отвечающую стратегическим и налоговым целям вашего предприятия.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Подбираем оптимальную процедуру, отвечающую стратегическим,</span> <br />
+              <span style={{ display: 'inline-block' }}>управленческим и налоговым целям вашего предприятия.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
-            {formsOfReorg.map((form, idx) => (
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
+            {formsOfReorg.map((item, idx) => (
               <div
                 key={idx}
-                className="card"
+                className="hover-lift"
                 style={{
-                  padding: '32px 26px',
-                  backgroundColor: 'var(--color-bg-light)',
-                  border: '1px solid var(--color-border)'
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
-                  {form.title}
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  0{idx + 1}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
+                  {item.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {form.desc}
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {item.desc}
                 </p>
               </div>
             ))}

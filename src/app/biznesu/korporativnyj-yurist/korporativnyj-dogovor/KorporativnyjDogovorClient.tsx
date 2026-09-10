@@ -88,29 +88,29 @@ export default function KorporativnyjDogovorClient() {
     }
   ];
 
-  const contractProvisions = [
+  const contractProvisions: { title: React.ReactNode; desc: string }[] = [
     {
-      title: 'Порядок согласованного голосования',
+      title: <><span style={{ display: 'inline-block' }}>Порядок согласованного</span> <br /><span style={{ display: 'inline-block' }}>голосования участников</span></>,
       desc: 'Обязанность голосовать определённым образом по вопросам дивидендов, смены директора, крупных сделок или ликвидации.'
     },
     {
-      title: 'Механизмы разрешения дедлоков',
+      title: <><span style={{ display: 'inline-block' }}>Механизмы разрешения</span> <br /><span style={{ display: 'inline-block' }}>тупиков (дедлоков)</span></>,
       desc: 'Индивидуальные алгоритмы преодоления тупика: опционы Call/Put, «русская рулетка», выкуп доли по фиксированной формуле.'
     },
     {
-      title: 'Непропорциональное распределение прав',
+      title: <><span style={{ display: 'inline-block' }}>Непропорциональное</span> <br /><span style={{ display: 'inline-block' }}>распределение прав</span></>,
       desc: 'Возможность предоставить участнику с долей 20% право решающего голоса или повышенную долю в дивидендах.'
     },
     {
-      title: 'Ограничения на передачу долей',
+      title: <><span style={{ display: 'inline-block' }}>Ограничения на передачу</span> <br /><span style={{ display: 'inline-block' }}>долей (Tag/Drag Along)</span></>,
       desc: 'Условия Tag-Along (право присоединенной продажи) и Drag-Along (право потребовать совместной продажи) при входе покупателя.'
     },
     {
-      title: 'Дополнительное финансирование',
+      title: <><span style={{ display: 'inline-block' }}>Дополнительное</span> <br /><span style={{ display: 'inline-block' }}>финансирование бизнеса</span></>,
       desc: 'Обязанности участников по предоставлению займов или вкладов в имущество и последствия отказа от финансирования.'
     },
     {
-      title: 'Неустойки и штрафы за нарушение',
+      title: <><span style={{ display: 'inline-block' }}>Неустойки и штрафы</span> <br /><span style={{ display: 'inline-block' }}>за нарушение договора</span></>,
       desc: 'Установление существенных денежных штрафов за несоблюдение обязательств договора и голосование вразрез с договоренностями.'
     }
   ];
@@ -415,34 +415,55 @@ export default function KorporativnyjDogovorClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: СОДЕРЖАНИЕ ДОГОВОРА ═══ */}
-      <section className="section bg-white" id="content">
+      {/* ═══ БЛОК 3: СОДЕРЖАНИЕ ДОГОВОРА (ПО ШАБЛОНУ НАПРАВЛЕНИЙ) ═══ */}
+      <section className="section" id="content" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Содержание и ключевые разделы корпоративного договора
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              <span style={{ display: 'inline-block' }}>Содержание и ключевые разделы</span> <br />
+              <span style={{ display: 'inline-block' }}>корпоративного договора</span>
             </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Каждый договор разрабатывается с нуля под бизнес-модель, риски и архитектуру конкретного партнерства.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Каждый договор разрабатывается с нуля</span> <br />
+              <span style={{ display: 'inline-block' }}>под бизнес-модель, риски и архитектуру конкретного партнерства.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
-            {contractProvisions.map((prov, idx) => (
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
+            {contractProvisions.map((item, idx) => (
               <div
                 key={idx}
-                className="card"
+                className="hover-lift"
                 style={{
-                  padding: '32px 26px',
-                  backgroundColor: 'var(--color-bg-light)',
-                  border: '1px solid var(--color-border)'
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
-                  {prov.title}
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  0{idx + 1}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
+                  {item.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {prov.desc}
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {item.desc}
                 </p>
               </div>
             ))}

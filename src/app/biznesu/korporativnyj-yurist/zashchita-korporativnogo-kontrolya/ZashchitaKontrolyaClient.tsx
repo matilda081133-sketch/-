@@ -88,29 +88,29 @@ export default function ZashchitaKontrolyaClient() {
     }
   ];
 
-  const urgentMeasures = [
+  const urgentMeasures: { title: React.ReactNode; desc: string }[] = [
     {
-      title: 'Блокировка налоговой (ФНС)',
-      desc: 'Срочная подача возражений по форме Р38001 с требованием приостановить или запретить внесение изменений в ЕГРЮЛ.'
+      title: <><span style={{ display: 'inline-block' }}>Блокировка действий</span> <br /><span style={{ display: 'inline-block' }}>в налоговой (ФНС)</span></>,
+      desc: 'Срочная подача возражений по форме Р38001 с требованием приостановить или запретить внесение несанкционированных изменений в ЕГРЮЛ.'
     },
     {
-      title: 'Уведомление банков',
+      title: <><span style={{ display: 'inline-block' }}>Уведомление и заморозка</span> <br /><span style={{ display: 'inline-block' }}>счетов в банках</span></>,
       desc: 'Официальные уведомления обслуживающих банков о спорности полномочий с требованием заблокировать расходные операции по счетам.'
     },
     {
-      title: 'Обеспечительные меры суда',
+      title: <><span style={{ display: 'inline-block' }}>Обеспечительные меры</span> <br /><span style={{ display: 'inline-block' }}>арбитражного суда</span></>,
       desc: 'Подача в Арбитражный суд Липецкой области ходатайств о запрете регистрационных действий, сделок с имуществом и голосования долями.'
     },
     {
-      title: 'Оспаривание протоколов и решений',
+      title: <><span style={{ display: 'inline-block' }}>Оспаривание поддельных</span> <br /><span style={{ display: 'inline-block' }}>протоколов и решений</span></>,
       desc: 'Исковые заявления о признании недействительными решений собраний, договоров отчуждения долей и назначений директоров.'
     },
     {
-      title: 'Виндикация и возврат долей',
+      title: <><span style={{ display: 'inline-block' }}>Виндикация и возврат</span> <br /><span style={{ display: 'inline-block' }}>похищенных долей</span></>,
       desc: 'Иски о восстановлении корпоративного контроля и возврате доли законному владельцу по ст. 65.2 ГК РФ.'
     },
     {
-      title: 'Уголовно-правовая защита',
+      title: <><span style={{ display: 'inline-block' }}>Уголовно-правовая</span> <br /><span style={{ display: 'inline-block' }}>защита собственника</span></>,
       desc: 'Подготовка заявлений в Следственный комитет и МВД по ст. 170.1, 185.5 УК РФ (фальсификация ЕГРЮЛ и решений собраний).'
     }
   ];
@@ -415,33 +415,54 @@ export default function ZashchitaKontrolyaClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: МЕРЫ ЗАЩИТЫ ═══ */}
-      <section className="section bg-white" id="measures">
+      {/* ═══ БЛОК 3: МЕРЫ ЗАЩИТЫ (ПО ШАБЛОНУ НАПРАВЛЕНИЙ) ═══ */}
+      <section className="section" id="measures" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Срочная защита строится из нескольких контуров
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              <span style={{ display: 'inline-block' }}>Срочная защита бизнеса</span> <br />
+              <span style={{ display: 'inline-block' }}>строится из нескольких контуров</span>
             </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Синхронные действия в налоговых органах, банках, Росреестре и арбитражном суде.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Синхронные юридические действия в налоговых органах,</span> <br />
+              <span style={{ display: 'inline-block' }}>банках, Росреестре и арбитражном суде.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
             {urgentMeasures.map((item, idx) => (
               <div
                 key={idx}
-                className="card"
+                className="hover-lift"
                 style={{
-                  padding: '32px 26px',
-                  backgroundColor: 'var(--color-bg-light)',
-                  border: '1px solid var(--color-border)'
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  0{idx + 1}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {item.desc}
                 </p>
               </div>

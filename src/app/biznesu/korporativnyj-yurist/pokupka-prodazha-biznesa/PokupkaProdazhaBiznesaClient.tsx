@@ -88,29 +88,29 @@ export default function PokupkaProdazhaBiznesaClient() {
     }
   ];
 
-  const dueDiligenceBlocks = [
+  const dueDiligenceBlocks: { title: React.ReactNode; desc: string }[] = [
     {
-      title: 'Корпоративный аудит',
+      title: <><span style={{ display: 'inline-block' }}>Корпоративный аудит</span> <br /><span style={{ display: 'inline-block' }}>и история владения</span></>,
       desc: 'История создания компании, законность перехода долей всех предыдущих владельцев, оплата уставного капитала, полномочия директора.'
     },
     {
-      title: 'Имущественный аудит',
+      title: <><span style={{ display: 'inline-block' }}>Имущественный аудит</span> <br /><span style={{ display: 'inline-block' }}>активов и залогов</span></>,
       desc: 'Проверка прав на недвижимость, транспорт, оборудование, товарные знаки, наличие залогов, арестов и правопритязаний третьих лиц.'
     },
     {
-      title: 'Договорной аудит',
+      title: <><span style={{ display: 'inline-block' }}>Договорной аудит</span> <br /><span style={{ display: 'inline-block' }}>и ключевые контракты</span></>,
       desc: 'Анализ ключевых контрактов с клиентами и поставщиками, договоров аренды, штрафных санкций и рисков одностороннего расторжения.'
     },
     {
-      title: 'Судебный и долговой аудит',
+      title: <><span style={{ display: 'inline-block' }}>Судебный и долговой</span> <br /><span style={{ display: 'inline-block' }}>аудит обязательств</span></>,
       desc: 'Поиск открытых и завершенных судебных дел в арбитраже и судах общей юрисдикции, исполнительных производств в ФССП, поручительств.'
     },
     {
-      title: 'Налоговый аудит рисков',
+      title: <><span style={{ display: 'inline-block' }}>Налоговый аудит</span> <br /><span style={{ display: 'inline-block' }}>и риски доначислений</span></>,
       desc: 'Выявление признаков дробления бизнеса, сомнительных контрагентов, нереализованных вычетов и рисков доначислений по НДС и налогу на прибыль.'
     },
     {
-      title: 'Трудовой аудит',
+      title: <><span style={{ display: 'inline-block' }}>Трудовой аудит</span> <br /><span style={{ display: 'inline-block' }}>и ключевой персонал</span></>,
       desc: 'Проверка трудовых договоров ключевых сотрудников, невыплаченных компенсаций, «золотых парашютов» и рисков ухода топ-менеджмента.'
     }
   ];
@@ -415,34 +415,55 @@ export default function PokupkaProdazhaBiznesaClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ЧТО ПРОВЕРЯЕМ (DUE DILIGENCE) ═══ */}
-      <section className="section bg-white" id="diligence">
+      {/* ═══ БЛОК 3: ЧТО ПРОВЕРЯЕМ (DUE DILIGENCE ПО ШАБЛОНУ НАПРАВЛЕНИЙ) ═══ */}
+      <section className="section" id="diligence" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Due Diligence бизнеса до подписания документов
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              <span style={{ display: 'inline-block' }}>Due Diligence бизнеса</span> <br />
+              <span style={{ display: 'inline-block' }}>до подписания документов</span>
             </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Проверяем все юридические, имущественные и финансовые аспекты приобретаемого предприятия.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Комплексный правовой, имущественный и финансовый аудит</span> <br />
+              <span style={{ display: 'inline-block' }}>приобретаемого предприятия для минимизации скрытых рисков.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
-            {dueDiligenceBlocks.map((blk, idx) => (
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
+            {dueDiligenceBlocks.map((item, idx) => (
               <div
                 key={idx}
-                className="card"
+                className="hover-lift"
                 style={{
-                  padding: '32px 26px',
-                  backgroundColor: 'var(--color-bg-light)',
-                  border: '1px solid var(--color-border)'
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
-                  {blk.title}
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  0{idx + 1}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
+                  {item.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {blk.desc}
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {item.desc}
                 </p>
               </div>
             ))}
