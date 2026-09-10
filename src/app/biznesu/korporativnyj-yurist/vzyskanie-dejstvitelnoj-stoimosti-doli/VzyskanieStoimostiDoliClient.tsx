@@ -88,29 +88,29 @@ export default function VzyskanieStoimostiDoliClient() {
     }
   ];
 
-  const whatAffectsPrice = [
+  const whatAffectsPrice: { title: React.ReactNode; desc: string }[] = [
     {
-      title: 'Рыночная стоимость чистых активов (СЧА)',
+      title: <><span style={{ display: 'inline-block' }}>Рыночная стоимость</span> <br /><span style={{ display: 'inline-block' }}>чистых активов (СЧА)</span></>,
       desc: 'Судебная практика ВС РФ однозначно указывает: действительная стоимость доли должна рассчитываться исходя из рыночной, а не балансовой стоимости имущества.'
     },
     {
-      title: 'Рыночная переоценка недвижимости',
+      title: <><span style={{ display: 'inline-block' }}>Рыночная переоценка</span> <br /><span style={{ display: 'inline-block' }}>недвижимости и земли</span></>,
       desc: 'Здания, земельные участки и производственные комплексы часто числятся на балансе по ценам 10-летней давности, занижая стоимость доли в 3–10 раз.'
     },
     {
-      title: 'Оценка дебиторской задолженности',
-      desc: 'Проверка реальности дебиторской задолженности покупателей и заказчиков для включения ее в расчет чистых активов общества.'
+      title: <><span style={{ display: 'inline-block' }}>Оценка реальной</span> <br /><span style={{ display: 'inline-block' }}>дебиторской задолженности</span></>,
+      desc: 'Проверка реальности дебиторской задолженности покупателей и заказчиков для включения её в расчет чистых активов общества.'
     },
     {
-      title: 'Оспаривание фиктивных долгов',
+      title: <><span style={{ display: 'inline-block' }}>Оспаривание мнимых</span> <br /><span style={{ display: 'inline-block' }}>и фиктивных долгов</span></>,
       desc: 'Выявление и признание недействительными договоров займов и поручительств, искусственно созданных директором перед выходом участника.'
     },
     {
-      title: 'Судебная экспертиза',
+      title: <><span style={{ display: 'inline-block' }}>Судебная экспертиза</span> <br /><span style={{ display: 'inline-block' }}>в арбитражном суде</span></>,
       desc: 'Назначение независимой судебной финансово-экономической и оценочной экспертизы в Арбитражном суде Липецкой области.'
     },
     {
-      title: 'Обеспечительные меры (арест счетов)',
+      title: <><span style={{ display: 'inline-block' }}>Обеспечительные меры</span> <br /><span style={{ display: 'inline-block' }}>и арест счетов</span></>,
       desc: 'Наложение ареста на денежные средства и имущество общества в пределах цены иска для гарантии реального взыскания денег.'
     }
   ];
@@ -280,10 +280,10 @@ export default function VzyskanieStoimostiDoliClient() {
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Взыскание стоимости доли ООО
+              Взыскание стоимости
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              в Липецке
+              доли ООО в Липецке
             </span>
           </span>
         }
@@ -415,33 +415,54 @@ export default function VzyskanieStoimostiDoliClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ИЗ ЧЕГО СКЛАДЫВАЕТСЯ СТОИМОСТЬ ═══ */}
-      <section className="section bg-white" id="valuation">
+      {/* ═══ БЛОК 3: ЧТО ВЛИЯЕТ НА ДЕЙСТВИТЕЛЬНУЮ СТОИМОСТЬ ДОЛИ (ПО ШАБЛОНУ НАПРАВЛЕНИЙ) ═══ */}
+      <section className="section" id="valuation" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Что влияет на действительную стоимость доли
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              <span style={{ display: 'inline-block' }}>Что влияет на действительную</span> <br />
+              <span style={{ display: 'inline-block' }}>стоимость доли в ООО</span>
             </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Рыночная оценка чистых активов компании — главный инструмент справедливой выплаты вышедшему участнику.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Рыночная оценка чистых активов компании —</span> <br />
+              <span style={{ display: 'inline-block' }}>главный инструмент справедливой выплаты вышедшему участнику.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
             {whatAffectsPrice.map((item, idx) => (
               <div
                 key={idx}
-                className="card"
+                className="hover-lift"
                 style={{
-                  padding: '32px 26px',
-                  backgroundColor: 'var(--color-bg-light)',
-                  border: '1px solid var(--color-border)'
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  0{idx + 1}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {item.desc}
                 </p>
               </div>
@@ -512,7 +533,7 @@ export default function VzyskanieStoimostiDoliClient() {
       {/* ═══ БЛОК 9: СМЕЖНЫЕ НАПРАВЛЕНИЯ ПРАКТИКИ ДЛЯ БИЗНЕСА (ПО ШАБЛОНУ) ═══ */}
       <section className="section bg-light" id="related-services" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '840px', marginBottom: '36px', textAlign: 'left' }}>
+          <div style={{ marginBottom: '36px' }}>
             <div style={{
               fontSize: '13px',
               fontWeight: 700,
@@ -523,12 +544,30 @@ export default function VzyskanieStoimostiDoliClient() {
             }}>
               Смежные направления практики для бизнеса
             </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 34px)', color: 'var(--color-deep-blue)', marginBottom: '14px', marginTop: 0, lineHeight: 1.25 }}>
-              <span style={{ display: 'inline-block' }}>Другие корпоративные</span> <br /><span style={{ display: 'inline-block' }}>задачи и споры</span>
-            </h2>
-            <p style={{ fontSize: '15.5px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.65, margin: 0, textWrap: 'balance' }}>
-              Юридические услуги для участников и бизнеса при изменении состава собственников.
-            </p>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 34px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.25, flex: '1 1 480px', minWidth: '280px' }}>
+                <span style={{ display: 'inline-block' }}>Другие корпоративные</span> <br /><span style={{ display: 'inline-block' }}>задачи и споры</span>
+              </h2>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}>
+                Юридические услуги для участников и бизнеса при изменении состава собственников.
+              </p>
+            </div>
           </div>
 
           <div className={relatedServices.length === 4 ? "grid grid-4" : "grid grid-3"} style={{ gap: '20px', marginBottom: '28px' }}>

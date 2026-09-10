@@ -1142,7 +1142,7 @@ export default function VzyskanieClient() {
       {/* ═══ БЛОК 6: ВЗЫСКАНИЕ ЗАДОЛЖЕННОСТИ ПОД КОНКРЕТНУЮ СТАДИЮ (ТАЙМЛАЙН) ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+          <div style={{ marginBottom: '44px' }}>
             <div style={{
               fontSize: '13px',
               fontWeight: 700,
@@ -1153,13 +1153,30 @@ export default function VzyskanieClient() {
             }}>
               Этапы юридического сопровождения
             </div>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Взыскание задолженности</span> <br />
-              <span style={{ display: 'inline-block' }}>под конкретную стадию</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              Чёткий состав работ и осязаемый результат на каждом этапе правового взаимодействия.
-            </p>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', margin: 0, lineHeight: 1.2, flex: '1 1 480px', minWidth: '280px' }}>
+                <span style={{ display: 'inline-block' }}>Взыскание задолженности</span> <br />
+                <span style={{ display: 'inline-block' }}>под конкретную стадию</span>
+              </h2>
+              <div style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-deep-blue)',
+                opacity: 0.9,
+                fontWeight: 500,
+                lineHeight: 1.6,
+                textAlign: 'right'
+              }}>
+                Чёткий состав работ и осязаемый результат на каждом этапе правового взаимодействия.
+              </div>
+            </div>
           </div>
 
           {/* Длинные горизонтальные карточки этапов 01 → 05 */}
@@ -1172,10 +1189,10 @@ export default function VzyskanieClient() {
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  padding: '28px 32px',
+                  padding: '24px 32px 24px 20px',
                   display: 'flex',
                   flexWrap: 'wrap',
-                  gap: '28px',
+                  gap: '24px',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   position: 'relative',
@@ -1183,53 +1200,51 @@ export default function VzyskanieClient() {
                 }}
               >
                 <div className="stage-accent" />
-                <div style={{ flex: '1 1 520px', minWidth: '280px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <span style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '26px',
-                      fontWeight: 700,
-                      color: 'var(--color-gold)',
-                      lineHeight: 1
-                    }}>
-                      {step.num}
-                    </span>
-                    <span style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      color: 'var(--color-primary)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      background: 'rgba(23, 50, 77, 0.06)',
-                      padding: '3px 8px'
-                    }}>
-                      Этап {step.num}
-                    </span>
+                
+                {/* Левая часть: крупный номер по центру и по левому краю с легким срезом + текст */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '18px', flex: '1 1 540px', minWidth: '280px', position: 'relative' }}>
+                  <div style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: 'clamp(64px, 6.5vw, 88px)',
+                    fontWeight: 800,
+                    color: 'var(--color-gold)',
+                    lineHeight: 0.72,
+                    marginLeft: '-46px',
+                    marginTop: '-40px',
+                    opacity: 0.2,
+                    userSelect: 'none',
+                    flexShrink: 0,
+                    letterSpacing: '-0.05em'
+                  }}>
+                    {step.num}
                   </div>
 
-                  <h3 style={{
-                    fontSize: '19px',
-                    fontFamily: 'var(--font-serif)',
-                    color: 'var(--color-deep-blue)',
-                    margin: '0 0 10px 0',
-                    lineHeight: 1.35,
-                    fontWeight: 600
-                  }}>
-                    {step.stage}
-                  </h3>
+                  <div style={{ flex: 1 }}>
+                    <h3 style={{
+                      fontSize: '19px',
+                      fontFamily: 'var(--font-serif)',
+                      color: 'var(--color-deep-blue)',
+                      margin: '0 0 8px 0',
+                      lineHeight: 1.35,
+                      fontWeight: 600
+                    }}>
+                      {step.stage}
+                    </h3>
 
-                  <p style={{
-                    fontSize: '14.5px',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: 0
-                  }}>
-                    {step.works}
-                  </p>
+                    <p style={{
+                      fontSize: '14.5px',
+                      color: 'var(--color-text-secondary)',
+                      lineHeight: 1.55,
+                      margin: 0
+                    }}>
+                      {step.works}
+                    </p>
+                  </div>
                 </div>
 
+                {/* Правая часть: Результат этапа */}
                 <div style={{
-                  flex: '1 1 320px',
+                  flex: '0 1 320px',
                   minWidth: '260px',
                   background: '#FAF7F2',
                   border: '1px solid rgba(193, 160, 102, 0.25)',

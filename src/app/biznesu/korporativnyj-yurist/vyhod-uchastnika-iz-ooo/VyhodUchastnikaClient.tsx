@@ -73,7 +73,7 @@ export default function VyhodUchastnikaClient() {
     },
     {
       tag: 'Со стороны общества',
-      title: <>Оформление документов ООО <br />после выхода соучредителя</>,
+      title: <>Оформление документов <br />ООО после выхода соучредителя</>,
       desc: 'Распределение доли, перешедшей обществу, между оставшимися участниками, продажа третьему лицу или погашение доли.'
     },
     {
@@ -88,29 +88,29 @@ export default function VyhodUchastnikaClient() {
     }
   ];
 
-  const whatWeCheck = [
+  const whatWeCheck: { title: React.ReactNode; desc: string }[] = [
     {
-      title: 'Прямое разрешение в уставе',
+      title: <><span style={{ display: 'inline-block' }}>Прямое разрешение</span> <br /><span style={{ display: 'inline-block' }}>в уставе общества</span></>,
       desc: 'По закону выход участника из ООО возможен только в том случае, если это прямо предусмотрено действующей редакцией устава общества.'
     },
     {
-      title: 'Запрет на выход единственного участника',
+      title: <><span style={{ display: 'inline-block' }}>Запрет на выход</span> <br /><span style={{ display: 'inline-block' }}>единственного участника</span></>,
       desc: 'Выход участников, в результате которого в обществе не остается ни одного участника, а также выход единственного участника категорически запрещены законом.'
     },
     {
-      title: 'Нотариальное заявление',
+      title: <><span style={{ display: 'inline-block' }}>Нотариальное</span> <br /><span style={{ display: 'inline-block' }}>заявление о выходе</span></>,
       desc: 'Заявление о выходе подлежит обязательному нотариальному удостоверению. Нотариус сам направляет форму в ФНС и уведомляет общество.'
     },
     {
-      title: 'Переход доли к обществу',
+      title: <><span style={{ display: 'inline-block' }}>Переход доли</span> <br /><span style={{ display: 'inline-block' }}>к обществу в ЕГРЮЛ</span></>,
       desc: 'Доля переходит к самому ООО с момента внесения соответствующей записи в ЕГРЮЛ, после чего у общества возникает обязанность выплатить стоимость.'
     },
     {
-      title: 'Распределение доли обществом',
+      title: <><span style={{ display: 'inline-block' }}>Распределение доли</span> <br /><span style={{ display: 'inline-block' }}>между участниками</span></>,
       desc: 'В течение одного года доля, перешедшая обществу, должна быть распределена между оставшимися участниками или продана.'
     },
     {
-      title: 'Срок выплаты действительной стоимости',
+      title: <><span style={{ display: 'inline-block' }}>Срок выплаты</span> <br /><span style={{ display: 'inline-block' }}>действительной стоимости</span></>,
       desc: 'Общество обязано выплатить действительную стоимость доли в течение 3 месяцев со дня возникновения обязанности (если иной срок не в уставе).'
     }
   ];
@@ -280,10 +280,10 @@ export default function VyhodUchastnikaClient() {
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Выход участника из ООО
+              Выход участника
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              в Липецке
+              из ООО в Липецке
             </span>
           </span>
         }
@@ -415,34 +415,55 @@ export default function VyhodUchastnikaClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ЧТО ПРОВЕРИТЬ ═══ */}
-      <section className="section bg-white" id="check">
+      {/* ═══ БЛОК 3: ВОЗМОЖЕН ЛИ ВЫХОД ИМЕННО В ВАШЕЙ СИТУАЦИИ (ПО ШАБЛОНУ НАПРАВЛЕНИЙ) ═══ */}
+      <section className="section" id="check" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Возможен ли выход именно в вашей ситуации
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              <span style={{ display: 'inline-block' }}>Возможен ли выход</span> <br />
+              <span style={{ display: 'inline-block' }}>именно в вашей ситуации</span>
             </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Ключевые юридические требования законодательства об ООО, определяющие допустимость процедуры.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Ключевые юридические требования законодательства об ООО,</span> <br />
+              <span style={{ display: 'inline-block' }}>определяющие допустимость процедуры.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
-            {whatWeCheck.map((chk, idx) => (
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
+            {whatWeCheck.map((item, idx) => (
               <div
                 key={idx}
-                className="card"
+                className="hover-lift"
                 style={{
-                  padding: '32px 26px',
-                  backgroundColor: 'var(--color-bg-light)',
-                  border: '1px solid var(--color-border)'
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
-                  {chk.title}
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  0{idx + 1}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
+                  {item.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {chk.desc}
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {item.desc}
                 </p>
               </div>
             ))}
@@ -512,7 +533,7 @@ export default function VyhodUchastnikaClient() {
       {/* ═══ БЛОК 9: СМЕЖНЫЕ НАПРАВЛЕНИЯ ПРАКТИКИ ДЛЯ БИЗНЕСА (ПО ШАБЛОНУ) ═══ */}
       <section className="section bg-light" id="related-services" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '840px', marginBottom: '36px', textAlign: 'left' }}>
+          <div style={{ marginBottom: '36px' }}>
             <div style={{
               fontSize: '13px',
               fontWeight: 700,
@@ -523,12 +544,30 @@ export default function VyhodUchastnikaClient() {
             }}>
               Смежные направления практики для бизнеса
             </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 34px)', color: 'var(--color-deep-blue)', marginBottom: '14px', marginTop: 0, lineHeight: 1.25 }}>
-              <span style={{ display: 'inline-block' }}>Другие корпоративные</span> <br /><span style={{ display: 'inline-block' }}>процедуры и споры</span>
-            </h2>
-            <p style={{ fontSize: '15.5px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.65, margin: 0, textWrap: 'balance' }}>
-              Комплексное юридическое сопровождение собственников бизнеса и участников ООО.
-            </p>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 34px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.25, flex: '1 1 480px', minWidth: '280px' }}>
+                <span style={{ display: 'inline-block' }}>Другие корпоративные</span> <br /><span style={{ display: 'inline-block' }}>процедуры и споры</span>
+              </h2>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}>
+                Комплексное юридическое сопровождение собственников бизнеса и участников ООО.
+              </p>
+            </div>
           </div>
 
           <div className={relatedServices.length === 4 ? "grid grid-4" : "grid grid-3"} style={{ gap: '20px', marginBottom: '28px' }}>

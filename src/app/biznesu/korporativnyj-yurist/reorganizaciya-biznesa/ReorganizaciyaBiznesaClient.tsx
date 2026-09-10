@@ -508,7 +508,7 @@ export default function ReorganizaciyaBiznesaClient() {
       {/* ═══ БЛОК 9: СМЕЖНЫЕ НАПРАВЛЕНИЯ ПРАКТИКИ ДЛЯ БИЗНЕСА (ПО ШАБЛОНУ) ═══ */}
       <section className="section bg-light" id="related-services" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '840px', marginBottom: '36px', textAlign: 'left' }}>
+          <div style={{ marginBottom: '36px' }}>
             <div style={{
               fontSize: '13px',
               fontWeight: 700,
@@ -519,12 +519,30 @@ export default function ReorganizaciyaBiznesaClient() {
             }}>
               Смежные направления практики для бизнеса
             </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 34px)', color: 'var(--color-deep-blue)', marginBottom: '14px', marginTop: 0, lineHeight: 1.25 }}>
-              <span style={{ display: 'inline-block' }}>Смежные услуги</span> <br /><span style={{ display: 'inline-block' }}>по структурированию бизнеса</span>
-            </h2>
-            <p style={{ fontSize: '15.5px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.65, margin: 0, textWrap: 'balance' }}>
-              Безопасное разделение, слияние и оптимизация структуры владения активами.
-            </p>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 34px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.25, flex: '1 1 480px', minWidth: '280px' }}>
+                <span style={{ display: "inline-block" }}>Смежные услуги</span> <br /><span style={{ display: "inline-block" }}>по структурированию бизнеса</span>
+              </h2>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}>
+                Безопасное разделение, слияние и оптимизация структуры владения активами.
+              </p>
+            </div>
           </div>
 
           <div className={relatedServices.length === 4 ? "grid grid-4" : "grid grid-3"} style={{ gap: '20px', marginBottom: '28px' }}>
