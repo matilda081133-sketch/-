@@ -16,12 +16,17 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://dejure-help.ru/images/smolyaninova.jpg',
+        url: 'https://dejure-help.ru/images/og/semejnyj-yurist.jpg',
         width: 1200,
         height: 630,
-        alt: 'Взыскание алиментов в Липецке',
+        type: 'image/jpeg',
+        alt: 'Семейный юрист в Липецке — ЮК «Де-Юре»',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://dejure-help.ru/images/og/semejnyj-yurist.jpg'],
   },
 };
 

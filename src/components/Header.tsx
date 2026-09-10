@@ -48,11 +48,9 @@ export default function Header() {
     { title: "Семейный юрист", href: "/grazhdanam/semejnyj-yurist/" },
     { title: "Наследственный юрист", href: "/grazhdanam/nasledstvennyj-yurist/" },
     { title: "Жилищный юрист", href: "/grazhdanam/zhilishchnyj-yurist/" },
-    { title: "Юрист по недвижимости", href: "/grazhdanam/yurist-po-nedvizhimosti/" },
     { title: "Земельный юрист", href: "/grazhdanam/zemelnyj-yurist/" },
     { title: "Банкротство физических лиц", href: "/grazhdanam/bankrotstvo-fizicheskih-lic/" },
     { title: "Кредитный юрист", href: "/grazhdanam/kreditnyj-yurist/" },
-    { title: "Взыскание долгов", href: "/grazhdanam/vzyskanie-dolgov/" },
     { title: "Юрист по исполнительному производству", href: "/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/" },
     { title: "Автоюрист", href: "/grazhdanam/avtoyurist/" },
     { title: "Трудовой юрист", href: "/grazhdanam/trudovoj-yurist/" },
@@ -65,16 +63,8 @@ export default function Header() {
     { title: "Арбитражный юрист", href: "/biznesu/arbitrazhnyj-yurist/" },
     { title: "Взыскание задолженности с юридических лиц", href: "/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/" },
     { title: "Корпоративный юрист", href: "/biznesu/korporativnyj-yurist/" },
-    { title: "Договорное право", href: "/biznesu/dogovornoe-pravo/" },
-    { title: "Налоговый юрист для бизнеса", href: "/biznesu/nalogovyj-yurist-dlya-biznesa/" },
-    { title: "Банкротство бизнеса", href: "/biznesu/bankrotstvo-biznesa/" },
     { title: "Трудовые споры с работниками", href: "/biznesu/trudovye-spory-s-rabotnikami/" },
-    { title: "Юридическое сопровождение бизнеса", href: "/biznesu/yuridicheskoe-soprovozhdenie-biznesa/" },
-    { title: "Юрист по недвижимости и строительству для бизнеса", href: "/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/" },
-    { title: "Исполнительное производство для бизнеса", href: "/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/" },
-    { title: "Миграционное сопровождение бизнеса", href: "/biznesu/migracionnoe-soprovozhdenie-biznesa/" },
-    { title: "Разблокировка расчётного счёта по 115-ФЗ", href: "/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/" },
-    { title: "Уголовно-правовая защита бизнеса", href: "/biznesu/ugolovno-pravovaya-zashchita-biznesa/" }
+    { title: "Исполнительное производство для бизнеса", href: "/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/" }
   ];
 
   return (

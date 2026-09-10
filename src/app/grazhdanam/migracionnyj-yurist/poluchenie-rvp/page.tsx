@@ -2,14 +2,14 @@ import { Metadata } from 'next';
 import PoluchenieRvpClient from './PoluchenieRvpClient';
 
 export const metadata: Metadata = {
-  title: 'Помощь в получении РВП в Липецке — оформление по квоте и без квоты | Де-Юре',
-  description: 'Юридическое сопровождение получения разрешения на временное проживание (РВП) в Липецке. Основания по браку, рождению, учёбе, квоте. Проверка документов и защита от отказа.',
+  title: 'Получение РВП в Липецке — разрешение на временное проживание | Де-Юре',
+  description: 'Помощь в оформлении разрешения на временное проживание (РВП) в Липецке: по квоте и без квоты (брак, рождение, соотечественники). Сбор документов и подача в МВД.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/',
   },
   openGraph: {
-    title: 'Помощь в получении РВП в Липецке | Де-Юре',
-    description: 'Юридическое сопровождение получения разрешения на временное проживание (РВП) в Липецке. Основания по браку, рождению, учёбе, квоте. Проверка документов и защита от отказа.',
+    title: 'Получение РВП в Липецке — разрешение на временное проживание | Де-Юре',
+    description: 'Помощь в оформлении разрешения на временное проживание (РВП) в Липецке: по квоте и без квоты (брак, рождение, соотечественники). Сбор документов и подача в МВД.',
     url: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -19,8 +19,9 @@ export const metadata: Metadata = {
         url: 'https://dejure-help.ru/images/og/migracionnyj-yurist.jpg',
         width: 1200,
         height: 630,
+        type: 'image/jpeg',
         alt: 'Миграционный юрист в Липецке — ЮК «Де-Юре»',
-      }
+      },
     ],
   },
   twitter: {
@@ -29,81 +30,161 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default function PoluchenieRvpPage() {
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'LegalService',
-    'name': 'ЮК «Де-Юре» — Помощь в получении РВП',
-    'description': 'Юридическое сопровождение получения разрешения на временное проживание (РВП) в Липецке. Основания по браку, рождению, учёбе, квоте. Проверка документов и защита от отказа.',
-    'url': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/',
-    'telephone': '+7 (4742) 20-15-25',
-    'priceRange': '$$',
-    'address': {
-      '@type': 'PostalAddress',
-      'streetAddress': 'ул. Советская, 35',
-      'addressLocality': 'Липецк',
-      'addressRegion': 'Липецкая область',
-            'addressCountry': 'RU'
-    },
-    'geo': {
-      '@type': 'GeoCoordinates',
-      'latitude': 52.6038,
-      'longitude': 39.5712
-    },
-    'openingHoursSpecification': {
-      '@type': 'OpeningHoursSpecification',
-      'dayOfWeek': [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday'
-      ],
-      'opens': '09:00',
-      'closes': '18:00'
-    }
-  };
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    'itemListElement': [
-      {
-        '@type': 'ListItem',
-        'position': 1,
-        'name': 'Главная',
-        'item': 'https://dejure-help.ru/'
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/#webpage",
+      "url": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/",
+      "name": "Получение РВП в Липецке — разрешение на временное проживание | Де-Юре",
+      "description": "Помощь в оформлении разрешения на временное проживание (РВП) в Липецке: по квоте и без квоты (брак, рождение, соотечественники). Сбор документов и подача в МВД.",
+      "isPartOf": {
+        "@id": "https://dejure-help.ru/#website"
       },
-      {
-        '@type': 'ListItem',
-        'position': 2,
-        'name': 'Гражданам',
-        'item': 'https://dejure-help.ru/grazhdanam/'
+      "breadcrumb": {
+        "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/#breadcrumb"
       },
-      {
-        '@type': 'ListItem',
-        'position': 3,
-        'name': 'Миграционный юрист',
-        'item': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/'
-      },
-      {
-        '@type': 'ListItem',
-        'position': 4,
-        'name': 'Помощь в получении РВП',
-        'item': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/'
+      "about": {
+        "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/#service"
       }
-    ]
-  };
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://dejure-help.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Гражданам",
+          "item": "https://dejure-help.ru/grazhdanam/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Миграционный юрист",
+          "item": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Получение РВП",
+          "item": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/"
+        }
+      ]
+    },
+    {
+      "@type": "LegalService",
+      "@id": "https://dejure-help.ru/#organization",
+      "name": "Юридическая компания «Де-Юре»",
+      "url": "https://dejure-help.ru/",
+      "logo": "https://dejure-help.ru/images/logo.png",
+      "image": "https://dejure-help.ru/images/og/migracionnyj-yurist.jpg",
+      "telephone": "+7 (4742) 20-15-25",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Советская, 35",
+        "addressLocality": "Липецк",
+        "addressRegion": "Липецкая область",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.6038,
+        "longitude": 39.5712
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/#person",
+      "name": "Дмитрий Сергеевич Конопкин",
+      "jobTitle": "Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»",
+      "url": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/",
+      "image": "https://dejure-help.ru/images/konopkin.jpg",
+      "worksFor": {
+        "@id": "https://dejure-help.ru/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/#service",
+      "name": "Оформление разрешения на временное проживание (РВП)",
+      "description": "Помощь в оформлении разрешения на временное проживание (РВП) в Липецке: по квоте и без квоты (брак, рождение, соотечественники). Сбор документов и подача в МВД.",
+      "provider": {
+        "@id": "https://dejure-help.ru/#organization"
+      },
+      "serviceType": "Миграционное право",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Российская Федерация"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-rvp/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Что такое РВП и на какой срок оно выдаётся?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Разрешение на временное проживание (РВП) — это статус, позволяющий иностранному гражданину законно жить и работать в России в течение 3 лет. РВП не продлевается — следующим шагом оформляется ВНЖ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Кто имеет право получить РВП без учёта правительственной квоты?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Перечень оснований установлен пунктом 3 статьи 6 закона № 115-ФЗ. В частности, проверяются условия по браку продолжительностью не менее трёх лет либо наличию общего ребёнка, отдельные семейные категории, участие в Госпрограмме, подходящее российское профессиональное образование для граждан государств бывшего СССР, военная служба и другие прямо предусмотренные случаи. Наличие одного бытового признака — брака, диплома или родственника — ещё не подтверждает право на подачу без квоты."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько времени МВД рассматривает заявление на РВП?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для граждан стран с безвизовым въездом срок рассмотрения составляет до 60 дней, для граждан визовых стран — до 4 месяцев с даты приёма заявления."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Нужно ли сдавать экзамен по русскому языку для РВП?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, необходимо предоставить сертификат о владении русским языком, знании истории и основ законодательства РФ (либо документ об образовании, выданный в СССР до 1991 года или в РФ)."
+          }
+        }
+      ]
+    }
+  ]
+};
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <PoluchenieRvpClient />
     </>

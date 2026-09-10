@@ -95,31 +95,32 @@ export default function CookieConsent() {
         </svg>
       </button>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+      <div className="cookie-consent-inner" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         {/* Icon + title */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', paddingRight: '20px' }}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9B7E55" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <div className="cookie-consent-header" style={{ display: 'flex', alignItems: 'center', gap: '10px', paddingRight: '20px' }}>
+          <svg className="cookie-consent-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9B7E55" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5z" />
             <path d="M8.5 8.5v.01" /><path d="M16 15.5v.01" /><path d="M12 12v.01" />
           </svg>
-          <span style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-deep-blue, #10273B)', fontFamily: 'var(--font-serif)' }}>
+          <span className="cookie-consent-title" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-deep-blue, #10273B)', fontFamily: 'var(--font-serif)' }}>
             Использование файлов cookie
           </span>
         </div>
 
         {/* Text per TZ */}
-        <p style={{ fontSize: '13px', color: 'var(--color-text-secondary, #55606E)', lineHeight: 1.55, margin: 0 }}>
-          Мы используем необходимые файлы cookie для работы сайта, а с вашего согласия — аналитические и другие необязательные cookie.{' '}
+        <p className="cookie-consent-text" style={{ fontSize: '13px', color: 'var(--color-text-secondary, #55606E)', lineHeight: 1.5, margin: 0 }}>
+          Мы используем необходимые файлы cookie для работы сайта, а с вашего согласия — аналитические cookie.{' '}
           Подробнее —{' '}
           <Link href="/cookies/" style={{ color: 'var(--color-primary, #10273B)', textDecoration: 'underline' }}>
-            в Политике использования cookie
+            в Политике cookie
           </Link>.
         </p>
 
         {/* Buttons */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+        <div className="cookie-consent-buttons" style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
           <button
             onClick={handleAccept}
+            className="cookie-consent-btn-accept"
             style={{
               padding: '8px 22px',
               fontSize: '13px',
@@ -136,6 +137,7 @@ export default function CookieConsent() {
           </button>
           <button
             onClick={handleDecline}
+            className="cookie-consent-btn-decline"
             style={{
               padding: '8px 16px',
               fontSize: '13px',
@@ -159,11 +161,35 @@ export default function CookieConsent() {
         }
         @media (max-width: 576px) {
           .cookie-consent-banner {
-            bottom: 16px !important;
-            right: 16px !important;
-            left: 16px !important;
+            bottom: 8px !important;
+            right: 8px !important;
+            left: 8px !important;
             width: auto !important;
             max-width: none !important;
+            padding: 10px 14px !important;
+            border-radius: 6px !important;
+          }
+          .cookie-consent-inner {
+            gap: 8px !important;
+          }
+          .cookie-consent-icon {
+            width: 16px !important;
+            height: 16px !important;
+          }
+          .cookie-consent-title {
+            font-size: 13px !important;
+          }
+          .cookie-consent-text {
+            font-size: 12px !important;
+            line-height: 1.4 !important;
+          }
+          .cookie-consent-btn-accept {
+            padding: 6px 14px !important;
+            font-size: 12px !important;
+          }
+          .cookie-consent-btn-decline {
+            padding: 6px 12px !important;
+            font-size: 12px !important;
           }
         }
       `}} />

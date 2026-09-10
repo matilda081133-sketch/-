@@ -302,17 +302,17 @@ export default function LishenieIOgranichenieRoditelskihPravClient() {
         }
         superTitle="Семейный юрист в Липецке"
         title={
-          <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+          <span style={{ display: 'block', width: '100%', maxWidth: '100%', minWidth: 0 }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block' }}>
               Лишение и ограничение
             </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block' }}>
               родительских прав в Липецке
             </span>
           </span>
         }
         subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
+          <span style={{ display: 'inline-block', width: '100%', maxWidth: '750px', minWidth: 0, textWrap: 'balance' }}>
             Судебное лишение или ограничение родительских прав по ст. 69, 73 СК РФ при угрозе здоровью ребёнка, неуплате алиментов или защита родителя от необоснованного иска.
           </span>
         }

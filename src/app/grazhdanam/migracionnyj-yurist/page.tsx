@@ -3,89 +3,230 @@ import MigracionnyjClient from './MigracionnyjClient';
 
 export const metadata: Metadata = {
   title: 'Миграционный юрист в Липецке — помощь иностранным гражданам | Де-Юре',
-  description: 'Помощь миграционного юриста в Липецке: запрет на въезд, выдворение, депортация, РВП, ВНЖ, гражданство и реестр контролируемых лиц. Оценим документы и порядок действий.',
+  description: 'Помощь миграционного юриста в Липецке: запрет на въезд, выдворение, депортация, РВП, ВНЖ, гражданство и реестр контролируемых лиц (260-ФЗ). Консультация и защита в суде.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/',
   },
   openGraph: {
-    title: 'Миграционный юрист в Липецке | Де-Юре',
-    description: 'Юридическая помощь иностранным гражданам: оформление статуса, отмена запрета на въезд, выдворения и депортации. Защита прав в Липецке и дистанционно.',
+    title: 'Миграционный юрист в Липецке — помощь иностранным гражданам | Де-Юре',
+    description: 'Помощь миграционного юриста в Липецке: запрет на въезд, выдворение, депортация, РВП, ВНЖ, гражданство и реестр контролируемых лиц (260-ФЗ). Консультация и защита в суде.',
     url: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
     type: 'website',
+    images: [
+      {
+        url: 'https://dejure-help.ru/images/og/migracionnyj-yurist.jpg',
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'Миграционный юрист в Липецке — ЮК «Де-Юре»',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://dejure-help.ru/images/og/migracionnyj-yurist.jpg'],
   },
 };
 
 export default function MigracionnyjPage() {
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'LegalService',
-    'name': 'Юридическая компания «Де-Юре» — Миграционный юрист в Липецке',
-    'description': 'Юридическая помощь иностранным гражданам: отмена запрета на въезд, обжалование выдворения и депортации, РВП, ВНЖ, гражданство, реестр контролируемых лиц.',
-    'url': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/',
-    'telephone': '+7 (4742) 20-15-25',
-    'priceRange': '$$',
-    'address': {
-      '@type': 'PostalAddress',
-      'streetAddress': 'ул. Советская, 35',
-      'addressLocality': 'Липецк',
-      'addressRegion': 'Липецкая область',
-            'addressCountry': 'RU'
-    },
-    'geo': {
-      '@type': 'GeoCoordinates',
-      'latitude': 52.6038,
-      'longitude': 39.5712
-    },
-    'openingHoursSpecification': {
-      '@type': 'OpeningHoursSpecification',
-      'dayOfWeek': [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday'
-      ],
-      'opens': '09:00',
-      'closes': '18:00'
-    }
-  };
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    'itemListElement': [
-      {
-        '@type': 'ListItem',
-        'position': 1,
-        'name': 'Главная',
-        'item': 'https://dejure-help.ru/'
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/#webpage",
+      "url": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/",
+      "name": "Миграционный юрист в Липецке — помощь иностранным гражданам | Де-Юре",
+      "description": "Помощь миграционного юриста в Липецке: запрет на въезд, выдворение, депортация, РВП, ВНЖ, гражданство и реестр контролируемых лиц (260-ФЗ). Консультация и защита в суде.",
+      "isPartOf": {
+        "@id": "https://dejure-help.ru/#website"
       },
-      {
-        '@type': 'ListItem',
-        'position': 2,
-        'name': 'Гражданам',
-        'item': 'https://dejure-help.ru/grazhdanam/'
+      "breadcrumb": {
+        "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/#breadcrumb"
       },
-      {
-        '@type': 'ListItem',
-        'position': 3,
-        'name': 'Миграционный юрист',
-        'item': 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/'
+      "about": {
+        "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/#service"
       }
-    ]
-  };
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://dejure-help.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Гражданам",
+          "item": "https://dejure-help.ru/grazhdanam/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Миграционный юрист",
+          "item": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/"
+        }
+      ]
+    },
+    {
+      "@type": "LegalService",
+      "@id": "https://dejure-help.ru/#organization",
+      "name": "Юридическая компания «Де-Юре»",
+      "url": "https://dejure-help.ru/",
+      "logo": "https://dejure-help.ru/images/logo.png",
+      "image": "https://dejure-help.ru/images/og/migracionnyj-yurist.jpg",
+      "telephone": "+7 (4742) 20-15-25",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Советская, 35",
+        "addressLocality": "Липецк",
+        "addressRegion": "Липецкая область",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.6038,
+        "longitude": 39.5712
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/#person",
+      "name": "Дмитрий Сергеевич Конопкин",
+      "jobTitle": "Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»",
+      "url": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/",
+      "image": "https://dejure-help.ru/images/konopkin.jpg",
+      "worksFor": {
+        "@id": "https://dejure-help.ru/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/#service",
+      "name": "Услуги миграционного юриста в Липецке",
+      "description": "Помощь миграционного юриста в Липецке: запрет на въезд, выдворение, депортация, РВП, ВНЖ, гражданство и реестр контролируемых лиц (260-ФЗ). Консультация и защита в суде.",
+      "provider": {
+        "@id": "https://dejure-help.ru/#organization"
+      },
+      "serviceType": "Миграционное право",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Российская Федерация"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Можно ли помочь, если иностранный гражданин находится за пределами России?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, начать работу можно с дистанционного анализа решения и документов. Возможность подачи обращения представителем, необходимость нотариальной доверенности и личного участия зависят от конкретной процедуры. Адвокат сообщит точный порядок после проверки обстоятельств."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Чем отличаются запрет на въезд, выдворение, депортация и нежелательность пребывания?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Это разные правовые меры: запрет (неразрешение въезда) ограничивает пересечение границы; административное выдворение назначается судом по делу об административном правонарушении (КоАП РФ); депортация — это принудительный выезд по решению МВД при утрате законных оснований для нахождения в РФ; решение о нежелательности пребывания принимается федеральным ведомством (МВД, ФСБ, Минюст, Роспотребнадзор). Каждая процедура требует своего процессуального порядка обжалования."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какой срок обжалования административного выдворения?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "По общему правилу (ст. 30.3 КоАП РФ) жалоба на постановление суда о назначении административного выдворения подаётся в течение 10 суток со дня вручения или получения копии постановления. Срок крайне сжатый, поэтому обращаться к адвокату нужно немедленно."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли отменить запрет на въезд из-за семьи в России?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Наличие супруга, детей или родителей — граждан РФ может иметь существенное значение при оценке соразмерности запрета и последствий для семьи. Однако семейные связи не отменяют ограничение автоматически. Необходимо подтвердить реальность отношений, совместное проживание или участие в жизни семьи и сопоставить эти обстоятельства с основанием запрета. Правовая позиция формируется с учётом Конституции РФ и актуальной практики российских судов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что делать, если сведения появились в реестре контролируемых лиц?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "С 5 февраля 2025 года (ФЗ от 08.08.2024 № 260-ФЗ) в отношении лиц, включенных в реестр контролируемых лиц, действует режим высылки с серьезными ограничениями прав (запрет на управление ТС, открытие счетов и переводы, регистрацию недвижимости и юрлиц, заключение брака). Юристы «Де-Юре» добиваются исключения из реестра через обжалование оснований внесения."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что грозит при аннулировании РВП или ВНЖ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "После аннулирования РВП или ВНЖ иностранный гражданин обязан выехать из РФ в течение 15 дней (ранее — 30 дней), либо оспорить решение. При подаче иска в суд депортация автоматически НЕ приостанавливается — юрист обязательно заявляет ходатайство о применении мер предварительной защиты (ст. 85 КАС РФ)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Оказывает ли компания помощь в оформлении патента на работу?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. Юридическая компания «Де-Юре» не занимается оформлением и переоформлением патентов на работу. Мы специализируемся на правовой защите: обжаловании запретов, выдворений, депортаций, защите и получении статусов РВП, ВНЖ и гражданства РФ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли получить гражданство РФ без оформления вида на жительство (ВНЖ)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "По общему правилу закона № 138-ФЗ «О гражданстве РФ» наличие ВНЖ является обязательным условием. Исключения предусмотрены для отдельных категорий (например, военнослужащие по контракту, участники Государственной программы переселения соотечественников и некоторые другие специальные основания). Точный маршрут определяется на консультации."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие документы нужны для первичной оценки ситуации?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Направьте копию паспорта с переводом, миграционную карту, регистрацию, имеющиеся постановления, уведомления МВД, судебные акты или решения об ограничении въезда, а также документы, подтверждающие семейные связи в России (при наличии). Если решение на руках отсутствует, адвокат поможет составить запрос на его получение."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Даёт ли юрист 100% гарантию отмены запрета или выдворения?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Закон об адвокатской деятельности и профессиональная этика запрещают давать гарантии исхода дела, зависящего от решения государственного органа или суда. Мы гарантируем детальный правовой анализ, выявление всех процессуальных нарушений, сбор доказательств и профессиональное представительство ваших интересов."
+          }
+        }
+      ]
+    }
+  ]
+};
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <MigracionnyjClient />
     </>
