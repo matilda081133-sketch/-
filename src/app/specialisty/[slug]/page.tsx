@@ -284,6 +284,16 @@ export default async function SpecialistPage({ params }: PageProps) {
                         <span className="nowrap-desk">Более 13 лет работы в ФССП, в том</span><br className="nowrap-desk" />
                         <span className="nowrap-desk">числе на руководящих должностях</span>
                       </>
+                    ) : (fact.includes('С 1997 года') && fact.includes('корпоративных')) || fact.includes('юридических и корпоративных') ? (
+                      <>
+                        <span className="nowrap-desk">С 1997 года — практический опыт юридических</span><br className="nowrap-desk" />
+                        <span className="nowrap-desk">и корпоративных процедур</span>
+                      </>
+                    ) : fact.includes('Банкротство граждан') && fact.includes('подготовка') ? (
+                      <>
+                        <span className="nowrap-desk">Банкротство граждан — предварительная оценка рисков,</span><br className="nowrap-desk" />
+                        <span className="nowrap-desk">подготовка и сопровождение</span>
+                      </>
                     ) : fact.includes('юридической практики') ? (
                       <>
                         <span className="nowrap-desk">Более пяти лет юридической практики</span><br className="nowrap-desk" />

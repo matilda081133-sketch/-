@@ -1022,7 +1022,7 @@ export default function BankrotstvoFizicheskihLicClient() {
 
       {/* ═══ БЛОК 7: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
-        title="Куратор направления — Владимир Начешников"
+        title={<><span style={{ display: 'inline-block' }}>Куратор направления — Владимир</span> <br /><span style={{ display: 'inline-block' }}>Викторович Начешников</span></>}
         name="Владимир Викторович Начешников"
         position="Специалист ЮК «Де-Юре»"
         imageUrl="/images/nacheshnikov.jpg"
@@ -1035,8 +1035,7 @@ export default function BankrotstvoFizicheskihLicClient() {
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
               <span>
-                Практический опыт в сфере юридических и корпоративных <br className="hidden-mobile" />
-                процедур — с 1997 года.
+                Практический опыт в сфере юридических и корпоративных процедур — с 1997 года.
               </span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
@@ -1052,7 +1051,7 @@ export default function BankrotstvoFizicheskihLicClient() {
               </span>
             </li>
           </ul>,
-          <a key="3" href="/specialisty/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
+          <a key="3" href="/specialisty/nacheshnikov-vladimir-viktorovich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
             Подробнее о Владимире Викторовиче Начешникове →
           </a>
         ]}

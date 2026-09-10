@@ -1017,14 +1017,14 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
 
       {/* ═══ БЛОК 9: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
-        title="Куратор направления — Владимир Начешников"
+        title={<><span style={{ display: 'inline-block' }}>Куратор направления — Владимир</span> <br /><span style={{ display: 'inline-block' }}>Викторович Начешников</span></>}
         name="Владимир Викторович Начешников"
         position="Специалист ЮК «Де-Юре»"
         imageUrl="/images/nacheshnikov.jpg"
         imagePosition="center 15%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Владимир Викторович оценивает основания для внесудебного банкротства, проверяет исполнительные производства и состав обязательств, помогает выбрать между процедурой через МФЦ и судебным маршрутом.
+            Владимир Викторович проводит анализ долговой ситуации, оценивает риски для имущества и совершённых сделок, определяет порядок подготовки к судебной процедуре и сопровождает дела о банкротстве физических лиц.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
@@ -1036,17 +1036,17 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
               <span>
-                Специализируется на правовой проверке документов, формировании реестра кредиторов и предотвращении рисков при списании задолженностей.
+                Специализируется на судебном банкротстве граждан, защите единственного жилья и исключении рисков оспаривания сделок.
               </span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
               <span>
-                Сопровождает клиентов в Липецке и Липецкой области, а также проводит предварительный анализ ситуации дистанционно.
+                Ведёт дела в Арбитражном суде Липецкой области и представляет интересы доверителей дистанционно по всей России.
               </span>
             </li>
           </ul>,
-          <a key="3" href="/specialisty/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
+          <a key="3" href="/specialisty/nacheshnikov-vladimir-viktorovich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
             Подробнее о Владимире Викторовиче Начешникове →
           </a>
         ]}

@@ -219,37 +219,37 @@ export default function OtmenaPrikazaClient() {
   const lawyerActions = [
     {
       num: '01',
-      title: 'Установит процессуальную картину',
+      title: <><span style={{ display: 'block' }}>Установит</span>{' '}<span style={{ display: 'block' }}>процессуальную картину</span></>,
       desc: 'Определит суд, номер дела, дату приказа, взыскателя, способ и стадию исполнения.'
     },
     {
       num: '02',
-      title: 'Проверит начало и окончание срока',
+      title: <><span style={{ display: 'block' }}>Проверит начало</span>{' '}<span style={{ display: 'block' }}>и окончание срока</span></>,
       desc: 'Сопоставит дату получения, почтовое отслеживание, адрес отправки и календарь процессуальных дней.'
     },
     {
       num: '03',
-      title: 'Получит недостающие материалы',
+      title: <><span style={{ display: 'block' }}>Получит недостающие</span>{' '}<span style={{ display: 'block' }}>материалы</span></>,
       desc: 'Сформирует перечень документов из суда, ФССП, банка и почтовой организации.'
     },
     {
       num: '04',
-      title: 'Подготовит возражения',
+      title: <><span style={{ display: 'block' }}>Подготовит</span>{' '}<span style={{ display: 'block' }}>возражения</span></>,
       desc: 'Оформит реквизиты, несогласие, просьбу об отмене, приложения и способ подачи.'
     },
     {
       num: '05',
-      title: 'Обоснует позднюю подачу',
+      title: <><span style={{ display: 'block' }}>Обоснует</span>{' '}<span style={{ display: 'block' }}>позднюю подачу</span></>,
       desc: 'Свяжет причины пропуска с подтверждающими документами и периодом, когда обращение было невозможно.'
     },
     {
       num: '06',
-      title: 'Проконтролирует определение',
+      title: <><span style={{ display: 'block' }}>Проконтролирует</span>{' '}<span style={{ display: 'block' }}>определение</span></>,
       desc: 'Проверит вынесение и получение определения об отмене; оперативно отследит отправку копий сторонам.'
     },
     {
       num: '07',
-      title: 'Сопроводит действия после отмены',
+      title: <><span style={{ display: 'block' }}>Сопроводит действия</span>{' '}<span style={{ display: 'block' }}>после отмены</span></>,
       desc: 'Подготовит документы приставу или в банк, оценит поворот исполнения и риск последующего иска.'
     }
   ];
@@ -316,28 +316,6 @@ export default function OtmenaPrikazaClient() {
     }
   ];
 
-  const documentGroups = [
-    {
-      title: 'Сведения о суде и деле',
-      items: ['Копия судебного приказа', 'Почтовый конверт с штемпелем', 'Почтовое извещение или трек-номер', 'Номер судебного участка и номер дела']
-    },
-    {
-      title: 'Как узнали о взыскании',
-      items: ['Дата фактического получения письма', 'Уведомление от банка или Госуслуг', 'СМС или постановление ФССП', 'Скриншоты списаний со счетов']
-    },
-    {
-      title: 'Исполнительное производство',
-      items: ['Постановление о возбуждении ИП', 'Номер исполнительного производства', 'Постановление об аресте счетов / имущества', 'Выписка по удержанным суммам']
-    },
-    {
-      title: 'При пропуске срока',
-      items: ['Справка о лечении / госпитализации', 'Приказ о командировке / путевой лист', 'Документы о смене адреса / регистрации', 'Справка почты о нарушении правил доставки']
-    },
-    {
-      title: 'Кредитные документы',
-      items: ['Кредитный договор / договор займа', 'График платежей и квитанции об оплате', 'Выписка по счету кредита', 'Уведомление об уступке долга (цессии)']
-    }
-  ];
 
   const afterCancelScenarios = [
     {
@@ -538,21 +516,21 @@ export default function OtmenaPrikazaClient() {
           {
             text: (
               <span>
-                <strong>Определяем суд и номер дела:</strong> проверяем фактическую доставку и исчисление 10 дней
+                <strong>Определяем суд и номер дела:</strong> проверяем фактическую<br />доставку и исчисление 10 дней
               </span>
             )
           },
           {
             text: (
               <span>
-                <strong>Практический опыт с 1997 года</strong> в защите прав заёмщиков и отмене судебных актов
+                <strong>Практический опыт с 1997 года</strong> в защите прав заёмщиков<br />и отмене судебных актов
               </span>
             )
           },
           {
             text: (
               <span>
-                <strong>Два параллельных трека:</strong> отмена в суде и прекращение исполнительного производства в ФССП
+                <strong>Два параллельных трека:</strong> отмена в суде и прекращение<br />исполнительного производства в ФССП
               </span>
             )
           }
@@ -704,12 +682,28 @@ export default function OtmenaPrikazaClient() {
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ marginBottom: '48px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '24px' }}>
-              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.25, flex: '1 1 480px', minWidth: '280px' }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2, flex: '1 1 480px', minWidth: '280px' }}>
                 <span style={{ display: 'inline-block' }}>Типовые ситуации, в которых</span> <br />
                 <span style={{ display: 'inline-block' }}>требуется отмена приказа</span>
               </h2>
-              <p style={{ flex: '0 1 440px', minWidth: '280px', fontSize: '15.5px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.65, margin: 0, paddingTop: '4px', textAlign: 'right' }}>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                paddingTop: '4px',
+                textAlign: 'right'
+              }}>
                 <span style={{ display: 'inline-block' }}>Поможем оперативно отменить приказ</span> <br />
                 <span style={{ display: 'inline-block' }}>и выстроить правовую защиту при спорах</span> <br />
                 <span style={{ display: 'inline-block' }}>с банками, МФО и коллекторами.</span>
@@ -728,20 +722,69 @@ export default function OtmenaPrikazaClient() {
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  position: 'relative'
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
                 }}
               >
-                <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '14px' }}>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  display: 'inline-block',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
                   {sit.tag}
-                </span>
-                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.35 }}>
+                </div>
+
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '20px',
+                  fontWeight: 600,
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 14px 0',
+                  lineHeight: 1.35,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
                   {sit.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+
+                <p style={{
+                  fontSize: '15px',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
                   {sit.desc}
                 </p>
               </div>
             ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '16px' }}>
+            <a
+              href="#form"
+              className="btn btn-primary"
+              style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 600 }}
+            >
+              Обсудить отмену приказа с юристом
+            </a>
           </div>
         </div>
       </section>
@@ -900,48 +943,80 @@ export default function OtmenaPrikazaClient() {
       </section>
 
       {/* ═══ БЛОК 7: ЧТО СДЕЛАЕТ КРЕДИТНЫЙ ЮРИСТ ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--color-cream)' }}>
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
-                Профессиональная помощь
-              </span>
-            </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--color-deep-blue)', margin: '0 0 16px', lineHeight: 1.25 }}>
-              Что сделает кредитный юрист «Де-Юре»
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Что сделает кредитный юрист</span> <br />
+              <span style={{ display: 'inline-block' }}>«Де-Юре»</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0 }}>
-              Комплексное процессуальное сопровождение от правового анализа до отмены приказа и прекращения исполнительного производства.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Комплексное процессуальное сопровождение — от анализа материалов и восстановления срока</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>до фактической отмены приказа и прекращения исполнительного производства.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
-            {lawyerActions.map((act, idx) => (
-              <div
-                key={idx}
-                className="hover-lift"
-                style={{
-                  background: 'var(--color-white)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  padding: '30px 24px',
-                  display: 'flex',
-                  flexDirection: 'column'
-                }}
-              >
-                <div style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', fontWeight: 'bold', marginBottom: '12px' }}>
-                  {act.num}
-                </div>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px', lineHeight: 1.3 }}>
-                  {act.title}
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '48px' }}>
+            {lawyerActions.map((item, idx) => (
+              <div key={idx} className="hover-lift" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '38px 24px 30px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                borderRadius: '0',
+                position: 'relative',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                minHeight: '100%'
+              }}>
+                <span style={{
+                  position: 'absolute',
+                  top: '16px',
+                  right: '20px',
+                  fontSize: '28px',
+                  fontFamily: 'var(--font-serif)',
+                  color: 'var(--color-gold)',
+                  opacity: 0.6,
+                  fontWeight: 600,
+                  lineHeight: 1
+                }}>
+                  {item.num}
+                </span>
+
+                <h3 style={{
+                  fontSize: '18px',
+                  fontFamily: 'var(--font-serif)',
+                  color: 'var(--color-deep-blue)',
+                  marginTop: '12px',
+                  marginBottom: '12px',
+                  lineHeight: 1.35,
+                  paddingRight: '30px'
+                }}>
+                  {item.title}
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {act.desc}
+
+                <p style={{
+                  fontSize: '14.5px',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                  marginTop: 'auto'
+                }}>
+                  {item.desc}
                 </p>
               </div>
             ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '16px' }}>
+            <a
+              href="#form"
+              className="btn btn-primary"
+              style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 600 }}
+            >
+              Обсудить отмену приказа с юристом
+            </a>
           </div>
         </div>
       </section>
@@ -965,97 +1040,232 @@ export default function OtmenaPrikazaClient() {
         ctaButtonHref="#form"
       />
 
-      {/* ═══ БЛОК 10: ЧТО ПОДГОТОВИТЬ ═══ */}
+      {/* ═══ БЛОК 10: ЧТО ПОДГОТОВИТЬ ДЛЯ КОНСУЛЬТАЦИИ ═══ */}
       <section className="section bg-white" id="documents" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
-                Пакет документов
-              </span>
-            </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--color-deep-blue)', margin: '0 0 16px', lineHeight: 1.25 }}>
-              Что подготовить для консультации
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Что подготовить</span> <br />
+              <span style={{ display: 'inline-block' }}>для консультации</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0 }}>
-              Чем полнее исходные сведения, тем точнее юрист рассчитает сроки и подготовит возражения. Если каких-то документов нет, мы поможем запросить их в суде или ФССП.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Чем полнее исходные сведения, тем точнее юрист рассчитает сроки и подготовит возражения.</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>Если каких-то документов нет, мы поможем запросить их в суде или ФССП.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            {documentGroups.map((grp, idx) => (
-              <div key={idx} style={{ background: 'var(--color-cream)', padding: '30px 24px', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)' }}>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px', lineHeight: 1.3 }}>
-                  {grp.title}
-                </h3>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  {grp.items.map((item, itemIdx) => (
-                    <li key={itemIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                      <span style={{ color: 'var(--color-primary)', fontWeight: 'bold' }}>—</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Обязательно (при наличии) */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                Обязательно (при наличии)
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {[
+                  {
+                    title: 'Судебный приказ или извещение',
+                    desc: 'Копия судебного приказа, конверт со штемпелем, извещение или трек-номер отправления.'
+                  },
+                  {
+                    title: 'Сведения о суде и номере дела',
+                    desc: 'Номер судебного участка мирового судьи, номер дела и наименование взыскателя.'
+                  },
+                  {
+                    title: 'Дата обнаружения взыскания',
+                    desc: 'Сведения о фактическом получении письма, уведомление Госуслуг или банка об аресте.'
+                  },
+                  {
+                    title: 'Постановление судебного пристава',
+                    desc: 'Номер и постановление о возбуждении ИП, если взыскание уже передано в ФССП.'
+                  }
+                ].map((doc, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
+                        {doc.title}
+                      </strong>
+                      <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                        {doc.desc}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Карточка 2: Дополнительно помогает */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                Дополнительно помогает
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {[
+                  {
+                    title: 'Документы об уважительности пропуска',
+                    desc: 'Справки о лечении, командировочные листы, документы о смене адреса при поздней подаче.'
+                  },
+                  {
+                    title: 'Кредитный договор и график платежей',
+                    desc: 'Договор займа или кредита, условия кредитования и уведомление об уступке прав (цессии).'
+                  },
+                  {
+                    title: 'Квитанции и выписки по счету',
+                    desc: 'Подтверждения ранее внесённых платежей для составления контррасчета задолженности.'
+                  },
+                  {
+                    title: 'Банковская выписка по удержаниям',
+                    desc: 'Выписка со списанными суммами для последующего заявления о повороте исполнения.'
+                  }
+                ].map((doc, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
+                        {doc.title}
+                      </strong>
+                      <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                        {doc.desc}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div style={{
+            background: 'rgba(23, 50, 77, 0.04)',
+            borderLeft: '3px solid var(--color-gold)',
+            padding: '16px 20px',
+            fontSize: '13.5px',
+            color: 'var(--color-text-secondary)',
+            lineHeight: 1.55,
+            marginBottom: '48px'
+          }}>
+            <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>
+              Конфиденциальность:
+            </strong>
+            Мы не запрашиваем загрузку паспортов и банковских выписок через открытую форму сайта. Способ безопасной передачи материалов будет согласован специалистом при первом звонке.
+          </div>
+
+          {/* Карточка: Что происходит после отмены судебного приказа */}
+          <div style={{
+            background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            position: 'relative'
+          }}>
+            <div className="stages-header-row" style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '24px',
+              marginBottom: '28px',
+              position: 'relative',
+              zIndex: 1
+            }}>
+              <div style={{ flex: '1 1 auto', minWidth: '280px' }}>
+                <h2 style={{ fontSize: 'clamp(22px, 2.5vw, 30px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  <span style={{ display: 'inline-block' }}>Что происходит после</span> <br />
+                  <span style={{ display: 'inline-block' }}>отмены судебного приказа</span>
+                </h2>
               </div>
-            ))}
-          </div>
-
-          <div style={{ background: '#F8F9FA', padding: '20px 24px', border: '1px solid var(--color-border)', display: 'flex', alignItems: 'center', gap: '14px' }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-            <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-              <strong>Конфиденциальность:</strong> Мы не запрашиваем загрузку паспортов и банковских выписок через открытую форму сайта. Передача конфиденциальных документов согласуется со специалистом по защищенным каналам.
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 11: ЧТО ПРОИСХОДИТ ПОСЛЕ ОТМЕНЫ ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--color-cream)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
-                Следующие шаги
-              </span>
-            </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--color-deep-blue)', margin: '0 0 16px', lineHeight: 1.25 }}>
-              Что происходит после отмены судебного приказа
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0 }}>
-              Вынесение определения об отмене приказа — ключевой процессуальный шаг, после которого важно правильно распорядиться полученным результатом.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            {afterCancelScenarios.map((sc, idx) => (
-              <div key={idx} className="hover-lift" style={{ background: 'var(--color-white)', padding: '30px 24px', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)' }}>
-                <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '12px' }}>
-                  {sc.tag}
+              <div className="stages-subtitle-right" style={{
+                fontSize: '14px',
+                color: 'rgba(255, 255, 255, 0.85)',
+                maxWidth: '520px',
+                lineHeight: 1.55,
+                textAlign: 'right',
+                flex: '0 0 auto'
+              }}>
+                <span style={{ display: 'block', fontWeight: 500 }}>Вынесение определения об отмене приказа — ключевой процессуальный шаг:</span>
+                <span style={{ display: 'block', color: 'rgba(255, 255, 255, 0.7)' }}>
+                  важно правильно распорядиться полученным результатом на стадии исполнения.
                 </span>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px', lineHeight: 1.35 }}>
-                  {sc.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {sc.desc}
-                </p>
               </div>
-            ))}
-          </div>
+            </div>
 
-          <div style={{ textAlign: 'center' }}>
-            <a href="#form" className="btn btn-primary" style={{ padding: '14px 32px' }}>
-              Определить действия после отмены приказа
-            </a>
+            <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1, marginBottom: '28px' }}>
+              {afterCancelScenarios.map((sc, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    padding: '24px 20px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '10px'
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: 'var(--color-gold)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      background: 'rgba(193, 160, 102, 0.15)',
+                      padding: '3px 8px',
+                      borderRadius: '2px'
+                    }}>
+                      {sc.tag}
+                    </span>
+                    <span style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)' }}>
+                      0{idx + 1}
+                    </span>
+                  </div>
+                  <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35 }}>
+                    {sc.title}
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.55, margin: 0 }}>
+                    {sc.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
+              <a
+                href="#form"
+                className="btn btn-primary"
+                style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 600 }}
+              >
+                Определить действия после отмены приказа
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 12: СТОИМОСТЬ ═══ */}
+      {/* ═══ БЛОК 11: СТОИМОСТЬ ═══ */}
       <PricingBlock
         title="Стоимость отмены судебного приказа в Липецке"
         subtitle="Честные фиксированные цены без скрытых платежей. Состав услуг и стоимость фиксируются в договоре до начала работы."
@@ -1066,22 +1276,37 @@ export default function OtmenaPrikazaClient() {
         ctaButtonLink="#form"
       />
 
-      {/* ═══ БЛОК 13: СПЕЦИАЛИСТ ═══ */}
+      {/* ═══ БЛОК 12: СПЕЦИАЛИСТ ═══ */}
       <SpecialistBlock
-        title="Куратор направления — Владимир Викторович Начешников"
+        title={<><span style={{ display: 'inline-block' }}>Куратор направления — Владимир</span> <br /><span style={{ display: 'inline-block' }}>Викторович Начешников</span></>}
         name="Владимир Викторович Начешников"
         position="Специалист по корпоративным процедурам и защите заемщиков, куратор направления"
         imageUrl="/images/nacheshnikov.jpg"
         imagePosition="center 15%"
         description={[
-          'Владимир Начешников проверяет судебный приказ, сведения об извещении и текущую стадию исполнения, определяет процессуальный маршрут и готовит документы для отмены приказа и обязательных действий после неё.',
-          'Практический опыт в сфере юридических и процессуальных процедур — с 1997 года. Сопровождает защиту прав граждан и заёмщиков в спорах с банками, микрофинансовыми организациями и коллекторскими агентствами.',
-          'Координирует работу с мировыми судьями Липецка и Липецкой области, взаимодействие со службой судебных приставов (ФССП) и последующую защиту по исковым заявлениям.'
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Владимир Начешников проверяет судебный приказ, сведения об извещении и текущую стадию исполнения, определяет процессуальный маршрут и готовит документы для отмены приказа и обязательных действий после неё.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Практический опыт в сфере юридических и процессуальных процедур — с 1997 года. Сопровождает защиту прав граждан и заёмщиков в спорах с банками, микрофинансовыми организациями и коллекторскими агентствами.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Координирует работу с мировыми судьями Липецка и Липецкой области, взаимодействие со службой судебных приставов (ФССП) и последующую защиту по исковым заявлениям.
+              </span>
+            </li>
+          </ul>,
+          <a key="3" href="/specialisty/nacheshnikov-vladimir-viktorovich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
+            Подробнее о специалисте →
+          </a>
         ]}
-        buttonText="Обсудить приказ с Владимиром Начешниковым"
+        buttonText="Обсудить ситуацию с Владимиром Начешниковым"
         buttonHref="#form"
-        profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
-        profileText="Подробнее о специалисте →"
       />
 
       {/* ═══ БЛОК 14: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}

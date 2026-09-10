@@ -844,20 +844,35 @@ export default function KreditnyjYuristClient() {
 
       {/* ═══ БЛОК 7: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
-        title="Куратор направления — Владимир Начешников"
+        title={<><span style={{ display: 'inline-block' }}>Куратор направления — Владимир</span> <br /><span style={{ display: 'inline-block' }}>Викторович Начешников</span></>}
         name="Владимир Викторович Начешников"
-        position="Специалист ЮК «Де-Юре», куратор направления"
+        position="Специалист по корпоративным процедурам и защите заемщиков, куратор направления"
         imageUrl="/images/nacheshnikov.jpg"
         imagePosition="center 15%"
         description={[
-          'Владимир Викторович анализирует кредитные договоры и требования кредиторов, определяет правовой маршрут, готовит позицию для переговоров и суда и сопровождает кредитные дела на согласованных этапах.',
-          'Практический опыт в сфере юридических и корпоративных процедур — с 1997 года. По подтверждению практики занимается кредитными спорами, отменой судебных приказов и защитой прав заёмщиков.',
-          'Организует сбор доказательств, проведение контррасчетов задолженности, взаимодействие с мировыми и районными судами Липецка и области.'
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Владимир Начешников проверяет кредитные договоры, судебные приказы, иски банков и МФО, определяет процессуальный маршрут и выстраивает состязательную защиту интересов заёмщика в суде и ФССП.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Практический опыт в сфере юридических и процессуальных процедур — с 1997 года. Сопровождает защиту прав граждан и заёмщиков в спорах с банками, микрофинансовыми организациями и коллекторскими агентствами.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>
+                Координирует работу с мировыми судьями и районными судами Липецка и области, взаимодействие с ФССП и поворот исполнения неправомерно взысканных сумм.
+              </span>
+            </li>
+          </ul>,
+          <a key="3" href="/specialisty/nacheshnikov-vladimir-viktorovich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }} data-analytics="specialist_profile_click">
+            Подробнее о специалисте →
+          </a>
         ]}
         buttonText="Обсудить ситуацию с Владимиром Начешниковым"
         buttonHref="#form"
-        profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
-        profileText="Подробнее о специалисте →"
       />
 
       {/* ═══ БЛОК 8: ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
