@@ -57,33 +57,45 @@ export default function KorporativnyjYuristClient() {
   const situations = [
     {
       tag: 'Конфликт участников',
-      title: <>Конфликт участников <br />или корпоративный тупик</>,
-      desc: 'Разногласия по распределению прибыли, решениям общего собрания, назначению директора или фактическая блокировка деятельности компании.'
+      title: 'Конфликт участников или дедлок',
+      desc: 'Разногласия по распределению прибыли, решениям общего собрания, назначению директора или фактическая блокировка деятельности компании.',
+      link: '/biznesu/korporativnyj-yurist/korporativnye-spory-mezhdu-uchastnikami/',
+      btnText: 'Корпоративные споры →'
     },
     {
       tag: 'Выход и стоимость доли',
-      title: <>Выход участника или выплата <br />действительной стоимости доли</>,
-      desc: 'Оформление выхода из состава ООО, определение действительной стоимости доли по рыночной оценке и защита от занижения выплаты.'
+      title: 'Выход участника или выплата доли',
+      desc: 'Оформление выхода из состава ООО, определение действительной стоимости доли по рыночной оценке и защита от занижения выплаты.',
+      link: '/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/',
+      btnText: 'Взыскание стоимости доли →'
     },
     {
       tag: 'Сделки и покупка бизнеса',
-      title: <>Сделка с долями или покупка <br />действующего бизнеса</>,
-      desc: 'Комплексная проверка рисков (due diligence), подготовка договора купли-продажи доли или активов, структурирование расчётов и нотариус.'
+      title: 'Сделка с долями или покупка бизнеса',
+      desc: 'Комплексная проверка рисков (due diligence), подготовка договора купли-продажи доли или активов, структурирование расчётов и нотариус.',
+      link: '/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/',
+      btnText: 'Покупка и продажа бизнеса →'
     },
     {
       tag: 'Реорганизация',
-      title: <>Реорганизация и изменение <br />структуры бизнеса</>,
-      desc: 'Слияние, присоединение, разделение, выделение или преобразование компании с сохранением активов, договоров и прав кредиторов.'
+      title: 'Реорганизация и изменение структуры',
+      desc: 'Слияние, присоединение, разделение, выделение или преобразование компании с сохранением активов, договоров и прав кредиторов.',
+      link: '/biznesu/korporativnyj-yurist/reorganizaciya-biznesa/',
+      btnText: 'Реорганизация бизнеса →'
     },
     {
       tag: 'Защита контроля',
-      title: <>Угроза или утрата <br />корпоративного контроля</>,
-      desc: 'Незаконная смена директора, спорные изменения в ЕГРЮЛ, блокировка доступа к счетам, документам и управление без воли собственника.'
+      title: 'Угроза или утрата контроля над ООО',
+      desc: 'Незаконная смена директора, спорные изменения в ЕГРЮЛ, блокировка доступа к счетам, документам и управление без воли собственника.',
+      link: '/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/',
+      btnText: 'Защита контроля →'
     },
     {
       tag: 'Корпоративный договор',
-      title: <>Корпоративный договор <br />и правила партнёрства</>,
-      desc: 'Фиксация договорённостей партнёров на старте: порядок голосования, финансирование, распределение прибыли и правила выхода.'
+      title: 'Корпоративный договор и партнёрство',
+      desc: 'Фиксация договорённостей партнёров на старте: порядок голосования, финансирование, распределение прибыли и правила выхода.',
+      link: '/biznesu/korporativnyj-yurist/korporativnyj-dogovor/',
+      btnText: 'Корпоративный договор →'
     }
   ];
 
@@ -419,46 +431,91 @@ export default function KorporativnyjYuristClient() {
         ]}
       />
 
-      {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
-      <section className="section bg-light" id="situations">
+      {/* ═══ БЛОК 2: С КАКОЙ СИТУАЦИЕЙ СТОЛКНУЛСЯ БИЗНЕС (ТИПОВЫЕ СИТУАЦИИ) ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontWeight: 600, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' }}>
-              <span style={{ width: '20px', height: '2px', backgroundColor: 'var(--color-primary)' }}></span>
-              Типовые ситуации
-              <span style={{ width: '20px', height: '2px', backgroundColor: 'var(--color-primary)' }}></span>
-            </div>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              С какими корпоративными задачами обращается бизнес
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>С какой ситуацией</span> <br />
+              <span style={{ display: 'inline-block' }}>столкнулся бизнес</span>
             </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Своевременное привлечение профильного юриста помогает избежать блокировки счетов, потери активов и затяжных судебных разбирательств.
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Выберите ближайший сценарий. Подбираем порядок действий под фактическую задачу и структуру владения компанией.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
-            {situations.map((sit, idx) => (
-              <div
-                key={idx}
-                className="card service-card"
-                style={{
-                  padding: '32px 28px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  borderTop: '3px solid var(--color-primary)'
-                }}
-              >
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
+            {situations.map((item, i) => (
+              <div key={i} className="hover-lift" style={{
+                padding: '36px 30px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
                 <div>
-                  <div style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-primary)', fontWeight: 700, marginBottom: '12px' }}>
-                    {sit.tag}
+                  <div style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: 'var(--color-gold)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    marginBottom: '14px',
+                    background: 'rgba(193, 160, 102, 0.1)',
+                    padding: '4px 10px',
+                    alignSelf: 'flex-start',
+                    display: 'inline-block',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.tag}
                   </div>
-                  <h3 style={{ fontSize: '20px', color: 'var(--color-deep-blue)', marginBottom: '14px', lineHeight: 1.35 }}>
-                    {sit.title}
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '18px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 14px 0',
+                    lineHeight: 1.35,
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.title}
                   </h3>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                    {sit.desc}
+
+                  <p style={{
+                    fontSize: '15px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: '0 0 20px 0',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.desc}
                   </p>
+                </div>
+
+                <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto' }}>
+                  <Link
+                    href={item.link}
+                    className="btn btn-outline"
+                    style={{ padding: '8px 18px', fontSize: '13.5px', display: 'inline-block', width: '100%', textAlign: 'center' }}
+                  >
+                    {item.btnText}
+                  </Link>
                 </div>
               </div>
             ))}
@@ -467,19 +524,15 @@ export default function KorporativnyjYuristClient() {
       </section>
 
       {/* ═══ БЛОК 3: НАПРАВЛЕНИЯ ПОМОЩИ (8 ДОЧЕРНИХ УСЛУГ) ═══ */}
-      <section className="section bg-white" id="directions">
+      <section className="section bg-light" id="directions" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontWeight: 600, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' }}>
-              <span style={{ width: '20px', height: '2px', backgroundColor: 'var(--color-primary)' }}></span>
-              Услуги и практика
-              <span style={{ width: '20px', height: '2px', backgroundColor: 'var(--color-primary)' }}></span>
-            </div>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Услуги по корпоративному праву в Липецке
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>Направления корпоративной</span> <br />
+              <span style={{ display: 'inline-block' }}>помощи для бизнеса</span>
             </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Решаем задачи любой сложности: от подготовки партнёрских договоров до защиты в резонансных корпоративных конфликтах в арбитражном суде.
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Полный спектр услуг по корпоративному праву в Липецке и арбитражным спорам: от структурирования владения до защиты в суде.
             </p>
           </div>
 
