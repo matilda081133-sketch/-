@@ -166,8 +166,8 @@ export default function ArbitrazhClient() {
     {
       title: (
         <span>
-          <span style={{ display: 'inline-block' }}>Назначено судебное</span> <br />
-          <span style={{ display: 'inline-block' }}>заседание</span>
+          <span style={{ display: 'inline-block' }}>Назначено</span> <br />
+          <span style={{ display: 'inline-block' }}>судебное заседание</span>
         </span>
       ),
       desc: 'Требуется срочно изучить материалы дела через «Мой Арбитр» и подготовить письменные возражения.'
@@ -175,8 +175,8 @@ export default function ArbitrazhClient() {
     {
       title: (
         <span>
-          <span style={{ display: 'inline-block' }}>Приняты обеспечительные</span> <br />
-          <span style={{ display: 'inline-block' }}>меры суда</span>
+          <span style={{ display: 'inline-block' }}>Приняты</span> <br />
+          <span style={{ display: 'inline-block' }}>обеспечительные меры суда</span>
         </span>
       ),
       desc: 'Арест счетов блокирует операционную деятельность. Необходимо ходатайство об отмене или замене мер.'
@@ -184,8 +184,8 @@ export default function ArbitrazhClient() {
     {
       title: (
         <span>
-          <span style={{ display: 'inline-block' }}>Назначена судебная</span> <br />
-          <span style={{ display: 'inline-block' }}>экспертиза</span>
+          <span style={{ display: 'inline-block' }}>Назначена</span> <br />
+          <span style={{ display: 'inline-block' }}>судебная экспертиза</span>
         </span>
       ),
       desc: 'Формулировки вопросов и выбор экспертной организации критически определяют исход дела.'
@@ -510,10 +510,10 @@ export default function ArbitrazhClient() {
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Арбитражный юрист
+              Арбитражный
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              в Липецке
+              юрист в Липецке
             </span>
           </span>
         }
@@ -798,16 +798,18 @@ export default function ArbitrazhClient() {
           </div>
 
           {/* Зона связи */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
-              +7 (4742) 20-15-25
-            </a>
-            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
-              Позвонить юристу
-            </a>
-            <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
-              Сообщить о документе
-            </a>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
+                +7 (4742) 20-15-25
+              </a>
+              <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
+                Позвонить юристу
+              </a>
+              <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+                Сообщить о документе
+              </a>
+            </div>
             <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
               Ответим в рабочее время и согласуем процессуальные действия
             </span>
