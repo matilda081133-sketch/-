@@ -89,27 +89,27 @@ export default function KorporativnyeSporyClient() {
 
   const helpBlocks = [
     {
-      title: 'Правовой аудит корпоративной ситуации',
+      title: <><span style={{ display: 'inline-block' }}>Правовой аудит</span> <br /><span style={{ display: 'inline-block' }}>корпоративной ситуации</span></>,
       desc: 'Анализируем устав, корпоративные договоры, протоколы общих собраний, договоры и финансовые документы для выявления слабых мест и рычагов давления.'
     },
     {
-      title: 'Досудебное урегулирование и переговоры',
+      title: <><span style={{ display: 'inline-block' }}>Досудебное урегулирование</span> <br /><span style={{ display: 'inline-block' }}>и переговоры</span></>,
       desc: 'Проводим структурированные переговоры, медиацию, формулируем компромиссные условия раздела активов или выкупа долей без дорогостоящего суда.'
     },
     {
-      title: 'Принятие срочных обеспечительных мер',
+      title: <><span style={{ display: 'inline-block' }}>Принятие срочных</span> <br /><span style={{ display: 'inline-block' }}>обеспечительных мер</span></>,
       desc: 'Подаём заявления об аресте долей, запрете ФНС регистрировать изменения в ЕГРЮЛ, блокировке спорных сделок и распоряжения расчетными счетами.'
     },
     {
-      title: 'Оспаривание решений органов управления',
+      title: <><span style={{ display: 'inline-block' }}>Оспаривание решений</span> <br /><span style={{ display: 'inline-block' }}>органов управления</span></>,
       desc: 'Признаем в арбитражном суде недействительными решения общего собрания участников, совета директоров и единоличного исполнительного органа.'
     },
     {
-      title: 'Взыскание убытков с генерального директора',
+      title: <><span style={{ display: 'inline-block' }}>Взыскание убытков</span> <br /><span style={{ display: 'inline-block' }}>с генерального директора</span></>,
       desc: 'Привлекаем руководителя к материальной ответственности по ст. 53.1 ГК РФ за недобросовестные или неразумные действия, причинившие ущерб обществу.'
     },
     {
-      title: 'Истребование документов через суд',
+      title: <><span style={{ display: 'inline-block' }}>Истребование документов</span> <br /><span style={{ display: 'inline-block' }}>через арбитражный суд</span></>,
       desc: 'Обязываем руководство предоставить полный доступ к бухгалтерской базе, контрактам и банковским выпискам с начислением судебной неустойки (астрента).'
     }
   ];
@@ -418,33 +418,50 @@ export default function KorporativnyeSporyClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: НАПРАВЛЕНИЯ ПОМОЩИ ═══ */}
-      <section className="section bg-white" id="help">
+      {/* ═══ БЛОК 3: НАПРАВЛЕНИЯ ПОМОЩИ / ЧТО ДЕЛАЕТ ЮРИСТ ═══ */}
+      <section className="section" id="help" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Как можно защищать интересы в корпоративном конфликте
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              <span style={{ display: 'inline-block' }}>Как можно защищать интересы</span> <br />
+              <span style={{ display: 'inline-block' }}>в корпоративном конфликте</span>
             </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Подбираем комплекс мер: от переговорной медиации до жесткого судебного пресечения нарушений.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              <span style={{ display: 'inline-block' }}>Подбираем комплекс мер:</span> <br />
+              <span style={{ display: 'inline-block' }}>от&nbsp;переговорной медиации до&nbsp;жесткого судебного пресечения нарушений.</span>
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
             {helpBlocks.map((blk, idx) => (
-              <div
-                key={idx}
-                className="card"
-                style={{
-                  padding: '32px 26px',
-                  backgroundColor: 'var(--color-bg-light)',
-                  border: '1px solid var(--color-border)'
-                }}
-              >
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
+              <div key={idx} className="hover-lift" style={{
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                padding: '36px 30px 32px 30px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  0{idx + 1}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {blk.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {blk.desc}
                 </p>
               </div>
