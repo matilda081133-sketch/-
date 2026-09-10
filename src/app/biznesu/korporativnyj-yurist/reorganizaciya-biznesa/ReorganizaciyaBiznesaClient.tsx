@@ -271,12 +271,7 @@ export default function ReorganizaciyaBiznesaClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Реорганизация бизнеса</span>
           </>
         }
-        superTitle={
-          <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
-            <span style={{ display: 'inline-block' }}>РЕОРГАНИЗАЦИЯ ЮРИДИЧЕСКИХ ЛИЦ •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и ФНС</span>
-          </span>
-        }
+        superTitle="РЕОРГАНИЗАЦИЯ ЮРИДИЧЕСКИХ ЛИЦ • Липецк и ФНС"
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
