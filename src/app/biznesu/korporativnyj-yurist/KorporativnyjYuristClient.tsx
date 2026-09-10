@@ -54,155 +54,157 @@ export default function KorporativnyjYuristClient() {
     ]
   };
 
-  const situations = [
+  const situations: { tag: string; title: React.ReactNode; desc: string }[] = [
     {
       tag: 'Конфликт участников',
-      title: 'Конфликт участников или дедлок',
-      desc: 'Разногласия по распределению прибыли, решениям общего собрания, назначению директора или фактическая блокировка деятельности компании.',
-      link: '/biznesu/korporativnyj-yurist/korporativnye-spory-mezhdu-uchastnikami/',
-      btnText: 'Корпоративные споры →'
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Конфликт участников</span> <br />
+          <span style={{ display: 'inline-block' }}>или дедлок</span>
+        </span>
+      ),
+      desc: 'Разногласия по распределению прибыли, решениям общего собрания, назначению директора или фактическая блокировка деятельности компании.'
     },
     {
       tag: 'Выход и стоимость доли',
-      title: 'Выход участника или выплата доли',
-      desc: 'Оформление выхода из состава ООО, определение действительной стоимости доли по рыночной оценке и защита от занижения выплаты.',
-      link: '/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/',
-      btnText: 'Взыскание стоимости доли →'
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Выход участника</span> <br />
+          <span style={{ display: 'inline-block' }}>или выплата доли</span>
+        </span>
+      ),
+      desc: 'Оформление выхода из состава ООО, определение действительной стоимости доли по рыночной оценке и защита от занижения выплаты.'
     },
     {
       tag: 'Сделки и покупка бизнеса',
-      title: 'Сделка с долями или покупка бизнеса',
-      desc: 'Комплексная проверка рисков (due diligence), подготовка договора купли-продажи доли или активов, структурирование расчётов и нотариус.',
-      link: '/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/',
-      btnText: 'Покупка и продажа бизнеса →'
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Сделка с долями</span> <br />
+          <span style={{ display: 'inline-block' }}>или покупка бизнеса</span>
+        </span>
+      ),
+      desc: 'Комплексная проверка рисков (due diligence), подготовка договора купли-продажи доли или активов, структурирование расчётов и нотариус.'
     },
     {
       tag: 'Реорганизация',
-      title: 'Реорганизация и изменение структуры',
-      desc: 'Слияние, присоединение, разделение, выделение или преобразование компании с сохранением активов, договоров и прав кредиторов.',
-      link: '/biznesu/korporativnyj-yurist/reorganizaciya-biznesa/',
-      btnText: 'Реорганизация бизнеса →'
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Реорганизация</span> <br />
+          <span style={{ display: 'inline-block' }}>и изменение структуры</span>
+        </span>
+      ),
+      desc: 'Слияние, присоединение, разделение, выделение или преобразование компании с сохранением активов, договоров и прав кредиторов.'
     },
     {
       tag: 'Защита контроля',
-      title: 'Угроза или утрата контроля над ООО',
-      desc: 'Незаконная смена директора, спорные изменения в ЕГРЮЛ, блокировка доступа к счетам, документам и управление без воли собственника.',
-      link: '/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/',
-      btnText: 'Защита контроля →'
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Угроза или утрата</span> <br />
+          <span style={{ display: 'inline-block' }}>контроля над ООО</span>
+        </span>
+      ),
+      desc: 'Незаконная смена директора, спорные изменения в ЕГРЮЛ, блокировка доступа к счетам, документам и управление без воли собственника.'
     },
     {
       tag: 'Корпоративный договор',
-      title: 'Корпоративный договор и партнёрство',
-      desc: 'Фиксация договорённостей партнёров на старте: порядок голосования, финансирование, распределение прибыли и правила выхода.',
-      link: '/biznesu/korporativnyj-yurist/korporativnyj-dogovor/',
-      btnText: 'Корпоративный договор →'
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Корпоративный договор</span> <br />
+          <span style={{ display: 'inline-block' }}>и партнёрство</span>
+        </span>
+      ),
+      desc: 'Фиксация договорённостей партнёров на старте: порядок голосования, финансирование, распределение прибыли и правила выхода.'
     }
   ];
 
-  const services = [
+  const services: { id: string; title: React.ReactNode; desc: string; link: string }[] = [
     {
       id: 'spory',
-      title: 'Корпоративные споры между участниками',
-      badge: 'Споры и защита',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Корпоративные споры</span> <br />
+          <span style={{ display: 'inline-block' }}>между участниками</span>
+        </span>
+      ),
       desc: 'Защита интересов при конфликтах собственников, оспаривании решений собраний, крупных сделок, действий директора и взыскании убытков.',
-      link: '/biznesu/korporativnyj-yurist/korporativnye-spory-mezhdu-uchastnikami/',
-      features: [
-        'Оспаривание незаконных решений общего собрания',
-        'Взыскание убытков с генерального директора',
-        'Истребование документов и информации о деятельности ООО',
-        'Исключение недобросовестного участника из общества'
-      ]
-    },
-    {
-      id: 'dogovor',
-      title: 'Корпоративный договор',
-      badge: 'Предотвращение конфликтов',
-      desc: 'Разработка индивидуального соглашения участников ООО для безопасного управления бизнесом, инвестиций и предотвращения дедлоков.',
-      link: '/biznesu/korporativnyj-yurist/korporativnyj-dogovor/',
-      features: [
-        'Синхронизация голосования по ключевым вопросам',
-        'Механизмы разрешения тупиковых ситуаций (deadlock)',
-        'Ограничения на продажу долей третьим лицам (tag-along, drag-along)',
-        'Порядок дополнительного финансирования компании'
-      ]
-    },
-    {
-      id: 'pokupka',
-      title: 'Покупка и продажа бизнеса',
-      badge: 'Сделки M&A',
-      desc: 'Юридическая проверка компании (due diligence), структурирование сделки, подготовка договоров и безопасная передача управления.',
-      link: '/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/',
-      features: [
-        'Полный правовой аудит рисков, активов и обязательств',
-        'Защита расчётов: эскроу, аккредитивы, рассрочка',
-        'Гарантии и заверения об обстоятельствах продавца',
-        'Переход операционного и банковского контроля'
-      ]
-    },
-    {
-      id: 'reorganizaciya',
-      title: 'Реорганизация бизнеса',
-      badge: 'Структурирование',
-      desc: 'Сопровождение процедур слияния, присоединения, выделения, разделения и преобразования юрлиц под ключ в Липецкой области.',
-      link: '/biznesu/korporativnyj-yurist/reorganizaciya-biznesa/',
-      features: [
-        'Разработка оптимальной схемы и передаточного акта',
-        'Уведомление регистрирующего органа (ФНС) и Федресурса',
-        'Публикации в «Вестнике государственной регистрации»',
-        'Взаимодействие с кредиторами и налоговыми органами'
-      ]
-    },
-    {
-      id: 'sdelki',
-      title: 'Сделки с долями ООО',
-      badge: 'Переход прав',
-      desc: 'Купля-продажа, дарение, залог и наследование долей в уставном капитале с соблюдением преимущественного права и нотариатом.',
-      link: '/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/',
-      features: [
-        'Анализ устава на наличие запретов и согласий',
-        'Оформление оферт и отказов от преимущественного права',
-        'Подготовка договора купли-продажи доли и согласий супругов',
-        'Сопровождение сделки у нотариуса и контроль ЕГРЮЛ'
-      ]
-    },
-    {
-      id: 'vyhod',
-      title: 'Выход участника из ООО',
-      badge: 'Прекращение участия',
-      desc: 'Юридически безупречный выход из состава учредителей: проверка права на выход, оформление заявления у нотариуса и переход доли.',
-      link: '/biznesu/korporativnyj-yurist/vyhod-uchastnika-iz-ooo/',
-      features: [
-        'Проверка положений устава о возможности выхода',
-        'Подготовка комплекта документов для нотариуса',
-        'Контроль внесения записи о переходе доли в ЕГРЮЛ',
-        'Фиксация даты выхода для последующих взаиморасчётов'
-      ]
+      link: '/biznesu/korporativnyj-yurist/korporativnye-spory-mezhdu-uchastnikami/'
     },
     {
       id: 'vzyskanie',
-      title: 'Взыскание действительной стоимости доли',
-      badge: 'Выплата активов',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Взыскание действительной</span> <br />
+          <span style={{ display: 'inline-block' }}>стоимости доли</span>
+        </span>
+      ),
       desc: 'Защита прав вышедшего участника: расчёт реальной рыночной стоимости чистых активов компании и взыскание средств через арбитраж.',
-      link: '/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/',
-      features: [
-        'Анализ бухгалтерского баланса и имущественного комплекса',
-        'Организация судебной финансово-экономической экспертизы',
-        'Досудебная претензия и переговоры с обществом',
-        'Судебное взыскание стоимости доли и процентов по ст. 395 ГК РФ'
-      ]
+      link: '/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/'
+    },
+    {
+      id: 'vyhod',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Выход участника</span> <br />
+          <span style={{ display: 'inline-block' }}>из состава ООО</span>
+        </span>
+      ),
+      desc: 'Юридически безупречный выход из состава учредителей: проверка права на выход, оформление заявления у нотариуса и переход доли.',
+      link: '/biznesu/korporativnyj-yurist/vyhod-uchastnika-iz-ooo/'
+    },
+    {
+      id: 'sdelki',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Сделки с долями</span> <br />
+          <span style={{ display: 'inline-block' }}>в уставном капитале</span>
+        </span>
+      ),
+      desc: 'Купля-продажа, дарение, залог и наследование долей в уставном капитале с соблюдением преимущественного права и нотариатом.',
+      link: '/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/'
+    },
+    {
+      id: 'dogovor',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Корпоративный договор</span> <br />
+          <span style={{ display: 'inline-block' }}>и партнёрство</span>
+        </span>
+      ),
+      desc: 'Разработка индивидуального соглашения участников ООО для безопасного управления бизнесом, инвестиций и предотвращения дедлоков.',
+      link: '/biznesu/korporativnyj-yurist/korporativnyj-dogovor/'
+    },
+    {
+      id: 'pokupka',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Покупка и продажа</span> <br />
+          <span style={{ display: 'inline-block' }}>бизнеса (M&A)</span>
+        </span>
+      ),
+      desc: 'Юридическая проверка компании (due diligence), структурирование сделки, подготовка договоров и безопасная передача управления.',
+      link: '/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/'
+    },
+    {
+      id: 'reorganizaciya',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Реорганизация бизнеса</span> <br />
+          <span style={{ display: 'inline-block' }}>и структуры</span>
+        </span>
+      ),
+      desc: 'Сопровождение процедур слияния, присоединения, выделения, разделения и преобразования юрлиц под ключ в Липецкой области.',
+      link: '/biznesu/korporativnyj-yurist/reorganizaciya-biznesa/'
     },
     {
       id: 'kontrol',
-      title: 'Защита корпоративного контроля',
-      badge: 'Экстренная защита',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Защита корпоративного</span> <br />
+          <span style={{ display: 'inline-block' }}>контроля над ООО</span>
+        </span>
+      ),
       desc: 'Срочные меры при рейдерских действиях, незаконной смене генерального директора, выводе активов и фальсификации решений.',
-      link: '/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/',
-      features: [
-        'Подача возражений по форме Р38001 в регистрирующий орган',
-        'Принятие срочных обеспечительных мер арбитражным судом',
-        'Оспаривание сфальсифицированных протоколов и решений',
-        'Восстановление доступа к счетам, ЭЦП и документации'
-      ]
+      link: '/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/'
     }
   ];
 
@@ -452,9 +454,6 @@ export default function KorporativnyjYuristClient() {
                 border: '1px solid var(--color-border)',
                 borderTop: '3px solid var(--color-primary)',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
                 position: 'relative',
                 overflow: 'hidden',
                 transition: 'all 0.3s ease'
@@ -465,66 +464,54 @@ export default function KorporativnyjYuristClient() {
                   </svg>
                 </div>
 
-                <div>
-                  <div style={{
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    color: 'var(--color-gold)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    marginBottom: '14px',
-                    background: 'rgba(193, 160, 102, 0.1)',
-                    padding: '4px 10px',
-                    alignSelf: 'flex-start',
-                    display: 'inline-block',
-                    position: 'relative',
-                    zIndex: 1
-                  }}>
-                    {item.tag}
-                  </div>
-
-                  <h3 style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '18px',
-                    fontWeight: 600,
-                    color: 'var(--color-deep-blue)',
-                    margin: '0 0 14px 0',
-                    lineHeight: 1.35,
-                    position: 'relative',
-                    zIndex: 1
-                  }}>
-                    {item.title}
-                  </h3>
-
-                  <p style={{
-                    fontSize: '15px',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: '0 0 20px 0',
-                    position: 'relative',
-                    zIndex: 1
-                  }}>
-                    {item.desc}
-                  </p>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  display: 'inline-block',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.tag}
                 </div>
 
-                <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto' }}>
-                  <Link
-                    href={item.link}
-                    className="btn btn-outline"
-                    style={{ padding: '8px 18px', fontSize: '13.5px', display: 'inline-block', width: '100%', textAlign: 'center' }}
-                  >
-                    {item.btnText}
-                  </Link>
-                </div>
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '20px',
+                  fontWeight: 600,
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 14px 0',
+                  lineHeight: 1.35,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.title}
+                </h3>
+
+                <p style={{
+                  fontSize: '15px',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: НАПРАВЛЕНИЯ ПОМОЩИ (8 ДОЧЕРНИХ УСЛУГ) ═══ */}
-      <section className="section bg-light" id="directions" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 3: НАПРАВЛЕНИЯ КОРПОРАТИВНОЙ ПОМОЩИ (8 УСЛУГ + КАРТОЧКА «НЕ НАШЛИ СИТУАЦИЮ?») ═══ */}
+      <section id="directions" className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
@@ -536,100 +523,109 @@ export default function KorporativnyjYuristClient() {
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '24px' }}>
-            {services.map((svc) => (
+          <div className="grid grid-3" style={{ gap: '24px' }}>
+            {services.map((svc, i) => (
               <Link
-                key={svc.id}
+                key={i}
                 href={svc.link}
-                style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', height: '100%' }}
+                style={{ textDecoration: 'none', display: 'block', height: '100%' }}
               >
                 <div
                   className="card service-card"
                   style={{
                     height: '100%',
-                    padding: '32px 28px',
+                    minHeight: '200px',
+                    padding: '30px',
                     background: 'var(--color-white)',
                     border: '1px solid var(--color-border)',
                     borderTop: '3px solid var(--color-primary)',
+                    borderRadius: '0',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    transition: 'all 0.3s ease'
+                    transition: 'all 0.3s ease',
+                    position: 'relative',
+                    cursor: 'pointer'
                   }}
                 >
                   <div>
-                    <div
-                      style={{
-                        display: 'inline-block',
-                        fontSize: '12px',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.08em',
-                        color: 'var(--color-primary)',
-                        fontWeight: 700,
-                        marginBottom: '12px'
-                      }}
-                    >
-                      {svc.badge}
-                    </div>
-                    <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.35 }}>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
                       {svc.title}
                     </h3>
-                    <p style={{ margin: '0 0 16px 0', fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                       {svc.desc}
                     </p>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {svc.features.map((feat, fIdx) => (
-                        <li key={fIdx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13.5px', color: 'var(--color-deep-blue)' }}>
-                          <span style={{ color: 'var(--color-primary)', fontWeight: 'bold' }}>✓</span>
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid rgba(23, 50, 77, 0.08)' }}>
-                    <span>Подробнее об услуге</span>
-                    <span>→</span>
+                  <div
+                    className="card-arrow"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: 'var(--color-primary)',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      marginTop: 'auto',
+                      paddingTop: '14px',
+                      borderTop: '1px solid rgba(23, 50, 77, 0.06)',
+                      transition: 'transform 0.3s'
+                    }}
+                  >
+                    <span>Подробнее</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                   </div>
                 </div>
               </Link>
             ))}
-          </div>
 
-          {/* Промежуточный баннер */}
-          <div
-            style={{
-              marginTop: '40px',
-              background: 'var(--color-deep-blue)',
-              padding: '36px 40px',
-              borderTop: '3px solid var(--color-gold)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '24px',
-              flexWrap: 'wrap'
-            }}
-          >
-            <div style={{ flex: '1 1 500px' }}>
-              <h3 style={{ margin: '0 0 8px 0', fontSize: '24px', fontFamily: 'var(--font-serif)', color: '#FFFFFF' }}>
-                Не нашли свою ситуацию?
-              </h3>
-              <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.5 }}>
-                Опишите вашу корпоративную задачу. Юрист изучит обстоятельства и предложит безопасный порядок действий.
-              </p>
-            </div>
-            <div>
-              <a
-                href="#form"
-                className="btn btn-primary"
-                style={{
-                  background: '#FFFFFF',
-                  color: 'var(--color-deep-blue)',
-                  borderColor: '#FFFFFF',
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                Получить консультацию
-              </a>
+            {/* Карточка 9: «Не нашли свою ситуацию?», завершающая сетку 3х3 */}
+            <div
+              className="card service-card"
+              style={{
+                height: '100%',
+                minHeight: '200px',
+                padding: '30px',
+                background: 'var(--color-deep-blue)',
+                border: '1px solid transparent',
+                borderTop: '3px solid var(--color-gold)',
+                borderRadius: '0',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                position: 'relative',
+                boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)'
+              }}
+            >
+              <div>
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: '#FFFFFF', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
+                  Не нашли свою ситуацию?
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55 }}>
+                  Опишите вашу корпоративную задачу. Юрист изучит обстоятельства и предложит безопасный порядок действий.
+                </p>
+              </div>
+              <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(255, 255, 255, 0.15)' }}>
+                <a
+                  href="#form"
+                  className="btn"
+                  style={{
+                    background: '#FFFFFF',
+                    color: 'var(--color-deep-blue)',
+                    padding: '8px 16px',
+                    fontSize: '13.5px',
+                    fontWeight: 600,
+                    display: 'inline-block',
+                    width: '100%',
+                    textAlign: 'center',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Получить консультацию
+                </a>
+              </div>
             </div>
           </div>
         </div>
