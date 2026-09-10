@@ -363,7 +363,9 @@ h4 { font-size: 1.25rem; }
 .related-service-card:hover {
   transform: translateY(-6px) translateZ(0) !important;
   box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
-  border-color: rgba(23, 50, 77, 0.25) !important;
+  border-left-color: rgba(23, 50, 77, 0.25) !important;
+  border-right-color: rgba(23, 50, 77, 0.25) !important;
+  border-bottom-color: rgba(23, 50, 77, 0.25) !important;
 }
 .related-service-card .card-arrow {
   transition: color 0.35s ease, transform 0.35s ease !important;
@@ -972,7 +974,7 @@ h4 { font-size: 1.25rem; }
 }
 
 .service-card {
-  border-top: 3px solid transparent !important;
+  border-top: 3px solid var(--color-primary) !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
