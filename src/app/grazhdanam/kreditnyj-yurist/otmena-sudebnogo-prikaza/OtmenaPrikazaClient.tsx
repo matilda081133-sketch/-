@@ -556,20 +556,42 @@ export default function OtmenaPrikazaClient() {
       {/* ═══ БЛОК 2: СРОЧНЫЙ БЛОК «ПРОВЕРЬТЕ СРОК» ═══ */}
       <section className="section bg-white" id="deadline" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '800px', margin: '0 auto 48px', textAlign: 'center' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <div style={{ width: '32px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)', fontWeight: 600 }}>
-                Срочная диагностика
-              </span>
-              <div style={{ width: '32px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
+          <div style={{ marginBottom: '48px' }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+                  <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
+                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
+                    Срочная диагностика
+                  </span>
+                </div>
+                <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2 }}>
+                  <span style={{ display: 'inline-block' }}>Когда Вы получили копию</span> <br />
+                  <span style={{ display: 'inline-block' }}>судебного приказа?</span>
+                </h2>
+              </div>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                paddingTop: '28px',
+                textAlign: 'right'
+              }}>
+                <span style={{ display: 'inline-block' }}>Возражения подаются в течение 10 дней со дня вручения.</span> <br />
+                <span style={{ display: 'inline-block' }}>Срок нельзя считать только по дате на документе:</span> <br />
+                <span style={{ display: 'inline-block' }}>важны обстоятельства и факт доставки.</span>
+              </p>
             </div>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--color-deep-blue)', margin: '0 0 16px', lineHeight: 1.25 }}>
-              Когда Вы получили копию судебного приказа?
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0 }}>
-              По общему правилу возражения подаются в течение 10 дней со дня получения копии приказа. Срок нельзя считать только по дате на документе: важны вручение, сведения почты и обстоятельства получения.
-            </p>
           </div>
 
           <div className="grid grid-2" style={{ gap: '24px', maxWidth: '1000px', margin: '0 auto' }}>
@@ -581,6 +603,7 @@ export default function OtmenaPrikazaClient() {
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   padding: '32px 28px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -619,24 +642,47 @@ export default function OtmenaPrikazaClient() {
       {/* ═══ БЛОК 3: ЧТО ТАКОЕ СУДЕБНЫЙ ПРИКАЗ И ЧТО ДАЕТ ОТМЕНА ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--color-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '850px', marginBottom: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
-                Процессуальный статус
-              </span>
+          <div style={{ marginBottom: '48px' }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+                  <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
+                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
+                    Процессуальный статус
+                  </span>
+                </div>
+                <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2 }}>
+                  <span style={{ display: 'inline-block' }}>Приказ выносят без заседания —</span> <br />
+                  <span style={{ display: 'inline-block' }}>возражения меняют порядок спора</span>
+                </h2>
+              </div>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                paddingTop: '28px',
+                textAlign: 'right'
+              }}>
+                <span style={{ display: 'inline-block' }}>При поступлении возражений судья обязан</span> <br />
+                <span style={{ display: 'inline-block' }}>отменить приказ. Спор переходит в состязательный</span> <br />
+                <span style={{ display: 'inline-block' }}>порядок с исследованием доказательств.</span>
+              </p>
             </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.5vw, 38px)', color: 'var(--color-deep-blue)', margin: '0 0 16px', lineHeight: 1.25 }}>
-              Приказ выносят без заседания — поэтому возражения меняют порядок спора
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0 }}>
-              Судебный приказ мировой судья выносит единолично, без судебного разбирательства и без вызова заёмщика. При своевременном поступлении возражений судья обязан отменить приказ. Кредитор после этого вправе обратиться с иском, где стороны уже представляют расчёты, доказательства и спорят по существу.
-            </p>
           </div>
 
           <div className="grid grid-2" style={{ gap: '28px' }}>
             {/* Колонка 1: Отмена даёт */}
-            <div style={{ background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '4px solid #2E7D32', padding: '36px 30px' }}>
+            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', border: '1px solid var(--color-border)', borderTop: '4px solid #2E7D32', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)', padding: '36px 30px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
                 <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#E8F5E9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#2E7D32', fontWeight: 'bold' }}>
                   ✓
@@ -656,7 +702,7 @@ export default function OtmenaPrikazaClient() {
             </div>
 
             {/* Колонка 2: Отмена не означает */}
-            <div style={{ background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '4px solid #C62828', padding: '36px 30px' }}>
+            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', border: '1px solid var(--color-border)', borderTop: '4px solid #C62828', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)', padding: '36px 30px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
                 <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#FFEBEE', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#C62828', fontWeight: 'bold' }}>
                   ✕
@@ -689,10 +735,18 @@ export default function OtmenaPrikazaClient() {
               flexWrap: 'wrap',
               gap: '24px'
             }}>
-              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2, flex: '1 1 480px', minWidth: '280px' }}>
-                <span style={{ display: 'inline-block' }}>Типовые ситуации, в которых</span> <br />
-                <span style={{ display: 'inline-block' }}>требуется отмена приказа</span>
-              </h2>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+                  <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
+                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
+                    Типовые случаи
+                  </span>
+                </div>
+                <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2 }}>
+                  <span style={{ display: 'inline-block' }}>Типовые ситуации, в которых</span> <br />
+                  <span style={{ display: 'inline-block' }}>требуется отмена приказа</span>
+                </h2>
+              </div>
               <p style={{
                 flex: '0 1 440px',
                 minWidth: '280px',
@@ -701,7 +755,7 @@ export default function OtmenaPrikazaClient() {
                 fontWeight: 400,
                 lineHeight: 1.65,
                 margin: 0,
-                paddingTop: '4px',
+                paddingTop: '28px',
                 textAlign: 'right'
               }}>
                 <span style={{ display: 'inline-block' }}>Поможем оперативно отменить приказ</span> <br />
@@ -792,24 +846,47 @@ export default function OtmenaPrikazaClient() {
       {/* ═══ БЛОК 5: СРОК НЕ ПРОПУЩЕН И СРОК ПРОПУЩЕН ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--color-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
-                Два процессуальных маршрута
-              </span>
+          <div style={{ marginBottom: '48px' }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+                  <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
+                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
+                    Два процессуальных маршрута
+                  </span>
+                </div>
+                <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2 }}>
+                  <span style={{ display: 'inline-block' }}>Своевременные возражения</span> <br />
+                  <span style={{ display: 'inline-block' }}>и поздняя подача</span>
+                </h2>
+              </div>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                paddingTop: '28px',
+                textAlign: 'right'
+              }}>
+                <span style={{ display: 'inline-block' }}>Порядок действий кардинально отличается</span> <br />
+                <span style={{ display: 'inline-block' }}>в зависимости от того, уложились ли Вы в 10 дней</span> <br />
+                <span style={{ display: 'inline-block' }}>или процессуальный срок был пропущен.</span>
+              </p>
             </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--color-deep-blue)', margin: '0 0 16px', lineHeight: 1.25 }}>
-              Своевременные возражения и поздняя подача
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0 }}>
-              Порядок действий кардинально отличается в зависимости от того, уложились ли Вы в 10 дней с момента вручения письма или срок был пропущен.
-            </p>
           </div>
 
           <div className="grid grid-2" style={{ gap: '28px' }}>
             {/* Маршрут 1 */}
-            <div style={{ background: 'var(--color-white)', padding: '36px 30px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)' }}>
+            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', padding: '36px 30px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)' }}>
               <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '12px' }}>
                 Маршрут 1 • В пределах 10 дней
               </span>
@@ -827,8 +904,8 @@ export default function OtmenaPrikazaClient() {
             </div>
 
             {/* Маршрут 2 */}
-            <div style={{ background: 'var(--color-white)', padding: '36px 30px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)' }}>
-              <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '12px' }}>
+            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', padding: '36px 30px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)' }}>
+              <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '12px' }}>
                 Маршрут 2 • Срок пропущен
               </span>
               <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px' }}>
@@ -850,19 +927,42 @@ export default function OtmenaPrikazaClient() {
       {/* ═══ БЛОК 6: СТРУКТУРА ВОЗРАЖЕНИЙ И HTML-ОБРАЗЕЦ ═══ */}
       <section className="section bg-white" id="sample" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '850px', marginBottom: '40px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
-                Процессуальный образец
-              </span>
+          <div style={{ marginBottom: '48px' }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+                  <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
+                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)', fontWeight: 600 }}>
+                    Процессуальный образец
+                  </span>
+                </div>
+                <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2 }}>
+                  <span style={{ display: 'inline-block' }}>Что должно быть</span> <br />
+                  <span style={{ display: 'inline-block' }}>в возражениях</span>
+                </h2>
+              </div>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                paddingTop: '28px',
+                textAlign: 'right'
+              }}>
+                <span style={{ display: 'inline-block' }}>Возражения подаются мировому судье.</span> <br />
+                <span style={{ display: 'inline-block' }}>Документ содержит реквизиты участка, номер дела</span> <br />
+                <span style={{ display: 'inline-block' }}>и указание на несогласие с исполнением.</span>
+              </p>
             </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--color-deep-blue)', margin: '0 0 16px', lineHeight: 1.25 }}>
-              Что должно быть в возражениях
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0 }}>
-              Возражения подаются в простой письменной форме мировому судье. Документ должен содержать точные реквизиты судебного участка, номер дела, сведения о взыскателе, должнике и прямое указание на несогласие с исполнением.
-            </p>
           </div>
 
           {/* Callout с образцом */}
@@ -968,30 +1068,29 @@ export default function OtmenaPrikazaClient() {
                 borderRadius: '0',
                 position: 'relative',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-                minHeight: '100%'
+                transition: 'all 0.3s ease'
               }}>
-                <span style={{
+                <div style={{
                   position: 'absolute',
-                  top: '16px',
-                  right: '20px',
-                  fontSize: '28px',
-                  fontFamily: 'var(--font-serif)',
-                  color: 'var(--color-gold)',
-                  opacity: 0.6,
-                  fontWeight: 600,
-                  lineHeight: 1
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
                   {item.num}
-                </span>
+                </div>
 
                 <h3 style={{
                   fontSize: '18px',
                   fontFamily: 'var(--font-serif)',
                   color: 'var(--color-deep-blue)',
-                  marginTop: '12px',
-                  marginBottom: '12px',
-                  lineHeight: 1.35,
-                  paddingRight: '30px'
+                  margin: '8px 0 12px 0',
+                  lineHeight: 1.35
                 }}>
                   {item.title}
                 </h3>
@@ -1043,15 +1142,42 @@ export default function OtmenaPrikazaClient() {
       {/* ═══ БЛОК 10: ЧТО ПОДГОТОВИТЬ ДЛЯ КОНСУЛЬТАЦИИ ═══ */}
       <section className="section bg-white" id="documents" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Что подготовить</span> <br />
-              <span style={{ display: 'inline-block' }}>для консультации</span>
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Чем полнее исходные сведения, тем точнее юрист рассчитает сроки и подготовит возражения.</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>Если каких-то документов нет, мы поможем запросить их в суде или ФССП.</span>
-            </p>
+          <div style={{ marginBottom: '48px' }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+                  <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
+                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)', fontWeight: 600 }}>
+                    Необходимые материалы
+                  </span>
+                </div>
+                <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2 }}>
+                  <span style={{ display: 'inline-block' }}>Что подготовить</span> <br />
+                  <span style={{ display: 'inline-block' }}>для консультации</span>
+                </h2>
+              </div>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                paddingTop: '28px',
+                textAlign: 'right'
+              }}>
+                <span style={{ display: 'inline-block' }}>Чем полнее исходные сведения, тем точнее</span> <br />
+                <span style={{ display: 'inline-block' }}>юрист рассчитает сроки и подготовит возражения.</span> <br />
+                <span style={{ display: 'inline-block' }}>Недостающие данные поможем запросить в суде.</span>
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
@@ -1185,23 +1311,22 @@ export default function OtmenaPrikazaClient() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              flexWrap: 'wrap',
               gap: '24px',
-              marginBottom: '28px',
+              marginBottom: '24px',
               position: 'relative',
               zIndex: 1
             }}>
               <div style={{ flex: '1 1 auto', minWidth: '280px' }}>
-                <h2 style={{ fontSize: 'clamp(22px, 2.5vw, 30px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                <h3 style={{ fontSize: 'clamp(19px, 2.2vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
                   <span style={{ display: 'inline-block' }}>Что происходит после</span> <br />
                   <span style={{ display: 'inline-block' }}>отмены судебного приказа</span>
-                </h2>
+                </h3>
               </div>
               <div className="stages-subtitle-right" style={{
-                fontSize: '14px',
+                fontSize: '13.5px',
                 color: 'rgba(255, 255, 255, 0.85)',
                 maxWidth: '520px',
-                lineHeight: 1.55,
+                lineHeight: 1.5,
                 textAlign: 'right',
                 flex: '0 0 auto'
               }}>
@@ -1212,14 +1337,14 @@ export default function OtmenaPrikazaClient() {
               </div>
             </div>
 
-            <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1, marginBottom: '28px' }}>
+            <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
               {afterCancelScenarios.map((sc, idx) => (
                 <div
                   key={idx}
                   style={{
                     background: 'rgba(255, 255, 255, 0.05)',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
-                    padding: '24px 20px',
+                    padding: '22px 20px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'
@@ -1242,24 +1367,14 @@ export default function OtmenaPrikazaClient() {
                       0{idx + 1}
                     </span>
                   </div>
-                  <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35 }}>
+                  <h4 style={{ fontSize: '16.5px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35 }}>
                     {sc.title}
-                  </h3>
+                  </h4>
                   <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.55, margin: 0 }}>
                     {sc.desc}
                   </p>
                 </div>
               ))}
-            </div>
-
-            <div style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-              <a
-                href="#form"
-                className="btn btn-primary"
-                style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 600 }}
-              >
-                Определить действия после отмены приказа
-              </a>
             </div>
           </div>
         </div>
