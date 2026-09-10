@@ -1316,91 +1316,172 @@ export default function OtmenaPrikazaClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 15: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      {/* ═══ БЛОК 13: СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--color-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
-                Комплексная защита
-              </span>
+          <div style={{ marginBottom: '48px' }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+                  <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
+                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
+                    Комплексная защита
+                  </span>
+                </div>
+                <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2 }}>
+                  <span style={{ display: 'inline-block' }}>Связанные юридические</span> <br />
+                  <span style={{ display: 'inline-block' }}>услуги</span>
+                </h2>
+              </div>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                paddingTop: '28px',
+                textAlign: 'right'
+              }}>
+                <span style={{ display: 'inline-block' }}>Если после отмены приказа кредитор</span> <br />
+                <span style={{ display: 'inline-block' }}>обратился с иском либо требуется</span> <br />
+                <span style={{ display: 'inline-block' }}>комплексное списание всех долгов:</span>
+              </p>
             </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--color-deep-blue)', margin: '0 0 16px', lineHeight: 1.25 }}>
-              Связанные юридические услуги
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0 }}>
-              Если после отмены приказа кредитор обратился с иском либо требуется комплексное списание всех долгов:
-            </p>
           </div>
 
           <div className="grid grid-3" style={{ gap: '24px' }}>
-            <Link href="/grazhdanam/kreditnyj-yurist/" style={{ textDecoration: 'none' }}>
-              <div className="hover-lift" style={{ background: 'var(--color-white)', padding: '30px 24px', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px' }}>
-                    Кредитный юрист
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                    Защита по искам банков, проверка кредитных договоров, снижение неустойки и оспаривание долгов в суде.
-                  </p>
-                </div>
-                <div style={{ marginTop: '16px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
-                  Подробнее →
-                </div>
+            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', padding: '32px 26px', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px' }}>
+                  Кредитный юрист
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 24px' }}>
+                  Защита по искам банков, проверка кредитных договоров, снижение неустойки и оспаривание долгов в суде.
+                </p>
               </div>
-            </Link>
+              <Link
+                href="/grazhdanam/kreditnyj-yurist/"
+                className="btn btn-outline"
+                style={{ width: '100%', textAlign: 'center', padding: '12px 20px', fontSize: '14px', fontWeight: 600 }}
+              >
+                Подробнее о направлении →
+              </Link>
+            </div>
 
-            <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/" style={{ textDecoration: 'none' }}>
-              <div className="hover-lift" style={{ background: 'var(--color-white)', padding: '30px 24px', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px' }}>
-                    Банкротство граждан
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                    Законное списание всех кредитов и займов через Арбитражный суд или бесплатно через МФЦ.
-                  </p>
-                </div>
-                <div style={{ marginTop: '16px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
-                  Подробнее →
-                </div>
+            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', padding: '32px 26px', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px' }}>
+                  Банкротство граждан
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 24px' }}>
+                  Законное списание всех кредитов и займов через Арбитражный суд или бесплатно через МФЦ.
+                </p>
               </div>
-            </Link>
+              <Link
+                href="/grazhdanam/bankrotstvo-fizicheskih-lic/"
+                className="btn btn-outline"
+                style={{ width: '100%', textAlign: 'center', padding: '12px 20px', fontSize: '14px', fontWeight: 600 }}
+              >
+                Подробнее о направлении →
+              </Link>
+            </div>
 
-            <Link href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/" style={{ textDecoration: 'none' }}>
-              <div className="hover-lift" style={{ background: 'var(--color-white)', padding: '30px 24px', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px' }}>
-                    Исполнительное производство
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                    Снятие арестов с карт и имущества, прекращение исполнительных производств, защита от незаконных действий приставов.
-                  </p>
-                </div>
-                <div style={{ marginTop: '16px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
-                  Подробнее →
-                </div>
+            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', padding: '32px 26px', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px' }}>
+                  Исполнительное производство
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 24px' }}>
+                  Снятие арестов с карт и имущества, прекращение исполнительных производств, защита от незаконных действий приставов.
+                </p>
               </div>
-            </Link>
+              <Link
+                href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/"
+                className="btn btn-outline"
+                style={{ width: '100%', textAlign: 'center', padding: '12px 20px', fontSize: '14px', fontWeight: 600 }}
+              >
+                Подробнее о направлении →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 16: ОФИС И ФИНАЛЬНАЯ ФОРМА ═══ */}
-      <section id="form" className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 14: ОФИС В ЛИПЕЦКЕ И ФИНАЛЬНАЯ ФОРМА ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
-          <ContactsForm
-            title="Проверьте срок отмены судебного приказа"
-            subtitle="Укажите дату получения копии приказа или дату, когда Вы впервые узнали о взыскании. Мы уточним документы и предложим следующий процессуальный шаг."
-            buttonText="Проверить срок и документы"
-            commentPlaceholder="Суд, взыскатель, сумма, дата получения приказа или списания средств..."
-            hiddenFields={[
-              { name: 'page_id', value: 'CIV-07-01' },
-              { name: 'service', value: 'cancel_court_order' },
-              { name: 'source_block', value: 'final_form' },
-              { name: 'term_state', value: activeDeadlineTab }
-            ]}
-          />
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Проверьте судебный приказ</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и сроки до списания средств</span>
+              </h2>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Укажите дату получения копии приказа или дату, когда вы впервые узнали о взыскании. Юрист проверит срок, основания и подготовит процессуальные возражения.
+              </p>
+
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста в Липецке</strong>
+                </div>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
+                </p>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
+                  г. Липецк, ул. Советская, д. 35, офис 213 (приём по записи)
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
+                Не указывайте в форме паспортные данные, номера счетов и карт. Документы можно передать юристу после согласования защищённого канала связи.
+              </div>
+            </div>
+
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Проверить срок и документы"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
+                buttonText="Проверить срок и документы"
+                commentPlaceholder="Суд, взыскатель, сумма, дата получения приказа или списания средств..."
+                hiddenFields={[
+                  { name: 'source_page', value: '/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/' },
+                  { name: 'page_type', value: 'service' },
+                  { name: 'direction', value: 'credit_lawyer' },
+                  { name: 'page_id', value: 'CIV-07-01' },
+                  { name: 'curator_id', value: 'nacheshnikov' },
+                  { name: 'service', value: 'Отмена судебного приказа в Липецке' },
+                  { name: 'term_state', value: activeDeadlineTab }
+                ]}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
