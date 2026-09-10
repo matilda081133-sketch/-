@@ -58,7 +58,7 @@ export default function ZashchitaKontrolyaClient() {
   const situations = [
     {
       tag: 'Незаконная смена директора',
-      title: <>В ЕГРЮЛ появился новый директор <br />без вашего ведома</>,
+      title: <>В ЕГРЮЛ появился новый <br />директор без вашего ведома</>,
       desc: 'По поддельным протоколам или решениям назначен посторонний руководитель, переоформивший доступ к банковским счетам.'
     },
     {
@@ -68,7 +68,7 @@ export default function ZashchitaKontrolyaClient() {
     },
     {
       tag: 'Блокировка доступа',
-      title: <>Собственника не пускают в офис <br />и заблокировали ЭЦП</>,
+      title: <>Собственника <br />не пускают в офис и заблокировали ЭЦП</>,
       desc: 'Смена охраны, отзыв электронных цифровых подписей, отключение от 1С и банковского обслуживания законного владельца бизнеса.'
     },
     {
@@ -83,7 +83,7 @@ export default function ZashchitaKontrolyaClient() {
     },
     {
       tag: 'Недружественное поглощение',
-      title: <>Комплексная рейдерская атака <br />на предприятие</>,
+      title: <>Комплексная рейдерская <br />атака на предприятие</>,
       desc: 'Синхронная подача заявлений в налоговую, банки, суды и правоохранительные органы с целью парализовать бизнес и заставить отдать долю.'
     }
   ];
@@ -271,12 +271,7 @@ export default function ZashchitaKontrolyaClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Защита корпоративного контроля</span>
           </>
         }
-        superTitle={
-          <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
-            <span style={{ display: 'inline-block' }}>ЭКСТРЕННАЯ ЗАЩИТА БИЗНЕСА И АКТИВОВ •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и арбитраж</span>
-          </span>
-        }
+        superTitle="ЭКСТРЕННАЯ ЗАЩИТА БИЗНЕСА И АКТИВОВ • Липецк и арбитраж"
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
@@ -517,7 +512,7 @@ export default function ZashchitaKontrolyaClient() {
         subtitle="Фиксированные тарифы, оперативный выезд и немедленный старт работы."
         tiers={pricingTiers}
         ctaTitle="Рассчитаем стоимость защиты управления компанией"
-        ctaSubtitle="Оставьте заявку — куратор направления свяжется с вами в течение 10 минут для немедленного реагирования."
+        ctaSubtitle={<><span style={{ display: 'inline-block' }}>Оставьте заявку — куратор направления свяжется с вами</span> <br /><span style={{ display: 'inline-block' }}>в течение 10 минут для немедленного реагирования.</span></>}
         ctaButtonText="Срочная консультация"
         ctaButtonLink="#form"
       />
