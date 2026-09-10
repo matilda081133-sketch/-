@@ -414,7 +414,7 @@ export default function AdvokatVzyatkiClient() {
       <SpecialistBlock
         title="Куратор практики"
         name="Аркадий Евгеньевич Бобкин"
-        position={<>Директор, управляющий партнёр ЮК «Де-Юре»,<br />куратор практики уголовного права</>}
+        position={<>Директор, управляющий партнёр<br />ЮК «Де-Юре»,<br />куратор практики уголовного права</>}
         imageUrl="/images/bobkin.jpg"
         imagePosition="center 15%"
         profileHref="/specialisty/bobkin-arkadiy-evgenevich/"

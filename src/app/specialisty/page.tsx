@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 const specialistListRoles: Record<string, string> = {
-  'bobkin-arkadiy-evgenevich': 'Директор, управляющий партнёр ЮК «Де-Юре»',
+  'bobkin-arkadiy-evgenevich': 'Директор, управляющий партнёр\nЮК «Де-Юре»',
   'konopkin-dmitriy-sergeevich': 'Адвокат',
   'smolyaninova-marina-valerevna': 'Ведущий юрист ЮК «Де-Юре»',
   'gusev-oleg-yurevich': 'Адвокат',
@@ -365,7 +365,8 @@ export default function SpecialistyPage() {
                           fontSize: '14px', 
                           color: '#4A607A', 
                           fontWeight: 500, 
-                          marginBottom: '16px'
+                          marginBottom: '16px',
+                          whiteSpace: 'pre-line'
                         }}>
                           {specialistListRoles[sp.slug] || sp.status}
                         </div>
