@@ -610,11 +610,12 @@ export default function KorporativnyjYuristClient() {
               <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(255, 255, 255, 0.15)' }}>
                 <a
                   href="#form"
-                  className="btn"
+                  className="btn white-btn-custom"
                   style={{
-                    background: '#FFFFFF',
-                    color: 'var(--color-deep-blue)',
-                    padding: '8px 16px',
+                    backgroundColor: '#FFFFFF',
+                    color: '#10273B',
+                    border: '1px solid #FFFFFF',
+                    padding: '10px 18px',
                     fontSize: '13.5px',
                     fontWeight: 600,
                     display: 'inline-block',
@@ -623,12 +624,30 @@ export default function KorporativnyjYuristClient() {
                     textDecoration: 'none'
                   }}
                 >
-                  Получить консультацию
+                  <span style={{ color: '#10273B', fontWeight: 600 }}>Получить консультацию</span>
                 </a>
               </div>
             </div>
           </div>
         </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .white-btn-custom {
+            background-color: #FFFFFF !important;
+            color: #10273B !important;
+            border: 1px solid #FFFFFF !important;
+          }
+          .white-btn-custom span {
+            color: #10273B !important;
+          }
+          .white-btn-custom:hover {
+            background-color: var(--color-gold) !important;
+            color: #10273B !important;
+            border-color: var(--color-gold) !important;
+          }
+          .white-btn-custom:hover span {
+            color: #10273B !important;
+          }
+        `}} />
       </section>
 
       {/* ═══ БЛОК 4: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
@@ -682,47 +701,67 @@ export default function KorporativnyjYuristClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 9: ФИНАЛЬНАЯ ФОРМА ═══ */}
-      <section className="section bg-light" id="form">
+      {/* ═══ БЛОК 9: ФИНАЛЬНАЯ ФОРМА (СВЯЗАТЬСЯ С НАМИ) — ШАБЛОН ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'center' }}>
-            <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontWeight: 600, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' }}>
-                <span style={{ width: '20px', height: '2px', backgroundColor: 'var(--color-primary)' }}></span>
-                Консультация
-                <span style={{ width: '20px', height: '2px', backgroundColor: 'var(--color-primary)' }}></span>
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
               </div>
-              <h2 className="section-title" style={{ marginBottom: '16px' }}>
-                Обсудите задачу с корпоративным юристом
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получите первичную</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>оценку ситуации</span>
               </h2>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                Оставьте заявку на первичный разбор ситуации. Специалист свяжется с вами, уточнит детали и предложит безопасный план действий.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко опишите ситуацию и оставьте контакты. Юрист изучит первичные документы и свяжется с вами для обсуждения корпоративной задачи.
               </p>
-              
-              <div style={{ background: 'var(--color-white)', padding: '24px', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-primary)', marginBottom: '20px' }}>
-                <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
-                  Прямой контакт:
+
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
-                <a href="tel:+74742201525" style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-primary)', textDecoration: 'none' }}>
-                  +7 (4742) 20-15-25
-                </a>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
-                  Липецк, ул. Советская, д. 35, офис 213
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                </p>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
+                  Липецк, ул. Советская, д. 35, офис 213 (приём по записи)
                 </div>
               </div>
 
-              <div style={{ background: 'rgba(16, 39, 59, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-deep-blue)', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                 <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
-                Не указывайте в форме паспортные данные, сведения о здоровье и коммерческую тайну. Их можно передать юристу после установления защищённого способа связи.
-                <span style={{ display: 'block', marginTop: '4px', color: 'rgba(44,51,64,0.55)', fontSize: '12px' }}>Основание: статья 10 № 152-ФЗ.</span>
+                Не указывайте в форме конфиденциальные данные, коммерческую тайну и закрытые документы. Документы можно передать юристу после согласования защищённого способа связи.
               </div>
             </div>
 
-            <div style={{ background: 'var(--color-white)', padding: '40px', border: '1px solid var(--color-border)', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
               <ContactsForm
-                title="Оставить заявку"
-                subtitle="Перезвоним в течение 15 минут в рабочее время"
-                hiddenFields={[{ name: 'service', value: 'Корпоративный юрист в Липецке' }]}
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте имя и номер телефона. Юрист свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
+                buttonText="Обсудить корпоративную задачу"
+                commentPlaceholder="Кратко опишите ситуацию: состав участников, суть спора или планируемой процедуры…"
+                hiddenFields={[
+                  { name: 'source_page', value: '/biznesu/korporativnyj-yurist/' },
+                  { name: 'page_type', value: 'hub' },
+                  { name: 'direction', value: 'corporate' },
+                  { name: 'service', value: 'Корпоративный юрист в Липецке' }
+                ]}
               />
             </div>
           </div>
