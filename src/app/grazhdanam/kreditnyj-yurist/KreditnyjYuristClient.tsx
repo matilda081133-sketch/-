@@ -472,7 +472,7 @@ export default function KreditnyjYuristClient() {
           {
             text: (
               <span>
-                <strong>До начала работы объясняем</strong> возможный результат, ограничения и следующий этап
+                <strong>До начала работы объясняем</strong> возможный результат,<br />ограничения и следующий этап
               </span>
             )
           }
