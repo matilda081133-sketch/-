@@ -45,7 +45,7 @@ export default function CasesBlock({
             </h2>
           </div>
           {showAllLink && (
-            <a href={showAllLink} className="btn btn-outline" style={{ padding: '12px 24px', height: 'fit-content' }}>
+            <a href={showAllLink} className="btn btn-outline" style={{ padding: '12px 24px', height: 'fit-content', marginLeft: 'auto' }}>
               {showAllText}
             </a>
           )}

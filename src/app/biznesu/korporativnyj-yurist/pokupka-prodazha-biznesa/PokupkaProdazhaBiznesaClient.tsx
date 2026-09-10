@@ -8,6 +8,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import MilitaryHero from '@/components/MilitaryHero';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
+import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
 
@@ -138,24 +139,24 @@ export default function PokupkaProdazhaBiznesaClient() {
     }
   ];
 
-  const processSteps = [
+  const processSteps: ProcessStep[] = [
     {
-      step: '01',
+      num: '01',
       title: 'Предварительные переговоры и NDA',
       desc: 'Подписываем соглашение о неразглашении конфиденциальной информации (NDA) и фиксируем базовые намерения в Term Sheet.'
     },
     {
-      step: '02',
+      num: '02',
       title: 'Комплексный Due Diligence',
       desc: 'Проводим полный правовой, налоговый и имущественный аудит бизнеса, формируем отчет с картой рисков и рекомендациями.'
     },
     {
-      step: '03',
+      num: '03',
       title: 'Структурирование и договоры',
       desc: 'Разрабатываем договор купли-продажи долей/активов, соглашения о заверениях и гарантиях (ст. 431.2 ГК РФ), настраиваем эскроу.'
     },
     {
-      step: '04',
+      num: '04',
       title: 'Закрытие сделки и передача контроля',
       desc: 'Сопровождаем удостоверение сделки у нотариуса, контролируем регистрацию в ФНС, передачу ключей, ЭЦП, банк-клиента и документации.'
     }
@@ -472,79 +473,22 @@ export default function PokupkaProdazhaBiznesaClient() {
 
       {/* ═══ БЛОК 5: КЕЙСЫ ═══ */}
       <CasesBlock
-        title="Примеры сопровождения сделок купли-продажи бизнеса"
+        title={<><span style={{ display: 'inline-block' }}>Примеры сопровождения</span> <br /><span style={{ display: 'inline-block' }}>покупки и продажи бизнеса</span></>}
         cases={practiceCases}
         showAllLink="/praktika"
         showAllText="Смотреть всю практику →"
       />
 
-      {/* ═══ БЛОК 6: КАК ПРОХОДИТ РАБОТА ═══ */}
-      <section className="section bg-light" id="process">
-        <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Порядок сопровождения сделки с бизнесом
-            </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Последовательный алгоритм, гарантирующий юридическую чистоту и финансовую безопасность.
-            </p>
-          </div>
-
-          <div className="grid grid-4" style={{ gap: '24px' }}>
-            {processSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="card"
-                style={{
-                  padding: '32px 24px',
-                  backgroundColor: 'var(--color-white)',
-                  border: '1px solid var(--color-border)'
-                }}
-              >
-                <div style={{ fontSize: '36px', fontWeight: 800, color: 'var(--color-primary)', opacity: 0.25, fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1 }}>
-                  {step.step}
-                </div>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
-                  {step.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Banner */}
-          <div style={{ marginTop: '48px' }}>
-            <div
-              className="card service-card cta-banner-card"
-              style={{
-                padding: '32px 36px',
-                background: 'var(--color-deep-blue)',
-                borderTop: '3px solid var(--color-gold)',
-                boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '24px'
-              }}
-            >
-              <div>
-                <h3 style={{ color: 'var(--color-white)', fontSize: '22px', marginBottom: '8px' }}>
-                  Нашли подходящий бизнес для покупки или ведете переговоры?
-                </h3>
-                <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '15px', margin: 0 }}>
-                  Проведем экспресс-аудит объекта и защитим вас от скрытых долгов продавца.
-                </p>
-              </div>
-              <a href="#form" className="btn white-btn-custom">
-                Заказать аудит
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ═══ БЛОК 6: КАК ПРОХОДИТ РАБОТА (ПОРЯДОК РАБОТЫ) ═══ */}
+      <ProcessBlock
+        title={<><span style={{ display: 'inline-block' }}>Порядок сопровождения</span> <br /><span style={{ display: 'inline-block' }}>сделки с бизнесом</span></>}
+        subtitle="Последовательный алгоритм, гарантирующий юридическую чистоту и финансовую безопасность."
+        steps={processSteps}
+        ctaTitle="Нашли подходящий бизнес для покупки или ведете переговоры?"
+        ctaSubtitle="Проведем экспресс-аудит объекта и защитим вас от скрытых долгов продавца."
+        ctaButtonText="Заказать аудит"
+        ctaButtonHref="#form"
+      />
 
       {/* ═══ БЛОК 7: ТАРИФЫ ═══ */}
       <PricingBlock

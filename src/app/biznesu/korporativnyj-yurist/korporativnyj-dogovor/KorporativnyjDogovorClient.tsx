@@ -8,6 +8,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import MilitaryHero from '@/components/MilitaryHero';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
+import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
 
@@ -138,24 +139,24 @@ export default function KorporativnyjDogovorClient() {
     }
   ];
 
-  const processSteps = [
+  const processSteps: ProcessStep[] = [
     {
-      step: '01',
+      num: '01',
       title: 'Интервью и сбор договоренностей',
       desc: 'Проводим детальный опрос всех участников: цели партнерства, доли, финансирование, зоны ответственности и сценарии выхода.'
     },
     {
-      step: '02',
+      num: '02',
       title: 'Аудит устава и подготовка матрицы условий',
       desc: 'Сопоставляем договоренности с действующим уставом и законодательством, формируем матрицу прав и обязанностей (Term Sheet).'
     },
     {
-      step: '03',
+      num: '03',
       title: 'Разработка текста договора и синхронизация устава',
       desc: 'Пишем индивидуальный проект корпоративного договора, устраняем противоречия с уставом и разрабатываем сопутствующие решения.'
     },
     {
-      step: '04',
+      num: '04',
       title: 'Согласование и подписание',
       desc: 'Проводим раунды правового согласования со всеми сторонами и сопровождаем подписание и нотариальное удостоверение.'
     }
@@ -472,79 +473,22 @@ export default function KorporativnyjDogovorClient() {
 
       {/* ═══ БЛОК 5: КЕЙСЫ ═══ */}
       <CasesBlock
-        title="Примеры разработанных корпоративных соглашений"
+        title={<><span style={{ display: 'inline-block' }}>Примеры разработки</span> <br /><span style={{ display: 'inline-block' }}>корпоративных договоров</span></>}
         cases={practiceCases}
         showAllLink="/praktika"
         showAllText="Смотреть всю практику →"
       />
 
-      {/* ═══ БЛОК 6: КАК ПРОХОДИТ РАБОТА ═══ */}
-      <section className="section bg-light" id="process">
-        <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Этапы подготовки корпоративного договора
-            </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Четкая последовательность от детального брифинга до нотариального удостоверения.
-            </p>
-          </div>
-
-          <div className="grid grid-4" style={{ gap: '24px' }}>
-            {processSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="card"
-                style={{
-                  padding: '32px 24px',
-                  backgroundColor: 'var(--color-white)',
-                  border: '1px solid var(--color-border)'
-                }}
-              >
-                <div style={{ fontSize: '36px', fontWeight: 800, color: 'var(--color-primary)', opacity: 0.25, fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1 }}>
-                  {step.step}
-                </div>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
-                  {step.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Banner */}
-          <div style={{ marginTop: '48px' }}>
-            <div
-              className="card service-card cta-banner-card"
-              style={{
-                padding: '32px 36px',
-                background: 'var(--color-deep-blue)',
-                borderTop: '3px solid var(--color-gold)',
-                boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '24px'
-              }}
-            >
-              <div>
-                <h3 style={{ color: 'var(--color-white)', fontSize: '22px', marginBottom: '8px' }}>
-                  Планируете запуск бизнеса с партнёром или привлечение инвестора?
-                </h3>
-                <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '15px', margin: 0 }}>
-                  Подготовим матрицу условий и проект договора, защищающий ваши инвестиции и контроль.
-                </p>
-              </div>
-              <a href="#form" className="btn white-btn-custom">
-                Заказать аудит
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ═══ БЛОК 6: КАК ПРОХОДИТ РАБОТА (ПОРЯДОК РАБОТЫ) ═══ */}
+      <ProcessBlock
+        title={<><span style={{ display: 'inline-block' }}>Этапы подготовки</span> <br /><span style={{ display: 'inline-block' }}>корпоративного договора</span></>}
+        subtitle="Четкая последовательность от детального брифинга до нотариального удостоверения."
+        steps={processSteps}
+        ctaTitle="Планируете запуск бизнеса с партнёром или привлечение инвестора?"
+        ctaSubtitle="Подготовим матрицу условий и проект договора, защищающий ваши инвестиции и контроль."
+        ctaButtonText="Заказать аудит"
+        ctaButtonHref="#form"
+      />
 
       {/* ═══ БЛОК 7: ТАРИФЫ ═══ */}
       <PricingBlock

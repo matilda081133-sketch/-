@@ -8,6 +8,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import MilitaryHero from '@/components/MilitaryHero';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
+import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
 
@@ -134,24 +135,24 @@ export default function ReorganizaciyaBiznesaClient() {
     }
   ];
 
-  const processSteps = [
+  const processSteps: ProcessStep[] = [
     {
-      step: '01',
+      num: '01',
       title: 'Разработка схемы и передаточного акта',
       desc: 'Анализируем цели бизнеса, активы, обязательства и формируем правовую модель реорганизации и передаточный акт.'
     },
     {
-      step: '02',
+      num: '02',
       title: 'Корпоративные решения и уведомление ФНС',
       desc: 'Проводим общие собрания участников, оформляем протоколы и подаем форму уведомления о начале реорганизации в регистрирующий орган.'
     },
     {
-      step: '03',
+      num: '03',
       title: 'Публикации и уведомление кредиторов',
       desc: 'Размещаем обязательные сообщения в Федресурсе и «Вестнике государственной регистрации» дважды с интервалом в 1 месяц.'
     },
     {
-      step: '04',
+      num: '04',
       title: 'Финальная регистрация в ЕГРЮЛ',
       desc: 'Подаем итоговый комплект документов в налоговую, получаем листы записи ЕГРЮЛ и сопровождаем переоформление активов.'
     }
@@ -468,79 +469,22 @@ export default function ReorganizaciyaBiznesaClient() {
 
       {/* ═══ БЛОК 5: КЕЙСЫ ═══ */}
       <CasesBlock
-        title="Примеры реорганизации предприятий"
+        title={<><span style={{ display: 'inline-block' }}>Примеры проектов</span> <br /><span style={{ display: 'inline-block' }}>по реорганизации предприятий</span></>}
         cases={practiceCases}
         showAllLink="/praktika"
         showAllText="Смотреть всю практику →"
       />
 
-      {/* ═══ БЛОК 6: КАК ПРОХОДИТ РАБОТА ═══ */}
-      <section className="section bg-light" id="process">
-        <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              Этапы сопровождения реорганизации
-            </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Полный контроль всех этапов и сроков взаимодействия с государственными органами.
-            </p>
-          </div>
-
-          <div className="grid grid-4" style={{ gap: '24px' }}>
-            {processSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="card"
-                style={{
-                  padding: '32px 24px',
-                  backgroundColor: 'var(--color-white)',
-                  border: '1px solid var(--color-border)'
-                }}
-              >
-                <div style={{ fontSize: '36px', fontWeight: 800, color: 'var(--color-primary)', opacity: 0.25, fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1 }}>
-                  {step.step}
-                </div>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
-                  {step.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Banner */}
-          <div style={{ marginTop: '48px' }}>
-            <div
-              className="card service-card cta-banner-card"
-              style={{
-                padding: '32px 36px',
-                background: 'var(--color-deep-blue)',
-                borderTop: '3px solid var(--color-gold)',
-                boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '24px'
-              }}
-            >
-              <div>
-                <h3 style={{ color: 'var(--color-white)', fontSize: '22px', marginBottom: '8px' }}>
-                  Планируете изменение структуры компании или выделение активов?
-                </h3>
-                <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '15px', margin: 0 }}>
-                  Разработаем безопасную дорожную карту реорганизации с защитой от претензий кредиторов и ФНС.
-                </p>
-              </div>
-              <a href="#form" className="btn white-btn-custom">
-                Получить план реорганизации
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ═══ БЛОК 6: КАК ПРОХОДИТ РАБОТА (ПОРЯДОК РАБОТЫ) ═══ */}
+      <ProcessBlock
+        title={<><span style={{ display: 'inline-block' }}>Этапы сопровождения</span> <br /><span style={{ display: 'inline-block' }}>реорганизации бизнеса</span></>}
+        subtitle="Полный контроль всех этапов и сроков взаимодействия с государственными органами."
+        steps={processSteps}
+        ctaTitle="Планируете изменение структуры компании или выделение активов?"
+        ctaSubtitle="Разработаем безопасную дорожную карту реорганизации с защитой от претензий кредиторов и ФНС."
+        ctaButtonText="Получить план реорганизации"
+        ctaButtonHref="#form"
+      />
 
       {/* ═══ БЛОК 7: ТАРИФЫ ═══ */}
       <PricingBlock

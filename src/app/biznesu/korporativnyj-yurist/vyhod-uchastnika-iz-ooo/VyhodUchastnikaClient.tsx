@@ -8,6 +8,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import MilitaryHero from '@/components/MilitaryHero';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
+import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
 
@@ -138,24 +139,24 @@ export default function VyhodUchastnikaClient() {
     }
   ];
 
-  const processSteps = [
+  const processSteps: ProcessStep[] = [
     {
-      step: '01',
+      num: '01',
       title: 'Анализ устава на право выхода',
       desc: 'Проверяем устав общества на наличие права на выход, отсутствие запретов и наличие нескольких участников в ООО.'
     },
     {
-      step: '02',
+      num: '02',
       title: 'Подготовка заявления для нотариуса',
       desc: 'Составляем проект заявления о выходе, собираем документы, подтверждающие статус участника, и организуем визит к нотариусу.'
     },
     {
-      step: '03',
+      num: '03',
       title: 'Нотариальное действие и подача в ФНС',
       desc: 'Нотариус удостоверяет заявление о выходе и в течение 2 рабочих дней направляет электронное заявление по форме Р13014 в налоговую.'
     },
     {
-      step: '04',
+      num: '04',
       title: 'Контроль ЕГРЮЛ и уведомление общества',
       desc: 'Получаем лист записи ЕГРЮЛ о переходе доли обществу и направляем официальное требование о расчете действительной стоимости доли.'
     }
@@ -472,79 +473,22 @@ export default function VyhodUchastnikaClient() {
 
       {/* ═══ БЛОК 5: КЕЙСЫ ═══ */}
       <CasesBlock
-        title="Примеры оформления выхода из ООО"
+        title={<><span style={{ display: 'inline-block' }}>Примеры оформления</span> <br /><span style={{ display: 'inline-block' }}>выхода участника из ООО</span></>}
         cases={practiceCases}
         showAllLink="/praktika"
         showAllText="Смотреть всю практику →"
       />
 
-      {/* ═══ БЛОК 6: КАК ПРОХОДИТ РАБОТА ═══ */}
-      <section className="section bg-light" id="process">
-        <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto 50px auto' }}>
-            <h2 className="section-title" style={{ marginBottom: '16px' }}>
-              От проверки устава до оформления последствий
-            </h2>
-            <p className="section-subtitle" style={{ color: 'var(--color-text-secondary)', margin: '0 auto' }}>
-              Прозрачные этапы сопровождения процедуры выхода участника из состава ООО.
-            </p>
-          </div>
-
-          <div className="grid grid-4" style={{ gap: '24px' }}>
-            {processSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="card"
-                style={{
-                  padding: '32px 24px',
-                  backgroundColor: 'var(--color-white)',
-                  border: '1px solid var(--color-border)'
-                }}
-              >
-                <div style={{ fontSize: '36px', fontWeight: 800, color: 'var(--color-primary)', opacity: 0.25, fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1 }}>
-                  {step.step}
-                </div>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.4 }}>
-                  {step.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Banner */}
-          <div style={{ marginTop: '48px' }}>
-            <div
-              className="card service-card cta-banner-card"
-              style={{
-                padding: '32px 36px',
-                background: 'var(--color-deep-blue)',
-                borderTop: '3px solid var(--color-gold)',
-                boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '24px'
-              }}
-            >
-              <div>
-                <h3 style={{ color: 'var(--color-white)', fontSize: '22px', marginBottom: '8px' }}>
-                  Хотите выйти из состава учредителей ООО?
-                </h3>
-                <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '15px', margin: 0 }}>
-                  Проверим устав компании и подготовим заявление для нотариуса за 1 день.
-                </p>
-              </div>
-              <a href="#form" className="btn white-btn-custom">
-                Проверить устав
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ═══ БЛОК 6: КАК ПРОХОДИТ РАБОТА (ПОРЯДОК РАБОТЫ) ═══ */}
+      <ProcessBlock
+        title={<><span style={{ display: 'inline-block' }}>От проверки устава</span> <br /><span style={{ display: 'inline-block' }}>до оформления последствий</span></>}
+        subtitle="Прозрачные этапы сопровождения процедуры выхода участника из состава ООО."
+        steps={processSteps}
+        ctaTitle="Хотите выйти из состава учредителей ООО?"
+        ctaSubtitle="Проверим устав компании и подготовим заявление для нотариуса за 1 день."
+        ctaButtonText="Проверить устав"
+        ctaButtonHref="#form"
+      />
 
       {/* ═══ БЛОК 7: ТАРИФЫ ═══ */}
       <PricingBlock
