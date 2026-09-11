@@ -861,46 +861,51 @@ export default function KreditnyjYuristClient() {
             style={{
               background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
               color: '#FFFFFF',
-              padding: '44px 40px',
+              padding: 'clamp(28px, 4vw, 44px) clamp(20px, 3.5vw, 40px)',
               borderTop: '4px solid var(--color-gold)',
               boxShadow: '0 8px 32px rgba(16, 39, 59, 0.18)',
               display: 'flex',
-              flexDirection: 'column',
-              gap: '24px'
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '32px'
             }}
           >
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
-              <div>
-                <span style={{
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.12em',
-                  background: 'rgba(193, 160, 102, 0.2)',
-                  padding: '4px 12px',
-                  display: 'inline-block',
-                  marginBottom: '12px'
-                }}>
-                  Срочная ситуация • 10 дней на возражения
-                </span>
-                <h2 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: 'clamp(24px, 3.2vw, 32px)',
-                  color: '#FFFFFF',
-                  margin: 0,
-                  lineHeight: 1.3
-                }}>
-                  Получили судебный приказ — сначала проверьте срок
-                </h2>
-              </div>
+            <div style={{ flex: '1 1 540px', minWidth: '280px' }}>
+              <span style={{
+                fontSize: '12px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.12em',
+                background: 'rgba(193, 160, 102, 0.2)',
+                padding: '4px 12px',
+                display: 'inline-block',
+                marginBottom: '12px'
+              }}>
+                Срочная ситуация • 10 дней на возражения
+              </span>
+              <h2 style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(24px, 3.2vw, 32px)',
+                color: '#FFFFFF',
+                margin: '0 0 16px 0',
+                lineHeight: 1.3
+              }}>
+                Получили судебный приказ — сначала проверьте срок
+              </h2>
+              <p style={{
+                fontSize: '15.5px',
+                color: 'rgba(255, 255, 255, 0.9)',
+                lineHeight: 1.65,
+                margin: 0,
+                maxWidth: '780px'
+              }}>
+                Судебный приказ выносится без обычного судебного заседания. Если Вы не согласны с взысканием, важно установить дату получения копии и своевременно подать возражения. При пропуске срока оцениваются причины пропуска и подтверждающие документы.
+              </p>
             </div>
 
-            <p style={{ fontSize: '15.5px', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.65, margin: 0, maxWidth: '900px' }}>
-              Судебный приказ выносится без обычного судебного заседания. Если Вы не согласны с взысканием, важно установить дату получения копии и своевременно подать возражения. При пропуске срока оцениваются причины пропуска и подтверждающие документы.
-            </p>
-
-            <div>
+            <div style={{ flex: '0 0 auto', display: 'flex', alignItems: 'center' }}>
               <Link
                 href="/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/"
                 className="btn white-btn-custom"
@@ -908,11 +913,12 @@ export default function KreditnyjYuristClient() {
                   backgroundColor: 'var(--color-gold)',
                   color: 'var(--color-deep-blue)',
                   border: '1px solid var(--color-gold)',
-                  padding: '14px 28px',
+                  padding: '15px 30px',
                   fontSize: '15px',
                   fontWeight: 700,
                   display: 'inline-block',
-                  textDecoration: 'none'
+                  textDecoration: 'none',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.15)'
                 }}
               >
                 Перейти к отмене судебного приказа →
@@ -1293,7 +1299,7 @@ export default function KreditnyjYuristClient() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 {primaryDocuments.map((doc, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                       <polyline points="9 11 12 14 22 4" />
                       <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
@@ -1328,7 +1334,8 @@ export default function KreditnyjYuristClient() {
                 {secondaryDocuments.map((doc, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <polyline points="20 6 9 17 4 12" />
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
                     <div>
                       <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
