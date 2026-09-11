@@ -504,7 +504,7 @@ export default function KreditnyjYuristClient() {
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '28px', marginBottom: '36px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '36px' }}>
             {situations.map((item, i) => (
               <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
