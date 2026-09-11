@@ -732,7 +732,7 @@ export default function OtmenaPrikazaClient() {
                   <span style={{ display: 'inline-block' }}>возражения меняют порядок спора</span>
                 </h2>
               </div>
-              <div style={{ maxWidth: '480px', paddingTop: '28px' }}>
+              <div style={{ maxWidth: '480px', paddingTop: '35px' }}>
                 <p style={{
                   fontSize: '15.5px',
                   color: 'var(--color-deep-blue)',
@@ -861,7 +861,7 @@ export default function OtmenaPrikazaClient() {
                 fontWeight: 400,
                 lineHeight: 1.65,
                 margin: 0,
-                paddingTop: '28px',
+                paddingTop: '35px',
                 textAlign: 'right'
               }}>
                 <span style={{ display: 'inline-block' }}>Поможем оперативно отменить приказ</span> <br />
@@ -980,7 +980,7 @@ export default function OtmenaPrikazaClient() {
                 fontWeight: 400,
                 lineHeight: 1.65,
                 margin: 0,
-                paddingTop: '28px',
+                paddingTop: '35px',
                 textAlign: 'right'
               }}>
                 <span style={{ display: 'inline-block' }}>Порядок действий кардинально отличается</span> <br />
