@@ -861,51 +861,46 @@ export default function KreditnyjYuristClient() {
             style={{
               background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
               color: '#FFFFFF',
-              padding: 'clamp(28px, 4vw, 44px) clamp(20px, 3.5vw, 40px)',
+              padding: '44px 40px',
               borderTop: '4px solid var(--color-gold)',
               boxShadow: '0 8px 32px rgba(16, 39, 59, 0.18)',
               display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '32px'
+              flexDirection: 'column',
+              gap: '24px'
             }}
           >
-            <div style={{ flex: '1 1 540px', minWidth: '280px' }}>
-              <span style={{
-                fontSize: '12px',
-                fontWeight: 700,
-                color: 'var(--color-gold)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.12em',
-                background: 'rgba(193, 160, 102, 0.2)',
-                padding: '4px 12px',
-                display: 'inline-block',
-                marginBottom: '12px'
-              }}>
-                Срочная ситуация • 10 дней на возражения
-              </span>
-              <h2 style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(24px, 3.2vw, 32px)',
-                color: '#FFFFFF',
-                margin: '0 0 16px 0',
-                lineHeight: 1.3
-              }}>
-                Получили судебный приказ — сначала проверьте срок
-              </h2>
-              <p style={{
-                fontSize: '15.5px',
-                color: 'rgba(255, 255, 255, 0.9)',
-                lineHeight: 1.65,
-                margin: 0,
-                maxWidth: '780px'
-              }}>
-                Судебный приказ выносится без обычного судебного заседания. Если Вы не согласны с взысканием, важно установить дату получения копии и своевременно подать возражения. При пропуске срока оцениваются причины пропуска и подтверждающие документы.
-              </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
+              <div>
+                <span style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.12em',
+                  background: 'rgba(193, 160, 102, 0.2)',
+                  padding: '4px 12px',
+                  display: 'inline-block',
+                  marginBottom: '12px'
+                }}>
+                  Срочная ситуация • 10 дней на возражения
+                </span>
+                <h2 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: 'clamp(24px, 3.2vw, 32px)',
+                  color: '#FFFFFF',
+                  margin: 0,
+                  lineHeight: 1.3
+                }}>
+                  Получили судебный приказ — сначала проверьте срок
+                </h2>
+              </div>
             </div>
 
-            <div style={{ flex: '0 0 auto', display: 'flex', alignItems: 'center' }}>
+            <p style={{ fontSize: '15.5px', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.65, margin: 0, maxWidth: '900px' }}>
+              Судебный приказ выносится без обычного судебного заседания. Если Вы не согласны с взысканием, важно установить дату получения копии и своевременно подать возражения. При пропуске срока оцениваются причины пропуска и подтверждающие документы.
+            </p>
+
+            <div>
               <Link
                 href="/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/"
                 className="btn white-btn-custom"
@@ -913,12 +908,11 @@ export default function KreditnyjYuristClient() {
                   backgroundColor: 'var(--color-gold)',
                   color: 'var(--color-deep-blue)',
                   border: '1px solid var(--color-gold)',
-                  padding: '15px 30px',
+                  padding: '14px 28px',
                   fontSize: '15px',
                   fontWeight: 700,
                   display: 'inline-block',
-                  textDecoration: 'none',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.15)'
+                  textDecoration: 'none'
                 }}
               >
                 Перейти к отмене судебного приказа →
