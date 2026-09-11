@@ -651,19 +651,17 @@ export default function OtmenaPrikazaClient() {
           </div>
 
           {/* Зона связи */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
-                +7 (4742) 20-15-25
-              </a>
-              <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
-                Позвонить юристу
-              </a>
-              <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
-                Описать ситуацию
-              </a>
-            </div>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+              +7 (4742) 20-15-25
+            </a>
+            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Описать ситуацию
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
               Перезвоним вам в течение 15 минут в рабочее время
             </span>
           </div>
@@ -718,7 +716,7 @@ export default function OtmenaPrikazaClient() {
             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
-              alignItems: 'flex-end',
+              alignItems: 'flex-start',
               flexWrap: 'wrap',
               gap: '24px'
             }}>
@@ -734,20 +732,19 @@ export default function OtmenaPrikazaClient() {
                   <span style={{ display: 'inline-block' }}>возражения меняют порядок спора</span>
                 </h2>
               </div>
-              <p style={{
-                flex: '0 1 440px',
-                minWidth: '280px',
-                fontSize: '15.5px',
-                color: 'var(--color-text-secondary)',
-                fontWeight: 400,
-                lineHeight: 1.65,
-                margin: 0,
-                textAlign: 'right'
-              }}>
-                <span style={{ display: 'inline-block' }}>При поступлении возражений судья обязан</span> <br />
-                <span style={{ display: 'inline-block' }}>отменить приказ. Спор переходит в состязательный</span> <br />
-                <span style={{ display: 'inline-block' }}>порядок с исследованием доказательств.</span>
-              </p>
+              <div style={{ maxWidth: '480px', paddingTop: '28px' }}>
+                <p style={{
+                  fontSize: '15.5px',
+                  color: 'var(--color-deep-blue)',
+                  lineHeight: 1.65,
+                  margin: 0,
+                  opacity: 0.92
+                }}>
+                  <span style={{ display: 'inline-block' }}>При поступлении возражений судья обязан</span> <br />
+                  <span style={{ display: 'inline-block' }}>отменить приказ. Спор переходит в состязательный</span> <br />
+                  <span style={{ display: 'inline-block' }}>порядок с исследованием доказательств.</span>
+                </p>
+              </div>
             </div>
           </div>
 
@@ -820,9 +817,7 @@ export default function OtmenaPrikazaClient() {
                 {comparisonItems.map((item, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <circle cx="12" cy="12" r="10" />
-                      <line x1="12" y1="8" x2="12" y2="12" />
-                      <line x1="12" y1="16" x2="12.01" y2="16" />
+                      <polyline points="20 6 9 17 4 12" />
                     </svg>
                     <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
                       {item.notMeans}
@@ -1610,7 +1605,7 @@ export default function OtmenaPrikazaClient() {
                     key={idx}
                     style={{
                       padding: '34px 30px',
-                      borderBottom: '1px solid var(--color-border)',
+                      borderBottom: (idx >= 4) ? 'none' : '1px solid var(--color-border)',
                       borderRight: (idx % 2 === 0) ? '1px solid var(--color-border)' : 'none',
                       display: 'flex',
                       flexDirection: 'column',
@@ -1663,30 +1658,67 @@ export default function OtmenaPrikazaClient() {
                     </p>
                   </div>
                 ))}
-              </div>
 
-              {/* Интегрированная панель действия */}
-              <div style={{
-                padding: '24px 32px',
-                background: 'linear-gradient(90deg, #FBF8F3 0%, #FFFFFF 100%)',
-                borderTop: '1px solid var(--color-border)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '20px'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
-                    Сопровождаем процедуру до фактического снятия арестов и прекращения исполнительного производства
-                  </span>
+                {/* Карточка 06: CTA Разбор ситуации */}
+                <div
+                  style={{
+                    padding: '34px 30px',
+                    background: 'linear-gradient(135deg, #10273B 0%, #17375E 100%)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    position: 'relative',
+                    color: '#FFFFFF'
+                  }}
+                >
+                  <div>
+                    <div style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: 'var(--color-gold)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      marginBottom: '8px'
+                    }}>
+                      Юридическая поддержка
+                    </div>
+                    <h3 style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '19px',
+                      fontWeight: 600,
+                      color: '#FFFFFF',
+                      margin: '0 0 10px 0',
+                      lineHeight: 1.3
+                    }}>
+                      Защита на стадии исполнения
+                    </h3>
+                    <p style={{
+                      fontSize: '14px',
+                      color: 'rgba(255, 255, 255, 0.85)',
+                      lineHeight: 1.6,
+                      margin: 0
+                    }}>
+                      Сопровождаем процедуру до фактического снятия арестов, разблокировки счетов и прекращения исполнительного производства.
+                    </p>
+                  </div>
+                  <div style={{ marginTop: '24px' }}>
+                    <a
+                      href="#form"
+                      className="btn btn-primary"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '100%',
+                        padding: '12px 20px',
+                        fontSize: '14.5px',
+                        fontWeight: 600
+                      }}
+                    >
+                      Записаться на разбор ситуации
+                    </a>
+                  </div>
                 </div>
-                <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px' }}>
-                  Записаться на разбор ситуации
-                </a>
               </div>
             </div>
           </div>
