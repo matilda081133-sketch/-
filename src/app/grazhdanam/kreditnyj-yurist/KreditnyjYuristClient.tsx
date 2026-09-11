@@ -183,31 +183,37 @@ export default function KreditnyjYuristClient() {
 
   const solutionRoutes = [
     {
+      tag: 'Досудебный порядок',
       title: 'Обращение к кредитору',
       when: 'Нужно проверить расчёт, заявить требование, представить документы или зафиксировать позицию до суда.',
       action: 'Готовит обращение и приложения, контролирует ответ и определяет следующий порядок защиты.'
     },
     {
+      tag: 'Кредитные каникулы',
       title: 'Льготный период или изменение условий',
       when: 'Есть предусмотренные законом критерии либо кредитор готов обсуждать договорный вариант.',
       action: 'Проверяет условия, готовит требование и оценивает новый график. Не обещает согласие банка без правового основания.'
     },
     {
+      tag: 'Досудебный спор',
       title: 'Финансовый уполномоченный',
       when: 'Спор относится к его компетенции и соблюдён обязательный претензионный порядок.',
       action: 'Формирует требование финансовой организации, затем обращение и доказательства по применимости.'
     },
     {
+      tag: 'Суд первой инстанции',
       title: 'Защита по иску кредитора',
       when: 'Банк, МФО или новый кредитор предъявил требования в суде.',
       action: 'Проверяет расчёт и доказательства, готовит возражения, ходатайства и представляет позицию.'
     },
     {
+      tag: 'Оспаривание сделки',
       title: 'Оспаривание договора или операции',
       when: 'Есть подтверждаемое отсутствие согласия, нарушение при заключении договора либо спорная дополнительная услуга.',
       action: 'Собирает доказательства, определяет надлежащего ответчика и последовательность обращений.'
     },
     {
+      tag: 'Смежные процедуры',
       title: 'Другой юридический маршрут',
       when: 'Проблема уже связана с приставом, взысканием в пользу клиента либо устойчивой неплатёжеспособностью.',
       action: 'Переводит в соответствующее направление без подмены услуги кредитного юриста.'
@@ -504,7 +510,7 @@ export default function KreditnyjYuristClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '36px' }}>
+          <div className="grid grid-3" style={{ gap: '28px' }}>
             {situations.map((item, i) => (
               <div key={i} className="hover-lift" style={{
                 padding: '36px 30px',
@@ -568,16 +574,97 @@ export default function KreditnyjYuristClient() {
                 </p>
               </div>
             ))}
-          </div>
 
-          <div style={{ textAlign: 'center', marginTop: '16px' }}>
-            <a
-              href="#form"
-              className="btn btn-primary"
-              style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 600 }}
-            >
-              Определить стадию и следующий шаг
-            </a>
+            {/* Карточка 9: Определить стадию и следующий шаг (CTA-карточка в 3-й строке) */}
+            <div className="hover-lift" style={{
+              padding: '36px 30px',
+              background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+              border: '1px solid rgba(193, 160, 102, 0.35)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              position: 'relative',
+              overflow: 'hidden',
+              transition: 'all 0.3s ease'
+            }}>
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="#C1A066">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+
+              <div>
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  display: 'inline-block'
+                }}>
+                  Экспресс-анализ
+                </div>
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '17px', 
+                  fontWeight: 600, 
+                  color: '#FFFFFF', 
+                  margin: '0 0 14px 0', 
+                  lineHeight: 1.35,
+                  minHeight: '68px',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    Определить стадию
+                  </span>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    и следующий шаг
+                  </span>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    по вашей ситуации
+                  </span>
+                </h3>
+                <p style={{ 
+                  fontSize: '14.5px', 
+                  color: '#CBD5E1', 
+                  lineHeight: 1.6,
+                  margin: '0 0 20px 0',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  Передайте документы кредитному юристу: проверим кредитора, процессуальные сроки и подберём законный маршрут защиты.
+                </p>
+              </div>
+
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <a
+                  href="#form"
+                  className="btn btn-gold"
+                  style={{
+                    display: 'block',
+                    textAlign: 'center',
+                    padding: '12px 18px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    backgroundColor: 'var(--color-gold)',
+                    color: 'var(--color-deep-blue)',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                  }}
+                >
+                  Определить стадию и следующий шаг
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -835,68 +922,201 @@ export default function KreditnyjYuristClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: ВОЗМОЖНЫЕ МАРШРУТЫ РЕШЕНИЯ ═══ */}
-      <section className="section" id="routes" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 5: СТРАТЕГИЯ ЗАЩИТЫ (ПРОЦЕССУАЛЬНОЕ ПОЛОЖЕНИЕ + 3 ЭТАПА АНАЛИЗА) ═══ */}
+      <section className="section bg-white" id="routes" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)', fontWeight: 600 }}>
-                Стратегия защиты
-              </span>
+          <div style={{ marginBottom: '36px' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '12px'
+            }}>
+              Стратегия защиты
             </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, textAlign: 'left' }}>
-              Решение зависит от стадии и документов
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.65, margin: 0, textAlign: 'left' }}>
-              В зависимости от оснований требований и текущей стадии спора кредитный юрист подбирает надлежащий юридический маршрут:
-            </p>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2, flex: '1 1 420px', minWidth: '280px' }}>
+                <span style={{ display: 'inline-block' }}>Решение зависит</span> <br />
+                <span style={{ display: 'inline-block' }}>от стадии и документов</span>
+              </h2>
+              <div style={{
+                flex: '0 1 480px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                lineHeight: 1.6,
+                textAlign: 'right'
+              }}>
+                В зависимости от оснований требований и текущей стадии спора кредитный юрист подбирает надлежащий юридический маршрут.
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '24px' }}>
-            {solutionRoutes.map((route, i) => (
+          {/* Компактные карточки стратегии защиты */}
+          <div className="grid grid-2" style={{ gap: '20px', marginBottom: '32px' }}>
+            {solutionRoutes.map((item, i) => (
               <div
                 key={i}
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
-                  padding: '30px 26px',
+                  padding: '24px 22px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.04)'
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
                 <div>
-                  <h3 style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '19px',
-                    color: 'var(--color-deep-blue)',
-                    margin: '0 0 14px 0',
-                    lineHeight: 1.35
+                  <div style={{
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    color: 'var(--color-gold)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    marginBottom: '10px',
+                    background: 'rgba(193, 160, 102, 0.12)',
+                    padding: '3px 8px',
+                    display: 'inline-block'
                   }}>
-                    {route.title}
+                    {item.tag}
+                  </div>
+                  <h3 style={{
+                    fontSize: '18px',
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 8px 0',
+                    lineHeight: 1.3,
+                    fontWeight: 600
+                  }}>
+                    {item.title}
                   </h3>
-                  <div style={{ marginBottom: '12px' }}>
-                    <span style={{ fontSize: '12.5px', fontWeight: 600, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '4px' }}>
-                      Когда рассматривается:
-                    </span>
-                    <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                      {route.when}
-                    </p>
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.55,
+                    margin: '0 0 16px 0'
+                  }}>
+                    {item.when}
+                  </p>
+                </div>
+
+                <div style={{
+                  background: '#FFFFFF',
+                  padding: '12px 14px',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '3px solid var(--color-gold)',
+                  marginTop: 'auto',
+                  boxShadow: '0 2px 6px rgba(23, 50, 77, 0.02)'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                    <strong style={{ fontSize: '11px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                      Действия юриста
+                    </strong>
                   </div>
-                  <div>
-                    <span style={{ fontSize: '12.5px', fontWeight: 600, color: 'var(--color-deep-blue)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '4px' }}>
-                      Что делает юрист:
-                    </span>
-                    <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                      {route.action}
-                    </p>
-                  </div>
+                  <span style={{ fontSize: '13px', color: 'var(--color-deep-blue)', lineHeight: 1.4, fontWeight: 500, display: 'block' }}>
+                    {item.action}
+                  </span>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* 3 ЭТАПА ПРАВОВОГО АНАЛИЗА И ЗАЩИТЫ ЗАЁМЩИКА */}
+          <div style={{
+            background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            position: 'relative'
+          }}>
+            <div className="stages-header-row" style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '24px',
+              marginBottom: '24px',
+              position: 'relative',
+              zIndex: 1
+            }}>
+              <div style={{ flex: '1 1 auto', minWidth: '280px' }}>
+                <h3 style={{ fontSize: 'clamp(19px, 2.2vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  <span style={{ display: 'inline-block' }}>3 этапа правового анализа</span> <br />
+                  <span style={{ display: 'inline-block' }}>и защиты заёмщика</span>
+                </h3>
+              </div>
+              <div className="stages-subtitle-right" style={{
+                fontSize: '13.5px',
+                color: 'rgba(255, 255, 255, 0.85)',
+                maxWidth: '520px',
+                lineHeight: 1.5,
+                textAlign: 'right',
+                flex: '0 0 auto'
+              }}>
+                <span style={{ display: 'block', fontWeight: 500 }}>Позволяет безошибочно определить правовую позицию:</span>
+                <span style={{ display: 'block', color: 'rgba(255, 255, 255, 0.7)' }}>
+                  <span style={{ display: 'inline-block' }}>проверка расчёта долга, отмена приказа или</span> <br className="hidden-mobile" />
+                  <span style={{ display: 'inline-block' }}>состязательная защита в суде.</span>
+                </span>
+              </div>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.25, display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0, lineHeight: 1.2 }}>01</span>
+                  <span style={{ lineHeight: 1.25 }}>
+                    <span style={{ display: 'block' }}>Анализ договора</span>
+                    <span style={{ display: 'block' }}>и расчёта долга</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Проверяем структуру требований, скрытые комиссии, неучтённые платежи и основания для оспаривания.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.25, display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0, lineHeight: 1.2 }}>02</span>
+                  <span style={{ lineHeight: 1.25 }}>
+                    <span style={{ display: 'block' }}>Формирование</span>
+                    <span style={{ display: 'block' }}>правовой позиции</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Готовим возражения на судебный приказ, отзыв на иск кредитора, контррасчёт и ходатайства по ст. 333 ГК РФ.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.25, display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0, lineHeight: 1.2 }}>03</span>
+                  <span style={{ lineHeight: 1.25 }}>
+                    <span style={{ display: 'block' }}>Защита в суде</span>
+                    <span style={{ display: 'block' }}>или переговоры</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Отстаиваем интересы заёмщика в суде, снижаем неустойку, сопровождаем досудебное урегулирование.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
