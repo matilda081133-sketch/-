@@ -615,44 +615,24 @@ export default function OtmenaPrikazaClient() {
                   boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
                   height: '100%',
-                  minHeight: '260px',
                   boxSizing: 'border-box'
                 }}
               >
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '12px' }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '8px' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                       <circle cx="12" cy="12" r="10"></circle>
                       <line x1="12" y1="8" x2="12" y2="12"></line>
                       <line x1="12" y1="16" x2="12.01" y2="16"></line>
                     </svg>
-                    <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, minHeight: '44px', wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+                    <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', wordBreak: 'break-word', overflowWrap: 'break-word' }}>
                       {st.title}
                     </div>
                   </div>
-                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13px', lineHeight: 1.55, margin: '0 0 16px' }}>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13.5px', lineHeight: 1.55, margin: 0 }}>
                     {st.desc}
                   </p>
-                </div>
-                <div>
-                  <a
-                    href="#form"
-                    className="btn btn-outline"
-                    style={{
-                      width: '100%',
-                      textAlign: 'center',
-                      padding: '10px 14px',
-                      fontSize: '13px',
-                      fontWeight: 600,
-                      borderColor: 'var(--color-primary)',
-                      color: 'var(--color-primary)'
-                    }}
-                    onClick={() => setActiveDeadlineTab(st.id)}
-                  >
-                    {st.cta} →
-                  </a>
                 </div>
               </div>
             ))}
@@ -671,23 +651,21 @@ export default function OtmenaPrikazaClient() {
           </div>
 
           {/* Зона связи */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
                 +7 (4742) 20-15-25
               </a>
-              <span style={{ color: 'rgba(255,255,255,0.4)' }}>|</span>
-              <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: '14px' }}>
-                Липецк, ул. Советская, 35, оф. 213 • Консультация по отмене приказа
-              </span>
+              <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+                Позвонить юристу
+              </a>
+              <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+                Описать ситуацию
+              </a>
             </div>
-            <a
-              href="#form"
-              className="btn btn-urgent-call"
-              style={{ padding: '12px 24px', fontSize: '14px', whiteSpace: 'nowrap' }}
-            >
-              Срочная консультация юриста
-            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
+              Перезвоним вам в течение 15 минут в рабочее время
+            </span>
           </div>
 
           <style dangerouslySetInnerHTML={{__html: `
@@ -702,7 +680,11 @@ export default function OtmenaPrikazaClient() {
               border: 1px solid rgba(255,255,255,0.8) !important;
               color: #FFFFFF !important;
               background: transparent !important;
+              text-decoration: none !important;
+              font-weight: 600 !important;
               transition: all 0.3s ease !important;
+              border-radius: 0 !important;
+              display: inline-block !important;
             }
             .btn-urgent-outline:hover {
               background: rgba(255,255,255,0.18) !important;
@@ -716,13 +698,14 @@ export default function OtmenaPrikazaClient() {
               background-color: var(--color-gold) !important;
               color: var(--color-deep-blue) !important;
               font-weight: 700 !important;
-              transition: all 0.3s ease !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
               border: 1px solid var(--color-gold) !important;
             }
             .btn-urgent-call:hover {
               background-color: #FFFFFF !important;
               color: #0B1C2A !important;
               border-color: #FFFFFF !important;
+              transform: translateY(-2px);
             }
           `}} />
         </div>
@@ -771,56 +754,38 @@ export default function OtmenaPrikazaClient() {
           <div className="grid grid-2" style={{ gap: '28px' }}>
             {/* Карточка 1: Отмена приказа даёт */}
             <div
-              className="hover-lift"
               style={{
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                 border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
+                borderTop: '3px solid var(--color-gold)',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 padding: '36px 32px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '20px'
+                gap: '24px'
               }}
             >
-              <div>
-                <h3 style={{
-                  fontSize: '20px',
-                  fontFamily: 'var(--font-serif)',
-                  color: 'var(--color-deep-blue)',
-                  margin: 0,
-                  paddingBottom: '14px',
-                  borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
-                  lineHeight: 1.3,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px'
-                }}>
-                  <div style={{
-                    width: '30px',
-                    height: '30px',
-                    borderRadius: '50%',
-                    background: 'rgba(46, 125, 50, 0.12)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0
-                  }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                  </div>
-                  <span>Отмена приказа даёт:</span>
-                </h3>
-              </div>
+              <h3 style={{
+                fontSize: '20px',
+                fontFamily: 'var(--font-serif)',
+                color: 'var(--color-deep-blue)',
+                margin: 0,
+                paddingBottom: '12px',
+                borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
+                lineHeight: 1.3
+              }}>
+                Отмена приказа даёт:
+              </h3>
 
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '18px' }}>
                 {comparisonItems.map((item, idx) => (
-                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '3px' }}>
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <span>{item.gives}</span>
+                    <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+                      {item.gives}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -828,58 +793,40 @@ export default function OtmenaPrikazaClient() {
 
             {/* Карточка 2: Отмена не означает */}
             <div
-              className="hover-lift"
               style={{
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                 border: '1px solid var(--color-border)',
-                borderTop: '3px solid #C62828',
+                borderTop: '3px solid var(--color-gold)',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 padding: '36px 32px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '20px'
+                gap: '24px'
               }}
             >
-              <div>
-                <h3 style={{
-                  fontSize: '20px',
-                  fontFamily: 'var(--font-serif)',
-                  color: 'var(--color-deep-blue)',
-                  margin: 0,
-                  paddingBottom: '14px',
-                  borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
-                  lineHeight: 1.3,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px'
-                }}>
-                  <div style={{
-                    width: '30px',
-                    height: '30px',
-                    borderRadius: '50%',
-                    background: 'rgba(198, 40, 40, 0.12)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0
-                  }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C62828" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="18" y1="6" x2="6" y2="18" />
-                      <line x1="6" y1="6" x2="18" y2="18" />
-                    </svg>
-                  </div>
-                  <span>Отмена не означает:</span>
-                </h3>
-              </div>
+              <h3 style={{
+                fontSize: '20px',
+                fontFamily: 'var(--font-serif)',
+                color: 'var(--color-deep-blue)',
+                margin: 0,
+                paddingBottom: '12px',
+                borderBottom: '1px solid rgba(23, 50, 77, 0.1)',
+                lineHeight: 1.3
+              }}>
+                Отмена не означает:
+              </h3>
 
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '18px' }}>
                 {comparisonItems.map((item, idx) => (
-                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C62828" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '3px' }}>
-                      <line x1="18" y1="6" x2="6" y2="18" />
-                      <line x1="6" y1="6" x2="18" y2="18" />
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="8" x2="12" y2="12" />
+                      <line x1="12" y1="16" x2="12.01" y2="16" />
                     </svg>
-                    <span>{item.notMeans}</span>
+                    <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+                      {item.notMeans}
+                    </span>
                   </li>
                 ))}
               </ul>
