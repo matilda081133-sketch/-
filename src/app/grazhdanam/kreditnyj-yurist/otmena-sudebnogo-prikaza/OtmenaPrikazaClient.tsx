@@ -1542,78 +1542,152 @@ export default function OtmenaPrikazaClient() {
             Мы не запрашиваем загрузку паспортов и банковских выписок через открытую форму сайта. Способ безопасной передачи материалов будет согласован специалистом при первом звонке.
           </div>
 
-          {/* Карточка: Что происходит после отмены судебного приказа */}
-          <div style={{
-            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
-            border: '1px solid rgba(193, 160, 102, 0.4)',
-            borderTop: '3px solid var(--color-gold)',
-            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
-            padding: '36px 32px',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
-            {/* Фоновый водяной знак */}
-            <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.05, pointerEvents: 'none' }}>
-              <svg width="140" height="140" viewBox="0 0 24 24" fill="#FFFFFF">
-                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-              </svg>
+          {/* Блок: Что происходит после отмены судебного приказа (Архитектурный реестр аудита) */}
+          <div style={{ marginTop: '56px' }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '28px',
+              marginBottom: '40px',
+              borderBottom: '1px solid rgba(193, 160, 102, 0.3)',
+              paddingBottom: '28px'
+            }}>
+              <div style={{ maxWidth: '620px' }}>
+                <div style={{
+                  fontSize: '13px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '12px'
+                }}>
+                  Стадии исполнения
+                </div>
+                <h2 className="with-accent" style={{
+                  fontSize: 'clamp(28px, 4vw, 42px)',
+                  fontFamily: 'var(--font-serif)',
+                  color: 'var(--color-primary)',
+                  margin: 0,
+                  lineHeight: 1.2
+                }}>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    Что происходит после
+                  </span>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    отмены судебного приказа
+                  </span>
+                </h2>
+              </div>
+              <div style={{ maxWidth: '480px', paddingTop: '28px' }}>
+                <p style={{
+                  fontSize: '15.5px',
+                  color: 'var(--color-deep-blue)',
+                  lineHeight: 1.65,
+                  margin: 0,
+                  opacity: 0.92
+                }}>
+                  Вынесение определения об отмене приказа — ключевой процессуальный шаг: важно правильно распорядиться полученным результатом на стадии исполнения.
+                </p>
+              </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', marginBottom: '28px', position: 'relative', zIndex: 1 }}>
-              <div>
-                <h3 style={{ fontSize: 'clamp(22px, 2.5vw, 28px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
-                  <span style={{ display: 'inline-block' }}>Что происходит после</span> <br />
-                  <span style={{ display: 'inline-block' }}>отмены судебного приказа</span>
-                </h3>
-              </div>
-              <div style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)', maxWidth: '520px', lineHeight: 1.55 }}>
-                <span style={{ display: 'block' }}>Вынесение определения об отмене приказа — ключевой процессуальный шаг:</span>
-                <span style={{ display: 'block' }}>важно правильно распорядиться полученным результатом на стадии исполнения.</span>
-              </div>
-            </div>
-
-            <div className="grid grid-2" style={{ gap: '20px', position: 'relative', zIndex: 1 }}>
-              {afterCancelScenarios.map((sc, idx) => (
-                <div
-                  key={idx}
-                  className={idx === 4 ? 'span-2-desktop' : ''}
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.05)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    padding: '24px 22px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '14px'
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{
+            {/* Архитектурный реестр аудита */}
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid var(--color-border)',
+              borderLeft: '4px solid var(--color-gold)',
+              boxShadow: '0 4px 25px rgba(23, 50, 77, 0.05)',
+              marginBottom: '40px'
+            }}>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))'
+              }}>
+                {afterCancelScenarios.map((item, idx) => (
+                  <div
+                    key={idx}
+                    style={{
+                      padding: '34px 30px',
+                      borderBottom: '1px solid var(--color-border)',
+                      borderRight: (idx % 2 === 0) ? '1px solid var(--color-border)' : 'none',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'flex-start',
+                      position: 'relative'
+                    }}
+                  >
+                    <div style={{
                       fontSize: '11px',
                       fontWeight: 700,
                       color: 'var(--color-gold)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.08em',
-                      background: 'rgba(193, 160, 102, 0.15)',
-                      padding: '3px 8px',
-                      borderRadius: '2px'
+                      marginBottom: '8px',
+                      paddingLeft: '50px'
                     }}>
-                      {sc.tag}
-                    </span>
-                    <span style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>
-                      0{idx + 1}
-                    </span>
-                  </div>
-                  <h4 style={{ fontSize: '17px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '10px' }}>
-                    <span>{sc.title}</span>
-                  </h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.92)', lineHeight: 1.55, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                      <span style={{ display: 'inline-block', width: '10px', height: '2px', backgroundColor: 'var(--color-gold)', flexShrink: 0, marginTop: '8px', borderRadius: '1px' }} />
-                      <div>{sc.desc}</div>
+                      {item.tag}
                     </div>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '14px', marginBottom: '10px' }}>
+                      <span style={{
+                        fontFamily: 'var(--font-serif)',
+                        fontSize: '26px',
+                        fontWeight: 600,
+                        color: 'var(--color-gold)',
+                        lineHeight: 1,
+                        letterSpacing: '-0.02em',
+                        minWidth: '36px'
+                      }}>
+                        0{idx + 1}
+                      </span>
+                      <h3 style={{
+                        fontFamily: 'var(--font-serif)',
+                        fontSize: '19px',
+                        fontWeight: 600,
+                        color: 'var(--color-deep-blue)',
+                        margin: 0,
+                        lineHeight: 1.3
+                      }}>
+                        {item.title}
+                      </h3>
+                    </div>
+                    <p style={{
+                      fontSize: '14.5px',
+                      color: 'var(--color-text-secondary)',
+                      lineHeight: 1.6,
+                      margin: 0,
+                      paddingLeft: '50px'
+                    }}>
+                      {item.desc}
+                    </p>
                   </div>
+                ))}
+              </div>
+
+              {/* Интегрированная панель действия */}
+              <div style={{
+                padding: '24px 32px',
+                background: 'linear-gradient(90deg, #FBF8F3 0%, #FFFFFF 100%)',
+                borderTop: '1px solid var(--color-border)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '20px'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
+                    Сопровождаем процедуру до фактического снятия арестов и прекращения исполнительного производства
+                  </span>
                 </div>
-              ))}
+                <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px' }}>
+                  Записаться на разбор ситуации
+                </a>
+              </div>
             </div>
           </div>
         </div>

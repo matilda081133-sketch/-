@@ -265,13 +265,13 @@ export default function BankrotstvoFizicheskihLicClient() {
             `}} />
             <span style={{ display: 'inline-block', maxWidth: '100%' }}>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                Проверим, подходит ли Вам судебное банкротство, какие обязательства
+                Проверим, подходит ли Вам судебное банкротство,
               </span>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                могут быть прекращены и чем процедура рискует для имущества,
+                какие обязательства могут быть прекращены и чем процедура
               </span>
               <span className="hero-sub-span-desktop" style={{ display: 'block' }}>
-                дохода и совершённых сделок.
+                рискует для имущества, дохода и совершённых сделок.
               </span>
             </span>
           </>
