@@ -501,12 +501,7 @@ export default function ArbitrazhClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Арбитражный юрист</span>
           </>
         }
-        superTitle={
-          <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
-            <span style={{ display: 'inline-block' }}>Арбитражные споры для бизнеса •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
-          </span>
-        }
+        superTitle="Арбитражные споры для бизнеса • Липецк и Липецкая область"
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
