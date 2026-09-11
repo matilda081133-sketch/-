@@ -84,7 +84,12 @@ export default function ObzhalovanieClient() {
     },
     {
       tag: 'Кассация АС ЦО',
-      title: 'Вступивший в силу судебный акт',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Вступивший в силу</span> <br />
+          <span style={{ display: 'inline-block' }}>судебный акт</span>
+        </span>
+      ),
       desc: 'Апелляция оставила решение в силе. Подаём кассационную жалобу в Арбитражный суд Центрального округа (Калуга).'
     },
     {
