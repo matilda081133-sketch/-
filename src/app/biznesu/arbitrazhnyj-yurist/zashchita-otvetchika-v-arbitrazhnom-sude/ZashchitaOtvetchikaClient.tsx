@@ -99,12 +99,22 @@ export default function ZashchitaOtvetchikaClient() {
     },
     {
       tag: 'Арест счетов',
-      title: 'Наложен арест на счета компании',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Наложен арест</span> <br />
+          <span style={{ display: 'inline-block' }}>на счета компании</span>
+        </span>
+      ),
       desc: 'Суд принял обеспечительные меры по заявлению истца. Подаём ходатайство об отмене ареста или замене мер.'
     },
     {
       tag: 'Мировое соглашение',
-      title: 'Нужна рассрочка и фиксация графика',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Нужна рассрочка</span> <br />
+          <span style={{ display: 'inline-block' }}>и фиксация графика</span>
+        </span>
+      ),
       desc: 'Долг частично обоснован, но единовременная выплата разрушит бизнес. Согласуем мировое соглашение с комфортным графиком.'
     },
     {
@@ -127,8 +137,8 @@ export default function ZashchitaOtvetchikaClient() {
     {
       title: (
         <span>
-          <span style={{ display: 'inline-block' }}>Арест расчётных счетов</span> <br />
-          <span style={{ display: 'inline-block' }}>компании</span>
+          <span style={{ display: 'inline-block' }}>Арест расчётных</span> <br />
+          <span style={{ display: 'inline-block' }}>счетов компании</span>
         </span>
       ),
       desc: 'Обеспечительные меры блокируют выплату зарплат, налоги и закупки. Требуется срочное ходатайство об отмене мер.'
@@ -154,8 +164,8 @@ export default function ZashchitaOtvetchikaClient() {
     {
       title: (
         <span>
-          <span style={{ display: 'inline-block' }}>Преюдиция для иска</span> <br />
-          <span style={{ display: 'inline-block' }}>о банкротстве</span>
+          <span style={{ display: 'inline-block' }}>Преюдиция для</span> <br />
+          <span style={{ display: 'inline-block' }}>иска о банкротстве</span>
         </span>
       ),
       desc: 'Решение арбитража на сумму от 2 млн ₽ даёт оппоненту право немедленно инициировать банкротство вашей компании.'
@@ -513,17 +523,19 @@ export default function ZashchitaOtvetchikaClient() {
             ))}
           </div>
 
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
-              +7 (4742) 20-15-25
-            </a>
-            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
-              Срочная консультация
-            </a>
-            <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
-              Передать иск на анализ
-            </a>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+                +7 (4742) 20-15-25
+              </a>
+              <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+                Срочная консультация
+              </a>
+              <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+                Передать иск на анализ
+              </a>
+            </div>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
               Ответим в рабочее время и согласуем процессуальные действия
             </span>
           </div>
