@@ -3,13 +3,13 @@ import IsklyuchenieIzReestraKontroliruemyhLicClient from './IsklyuchenieIzReestr
 
 export const metadata: Metadata = {
   title: 'Исключение из реестра контролируемых лиц (режим высылки) в Липецке | Де-Юре',
-  description: 'Исключение из реестра контролируемых лиц (режим высылки, ФЗ № 260-ФЗ) в Липецке: правовой аудит, устранение нарушений, досудебное и судебное обжалование. ЮК «Де-Юре».',
+  description: 'Помощь при включении в реестр контролируемых лиц МВД: установление основания, исправление сведений, обжалование исходного решения и контроль прекращения ограничений.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/',
   },
   openGraph: {
     title: 'Исключение из реестра контролируемых лиц (режим высылки) в Липецке | Де-Юре',
-    description: 'Исключение из реестра контролируемых лиц (режим высылки, ФЗ № 260-ФЗ) в Липецке: правовой аудит, устранение нарушений, досудебное и судебное обжалование. ЮК «Де-Юре».',
+    description: 'Помощь при включении в реестр контролируемых лиц МВД: установление основания, исправление сведений, обжалование исходного решения и контроль прекращения ограничений.',
     url: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: 'image/jpeg',
-        alt: 'Миграционный юрист в Липецке — ЮК «Де-Юре»',
+        alt: 'Исключение из реестра контролируемых лиц МВД — ЮК «Де-Юре»',
       },
     ],
   },
@@ -39,15 +39,21 @@ export default function IsklyuchenieIzReestraPage() {
       "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/#webpage",
       "url": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/",
       "name": "Исключение из реестра контролируемых лиц (режим высылки) в Липецке | Де-Юре",
-      "description": "Исключение из реестра контролируемых лиц (режим высылки, ФЗ № 260-ФЗ) в Липецке: правовой аудит, устранение нарушений, досудебное и судебное обжалование. ЮК «Де-Юре».",
+      "description": "Помощь при включении в реестр контролируемых лиц МВД: установление основания, исправление сведений, обжалование исходного решения и контроль прекращения ограничений.",
       "isPartOf": {
         "@id": "https://dejure-help.ru/#website"
       },
       "breadcrumb": {
         "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/#breadcrumb"
       },
+      "mainEntity": {
+        "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/#service"
+      },
       "about": {
         "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/#service"
+      },
+      "mentions": {
+        "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person"
       }
     },
     {
@@ -116,20 +122,16 @@ export default function IsklyuchenieIzReestraPage() {
     },
     {
       "@type": "Person",
-      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/#person",
+      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person",
       "name": "Дмитрий Сергеевич Конопкин",
-      "jobTitle": "Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»",
-      "url": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/",
-      "image": "https://dejure-help.ru/images/konopkin.jpg",
-      "worksFor": {
-        "@id": "https://dejure-help.ru/#organization"
-      }
+      "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
+      "jobTitle": "Адвокат"
     },
     {
       "@type": "Service",
       "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/#service",
       "name": "Исключение из реестра контролируемых лиц МВД",
-      "description": "Исключение из реестра контролируемых лиц (режим высылки, ФЗ № 260-ФЗ) в Липецке: правовой аудит, устранение нарушений, досудебное и судебное обжалование. ЮК «Де-Юре».",
+      "description": "Помощь при включении в реестр контролируемых лиц МВД: установление основания, исправление сведений, обжалование исходного решения и контроль прекращения ограничений.",
       "provider": {
         "@id": "https://dejure-help.ru/#organization"
       },
@@ -156,7 +158,7 @@ export default function IsklyuchenieIzReestraPage() {
           "name": "Какие ограничения действуют при включении в реестр (режим высылки)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "В период нахождения в реестре действует режим высылки: запрет на управление транспортными средствами, открытие банковских счетов и переводы средств, регистрацию прав на недвижимость и транспортные средства, регистрацию брака, а также ограничение на выезд из региона пребывания."
+            "text": "Контролируемому лицу отказывают в открытии новых счетов и ограничивают банковские операции. Исключения предусмотрены для входящих переводов, уплаты обязательных платежей и выдачи наличных в сумме не более 30 000 рублей в месяц. Кроме того, действуют ограничения в отношении транспорта, недвижимости, предпринимательской деятельности, заключения брака и передвижения."
           }
         },
         {
@@ -188,7 +190,7 @@ export default function IsklyuchenieIzReestraPage() {
           "name": "Разблокируют ли банковские счета после исключения из реестра?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Да. После исключения сведений из ведомственной базы МВД и передачи обновлённых данных в банковскую систему все ограничения по операциям со счетами и картами снимаются."
+            "text": "Режим высылки прекращается со дня исключения сведений из реестра. Фактическое восстановление банковских операций может зависеть от обновления данных в информационных системах МВД и банка. Если ограничения продолжают действовать, необходимо проверить статус записи и направить обращения в МВД и кредитную организацию."
           }
         }
       ]

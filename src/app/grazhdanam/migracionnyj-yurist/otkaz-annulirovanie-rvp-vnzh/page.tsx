@@ -3,13 +3,13 @@ import OtkazAnnulirovanieRvpVnzhClient from './OtkazAnnulirovanieRvpVnzhClient';
 
 export const metadata: Metadata = {
   title: 'Обжалование отказа и аннулирования РВП / ВНЖ в Липецке — адвокат | Де-Юре',
-  description: 'Обжалование отказа и аннулирования РВП / ВНЖ в Липецке: досудебное обжалование, иск в суд по КАС РФ, меры предварительной защиты (ст. 85 КАС РФ). ЮК «Де-Юре».',
+  description: 'Помощь при отказе в выдаче или аннулировании РВП и ВНЖ в Липецке. При аннулировании - 15 дней на выезд. Жалоба в МВД и судебная защита.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/',
   },
   openGraph: {
     title: 'Обжалование отказа и аннулирования РВП / ВНЖ в Липецке — адвокат | Де-Юре',
-    description: 'Обжалование отказа и аннулирования РВП / ВНЖ в Липецке: досудебное обжалование, иск в суд по КАС РФ, меры предварительной защиты (ст. 85 КАС РФ). ЮК «Де-Юре».',
+    description: 'Помощь при отказе в выдаче или аннулировании РВП и ВНЖ в Липецке. При аннулировании - 15 дней на выезд. Жалоба в МВД и судебная защита.',
     url: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: 'image/jpeg',
-        alt: 'Миграционный юрист в Липецке — ЮК «Де-Юре»',
+        alt: 'Обжалование отказа или аннулирования РВП и ВНЖ — ЮК «Де-Юре»',
       },
     ],
   },
@@ -39,15 +39,21 @@ export default function OtkazAnnulirovaniePage() {
       "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/#webpage",
       "url": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/",
       "name": "Обжалование отказа и аннулирования РВП / ВНЖ в Липецке — адвокат | Де-Юре",
-      "description": "Обжалование отказа и аннулирования РВП / ВНЖ в Липецке: досудебное обжалование, иск в суд по КАС РФ, меры предварительной защиты (ст. 85 КАС РФ). ЮК «Де-Юре».",
+      "description": "Помощь при отказе в выдаче или аннулировании РВП и ВНЖ в Липецке. При аннулировании - 15 дней на выезд. Жалоба в МВД и судебная защита.",
       "isPartOf": {
         "@id": "https://dejure-help.ru/#website"
       },
       "breadcrumb": {
         "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/#breadcrumb"
       },
+      "mainEntity": {
+        "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/#service"
+      },
       "about": {
         "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/#service"
+      },
+      "mentions": {
+        "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person"
       }
     },
     {
@@ -116,20 +122,16 @@ export default function OtkazAnnulirovaniePage() {
     },
     {
       "@type": "Person",
-      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/#person",
+      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person",
       "name": "Дмитрий Сергеевич Конопкин",
-      "jobTitle": "Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»",
-      "url": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/",
-      "image": "https://dejure-help.ru/images/konopkin.jpg",
-      "worksFor": {
-        "@id": "https://dejure-help.ru/#organization"
-      }
+      "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
+      "jobTitle": "Адвокат"
     },
     {
       "@type": "Service",
       "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/#service",
       "name": "Обжалование отказа или аннулирования РВП и ВНЖ",
-      "description": "Обжалование отказа и аннулирования РВП / ВНЖ в Липецке: досудебное обжалование, иск в суд по КАС РФ, меры предварительной защиты (ст. 85 КАС РФ). ЮК «Де-Юре».",
+      "description": "Помощь при отказе в выдаче или аннулировании РВП и ВНЖ в Липецке. При аннулировании - 15 дней на выезд. Жалоба в МВД и судебная защита.",
       "provider": {
         "@id": "https://dejure-help.ru/#organization"
       },

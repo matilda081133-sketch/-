@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "npm run build && npx -y gh-pages -d out -t"
+    "deploy": "npm run build && node scripts/deploy.js"
   },
   "dependencies": {
     "docx": "^9.7.1",

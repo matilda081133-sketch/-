@@ -3,13 +3,13 @@ import PoluchenieVidaNaZhitelstvoClient from './PoluchenieVidaNaZhitelstvoClient
 
 export const metadata: Metadata = {
   title: 'Помощь в получении ВНЖ в Липецке — оформление вида на жительство | Де-Юре',
-  description: 'Помощь в оформлении вида на жительство (ВНЖ) в Липецке: сбор и проверка документов, подача в МВД, сопровождение на всех этапах. ЮК «Де-Юре».',
+  description: 'Юридическая помощь в оформлении вида на жительство (ВНЖ) в Липецке: после РВП и напрямую по семейным, образовательным и профессиональным основаниям. Проверка документов и сопровождение подачи.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/',
   },
   openGraph: {
     title: 'Помощь в получении ВНЖ в Липецке — оформление вида на жительство | Де-Юре',
-    description: 'Помощь в оформлении вида на жительство (ВНЖ) в Липецке: сбор и проверка документов, подача в МВД, сопровождение на всех этапах. ЮК «Де-Юре».',
+    description: 'Юридическая помощь в оформлении вида на жительство (ВНЖ) в Липецке: после РВП и напрямую по семейным, образовательным и профессиональным основаниям. Проверка документов и сопровождение подачи.',
     url: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: 'image/jpeg',
-        alt: 'Миграционный юрист в Липецке — ЮК «Де-Юре»',
+        alt: 'Оформление вида на жительство (ВНЖ) — ЮК «Де-Юре»',
       },
     ],
   },
@@ -39,15 +39,21 @@ export default function PoluchenieVnzhPage() {
       "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/#webpage",
       "url": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/",
       "name": "Помощь в получении ВНЖ в Липецке — оформление вида на жительство | Де-Юре",
-      "description": "Помощь в оформлении вида на жительство (ВНЖ) в Липецке: сбор и проверка документов, подача в МВД, сопровождение на всех этапах. ЮК «Де-Юре».",
+      "description": "Юридическая помощь в оформлении вида на жительство (ВНЖ) в Липецке: после РВП и напрямую по семейным, образовательным и профессиональным основаниям. Проверка документов и сопровождение подачи.",
       "isPartOf": {
         "@id": "https://dejure-help.ru/#website"
       },
       "breadcrumb": {
         "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/#breadcrumb"
       },
+      "mainEntity": {
+        "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/#service"
+      },
       "about": {
         "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/#service"
+      },
+      "mentions": {
+        "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person"
       }
     },
     {
@@ -116,20 +122,16 @@ export default function PoluchenieVnzhPage() {
     },
     {
       "@type": "Person",
-      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/#person",
+      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person",
       "name": "Дмитрий Сергеевич Конопкин",
-      "jobTitle": "Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»",
-      "url": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/",
-      "image": "https://dejure-help.ru/images/konopkin.jpg",
-      "worksFor": {
-        "@id": "https://dejure-help.ru/#organization"
-      }
+      "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
+      "jobTitle": "Адвокат"
     },
     {
       "@type": "Service",
       "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/#service",
       "name": "Оформление вида на жительство (ВНЖ)",
-      "description": "Помощь в оформлении вида на жительство (ВНЖ) в Липецке: сбор и проверка документов, подача в МВД, сопровождение на всех этапах. ЮК «Де-Юре».",
+      "description": "Юридическая помощь в оформлении вида на жительство (ВНЖ) в Липецке: после РВП и напрямую по семейным, образовательным и профессиональным основаниям. Проверка документов и сопровождение подачи.",
       "provider": {
         "@id": "https://dejure-help.ru/#organization"
       },

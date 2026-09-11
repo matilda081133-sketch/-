@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: 'image/jpeg',
-        alt: 'Миграционный юрист в Липецке — ЮК «Де-Юре»',
+        alt: 'Обжалование постановления об административном выдворении — ЮК «Де-Юре»',
       },
     ],
   },
@@ -46,8 +46,14 @@ export default function ObzhalovanieVydvoreniyaPage() {
       "breadcrumb": {
         "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-administrativnogo-vydvoreniya/#breadcrumb"
       },
+      "mainEntity": {
+        "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-administrativnogo-vydvoreniya/#service"
+      },
       "about": {
         "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-administrativnogo-vydvoreniya/#service"
+      },
+      "mentions": {
+        "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person"
       }
     },
     {
@@ -116,14 +122,10 @@ export default function ObzhalovanieVydvoreniyaPage() {
     },
     {
       "@type": "Person",
-      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/#person",
+      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person",
       "name": "Дмитрий Сергеевич Конопкин",
-      "jobTitle": "Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»",
-      "url": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/",
-      "image": "https://dejure-help.ru/images/konopkin.jpg",
-      "worksFor": {
-        "@id": "https://dejure-help.ru/#organization"
-      }
+      "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
+      "jobTitle": "Адвокат"
     },
     {
       "@type": "Service",

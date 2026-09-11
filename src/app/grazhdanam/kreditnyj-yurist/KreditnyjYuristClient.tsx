@@ -107,44 +107,76 @@ export default function KreditnyjYuristClient() {
 
   const situations = [
     {
-      title: 'Платёж скоро станет непосильным',
-      desc: 'Есть ли предусмотренное законом или договором основание изменить порядок платежей; какие документы подтвердят изменение обстоятельств.',
-      badge: 'До просрочки'
+      tag: 'До просрочки',
+      title: [
+        'Платёж скоро станет',
+        'непосильным для оплаты',
+        'по графику договора'
+      ],
+      desc: 'Есть ли предусмотренное законом или договором основание изменить порядок платежей; какие документы подтвердят изменение обстоятельств.'
     },
     {
-      title: 'Уже возникла просрочка',
-      desc: 'Правильно ли учтены платежи, из чего состоит требование и какие действия кредитора ожидаются дальше.',
-      badge: 'Просрочка'
+      tag: 'Просрочка',
+      title: [
+        'Уже возникла просрочка',
+        'по кредиту или займу',
+        'и начисляются штрафы'
+      ],
+      desc: 'Правильно ли учтены платежи, из чего состоит требование и какие действия кредитора ожидаются дальше.'
     },
     {
-      title: 'Получена претензия банка или МФО',
-      desc: 'Срок ответа, полномочия отправителя, расчёт долга и целесообразность письменных возражений.',
-      badge: 'Претензия'
+      tag: 'Претензия',
+      title: [
+        'Получено требование',
+        'или официальная претензия',
+        'от банка либо МФО'
+      ],
+      desc: 'Срок ответа, полномочия отправителя, расчёт долга и целесообразность письменных возражений.'
     },
     {
-      title: 'Банк или МФО подали иск',
-      desc: 'Срок подготовки позиции, доказательства платежей, расчёт требований, применимые возражения и необходимость представительства.',
-      badge: 'Судебный иск'
+      tag: 'Судебный иск',
+      title: [
+        'Банк или МФО',
+        'подали исковое заявление',
+        'о взыскании долга в суд'
+      ],
+      desc: 'Срок подготовки позиции, доказательства платежей, расчёт требований, применимые возражения и необходимость представительства.'
     },
     {
-      title: 'Получен судебный приказ',
-      desc: 'Дата получения, суд, взыскатель, сумма и наличие оснований восстановить срок, если он пропущен.',
-      badge: 'Судебный приказ'
+      tag: 'Судебный приказ',
+      title: [
+        'Мировой судья вынес',
+        'судебный приказ о взыскании',
+        'задолженности по кредиту'
+      ],
+      desc: 'Дата получения, суд, взыскатель, сумма и наличие оснований восстановить срок, если он пропущен.'
     },
     {
-      title: 'Долг передан коллекторам',
-      desc: 'Кто является кредитором или представителем, подтверждён ли переход права требования и соблюдаются ли правила взаимодействия.',
-      badge: 'Коллекторы'
+      tag: 'Коллекторы',
+      title: [
+        'Долг по кредиту',
+        'передан коллекторам',
+        'или новому кредитору'
+      ],
+      desc: 'Кто является кредитором или представителем, подтверждён ли переход права требования и соблюдаются ли правила взаимодействия.'
     },
     {
-      title: 'Кредит оформлен без согласия',
-      desc: 'Как заключён договор, куда перечислены деньги, что сохранилось в переписке и какие записи появились в кредитной истории.',
-      badge: 'Кредит без согласия'
+      tag: 'Кредит без согласия',
+      title: [
+        'Кредит или микрозайм',
+        'оформлен мошенниками',
+        'без вашего согласия'
+      ],
+      desc: 'Как заключён договор, куда перечислены деньги, что сохранилось в переписке и какие записи появились в кредитной истории.'
     },
     {
-      title: 'Пристав уже арестовал счёт',
-      desc: 'Это отдельная стадия. Нужен переход к юристу по исполнительному производству, если спор связан с действиями ФССП.',
-      badge: 'ФССП / Приставы'
+      tag: 'ФССП / Приставы',
+      title: [
+        'Судебный пристав',
+        'уже арестовал счета',
+        'или удерживает доход'
+      ],
+      desc: 'Это отдельная стадия. Нужен переход к юристу по исполнительному производству, если спор связан с действиями ФССП.'
     }
   ];
 
@@ -184,32 +216,34 @@ export default function KreditnyjYuristClient() {
 
   const helpScope = [
     {
-      task: 'Разбор ситуации',
-      result: 'Определены кредитор, стадия, документы, сроки и вопрос, который действительно можно решать юридически.'
+      num: '01',
+      title: 'Аудит ситуации и расчёт долга',
+      desc: 'Определяем кредитора, стадию спора, проверяем структуру долга, скрытые начисления, неучтённые платежи и сроки обжалования.'
     },
     {
-      task: 'Проверка договора и расчёта',
-      result: 'Зафиксированы состав требования, спорные элементы, неучтённые платежи и недостающие документы.'
+      num: '02',
+      title: 'Выбор порядка защиты',
+      desc: 'Подбираем надёжный маршрут: досудебные претензии, льготный период, финансовый уполномоченный или судебная защита.'
     },
     {
-      task: 'Выбор порядка защиты',
-      result: 'Согласован досудебный, внесудебный, судебный либо смежный маршрут и объяснены его ограничения.'
+      num: '03',
+      title: 'Подготовка документов',
+      desc: 'Составляем мотивированные возражения на судебный приказ или иск, ходатайства о снижении неустойки, запросы и жалобы.'
     },
     {
-      task: 'Подготовка документов',
-      result: 'Обращение, претензия, заявление, возражения, жалоба или ходатайство подготовлены под факты дела.'
+      num: '04',
+      title: 'Переговоры и претензии',
+      desc: 'Ведём официальную переписку с банком, МФО или коллекторами, фиксируем нарушения и проверяем законность уступки права.'
     },
     {
-      task: 'Переговоры и переписка',
-      result: 'Позиция клиента изложена последовательно, ответы и предложения кредитора проверены до подписания.'
+      num: '05',
+      title: 'Судебное представительство',
+      desc: 'Лично защищаем интересы заёмщика в суде, доказываем необоснованность требований кредитора и снижаем сумму взыскания.'
     },
     {
-      task: 'Судебное представительство',
-      result: 'Документы подаются в срок, доказательства представлены, процессуальная позиция клиента поддерживается в суде.'
-    },
-    {
-      task: 'Завершение этапа',
-      result: 'Юрист разъясняет полученный документ, оставшиеся обязательства и следующий необходимый шаг.'
+      num: '06',
+      title: 'Контроль исполнения решения',
+      desc: 'Получаем судебный акт, проверяем правильность расчёта, прекращение начислений и защищаем от незаконных действий приставов.'
     }
   ];
 
@@ -272,33 +306,41 @@ export default function KreditnyjYuristClient() {
       num: '07',
       title: 'Следующий шаг',
       desc: 'Разъясняем ответ или судебный акт и при необходимости переводим вопрос в апелляцию, исполнительное производство либо другой профильный маршрут.'
+    },
+    {
+      isBanner: true,
+      title: 'Дистанционный формат',
+      desc: 'Консультации и обмен несекретными документами возможны дистанционно. Способ передачи финансовых документов и необходимость личного участия согласуются после установления защищённого канала связи.'
     }
   ];
 
-  const documents = [
+  const primaryDocuments = [
     {
-      group: 'Договор',
-      items: 'Кредитный договор или договор займа, индивидуальные условия, график платежей, дополнительные соглашения.'
+      title: 'Кредитный договор или договор займа',
+      desc: 'Индивидуальные условия, график платежей, дополнительные соглашения и заявления заёмщика.'
     },
     {
-      group: 'Платежи и расчёт',
-      items: 'Выписки, чеки, история операций, справка о задолженности и расчёт кредитора — если получен.'
+      title: 'Выписки по счёту и квитанции',
+      desc: 'Банковские выписки, чеки, история транзакций в онлайн-банке и справка о текущей задолженности.'
     },
     {
-      group: 'Переписка',
-      items: 'Заявления, ответы, претензии, уведомления, сообщения о передаче долга и предложения изменить условия.'
+      title: 'Документы об изменении дохода',
+      desc: 'Справка 2-НДФЛ, трудовая книжка с записью об увольнении или больничные листы (для кредитных каникул).'
+    }
+  ];
+
+  const secondaryDocuments = [
+    {
+      title: 'Переписка и претензии',
+      desc: 'Заявления, ответы кредитора, претензии, уведомления об уступке прав (цессии) и требования досрочного возврата.'
     },
     {
-      group: 'Суд',
-      items: 'Судебный приказ, иск, приложения, определения, извещения, решение или жалоба — по текущей стадии.'
+      title: 'Судебные акты и извещения',
+      desc: 'Судебный приказ, исковое заявление банка или МФО с расчётом, повестки, определения суда, постановление пристава.'
     },
     {
-      group: 'Кредит без согласия',
-      items: 'Кредитная история, сведения о счёте получения денег, сообщения, данные личного кабинета, обращения в МФО, банк и правоохранительные органы.'
-    },
-    {
-      group: 'Изменение дохода',
-      items: 'Сведения о доходах и документы, подтверждающие трудную жизненную ситуацию, если рассматриваются предусмотренные законом меры.'
+      title: 'Документы по займам без согласия',
+      desc: 'Кредитная история из БКИ, выписка о переводе на сторонний счёт, талон-уведомление из полиции.'
     }
   ];
 
@@ -365,27 +407,23 @@ export default function KreditnyjYuristClient() {
   const relatedServices = [
     {
       title: 'Отмена судебного приказа',
-      desc: 'Получили приказ о взыскании кредита или займа — проверить срок и подготовить возражения.',
-      link: '/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/',
-      isChild: true
+      desc: 'Получили приказ о взыскании кредита или микрозайма — проверить 10-дневный срок и отменить приказ.',
+      link: '/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/'
     },
     {
       title: 'Банкротство физических лиц',
-      desc: 'Оценить применимость процедуры, если проблема состоит в невозможности исполнять совокупность обязательств.',
-      link: '/grazhdanam/bankrotstvo-fizicheskih-lic/',
-      isChild: false
+      desc: 'Оценить законную возможность полного списания долгов через суд или бесплатно через МФЦ.',
+      link: '/grazhdanam/bankrotstvo-fizicheskih-lic/'
     },
     {
       title: 'Юрист по исполнительному производству',
-      desc: 'Обжаловать арест, удержание, списание или бездействие пристава после начала исполнения.',
-      link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/',
-      isChild: false
+      desc: 'Защитить доходы от чрезмерных удержаний, снять арест со счетов или обжаловать действия пристава.',
+      link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/'
     },
     {
-      title: 'Взыскание долгов',
-      desc: 'Вернуть деньги по расписке, частному займу или другому обязательству на стороне кредитора.',
-      link: '/grazhdanam/vzyskanie-dolgov/',
-      isChild: false
+      title: 'Возврат списанных денег',
+      desc: 'Поворот исполнения судебного приказа, возврат удержанных банком сумм и социальных выплат.',
+      link: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/'
     }
   ];
 
@@ -456,70 +494,78 @@ export default function KreditnyjYuristClient() {
       {/* ═══ БЛОК 2: НА КАКОЙ СТАДИИ НАХОДИТСЯ ВАША СИТУАЦИЯ ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)', fontWeight: 600 }}>
-                Стадии спора
-              </span>
-            </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, textAlign: 'left' }}>
-              На какой стадии находится Ваша ситуация
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>На какой стадии</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>находится Ваша ситуация</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.65, margin: 0, textAlign: 'left' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Способ защиты зависит не только от суммы долга. Важно, кто предъявляет требования, какие документы уже получены и дошёл ли вопрос до суда или приставов.
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '36px' }}>
+          <div className="grid grid-4" style={{ gap: '28px', marginBottom: '36px' }}>
             {situations.map((item, i) => (
-              <div
-                key={i}
-                className="hover-lift"
-                style={{
-                  padding: '30px 28px',
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between'
-                }}
-              >
-                <div>
-                  <div style={{
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    color: 'var(--color-gold)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    marginBottom: '12px',
-                    background: 'rgba(193, 160, 102, 0.1)',
-                    padding: '4px 10px',
-                    display: 'inline-block'
-                  }}>
-                    {item.badge}
-                  </div>
-                  <h3 style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '19px',
-                    fontWeight: 600,
-                    color: 'var(--color-deep-blue)',
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.35
-                  }}>
-                    {item.title}
-                  </h3>
-                  <p style={{
-                    fontSize: '14.5px',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: 0
-                  }}>
-                    {item.desc}
-                  </p>
+              <div key={i} className="hover-lift" style={{
+                padding: '36px 30px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
                 </div>
+
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.tag}
+                </div>
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '17px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-deep-blue)', 
+                  margin: '0 0 14px 0', 
+                  lineHeight: 1.35, 
+                  minHeight: '68px',
+                  position: 'relative', 
+                  zIndex: 1 
+                }}>
+                  {item.title.map((line, idx) => (
+                    <span key={idx} className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                      {line}
+                    </span>
+                  ))}
+                </h3>
+                <p style={{ 
+                  fontSize: '14.5px', 
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: 1.6,
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -540,51 +586,54 @@ export default function KreditnyjYuristClient() {
       <section className="section bg-light" id="audit" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-start',
-            flexWrap: 'wrap',
-            gap: '28px',
-            marginBottom: '40px',
             borderBottom: '1px solid rgba(193, 160, 102, 0.3)',
-            paddingBottom: '28px'
+            paddingBottom: '28px',
+            marginBottom: '40px'
           }}>
-            <div style={{ maxWidth: '620px' }}>
-              <div style={{
-                fontSize: '13px',
-                fontWeight: 700,
-                color: 'var(--color-gold)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                marginBottom: '12px'
-              }}>
-                Правовой аудит
-              </div>
-              <h2 className="with-accent" style={{
-                fontSize: 'clamp(28px, 4vw, 42px)',
-                fontFamily: 'var(--font-serif)',
-                color: 'var(--color-primary)',
-                margin: 0,
-                lineHeight: 1.2
-              }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                  Почему сначала нужен
-                </span>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                  анализ материалов
-                </span>
-              </h2>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '12px'
+            }}>
+              Правовой аудит
             </div>
-            <div style={{ maxWidth: '480px', paddingTop: '28px' }}>
-              <p style={{
-                fontSize: '15.5px',
-                color: 'var(--color-deep-blue)',
-                lineHeight: 1.65,
-                margin: 0,
-                opacity: 0.92
-              }}>
-                Нельзя обещать уменьшение долга или расторжение договора, не изучив условия кредита, движение платежей и требования кредитора.
-              </p>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '28px'
+            }}>
+              <div style={{ maxWidth: '620px' }}>
+                <h2 className="with-accent" style={{
+                  fontSize: 'clamp(28px, 4vw, 42px)',
+                  fontFamily: 'var(--font-serif)',
+                  color: 'var(--color-primary)',
+                  margin: 0,
+                  lineHeight: 1.2
+                }}>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    Почему сначала нужен
+                  </span>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    анализ материалов
+                  </span>
+                </h2>
+              </div>
+              <div style={{ maxWidth: '480px', paddingTop: '4px' }}>
+                <p style={{
+                  fontSize: '15.5px',
+                  color: 'var(--color-deep-blue)',
+                  lineHeight: 1.65,
+                  margin: 0,
+                  opacity: 0.92
+                }}>
+                  Нельзя обещать уменьшение долга или расторжение договора, не изучив условия кредита, движение платежей и требования кредитора.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -855,50 +904,50 @@ export default function KreditnyjYuristClient() {
       {/* ═══ БЛОК 6: ЧЕМ ПОМОЖЕТ КРЕДИТНЫЙ ЮРИСТ ═══ */}
       <section className="section bg-white" id="scope" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)', fontWeight: 600 }}>
-                Объём помощи
-              </span>
-            </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, textAlign: 'left' }}>
-              Чем поможет кредитный юрист
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Чем поможет</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>кредитный юрист</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.65, margin: 0, textAlign: 'left' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance', textAlign: 'left' }}>
               Каждый этап работы направлен на понятный и контролируемый процессуальный результат.
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '36px' }}>
-            {helpScope.map((item, i) => (
-              <div
-                key={i}
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-primary)',
-                  padding: '20px 24px',
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  alignItems: 'baseline',
-                  justifyContent: 'space-between',
-                  gap: '12px'
-                }}
-              >
-                <div style={{ flex: '0 0 260px' }}>
-                  <span style={{ fontSize: '12px', color: 'var(--color-gold)', fontWeight: 700, marginRight: '8px' }}>
-                    0{i + 1}.
-                  </span>
-                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>
-                    {item.task}
-                  </strong>
+          <div className="grid grid-3" style={{ gap: '20px', position: 'relative', marginBottom: '36px' }}>
+            {helpScope.map((item, idx) => (
+              <div key={idx} className="hover-lift" style={{
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                padding: '30px 24px 24px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                boxSizing: 'border-box',
+                position: 'relative'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
                 </div>
-                <div style={{ flex: '1 1 400px' }}>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                    {item.result}
-                  </span>
-                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '4px 0 8px 0', lineHeight: 1.3 }}>
+                  {item.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -906,13 +955,14 @@ export default function KreditnyjYuristClient() {
           <div style={{
             background: 'var(--gradient-cream)',
             border: '1px solid var(--color-border)',
-            padding: '24px 28px',
-            marginBottom: '32px'
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '22px 28px',
+            marginBottom: '36px'
           }}>
-            <strong style={{ color: 'var(--color-deep-blue)', fontSize: '15px', display: 'block', marginBottom: '6px' }}>
+            <strong style={{ color: 'var(--color-primary)', fontSize: '15px', display: 'block', marginBottom: '6px' }}>
               Границы услуги:
             </strong>
-            <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+            <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-deep-blue)', opacity: 0.9, lineHeight: 1.6 }}>
               Кредитный юрист не выдаёт новый кредит, не является брокером, не обещает остановить начисления одним заявлением и не заменяет отдельную процедуру банкротства или работу с приставами.
             </p>
           </div>
@@ -985,56 +1035,93 @@ export default function KreditnyjYuristClient() {
         ctaButtonText="Получить консультацию"
         ctaButtonHref="#form"
       />
-      <div className="container" style={{ marginTop: '-20px', marginBottom: '60px' }}>
-        <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '3px solid var(--color-gold)', padding: '16px 20px', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-          <strong style={{ color: 'var(--color-deep-blue)' }}>Дистанционный формат:</strong> Консультации и обмен несекретными документами возможны дистанционно. Способ передачи финансовых документов и необходимость личного участия согласуются после установления защищённого канала связи.
-        </div>
-      </div>
 
-      {/* ═══ БЛОК 10: ДОКУМЕНТЫ ДЛЯ ПРЕДВАРИТЕЛЬНОГО АНАЛИЗА ═══ */}
+      {/* ═══ БЛОК 10: ЧТО ПОДГОТОВИТЬ ДЛЯ КОНСУЛЬТАЦИИ ═══ */}
       <section className="section bg-white" id="documents" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
               <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
               <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)', fontWeight: 600 }}>
-                Подготовка к разбору
+                Необходимые материалы
               </span>
             </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, textAlign: 'left' }}>
-              Что подготовить к консультации
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Что подготовить</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>к консультации</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.65, margin: 0, textAlign: 'left' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: '16px 0 0 0', lineHeight: 1.6, textWrap: 'balance' }}>
               Для качественного анализа ситуации полезно заранее собрать имеющиеся документы. Если полного комплекта нет, начните с того, что уже есть: юрист определит, что запросить дополнительно.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            {documents.map((doc, i) => (
-              <div
-                key={i}
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  padding: '24px 22px',
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.04)'
-                }}
-              >
-                <h3 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '18px',
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 10px 0',
-                  fontWeight: 600
-                }}>
-                  {doc.group}
-                </h3>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                  {doc.items}
-                </p>
-              </div>
-            ))}
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Договорные и финансовые документы */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                Договорные и финансовые документы
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {primaryDocuments.map((doc, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
+                        {doc.title}
+                      </strong>
+                      <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                        {doc.desc}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Карточка 2: Переписка, суд и особые случаи */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                Переписка, суд и особые случаи
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {secondaryDocuments.map((doc, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
+                        {doc.title}
+                      </strong>
+                      <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                        {doc.desc}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div style={{
@@ -1048,7 +1135,7 @@ export default function KreditnyjYuristClient() {
             <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>
               Безопасность передачи данных:
             </strong>
-            Не отправляйте финансовые и паспортные документы через общую форму на сайте. Способ безопасной передачи материалов будет согласован специалистом при первом звонке.
+            Не отправляйте конфиденциальные финансовые и паспортные документы через общую форму на сайте. Способ безопасной передачи материалов будет согласован специалистом при первом звонке.
           </div>
         </div>
       </section>
@@ -1073,56 +1160,78 @@ export default function KreditnyjYuristClient() {
       />
 
       {/* ═══ БЛОК 13: СВЯЗАННЫЕ УСЛУГИ ═══ */}
-      <section className="section bg-white" id="related-services" style={{ padding: '80px 0' }}>
+      <section className="section bg-cream" id="related-services" style={{ padding: '80px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
               <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
               <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)', fontWeight: 600 }}>
                 Смежные направления
               </span>
             </div>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, textAlign: 'left' }}>
-              Связанные услуги
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Связанные услуги
+              </span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.65, margin: 0, textAlign: 'left' }}>
-              Если Ваша ситуация выходит за рамки кредитного спора, перейдите в профильный раздел:
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              Если Ваша ситуация выходит за рамки кредитного спора или требует сопутствующих мер защиты:
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '24px' }}>
+          <style dangerouslySetInnerHTML={{ __html: `
+            .related-service-card {
+              border-top: 3px solid var(--color-primary) !important;
+            }
+            .related-service-card:hover {
+              border-top: 3px solid var(--color-primary) !important;
+            }
+            .related-service-card:hover .card-arrow {
+              color: var(--color-gold) !important;
+            }
+            .related-service-card:hover .card-arrow svg {
+              stroke: var(--color-gold) !important;
+            }
+          `}} />
+
+          <div className="grid grid-4" style={{ gap: '20px' }}>
             {relatedServices.map((srv, idx) => (
-              <div
-                key={idx}
-                className="hover-lift"
-                style={{
-                  background: srv.isChild ? 'linear-gradient(160deg, #FFFFFF 0%, #F5F0E6 100%)' : 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  border: srv.isChild ? '2px solid var(--color-primary)' : '1px solid var(--color-border)',
-                  borderTop: '4px solid var(--color-primary)',
-                  padding: '32px 28px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between'
-                }}
-              >
-                <div>
-                  <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px', lineHeight: 1.35 }}>
-                    {srv.title}
-                  </h3>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 24px' }}>
-                    {srv.desc}
-                  </p>
+              <Link key={idx} href={srv.link} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                <div
+                  className="card related-service-card hover-lift"
+                  style={{
+                    height: '100%',
+                    minHeight: '180px',
+                    padding: '28px 22px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-primary)',
+                    borderRadius: '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                    transition: 'all 0.3s ease',
+                    position: 'relative'
+                  }}
+                >
+                  <div>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                      {srv.title}
+                    </h3>
+                    <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      {srv.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
+                    Подробнее 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
                 </div>
-                <div>
-                  <Link
-                    href={srv.link}
-                    className="btn btn-outline"
-                    style={{ width: '100%', textAlign: 'center', padding: '12px 20px', fontSize: '14px', fontWeight: 600 }}
-                  >
-                    {srv.isChild ? 'Перейти к услуге →' : 'Подробнее о направлении →'}
-                  </Link>
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

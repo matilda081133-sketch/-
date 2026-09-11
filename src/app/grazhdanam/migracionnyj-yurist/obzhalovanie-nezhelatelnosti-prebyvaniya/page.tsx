@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: 'image/jpeg',
-        alt: 'Миграционный юрист в Липецке — ЮК «Де-Юре»',
+        alt: 'Обжалование решения о нежелательности пребывания в РФ — ЮК «Де-Юре»',
       },
     ],
   },
@@ -46,8 +46,14 @@ export default function ObzhalovanieNezhelatelnostiPage() {
       "breadcrumb": {
         "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-nezhelatelnosti-prebyvaniya/#breadcrumb"
       },
+      "mainEntity": {
+        "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-nezhelatelnosti-prebyvaniya/#service"
+      },
       "about": {
         "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-nezhelatelnosti-prebyvaniya/#service"
+      },
+      "mentions": {
+        "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person"
       }
     },
     {
@@ -116,14 +122,10 @@ export default function ObzhalovanieNezhelatelnostiPage() {
     },
     {
       "@type": "Person",
-      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/#person",
+      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person",
       "name": "Дмитрий Сергеевич Конопкин",
-      "jobTitle": "Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»",
-      "url": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/",
-      "image": "https://dejure-help.ru/images/konopkin.jpg",
-      "worksFor": {
-        "@id": "https://dejure-help.ru/#organization"
-      }
+      "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
+      "jobTitle": "Адвокат"
     },
     {
       "@type": "Service",
@@ -164,7 +166,7 @@ export default function ObzhalovanieNezhelatelnostiPage() {
           "name": "Можно ли отменить нежелательность пребывания после погашения судимости?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Если нежелательность установлена Минюстом РФ в связи с наличием судимости, решение принимается на срок до момента погашения или снятия судимости. Однако при наличии семьи (супруг, дети — граждане РФ), длительного проживания и положительных характеристик юристы «Де-Юре» добиваются отмены распоряжения в судебном порядке по ст. 8 Конвенции о защите прав человека и позиции КС РФ."
+            "text": "Погашение судимости само по себе не отменяет решение о нежелательности пребывания. Оно оценивается вместе с поведением после освобождения, отсутствием новых нарушений, семейными связями, продолжительностью проживания в России и соразмерностью ограничения. Возможность отмены определяется после изучения решения и доказательств."
           }
         },
         {
@@ -177,18 +179,18 @@ export default function ObzhalovanieNezhelatelnostiPage() {
         },
         {
           "@type": "Question",
-          "name": "Какой срок на обжалование распоряжения о нежелательности пребывания?",
+          "name": "В какой срок можно обжаловать решение о нежелательности пребывания?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Административное исковое заявление по КАС РФ может быть подано в суд в течение 3 месяцев со дня, когда гражданину стало известно о нарушении его прав (ч. 1 ст. 219 КАС РФ). Пропуск срока возможен к восстановлению при наличии уважительных причин."
+            "text": "По общему правилу административный иск подается в течение трех месяцев со дня, когда человеку стало известно о нарушении его прав. Точную дату начала срока необходимо определять по уведомлению, дате получения решения и другим документам. Пропущенный срок может быть восстановлен только при наличии уважительных причин."
           }
         },
         {
           "@type": "Question",
-          "name": "Что происходит с действием решения во время суда?",
+          "name": "Приостанавливает ли обращение в суд исполнение решения?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Подача административного иска автоматически не приостанавливает действие распоряжения о нежелательности. Юрист одновременно с подачей иска заявляет ходатайство о применении мер предварительной защиты (ст. 85 КАС РФ) для приостановления действия решения и защиты от депортации на время процесса."
+            "text": "Нет. Подача административного иска сама по себе не приостанавливает действие решения. Необходимо отдельно заявить о применении мер предварительной защиты. Приостановить действие решения или запретить его исполнение может суд."
           }
         }
       ]

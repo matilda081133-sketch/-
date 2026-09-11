@@ -197,7 +197,7 @@ export default function ObzhalovanieAdministrativnogoVydvoreniyaClient() {
 ]}
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»"
+        imageSubtitle="Адвокат, рег. номер 48/812"
         imageObjectPosition="center 20%"
       />
 
@@ -341,7 +341,7 @@ export default function ObzhalovanieAdministrativnogoVydvoreniyaClient() {
       <SpecialistBlock
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Миграционное право»</>}
+        position="Адвокат, рег. номер 48/812"
         imageUrl="/images/konopkin.jpg"
         imagePosition="center 15%"
         description={[

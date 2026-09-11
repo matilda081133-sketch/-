@@ -642,89 +642,96 @@ export default function ArbitrazhClient() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* ═══ СПЕЦИАЛИЗИРОВАННЫЕ УСЛУГИ КЛАСТЕРА (ШАБЛОН КАРТОЧЕК НАПРАВЛЕНИЙ) ═══ */}
-          <div style={{ marginTop: '64px', marginBottom: '24px' }}>
-            <div style={{ marginBottom: '32px' }}>
-              <div style={{
-                fontSize: '12px',
-                fontWeight: 700,
-                color: 'var(--color-gold)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                marginBottom: '8px'
-              }}>
-                Специализированные услуги
-              </div>
-              <h3 style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(22px, 3vw, 28px)',
-                color: 'var(--color-deep-blue)',
-                margin: 0
-              }}>
-                Выберите этап или формат помощи
-              </h3>
-            </div>
+      {/* ═══ БЛОК 3: НАПРАВЛЕНИЯ АРБИТРАЖНОЙ ПОМОЩИ (ШАБЛОН БЛОКА НАПРАВЛЕНИЙ) ═══ */}
+      <section id="directions" className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>Направления арбитражной</span> <br />
+              <span style={{ display: 'inline-block' }}>помощи для бизнеса</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Выберите конкретное направление, чтобы узнать порядок действий, необходимые документы и варианты процессуальной защиты вашей компании.
+            </p>
+          </div>
 
-            <div className="grid grid-3" style={{ gap: '24px', marginTop: '32px', paddingTop: '8px' }}>
-              {[
-                {
-                  title: 'Подготовка и подача иска',
-                  desc: 'Проверим требования, подсудность, претензионный порядок, сформируем комплект доказательств и подадим иск в суд.',
-                  link: '/biznesu/arbitrazhnyj-yurist/isk-v-arbitrazhnyj-sud/'
-                },
-                {
-                  title: 'Защита ответчика в суде',
-                  desc: 'Срочный анализ иска, подготовка отзыва, снижение неустойки по ст. 333 ГК РФ, встречный иск и защита активов.',
-                  link: '/biznesu/arbitrazhnyj-yurist/zashchita-otvetchika-v-arbitrazhnom-sude/'
-                },
-                {
-                  title: 'Обжалование судебных решений',
-                  desc: 'Апелляция в 19 ААС (Воронеж), кассация в АС ЦО (Калуга), приостановление исполнения и восстановление сроков.',
-                  link: '/biznesu/arbitrazhnyj-yurist/obzhalovanie-resheniya-arbitrazhnogo-suda/'
-                }
-              ].map((card, idx) => (
-                <Link
-                  key={idx}
-                  href={card.link}
-                  style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
+          <div className="grid grid-3" style={{ gap: '24px' }}>
+            {[
+              {
+                title: 'Подготовка и подача иска',
+                desc: 'Проверим требования, подсудность, претензионный порядок, сформируем комплект доказательств и подадим иск в суд.',
+                link: '/biznesu/arbitrazhnyj-yurist/isk-v-arbitrazhnyj-sud/'
+              },
+              {
+                title: 'Защита ответчика в суде',
+                desc: 'Срочный анализ иска, подготовка отзыва, снижение неустойки по ст. 333 ГК РФ, встречный иск и защита активов.',
+                link: '/biznesu/arbitrazhnyj-yurist/zashchita-otvetchika-v-arbitrazhnom-sude/'
+              },
+              {
+                title: 'Обжалование судебных решений',
+                desc: 'Апелляция в 19 ААС (Воронеж), кассация в АС ЦО (Калуга), приостановление исполнения и восстановление сроков.',
+                link: '/biznesu/arbitrazhnyj-yurist/obzhalovanie-resheniya-arbitrazhnogo-suda/'
+              }
+            ].map((card, idx) => (
+              <Link
+                key={idx}
+                href={card.link}
+                style={{ textDecoration: 'none', display: 'block', height: '100%' }}
+              >
+                <div
+                  className="card service-card hover-lift"
+                  style={{
+                    height: '100%',
+                    minHeight: '220px',
+                    padding: '32px 28px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-primary)',
+                    borderRadius: '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                    transition: 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease',
+                    position: 'relative',
+                    cursor: 'pointer'
+                  }}
                 >
+                  <div>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600, minHeight: '48px' }}>
+                      {card.title}
+                    </h3>
+                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {card.desc}
+                    </p>
+                  </div>
                   <div
-                    className="card service-card"
+                    className="card-arrow"
                     style={{
-                      height: '100%',
-                      minHeight: '210px',
-                      padding: '28px',
-                      background: 'var(--color-white)',
-                      border: '1px solid var(--color-border)',
-                      borderRadius: '0',
                       display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'space-between',
-                      position: 'relative',
-                      cursor: 'pointer',
-                      transition: 'all 0.35s ease'
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: 'var(--color-primary)',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      marginTop: 'auto',
+                      paddingTop: '14px',
+                      borderTop: '1px solid rgba(23, 50, 77, 0.06)',
+                      transition: 'transform 0.3s'
                     }}
                   >
-                    <div>
-                      <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
-                        {card.title}
-                      </h3>
-                      <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                        {card.desc}
-                      </p>
-                    </div>
-                    <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: 'auto', transition: 'all 0.3s' }}>
-                      <span>Подробнее об услуге</span>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </div>
+                    <span>Подробнее</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                   </div>
-                </Link>
-              ))}
-            </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

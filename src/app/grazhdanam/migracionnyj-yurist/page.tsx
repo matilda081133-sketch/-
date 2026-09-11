@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: 'image/jpeg',
-        alt: 'Миграционный юрист в Липецке — ЮК «Де-Юре»',
+        alt: 'Услуги миграционного юриста в Липецке — ЮК «Де-Юре»',
       },
     ],
   },
@@ -46,8 +46,14 @@ export default function MigracionnyjPage() {
       "breadcrumb": {
         "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/#breadcrumb"
       },
+      "mainEntity": {
+        "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/#service"
+      },
       "about": {
         "@id": "https://dejure-help.ru/grazhdanam/migracionnyj-yurist/#service"
+      },
+      "mentions": {
+        "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person"
       }
     },
     {
@@ -110,14 +116,10 @@ export default function MigracionnyjPage() {
     },
     {
       "@type": "Person",
-      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/#person",
+      "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person",
       "name": "Дмитрий Сергеевич Конопкин",
-      "jobTitle": "Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное право»",
-      "url": "https://dejure-help.ru/specialisty/konopkin-dmitrij-sergeevich/",
-      "image": "https://dejure-help.ru/images/konopkin.jpg",
-      "worksFor": {
-        "@id": "https://dejure-help.ru/#organization"
-      }
+      "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
+      "jobTitle": "Адвокат"
     },
     {
       "@type": "Service",
@@ -174,7 +176,7 @@ export default function MigracionnyjPage() {
           "name": "Что делать, если сведения появились в реестре контролируемых лиц?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "С 5 февраля 2025 года (ФЗ от 08.08.2024 № 260-ФЗ) в отношении лиц, включенных в реестр контролируемых лиц, действует режим высылки с серьезными ограничениями прав (запрет на управление ТС, открытие счетов и переводы, регистрацию недвижимости и юрлиц, заключение брака). Юристы «Де-Юре» добиваются исключения из реестра через обжалование оснований внесения."
+            "text": "Включение в реестр контролируемых лиц ограничивает открытие счетов и проведение банковских операций. При этом закон сохраняет возможность получать входящие переводы, оплачивать обязательные платежи и снимать наличные в пределах установленного лимита. Также действуют ограничения на управление транспортом, регистрацию имущества, заключение брака и передвижение. Необходимо установить основание включения и определить, требуется ли исправление сведений, получение законного статуса или обжалование исходного решения."
           }
         },
         {
@@ -182,7 +184,7 @@ export default function MigracionnyjPage() {
           "name": "Что грозит при аннулировании РВП или ВНЖ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "После аннулирования РВП или ВНЖ иностранный гражданин обязан выехать из РФ в течение 15 дней (ранее — 30 дней), либо оспорить решение. При подаче иска в суд депортация автоматически НЕ приостанавливается — юрист обязательно заявляет ходатайство о применении мер предварительной защиты (ст. 85 КАС РФ)."
+            "text": "После аннулирования РВП или ВНЖ иностранный гражданин обязан выехать из России в течение 15 дней. Само обращение в суд не приостанавливает действие решения и обязанность выехать. Вместе с административным иском необходимо отдельно заявить о применении мер предварительной защиты. Временно приостановить действие решения может суд, если удовлетворит это заявление."
           }
         },
         {
