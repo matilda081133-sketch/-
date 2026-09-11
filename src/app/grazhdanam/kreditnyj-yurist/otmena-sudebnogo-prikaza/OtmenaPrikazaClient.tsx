@@ -990,88 +990,127 @@ export default function OtmenaPrikazaClient() {
             </div>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '28px' }}>
-            {/* Маршрут 1 */}
-            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', padding: '36px 30px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
+          {/* Сравнительная двухколоночная структура в строгом юридическом стиле сайта */}
+          <div className="grid grid-2" style={{ gap: '30px', alignItems: 'stretch', marginBottom: '32px' }}>
+            
+            {/* Колонка 1: Маршрут 1 */}
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              padding: '36px 32px',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+              display: 'flex',
+              flexDirection: 'column'
+            }}>
+              <div style={{ paddingBottom: '18px', marginBottom: '24px', borderBottom: '1px solid var(--color-border)' }}>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  marginBottom: '8px'
+                }}>
+                  Маршрут 1 • В пределах 10 дней
+                </div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.3, fontWeight: 700 }}>
+                  Возражения в установленный срок
+                </h3>
+                <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  По закону (ст. 129 ГПК РФ) для отмены приказа достаточно выразить свое несогласие с его исполнением. На этой стадии не требуется доказывать весь кредитный спор, расчеты или недействительность договора.
+                </p>
               </div>
-              <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '12px', position: 'relative', zIndex: 1 }}>
-                Маршрут 1 • В пределах 10 дней
-              </span>
-              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px', position: 'relative', zIndex: 1 }}>
-                Возражения в установленный срок
-              </h3>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.65, marginBottom: '16px', position: 'relative', zIndex: 1 }}>
-                По закону (ст. 129 ГПК РФ) для отмены приказа <strong>достаточно выразить свое несогласие</strong> с его исполнением. На этой стадии не требуется доказывать весь кредитный спор, расчеты или недействительность договора.
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '14.5px', color: 'var(--color-deep-blue)', position: 'relative', zIndex: 1 }}>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                  <span>Обязательно проверяем реквизиты мирового судьи и номер дела</span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                  <span>Оформляем подпись и перечень приложений</span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                  <span>Подаем способом с железной фиксацией даты (почта с описью / канцелярия)</span>
-                </li>
-              </ul>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div className="risk-card-item risk-card-item--gold">
+                  <h4 style={{ fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
+                    Реквизиты мирового судьи и номер дела
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                    Обязательно проверяем реквизиты мирового судьи и номер дела
+                  </p>
+                </div>
+
+                <div className="risk-card-item risk-card-item--gold">
+                  <h4 style={{ fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
+                    Подпись и перечень приложений
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                    Оформляем подпись и перечень приложений
+                  </p>
+                </div>
+
+                <div className="risk-card-item risk-card-item--gold">
+                  <h4 style={{ fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
+                    Способ фиксации даты подачи
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                    Подаем способом с железной фиксацией даты (почта с описью / канцелярия)
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* Маршрут 2 */}
-            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', padding: '36px 30px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
+            {/* Колонка 2: Маршрут 2 */}
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              padding: '36px 32px',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+              display: 'flex',
+              flexDirection: 'column'
+            }}>
+              <div style={{ paddingBottom: '18px', marginBottom: '24px', borderBottom: '1px solid var(--color-border)' }}>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  color: 'var(--color-primary)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  marginBottom: '8px'
+                }}>
+                  Маршрут 2 • Срок пропущен
+                </div>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.3, fontWeight: 700 }}>
+                  Поздние возражения с доказательствами
+                </h3>
+                <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  Суд рассматривает поздние возражения только при обосновании причин, не зависевших от должника, и документальном подтверждении невозможности подать их вовремя (Постановление Пленума ВС РФ № 62).
+                </p>
               </div>
-              <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '12px', position: 'relative', zIndex: 1 }}>
-                Маршрут 2 • Срок пропущен
-              </span>
-              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px', position: 'relative', zIndex: 1 }}>
-                Поздние возражения с доказательствами
-              </h3>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.65, marginBottom: '16px', position: 'relative', zIndex: 1 }}>
-                Суд рассматривает поздние возражения только при <strong>обосновании причин, не зависевших от должника</strong>, и документальном подтверждении невозможности подать их вовремя (Постановление Пленума ВС РФ № 62).
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '14.5px', color: 'var(--color-deep-blue)', position: 'relative', zIndex: 1 }}>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                  <span>Подаются не позднее 10 дней с момента отпадения препятствий</span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                  <span>Доказательства: болезнь, командировка, отпуск, смена адреса, сбои доставки</span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                  <span>К возражениям прикладывается полный пакет подтверждающих документов</span>
-                </li>
-              </ul>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div className="risk-card-item risk-card-item--navy">
+                  <h4 style={{ fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
+                    Срок подачи после отпадения препятствий
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                    Подаются не позднее 10 дней с момента отпадения препятствий
+                  </p>
+                </div>
+
+                <div className="risk-card-item risk-card-item--navy">
+                  <h4 style={{ fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
+                    Уважительные причины пропуска
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                    Доказательства: болезнь, командировка, отпуск, смена адреса, сбои доставки
+                  </p>
+                </div>
+
+                <div className="risk-card-item risk-card-item--navy">
+                  <h4 style={{ fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
+                    Подтверждающие документы
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                    К возражениям прикладывается полный пакет подтверждающих документов
+                  </p>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
