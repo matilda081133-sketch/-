@@ -7,17 +7,22 @@ const outDir = path.join(projectDir, 'out');
 
 console.log('1. Cleaning .next and out directories...');
 const nextDir = path.join(projectDir, '.next');
-if (fs.existsSync(nextDir)) {
-  fs.rmSync(nextDir, { recursive: true, force: true });
+try {
+  if (fs.existsSync(nextDir)) fs.rmSync(nextDir, { recursive: true, force: true });
+} catch (e) {
+  console.warn('Warning cleaning .next:', e.message);
 }
-if (fs.existsSync(outDir)) {
-  fs.rmSync(outDir, { recursive: true, force: true });
+try {
+  if (fs.existsSync(outDir)) fs.rmSync(outDir, { recursive: true, force: true });
+} catch (e) {
+  console.warn('Warning cleaning out:', e.message);
 }
 
 console.log('2. Building fresh Next.js export...');
 execSync('npm run build', { cwd: projectDir, stdio: 'inherit' });
 
-console.log('3. Ensuring .nojekyll exists...');
+console.log('3. Ensuring CNAME and .nojekyll exist...');
+fs.writeFileSync(path.join(outDir, 'CNAME'), 'dejure-help.ru\n', 'utf8');
 fs.writeFileSync(path.join(outDir, '.nojekyll'), '', 'utf8');
 
 console.log('4. Initializing git repo inside out folder...');
