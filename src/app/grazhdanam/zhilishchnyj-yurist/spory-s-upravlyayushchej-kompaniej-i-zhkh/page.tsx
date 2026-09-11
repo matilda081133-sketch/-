@@ -15,10 +15,11 @@ export const metadata: Metadata = {
     siteName: 'ЮК «Де-Юре»',
     images: [
       {
-        url: 'https://dejure-help.ru/images/housing_law_hero.jpg',
+        url: 'https://dejure-help.ru/images/og/utility-management-disputes-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Споры с управляющей компанией, ТСЖ и ЖКХ в Липецке'
+        type: 'image/jpeg',
+        alt: 'Споры с управляющей компанией и ЖКХ в Липецке — ЮК «Де-Юре»'
       }
     ],
     locale: 'ru_RU',
@@ -26,9 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Споры с управляющей компанией и ЖКХ в Липецке — юрист | Де-Юре',
-    description: 'Поможем оспорить начисления, добиться перерасчёта, ремонта общего имущества и реакции УК или ТСЖ. Претензии, жалобы и суд в Липецке.',
-    images: ['https://dejure-help.ru/images/housing_law_hero.jpg']
+    images: ['https://dejure-help.ru/images/og/utility-management-disputes-og.jpg']
   }
 };
 

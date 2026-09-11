@@ -83,6 +83,18 @@ export default function VselenieClient() {
           { '@type': 'ListItem', position: 3, name: 'Жилищный юрист', item: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/' },
           { '@type': 'ListItem', position: 4, name: 'Вселение и устранение препятствий', item: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/vselenie-i-ustranenie-prepyatstvij-v-polzovanii-kvartiroj/' }
         ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/vselenie-i-ustranenie-prepyatstvij-v-polzovanii-kvartiroj/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };
@@ -111,7 +123,7 @@ export default function VselenieClient() {
     {
       tag: 'Компенсация за долю',
       title: 'Вселение невозможно из-за малой площади или планировки',
-      desc: 'Взыщем со второго собственника ежемесячную компенсацию за пользование вашей долей или добьёмся её выкупа.'
+      desc: 'Оценим основания для компенсации за пользование квартирой другим собственником и отдельно — возможность договорного выкупа доли. Принудительная выплата стоимости доли применяется судом только при предусмотренных законом условиях.'
     },
     {
       tag: 'Встречный иск',
@@ -528,7 +540,7 @@ export default function VselenieClient() {
       {/* ═══ 5. ПРОЦЕСС ═══ */}
       <ProcessBlock 
         title="Как проходит работа"
-        subtitle="Пять шагов к гарантированному получению доступа в квартиру."
+        subtitle="Пять шагов к восстановлению доступа в квартиру."
         steps={[
           { num: '01', title: 'Правовой анализ', desc: 'Проверяем права на квартиру, доли, метраж комнат и основания пользования жильём.' },
           { num: '02', title: 'Фиксация препятствий', desc: 'Формируем официальные доказательства недопуска: акты, обращения в МВД, видеозаписи.' },

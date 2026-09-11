@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'ЮК «Де-Юре»',
     images: [
       {
-        url: 'https://dejure-help.ru/images/housing_law_hero.jpg',
+        url: 'https://dejure-help.ru/images/og/housing-lawyer-lipetsk-og.jpg',
         width: 1200,
         height: 630,
         alt: 'Жилищный юрист в Липецке — ЮК Де-Юре'
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Жилищный юрист в Липецке | Де-Юре',
     description: 'Определим правовой режим жилья, оценим документы и предложим порядок действий для досудебного или судебного решения жилищного спора.',
-    images: ['https://dejure-help.ru/images/housing_law_hero.jpg']
+    images: ['https://dejure-help.ru/images/og/housing-lawyer-lipetsk-og.jpg']
   }
 };
 

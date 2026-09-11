@@ -15,10 +15,11 @@ export const metadata: Metadata = {
     siteName: 'ЮК «Де-Юре»',
     images: [
       {
-        url: 'https://dejure-help.ru/images/housing_law_hero.jpg',
+        url: 'https://dejure-help.ru/images/og/eviction-registration-court-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Выселение и выписка из квартиры через суд в Липецке'
+        type: 'image/jpeg',
+        alt: 'Выселение и выписка из квартиры через суд в Липецке — ЮК «Де-Юре»'
       }
     ],
     locale: 'ru_RU',
@@ -26,9 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Выселение и выписка из квартиры через суд в Липецке — юрист | Де-Юре',
-    description: 'Поможем выписать и выселить человека через суд или защититься от необоснованного иска. Оценим право пользования, доказательства и риски. Липецк.',
-    images: ['https://dejure-help.ru/images/housing_law_hero.jpg']
+    images: ['https://dejure-help.ru/images/og/eviction-registration-court-og.jpg']
   }
 };
 

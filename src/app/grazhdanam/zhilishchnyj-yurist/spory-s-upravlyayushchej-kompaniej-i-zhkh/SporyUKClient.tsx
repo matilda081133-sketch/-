@@ -87,6 +87,18 @@ export default function SporyUKClient() {
           { '@type': 'ListItem', position: 3, name: 'Жилищный юрист', item: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/' },
           { '@type': 'ListItem', position: 4, name: 'Споры с УК, ТСЖ и ЖКХ', item: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/spory-s-upravlyayushchej-kompaniej-i-zhkh/' }
         ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/spory-s-upravlyayushchej-kompaniej-i-zhkh/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };
@@ -143,7 +155,7 @@ export default function SporyUKClient() {
     },
     {
       title: <>Судебная защита прав потребителей</>,
-      desc: 'Взыскиваем перерасчёт, возмещение ущерба, штраф 50%, неустойку и компенсацию морального вреда.'
+      desc: 'Заявляем требования о перерасчёте, возмещении ущерба, штрафе по Закону о ЗПП, неустойке и компенсации морального вреда.'
     },
     {
       title: <>Оспаривание протоколов ОСС</>,
@@ -295,7 +307,7 @@ export default function SporyUKClient() {
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
                         <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
-                          <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>СПОРИ С УК И ЖКХ</span>
+                          <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>СПОРЫ С УК И ЖКХ</span>
                           <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>ЮК «Де-Юре» Липецк</span>
                         </div>
                       </div>
@@ -355,7 +367,7 @@ export default function SporyUKClient() {
           trustItems={[
             { text: 'Проверим обоснованность тарифов и начислений' },
             { text: 'Привлечём ГЖИ и надзорные органы' },
-            { text: 'Взыщем ущерб, штраф 50% и судебные издержки' }
+            { text: 'Заявим ущерб, штраф по Закону о ЗПП и судебные расходы' }
           ]}
         />
       </div>
@@ -426,10 +438,10 @@ export default function SporyUKClient() {
           >
             <div style={{ flex: '1 1 300px' }}>
               <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
-                УК обязана возместить ущерб и выплатить 50% штрафа
+                Что можно взыскать с управляющей организации
               </h3>
               <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
-                По закону о защите прав потребителей все расходы на независимую экспертизу, юридическую помощь и штраф 50% от суммы взыскиваются с управляющей организации.
+                Если подтверждены нарушение со стороны управляющей организации, причинная связь и размер требований, в суде можно заявить возмещение ущерба, компенсацию морального вреда и связанные с делом расходы. Штраф по Закону о защите прав потребителей заявляется, когда закон применим и требования потребителя не были удовлетворены добровольно; окончательный состав и размер взыскания определяет суд.
               </p>
             </div>
             <div style={{ flexShrink: 0 }}>

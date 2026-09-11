@@ -99,6 +99,18 @@ export default function RazdelClient() {
           { '@type': 'ListItem', position: 3, name: 'Жилищный юрист', item: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/' },
           { '@type': 'ListItem', position: 4, name: 'Раздел лицевых счетов и порядка оплаты ЖКУ', item: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/razdel-licevyh-schetov-i-poryadka-oplaty-zhku/' }
         ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/razdel-licevyh-schetov-i-poryadka-oplaty-zhku/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };
@@ -550,7 +562,7 @@ export default function RazdelClient() {
           { num: '02', title: 'Анализ начислений', desc: 'Проверяем квитанции всех поставщиков коммунальных услуг и управляющей компании.' },
           { num: '03', title: 'Досудебный порядок', desc: 'Подготавливаем соглашение совладельцев или официальные заявления в УК и расчётные центры.' },
           { num: '04', title: 'Судебный процесс', desc: 'При отказе составляем иск, обосновываем доли участия и представляем ваши интересы в суде.' },
-          { num: '05', title: 'Открытие счетов', desc: 'Передаём решение суда в УК и расчётный центр и контролируем формирование раздельных квитанций.' }
+          { num: '05', title: 'Раздельные платёжные документы', desc: 'Передаём решение суда исполнителям и в расчётный центр и контролируем формирование отдельных платёжных документов по установленному порядку оплаты.' }
         ]}
       />
 

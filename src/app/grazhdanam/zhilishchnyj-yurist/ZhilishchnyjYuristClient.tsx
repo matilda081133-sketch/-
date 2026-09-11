@@ -98,6 +98,7 @@ export default function ZhilishchnyjYuristClient() {
         '@id': 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/#service',
         name: 'Помощь жилищного юриста в Липецке',
         serviceType: 'Юридическая помощь по жилищным спорам',
+        url: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/',
         provider: {
           '@id': 'https://dejure-help.ru/#legalservice'
         },
@@ -111,6 +112,18 @@ export default function ZhilishchnyjYuristClient() {
           { '@type': 'ListItem', position: 2, name: 'Гражданам', item: 'https://dejure-help.ru/grazhdanam/' },
           { '@type': 'ListItem', position: 3, name: 'Жилищный юрист', item: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/' }
         ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };
@@ -236,7 +249,7 @@ export default function ZhilishchnyjYuristClient() {
     },
     {
       situation: 'Получен иск или судебный приказ',
-      dos: 'Зафиксируйте дату получения конверта; запросите материалы дела в суде; передайте иск юристу в течение 10 дней.',
+      dos: 'Зафиксируйте дату получения документа. Если это судебный приказ — проверьте 10-дневный срок для подачи возражений со дня получения его копии. Если это иск — изучите определение суда и установленный судом срок для представления возражений; запросите материалы дела и передайте документы юристу.',
       donts: 'Не игнорируйте судебные заседания и не подписывайте соглашений без консультации с юристом.'
     },
     {
@@ -264,7 +277,7 @@ export default function ZhilishchnyjYuristClient() {
               <span style={{ color: 'var(--color-text-main)' }}>Жилищный юрист</span>
             </>
           }
-          superTitle="Жилищное право • споры по недвижимости • ЖКХ"
+          superTitle="Жилищное право • жилищные споры • ЖКХ • Липецк"
           title={<>Жилищный юрист <br />в Липецке</>}
           subtitle={
             <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>

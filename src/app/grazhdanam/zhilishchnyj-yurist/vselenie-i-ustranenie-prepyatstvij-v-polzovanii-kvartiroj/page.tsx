@@ -15,10 +15,11 @@ export const metadata: Metadata = {
     siteName: 'ЮК «Де-Юре»',
     images: [
       {
-        url: 'https://dejure-help.ru/images/housing_law_hero.jpg',
+        url: 'https://dejure-help.ru/images/og/apartment-access-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Вселение и определение порядка пользования квартирой в Липецке'
+        type: 'image/jpeg',
+        alt: 'Вселение и устранение препятствий в Липецке — ЮК «Де-Юре»'
       }
     ],
     locale: 'ru_RU',
@@ -26,9 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Вселение и порядок пользования квартирой в Липецке — юрист | Де-Юре',
-    description: 'Поможем получить доступ к квартире, прекратить препятствия или определить порядок пользования. Оценим право, доказательства и судебную перспективу. Липецк.',
-    images: ['https://dejure-help.ru/images/housing_law_hero.jpg']
+    images: ['https://dejure-help.ru/images/og/apartment-access-og.jpg']
   }
 };
 
