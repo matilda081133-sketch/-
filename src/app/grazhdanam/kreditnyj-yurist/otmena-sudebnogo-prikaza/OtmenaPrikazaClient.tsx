@@ -1513,7 +1513,7 @@ export default function OtmenaPrikazaClient() {
           </div>
 
           {/* Блок: Что происходит после отмены судебного приказа (Архитектурный реестр аудита) */}
-          <div style={{ marginTop: '56px' }}>
+          <div style={{ marginTop: '88px', paddingTop: '16px' }}>
             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
@@ -1550,7 +1550,7 @@ export default function OtmenaPrikazaClient() {
                   </span>
                 </h2>
               </div>
-              <div style={{ maxWidth: '480px', paddingTop: '28px' }}>
+              <div style={{ maxWidth: '480px', paddingTop: '35px' }}>
                 <p style={{
                   fontSize: '15.5px',
                   color: 'var(--color-deep-blue)',
