@@ -1,0 +1,230 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,35812,e=>{"use strict";var t=e.i(43476);function i({items:e,marginTop:r}){return e&&0!==e.length?(0,t.jsx)("div",{style:{display:"flex",flexDirection:"column",gap:"14px",marginTop:r||"20px",marginBottom:"24px",width:"100%",maxWidth:"640px"},children:e.map((e,i)=>(0,t.jsx)("div",{style:{paddingLeft:"16px",borderLeft:"3px solid var(--color-gold)",fontSize:"15px",color:"var(--color-deep-blue)",lineHeight:1.45,fontWeight:500,whiteSpace:"pre-line"},children:e.text},i))}):null}e.s(["default",0,function({breadcrumbs:e,superTitle:r,title:n,subtitle:o,primaryCtaText:a,primaryCtaSubtext:s,primaryCtaLink:l="#form",primaryCtaAnalytics:p,secondaryCtaText:d,secondaryCtaLink:c,urgentHint:m,trustItems:x=[],trustPosition:h="above-cta",imageUrl:g,imageName:u,imageSubtitle:f,trustMarginTop:y,imageMarginTop:v,imageObjectPosition:b,rightContent:j}){let w=!!(g||j);return(0,t.jsxs)("section",{className:"military-hero-section",style:{position:"relative",minHeight:"85vh",display:"flex",alignItems:"center",paddingTop:"clamp(120px, 9vw, 160px)",paddingBottom:"80px",background:"linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)",overflow:"hidden"},children:[(0,t.jsx)("div",{style:{position:"absolute",top:"-10%",right:"-5%",width:"600px",height:"600px",background:"radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)",borderRadius:"50%",zIndex:0}}),(0,t.jsxs)("div",{className:"container",style:{position:"relative",zIndex:1,paddingTop:"0px"},children:[e&&(0,t.jsx)("div",{style:{fontSize:"13px",color:"var(--color-text-secondary)",marginBottom:"32px"},children:e}),(0,t.jsxs)("div",{className:w?"grid grid-2 land-hero-grid":"",style:{display:w?"grid":"flex",flexDirection:w?"row":"column",gap:"40px",alignItems:"flex-start"},children:[(0,t.jsxs)("div",{style:{flex:"1 1 0%",paddingTop:"0px"},children:[(0,t.jsxs)("div",{style:{display:"flex",alignItems:"center",gap:"16px",marginBottom:"12px",flexWrap:"wrap"},children:[(0,t.jsx)("div",{style:{width:"40px",height:"2px",backgroundColor:"#9B7E55",flexShrink:0}}),(0,t.jsx)("span",{className:"military-hero-supertitle",style:{textTransform:"uppercase",letterSpacing:"0.08em",fontSize:"clamp(11px, 2vw, 14px)",fontWeight:600,color:"var(--color-gold-text, #80633F)",overflowWrap:"anywhere"},children:r})]}),(0,t.jsx)("h1",{className:"military-hero-h1",style:{fontSize:"clamp(26px, 3.8vw, 50px)",color:"var(--color-deep-blue)",fontFamily:"var(--font-serif)",margin:"0 0 16px 0",lineHeight:1.15},children:n}),(0,t.jsx)("p",{className:"military-hero-subtitle",style:{fontSize:"16px",color:"var(--color-deep-blue)",opacity:.9,fontWeight:500,marginBottom:"16px",maxWidth:"750px",lineHeight:1.55},children:o}),"above-cta"===h&&x&&x.length>0&&(0,t.jsx)(i,{items:x,marginTop:y||"16px"}),(0,t.jsxs)("div",{className:"military-hero-cta",style:{display:"flex",flexDirection:"column",alignItems:"flex-start",gap:"10px",marginTop:"20px",marginBottom:m?"16px":"24px"},children:[(0,t.jsxs)("div",{style:{display:"flex",flexWrap:"wrap",alignItems:"center",gap:"16px"},children:[(0,t.jsx)("a",{href:l,className:"btn btn-primary military-hero-primary-btn","data-analytics":p||"military_hero_consultation_click",children:a}),d&&c&&(0,t.jsx)("a",{href:c,className:"btn btn-outline",style:{padding:"15px 36px",fontSize:"15px"},children:d})]}),s&&(0,t.jsx)("div",{style:{fontSize:"14px",color:"var(--color-text-secondary)",marginTop:"2px"},children:s})]}),m&&(0,t.jsxs)("div",{style:{background:"rgba(200, 169, 126, 0.1)",borderLeft:"4px solid var(--color-gold)",padding:"14px 20px",marginBottom:"20px",fontSize:"14px",color:"var(--color-deep-blue)",lineHeight:1.5},children:[(0,t.jsx)("strong",{style:{display:"block",marginBottom:"4px"},children:"Важно:"}),m]}),"below-cta"===h&&x&&x.length>0&&(0,t.jsx)(i,{items:x,marginTop:y||"16px"})]}),(0,t.jsx)("div",{className:"military-hero-right",style:{width:"100%",maxWidth:"440px",margin:"0 auto",flexShrink:0,display:"flex",flexDirection:"column",paddingTop:v||0,marginTop:0},children:j||(0,t.jsxs)("div",{className:"hero-photo-hover",style:{width:"100%",borderRadius:"0",overflow:"hidden",position:"relative",boxShadow:"0 4px 14px rgba(16, 39, 59, 0.12)",zIndex:1,display:"block",background:"transparent"},children:[g?(0,t.jsx)("img",{src:g,alt:u||n?.toString()||"Специалист",width:440,height:460,fetchPriority:"high",decoding:"async",style:{width:"100%",height:"460px",objectFit:"cover",objectPosition:b||"center 20%",display:"block",filter:"brightness(1.05)",aspectRatio:"440/460"},className:"hero-photo-img"}):(0,t.jsx)("div",{style:{padding:"40px",textAlign:"center",fontStyle:"italic",color:"var(--color-text-secondary)"},children:"[Фото специалиста]"}),(u||f)&&(0,t.jsxs)("div",{style:{padding:"16px 20px",background:"rgba(255, 255, 255, 0.75)",backdropFilter:"blur(10px)",borderTop:"3px solid var(--color-gold)",borderLeft:"1px solid rgba(255, 255, 255, 0.9)",borderRight:"1px solid rgba(255, 255, 255, 0.9)",borderBottom:"1px solid rgba(255, 255, 255, 0.9)",boxShadow:"0 4px 14px rgba(16, 39, 59, 0.08)"},children:[u&&(0,t.jsx)("div",{style:{fontSize:"16px",fontWeight:700,color:"var(--color-deep-blue)",fontFamily:"var(--font-serif)",marginBottom:"2px",lineHeight:1.3},children:"Дмитрий Сергеевич Конопкин"===u||"Конопкин Дмитрий Сергеевич"===u?(0,t.jsxs)(t.Fragment,{children:["Конопкин ",(0,t.jsx)("br",{}),"Дмитрий Сергеевич"]}):"Марина Валерьевна Смольянинова"===u||"Смольянинова Марина Валерьевна"===u?(0,t.jsxs)(t.Fragment,{children:["Смольянинова ",(0,t.jsx)("br",{}),"Марина Валерьевна"]}):u}),f&&(0,t.jsx)("div",{style:{fontSize:"13px",color:"var(--color-text-secondary)",fontWeight:500,lineHeight:1.35},children:"string"==typeof f&&f.includes("куратор")?(0,t.jsxs)(t.Fragment,{children:[f.split("куратор")[0].trim().replace(/,$/,""),",",(0,t.jsx)("br",{}),"куратор",f.split("куратор")[1]]}):f})]})]})})]}),(0,t.jsx)("style",{dangerouslySetInnerHTML:{__html:`
+          .military-hero-primary-btn {
+            padding: 15px 36px !important;
+            font-size: 15px !important;
+            color: #FFFFFF !important;
+            background-color: #10273B !important;
+            border: 1px solid #9B7E55 !important;
+            box-shadow: 0 4px 14px rgba(16, 39, 59, 0.25) !important;
+            transition: all 0.3s ease !important;
+            border-radius: var(--radius-md) !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+          }
+          .military-hero-primary-btn:hover {
+            background-color: #17324D !important;
+            border: 1px solid #FFFFFF !important;
+            border-color: #FFFFFF !important;
+            color: #FFFFFF !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 24px rgba(16, 39, 59, 0.35) !important;
+          }
+
+          @media (max-width: 1440px) {
+            .military-hero-section {
+              padding-top: 130px !important;
+              padding-bottom: 50px !important;
+              min-height: auto !important;
+            }
+            .military-hero-h1 {
+              font-size: clamp(24px, 3.4vw, 44px) !important;
+              margin-bottom: 12px !important;
+            }
+            .military-hero-subtitle {
+              margin-bottom: 12px !important;
+              font-size: 15px !important;
+              line-height: 1.5 !important;
+            }
+            .military-hero-cta {
+              margin-top: 12px !important;
+              margin-bottom: 16px !important;
+            }
+          }
+          @media (max-width: 1200px) {
+            .land-hero-grid {
+              grid-template-columns: minmax(0, 1fr) 360px !important;
+              gap: 28px !important;
+            }
+            .military-hero-h1 {
+              font-size: clamp(22px, 3.1vw, 38px) !important;
+            }
+          }
+          @media (max-width: 1024px) {
+            .land-hero-grid {
+              grid-template-columns: minmax(0, 1fr) 320px !important;
+              gap: 20px !important;
+            }
+            .military-hero-h1 {
+              font-size: clamp(22px, 2.8vw, 32px) !important;
+            }
+          }
+          @media (max-width: 900px) {
+            .land-hero-grid {
+              grid-template-columns: 1fr !important;
+            }
+          }
+          @media (max-width: 768px) {
+            .military-hero-section {
+              padding-top: 100px !important;
+              padding-bottom: 40px !important;
+            }
+            .military-hero-cta {
+              width: 100% !important;
+            }
+            .military-hero-cta .btn {
+              width: 100% !important;
+              text-align: center !important;
+            }
+          }
+          @media (max-width: 480px) {
+            .military-hero-h1, .hero-title-span-mobile {
+              white-space: normal !important;
+              overflow-wrap: anywhere !important;
+              word-break: normal !important;
+            }
+            .military-hero-section .container {
+              width: 100% !important;
+              max-width: 100% !important;
+              min-width: 0 !important;
+              padding-left: 16px !important;
+              padding-right: 16px !important;
+            }
+            .military-hero-supertitle {
+              white-space: normal !important;
+            }
+            .military-hero-subtitle {
+              width: 100% !important;
+              max-width: 100% !important;
+              min-width: 0 !important;
+              overflow-wrap: anywhere !important;
+            }
+          }
+        `}})]})]})}],35812)},16015,(e,t,i)=>{},98547,(e,t,i)=>{var r=e.i(47167);e.r(16015);var n=e.r(71645),o=n&&"object"==typeof n&&"default"in n?n:{default:n},a=void 0!==r.default&&r.default.env&&!0,s=function(e){return"[object String]"===Object.prototype.toString.call(e)},l=function(){function e(e){var t=void 0===e?{}:e,i=t.name,r=void 0===i?"stylesheet":i,n=t.optimizeForSpeed,o=void 0===n?a:n;p(s(r),"`name` must be a string"),this._name=r,this._deletedRulePlaceholder="#"+r+"-deleted-rule____{}",p("boolean"==typeof o,"`optimizeForSpeed` must be a boolean"),this._optimizeForSpeed=o,this._serverSheet=void 0,this._tags=[],this._injected=!1,this._rulesCount=0;var l="u">typeof window&&document.querySelector('meta[property="csp-nonce"]');this._nonce=l?l.getAttribute("content"):null}var t,i=e.prototype;return i.setOptimizeForSpeed=function(e){p("boolean"==typeof e,"`setOptimizeForSpeed` accepts a boolean"),p(0===this._rulesCount,"optimizeForSpeed cannot be when rules have already been inserted"),this.flush(),this._optimizeForSpeed=e,this.inject()},i.isOptimizeForSpeed=function(){return this._optimizeForSpeed},i.inject=function(){var e=this;if(p(!this._injected,"sheet already injected"),this._injected=!0,"u">typeof window&&this._optimizeForSpeed){this._tags[0]=this.makeStyleTag(this._name),this._optimizeForSpeed="insertRule"in this.getSheet(),this._optimizeForSpeed||(a||console.warn("StyleSheet: optimizeForSpeed mode not supported falling back to standard mode."),this.flush(),this._injected=!0);return}this._serverSheet={cssRules:[],insertRule:function(t,i){return"number"==typeof i?e._serverSheet.cssRules[i]={cssText:t}:e._serverSheet.cssRules.push({cssText:t}),i},deleteRule:function(t){e._serverSheet.cssRules[t]=null}}},i.getSheetForTag=function(e){if(e.sheet)return e.sheet;for(var t=0;t<document.styleSheets.length;t++)if(document.styleSheets[t].ownerNode===e)return document.styleSheets[t]},i.getSheet=function(){return this.getSheetForTag(this._tags[this._tags.length-1])},i.insertRule=function(e,t){if(p(s(e),"`insertRule` accepts only strings"),"u"<typeof window)return"number"!=typeof t&&(t=this._serverSheet.cssRules.length),this._serverSheet.insertRule(e,t),this._rulesCount++;if(this._optimizeForSpeed){var i=this.getSheet();"number"!=typeof t&&(t=i.cssRules.length);try{i.insertRule(e,t)}catch(t){return a||console.warn("StyleSheet: illegal rule: \n\n"+e+"\n\nSee https://stackoverflow.com/q/20007992 for more info"),-1}}else{var r=this._tags[t];this._tags.push(this.makeStyleTag(this._name,e,r))}return this._rulesCount++},i.replaceRule=function(e,t){if(this._optimizeForSpeed||"u"<typeof window){var i="u">typeof window?this.getSheet():this._serverSheet;if(t.trim()||(t=this._deletedRulePlaceholder),!i.cssRules[e])return e;i.deleteRule(e);try{i.insertRule(t,e)}catch(r){a||console.warn("StyleSheet: illegal rule: \n\n"+t+"\n\nSee https://stackoverflow.com/q/20007992 for more info"),i.insertRule(this._deletedRulePlaceholder,e)}}else{var r=this._tags[e];p(r,"old rule at index `"+e+"` not found"),r.textContent=t}return e},i.deleteRule=function(e){if("u"<typeof window)return void this._serverSheet.deleteRule(e);if(this._optimizeForSpeed)this.replaceRule(e,"");else{var t=this._tags[e];p(t,"rule at index `"+e+"` not found"),t.parentNode.removeChild(t),this._tags[e]=null}},i.flush=function(){this._injected=!1,this._rulesCount=0,"u">typeof window?(this._tags.forEach(function(e){return e&&e.parentNode.removeChild(e)}),this._tags=[]):this._serverSheet.cssRules=[]},i.cssRules=function(){var e=this;return"u"<typeof window?this._serverSheet.cssRules:this._tags.reduce(function(t,i){return i?t=t.concat(Array.prototype.map.call(e.getSheetForTag(i).cssRules,function(t){return t.cssText===e._deletedRulePlaceholder?null:t})):t.push(null),t},[])},i.makeStyleTag=function(e,t,i){t&&p(s(t),"makeStyleTag accepts only strings as second parameter");var r=document.createElement("style");this._nonce&&r.setAttribute("nonce",this._nonce),r.type="text/css",r.setAttribute("data-"+e,""),t&&r.appendChild(document.createTextNode(t));var n=document.head||document.getElementsByTagName("head")[0];return i?n.insertBefore(r,i):n.appendChild(r),r},t=[{key:"length",get:function(){return this._rulesCount}}],function(e,t){for(var i=0;i<t.length;i++){var r=t[i];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}(e.prototype,t),e}();function p(e,t){if(!e)throw Error("StyleSheet: "+t+".")}var d=function(e){for(var t=5381,i=e.length;i;)t=33*t^e.charCodeAt(--i);return t>>>0},c={};function m(e,t){if(!t)return"jsx-"+e;var i=String(t),r=e+i;return c[r]||(c[r]="jsx-"+d(e+"-"+i)),c[r]}function x(e,t){"u"<typeof window&&(t=t.replace(/\/style/gi,"\\/style"));var i=e+t;return c[i]||(c[i]=t.replace(/__jsx-style-dynamic-selector/g,e)),c[i]}var h=function(){function e(e){var t=void 0===e?{}:e,i=t.styleSheet,r=void 0===i?null:i,n=t.optimizeForSpeed,o=void 0!==n&&n;this._sheet=r||new l({name:"styled-jsx",optimizeForSpeed:o}),this._sheet.inject(),r&&"boolean"==typeof o&&(this._sheet.setOptimizeForSpeed(o),this._optimizeForSpeed=this._sheet.isOptimizeForSpeed()),this._fromServer=void 0,this._indices={},this._instancesCounts={}}var t=e.prototype;return t.add=function(e){var t=this;void 0===this._optimizeForSpeed&&(this._optimizeForSpeed=Array.isArray(e.children),this._sheet.setOptimizeForSpeed(this._optimizeForSpeed),this._optimizeForSpeed=this._sheet.isOptimizeForSpeed()),"u">typeof window&&!this._fromServer&&(this._fromServer=this.selectFromServer(),this._instancesCounts=Object.keys(this._fromServer).reduce(function(e,t){return e[t]=0,e},{}));var i=this.getIdAndRules(e),r=i.styleId,n=i.rules;if(r in this._instancesCounts){this._instancesCounts[r]+=1;return}var o=n.map(function(e){return t._sheet.insertRule(e)}).filter(function(e){return -1!==e});this._indices[r]=o,this._instancesCounts[r]=1},t.remove=function(e){var t=this,i=this.getIdAndRules(e).styleId;if(function(e,t){if(!e)throw Error("StyleSheetRegistry: "+t+".")}(i in this._instancesCounts,"styleId: `"+i+"` not found"),this._instancesCounts[i]-=1,this._instancesCounts[i]<1){var r=this._fromServer&&this._fromServer[i];r?(r.parentNode.removeChild(r),delete this._fromServer[i]):(this._indices[i].forEach(function(e){return t._sheet.deleteRule(e)}),delete this._indices[i]),delete this._instancesCounts[i]}},t.update=function(e,t){this.add(t),this.remove(e)},t.flush=function(){this._sheet.flush(),this._sheet.inject(),this._fromServer=void 0,this._indices={},this._instancesCounts={}},t.cssRules=function(){var e=this,t=this._fromServer?Object.keys(this._fromServer).map(function(t){return[t,e._fromServer[t]]}):[],i=this._sheet.cssRules();return t.concat(Object.keys(this._indices).map(function(t){return[t,e._indices[t].map(function(e){return i[e].cssText}).join(e._optimizeForSpeed?"":"\n")]}).filter(function(e){return!!e[1]}))},t.styles=function(e){var t,i;return t=this.cssRules(),void 0===(i=e)&&(i={}),t.map(function(e){var t=e[0],r=e[1];return o.default.createElement("style",{id:"__"+t,key:"__"+t,nonce:i.nonce?i.nonce:void 0,dangerouslySetInnerHTML:{__html:r}})})},t.getIdAndRules=function(e){var t=e.children,i=e.dynamic,r=e.id;if(i){var n=m(r,i);return{styleId:n,rules:Array.isArray(t)?t.map(function(e){return x(n,e)}):[x(n,t)]}}return{styleId:m(r),rules:Array.isArray(t)?t:[t]}},t.selectFromServer=function(){return Array.prototype.slice.call(document.querySelectorAll('[id^="__jsx-"]')).reduce(function(e,t){return e[t.id.slice(2)]=t,e},{})},e}(),g=n.createContext(null);function u(){return new h}function f(){return n.useContext(g)}g.displayName="StyleSheetContext";var y=o.default.useInsertionEffect||o.default.useLayoutEffect,v="u">typeof window?u():void 0;function b(e){var t=v||f();return t&&("u"<typeof window?t.add(e):y(function(){return t.add(e),function(){t.remove(e)}},[e.id,String(e.dynamic)])),null}b.dynamic=function(e){return e.map(function(e){return m(e[0],e[1])}).join(" ")},i.StyleRegistry=function(e){var t=e.registry,i=e.children,r=n.useContext(g),a=n.useState(function(){return r||t||u()})[0];return o.default.createElement(g.Provider,{value:a},i)},i.createStyleRegistry=u,i.style=b,i.useStyleRegistry=f},37902,(e,t,i)=>{t.exports=e.r(98547).style},95580,e=>{"use strict";var t=e.i(43476),i=e.i(37902);e.s(["default",0,function({faqs:e,superTitle:r="Частые вопросы клиентов",title:n="Ответы на важные вопросы",subtitle:o="Мы собрали самые частые вопросы наших доверителей. Если вы не нашли ответ на свой вопрос — свяжитесь с нами для индивидуальной консультации.",ctaText:a="Задать свой вопрос",ctaLink:s="#form"}){return(0,t.jsxs)("section",{style:{padding:"clamp(48px, 6vw, 80px) 0",borderTop:"1px solid var(--color-border)"},className:"jsx-68b81e88106905c0 section bg-white",children:[(0,t.jsx)("div",{className:"jsx-68b81e88106905c0 container",children:(0,t.jsxs)("div",{style:{gap:"clamp(32px, 5vw, 80px)",alignItems:"flex-start"},className:"jsx-68b81e88106905c0 grid grid-2 faq-layout-grid",children:[(0,t.jsxs)("div",{className:"jsx-68b81e88106905c0 faq-sticky-col reveal-on-scroll",children:[(0,t.jsxs)("div",{style:{display:"flex",alignItems:"center",gap:"16px",marginBottom:"18px"},className:"jsx-68b81e88106905c0",children:[(0,t.jsx)("div",{style:{width:"40px",height:"2px",backgroundColor:"var(--color-primary)"},className:"jsx-68b81e88106905c0"}),(0,t.jsx)("span",{style:{textTransform:"uppercase",letterSpacing:"0.1em",fontSize:"13px",fontWeight:600,color:"var(--color-primary)"},className:"jsx-68b81e88106905c0",children:r})]}),(0,t.jsx)("h2",{style:{fontSize:"clamp(28px, 4vw, 42px)",fontFamily:"var(--font-serif)",color:"var(--color-deep-blue)",marginBottom:"14px",lineHeight:1.15},className:"jsx-68b81e88106905c0",children:n}),(0,t.jsx)("p",{style:{color:"var(--color-text-secondary)",fontSize:"16px",lineHeight:1.6,marginBottom:"28px",maxWidth:"400px"},className:"jsx-68b81e88106905c0",children:o}),(0,t.jsx)("a",{href:s,style:{display:"inline-flex"},className:"jsx-68b81e88106905c0 btn btn-outline",children:a})]}),(0,t.jsx)("div",{style:{display:"flex",flexDirection:"column",gap:"14px"},className:"jsx-68b81e88106905c0 reveal-on-scroll delay-200",children:(e||[{q:"Как проходит первое обращение?",a:"На первой встрече юрист уточнит суть вашего вопроса, проведет правовую экспертизу имеющихся документов и оценит судебные перспективы дела. Мы предложим возможные варианты решения и определим, какой адвокат или юрист в Липецке лучше всего подойдет для вашей задачи."},{q:"Какие документы нужно подготовить?",a:"Состав документов зависит от вашей ситуации. Для подачи иска в суд чаще всего достаточно паспорта, договоров (если есть), судебных решений и переписки. Мы уточним точный список во время первичного приема."},{q:"Как определяется стоимость юридической помощи?",a:"Стоимость зависит от объёма и сложности задачи. Услуги ЮК и порядок оплаты фиксируются в договоре с компанией. Если требуется адвокатская помощь, её условия и вознаграждение определяются в отдельном соглашении между адвокатом и доверителем."},{q:"Кто будет вести моё дело?",a:"Дело ведет специалист, профиль которого строго соответствует вашей проблеме (например, профильный земельный юрист или опытный адвокат по уголовным делам). В сложных спорах мы привлекаем команду юристов."},{q:"Можно ли привлечь адвоката или нескольких специалистов?",a:"Да. Если задача требует адвокатского статуса или компетенций из нескольких областей права, ЮК может привлечь независимого адвоката соответствующей специализации. Его участие и стоимость согласуются отдельно, а адвокатская помощь оформляется соглашением между адвокатом и доверителем."},{q:"Какие гарантии может дать юридическая компания?",a:"ЮК гарантирует соблюдение согласованных условий, конфиденциальность и добросовестное выполнение принятых обязательств. Адвокат дополнительно связан требованиями адвокатской тайны. Гарантировать конкретный исход дела нельзя, поэтому до начала работы оцениваются возможные варианты и риски."},{q:"Как я буду узнавать о ходе дела?",a:"Мы находимся на постоянной связи с доверителем. Вы будете регулярно получать детальные отчеты о проделанной юридической работе, назначенных судебных заседаниях и любых изменениях в ходе процесса."},{q:"Можно ли работать дистанционно?",a:"Да, в большинстве случаев мы можем оказывать юридические услуги дистанционно, включая правовые консультации онлайн, составление процессуальных документов и представительство в суде на основании нотариальной доверенности."},{q:"Как обеспечивается конфиденциальность?",a:"ЮК обеспечивает конфиденциальность полученной информации в соответствии с законом и условиями договора. Если помощь оказывает адвокат, переданные ему сведения охраняются режимом адвокатской тайны."},{q:"Работаете ли вы за пределами Липецка и области?",a:"Да. Мы представляем интересы бизнеса и граждан не только в судах Липецка и области, но и в других регионах России, включая арбитраж в Москве, если этого требует специфика и масштаб дела."}]).map((e,i)=>(0,t.jsxs)("details",{style:{background:"linear-gradient(to right, #0B1C2A 0%, #17375E 100%)",border:"1px solid var(--color-border)",borderRadius:"0",transition:"var(--transition)",color:"var(--color-white)",overflow:"hidden"},className:"jsx-68b81e88106905c0 faq-details",children:[(0,t.jsxs)("summary",{style:{padding:"20px 24px",display:"flex",justifyContent:"space-between",alignItems:"center",cursor:"pointer",fontSize:"18px",fontWeight:"500",fontFamily:"var(--font-sans)",listStyle:"none",background:"transparent"},className:"jsx-68b81e88106905c0 faq-summary",children:[(0,t.jsx)("span",{style:{paddingRight:"16px",lineHeight:1.4,color:"var(--color-white)"},className:"jsx-68b81e88106905c0",children:e.q}),(0,t.jsx)("span",{style:{display:"inline-flex",alignItems:"center",justifyContent:"center",width:"36px",height:"36px",borderRadius:"50%",border:"1px solid rgba(255, 255, 255, 0.2)",transition:"all 0.3s ease",flexShrink:0,color:"var(--color-white)"},className:"jsx-68b81e88106905c0 faq-icon",children:"+"})]}),(0,t.jsx)("div",{style:{padding:"24px 28px",background:"var(--gradient-cream)",color:"var(--color-text-main)",lineHeight:"1.6",fontSize:"15.5px",borderTop:"1px solid var(--color-border)"},className:"jsx-68b81e88106905c0 faq-answer-body",children:(0,t.jsx)("div",{className:"jsx-68b81e88106905c0",children:e.a})})]},i))})]})}),(0,t.jsx)(i.default,{id:"68b81e88106905c0",children:".faq-sticky-col.jsx-68b81e88106905c0{position:sticky;top:120px}.faq-summary.jsx-68b81e88106905c0::-webkit-details-marker{display:none}details[open].jsx-68b81e88106905c0 .faq-icon.jsx-68b81e88106905c0{background:#ffffff1a;transform:rotate(45deg)}details.jsx-68b81e88106905c0:hover{box-shadow:0 20px 40px #10273b26}@media (width<=991px){.faq-layout-grid.jsx-68b81e88106905c0{grid-template-columns:1fr!important;gap:36px!important}.faq-sticky-col.jsx-68b81e88106905c0{position:static!important;top:auto!important}}@media (width<=767px){.faq-summary.jsx-68b81e88106905c0{padding:16px 18px!important;font-size:16px!important}.faq-answer-body.jsx-68b81e88106905c0{padding:18px 16px!important;font-size:14.5px!important}.faq-sticky-col.jsx-68b81e88106905c0 .btn.jsx-68b81e88106905c0{text-align:center!important;justify-content:center!important;width:100%!important}}"})]})}])},37671,e=>{"use strict";var t=e.i(43476);e.s(["default",0,function({title:e="Стоимость юридических услуг в Липецке",subtitle:i="Честные цены, закрепленные в договоре. Никаких скрытых платежей.",tiers:r,ctaTitle:n="Точную стоимость определим до начала работы",ctaSubtitle:o="Сначала изучим обстоятельства и документы, предложим подходящий формат помощи и согласуем стоимость. Она не изменится без согласования с вами.",ctaButtonText:a="Получить расчёт стоимости",ctaButtonLink:s="#form",disclaimer:l,guaranteeText:p,sectionStyle:d}){let c=r||[{title:"Гражданам",subtitle:"Защита личных интересов",popular:!1,price:"от 2 000 ₽",features:[{name:"Юридическая консультация",value:"2 000 ₽"},{name:"Составление и подача иска",value:"от 10 000 ₽"},{name:"Ведение дела в суде Липецка",value:"от 15 000 ₽"},{name:"Апелляционная жалоба",value:"от 20 000 ₽"},{name:"Ознакомление с материалами",value:"4 000 ₽/том"}]},{title:"Бизнесу",subtitle:"Комплексное юридическое сопровождение",popular:!0,price:"от 5 000 ₽",features:[{name:"Консультация для бизнеса",value:"5 000 ₽"},{name:"Разработка договоров",value:"от 10 000 ₽"},{name:"Досудебная претензионная работа",value:"от 15 000 ₽"},{name:"Представительство в Арбитраже",value:"от 15 000 ₽"},{name:"Правовой аудит документов",value:"от 10 000 ₽"}]},{title:"Документы и консалтинг",subtitle:"Глубокая правовая аналитика",popular:!1,price:"от 10 000 ₽",features:[{name:"Письменная правовая оценка",value:"от 30 000 ₽"},{name:"Официальное заключение юриста",value:"от 35 000 ₽"},{name:"Участие в деловых переговорах",value:"15 000 ₽"},{name:"Защита интересов в госорганах",value:"15 000 ₽"},{name:"Разработка внутренних регламентов",value:"от 15 000 ₽"}]}];return(0,t.jsxs)("section",{id:"pricing",className:"section",style:{position:"relative",overflow:"hidden",padding:"80px 0",background:"var(--gradient-cream)",...d},children:[(0,t.jsxs)("div",{className:"container",style:{position:"relative",zIndex:1},children:[(0,t.jsxs)("div",{style:{textAlign:"center",marginBottom:"80px"},children:[(0,t.jsx)("h2",{style:{marginTop:0,fontSize:"clamp(32px, 4vw, 42px)",fontFamily:"var(--font-serif)",color:"var(--color-deep-blue)",marginBottom:"20px"},children:e}),(0,t.jsx)("p",{style:{fontSize:"16px",color:"var(--color-deep-blue)",opacity:.9,fontWeight:500,maxWidth:"700px",margin:"0 auto",lineHeight:1.6},children:i})]}),(0,t.jsx)("div",{className:`pricing-grid-container ${4===c.length?"pricing-grid-4":c.length>=3?"pricing-grid-3":"pricing-grid-2"}`,children:c.map((e,i)=>(0,t.jsxs)("div",{style:{background:e.popular?"linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)":"var(--color-white)",color:e.popular?"var(--color-white)":"var(--color-deep-blue)",borderRadius:"0",padding:4===c.length?"32px 16px":"40px 30px",boxShadow:e.popular?"0 20px 40px rgba(16, 39, 59, 0.15)":"0 10px 30px rgba(0,0,0,0.05)",border:e.popular?"1px solid transparent":"1px solid rgba(23, 50, 77, 0.1)",position:"relative",transition:"transform 0.4s ease, box-shadow 0.4s ease",display:"flex",flexDirection:"column",height:"100%",width:"100%",minWidth:0,boxSizing:"border-box"},className:"pricing-tier-card",children:[e.popular&&!!e.badgeText&&(0,t.jsx)("div",{style:{position:"absolute",top:"0",left:"50%",transform:"translate(-50%, -50%)",background:"var(--color-white)",color:"var(--color-deep-blue)",padding:"6px 16px",borderRadius:"0",fontSize:"12px",fontWeight:"bold",textTransform:"uppercase",letterSpacing:"0.1em"},children:e.badgeText}),(0,t.jsxs)("div",{style:{minHeight:"185px",display:"flex",flexDirection:"column",justifyContent:"flex-start",marginBottom:"24px"},children:[(0,t.jsx)("h3",{style:{fontSize:4===c.length?"20px":"22px",margin:"0 0 8px 0",color:"inherit",textAlign:"center",lineHeight:1.3},children:e.title}),(0,t.jsx)("p",{style:{fontSize:"14px",opacity:.8,margin:"0 0 12px 0",textAlign:"center",lineHeight:1.5},children:e.subtitle}),e.price&&(0,t.jsx)("div",{style:{fontSize:"28px",fontFamily:"var(--font-serif)",fontWeight:"bold",marginTop:"auto",textAlign:"center"},children:e.price})]}),(0,t.jsx)("ul",{style:{listStyle:"none",padding:0,margin:"0 0 32px 0",flexGrow:1,display:"flex",flexDirection:"column",gap:"16px"},children:e.features.map((i,r)=>(0,t.jsxs)("li",{style:{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:"8px",fontSize:"13px",opacity:.9},children:[(0,t.jsxs)("div",{style:{display:"flex",gap:"8px",flex:"1 1 0%",minWidth:0},children:[(0,t.jsx)("svg",{width:"16",height:"16",viewBox:"0 0 24 24",fill:"none",stroke:e.popular?"rgba(255,255,255,0.5)":"var(--color-primary)",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",style:{flexShrink:0,marginTop:"2px"},children:(0,t.jsx)("polyline",{points:"20 6 9 17 4 12"})}),(0,t.jsx)("span",{style:{lineHeight:1.35,wordBreak:"break-word"},children:i.name})]}),(0,t.jsx)("span",{style:{fontWeight:600,whiteSpace:"nowrap",color:e.popular?"var(--color-white)":"var(--color-deep-blue)"},children:i.value})]},r))}),(0,t.jsx)("a",{href:e.buttonHref||"#form",className:`btn ${e.popular?"btn-popular":"btn-regular"}`,style:{width:"100%",textAlign:"center",borderRadius:"0",fontSize:"15px",padding:"14px 16px",whiteSpace:"normal",textWrap:"balance",lineHeight:1.3,minHeight:"52px"},children:e.buttonText||"Узнать точную стоимость"})]},i))}),(l||p)&&(0,t.jsxs)("div",{style:{marginTop:"32px",display:"flex",flexDirection:"column",gap:"12px"},children:[l&&(0,t.jsx)("p",{style:{color:"var(--color-deep-blue)",fontSize:"14px",lineHeight:1.6,margin:0,textAlign:"center",opacity:.9},children:l}),p&&(0,t.jsxs)("p",{style:{color:"var(--color-deep-blue)",fontWeight:600,fontSize:"14px",lineHeight:1.5,margin:0,textAlign:"center"},children:["✓ ",p]})]}),n&&(0,t.jsxs)("div",{className:"pricing-cta-banner",style:{marginTop:"40px",background:"var(--color-white)",border:"1px solid var(--color-border)",borderTop:"4px solid var(--color-primary)",boxShadow:"0 4px 20px rgba(23, 50, 77, 0.05)",padding:"36px 32px",borderRadius:"0",display:"flex",flexWrap:"wrap",gap:"24px",alignItems:"center",justifyContent:"space-between"},children:[(0,t.jsxs)("div",{style:{flex:"1 1 400px"},children:[(0,t.jsx)("h3",{style:{fontSize:"22px",marginBottom:"10px",fontFamily:"var(--font-serif)",color:"var(--color-deep-blue)",lineHeight:1.3,fontWeight:700},children:n}),(0,t.jsx)("p",{style:{fontSize:"15px",color:"var(--color-text-secondary)",lineHeight:1.6,margin:0},children:o})]}),(0,t.jsx)("div",{style:{flexShrink:0},children:(0,t.jsx)("a",{href:s||"#form",className:"btn btn-primary",style:{padding:"14px 32px",fontSize:"15px",display:"inline-block"},children:a})})]})]}),(0,t.jsx)("style",{dangerouslySetInnerHTML:{__html:`
+        .pricing-grid-container {
+          display: grid;
+          align-items: stretch;
+          width: 100%;
+        }
+        .pricing-grid-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 30px;
+        }
+        .pricing-grid-4 {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 16px;
+        }
+        .pricing-grid-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 30px;
+          max-width: 850px;
+          margin: 0 auto;
+        }
+        @media (max-width: 1024px) and (min-width: 768px) {
+          .pricing-grid-3, .pricing-grid-4 {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 20px !important;
+          }
+        }
+        @media (max-width: 767px) {
+          .pricing-grid-container, .pricing-grid-3, .pricing-grid-4, .pricing-grid-2 {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+          .pricing-tier-card {
+            padding: 28px 20px !important;
+          }
+          .pricing-cta-banner {
+            padding: 24px 20px !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            text-align: left !important;
+          }
+          .pricing-cta-banner .btn {
+            width: 100% !important;
+            text-align: center !important;
+          }
+        }
+        .pricing-tier-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 30px 60px rgba(0,0,0,0.1) !important;
+        }
+        .btn-regular {
+          background: #10273B !important;
+          color: #FFFFFF !important;
+          border: 1px solid #10273B !important;
+          transition: all 0.3s ease !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          font-size: 15px !important;
+          white-space: normal !important;
+          text-wrap: balance !important;
+          text-align: center !important;
+          line-height: 1.3 !important;
+          min-height: 52px !important;
+        }
+        .btn-regular:hover {
+          background: #174269 !important;
+          color: #FFFFFF !important;
+          border-color: #174269 !important;
+        }
+        .btn-popular {
+          background: #FFFFFF !important;
+          color: #10273B !important;
+          border: 1px solid #FFFFFF !important;
+          transition: all 0.3s ease !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          font-size: 15px !important;
+          white-space: normal !important;
+          text-wrap: balance !important;
+          text-align: center !important;
+          line-height: 1.3 !important;
+          min-height: 52px !important;
+        }
+        .btn-popular:hover {
+          background: #174269 !important;
+          color: #FFFFFF !important;
+          border-color: #FFFFFF !important;
+        }
+      `}})]})}])},74648,e=>{"use strict";var t=e.i(43476);e.s(["default",0,function({cases:e,title:i="Результаты нашей работы",showAllLink:r="/praktika",showAllText:n="Смотреть все дела",showDemoWarning:o=!1,resultLabel:a="Результат"}){return(0,t.jsxs)("section",{className:"section bg-white",style:{padding:"clamp(48px, 6vw, 80px) 0"},children:[(0,t.jsxs)("div",{className:"container",children:[(0,t.jsxs)("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:"40px",flexWrap:"wrap",gap:"20px",width:"100%"},children:[(0,t.jsxs)("div",{children:[(0,t.jsxs)("div",{style:{display:"flex",alignItems:"center",gap:"16px",marginBottom:"16px"},children:[(0,t.jsx)("div",{style:{width:"40px",height:"1px",backgroundColor:"var(--color-primary)"}}),(0,t.jsx)("span",{style:{textTransform:"uppercase",letterSpacing:"0.15em",fontSize:"12px",color:"var(--color-primary)"},children:"Практика"})]}),(0,t.jsx)("h2",{style:{margin:0,fontSize:"clamp(28px, 4vw, 42px)",fontFamily:"var(--font-serif)",color:"var(--color-deep-blue)"},children:i})]}),r&&(0,t.jsx)("a",{href:r,className:"btn btn-outline",style:{padding:"12px 24px",height:"fit-content",marginLeft:"auto"},children:n})]}),(0,t.jsx)("div",{className:"cases-grid",children:e.map((e,i)=>(0,t.jsxs)("div",{className:"case-card group",style:{padding:"36px 30px 30px 30px",border:"1px solid var(--color-border)",borderRadius:"0",display:"flex",flexDirection:"column",background:"var(--color-white)",boxShadow:"0 4px 10px rgba(0,0,0,0.12)",position:"relative",overflow:"hidden",height:"100%"},children:[(0,t.jsx)("div",{style:{position:"absolute",top:0,left:0,width:"4px",height:"0%",background:"var(--color-gold)",transition:"height 0.4s ease"},className:"case-accent-line"}),(0,t.jsxs)("div",{style:{paddingBottom:"20px",marginBottom:"20px",paddingTop:"0"},children:[(0,t.jsx)("span",{style:{display:"block",fontSize:"11px",textTransform:"uppercase",letterSpacing:"0.1em",color:"#D4AF37",marginBottom:"12px",fontWeight:600,lineHeight:1.45},children:e.category}),(0,t.jsx)("h3",{style:{margin:0,color:"var(--color-deep-blue)",fontSize:"19px",fontFamily:"var(--font-serif)",lineHeight:1.4,wordBreak:"break-word",overflowWrap:"break-word"},children:e.title})]}),(0,t.jsxs)("div",{style:{display:"flex",flexDirection:"column",gap:"18px",flexGrow:1},children:[(0,t.jsxs)("div",{children:[(0,t.jsx)("div",{style:{display:"inline-block",background:"rgba(23, 50, 77, 0.08)",color:"var(--color-deep-blue)",padding:"3px 10px",fontSize:"11px",fontWeight:700,letterSpacing:"0.06em",borderRadius:"3px",marginBottom:"8px"},children:"ПРОБЛЕМА"}),(0,t.jsx)("p",{style:{fontSize:"14px",margin:0,lineHeight:1.6,color:"var(--color-text-main)"},children:e.problem})]}),(0,t.jsxs)("div",{children:[(0,t.jsx)("div",{style:{display:"inline-block",background:"rgba(193, 160, 102, 0.16)",color:"#8C6F34",padding:"3px 10px",fontSize:"11px",fontWeight:700,letterSpacing:"0.06em",borderRadius:"3px",marginBottom:"8px"},children:"ЧТО СДЕЛАЛИ"}),(0,t.jsx)("p",{style:{fontSize:"14px",margin:0,lineHeight:1.6,color:"var(--color-text-main)"},children:e.action})]})]}),(0,t.jsxs)("div",{style:{marginTop:"24px",background:"rgba(193, 160, 102, 0.05)",padding:"18px",borderRadius:"0",border:"1px solid rgba(193, 160, 102, 0.2)",borderLeft:"4px solid var(--color-gold)"},children:[(0,t.jsx)("h4",{style:{fontSize:"12px",textTransform:"uppercase",letterSpacing:"0.05em",color:"var(--color-primary)",marginBottom:"6px",fontWeight:600},children:a}),(0,t.jsx)("p",{style:{fontSize:"14.5px",margin:0,fontWeight:500,color:"var(--color-deep-blue)",lineHeight:1.5},children:e.result})]})]},i))})]}),(0,t.jsx)("style",{dangerouslySetInnerHTML:{__html:`
+        .cases-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+        @media (max-width: 1024px) and (min-width: 768px) {
+          .cases-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 20px !important;
+          }
+        }
+        @media (max-width: 767px) {
+          .cases-grid {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+          .case-card {
+            padding: 28px 20px 24px 20px !important;
+          }
+        }
+        .case-card h3 span {
+          word-break: break-word !important;
+          overflow-wrap: break-word !important;
+        }
+        .case-card {
+          transition: all 0.4s ease;
+        }
+        .case-card:hover {
+          box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+          border-color: transparent;
+          transform: translateY(-4px);
+        }
+        .case-card:hover .case-accent-line {
+          height: 100%;
+        }
+      `}})]})}])}]);

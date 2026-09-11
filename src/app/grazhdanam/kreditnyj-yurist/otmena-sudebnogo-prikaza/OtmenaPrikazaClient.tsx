@@ -892,6 +892,12 @@ export default function OtmenaPrikazaClient() {
                   transition: 'all 0.3s ease'
                 }}
               >
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
                 <div style={{
                   fontSize: '12px',
                   fontWeight: 700,
@@ -991,32 +997,42 @@ export default function OtmenaPrikazaClient() {
 
           <div className="grid grid-2" style={{ gap: '28px' }}>
             {/* Маршрут 1 */}
-            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', padding: '36px 30px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)' }}>
-              <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '12px' }}>
+            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', padding: '36px 30px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '12px', position: 'relative', zIndex: 1 }}>
                 Маршрут 1 • В пределах 10 дней
               </span>
-              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px' }}>
+              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px', position: 'relative', zIndex: 1 }}>
                 Возражения в установленный срок
               </h3>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.65, marginBottom: '16px' }}>
+              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.65, marginBottom: '16px', position: 'relative', zIndex: 1 }}>
                 По закону (ст. 129 ГПК РФ) для отмены приказа <strong>достаточно выразить свое несогласие</strong> с его исполнением. На этой стадии не требуется доказывать весь кредитный спор, расчеты или недействительность договора.
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '14.5px', color: 'var(--color-deep-blue)' }}>
-                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '14.5px', color: 'var(--color-deep-blue)', position: 'relative', zIndex: 1 }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
                   </svg>
                   <span>Обязательно проверяем реквизиты мирового судьи и номер дела</span>
                 </li>
-                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
                   </svg>
                   <span>Оформляем подпись и перечень приложений</span>
                 </li>
-                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
                   </svg>
                   <span>Подаем способом с железной фиксацией даты (почта с описью / канцелярия)</span>
                 </li>
@@ -1024,32 +1040,41 @@ export default function OtmenaPrikazaClient() {
             </div>
 
             {/* Маршрут 2 */}
-            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', padding: '36px 30px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)' }}>
-              <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '12px' }}>
+            <div className="hover-lift" style={{ background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)', padding: '36px 30px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '12px', position: 'relative', zIndex: 1 }}>
                 Маршрут 2 • Срок пропущен
               </span>
-              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px' }}>
+              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px', position: 'relative', zIndex: 1 }}>
                 Поздние возражения с доказательствами
               </h3>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.65, marginBottom: '16px' }}>
+              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.65, marginBottom: '16px', position: 'relative', zIndex: 1 }}>
                 Суд рассматривает поздние возражения только при <strong>обосновании причин, не зависевших от должника</strong>, и документальном подтверждении невозможности подать их вовремя (Постановление Пленума ВС РФ № 62).
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '14.5px', color: 'var(--color-deep-blue)' }}>
-                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '14.5px', color: 'var(--color-deep-blue)', position: 'relative', zIndex: 1 }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
                   </svg>
                   <span>Подаются не позднее 10 дней с момента отпадения препятствий</span>
                 </li>
-                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="12" y1="18" x2="12" y2="12" />
+                    <line x1="9" y1="15" x2="15" y2="15" />
                   </svg>
                   <span>Доказательства: болезнь, командировка, отпуск, смена адреса, сбои доставки</span>
                 </li>
-                <li style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
                   </svg>
                   <span>К возражениям прикладывается полный пакет подтверждающих документов</span>
                 </li>
@@ -1196,15 +1221,25 @@ export default function OtmenaPrikazaClient() {
               <div key={idx} className="hover-lift" style={{
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '38px 22px 28px 22px',
+                justifyContent: 'space-between',
+                padding: '38px 24px 28px 24px',
+                minHeight: '280px',
+                height: '100%',
                 border: '1px solid var(--color-border)',
                 borderTop: '4px solid var(--color-gold)',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                 borderRadius: '0',
                 position: 'relative',
+                overflow: 'hidden',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
                 transition: 'all 0.3s ease'
               }}>
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
                 <div style={{
                   position: 'absolute',
                   top: '-14px',
@@ -1220,15 +1255,18 @@ export default function OtmenaPrikazaClient() {
                   {item.num}
                 </div>
 
-                <h3 style={{
-                  fontSize: '18px',
-                  fontFamily: 'var(--font-serif)',
-                  color: 'var(--color-deep-blue)',
-                  margin: '8px 0 12px 0',
-                  lineHeight: 1.35
-                }}>
-                  {item.title}
-                </h3>
+                <div>
+                  <h3 style={{
+                    fontSize: '18px',
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--color-deep-blue)',
+                    margin: '8px 0 12px 0',
+                    lineHeight: 1.35,
+                    minHeight: '52px'
+                  }}>
+                    {item.title}
+                  </h3>
+                </div>
 
                 <p style={{
                   fontSize: '14px',
@@ -1249,15 +1287,24 @@ export default function OtmenaPrikazaClient() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                padding: '34px 22px 26px 22px',
+                padding: '38px 24px 28px 24px',
+                minHeight: '280px',
+                height: '100%',
                 border: '1px solid rgba(193, 160, 102, 0.4)',
                 borderTop: '4px solid var(--color-gold)',
                 background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
                 boxShadow: '0 8px 24px rgba(16, 39, 59, 0.16)',
                 position: 'relative',
+                overflow: 'hidden',
                 transition: 'all 0.3s ease'
               }}
             >
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="#FFFFFF">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+
               <div>
                 <div style={{
                   fontSize: '11px',
@@ -1277,7 +1324,8 @@ export default function OtmenaPrikazaClient() {
                   fontFamily: 'var(--font-serif)',
                   color: '#FFFFFF',
                   margin: '0 0 10px 0',
-                  lineHeight: 1.35
+                  lineHeight: 1.35,
+                  minHeight: '52px'
                 }}>
                   Обсудить отмену приказа
                 </h3>
@@ -1394,46 +1442,26 @@ export default function OtmenaPrikazaClient() {
                 {[
                   {
                     title: 'Судебный приказ или извещение',
-                    desc: 'Копия судебного приказа, конверт со штемпелем, извещение или трек-номер отправления.',
-                    icon: (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                        <polyline points="22,6 12,13 2,6" />
-                      </svg>
-                    )
+                    desc: 'Копия судебного приказа, конверт со штемпелем, извещение или трек-номер отправления.'
                   },
                   {
                     title: 'Сведения о суде и номере дела',
-                    desc: 'Номер судебного участка мирового судьи, номер дела и наименование взыскателя.',
-                    icon: (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                        <circle cx="11" cy="11" r="8" />
-                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                      </svg>
-                    )
+                    desc: 'Номер судебного участка мирового судьи, номер дела и наименование взыскателя.'
                   },
                   {
                     title: 'Дата обнаружения взыскания',
-                    desc: 'Сведения о фактическом получении письма, уведомление Госуслуг или банка об аресте.',
-                    icon: (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                      </svg>
-                    )
+                    desc: 'Сведения о фактическом получении письма, уведомление Госуслуг или банка об аресте.'
                   },
                   {
                     title: 'Постановление судебного пристава',
-                    desc: 'Номер и постановление о возбуждении ИП, если взыскание уже передано в ФССП.',
-                    icon: (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                      </svg>
-                    )
+                    desc: 'Номер и постановление о возбуждении ИП, если взыскание уже передано в ФССП.'
                   }
                 ].map((doc, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                    {doc.icon}
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
                     <div>
                       <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
                         {doc.title}
@@ -1465,59 +1493,26 @@ export default function OtmenaPrikazaClient() {
                 {[
                   {
                     title: 'Документы об уважительности пропуска',
-                    desc: 'Справки о лечении, командировочные листы, документы о смене адреса при поздней подаче.',
-                    icon: (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                        <polyline points="14 2 14 8 20 8" />
-                        <line x1="12" y1="18" x2="12" y2="12" />
-                        <line x1="9" y1="15" x2="15" y2="15" />
-                      </svg>
-                    )
+                    desc: 'Справки о лечении, командировочные листы, документы о смене адреса при поздней подаче.'
                   },
                   {
                     title: 'Кредитный договор и график платежей',
-                    desc: 'Договор займа или кредита, условия кредитования и уведомление об уступке прав (цессии).',
-                    icon: (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                        <polyline points="14 2 14 8 20 8" />
-                        <line x1="16" y1="13" x2="8" y2="13" />
-                        <line x1="16" y1="17" x2="8" y2="17" />
-                        <polyline points="10 9 9 9 8 9" />
-                      </svg>
-                    )
+                    desc: 'Договор займа или кредита, условия кредитования и уведомление об уступке прав (цессии).'
                   },
                   {
                     title: 'Квитанции и выписки по счету',
-                    desc: 'Подтверждения ранее внесённых платежей для составления контррасчета задолженности.',
-                    icon: (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                        <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z" />
-                        <line x1="8" y1="8" x2="16" y2="8" />
-                        <line x1="8" y1="12" x2="16" y2="12" />
-                        <line x1="8" y1="16" x2="12" y2="16" />
-                      </svg>
-                    )
+                    desc: 'Подтверждения ранее внесённых платежей для составления контррасчета задолженности.'
                   },
                   {
                     title: 'Банковская выписка по удержаниям',
-                    desc: 'Выписка со списанными суммами для последующего заявления о повороте исполнения.',
-                    icon: (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                        <path d="M3 21h18" />
-                        <path d="M5 21V10" />
-                        <path d="M19 21V10" />
-                        <path d="M9 21V10" />
-                        <path d="M15 21V10" />
-                        <path d="M2 10h20" />
-                        <path d="M12 3L2 10h20L12 3z" />
-                      </svg>
-                    )
+                    desc: 'Выписка со списанными суммами для последующего заявления о повороте исполнения.'
                   }
                 ].map((doc, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                    {doc.icon}
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
                     <div>
                       <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>
                         {doc.title}
@@ -1549,58 +1544,46 @@ export default function OtmenaPrikazaClient() {
 
           {/* Карточка: Что происходит после отмены судебного приказа */}
           <div style={{
-            background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
             border: '1px solid rgba(193, 160, 102, 0.4)',
             borderTop: '3px solid var(--color-gold)',
             boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
             padding: '36px 32px',
-            position: 'relative'
+            position: 'relative',
+            overflow: 'hidden'
           }}>
-            <div className="stages-header-row" style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '24px',
-              marginBottom: '24px',
-              position: 'relative',
-              zIndex: 1
-            }}>
-              <div style={{ flex: '1 1 auto', minWidth: '280px' }}>
-                <h3 style={{ fontSize: 'clamp(19px, 2.2vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+            {/* Фоновый водяной знак */}
+            <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.05, pointerEvents: 'none' }}>
+              <svg width="140" height="140" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', marginBottom: '28px', position: 'relative', zIndex: 1 }}>
+              <div>
+                <h3 style={{ fontSize: 'clamp(22px, 2.5vw, 28px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
                   <span style={{ display: 'inline-block' }}>Что происходит после</span> <br />
                   <span style={{ display: 'inline-block' }}>отмены судебного приказа</span>
                 </h3>
               </div>
-              <div className="stages-subtitle-right" style={{
-                fontSize: '14px',
-                color: 'rgba(255, 255, 255, 0.85)',
-                maxWidth: '500px',
-                lineHeight: 1.55,
-                textAlign: 'right',
-                flex: '0 0 auto'
-              }}>
-                <div style={{ fontWeight: 500, marginBottom: '4px' }}>
-                  <span style={{ display: 'inline-block' }}>Вынесение определения об отмене приказа —</span> <br />
-                  <span style={{ display: 'inline-block' }}>ключевой процессуальный шаг:</span>
-                </div>
-                <div style={{ color: 'rgba(255, 255, 255, 0.75)' }}>
-                  <span style={{ display: 'inline-block' }}>важно правильно распорядиться полученным</span> <br />
-                  <span style={{ display: 'inline-block' }}>результатом на стадии исполнения.</span>
-                </div>
+              <div style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)', maxWidth: '520px', lineHeight: 1.55 }}>
+                <span style={{ display: 'block' }}>Вынесение определения об отмене приказа — ключевой процессуальный шаг:</span>
+                <span style={{ display: 'block' }}>важно правильно распорядиться полученным результатом на стадии исполнения.</span>
               </div>
             </div>
 
-            <div className="grid grid-5" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
+            <div className="grid grid-2" style={{ gap: '20px', position: 'relative', zIndex: 1 }}>
               {afterCancelScenarios.map((sc, idx) => (
                 <div
                   key={idx}
+                  className={idx === 4 ? 'span-2-desktop' : ''}
                   style={{
                     background: 'rgba(255, 255, 255, 0.05)',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
-                    padding: '20px 16px',
+                    padding: '24px 22px',
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '10px'
+                    gap: '14px'
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -1616,16 +1599,19 @@ export default function OtmenaPrikazaClient() {
                     }}>
                       {sc.tag}
                     </span>
-                    <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)' }}>
+                    <span style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>
                       0{idx + 1}
                     </span>
                   </div>
-                  <h4 style={{ fontSize: '15px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.3 }}>
-                    {sc.title}
+                  <h4 style={{ fontSize: '17px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '10px' }}>
+                    <span>{sc.title}</span>
                   </h4>
-                  <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
-                    {sc.desc}
-                  </p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.92)', lineHeight: 1.55, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                      <span style={{ display: 'inline-block', width: '10px', height: '2px', backgroundColor: 'var(--color-gold)', flexShrink: 0, marginTop: '8px', borderRadius: '1px' }} />
+                      <div>{sc.desc}</div>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

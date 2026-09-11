@@ -87,12 +87,22 @@ export default function IskArbitrazhClient() {
   const situations = [
     {
       tag: 'Нарушение оплаты',
-      title: 'Контрагент не платит по договору',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Контрагент не платит</span> <br />
+          <span style={{ display: 'inline-block' }}>по договору</span>
+        </span>
+      ),
       desc: 'Поставка выполнена, услуги оказаны или работы приняты, но оплата не поступила. Готовим претензию и иск о взыскании долга и неустойки.'
     },
     {
       tag: 'Срыв сроков и дефекты',
-      title: 'Нарушены сроки или качество работ',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Нарушены сроки</span> <br />
+          <span style={{ display: 'inline-block' }}>или качество работ</span>
+        </span>
+      ),
       desc: 'Подрядчик сорвал график или сдал объект с неустранимыми дефектами. Формируем требования о расторжении договора, возврате аванса и возмещении убытков.'
     },
     {
@@ -102,12 +112,22 @@ export default function IskArbitrazhClient() {
     },
     {
       tag: 'Убытки и ущерб',
-      title: 'Контрагент причинил ущерб бизнесу',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Контрагент причинил</span> <br />
+          <span style={{ display: 'inline-block' }}>ущерб бизнесу</span>
+        </span>
+      ),
       desc: 'Неисполнение обязательств повлекло реальный ущерб или упущенную выгоду. Доказываем причинно-следственную связь и размер убытков.'
     },
     {
       tag: 'Риск вывода активов',
-      title: 'Ответчик прячет имущество и деньги',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Ответчик прячет</span> <br />
+          <span style={{ display: 'inline-block' }}>имущество и деньги</span>
+        </span>
+      ),
       desc: 'Параллельно с иском подаём мотивированное ходатайство о наложении ареста на расчётные счета и имущество ответчика.'
     },
     {
