@@ -49,6 +49,7 @@ export default function Header() {
     { title: "Наследственный юрист", href: "/grazhdanam/nasledstvennyj-yurist/" },
     { title: "Жилищный юрист", href: "/grazhdanam/zhilishchnyj-yurist/" },
     { title: "Земельный юрист", href: "/grazhdanam/zemelnyj-yurist/" },
+    { title: "Юрист по недвижимости", href: "/grazhdanam/yurist-po-nedvizhimosti/" },
     { title: "Банкротство физических лиц", href: "/grazhdanam/bankrotstvo-fizicheskih-lic/" },
     { title: "Кредитный юрист", href: "/grazhdanam/kreditnyj-yurist/" },
     { title: "Юрист по исполнительному производству", href: "/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/" },

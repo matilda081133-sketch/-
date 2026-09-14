@@ -46,6 +46,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/',
     '/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/',
     '/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/',
+    // Юрист по недвижимости (Кластер CIV-04)
+    '/grazhdanam/yurist-po-nedvizhimosti/',
+    '/grazhdanam/yurist-po-nedvizhimosti/spory-s-zastrojshchikom/',
+    '/grazhdanam/yurist-po-nedvizhimosti/soprovozhdenie-sdelok-s-nedvizhimostyu/',
+    '/grazhdanam/yurist-po-nedvizhimosti/vzyskanie-neustojki-po-ddu/',
+    '/grazhdanam/yurist-po-nedvizhimosti/rastorzhenie-ddu/',
+    '/grazhdanam/yurist-po-nedvizhimosti/nedostatki-kvartiry-i-vzyskanie-rashodov/',
+    '/grazhdanam/yurist-po-nedvizhimosti/legalizaciya-samovolnoj-postrojki/',
+    '/grazhdanam/yurist-po-nedvizhimosti/priznanie-prava-sobstvennosti-na-nedvizhimost/',
+    '/grazhdanam/yurist-po-nedvizhimosti/osparivanie-sdelok-s-nedvizhimostyu/',
     // Военный юрист
     '/grazhdanam/voennyj-yurist/',
     '/grazhdanam/voennyj-yurist/spory-s-voenkomatom/',
