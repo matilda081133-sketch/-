@@ -118,50 +118,42 @@ export default function YuristPoNedvizhimostiClient() {
     {
       tag: 'ПОКУПКА КВАРТИРЫ',
       title: 'Покупаю недвижимость',
-      desc: 'Нужно проверить объект, продавца, документы, договор и порядок расчётов до передачи денег.',
-      link: '/grazhdanam/yurist-po-nedvizhimosti/soprovozhdenie-sdelok-s-nedvizhimostyu/'
+      desc: 'Нужно проверить объект, продавца, документы, договор и порядок расчётов до передачи денег.'
     },
     {
       tag: 'ПРОДАЖА И ДАРЕНИЕ',
       title: 'Продаю или передаю объект',
-      desc: 'Нужно подготовить договор, согласовать условия, регистрацию, расчёты и передачу недвижимости.',
-      link: '/grazhdanam/yurist-po-nedvizhimosti/soprovozhdenie-sdelok-s-nedvizhimostyu/'
+      desc: 'Нужно подготовить договор, согласовать условия, регистрацию, расчёты и передачу недвижимости.'
     },
     {
       tag: 'СПОР С ЗАСТРОЙЩИКОМ',
       title: 'Застройщик нарушил обязательства',
-      desc: 'Просрочка передачи, дефекты отделки, отказ платить неустойку или необходимость расторгнуть ДДУ.',
-      link: '/grazhdanam/yurist-po-nedvizhimosti/spory-s-zastrojshchikom/'
+      desc: 'Просрочка передачи, дефекты отделки, отказ платить неустойку или необходимость расторгнуть ДДУ.'
     },
     {
       tag: 'ОФОРМЛЕНИЕ ПРАВ',
       title: 'Право не удаётся оформить',
-      desc: 'Не хватает документов, продавец уклоняется от регистрации, или требуется судебное признание права.',
-      link: '/grazhdanam/yurist-po-nedvizhimosti/priznanie-prava-sobstvennosti-na-nedvizhimost/'
+      desc: 'Не хватает документов, продавец уклоняется от регистрации, или требуется судебное признание права.'
     },
     {
       tag: 'ОСПАРИВАНИЕ СДЕЛКИ',
       title: 'Сделку хотят отменить',
-      desc: 'Предъявлен иск либо есть основания оспорить куплю-продажу, дарение или другую передачу объекта.',
-      link: '/grazhdanam/yurist-po-nedvizhimosti/osparivanie-sdelok-s-nedvizhimostyu/'
+      desc: 'Предъявлен иск либо есть основания оспорить куплю-продажу, дарение или другую передачу объекта.'
     },
     {
       tag: 'САМОВОЛЬНАЯ ПОСТРОЙКА',
       title: 'Постройку требуют снести',
-      desc: 'Нужно оценить возможность сохранения, оформления и судебной защиты дома, здания или пристройки.',
-      link: '/grazhdanam/yurist-po-nedvizhimosti/legalizaciya-samovolnoj-postrojki/'
+      desc: 'Нужно оценить возможность сохранения, оформления и судебной защиты дома, здания или пристройки.'
     },
     {
       tag: 'ПРИОСТАНОВКА В РОСРЕЕСТРЕ',
       title: 'Росреестр приостановил регистрацию',
-      desc: 'Определим причину: устранимые замечания, скрытый спор о праве или пороки представленных документов.',
-      link: '#form'
+      desc: 'Определим причину: устранимые замечания, скрытый спор о праве или пороки представленных документов.'
     },
     {
       tag: 'СЛОЖНАЯ СИТУАЦИЯ',
       title: 'Не знаю, с чего начать',
-      desc: 'Опишите объект, участников и текущую стадию — разберём риски и определим профильный маршрут защиты.',
-      link: '#form'
+      desc: 'Опишите объект, участников и текущую стадию — разберём риски и определим профильный маршрут защиты.'
     }
   ];
 
@@ -625,7 +617,7 @@ export default function YuristPoNedvizhimostiClient() {
           <div className="grid grid-3" style={{ gap: '28px' }}>
             {situations.map((sit, i) => (
               <div key={i} className="hover-lift" style={{ 
-                padding: '32px 28px', 
+                padding: '36px 30px', 
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                 border: '1px solid var(--color-border)',
                 borderTop: '3px solid var(--color-primary)',
@@ -633,7 +625,8 @@ export default function YuristPoNedvizhimostiClient() {
                 display: 'flex',
                 flexDirection: 'column',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
               }}>
                 <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
                   <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
@@ -642,59 +635,25 @@ export default function YuristPoNedvizhimostiClient() {
                 </div>
 
                 <div style={{ 
-                  fontSize: '12px', 
+                  fontSize: '13px', 
                   fontWeight: 600, 
                   color: 'var(--color-gold)', 
-                  marginBottom: '12px',
+                  marginBottom: '14px',
                   background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
+                  padding: '4px 12px',
                   alignSelf: 'flex-start',
                   borderRadius: '2px'
                 }}>
                   {sit.tag}
                 </div>
 
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 12px 0' }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0', whiteSpace: 'pre-line' }}>
                   {sit.title}
                 </h3>
 
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 16px 0', position: 'relative', zIndex: 1, flexGrow: 1 }}>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
                   {sit.desc}
                 </p>
-
-                {sit.link !== '#form' ? (
-                  <Link
-                    href={sit.link}
-                    style={{
-                      fontSize: '14px',
-                      color: 'var(--color-primary)',
-                      fontWeight: 600,
-                      textDecoration: 'none',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      marginTop: 'auto'
-                    }}
-                  >
-                    Подробнее об услуге →
-                  </Link>
-                ) : (
-                  <a
-                    href="#form"
-                    style={{
-                      fontSize: '14px',
-                      color: 'var(--color-primary)',
-                      fontWeight: 600,
-                      textDecoration: 'none',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      marginTop: 'auto'
-                    }}
-                  >
-                    Получить консультацию →
-                  </a>
-                )}
               </div>
             ))}
           </div>
@@ -749,45 +708,45 @@ export default function YuristPoNedvizhimostiClient() {
               </Link>
             ))}
 
-            {/* Карточка 9: Акцентная тёмно-синяя карточка */}
+            {/* Карточка 9: «Нестандартная ситуация», завершающая сетку 3х3 в одном ряду с картой 8 */}
             <div 
               className="card service-card" 
               style={{ 
-                gridColumn: '1 / -1',
-                padding: '32px 36px', 
+                height: '100%', 
+                minHeight: '160px',
+                padding: '30px', 
                 background: 'var(--color-deep-blue)', 
                 border: '1px solid transparent',
                 borderRadius: '0',
                 display: 'flex', 
-                flexDirection: 'row',
-                alignItems: 'center',
+                flexDirection: 'column', 
                 justifyContent: 'space-between',
-                gap: '28px',
                 transition: 'all 0.3s',
                 position: 'relative',
                 borderTop: '3px solid var(--color-gold)',
                 boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)'
               }}
             >
-              <div style={{ flex: '1 1 500px' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+              <div>
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.35, fontWeight: 600 }}>
                   Нестандартная или сложная ситуация с недвижимостью?
                 </h3>
-                <p style={{ margin: '0', fontSize: '16px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.55 }}>
+                <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.55 }}>
                   Опишите вашу задачу в форме. Изучим имеющиеся документы и предложим надёжные законные варианты решения.
                 </p>
               </div>
-              <div style={{ flexShrink: 0 }}>
+              <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(255, 255, 255, 0.15)' }}>
                 <a 
                   href="#form" 
                   className="btn white-btn-custom" 
                   style={{ 
                     display: 'inline-block', 
+                    width: '100%',
                     textAlign: 'center', 
-                    fontSize: '15px',
+                    fontSize: '13.5px',
                     background: 'var(--color-white)',
                     color: 'var(--color-deep-blue)',
-                    padding: '14px 28px',
+                    padding: '10px 18px',
                     fontWeight: 600,
                     textDecoration: 'none'
                   }}
@@ -800,54 +759,143 @@ export default function YuristPoNedvizhimostiClient() {
         </div>
       </section>
 
-      {/* ═══ 4. ЧТО ПРОВЕРЯЕТ ЮРИСТ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ 4. ПРЕДВАРИТЕЛЬНЫЙ ПРАВОВОЙ АУДИТ (ORGANIC DIAGNOSTIC AUDIT MATRIX) ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Что проверяем до сделки или выбора способа защиты
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Выявляем скрытые риски, которые можно установить по документам, государственным реестрам и судебным базам, и предлагаем способы их законного устранения.
-            </p>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+            gap: '28px',
+            marginBottom: '40px',
+            borderBottom: '1px solid rgba(193, 160, 102, 0.3)',
+            paddingBottom: '28px'
+          }}>
+            <div style={{ maxWidth: '620px' }}>
+              <div style={{
+                fontSize: '13px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                marginBottom: '12px'
+              }}>
+                Предварительный правовой аудит
+              </div>
+              <h2 className="with-accent" style={{
+                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontFamily: 'var(--font-serif)',
+                color: 'var(--color-primary)',
+                margin: 0,
+                lineHeight: 1.2
+              }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                  Сначала — диагностика
+                </span>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                  объекта и рисков
+                </span>
+              </h2>
+            </div>
+            <div style={{ maxWidth: '480px', paddingTop: '28px' }}>
+              <p style={{
+                fontSize: '15.5px',
+                color: 'var(--color-deep-blue)',
+                lineHeight: 1.65,
+                margin: 0,
+                opacity: 0.92
+              }}>
+                Выявляем скрытые риски, которые можно установить по документам, государственным реестрам и судебным базам, и предлагаем способы их законного устранения.
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px' }}>
-            {helpItems.map((item, i) => (
-              <div key={i} className="hover-lift" style={{ 
-                padding: '32px 28px', 
-                background: 'var(--color-white)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-gold)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative'
-              }}>
-                <div style={{ 
-                  width: '36px', 
-                  height: '36px', 
-                  borderRadius: '2px', 
-                  background: 'rgba(193, 160, 102, 0.12)', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
-                  marginBottom: '16px',
-                  color: 'var(--color-gold)',
-                  fontWeight: 'bold',
-                  fontSize: '15px',
-                  fontFamily: 'var(--font-serif)'
-                }}>
-                  0{i + 1}
+          {/* Архитектурный реестр аудита */}
+          <div style={{
+            background: '#FFFFFF',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 25px rgba(23, 50, 77, 0.05)',
+            marginBottom: '40px'
+          }}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))'
+            }}>
+              {helpItems.map((item, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    padding: '34px 30px',
+                    borderBottom: idx >= (helpItems.length % 2 === 1 ? helpItems.length - 1 : helpItems.length - 2) ? 'none' : '1px solid var(--color-border)',
+                    borderRight: (idx % 2 === 0 && idx < helpItems.length - 1) ? '1px solid var(--color-border)' : 'none',
+                    gridColumn: (idx === helpItems.length - 1 && helpItems.length % 2 === 1) ? '1 / -1' : 'auto',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-start',
+                    position: 'relative'
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '14px', marginBottom: '10px' }}>
+                    <span style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '26px',
+                      fontWeight: 600,
+                      color: 'var(--color-gold)',
+                      lineHeight: 1,
+                      letterSpacing: '-0.02em',
+                      minWidth: '36px'
+                    }}>
+                      0{idx + 1}
+                    </span>
+                    <h3 style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '19px',
+                      fontWeight: 600,
+                      color: 'var(--color-deep-blue)',
+                      margin: 0,
+                      lineHeight: 1.3
+                    }}>
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p style={{
+                    fontSize: '14.5px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0,
+                    paddingLeft: '50px'
+                  }}>
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 12px 0' }}>
-                  {item.title}
-                </h3>
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {item.desc}
-                </p>
+              ))}
+            </div>
+
+            {/* Интегрированная панель действия */}
+            <div style={{
+              padding: '24px 32px',
+              background: 'linear-gradient(90deg, #FBF8F3 0%, #FFFFFF 100%)',
+              borderTop: '1px solid var(--color-border)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
+                  Проводим правовую диагностику объекта и участников до передачи денег или обращения в суд
+                </span>
               </div>
-            ))}
+              <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px' }}>
+                Записаться на разбор ситуации
+              </a>
+            </div>
           </div>
         </div>
       </section>
