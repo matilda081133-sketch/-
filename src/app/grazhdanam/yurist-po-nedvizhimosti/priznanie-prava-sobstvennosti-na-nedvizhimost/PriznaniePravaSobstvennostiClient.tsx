@@ -236,7 +236,7 @@ export default function PriznaniePravaSobstvennostiClient() {
           </>
         }
         superTitle="Судебное признание права • ст. 218, 234 ГК РФ • Липецк"
-        title={<>Признание права собственности <br />на недвижимость в Липецке</>}
+        title={<>Признание <br />права собственности <br />на недвижимость <br />в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
             Оформим право собственности через суд на квартиру, дом, новостройку или гараж при утере документов, отказе Росреестра, банкротстве продавца или по приобретательной давности.
@@ -404,8 +404,8 @@ export default function PriznaniePravaSobstvennostiClient() {
       {/* ═══ 2. СИТУАЦИИ ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+          <div style={{ maxWidth: '850px', marginBottom: '48px' }}>
+            <h2 className="with-accent nowrap-desk" style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Когда право признаётся только через суд
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
@@ -422,7 +422,12 @@ export default function PriznaniePravaSobstvennostiClient() {
               },
               {
                 tag: 'УТЕРЯ ДОКУМЕНТОВ',
-                title: 'Утрата архивов и ордеров',
+                title: (
+                  <>
+                    Утрата архивов <br />
+                    и ордеров
+                  </>
+                ),
                 desc: 'Отсутствие первичных правоустанавливающих договоров, ликвидация предприятий, выдававших жильё в 1980–1990-х годах.'
               },
               {
@@ -432,7 +437,12 @@ export default function PriznaniePravaSobstvennostiClient() {
               },
               {
                 tag: 'ГАРАЖИ И КООПЕРАТИВЫ',
-                title: 'Паенакопления в ГСК / СНТ',
+                title: (
+                  <>
+                    Паенакопления <br />
+                    в ГСК / СНТ
+                  </>
+                ),
                 desc: 'Полная выплата пая при отсутствии председателя, правоустанавливающих документов кооператива или актов ввода.'
               }
             ].map((item, idx) => (

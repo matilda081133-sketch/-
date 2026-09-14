@@ -526,80 +526,100 @@ export default function NedostatkiKvartiryClient() {
       </section>
 
       {/* ═══ 3. ЭТАПЫ РАБОТЫ ═══ */}
-      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      <section className="section" style={{ padding: '80px 0', background: 'var(--color-deep-blue)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Как получить компенсацию за строительный брак
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Последовательный юридический регламент от фиксации нарушений до перечисления денег на ваш счёт.
+          <div style={{
+            background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.35)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)',
+            padding: '40px 36px',
+            position: 'relative',
+            overflow: 'hidden',
+            marginBottom: '32px'
+          }}>
+            {/* Фоновый декоративный вектор */}
+            <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
+              <svg width="120" height="120" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', paddingBottom: '16px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', marginBottom: '20px' }}>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+              <div>
+                <h2 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                    Как получить компенсацию
+                  </span>
+                  <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                    за строительный брак
+                  </span>
+                </h2>
+              </div>
+            </div>
+
+            <p style={{ margin: '0 0 28px 0', fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, maxWidth: '820px' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                Последовательный юридический регламент от фиксации
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                нарушений до перечисления денег на ваш счёт.
+              </span>
             </p>
+
+            <div className="grid grid-2" style={{ gap: '22px', position: 'relative', zIndex: 1 }}>
+              {[
+                {
+                  title: 'Инструментальная фиксация',
+                  desc: 'Осмотр сертифицированным экспертом НОПРИЗ с использованием лазерных дальномеров, тепловизоров и анемометров.'
+                },
+                {
+                  title: 'Дефектная ведомость и смета',
+                  desc: 'Составление официальной сметы стоимости восстановительного ремонта с учётом рыночных цен материалов и работ.'
+                },
+                {
+                  title: 'Претензия застройщику',
+                  desc: 'Направление обоснованной претензии с требованием добровольного возмещения в установленный законом срок.'
+                },
+                {
+                  title: 'Судебный процесс',
+                  desc: 'Подача иска в суд, назначение судебной строительной экспертизы и защита выводов независимого эксперта.'
+                },
+                {
+                  title: 'Потребительский штраф 50%',
+                  desc: 'Взыскание штрафа за отказ добровольно возместить ущерб, морального вреда и неустойки по закону о защите прав потребителей.'
+                },
+                {
+                  title: 'Исполнение и выплата',
+                  desc: 'Предъявление исполнительного листа в банк застройщика и контроль зачисления денег на расчётный счёт дольщика.'
+                }
+              ].map((item, idx) => (
+                <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '3px', lineHeight: 1.35 }}>
+                      {item.title}
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.55 }}>
+                      {item.desc}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px' }}>
-            {[
-              {
-                title: 'Инструментальная фиксация',
-                desc: 'Осмотр сертифицированным экспертом НОПРИЗ с использованием лазерных дальномеров, тепловизоров и анемометров.'
-              },
-              {
-                title: 'Дефектная ведомость и смета',
-                desc: 'Составление официальной сметы стоимости восстановительного ремонта с учётом рыночных цен материалов и работ.'
-              },
-              {
-                title: 'Претензия застройщику',
-                desc: 'Направление обоснованной претензии с требованием добровольного возмещения в установленный законом срок.'
-              },
-              {
-                title: 'Судебный процесс',
-                desc: 'Подача иска в суд, назначение судебной строительной экспертизы и защита выводов независимого эксперта.'
-              },
-              {
-                title: 'Потребительский штраф 50%',
-                desc: 'Взыскание штрафа за отказ добровольно возместить ущерб, морального вреда и неустойки по закону о защите прав потребителей.'
-              },
-              {
-                title: 'Исполнение и выплата',
-                desc: 'Предъявление исполнительного листа в банк застройщика и контроль зачисления денег на расчётный счёт дольщика.'
-              }
-            ].map((step, idx) => (
-              <div
-                key={idx}
-                className="hover-lift"
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  padding: '36px 30px 32px 30px',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  position: 'relative'
-                }}
-              >
-                <div style={{
-                  position: 'absolute',
-                  top: '-14px',
-                  left: '24px',
-                  background: 'var(--color-gold)',
-                  color: '#FFFFFF',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  padding: '2px 10px',
-                  borderRadius: '2px',
-                  letterSpacing: '0.05em'
-                }}>
-                  0{idx + 1}
-                </div>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
-                  {step.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {step.desc}
-                </p>
-              </div>
-            ))}
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 32px' }}>
+              Получить компенсацию за брак
+            </a>
           </div>
         </div>
       </section>

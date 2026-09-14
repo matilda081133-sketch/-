@@ -236,7 +236,7 @@ export default function OsparivanieSdelokClient() {
           </>
         }
         superTitle="Недействительность сделок • ст. 166–179 ГК РФ • Липецк"
-        title={<>Оспаривание сделок <br />с недвижимостью в Липецке</>}
+        title={<>Оспаривание сделок <br />с недвижимостью <br />в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
             Признаем договор купли-продажи, дарения или залога недействительным и вернём квартиру в собственность, либо защитим право добросовестного покупателя от изъятия.
@@ -520,7 +520,12 @@ export default function OsparivanieSdelokClient() {
               Порядок оспаривания и защиты сделки
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Комплекс мер для надёжной защиты имущественных прав доверителя в районных и арбитражных судах.
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                Комплекс мер для надёжной защиты имущественных
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                прав доверителя в районных и арбитражных судах.
+              </span>
             </p>
           </div>
 
