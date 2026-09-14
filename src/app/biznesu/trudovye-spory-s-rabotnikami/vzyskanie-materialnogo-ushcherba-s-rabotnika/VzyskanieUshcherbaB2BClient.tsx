@@ -328,10 +328,10 @@ export default function VzyskanieUshcherbaB2BClient() {
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Взыскание ущерба
+              Взыскание материального
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              с работника компании
+              ущерба с работника
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               в Липецке
@@ -340,7 +340,7 @@ export default function VzyskanieUshcherbaB2BClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Организуем служебную проверку, установим размер прямого ущерба и вину работника, оформим добровольное возмещение или взыщем средства через суд.
+            Проверим основания материальной ответственности, поможем зафиксировать размер и причины ущерба, оформить доказательства и выбрать законный способ возмещения.
           </span>
         }
         primaryCtaText="Обсудить ущерб"
@@ -379,7 +379,7 @@ export default function VzyskanieUshcherbaB2BClient() {
               <span style={{ display: "inline-block" }}>В каких ситуациях</span> <br /><span style={{ display: "inline-block" }}>взыскивается ущерб</span> <br /><span style={{ display: "inline-block" }}>с сотрудника компании</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Соблюдение процедуры проверки по ТК РФ — главное условие успешного взыскания ущерба. Любое нарушение правил инвентаризации или истребования объяснений лишает компанию шансов в суде.
+              Для взыскания нужно подтвердить прямой действительный ущерб, его размер, противоправность поведения, вину и причинную связь, а также соблюсти процедуру проверки. Ошибки в документах могут ослабить позицию работодателя, поэтому порядок действий нужно определить до удержания или обращения в суд.
             </p>
           </div>
 
