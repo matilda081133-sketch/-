@@ -48,43 +48,76 @@ export default function RazdelUchastkaClient() {
   ];
 
   const jsonLdGraph = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Organization",
-        "@id": "https://dejure-help.ru/#organization",
-        "name": "Юридическая компания «Де-Юре»",
-        "url": "https://dejure-help.ru/",
-        "logo": "https://matilda081133-sketch.github.io/images/logo_dark.png"
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область']
       },
       {
-        "@type": "Service",
-        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#service",
-        "name": "Раздел земельного участка в Липецке",
-        "serviceType": "Раздел земельного участка, выдел доли и определение порядка пользования",
-        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/",
-        "description": "Проверим юридическую и техническую делимость земельного участка в Липецке, подготовим соглашение или судебное дело и сопроводим кадастровый учёт.",
-        "provider": { "@id": "https://dejure-help.ru/#organization" },
-        "areaServed": ["Липецк", "Липецкая область", "Россия"]
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#service',
+        name: 'Раздел земельного участка в Липецке',
+        serviceType: 'Юридическая помощь по разделу земельного участка',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/',
+        description: 'Раздел земельного участка, выдел доли в натуре и определение порядка пользования земельным участком в Липецке.'
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://matilda081133-sketch.github.io/-/" },
-          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/grazhdanam/" },
-          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/" },
-          { "@type": "ListItem", "position": 4, "name": "Раздел земельного участка", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/" }
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Гражданам",
+                    "item": "https://dejure-help.ru/grazhdanam/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Земельный юрист",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Раздел земельного участка",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/"
+          }
         ]
       },
       {
-        "@type": "WebPage",
-        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#webpage",
-        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/",
-        "name": "Раздел земельного участка в Липецке | Де-Юре",
-        "description": "Проверим юридическую и техническую делимость земельного участка в Липецке, подготовим соглашение или судебное дело и сопроводим кадастровый учёт.",
-        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#breadcrumb" },
-        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#service" }
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };

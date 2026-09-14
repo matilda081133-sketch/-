@@ -48,43 +48,76 @@ export default function PerevodKategoriiClient() {
   ];
 
   const jsonLdGraph = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Organization",
-        "@id": "https://dejure-help.ru/#organization",
-        "name": "Юридическая компания «Де-Юре»",
-        "url": "https://dejure-help.ru/",
-        "logo": "https://matilda081133-sketch.github.io/images/logo_dark.png"
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область']
       },
       {
-        "@type": "Service",
-        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/#service",
-        "name": "Перевод земельного участка в другую категорию в Липецке",
-        "serviceType": "Перевод земель и земельных участков из одной категории в другую",
-        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/",
-        "description": "Проверим допустимость перевода земельного участка в другую категорию в Липецкой области, подготовим обоснование, ходатайство и сопроводим решение или обжалование.",
-        "provider": { "@id": "https://dejure-help.ru/#organization" },
-        "areaServed": ["Липецк", "Липецкая область", "Россия"]
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/#service',
+        name: 'Перевод земельного участка в другую категорию в Липецке',
+        serviceType: 'Юридическая помощь по переводу земель в другую категорию',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/',
+        description: 'Проверка ограничений, подготовка ходатайства, финансово-экономического обоснования и сопровождение перевода земель в Липецкой области.'
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://matilda081133-sketch.github.io/-/" },
-          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/grazhdanam/" },
-          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/" },
-          { "@type": "ListItem", "position": 4, "name": "Перевод участка в другую категорию", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/" }
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Гражданам",
+                    "item": "https://dejure-help.ru/grazhdanam/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Земельный юрист",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Перевод земельного участка в другую категорию",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/"
+          }
         ]
       },
       {
-        "@type": "WebPage",
-        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/#webpage",
-        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/",
-        "name": "Перевод земельного участка в другую категорию в Липецке | Де-Юре",
-        "description": "Проверим допустимость перевода земельного участка в другую категорию в Липецкой области, подготовим обоснование, ходатайство и сопроводим решение или обжалование.",
-        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/#breadcrumb" },
-        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/#service" }
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };

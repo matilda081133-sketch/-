@@ -5,19 +5,20 @@ export const metadata = {
   title: 'Юрист по спорам о границах земельного участка в Липецке | Де-Юре',
   description: 'Юридическая помощь при наложении границ, реестровой ошибке, захвате части участка и споре с соседом в Липецке. Анализ документов, переговоры и представительство в суде.',
   alternates: {
-    canonical: 'https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/'
+    canonical: 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/'
   },
   openGraph: {
     title: 'Юрист по спорам о границах земельного участка в Липецке | Де-Юре',
     description: 'Юридическая помощь при наложении границ, реестровой ошибке, захвате части участка и споре с соседом в Липецке. Анализ документов, переговоры и представительство в суде.',
-    url: 'https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/',
+    url: 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/',
     siteName: 'ЮК «Де-Юре»',
     images: [
       {
-        url: 'https://matilda081133-sketch.github.io/images/land_law_hero_pro.jpg',
+        url: 'https://dejure-help.ru/images/og/land-boundary-disputes-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Юрист по спорам о границах земельного участка в Липецке'
+        type: 'image/jpeg',
+        alt: 'Споры о границах земельного участка в Липецке — ЮК «Де-Юре»'
       }
     ],
     locale: 'ru_RU',
@@ -27,7 +28,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Юрист по спорам о границах земельного участка в Липецке | Де-Юре',
     description: 'Юридическая помощь при наложении границ, реестровой ошибке, захвате части участка и споре с соседом в Липецке.',
-    images: ['https://matilda081133-sketch.github.io/images/land_law_hero_pro.jpg']
+    images: ['https://dejure-help.ru/images/og/land-boundary-disputes-og.jpg']
   }
 };
 

@@ -50,56 +50,76 @@ export default function SporyOGranicahClient() {
   ];
 
   const jsonLdGraph = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Organization",
-        "@id": "https://dejure-help.ru/#organization",
-        "name": "Юридическая компания «Де-Юре»",
-        "url": "https://dejure-help.ru/",
-        "logo": "https://matilda081133-sketch.github.io/images/logo_dark.png",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Липецк",
-          "addressRegion": "Липецкая область",
-          "addressCountry": "RU"
-        }
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область']
       },
       {
-        "@type": "LegalService",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/#legalservice",
-        "name": "Юрист по спорам о границах земельного участка в Липецке",
-        "serviceType": "Юридическая помощь по спорам о границах земельного участка",
-        "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/",
-        "description": "Юридическая помощь при наложении границ, реестровой ошибке, захвате части участка и споре с соседом в Липецке.",
-        "provider": { "@id": "https://dejure-help.ru/#organization" },
-        "areaServed": ["Липецк", "Липецкая область", "Россия"]
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/#service',
+        name: 'Юрист по спорам о границах земельного участка в Липецке',
+        serviceType: 'Юридическая помощь по спорам о границах земельного участка',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/',
+        description: 'Юридическая помощь при наложении границ, реестровой ошибке, захвате части участка и споре с соседом в Липецке.'
       },
       {
-        "@type": "Service",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/#service",
-        "name": "Споры о границах земельного участка",
-        "serviceType": "Защита прав на земельный участок и определение границ",
-        "provider": { "@id": "https://dejure-help.ru/#organization" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://matilda081133-sketch.github.io/-/" },
-          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/" },
-          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/" },
-          { "@type": "ListItem", "position": 4, "name": "Споры о границах участка", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/" }
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Гражданам",
+                    "item": "https://dejure-help.ru/grazhdanam/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Земельный юрист",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Споры о границах участка",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/"
+          }
         ]
       },
       {
-        "@type": "WebPage",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/#webpage",
-        "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/",
-        "name": "Юрист по спорам о границах земельного участка в Липецке | Де-Юре",
-        "description": "Юридическая помощь при наложении границ, реестровой ошибке, захвате части участка и споре с соседом в Липецке.",
-        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/#breadcrumb" },
-        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/#legalservice" }
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };

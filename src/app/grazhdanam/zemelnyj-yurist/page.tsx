@@ -5,19 +5,20 @@ export const metadata = {
   title: 'Земельный юрист в Липецке — помощь по земельным вопросам | Де-Юре',
   description: 'Земельный юрист в Липецке: споры о границах, оформление прав, раздел участка, сервитут, кадастровая стоимость, изменение ВРИ и категории земли.',
   alternates: {
-    canonical: 'https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/'
+    canonical: 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/'
   },
   openGraph: {
     title: 'Земельный юрист в Липецке — помощь по земельным вопросам | Де-Юре',
     description: 'Помощь земельного юриста в Липецке: споры о границах, оформление прав, сервитут, кадастровая стоимость, изменение ВРИ и перевод земли в другую категорию.',
-    url: 'https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/',
+    url: 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/',
     siteName: 'ЮК «Де-Юре»',
     images: [
       {
-        url: 'https://matilda081133-sketch.github.io/images/land_law_hero_pro.jpg',
+        url: 'https://dejure-help.ru/images/og/land-lawyer-lipetsk-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Земельный юрист в Липецке'
+        type: 'image/jpeg',
+        alt: 'Земельный юрист в Липецке — ЮК «Де-Юре»'
       }
     ],
     locale: 'ru_RU',
@@ -27,7 +28,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Земельный юрист в Липецке — помощь по земельным вопросам | Де-Юре',
     description: 'Помощь земельного юриста в Липецке: споры о границах, оформление прав, сервитут, кадастровая стоимость, изменение ВРИ и перевод земли в другую категорию.',
-    images: ['https://matilda081133-sketch.github.io/images/land_law_hero_pro.jpg']
+    images: ['https://dejure-help.ru/images/og/land-lawyer-lipetsk-og.jpg']
   }
 };
 

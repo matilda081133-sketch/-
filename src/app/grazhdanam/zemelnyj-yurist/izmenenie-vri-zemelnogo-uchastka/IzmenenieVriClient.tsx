@@ -48,43 +48,76 @@ export default function IzmenenieVriClient() {
   ];
 
   const jsonLdGraph = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Organization",
-        "@id": "https://dejure-help.ru/#organization",
-        "name": "Юридическая компания «Де-Юре»",
-        "url": "https://dejure-help.ru/",
-        "logo": "https://matilda081133-sketch.github.io/images/logo_dark.png"
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область']
       },
       {
-        "@type": "Service",
-        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/#service",
-        "name": "Изменение вида разрешённого использования земельного участка в Липецке",
-        "serviceType": "Изменение ВРИ и правового режима использования земли",
-        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/",
-        "description": "Проверим территориальную зону, регламент и ограничения, определим порядок изменения ВРИ земельного участка в Липецке и сопроводим процедуру или обжалование.",
-        "provider": { "@id": "https://dejure-help.ru/#organization" },
-        "areaServed": ["Липецк", "Липецкая область", "Россия"]
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/#service',
+        name: 'Изменение ВРИ земельного участка в Липецке',
+        serviceType: 'Юридическая помощь по изменению вида разрешенного использования',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/',
+        description: 'Проверка регламентов, выбор классификатора, согласование с администрацией и внесение изменений в ЕГРН в Липецке.'
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://matilda081133-sketch.github.io/-/" },
-          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/grazhdanam/" },
-          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/" },
-          { "@type": "ListItem", "position": 4, "name": "Изменение ВРИ земельного участка", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/" }
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Гражданам",
+                    "item": "https://dejure-help.ru/grazhdanam/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Земельный юрист",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Изменение ВРИ земельного участка",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/"
+          }
         ]
       },
       {
-        "@type": "WebPage",
-        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/#webpage",
-        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/",
-        "name": "Изменение ВРИ земельного участка в Липецке | Де-Юре",
-        "description": "Проверим территориальную зону, регламент и ограничения, определим порядок изменения ВРИ земельного участка в Липецке и сопроводим процедуру или обжалование.",
-        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/#breadcrumb" },
-        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/#service" }
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };

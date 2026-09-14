@@ -48,43 +48,76 @@ export default function UstanovlenieServitutaClient() {
   ];
 
   const jsonLdGraph = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Organization",
-        "@id": "https://dejure-help.ru/#organization",
-        "name": "Юридическая компания «Де-Юре»",
-        "url": "https://dejure-help.ru/",
-        "logo": "https://matilda081133-sketch.github.io/images/logo_dark.png"
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область']
       },
       {
-        "@type": "Service",
-        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#service",
-        "name": "Установление земельного сервитута в Липецке",
-        "serviceType": "Установление, изменение и прекращение земельного сервитута",
-        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/",
-        "description": "Помощь в установлении, изменении и прекращении земельного сервитута в Липецке: маршрут, условия, плата, соглашение и представительство в суде.",
-        "provider": { "@id": "https://dejure-help.ru/#organization" },
-        "areaServed": ["Липецк", "Липецкая область", "Россия"]
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#service',
+        name: 'Установление земельного сервитута в Липецке',
+        serviceType: 'Юридическая помощь по установлению сервитута',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/',
+        description: 'Помощь в установлении, изменении и прекращении земельного сервитута в Липецке: проход, проезд, коммуникации, соглашение и суд.'
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://matilda081133-sketch.github.io/-/" },
-          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/grazhdanam/" },
-          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/" },
-          { "@type": "ListItem", "position": 4, "name": "Установление сервитута", "item": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/" }
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Гражданам",
+                    "item": "https://dejure-help.ru/grazhdanam/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Земельный юрист",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Установление земельного сервитута",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/"
+          }
         ]
       },
       {
-        "@type": "WebPage",
-        "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#webpage",
-        "url": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/",
-        "name": "Установление земельного сервитута в Липецке | Де-Юре",
-        "description": "Помощь в установлении, изменении и прекращении земельного сервитута в Липецке: маршрут, условия, плата, соглашение и представительство в суде.",
-        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#breadcrumb" },
-        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#service" }
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };

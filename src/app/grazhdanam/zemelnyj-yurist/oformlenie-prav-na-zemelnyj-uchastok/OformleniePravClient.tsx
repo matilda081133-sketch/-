@@ -48,51 +48,76 @@ export default function OformleniePravClient() {
   ];
 
   const jsonLdGraph = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Organization",
-        "@id": "https://dejure-help.ru/#organization",
-        "name": "Юридическая компания «Де-Юре»",
-        "url": "https://dejure-help.ru/",
-        "logo": "https://matilda081133-sketch.github.io/images/logo_dark.png"
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область']
       },
       {
-        "@type": "LegalService",
-        "@id": "https://dejure-help.ru/#legalservice",
-        "name": "Юридическая компания «Де-Юре»",
-        "url": "https://dejure-help.ru/",
-        "logo": "https://matilda081133-sketch.github.io/images/logo_dark.png",
-        "areaServed": ["Липецк", "Липецкая область", "Россия"]
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/#service',
+        name: 'Оформление прав на земельный участок в Липецке',
+        serviceType: 'Юридическая помощь по оформлению прав на земельный участок',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/',
+        description: 'Оформление права собственности, аренды, приватизации, выкупа и исправления документов на земельный участок в Липецке.'
       },
       {
-        "@type": "Service",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/#service",
-        "name": "Оформление прав на земельный участок в Липецке",
-        "serviceType": "Оформление и регистрация прав на землю",
-        "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/",
-        "description": "Проверим основания и документы, определим административный или судебный порядок оформления права на земельный участок в Липецке и сопроводим регистрацию.",
-        "provider": { "@id": "https://dejure-help.ru/#organization" },
-        "areaServed": ["Липецк", "Липецкая область", "Россия"]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://matilda081133-sketch.github.io/-/" },
-          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/" },
-          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/" },
-          { "@type": "ListItem", "position": 4, "name": "Оформление прав на земельный участок", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/" }
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Гражданам",
+                    "item": "https://dejure-help.ru/grazhdanam/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Земельный юрист",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Оформление прав на земельный участок",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/"
+          }
         ]
       },
       {
-        "@type": "WebPage",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/#webpage",
-        "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/",
-        "name": "Оформление прав на земельный участок в Липецке | Де-Юре",
-        "description": "Проверим основания и документы, определим административный или судебный порядок оформления права на земельный участок в Липецке и сопроводим регистрацию.",
-        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/#breadcrumb" },
-        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/#service" }
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };

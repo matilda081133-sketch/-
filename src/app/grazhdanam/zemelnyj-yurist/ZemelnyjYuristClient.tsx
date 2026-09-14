@@ -67,118 +67,132 @@ export default function ZemelnyjYuristClient() {
   ];
 
   const jsonLdGraph = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Organization",
-        "@id": "https://dejure-help.ru/#organization",
-        "name": "Юридическая компания «Де-Юре»",
-        "url": "https://dejure-help.ru/",
-        "logo": "https://matilda081133-sketch.github.io/images/logo_dark.png",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Липецк",
-          "addressRegion": "Липецкая область",
-          "addressCountry": "RU"
-        }
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область']
       },
       {
-        "@type": "LegalService",
-        "@id": "https://dejure-help.ru/#legalservice",
-        "name": "Юридическая компания «Де-Юре»",
-        "url": "https://dejure-help.ru/",
-        "logo": "https://matilda081133-sketch.github.io/images/logo_dark.png",
-        "areaServed": ["Липецк", "Липецкая область", "Россия"]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/#service",
-        "name": "Услуги земельного юриста в Липецке",
-        "serviceType": "Юридическая помощь по земельным вопросам",
-        "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/",
-        "description": "Помощь земельного юриста в Липецке: споры о границах, оформление прав, сервитут, кадастровая стоимость, изменение ВРИ и перевод земли в другую категорию.",
-        "provider": { "@id": "https://dejure-help.ru/#organization" },
-        "areaServed": ["Липецк", "Липецкая область", "Россия"],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/#service',
+        name: 'Услуги земельного юриста в Липецке',
+        serviceType: 'Юридическая помощь по земельным вопросам',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/',
+        description: 'Помощь земельного юриста в Липецке: споры о границах, оформление прав, сервитут, кадастровая стоимость, изменение ВРИ и перевод земли в другую категорию.',
+        hasOfferCatalog: {
+                    "@type": "OfferCatalog",
           "name": "Направления помощи земельного юриста",
           "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Споры о границах земельного участка",
-                "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Оформление прав на земельный участок",
-                "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Раздел земельного участка",
-                "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Установление земельного сервитута",
-                "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Оспаривание кадастровой стоимости",
-                "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Изменение вида разрешённого использования участка",
-                "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Перевод земельного участка в другую категорию",
-                "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/"
-              }
-            }
+                    {
+                              "@type": "Offer",
+                              "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Споры о границах земельного участка",
+                                        "url": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/"
+                              }
+                    },
+                    {
+                              "@type": "Offer",
+                              "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Оформление прав на земельный участок",
+                                        "url": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/"
+                              }
+                    },
+                    {
+                              "@type": "Offer",
+                              "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Раздел земельного участка",
+                                        "url": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/razdel-zemelnogo-uchastka/"
+                              }
+                    },
+                    {
+                              "@type": "Offer",
+                              "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Установление земельного сервитута",
+                                        "url": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/ustanovlenie-servituta/"
+                              }
+                    },
+                    {
+                              "@type": "Offer",
+                              "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Оспаривание кадастровой стоимости",
+                                        "url": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/osparivanie-kadastrovoj-stoimosti/"
+                              }
+                    },
+                    {
+                              "@type": "Offer",
+                              "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Изменение ВРИ земельного участка",
+                                        "url": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/izmenenie-vri-zemelnogo-uchastka/"
+                              }
+                    },
+                    {
+                              "@type": "Offer",
+                              "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Перевод земельного участка в другую категорию",
+                                        "url": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/perevod-zemelnogo-uchastka-v-druguyu-kategoriyu/"
+                              }
+                    }
           ]
         }
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://matilda081133-sketch.github.io/-/" },
-          { "@type": "ListItem", "position": 2, "name": "Гражданам", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/" },
-          { "@type": "ListItem", "position": 3, "name": "Земельный юрист", "item": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/" }
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Гражданам",
+                    "item": "https://dejure-help.ru/grazhdanam/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Земельный юрист",
+                    "item": "https://dejure-help.ru/grazhdanam/zemelnyj-yurist/"
+          }
         ]
       },
       {
-        "@type": "WebPage",
-        "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/#webpage",
-        "url": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/",
-        "name": "Земельный юрист в Липецке — помощь по земельным вопросам | Де-Юре",
-        "description": "Земельный юрист в Липецке: споры о границах, оформление прав, раздел участка, сервитут, кадастровая стоимость, изменение ВРИ и категории земли.",
-        "breadcrumb": { "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/#breadcrumb" },
-        "mainEntity": { "@id": "https://matilda081133-sketch.github.io/-/grazhdanam/zemelnyj-yurist/#service" }
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/zemelnyj-yurist/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
       }
     ]
   };
