@@ -551,7 +551,7 @@ export default function RastorzhenieDDUClient() {
               </svg>
               <div>
                 <h3 className="nowrap-desk" style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
-                  Три способа расторгнуть договор ДДУ
+                  3 способа расторгнуть договор ДДУ
                 </h3>
               </div>
             </div>
