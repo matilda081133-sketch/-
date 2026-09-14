@@ -536,7 +536,10 @@ export default function NezakonnoeUvolnenieClient() {
             <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
               +7 (4742) 20-15-25
             </a>
-            <a href="#form" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="tel:+74742201525" className="btn btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="uvolnenie_urgent_call_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Проверить срок и документы
             </a>
             <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>

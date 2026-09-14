@@ -436,7 +436,7 @@ export default function NezakonnoeSokrashchenieClient() {
       <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
-            <span style={{ display: 'inline-block' }}>Когда нельзя</span> <br /><span style={{ display: 'inline-block' }}>откладывать</span>
+            Когда нельзя откладывать
           </h2>
           <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '640px', lineHeight: 1.6 }}>
@@ -530,7 +530,10 @@ export default function NezakonnoeSokrashchenieClient() {
             <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
               +7 (4742) 20-15-25
             </a>
-            <a href="#form" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="tel:+74742201525" className="btn btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="sokrashchenie_urgent_call_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Проверить процедуру и срок
             </a>
             <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>

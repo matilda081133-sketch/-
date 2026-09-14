@@ -410,12 +410,37 @@ export default function TrudovyeSporyB2BClient() {
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Трудовые споры с работниками»"
       />
 
-      {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 2: НАПРАВЛЕНИЯ ПОМОЩИ ═══ */}
+      <section id="directions" className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .service-card-smooth {
+            will-change: transform, box-shadow, border-color;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease !important;
+          }
+          .service-card-smooth:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
+            border-color: rgba(193, 160, 102, 0.45) !important;
+          }
+          .service-card-smooth .card-arrow svg {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+          }
+          .service-card-smooth:hover .card-arrow svg {
+            transform: translateX(6px);
+          }
+          .service-card-smooth .card-arrow {
+            transition: color 0.35s ease;
+          }
+          .service-card-smooth:hover .card-arrow {
+            color: var(--color-gold);
+          }
+        `}} />
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: "inline-block" }}>Направления помощи</span> <br /><span style={{ display: "inline-block" }}>по трудовым спорам</span> <br /><span style={{ display: "inline-block" }}>для бизнеса</span>
+              <span style={{ display: 'inline-block' }}>Направления помощи</span>{' '}
+              <br />
+              <span style={{ display: 'inline-block' }}>по трудовым спорам для бизнеса</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Подключаемся на стадии подготовки кадрового решения, досудебного конфликта, проверки или судебного разбирательства. Выберите ситуацию, чтобы увидеть порядок и объём помощи.
@@ -426,11 +451,11 @@ export default function TrudovyeSporyB2BClient() {
             {directions.map((dir, i) => (
               <a key={i} href={dir.link} style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', height: '100%' }}>
                 <div
-                  className="card service-card"
+                  className="card service-card service-card-smooth"
                   style={{
                     height: '100%',
                     minHeight: '220px',
-                    padding: '28px',
+                    padding: '30px',
                     background: 'var(--color-white)',
                     border: '1px solid var(--color-border)',
                     borderRadius: '0',
@@ -443,7 +468,7 @@ export default function TrudovyeSporyB2BClient() {
                   }}
                 >
                   <div>
-                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.35 }}>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontWeight: 600 }}>
                       {dir.title}
                     </h3>
                     <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
