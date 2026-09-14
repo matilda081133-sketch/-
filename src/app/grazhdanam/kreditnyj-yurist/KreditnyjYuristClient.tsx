@@ -838,11 +838,11 @@ export default function KreditnyjYuristClient() {
                 <line x1="12" y1="8" x2="12" y2="12"></line>
                 <line x1="12" y1="16" x2="12.01" y2="16"></line>
               </svg>
-              <div style={{ maxWidth: '680px' }}>
-                <strong style={{ display: 'block', color: 'var(--color-deep-blue)', fontSize: '14.5px', marginBottom: '2px' }}>
+              <div style={{ maxWidth: '680px', lineHeight: 1.4 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', fontSize: '14px', marginRight: '6px' }}>
                   Важно учитывать:
                 </strong>
-                <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)' }}>
                   Сам факт просрочки не делает требования кредитора незаконными, а обращение с жалобой не приостанавливает платежи и взыскание автоматически. Юрист должен отдельно определить юридический эффект каждого действия.
                 </span>
               </div>

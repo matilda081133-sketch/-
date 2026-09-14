@@ -330,7 +330,7 @@ export default function OtmenaPrikazaClient() {
       tag: 'Исполнение не начато'
     },
     {
-      title: 'Производство находится у пристава',
+      title: <>Производство находится <br />у пристава</>,
       desc: 'Отмена приказа является законным основанием для прекращения ИП по ст. 43 Закона № 229-ФЗ. Определение передаётся приставу для снятия всех арестов.',
       tag: 'ФССП'
     },
@@ -340,12 +340,12 @@ export default function OtmenaPrikazaClient() {
       tag: 'Банк'
     },
     {
-      title: 'Деньги уже взысканы или удержаны',
+      title: <>Деньги уже взысканы <br />или удержаны</>,
       desc: 'Отдельно оцениваем возможность поворота исполнения судебного приказа (ст. 443 ГПК РФ) для возврата удержанных средств, если банк еще не подал иск.',
       tag: 'Поворот исполнения'
     },
     {
-      title: 'Кредитор подал исковое заявление',
+      title: <>Кредитор подал <br />исковое заявление</>,
       desc: 'Отмена приказа переводит спор в исковой порядок. Проверяем договор, сроки исковой давности, расчет платежей, проценты и неустойку по ст. 333 ГК РФ.',
       tag: 'Исковой спор'
     }
@@ -1253,7 +1253,7 @@ export default function OtmenaPrikazaClient() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
-                padding: '24px 20px',
+                padding: '28px 22px',
                 border: '1px solid var(--color-border)',
                 borderTop: '3px solid var(--color-gold)',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
@@ -1262,35 +1262,31 @@ export default function OtmenaPrikazaClient() {
                 position: 'relative'
               }}>
                 <div style={{
-                  fontSize: '13px',
+                  fontSize: '28px',
                   fontWeight: 700,
                   color: 'var(--color-gold)',
                   fontFamily: 'var(--font-serif)',
-                  letterSpacing: '0.05em',
-                  marginBottom: '10px',
-                  background: 'rgba(193, 160, 102, 0.12)',
-                  padding: '2px 8px',
-                  borderRadius: '2px',
-                  alignSelf: 'flex-start'
+                  lineHeight: 1,
+                  marginBottom: '14px'
                 }}>
                   {item.num}
                 </div>
 
                 <h3 style={{
-                  fontSize: '17px',
+                  fontSize: '18px',
                   fontFamily: 'var(--font-serif)',
                   color: 'var(--color-deep-blue)',
-                  margin: '0 0 8px 0',
-                  lineHeight: 1.3,
+                  margin: '0 0 10px 0',
+                  lineHeight: 1.35,
                   fontWeight: 600
                 }}>
                   {item.title}
                 </h3>
 
                 <p style={{
-                  fontSize: '13.5px',
+                  fontSize: '14px',
                   color: 'var(--color-text-secondary)',
-                  lineHeight: 1.5,
+                  lineHeight: 1.55,
                   margin: 0
                 }}>
                   {item.desc}
@@ -1305,7 +1301,7 @@ export default function OtmenaPrikazaClient() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                padding: '24px 20px',
+                padding: '28px 22px',
                 border: '1px solid rgba(193, 160, 102, 0.4)',
                 borderTop: '3px solid var(--color-gold)',
                 background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
@@ -1321,28 +1317,28 @@ export default function OtmenaPrikazaClient() {
                   color: 'var(--color-gold)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.08em',
-                  marginBottom: '10px',
+                  marginBottom: '12px',
                   background: 'rgba(193, 160, 102, 0.2)',
-                  padding: '2px 8px',
+                  padding: '3px 8px',
                   display: 'inline-block'
                 }}>
                   Юридическая помощь
                 </div>
                 <h3 style={{
-                  fontSize: '17px',
+                  fontSize: '18px',
                   fontFamily: 'var(--font-serif)',
                   color: '#FFFFFF',
-                  margin: '0 0 8px 0',
-                  lineHeight: 1.3,
+                  margin: '0 0 10px 0',
+                  lineHeight: 1.35,
                   fontWeight: 600
                 }}>
                   Обсудить отмену приказа
                 </h3>
                 <p style={{
-                  fontSize: '13px',
+                  fontSize: '13.5px',
                   color: 'rgba(255, 255, 255, 0.85)',
-                  lineHeight: 1.45,
-                  margin: '0 0 16px 0'
+                  lineHeight: 1.5,
+                  margin: '0 0 18px 0'
                 }}>
                   Оставьте заявку — кредитный юрист изучит приказ, проверит сроки и защитит Ваши интересы.
                 </p>
@@ -1354,8 +1350,8 @@ export default function OtmenaPrikazaClient() {
                   style={{
                     width: '100%',
                     textAlign: 'center',
-                    padding: '10px 12px',
-                    fontSize: '13px',
+                    padding: '12px 14px',
+                    fontSize: '13.5px',
                     fontWeight: 700,
                     backgroundColor: 'var(--color-gold)',
                     color: 'var(--color-deep-blue)',
@@ -1467,7 +1463,7 @@ export default function OtmenaPrikazaClient() {
                   }
                 ].map((doc, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                       <polyline points="9 11 12 14 22 4" />
                       <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
@@ -1718,7 +1714,7 @@ export default function OtmenaPrikazaClient() {
                   <div style={{ marginTop: '24px' }}>
                     <a
                       href="#form"
-                      className="btn btn-primary"
+                      className="btn white-btn-custom"
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
@@ -1726,7 +1722,11 @@ export default function OtmenaPrikazaClient() {
                         width: '100%',
                         padding: '12px 20px',
                         fontSize: '14.5px',
-                        fontWeight: 600
+                        fontWeight: 700,
+                        backgroundColor: '#FFFFFF',
+                        color: 'var(--color-deep-blue)',
+                        border: '1px solid #FFFFFF',
+                        textDecoration: 'none'
                       }}
                     >
                       Записаться на разбор ситуации
