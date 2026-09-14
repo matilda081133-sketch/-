@@ -13,47 +13,6 @@ import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
 
 export default function KorporativnyjYuristClient() {
-  const jsonLdGraph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/#legalservice',
-        name: 'Юридическая компания Де-Юре',
-        url: 'https://dejure-help.ru/',
-        telephone: '+7 (4742) 20-15-25',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
-          addressLocality: 'Липецк',
-          addressRegion: 'Липецкая область',
-          addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область']
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/#service',
-        name: 'Корпоративный юрист для бизнеса в Липецке',
-        serviceType: 'Юридическое сопровождение корпоративных процедур и споров',
-        provider: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        description: 'Корпоративные споры, выход из ООО, взыскание стоимости доли, корпоративные договоры, сделки с долями, покупка бизнеса, реорганизация и защита контроля.'
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/#breadcrumb',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
-          { '@type': 'ListItem', position: 2, name: 'Бизнесу', item: 'https://dejure-help.ru/biznesu/' },
-          { '@type': 'ListItem', position: 3, name: 'Корпоративный юрист', item: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/' }
-        ]
-      }
-    ]
-  };
-
   const situations: { tag: string; title: React.ReactNode; desc: string }[] = [
     {
       tag: 'Конфликт участников',
@@ -343,6 +302,87 @@ export default function KorporativnyjYuristClient() {
       a: 'Все передаваемые сведения, финансовая отчётность, структура владения и детали конфликтов защищены строгим режимом конфиденциальности в соответствии с договором об оказании юридических услуг.'
     }
   ];
+
+  const jsonLdGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
+        name: 'Владимир Викторович Начешников',
+        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        }
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/#service',
+        name: 'Корпоративный юрист для бизнеса в Липецке',
+        serviceType: 'Юридическое сопровождение корпоративных процедур и споров',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/',
+        description: 'Корпоративные споры, выход из ООО, взыскание стоимости доли, корпоративные договоры, сделки с долями, покупка бизнеса, реорганизация и защита контроля.'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Бизнесу",
+                    "item": "https://dejure-help.ru/biznesu/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Корпоративный юрист",
+                    "item": "https://dejure-help.ru/biznesu/korporativnyj-yurist/"
+          }
+        ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
+      }
+    ]
+  };
 
   return (
     <main>

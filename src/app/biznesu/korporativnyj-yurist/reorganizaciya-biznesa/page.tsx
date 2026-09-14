@@ -14,8 +14,21 @@ export const metadata: Metadata = {
       'Сопровождение слияния, присоединения, выделения, разделения и преобразования компаний: структура, решения, кредиторы, регистрация и передача активов.',
     url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/reorganizaciya-biznesa/',
     type: 'website',
+        images: [
+      {
+        url: 'https://dejure-help.ru/images/og/business-reorganization-og.jpg',
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'Реорганизация бизнеса в Липецке — ЮК «Де-Юре»'
+      }
+    ],
     locale: 'ru_RU',
     siteName: 'Юридическая компания «Де-Юре»'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://dejure-help.ru/images/og/business-reorganization-og.jpg']
   }
 };
 

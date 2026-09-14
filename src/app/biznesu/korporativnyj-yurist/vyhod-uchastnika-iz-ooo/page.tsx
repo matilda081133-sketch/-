@@ -14,8 +14,21 @@ export const metadata: Metadata = {
       'Сопровождение выхода участника из ООО: проверка устава, подготовка к нотариусу, контроль изменений в ЕГРЮЛ и оформление последствий перехода доли.',
     url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/vyhod-uchastnika-iz-ooo/',
     type: 'website',
+        images: [
+      {
+        url: 'https://dejure-help.ru/images/og/exit-from-ooo-og.jpg',
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'Выход участника из ООО в Липецке — ЮК «Де-Юре»'
+      }
+    ],
     locale: 'ru_RU',
     siteName: 'Юридическая компания «Де-Юре»'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://dejure-help.ru/images/og/exit-from-ooo-og.jpg']
   }
 };
 

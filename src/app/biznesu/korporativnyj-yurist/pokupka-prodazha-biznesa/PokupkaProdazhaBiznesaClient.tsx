@@ -13,34 +13,6 @@ import FAQBlock from '@/components/FAQBlock';
 import ContactsForm from '@/components/ContactsForm';
 
 export default function PokupkaProdazhaBiznesaClient() {
-  const jsonLdGraph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'LegalService',
-        name: 'Сопровождение сделок по покупке и продаже бизнеса в Липецке — ЮК «Де-Юре»',
-        description: 'Комплексное юридическое сопровождение M&A сделок, купли-продажи готового бизнеса, due diligence, структурирование и защита расчетов в Липецкой области.',
-        url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/',
-        telephone: '+7 (4742) 20-15-25',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Липецк',
-          streetAddress: 'ул. Советская, д. 35, офис 213',
-          addressRegion: 'Липецкая область'
-        }
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
-          { '@type': 'ListItem', position: 2, name: 'Бизнесу', item: 'https://dejure-help.ru/biznesu/' },
-          { '@type': 'ListItem', position: 3, name: 'Корпоративный юрист', item: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/' },
-          { '@type': 'ListItem', position: 4, name: 'Покупка и продажа бизнеса', item: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/' }
-        ]
-      }
-    ]
-  };
-
   const situations = [
     {
       tag: 'Покупка готового бизнеса',
@@ -198,7 +170,7 @@ export default function PokupkaProdazhaBiznesaClient() {
   const faqs = [
     {
       q: 'Что выгоднее покупать: 100% доли ООО (Share Deal) или активы бизнеса (Asset Deal)?',
-      a: 'При покупке доли вы получаете компанию со всеми лицензиями, договорами и оборотами, но также принимаете на себя все скрытые долги и налоговые риски прошлого периода. Покупка активов (оборудования, недвижимости, товарного знака) исключает риски старого юрлица, но требует переоформления всех договоров и лицензий на вашу новую компанию.'
+      a: 'При покупке доли вы получаете компанию со всеми лицензиями, договорами и оборотами, но также принимаете на себя все скрытые долги и налоговые риски прошлого периода. При покупке активов долги прежнего юридического лица по общему правилу не переходят к покупателю автоматически. При этом необходимо проверить сами активы, их обременения, права третьих лиц, связанные договоры, налоговые последствия и необходимость переоформления лицензий и разрешений.'
     },
     {
       q: 'Как защитить покупателя, если после сделки выяснятся скрытые долги компании?',
@@ -236,6 +208,93 @@ export default function PokupkaProdazhaBiznesaClient() {
       link: '/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/'
     }
   ];
+
+  const jsonLdGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
+        name: 'Владимир Викторович Начешников',
+        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        }
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/#service',
+        name: 'Юридическое сопровождение покупки и продажи бизнеса в Липецке',
+        serviceType: 'Юридическое сопровождение покупки и продажи бизнеса',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/',
+        description: 'Комплексное юридическое сопровождение M&A сделок, купли-продажи готового бизнеса, due diligence, структурирование и защита расчетов в Липецкой области.'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Бизнесу",
+                    "item": "https://dejure-help.ru/biznesu/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Корпоративный юрист",
+                    "item": "https://dejure-help.ru/biznesu/korporativnyj-yurist/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Покупка и продажа бизнеса",
+                    "item": "https://dejure-help.ru/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/"
+          }
+        ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
+      }
+    ]
+  };
 
   return (
     <>
@@ -485,7 +544,7 @@ export default function PokupkaProdazhaBiznesaClient() {
       {/* ═══ БЛОК 6: КАК ПРОХОДИТ РАБОТА (ПОРЯДОК РАБОТЫ) ═══ */}
       <ProcessBlock
         title={<><span style={{ display: 'inline-block' }}>Порядок сопровождения</span> <br /><span style={{ display: 'inline-block' }}>сделки с бизнесом</span></>}
-        subtitle="Последовательный алгоритм, гарантирующий юридическую чистоту и финансовую безопасность."
+        subtitle="Последовательный алгоритм проверки и сопровождения, направленный на снижение юридических и финансовых рисков сделки."
         steps={processSteps}
         ctaTitle="Нашли подходящий бизнес для покупки или ведете переговоры?"
         ctaSubtitle="Проведем экспресс-аудит объекта и защитим вас от скрытых долгов продавца."

@@ -14,8 +14,21 @@ export const metadata: Metadata = {
       'Сопровождение продажи, покупки и дарения доли ООО: проверка устава и ограничений, оферта и согласия, договор, расчёты, нотариус и регистрация перехода.',
     url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/',
     type: 'website',
+        images: [
+      {
+        url: 'https://dejure-help.ru/images/og/share-transactions-og.jpg',
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'Сделки с долями ООО в Липецке — ЮК «Де-Юре»'
+      }
+    ],
     locale: 'ru_RU',
     siteName: 'Юридическая компания «Де-Юре»'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://dejure-help.ru/images/og/share-transactions-og.jpg']
   }
 };
 

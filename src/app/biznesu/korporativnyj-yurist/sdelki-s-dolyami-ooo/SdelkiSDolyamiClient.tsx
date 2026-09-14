@@ -13,48 +13,6 @@ import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
 
 export default function SdelkiSDolyamiClient() {
-  const jsonLdGraph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/#legalservice',
-        name: 'Юридическая компания Де-Юре',
-        url: 'https://dejure-help.ru/',
-        telephone: '+7 (4742) 20-15-25',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
-          addressLocality: 'Липецк',
-          addressRegion: 'Липецкая область',
-          addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область']
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/#service',
-        name: 'Сопровождение сделок с долями ООО в Липецке',
-        serviceType: 'Юридическое сопровождение купли-продажи и отчуждения долей ООО',
-        provider: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        description: 'Сопровождение продажи, покупки и дарения доли ООО: проверка устава и ограничений, оферта и согласия, договор, расчёты, нотариус и регистрация перехода.'
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/#breadcrumb',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
-          { '@type': 'ListItem', position: 2, name: 'Бизнесу', item: 'https://dejure-help.ru/biznesu/' },
-          { '@type': 'ListItem', position: 3, name: 'Корпоративный юрист', item: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/' },
-          { '@type': 'ListItem', position: 4, name: 'Сделки с долями ООО', item: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/' }
-        ]
-      }
-    ]
-  };
-
   const situations = [
     {
       tag: 'Продажа доли третьему лицу',
@@ -249,6 +207,93 @@ export default function SdelkiSDolyamiClient() {
       link: '/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/'
     }
   ];
+
+  const jsonLdGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
+        name: 'Владимир Викторович Начешников',
+        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        }
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/#service',
+        name: 'Сопровождение сделок с долями ООО в Липецке',
+        serviceType: 'Юридическое оформление и сопровождение сделок с долями ООО',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/',
+        description: 'Купля-продажа, дарение, залог и отчуждение долей ООО: проверка преимущественного права, согласий супругов, подготовка документов и сопровождение у нотариуса.'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Бизнесу",
+                    "item": "https://dejure-help.ru/biznesu/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Корпоративный юрист",
+                    "item": "https://dejure-help.ru/biznesu/korporativnyj-yurist/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Сделки с долями ООО",
+                    "item": "https://dejure-help.ru/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/"
+          }
+        ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
+      }
+    ]
+  };
 
   return (
     <>

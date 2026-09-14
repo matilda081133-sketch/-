@@ -13,48 +13,6 @@ import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
 
 export default function KorporativnyjDogovorClient() {
-  const jsonLdGraph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/#legalservice',
-        name: 'Юридическая компания Де-Юре',
-        url: 'https://dejure-help.ru/',
-        telephone: '+7 (4742) 20-15-25',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
-          addressLocality: 'Липецк',
-          addressRegion: 'Липецкая область',
-          addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область']
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/korporativnyj-dogovor/#service',
-        name: 'Разработка корпоративного договора в Липецке',
-        serviceType: 'Разработка и согласование соглашений участников ООО и акционеров',
-        provider: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        description: 'Разработка корпоративного договора для участников ООО и акционеров: управление, голосование, финансирование, доли, выход партнёра и разрешение тупиков.'
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/korporativnyj-dogovor/#breadcrumb',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
-          { '@type': 'ListItem', position: 2, name: 'Бизнесу', item: 'https://dejure-help.ru/biznesu/' },
-          { '@type': 'ListItem', position: 3, name: 'Корпоративный юрист', item: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/' },
-          { '@type': 'ListItem', position: 4, name: 'Корпоративный договор', item: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/korporativnyj-dogovor/' }
-        ]
-      }
-    ]
-  };
-
   const situations = [
     {
       tag: 'Несколько основателей',
@@ -223,7 +181,7 @@ export default function KorporativnyjDogovorClient() {
     },
     {
       q: 'Что происходит, если один из партнеров нарушает корпоративный договор?',
-      a: 'В договоре фиксируются существенные штрафные неустойки за нарушение обязательств (например, голосование вопреки соглашению). Кроме того, решения органов общества, принятые в нарушение корпоративного договора, могут быть признаны судом недействительными по иску добросовестной стороны.'
+      a: 'В договоре фиксируются существенные штрафные неустойки за нарушение обязательств (например, голосование вопреки соглашению). Решение органа общества, принятое в нарушение корпоративного договора, может быть признано недействительным, если на момент принятия решения сторонами договора являлись все участники общества. При этом признание решения недействительным не должно нарушать права и охраняемые законом интересы третьих лиц.'
     }
   ];
 
@@ -249,6 +207,93 @@ export default function KorporativnyjDogovorClient() {
       link: '/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/'
     }
   ];
+
+  const jsonLdGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
+        name: 'Владимир Викторович Начешников',
+        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        }
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/korporativnyj-dogovor/#service',
+        name: 'Разработка корпоративного договора для участников ООО в Липецке',
+        serviceType: 'Составление и аудит корпоративных соглашений между участниками',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/korporativnyj-dogovor/',
+        description: 'Разработка индивидуальных корпоративных договоров: фиксация правил голосования, распределения прибыли, инвестиций, условий Tag/Drag Along и дедлоков.'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/korporativnyj-dogovor/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Бизнесу",
+                    "item": "https://dejure-help.ru/biznesu/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Корпоративный юрист",
+                    "item": "https://dejure-help.ru/biznesu/korporativnyj-yurist/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Корпоративный договор",
+                    "item": "https://dejure-help.ru/biznesu/korporativnyj-yurist/korporativnyj-dogovor/"
+          }
+        ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/korporativnyj-dogovor/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
+      }
+    ]
+  };
 
   return (
     <>
@@ -477,7 +522,7 @@ export default function KorporativnyjDogovorClient() {
         profileText="Подробнее о Владимире Викторовиче Начешникове →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Грамотный корпоративный договор — это юридический фундамент компании, исключающий 90% будущих конфликтов между учредителями.
+            Корпоративный договор заранее фиксирует правила управления, финансирования, распоряжения долями и разрешения тупиковых ситуаций, снижая риск будущих конфликтов между участниками.
           </span>,
           <span key="2" style={{ color: 'var(--color-deep-blue)', display: 'block', marginTop: '12px' }}>
             Владимир Викторович структурирует переговоры между учредителями и инвесторами, выявляет скрытые противоречия и курирует процесс фиксации договоренностей в юридически обязывающие документы.

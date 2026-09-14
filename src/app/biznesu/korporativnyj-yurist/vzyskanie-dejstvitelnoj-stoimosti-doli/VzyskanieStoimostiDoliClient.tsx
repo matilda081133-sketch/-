@@ -13,48 +13,6 @@ import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
 
 export default function VzyskanieStoimostiDoliClient() {
-  const jsonLdGraph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/#legalservice',
-        name: 'Юридическая компания Де-Юре',
-        url: 'https://dejure-help.ru/',
-        telephone: '+7 (4742) 20-15-25',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
-          addressLocality: 'Липецк',
-          addressRegion: 'Липецкая область',
-          addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область']
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/#service',
-        name: 'Взыскание действительной стоимости доли в Липецке',
-        serviceType: 'Взыскание действительной стоимости доли вышедшего участника ООО',
-        provider: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        description: 'Помощь при невыплате или занижении действительной стоимости доли ООО: анализ расчёта и активов, оценка, претензия, переговоры и судебное взыскание.'
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/#breadcrumb',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
-          { '@type': 'ListItem', position: 2, name: 'Бизнесу', item: 'https://dejure-help.ru/biznesu/' },
-          { '@type': 'ListItem', position: 3, name: 'Корпоративный юрист', item: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/' },
-          { '@type': 'ListItem', position: 4, name: 'Взыскание стоимости доли', item: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/' }
-        ]
-      }
-    ]
-  };
-
   const situations = [
     {
       tag: 'Полный отказ в выплате',
@@ -91,7 +49,7 @@ export default function VzyskanieStoimostiDoliClient() {
   const whatAffectsPrice: { title: React.ReactNode; desc: string }[] = [
     {
       title: <><span style={{ display: 'inline-block' }}>Рыночная стоимость</span> <br /><span style={{ display: 'inline-block' }}>чистых активов (СЧА)</span></>,
-      desc: 'Судебная практика ВС РФ однозначно указывает: действительная стоимость доли должна рассчитываться исходя из рыночной, а не балансовой стоимости имущества.'
+      desc: 'По общему правилу действительная стоимость доли определяется по данным бухгалтерской отчётности общества. Если общество или вышедший участник не согласны с таким расчётом, до окончания установленного срока выплаты можно заявить об определении стоимости чистых активов с учётом рыночной стоимости активов и обязательств. При возникновении спора размер выплаты может подтверждаться независимой оценкой и судебной экспертизой.'
     },
     {
       title: <><span style={{ display: 'inline-block' }}>Рыночная переоценка</span> <br /><span style={{ display: 'inline-block' }}>недвижимости и земли</span></>,
@@ -215,7 +173,7 @@ export default function VzyskanieStoimostiDoliClient() {
     },
     {
       q: 'Почему балансовая стоимость отличается от действительной рыночной стоимости?',
-      a: 'Бухгалтерский баланс учитывает основные средства по остаточной стоимости с учетом амортизации, а недвижимость и землю — по исторической стоимости приобретения. В суде действительная стоимость рассчитывается на основе рыночной оценки всех активов на дату выхода.'
+      a: 'Бухгалтерский баланс учитывает основные средства по остаточной стоимости с учетом амортизации, а недвижимость и землю — по исторической стоимости приобретения. По общему правилу расчёт производится по данным бухгалтерской отчётности, однако при несогласии стороны вправе заявить об определении стоимости чистых активов с учётом рыночной стоимости активов и обязательств до окончания срока выплаты. При возникновении спора в суде размер выплаты может устанавливаться на основе независимой оценки и судебной экспертизой.'
     },
     {
       q: 'Какой срок исковой давности по спорам о выплате действительной стоимости доли?',
@@ -250,6 +208,93 @@ export default function VzyskanieStoimostiDoliClient() {
     }
   ];
 
+  const jsonLdGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
+        name: 'Владимир Викторович Начешников',
+        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        }
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/#service',
+        name: 'Взыскание действительной стоимости доли в Липецке',
+        serviceType: 'Взыскание действительной стоимости доли вышедшего участника ООО',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/',
+        description: 'Помощь при невыплате или занижении действительной стоимости доли ООО: анализ расчёта и активов, оценка, претензия, переговоры и судебное взыскание.'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Бизнесу",
+                    "item": "https://dejure-help.ru/biznesu/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Корпоративный юрист",
+                    "item": "https://dejure-help.ru/biznesu/korporativnyj-yurist/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Взыскание стоимости доли",
+                    "item": "https://dejure-help.ru/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/"
+          }
+        ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
       <script
@@ -280,10 +325,10 @@ export default function VzyskanieStoimostiDoliClient() {
         title={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              Взыскание стоимости
+              Взыскание действительной
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              доли ООО в Липецке
+              стоимости доли ООО в Липецке
             </span>
           </span>
         }

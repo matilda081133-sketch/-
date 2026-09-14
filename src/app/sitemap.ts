@@ -24,6 +24,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Взыскание задолженности с юрлиц (B2B)
     '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/',
     '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/',
+    // Корпоративный юрист (Кластер BIZ-02)
+    '/biznesu/korporativnyj-yurist/',
+    '/biznesu/korporativnyj-yurist/korporativnye-spory-mezhdu-uchastnikami/',
+    '/biznesu/korporativnyj-yurist/vyhod-uchastnika-iz-ooo/',
+    '/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/',
+    '/biznesu/korporativnyj-yurist/sdelki-s-dolyami-ooo/',
+    '/biznesu/korporativnyj-yurist/korporativnyj-dogovor/',
+    '/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/',
+    '/biznesu/korporativnyj-yurist/reorganizaciya-biznesa/',
+    '/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/',
     // Банкротство физических лиц
     '/grazhdanam/bankrotstvo-fizicheskih-lic/',
     '/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/',

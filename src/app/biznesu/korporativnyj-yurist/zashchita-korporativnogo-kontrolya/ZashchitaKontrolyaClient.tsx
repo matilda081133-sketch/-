@@ -13,48 +13,6 @@ import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
 
 export default function ZashchitaKontrolyaClient() {
-  const jsonLdGraph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/#legalservice',
-        name: 'Юридическая компания Де-Юре',
-        url: 'https://dejure-help.ru/',
-        telephone: '+7 (4742) 20-15-25',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
-          addressLocality: 'Липецк',
-          addressRegion: 'Липецкая область',
-          addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область']
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/#service',
-        name: 'Защита и восстановление корпоративного контроля в Липецке',
-        serviceType: 'Экстренная защита корпоративного контроля и активов бизнеса',
-        provider: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        description: 'Защита и восстановление корпоративного контроля: незаконная смена директора или участников, изменения в ЕГРЮЛ, блокировка счетов и риск вывода активов.'
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/#breadcrumb',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://dejure-help.ru/' },
-          { '@type': 'ListItem', position: 2, name: 'Бизнесу', item: 'https://dejure-help.ru/biznesu/' },
-          { '@type': 'ListItem', position: 3, name: 'Корпоративный юрист', item: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/' },
-          { '@type': 'ListItem', position: 4, name: 'Защита корпоративного контроля', item: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/' }
-        ]
-      }
-    ]
-  };
-
   const situations = [
     {
       tag: 'Незаконная смена директора',
@@ -250,6 +208,93 @@ export default function ZashchitaKontrolyaClient() {
     }
   ];
 
+  const jsonLdGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
+        name: 'Юридическая компания Де-Юре',
+        url: 'https://dejure-help.ru/',
+        telephone: '+7 (4742) 20-15-25',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          addressLocality: 'Липецк',
+          addressRegion: 'Липецкая область',
+          addressCountry: 'RU'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
+        name: 'Владимир Викторович Начешников',
+        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        }
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/#service',
+        name: 'Защита и восстановление корпоративного контроля в Липецке',
+        serviceType: 'Экстренная защита корпоративного контроля и активов бизнеса',
+        provider: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        },
+        areaServed: ['Липецк', 'Липецкая область'],
+        url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/',
+        description: 'Защита и восстановление корпоративного контроля: незаконная смена директора или участников, изменения в ЕГРЮЛ, блокировка счетов и риск вывода активов.'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/#breadcrumb',
+        itemListElement: [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://dejure-help.ru/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Бизнесу",
+                    "item": "https://dejure-help.ru/biznesu/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Корпоративный юрист",
+                    "item": "https://dejure-help.ru/biznesu/korporativnyj-yurist/"
+          },
+          {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Защита корпоративного контроля",
+                    "item": "https://dejure-help.ru/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/"
+          }
+        ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/#faq',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
       <script
@@ -284,7 +329,7 @@ export default function ZashchitaKontrolyaClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Срочная юридическая помощь при незаконной смене директора, захвате долей, блокировке счетов и рисках вывода активов: блокировка ФНС, обеспечительные аресты в суде и возврат управления.
+            Срочная юридическая помощь при незаконной смене директора, захвате долей, блокировке счетов и риске вывода активов: возражения в ФНС, обеспечительные меры в суде и восстановление управления.
           </span>
         }
         primaryCtaText="Срочно защитить контроль"
@@ -501,7 +546,7 @@ export default function ZashchitaKontrolyaClient() {
         subtitle="Последовательный план действий: от экстренной блокировки до полного восстановления законных полномочий."
         steps={processSteps}
         ctaTitle="Обнаружили попытку захвата управления или смену директора?"
-        ctaSubtitle="Примем экстренные меры: заблокируем налоговую регистрацию и расчетные счета сегодня."
+        ctaSubtitle="Подготовим срочные возражения в ФНС, уведомим обслуживающие банки и при наличии оснований заявим обеспечительные меры в арбитражном суде."
         ctaButtonText="Защитить бизнес сейчас"
         ctaButtonHref="#form"
       />
@@ -512,7 +557,7 @@ export default function ZashchitaKontrolyaClient() {
         subtitle="Фиксированные тарифы, оперативный выезд и немедленный старт работы."
         tiers={pricingTiers}
         ctaTitle="Рассчитаем стоимость защиты управления компанией"
-        ctaSubtitle={<><span style={{ display: 'inline-block' }}>Оставьте заявку — куратор направления свяжется с вами</span> <br /><span style={{ display: 'inline-block' }}>в течение 10 минут для немедленного реагирования.</span></>}
+        ctaSubtitle={<><span style={{ display: 'inline-block' }}>Оставьте заявку — куратор направления свяжется с вами</span> <br /><span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span></>}
         ctaButtonText="Срочная консультация"
         ctaButtonLink="#form"
       />

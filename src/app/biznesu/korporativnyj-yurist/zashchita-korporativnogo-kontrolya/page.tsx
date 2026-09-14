@@ -14,8 +14,21 @@ export const metadata: Metadata = {
       'Защита и восстановление корпоративного контроля: незаконная смена директора или участников, изменения в ЕГРЮЛ, блокировка счетов и риск вывода активов.',
     url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/',
     type: 'website',
+        images: [
+      {
+        url: 'https://dejure-help.ru/images/og/corporate-control-protection-og.jpg',
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'Защита корпоративного контроля над ООО в Липецке — ЮК «Де-Юре»'
+      }
+    ],
     locale: 'ru_RU',
     siteName: 'Юридическая компания «Де-Юре»'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://dejure-help.ru/images/og/corporate-control-protection-og.jpg']
   }
 };
 
