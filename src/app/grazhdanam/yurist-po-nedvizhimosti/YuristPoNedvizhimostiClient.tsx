@@ -828,9 +828,8 @@ export default function YuristPoNedvizhimostiClient() {
                   key={idx}
                   style={{
                     padding: '34px 30px',
-                    borderBottom: idx >= (helpItems.length % 2 === 1 ? helpItems.length - 1 : helpItems.length - 2) ? 'none' : '1px solid var(--color-border)',
-                    borderRight: (idx % 2 === 0 && idx < helpItems.length - 1) ? '1px solid var(--color-border)' : 'none',
-                    gridColumn: (idx === helpItems.length - 1 && helpItems.length % 2 === 1) ? '1 / -1' : 'auto',
+                    borderBottom: idx < 6 ? '1px solid var(--color-border)' : 'none',
+                    borderRight: idx % 2 === 0 ? '1px solid var(--color-border)' : 'none',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-start',
@@ -871,30 +870,38 @@ export default function YuristPoNedvizhimostiClient() {
                   </p>
                 </div>
               ))}
-            </div>
 
-            {/* Интегрированная панель действия */}
-            <div style={{
-              padding: '24px 32px',
-              background: 'linear-gradient(90deg, #FBF8F3 0%, #FFFFFF 100%)',
-              borderTop: '1px solid var(--color-border)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
-              gap: '20px'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
-                  Проводим правовую диагностику объекта и участников до передачи денег или обращения в суд
-                </span>
+              {/* 08: Карточка действия в одном ряду с пунктом 07 */}
+              <div
+                style={{
+                  padding: '32px 30px',
+                  background: 'linear-gradient(145deg, #FBF8F3 0%, #F5EFE6 100%)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  gap: '16px'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 600, lineHeight: 1.5 }}>
+                    Проводим правовую диагностику объекта и участников до передачи денег или обращения в суд
+                  </span>
+                </div>
+                <a
+                  href="#form"
+                  className="btn btn-primary"
+                  style={{
+                    padding: '12px 24px',
+                    fontSize: '14.5px',
+                    alignSelf: 'flex-start'
+                  }}
+                >
+                  Записаться на разбор ситуации
+                </a>
               </div>
-              <a href="#form" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '14.5px' }}>
-                Записаться на разбор ситуации
-              </a>
             </div>
           </div>
         </div>
