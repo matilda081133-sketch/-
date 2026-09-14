@@ -14,6 +14,20 @@ export const metadata: Metadata = {
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
     type: 'website',
+    images: [
+      {
+        url: 'https://dejure-help.ru/images/og/nezakonnoe-uvolnenie-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Помощь юриста при незаконном увольнении в Липецке — ЮК Де-Юре',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Незаконное увольнение в Липецке — помощь юриста | Де-Юре',
+    description: 'Помощь юриста при незаконном увольнении в Липецке: восстановление на работе, отмена дисциплинарных взысканий, взыскание среднего заработка за вынужденный прогул.',
+    images: ['https://dejure-help.ru/images/og/nezakonnoe-uvolnenie-og.jpg'],
   },
 };
 

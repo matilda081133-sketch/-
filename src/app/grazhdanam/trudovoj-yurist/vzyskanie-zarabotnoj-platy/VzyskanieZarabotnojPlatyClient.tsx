@@ -354,19 +354,37 @@ export default function VzyskanieZarabotnojPlatyClient() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Organization',
-        '@id': 'https://dejure-help.ru/#organization',
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
         'name': 'Юридическая компания «Де-Юре»',
         'url': 'https://dejure-help.ru/',
         'logo': 'https://dejure-help.ru/images/logo.png',
+        'telephone': '+7 (4742) 20-15-25',
         'address': {
           '@type': 'PostalAddress',
+          'streetAddress': 'ул. Советская, д. 35, оф. 213',
           'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
-        }
+        },
+        'areaServed': [
+          {
+            '@type': 'AdministrativeArea',
+            'name': 'Липецкая область'
+          },
+          {
+            '@type': 'City',
+            'name': 'Липецк'
+          },
+          {
+            '@type': 'Country',
+            'name': 'Россия'
+          }
+        ]
       },
       {
         '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/#breadcrumb',
         'itemListElement': [
           { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
           { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
@@ -375,15 +393,50 @@ export default function VzyskanieZarabotnojPlatyClient() {
         ]
       },
       {
-        '@type': 'LegalService',
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/#webpage',
+        'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/',
+        'name': 'Взыскание заработной платы в Липецке — юрист по зарплате | Де-Юре',
+        'description': 'Помощь юриста по взысканию заработной платы в Липецке: задержка выплат, расчет при увольнении, невыплата премий, компенсация по ст. 236 ТК РФ и суд.',
+        'inLanguage': 'ru-RU',
+        'about': {
+          '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/#service'
+        }
+      },
+      {
+        '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/#service',
         'name': 'Взыскание заработной платы в Липецке',
+        'serviceType': 'Взыскание задолженности по зарплате',
         'description': 'Взыскание задолженности по заработной плате, окончательного расчета, премий, переработок и компенсаций.',
         'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/',
-        'provider': { '@id': 'https://dejure-help.ru/#organization' }
+        'provider': { '@id': 'https://dejure-help.ru/#legalservice' },
+        'areaServed': [
+          {
+            '@type': 'AdministrativeArea',
+            'name': 'Липецкая область'
+          },
+          {
+            '@type': 'City',
+            'name': 'Липецк'
+          },
+          {
+            '@type': 'Country',
+            'name': 'Россия'
+          }
+        ]
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
+        'name': 'Марина Валерьевна Смольянинова',
+        'jobTitle': 'Ведущий юрист',
+        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        'worksFor': { '@id': 'https://dejure-help.ru/#legalservice' }
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -392,13 +445,6 @@ export default function VzyskanieZarabotnojPlatyClient() {
             'text': faq.a
           }
         }))
-      },
-      {
-        '@type': 'Person',
-        'name': 'Марина Валерьевна Смольянинова',
-        'jobTitle': 'Ведущий юрист',
-        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
-        'worksFor': { '@id': 'https://dejure-help.ru/#organization' }
       }
     ]
   };

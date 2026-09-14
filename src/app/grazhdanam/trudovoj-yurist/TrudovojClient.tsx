@@ -272,19 +272,37 @@ export default function TrudovojClient() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Organization',
-        '@id': 'https://dejure-help.ru/#organization',
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
         'name': 'Юридическая компания «Де-Юре»',
         'url': 'https://dejure-help.ru/',
         'logo': 'https://dejure-help.ru/images/logo.png',
+        'telephone': '+7 (4742) 20-15-25',
         'address': {
           '@type': 'PostalAddress',
+          'streetAddress': 'ул. Советская, д. 35, оф. 213',
           'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
-        }
+        },
+        'areaServed': [
+          {
+            '@type': 'AdministrativeArea',
+            'name': 'Липецкая область'
+          },
+          {
+            '@type': 'City',
+            'name': 'Липецк'
+          },
+          {
+            '@type': 'Country',
+            'name': 'Россия'
+          }
+        ]
       },
       {
         '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/#breadcrumb',
         'itemListElement': [
           { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
           { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
@@ -292,15 +310,88 @@ export default function TrudovojClient() {
         ]
       },
       {
-        '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/#service',
-        'name': 'Юридическая помощь по трудовым спорам в Липецке',
-        'description': 'Помощь трудового юриста в Липецке: незаконное увольнение, сокращение, взыскание зарплаты и производственные травмы.',
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/#webpage',
         'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/',
-        'provider': { '@id': 'https://dejure-help.ru/#organization' }
+        'name': 'Трудовой юрист в Липецке — защита прав работников | Де-Юре',
+        'description': 'Помощь трудового юриста в Липецке для работников: незаконное увольнение, сокращение, невыплата зарплаты, производственные травмы. Защита в суде.',
+        'inLanguage': 'ru-RU',
+        'about': {
+          '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/#service'
+        }
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/#service',
+        'name': 'Услуги трудового юриста в Липецке',
+        'serviceType': 'Юридическая помощь по трудовым спорам',
+        'provider': { '@id': 'https://dejure-help.ru/#legalservice' },
+        'areaServed': [
+          {
+            '@type': 'AdministrativeArea',
+            'name': 'Липецкая область'
+          },
+          {
+            '@type': 'City',
+            'name': 'Липецк'
+          },
+          {
+            '@type': 'Country',
+            'name': 'Россия'
+          }
+        ],
+        'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/',
+        'description': 'Помощь трудового юриста в Липецке: незаконное увольнение, сокращение, взыскание зарплаты и производственные травмы.',
+        'hasOfferCatalog': {
+          '@type': 'OfferCatalog',
+          'name': 'Услуги трудового юриста',
+          'itemListElement': [
+            {
+              '@type': 'Offer',
+              'itemOffered': {
+                '@type': 'Service',
+                'name': 'Незаконное увольнение',
+                'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/nezakonnoe-uvolnenie/'
+              }
+            },
+            {
+              '@type': 'Offer',
+              'itemOffered': {
+                '@type': 'Service',
+                'name': 'Незаконное сокращение',
+                'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/'
+              }
+            },
+            {
+              '@type': 'Offer',
+              'itemOffered': {
+                '@type': 'Service',
+                'name': 'Производственная травма',
+                'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/'
+              }
+            },
+            {
+              '@type': 'Offer',
+              'itemOffered': {
+                '@type': 'Service',
+                'name': 'Взыскание заработной платы',
+                'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/'
+              }
+            }
+          ]
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
+        'name': 'Марина Валерьевна Смольянинова',
+        'jobTitle': 'Ведущий юрист',
+        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        'worksFor': { '@id': 'https://dejure-help.ru/#legalservice' }
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -309,13 +400,6 @@ export default function TrudovojClient() {
             'text': faq.a
           }
         }))
-      },
-      {
-        '@type': 'Person',
-        'name': 'Марина Валерьевна Смольянинова',
-        'jobTitle': 'Ведущий юрист',
-        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
-        'worksFor': { '@id': 'https://dejure-help.ru/#organization' }
       }
     ]
   };

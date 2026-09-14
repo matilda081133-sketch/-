@@ -322,19 +322,37 @@ export default function ProizvodstvennayaTravmaClient() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Organization',
-        '@id': 'https://dejure-help.ru/#organization',
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
         'name': 'Юридическая компания «Де-Юре»',
         'url': 'https://dejure-help.ru/',
         'logo': 'https://dejure-help.ru/images/logo.png',
+        'telephone': '+7 (4742) 20-15-25',
         'address': {
           '@type': 'PostalAddress',
+          'streetAddress': 'ул. Советская, д. 35, оф. 213',
           'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
-        }
+        },
+        'areaServed': [
+          {
+            '@type': 'AdministrativeArea',
+            'name': 'Липецкая область'
+          },
+          {
+            '@type': 'City',
+            'name': 'Липецк'
+          },
+          {
+            '@type': 'Country',
+            'name': 'Россия'
+          }
+        ]
       },
       {
         '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/#breadcrumb',
         'itemListElement': [
           { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
           { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
@@ -343,15 +361,50 @@ export default function ProizvodstvennayaTravmaClient() {
         ]
       },
       {
-        '@type': 'LegalService',
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/#webpage',
+        'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/',
+        'name': 'Юрист по производственным травмам в Липецке | Де-Юре',
+        'description': 'Помощь юриста при производственной травме и несчастных случаях на производстве в Липецке: оформление акта Н-1, страховые выплаты СФР, компенсация морального вреда.',
+        'inLanguage': 'ru-RU',
+        'about': {
+          '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/#service'
+        }
+      },
+      {
+        '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/#service',
-        'name': 'Помощь юриста при производственной травме в Липецке',
+        'name': 'Юридическая помощь при производственной травме в Липецке',
+        'serviceType': 'Помощь при несчастных случаях на производстве',
         'description': 'Расследование несчастного случая, проверка акта Н-1, оформление выплат СФР и возмещение вреда здоровью.',
         'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/',
-        'provider': { '@id': 'https://dejure-help.ru/#organization' }
+        'provider': { '@id': 'https://dejure-help.ru/#legalservice' },
+        'areaServed': [
+          {
+            '@type': 'AdministrativeArea',
+            'name': 'Липецкая область'
+          },
+          {
+            '@type': 'City',
+            'name': 'Липецк'
+          },
+          {
+            '@type': 'Country',
+            'name': 'Россия'
+          }
+        ]
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
+        'name': 'Марина Валерьевна Смольянинова',
+        'jobTitle': 'Ведущий юрист',
+        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        'worksFor': { '@id': 'https://dejure-help.ru/#legalservice' }
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -360,13 +413,6 @@ export default function ProizvodstvennayaTravmaClient() {
             'text': faq.a
           }
         }))
-      },
-      {
-        '@type': 'Person',
-        'name': 'Марина Валерьевна Смольянинова',
-        'jobTitle': 'Ведущий юрист',
-        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
-        'worksFor': { '@id': 'https://dejure-help.ru/#organization' }
       }
     ]
   };

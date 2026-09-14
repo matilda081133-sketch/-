@@ -321,19 +321,37 @@ export default function NezakonnoeSokrashchenieClient() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Organization',
-        '@id': 'https://dejure-help.ru/#organization',
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#legalservice',
         'name': 'Юридическая компания «Де-Юре»',
         'url': 'https://dejure-help.ru/',
         'logo': 'https://dejure-help.ru/images/logo.png',
+        'telephone': '+7 (4742) 20-15-25',
         'address': {
           '@type': 'PostalAddress',
+          'streetAddress': 'ул. Советская, д. 35, оф. 213',
           'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
-        }
+        },
+        'areaServed': [
+          {
+            '@type': 'AdministrativeArea',
+            'name': 'Липецкая область'
+          },
+          {
+            '@type': 'City',
+            'name': 'Липецк'
+          },
+          {
+            '@type': 'Country',
+            'name': 'Россия'
+          }
+        ]
       },
       {
         '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/#breadcrumb',
         'itemListElement': [
           { '@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://dejure-help.ru/' },
           { '@type': 'ListItem', 'position': 2, 'name': 'Гражданам', 'item': 'https://dejure-help.ru/grazhdanam/' },
@@ -342,15 +360,50 @@ export default function NezakonnoeSokrashchenieClient() {
         ]
       },
       {
-        '@type': 'LegalService',
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/#webpage',
+        'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/',
+        'name': 'Незаконное сокращение в Липецке — помощь юриста | Де-Юре',
+        'description': 'Помощь юриста при незаконном сокращении штата в Липецке: проверка процедуры, преимущественное право, предложение вакансий, выплата выходного пособия и суд.',
+        'inLanguage': 'ru-RU',
+        'about': {
+          '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/#service'
+        }
+      },
+      {
+        '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/#service',
         'name': 'Защита при незаконном сокращении в Липецке',
+        'serviceType': 'Защита прав работников при сокращении штата',
         'description': 'Проверка реальности сокращения, сроков уведомления, предложенных вакансий и преимущественного права.',
         'url': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/',
-        'provider': { '@id': 'https://dejure-help.ru/#organization' }
+        'provider': { '@id': 'https://dejure-help.ru/#legalservice' },
+        'areaServed': [
+          {
+            '@type': 'AdministrativeArea',
+            'name': 'Липецкая область'
+          },
+          {
+            '@type': 'City',
+            'name': 'Липецк'
+          },
+          {
+            '@type': 'Country',
+            'name': 'Россия'
+          }
+        ]
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
+        'name': 'Марина Валерьевна Смольянинова',
+        'jobTitle': 'Ведущий юрист',
+        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        'worksFor': { '@id': 'https://dejure-help.ru/#legalservice' }
       },
       {
         '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/#faq',
         'mainEntity': faqs.map(faq => ({
           '@type': 'Question',
           'name': faq.q,
@@ -359,13 +412,6 @@ export default function NezakonnoeSokrashchenieClient() {
             'text': faq.a
           }
         }))
-      },
-      {
-        '@type': 'Person',
-        'name': 'Марина Валерьевна Смольянинова',
-        'jobTitle': 'Ведущий юрист',
-        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
-        'worksFor': { '@id': 'https://dejure-help.ru/#organization' }
       }
     ]
   };
