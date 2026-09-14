@@ -525,7 +525,7 @@ export default function RastorzhenieDDUClient() {
       </section>
 
       {/* ═══ 3. ТРИ СПОСОБА ПРЕКРАТИТЬ ДОГОВОР ═══ */}
-      <section className="section" style={{ padding: '80px 0', background: 'var(--color-deep-blue)' }}>
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{
             background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
@@ -550,7 +550,7 @@ export default function RastorzhenieDDUClient() {
                 <path d="M12 6v6l4 2"></path>
               </svg>
               <div>
-                <h3 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                <h3 className="nowrap-desk" style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
                   Три способа расторгнуть договор ДДУ
                 </h3>
               </div>

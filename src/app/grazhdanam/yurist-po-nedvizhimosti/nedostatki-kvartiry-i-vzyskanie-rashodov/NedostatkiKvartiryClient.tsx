@@ -526,7 +526,7 @@ export default function NedostatkiKvartiryClient() {
       </section>
 
       {/* ═══ 3. ЭТАПЫ РАБОТЫ ═══ */}
-      <section className="section" style={{ padding: '80px 0', background: 'var(--color-deep-blue)' }}>
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{
             background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
@@ -551,13 +551,8 @@ export default function NedostatkiKvartiryClient() {
                 <path d="M12 6v6l4 2"></path>
               </svg>
               <div>
-                <h2 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
-                  <span className="hero-title-span-mobile" style={{ display: 'block' }}>
-                    Как получить компенсацию
-                  </span>
-                  <span className="hero-title-span-mobile" style={{ display: 'block' }}>
-                    за строительный брак
-                  </span>
+                <h2 className="nowrap-desk" style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  Как получить компенсацию за строительный брак
                 </h2>
               </div>
             </div>
