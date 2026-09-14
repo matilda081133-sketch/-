@@ -200,8 +200,8 @@ export default function NezakonnoeSokrashchenieClient() {
       tag: 'Фиктивность',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сокращение</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>выглядит формальным</span>
+          <span style={{ display: 'block' }}>Сокращение</span>{' '}
+          <span style={{ display: 'block' }}>выглядит формальным</span>
         </>
       ),
       desc: 'Должность убрали из штатного расписания, но прежние обязанности сохранились, переданы другому работнику или появилась аналогичная позиция.'
@@ -210,8 +210,8 @@ export default function NezakonnoeSokrashchenieClient() {
       tag: 'Вакансии',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не предложили</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>все подходящие вакансии</span>
+          <span style={{ display: 'block' }}>Не предложили</span>{' '}
+          <span style={{ display: 'block' }}>все подходящие вакансии</span>
         </>
       ),
       desc: 'Работодатель не предлагал свободные подходящие должности, сделал это однократно либо не раскрывал вакансии, появившиеся до увольнения.'
@@ -220,8 +220,8 @@ export default function NezakonnoeSokrashchenieClient() {
       tag: 'Преимущество',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не учли</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>преимущественное право оставления</span>
+          <span style={{ display: 'block' }}>Не учли преимущественное</span>{' '}
+          <span style={{ display: 'block' }}>право оставления</span>
         </>
       ),
       desc: 'При сокращении нескольких работников не сравнили квалификацию и производительность либо проигнорировали предусмотренные законом преимущества.'
@@ -230,8 +230,8 @@ export default function NezakonnoeSokrashchenieClient() {
       tag: 'Сроки',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Нарушили</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>установленный срок уведомления</span>
+          <span style={{ display: 'block' }}>Нарушили установленный</span>{' '}
+          <span style={{ display: 'block' }}>срок уведомления</span>
         </>
       ),
       desc: 'Работника предупредили менее чем за два месяца, подменили уведомление соглашением или досрочно уволили без надлежащего согласия и компенсации.'
@@ -240,8 +240,8 @@ export default function NezakonnoeSokrashchenieClient() {
       tag: 'Гарантии',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сокращают</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>защищенного работника</span>
+          <span style={{ display: 'block' }}>Сокращают</span>{' '}
+          <span style={{ display: 'block' }}>защищенного работника</span>
         </>
       ),
       desc: 'Увольнение касается беременной женщины, родителя в защищенной законом семейной ситуации или другого работника со специальными гарантиями.'
@@ -250,8 +250,8 @@ export default function NezakonnoeSokrashchenieClient() {
       tag: 'Давление',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Предлагают</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>уволиться по собственному</span>
+          <span style={{ display: 'block' }}>Предлагают</span>{' '}
+          <span style={{ display: 'block' }}>уволиться по собственному</span>
         </>
       ),
       desc: 'Вместо официального сокращения требуют заявление или невыгодное соглашение, чтобы не соблюдать гарантии и не выплачивать пособие.'
@@ -260,8 +260,8 @@ export default function NezakonnoeSokrashchenieClient() {
       tag: 'Пособие',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не выплатили</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>положенные суммы</span>
+          <span style={{ display: 'block' }}>Не выплатили</span>{' '}
+          <span style={{ display: 'block' }}>положенные суммы</span>
         </>
       ),
       desc: 'Не перечислили выходное пособие, окончательный расчет или средний заработок за соответствующий период трудоустройства.'
@@ -270,8 +270,8 @@ export default function NezakonnoeSokrashchenieClient() {
       tag: 'Суд',
       title: (
         <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Увольнение</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>уже состоялось</span>
+          <span style={{ display: 'block' }}>Увольнение</span>{' '}
+          <span style={{ display: 'block' }}>уже состоялось</span>
         </>
       ),
       desc: 'Нужно оценить срок, восстановление на работе, изменение записи, выплаты и доказательства нарушенной процедуры.'
@@ -594,7 +594,7 @@ export default function NezakonnoeSokrashchenieClient() {
                   {sit.tag}
                 </div>
 
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0' }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0', overflowWrap: 'break-word' }}>
                   {sit.title}
                 </h3>
 
