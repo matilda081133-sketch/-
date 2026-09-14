@@ -1249,27 +1249,32 @@ export default function OtmenaPrikazaClient() {
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '20px' }}>
+          <div className="grid grid-4" style={{ gap: '32px 20px', position: 'relative', marginTop: '16px' }}>
             {lawyerActions.map((item, idx) => (
               <div key={idx} className="hover-lift" style={{
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                padding: '30px 24px 24px 24px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'flex-start',
-                padding: '28px 22px',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-gold)',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
-                transition: 'all 0.3s ease',
-                position: 'relative'
+                height: '100%',
+                boxSizing: 'border-box',
+                position: 'relative',
+                transition: 'all 0.3s ease'
               }}>
                 <div style={{
-                  fontSize: '28px',
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
                   fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  fontFamily: 'var(--font-serif)',
-                  lineHeight: 1,
-                  marginBottom: '14px'
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
                   {item.num}
                 </div>
@@ -1278,9 +1283,8 @@ export default function OtmenaPrikazaClient() {
                   fontSize: '18px',
                   fontFamily: 'var(--font-serif)',
                   color: 'var(--color-deep-blue)',
-                  margin: '0 0 10px 0',
-                  lineHeight: 1.35,
-                  fontWeight: 600
+                  margin: '4px 0 8px 0',
+                  lineHeight: 1.3
                 }}>
                   {item.title}
                 </h3>
@@ -1288,7 +1292,7 @@ export default function OtmenaPrikazaClient() {
                 <p style={{
                   fontSize: '14px',
                   color: 'var(--color-text-secondary)',
-                  lineHeight: 1.55,
+                  lineHeight: 1.6,
                   margin: 0
                 }}>
                   {item.desc}
@@ -1300,29 +1304,33 @@ export default function OtmenaPrikazaClient() {
             <div
               className="hover-lift"
               style={{
+                background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+                padding: '30px 24px 24px 24px',
+                border: '1px solid rgba(193, 160, 102, 0.4)',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(16, 39, 59, 0.16)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                padding: '28px 22px',
-                border: '1px solid rgba(193, 160, 102, 0.4)',
-                borderTop: '3px solid var(--color-gold)',
-                background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
-                boxShadow: '0 4px 20px rgba(16, 39, 59, 0.16)',
+                height: '100%',
+                boxSizing: 'border-box',
                 position: 'relative',
                 transition: 'all 0.3s ease'
               }}
             >
               <div>
                 <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: 'var(--color-deep-blue)',
                   fontSize: '11px',
                   fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: '12px',
-                  background: 'rgba(193, 160, 102, 0.2)',
-                  padding: '3px 8px',
-                  display: 'inline-block'
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase'
                 }}>
                   Юридическая помощь
                 </div>
@@ -1330,16 +1338,15 @@ export default function OtmenaPrikazaClient() {
                   fontSize: '18px',
                   fontFamily: 'var(--font-serif)',
                   color: '#FFFFFF',
-                  margin: '0 0 10px 0',
-                  lineHeight: 1.35,
-                  fontWeight: 600
+                  margin: '4px 0 8px 0',
+                  lineHeight: 1.3
                 }}>
                   Обсудить отмену приказа
                 </h3>
                 <p style={{
                   fontSize: '13.5px',
                   color: 'rgba(255, 255, 255, 0.85)',
-                  lineHeight: 1.5,
+                  lineHeight: 1.55,
                   margin: '0 0 18px 0'
                 }}>
                   Оставьте заявку — кредитный юрист изучит приказ, проверит сроки и защитит Ваши интересы.
