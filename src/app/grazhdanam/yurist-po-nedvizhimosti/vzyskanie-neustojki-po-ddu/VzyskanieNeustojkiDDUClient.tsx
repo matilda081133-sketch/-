@@ -412,8 +412,13 @@ export default function VzyskanieNeustojkiDDUClient() {
       <section className="section bg-white" id="requirements" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Что взыскивается с застройщика при просрочке
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                Что взыскивается
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                с застройщика при просрочке
+              </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Грамотно составленный иск включает не только базовую неустойку, но и компенсацию сопутствующих убытков, штраф 50% и моральный вред.
@@ -523,8 +528,13 @@ export default function VzyskanieNeustojkiDDUClient() {
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Что сделает юрист по ДДУ компании «Де-Юре»
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                Что сделает юрист
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                по ДДУ компании «Де-Юре»
+              </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Берём на себя всю процессуальную работу: от составления точного математического расчёта до поступления средств на ваш счёт.

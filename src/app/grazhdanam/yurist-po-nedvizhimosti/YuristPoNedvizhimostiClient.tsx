@@ -606,8 +606,13 @@ export default function YuristPoNedvizhimostiClient() {
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              С какими вопросами по недвижимости обращаются
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                С какими вопросами
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                по недвижимости обращаются
+              </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Помогаем разобраться в сделках, спорах с застройщиками, оформлении и защите права собственности. Изучим документы, определим характер задачи и предложим законный порядок действий.
@@ -656,6 +661,97 @@ export default function YuristPoNedvizhimostiClient() {
                 </p>
               </div>
             ))}
+
+            {/* Карточка 9: Экспресс-анализ (CTA-карточка в 3-й строке) */}
+            <div className="hover-lift" style={{ 
+              padding: '36px 30px', 
+              background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+              border: '1px solid rgba(193, 160, 102, 0.35)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+              display: 'flex', 
+              flexDirection: 'column', 
+              justifyContent: 'space-between',
+              position: 'relative', 
+              overflow: 'hidden',
+              transition: 'all 0.3s ease'
+            }}>
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="#C1A066">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+
+              <div>
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  display: 'inline-block'
+                }}>
+                  Экспресс-анализ
+                </div>
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '17px', 
+                  fontWeight: 600, 
+                  color: '#FFFFFF', 
+                  margin: '0 0 14px 0', 
+                  lineHeight: 1.35,
+                  minHeight: '68px',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    Определить стадию
+                  </span>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    и следующий шаг
+                  </span>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    по вашей ситуации
+                  </span>
+                </h3>
+                <p style={{ 
+                  fontSize: '14.5px', 
+                  color: '#CBD5E1', 
+                  lineHeight: 1.6,
+                  margin: '0 0 20px 0',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  Передайте документы юристу по недвижимости: проверим объект, сторону сделки, процессуальные сроки и подберём законный маршрут защиты.
+                </p>
+              </div>
+
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <a
+                  href="#form"
+                  className="btn btn-gold"
+                  style={{
+                    display: 'block',
+                    textAlign: 'center',
+                    padding: '12px 18px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    backgroundColor: 'var(--color-gold)',
+                    color: 'var(--color-deep-blue)',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                  }}
+                >
+                  Определить стадию и следующий шаг
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -668,7 +764,15 @@ export default function YuristPoNedvizhimostiClient() {
               Направления юридической помощи
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Выберите специализированную услугу. Если ваша ситуация затрагивает несколько вопросов, опишите детали в форме — мы разберёмся и подскажем оптимальный план действий.
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                Выберите специализированную услугу. Если ваша ситуация
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                затрагивает несколько вопросов, опишите детали в форме —
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                мы разберёмся и подскажем оптимальный план действий.
+              </span>
             </p>
           </div>
 
@@ -811,6 +915,14 @@ export default function YuristPoNedvizhimostiClient() {
             </div>
           </div>
 
+          <style dangerouslySetInnerHTML={{ __html: `
+            @media (max-width: 640px) {
+              .audit-cta-card {
+                grid-column: 1 / -1 !important;
+              }
+            }
+          `}} />
+
           {/* Архитектурный реестр аудита */}
           <div style={{
             background: '#FFFFFF',
@@ -871,22 +983,27 @@ export default function YuristPoNedvizhimostiClient() {
                 </div>
               ))}
 
-              {/* 08: Карточка действия в одном ряду с пунктом 07 */}
+              {/* 08: Карточка действия в одном ряду с пунктом 07 во всю оставшуюся ширину */}
               <div
+                className="audit-cta-card"
                 style={{
-                  padding: '32px 30px',
+                  gridColumn: '2 / -1',
+                  padding: '32px 34px',
                   background: 'linear-gradient(145deg, #FBF8F3 0%, #F5EFE6 100%)',
                   display: 'flex',
-                  flexDirection: 'column',
+                  alignItems: 'center',
                   justifyContent: 'space-between',
-                  gap: '16px'
+                  flexWrap: 'wrap',
+                  gap: '24px',
+                  width: '100%',
+                  boxSizing: 'border-box'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: '1 1 320px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 600, lineHeight: 1.5 }}>
+                  <span style={{ fontSize: '15.5px', color: 'var(--color-deep-blue)', fontWeight: 600, lineHeight: 1.5 }}>
                     Проводим правовую диагностику объекта и участников до передачи денег или обращения в суд
                   </span>
                 </div>
@@ -894,9 +1011,10 @@ export default function YuristPoNedvizhimostiClient() {
                   href="#form"
                   className="btn btn-primary"
                   style={{
-                    padding: '12px 24px',
+                    padding: '13px 28px',
                     fontSize: '14.5px',
-                    alignSelf: 'flex-start'
+                    whiteSpace: 'nowrap',
+                    flexShrink: 0
                   }}
                 >
                   Записаться на разбор ситуации
@@ -1241,27 +1359,26 @@ export default function YuristPoNedvizhimostiClient() {
                 Опишите ваш вопрос по недвижимости и оставьте контактные данные. Обращение передадим профильному юристу. Он изучит обстоятельства и предложит возможный порядок действий.
               </p>
               
-              <div style={{ marginTop: '32px' }}>
+              <div style={{
+                background: 'var(--gradient-cream)',
+                padding: '24px 28px',
+                borderLeft: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
+                marginBottom: '28px'
+              }}>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '6px' }}>Офис в Липецке</div>
+                <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  г. Липецк, ул. Советская, д. 35, офис 213<br />
+                  Пн–Пт с 9:00 до 18:00 • Возможно дистанционное ведение дел
+                </div>
+              </div>
+
+              <div style={{ marginTop: 'auto' }}>
                 <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                   <span>
                     Перезвоним в течение 15 минут в рабочее время
                   </span>
-                </div>
-              </div>
-
-              <div style={{ marginTop: 'auto', paddingTop: '32px' }}>
-                <div style={{
-                  background: 'var(--gradient-cream)',
-                  padding: '24px 28px',
-                  borderLeft: '3px solid var(--color-primary)',
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.04)'
-                }}>
-                  <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '6px' }}>Офис в Липецке</div>
-                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                    г. Липецк, ул. Советская, д. 35, офис 213<br />
-                    Пн–Пт с 9:00 до 18:00 • Возможно дистанционное ведение дел
-                  </div>
                 </div>
               </div>
             </div>

@@ -550,69 +550,144 @@ export default function SporySZastrojshchikomClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
-            {[
-              {
-                title: 'Договор и статус сторон',
-                desc: 'Зарегистрированный ДДУ, договор уступки права требования, статус гражданина как потребителя и отсутствие коммерческого назначения объекта.'
-              },
-              {
-                title: 'Сроки и периоды нарушения',
-                desc: 'Дата передачи по договору, фактическая дата уведомления о готовности, нормативные периоды мораториев и применимые редакции ст. 6 № 214-ФЗ.'
-              },
-              {
-                title: 'Дополнительные соглашения',
-                desc: 'Наличие подписанных допсоглашений о переносе сроков, действительность подписей и сохранение права на ранее начисленные штрафы.'
-              },
-              {
-                title: 'Фиксация дефектов при приёмке',
-                desc: 'Составление дефектной ведомости, привлечение аттестованного специалиста по постановлению № 2380 и соблюдение досудебного срока устранения.'
-              },
-              {
-                title: 'Доказательства убытков',
-                desc: 'Договоры найма жилья, квитанции об оплате аренды, переплата по процентам кредита и причинно-следственная связь с нарушением застройщика.'
-              },
-              {
-                title: 'Платёжеспособность и эскроу',
-                desc: 'Проверка финансовых показателей застройщика, наличие денежных средств на счетах, статус счёта эскроу в уполномоченном банке.'
-              }
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="hover-lift"
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  padding: '36px 30px 32px 30px',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  position: 'relative'
-                }}
-              >
-                <div style={{
-                  position: 'absolute',
-                  top: '-14px',
-                  left: '24px',
-                  background: 'var(--color-gold)',
-                  color: '#FFFFFF',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  padding: '2px 10px',
-                  borderRadius: '2px',
-                  letterSpacing: '0.05em'
-                }}>
-                  0{idx + 1}
-                </div>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
-                  {item.title}
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Договорные условия и процессуальные сроки */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Договорные условия и процессуальные сроки
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {item.desc}
-                </p>
               </div>
-            ))}
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Оцениваем статус дольщика, условия ДДУ и действительные периоды нарушения обязательств.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Договор и правовой статус сторон</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Зарегистрированный ДДУ, договор уступки права требования, статус гражданина как потребителя и отсутствие коммерческого назначения.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Сроки передачи и периоды нарушения</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Дата передачи по договору, фактическая дата уведомления о готовности, нормативные периоды мораториев и применимые редакции ст. 6 № 214-ФЗ.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Дополнительные соглашения о переносе сроков</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Наличие подписанных соглашений, действительность подписей и сохранение законного права на ранее начисленные санкции.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Карточка 2: Дефекты, финансовые убытки и платёжеспособность */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Дефекты, финансовые убытки и платёжеспособность
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Фиксируем строительные недостатки, рассчитываем фактические убытки и проверяем платежеспособность застройщика.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Фиксация дефектов при приёмке объекта</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Составление дефектной ведомости, привлечение аттестованного специалиста по постановлению № 2380 и соблюдение досудебного срока устранения.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Доказательства причинённых убытков</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Договоры найма жилья, квитанции об оплате аренды, переплата по процентам кредита и причинно-следственная связь с нарушением.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Платёжеспособность и статус счетов эскроу</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Проверка финансовых показателей застройщика, наличие денежных средств на счетах и статус счёта эскроу в уполномоченном банке.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Информационная плашка */}
+          <div style={{
+            background: 'var(--color-white)',
+            padding: '24px 28px',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+            fontSize: '14.5px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.65,
+            marginBottom: '32px'
+          }}>
+            <strong style={{ color: 'var(--color-primary)' }}>Досудебный аудит перед иском:</strong> правильный расчёт неустойки с учётом мораториев и фиксация дефектов по специальным правилам исключают затягивание спора и снижают риск необоснованного снижения сумм судом по ст. 333 ГК РФ.
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block' }}>
+              Записаться на разбор ситуации с застройщиком
+            </a>
           </div>
         </div>
       </section>
@@ -633,75 +708,91 @@ export default function SporySZastrojshchikomClient() {
       />
 
       {/* ═══ 6. ЧТО ВАЖНО ЗНАТЬ ДО СПОРА ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      <section className="section" style={{ padding: '80px 0', background: 'var(--color-deep-blue)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Не теряйте доказательства до оценки документов
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Ошибочные действия при приёмке или подписании документов могут существенно усложнить или сделать невозможным взыскание компенсации.
+          <div style={{
+            background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.35)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)',
+            padding: '40px 36px',
+            position: 'relative',
+            overflow: 'hidden',
+            marginBottom: '32px'
+          }}>
+            {/* Фоновый декоративный вектор */}
+            <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
+              <svg width="120" height="120" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', paddingBottom: '16px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', marginBottom: '20px' }}>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+              <div>
+                <h3 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  Не теряйте доказательства до оценки документов
+                </h3>
+              </div>
+            </div>
+
+            <p style={{ margin: '0 0 28px 0', fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, maxWidth: '820px' }}>
+              <span style={{ display: 'inline-block' }}>Предотвращаем типичные ошибки дольщиков при приёмке и подписании документов,</span> <br className="hidden-mobile" />
+              <span style={{ display: 'inline-block' }}>которые приводят к потере неустойки или невозможности устранения строительных дефектов:</span>
             </p>
+
+            <div className="grid grid-2" style={{ gap: '22px', position: 'relative', zIndex: 1 }}>
+              {[
+                {
+                  title: 'Дополнительные соглашения о переносе',
+                  desc: 'Подписание соглашения о переносе срока без юридического анализа последствий лишает законного права на начисленные неустойки.'
+                },
+                {
+                  title: 'Типовые претензии из интернета',
+                  desc: 'Использование общих шаблонов без проверки действующих мораториев и актуальных редакций ст. 6 № 214-ФЗ ослабляет позицию в суде.'
+                },
+                {
+                  title: 'Заниженная компенсация от застройщика',
+                  desc: 'Согласие на невыгодное мировое соглашение или минимальные выплаты без расчёта реальной судебной перспективы дела.'
+                },
+                {
+                  title: 'Приёмка без дефектной ведомости',
+                  desc: 'Подписание акта приёма-передачи без фиксации строительных недостатков делает последующее взыскание компенсации крайне сложным.'
+                },
+                {
+                  title: 'Ремонт до проведения экспертизы',
+                  desc: 'Начало чистовой отделки до официальной фиксации недостатков аттестованным специалистом по постановлению № 2380.'
+                },
+                {
+                  title: 'Отсутствие доказательств отправки',
+                  desc: 'Направление претензии без описи вложений и почтовых квитанций лишает дольщика права на штраф 50% и возмещение расходов.'
+                }
+              ].map((item, idx) => (
+                <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: '#FFFFFF', marginBottom: '3px', lineHeight: 1.35 }}>
+                      {item.title}
+                    </strong>
+                    <span style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.55 }}>
+                      {item.desc}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
-            <div style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-              padding: '36px 32px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '20px'
-            }}>
-              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                Ошибки при документах и сроках
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Подписание допсоглашения о переносе срока без юридического анализа последствий</span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Использование типовых претензий из интернета без проверки мораториев</span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Согласие на заниженную компенсацию по мировому соглашению без расчёта перспектив</span>
-                </li>
-              </ul>
-            </div>
-
-            <div style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-              padding: '36px 32px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '20px'
-            }}>
-              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                Ошибки при фиксации дефектов
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Подписание акта приёма-передачи без дефектной ведомости при наличии брака</span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Начало чистового ремонта до фиксации недостатков независимым экспертом</span>
-                </li>
-                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Отсутствие описи вложений и квитанций об отправке претензии застройщику</span>
-                </li>
-              </ul>
-            </div>
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', padding: '14px 32px' }}>
+              Записаться на разбор ситуации
+            </a>
           </div>
         </div>
       </section>

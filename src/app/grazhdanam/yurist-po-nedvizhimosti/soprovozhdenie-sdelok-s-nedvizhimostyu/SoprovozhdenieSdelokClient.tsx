@@ -236,7 +236,7 @@ export default function SoprovozhdenieSdelokClient() {
           </>
         }
         superTitle="Сделки с недвижимостью • проверка • расчёты • Липецк"
-        title={<>Сопровождение сделок <br />с недвижимостью в Липецке</>}
+        title={<>Сопровождение сделок <br />с недвижимостью <br />в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
             Проверим объект, собственника и документы, подготовим договор и безопасную схему расчётов, сопроводим регистрацию и передачу объекта. Риски обозначим до передачи денег.
@@ -410,7 +410,12 @@ export default function SoprovozhdenieSdelokClient() {
               Когда стоит подключить юриста
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Любая ошибка в документах или схеме расчётов может привести к потере недвижимости, денег или долгим судебным спорам.
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                Любая ошибка в документах или схеме расчётов может привести
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                к потере недвижимости, денег или долгим судебным спорам.
+              </span>
             </p>
           </div>
 
@@ -640,6 +645,7 @@ export default function SoprovozhdenieSdelokClient() {
           </div>
 
           <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Проверка юридической судьбы объекта */}
             <div style={{
               background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
@@ -650,53 +656,152 @@ export default function SoprovozhdenieSdelokClient() {
               flexDirection: 'column',
               gap: '20px'
             }}>
-              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                Проверка юридической судьбы объекта
-              </h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Проверка юридической судьбы объекта
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Анализируем историю прав, ограничения и законность владения для исключения риска истребования имущества.
+              </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>История всех переходов прав и цепочка оснований возникновения собственности</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>История всех переходов прав и цепочка оснований</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Договоры купли-продажи, приватизация, дарение, свидетельства о праве на наследство и судебные решения.</span>
+                  </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Наличие зарегистрированных и скрытых арестов, залогов, запретов и судебных споров</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Обременения, аресты, залоги и судебные споры</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Наличие зарегистрированных и скрытых арестов, ипотек, залогов, запретов ФССП и претензий третьих лиц.</span>
+                  </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Использование материнского капитала при покупке и выполнение обязанности по долям</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Материнский капитал и выполнение обязанности по долям</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Использование субсидий и маткапитала при покупке, соблюдение законных прав несовершеннолетних детей.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Техническая документация и планировка</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Соответствие фактической планировки поэтажному плану БТИ, выявление неузаконенных перепланировок.</span>
+                  </div>
                 </li>
               </ul>
             </div>
 
+            {/* Карточка 2: Проверка благонадёжности собственников */}
             <div style={{
               background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
+              borderTop: '3px solid var(--color-gold)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
               padding: '36px 32px',
               display: 'flex',
               flexDirection: 'column',
               gap: '20px'
             }}>
-              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                Проверка благонадёжности собственников
-              </h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="8.5" cy="7" r="4"></circle>
+                  <polyline points="17 11 19 13 23 9"></polyline>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Проверка благонадёжности собственников
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Изучаем финансовое состояние, семейные обязательства и дееспособность продавца для предотвращения отмены сделки.
+              </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Проверка банкротных рисков по ЕФРСБ, картотеке арбитражных дел и ФССП</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Банкротные риски и долговые обязательства</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Проверка продавца по ЕФРСБ, картотеке арбитражных дел и базам ФССП на риск банкротного оспаривания.</span>
+                  </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Супружеские права, брачные договоры, согласия бывших супругов на отчуждение</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Супружеские права и согласие на отчуждение</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Брачные договоры, нотариальные согласия супругов (включая бывших), подтверждение единоличной собственности.</span>
+                  </div>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
-                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Дееспособность продавца, подлинность доверенностей по реестру ФНП</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Дееспособность и подлинность доверенностей</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Проверка подлинности доверенностей по реестру ФНП, полномочий представителей и дееспособности сторон.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Действительность паспортов и налоговый статус</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Проверка паспортов по учётам МВД, отсутствие запретов на сделки и риска субсидиарной ответственности.</span>
+                  </div>
                 </li>
               </ul>
             </div>
+          </div>
+
+          {/* Информационная плашка */}
+          <div style={{
+            background: 'var(--color-white)',
+            padding: '24px 28px',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+            fontSize: '14.5px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.65,
+            marginBottom: '32px'
+          }}>
+            <strong style={{ color: 'var(--color-primary)' }}>Письменное заключение юриста:</strong> по итогам проверки вы получаете отчёт с оценкой юридической чистоты объекта, перечнем выявленных факторов риска и чёткими рекомендациями по согласованию условий договора и схемы расчётов.
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="#form" className="btn btn-primary" style={{ display: 'inline-block' }}>
+              Заказать проверку перед сделкой
+            </a>
           </div>
         </div>
       </section>

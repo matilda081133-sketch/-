@@ -242,7 +242,7 @@ export default function NedostatkiKvartiryClient() {
           </>
         }
         superTitle="Строительный брак • приёмка • экспертиза • Липецк"
-        title={<>Взыскание компенсации <br />за дефекты квартиры в Липецке</>}
+        title={<>Взыскание компенсации <br />за дефекты квартиры <br />в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
             Поможем зафиксировать строительные дефекты при приёмке или в период 5-летней гарантии, привлечём эксперта НОПРИЗ/НОСТРОЙ и взыщем полную стоимость восстановительного ремонта.
@@ -413,8 +413,13 @@ export default function NedostatkiKvartiryClient() {
       <section className="section bg-white" id="defects" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Типичные дефекты квартир в новостройках
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                Типичные дефекты квартир
+              </span>
+              <span className="hero-title-span-mobile" style={{ display: 'block' }}>
+                в новостройках
+              </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Большинство дефектов не видны невооружённым глазом и выявляются только специальным поверенным оборудованием.
