@@ -69,70 +69,75 @@ export default function RastorzhenieDDUClient() {
   const processSteps = [
     {
       num: '01',
-      title: 'Анализ документов',
-      desc: 'Проверяем ДДУ, платежи, стадию строительства, банк эскроу и основания для расторжения.'
+      title: 'Оценка оснований и рисков',
+      desc: 'Проверяем сроки просрочки, состояние застройщика, остаток средств на эскроу и кредитный договор.'
     },
     {
       num: '02',
-      title: 'Выбор порядка',
-      desc: 'Определяем процедуру: односторонний внесудебный отказ через Росреестр или судебный иск.'
+      title: 'Уведомление об отказе',
+      desc: 'Составляем и направляем застройщику юридически безупречное уведомление об одностороннем отказе от ДДУ.'
     },
     {
       num: '03',
-      title: 'Взаимодействие с банком',
-      desc: 'Согласуем процедуру с банком-кредитором (при ипотеке) для безопасного закрытия кредита.'
+      title: 'Погашение записи в Росреестре',
+      desc: 'Подаём заявление в Росреестр о прекращении ДДУ, контролируем снятие обременения с объекта.'
     },
     {
       num: '04',
-      title: 'Прекращение ДДУ',
-      desc: 'Регистрируем расторжение договора в Росреестре и инициируем раскрытие счёта эскроу.'
+      title: 'Возврат денег со счёта эскроу',
+      desc: 'Предоставляем подтверждение Росреестра в банк эскроу-агент для мгновенного разблокирования средств.'
     },
     {
       num: '05',
-      title: 'Возврат денег и процентов',
-      desc: 'Контролируем зачисление цены договора дольщику и взыскиваем законные проценты с застройщика.'
+      title: 'Взыскание процентов в суде',
+      desc: 'Взыскиваем с застройщика законные проценты по ст. 9 № 214-ФЗ, штраф 50% и убытки.'
     }
   ];
 
   const pricingTiers = [
     {
-      title: <>Правовой анализ ДДУ</>,
-      subtitle: 'Оценка оснований',
+      title: <>Правовой анализ оснований</>,
+      subtitle: 'Оценка рисков выхода из ДДУ',
       popular: false,
-      price: 'от ХХХ ₽',
+      price: 'от 10 000 ₽',
       features: [
-        { name: 'Анализ условий выхода из договора', value: '✓' },
-        { name: 'Проверка эскроу и рисков застройщика', value: '✓' },
-        { name: 'Расчёт процентов за пользование деньгами', value: '✓' }
+        { name: 'Анализ договора ДДУ и сроков нарушения', value: '✓' },
+        { name: 'Проверка статуса счёта эскроу в банке', value: '✓' },
+        { name: 'Расчёт процентов по ч. 2 ст. 9 № 214-ФЗ', value: '✓' },
+        { name: 'Письменное заключение о безопасности', value: '✓' }
       ],
       buttonText: 'Оценить риски',
       buttonHref: '#form'
     },
     {
       title: <>Внесудебное расторжение</>,
-      subtitle: 'Отказ через Росреестр',
+      subtitle: 'При просрочке свыше 2 месяцев',
       popular: true,
       badgeText: 'ВОСТРЕБОВАНО',
-      price: 'от ХХХ ₽',
+      price: 'от 25 000 ₽',
       features: [
-        { name: 'Составление юридического отказа от ДДУ', value: '✓' },
-        { name: 'Погашение записи в Росреестре', value: '✓' },
-        { name: 'Взаимодействие с банком и возврат эскроу', value: '✓' }
+        { name: 'Уведомление об одностороннем отказе', value: '✓' },
+        { name: 'Регистрация прекращения ДДУ в Росреестре', value: '✓' },
+        { name: 'Взаимодействие с банком эскроу-агентом', value: '✓' },
+        { name: 'Возврат 100% средств со счёта эскроу', value: '✓' },
+        { name: 'Закрытие ипотечных обязательств', value: '✓' }
       ],
       buttonText: 'Расторгнуть договор',
       buttonHref: '#form'
     },
     {
-      title: <>Судебное расторжение ДДУ</>,
-      subtitle: 'Ведение спора в суде',
+      title: <>Судебное расторжение + проценты</>,
+      subtitle: 'При дефектах или отказе застройщика',
       popular: false,
-      price: 'от ХХХ ₽',
+      price: 'от 35 000 ₽',
       features: [
-        { name: 'Подготовка иска и доказательной базы', value: '✓' },
-        { name: 'Представительство во всех заседаниях', value: '✓' },
-        { name: 'Взыскание цены, процентов и штрафа 50%', value: '✓' }
+        { name: 'Подготовка иска о расторжении ДДУ', value: '✓' },
+        { name: 'Судебное доказывание нарушений застройщика', value: '✓' },
+        { name: 'Взыскание процентов, штрафа 50% и убытков', value: '✓' },
+        { name: 'Ведение дела во всех инстанциях', value: '✓' },
+        { name: 'Фактическое исполнение решения', value: '✓' }
       ],
-      buttonText: 'Судебное расторжение',
+      buttonText: 'Расторгнуть через суд',
       buttonHref: '#form'
     }
   ];
@@ -158,14 +163,14 @@ export default function RastorzhenieDDUClient() {
       {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/rastorzhenie-ddu/#service',
-        name: 'Расторжение ДДУ в Липецке',
-        serviceType: 'Юридическая помощь при расторжении ДДУ',
+        name: 'Расторжение договора ДДУ в Липецке',
+        serviceType: 'Расторжение договора долевого участия',
         provider: {
           '@id': 'https://dejure-help.ru/#legalservice'
         },
         areaServed: ['Липецк', 'Липецкая область'],
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/rastorzhenie-ddu/',
-        description: 'Расторжение договора долевого участия в Липецке: проверим основания, подготовим отказ, соглашение или иск, возврат денег и сопровождение исполнения.'
+        description: 'Расторжение договора ДДУ в Липецке: возврат средств со счетов эскроу, взыскание процентов по 214-ФЗ, урегулирование ипотеки и судебная защита.'
       },
       {
         '@type': 'BreadcrumbList',
@@ -237,17 +242,19 @@ export default function RastorzhenieDDUClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Расторжение ДДУ</span>
           </>
         }
-        superTitle="Выход из договора долевого участия"
-        title={<>Расторжение ДДУ <br />в Липецке</>}
+        superTitle="ДДУ • 214-ФЗ • возврат эскроу • проценты • Липецк"
+        title={<>Расторжение договора ДДУ <br />в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
-            Проверим основания для выхода из договора, обеспечим возврат 100% денег со счетов эскроу, закроем ипотеку и взыщем законные проценты с застройщика.
+            Поможем безопасно выйти из договора долевого участия, вернуть 100% средств со счёта эскроу, закрыть ипотеку и взыскать с застройщика проценты за пользование деньгами.
           </span>
         }
-        primaryCtaText="Оценить расторжение ДДУ"
+        primaryCtaText="Оценить расторжение"
         primaryCtaLink="#form"
-        primaryCtaAnalytics="ddu_termination_hero_click"
+        primaryCtaAnalytics="cancel_ddu_hero_click"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        secondaryCtaText="Основания выхода"
+        secondaryCtaLink="#grounds"
         rightContent={
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
             <div style={{
@@ -290,8 +297,8 @@ export default function RastorzhenieDDUClient() {
               <div className="doc-wrapper-float-3">
                 <div className="doc-sheet doc-sheet-3">
                   <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '65px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
-                      <span style={{ fontSize: '4px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>ОТКАЗ ОТ ДДУ</span>
+                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '75px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
+                      <span style={{ fontSize: '4.5px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>СТ. 9 № 214-ФЗ</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '35px' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
@@ -299,10 +306,94 @@ export default function RastorzhenieDDUClient() {
                         <div style={{ width: '55px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
                       </div>
                     </div>
-                    <div style={{ width: '120px', height: '6px', background: 'var(--color-gold)', margin: '0 auto 25px auto' }}></div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ width: '130px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 30px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                       <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '85%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '95%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-2">
+                <div className="doc-sheet doc-sheet-2">
+                  <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '110px', height: '30px', border: '1px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.2 }}>
+                        УВЕДОМЛЕНИЕ ОБ ОТКАЗЕ<br/>
+                        ОТ ИСПОЛНЕНИЯ ДДУ
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+
+                    <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 16px auto' }}></div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                      <div style={{ width: '40%', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Дольщик:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Росреестр:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-1">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
+                      <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ВОЗВРАТ ЭСКРОУ</span>
+                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>100% средств дольщика</span>
+                      </div>
+                    </div>
+
+                    <div className="doc-map-box" style={{ 
+                      width: '100%', 
+                      height: '110px', 
+                      background: 'rgba(247, 244, 237, 0.6)', 
+                      border: '1px solid rgba(193, 160, 102, 0.3)', 
+                      borderRadius: '2px', 
+                      marginBottom: '12px',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '4px'
+                    }}>
+                      <svg width="100%" height="100%" viewBox="0 0 200 100" fill="none">
+                        <line x1="0" y1="50" x2="200" y2="50" stroke="rgba(23,50,77,0.06)" strokeDasharray="2 2" />
+                        <rect x="25" y="15" width="150" height="70" fill="rgba(193, 160, 102, 0.1)" stroke="#C1A066" strokeWidth="1.5" />
+                        <line x1="100" y1="15" x2="100" y2="85" stroke="#C1A066" strokeWidth="1" strokeDasharray="3 3" />
+                        <text x="35" y="38" fill="#10273B" fontSize="6.5" fontWeight="bold">Счёт эскроу</text>
+                        <text x="110" y="38" fill="#1B8738" fontSize="6.5" fontWeight="bold">100% возврат</text>
+                        <text x="35" y="70" fill="#10273B" fontSize="6" fontWeight="bold">Росреестр</text>
+                        <text x="110" y="70" fill="#10273B" fontSize="6" fontWeight="bold">+ Проценты 214-ФЗ</text>
+                      </svg>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                        <div style={{ fontSize: '11px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ЮК «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '9.5px', color: 'rgba(23,50,77,0.75)', fontFamily: 'var(--font-sans)' }}>Защита дольщиков • Липецк</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -310,20 +401,26 @@ export default function RastorzhenieDDUClient() {
             </div>
           </div>
         }
+        trustItems={[
+          { text: 'Полный возврат денег со счёта эскроу в уполномоченном банке.' },
+          { text: 'Взыскание процентов по ст. 9 закона № 214-ФЗ с застройщика.' },
+          { text: 'Урегулирование ипотечных обязательств без санкций банка.' }
+        ]}
       />
 
       {/* ═══ 2. ОСНОВАНИЯ ДЛЯ РАСТОРЖЕНИЯ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      <section className="section bg-white" id="grounds" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>ЗАКОННЫЕ ОСНОВАНИЯ</span>
-            <h2 className="section-title">Когда можно законно выйти из ДДУ</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Когда можно законно выйти из ДДУ
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Федеральный закон № 214-ФЗ строго регламентирует случаи, когда дольщик вправе забрать деньги без финансовых потерь.
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '24px' }}>
+          <div className="grid grid-4" style={{ gap: '24px', marginBottom: '40px' }}>
             {[
               {
                 tag: 'ПРОСРОЧКА > 2 МЕСЯЦЕВ',
@@ -348,41 +445,76 @@ export default function RastorzhenieDDUClient() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="situation-card"
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
                   padding: '28px 24px',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
-                  height: '100%'
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
-                <span style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  color: 'var(--color-gold)',
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <div style={{ 
+                  fontSize: '11px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-gold)', 
+                  marginBottom: '12px',
                   background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  borderRadius: '4px',
-                  display: 'inline-block',
-                  marginBottom: '16px',
-                  alignSelf: 'flex-start'
+                  padding: '3px 8px',
+                  alignSelf: 'flex-start',
+                  borderRadius: '2px'
                 }}>
                   {item.tag}
-                </span>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '12px', lineHeight: 1.3 }}>
+                </div>
+                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.35, margin: '0 0 10px 0' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
                   {item.desc}
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="card service-card cta-banner-card" style={{ 
+            width: '100%', 
+            padding: '32px 36px', 
+            background: 'var(--color-deep-blue)', 
+            borderRadius: '0',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '24px',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}>
+            <div style={{ flex: '1 1 300px' }}>
+              <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                Опасаетесь остаться без квартиры и без денег?
+              </h3>
+              <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
+                Мы проверим статус эскроу-счёта и финансовое состояние застройщика до подачи документов на расторжение, исключив любые риски потери средств.
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a 
+                href="#form" 
+                className="btn white-btn-custom" 
+                style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
+              >
+                Проверить эскроу-счёт
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -390,10 +522,11 @@ export default function RastorzhenieDDUClient() {
       {/* ═══ 3. ТРИ СПОСОБА ПРЕКРАТИТЬ ДОГОВОР ═══ */}
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>ПРОЦЕДУРА ВЫХОДА</span>
-            <h2 className="section-title">Три способа расторгнуть договор ДДУ</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Три способа расторгнуть договор ДДУ
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Выбираем наиболее быстрый и финансово безопасный маршрут исходя из фактических обстоятельств стройки.
             </p>
           </div>
@@ -401,54 +534,50 @@ export default function RastorzhenieDDUClient() {
           <div className="grid grid-3" style={{ gap: '28px' }}>
             {[
               {
-                num: '01',
                 title: 'Односторонний отказ',
                 desc: 'Применяется при просрочке свыше 2 месяцев. Не требует согласия застройщика и суда. Договор прекращается с даты направления уведомления.'
               },
               {
-                num: '02',
                 title: 'Соглашение сторон',
                 desc: 'Добровольное расторжение по соглашению. Важно зафиксировать точные сроки возврата денег, отсутствие штрафов и размер компенсации.'
               },
               {
-                num: '03',
                 title: 'Судебное расторжение',
                 desc: 'Необходимо при существенном изменении проекта, отказе застройщика признавать дефекты или споре по сумме процентов.'
               }
             ].map((step, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
-                  borderRadius: '16px',
-                  padding: '32px 24px 24px 24px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
                   borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-                  position: 'relative',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
                 <div style={{
                   position: 'absolute',
                   top: '-14px',
                   left: '24px',
-                  background: 'linear-gradient(135deg, var(--color-gold) 0%, #D4AF37 100%)',
+                  background: 'var(--color-gold)',
                   color: '#FFFFFF',
-                  fontSize: '0.8rem',
-                  fontWeight: 800,
-                  padding: '3px 12px',
-                  borderRadius: '20px',
-                  letterSpacing: '0.05em',
-                  boxShadow: '0 2px 6px rgba(193, 160, 102, 0.4)'
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
-                  {step.num}
+                  0{idx + 1}
                 </div>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginTop: '6px', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {step.title}
                 </h3>
-                <p style={{ fontSize: '0.93rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {step.desc}
                 </p>
               </div>
@@ -467,62 +596,155 @@ export default function RastorzhenieDDUClient() {
 
       {/* ═══ 5. ПРОЦЕСС РАБОТЫ ═══ */}
       <ProcessBlock
-        title="Как проходит расторжение"
-        subtitle="Пять этапов возврата средств со счёта эскроу и взыскания процентов."
+        title="Как проходит процедура выхода из ДДУ"
+        subtitle="Пошаговый регламент от анализа оснований до фактического возврата денег на счёт."
         steps={processSteps}
       />
 
       {/* ═══ 6. СТОИМОСТЬ ═══ */}
       <PricingBlock
         title="Стоимость услуг по расторжению ДДУ"
-        subtitle="Фиксированные тарифы без скрытых платежей. Проценты за пользование средствами и судебные издержки возлагаются на застройщика."
+        subtitle="Прозрачная фиксация стоимости в договоре без скрытых доплат. Судебные расходы взыскиваются с застройщика."
         tiers={pricingTiers}
       />
 
       {/* ═══ 7. ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
         faqs={faqs}
-        title={<>Ответы на частые вопросы <br />по расторжению договоров ДДУ</>}
-        subtitle="Юридические правила возврата денег со счетов эскроу, погашения ипотеки и защиты прав дольщиков."
+        title={<>Частые вопросы <br />по расторжению договора ДДУ</>}
+        subtitle="Разъяснения ст. 9 закона № 214-ФЗ, правил возврата денег со счетов эскроу и судебной практики."
         ctaText="Задать свой вопрос"
         ctaLink="#form"
       />
 
-      {/* ═══ 8. ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ 8. СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Связанные услуги
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Смежные направления помощи дольщикам при нарушениях застройщика.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '20px' }}>
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/vzyskanie-neustojki-po-ddu/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Взыскание неустойки
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Если вы хотите получить квартиру и компенсировать задержку сдачи по закону № 214-ФЗ.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/nedostatki-kvartiry-i-vzyskanie-rashodov/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Дефекты квартиры
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Фиксация строительного брака, экспертиза и взыскание компенсации на ремонт.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/spory-s-zastrojshchikom/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Все споры с застройщиком
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Комплексная защита прав участников долевого строительства в Липецке.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 9. ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
-              <span className="badge badge-gold" style={{ marginBottom: '16px', alignSelf: 'flex-start' }}>
-                КОНСУЛЬТАЦИЯ
-              </span>
-              <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '20px' }}>
-                Оцените перспективы выхода из ДДУ
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Оцените перспективы расторжения ДДУ
               </h2>
-              <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '32px' }}>
-                Укажите причину расторжения, срок просрочки, привлекалась ли ипотека и статус счёта эскроу. Мы проанализируем договор и предложим безопасную схему возврата ваших денег.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Укажите название жилого комплекса, срок сдачи по договору и причину выхода из проекта. Мы оценим безопасность расторжения и подскажем верный порядок действий.
               </p>
-
-              <div style={{
-                background: 'var(--color-bg-light)',
-                borderRadius: '16px',
-                padding: '24px 28px',
-                border: '1px solid rgba(23, 50, 77, 0.08)',
-                marginTop: 'auto'
-              }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '8px' }}>
-                  Офис в Липецке
-                </h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', margin: 0, lineHeight: 1.6 }}>
-                  г. Липецк, ул. Советская, д. 35, офис 213.<br />
-                  Телефон: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>+7 (4742) 20-15-25</a><br />
-                  Пн–Пт с 9:00 до 18:00. Принимаем документы на анализ дистанционно.
-                </p>
+              <div style={{ marginTop: '32px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Перезвоним вам в течение 15 минут в рабочее время</span>
+                </div>
               </div>
             </div>
 
-            <div>
-              <ContactsForm title="Написать нам" subtitle="" buttonText="Оставить заявку" commentPlaceholder="Кратко опишите ситуацию по недвижимости…" hiddenFields={[{ name: 'service', value: 'Расторжение ДДУ' }]} />
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm 
+                  title="Написать нам" 
+                  subtitle="" 
+                  buttonText="Оценить расторжение" 
+                  commentPlaceholder="Укажите ЖК, дату сдачи по ДДУ и причину расторжения…" 
+                  subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                  hiddenFields={[{ name: 'service', value: 'Расторжение ДДУ' }]} 
+                />
+              </div>
             </div>
           </div>
         </div>

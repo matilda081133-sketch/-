@@ -69,39 +69,40 @@ export default function VzyskanieNeustojkiDDUClient() {
   const processSteps = [
     {
       num: '01',
-      title: 'Первичный анализ',
-      desc: 'Изучаем ДДУ, дату плановой сдачи, уведомления и проверяем наличие просрочки.'
+      title: 'Анализ ДДУ и дат',
+      desc: 'Изучаем договор, плановый срок ввода, дату фактической передачи и переписку с застройщиком.'
     },
     {
       num: '02',
       title: 'Расчёт требований',
-      desc: 'Рассчитываем неустойку по правовым периодам с учётом ключевой ставки ЦБ РФ и действовавших норм.'
+      desc: 'Рассчитываем неустойку по ключевой ставке ЦБ РФ с разбивкой по периодам действия мораториев.'
     },
     {
       num: '03',
-      title: 'Претензия застройщику',
-      desc: 'Составляем и направляем досудебную претензию с подробным расчётом и банковскими реквизитами.'
+      title: 'Досудебная претензия',
+      desc: 'Направляем застройщику мотивированную претензию с расчётом и требованием добровольной выплаты.'
     },
     {
       num: '04',
-      title: 'Судебное производство',
-      desc: 'Подаём иск в суд по выбору дольщика, защищаем расчёт от необоснованного снижения по ст. 333 ГК РФ.'
+      title: 'Судебный процесс',
+      desc: 'Подаём иск по Закону о защите прав потребителей без госпошлины, защищаем сумму от ст. 333 ГК РФ.'
     },
     {
       num: '05',
-      title: 'Исполнение решения',
-      desc: 'Получаем исполнительный лист и предъявляем его ко взысканию в банк застройщика или ФССП.'
+      title: 'Взыскание денег',
+      desc: 'Предъявляем исполнительный лист в банк застройщика и контролируем фактическое списание средств.'
     }
   ];
 
   const pricingTiers = [
     {
-      title: <>Досудебная претензия</>,
-      subtitle: 'Претензионный порядок',
+      title: <>Расчёт и претензия</>,
+      subtitle: 'Досудебный этап',
       popular: false,
-      price: 'от ХХХ ₽',
+      price: 'от 10 000 ₽',
       features: [
-        { name: 'Правовой расчёт неустойки по периодам', value: '✓' },
+        { name: 'Анализ договора ДДУ и допсоглашений', value: '✓' },
+        { name: 'Расчёт неустойки с учётом мораториев', value: '✓' },
         { name: 'Составление мотивированной претензии', value: '✓' },
         { name: 'Контроль вручения застройщику', value: '✓' }
       ],
@@ -109,31 +110,34 @@ export default function VzyskanieNeustojkiDDUClient() {
       buttonHref: '#form'
     },
     {
-      title: <>Судебное взыскание под ключ</>,
-      subtitle: 'Полное ведение дела',
+      title: <>Взыскание в суде под ключ</>,
+      subtitle: 'Судебный процесс до решения',
       popular: true,
       badgeText: 'ВОСТРЕБОВАНО',
-      price: 'от ХХХ ₽',
+      price: 'от 25 000 ₽',
       features: [
-        { name: 'Подготовка иска и доказательной базы', value: '✓' },
-        { name: 'Представительство во всех заседаниях', value: '✓' },
-        { name: 'Возражения на снижение по ст. 333 ГК', value: '✓' },
-        { name: 'Получение исполнительного листа', value: '✓' }
+        { name: 'Подготовка иска и расчёт требований', value: '✓' },
+        { name: 'Взыскание штрафа 50% и морального вреда', value: '✓' },
+        { name: 'Мотивированные возражения против ст. 333 ГК', value: '✓' },
+        { name: 'Участие во всех судебных заседаниях', value: '✓' },
+        { name: 'Взыскание судебных расходов с застройщика', value: '✓' }
       ],
-      buttonText: 'Взыскать под ключ',
+      buttonText: 'Взыскать неустойку',
       buttonHref: '#form'
     },
     {
-      title: <>Взыскание убытков и аренды</>,
-      subtitle: 'Комплексный иск',
+      title: <>Неустойка + убытки (аренда)</>,
+      subtitle: 'Максимальная компенсация потерь',
       popular: false,
-      price: 'от ХХХ ₽',
+      price: 'от 30 000 ₽',
       features: [
-        { name: 'Обоснование расходов на наём жилья', value: '✓' },
-        { name: 'Взыскание переплаты по процентам', value: '✓' },
-        { name: 'Штраф 50% и моральный вред', value: '✓' }
+        { name: 'Взыскание законной неустойки по ДДУ', value: '✓' },
+        { name: 'Доказывание расходов на аренду жилья', value: '✓' },
+        { name: 'Взыскание переплаты по процентам кредита', value: '✓' },
+        { name: 'Штраф 50% на совокупную сумму убытков', value: '✓' },
+        { name: 'Получение исполнительного листа и исполнение', value: '✓' }
       ],
-      buttonText: 'Взыскать убытки',
+      buttonText: 'Взыскать с убытками',
       buttonHref: '#form'
     }
   ];
@@ -166,7 +170,7 @@ export default function VzyskanieNeustojkiDDUClient() {
         },
         areaServed: ['Липецк', 'Липецкая область'],
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/vzyskanie-neustojki-po-ddu/',
-        description: 'Взыскание неустойки с застройщика по ДДУ в Липецке: проверим период просрочки, рассчитаем требования, подготовим претензию, иск и исполнение.'
+        description: 'Взыскание неустойки по ДДУ с застройщика в Липецке: расчёт по 214-ФЗ с учётом мораториев, претензия, суд, штраф 50% и реальное получение денег.'
       },
       {
         '@type': 'BreadcrumbList',
@@ -238,17 +242,19 @@ export default function VzyskanieNeustojkiDDUClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Взыскание неустойки</span>
           </>
         }
-        superTitle="Просрочка передачи квартиры по ДДУ"
+        superTitle="ДДУ • 214-ФЗ • просрочка сдачи • Липецк"
         title={<>Взыскание неустойки <br />по ДДУ в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
-            Проверим период просрочки, рассчитаем применимые требования с учётом мораториев и ключевой ставки, подготовим претензию, иск и доведём дело до фактического исполнения.
+            Рассчитаем неустойку по ч. 2 ст. 6 закона № 214-ФЗ с учётом актуальных мораториев и ставок ЦБ РФ. Взыщем неустойку, убытки на аренду, штраф 50% и моральный вред.
           </span>
         }
-        primaryCtaText="Рассчитать сумму неустойки"
+        primaryCtaText="Рассчитать неустойку"
         primaryCtaLink="#form"
         primaryCtaAnalytics="ddu_penalty_hero_click"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        secondaryCtaText="Состав требований"
+        secondaryCtaLink="#requirements"
         rightContent={
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
             <div style={{
@@ -291,8 +297,8 @@ export default function VzyskanieNeustojkiDDUClient() {
               <div className="doc-wrapper-float-3">
                 <div className="doc-sheet doc-sheet-3">
                   <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '65px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
-                      <span style={{ fontSize: '4px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>РАСЧЁТ № 214-ФЗ</span>
+                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '75px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
+                      <span style={{ fontSize: '4.5px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>РАСЧЁТ СТ. 6 ДДУ</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '35px' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
@@ -300,10 +306,94 @@ export default function VzyskanieNeustojkiDDUClient() {
                         <div style={{ width: '55px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
                       </div>
                     </div>
-                    <div style={{ width: '120px', height: '6px', background: 'var(--color-gold)', margin: '0 auto 25px auto' }}></div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ width: '130px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 30px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                       <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '85%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '95%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-2">
+                <div className="doc-sheet doc-sheet-2">
+                  <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '110px', height: '30px', border: '1px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.2 }}>
+                        ИСКОВОЕ ЗАЯВЛЕНИЕ<br/>
+                        О ВЗЫСКАНИИ НЕУСТОЙКИ
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+
+                    <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 16px auto' }}></div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                      <div style={{ width: '40%', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Дольщик:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Застройщик:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-1">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
+                      <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ФЗ № 214-ФЗ</span>
+                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>Штраф 50% + Убытки</span>
+                      </div>
+                    </div>
+
+                    <div className="doc-map-box" style={{ 
+                      width: '100%', 
+                      height: '110px', 
+                      background: 'rgba(247, 244, 237, 0.6)', 
+                      border: '1px solid rgba(193, 160, 102, 0.3)', 
+                      borderRadius: '2px', 
+                      marginBottom: '12px',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '4px'
+                    }}>
+                      <svg width="100%" height="100%" viewBox="0 0 200 100" fill="none">
+                        <line x1="0" y1="50" x2="200" y2="50" stroke="rgba(23,50,77,0.06)" strokeDasharray="2 2" />
+                        <rect x="25" y="15" width="150" height="70" fill="rgba(193, 160, 102, 0.1)" stroke="#C1A066" strokeWidth="1.5" />
+                        <line x1="100" y1="15" x2="100" y2="85" stroke="#C1A066" strokeWidth="1" strokeDasharray="3 3" />
+                        <text x="35" y="38" fill="#10273B" fontSize="6.5" fontWeight="bold">Срок по ДДУ</text>
+                        <text x="110" y="38" fill="#C53030" fontSize="6.5" fontWeight="bold">Период просрочки</text>
+                        <text x="35" y="70" fill="#10273B" fontSize="6" fontWeight="bold">Ставка ЦБ РФ</text>
+                        <text x="110" y="70" fill="#1B8738" fontSize="6" fontWeight="bold">+ Штраф 50%</text>
+                      </svg>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                        <div style={{ fontSize: '11px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ЮК «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '9.5px', color: 'rgba(23,50,77,0.75)', fontFamily: 'var(--font-sans)' }}>Защита дольщиков • Липецк</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -311,20 +401,26 @@ export default function VzyskanieNeustojkiDDUClient() {
             </div>
           </div>
         }
+        trustItems={[
+          { text: 'Разбивка просрочки по периодам действия мораториев.' },
+          { text: 'Взыскание убытков на вынужденный наём съёмного жилья.' },
+          { text: 'Защита суммы иска от снижения по ст. 333 ГК РФ.' }
+        ]}
       />
 
-      {/* ═══ 2. ЧТО МОЖНО ЗАЯВИТЬ В СУДЕ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ 2. СОСТАВ ТРЕБОВАНИЙ ═══ */}
+      <section className="section bg-white" id="requirements" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>СОСТАВ ТРЕБОВАНИЙ</span>
-            <h2 className="section-title">Что взыскивается с застройщика при просрочке</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Что взыскивается с застройщика при просрочке
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Грамотно составленный иск включает не только базовую неустойку, но и компенсацию сопутствующих убытков, штраф 50% и моральный вред.
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '24px' }}>
+          <div className="grid grid-4" style={{ gap: '24px', marginBottom: '40px' }}>
             {[
               {
                 tag: 'ОСНОВНОЕ ТРЕБОВАНИЕ',
@@ -349,52 +445,88 @@ export default function VzyskanieNeustojkiDDUClient() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="situation-card"
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
                   padding: '28px 24px',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
-                  height: '100%'
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
-                <span style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  color: 'var(--color-gold)',
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <div style={{ 
+                  fontSize: '11px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-gold)', 
+                  marginBottom: '12px',
                   background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  borderRadius: '4px',
-                  display: 'inline-block',
-                  marginBottom: '16px',
-                  alignSelf: 'flex-start'
+                  padding: '3px 8px',
+                  alignSelf: 'flex-start',
+                  borderRadius: '2px'
                 }}>
                   {item.tag}
-                </span>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '12px', lineHeight: 1.3 }}>
+                </div>
+                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.35, margin: '0 0 10px 0' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
                   {item.desc}
                 </p>
               </div>
             ))}
           </div>
+
+          <div className="card service-card cta-banner-card" style={{ 
+            width: '100%', 
+            padding: '32px 36px', 
+            background: 'var(--color-deep-blue)', 
+            borderRadius: '0',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '24px',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}>
+            <div style={{ flex: '1 1 300px' }}>
+              <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                Застройщик предлагает подписать допсоглашение о переносе?
+              </h3>
+              <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
+                Не подписывайте документы до консультации с юристом. Подписание соглашения лишает вас права требовать законную неустойку за весь перенесённый период.
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a 
+                href="#form" 
+                className="btn white-btn-custom" 
+                style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
+              >
+                Проверить допсоглашение
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ═══ 3. ЧТО ВХОДИТ В УСЛУГУ (HelpScope с золотыми бейджами) ═══ */}
+      {/* ═══ 3. ПЛАН ДЕЙСТВИЙ ═══ */}
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>ПЛАН ДЕЙСТВИЙ</span>
-            <h2 className="section-title">Что сделает юрист по ДДУ компании «Де-Юре»</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Что сделает юрист по ДДУ компании «Де-Юре»
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Берём на себя всю процессуальную работу: от составления точного математического расчёта до поступления средств на ваш счёт.
             </p>
           </div>
@@ -402,69 +534,62 @@ export default function VzyskanieNeustojkiDDUClient() {
           <div className="grid grid-3" style={{ gap: '28px' }}>
             {[
               {
-                num: '01',
                 title: 'Анализ документов',
                 desc: 'Анализируем ДДУ, дополнительные соглашения, договор уступки, уведомления застройщика и акт приёма-передачи.'
               },
               {
-                num: '02',
                 title: 'Разбивка по периодам',
                 desc: 'Разбиваем срок просрочки на правовые периоды, исключаем моратории и готовим математически выверенный расчёт.'
               },
               {
-                num: '03',
                 title: 'Определение убытков',
                 desc: 'Определяем состав дополнительных требований: аренда, переплата по кредиту, моральный вред и судебные издержки.'
               },
               {
-                num: '04',
                 title: 'Досудебная претензия',
                 desc: 'Готовим и направляем официальную претензию застройщику с подтверждением отправки для начисления штрафа 50%.'
               },
               {
-                num: '05',
                 title: 'Иск и защита в суде',
                 desc: 'Составляем иск, определяем выгодную подсудность, участвуем в заседаниях и парируем ст. 333 ГК РФ.'
               },
               {
-                num: '06',
                 title: 'Исполнение решения',
                 desc: 'Получаем исполнительный документ и направляем его в банк с реальным движением средств на расчётных счетах.'
               }
             ].map((step, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
-                  borderRadius: '16px',
-                  padding: '32px 24px 24px 24px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
                   borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-                  position: 'relative',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
                 <div style={{
                   position: 'absolute',
                   top: '-14px',
                   left: '24px',
-                  background: 'linear-gradient(135deg, var(--color-gold) 0%, #D4AF37 100%)',
+                  background: 'var(--color-gold)',
                   color: '#FFFFFF',
-                  fontSize: '0.8rem',
-                  fontWeight: 800,
-                  padding: '3px 12px',
-                  borderRadius: '20px',
-                  letterSpacing: '0.05em',
-                  boxShadow: '0 2px 6px rgba(193, 160, 102, 0.4)'
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
-                  {step.num}
+                  0{idx + 1}
                 </div>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginTop: '6px', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {step.title}
                 </h3>
-                <p style={{ fontSize: '0.93rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {step.desc}
                 </p>
               </div>
@@ -498,47 +623,140 @@ export default function VzyskanieNeustojkiDDUClient() {
       {/* ═══ 7. ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
         faqs={faqs}
-        title={<>Ответы на частые вопросы <br />по неустойке по ДДУ</>}
-        subtitle="Разъяснения норм Федерального закона № 214-ФЗ, правил применения ст. 333 ГК РФ и мораториев."
+        title={<>Частые вопросы <br />по взысканию неустойки по ДДУ</>}
+        subtitle="Разъяснения норм ст. 6 закона № 214-ФЗ, правил расчёта и судебной практики по спорам с застройщиками."
         ctaText="Задать свой вопрос"
         ctaLink="#form"
       />
 
-      {/* ═══ 8. ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ 8. СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Связанные услуги
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Смежные направления помощи дольщикам при нарушениях застройщика.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '20px' }}>
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/rastorzhenie-ddu/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Расторжение ДДУ
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Выход из договора при длительной просрочке, возврат средств со счетов эскроу и процентов.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/nedostatki-kvartiry-i-vzyskanie-rashodov/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Дефекты квартиры
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Фиксация брака, строительно-техническая экспертиза и взыскание стоимости ремонта.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/spory-s-zastrojshchikom/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Все споры с застройщиком
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Комплексная защита прав участников долевого строительства в судах Липецка.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 9. ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
-              <span className="badge badge-gold" style={{ marginBottom: '16px', alignSelf: 'flex-start' }}>
-                РАСЧЁТ НЕУСТОЙКИ
-              </span>
-              <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '20px' }}>
-                Рассчитайте сумму неустойки с застройщика
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Рассчитайте сумму неустойки по вашему ДДУ
               </h2>
-              <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '32px' }}>
-                Укажите дату заключения ДДУ, плановый срок сдачи, цену договора и подписан ли акт приёма-передачи. Мы проверим применимые периоды и сообщим точную сумму к взысканию.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Укажите цену договора, плановый срок передачи квартиры и текущий статус (подписан ли акт приёма-передачи). Юрист сделает точный расчёт с учётом ставок ЦБ и мораториев.
               </p>
-
-              <div style={{
-                background: 'var(--color-bg-light)',
-                borderRadius: '16px',
-                padding: '24px 28px',
-                border: '1px solid rgba(23, 50, 77, 0.08)',
-                marginTop: 'auto'
-              }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '8px' }}>
-                  Офис в Липецке
-                </h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', margin: 0, lineHeight: 1.6 }}>
-                  г. Липецк, ул. Советская, д. 35, офис 213.<br />
-                  Телефон: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>+7 (4742) 20-15-25</a><br />
-                  Пн–Пт с 9:00 до 18:00. Возможно дистанционное ведение дел.
-                </p>
+              <div style={{ marginTop: '32px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Перезвоним вам в течение 15 минут в рабочее время</span>
+                </div>
               </div>
             </div>
 
-            <div>
-              <ContactsForm title="Написать нам" subtitle="" buttonText="Оставить заявку" commentPlaceholder="Кратко опишите ситуацию по недвижимости…" hiddenFields={[{ name: 'service', value: 'Взыскание неустойки по ДДУ' }]} />
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm 
+                  title="Написать нам" 
+                  subtitle="" 
+                  buttonText="Получить точный расчёт" 
+                  commentPlaceholder="Укажите застройщика, цену ДДУ и срок сдачи…" 
+                  subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                  hiddenFields={[{ name: 'service', value: 'Взыскание неустойки по ДДУ' }]} 
+                />
+              </div>
             </div>
           </div>
         </div>

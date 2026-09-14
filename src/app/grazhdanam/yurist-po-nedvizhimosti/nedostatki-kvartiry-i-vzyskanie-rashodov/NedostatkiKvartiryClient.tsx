@@ -69,70 +69,74 @@ export default function NedostatkiKvartiryClient() {
   const processSteps = [
     {
       num: '01',
-      title: 'Фиксация дефектов',
-      desc: 'Осматриваем квартиру с сертифицированным специалистом реестра НОПРИЗ/НОСТРОЙ, составляем акт осмотра.'
+      title: 'Приёмка и осмотр экспертом',
+      desc: 'Привлекаем эксперта из реестра НОПРИЗ/НОСТРОЙ со специальным поверенным оборудованием.'
     },
     {
       num: '02',
-      title: 'Сметный расчёт',
-      desc: 'Эксперт рассчитывает полную рыночную стоимость восстановительных строительных и отделочных работ.'
+      title: 'Дефектная ведомость и смета',
+      desc: 'Фиксируем все отклонения от СП и ГОСТ, рассчитываем сметную стоимость восстановительного ремонта.'
     },
     {
       num: '03',
       title: 'Досудебная претензия',
-      desc: 'Направляем застройщику мотивированное требование с приложением экспертного заключения и сметы.'
+      desc: 'Направляем застройщику требование о выплате стоимости устранения дефектов с приложением акта.'
     },
     {
       num: '04',
-      title: 'Судебный процесс',
-      desc: 'Представляем интересы в суде, участвуем в судебной экспертизе, обосновываем расчёт и парируем возражения.'
+      title: 'Судебный иск и экспертиза',
+      desc: 'Подаём иск по закону о защите прав потребителей, защищаем выводы экспертизы в судебных заседаниях.'
     },
     {
       num: '05',
-      title: 'Взыскание средств',
-      desc: 'Получаем исполнительный лист, направляем его в банк застройщика и контролируем поступление денег на счёт.'
+      title: 'Получение денег',
+      desc: 'Взыскиваем стоимость ремонта, штраф 50%, неустойку и расходы на экспертизу через банк застройщика.'
     }
   ];
 
   const pricingTiers = [
     {
-      title: <>Организация экспертизы</>,
-      subtitle: 'Фиксация брака',
+      title: <>Приёмка с экспертом</>,
+      subtitle: 'Выезд эксперта НОПРИЗ',
       popular: false,
-      price: 'от ХХХ ₽',
+      price: 'от 15 000 ₽',
       features: [
-        { name: 'Выезд эксперта реестра НОПРИЗ', value: '✓' },
-        { name: 'Инструментальное обследование квартиры', value: '✓' },
-        { name: 'Официальный акт со сметой расходов', value: '✓' }
+        { name: 'Инструментальный осмотр квартиры', value: '✓' },
+        { name: 'Проверка стен, стяжки, окон, вентиляции', value: '✓' },
+        { name: 'Составление дефектного акта по ГОСТ', value: '✓' },
+        { name: 'Инструкция по подписанию акта приёмки', value: '✓' }
       ],
-      buttonText: 'Вызвать эксперта',
+      buttonText: 'Заказать приёмку',
       buttonHref: '#form'
     },
     {
-      title: <>Претензия и досудебный этап</>,
+      title: <>Претензия и переговоры</>,
       subtitle: 'Досудебное урегулирование',
       popular: false,
-      price: 'от ХХХ ₽',
+      price: 'от 12 000 ₽',
       features: [
-        { name: 'Анализ условий гарантии по ДДУ', value: '✓' },
-        { name: 'Составление мотивированной претензии', value: '✓' },
-        { name: 'Переговоры с представителями застройщика', value: '✓' }
+        { name: 'Правовой анализ дефектной ведомости', value: '✓' },
+        { name: 'Составление сметного обоснования убытков', value: '✓' },
+        { name: 'Мотивированная досудебная претензия', value: '✓' },
+        { name: 'Переговоры с юридическим отделом застройщика', value: '✓' }
       ],
-      buttonText: 'Составить претензию',
+      buttonText: 'Направить претензию',
       buttonHref: '#form'
     },
     {
-      title: <>Взыскание через суд под ключ</>,
-      subtitle: 'Судебное ведение спора',
+      title: <>Взыскание в суде под ключ</>,
+      subtitle: 'Судебное возмещение стоимости ремонта',
       popular: true,
       badgeText: 'ВОСТРЕБОВАНО',
-      price: 'от ХХХ ₽',
+      price: 'от 35 000 ₽',
       features: [
-        { name: 'Подготовка иска и доказательной базы', value: '✓' },
-        { name: 'Представительство во всех заседаниях', value: '✓' },
-        { name: 'Взыскание сметы, штрафа 50% и экспертизы', value: '✓' }
+        { name: 'Подготовка иска и организация судебной экспертизы', value: '✓' },
+        { name: 'Взыскание стоимости ремонта + штраф 50%', value: '✓' },
+        { name: 'Взыскание морального вреда и расходов на юриста', value: '✓' },
+        { name: 'Участие во всех судебных заседаниях', value: '✓' },
+        { name: 'Исполнение решения и перечисление денег', value: '✓' }
       ],
-      buttonText: 'Взыскать под ключ',
+      buttonText: 'Взыскать в суде',
       buttonHref: '#form'
     }
   ];
@@ -158,14 +162,14 @@ export default function NedostatkiKvartiryClient() {
       {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/nedostatki-kvartiry-i-vzyskanie-rashodov/#service',
-        name: 'Недостатки квартиры от застройщика в Липецке',
-        serviceType: 'Взыскание расходов на устранение строительных дефектов',
+        name: 'Взыскание расходов за недостатки квартиры в Липецке',
+        serviceType: 'Компенсация за дефекты квартиры от застройщика',
         provider: {
           '@id': 'https://dejure-help.ru/#legalservice'
         },
         areaServed: ['Липецк', 'Липецкая область'],
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/nedostatki-kvartiry-i-vzyskanie-rashodov/',
-        description: 'Помощь при недостатках квартиры от застройщика в Липецке: оценим документы и дефекты, подготовим требование, взыщем расходы или уменьшение цены.'
+        description: 'Юрист по недостаткам квартиры в Липецке: приёмка с экспертом НОПРИЗ, дефектная ведомость, смета, суд с застройщиком и взыскание стоимости ремонта.'
       },
       {
         '@type': 'BreadcrumbList',
@@ -198,7 +202,7 @@ export default function NedostatkiKvartiryClient() {
           {
             '@type': 'ListItem',
             position: 5,
-            name: 'Недостатки квартиры и взыскание расходов',
+            name: 'Недостатки квартиры',
             item: 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/nedostatki-kvartiry-i-vzyskanie-rashodov/'
           }
         ]
@@ -237,17 +241,19 @@ export default function NedostatkiKvartiryClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Недостатки квартиры</span>
           </>
         }
-        superTitle="Защита дольщика при строительных дефектах"
-        title={<>Недостатки квартиры от застройщика: <br />взыскание расходов в Липецке</>}
+        superTitle="Строительный брак • приёмка • экспертиза • Липецк"
+        title={<>Взыскание компенсации <br />за дефекты квартиры в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
-            Организуем фиксацию дефектов сертифицированным экспертом НОПРИЗ, составим сметный расчёт, проведём досудебную претензию и взыщем полную стоимость ремонта через суд.
+            Поможем зафиксировать строительные дефекты при приёмке или в период 5-летней гарантии, привлечём эксперта НОПРИЗ/НОСТРОЙ и взыщем полную стоимость восстановительного ремонта.
           </span>
         }
-        primaryCtaText="Оценить стоимость устранения"
+        primaryCtaText="Разобрать дефекты"
         primaryCtaLink="#form"
         primaryCtaAnalytics="defects_hero_click"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        secondaryCtaText="Виды дефектов"
+        secondaryCtaLink="#defects"
         rightContent={
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
             <div style={{
@@ -290,8 +296,8 @@ export default function NedostatkiKvartiryClient() {
               <div className="doc-wrapper-float-3">
                 <div className="doc-sheet doc-sheet-3">
                   <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '65px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
-                      <span style={{ fontSize: '4px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>ДЕФЕКТНЫЙ АКТ</span>
+                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '75px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
+                      <span style={{ fontSize: '4.5px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>ДЕФЕКТНЫЙ АКТ</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '35px' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
@@ -299,10 +305,96 @@ export default function NedostatkiKvartiryClient() {
                         <div style={{ width: '55px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
                       </div>
                     </div>
-                    <div style={{ width: '120px', height: '6px', background: 'var(--color-gold)', margin: '0 auto 25px auto' }}></div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ width: '130px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 30px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                       <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '85%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '95%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-2">
+                <div className="doc-sheet doc-sheet-2">
+                  <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '110px', height: '30px', border: '1px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.2 }}>
+                        ЗАКЛЮЧЕНИЕ ЭКСПЕРТА<br/>
+                        НОПРИЗ / НОСТРОЙ
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+
+                    <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 16px auto' }}></div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                      <div style={{ width: '40%', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Специалист:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Юрист по дефектам:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-1">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
+                      <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>СМЕТНЫЙ РАСЧЁТ</span>
+                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>Возмещение ремонта</span>
+                      </div>
+                    </div>
+
+                    <div className="doc-map-box" style={{ 
+                      width: '100%', 
+                      height: '110px', 
+                      background: 'rgba(247, 244, 237, 0.6)', 
+                      border: '1px solid rgba(193, 160, 102, 0.3)', 
+                      borderRadius: '2px', 
+                      marginBottom: '12px',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '4px'
+                    }}>
+                      <svg width="100%" height="100%" viewBox="0 0 200 100" fill="none">
+                        <line x1="0" y1="50" x2="200" y2="50" stroke="rgba(23,50,77,0.06)" strokeDasharray="2 2" />
+                        <rect x="25" y="15" width="150" height="70" fill="rgba(193, 160, 102, 0.1)" stroke="#C1A066" strokeWidth="1.5" />
+                        <line x1="75" y1="15" x2="75" y2="85" stroke="#C1A066" strokeWidth="1" />
+                        <line x1="125" y1="15" x2="125" y2="85" stroke="#C1A066" strokeWidth="1" />
+                        <text x="32" y="35" fill="#C53030" fontSize="6" fontWeight="bold">Стяжка: трещины</text>
+                        <text x="82" y="35" fill="#C53030" fontSize="6" fontWeight="bold">Окна: продувание</text>
+                        <text x="130" y="35" fill="#C53030" fontSize="6" fontWeight="bold">Стены: уклон</text>
+                        <text x="45" y="70" fill="#1B8738" fontSize="7" fontWeight="bold">Смета Минстроя РФ</text>
+                        <text x="135" y="70" fill="#10273B" fontSize="6" fontWeight="bold">+ Штраф 50%</text>
+                      </svg>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                        <div style={{ fontSize: '11px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ЮК «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '9.5px', color: 'rgba(23,50,77,0.75)', fontFamily: 'var(--font-sans)' }}>Защита дольщиков • Липецк</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -310,160 +402,195 @@ export default function NedostatkiKvartiryClient() {
             </div>
           </div>
         }
+        trustItems={[
+          { text: 'Привлечение аттестованных судебных экспертов НОПРИЗ.' },
+          { text: 'Составление сметы по официальным нормативам Минстроя РФ.' },
+          { text: 'Взыскание полной стоимости ремонта, штрафа 50% и экспертизы.' }
+        ]}
       />
 
-      {/* ═══ 2. ТИПЫ ДЕФЕКТОВ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ 2. ТИПИЧНЫЕ ДЕФЕКТЫ ═══ */}
+      <section className="section bg-white" id="defects" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>ТИПИЧНЫЙ БРАК</span>
-            <h2 className="section-title">С какими недостатками мы помогаем</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              Любые отступления от строительных норм (СП, ГОСТ, СНиП) и условий проектной декларации подлежат компенсации за счёт застройщика.
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Типичные дефекты квартир в новостройках
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Большинство дефектов не видны невооружённым глазом и выявляются только специальным поверенным оборудованием.
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '24px' }}>
+          <div className="grid grid-4" style={{ gap: '24px', marginBottom: '40px' }}>
             {[
               {
-                tag: 'ГЕОМЕТРИЯ И СТЕНЫ',
-                title: 'Кривизна стен и перегородок',
-                desc: 'Отклонения от вертикали, неровности штукатурки, трещины в кладке и пустоты под отделочным слоем.'
+                tag: 'КРИВЫЕ СТЕНЫ',
+                title: 'Отклонения стен и полов',
+                desc: 'Отклонение геометрии стен от вертикали, неровности штукатурного слоя, трещины и пустоты полусухой стяжки.'
               },
               {
-                tag: 'ПОЛ И СТЯЖКА',
-                title: 'Дефекты стяжки пола',
-                desc: 'Перепады высот, бухтение стяжки, растрескивание, нарушение технологии полусухой заливки и гидроизоляции.'
+                tag: 'ОКОННЫЕ БЛОКИ',
+                title: 'Оконные конструкции',
+                desc: 'Продувание, деформация рам, отсутствие пароизоляционных лент по ГОСТ, царапины и окалины стеклопакетов.'
               },
               {
-                tag: 'ОКНА И ДВЕРИ',
-                title: 'Продувание оконных блоков',
-                desc: 'Деформация рам, отсутствие прижима, продувание монтажных швов, трещины стеклопакетов и царапины профиля.'
+                tag: 'ВЕНТИЛЯЦИЯ И СЫРОСТЬ',
+                title: 'Вентиляция и микроклимат',
+                desc: 'Обратная тяга в вентканалах, промерзание межпанельных швов, повышенная влажность и появление грибка.'
               },
               {
-                tag: 'ТЕПЛО И ВЕНТИЛЯЦИЯ',
-                title: 'Промерзание и плесень',
-                desc: 'Мостики холода на стыках плит, промерзание углов, обратная тяга вентиляции и сырость в жилых комнатах.'
+                tag: 'ИНЖЕНЕРНЫЕ СЕТИ',
+                title: 'Отопление и сантехника',
+                desc: 'Течи фитингов разводки в стяжке, отсутствие теплоизоляции труб, нарушения в электрощитах и заземлении.'
               }
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="situation-card"
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
                   padding: '28px 24px',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
-                  height: '100%'
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
-                <span style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  color: 'var(--color-gold)',
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <div style={{ 
+                  fontSize: '11px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-gold)', 
+                  marginBottom: '12px',
                   background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  borderRadius: '4px',
-                  display: 'inline-block',
-                  marginBottom: '16px',
-                  alignSelf: 'flex-start'
+                  padding: '3px 8px',
+                  alignSelf: 'flex-start',
+                  borderRadius: '2px'
                 }}>
                   {item.tag}
-                </span>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '12px', lineHeight: 1.3 }}>
+                </div>
+                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.35, margin: '0 0 10px 0' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
                   {item.desc}
                 </p>
               </div>
             ))}
           </div>
+
+          <div className="card service-card cta-banner-card" style={{ 
+            width: '100%', 
+            padding: '32px 36px', 
+            background: 'var(--color-deep-blue)', 
+            borderRadius: '0',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '24px',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}>
+            <div style={{ flex: '1 1 300px' }}>
+              <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                Не начинайте чистовой ремонт до проведения экспертизы!
+              </h3>
+              <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
+                После укладки плитки или ламината зафиксировать дефекты стяжки и стен будет юридически невозможно. Вызовите эксперта для фиксации брака.
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a 
+                href="#form" 
+                className="btn white-btn-custom" 
+                style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
+              >
+                Вызвать эксперта
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ═══ 3. ЧТО ВХОДИТ В УСЛУГУ (HelpScope с золотыми бейджами) ═══ */}
+      {/* ═══ 3. ЭТАПЫ РАБОТЫ ═══ */}
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>ПЛАН ВЗЫСКАНИЯ</span>
-            <h2 className="section-title">Что сделает юрист «Де-Юре» по дефектам новостройки</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              Формируем неопровержимую доказательную базу, чтобы исключить затягивание спора и отказ суда.
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Как получить компенсацию за строительный брак
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Последовательный юридический регламент от фиксации нарушений до перечисления денег на ваш счёт.
             </p>
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
             {[
               {
-                num: '01',
-                title: 'Осмотр с экспертом',
-                desc: 'Привлекаем аттестованного специалиста из национального реестра НОПРИЗ/НОСТРОЙ для инструментального обследования.'
+                title: 'Инструментальная фиксация',
+                desc: 'Осмотр сертифицированным экспертом НОПРИЗ с использованием лазерных дальномеров, тепловизоров и анемометров.'
               },
               {
-                num: '02',
-                title: 'Составление дефектного акта',
-                desc: 'Фиксируем все нарушения СП и ГОСТ с приложением поверочных сертификатов измерительных приборов.'
+                title: 'Дефектная ведомость и смета',
+                desc: 'Составление официальной сметы стоимости восстановительного ремонта с учётом рыночных цен материалов и работ.'
               },
               {
-                num: '03',
-                title: 'Сметный расчёт',
-                desc: 'Рассчитываем полную сметную стоимость ремонтно-восстановительных работ по официальным расценкам региона.'
+                title: 'Претензия застройщику',
+                desc: 'Направление обоснованной претензии с требованием добровольного возмещения в установленный законом срок.'
               },
               {
-                num: '04',
-                title: 'Досудебная претензия',
-                desc: 'Направляем застройщику мотивированное требование о выплате с установлением предусмотренного законом срока.'
+                title: 'Судебный процесс',
+                desc: 'Подача иска в суд, назначение судебной строительной экспертизы и защита выводов независимого эксперта.'
               },
               {
-                num: '05',
-                title: 'Защита в суде',
-                desc: 'Подаём иск, представляем экспертное заключение, участвуем в судебной экспертизе и требуем штраф 50%.'
+                title: 'Потребительский штраф 50%',
+                desc: 'Взыскание штрафа за отказ добровольно возместить ущерб, морального вреда и неустойки по закону о защите прав потребителей.'
               },
               {
-                num: '06',
                 title: 'Исполнение и выплата',
-                desc: 'Получаем исполнительный лист и добиваемся фактического зачисления денежных средств на ваш счёт.'
+                desc: 'Предъявление исполнительного листа в банк застройщика и контроль зачисления денег на расчётный счёт дольщика.'
               }
             ].map((step, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
-                  borderRadius: '16px',
-                  padding: '32px 24px 24px 24px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
                   borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-                  position: 'relative',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
                 <div style={{
                   position: 'absolute',
                   top: '-14px',
                   left: '24px',
-                  background: 'linear-gradient(135deg, var(--color-gold) 0%, #D4AF37 100%)',
+                  background: 'var(--color-gold)',
                   color: '#FFFFFF',
-                  fontSize: '0.8rem',
-                  fontWeight: 800,
-                  padding: '3px 12px',
-                  borderRadius: '20px',
-                  letterSpacing: '0.05em',
-                  boxShadow: '0 2px 6px rgba(193, 160, 102, 0.4)'
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
-                  {step.num}
+                  0{idx + 1}
                 </div>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginTop: '6px', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {step.title}
                 </h3>
-                <p style={{ fontSize: '0.93rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {step.desc}
                 </p>
               </div>
@@ -482,62 +609,155 @@ export default function NedostatkiKvartiryClient() {
 
       {/* ═══ 5. ПРОЦЕСС РАБОТЫ ═══ */}
       <ProcessBlock
-        title="Как проходит работа"
-        subtitle="Пять шагов от фиксации дефектов до получения денежной компенсации."
+        title="Процесс работы с дефектами"
+        subtitle="Пять шагов для получения денежной компенсации за строительные недостатки квартиры."
         steps={processSteps}
       />
 
       {/* ═══ 6. СТОИМОСТЬ ═══ */}
       <PricingBlock
         title="Стоимость услуг по недостаткам квартиры"
-        subtitle="Все понесённые расходы на проведение строительной экспертизы и юридическую помощь взыскиваются с застройщика."
+        subtitle="Прозрачная фиксация стоимости в договоре без скрытых доплат. Расходы на юриста и экспертизу взыскиваются с застройщика."
         tiers={pricingTiers}
       />
 
       {/* ═══ 7. ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
         faqs={faqs}
-        title={<>Ответы на частые вопросы <br />по строительным недостаткам</>}
-        subtitle="Правила фиксации строительного брака, порядок взаимодействия с экспертами и судебная практика."
+        title={<>Частые вопросы <br />по строительным недостаткам квартиры</>}
+        subtitle="Разъяснения норм ст. 7 закона № 214-ФЗ, гарантийных сроков и судебной практики в Липецке."
         ctaText="Задать свой вопрос"
         ctaLink="#form"
       />
 
-      {/* ═══ 8. ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ 8. СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Связанные услуги
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Смежные направления помощи дольщикам при нарушениях застройщика.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '20px' }}>
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/vzyskanie-neustojki-po-ddu/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Неустойка по ДДУ
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Взыскание неустойки за просрочку сдачи дома с компенсацией аренды жилья.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/rastorzhenie-ddu/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Расторжение ДДУ
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Выход из договора при существенных дефектах и возврат денег с эскроу-счёта.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/spory-s-zastrojshchikom/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Все споры с застройщиком
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Комплексная защита прав участников долевого строительства в Липецке.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 9. ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
-              <span className="badge badge-gold" style={{ marginBottom: '16px', alignSelf: 'flex-start' }}>
-                КОНСУЛЬТАЦИЯ
-              </span>
-              <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '20px' }}>
-                Взыщите расходы на устранение брака
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Взыщите стоимость устранения недостатков
               </h2>
-              <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '32px' }}>
-                Опишите выявленные недостатки квартиры, подписан ли акт приёма-передачи и начат ли чистовой ремонт. Мы организуем осмотр экспертом и подготовим требования.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко опишите характер дефектов (стены, стяжка, окна, промерзание), подписан ли акт приёма-передачи и начат ли ремонт. Юрист подскажет порядок вызова эксперта.
               </p>
-
-              <div style={{
-                background: 'var(--color-bg-light)',
-                borderRadius: '16px',
-                padding: '24px 28px',
-                border: '1px solid rgba(23, 50, 77, 0.08)',
-                marginTop: 'auto'
-              }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '8px' }}>
-                  Офис в Липецке
-                </h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', margin: 0, lineHeight: 1.6 }}>
-                  г. Липецк, ул. Советская, д. 35, офис 213.<br />
-                  Телефон: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>+7 (4742) 20-15-25</a><br />
-                  Пн–Пт с 9:00 до 18:00. Принимаем фото и акты дефектов на предварительный анализ.
-                </p>
+              <div style={{ marginTop: '32px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Перезвоним вам в течение 15 минут в рабочее время</span>
+                </div>
               </div>
             </div>
 
-            <div>
-              <ContactsForm title="Написать нам" subtitle="" buttonText="Оставить заявку" commentPlaceholder="Кратко опишите ситуацию по недвижимости…" hiddenFields={[{ name: 'service', value: 'Недостатки квартиры от застройщика' }]} />
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm 
+                  title="Написать нам" 
+                  subtitle="" 
+                  buttonText="Оставить заявку" 
+                  commentPlaceholder="Опишите обнаруженные дефекты новостройки…" 
+                  subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                  hiddenFields={[{ name: 'service', value: 'Недостатки квартиры новостройки' }]} 
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -69,71 +69,75 @@ export default function PriznaniePravaSobstvennostiClient() {
   const processSteps = [
     {
       num: '01',
-      title: 'Анализ оснований',
-      desc: 'Изучаем историю владения объектом, архивные справки, квитанции, выписки БТИ и отказ Росреестра.'
+      title: 'Архивный поиск и аудит',
+      desc: 'Запрашиваем архивные копии решений, ордеров, справок БТИ, выписок из похозяйственных книг.'
     },
     {
       num: '02',
-      title: 'Сбор доказательств',
-      desc: 'Направляем запросы в архивы, заказываем выписки из похозяйственных книг, опрашиваем свидетелей владения.'
+      title: 'Техническая инвентаризация',
+      desc: 'Организуем изготовление технического плана кадастровым инженером для постановки объекта на учёт.'
     },
     {
       num: '03',
-      title: 'Технический план',
-      desc: 'Кадастровый инженер проводит замеры объекта и изготавливает актуальный технический план.'
+      title: 'Отказ Росреестра',
+      desc: 'Подаём заявление на регистрацию для получения официального мотивированного отказа органа регистрации.'
     },
     {
       num: '04',
-      title: 'Судебный процесс',
-      desc: 'Составляем иск, рассчитываем госпошлину, обосновываем позицию и участвуем во всех судебных заседаниях.'
+      title: 'Иск в суд и доказывание',
+      desc: 'Формируем правовую позицию по ст. 218, 234 ГК РФ, собираем свидетельские показания и квитанции.'
     },
     {
       num: '05',
-      title: 'Регистрация в ЕГРН',
-      desc: 'Получаем решение суда с отметкой о вступлении в силу и сопровождаем внесение записи в Росреестр.'
+      title: 'Регистрация права в ЕГРН',
+      desc: 'Направляем вступившее в силу решение суда в Росреестр и получаем выписку с зарегистрированным правом.'
     }
   ];
 
   const pricingTiers = [
     {
-      title: <>Правовой анализ ситуации</>,
-      subtitle: 'Оценка перспективы',
+      title: <>Анализ документов и архив</>,
+      subtitle: 'Досудебный аудит и поиск',
       popular: false,
-      price: 'от ХХХ ₽',
+      price: 'от 10 000 ₽',
       features: [
-        { name: 'Анализ архивных и первичных документов', value: '✓' },
-        { name: 'Определение надлежащего ответчика и суда', value: '✓' },
-        { name: 'Расчёт госпошлины и дорожная карта', value: '✓' }
+        { name: 'Правовой анализ цепочки владения', value: '✓' },
+        { name: 'Архивные запросы в БТИ и госархивы', value: '✓' },
+        { name: 'Оценка оснований признания права', value: '✓' },
+        { name: 'Формирование доказательственной базы', value: '✓' }
       ],
-      buttonText: 'Оценить шансы',
+      buttonText: 'Заказать аудит',
       buttonHref: '#form'
     },
     {
-      title: <>Подготовка иска в суд</>,
-      subtitle: 'Процессуальный пакет',
-      popular: false,
-      price: 'от ХХХ ₽',
-      features: [
-        { name: 'Составление искового заявления', value: '✓' },
-        { name: 'Формирование доказательной базы', value: '✓' },
-        { name: 'Инструкция по подаче и ведению дела', value: '✓' }
-      ],
-      buttonText: 'Заказать иск',
-      buttonHref: '#form'
-    },
-    {
-      title: <>Признание права под ключ</>,
-      subtitle: 'Ведение дела до выписки ЕГРН',
+      title: <>Признание права в суде</>,
+      subtitle: 'Судебное оформление под ключ',
       popular: true,
       badgeText: 'ВОСТРЕБОВАНО',
-      price: 'от ХХХ ₽',
+      price: 'от 40 000 ₽',
       features: [
-        { name: 'Запросы в архивы и кадастровый учёт', value: '✓' },
-        { name: 'Полное судебное представительство', value: '✓' },
-        { name: 'Получение вступившего в силу решения суда', value: '✓' },
-        { name: 'Внесение записи о праве в Росреестр', value: '✓' }
+        { name: 'Подготовка искового заявления', value: '✓' },
+        { name: 'Сбор доказательств открытого владения', value: '✓' },
+        { name: 'Участие во всех судебных заседаниях', value: '✓' },
+        { name: 'Получение вступившего в силу решения', value: '✓' },
+        { name: 'Внесение сведений о праве в ЕГРН', value: '✓' }
       ],
-      buttonText: 'Оформить под ключ',
+      buttonText: 'Признать право в суде',
+      buttonHref: '#form'
+    },
+    {
+      title: <>Сложные объекты и банкротство</>,
+      subtitle: 'Новостройки, ликвидация, споры',
+      popular: false,
+      price: 'от 45 000 ₽',
+      features: [
+        { name: 'Признание права при банкротстве застройщика', value: '✓' },
+        { name: 'Оформление прав на ликвидированные ГСК/СНТ', value: '✓' },
+        { name: 'Отражение встречных притязаний администрации', value: '✓' },
+        { name: 'Сопровождение в арбитражном суде', value: '✓' },
+        { name: 'Регистрация права в Росреестре', value: '✓' }
+      ],
+      buttonText: 'Оформить сложный объект',
       buttonHref: '#form'
     }
   ];
@@ -166,7 +170,7 @@ export default function PriznaniePravaSobstvennostiClient() {
         },
         areaServed: ['Липецк', 'Липецкая область'],
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/priznanie-prava-sobstvennosti-na-nedvizhimost/',
-        description: 'Помощь в признании и регистрации права собственности на недвижимость в Липецке: проверим основание, подготовим документы, суд и внесение записи в ЕГРН.'
+        description: 'Признание права собственности на квартиру, дом, гараж, новостройку через суд в Липецке: приобретательная давность, утеря документов, регистрация в ЕГРН.'
       },
       {
         '@type': 'BreadcrumbList',
@@ -231,17 +235,19 @@ export default function PriznaniePravaSobstvennostiClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Признание права собственности</span>
           </>
         }
-        superTitle="От правового основания до записи в ЕГРН"
+        superTitle="Судебное признание права • ст. 218, 234 ГК РФ • Липецк"
         title={<>Признание права собственности <br />на недвижимость в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
-            Поможем оформить право собственности через суд при утере документов, ликвидации застройщика, отказе Росреестра или по приобретательной давности.
+            Оформим право собственности через суд на квартиру, дом, новостройку или гараж при утере документов, отказе Росреестра, банкротстве продавца или по приобретательной давности.
           </span>
         }
-        primaryCtaText="Оценить перспективу дела"
+        primaryCtaText="Признать право через суд"
         primaryCtaLink="#form"
-        primaryCtaAnalytics="prop_rights_hero_click"
+        primaryCtaAnalytics="recognition_hero_click"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        secondaryCtaText="Основания иска"
+        secondaryCtaLink="#situations"
         rightContent={
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
             <div style={{
@@ -284,8 +290,8 @@ export default function PriznaniePravaSobstvennostiClient() {
               <div className="doc-wrapper-float-3">
                 <div className="doc-sheet doc-sheet-3">
                   <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '65px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
-                      <span style={{ fontSize: '4px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>РЕШЕНИЕ СУДА</span>
+                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '75px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
+                      <span style={{ fontSize: '4.5px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>СТ. 218, 234 ГК</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '35px' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
@@ -293,10 +299,94 @@ export default function PriznaniePravaSobstvennostiClient() {
                         <div style={{ width: '55px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
                       </div>
                     </div>
-                    <div style={{ width: '120px', height: '6px', background: 'var(--color-gold)', margin: '0 auto 25px auto' }}></div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ width: '130px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 30px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                       <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '85%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '95%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-2">
+                <div className="doc-sheet doc-sheet-2">
+                  <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '110px', height: '30px', border: '1px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.2 }}>
+                        РЕШЕНИЕ СУДА<br/>
+                        О ПРИЗНАНИИ ПРАВА
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+
+                    <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 16px auto' }}></div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                      <div style={{ width: '40%', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Собственник:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Росреестр:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-1">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
+                      <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>РЕГИСТРАЦИЯ В ЕГРН</span>
+                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>На основании судебного акта</span>
+                      </div>
+                    </div>
+
+                    <div className="doc-map-box" style={{ 
+                      width: '100%', 
+                      height: '110px', 
+                      background: 'rgba(247, 244, 237, 0.6)', 
+                      border: '1px solid rgba(193, 160, 102, 0.3)', 
+                      borderRadius: '2px', 
+                      marginBottom: '12px',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '4px'
+                    }}>
+                      <svg width="100%" height="100%" viewBox="0 0 200 100" fill="none">
+                        <line x1="0" y1="50" x2="200" y2="50" stroke="rgba(23,50,77,0.06)" strokeDasharray="2 2" />
+                        <rect x="25" y="15" width="150" height="70" fill="rgba(193, 160, 102, 0.1)" stroke="#C1A066" strokeWidth="1.5" />
+                        <line x1="85" y1="15" x2="85" y2="85" stroke="#C1A066" strokeWidth="1" />
+                        <text x="35" y="38" fill="#10273B" fontSize="6.5" fontWeight="bold">Квартира / Дом</text>
+                        <text x="35" y="65" fill="#10273B" fontSize="6" fontWeight="bold">Владение &gt; 15 лет</text>
+                        <text x="100" y="45" fill="#1B8738" fontSize="7" fontWeight="bold">ПРАВО ПРИЗНАНО</text>
+                        <text x="102" y="65" fill="#10273B" fontSize="6" fontWeight="bold">Выписка ЕГРН получена</text>
+                      </svg>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                        <div style={{ fontSize: '11px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ЮК «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '9.5px', color: 'rgba(23,50,77,0.75)', fontFamily: 'var(--font-sans)' }}>Судебная защита прав • Липецк</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -304,160 +394,195 @@ export default function PriznaniePravaSobstvennostiClient() {
             </div>
           </div>
         }
+        trustItems={[
+          { text: 'Оформление прав при полной утрате исходных документов.' },
+          { text: 'Применение срока приобретательной давности по ст. 234 ГК РФ.' },
+          { text: 'Внесение записи в ЕГРН на основании решения суда под ключ.' }
+        ]}
       />
 
-      {/* ═══ 2. ПРИЧИНЫ ОБРАЩЕНИЯ В СУД ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ 2. СИТУАЦИИ ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>ТИПИЧНЫЕ СИТУАЦИИ</span>
-            <h2 className="section-title">Когда право признаётся через суд</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              Суд является единственным законным способом узаконить владение недвижимостью, если стандартный административный порядок не работает.
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Когда право признаётся только через суд
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Если Росреестр отказывает во внесудебной регистрации, единственным законным способом получить собственность остаётся судебный акт.
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '24px' }}>
+          <div className="grid grid-4" style={{ gap: '24px', marginBottom: '40px' }}>
             {[
               {
+                tag: 'ДАВНОСТЬ ВЛАДЕНИЯ',
+                title: 'Владение более 15 лет',
+                desc: 'Добросовестное, открытое и непрерывное владение домом или квартирой как своей собственной по ст. 234 ГК РФ.'
+              },
+              {
                 tag: 'УТЕРЯ ДОКУМЕНТОВ',
-                title: 'Нет правоустанавливающих бумаг',
-                desc: 'Договоры, ордера или свидетельства старого образца утеряны, а архивы не содержат полных сведений для Росреестра.'
+                title: 'Утрата архивов и ордеров',
+                desc: 'Отсутствие первичных правоустанавливающих договоров, ликвидация предприятий, выдававших жильё в 1980–1990-х годах.'
               },
               {
-                tag: 'СТ. 234 ГК РФ',
-                title: 'Приобретательная давность',
-                desc: 'Открытое, добросовестное и непрерывное владение домом, квартирой или дачей более 15 лет как своей собственной.'
+                tag: 'БАНКРОТСТВО',
+                title: 'Ликвидация застройщика',
+                desc: 'Застройщик обанкротился или исключён из ЕГРЮЛ до передачи документов в Росреестр при фактически сданном объекте.'
               },
               {
-                tag: 'ЛИКВИДАЦИЯ ПРОДАВЦА',
-                title: 'Ликвидация застройщика или ГСК',
-                desc: 'Компания-застройщик или кооператив прекратили деятельность, не успев передать документы на кадастровый учёт.'
-              },
-              {
-                tag: 'ОТКАЗ РОСРЕЕСТРА',
-                title: 'Приостановка и отказ в ЕГРН',
-                desc: 'Регистратор вынес решение об отказе из-за технических ошибок в документах или невозможности подтвердить правопредшественника.'
+                tag: 'ГАРАЖИ И КООПЕРАТИВЫ',
+                title: 'Паенакопления в ГСК / СНТ',
+                desc: 'Полная выплата пая при отсутствии председателя, правоустанавливающих документов кооператива или актов ввода.'
               }
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="situation-card"
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
                   padding: '28px 24px',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
-                  height: '100%'
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
-                <span style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  color: 'var(--color-gold)',
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <div style={{ 
+                  fontSize: '11px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-gold)', 
+                  marginBottom: '12px',
                   background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  borderRadius: '4px',
-                  display: 'inline-block',
-                  marginBottom: '16px',
-                  alignSelf: 'flex-start'
+                  padding: '3px 8px',
+                  alignSelf: 'flex-start',
+                  borderRadius: '2px'
                 }}>
                   {item.tag}
-                </span>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '12px', lineHeight: 1.3 }}>
+                </div>
+                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.35, margin: '0 0 10px 0' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
                   {item.desc}
                 </p>
               </div>
             ))}
           </div>
+
+          <div className="card service-card cta-banner-card" style={{ 
+            width: '100%', 
+            padding: '32px 36px', 
+            background: 'var(--color-deep-blue)', 
+            borderRadius: '0',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '24px',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}>
+            <div style={{ flex: '1 1 300px' }}>
+              <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                Получили письменный отказ или приостановку Росреестра?
+              </h3>
+              <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
+                Покажите уведомление юристу. Мы проанализируем основания отказа и подготовим иск для признания права собственности через суд.
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a 
+                href="#form" 
+                className="btn white-btn-custom" 
+                style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
+              >
+                Разобрать отказ Росреестра
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ═══ 3. ЧТО ВХОДИТ В УСЛУГУ (HelpScope с золотыми бейджами) ═══ */}
+      {/* ═══ 3. ЭТАПЫ СУДЕБНОГО ПРИЗНАНИЯ ═══ */}
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>ПЛАН ЗАЩИТЫ</span>
-            <h2 className="section-title">Что сделает юрист «Де-Юре» по признанию права</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              Мы выстраиваем юридическую стратегию и собираем неопровержимый пакет доказательств для суда.
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Этапы судебного признания права
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Полный цикл защиты ваших законных интересов до получения выписки из ЕГРН.
             </p>
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
             {[
               {
-                num: '01',
-                title: 'Восстановление архивов',
-                desc: 'Формируем адвокатские запросы в архивы Липецкой области, БТИ, администрации поселений и налоговую службу.'
+                title: 'Сбор архивных доказательств',
+                desc: 'Направляем запросы в муниципальные архивы, органы технической инвентаризации (БТИ), налоговые органы и ведомства.'
               },
               {
-                num: '02',
-                title: 'Кадастровые замеры',
-                desc: 'Привлекаем кадастрового инженера для точного определения координат, площади и изготовления техплана объекта.'
+                title: 'Технический план объекта',
+                desc: 'Привлекаем аттестованного кадастрового инженера для проведения обмеров и формирования технического описания недвижимости.'
               },
               {
-                num: '03',
-                title: 'Свидетельская база',
-                desc: 'Организуем подготовку свидетелей, подтверждающих факт непрерывного и открытого владения недвижимым имуществом.'
+                title: 'Формирование иска по ГК РФ',
+                desc: 'Составляем иск, определяем правильный состав ответчиков и третьих лиц (администрация города, Росреестр, наследники).'
               },
               {
-                num: '04',
-                title: 'Составление иска',
-                desc: 'Определяем надлежащего ответчика (муниципалитет, ТУ Росимущества), формулируем требования и рассчитываем пошлину.'
+                title: 'Судебное представительство',
+                desc: 'Участвуем во всех судебных заседаниях, допрашиваем свидетелей, представляем доказательства добросовестности.'
               },
               {
-                num: '05',
-                title: 'Представительство в суде',
-                desc: 'Участвуем во всех судебных заседаниях, приобщаем архивные материалы, отстаиваем законность основания владения.'
+                title: 'Вступление решения в силу',
+                desc: 'Контролируем изготовление решения в окончательной форме, получаем отметку о вступлении в законную силу.'
               },
               {
-                num: '06',
-                title: 'Государственная регистрация',
-                desc: 'После вступления судебного решения в законную силу подаём документы в Росреестр и передаём клиенту выписку ЕГРН.'
+                title: 'Регистрация права в ЕГРН',
+                desc: 'Сдаём судебный акт в Росреестр и передаём доверителю выписку из ЕГРН с зарегистрированным правом собственности.'
               }
             ].map((step, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
-                  borderRadius: '16px',
-                  padding: '32px 24px 24px 24px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
                   borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-                  position: 'relative',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
                 <div style={{
                   position: 'absolute',
                   top: '-14px',
                   left: '24px',
-                  background: 'linear-gradient(135deg, var(--color-gold) 0%, #D4AF37 100%)',
+                  background: 'var(--color-gold)',
                   color: '#FFFFFF',
-                  fontSize: '0.8rem',
-                  fontWeight: 800,
-                  padding: '3px 12px',
-                  borderRadius: '20px',
-                  letterSpacing: '0.05em',
-                  boxShadow: '0 2px 6px rgba(193, 160, 102, 0.4)'
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
-                  {step.num}
+                  0{idx + 1}
                 </div>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginTop: '6px', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {step.title}
                 </h3>
-                <p style={{ fontSize: '0.93rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {step.desc}
                 </p>
               </div>
@@ -468,70 +593,163 @@ export default function PriznaniePravaSobstvennostiClient() {
 
       {/* ═══ 4. КЕЙСЫ ═══ */}
       <CasesBlock
-        title="Примеры судебного признания прав"
+        title="Примеры признания права собственности"
         showDemoWarning={false}
         resultLabel="Результат"
         cases={cases}
       />
 
-      {/* ═══ 5. ПРОЦЕСС РАБОТЫ ═══ */}
+      {/* ═══ 5. ПРОЦЕСС ═══ */}
       <ProcessBlock
-        title="Как проходит работа"
-        subtitle="Пять шагов от первичного изучения документов до внесения записи в ЕГРН."
+        title="Порядок работы юриста"
+        subtitle="Пять шагов для получения законного права собственности на спорный объект."
         steps={processSteps}
       />
 
       {/* ═══ 6. СТОИМОСТЬ ═══ */}
       <PricingBlock
         title="Стоимость услуг по признанию права собственности"
-        subtitle="Стоимость юридического сопровождения фиксируется в договоре и не меняется в процессе ведения дела."
+        subtitle="Прозрачная фиксация стоимости в договоре без скрытых доплат. Оплата судебной пошлины рассчитывается отдельно."
         tiers={pricingTiers}
       />
 
       {/* ═══ 7. ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
         faqs={faqs}
-        title={<>Ответы на частые вопросы <br />по признанию права собственности</>}
-        subtitle="Правовые разъяснения норм Гражданского кодекса РФ, правил расчёта госпошлины и оформления через суд."
+        title={<>Частые вопросы <br />по признанию права собственности</>}
+        subtitle="Разъяснения норм ст. 218 и 234 ГК РФ, правил оформления объектов без документов и судебной практики."
         ctaText="Задать свой вопрос"
         ctaLink="#form"
       />
 
-      {/* ═══ 8. ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ 8. СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Связанные услуги
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Смежные направления помощи по защите и оформлению недвижимости.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '20px' }}>
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/legalizaciya-samovolnoj-postrojki/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Узаконивание самостроя
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Легализация домов, пристроек и реконструкций по ст. 222 ГК РФ.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/zemelnyj-yurist/oformlenie-prav-na-zemelnyj-uchastok/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Оформление прав на землю
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Приватизация и выкуп земельных участков под оформленными зданиями.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/osparivanie-sdelok-s-nedvizhimostyu/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Оспаривание сделок
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Возврат имущества, незаконно оформленного третьими лицами.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 9. ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
-              <span className="badge badge-gold" style={{ marginBottom: '16px', alignSelf: 'flex-start' }}>
-                КОНСУЛЬТАЦИЯ
-              </span>
-              <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '20px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
                 Оформите право собственности через суд
               </h2>
-              <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '32px' }}>
-                Укажите объект (квартира, дом, гараж, участок), какие документы сохранились и причину, по которой Росреестр отказывает в регистрации. Мы проверим перспективы и поможем оформить право.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко опишите объект (квартира, дом, гараж), имеющиеся документы и причину невозможности регистрации в обычном порядке. Мы предложим надёжную стратегию защиты.
               </p>
-
-              <div style={{
-                background: 'var(--color-bg-light)',
-                borderRadius: '16px',
-                padding: '24px 28px',
-                border: '1px solid rgba(23, 50, 77, 0.08)',
-                marginTop: 'auto'
-              }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '8px' }}>
-                  Офис в Липецке
-                </h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', margin: 0, lineHeight: 1.6 }}>
-                  г. Липецк, ул. Советская, д. 35, офис 213.<br />
-                  Телефон: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>+7 (4742) 20-15-25</a><br />
-                  Пн–Пт с 9:00 до 18:00. Принимаем архивные документы на предварительный анализ.
-                </p>
+              <div style={{ marginTop: '32px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Перезвоним вам в течение 15 минут в рабочее время</span>
+                </div>
               </div>
             </div>
 
-            <div>
-              <ContactsForm title="Написать нам" subtitle="" buttonText="Оставить заявку" commentPlaceholder="Кратко опишите ситуацию по недвижимости…" hiddenFields={[{ name: 'service', value: 'Признание права собственности' }]} />
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm 
+                  title="Написать нам" 
+                  subtitle="" 
+                  buttonText="Оставить заявку" 
+                  commentPlaceholder="Опишите ситуацию (объект, утеря документов, отказ Росреестра)…" 
+                  subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                  hiddenFields={[{ name: 'service', value: 'Признание права собственности на недвижимость' }]} 
+                />
+              </div>
             </div>
           </div>
         </div>

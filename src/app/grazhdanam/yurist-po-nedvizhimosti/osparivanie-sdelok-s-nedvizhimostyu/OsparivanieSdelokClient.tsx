@@ -69,71 +69,75 @@ export default function OsparivanieSdelokClient() {
   const processSteps = [
     {
       num: '01',
-      title: 'Анализ оснований',
-      desc: 'Изучаем текст договора, платёжные документы, медицинские справки и проверяем сроки исковой давности.'
+      title: 'Аудит сделки и оснований',
+      desc: 'Анализируем договор, расчёты, дееспособность сторон, банкротные риски и процессуальные сроки.'
     },
     {
       num: '02',
-      title: 'Обеспечительные меры',
-      desc: 'Ходатайствуем перед судом о наложении ареста на недвижимость и запрета регистрационных действий Росреестра.'
+      title: 'Срочный арест объекта',
+      desc: 'Подаём заявление об обеспечительных мерах для запрета Росреестру регистрировать перепродажу квартиры.'
     },
     {
       num: '03',
-      title: 'Формирование позиции',
-      desc: 'Готовим исковое заявление либо мотивированные возражения ответчика со сбором доказательств добросовестности.'
+      title: 'Сбор доказательств',
+      desc: 'Запрашиваем медицинскую документацию, банковские выписки, проводим досудебную оценку стоимости.'
     },
     {
       num: '04',
-      title: 'Судебная экспертиза',
-      desc: 'Формулируем вопросы экспертам, сопровождаем судебно-психиатрическую, почерковедческую или оценочную экспертизу.'
+      title: 'Судебный процесс',
+      desc: 'Представляем интересы в суде, допрашиваем свидетелей и защищаем позицию при судебной экспертизе.'
     },
     {
       num: '05',
-      title: 'Применение последствий',
-      desc: 'Добиваемся возврата объекта, сохранения права собственности либо полного взыскания уплаченных денег.'
+      title: 'Реституция и Росреестр',
+      desc: 'Исполняем решение суда: возвращаем недвижимость в собственность либо добиваемся выплаты денег.'
     }
   ];
 
   const pricingTiers = [
     {
       title: <>Правовой анализ сделки</>,
-      subtitle: 'Оценка оснований',
+      subtitle: 'Оценка шансов на победу',
       popular: false,
-      price: 'от ХХХ ₽',
+      price: 'от 12 000 ₽',
       features: [
-        { name: 'Анализ обстоятельств совершения сделки', value: '✓' },
-        { name: 'Проверка срока исковой давности', value: '✓' },
-        { name: 'Оценка риска признания недействительной', value: '✓' }
+        { name: 'Анализ оспоримости договора по ГК РФ', value: '✓' },
+        { name: 'Проверка сроков исковой давности', value: '✓' },
+        { name: 'Оценка статуса добросовестного приобретателя', value: '✓' },
+        { name: 'Письменная стратегия ведения дела', value: '✓' }
       ],
-      buttonText: 'Оценить риски',
+      buttonText: 'Заказать анализ',
       buttonHref: '#form'
     },
     {
-      title: <>Срочный арест объекта</>,
-      subtitle: 'Обеспечительные меры',
-      popular: false,
-      price: 'от ХХХ ₽',
-      features: [
-        { name: 'Заявление об аресте недвижимости в суд', value: '✓' },
-        { name: 'Запрет перерегистрации в Росреестре', value: '✓' },
-        { name: 'Контроль внесения отметки в ЕГРН', value: '✓' }
-      ],
-      buttonText: 'Наложить арест',
-      buttonHref: '#form'
-    },
-    {
-      title: <>Ведение дела в суде под ключ</>,
-      subtitle: 'Иск или защита в суде',
+      title: <>Судебное признание недействительности</>,
+      subtitle: 'Оспаривание сделки под ключ',
       popular: true,
       badgeText: 'ВОСТРЕБОВАНО',
-      price: 'от ХХХ ₽',
+      price: 'от 45 000 ₽',
       features: [
-        { name: 'Составление иска или отзыва на иск', value: '✓' },
-        { name: 'Представительство во всех инстанциях', value: '✓' },
-        { name: 'Сопровождение судебных экспертиз', value: '✓' },
-        { name: 'Исполнение решения и регистрация в ЕГРН', value: '✓' }
+        { name: 'Накладывание срочного ареста на объект', value: '✓' },
+        { name: 'Подготовка иска и сбор доказательств', value: '✓' },
+        { name: 'Назначение судебной психиатрической экспертизы', value: '✓' },
+        { name: 'Участие во всех судебных заседаниях', value: '✓' },
+        { name: 'Возврат объекта и внесение изменений в ЕГРН', value: '✓' }
       ],
-      buttonText: 'Защитить права в суде',
+      buttonText: 'Оспорить сделку',
+      buttonHref: '#form'
+    },
+    {
+      title: <>Защита добросовестного покупателя</>,
+      subtitle: 'Сохранение купленного жилья',
+      popular: false,
+      price: 'от 45 000 ₽',
+      features: [
+        { name: 'Формирование статуса добросовестного приобретателя', value: '✓' },
+        { name: 'Защита от претензий родственников и опеки', value: '✓' },
+        { name: 'Отражение исков управляющих при банкротстве', value: '✓' },
+        { name: 'Сохранение права собственности за покупателем', value: '✓' },
+        { name: 'Взыскание судебных расходов с оппонента', value: '✓' }
+      ],
+      buttonText: 'Защитить жильё',
       buttonHref: '#form'
     }
   ];
@@ -160,13 +164,13 @@ export default function OsparivanieSdelokClient() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/osparivanie-sdelok-s-nedvizhimostyu/#service',
         name: 'Оспаривание сделок с недвижимостью в Липецке',
-        serviceType: 'Судебное оспаривание сделок с недвижимостью',
+        serviceType: 'Оспаривание сделок и признание договоров недействительными',
         provider: {
           '@id': 'https://dejure-help.ru/#legalservice'
         },
         areaServed: ['Липецк', 'Липецкая область'],
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/osparivanie-sdelok-s-nedvizhimostyu/',
-        description: 'Помощь в оспаривании сделок с недвижимостью в Липецке: оценим основания и срок, подготовим иск или защиту, добьёмся применимых последствий.'
+        description: 'Оспаривание сделок с недвижимостью в Липецке: признание договоров купли-продажи и дарения недействительными, защита добросовестных покупателей, арест объектов.'
       },
       {
         '@type': 'BreadcrumbList',
@@ -231,17 +235,19 @@ export default function OsparivanieSdelokClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Оспаривание сделок</span>
           </>
         }
-        superTitle="Основание, срок и защита объекта"
+        superTitle="Недействительность сделок • ст. 166–179 ГК РФ • Липецк"
         title={<>Оспаривание сделок <br />с недвижимостью в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
-            Оценим законность купли-продажи, дарения или ренты, наложим арест на спорный объект, оспорим незаконную сделку либо защитим права добросовестного приобретателя.
+            Признаем договор купли-продажи, дарения или залога недействительным и вернём квартиру в собственность, либо защитим право добросовестного покупателя от изъятия.
           </span>
         }
-        primaryCtaText="Оценить перспективы спора"
+        primaryCtaText="Оспорить или защитить сделку"
         primaryCtaLink="#form"
-        primaryCtaAnalytics="transaction_dispute_hero_click"
+        primaryCtaAnalytics="dispute_deal_hero_click"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        secondaryCtaText="Основания спора"
+        secondaryCtaLink="#grounds"
         rightContent={
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
             <div style={{
@@ -284,8 +290,8 @@ export default function OsparivanieSdelokClient() {
               <div className="doc-wrapper-float-3">
                 <div className="doc-sheet doc-sheet-3">
                   <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '65px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
-                      <span style={{ fontSize: '4px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>СТ. 166-181 ГК</span>
+                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '75px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
+                      <span style={{ fontSize: '4.5px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>СТ. 166-179 ГК</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '35px' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
@@ -293,10 +299,94 @@ export default function OsparivanieSdelokClient() {
                         <div style={{ width: '55px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
                       </div>
                     </div>
-                    <div style={{ width: '120px', height: '6px', background: 'var(--color-gold)', margin: '0 auto 25px auto' }}></div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ width: '130px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 30px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                       <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '85%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '95%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-2">
+                <div className="doc-sheet doc-sheet-2">
+                  <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '110px', height: '30px', border: '1px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.2 }}>
+                        ОПРЕДЕЛЕНИЕ СУДА<br/>
+                        О НАЛОЖЕНИИ АРЕСТА
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+
+                    <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 16px auto' }}></div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                      <div style={{ width: '40%', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Истец:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Ответчик:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-1">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
+                      <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>РЕСТИТУЦИЯ</span>
+                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>Возврат прав на объект</span>
+                      </div>
+                    </div>
+
+                    <div className="doc-map-box" style={{ 
+                      width: '100%', 
+                      height: '110px', 
+                      background: 'rgba(247, 244, 237, 0.6)', 
+                      border: '1px solid rgba(193, 160, 102, 0.3)', 
+                      borderRadius: '2px', 
+                      marginBottom: '12px',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '4px'
+                    }}>
+                      <svg width="100%" height="100%" viewBox="0 0 200 100" fill="none">
+                        <line x1="0" y1="50" x2="200" y2="50" stroke="rgba(23,50,77,0.06)" strokeDasharray="2 2" />
+                        <rect x="25" y="15" width="150" height="70" fill="rgba(193, 160, 102, 0.1)" stroke="#C1A066" strokeWidth="1.5" />
+                        <line x1="100" y1="15" x2="100" y2="85" stroke="#C1A066" strokeWidth="1" strokeDasharray="3 3" />
+                        <text x="35" y="38" fill="#10273B" fontSize="6.5" fontWeight="bold">Договор купли</text>
+                        <text x="110" y="38" fill="#C53030" fontSize="6.5" fontWeight="bold">Спор о праве</text>
+                        <text x="35" y="65" fill="#1B8738" fontSize="6" fontWeight="bold">Арест наложен</text>
+                        <text x="105" y="65" fill="#10273B" fontSize="6" fontWeight="bold">Ст. 302 ГК РФ</text>
+                      </svg>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                        <div style={{ fontSize: '11px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ЮК «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '9.5px', color: 'rgba(23,50,77,0.75)', fontFamily: 'var(--font-sans)' }}>Защита сделок • Липецк</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -304,160 +394,195 @@ export default function OsparivanieSdelokClient() {
             </div>
           </div>
         }
+        trustItems={[
+          { text: 'Срочное наложение обеспечительных мер (судебного ареста).' },
+          { text: 'Назначение судебной психолого-психиатрической экспертизы.' },
+          { text: 'Защита добросовестных приобретателей от изъятия жилья.' }
+        ]}
       />
 
-      {/* ═══ 2. ОСНОВАНИЯ ДЛЯ ОСПАРИВАНИЯ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ 2. ОСНОВАНИЯ ОСПАРИВАНИЯ ═══ */}
+      <section className="section bg-white" id="grounds" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>ОСНОВАНИЯ СПОРА</span>
-            <h2 className="section-title">В каких случаях сделка может быть отменена</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              Мы защищаем собственников как со стороны истца (возврат незаконно отчуждённого жилья), так и со стороны ответчика (защита добросовестного покупателя).
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Основания для признания сделки недействительной
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Каждая правовая ситуация требует отдельного состава доказывания по Гражданскому и Семейному кодексам РФ.
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '24px' }}>
+          <div className="grid grid-4" style={{ gap: '24px', marginBottom: '40px' }}>
             {[
               {
-                tag: 'СТ. 177 ГК РФ',
-                title: 'Пороки воли продавца',
-                desc: 'Продавец в момент сделки не был способен понимать значение своих действий или руководить ими (болезнь, возраст, алкоголизация).'
+                tag: 'НЕДЕЕСПОСОБНОСТЬ',
+                title: 'Порок воли продавца',
+                desc: 'Совершение сделки гражданином, не способным понимать значение действий или руководить ими из-за болезни или возраста (ст. 177 ГК).'
               },
               {
-                tag: 'СТ. 178, 179 ГК РФ',
-                title: 'Обман или заблуждение',
-                desc: 'Сделка совершена под влиянием обмана, насилия, угроз или неблагоприятных стечений тяжёлых обстоятельств (кабальная сделка).'
+                tag: 'ОБМАН И ДАВЛЕНИЕ',
+                title: 'Заблуждение и обман',
+                desc: 'Подписание договора дарения вместо пожизненного содержания, обман со стороны третьих лиц, кабальные условия сделки (ст. 178, 179 ГК).'
               },
               {
-                tag: 'СТ. 302 ГК РФ',
-                title: 'Защита покупателя',
-                desc: 'Отстаивание статуса добросовестного приобретателя при попытке прежних собственников или их наследников истребовать квартиру.'
+                tag: 'БРАК И ДЕТИ',
+                title: 'Права супругов и детей',
+                desc: 'Отчуждение совместной недвижимости без нотариального согласия супруга (ст. 35 СК РФ) или без согласования с органами опеки.'
               },
               {
                 tag: 'БАНКРОТСТВО',
                 title: 'Оспаривание при банкротстве',
-                desc: 'Защита от требований арбитражного управляющего вернуть недвижимость по сделкам с неравноценным встречным исполнением.'
+                desc: 'Продажа объекта по заниженной цене в пределах 3 лет до возбуждения банкротства продавца (ст. 61.2 Закона о банкротстве).'
               }
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="situation-card"
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
                   padding: '28px 24px',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
-                  height: '100%'
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
-                <span style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  color: 'var(--color-gold)',
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <div style={{ 
+                  fontSize: '11px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-gold)', 
+                  marginBottom: '12px',
                   background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  borderRadius: '4px',
-                  display: 'inline-block',
-                  marginBottom: '16px',
-                  alignSelf: 'flex-start'
+                  padding: '3px 8px',
+                  alignSelf: 'flex-start',
+                  borderRadius: '2px'
                 }}>
                   {item.tag}
-                </span>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '12px', lineHeight: 1.3 }}>
+                </div>
+                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.35, margin: '0 0 10px 0' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
                   {item.desc}
                 </p>
               </div>
             ))}
           </div>
+
+          <div className="card service-card cta-banner-card" style={{ 
+            width: '100%', 
+            padding: '32px 36px', 
+            background: 'var(--color-deep-blue)', 
+            borderRadius: '0',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '24px',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}>
+            <div style={{ flex: '1 1 300px' }}>
+              <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                Опасаетесь срочной перепродажи спорного жилья?
+              </h3>
+              <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
+                Мы подготовим заявление о наложении обеспечительных мер и судебного запрета регистрационных действий в день обращения.
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a 
+                href="#form" 
+                className="btn white-btn-custom" 
+                style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
+              >
+                Наложить арест на объект
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ═══ 3. ЧТО ВХОДИТ В УСЛУГУ (HelpScope с золотыми бейджами) ═══ */}
+      {/* ═══ 3. ЭТАПЫ СУДЕБНОГО СПОРА ═══ */}
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>ПЛАН ЗАЩИТЫ</span>
-            <h2 className="section-title">Что сделает судебный юрист «Де-Юре»</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              Разрабатываем доказательственную стратегию и защищаем объект недвижимости во всех судебных инстанциях.
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Порядок оспаривания и защиты сделки
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Комплекс мер для надёжной защиты имущественных прав доверителя в районных и арбитражных судах.
             </p>
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
             {[
               {
-                num: '01',
-                title: 'Срочный арест объекта',
-                desc: 'Подаём ходатайство о наложении обеспечительных мер (арест, запрет регистрационных действий), чтобы исключить перепродажу.'
+                title: 'Срочные обеспечительные меры',
+                desc: 'Подача ходатайства об аресте объекта недвижимости в суд для предотвращения дальнейших перепродаж третьим лицам.'
               },
               {
-                num: '02',
-                title: 'Анализ давности',
-                desc: 'Оцениваем годичный или трёхлетний срок исковой давности и моменты, когда сторона узнала о нарушении своих прав.'
+                title: 'Сбор доказательственной базы',
+                desc: 'Истребование медицинских карт, банковских выписок, аудиозаписей переговоров, архивных регистрационных дел.'
               },
               {
-                num: '03',
-                title: 'Сбор доказательств',
-                desc: 'Истребуем выписки банковских переводов, расписки, медицинские карты, нотариальные дела и архивные договоры.'
+                title: 'Судебно-психиатрическая экспертиза',
+                desc: 'Формулирование вопросов и привлечение экспертов для оценки способности лица понимать значение действий в день сделки.'
               },
               {
-                num: '04',
-                title: 'Судебная экспертиза',
-                desc: 'Формируем вопросы для судебно-психиатрической, почерковедческой или оценочной экспертизы и защищаем выводы.'
+                title: 'Защита добросовестности',
+                desc: 'Доказывание проявления должной осмотрительности покупателем, рыночности цены и возмездности расчётов по ст. 302 ГК.'
               },
               {
-                num: '05',
-                title: 'Представительство в суде',
-                desc: 'Участвуем во всех судебных заседаниях в Липецке и Липецком областном суде, опровергаем доводы оппонентов.'
+                title: 'Судебное представительство',
+                desc: 'Защита позиции во всех судебных инстанциях Липецкой области, допрос свидетелей и опровержение доводов оппонентов.'
               },
               {
-                num: '06',
-                title: 'Реституция и ЕГРН',
-                desc: 'Контролируем снятие обременений, исполнение судебного акта, возврат денежных средств и регистрацию в Росреестре.'
+                title: 'Двусторонняя реституция',
+                desc: 'Возврат объекта законному собственнику либо взыскание полной стоимости недвижимости с недобросовестной стороны.'
               }
             ].map((step, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
-                  borderRadius: '16px',
-                  padding: '32px 24px 24px 24px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
                   borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-                  position: 'relative',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
                 <div style={{
                   position: 'absolute',
                   top: '-14px',
                   left: '24px',
-                  background: 'linear-gradient(135deg, var(--color-gold) 0%, #D4AF37 100%)',
+                  background: 'var(--color-gold)',
                   color: '#FFFFFF',
-                  fontSize: '0.8rem',
-                  fontWeight: 800,
-                  padding: '3px 12px',
-                  borderRadius: '20px',
-                  letterSpacing: '0.05em',
-                  boxShadow: '0 2px 6px rgba(193, 160, 102, 0.4)'
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
-                  {step.num}
+                  0{idx + 1}
                 </div>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginTop: '6px', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {step.title}
                 </h3>
-                <p style={{ fontSize: '0.93rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {step.desc}
                 </p>
               </div>
@@ -468,70 +593,163 @@ export default function OsparivanieSdelokClient() {
 
       {/* ═══ 4. КЕЙСЫ ═══ */}
       <CasesBlock
-        title="Примеры споров по сделкам"
+        title="Примеры судебных споров по сделкам"
         showDemoWarning={false}
         resultLabel="Результат"
         cases={cases}
       />
 
-      {/* ═══ 5. ПРОЦЕСС РАБОТЫ ═══ */}
+      {/* ═══ 5. ПРОЦЕСС ═══ */}
       <ProcessBlock
-        title="Как проходит работа"
-        subtitle="Пять этапов судебной защиты права собственности и денежных средств."
+        title="Процесс защиты интересов"
+        subtitle="Пять шагов для признания сделки недействительной или защиты статуса добросовестного покупателя."
         steps={processSteps}
       />
 
       {/* ═══ 6. СТОИМОСТЬ ═══ */}
       <PricingBlock
         title="Стоимость услуг по оспариванию сделок"
-        subtitle="Фиксированная стоимость юридического ведения дела фиксируется в договоре и взыскивается с проигравшей стороны."
+        subtitle="Прозрачная фиксация стоимости в договоре. Судебные расходы взыскиваются с проигравшей стороны."
         tiers={pricingTiers}
       />
 
       {/* ═══ 7. ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
         faqs={faqs}
-        title={<>Ответы на частые вопросы <br />по оспариванию сделок</>}
-        subtitle="Разъяснения положений статей 166–181 и 302 ГК РФ, сроков исковой давности и правил защиты покупателей."
+        title={<>Частые вопросы <br />по оспариванию сделок с недвижимостью</>}
+        subtitle="Разъяснения статей 166–179 ГК РФ, сроков давности и статуса добросовестного приобретателя."
         ctaText="Задать свой вопрос"
         ctaLink="#form"
       />
 
-      {/* ═══ 8. ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ 8. СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Связанные услуги
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Смежные направления помощи по защите имущественных прав.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '20px' }}>
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/soprovozhdenie-sdelok-s-nedvizhimostyu/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Сопровождение сделок
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Превентивная проверка объекта и собственника для исключения рисков оспаривания.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/priznanie-prava-sobstvennosti-na-nedvizhimost/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Признание права
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Оформление права собственности на недвижимость через суд при утере документов.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/spory-s-zastrojshchikom/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Споры с застройщиком
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Взыскание неустоек, расторжение ДДУ и компенсация строительных дефектов.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 9. ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
-              <span className="badge badge-gold" style={{ marginBottom: '16px', alignSelf: 'flex-start' }}>
-                КОНСУЛЬТАЦИЯ
-              </span>
-              <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '20px' }}>
-                Защитите недвижимость и деньги в суде
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Защитите свои имущественные интересы
               </h2>
-              <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '32px' }}>
-                Опишите ситуацию, какой договор оспаривается (купля-продажа, дарение, рента), подан ли уже иск в суд и наложен ли арест. Мы оценим риски и разработаем надёжную стратегию защиты.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко опишите ситуацию: тип сделки (купля-продажа, дарение), дату подписания и основание спора. Мы оценим риски и предложим план судебной защиты.
               </p>
-
-              <div style={{
-                background: 'var(--color-bg-light)',
-                borderRadius: '16px',
-                padding: '24px 28px',
-                border: '1px solid rgba(23, 50, 77, 0.08)',
-                marginTop: 'auto'
-              }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '8px' }}>
-                  Офис в Липецке
-                </h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', margin: 0, lineHeight: 1.6 }}>
-                  г. Липецк, ул. Советская, д. 35, офис 213.<br />
-                  Телефон: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>+7 (4742) 20-15-25</a><br />
-                  Пн–Пт с 9:00 до 18:00. Принимаем исковые заявления на срочный анализ.
-                </p>
+              <div style={{ marginTop: '32px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Перезвоним вам в течение 15 минут в рабочее время</span>
+                </div>
               </div>
             </div>
 
-            <div>
-              <ContactsForm title="Написать нам" subtitle="" buttonText="Оставить заявку" commentPlaceholder="Кратко опишите ситуацию по недвижимости…" hiddenFields={[{ name: 'service', value: 'Оспаривание сделок с недвижимостью' }]} />
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm 
+                  title="Написать нам" 
+                  subtitle="" 
+                  buttonText="Оставить заявку" 
+                  commentPlaceholder="Опишите обстоятельства сделки и суть претензий…" 
+                  subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                  hiddenFields={[{ name: 'service', value: 'Оспаривание сделок с недвижимостью' }]} 
+                />
+              </div>
             </div>
           </div>
         </div>

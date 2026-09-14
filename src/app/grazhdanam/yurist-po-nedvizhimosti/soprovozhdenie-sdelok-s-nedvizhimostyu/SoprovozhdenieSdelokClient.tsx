@@ -49,19 +49,19 @@ export default function SoprovozhdenieSdelokClient() {
       isDemo: false
     },
     {
-      category: 'СЛОЖНАЯ ЦЕПОЧКА',
-      title: 'Продажа квартиры в сложной встречной альтернативной сделке',
-      problem: 'Семья продавала квартиру с ипотечным обременением и одновременно покупала дом с участком. В цепочке участвовали два банка, срыв одного этапа создавал риск потери задатка и жилья.',
-      action: 'Разработали единую дорожную карту сделки, синхронизировали условия снятия обременения, открытие встречных аккредитивов, сроки фактического освобождения объектов и штрафные санкции за задержку.',
-      result: 'Обе сделки зарегистрированы одновременно в один день. Семья переехала в новый дом без разрыва между передачей старой квартиры и получением права на новую.',
+      category: 'ЗАГОРОДНАЯ НЕДВИЖИМОСТЬ',
+      title: 'Проверка дома и земельного участка со скрытыми ограничениями',
+      problem: 'При покупке коттеджа выяснилось, что часть участка попадает в охранную зону газопровода, а пристроенная баня возведена с нарушением градостроительных отступов от границы с соседом.',
+      action: 'Изучили ГПЗУ, правила землепользования и застройки района, провели согласование с продавцом об устранении нарушений и снижении цены договора с фиксацией условий в предварительном договоре.',
+      result: 'Клиент спасён от покупки объекта под угрозой сноса; сделка скорректирована с гарантией отсутствия претензий органов надзора и соседей.',
       isDemo: false
     },
     {
-      category: 'ЗАГОРОДНАЯ НЕДВИЖИМОСТЬ',
-      title: 'Покупка жилого дома и земельного участка с расхождениями в ЕГРН',
-      problem: 'Покупатели нашли загородный дом, но площадь дома и конфигурация забора не совпадали с данными Росреестра, а капитальная баня и пристройка не стояли на кадастровом учёте.',
-      action: 'Сопоставили технические и межевые планы, совместно с кадастровым инженером определили перечень необходимых согласований и обязали продавца узаконить постройки до проведения сделки купли-продажи.',
-      result: 'Продавец зарегистрировал изменения за свой счёт. Покупатели приобрели юридически чистый объект с точными границами и зарегистрированными строениями.',
+      category: 'БЕЗОПАСНЫЕ РАСЧЁТЫ',
+      title: 'Альтернативная сделка из трёх квартир с детскими долями',
+      problem: 'Сложная цепочка сделок с участием органов опеки, ипотечных средств двух разных банков и выделением долей несовершеннолетним. Существовал риск разрыва цепочки на этапе регистрации.',
+      action: 'Синхронизировали сроки подачи документов, условия раскрытия аккредитивов в обоих банках, согласовали распоряжение опеки и обеспечили одновременную регистрацию всех переходов прав.',
+      result: 'Все три объекта успешно зарегистрированы в Росреестре за один регистрационный цикл; ни один из участников не понёс финансовых потерь.',
       isDemo: false
     }
   ];
@@ -69,68 +69,73 @@ export default function SoprovozhdenieSdelokClient() {
   const processSteps = [
     {
       num: '01',
-      title: 'Получаем документы',
-      desc: 'Изучаем описание сделки, проект договора и доступный комплект правоустанавливающих документов.'
+      title: 'Анализ документов и истории',
+      desc: 'Запрашиваем выписки из ЕГРН, архивные справки, проверяем собственника по базам судов, ФССП, реестру банкротств и нотариату.'
     },
     {
       num: '02',
-      title: 'Определяем формат',
-      desc: 'Согласуем глубину проверки, критические сроки и фиксированную стоимость выбранного тарифа.'
+      title: 'Правовой аудит рисков',
+      desc: 'Выявляем скрытые права третьих лиц, маткапитал, приватизацию, супружеские доли и риск оспаривания сделки.'
     },
     {
       num: '03',
-      title: 'Правовой аудит',
-      desc: 'Проводим комплексную проверку объекта и продавца, формируем письменное заключение с картой рисков.'
+      title: 'Составление и правка договора',
+      desc: 'Разрабатываем индивидуальный договор купли-продажи с гарантиями, заверениями об обстоятельствах и штрафами.'
     },
     {
       num: '04',
-      title: 'Договор и расчёты',
-      desc: 'Составляем юридически грамотный договор купли-продажи, согласуем условия безопасных расчётов.'
+      title: 'Безопасные расчёты',
+      desc: 'Организуем расчёты через безотзывный аккредитив, депозит нотариуса или эскроу-счёт с чёткими условиями раскрытия.'
     },
     {
       num: '05',
-      title: 'Регистрация и приёмка',
-      desc: 'Сопровождаем подачу в Росреестр, контролируем переход права и подписание акта приёма-передачи объекта.'
+      title: 'Регистрация и передаточный акт',
+      desc: 'Контролируем регистрацию в Росреестре, отсутствие приостановок и подписание акта приёма-передачи объекта.'
     }
   ];
 
   const pricingTiers = [
     {
       title: <>Экспертиза договора</>,
-      subtitle: 'Анализ условий',
+      subtitle: 'Анализ проекта и правок',
       popular: false,
-      price: 'от ХХХ ₽',
+      price: 'от 10 000 ₽',
       features: [
         { name: 'Правовой анализ проекта договора', value: '✓' },
         { name: 'Выявление кабальных и рискованных условий', value: '✓' },
-        { name: 'Подготовка правок в ваших интересах', value: '✓' }
+        { name: 'Подготовка правок в ваших интересах', value: '✓' },
+        { name: 'Письменные рекомендации юриста', value: '✓' }
       ],
       buttonText: 'Проверить договор',
       buttonHref: '#form'
     },
     {
-      title: <>Проверка объекта и собственника</>,
-      subtitle: 'Безопасность покупки',
+      title: <>Проверка объекта и сторон</>,
+      subtitle: 'Комплексный юридический аудит',
       popular: true,
       badgeText: 'ВОСТРЕБОВАНО',
-      price: 'от ХХХ ₽',
+      price: 'от 15 000 ₽',
       features: [
         { name: 'История объекта и переходов прав', value: '✓' },
-        { name: 'Проверка долгов, арестов и банкротства', value: '✓' },
-        { name: 'Письменное заключение с рекомендациями', value: '✓' }
+        { name: 'Проверка собственников по базам ФССП и судов', value: '✓' },
+        { name: 'Анализ банкротных и супружеских рисков', value: '✓' },
+        { name: 'Письменное правовое заключение', value: '✓' },
+        { name: 'Инструкция по безопасным расчётам', value: '✓' }
       ],
-      buttonText: 'Заказать проверку',
+      buttonText: 'Заказать аудит',
       buttonHref: '#form'
     },
     {
-      title: <>Полное сопровождение сделки</>,
-      subtitle: 'Под ключ от аванса до ключей',
+      title: <>Сопровождение под ключ</>,
+      subtitle: 'От аванса до ключей и Росреестра',
       popular: false,
-      price: 'от ХХХ ₽',
+      price: 'от 35 000 ₽',
       features: [
-        { name: 'Глубокая проверка объекта и сторон', value: '✓' },
-        { name: 'Составление всех договоров и соглашений', value: '✓' },
-        { name: 'Безопасные расчёты и контроль Росреестра', value: '✓' }
+        { name: 'Полный аудит объекта и всех собственников', value: '✓' },
+        { name: 'Составление предварительного и основного договоров', value: '✓' },
+        { name: 'Организация расчётов (аккредитив/эскроу)', value: '✓' },
+        { name: 'Личное присутствие на сделке', value: '✓' },
+        { name: 'Контроль регистрации и передачи объекта', value: '✓' }
       ],
       buttonText: 'Сопроводить сделку',
       buttonHref: '#form'
@@ -159,7 +164,7 @@ export default function SoprovozhdenieSdelokClient() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/soprovozhdenie-sdelok-s-nedvizhimostyu/#service',
         name: 'Сопровождение сделок с недвижимостью в Липецке',
-        serviceType: 'Юридическое сопровождение сделок',
+        serviceType: 'Юридическое сопровождение сделок с недвижимостью',
         provider: {
           '@id': 'https://dejure-help.ru/#legalservice'
         },
@@ -192,7 +197,7 @@ export default function SoprovozhdenieSdelokClient() {
           {
             '@type': 'ListItem',
             position: 4,
-            name: 'Сопровождение сделок с недвижимостью',
+            name: 'Сопровождение сделок',
             item: 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/soprovozhdenie-sdelok-s-nedvizhimostyu/'
           }
         ]
@@ -230,17 +235,19 @@ export default function SoprovozhdenieSdelokClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Сопровождение сделок</span>
           </>
         }
-        superTitle="Сделки с недвижимостью • Липецк"
+        superTitle="Сделки с недвижимостью • проверка • расчёты • Липецк"
         title={<>Сопровождение сделок <br />с недвижимостью в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
-            Проверим объект, собственника и документы, подготовим договор и безопасную схему расчётов, сопроводим регистрацию и передачу недвижимости. Риски обозначим до передачи денег.
+            Проверим объект, собственника и документы, подготовим договор и безопасную схему расчётов, сопроводим регистрацию и передачу объекта. Риски обозначим до передачи денег.
           </span>
         }
         primaryCtaText="Проверить объект и схему"
         primaryCtaLink="#form"
         primaryCtaAnalytics="deal_support_hero_click"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        secondaryCtaText="Ситуации клиентов"
+        secondaryCtaLink="#situations"
         rightContent={
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
             <div style={{
@@ -283,8 +290,8 @@ export default function SoprovozhdenieSdelokClient() {
               <div className="doc-wrapper-float-3">
                 <div className="doc-sheet doc-sheet-3">
                   <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '65px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
-                      <span style={{ fontSize: '4px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>ДОГОВОР КУПЛИ</span>
+                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '75px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
+                      <span style={{ fontSize: '4.5px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>ЕГРН ВЫПИСКА</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '35px' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
@@ -292,10 +299,95 @@ export default function SoprovozhdenieSdelokClient() {
                         <div style={{ width: '55px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
                       </div>
                     </div>
-                    <div style={{ width: '120px', height: '6px', background: 'var(--color-gold)', margin: '0 auto 25px auto' }}></div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ width: '130px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 30px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                       <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '85%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '95%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-2">
+                <div className="doc-sheet doc-sheet-2">
+                  <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '110px', height: '30px', border: '1px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.2 }}>
+                        ДОГОВОР КУПЛИ-ПРОДАЖИ<br/>
+                        ОБЪЕКТА НЕДВИЖИМОСТИ
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+
+                    <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 16px auto' }}></div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                      <div style={{ width: '40%', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Покупатель:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Продавец:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-1">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
+                      <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>АУДИТ СДЕЛКИ</span>
+                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>Безопасные расчёты</span>
+                      </div>
+                    </div>
+
+                    <div className="doc-map-box" style={{ 
+                      width: '100%', 
+                      height: '110px', 
+                      background: 'rgba(247, 244, 237, 0.6)', 
+                      border: '1px solid rgba(193, 160, 102, 0.3)', 
+                      borderRadius: '2px', 
+                      marginBottom: '12px',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '4px'
+                    }}>
+                      <svg width="100%" height="100%" viewBox="0 0 200 100" fill="none">
+                        <line x1="0" y1="50" x2="200" y2="50" stroke="rgba(23,50,77,0.06)" strokeDasharray="2 2" />
+                        <rect x="25" y="15" width="150" height="70" fill="rgba(193, 160, 102, 0.1)" stroke="#C1A066" strokeWidth="1.5" />
+                        <line x1="85" y1="15" x2="85" y2="85" stroke="#C1A066" strokeWidth="1" />
+                        <line x1="25" y1="55" x2="85" y2="55" stroke="#C1A066" strokeWidth="1" />
+                        <text x="35" y="38" fill="#10273B" fontSize="6.5" fontWeight="bold">Гостиная</text>
+                        <text x="35" y="72" fill="#10273B" fontSize="6.5" fontWeight="bold">Кухня</text>
+                        <text x="105" y="45" fill="#10273B" fontSize="7" fontWeight="bold">АККРЕДИТИВ</text>
+                        <text x="98" y="65" fill="#1B8738" fontSize="6" fontWeight="bold">✓ Чистота проверена</text>
+                      </svg>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                        <div style={{ fontSize: '11px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ЮК «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '9.5px', color: 'rgba(23,50,77,0.75)', fontFamily: 'var(--font-sans)' }}>Безопасные сделки • Липецк</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -303,20 +395,26 @@ export default function SoprovozhdenieSdelokClient() {
             </div>
           </div>
         }
+        trustItems={[
+          { text: 'Глубокая проверка истории объекта и собственников.' },
+          { text: 'Организация расчётов через безотзывный аккредитив или эскроу.' },
+          { text: 'Защита покупателя и продавца от потери имущества и денег.' }
+        ]}
       />
 
       {/* ═══ 2. СИТУАЦИИ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>СИТУАЦИИ</span>
-            <h2 className="section-title">Когда стоит подключить юриста</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Когда стоит подключить юриста
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Любая ошибка в документах или схеме расчётов может привести к потере недвижимости, денег или долгим судебным спорам.
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '24px' }}>
+          <div className="grid grid-4" style={{ gap: '24px', marginBottom: '40px' }}>
             {[
               {
                 tag: 'ПОКУПКА КВАРТИРЫ',
@@ -361,52 +459,88 @@ export default function SoprovozhdenieSdelokClient() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="situation-card"
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
                   padding: '28px 24px',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
-                  height: '100%'
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
-                <span style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  color: 'var(--color-gold)',
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <div style={{ 
+                  fontSize: '11px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-gold)', 
+                  marginBottom: '12px',
                   background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  borderRadius: '4px',
-                  display: 'inline-block',
-                  marginBottom: '16px',
-                  alignSelf: 'flex-start'
+                  padding: '3px 8px',
+                  alignSelf: 'flex-start',
+                  borderRadius: '2px'
                 }}>
                   {item.tag}
-                </span>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '12px', lineHeight: 1.3 }}>
+                </div>
+                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.35, margin: '0 0 10px 0' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
                   {item.desc}
                 </p>
               </div>
             ))}
           </div>
+
+          <div className="card service-card cta-banner-card" style={{ 
+            width: '100%', 
+            padding: '32px 36px', 
+            background: 'var(--color-deep-blue)', 
+            borderRadius: '0',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '24px',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}>
+            <div style={{ flex: '1 1 300px' }}>
+              <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                Планируете внести аванс или задаток?
+              </h3>
+              <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
+                Покажите предварительный договор юристу до передачи денег. Мы сформулируем условия возврата средств при отказе банка или выявлении юридических дефектов.
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a 
+                href="#form" 
+                className="btn white-btn-custom" 
+                style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
+              >
+                Проверить перед авансом
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ═══ 3. ЭТАПЫ СОПРОВОЖДЕНИЯ (HelpScope с золотыми бейджами) ═══ */}
+      {/* ═══ 3. ЭТАПЫ СОПРОВОЖДЕНИЯ ═══ */}
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>БЕЗОПАСНЫЙ ПРОЦЕСС</span>
-            <h2 className="section-title">Контроль каждого этапа сделки</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Контроль каждого этапа сделки
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Мы сопровождаем доверителя на всех стадиях: от первой проверки объекта до передачи ключей и подписания итогового передаточного акта.
             </p>
           </div>
@@ -414,69 +548,62 @@ export default function SoprovozhdenieSdelokClient() {
           <div className="grid grid-3" style={{ gap: '28px' }}>
             {[
               {
-                num: '01',
                 title: 'До внесения аванса',
                 desc: 'Анализируем объект и условия резервирования; фиксируем возврат денег, сроки и документы, которые продавец обязан предоставить.'
               },
               {
-                num: '02',
                 title: 'До основного договора',
                 desc: 'Завершаем глубокую проверку, согласуем риски, договор купли-продажи, обязательные согласия супругов и безопасную схему расчётов.'
               },
               {
-                num: '03',
                 title: 'Подписание и расчёты',
                 desc: 'Сверяем полномочия сторон, контролируем закладку средств в аккредитив или эскроу и подтверждение внесения денег.'
               },
               {
-                num: '04',
                 title: 'Государственная регистрация',
                 desc: 'Отслеживаем прохождение документов в Росреестре. При приостановке оперативно устраняем технические или правовые замечания.'
               },
               {
-                num: '05',
                 title: 'Раскрытие денежных средств',
                 desc: 'Проверяем наступление согласованных условий доступа продавца к деньгам (выписка ЕГРН без обременений, снятие с регистрационного учёта).'
               },
               {
-                num: '06',
                 title: 'Фактическая передача объекта',
                 desc: 'Фиксируем состояние квартиры, показания приборов учёта, передачу ключей и отсутствие задолженностей в передаточном акте.'
               }
             ].map((step, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
-                  borderRadius: '16px',
-                  padding: '32px 24px 24px 24px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
                   borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-                  position: 'relative',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
                 <div style={{
                   position: 'absolute',
                   top: '-14px',
                   left: '24px',
-                  background: 'linear-gradient(135deg, var(--color-gold) 0%, #D4AF37 100%)',
+                  background: 'var(--color-gold)',
                   color: '#FFFFFF',
-                  fontSize: '0.8rem',
-                  fontWeight: 800,
-                  padding: '3px 12px',
-                  borderRadius: '20px',
-                  letterSpacing: '0.05em',
-                  boxShadow: '0 2px 6px rgba(193, 160, 102, 0.4)'
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
-                  {step.num}
+                  0{idx + 1}
                 </div>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginTop: '6px', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {step.title}
                 </h3>
-                <p style={{ fontSize: '0.93rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {step.desc}
                 </p>
               </div>
@@ -495,62 +622,229 @@ export default function SoprovozhdenieSdelokClient() {
 
       {/* ═══ 5. ПРОЦЕСС РАБОТЫ ═══ */}
       <ProcessBlock
-        title="Как проходит работа"
-        subtitle="Пять шагов к безопасной покупке или продаже недвижимости."
+        title="Как проходит сопровождение"
+        subtitle="Пять шагов для безопасного проведения покупки или продажи недвижимости."
         steps={processSteps}
       />
 
-      {/* ═══ 6. СТОИМОСТЬ ═══ */}
+      {/* ═══ 6. ЧТО ПРОВЕРЯЕТ ЮРИСТ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Что проверяет юрист перед сделкой
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Анализ строится на сопоставлении десятков официальных реестров и правовых документов.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                Проверка юридической судьбы объекта
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
+                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>История всех переходов прав и цепочка оснований возникновения собственности</span>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
+                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Наличие зарегистрированных и скрытых арестов, залогов, запретов и судебных споров</span>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
+                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Использование материнского капитала при покупке и выполнение обязанности по долям</span>
+                </li>
+              </ul>
+            </div>
+
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                Проверка благонадёжности собственников
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
+                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Проверка банкротных рисков по ЕФРСБ, картотеке арбитражных дел и ФССП</span>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
+                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Супружеские права, брачные договоры, согласия бывших супругов на отчуждение</span>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '16px' }}>—</span>
+                  <span style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Дееспособность продавца, подлинность доверенностей по реестру ФНП</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 7. СТОИМОСТЬ ═══ */}
       <PricingBlock
-        title="Стоимость сопровождения сделок"
-        subtitle="Фиксированная стоимость услуг без скрытых комиссий и процентов от цены недвижимости."
+        title="Стоимость сопровождения сделок с недвижимостью"
+        subtitle="Фиксированная стоимость каждого пакета согласуется до начала работы. Отдельно согласуются выезды и сложные цепочки сделок."
         tiers={pricingTiers}
       />
 
-      {/* ═══ 7. ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
+      {/* ═══ 8. ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
         faqs={faqs}
         title={<>Ответы на частые вопросы <br />по сопровождению сделок</>}
-        subtitle="Полезные рекомендации юриста по проверке недвижимости, договорам и безопасным расчётам."
+        subtitle="Разъяснения по проверке юридической чистоты, безопасным расчётам и рискам доверенностей."
         ctaText="Задать свой вопрос"
         ctaLink="#form"
       />
 
-      {/* ═══ 8. ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ 9. СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Связанные услуги
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Смежные направления помощи по защите прав на недвижимость.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '20px' }}>
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/spory-s-zastrojshchikom/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Споры с застройщиком
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Взыскание неустойки по ДДУ, расторжение договора и компенсация за строительные дефекты.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/priznanie-prava-sobstvennosti-na-nedvizhimost/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Признание права собственности
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Судебное признание права на квартиру, дом, самовольную постройку или гараж.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/osparivanie-sdelok-s-nedvizhimostyu/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Оспаривание сделок
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Защита от недействительных сделок, мошенничества и возврат незаконно отчуждённого жилья.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 10. ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
-              <span className="badge badge-gold" style={{ marginBottom: '16px', alignSelf: 'flex-start' }}>
-                КОНСУЛЬТАЦИЯ
-              </span>
-              <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '20px' }}>
-                Проверьте сделку до передачи денег
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Обсудите сделку с юристом по недвижимости
               </h2>
-              <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '32px' }}>
-                Укажите, покупаете или продаёте объект, что уже подписано и когда планируется сделка. Мы свяжемся с вами, оценим риски и согласуем состав проверки.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко опишите объект, планируемый способ расчётов и текущую стадию переговоров. Мы оценим риски и согласуем формат сопровождения.
               </p>
-
-              <div style={{
-                background: 'var(--color-bg-light)',
-                borderRadius: '16px',
-                padding: '24px 28px',
-                border: '1px solid rgba(23, 50, 77, 0.08)',
-                marginTop: 'auto'
-              }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '8px' }}>
-                  Офис в Липецке
-                </h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', margin: 0, lineHeight: 1.6 }}>
-                  г. Липецк, ул. Советская, д. 35, офис 213.<br />
-                  Телефон: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>+7 (4742) 20-15-25</a><br />
-                  Пн–Пт с 9:00 до 18:00. Принимаем договоры на проверку онлайн.
-                </p>
+              <div style={{ marginTop: '32px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Перезвоним вам в течение 15 минут в рабочее время</span>
+                </div>
               </div>
             </div>
 
-            <div>
-              <ContactsForm title="Написать нам" subtitle="" buttonText="Оставить заявку" commentPlaceholder="Кратко опишите ситуацию по недвижимости…" hiddenFields={[{ name: 'service', value: 'Сопровождение сделок с недвижимостью' }]} />
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm 
+                  title="Написать нам" 
+                  subtitle="" 
+                  buttonText="Получить консультацию" 
+                  commentPlaceholder="Кратко опишите сделку (квартира, дом, аванс)…" 
+                  subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                  hiddenFields={[{ name: 'service', value: 'Сопровождение сделок с недвижимостью' }]} 
+                />
+              </div>
             </div>
           </div>
         </div>

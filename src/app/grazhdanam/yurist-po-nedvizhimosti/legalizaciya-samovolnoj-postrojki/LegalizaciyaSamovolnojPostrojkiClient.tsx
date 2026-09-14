@@ -69,71 +69,75 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
   const processSteps = [
     {
       num: '01',
-      title: 'Правовой аудит объекта',
-      desc: 'Изучаем документы на земельный участок, категорию, ВРИ, параметры объекта и градостроительный план (ГПЗУ).'
+      title: 'Градостроительный аудит',
+      desc: 'Изучаем права на земельный участок, ПЗЗ, отступы от границ, охранные зоны и красные линии.'
     },
     {
       num: '02',
-      title: 'Выбор порядка оформления',
-      desc: 'Определяем возможность упрощённого внесудебного оформления (амнистия) или необходимость судебного порядка.'
+      title: 'Техническое обследование',
+      desc: 'Организуем инструментальное обследование постройки на соответствие строительным и пожарным нормам.'
     },
     {
       num: '03',
-      title: 'Техническое обследование',
-      desc: 'Организуем инструментальное обследование экспертом: проверка капитальности, строительных и противопожарных норм.'
+      title: 'Внесудебная попытка',
+      desc: 'Подаём уведомление или заявление в Росреестр / администрацию для фиксации официального отказа.'
     },
     {
       num: '04',
-      title: 'Судебный процесс',
-      desc: 'Подаём иск о признании права собственности по ст. 222 ГК РФ, защищаем объект от сноса в суде.'
+      title: 'Иск по ст. 222 ГК РФ',
+      desc: 'Готовим иск о признании права собственности, формулируем вопросы для судебной экспертизы.'
     },
     {
       num: '05',
-      title: 'Запись в ЕГРН',
-      desc: 'Кадастровый инженер изготавливает технический план на основании судебного акта, вносим объект в Росреестр.'
+      title: 'Регистрация в ЕГРН',
+      desc: 'Получаем вступившее в силу решение суда и регистрируем право собственности в Росреестре.'
     }
   ];
 
   const pricingTiers = [
     {
-      title: <>Правовой анализ объекта</>,
-      subtitle: 'Оценка рисков',
+      title: <>Градостроительный аудит</>,
+      subtitle: 'Оценка шансов узаконивания',
       popular: false,
-      price: 'от ХХХ ₽',
+      price: 'от 15 000 ₽',
       features: [
-        { name: 'Анализ прав на землю и ограничений ПЗЗ', value: '✓' },
-        { name: 'Оценка риска иска о сносе объекта', value: '✓' },
-        { name: 'Выбор оптимального порядка узаконивания', value: '✓' }
+        { name: 'Анализ документов на землю и постройку', value: '✓' },
+        { name: 'Проверка ПЗЗ, ВРИ и охранных зон (ЗОУИТ)', value: '✓' },
+        { name: 'Выявление нарушений отступов от границ', value: '✓' },
+        { name: 'Письменная дорожная карта оформления', value: '✓' }
       ],
-      buttonText: 'Оценить объект',
+      buttonText: 'Заказать аудит',
       buttonHref: '#form'
     },
     {
-      title: <>Внесудебная легализация</>,
-      subtitle: 'Упрощённый порядок',
-      popular: false,
-      price: 'от ХХХ ₽',
-      features: [
-        { name: 'Взаимодействие с кадастровым инженером', value: '✓' },
-        { name: 'Подготовка уведомлений и техплана', value: '✓' },
-        { name: 'Регистрация права собственности в ЕГРН', value: '✓' }
-      ],
-      buttonText: 'Узаконить без суда',
-      buttonHref: '#form'
-    },
-    {
-      title: <>Признание права через суд</>,
-      subtitle: 'Под ключ по ст. 222 ГК РФ',
+      title: <>Судебное узаконивание (ст. 222 ГК)</>,
+      subtitle: 'Признание права собственности под ключ',
       popular: true,
       badgeText: 'ВОСТРЕБОВАНО',
-      price: 'от ХХХ ₽',
+      price: 'от 45 000 ₽',
       features: [
-        { name: 'Строительно-техническая экспертиза', value: '✓' },
-        { name: 'Составление иска и защита от сноса', value: '✓' },
-        { name: 'Ведение всех заседаний до решения суда', value: '✓' },
-        { name: 'Кадастровый учёт и регистрация права', value: '✓' }
+        { name: 'Подготовка искового заявления по ст. 222 ГК РФ', value: '✓' },
+        { name: 'Организация судебной строительной экспертизы', value: '✓' },
+        { name: 'Защита от претензий администрации и соседей', value: '✓' },
+        { name: 'Участие во всех судебных заседаниях', value: '✓' },
+        { name: 'Внесение сведений об объекте в ЕГРН', value: '✓' }
       ],
-      buttonText: 'Признать право в суде',
+      buttonText: 'Узаконить постройку',
+      buttonHref: '#form'
+    },
+    {
+      title: <>Защита от иска о сносе</>,
+      subtitle: 'Отражение претензий администрации',
+      popular: false,
+      price: 'от 40 000 ₽',
+      features: [
+        { name: 'Правовая оценка иска о сносе постройки', value: '✓' },
+        { name: 'Встречный иск о сохранении объекта', value: '✓' },
+        { name: 'Доказывание отсутствия угрозы жизни и здоровью', value: '✓' },
+        { name: 'Снятие обеспечительных мер (арестов)', value: '✓' },
+        { name: 'Сохранение строения в собственности', value: '✓' }
+      ],
+      buttonText: 'Защитить от сноса',
       buttonHref: '#form'
     }
   ];
@@ -160,13 +164,13 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/legalizaciya-samovolnoj-postrojki/#service',
         name: 'Легализация самовольной постройки в Липецке',
-        serviceType: 'Узаконивание самовольных построек и домов',
+        serviceType: 'Узаконивание самовольных построек',
         provider: {
           '@id': 'https://dejure-help.ru/#legalservice'
         },
         areaServed: ['Липецк', 'Липецкая область'],
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/legalizaciya-samovolnoj-postrojki/',
-        description: 'Легализация дома, пристройки и реконструкции в Липецке: проверим участок и параметры, выберем порядок, подготовим документы, суд и регистрацию.'
+        description: 'Легализация самовольных построек, домов, пристроек и реконструкций в Липецке: признание права по ст. 222 ГК РФ, защита от сноса и регистрация в ЕГРН.'
       },
       {
         '@type': 'BreadcrumbList',
@@ -228,20 +232,22 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
             <Link href="/" style={{ color: 'var(--color-primary)' }}>Главная</Link> <span style={{ margin: '0 8px' }}>/</span>
             <Link href="/grazhdanam/" style={{ color: 'var(--color-primary)' }}>Гражданам</Link> <span style={{ margin: '0 8px' }}>/</span>
             <Link href="/grazhdanam/yurist-po-nedvizhimosti/" style={{ color: 'var(--color-primary)' }}>Юрист по недвижимости</Link> <span style={{ margin: '0 8px' }}>/</span>
-            <span style={{ color: 'var(--color-text-main)' }}>Легализация постройки</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Легализация самовольной постройки</span>
           </>
         }
-        superTitle="Сохранение объекта и оформление права"
+        superTitle="Самострой • ст. 222 ГК РФ • защита от сноса • Липецк"
         title={<>Легализация самовольной <br />постройки в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
-            Поможем узаконить дом, пристройку или реконструкцию: проверим землю и ПЗЗ, защитим от сноса, организуем экспертизу безопасности и признаем право через суд.
+            Узаконим дом, пристройку, гараж или реконструкцию через суд по ст. 222 ГК РФ либо в административном порядке. Защитим объект от иска администрации о сносе.
           </span>
         }
-        primaryCtaText="Оценить возможность узаконивания"
+        primaryCtaText="Узаконить постройку"
         primaryCtaLink="#form"
         primaryCtaAnalytics="unauthorized_build_hero_click"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        secondaryCtaText="Виды самостроя"
+        secondaryCtaLink="#objects"
         rightContent={
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
             <div style={{
@@ -284,8 +290,8 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
               <div className="doc-wrapper-float-3">
                 <div className="doc-sheet doc-sheet-3">
                   <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '65px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
-                      <span style={{ fontSize: '4px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>СТ. 222 ГК РФ</span>
+                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '75px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
+                      <span style={{ fontSize: '4.5px', fontWeight: 'bold', color: 'rgba(23,50,77,0.4)', fontFamily: 'var(--font-serif)' }}>СТ. 222 ГК РФ</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '35px' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
@@ -293,10 +299,93 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
                         <div style={{ width: '55px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
                       </div>
                     </div>
-                    <div style={{ width: '120px', height: '6px', background: 'var(--color-gold)', margin: '0 auto 25px auto' }}></div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ width: '130px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 30px auto' }}></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                       <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
-                      <div style={{ width: '85%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '95%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-2">
+                <div className="doc-sheet doc-sheet-2">
+                  <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '110px', height: '30px', border: '1px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '5px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.2 }}>
+                        ТЕХНИЧЕСКИЙ ПЛАН<br/>
+                        ЖИЛОГО ДОМА
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
+                        <div style={{ width: '90px', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                        <div style={{ width: '50px', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      </div>
+                    </div>
+
+                    <div style={{ width: '140px', height: '6px', background: 'var(--color-primary)', margin: '0 auto 16px auto' }}></div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                      <div style={{ width: '40%', height: '3px', background: 'rgba(23,50,77,0.2)' }}></div>
+                      <div style={{ width: '100%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                      <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Собственник земли:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Кадастровый инженер:</div>
+                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="doc-wrapper-float-1">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
+                      <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ПРИЗНАНИЕ ПРАВА</span>
+                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>Решение суда по ст. 222</span>
+                      </div>
+                    </div>
+
+                    <div className="doc-map-box" style={{ 
+                      width: '100%', 
+                      height: '110px', 
+                      background: 'rgba(247, 244, 237, 0.6)', 
+                      border: '1px solid rgba(193, 160, 102, 0.3)', 
+                      borderRadius: '2px', 
+                      marginBottom: '12px',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '4px'
+                    }}>
+                      <svg width="100%" height="100%" viewBox="0 0 200 100" fill="none">
+                        <line x1="0" y1="50" x2="200" y2="50" stroke="rgba(23,50,77,0.06)" strokeDasharray="2 2" />
+                        <rect x="25" y="15" width="150" height="70" fill="rgba(193, 160, 102, 0.1)" stroke="#C1A066" strokeWidth="1.5" />
+                        <polygon points="25,45 100,15 175,45" fill="rgba(193, 160, 102, 0.2)" stroke="#C1A066" strokeWidth="1.2" />
+                        <rect x="65" y="55" width="30" height="30" fill="rgba(23, 50, 77, 0.1)" stroke="#10273B" strokeWidth="1" />
+                        <rect x="110" y="55" width="25" height="30" fill="rgba(23, 50, 77, 0.1)" stroke="#10273B" strokeWidth="1" />
+                        <text x="35" y="92" fill="#1B8738" fontSize="6.5" fontWeight="bold">✓ Безопасность подтверждена</text>
+                      </svg>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                        <div style={{ fontSize: '11px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ЮК «ДЕ-ЮРЕ»</div>
+                        <div style={{ fontSize: '9.5px', color: 'rgba(23,50,77,0.75)', fontFamily: 'var(--font-sans)' }}>Узаконивание построек • Липецк</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -304,160 +393,187 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
             </div>
           </div>
         }
+        trustItems={[
+          { text: 'Оценка градостроительных регламентов и отступов по ПЗЗ.' },
+          { text: 'Проведение комплексной строительно-технической экспертизы.' },
+          { text: 'Признание права по ст. 222 ГК РФ и защита от исков о сносе.' }
+        ]}
       />
 
-      {/* ═══ 2. ЧЕТЫРЕ ВОЗМОЖНЫХ МАРШРУТА ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ 2. ВИДЫ САМОСТРОЯ ═══ */}
+      <section className="section bg-white" id="objects" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>ВАРИАНТЫ ОФОРМЛЕНИЯ</span>
-            <h2 className="section-title">Четыре пути узаконивания постройки</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              Мы выбираем наименее затратный способ: от упрощённой регистрации по дачной амнистии до защиты от иска администрации в суде.
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              С какими объектами самостроя мы работаем
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Поможем узаконить вновь возведённые строения или узаконить проведённую реконструкцию существующих зданий.
+            </p>
+          </div>
+
+          <div className="grid grid-4" style={{ gap: '24px', marginBottom: '40px' }}>
+            {[
+              {
+                tag: 'ЖИЛОЙ ДОМ',
+                title: 'Жилые и садовые дома',
+                desc: 'Капитальные дома, возведённые без уведомления о строительстве, с нарушением отступов от межи или на землях без надлежащего ВРИ.'
+              },
+              {
+                tag: 'РЕКОНСТРУКЦИЯ',
+                title: 'Пристройки и мансарды',
+                desc: 'Увеличение площади дома, пристройка дополнительных жилых помещений, гаражей, надстройка этажей без согласованного проекта.'
+              },
+              {
+                tag: 'ГАРАЖИ И ХОЗПОСТРОЙКИ',
+                title: 'Гаражи, бани, склады',
+                desc: 'Капитальные вспомогательные строения на ленточных и плитных фундаментах, требующие официальной регистрации права.'
+              },
+              {
+                tag: 'ЗАЩИТА ОТ СНОСА',
+                title: 'Угроза сноса объекта',
+                desc: 'Судебная защита собственников от исков администрации г. Липецка и органов строительного надзора об обязательном сносе.'
+              }
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="hover-lift"
+                style={{
+                  padding: '28px 24px',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <div style={{ 
+                  fontSize: '11px', 
+                  fontWeight: 600, 
+                  color: 'var(--color-gold)', 
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '3px 8px',
+                  alignSelf: 'flex-start',
+                  borderRadius: '2px'
+                }}>
+                  {item.tag}
+                </div>
+                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.35, margin: '0 0 10px 0' }}>
+                  {item.title}
+                </h3>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="card service-card cta-banner-card" style={{ 
+            width: '100%', 
+            padding: '32px 36px', 
+            background: 'var(--color-deep-blue)', 
+            borderRadius: '0',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '24px',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}>
+            <div style={{ flex: '1 1 300px' }}>
+              <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                Получили предписание или судебный иск о сносе?
+              </h3>
+              <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
+                Срочно обратитесь к юристу. Подача встречного иска по ст. 222 ГК РФ и назначение строительной экспертизы позволяют сохранить постройку в 90% случаев.
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a 
+                href="#form" 
+                className="btn white-btn-custom" 
+                style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
+              >
+                Отразить иск о сносе
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 3. УСЛОВИЯ ЛЕГАЛИЗАЦИИ ═══ */}
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Условия успешного узаконивания по ст. 222 ГК РФ
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Четыре обязательных критерия, которые проверяет суд при признании права собственности на самовольную постройку.
             </p>
           </div>
 
           <div className="grid grid-4" style={{ gap: '24px' }}>
             {[
               {
-                tag: 'ДАЧНАЯ АМНИСТИЯ',
-                title: 'Упрощённая регистрация',
-                desc: 'Оформление жилых и садовых домов на участках ИЖС, ЛПХ и СНТ по техплану без обращения в суд и без штрафов.'
+                title: 'Права на земельный участок',
+                desc: 'Земля должна находиться в собственности, пожизненном наследуемом владении или долгосрочной аренде с правом строительства.'
               },
               {
-                tag: 'УВЕДОМИТЕЛЬНЫЙ ПОРЯДОК',
-                title: 'Уведомление в администрацию',
-                desc: 'Подача уведомления о планируемом строительстве или реконструкции при наличии возможности соблюдения регламентов.'
+                title: 'Вид использования земли',
+                desc: 'Категория и разрешённое использование участка (ВРИ) должны допускать размещение возведённого объекта.'
               },
               {
-                tag: 'СУДЕБНЫЙ ИСК',
-                title: 'Иск по ст. 222 ГК РФ',
-                desc: 'Судебное признание права собственности на самовольный объект при отказе администрации или нарушении параметров.'
+                title: 'Безопасность объекта',
+                desc: 'Постройка должна отвечать строительным, санитарным, экологическим и противопожарным нормам и не создавать угрозы.'
               },
               {
-                tag: 'ЗАЩИТА ОТ СНОСА',
-                title: 'Встречный иск о сносе',
-                desc: 'Защита строения при подаче иска муниципальным органом: строительная экспертиза безопасности и сохранение объекта.'
-              }
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="situation-card"
-                style={{
-                  background: '#FFFFFF',
-                  padding: '28px 24px',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: '100%'
-                }}
-              >
-                <span style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  color: 'var(--color-gold)',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  borderRadius: '4px',
-                  display: 'inline-block',
-                  marginBottom: '16px',
-                  alignSelf: 'flex-start'
-                }}>
-                  {item.tag}
-                </span>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '12px', lineHeight: 1.3 }}>
-                  {item.title}
-                </h3>
-                <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 3. ЧТО ВХОДИТ В УСЛУГУ (HelpScope с золотыми бейджами) ═══ */}
-      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '16px' }}>ПЛАН ДЕЙСТВИЙ</span>
-            <h2 className="section-title">Что сделает юрист «Де-Юре» по самовольной постройке</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              Обеспечиваем полную правовую и техническую защиту: от проверки земли до внесения записи о собственности в ЕГРН.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '28px' }}>
-            {[
-              {
-                num: '01',
-                title: 'Аудит прав на землю',
-                desc: 'Проверяем категорию земель, ВРИ, границы межевания, охранные зоны инженерных сетей (ЗОУИТ) и правила застройки.'
-              },
-              {
-                num: '02',
-                title: 'Техническая экспертиза',
-                desc: 'Привлекаем экспертов для заключения о несущей способности конструкций, пожарной безопасности и соответствии СНиП.'
-              },
-              {
-                num: '03',
-                title: 'Согласование с соседями',
-                desc: 'Анализируем соблюдение нормативных отступов от границ соседних участков и исключаем риски претензий смежников.'
-              },
-              {
-                num: '04',
-                title: 'Административный этап',
-                desc: 'Формируем комплект документов и подаём обращение в уполномоченные органы архитектуры и градостроительства.'
-              },
-              {
-                num: '05',
-                title: 'Судебное признание права',
-                desc: 'Готовим иск о признании права собственности по ст. 222 ГК РФ, защищаем доказательства в суде Липецка.'
-              },
-              {
-                num: '06',
-                title: 'Кадастровый учёт и ЕГРН',
-                desc: 'Контролируем изготовление технического плана кадастровым инженером и внесение сведений в Росреестр.'
+                title: 'Отсутствие споров с соседями',
+                desc: 'Сохранение постройки не должно нарушать законные интересы смежных землепользователей и третьих лиц.'
               }
             ].map((step, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
-                  borderRadius: '16px',
-                  padding: '32px 24px 24px 24px',
-                  border: '1px solid rgba(23, 50, 77, 0.08)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '32px 24px',
+                  border: '1px solid var(--color-border)',
                   borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-                  position: 'relative',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
                 <div style={{
                   position: 'absolute',
                   top: '-14px',
                   left: '24px',
-                  background: 'linear-gradient(135deg, var(--color-gold) 0%, #D4AF37 100%)',
+                  background: 'var(--color-gold)',
                   color: '#FFFFFF',
-                  fontSize: '0.8rem',
-                  fontWeight: 800,
-                  padding: '3px 12px',
-                  borderRadius: '20px',
-                  letterSpacing: '0.05em',
-                  boxShadow: '0 2px 6px rgba(193, 160, 102, 0.4)'
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
-                  {step.num}
+                  0{idx + 1}
                 </div>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', marginTop: '6px', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 12px 0', lineHeight: 1.35 }}>
                   {step.title}
                 </h3>
-                <p style={{ fontSize: '0.93rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {step.desc}
                 </p>
               </div>
@@ -468,70 +584,163 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
 
       {/* ═══ 4. КЕЙСЫ ═══ */}
       <CasesBlock
-        title="Примеры легализации самостроя"
+        title="Примеры узаконивания построек"
         showDemoWarning={false}
         resultLabel="Результат"
         cases={cases}
       />
 
-      {/* ═══ 5. ПРОЦЕСС РАБОТЫ ═══ */}
+      {/* ═══ 5. ПРОЦЕСС ═══ */}
       <ProcessBlock
-        title="Как проходит узаконивание"
-        subtitle="Пять этапов оформления права собственности на самовольно возведённый объект."
+        title="Порядок узаконивания самостроя"
+        subtitle="Пять этапов от градостроительного аудита до получения выписки из ЕГРН."
         steps={processSteps}
       />
 
       {/* ═══ 6. СТОИМОСТЬ ═══ */}
       <PricingBlock
         title="Стоимость услуг по легализации самостроя"
-        subtitle="Фиксированная стоимость юридического сопровождения согласуется до начала работы и фиксируется в договоре."
+        subtitle="Прозрачная фиксация стоимости в договоре. Возможно ведение дела под ключ с внесением записи в ЕГРН."
         tiers={pricingTiers}
       />
 
       {/* ═══ 7. ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
         faqs={faqs}
-        title={<>Ответы на частые вопросы <br />по самовольным постройкам</>}
-        subtitle="Разъяснения положений ст. 222 ГК РФ, требований дачной амнистии и правил судебной строительной экспертизы."
+        title={<>Частые вопросы <br />по легализации самовольных построек</>}
+        subtitle="Разъяснения ст. 222 ГК РФ, правил дачной амнистии и судебной практики по сохранению самостроя."
         ctaText="Задать свой вопрос"
         ctaLink="#form"
       />
 
-      {/* ═══ 8. ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ 8. СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Связанные услуги
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Смежные направления помощи по недвижимости и земельным правам.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '20px' }}>
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/priznanie-prava-sobstvennosti-na-nedvizhimost/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Признание права
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Признание права собственности на квартиру, дом, долю в новостройке через суд.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Споры о границах земли
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Устранение наложений границ, реестровых ошибок и согласование межевания.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/grazhdanam/yurist-po-nedvizhimosti/soprovozhdenie-sdelok-s-nedvizhimostyu/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div 
+                className="card" 
+                style={{ 
+                  height: '100%', 
+                  padding: '32px', 
+                  background: 'var(--color-white)', 
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  display: 'flex', 
+                  flexDirection: 'column'
+                }}
+              >
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                  Сопровождение сделок
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
+                  Безопасная покупка и продажа узаконенных домов и земельных участков.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600 }}>
+                  Подробнее →
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 9. ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
-              <span className="badge badge-gold" style={{ marginBottom: '16px', alignSelf: 'flex-start' }}>
-                КОНСУЛЬТАЦИЯ
-              </span>
-              <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '20px' }}>
-                Узаконьте постройку и защитите объект
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Узаконьте постройку и защитите её от сноса
               </h2>
-              <p style={{ fontSize: '1.05rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '32px' }}>
-                Опишите объект, оформлен ли земельный участок в собственность или аренду, есть ли предписания или претензии администрации. Мы оценим шансы и предложим оптимальный путь.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко укажите тип объекта (дом, пристройка, баня), категорию земли и наличие претензий от администрации или соседей. Юрист оценит шансы признания права по ст. 222 ГК РФ.
               </p>
-
-              <div style={{
-                background: 'var(--color-bg-light)',
-                borderRadius: '16px',
-                padding: '24px 28px',
-                border: '1px solid rgba(23, 50, 77, 0.08)',
-                marginTop: 'auto'
-              }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '8px' }}>
-                  Офис в Липецке
-                </h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', margin: 0, lineHeight: 1.6 }}>
-                  г. Липецк, ул. Советская, д. 35, офис 213.<br />
-                  Телефон: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>+7 (4742) 20-15-25</a><br />
-                  Пн–Пт с 9:00 до 18:00. Возможен выезд юриста на объект.
-                </p>
+              <div style={{ marginTop: '32px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Перезвоним вам в течение 15 минут в рабочее время</span>
+                </div>
               </div>
             </div>
 
-            <div>
-              <ContactsForm title="Написать нам" subtitle="" buttonText="Оставить заявку" commentPlaceholder="Кратко опишите ситуацию по недвижимости…" hiddenFields={[{ name: 'service', value: 'Легализация самовольной постройки' }]} />
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm 
+                  title="Написать нам" 
+                  subtitle="" 
+                  buttonText="Оценить перспективу" 
+                  commentPlaceholder="Опишите постройку (дом, пристройка, отступы, претензии)…" 
+                  subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                  hiddenFields={[{ name: 'service', value: 'Легализация самовольной постройки' }]} 
+                />
+              </div>
             </div>
           </div>
         </div>
