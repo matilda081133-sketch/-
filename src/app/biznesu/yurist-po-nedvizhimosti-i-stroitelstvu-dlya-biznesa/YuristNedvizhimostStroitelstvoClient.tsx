@@ -93,61 +93,47 @@ export default function YuristNedvizhimostStroitelstvoClient() {
   ];
 
   // 8 Situations from ТЗ 7.1
-  const situations = [
+  const situations: { tag: string; title: string; desc: string; buttonText?: string; href?: string }[] = [
     {
       tag: 'ПОКУПКА И ПРОДАЖА',
       title: 'Покупка или продажа объекта',
-      desc: 'Нужно проверить коммерческую недвижимость, продавца, ограничения и условия сделки до подписания документов.',
-      linkText: 'Перейти к сделке',
-      href: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/soprovozhdenie-sdelok-s-kommercheskoy-nedvizhimostyu/'
+      desc: 'Нужно проверить коммерческую недвижимость, продавца, ограничения и условия сделки до подписания документов.'
     },
     {
       tag: 'КОММЕРЧЕСКАЯ АРЕНДА',
       title: 'Коммерческая аренда',
-      desc: 'Нужно подготовить или проверить договор, изменить условия, расторгнуть аренду либо урегулировать спор по помещению.',
-      linkText: 'Перейти к аренде',
-      href: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-arendy-kommercheskoy-nedvizhimosti/'
+      desc: 'Нужно подготовить или проверить договор, изменить условия, расторгнуть аренду либо урегулировать спор по помещению.'
     },
     {
       tag: 'ЗЕМЛЯ И ПРОЕКТ',
       title: 'Участок под проект',
-      desc: 'Нужно понять, допускают ли права на землю, ВРИ, ПЗЗ, ГПЗУ и ограничения запланированное использование или строительство.',
-      linkText: 'Перейти к участкам',
-      href: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/zemelno-gradostroitelnoe-soprovozhdenie/'
+      desc: 'Нужно понять, допускают ли права на землю, ВРИ, ПЗЗ, ГПЗУ и ограничения запланированное использование или строительство.'
     },
     {
       tag: 'СТРОИТЕЛЬСТВО',
       title: 'Строительство или реконструкция',
-      desc: 'Требуется юридическая дорожная карта, договорная структура, разрешительная документация или сопровождение проекта до ввода.',
-      linkText: 'Перейти к стройке',
-      href: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-stroitelstva/'
+      desc: 'Требуется юридическая дорожная карта, договорная структура, разрешительная документация или сопровождение проекта до ввода.'
     },
     {
       tag: 'СТРОИТЕЛЬНЫЙ СПОР',
       title: 'Конфликт по строительным работам',
-      desc: 'Заказчик или подрядчик спорит об оплате, сроках, объёме, качестве, приёмке, недостатках или возврате аванса.',
-      linkText: 'Перейти к спорам',
-      href: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/stroitelnye-spory/'
+      desc: 'Заказчик или подрядчик спорит об оплате, сроках, объёме, качестве, приёмке, недостатках или возврате аванса.'
     },
     {
       tag: 'РОСРЕЕСТР И ВЕДОМСТВА',
       title: 'Отказ органа или Росреестра',
-      desc: 'Получен отказ, приостановка или требование представить дополнительные документы. Сначала определим предмет и правильный маршрут.',
-      linkText: 'Получить разбор отказа',
-      href: '#form'
+      desc: 'Получен отказ, приостановка или требование представить дополнительные документы. Сначала определим предмет и правильный маршрут.'
     },
     {
       tag: 'САМОВОЛЬНЫЙ ОБЪЕКТ',
       title: 'Риск самовольной постройки',
-      desc: 'Объект или реконструкцию считают самовольными, требуют прекратить использование, привести объект в соответствие или снести.',
-      linkText: 'Срочная правовая оценка',
-      href: '#form'
+      desc: 'Объект или реконструкцию считают самовольными, требуют прекратить использование, привести объект в соответствие или снести.'
     },
     {
       tag: 'СЛОЖНАЯ ЗАДАЧА',
       title: 'Задача затрагивает несколько стадий',
       desc: 'Покупка участка, изменение режима, строительство, аренда или спор связаны между собой и требуют общего плана действий.',
-      linkText: 'Комплексная консультация',
+      buttonText: 'Комплексная консультация',
       href: '#form'
     }
   ];
@@ -436,8 +422,25 @@ export default function YuristNedvizhimostStroitelstvoClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Юрист по недвижимости и строительству</span>
           </>
         }
-        superTitle="Недвижимость и строительство • Бизнесу • Липецк и Липецкая область"
-        title={<>Юрист по недвижимости <br />и строительству для бизнеса</>}
+        superTitle={
+          <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
+            <span style={{ display: 'inline-block' }}>Недвижимость и строительство •</span> <br />
+            <span style={{ display: 'inline-block' }}>Бизнесу • Липецк и Липецкая область</span>
+          </span>
+        }
+        title={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Юрист по недвижимости
+            </span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              и строительству
+            </span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              для бизнеса
+            </span>
+          </span>
+        }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '640px', textWrap: 'balance' }}>
             Проверим документы и правовые риски, определим подходящий формат помощи и подключимся к сделке, строительному проекту или спору на согласованных этапах.
@@ -446,7 +449,11 @@ export default function YuristNedvizhimostStroitelstvoClient() {
         primaryCtaText="Обсудить задачу бизнеса"
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_primary_cta_b2b_re"
-        primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
+        primaryCtaSubtext={
+          <span style={{ display: 'block', marginTop: '-6px' }}>
+            Перезвоним в течение 15 минут в рабочее время
+          </span>
+        }
         secondaryCtaText="С какими ситуациями помогаем"
         secondaryCtaLink="#situations"
         trustItems={[
@@ -498,8 +505,8 @@ export default function YuristNedvizhimostStroitelstvoClient() {
               <div className="doc-wrapper-float-3">
                 <div className="doc-sheet doc-sheet-3">
                   <div style={{ padding: '35px 25px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '95px', height: '25px', border: '1.5px solid rgba(23, 50, 77, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
-                      <span style={{ fontSize: '4.5px', fontWeight: 'bold', color: 'rgba(23,50,77,0.5)', fontFamily: 'var(--font-serif)' }}>ЕГРН БИЗНЕС № 48/01</span>
+                    <div style={{ position: 'absolute', top: '25px', left: '25px', width: '135px', height: '28px', border: '1.5px solid rgba(23, 50, 77, 0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-5deg)' }}>
+                      <span style={{ fontSize: '8px', fontWeight: 'bold', color: 'rgba(23,50,77,0.7)', fontFamily: 'var(--font-serif)', letterSpacing: '0.04em' }}>ЕГРН БИЗНЕС № 48/01</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '35px' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'flex-end' }}>
@@ -521,8 +528,8 @@ export default function YuristNedvizhimostStroitelstvoClient() {
               <div className="doc-wrapper-float-2">
                 <div className="doc-sheet doc-sheet-2">
                   <div style={{ padding: '28px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '120px', height: '32px', border: '1px solid #C1A066', color: '#C1A066', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
-                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '4.8px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.2 }}>
+                    <div style={{ position: 'absolute', top: '22px', left: '22px', width: '160px', height: '36px', border: '1.25px solid #C1A066', color: '#9B7E55', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-4deg)', opacity: 0.95 }}>
+                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '8.5px', textAlign: 'center', fontWeight: 'bold', lineHeight: 1.25, letterSpacing: '0.02em' }}>
                         ДОГОВОР ГЕНПОДРЯДА<br/>И КОММЕРЧЕСКОЙ АРЕНДЫ
                       </div>
                     </div>
@@ -542,14 +549,14 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                       <div style={{ width: '90%', height: '3px', background: 'rgba(23,50,77,0.1)' }}></div>
                     </div>
 
-                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.15)' }}>
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px dashed rgba(23,50,77,0.2)' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Заказчик / Арендодатель:</div>
-                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                        <div style={{ fontSize: '8px', fontWeight: 600, color: 'rgba(23,50,77,0.7)', fontFamily: 'var(--font-sans)' }}>Заказчик / Арендодатель:</div>
+                        <div style={{ width: '90px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '6px' }}></div>
                       </div>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Подрядчик / Арендатор:</div>
-                        <div style={{ width: '70px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '8px' }}></div>
+                        <div style={{ fontSize: '8px', fontWeight: 600, color: 'rgba(23,50,77,0.7)', fontFamily: 'var(--font-sans)' }}>Подрядчик / Арендатор:</div>
+                        <div style={{ width: '90px', height: '1px', background: 'rgba(23,50,77,0.4)', marginTop: '6px' }}></div>
                       </div>
                     </div>
                   </div>
@@ -559,22 +566,22 @@ export default function YuristNedvizhimostStroitelstvoClient() {
               {/* Лист 1: План земельного участка / объекта с печатью */}
               <div className="doc-wrapper-float-1">
                 <div className="doc-sheet doc-sheet-1">
-                  <div style={{ padding: '26px 22px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '14px' }}>
-                      <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
-                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ГЕНПЛАН И ЗОУИТ</span>
-                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>ГПЗУ / ПЗЗ Липецк</span>
+                  <div style={{ padding: '24px 20px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '10px', marginBottom: '12px' }}>
+                      <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '62px', height: 'auto', opacity: 0.95 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', alignItems: 'flex-end' }}>
+                        <span style={{ fontSize: '9px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ГЕНПЛАН И ЗОУИТ</span>
+                        <span style={{ fontSize: '8px', color: 'var(--color-primary)', fontWeight: 600 }}>ГПЗУ / ПЗЗ Липецк</span>
                       </div>
                     </div>
 
                     <div className="doc-map-box" style={{ 
                       width: '100%', 
-                      height: '110px', 
-                      background: 'rgba(247, 244, 237, 0.6)', 
-                      border: '1px solid rgba(193, 160, 102, 0.3)', 
+                      height: '118px', 
+                      background: 'rgba(247, 244, 237, 0.65)', 
+                      border: '1px solid rgba(193, 160, 102, 0.35)', 
                       borderRadius: '2px', 
-                      marginBottom: '12px', 
+                      marginBottom: '10px', 
                       position: 'relative', 
                       display: 'flex', 
                       alignItems: 'center', 
@@ -582,29 +589,29 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                       padding: '4px' 
                     }}>
                       <svg width="100%" height="100%" viewBox="0 0 200 100" fill="none">
-                        <rect x="20" y="10" width="160" height="80" fill="rgba(193, 160, 102, 0.12)" stroke="#10273B" strokeWidth="1.5" />
-                        <line x1="90" y1="10" x2="90" y2="90" stroke="#10273B" strokeWidth="1.2" />
-                        <line x1="90" y1="50" x2="180" y2="50" stroke="#10273B" strokeWidth="1.2" />
-                        <line x1="20" y1="55" x2="90" y2="55" stroke="#10273B" strokeWidth="1.2" strokeDasharray="2 2" />
-                        <path d="M90 35 A15 15 0 0 0 75 50" fill="none" stroke="#C1A066" strokeWidth="0.8" />
-                        <path d="M110 50 A15 15 0 0 0 125 35" fill="none" stroke="#C1A066" strokeWidth="0.8" />
-                        <text x="28" y="34" fill="#10273B" fontSize="6.2" fontWeight="bold">Складской блок 480 м²</text>
-                        <text x="28" y="74" fill="#10273B" fontSize="6.2" fontWeight="bold">Производство 820 м²</text>
-                        <text x="96" y="32" fill="#10273B" fontSize="6.2" fontWeight="bold">Зона разгрузки</text>
-                        <text x="96" y="72" fill="#10273B" fontSize="6.2" fontWeight="bold">Парковка / АБК</text>
-                        <text x="135" y="86" fill="#C1A066" fontSize="7" fontWeight="bold">S = 2 400 м²</text>
+                        <rect x="15" y="10" width="170" height="80" fill="rgba(193, 160, 102, 0.12)" stroke="#10273B" strokeWidth="1.5" />
+                        <line x1="95" y1="10" x2="95" y2="90" stroke="#10273B" strokeWidth="1.2" />
+                        <line x1="95" y1="50" x2="185" y2="50" stroke="#10273B" strokeWidth="1.2" />
+                        <line x1="15" y1="55" x2="95" y2="55" stroke="#10273B" strokeWidth="1.2" strokeDasharray="2 2" />
+                        <path d="M95 35 A15 15 0 0 0 80 50" fill="none" stroke="#C1A066" strokeWidth="0.8" />
+                        <path d="M115 50 A15 15 0 0 0 130 35" fill="none" stroke="#C1A066" strokeWidth="0.8" />
+                        <text x="20" y="34" fill="#10273B" fontSize="8.5" fontWeight="bold">Складской блок 480 м²</text>
+                        <text x="20" y="74" fill="#10273B" fontSize="8.5" fontWeight="bold">Производство 820 м²</text>
+                        <text x="102" y="32" fill="#10273B" fontSize="8.5" fontWeight="bold">Зона разгрузки</text>
+                        <text x="102" y="72" fill="#10273B" fontSize="8.5" fontWeight="bold">Парковка / АБК</text>
+                        <text x="130" y="86" fill="#80633F" fontSize="9.5" fontWeight="bold">S = 2 400 м²</text>
                       </svg>
                     </div>
 
                     <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '8px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                        <div style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>ЮК «ДЕ-ЮРЕ» B2B</div>
-                        <div style={{ fontSize: '5px', color: 'rgba(23,50,77,0.6)', fontFamily: 'var(--font-sans)' }}>Недвижимость и стройка • Липецк</div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div style={{ fontSize: '9px', fontWeight: 'bold', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', letterSpacing: '0.03em' }}>ЮК «ДЕ-ЮРЕ» B2B</div>
+                        <div style={{ fontSize: '8px', color: 'rgba(23,50,77,0.7)', fontFamily: 'var(--font-sans)' }}>Недвижимость и стройка • Липецк</div>
                       </div>
-                      <div style={{ position: 'relative', width: '42px', height: '42px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <div style={{ width: '38px', height: '38px', borderRadius: '50%', border: '1.25px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-12deg)', opacity: 0.9 }}>
-                          <div style={{ width: '31px', height: '31px', borderRadius: '50%', border: '0.5px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <span style={{ fontSize: '3.5px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.1 }}>
+                      <div style={{ position: 'relative', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ width: '44px', height: '44px', borderRadius: '50%', border: '1.5px solid #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-12deg)', opacity: 0.95 }}>
+                          <div style={{ width: '36px', height: '36px', borderRadius: '50%', border: '0.75px dashed #17375E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <span style={{ fontSize: '5.5px', fontWeight: 'bold', color: '#17375E', textAlign: 'center', lineHeight: 1.15 }}>
                               ДЕ-ЮРЕ<br/>B2B
                             </span>
                           </div>
@@ -622,6 +629,13 @@ export default function YuristNedvizhimostStroitelstvoClient() {
 
       {/* ═══ 2. БЛОК СИТУАЦИЙ (ПО ШАБЛОНУ) ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
+        <style>{`
+          @media (min-width: 993px) {
+            .situation-card-last {
+              grid-column: span 2;
+            }
+          }
+        `}</style>
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
@@ -638,159 +652,110 @@ export default function YuristNedvizhimostStroitelstvoClient() {
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
-            {situations.map((sit, i) => (
-              <div key={i} className="hover-lift" style={{ 
-                padding: '36px 30px', 
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease'
-              }}>
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                  </svg>
-                </div>
-
-                <div style={{ 
-                  fontSize: '13px', 
-                  fontWeight: 600, 
-                  color: 'var(--color-gold)', 
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 12px',
-                  alignSelf: 'flex-start',
-                  borderRadius: '2px'
-                }}>
-                  {sit.tag}
-                </div>
-
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0', whiteSpace: 'pre-line' }}>
-                  {sit.title}
-                </h3>
-
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 20px 0', position: 'relative', zIndex: 1, flexGrow: 1 }}>
-                  {sit.desc}
-                </p>
-
-                <div style={{ marginTop: 'auto', paddingTop: '10px' }}>
-                  <Link
-                    href={sit.href}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      color: 'var(--color-primary)',
-                      fontSize: '14px',
-                      fontWeight: 600,
-                      textDecoration: 'none'
-                    }}
-                  >
-                    <span>{sit.linkText}</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            ))}
-
-            {/* Карточка 9: Экспресс-анализ B2B (Тёмная CTA-карточка в 3-й строке) */}
-            <div className="hover-lift" style={{ 
-              padding: '36px 30px', 
-              background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
-              border: '1px solid rgba(193, 160, 102, 0.35)',
-              borderTop: '3px solid var(--color-gold)',
-              boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
-              display: 'flex', 
-              flexDirection: 'column', 
-              justifyContent: 'space-between',
-              position: 'relative', 
-              overflow: 'hidden',
-              transition: 'all 0.3s ease'
-            }}>
-              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
-                <svg width="100" height="100" viewBox="0 0 24 24" fill="#C1A066">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-              </div>
-
-              <div>
-                <div style={{ 
-                  fontSize: '12px', 
-                  fontWeight: 700, 
-                  color: 'var(--color-gold)', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.08em', 
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.15)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  display: 'inline-block'
-                }}>
-                  Экспресс-квалификация
-                </div>
-                <h3 style={{ 
-                  fontFamily: 'var(--font-serif)', 
-                  fontSize: '17px', 
-                  fontWeight: 600, 
-                  color: '#FFFFFF', 
-                  margin: '0 0 14px 0', 
-                  lineHeight: 1.35,
-                  minHeight: '68px',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                    Сложная ситуация
-                  </span>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                    или несколько стадий
-                  </span>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                    в одном проекте?
-                  </span>
-                </h3>
-                <p style={{ 
-                  fontSize: '14.5px', 
-                  color: '#CBD5E1', 
-                  lineHeight: 1.6,
-                  margin: '0 0 20px 0',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  Передайте сведения о задаче: определим характер рисков, профильное направление, состав команды и согласуем порядок действий до начала работ.
-                </p>
-              </div>
-
-              <div style={{ position: 'relative', zIndex: 1 }}>
-                <a
-                  href="#form"
-                  className="btn btn-gold"
-                  style={{
-                    display: 'block',
-                    textAlign: 'center',
-                    padding: '12px 18px',
-                    fontSize: '14px',
-                    fontWeight: 700,
-                    backgroundColor: 'var(--color-gold)',
-                    color: 'var(--color-deep-blue)',
-                    borderRadius: '2px',
-                    textDecoration: 'none',
-                    transition: 'all 0.2s ease',
-                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+            {situations.map((sit, i) => {
+              const isLast = i === situations.length - 1;
+              return (
+                <div 
+                  key={i} 
+                  className={`hover-lift ${isLast ? 'situation-card-last' : ''}`}
+                  style={{ 
+                    padding: '36px 30px', 
+                    background: isLast 
+                      ? 'linear-gradient(145deg, #10273B 0%, #17324D 100%)' 
+                      : 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                    border: isLast 
+                      ? '1px solid rgba(193, 160, 102, 0.35)' 
+                      : '1px solid var(--color-border)',
+                    borderTop: isLast 
+                      ? '3px solid var(--color-gold)' 
+                      : '3px solid var(--color-primary)',
+                    boxShadow: isLast 
+                      ? '0 8px 30px rgba(16, 39, 59, 0.18)' 
+                      : '0 4px 20px rgba(23, 50, 77, 0.05)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    transition: 'all 0.3s ease'
                   }}
                 >
-                  Обсудить задачу бизнеса
-                </a>
-              </div>
-            </div>
+                  <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: isLast ? 0.1 : 0.06, pointerEvents: 'none' }}>
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill={isLast ? '#C1A066' : 'var(--color-deep-blue)'}>
+                      <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                  </div>
+
+                  <div>
+                    <div style={{ 
+                      fontSize: '12px', 
+                      fontWeight: 700, 
+                      color: 'var(--color-gold)', 
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em', 
+                      marginBottom: '14px',
+                      background: isLast ? 'rgba(193, 160, 102, 0.15)' : 'rgba(193, 160, 102, 0.1)',
+                      padding: '4px 12px',
+                      alignSelf: 'flex-start',
+                      borderRadius: '2px',
+                      display: 'inline-block',
+                      position: 'relative',
+                      zIndex: 1
+                    }}>
+                      {sit.tag}
+                    </div>
+
+                    <h3 style={{ 
+                      fontSize: '18px', 
+                      fontFamily: 'var(--font-serif)', 
+                      fontWeight: 600, 
+                      color: isLast ? '#FFFFFF' : 'var(--color-deep-blue)', 
+                      lineHeight: 1.4, 
+                      margin: '0 0 14px 0',
+                      position: 'relative',
+                      zIndex: 1
+                    }}>
+                      {sit.title}
+                    </h3>
+
+                    <p style={{ 
+                      fontSize: '15px', 
+                      color: isLast ? '#CBD5E1' : 'var(--color-text-secondary)', 
+                      lineHeight: 1.6, 
+                      margin: isLast ? '0 0 20px 0' : 0, 
+                      position: 'relative', 
+                      zIndex: 1
+                    }}>
+                      {sit.desc}
+                    </p>
+                  </div>
+
+                  {isLast && sit.buttonText && (
+                    <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '16px' }}>
+                      <a
+                        href={sit.href || '#form'}
+                        className="btn btn-gold"
+                        style={{
+                          display: 'inline-block',
+                          textAlign: 'center',
+                          padding: '12px 24px',
+                          fontSize: '14.5px',
+                          fontWeight: 700,
+                          backgroundColor: 'var(--color-gold)',
+                          color: 'var(--color-deep-blue)',
+                          borderRadius: '2px',
+                          textDecoration: 'none',
+                          transition: 'all 0.2s ease',
+                          boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                        }}
+                      >
+                        {sit.buttonText}
+                      </a>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -1130,7 +1095,11 @@ export default function YuristNedvizhimostStroitelstvoClient() {
 
       {/* ═══ 6. ПРИМЕРЫ ИЗ ПРАКТИКИ (CASES BLOCK) ═══ */}
       <CasesBlock
-        title="Примеры задач по недвижимости и строительству"
+        title={
+          <>
+            Примеры задач <br />по недвижимости и строительству
+          </>
+        }
         showDemoWarning={false}
         resultLabel="Результат"
         cases={cases}
