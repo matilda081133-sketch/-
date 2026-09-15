@@ -1047,16 +1047,6 @@ export default function SdelkiKommercheskayaClient() {
         <div className="container">
           <div style={{ marginBottom: '36px' }}>
             <div style={{
-              fontSize: '13px',
-              fontWeight: 700,
-              color: 'var(--color-gold)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              marginBottom: '10px'
-            }}>
-              Смежные направления практики по недвижимости и строительству
-            </div>
-            <div style={{
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'flex-start',

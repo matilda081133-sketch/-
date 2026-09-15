@@ -32,23 +32,23 @@ export default function CasesBlock({
   return (
     <section className="section bg-white" style={{ padding: 'clamp(48px, 6vw, 80px) 0' }}>
       <div className="container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px', flexWrap: 'wrap', gap: '20px', width: '100%' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
-                Практика
-              </span>
-            </div>
-            <h2 style={{ margin: 0, fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)' }}>
+        <div style={{ marginBottom: '40px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+            <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
+            <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)' }}>
+              Практика
+            </span>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
+            <h2 style={{ margin: 0, fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.25 }}>
               {title}
             </h2>
+            {showAllLink && (
+              <a href={showAllLink} className="btn btn-outline" style={{ padding: '12px 24px', height: 'fit-content', whiteSpace: 'nowrap' }}>
+                {showAllText}
+              </a>
+            )}
           </div>
-          {showAllLink && (
-            <a href={showAllLink} className="btn btn-outline" style={{ padding: '12px 24px', height: 'fit-content', marginLeft: 'auto' }}>
-              {showAllText}
-            </a>
-          )}
         </div>
         
         <div className="cases-grid">

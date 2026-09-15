@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -12,8 +12,6 @@ import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 
 export default function SoprovozhdenieStroitelstvaClient() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const faqs = [
     {
       q: 'На какой стадии подключать юриста по строительству?',
@@ -82,44 +80,47 @@ export default function SoprovozhdenieStroitelstvaClient() {
       title: 'Ввод объекта в эксплуатацию',
       desc: 'Подготовка пакета для получения разрешения на ввод, технический план, преодоление замечаний Госстройнадзора.',
       tag: 'Ввод объекта'
-    },
-    {
-      title: 'Риск самовольной постройки',
-      desc: 'Строительство начато без разрешения или с отклонениями от проекта. Требуется правовая диагностика и план минимизации рисков сноса.',
-      tag: 'Самострой'
     }
   ];
 
   const auditDirections = [
     {
+      num: '01',
       title: 'Правовой статус участка и ГПЗУ',
       desc: 'Соответствие параметров проектируемого объекта ВРИ, ПЗЗ, красным линиям и градостроительному плану участка.'
     },
     {
+      num: '02',
       title: 'Статус застройщика и СРО',
       desc: 'Полномочия заказчика, наличие обязательного членства в СРО у проектировщика, изыскателя и генерального подрядчика.'
     },
     {
+      num: '03',
       title: 'Договоры на изыскания и проект',
       desc: 'Технические задания, разграничение ответственности за ошибки в проекте, передача исключительных прав на документацию.'
     },
     {
+      num: '04',
       title: 'Экспертиза проектной документации',
       desc: 'Проверка необходимости государственной или негосударственной экспертизы, соответствие исходно-разрешительным данным.'
     },
     {
+      num: '05',
       title: 'Договорная обвязка генподряда',
       desc: 'Регламент сдачи-приёмки КС-2/КС-3, графики платежей, гарантийные удержания, ответственность за срыв сроков и дефекты.'
     },
     {
+      num: '06',
       title: 'Разрешительная документация',
       desc: 'Проверка комплектности документов по ст. 51 ГрК РФ для получения разрешения на строительство без риска возврата.'
     },
     {
+      num: '07',
       title: 'Строительный контроль и журналы',
       desc: 'Правовой регламент ведения исполнительной документации, актов скрытых работ и претензионной переписки на стройплощадке.'
     },
     {
+      num: '08',
       title: 'Подготовка к вводу и постановке на учёт',
       desc: 'Сверка фактических параметров по техплану с проектом и разрешением, подготовка заявления на ввод по ст. 55 ГрК РФ.'
     }
@@ -155,7 +156,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
       price: 'от 25 000 ₽',
       subtitle: 'Правовой аудит договоров подряда/проектирования, исходно-разрешительных документов и выявление рисков.',
       buttonText: 'Выбрать тариф',
-      buttonHref: '#contacts-form',
+      buttonHref: '#form',
       features: [
         { name: 'Анализ договоров с подрядчиками и СРО', value: '✓' },
         { name: 'Проверка исходно-разрешительного пакета', value: '✓' },
@@ -169,7 +170,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
       price: 'от 45 000 ₽',
       subtitle: 'Подготовка пакета по ст. 51 ГрК РФ, аудит экспертизы проекта и сопровождение взаимодействия с ведомством.',
       buttonText: 'Выбрать тариф',
-      buttonHref: '#contacts-form',
+      buttonHref: '#form',
       features: [
         { name: 'Проверка соответствия проекту и ГПЗУ', value: '✓' },
         { name: 'Подготовка заявления и правового пакета', value: '✓' },
@@ -183,7 +184,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
       price: 'от 55 000 ₽',
       subtitle: 'Правовой контроль подготовки к вводу объекта, сопоставление техплана с проектом и получение разрешения на ввод.',
       buttonText: 'Выбрать тариф',
-      buttonHref: '#contacts-form',
+      buttonHref: '#form',
       features: [
         { name: 'Сверка фактических параметров и проекта', value: '✓' },
         { name: 'Проверка исполнительной документации', value: '✓' },
@@ -197,7 +198,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
       price: 'от 80 000 ₽',
       subtitle: 'Полное юридическое сопровождение строительства от исходной точки до регистрации права собственности.',
       buttonText: 'Выбрать тариф',
-      buttonHref: '#contacts-form',
+      buttonHref: '#form',
       features: [
         { name: 'Постоянное сопровождение всех договоров', value: '✓' },
         { name: 'Контроль актов КС-2/КС-3 и переписки', value: '✓' },
@@ -205,6 +206,29 @@ export default function SoprovozhdenieStroitelstvaClient() {
         { name: 'Взаимодействие с надзорными инстанциями', value: '✓' }
       ],
       popular: false
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: 'Сделки с недвижимостью',
+      desc: 'Сопровождение купли-продажи коммерческих зданий, земельных массивов, складов и производственных комплексов.',
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/soprovozhdenie-sdelok-s-kommercheskoy-nedvizhimostyu/'
+    },
+    {
+      title: 'Аренда коммерческой недвижимости',
+      desc: 'Аудит и составление договоров аренды для арендаторов и арендодателей, защита обеспечительных платежей.',
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-arendy-kommercheskoy-nedvizhimosti/'
+    },
+    {
+      title: 'Земля и градостроительство',
+      desc: 'Градостроительный аудит, смена ВРИ, внесение изменений в ПЗЗ, получение ГПЗУ и оформление участков.',
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/zemelno-gradostroitelnoe-soprovozhdenie/'
+    },
+    {
+      title: 'Строительные споры в арбитраже',
+      desc: 'Взыскание задолженности по КС-2/КС-3, защита от претензий по качеству и срокам, судебная экспертиза.',
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/stroitelnye-spory/'
     }
   ];
 
@@ -260,47 +284,104 @@ export default function SoprovozhdenieStroitelstvaClient() {
       />
       <Header />
 
-      {/* ═══ 1. ПЕРВЫЙ ЭКРАН ═══ */}
+      {/* ═══ 1. ПЕРВЫЙ ЭКРАН (HERO) ═══ */}
       <MilitaryHero
         breadcrumbs={
           <>
             <Link href="/" style={{ color: 'var(--color-primary)' }}>Главная</Link> <span style={{ margin: '0 8px' }}>/</span>
             <Link href="/biznesu/" style={{ color: 'var(--color-primary)' }}>Бизнесу</Link> <span style={{ margin: '0 8px' }}>/</span>
             <Link href="/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/" style={{ color: 'var(--color-primary)' }}>Юрист по недвижимости и строительству</Link> <span style={{ margin: '0 8px' }}>/</span>
-            <span style={{ color: 'var(--color-text-muted)' }}>Сопровождение строительства</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Сопровождение строительства</span>
           </>
         }
-        superTitle="Строительство и реконструкция • Бизнесу • Липецк"
-        title="Юридическое сопровождение строительства и реконструкции в Липецке"
-        subtitle="Сформируем юридический маршрут проекта, подготовим договоры подряда и разрешительную базу, проконтролируем изменения и сопроводим объект до ввода в эксплуатацию."
+        superTitle={
+          <span className="hero-title-span-mobile" style={{ display: 'inline-block' }}>
+            Недвижимость и строительство • Сопровождение строительства • Липецк
+          </span>
+        }
+        title={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Юридическое сопровождение
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              строительства и девелопмента
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              в Липецке
+            </span>
+          </span>
+        }
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
+            Сформируем юридический маршрут проекта, подготовим договоры подряда и разрешительную базу, проконтролируем изменения и сопроводим объект до ввода в эксплуатацию.
+          </span>
+        }
         trustItems={[
-          { text: 'Начинаем до закупки и подрядных работ' },
-          { text: 'Связываем договоры, проект и разрешения' },
-          { text: 'Стоимость и состав задач фиксируем в договоре' }
+          { text: <span><strong>Начинаем до закупки</strong> и подрядных строительных работ</span> },
+          { text: <span><strong>Связываем договоры</strong>, проектную базу и разрешения в единую систему</span> },
+          { text: <span><strong>Фиксированная стоимость</strong> и измеримые этапы в договоре</span> }
         ]}
         primaryCtaText="Обсудить строительный проект"
         primaryCtaLink="#form"
+        primaryCtaSubtext={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Перезвоним в течение 15 минут в рабочее время
+            </span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              или звоните: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
+            </span>
+          </span>
+        }
         secondaryCtaText="Что проверит юрист"
         secondaryCtaLink="#situations"
+        imageUrl="/images/nacheshnikov.jpg"
+        imageName="Владимир Викторович Начешников"
+        imageSubtitle="Специалист по сопровождению строительства и девелопмента"
       />
 
-      {/* ═══ 2. КОГДА НУЖЕН ЮРИСТ ПО СТРОИТЕЛЬСТВУ ═══ */}
-      <section style={{ backgroundColor: 'var(--color-white)', padding: '64px 0' }}>
+      {/* ═══ 2. КОГДА НУЖЕН ЮРИСТ (СИТУАЦИИ) ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 40px' }}>
-            <h2 className="nowrap-desk" style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              Когда проекту требуется юридическое сопровождение
+          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '12px'
+            }}>
+              Строительная практика
+            </div>
+            <h2 className="with-accent" style={{ 
+              fontSize: 'clamp(28px, 4vw, 42px)', 
+              fontFamily: 'var(--font-serif)', 
+              color: 'var(--color-primary)', 
+              marginBottom: '16px', 
+              marginTop: 0, 
+              lineHeight: 1.2,
+              textAlign: 'left'
+            }}>
+              <span style={{ display: 'inline-block' }}>Когда строительному проекту</span> <br />
+              <span style={{ display: 'inline-block' }}>требуется юридическое сопровождение</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              Помогаем застройщикам, техническим заказчикам и инвесторам предотвратить риски штрафов, простоев и отказа во вводе объекта.
+            <p style={{ 
+              fontSize: '16px', 
+              color: 'var(--color-deep-blue)', 
+              opacity: 0.9, 
+              lineHeight: 1.65, 
+              margin: 0,
+              maxWidth: '740px',
+              textAlign: 'left',
+              textWrap: 'balance'
+            }}>
+              Помогаем застройщикам, техническим заказчикам и инвесторам предотвратить риски штрафов, простоев, судебных споров и отказа во вводе объекта.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '20px'
-          }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             {situations.map((sit, idx) => (
               <div
                 key={idx}
@@ -390,162 +471,475 @@ export default function SoprovozhdenieStroitelstvaClient() {
                 </div>
               </div>
             ))}
+
+            {/* Карточка 6: CTA для сложных ситуаций */}
+            <div
+              className="card hover-lift"
+              style={{
+                background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+                border: '1px solid rgba(193, 160, 102, 0.35)',
+                borderTop: '3px solid var(--color-gold)',
+                borderRadius: '0',
+                padding: '32px 28px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              <div style={{
+                position: 'absolute',
+                top: '-15px',
+                right: '-15px',
+                width: '90px',
+                height: '90px',
+                opacity: 0.1,
+                pointerEvents: 'none',
+                color: '#C1A066'
+              }}>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+
+              <div>
+                <div style={{
+                  fontSize: '11.5px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '3px 8px',
+                  display: 'inline-block',
+                  borderRadius: '2px'
+                }}>
+                  Экспресс-аудит
+                </div>
+
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '18px',
+                  fontWeight: 600,
+                  color: '#FFFFFF',
+                  margin: '0 0 12px 0',
+                  lineHeight: 1.35
+                }}>
+                  Сложный объект или предписание надзора?
+                </h3>
+
+                <p style={{
+                  fontSize: '14px',
+                  color: '#CBD5E1',
+                  lineHeight: 1.6,
+                  margin: 0
+                }}>
+                  Проанализируем документацию, выявим скрытые строительные риски и сформируем правовой план защиты проекта.
+                </p>
+              </div>
+
+              <div style={{ marginTop: '20px' }}>
+                <a
+                  href="#form"
+                  className="btn btn-gold"
+                  style={{
+                    display: 'inline-block',
+                    width: '100%',
+                    textAlign: 'center',
+                    padding: '10px 18px',
+                    fontSize: '13.5px',
+                    fontWeight: 700,
+                    backgroundColor: 'var(--color-gold)',
+                    color: 'var(--color-deep-blue)',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                  }}
+                >
+                  Заказать аудит проекта
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ 3. НАПРАВЛЕНИЯ АУДИТА ═══ */}
-      <section id="project-audit" style={{ backgroundColor: '#F8FAFC', padding: '64px 0', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
+      {/* ═══ 3. НАПРАВЛЕНИЯ СТРОИТЕЛЬНОГО АУДИТА (DUE DILIGENCE ПО ШАБЛОНУ) ═══ */}
+      <section className="section bg-light" id="due-diligence" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 40px' }}>
-            <h2 className="nowrap-desk" style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              Что проверит юрист: 8 ключевых блоков проекта
+          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '12px'
+            }}>
+              Комплексный анализ
+            </div>
+            <h2 className="with-accent" style={{ 
+              fontSize: 'clamp(28px, 4vw, 42px)', 
+              fontFamily: 'var(--font-serif)', 
+              color: 'var(--color-primary)', 
+              marginBottom: '16px', 
+              marginTop: 0, 
+              lineHeight: 1.2,
+              textAlign: 'left'
+            }}>
+              <span style={{ display: 'inline-block' }}>Что проверит юрист:</span> <br />
+              <span style={{ display: 'inline-block' }}>8 направлений Due Diligence проекта</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
+            <p style={{ 
+              fontSize: '16px', 
+              color: 'var(--color-deep-blue)', 
+              opacity: 0.9, 
+              lineHeight: 1.65, 
+              margin: 0, 
+              maxWidth: '740px',
+              textAlign: 'left',
+              textWrap: 'balance'
+            }}>
               Правовая экспертиза строительного проекта от градостроительного регламента до итоговой документации ввода в эксплуатацию.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '20px'
-          }}>
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
             {auditDirections.map((item, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E2E8F0',
-                  borderRadius: '12px',
-                  padding: '24px'
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                  <div style={{
-                    width: '26px',
-                    height: '26px',
-                    borderRadius: '50%',
-                    backgroundColor: 'var(--color-primary)',
-                    color: '#FFFFFF',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '13px',
-                    fontWeight: 700
-                  }}>
-                    {idx + 1}
-                  </div>
-                  <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: 0 }}>
-                    {item.title}
-                  </h3>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
                 </div>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <h3 style={{ 
+                  fontSize: '18px', 
+                  fontFamily: 'var(--font-serif)', 
+                  color: 'var(--color-deep-blue)', 
+                  margin: '8px 0 14px 0', 
+                  lineHeight: 1.35 
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{ 
+                  fontSize: '14.5px', 
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: 1.6, 
+                  margin: 0 
+                }}>
                   {item.desc}
                 </p>
               </div>
             ))}
+
+            {/* Карточка 9: Завершающая CTA карточка аудита */}
+            <div 
+              className="hover-lift"
+              style={{
+                padding: '36px 30px 32px 30px',
+                background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+                border: '1px solid rgba(193, 160, 102, 0.35)',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="#C1A066">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+
+              <div>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  display: 'inline-block',
+                  borderRadius: '2px'
+                }}>
+                  Заключение Due Diligence
+                </div>
+
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '18px',
+                  fontWeight: 600,
+                  color: '#FFFFFF',
+                  margin: '8px 0 14px 0',
+                  lineHeight: 1.35
+                }}>
+                  Нужен аудит строительного проекта?
+                </h3>
+
+                <p style={{
+                  fontSize: '14.5px',
+                  color: '#CBD5E1',
+                  lineHeight: 1.6,
+                  margin: 0
+                }}>
+                  Предоставим письменное заключение с анализом рисков, условий генподряда и правовыми рекомендациями.
+                </p>
+              </div>
+
+              <div style={{ marginTop: '20px', position: 'relative', zIndex: 1 }}>
+                <a
+                  href="#form"
+                  className="btn btn-gold"
+                  style={{
+                    display: 'inline-block',
+                    width: '100%',
+                    textAlign: 'center',
+                    padding: '12px 20px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    backgroundColor: 'var(--color-gold)',
+                    color: 'var(--color-deep-blue)',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                  }}
+                >
+                  Заказать Due Diligence проекта
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ 4. ДИАГНОСТИКА: ЧТО ПОДГОТОВИТЬ ДЛЯ СТАРТА ═══ */}
-      {/* КРИТИЧЕСКОЕ ПРАВИЛО ДИЗАЙНА: светлый фон секции var(--gradient-cream), не синий! */}
-      <section style={{ background: 'var(--gradient-cream)', padding: '64px 0' }}>
+      {/* ═══ 4. ЧТО ПОДГОТОВИТЬ ДЛЯ СТАРТА (ДОКУМЕНТЫ) ═══ */}
+      <section className="section bg-white" id="documents" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{
-            backgroundColor: '#10273B',
-            borderRadius: '20px',
-            padding: '44px 40px',
-            color: '#FFFFFF',
-            boxShadow: '0 12px 32px rgba(16,39,59,0.18)'
-          }}>
-            <div style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center', marginBottom: '32px' }}>
-              <div style={{
-                display: 'inline-block',
-                padding: '4px 12px',
-                borderRadius: '6px',
-                backgroundColor: 'rgba(212,175,55,0.18)',
-                color: '#D4AF37',
-                fontSize: '13px',
-                fontWeight: 600,
-                marginBottom: '12px'
-              }}>
-                Пакет документов
-              </div>
-              <h3 className="nowrap-desk" style={{ fontSize: '26px', fontWeight: 700, color: '#FFFFFF', marginBottom: '12px' }}>
-                Что подготовить для первичной оценки проекта
-              </h3>
-              <p style={{ fontSize: '15px', color: '#CBD5E1', lineHeight: 1.6 }}>
-                Для первого обсуждения достаточно адреса объекта, кадастрового номера, назначения здания и текущей стадии.
-              </p>
-            </div>
-
+          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '16px',
-              marginBottom: '32px'
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '12px'
             }}>
-              {[
-                'Адрес и кадастровые номера земельного участка и реконструируемого объекта',
-                'Краткое описание параметров: площадь застройки, этажность, назначение объекта',
-                'Выписки из ЕГРН на землю и здание, договоры аренды и сервитуты — если есть',
-                'ПЗЗ, ГПЗУ, техусловия и исходно-разрешительные документы — если получены',
-                'Проектная документация, заключения экспертизы и разрешения на строительство',
-                'Договоры с техзаказчиком, проектировщиком, подрядчиками и акты КС-2/КС-3',
-                'Заявления, замечания, отказы ведомств и предписания органов стройнадзора'
-              ].map((item, idx) => (
-                <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <div style={{
-                    width: '20px',
-                    height: '20px',
-                    borderRadius: '50%',
-                    backgroundColor: 'rgba(212,175,55,0.2)',
-                    color: '#D4AF37',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    flexShrink: 0,
-                    marginTop: '2px'
-                  }}>
-                    ✓
+              Пакет документов
+            </div>
+            <h2 className="with-accent" style={{ 
+              fontSize: 'clamp(28px, 4vw, 42px)', 
+              fontFamily: 'var(--font-serif)', 
+              color: 'var(--color-primary)', 
+              marginBottom: '16px', 
+              marginTop: 0, 
+              lineHeight: 1.2,
+              textAlign: 'left'
+            }}>
+              <span style={{ display: 'inline-block' }}>Что подготовить для аудита</span> <br />
+              <span style={{ display: 'inline-block' }}>строительного проекта</span>
+            </h2>
+            <p style={{ 
+              fontSize: '16px', 
+              color: 'var(--color-deep-blue)', 
+              opacity: 0.9, 
+              lineHeight: 1.65, 
+              margin: 0,
+              maxWidth: '740px',
+              textAlign: 'left',
+              textWrap: 'balance'
+            }}>
+              Для первичного анализа достаточно адреса объекта, кадастрового номера и стадии стройки. Остальные документы запросим и проанализируем по ходу аудита.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '32px', marginBottom: '40px' }}>
+            {/* Карточка 1: Исходно-разрешительная и проектная документация */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Исходно-разрешительная база
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Необходима для проверки градостроительного регламента, соответствия параметров объекта и законности застройки.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Выписка ЕГРН на землю и здание</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Кадастровый номер, права собственности/аренды, вид разрешённого использования и обременения.</span>
                   </div>
-                  <span style={{ fontSize: '14px', color: '#E2E8F0', lineHeight: 1.5 }}>
-                    {item}
-                  </span>
-                </div>
-              ))}
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>ГПЗУ и технические условия</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Градостроительный план участка, отступы, охранные зоны ЗОУИТ и условия подключения к сетям.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Проект и экспертиза (при наличии)</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Разделы проектной документации (АР, КР, СПОЗУ), заключение экспертизы и разрешение на строительство.</span>
+                  </div>
+                </li>
+              </ul>
             </div>
 
-            <div style={{ textAlign: 'center' }}>
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="btn btn-gold"
-                style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 600 }}
-              >
-                Отправить параметры проекта на оценку
-              </button>
+            {/* Карточка 2: Договорная база и строительный контроль */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Договорная база и стройконтроль
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Необходимы для проверки распределения ответственности застройщика, генподрядчика и проектировщика.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Договоры подряда и техзаказчика</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Соглашения с генеральным проектировщиком, подрядчиками, наличие членства в СРО и страховки.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Акты приёмки (КС-2, КС-3)</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Акты выполненных работ, справки о стоимости, журналы общих работ и акты скрытых работ.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Предписания и переписка</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Замечания органов Госстройнадзора, мотивированные отказы ведомств и претензии сторон.</span>
+                  </div>
+                </li>
+              </ul>
             </div>
+          </div>
+
+          {/* Информационная плашка */}
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(23, 50, 77, 0.04) 0%, rgba(23, 50, 77, 0.08) 100%)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '20px 24px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '16px'
+          }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <strong>Нет полного комплекта документов?</strong> Начнём с того, что есть в наличии. Недостающие градостроительные сведения, регламенты и выписки из реестров запросим самостоятельно.
+            </p>
           </div>
         </div>
       </section>
 
       {/* ═══ 5. ЭТАПЫ СОПРОВОЖДЕНИЯ СТРОИТЕЛЬСТВА (PROCESS BLOCK) ═══ */}
       <ProcessBlock
-        title="Этапы сопровождения строительного проекта"
-        subtitle="Восемь стадий правового контроля: от подготовки до ввода в эксплуатацию и регистрации права"
+        title="Порядок работы по сопровождению проекта"
+        subtitle="Пять стадий правового контроля: от первичного аудита до ввода в эксплуатацию и регистрации права"
         steps={[
           {
             num: '01',
             title: 'Аудит участка и исходных данных',
-            desc: 'Проверяем права на землю, ПЗЗ, ГПЗУ и технические ограничения перед проектированием.'
+            desc: 'Проверяем права на землю, ПЗЗ, ГПЗУ, ЗОУИТ и технические ограничения перед проектированием.'
           },
           {
             num: '02',
-            title: 'Договоры с проектировщиками',
+            title: 'Договоры с проектировщиками и СРО',
             desc: 'Фиксируем техническое задание, этапы проектирования, согласование в экспертизе и авторские права.'
           },
           {
@@ -555,28 +949,13 @@ export default function SoprovozhdenieStroitelstvaClient() {
           },
           {
             num: '04',
-            title: 'Договоры генподряда и стройки',
-            desc: 'Разрабатываем регламенты сдачи-приёмки КС-2/КС-3, удержаний, штрафов и порядка допработ.'
+            title: 'Правовой надзор за генподрядом',
+            desc: 'Регламентируем сдачу-приёмку КС-2/КС-3, гарантийные удержания, порядок допработ и претензионную переписку.'
           },
           {
             num: '05',
-            title: 'Правовой надзор в ходе стройки',
-            desc: 'Юридическое сопровождение изменений в проект, актов скрытых работ и претензионной переписки.'
-          },
-          {
-            num: '06',
-            title: 'Проверка исполнительной базы',
-            desc: 'Аудит соответствия техплана, журналов работ и разрешительных документов перед подачей на ввод.'
-          },
-          {
-            num: '07',
-            title: 'Получение разрешения на ввод',
-            desc: 'Сопровождение процедуры по ст. 55 ГрК РФ и преодоление возможных замечаний органа надзора.'
-          },
-          {
-            num: '08',
-            title: 'Кадастровый учёт и регистрация',
-            desc: 'Постановка здания на кадастровый учёт и государственная регистрация права собственности в Росреестре.'
+            title: 'Ввод в эксплуатацию и регистрация',
+            desc: 'Сверка техплана с проектом, получение разрешения на ввод по ст. 55 ГрК РФ и регистрация прав в Росреестре.'
           }
         ]}
       />
@@ -584,13 +963,22 @@ export default function SoprovozhdenieStroitelstvaClient() {
       {/* ═══ 6. ПРАКТИКА (CASES BLOCK) ═══ */}
       <CasesBlock
         cases={cases}
-        title="Практика сопровождения строительных проектов"
+        title={
+          <>
+            <span style={{ display: 'inline-block' }}>Практика сопровождения</span> <br />
+            <span style={{ display: 'inline-block' }}>строительства и девелопмента</span>
+          </>
+        }
+        showDemoWarning={false}
+        resultLabel="Результат"
+        showAllLink="/praktika"
+        showAllText="Смотреть всю практику →"
       />
 
       {/* ═══ 7. СТОИМОСТЬ (PRICING BLOCK) ═══ */}
       <PricingBlock
-        title="Стоимость сопровождения строительства"
-        subtitle="Прозрачные тарифы на аудит, согласования и абонентский надзор проектов"
+        title="Стоимость юридического сопровождения строительства"
+        subtitle="Фиксированная стоимость работ, закреплённая в договоре. Понятные и измеримые этапы."
         tiers={pricingTiers}
       />
 
@@ -601,130 +989,155 @@ export default function SoprovozhdenieStroitelstvaClient() {
         faqs={faqs}
       />
 
-      {/* ═══ 9. ФОРМА ОБРАТНОЙ СВЯЗИ (CONTACTS FORM) ═══ */}
-      <ContactsForm
-        title="Обсудите строительный проект с юристом"
-        subtitle="Оставьте заявку на предварительный анализ проекта или реконструкции. Мы свяжемся с вами в течение 15 минут в рабочее время."
-      />
+      {/* ═══ 9. СМЕЖНЫЕ УСЛУГИ КЛАСТЕРА (GRID-4) ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div style={{ marginBottom: '36px' }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ 
+                fontFamily: 'var(--font-serif)', 
+                fontSize: 'clamp(24px, 3.5vw, 34px)', 
+                color: 'var(--color-deep-blue)', 
+                margin: 0, 
+                lineHeight: 1.25, 
+                flex: '1 1 480px', 
+                minWidth: '280px' 
+              }}>
+                <span style={{ display: "inline-block" }}>Смежные услуги</span> <br />
+                <span style={{ display: "inline-block" }}>кластера недвижимости</span>
+              </h2>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}>
+                Комплексная юридическая помощь бизнесу: купля-продажа, коммерческая аренда, земельное право и судебный арбитраж.
+              </p>
+            </div>
+          </div>
 
-      <Footer />
-
-      {/* Модальное окно быстрой заявки */}
-      {isModalOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            backgroundColor: 'rgba(16,39,59,0.7)',
-            zIndex: 9999,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px'
-          }}
-          onClick={() => setIsModalOpen(false)}
-        >
-          <div
-            style={{
-              backgroundColor: '#FFFFFF',
-              borderRadius: '16px',
-              padding: '36px 32px',
-              maxWidth: '540px',
-              width: '100%',
-              position: 'relative'
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setIsModalOpen(false)}
-              style={{
-                position: 'absolute',
-                top: '16px',
-                right: '16px',
-                background: 'none',
-                border: 'none',
-                fontSize: '24px',
-                cursor: 'pointer',
-                color: '#64748B'
-              }}
-            >
-              ×
-            </button>
-            <h3 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>
-              Консультация по строительному проекту
-            </h3>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-muted)', lineHeight: 1.5, marginBottom: '24px' }}>
-              Укажите ваши контактные данные и стадию проекта. Профильный юрист свяжется с вами в рабочее время.
-            </p>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert('Спасибо! Ваша заявка принята. Юрист свяжется с вами в рабочее время.');
-                setIsModalOpen(false);
-              }}
-            >
-              <div style={{ marginBottom: '16px' }}>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                  Ваше имя или организация
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="ООО «Компания» или представитель"
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
+            {relatedServices.map((rel, idx) => (
+              <Link key={idx} href={rel.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+                <div
+                  className="card related-service-card hover-lift"
                   style={{
-                    width: '100%',
-                    padding: '12px 14px',
-                    borderRadius: '8px',
-                    border: '1px solid #CBD5E1',
-                    fontSize: '14px'
+                    height: '100%',
+                    minHeight: '180px',
+                    padding: '26px 24px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-primary)',
+                    borderRadius: '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                    transition: 'all 0.3s ease'
                   }}
-                />
-              </div>
-              <div style={{ marginBottom: '16px' }}>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                  Телефон для связи
-                </label>
-                <input
-                  type="tel"
-                  required
-                  placeholder="+7 (___) ___-__-__"
-                  style={{
-                    width: '100%',
-                    padding: '12px 14px',
-                    borderRadius: '8px',
-                    border: '1px solid #CBD5E1',
-                    fontSize: '14px'
-                  }}
-                />
-              </div>
-              <div style={{ marginBottom: '20px' }}>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                  Параметры объекта и стадия
-                </label>
-                <textarea
-                  rows={3}
-                  placeholder="Строительство склада, реконструкция цеха, получение разрешения на ввод..."
-                  style={{
-                    width: '100%',
-                    padding: '12px 14px',
-                    borderRadius: '8px',
-                    border: '1px solid #CBD5E1',
-                    fontSize: '14px',
-                    resize: 'vertical'
-                  }}
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn btn-primary"
-                style={{ width: '100%', padding: '14px', fontSize: '15px', fontWeight: 600 }}
-              >
-                Отправить заявку
-              </button>
-            </form>
+                >
+                  <div>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                      {rel.title}
+                    </h3>
+                    <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {rel.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                    <span>Подробнее об услуге</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
-      )}
+      </section>
+
+      {/* ═══ 10. ФИНАЛЬНАЯ ФОРМА (СВЯЗАТЬСЯ С НАМИ) — ШАБЛОН ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получите первичную</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>оценку проекта</span>
+              </h2>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко опишите параметры объекта и текущую стадию. Юрист оценит правовые риски, комплектность документов и свяжется с вами в течение 15 минут в рабочее время.
+              </p>
+
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация строительного юриста</strong>
+                </div>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                </p>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
+                  Липецк, ул. Советская, д. 35, офис 213 (приём по предварительной записи)
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
+                Не указывайте в форме конфиденциальные инвестиционные планы и закрытые данные. Документы можно передать юристу после согласования защищённого канала связи.
+              </div>
+            </div>
+
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Обсудить строительный проект"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Опишите объект и стадию стройки. Юрист свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
+                buttonText="Отправить проект на оценку"
+                commentPlaceholder="Укажите назначение объекта (склад, цех, ТЦ), стадию и возникшие вопросы…"
+                hiddenFields={[
+                  { name: 'source_page', value: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-stroitelstva/' },
+                  { name: 'service', value: 'Юридическое сопровождение строительства и реконструкции' }
+                ]}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </main>
   );
 }
