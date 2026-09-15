@@ -342,7 +342,10 @@ export default function ArendaKommercheskayaClient() {
               Юридическое сопровождение
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              аренды коммерческой недвижимости
+              аренды коммерческой
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              недвижимости
             </span>
           </span>
         }

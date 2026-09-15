@@ -67,7 +67,12 @@ export default function SdelkiKommercheskayaClient() {
       tag: 'Продажа'
     },
     {
-      title: 'Сложный объект или комплекс',
+      title: (
+        <>
+          Сложный объект <br />
+          или комплекс
+        </>
+      ),
       desc: 'В сделку входят несколько зданий, земельный участок, сети, оборудование или действующие арендаторы.',
       tag: 'Комплекс'
     },
@@ -77,7 +82,12 @@ export default function SdelkiKommercheskayaClient() {
       tag: 'Росреестр'
     },
     {
-      title: 'Сделка с обременением или арендой',
+      title: (
+        <>
+          Сделка с обременением <br />
+          или арендой
+        </>
+      ),
       desc: 'Объект находится в залоге, под арестом, обременён долгосрочной арендой или имеет неснятые запреты.',
       tag: 'Обременения'
     }
@@ -338,7 +348,10 @@ export default function SdelkiKommercheskayaClient() {
               Сопровождение сделок
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              с коммерческой недвижимостью
+              с коммерческой
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              недвижимостью
             </span>
           </span>
         }
