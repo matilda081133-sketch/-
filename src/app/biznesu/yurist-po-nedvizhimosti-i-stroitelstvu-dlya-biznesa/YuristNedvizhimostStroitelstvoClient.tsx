@@ -657,18 +657,17 @@ export default function YuristNedvizhimostStroitelstvoClient() {
               return (
                 <div 
                   key={i} 
-                  className={`hover-lift ${isLast ? 'situation-card-last' : ''}`}
+                  className={`card hover-lift ${isLast ? 'situation-card-last' : ''}`}
                   style={{ 
-                    padding: '36px 30px', 
+                    padding: isLast ? '36px 30px' : '32px 28px', 
                     background: isLast 
                       ? 'linear-gradient(145deg, #10273B 0%, #17324D 100%)' 
-                      : 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                      : 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
                     border: isLast 
                       ? '1px solid rgba(193, 160, 102, 0.35)' 
                       : '1px solid var(--color-border)',
-                    borderTop: isLast 
-                      ? '3px solid var(--color-gold)' 
-                      : '3px solid var(--color-primary)',
+                    borderTop: '3px solid var(--color-gold)',
+                    borderRadius: '0',
                     boxShadow: isLast 
                       ? '0 8px 30px rgba(16, 39, 59, 0.18)' 
                       : '0 4px 20px rgba(23, 50, 77, 0.05)',
@@ -676,81 +675,103 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     position: 'relative',
-                    overflow: 'hidden',
-                    transition: 'all 0.3s ease'
+                    overflow: 'hidden'
                   }}
                 >
-                  <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: isLast ? 0.1 : 0.06, pointerEvents: 'none' }}>
-                    <svg width="100" height="100" viewBox="0 0 24 24" fill={isLast ? '#C1A066' : 'var(--color-deep-blue)'}>
-                      <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  <div style={{
+                    position: 'absolute',
+                    top: '-15px',
+                    right: '-15px',
+                    width: '90px',
+                    height: '90px',
+                    opacity: isLast ? 0.1 : 0.04,
+                    pointerEvents: 'none',
+                    color: isLast ? '#C1A066' : 'var(--color-deep-blue)'
+                  }}>
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                     </svg>
                   </div>
 
                   <div>
-                    <div style={{ 
-                      fontSize: '12px', 
-                      fontWeight: 700, 
-                      color: 'var(--color-gold)', 
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em', 
-                      marginBottom: '14px',
-                      background: isLast ? 'rgba(193, 160, 102, 0.15)' : 'rgba(193, 160, 102, 0.1)',
-                      padding: '4px 12px',
-                      alignSelf: 'flex-start',
-                      borderRadius: '2px',
-                      display: 'inline-block',
-                      position: 'relative',
-                      zIndex: 1
-                    }}>
-                      {sit.tag}
-                    </div>
+                    {sit.tag && (
+                      <div style={{ 
+                        fontSize: '11.5px', 
+                        fontWeight: 700, 
+                        color: isLast ? 'var(--color-gold)' : 'var(--color-primary)', 
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em', 
+                        marginBottom: '12px',
+                        background: isLast ? 'rgba(193, 160, 102, 0.15)' : 'rgba(23, 50, 77, 0.06)',
+                        padding: '3px 8px',
+                        alignSelf: 'flex-start',
+                        borderRadius: '2px',
+                        display: 'inline-block'
+                      }}>
+                        {sit.tag}
+                      </div>
+                    )}
 
                     <h3 style={{ 
                       fontSize: '18px', 
                       fontFamily: 'var(--font-serif)', 
                       fontWeight: 600, 
                       color: isLast ? '#FFFFFF' : 'var(--color-deep-blue)', 
-                      lineHeight: 1.4, 
-                      margin: '0 0 14px 0',
-                      position: 'relative',
-                      zIndex: 1
+                      lineHeight: 1.35, 
+                      margin: '0 0 12px 0'
                     }}>
                       {sit.title}
                     </h3>
 
                     <p style={{ 
-                      fontSize: '15px', 
+                      fontSize: '14px', 
                       color: isLast ? '#CBD5E1' : 'var(--color-text-secondary)', 
                       lineHeight: 1.6, 
-                      margin: isLast ? '0 0 20px 0' : 0, 
-                      position: 'relative', 
-                      zIndex: 1
+                      margin: isLast ? '0 0 20px 0' : 0
                     }}>
                       {sit.desc}
                     </p>
                   </div>
 
-                  {isLast && sit.buttonText && (
-                    <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '16px' }}>
-                      <a
-                        href={sit.href || '#form'}
-                        className="btn btn-gold"
-                        style={{
-                          display: 'inline-block',
-                          textAlign: 'center',
-                          padding: '12px 24px',
-                          fontSize: '14.5px',
-                          fontWeight: 700,
-                          backgroundColor: 'var(--color-gold)',
-                          color: 'var(--color-deep-blue)',
-                          borderRadius: '2px',
-                          textDecoration: 'none',
-                          transition: 'all 0.2s ease',
-                          boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
-                        }}
-                      >
-                        {sit.buttonText}
-                      </a>
+                  {isLast ? (
+                    sit.buttonText && (
+                      <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '16px' }}>
+                        <a
+                          href={sit.href || '#form'}
+                          className="btn btn-gold"
+                          style={{
+                            display: 'inline-block',
+                            textAlign: 'center',
+                            padding: '12px 24px',
+                            fontSize: '14.5px',
+                            fontWeight: 700,
+                            backgroundColor: 'var(--color-gold)',
+                            color: 'var(--color-deep-blue)',
+                            borderRadius: '2px',
+                            textDecoration: 'none',
+                            transition: 'all 0.2s ease',
+                            boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                          }}
+                        >
+                          {sit.buttonText}
+                        </a>
+                      </div>
+                    )
+                  ) : (
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--color-primary)',
+                      fontSize: '13px',
+                      fontWeight: 600,
+                      marginTop: '20px'
+                    }}>
+                      <span>Защитить проект</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
                     </div>
                   )}
                 </div>
