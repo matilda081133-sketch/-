@@ -910,7 +910,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
             </p>
           </div>
 
-          <div className="grid grid-5" style={{ gap: '20px' }}>
+          <div className="grid grid-3" style={{ gap: '28px' }}>
             {[
               { 
                 tag: 'Активы и владение',
@@ -942,7 +942,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                 key={idx} 
                 className="hover-lift"
                 style={{
-                  padding: '30px 22px',
+                  padding: '36px 30px',
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
@@ -954,21 +954,21 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                   transition: 'all 0.3s ease'
                 }}
               >
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.05, pointerEvents: 'none' }}>
-                  <svg width="80" height="80" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
                     <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                   </svg>
                 </div>
 
                 <div style={{ 
-                  fontSize: '11px', 
+                  fontSize: '12px', 
                   fontWeight: 700, 
                   color: 'var(--color-gold)', 
                   textTransform: 'uppercase', 
                   letterSpacing: '0.08em', 
                   marginBottom: '14px',
                   background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
+                  padding: '4px 12px',
                   alignSelf: 'flex-start',
                   borderRadius: '2px',
                   display: 'inline-block',
@@ -979,12 +979,12 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                 </div>
 
                 <h3 style={{ 
-                  fontSize: '18px', 
+                  fontSize: '20px', 
                   fontFamily: 'var(--font-serif)', 
                   fontWeight: 600, 
                   color: 'var(--color-deep-blue)', 
                   lineHeight: 1.35, 
-                  margin: '0 0 12px 0',
+                  margin: '0 0 14px 0',
                   position: 'relative',
                   zIndex: 1
                 }}>
@@ -992,9 +992,9 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                 </h3>
 
                 <p style={{ 
-                  fontSize: '14.5px', 
+                  fontSize: '15px', 
                   color: 'var(--color-text-secondary)', 
-                  lineHeight: 1.55, 
+                  lineHeight: 1.6, 
                   margin: 0,
                   position: 'relative',
                   zIndex: 1
@@ -1003,6 +1003,97 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                 </p>
               </div>
             ))}
+
+            {/* Карточка 6: Экспресс-анализ (Завершающая 2-й ряд CTA-карточка) */}
+            <div className="hover-lift" style={{ 
+              padding: '36px 30px', 
+              background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+              border: '1px solid rgba(193, 160, 102, 0.35)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+              display: 'flex', 
+              flexDirection: 'column', 
+              justifyContent: 'space-between',
+              position: 'relative', 
+              overflow: 'hidden',
+              transition: 'all 0.3s ease'
+            }}>
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="#C1A066">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+
+              <div>
+                <div style={{ 
+                  fontSize: '12px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  display: 'inline-block'
+                }}>
+                  Экспресс-анализ
+                </div>
+                <h3 style={{ 
+                  fontFamily: 'var(--font-serif)', 
+                  fontSize: '17px', 
+                  fontWeight: 600, 
+                  color: '#FFFFFF', 
+                  margin: '0 0 14px 0', 
+                  lineHeight: 1.35,
+                  minHeight: '68px',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    Определить стадию
+                  </span>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    и следующий шаг
+                  </span>
+                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                    по вашей ситуации
+                  </span>
+                </h3>
+                <p style={{ 
+                  fontSize: '14.5px', 
+                  color: '#CBD5E1', 
+                  lineHeight: 1.6, 
+                  margin: '0 0 20px 0', 
+                  position: 'relative', 
+                  zIndex: 1 
+                }}>
+                  Передайте документы юристу по недвижимости: проверим объект, сторону сделки, процессуальные сроки и подберём законный маршрут защиты.
+                </p>
+              </div>
+
+              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto' }}>
+                <a
+                  href="#form"
+                  className="btn btn-gold"
+                  style={{
+                    display: 'block',
+                    textAlign: 'center',
+                    padding: '12px 18px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    backgroundColor: 'var(--color-gold)',
+                    color: 'var(--color-deep-blue)',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                  }}
+                >
+                  Определить стадию и следующий шаг
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
