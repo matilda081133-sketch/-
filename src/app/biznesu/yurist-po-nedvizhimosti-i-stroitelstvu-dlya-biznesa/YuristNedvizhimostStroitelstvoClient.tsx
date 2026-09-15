@@ -882,48 +882,125 @@ export default function YuristNedvizhimostStroitelstvoClient() {
         </div>
       </section>
 
-      {/* ═══ 4. КОМУ ПОМОГАЕМ (СЕГМЕНТЫ БИЗНЕСА) ═══ */}
-      <section style={{ backgroundColor: 'var(--color-white)', padding: '60px 0 40px', borderBottom: '1px solid #ECEFF2' }}>
+      {/* ═══ 4. КОМУ ПОМОГАЕМ (ПО ШАБЛОНУ) ═══ */}
+      <section className="section bg-white" id="who-we-help" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 36px' }}>
-            <h2 className="nowrap-desk" style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ 
+              fontSize: 'clamp(28px, 4vw, 36px)', 
+              fontFamily: 'var(--font-serif)', 
+              color: 'var(--color-primary)', 
+              marginBottom: '16px', 
+              marginTop: 0, 
+              lineHeight: 1.25,
+              textAlign: 'left'
+            }}>
               Кому помогаем
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
+            <p style={{ 
+              fontSize: '16px', 
+              color: 'var(--color-deep-blue)', 
+              opacity: 0.9, 
+              fontWeight: 500, 
+              margin: 0, 
+              lineHeight: 1.6,
+              textAlign: 'left'
+            }}>
               Работаем с обеими сторонами коммерческих отношений. Позицию и возможный конфликт интересов проверяем до заключения договора с клиентом.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '16px'
-          }}>
+          <div className="grid grid-5" style={{ gap: '20px' }}>
             {[
-              { role: 'Собственники и инвесторы', desc: 'Защита активов, проверка чистоты объектов и планирование юридических маршрутов' },
-              { role: 'Покупатели и продавцы', desc: 'Due diligence, согласование безопасных расчётов и регистрация сделок' },
-              { role: 'Арендодатели и арендаторы', desc: 'Договоры коммерческой аренды, урегулирование разногласий и возврат площадей' },
-              { role: 'Заказчики и застройщики', desc: 'Разрешительная документация, договоры генподряда и контроль исполнения' },
-              { role: 'Подрядчики и субподрядчики', desc: 'Защита по КС-2/КС-3, взыскание задолженности и экспертиза объёмов/качества' }
+              { 
+                tag: 'Активы и владение',
+                role: 'Собственники и инвесторы', 
+                desc: 'Защита активов, проверка чистоты объектов и планирование юридических маршрутов' 
+              },
+              { 
+                tag: 'Сделки и права',
+                role: 'Покупатели и продавцы', 
+                desc: 'Due diligence, согласование безопасных расчётов и регистрация сделок' 
+              },
+              { 
+                tag: 'Коммерческая аренда',
+                role: 'Арендодатели и арендаторы', 
+                desc: 'Договоры коммерческой аренды, урегулирование разногласий и возврат площадей' 
+              },
+              { 
+                tag: 'Стройка и девелопмент',
+                role: 'Заказчики и застройщики', 
+                desc: 'Разрешительная документация, договоры генподряда и контроль исполнения' 
+              },
+              { 
+                tag: 'Подрядные работы',
+                role: 'Подрядчики и субподрядчики', 
+                desc: 'Защита по КС-2/КС-3, взыскание задолженности и экспертиза объёмов/качества' 
+              }
             ].map((seg, idx) => (
-              <div key={idx} style={{
-                backgroundColor: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                background: '#FFFFFF',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-gold)',
-                borderRadius: '0',
-                padding: '24px 20px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                boxShadow: '0 2px 12px rgba(23, 50, 77, 0.03)'
-              }}>
-                <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '8px' }}>
+              <div 
+                key={idx} 
+                className="hover-lift"
+                style={{
+                  padding: '30px 22px',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.05, pointerEvents: 'none' }}>
+                  <svg width="80" height="80" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
+                <div style={{ 
+                  fontSize: '11px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-gold)', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.08em', 
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.1)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  borderRadius: '2px',
+                  display: 'inline-block',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {seg.tag}
+                </div>
+
+                <h3 style={{ 
+                  fontSize: '18px', 
+                  fontFamily: 'var(--font-serif)', 
+                  fontWeight: 600, 
+                  color: 'var(--color-deep-blue)', 
+                  lineHeight: 1.35, 
+                  margin: '0 0 12px 0',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
                   {seg.role}
-                </div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                </h3>
+
+                <p style={{ 
+                  fontSize: '14.5px', 
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: 1.55, 
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
                   {seg.desc}
-                </div>
+                </p>
               </div>
             ))}
           </div>
