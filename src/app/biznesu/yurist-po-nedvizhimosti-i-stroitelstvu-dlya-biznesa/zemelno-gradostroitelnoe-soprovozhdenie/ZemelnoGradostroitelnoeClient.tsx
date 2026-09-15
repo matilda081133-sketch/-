@@ -608,15 +608,15 @@ export default function ZemelnoGradostroitelnoeClient() {
               lineHeight: 1.2,
               textAlign: 'left'
             }}>
-              <span style={{ display: 'inline-block' }}>Что проверит юрист: 8 направлений</span> <br />
-              <span style={{ display: 'inline-block' }}>градостроительного аудита участка</span>
+              <span style={{ display: 'inline-block' }}>Что проверит юрист:</span> <br />
+              <span style={{ display: 'inline-block' }}>8 направлений Due Diligence участка</span>
             </h2>
             <p style={{ 
               fontSize: '16px', 
               color: 'var(--color-deep-blue)', 
               opacity: 0.9, 
               lineHeight: 1.65, 
-              margin: 0,
+              margin: 0, 
               maxWidth: '740px',
               textAlign: 'left',
               textWrap: 'balance'
@@ -625,55 +625,140 @@ export default function ZemelnoGradostroitelnoeClient() {
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
             {auditDirections.map((item, idx) => (
               <div
                 key={idx}
-                className="card hover-lift"
+                className="hover-lift"
                 style={{
-                  background: 'var(--color-white)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
                   border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-gold)',
-                  borderRadius: '0',
-                  padding: '28px 24px',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
-                  gap: '20px',
-                  alignItems: 'flex-start',
-                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
                 <div style={{
-                  fontSize: '18px',
-                  fontFamily: 'var(--font-serif)',
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
                   fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  lineHeight: 1,
-                  paddingTop: '2px'
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
                   {item.num}
                 </div>
-                <div>
-                  <h3 style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '17px',
-                    fontWeight: 700,
-                    color: 'var(--color-deep-blue)',
-                    margin: '0 0 8px 0',
-                    lineHeight: 1.3
-                  }}>
-                    {item.title}
-                  </h3>
-                  <p style={{
-                    margin: 0,
-                    fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6
-                  }}>
-                    {item.desc}
-                  </p>
-                </div>
+                <h3 style={{ 
+                  fontSize: '18px', 
+                  fontFamily: 'var(--font-serif)', 
+                  color: 'var(--color-deep-blue)', 
+                  margin: '8px 0 14px 0', 
+                  lineHeight: 1.35 
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{ 
+                  fontSize: '14.5px', 
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: 1.6, 
+                  margin: 0 
+                }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
+
+            {/* Карточка 9: Завершающая CTA карточка аудита */}
+            <div 
+              className="hover-lift"
+              style={{
+                padding: '36px 30px 32px 30px',
+                background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+                border: '1px solid rgba(193, 160, 102, 0.35)',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="#C1A066">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+
+              <div>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  display: 'inline-block',
+                  borderRadius: '2px'
+                }}>
+                  Заключение Due Diligence
+                </div>
+
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '18px',
+                  fontWeight: 600,
+                  color: '#FFFFFF',
+                  margin: '8px 0 14px 0',
+                  lineHeight: 1.35
+                }}>
+                  Нужен аудит участка до сделки?
+                </h3>
+
+                <p style={{
+                  fontSize: '14.5px',
+                  color: '#CBD5E1',
+                  lineHeight: 1.6,
+                  margin: 0
+                }}>
+                  Предоставим письменный отчёт с выявленными рисками, ограничениями и юридическими рекомендациями по проекту.
+                </p>
+              </div>
+
+              <div style={{ marginTop: '20px', position: 'relative', zIndex: 1 }}>
+                <a
+                  href="#form"
+                  className="btn btn-gold"
+                  style={{
+                    display: 'inline-block',
+                    width: '100%',
+                    textAlign: 'center',
+                    padding: '12px 20px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    backgroundColor: 'var(--color-gold)',
+                    color: 'var(--color-deep-blue)',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                  }}
+                >
+                  Заказать Due Diligence участка
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
