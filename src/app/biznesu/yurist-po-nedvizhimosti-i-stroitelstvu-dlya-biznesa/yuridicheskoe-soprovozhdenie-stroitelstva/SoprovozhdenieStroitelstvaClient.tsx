@@ -296,7 +296,8 @@ export default function SoprovozhdenieStroitelstvaClient() {
         }
         superTitle={
           <span className="hero-title-span-mobile" style={{ display: 'inline-block' }}>
-            Недвижимость и строительство • Сопровождение строительства • Липецк
+            Недвижимость и строительство • <br />
+            Сопровождение строительства • Липецк
           </span>
         }
         title={
@@ -477,7 +478,10 @@ export default function SoprovozhdenieStroitelstvaClient() {
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
                   onClick={(e) => {
-                    e.stopPropagation();
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
                   <span>Защитить проект</span>
@@ -743,7 +747,10 @@ export default function SoprovozhdenieStroitelstvaClient() {
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
                   onClick={(e) => {
-                    e.stopPropagation();
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
                   <span>Заказать Due Diligence проекта</span>

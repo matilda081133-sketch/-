@@ -490,7 +490,10 @@ export default function ZemelnoGradostroitelnoeClient() {
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
                   onClick={(e) => {
-                    e.stopPropagation();
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
                   <span>Защитить проект</span>
@@ -760,7 +763,10 @@ export default function ZemelnoGradostroitelnoeClient() {
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
                   onClick={(e) => {
-                    e.stopPropagation();
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
                   <span>Заказать Due Diligence участка</span>

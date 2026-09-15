@@ -6,4 +6,4 @@
 :HL["/images/polozova.jpg","image"]
 :HL["/images/konopkin.jpg","image"]
 :HL["/images/gusev.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"specialisty","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"Hamg0o3dZ4_bLew8ARZTD"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"specialisty","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"CCc7s9egqldkCsKwslV-W"}

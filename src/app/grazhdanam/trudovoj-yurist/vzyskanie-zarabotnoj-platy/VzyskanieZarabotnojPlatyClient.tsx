@@ -600,21 +600,35 @@ export default function VzyskanieZarabotnojPlatyClient() {
                   </p>
                 </div>
 
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  color: 'var(--color-primary)',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                  marginTop: '20px'
-                }}>
+                <a
+                  href="#form"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13.5px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '20px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
+                  }}
+                >
                   <span>Защитить права</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
-                </div>
+                </a>
               </div>
             ))}
 
@@ -697,8 +711,14 @@ export default function VzyskanieZarabotnojPlatyClient() {
             boxShadow: '0 10px 30px rgba(16, 39, 59, 0.2)',
             padding: '36px 32px',
             position: 'relative',
-            overflow: 'hidden'
-          }}>
+            overflow: 'hidden',
+                  cursor: 'pointer'
+                }}
+                onClick={() => {
+                  const el = document.getElementById('form');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  else window.location.hash = 'form';
+                }}>
             {/* Фоновый декоративный вектор */}
             <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
               <svg width="120" height="120" viewBox="0 0 24 24" fill="#FFFFFF">

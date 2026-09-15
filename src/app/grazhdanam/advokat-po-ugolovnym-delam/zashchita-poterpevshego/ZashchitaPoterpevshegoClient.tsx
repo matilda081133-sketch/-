@@ -413,21 +413,35 @@ export default function ZashchitaPoterpevshegoClient() {
                   </p>
                 </div>
 
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  color: 'var(--color-primary)',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                  marginTop: '20px'
-                }}>
+                <a
+                  href="#form"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13.5px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '20px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
+                  }}
+                >
                   <span>Защитить права</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
-                </div>
+                </a>
               </div>
             ))}
           </div>

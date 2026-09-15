@@ -516,7 +516,10 @@ export default function SdelkiKommercheskayaClient() {
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
                   onClick={(e) => {
-                    e.stopPropagation();
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
                   <span>Защитить сделку</span>
@@ -755,21 +758,7 @@ export default function SdelkiKommercheskayaClient() {
                 zIndex: 1
               }}>
                 <div style={{ flex: '1 1 340px' }}>
-                  <div style={{
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    color: 'var(--color-gold)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    marginBottom: '14px',
-                    background: 'rgba(193, 160, 102, 0.15)',
-                    padding: '4px 10px',
-                    alignSelf: 'flex-start',
-                    display: 'inline-block',
-                    borderRadius: '2px'
-                  }}>
-                    Заключение Due Diligence
-                  </div>
+                  
 
                   <h3 style={{
                     fontFamily: 'var(--font-serif)',

@@ -505,7 +505,10 @@ export default function ArendaKommercheskayaClient() {
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
                   onClick={(e) => {
-                    e.stopPropagation();
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
                   <span>Урегулировать аренду</span>
