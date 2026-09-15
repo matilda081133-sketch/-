@@ -1016,7 +1016,16 @@ export default function ZemelnoGradostroitelnoeClient() {
       {/* ═══ 6. ПРАКТИКА (CASES BLOCK) ═══ */}
       <CasesBlock
         cases={cases}
-        title="Практика по земельным и градостроительным делам"
+        title={
+          <>
+            <span style={{ display: 'inline-block' }}>Практика по земельным</span> <br />
+            <span style={{ display: 'inline-block' }}>и градостроительным делам</span>
+          </>
+        }
+        showDemoWarning={false}
+        resultLabel="Результат"
+        showAllLink="/praktika"
+        showAllText="Смотреть всю практику →"
       />
 
       {/* ═══ 7. СТОИМОСТЬ (PRICING BLOCK) ═══ */}
