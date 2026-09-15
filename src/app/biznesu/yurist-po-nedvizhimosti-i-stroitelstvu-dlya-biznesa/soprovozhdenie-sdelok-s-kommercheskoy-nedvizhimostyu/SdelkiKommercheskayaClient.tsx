@@ -239,7 +239,19 @@ export default function SdelkiKommercheskayaClient() {
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
         },
-        areaServed: ['Липецк', 'Липецкая область']
+        areaServed: ['Липецк', 'Липецкая область'],
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
+        name: 'Владимир Викторович Начешников',
+        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        }
       },
       {
         '@type': 'Service',
@@ -354,6 +366,10 @@ export default function SdelkiKommercheskayaClient() {
         }
         secondaryCtaText="Что проверит юрист"
         secondaryCtaLink="#due-diligence"
+        imageUrl="/images/nacheshnikov.jpg"
+        imageName="Владимир Викторович Начешников"
+        imageSubtitle="Специалист по сопровождению сделок и аудиту бизнеса"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ 2. КОГДА НУЖЕН ЮРИСТ (СИТУАЦИИ) — ШАБЛОН ═══ */}
@@ -588,6 +604,19 @@ export default function SdelkiKommercheskayaClient() {
             </p>
           </div>
 
+          <style dangerouslySetInnerHTML={{ __html: `
+            @media (min-width: 992px) {
+              .due-diligence-cta-card {
+                grid-column: span 2 !important;
+              }
+            }
+            @media (max-width: 991px) {
+              .due-diligence-cta-card {
+                grid-column: 1 / -1 !important;
+              }
+            }
+          `}} />
+
           <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
             {dueDiligenceItems.map((item, idx) => (
               <div
@@ -638,80 +667,98 @@ export default function SdelkiKommercheskayaClient() {
               </div>
             ))}
 
-            {/* Карточка 8: Завершающая CTA карточка аудита */}
+            {/* Карточка 8: Завершающая CTA карточка аудита на всю оставшуюся ширину */}
             <div 
-              className="hover-lift"
+              className="hover-lift due-diligence-cta-card"
               style={{
-                padding: '36px 30px',
+                padding: '36px 36px',
                 background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
                 border: '1px solid rgba(193, 160, 102, 0.35)',
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
+                justifyContent: 'center',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
               }}
             >
-              <div>
-                <div style={{
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.15)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  display: 'inline-block',
-                  borderRadius: '2px'
-                }}>
-                  Заключение Due Diligence
-                </div>
-
-                <h3 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '18px',
-                  fontWeight: 600,
-                  color: '#FFFFFF',
-                  margin: '0 0 14px 0',
-                  lineHeight: 1.35
-                }}>
-                  Нужна оценка объекта до внесения аванса?
-                </h3>
-
-                <p style={{
-                  fontSize: '14.5px',
-                  color: '#CBD5E1',
-                  lineHeight: 1.6,
-                  margin: '0 0 20px 0'
-                }}>
-                  Предоставим письменный отчёт с выявленными рисками, ограничениями и юридическими рекомендациями по структуре сделки.
-                </p>
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="#C1A066">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
               </div>
 
-              <div style={{ marginTop: 'auto' }}>
-                <a
-                  href="#form"
-                  className="btn btn-gold"
-                  style={{
-                    display: 'block',
-                    textAlign: 'center',
-                    padding: '12px 18px',
-                    fontSize: '14px',
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: '24px',
+                position: 'relative',
+                zIndex: 1
+              }}>
+                <div style={{ flex: '1 1 340px' }}>
+                  <div style={{
+                    fontSize: '12px',
                     fontWeight: 700,
-                    backgroundColor: 'var(--color-gold)',
-                    color: 'var(--color-deep-blue)',
-                    borderRadius: '2px',
-                    textDecoration: 'none',
-                    transition: 'all 0.2s ease',
-                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
-                  }}
-                >
-                  Заказать Due Diligence объекта
-                </a>
+                    color: 'var(--color-gold)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    marginBottom: '14px',
+                    background: 'rgba(193, 160, 102, 0.15)',
+                    padding: '4px 10px',
+                    alignSelf: 'flex-start',
+                    display: 'inline-block',
+                    borderRadius: '2px'
+                  }}>
+                    Заключение Due Diligence
+                  </div>
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '22px',
+                    fontWeight: 600,
+                    color: '#FFFFFF',
+                    margin: '0 0 10px 0',
+                    lineHeight: 1.3
+                  }}>
+                    Нужна оценка объекта до внесения аванса?
+                  </h3>
+
+                  <p style={{
+                    fontSize: '15px',
+                    color: '#CBD5E1',
+                    lineHeight: 1.6,
+                    margin: 0
+                  }}>
+                    Предоставим письменный отчёт с выявленными рисками, ограничениями и юридическими рекомендациями по структуре сделки.
+                  </p>
+                </div>
+
+                <div style={{ flexShrink: 0 }}>
+                  <a
+                    href="#form"
+                    className="btn btn-gold"
+                    style={{
+                      display: 'inline-block',
+                      textAlign: 'center',
+                      padding: '14px 28px',
+                      fontSize: '15px',
+                      fontWeight: 700,
+                      backgroundColor: 'var(--color-gold)',
+                      color: 'var(--color-deep-blue)',
+                      borderRadius: '2px',
+                      textDecoration: 'none',
+                      whiteSpace: 'nowrap',
+                      transition: 'all 0.2s ease',
+                      boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                    }}
+                  >
+                    Заказать Due Diligence объекта
+                  </a>
+                </div>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -12,8 +12,6 @@ import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 
 export default function ArendaKommercheskayaClient() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const faqs = [
     {
       q: 'Когда лучше подключать юриста?',
@@ -82,23 +80,42 @@ export default function ArendaKommercheskayaClient() {
       title: 'Задолженность и удержание имущества',
       desc: 'Конфликт по оплате: ограничение доступа в помещение, отключение коммунальных услуг, удержание оборудования арендатора.',
       tag: 'Конфликт'
-    },
-    {
-      title: 'Возврат помещения и обеспечение',
-      desc: 'Разногласия по акту возврата, естественному износу, восстановительному ремонту и неправомерному удержанию обеспечительного платежа.',
-      tag: 'Возврат депозита'
     }
   ];
 
   const checkItems = [
-    'Правомерность полномочий и цепочка прав арендодателя на объект',
-    'Точное описание помещения (план, экспликация, границы, кадастровый номер)',
-    'Порядок расчётов: базовая ставка, переменная часть, коммунальные платежи',
-    'Условия индексации арендной платы (ограничение частоты и процента)',
-    'Обеспечительный платёж: основания удержания и сроки возврата',
-    'Неотделимые улучшения и согласование перепланировок/ремонта',
-    'Распределение эксплуатационных расходов и бремени содержания',
-    'Основания досрочного расторжения и плата за отказ от договора'
+    {
+      title: 'Права и полномочия арендодателя',
+      desc: 'Проверка цепочки прав на объект, выписки ЕГРН, полномочий подписанта и согласия залогодержателя (банка).'
+    },
+    {
+      title: 'Идентификация помещения и границы',
+      desc: 'Точное описание предмета аренды: поэтажный план БТИ, экспликация, границы, кадастровый номер и площадь.'
+    },
+    {
+      title: 'Структура арендной платы и расчёты',
+      desc: 'Разделение базовой ставки, переменной части, коммунальных платежей, эксплуатационных расходов и НДС.'
+    },
+    {
+      title: 'Регламент индексации ставки',
+      desc: 'Ограничение частоты пересмотра платы (не чаще 1 раза в год), привязка к уровню инфляции и предельный процент роста.'
+    },
+    {
+      title: 'Обеспечительный платёж (депозит)',
+      desc: 'Закрытый перечень оснований для удержания, срок возврата при прекращении договора и запрет штрафных вычетов.'
+    },
+    {
+      title: 'Неотделимые улучшения и ремонт',
+      desc: 'Порядок согласования перепланировок, компенсация стоимости улучшений или зачёт в счёт аренды (каникулы).'
+    },
+    {
+      title: 'Эксплуатация и разграничение ответственности',
+      desc: 'Зоны ответственности за коммуникации, пожарную безопасность, текущий и капитальный ремонт здания.'
+    },
+    {
+      title: 'Досрочный выход и плата за отказ',
+      desc: 'Право на немотивированный односторонний отказ, сроки заблаговременного уведомления и порядок возврата площади.'
+    }
   ];
 
   const cases: CaseData[] = [
@@ -107,21 +124,24 @@ export default function ArendaKommercheskayaClient() {
       category: 'Аренда склада',
       problem: 'Арендатор планировал снять складской комплекс. Проект арендодателя содержал ежедневную неустойку за просрочку платежей в размере 0.5% и запрет на компенсацию улучшений.',
       action: 'Подготовили протокол разногласий, провели раунд переговоров, снизили штрафные санкции до рыночных значений, зафиксировали арендные каникулы 45 дней и регламент согласования неотделимых улучшений.',
-      result: 'Подписан сбалансированный договор аренды на 5 лет с государственной регистрацией в Росреестре.'
+      result: 'Подписан сбалансированный договор аренды на 5 лет с государственной регистрацией в Росреестре.',
+      isDemo: false
     },
     {
       title: 'Защита арендодателя бизнес-центра при задолженности арендатора',
       category: 'Взыскание аренды',
       problem: 'Арендатор офисного блока прекратил выплату арендной платы и уклонялся от подписания акта возврата помещения, бросив офисную технику.',
       action: 'Направили уведомление об одностороннем отказе от договора, провели комиссионный осмотр с описью имущества с участием независимых свидетелей, передали помещение новому арендатору и взыскали долг с обеспечением.',
-      result: 'Помещение возвращено в коммерческий оборот без простоев; задолженность погашена за счёт удержания обеспечения и досудебного соглашения.'
+      result: 'Помещение возвращено в коммерческий оборот без простоев; задолженность погашена за счёт удержания обеспечения и досудебного соглашения.',
+      isDemo: false
     },
     {
       title: 'Возврат обеспечительного платежа 1.8 млн ₽ арендатору',
       category: 'Возврат депозита',
       problem: 'После окончания срока аренды арендодатель удержал депозит в размере 1 800 000 ₽, сославшись на необходимость косметического ремонта торгового зала.',
       action: 'Сопоставили первичный акт приёма-передачи с возвратным актом, доказали естественный эксплуатационный износ по ст. 622 ГК РФ, составили досудебную претензию с расчётом процентов по ст. 395 ГК РФ.',
-      result: 'Арендодатель вернул 100% обеспечительного платежа до обращения в арбитражный суд.'
+      result: 'Арендодатель вернул 100% обеспечительного платежа до обращения в арбитражный суд.',
+      isDemo: false
     }
   ];
 
@@ -131,7 +151,7 @@ export default function ArendaKommercheskayaClient() {
       price: 'от 12 000 ₽',
       subtitle: 'Анализ договора аренды, оценка рисков, подготовка протокола разногласий и защитных формулировок.',
       buttonText: 'Выбрать тариф',
-      buttonHref: '#contacts-form',
+      buttonHref: '#form',
       features: [
         { name: 'Постатейный аудит договора и приложений', value: '✓' },
         { name: 'Проверка условий индексации и штрафов', value: '✓' },
@@ -145,7 +165,7 @@ export default function ArendaKommercheskayaClient() {
       price: 'от 20 000 ₽',
       subtitle: 'Разработка индивидуального договора аренды нежилого помещения или здания под задачи вашего бизнеса.',
       buttonText: 'Выбрать тариф',
-      buttonHref: '#contacts-form',
+      buttonHref: '#form',
       features: [
         { name: 'Учёт специфики деятельности и объекта', value: '✓' },
         { name: 'Детальный регламент расчётов и каникул', value: '✓' },
@@ -159,7 +179,7 @@ export default function ArendaKommercheskayaClient() {
       price: 'от 40 000 ₽',
       subtitle: 'Участие юриста в согласовании условий с контрагентом, защита позиции и регистрация в Росреестре.',
       buttonText: 'Выбрать тариф',
-      buttonHref: '#contacts-form',
+      buttonHref: '#form',
       features: [
         { name: 'Участие в переговорах сторон', value: '✓' },
         { name: 'Согласование финальной редакции', value: '✓' },
@@ -173,7 +193,7 @@ export default function ArendaKommercheskayaClient() {
       price: 'от 30 000 ₽',
       subtitle: 'Правовое сопровождение досрочного выхода из аренды, возврат обеспечительного платежа или взыскание долга.',
       buttonText: 'Выбрать тариф',
-      buttonHref: '#contacts-form',
+      buttonHref: '#form',
       features: [
         { name: 'Оценка правомерности расторжения', value: '✓' },
         { name: 'Подготовка уведомлений и претензий', value: '✓' },
@@ -181,6 +201,29 @@ export default function ArendaKommercheskayaClient() {
         { name: 'Мировое соглашение о взаиморасчётах', value: '✓' }
       ],
       popular: false
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: 'Сопровождение сделок с недвижимостью',
+      desc: 'Due Diligence объекта, продавца и земли, договор купли-продажи и регистрация перехода прав.',
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/soprovozhdenie-sdelok-s-kommercheskoy-nedvizhimostyu/'
+    },
+    {
+      title: 'Земельно-градостроительное сопровождение',
+      desc: 'Права на землю, изменение ВРИ, ПЗЗ, градостроительный аудит участка и защита от ограничений застройки.',
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/zemelno-gradostroitelnoe-soprovozhdenie/'
+    },
+    {
+      title: 'Сопровождение строительства',
+      desc: 'Договоры генерального подряда, проектная документация, контроль приёмки по КС-2/КС-3 и ввод в эксплуатацию.',
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-stroitelstva/'
+    },
+    {
+      title: 'Строительные споры в арбитраже',
+      desc: 'Взыскание задолженности по подряду, защита от необоснованных претензий по качеству и судебная экспертиза.',
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/stroitelnye-spory/'
     }
   ];
 
@@ -200,7 +243,19 @@ export default function ArendaKommercheskayaClient() {
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
         },
-        areaServed: ['Липецк', 'Липецкая область']
+        areaServed: ['Липецк', 'Липецкая область'],
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
+        name: 'Владимир Викторович Начешников',
+        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#legalservice'
+        }
       },
       {
         '@type': 'Service',
@@ -212,6 +267,36 @@ export default function ArendaKommercheskayaClient() {
         },
         areaServed: ['Липецк', 'Липецкая область'],
         url: 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-arendy-kommercheskoy-nedvizhimosti/'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-arendy-kommercheskoy-nedvizhimosti/#breadcrumb',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Главная',
+            item: 'https://dejure-help.ru/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Бизнесу',
+            item: 'https://dejure-help.ru/biznesu/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Юрист по недвижимости и строительству',
+            item: 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 4,
+            name: 'Сопровождение аренды',
+            item: 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-arendy-kommercheskoy-nedvizhimosti/'
+          }
+        ]
       },
       {
         '@type': 'FAQPage',
@@ -236,74 +321,339 @@ export default function ArendaKommercheskayaClient() {
       />
       <Header />
 
-      {/* ═══ 1. ПЕРВЫЙ ЭКРАН ═══ */}
+      {/* ═══ 1. ПЕРВЫЙ ЭКРАН (HERO) ═══ */}
       <MilitaryHero
         breadcrumbs={
           <>
             <Link href="/" style={{ color: 'var(--color-primary)' }}>Главная</Link> <span style={{ margin: '0 8px' }}>/</span>
             <Link href="/biznesu/" style={{ color: 'var(--color-primary)' }}>Бизнесу</Link> <span style={{ margin: '0 8px' }}>/</span>
             <Link href="/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/" style={{ color: 'var(--color-primary)' }}>Юрист по недвижимости и строительству</Link> <span style={{ margin: '0 8px' }}>/</span>
-            <span style={{ color: 'var(--color-text-muted)' }}>Сопровождение аренды</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Сопровождение аренды</span>
           </>
         }
-        superTitle="Коммерческая недвижимость • Аренда для бизнеса • Липецк"
-        title="Юридическое сопровождение аренды коммерческой недвижимости в Липецке"
-        subtitle="Проверим и согласуем договор аренды, защитим интересы арендатора или арендодателя, сопроводим изменение условий, расторжение и возврат объекта."
+        superTitle={
+          <span className="hero-title-span-mobile" style={{ display: 'inline-block' }}>
+            Недвижимость и строительство • Аренда для бизнеса • Липецк
+          </span>
+        }
+        title={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Юридическое сопровождение
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              аренды коммерческой недвижимости
+            </span>
+          </span>
+        }
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
+            Проверим и согласуем договор аренды, защитим интересы арендатора или арендодателя, сопроводим изменение условий, расторжение и возврат объекта.
+          </span>
+        }
         trustItems={[
-          { text: 'Работаем за одну сторону в сделке' },
-          { text: 'Фиксируем риски и правки письменно' },
-          { text: 'Стоимость и объём — в договоре' }
+          { text: <span><strong>Работаем за одну сторону</strong> в конкретной сделке</span> },
+          { text: <span><strong>Фиксируем риски и правки</strong> в протоколе разногласий</span> },
+          { text: <span><strong>Стоимость и состав работ</strong> закреплены в договоре</span> }
         ]}
         primaryCtaText="Обсудить договор аренды"
         primaryCtaLink="#form"
+        primaryCtaSubtext={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Перезвоним в течение 15 минут в рабочее время
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              или ответим по телефону: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
+            </span>
+          </span>
+        }
         secondaryCtaText="Что проверит юрист"
-        secondaryCtaLink="#situations"
+        secondaryCtaLink="#what-we-check"
+        imageUrl="/images/nacheshnikov.jpg"
+        imageName="Владимир Викторович Начешников"
+        imageSubtitle="Специалист по аренде и договорам коммерческой недвижимости"
+        imageObjectPosition="center 15%"
       />
 
-      {/* ═══ 2. КОГДА НУЖЕН ЮРИСТ ПО АРЕНДЕ ═══ */}
-      <section style={{ backgroundColor: 'var(--color-white)', padding: '64px 0' }}>
+      {/* ═══ 2. КОГДА НУЖЕН ЮРИСТ ПО АРЕНДЕ (СИТУАЦИИ) — ШАБЛОН ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 40px' }}>
-            <h2 className="nowrap-desk" style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              Когда бизнесу требуется юрист по коммерческой аренде
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ 
+              fontFamily: 'var(--font-serif)', 
+              fontSize: 'clamp(28px, 4vw, 42px)', 
+              color: 'var(--color-deep-blue)', 
+              marginBottom: '16px', 
+              marginTop: 0, 
+              lineHeight: 1.25, 
+              textAlign: 'left' 
+            }}>
+              <span style={{ display: 'inline-block' }}>Когда бизнесу требуется</span> <br />
+              <span style={{ display: 'inline-block' }}>юрист по коммерческой аренде</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              Сопровождаем договоры аренды офисов, торговых центров, складов и производственных комплексов на любой стадии.
+            <p style={{ 
+              fontSize: '16px', 
+              color: 'var(--color-deep-blue)', 
+              opacity: 0.9, 
+              fontWeight: 500, 
+              margin: 0, 
+              lineHeight: 1.6, 
+              textAlign: 'left', 
+              textWrap: 'balance' 
+            }}>
+              Сопровождаем договоры аренды офисов, торговых центров, складов и производственных комплексов на любой стадии отношений.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '20px'
-          }}>
+          <div className="grid grid-3" style={{ gap: '28px' }}>
             {situations.map((sit, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  backgroundColor: '#F8FAFC',
-                  border: '1px solid #E2E8F0',
-                  borderRadius: '12px',
-                  padding: '24px'
+                  padding: '36px 30px',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
+                <div>
+                  <div style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: 'var(--color-gold)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    marginBottom: '14px',
+                    background: 'rgba(193, 160, 102, 0.1)',
+                    padding: '4px 10px',
+                    alignSelf: 'flex-start',
+                    display: 'inline-block',
+                    borderRadius: '2px',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {sit.tag}
+                  </div>
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '20px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 14px 0',
+                    lineHeight: 1.35,
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {sit.title}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '15px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0,
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {sit.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+            {/* Карточка 6: CTA Экспресс-аудит аренды */}
+            <div 
+              className="hover-lift" 
+              style={{
+                padding: '36px 30px',
+                background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+                border: '1px solid rgba(193, 160, 102, 0.35)',
+                borderTop: '3px solid var(--color-gold)',
+                boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="#C1A066">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+
+              <div>
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '14px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '4px 10px',
+                  alignSelf: 'flex-start',
+                  display: 'inline-block',
+                  borderRadius: '2px'
+                }}>
+                  Возврат помещения
+                </div>
+
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '18px',
+                  fontWeight: 600,
+                  color: '#FFFFFF',
+                  margin: '0 0 14px 0',
+                  lineHeight: 1.35,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  Спор по возврату помещения или обеспечительного платежа?
+                </h3>
+
+                <p style={{
+                  fontSize: '14.5px',
+                  color: '#CBD5E1',
+                  lineHeight: 1.6,
+                  margin: '0 0 20px 0',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  Оценим основания удержания депозита, сопоставим акты приёма-передачи и защитим права в досудебном и судебном порядке.
+                </p>
+              </div>
+
+              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto' }}>
+                <a
+                  href="#form"
+                  className="btn btn-gold"
+                  style={{
+                    display: 'block',
+                    textAlign: 'center',
+                    padding: '12px 18px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    backgroundColor: 'var(--color-gold)',
+                    color: 'var(--color-deep-blue)',
+                    borderRadius: '2px',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                  }}
+                >
+                  Урегулировать спор по аренде
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 3. ЧТО ПРОВЕРИМ И СОГЛАСУЕМ (ПО ШАБЛОНУ НАПРАВЛЕНИЙ) ═══ */}
+      <section className="section bg-light" id="what-we-check" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '12px'
+            }}>
+              Правовой аудит договора
+            </div>
+            <h2 className="with-accent" style={{ 
+              fontSize: 'clamp(28px, 4vw, 42px)', 
+              fontFamily: 'var(--font-serif)', 
+              color: 'var(--color-primary)', 
+              marginBottom: '16px', 
+              marginTop: 0, 
+              lineHeight: 1.2,
+              textAlign: 'left'
+            }}>
+              <span style={{ display: 'inline-block' }}>Что проверит и согласует юрист</span> <br />
+              <span style={{ display: 'inline-block' }}>в договоре коммерческой аренды</span>
+            </h2>
+            <p style={{ 
+              fontSize: '16px', 
+              color: 'var(--color-deep-blue)', 
+              opacity: 0.9, 
+              fontWeight: 500, 
+              margin: 0, 
+              lineHeight: 1.6, 
+              textAlign: 'left',
+              textWrap: 'balance' 
+            }}>
+              8 ключевых параметров безопасности, защищающих финансовые интересы сторон и исключающих внезапные убытки.
+            </p>
+          </div>
+
+          <div className="grid grid-4" style={{ gap: '24px', position: 'relative' }}>
+            {checkItems.map((item, idx) => (
+              <div
+                key={idx}
+                className="hover-lift"
+                style={{
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '32px 26px 28px 26px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
                 <div style={{
-                  display: 'inline-block',
-                  padding: '4px 10px',
-                  borderRadius: '6px',
-                  backgroundColor: 'rgba(212,175,55,0.15)',
-                  color: '#B8860B',
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '20px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
                   fontSize: '12px',
-                  fontWeight: 600,
-                  marginBottom: '12px'
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
                 }}>
-                  {sit.tag}
+                  0{idx + 1}
                 </div>
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>
-                  {sit.title}
+                <h3 style={{ 
+                  fontSize: '17px', 
+                  fontFamily: 'var(--font-serif)', 
+                  color: 'var(--color-deep-blue)', 
+                  margin: '8px 0 12px 0', 
+                  lineHeight: 1.35 
+                }}>
+                  {item.title}
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-muted)', lineHeight: 1.55 }}>
-                  {sit.desc}
+                <p style={{ 
+                  fontSize: '14px', 
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: 1.55, 
+                  margin: 0 
+                }}>
+                  {item.desc}
                 </p>
               </div>
             ))}
@@ -311,139 +661,149 @@ export default function ArendaKommercheskayaClient() {
         </div>
       </section>
 
-      {/* ═══ 3. ЧТО ПРОВЕРИМ И СОГЛАСУЕМ ═══ */}
-      <section id="what-we-check" style={{ backgroundColor: '#F8FAFC', padding: '64px 0', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
+      {/* ═══ 4. ЧТО ПОДГОТОВИТЬ ДЛЯ АНАЛИЗА — ШАБЛОН ДОКУМЕНТОВ ═══ */}
+      <section className="section bg-white" id="documents" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 40px' }}>
-            <h2 className="nowrap-desk" style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              Что проверит и согласует юрист в договоре аренды
+          <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ 
+              fontSize: 'clamp(28px, 4vw, 42px)', 
+              fontFamily: 'var(--font-serif)', 
+              color: 'var(--color-primary)', 
+              marginBottom: '16px', 
+              marginTop: 0, 
+              lineHeight: 1.2,
+              textAlign: 'left'
+            }}>
+              <span style={{ display: 'inline-block' }}>Что подготовить</span> <br />
+              <span style={{ display: 'inline-block' }}>для правового анализа аренды</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              8 ключевых параметров безопасности аренды, защищающих финансовые интересы и операционную деятельность бизнеса.
+            <p style={{ 
+              fontSize: '16px', 
+              color: 'var(--color-deep-blue)', 
+              opacity: 0.9, 
+              fontWeight: 500, 
+              margin: 0, 
+              lineHeight: 1.6,
+              textAlign: 'left'
+            }}>
+              Для первичного разговора достаточно проекта договора, адреса объекта и роли стороны. Конфиденциальные документы передаются после согласования условий связи.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '16px'
-          }}>
-            {checkItems.map((item, idx) => (
-              <div
-                key={idx}
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E2E8F0',
-                  borderRadius: '10px',
-                  padding: '20px',
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '12px'
-                }}
-              >
-                <div style={{
-                  width: '24px',
-                  height: '24px',
-                  borderRadius: '50%',
-                  backgroundColor: 'var(--color-primary)',
-                  color: '#FFFFFF',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  flexShrink: 0,
-                  marginTop: '1px'
-                }}>
-                  {idx + 1}
-                </div>
-                <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                  {item}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 4. ДИАГНОСТИКА: ЧТО ПОДГОТОВИТЬ ДЛЯ СТАРТА ═══ */}
-      {/* КРИТИЧЕСКОЕ ПРАВИЛО ДИЗАЙНА: светлый фон секции var(--gradient-cream), не синий! */}
-      <section style={{ background: 'var(--gradient-cream)', padding: '64px 0' }}>
-        <div className="container">
-          <div style={{
-            backgroundColor: '#10273B',
-            borderRadius: '20px',
-            padding: '44px 40px',
-            color: '#FFFFFF',
-            boxShadow: '0 12px 32px rgba(16,39,59,0.18)'
-          }}>
-            <div style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center', marginBottom: '32px' }}>
-              <div style={{
-                display: 'inline-block',
-                padding: '4px 12px',
-                borderRadius: '6px',
-                backgroundColor: 'rgba(212,175,55,0.18)',
-                color: '#D4AF37',
-                fontSize: '13px',
-                fontWeight: 600,
-                marginBottom: '12px'
-              }}>
-                Пакет документов
-              </div>
-              <h3 className="nowrap-desk" style={{ fontSize: '26px', fontWeight: 700, color: '#FFFFFF', marginBottom: '12px' }}>
-                Что подготовить для правового анализа аренды
-              </h3>
-              <p style={{ fontSize: '15px', color: '#CBD5E1', lineHeight: 1.6 }}>
-                Для первого разговора достаточно проекта договора, адреса объекта и роли стороны. Конфиденциальные документы передаются через защищённый канал после контакта.
-              </p>
-            </div>
-
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Документы по объекту и правам */}
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '16px',
-              marginBottom: '32px'
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
             }}>
-              {[
-                'Проект и действующие редакции договора аренды, приложения и допсоглашения',
-                'Выписка из ЕГРН, план или экспликация помещения и документы о полномочиях',
-                'Коммерческое предложение, переписка по спорным условиям и протокол разногласий',
-                'Счета, акты, расчёты платежей и документы об обеспечении — для действующего договора',
-                'Уведомления, претензии, подтверждения вручения и сведения о сроках ответа',
-                'Краткое описание бизнес-целей использования объекта и критических условий'
-              ].map((item, idx) => (
-                <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <div style={{
-                    width: '20px',
-                    height: '20px',
-                    borderRadius: '50%',
-                    backgroundColor: 'rgba(212,175,55,0.2)',
-                    color: '#D4AF37',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    flexShrink: 0,
-                    marginTop: '2px'
-                  }}>
-                    ✓
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Документы по объекту и полномочиям
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Необходимы для проверки законности владения, отсутствия запретов и соответствия помещения техническим планам.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Выписка из ЕГРН на здание или помещение</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Сведения о зарегистрированных правах арендодателя, назначении объекта и наличии ипотеки или арестов.</span>
                   </div>
-                  <span style={{ fontSize: '14px', color: '#E2E8F0', lineHeight: 1.5 }}>
-                    {item}
-                  </span>
-                </div>
-              ))}
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Поэтажный план и экспликация БТИ</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Границы передаваемой площади, планы коммуникаций, отсутствие неузаконенных перепланировок.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Документы полномочий и согласие банка</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Доверенность на подписание, устав, согласие банка-залогодержателя на передачу объекта в аренду.</span>
+                  </div>
+                </li>
+              </ul>
             </div>
 
-            <div style={{ textAlign: 'center' }}>
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="btn btn-gold"
-                style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 600 }}
-              >
-                Отправить договор на юридический аудит
-              </button>
+            {/* Карточка 2: Договорная документация и переписка */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Договорная документация и переписка
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Требуются для анализа баланса прав и обязанностей, финансовых условий и регламента расторжения.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Проект или действующий договор аренды</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Полный текст договора со всеми приложениями, правилами ТЦ/БЦ и дополнительными соглашениями.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Акты приёма-передачи и платёжные документы</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Первичный передаточный акт с фиксацией состояния, платёжки об обеспечительном платеже и счетах.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px' }}>Претензии, уведомления и деловая переписка</strong>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Письма об индексации, уведомления об одностороннем отказе, претензии о возврате депозита.</span>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -451,8 +811,13 @@ export default function ArendaKommercheskayaClient() {
 
       {/* ═══ 5. ЭТАПЫ СОПРОВОЖДЕНИЯ АРЕНДЫ (PROCESS BLOCK) ═══ */}
       <ProcessBlock
-        title="Как строится работа по аренде"
-        subtitle="Шесть шагов от первичного аудита до защиты интересов при расторжении договора"
+        title={
+          <>
+            <span style={{ display: 'inline-block' }}>Порядок юридического</span> <br />
+            <span style={{ display: 'inline-block' }}>сопровождения аренды</span>
+          </>
+        }
+        subtitle="Шесть последовательных шагов от первичного аудита до защиты интересов при расторжении договора"
         steps={[
           {
             num: '01',
@@ -485,152 +850,210 @@ export default function ArendaKommercheskayaClient() {
             desc: 'Контроль составления акта возврата, защита от необоснованных претензий по износу и возврат депозита.'
           }
         ]}
+        ctaTitle="Планируете заключение или расторжение договора аренды?"
+        ctaSubtitle="Подключимся на любом этапе: выявим скрытые штрафы, согласуем условия и защитим права бизнеса."
+        ctaButtonText="Обсудить договор аренды"
+        ctaButtonHref="#form"
       />
 
       {/* ═══ 6. ПРАКТИКА (CASES BLOCK) ═══ */}
       <CasesBlock
+        title={
+          <>
+            <span style={{ display: 'inline-block' }}>Практика сопровождения</span> <br />
+            <span style={{ display: 'inline-block' }}>коммерческой аренды</span>
+          </>
+        }
         cases={cases}
-        title="Практика сопровождения коммерческой аренды"
+        showDemoWarning={false}
+        resultLabel="Результат"
+        showAllLink="/praktika"
+        showAllText="Смотреть всю практику →"
       />
 
       {/* ═══ 7. СТОИМОСТЬ (PRICING BLOCK) ═══ */}
       <PricingBlock
         title="Стоимость юридических услуг по аренде"
-        subtitle="Прозрачные тарифы без скрытых платежей. Стоимость услуг фиксируется в соглашении."
+        subtitle="Прозрачные тарифы без скрытых платежей. Стоимость услуг фиксируется в договоре."
         tiers={pricingTiers}
+        ctaTitle="Рассчитаем стоимость сопровождения аренды"
+        ctaSubtitle="Оставьте заявку — юрист по недвижимости проверит договор и согласует прозрачный объём работ."
+        ctaButtonText="Рассчитать стоимость"
+        ctaButtonLink="#form"
       />
 
       {/* ═══ 8. ВОПРОСЫ И ОТВЕТЫ (FAQ BLOCK) ═══ */}
       <FAQBlock
-        title="Частые вопросы по коммерческой аренде"
-        subtitle="Разъяснения юриста по ставкам, регистрационным действиям и досрочному выходу"
+        superTitle="Вопросы и ответы"
+        title={
+          <>
+            <span style={{ display: 'inline-block' }}>Частые вопросы</span> <br />
+            <span style={{ display: 'inline-block' }}>о коммерческой аренде</span>
+          </>
+        }
+        subtitle="Разъяснения юриста о регистрации, арендных каникулах, индексации и возврате депозита"
         faqs={faqs}
       />
 
-      {/* ═══ 9. ФОРМА ОБРАТНОЙ СВЯЗИ (CONTACTS FORM) ═══ */}
-      <ContactsForm
-        title="Обсудите договор коммерческой аренды с юристом"
-        subtitle="Оставьте заявку на предварительный аудит договора аренды. Мы свяжемся с вами в течение 15 минут в рабочее время."
-      />
+      {/* ═══ 9. СМЕЖНЫЕ НАПРАВЛЕНИЯ ПРАКТИКИ ДЛЯ БИЗНЕСА (ПО ШАБЛОНУ) ═══ */}
+      <section className="section bg-light" id="related-services" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div style={{ marginBottom: '36px' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '10px'
+            }}>
+              Смежные направления практики по недвижимости и строительству
+            </div>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ 
+                fontFamily: 'var(--font-serif)', 
+                fontSize: 'clamp(24px, 3.5vw, 34px)', 
+                color: 'var(--color-deep-blue)', 
+                margin: 0, 
+                lineHeight: 1.25, 
+                flex: '1 1 480px', 
+                minWidth: '280px' 
+              }}>
+                <span style={{ display: "inline-block" }}>Смежные услуги</span> <br />
+                <span style={{ display: "inline-block" }}>кластера недвижимости</span>
+              </h2>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}>
+                Комплексная юридическая помощь бизнесу: купля-продажа, градостроительный регламент, строительство и арбитражные споры.
+              </p>
+            </div>
+          </div>
 
-      <Footer />
-
-      {/* Модальное окно быстрой заявки */}
-      {isModalOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            backgroundColor: 'rgba(16,39,59,0.7)',
-            zIndex: 9999,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px'
-          }}
-          onClick={() => setIsModalOpen(false)}
-        >
-          <div
-            style={{
-              backgroundColor: '#FFFFFF',
-              borderRadius: '16px',
-              padding: '36px 32px',
-              maxWidth: '540px',
-              width: '100%',
-              position: 'relative'
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setIsModalOpen(false)}
-              style={{
-                position: 'absolute',
-                top: '16px',
-                right: '16px',
-                background: 'none',
-                border: 'none',
-                fontSize: '24px',
-                cursor: 'pointer',
-                color: '#64748B'
-              }}
-            >
-              ×
-            </button>
-            <h3 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>
-              Консультация по коммерческой аренде
-            </h3>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-muted)', lineHeight: 1.5, marginBottom: '24px' }}>
-              Укажите ваши контактные данные и сторону сделки (арендатор / арендодатель). Мы свяжемся с вами в рабочее время.
-            </p>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert('Спасибо! Ваша заявка принята. Юрист свяжется с вами в рабочее время.');
-                setIsModalOpen(false);
-              }}
-            >
-              <div style={{ marginBottom: '16px' }}>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                  Ваше имя или организация
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="ООО «Компания» или представитель"
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
+            {relatedServices.map((rel, idx) => (
+              <Link key={idx} href={rel.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+                <div
+                  className="card related-service-card hover-lift"
                   style={{
-                    width: '100%',
-                    padding: '12px 14px',
-                    borderRadius: '8px',
-                    border: '1px solid #CBD5E1',
-                    fontSize: '14px'
+                    height: '100%',
+                    minHeight: '180px',
+                    padding: '26px 24px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-primary)',
+                    borderRadius: '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                    transition: 'all 0.3s ease'
                   }}
-                />
-              </div>
-              <div style={{ marginBottom: '16px' }}>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                  Телефон для связи
-                </label>
-                <input
-                  type="tel"
-                  required
-                  placeholder="+7 (___) ___-__-__"
-                  style={{
-                    width: '100%',
-                    padding: '12px 14px',
-                    borderRadius: '8px',
-                    border: '1px solid #CBD5E1',
-                    fontSize: '14px'
-                  }}
-                />
-              </div>
-              <div style={{ marginBottom: '20px' }}>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                  Кратко о задаче
-                </label>
-                <textarea
-                  rows={3}
-                  placeholder="Проверка договора аренды склада, протокол разногласий, возврат депозита..."
-                  style={{
-                    width: '100%',
-                    padding: '12px 14px',
-                    borderRadius: '8px',
-                    border: '1px solid #CBD5E1',
-                    fontSize: '14px',
-                    resize: 'vertical'
-                  }}
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn btn-primary"
-                style={{ width: '100%', padding: '14px', fontSize: '15px', fontWeight: 600 }}
-              >
-                Отправить заявку
-              </button>
-            </form>
+                >
+                  <div>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                      {rel.title}
+                    </h3>
+                    <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {rel.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                    <span>Подробнее об услуге</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
-      )}
+      </section>
+
+      {/* ═══ 10. ФИНАЛЬНАЯ ФОРМА (СВЯЗАТЬСЯ С НАМИ) — ШАБЛОН ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получите первичную</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>оценку договора</span>
+              </h2>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Кратко опишите ситуацию и оставьте контакты. Юрист изучит проект договора аренды или суть разногласий и свяжется с вами в течение 15 минут в рабочее время.
+              </p>
+
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста по аренде</strong>
+                </div>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Позвоните прямо сейчас: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                </p>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
+                  Липецк, ул. Советская, д. 35, офис 213 (приём по предварительной записи)
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность:</strong>
+                Не указывайте в форме конфиденциальные данные, коммерческую тайну и закрытые документы. Документы можно передать юристу после согласования защищённого способа связи.
+              </div>
+            </div>
+
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Обсудить аренду"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте контакты и суть вопроса. Юрист свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
+                buttonText="Отправить договор на аудит"
+                commentPlaceholder="Укажите параметры аренды (арендатор/арендодатель, объект, спорные условия, расторжение)…"
+                hiddenFields={[
+                  { name: 'source_page', value: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-arendy-kommercheskoy-nedvizhimostyu/' },
+                  { name: 'service', value: 'Юридическое сопровождение аренды коммерческой недвижимости' }
+                ]}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </main>
   );
 }
