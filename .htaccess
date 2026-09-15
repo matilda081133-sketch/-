@@ -1,0 +1,30 @@
+Options -Indexes
+
+ErrorDocument 404 /404.html
+
+RewriteEngine On
+RewriteBase /
+
+# 1. Единый постоянный 301-редирект с HTTP на HTTPS (с сохранением пути и query string)
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteRule ^(.*)$ https://dejure-help.ru/$1 [R=301,L,QSA]
+
+# 2. Редирект с www на без-www
+RewriteCond %{HTTP_HOST} ^www\.dejure-help\.ru$ [NC]
+RewriteRule ^(.*)$ https://dejure-help.ru/$1 [R=301,L,QSA]
+
+# 3. Прямые алиасы / редиректы
+RewriteRule ^zhilishchnyj-yurist/?$ /grazhdanam/zhilishchnyj-yurist/ [R=301,L]
+RewriteRule ^zhilishchnyj-yurist/(.*)$ /grazhdanam/zhilishchnyj-yurist/$1 [R=301,L]
+
+# 4. Приведение URL к каноническому виду со слэшем на конце для путей без расширения
+RewriteCond %{REQUEST_URI} !\.
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ https://dejure-help.ru/$1/ [R=301,L,QSA]
+
+# 5. Отдача существующих файлов и директорий
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
