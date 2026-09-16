@@ -653,7 +653,7 @@ export default function StroitelnyeSporyClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '20px', position: 'relative' }}>
+          <div className="grid grid-3" style={{ gap: '20px', position: 'relative', gridAutoRows: '1fr' }}>
             {auditDirections.map((item, idx) => (
               <div
                 key={idx}
@@ -667,6 +667,7 @@ export default function StroitelnyeSporyClient() {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
+                  minHeight: '270px',
                   height: '100%',
                   position: 'relative'
                 }}
@@ -691,7 +692,8 @@ export default function StroitelnyeSporyClient() {
                     fontFamily: 'var(--font-serif)', 
                     color: 'var(--color-deep-blue)', 
                     margin: '6px 0 10px 0', 
-                    lineHeight: 1.35 
+                    lineHeight: 1.35,
+                    minHeight: '48px'
                   }}>
                     {item.title}
                   </h3>
@@ -699,13 +701,98 @@ export default function StroitelnyeSporyClient() {
                     fontSize: '14px', 
                     color: 'var(--color-text-secondary)', 
                     lineHeight: 1.55, 
-                    margin: 0 
+                    margin: 0,
+                    minHeight: '80px'
                   }}>
                     {item.desc}
                   </p>
                 </div>
               </div>
             ))}
+
+            {/* Карточка 9: Завершающая CTA карточка аудита */}
+            <div 
+              className="hover-lift"
+              style={{
+                padding: '30px 24px 26px 24px',
+                background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+                border: '1px solid rgba(193, 160, 102, 0.35)',
+                borderTop: '3px solid var(--color-gold)',
+                boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                minHeight: '270px',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                const el = document.getElementById('form');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                else window.location.hash = 'form';
+              }}
+            >
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="#C1A066">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+
+              <div>
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '17.5px',
+                  fontWeight: 600,
+                  color: '#FFFFFF',
+                  margin: '6px 0 10px 0',
+                  lineHeight: 1.35,
+                  minHeight: '48px'
+                }}>
+                  Нужен аудит строительного спора?
+                </h3>
+
+                <p style={{
+                  fontSize: '14px',
+                  color: '#CBD5E1',
+                  lineHeight: 1.55,
+                  margin: 0,
+                  minHeight: '80px'
+                }}>
+                  Предоставим письменное заключение с анализом рисков, доказательственной базы и правовыми рекомендациями.
+                </p>
+              </div>
+
+              <div style={{ marginTop: 'auto', paddingTop: '16px', position: 'relative', zIndex: 1 }}>
+                <a
+                  href="#form"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-gold)',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
+                  }}
+                >
+                  <span>Заказать Due Diligence спора</span>
+                  <span style={{ fontSize: '16px' }}>&rarr;</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -747,15 +834,18 @@ export default function StroitelnyeSporyClient() {
                   Договорные и исполнительные документы
                 </h3>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 {[
                   'Договор строительного подряда, ТЗ, сметы и допсоглашения',
                   'Акты КС-2/КС-3, УПД и справки о стоимости работ',
                   'Платёжные поручения, счета, расчёты авансов и удержаний',
                   'Акты освидетельствования скрытых работ (АОСР) и журналы'
                 ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                    <span style={{ color: 'var(--color-gold)', fontWeight: 'bold', fontSize: '16px', lineHeight: 1 }}>✓</span>
+                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -781,15 +871,18 @@ export default function StroitelnyeSporyClient() {
                   Переписка и доказательства спора
                 </h3>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 {[
                   'Извещения о готовности к приёмке и уведомления о приостановке',
                   'Претензии, ответы на них и уведомления об отказе',
                   'Дефектные ведомости и заключения независимых экспертов',
                   'Фото- и видеоматериалы фиксации состояния объекта'
                 ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                    <span style={{ color: 'var(--color-gold)', fontWeight: 'bold', fontSize: '16px', lineHeight: 1 }}>✓</span>
+                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
                     <span>{item}</span>
                   </li>
                 ))}

@@ -336,10 +336,10 @@ export default function SoprovozhdenieStroitelstvaClient() {
               Юридическое сопровождение
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              строительства и реконструкции
+              строительства и
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              в Липецке
+              реконструкции в Липецке
             </span>
           </span>
         }
@@ -682,7 +682,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  minHeight: '235px',
+                  minHeight: '270px',
                   height: '100%',
                   position: 'relative'
                 }}
@@ -737,7 +737,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                minHeight: '235px',
+                minHeight: '270px',
                 height: '100%',
                 position: 'relative',
                 overflow: 'hidden',

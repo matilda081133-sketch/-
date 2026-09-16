@@ -748,22 +748,38 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                   </div>
 
                   {isLast ? (
-                    <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '12px' }}>
+                    <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '16px' }}>
                       <a
                         href="#form"
                         style={{
                           display: 'inline-flex',
                           alignItems: 'center',
-                          gap: '6px',
-                          color: 'var(--color-gold)',
-                          fontSize: '14px',
-                          fontWeight: 600,
+                          justifyContent: 'center',
+                          gap: '8px',
+                          background: 'linear-gradient(135deg, #C1A066 0%, #B89C72 100%)',
+                          color: '#10273B',
+                          padding: '13px 26px',
+                          borderRadius: '2px',
+                          fontSize: '14.5px',
+                          fontWeight: 700,
                           textDecoration: 'none',
                           cursor: 'pointer',
-                          transition: 'all 0.2s ease'
+                          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                          boxShadow: '0 4px 14px rgba(193, 160, 102, 0.25)',
+                          letterSpacing: '0.01em'
                         }}
-                        onMouseEnter={(e) => (e.currentTarget.style.color = '#dfca9e')}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = '#FFFFFF';
+                          e.currentTarget.style.color = 'var(--color-deep-blue)';
+                          e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 255, 255, 0.3)';
+                          e.currentTarget.style.transform = 'translateY(-2px)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = 'linear-gradient(135deg, #C1A066 0%, #B89C72 100%)';
+                          e.currentTarget.style.color = '#10273B';
+                          e.currentTarget.style.boxShadow = '0 4px 14px rgba(193, 160, 102, 0.25)';
+                          e.currentTarget.style.transform = 'translateY(0)';
+                        }}
                         onClick={(e) => {
                           e.preventDefault();
                           const el = document.getElementById('form');
@@ -772,7 +788,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                         }}
                       >
                         <span>{sit.buttonText || 'Комплексная консультация'}</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                           <line x1="5" y1="12" x2="19" y2="12"></line>
                           <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
@@ -970,7 +986,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '20px' }}>
+          <div className="grid grid-3" style={{ gap: '20px', gridAutoRows: '1fr' }}>
             {[
               { 
                 tag: 'Активы и владение',
@@ -1009,6 +1025,9 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
                   display: 'flex',
                   flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  minHeight: '270px',
+                  height: '100%',
                   position: 'relative',
                   overflow: 'hidden',
                   transition: 'all 0.3s ease'
@@ -1020,64 +1039,77 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                   </svg>
                 </div>
 
-                <div style={{ 
-                  fontSize: '11.5px', 
-                  fontWeight: 700, 
-                  color: 'var(--color-gold)', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.08em', 
-                  marginBottom: '10px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '3px 10px',
-                  alignSelf: 'flex-start',
-                  borderRadius: '2px',
-                  display: 'inline-block',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {seg.tag}
+                <div>
+                  <div style={{ 
+                    fontSize: '11.5px', 
+                    fontWeight: 700, 
+                    color: 'var(--color-gold)', 
+                    textTransform: 'uppercase', 
+                    letterSpacing: '0.08em', 
+                    marginBottom: '10px',
+                    background: 'rgba(193, 160, 102, 0.1)',
+                    padding: '3px 10px',
+                    alignSelf: 'flex-start',
+                    borderRadius: '2px',
+                    display: 'inline-block',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {seg.tag}
+                  </div>
+
+                  <h3 style={{ 
+                    fontSize: '18px', 
+                    fontFamily: 'var(--font-serif)', 
+                    fontWeight: 600, 
+                    color: 'var(--color-deep-blue)', 
+                    lineHeight: 1.35, 
+                    margin: '0 0 10px 0',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {seg.role}
+                  </h3>
+
+                  <p style={{ 
+                    fontSize: '14px', 
+                    color: 'var(--color-text-secondary)', 
+                    lineHeight: 1.5, 
+                    margin: 0,
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {seg.desc}
+                  </p>
                 </div>
-
-                <h3 style={{ 
-                  fontSize: '18px', 
-                  fontFamily: 'var(--font-serif)', 
-                  fontWeight: 600, 
-                  color: 'var(--color-deep-blue)', 
-                  lineHeight: 1.35, 
-                  margin: '0 0 10px 0',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {seg.role}
-                </h3>
-
-                <p style={{ 
-                  fontSize: '14px', 
-                  color: 'var(--color-text-secondary)', 
-                  lineHeight: 1.5, 
-                  margin: 0,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {seg.desc}
-                </p>
               </div>
             ))}
 
             {/* Карточка 6: Определить стадию и следующий шаг (Компактная CTA-карточка) */}
-            <div className="hover-lift" style={{ 
-              padding: '26px 24px', 
-              background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
-              border: '1px solid rgba(193, 160, 102, 0.35)',
-              borderTop: '3px solid var(--color-gold)',
-              boxShadow: '0 6px 24px rgba(16, 39, 59, 0.15)',
-              display: 'flex', 
-              flexDirection: 'column', 
-              justifyContent: 'space-between',
-              position: 'relative', 
-              overflow: 'hidden',
-              transition: 'all 0.3s ease'
-            }}>
+            <div 
+              className="hover-lift" 
+              style={{ 
+                padding: '26px 24px', 
+                background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+                border: '1px solid rgba(193, 160, 102, 0.35)',
+                borderTop: '3px solid var(--color-gold)',
+                boxShadow: '0 6px 24px rgba(16, 39, 59, 0.15)',
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between',
+                minHeight: '270px',
+                height: '100%',
+                position: 'relative', 
+                overflow: 'hidden',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                const el = document.getElementById('form');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                else window.location.hash = 'form';
+              }}
+            >
               <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
                 <svg width="90" height="90" viewBox="0 0 24 24" fill="#C1A066">
                   <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
@@ -1101,7 +1133,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                   fontSize: '14px', 
                   color: '#CBD5E1', 
                   lineHeight: 1.5, 
-                  margin: '0 0 16px 0', 
+                  margin: 0, 
                   position: 'relative', 
                   zIndex: 1 
                 }}>
@@ -1109,7 +1141,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                 </p>
               </div>
 
-              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '12px' }}>
+              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '16px' }}>
                 <a
                   href="#form"
                   style={{
@@ -1123,7 +1155,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                     cursor: 'pointer',
                     transition: 'all 0.2s ease'
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#dfca9e')}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
                   onClick={(e) => {
                     e.preventDefault();
@@ -1133,10 +1165,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                   }}
                 >
                   <span>Определить стадию и следующий шаг</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
+                  <span style={{ fontSize: '16px' }}>&rarr;</span>
                 </a>
               </div>
             </div>

@@ -689,7 +689,7 @@ export default function ZemelnoGradostroitelnoeClient() {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  minHeight: '235px',
+                  minHeight: '270px',
                   height: '100%',
                   position: 'relative'
                 }}
@@ -744,7 +744,7 @@ export default function ZemelnoGradostroitelnoeClient() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                minHeight: '235px',
+                minHeight: '270px',
                 height: '100%',
                 position: 'relative',
                 overflow: 'hidden',
