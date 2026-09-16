@@ -63,6 +63,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/',
     '/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/',
     '/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
+    // Юрист по недвижимости и строительству для бизнеса
+    '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/',
+    '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/soprovozhdenie-sdelok-s-kommercheskoy-nedvizhimostyu/',
+    '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-arendy-kommercheskoy-nedvizhimosti/',
+    '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/zemelno-gradostroitelnoe-soprovozhdenie/',
+    '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-stroitelstva/',
+    '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/stroitelnye-spory/',
     // Исполнительное для бизнеса
     '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/',
     '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/',

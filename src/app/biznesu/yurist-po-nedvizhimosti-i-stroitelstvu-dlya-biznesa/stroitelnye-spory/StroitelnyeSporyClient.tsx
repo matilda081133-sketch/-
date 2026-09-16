@@ -195,26 +195,26 @@ export default function StroitelnyeSporyClient() {
     }
   ];
 
-  const relatedServices = [
+    const relatedServices = [
     {
-      title: 'Сделки с коммерческой недвижимостью',
-      desc: 'Сопровождение купли-продажи коммерческих зданий, земельных массивов, складов и производственных комплексов.',
-      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/soprovozhdenie-sdelok-s-kommercheskoy-nedvizhimostyu/'
-    },
-    {
-      title: 'Аренда коммерческой недвижимости',
-      desc: 'Аудит и составление договоров аренды для арендаторов и арендодателей, защита обеспечительных платежей.',
-      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-arendy-kommercheskoy-nedvizhimosti/'
-    },
-    {
-      title: 'Земля и градостроительство',
-      desc: 'Градостроительный аудит, смена ВРИ, внесение изменений в ПЗЗ, получение ГПЗУ и оформление участков.',
-      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/zemelno-gradostroitelnoe-soprovozhdenie/'
-    },
-    {
-      title: 'Сопровождение строительства и реконструкции',
-      desc: 'Правовое сопровождение от старта проекта и договоров подряда до получения разрешения на ввод объекта в эксплуатацию.',
+      title: 'Юридическое сопровождение строительства и реконструкции',
+      desc: 'Если судебного конфликта ещё нет и требуется выстроить договоры, приёмку, переписку и разрешительный маршрут проекта.',
       link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-stroitelstva/'
+    },
+    {
+      title: 'Арбитражный юрист',
+      desc: 'Если основной вопрос связан со стадией арбитражного процесса, обжалованием судебного акта или защитой ответчика, а не со спецификой строительных работ.',
+      link: '/biznesu/arbitrazhnyj-yurist/'
+    },
+    {
+      title: 'Взыскание задолженности с юридических лиц',
+      desc: 'Если долг признан и спор об объёме, качестве или приёмке строительных работ отсутствует.',
+      link: '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/'
+    },
+    {
+      title: 'Договорное право',
+      desc: 'Если требуется разработать или проверить договор подряда до возникновения конфликта.',
+      link: '/biznesu/dogovornoe-pravo/'
     }
   ];
 
@@ -235,6 +235,36 @@ export default function StroitelnyeSporyClient() {
           addressCountry: 'RU'
         },
         areaServed: ['Липецк', 'Липецкая область']
+      },
+            {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/stroitelnye-spory/#breadcrumb',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Главная',
+            item: 'https://dejure-help.ru/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Бизнесу',
+            item: 'https://dejure-help.ru/biznesu/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Юрист по недвижимости и строительству для бизнеса',
+            item: 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 4,
+            name: 'Юрист по строительным спорам в Липецке',
+            item: 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/stroitelnye-spory/'
+          }
+        ]
       },
       {
         '@type': 'Service',
@@ -689,7 +719,7 @@ export default function StroitelnyeSporyClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
             <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
-              Смежные направления практики по недвижимости и строительству
+              Смежные юридические услуги
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
               Если вашей компании требуется комплексное решение, ознакомьтесь с другими направлениями строительной практики:

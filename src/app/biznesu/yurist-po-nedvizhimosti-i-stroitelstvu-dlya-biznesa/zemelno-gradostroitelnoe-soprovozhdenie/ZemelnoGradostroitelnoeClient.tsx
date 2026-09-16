@@ -253,6 +253,36 @@ export default function ZemelnoGradostroitelnoeClient() {
         },
         areaServed: ['Липецк', 'Липецкая область']
       },
+            {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/zemelno-gradostroitelnoe-soprovozhdenie/#breadcrumb',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Главная',
+            item: 'https://dejure-help.ru/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Бизнесу',
+            item: 'https://dejure-help.ru/biznesu/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Юрист по недвижимости и строительству для бизнеса',
+            item: 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 4,
+            name: 'Земельно-градостроительное сопровождение',
+            item: 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/zemelno-gradostroitelnoe-soprovozhdenie/'
+          }
+        ]
+      },
       {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/zemelno-gradostroitelnoe-soprovozhdenie/#service',
