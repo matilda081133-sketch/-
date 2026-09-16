@@ -838,46 +838,50 @@ export default function YuristNedvizhimostStroitelstvoClient() {
 
           <div className="grid grid-3" style={{ gap: '24px' }}>
             {directions.map((dir, i) => (
-              <Link key={i} href={dir.href} style={{ textDecoration: 'none', display: 'block' }}>
+              <Link key={i} href={dir.href} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
                 <div 
-                  className="card service-card" 
+                  className="card service-card hover-lift" 
                   style={{ 
                     height: '100%', 
-                    minHeight: '160px',
+                    minHeight: '200px',
                     padding: '30px', 
                     background: 'var(--color-white)', 
                     border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-primary)',
                     borderRadius: '0',
                     display: 'flex', 
                     flexDirection: 'column', 
-                    transition: 'all 0.3s',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                    transition: 'all 0.3s ease',
                     position: 'relative',
-                    borderTop: '3px solid var(--color-primary)'
+                    cursor: 'pointer'
                   }}
                 >
-                  <div style={{
-                    display: 'inline-block',
-                    padding: '3px 8px',
-                    borderRadius: '2px',
-                    backgroundColor: 'rgba(193, 160, 102, 0.12)',
-                    color: 'var(--color-gold)',
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '14px',
-                    alignSelf: 'flex-start'
-                  }}>
-                    {dir.tag}
+                  <div>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
+                      {dir.title}
+                    </h3>
+                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {dir.desc}
+                    </p>
                   </div>
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
-                    {dir.title}
-                  </h3>
-                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                    {dir.desc}
-                  </p>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
-                    Подробнее 
+                  <div 
+                    className="card-arrow" 
+                    style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      gap: '8px', 
+                      color: 'var(--color-primary)', 
+                      fontSize: '14px', 
+                      fontWeight: 600, 
+                      marginTop: 'auto',
+                      paddingTop: '14px',
+                      borderTop: '1px solid rgba(23, 50, 77, 0.06)',
+                      transition: 'transform 0.3s' 
+                    }}
+                  >
+                    <span>Подробнее</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
@@ -892,7 +896,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
               className="card service-card" 
               style={{ 
                 height: '100%', 
-                minHeight: '160px',
+                minHeight: '200px',
                 padding: '30px', 
                 background: 'var(--color-deep-blue)', 
                 border: '1px solid transparent',
