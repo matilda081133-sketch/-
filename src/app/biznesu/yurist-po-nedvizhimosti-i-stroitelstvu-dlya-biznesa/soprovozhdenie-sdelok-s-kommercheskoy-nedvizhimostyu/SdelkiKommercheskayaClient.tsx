@@ -521,8 +521,9 @@ export default function SdelkiKommercheskayaClient() {
 
             {/* Карточка 6: CTA Экспресс-анализ договора */}
             <div 
-              className="hover-lift" 
+              className="card hover-lift" 
               style={{
+                borderRadius: '0',
                 padding: '26px 24px',
                 background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
                 border: '1px solid rgba(193, 160, 102, 0.35)',
@@ -533,7 +534,13 @@ export default function SdelkiKommercheskayaClient() {
                 justifyContent: 'space-between',
                 position: 'relative',
                 overflow: 'hidden',
+                cursor: 'pointer',
                 transition: 'all 0.3s ease'
+              }}
+              onClick={() => {
+                const el = document.getElementById('form');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                else window.location.hash = 'form';
               }}
             >
               <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
@@ -543,6 +550,21 @@ export default function SdelkiKommercheskayaClient() {
               </div>
 
               <div>
+                <div style={{
+                  fontSize: '11.5px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '3px 8px',
+                  display: 'inline-block',
+                  borderRadius: '2px'
+                }}>
+                  Экспертиза проекта
+                </div>
+
                 <h3 style={{
                   fontFamily: 'var(--font-serif)',
                   fontSize: '18px',
@@ -591,7 +613,7 @@ export default function SdelkiKommercheskayaClient() {
                     else window.location.hash = 'form';
                   }}
                 >
-                  <span>Проверить проект договора</span>
+                  <span>Проверить договор контрагента</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>

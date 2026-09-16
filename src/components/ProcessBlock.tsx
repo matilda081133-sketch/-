@@ -53,6 +53,9 @@ export default function ProcessBlock({
   // Сценарий 4: 7 регулярных шагов без баннера -> Ряд 1: 3 шага (01,02,03) в grid-3; Ряд 2: 4 шага (04,05,06,07) в grid-4 в один ряд!
   const is7PureSteps = steps.length === 7 && bannerSteps.length === 0;
 
+  // Сценарий 5: 8 регулярных шагов без баннера -> 2 ряда по 4 карточки в grid-4 (Ряд 1: 01,02,03,04; Ряд 2: 05,06,07,08)
+  const is8PureSteps = steps.length === 8 && bannerSteps.length === 0;
+
   return (
     <section className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
       {/* Organic graphic background */}
@@ -671,9 +674,94 @@ export default function ProcessBlock({
                 ))}
               </div>
             </div>
+          ) : is8PureSteps ? (
+            /* СЦЕНАРИЙ 5: 8 регулярных этапов без баннера (2 ряда по 4 карточки в grid-4) */
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+              {/* Ряд 1: 4 этапа 01 -> 02 -> 03 -> 04 */}
+              <div className="grid grid-4" style={{ gap: '24px' }}>
+                {steps.slice(0, 4).map((step, i) => (
+                  <div key={i} className="stage-item" style={{ 
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    background: 'transparent',
+                    padding: '10px'
+                  }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
+                      <div style={{ 
+                        width: '56px', 
+                        height: '56px', 
+                        borderRadius: '50%', 
+                        background: 'linear-gradient(135deg, #FFFFFF 0%, #FBF8F3 100%)', 
+                        border: '2px solid var(--color-gold)', 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center', 
+                        color: 'var(--color-deep-blue)', 
+                        fontWeight: 700, 
+                        fontSize: '20px', 
+                        fontFamily: 'var(--font-serif)', 
+                        boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)', 
+                        position: 'relative',
+                        zIndex: 2 
+                      }}>
+                        {step.num || String(i + 1).padStart(2, '0')}
+                      </div>
+                    </div>
+                    <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '14px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
+                      {typeof step.title === 'string' ? step.title.replace(/^\d+\.\s*/, '') : step.title}
+                    </h3>
+                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0, textAlign: 'center', whiteSpace: 'pre-line' }}>
+                      {step.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Ряд 2: 4 этапа 05 -> 06 -> 07 -> 08 */}
+              <div className="grid grid-4" style={{ gap: '24px' }}>
+                {steps.slice(4, 8).map((step, i) => (
+                  <div key={i + 4} className="stage-item" style={{ 
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    background: 'transparent',
+                    padding: '10px'
+                  }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
+                      <div style={{ 
+                        width: '56px', 
+                        height: '56px', 
+                        borderRadius: '50%', 
+                        background: 'linear-gradient(135deg, #FFFFFF 0%, #FBF8F3 100%)', 
+                        border: '2px solid var(--color-gold)', 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center', 
+                        color: 'var(--color-deep-blue)', 
+                        fontWeight: 700, 
+                        fontSize: '20px', 
+                        fontFamily: 'var(--font-serif)', 
+                        boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)', 
+                        position: 'relative',
+                        zIndex: 2 
+                      }}>
+                        {step.num || String(i + 5).padStart(2, '0')}
+                      </div>
+                    </div>
+                    <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', marginBottom: '14px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textAlign: 'center' }}>
+                      {typeof step.title === 'string' ? step.title.replace(/^\d+\.\s*/, '') : step.title}
+                    </h3>
+                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0, textAlign: 'center', whiteSpace: 'pre-line' }}>
+                      {step.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           ) : (
             /* Другие конфигурации (2, 3, 4 этапа) */
-            <div className={steps.length === 4 ? "grid grid-4" : steps.length === 2 ? "grid grid-2" : "grid grid-3"} style={{ gap: '40px' }}>
+            <div className={steps.length % 4 === 0 ? "grid grid-4" : steps.length === 2 ? "grid grid-2" : "grid grid-3"} style={{ gap: '40px' }}>
               {steps.map((step, i) => (
                 <div key={i} className="stage-item" style={{ 
                   position: 'relative',
