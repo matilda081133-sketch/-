@@ -1262,7 +1262,7 @@ export default function BankrotstvoFizicheskihLicClient() {
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Освобождение от долгов</strong>
-                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Определение суда освобождает от дальнейшего исполнения заявленных требований банков, МФО, налоговой и иных кредиторов.</span>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Добиваемся освобождения клиента от кредитов, микрозаймов, налоговой и другой задолженности, которая может быть списана по закону. После завершения процедуры проверяем, какие обязательства прекращены, а какие сохраняются.</span>
                   </div>
                 </li>
 

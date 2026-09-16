@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: 'https://dejure-help.ru/images/og/bankrotstvo-cherez-mfc-og.jpg',
         width: 1200,
         height: 630,
         alt: 'Внесудебное банкротство через МФЦ в Липецке — ЮК Де-Юре',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Внесудебное банкротство через МФЦ в Липецке | Де-Юре',
     description: 'Проверим условия внесудебного банкротства через МФЦ, исполнительные производства и список кредиторов.',
-    images: ['/images/og-image.jpg'],
+    images: ['https://dejure-help.ru/images/og/bankrotstvo-cherez-mfc-og.jpg'],
   },
 };
 

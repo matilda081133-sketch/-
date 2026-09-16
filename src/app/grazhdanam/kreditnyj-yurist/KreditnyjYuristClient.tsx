@@ -417,6 +417,11 @@ export default function KreditnyjYuristClient() {
       link: '/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/'
     },
     {
+      title: 'Внесудебное банкротство через МФЦ',
+      desc: 'Проверить возможность внесудебного банкротства через МФЦ.',
+      link: '/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/'
+    },
+    {
       title: 'Банкротство физических лиц',
       desc: 'Оценить законную возможность полного списания долгов через суд или бесплатно через МФЦ.',
       link: '/grazhdanam/bankrotstvo-fizicheskih-lic/'
