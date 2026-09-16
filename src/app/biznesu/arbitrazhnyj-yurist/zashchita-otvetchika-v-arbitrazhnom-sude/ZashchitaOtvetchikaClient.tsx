@@ -76,51 +76,69 @@ export default function ZashchitaOtvetchikaClient() {
     ]
   };
 
-  const situations = [
+  const situations: { tag: string; title: React.ReactNode; desc: React.ReactNode; btnText: string; btnHref: string }[] = [
     {
-      tag: 'Получен иск',
+      tag: 'Арбитражный иск',
       title: 'Иск или определение арбитражного суда',
-      desc: 'Контрагент предъявил завышенные требования. Требуется срочно изучить иск, проверить расчёт и подготовить мотивированный отзыв.'
+      desc: 'Проверим суд, номер дела, предмет и основания иска, подсудность и процессуальные сроки. Сформируем первичную позицию.',
+      btnText: 'Проверить иск',
+      btnHref: '#form'
     },
     {
-      tag: 'Завышенная неустойка',
-      title: (
-        <span>
-          <span style={{ display: 'inline-block' }}>Неустойка превышает</span> <br />
-          <span style={{ display: 'inline-block' }}>разумные пределы</span>
-        </span>
-      ),
-      desc: 'Истец начислил грабительские штрафы и проценты. Заявляем ходатайство по ст. 333 ГК РФ и снижаем сумму требований.'
+      tag: 'Договорный спор',
+      title: 'Требование о расторжении или изменении договора',
+      desc: 'Кредитор заявляет о существенном нарушении условий договора. Оценим мотивированность требований и обоснованность расторжения.',
+      btnText: 'Оценить требования',
+      btnHref: '#form'
     },
     {
-      tag: 'Встречные претензии',
-      title: 'У вас есть встречные требования',
-      desc: 'Истец сам сорвал сроки, поставил некачественный товар или причинил убытки. Подаём встречный иск для зачёта требований.'
+      tag: 'Исполнение обязательства',
+      title: 'Понуждение к исполнению обязательства',
+      desc: 'Иск о передаче имущества, выполнении работ или устранении недостатков. Проверим реальную возможность и правовые основания исполнения.',
+      btnText: 'Проверить обязательство',
+      btnHref: '#form'
     },
     {
-      tag: 'Арест счетов',
-      title: (
-        <span>
-          <span style={{ display: 'inline-block' }}>Наложен арест</span> <br />
-          <span style={{ display: 'inline-block' }}>на счета компании</span>
-        </span>
-      ),
-      desc: 'Суд принял обеспечительные меры по заявлению истца. Подаём ходатайство об отмене ареста или замене мер.'
+      tag: 'Корпоративный спор',
+      title: 'Оспаривание сделки или корпоративного решения',
+      desc: 'Заявления об оспаривании крупных сделок, решений органов управления или выходе участников. Выстроим процессуальную защиту.',
+      btnText: 'Защитить решение',
+      btnHref: '#form'
     },
     {
-      tag: 'Мировое соглашение',
-      title: (
-        <span>
-          <span style={{ display: 'inline-block' }}>Нужна рассрочка</span> <br />
-          <span style={{ display: 'inline-block' }}>и фиксация графика</span>
-        </span>
-      ),
-      desc: 'Долг частично обоснован, но единовременная выплата разрушит бизнес. Согласуем мировое соглашение с комфортным графиком.'
+      tag: 'Госорганы',
+      title: 'Спор с государственным органом',
+      desc: 'Требования контрольно-надзорных органов, ведомств или администрации. Оспорим предписания, штрафы и публичные претензии.',
+      btnText: 'Защита от претензий',
+      btnHref: '#form'
     },
     {
-      tag: 'Пропуск сроков',
-      title: 'Истекает срок на подачу отзыва',
-      desc: 'Судебное заседание уже скоро. Срочно подаём предварительные возражения и знакомимся с материалами дела.'
+      tag: 'Доказательства',
+      title: 'Необходимость экспертизы',
+      desc: 'Спор требует специальной строительно-технической, почерковедческой или финансовой экспертизы. Сформируем вопросы и эксперта.',
+      btnText: 'Назначить экспертизу',
+      btnHref: '#form'
+    },
+    {
+      tag: 'Процессуальные сроки',
+      title: 'Пропуск процессуального срока',
+      desc: 'Истекает срок на подачу отзыва или жалобы. Подготовим предварительные возражения и ходатайство о восстановлении срока.',
+      btnText: 'Восстановить срок',
+      btnHref: '#form'
+    },
+    {
+      tag: 'Обжалование',
+      title: 'Обжалование судебного акта',
+      desc: 'Вынесено неблагоприятное решение или определение. Подготовим апелляционную или кассационную жалобу и представим интересы в суде.',
+      btnText: 'Обжаловать решение',
+      btnHref: '#form'
+    },
+    {
+      tag: 'Взыскание долгов',
+      title: 'Иск о взыскании задолженности',
+      desc: 'Кредитор требует основной долг, проценты или неустойку. Проверим расчёт, первичные документы, срок исковой давности, встречные требования и обеспечительные меры.',
+      btnText: 'Защита от взыскания задолженности',
+      btnHref: '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/'
     }
   ];
 
@@ -330,10 +348,7 @@ export default function ZashchitaOtvetchikaClient() {
 
   return (
     <main style={{ position: 'relative', overflowX: 'hidden' }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      
       <Header />
 
       {/* ═══ БЛОК 1: HERO ═══ */}
@@ -403,7 +418,7 @@ export default function ZashchitaOtvetchikaClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: 'inline-block' }}>С чем обращаются ответчики</span> <br /><span style={{ display: 'inline-block' }}>в арбитражном процессе</span>
+              С какими процессуальными задачами ответчика работаем
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Формируем надёжную защиту на любой стадии рассмотрения дела.
@@ -483,35 +498,49 @@ export default function ZashchitaOtvetchikaClient() {
                   </p>
                 </div>
 
-                <a
-                  href="#form"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    color: 'var(--color-primary)',
-                    fontSize: '13.5px',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    marginTop: '20px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.getElementById('form');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    else window.location.hash = 'form';
-                  }}
-                >
-                  <span>Защитить проект</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
+                {item.btnHref.startsWith('/') ? (
+                  <Link
+                    href={item.btnHref}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--color-primary)',
+                      fontSize: '13.5px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      marginTop: '20px',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    <span>{item.btnText}</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </Link>
+                ) : (
+                  <a
+                    href={item.btnHref}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--color-primary)',
+                      fontSize: '13.5px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      marginTop: '20px',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    <span>{item.btnText}</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                )}
               </div>
             ))}
           </div>
