@@ -421,7 +421,7 @@ export default function ZemelnoGradostroitelnoeClient() {
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
                   borderRadius: '0',
-                  padding: '28px 24px',
+                  padding: '26px 24px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -528,91 +528,83 @@ export default function ZemelnoGradostroitelnoeClient() {
                 border: '1px solid #2A4A6D',
                 borderTop: '3px solid var(--color-gold)',
                 borderRadius: '0',
-                padding: '32px 28px',
+                padding: '26px 24px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 boxShadow: '0 8px 24px rgba(15, 33, 51, 0.25)',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                const el = document.getElementById('form');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                else window.location.hash = 'form';
               }}
             >
               <div style={{
                 position: 'absolute',
-                bottom: '-20px',
-                right: '-20px',
-                width: '120px',
-                height: '120px',
+                top: '-15px',
+                right: '-15px',
+                width: '90px',
+                height: '90px',
                 opacity: 0.08,
                 pointerEvents: 'none',
-                color: 'var(--color-gold)'
+                color: '#C1A066'
               }}>
                 <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
-                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                 </svg>
               </div>
 
               <div>
-                <div style={{
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.15)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  display: 'inline-block',
-                  borderRadius: '2px'
-                }}>
-                  Сложные споры
-                </div>
-
                 <h3 style={{
                   fontFamily: 'var(--font-serif)',
                   fontSize: '18px',
                   fontWeight: 600,
                   color: '#FFFFFF',
-                  margin: '0 0 14px 0',
-                  lineHeight: 1.35,
-                  position: 'relative',
-                  zIndex: 1
+                  margin: '0 0 10px 0',
+                  lineHeight: 1.35
                 }}>
                   ЗОУИТ, сервитуты или отказ администрации?
                 </h3>
 
                 <p style={{
-                  fontSize: '14.5px',
+                  fontSize: '14px',
                   color: '#CBD5E1',
-                  lineHeight: 1.6,
-                  margin: '0 0 20px 0',
-                  position: 'relative',
-                  zIndex: 1
+                  lineHeight: 1.5,
+                  margin: '0 0 16px 0'
                 }}>
                   Оценим правовые основания ограничений, определим порядок изменения границ или режима санитарно-защитной зоны с привлечением профильных специалистов и оспорим незаконный отказ государственного органа.
                 </p>
               </div>
 
-              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto' }}>
+              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '12px' }}>
                 <a
                   href="#form"
-                  className="btn btn-gold"
                   style={{
-                    display: 'block',
-                    textAlign: 'center',
-                    padding: '12px 18px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-gold)',
                     fontSize: '14px',
-                    fontWeight: 700,
-                    backgroundColor: 'var(--color-gold)',
-                    color: 'var(--color-deep-blue)',
-                    borderRadius: '2px',
+                    fontWeight: 600,
                     textDecoration: 'none',
-                    transition: 'all 0.2s ease',
-                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                    transition: 'opacity 0.2s ease'
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
-                  Обсудить проект с юристом
+                  <span>Обсудить проект с юристом</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </a>
               </div>
             </div>
@@ -667,46 +659,50 @@ export default function ZemelnoGradostroitelnoeClient() {
                 className="hover-lift"
                 style={{
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  padding: '24px 22px 20px 22px',
+                  padding: '30px 24px 26px 24px',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%',
                   position: 'relative'
                 }}
               >
                 <div style={{
                   position: 'absolute',
-                  top: '-13px',
-                  left: '20px',
+                  top: '-14px',
+                  left: '22px',
                   background: 'var(--color-gold)',
                   color: '#FFFFFF',
-                  fontSize: '11.5px',
+                  fontSize: '13px',
                   fontWeight: 700,
-                  padding: '2px 8px',
+                  padding: '3px 10px',
                   borderRadius: '2px',
                   letterSpacing: '0.05em'
                 }}>
                   {item.num}
                 </div>
-                <h3 style={{ 
-                  fontSize: '17px', 
-                  fontFamily: 'var(--font-serif)', 
-                  color: 'var(--color-deep-blue)', 
-                  margin: '4px 0 8px 0', 
-                  lineHeight: 1.3 
-                }}>
-                  {item.title}
-                </h3>
-                <p style={{ 
-                  fontSize: '13.5px', 
-                  color: 'var(--color-text-secondary)', 
-                  lineHeight: 1.5, 
-                  margin: 0 
-                }}>
-                  {item.desc}
-                </p>
+                <div>
+                  <h3 style={{ 
+                    fontSize: '17.5px', 
+                    fontFamily: 'var(--font-serif)', 
+                    color: 'var(--color-deep-blue)', 
+                    margin: '6px 0 10px 0', 
+                    lineHeight: 1.35 
+                  }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ 
+                    fontSize: '14px', 
+                    color: 'var(--color-text-secondary)', 
+                    lineHeight: 1.55, 
+                    margin: 0 
+                  }}>
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
 
@@ -714,7 +710,7 @@ export default function ZemelnoGradostroitelnoeClient() {
             <div 
               className="hover-lift"
               style={{
-                padding: '24px 22px 20px 22px',
+                padding: '30px 24px 26px 24px',
                 background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
                 border: '1px solid rgba(193, 160, 102, 0.35)',
                 borderTop: '3px solid var(--color-gold)',
@@ -722,6 +718,7 @@ export default function ZemelnoGradostroitelnoeClient() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
+                height: '100%',
                 position: 'relative',
                 overflow: 'hidden',
                 transition: 'all 0.3s ease',
@@ -742,26 +739,26 @@ export default function ZemelnoGradostroitelnoeClient() {
               <div>
                 <h3 style={{
                   fontFamily: 'var(--font-serif)',
-                  fontSize: '17px',
+                  fontSize: '17.5px',
                   fontWeight: 600,
                   color: '#FFFFFF',
-                  margin: '4px 0 8px 0',
-                  lineHeight: 1.3
+                  margin: '6px 0 10px 0',
+                  lineHeight: 1.35
                 }}>
                   Нужен аудит участка до сделки?
                 </h3>
 
                 <p style={{
-                  fontSize: '13.5px',
+                  fontSize: '14px',
                   color: '#CBD5E1',
-                  lineHeight: 1.5,
+                  lineHeight: 1.55,
                   margin: 0
                 }}>
                   Предоставим письменный отчёт с выявленными рисками, ограничениями и юридическими рекомендациями по проекту.
                 </p>
               </div>
 
-              <div style={{ marginTop: '16px', position: 'relative', zIndex: 1 }}>
+              <div style={{ marginTop: '20px', position: 'relative', zIndex: 1 }}>
                 <a
                   href="#form"
                   style={{
@@ -769,7 +766,7 @@ export default function ZemelnoGradostroitelnoeClient() {
                     alignItems: 'center',
                     gap: '6px',
                     color: 'var(--color-gold)',
-                    fontSize: '13.5px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     textDecoration: 'none',
                     cursor: 'pointer',

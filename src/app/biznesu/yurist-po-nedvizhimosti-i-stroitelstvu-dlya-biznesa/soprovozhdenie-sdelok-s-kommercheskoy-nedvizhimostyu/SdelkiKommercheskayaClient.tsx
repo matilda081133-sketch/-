@@ -372,6 +372,10 @@ export default function SdelkiKommercheskayaClient() {
         }
         secondaryCtaText="Что проверит юрист"
         secondaryCtaLink="#due-diligence"
+        imageUrl="/images/nacheshnikov.jpg"
+        imageName="Владимир Викторович Начешников"
+        imageSubtitle="Специалист по сопровождению сделок и аудиту бизнеса"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ 2. КОГДА НУЖЕН ЮРИСТ (СИТУАЦИИ) — ШАБЛОН ═══ */}

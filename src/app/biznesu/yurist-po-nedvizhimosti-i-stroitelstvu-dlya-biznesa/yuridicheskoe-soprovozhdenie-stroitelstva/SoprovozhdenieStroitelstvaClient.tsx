@@ -528,11 +528,11 @@ export default function SoprovozhdenieStroitelstvaClient() {
                 border: '1px solid rgba(193, 160, 102, 0.35)',
                 borderTop: '3px solid var(--color-gold)',
                 borderRadius: '0',
-                padding: '32px 28px',
+                padding: '26px 24px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+                boxShadow: '0 6px 24px rgba(16, 39, 59, 0.15)',
                 position: 'relative',
                 overflow: 'hidden'
               }}
@@ -543,7 +543,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
                 right: '-15px',
                 width: '90px',
                 height: '90px',
-                opacity: 0.1,
+                opacity: 0.08,
                 pointerEvents: 'none',
                 color: '#C1A066'
               }}>
@@ -553,27 +553,12 @@ export default function SoprovozhdenieStroitelstvaClient() {
               </div>
 
               <div>
-                <div style={{
-                  fontSize: '11.5px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
-                  marginBottom: '12px',
-                  background: 'rgba(193, 160, 102, 0.15)',
-                  padding: '3px 8px',
-                  display: 'inline-block',
-                  borderRadius: '2px'
-                }}>
-                  Экспресс-аудит
-                </div>
-
                 <h3 style={{
                   fontFamily: 'var(--font-serif)',
                   fontSize: '18px',
                   fontWeight: 600,
                   color: '#FFFFFF',
-                  margin: '0 0 12px 0',
+                  margin: '0 0 10px 0',
                   lineHeight: 1.35
                 }}>
                   Сложный объект или предписание надзора?
@@ -582,33 +567,38 @@ export default function SoprovozhdenieStroitelstvaClient() {
                 <p style={{
                   fontSize: '14px',
                   color: '#CBD5E1',
-                  lineHeight: 1.6,
-                  margin: 0
+                  lineHeight: 1.5,
+                  margin: '0 0 16px 0'
                 }}>
                   Проанализируем документацию, выявим скрытые строительные риски и сформируем правовой план защиты проекта.
                 </p>
               </div>
 
-              <div style={{ marginTop: '20px' }}>
+              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '12px' }}>
                 <a
                   href="#form"
-                  className="btn btn-gold"
                   style={{
-                    display: 'inline-block',
-                    width: '100%',
-                    textAlign: 'center',
-                    padding: '10px 18px',
-                    fontSize: '13.5px',
-                    fontWeight: 700,
-                    backgroundColor: 'var(--color-gold)',
-                    color: 'var(--color-deep-blue)',
-                    borderRadius: '2px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-gold)',
+                    fontSize: '14px',
+                    fontWeight: 600,
                     textDecoration: 'none',
-                    transition: 'all 0.2s ease',
-                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                    transition: 'opacity 0.2s ease'
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
-                  Заказать аудит проекта
+                  <span>Заказать аудит проекта</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </a>
               </div>
             </div>
@@ -663,46 +653,50 @@ export default function SoprovozhdenieStroitelstvaClient() {
                 className="hover-lift"
                 style={{
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  padding: '24px 22px 20px 22px',
+                  padding: '30px 24px 26px 24px',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%',
                   position: 'relative'
                 }}
               >
                 <div style={{
                   position: 'absolute',
-                  top: '-13px',
-                  left: '20px',
+                  top: '-14px',
+                  left: '22px',
                   background: 'var(--color-gold)',
                   color: '#FFFFFF',
-                  fontSize: '11.5px',
+                  fontSize: '13px',
                   fontWeight: 700,
-                  padding: '2px 8px',
+                  padding: '3px 10px',
                   borderRadius: '2px',
                   letterSpacing: '0.05em'
                 }}>
                   {item.num}
                 </div>
-                <h3 style={{ 
-                  fontSize: '17px', 
-                  fontFamily: 'var(--font-serif)', 
-                  color: 'var(--color-deep-blue)', 
-                  margin: '4px 0 8px 0', 
-                  lineHeight: 1.3 
-                }}>
-                  {item.title}
-                </h3>
-                <p style={{ 
-                  fontSize: '13.5px', 
-                  color: 'var(--color-text-secondary)', 
-                  lineHeight: 1.5, 
-                  margin: 0 
-                }}>
-                  {item.desc}
-                </p>
+                <div>
+                  <h3 style={{ 
+                    fontSize: '17.5px', 
+                    fontFamily: 'var(--font-serif)', 
+                    color: 'var(--color-deep-blue)', 
+                    margin: '6px 0 10px 0', 
+                    lineHeight: 1.35 
+                  }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ 
+                    fontSize: '14px', 
+                    color: 'var(--color-text-secondary)', 
+                    lineHeight: 1.55, 
+                    margin: 0 
+                  }}>
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
 
@@ -710,7 +704,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
             <div 
               className="hover-lift"
               style={{
-                padding: '24px 22px 20px 22px',
+                padding: '30px 24px 26px 24px',
                 background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
                 border: '1px solid rgba(193, 160, 102, 0.35)',
                 borderTop: '3px solid var(--color-gold)',
@@ -718,6 +712,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
+                height: '100%',
                 position: 'relative',
                 overflow: 'hidden',
                 transition: 'all 0.3s ease',
@@ -738,26 +733,26 @@ export default function SoprovozhdenieStroitelstvaClient() {
               <div>
                 <h3 style={{
                   fontFamily: 'var(--font-serif)',
-                  fontSize: '17px',
+                  fontSize: '17.5px',
                   fontWeight: 600,
                   color: '#FFFFFF',
-                  margin: '4px 0 8px 0',
-                  lineHeight: 1.3
+                  margin: '6px 0 10px 0',
+                  lineHeight: 1.35
                 }}>
                   Нужен аудит строительного проекта?
                 </h3>
 
                 <p style={{
-                  fontSize: '13.5px',
+                  fontSize: '14px',
                   color: '#CBD5E1',
-                  lineHeight: 1.5,
+                  lineHeight: 1.55,
                   margin: 0
                 }}>
                   Предоставим письменное заключение с анализом рисков, условий генподряда и правовыми рекомендациями.
                 </p>
               </div>
 
-              <div style={{ marginTop: '16px', position: 'relative', zIndex: 1 }}>
+              <div style={{ marginTop: '20px', position: 'relative', zIndex: 1 }}>
                 <a
                   href="#form"
                   style={{
@@ -765,7 +760,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
                     alignItems: 'center',
                     gap: '6px',
                     color: 'var(--color-gold)',
-                    fontSize: '13.5px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     textDecoration: 'none',
                     cursor: 'pointer',

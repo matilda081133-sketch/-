@@ -1107,7 +1107,8 @@ export default function YuristPoNedvizhimostiClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              Что можно подготовить к первой консультации
+              <span style={{ display: 'inline-block' }}>Что можно подготовить</span> <br />
+              <span style={{ display: 'inline-block' }}>к первой консультации</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Если части документов нет на руках, всё равно запишитесь на консультацию. Юрист проверит статус объекта по открытым реестрам, определит недостающие материалы и направит запросы.
