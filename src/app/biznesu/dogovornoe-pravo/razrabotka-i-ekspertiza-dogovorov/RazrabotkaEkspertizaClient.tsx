@@ -99,6 +99,20 @@ export default function RazrabotkaEkspertizaClient() {
       desc: 'Оценим последствия изменений, проверим основания прекращения обязательств и подготовим дополнительное соглашение или уведомление.',
       context: 'amendment',
       btnText: 'Согласовать изменения'
+    },
+    {
+      tag: 'Рамочный договор',
+      title: 'Регулярные поставки или заказы по спецификациям',
+      desc: 'Выстроим прозрачную систему заявок, спецификаций и первичных актов под постоянный коммерческий оборот компании.',
+      context: 'framework',
+      btnText: 'Настроить систему'
+    },
+    {
+      tag: 'Имущественные сделки',
+      title: 'Аренда коммерческой недвижимости или лизинг',
+      desc: 'Проверим распределение расходов на ремонт, неотделимые улучшения, индексацию ставки и порядок одностороннего отказа.',
+      context: 'lease',
+      btnText: 'Проверить аренду'
     }
   ];
 
@@ -180,19 +194,42 @@ export default function RazrabotkaEkspertizaClient() {
     }
   ];
 
-  const contractTypes = [
-    'Поставка товаров и оборудования',
-    'Возмездное оказание коммерческих услуг',
-    'Подряд (кроме строительного)',
-    'Коммерческая аренда и субаренда',
-    'Купля-продажа коммерческого имущества',
-    'Перевозка и транспортная экспедиция',
-    'Складское и ответственное хранение',
-    'Заем и финансовые документы',
-    'Агентирование, комиссия и поручение',
-    'Финансовый лизинг',
-    'Уступка права требования (цессия) и перевод долга',
-    'Лицензионные и смешанные договоры'
+  const contractCategories = [
+    {
+      title: 'Торговля и поставка',
+      items: 'Договоры поставки товаров и оборудования, дистрибуция, оптовая купля-продажа, коммерческая концессия и агентские договоры.'
+    },
+    {
+      title: 'Услуги и подряд',
+      items: 'Возмездное оказание услуг, проектные и монтажные работы, IT-разработка и лицензии, логистика и транспортная экспедиция.'
+    },
+    {
+      title: 'Имущественные сделки',
+      items: 'Аренда коммерческих помещений, складов и земельных участков, лизинг спецтехники, оборудования и автотранспорта.'
+    },
+    {
+      title: 'Обеспечение и финансы',
+      items: 'Договоры займа, поручительства, залога, уступки прав требования (цессия), перевод долга и соглашения о новации.'
+    }
+  ];
+
+  const prepDocs = [
+    {
+      title: 'Проект договора или шаблон',
+      desc: 'Текст контрагента либо типовой шаблон, используемый в компании на текущий момент.'
+    },
+    {
+      title: 'Приложения и спецификации',
+      desc: 'Коммерческое предложение, техническое задание, графики платежей и поставок.'
+    },
+    {
+      title: 'Описание реального процесса',
+      desc: 'Кто, что, когда делает и какими первичными документами подтверждается закрытие обязательств.'
+    },
+    {
+      title: 'Переписка по разногласиям',
+      desc: 'Замечания контрагента, спорные формулировки и контрольная дата подписания документа.'
+    }
   ];
 
   const workSteps = [
@@ -220,6 +257,25 @@ export default function RazrabotkaEkspertizaClient() {
       num: '05',
       title: 'Обсуждаем выводы и доработки',
       desc: 'Объясняем критичные пункты, отвечаем на вопросы и в пределах согласованного объёма корректируем редакцию.'
+    }
+  ];
+
+  const deliverables = [
+    {
+      title: 'Таблица выявленных рисков',
+      desc: 'Детальный перечень уязвимых пунктов договора с разделением на критичные, коммерческие и процедурные риски.'
+    },
+    {
+      title: 'Безопасная редакция документа',
+      desc: 'Готовый проект договора или встречная редакция с правками в режиме рецензирования под реальные процессы компании.'
+    },
+    {
+      title: 'Протокол разногласий',
+      desc: 'Мотивированный юридический документ с обоснованием исключения невыгодных пунктов для направления контрагенту.'
+    },
+    {
+      title: 'Рекомендации по исполнению',
+      desc: 'Памятка для бухгалтерии и менеджеров по контролю этапов, сроков и правильному закрытию сделки первичными документами.'
     }
   ];
 
@@ -311,6 +367,11 @@ export default function RazrabotkaEkspertizaClient() {
       title: 'Споры по договору поставки',
       desc: 'Узкопрофильная защита поставщиков и покупателей: проверка УПД, ТОРГ-12, транспортных накладных и взыскание долгов.',
       link: '/biznesu/dogovornoe-pravo/spory-po-dogovoru-postavki/'
+    },
+    {
+      title: 'Взыскание задолженности с юрлиц',
+      desc: 'Возврат долгов по договорам поставки, подряда и услуг через досудебный порядок, арбитражный суд и приставов.',
+      link: '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/'
     }
   ];
 
@@ -420,6 +481,67 @@ export default function RazrabotkaEkspertizaClient() {
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
         secondaryCtaText="Форматы помощи"
         secondaryCtaLink="#formats"
+        rightContent={
+          <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
+            <div style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '130%',
+              height: '130%',
+              background: 'radial-gradient(circle, rgba(193, 160, 102, 0.15) 0%, rgba(23, 50, 77, 0.04) 40%, transparent 70%)',
+              zIndex: 0,
+              pointerEvents: 'none'
+            }} />
+
+            <div className="mockup-container" style={{ zIndex: 1, margin: 0 }}>
+              <div style={{ position: 'absolute', width: '220px', height: '220px', background: 'var(--color-primary)', filter: 'blur(90px)', opacity: 0.12, borderRadius: '50%' }} />
+
+              <div className="doc-wrapper-float-1">
+                <div className="doc-sheet doc-sheet-1">
+                  <div style={{ padding: '24px 20px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(23,50,77,0.2)', paddingBottom: '8px', marginBottom: '12px' }}>
+                      <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '50px', height: 'auto', opacity: 0.9 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', alignItems: 'flex-end' }}>
+                        <span style={{ fontSize: '6.5px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>ЭКСПЕРТИЗА И РАЗРАБОТКА</span>
+                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>Правовой анализ сделки</span>
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '12px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(247, 244, 237, 0.8)', padding: '5px 8px', borderLeft: '3px solid #C1A066' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: '#C1A066' }}>01</span>
+                        <span style={{ fontSize: '5.5px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>МОДЕЛЬ СДЕЛКИ И ПРЕДМЕТ</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(247, 244, 237, 0.8)', padding: '5px 8px', borderLeft: '3px solid #C1A066' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: '#C1A066' }}>02</span>
+                        <span style={{ fontSize: '5.5px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>ПОРЯДОК ОПЛАТЫ И РАСЧЁТЫ</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(247, 244, 237, 0.8)', padding: '5px 8px', borderLeft: '3px solid #C1A066' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: '#C1A066' }}>03</span>
+                        <span style={{ fontSize: '5.5px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>ПРИЁМКА И ДОКУМЕНТООБОРОТ</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(247, 244, 237, 0.8)', padding: '5px 8px', borderLeft: '3px solid #C1A066' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: '#C1A066' }}>04</span>
+                        <span style={{ fontSize: '5.5px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>ОТВЕТСТВЕННОСТЬ И РИСКИ</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(247, 244, 237, 0.8)', padding: '5px 8px', borderLeft: '3px solid #C1A066' }}>
+                        <span style={{ fontSize: '6px', fontWeight: 'bold', color: '#C1A066' }}>05</span>
+                        <span style={{ fontSize: '5.5px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>ПРОТОКОЛ РАЗНОГЛАСИЙ</span>
+                      </div>
+                    </div>
+
+                    <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: '6px', borderTop: '1px solid rgba(23,50,77,0.15)' }}>
+                      <span style={{ fontSize: '5px', color: 'var(--color-text-muted)' }}>ЮК «ДЕ-ЮРЕ» • B2B ДОГОВОРЫ</span>
+                      <span style={{ fontSize: '5px', color: 'var(--color-gold)', fontWeight: 'bold' }}>БЕЗОПАСНОСТЬ СДЕЛКИ ✓</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
       />
 
       {/* ═══ 1.1. СТРОКА ДОВЕРИЯ ═══ */}
@@ -557,12 +679,139 @@ export default function RazrabotkaEkspertizaClient() {
                 </a>
               </div>
             ))}
+
+            {/* Карточка 9: Индивидуальная разработка */}
+            <div
+              className="card hover-lift"
+              style={{
+                background: 'linear-gradient(135deg, rgba(23, 50, 77, 0.98) 0%, rgba(16, 39, 59, 0.98) 100%)',
+                color: '#fff',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-gold)',
+                borderRadius: '0',
+                padding: '32px 28px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              <div>
+                <div style={{
+                  fontSize: '11.5px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '3px 8px',
+                  display: 'inline-block',
+                  borderRadius: '2px'
+                }}>
+                  Индивидуальная сделка
+                </div>
+
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '18px',
+                  fontWeight: 600,
+                  color: '#ffffff',
+                  margin: '0 0 12px 0',
+                  lineHeight: 1.35
+                }}>
+                  Нестандартная сделка или холдинг?
+                </h3>
+
+                <p style={{
+                  fontSize: '14px',
+                  color: 'rgba(255, 255, 255, 0.85)',
+                  lineHeight: 1.6,
+                  margin: 0
+                }}>
+                  Свяжем несколько договоров в единый структурированный контракт с разграничением рисков и обеспечением исполнения.
+                </p>
+              </div>
+
+              <a
+                href="#form"
+                onClick={() => setActiveContext('custom-deal')}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  color: 'var(--color-gold)',
+                  fontSize: '13.5px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  marginTop: '20px',
+                  cursor: 'pointer'
+                }}
+              >
+                <span>Обсудить задачу →</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ 3. КАКОЙ ФОРМАТ ПОМОЩИ НУЖЕН ═══ */}
-      <section id="formats" className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ 3. ЧТО ПРОВЕРЯЕМ В ДОГОВОРЕ ═══ */}
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Что проверяем в договоре: <br />8 направлений анализа
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Правовая оценка текста и приложений, чтобы исключить судебные уязвимости, потерю активов и неконтролируемые санкции.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '24px' }}>
+            {reviewScope.map((item, idx) => (
+              <div
+                key={idx}
+                className="card hover-lift"
+                style={{
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '4px solid var(--color-gold)',
+                  padding: '28px 26px',
+                  borderRadius: '0',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
+                  <span style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: 'var(--color-gold)',
+                    fontFamily: 'var(--font-serif)'
+                  }}>
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: 0 }}>
+                    {item.title}
+                  </h3>
+                </div>
+
+                <div style={{ marginBottom: '12px', fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+                  <strong style={{ color: 'var(--color-primary)' }}>Что анализируем:</strong> {item.what}
+                </div>
+
+                <div style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                  <strong style={{ color: 'var(--color-deep-blue)' }}>Почему важно:</strong> {item.why}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 4. КАКОЙ ФОРМАТ ПОМОЩИ НУЖЕН ═══ */}
+      <section id="formats" className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
@@ -596,92 +845,50 @@ export default function RazrabotkaEkspertizaClient() {
                     fontWeight: 700,
                     color: 'var(--color-gold)',
                     letterSpacing: '0.05em',
-                    marginBottom: '10px',
-                    textTransform: 'uppercase'
+                    textTransform: 'uppercase',
+                    marginBottom: '10px'
                   }}>
                     {fmt.badge}
                   </div>
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '20px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    marginBottom: '12px',
+                    lineHeight: 1.3
+                  }}>
                     {fmt.title}
                   </h3>
-                  <p style={{ margin: '0 0 16px 0', fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
                     {fmt.desc}
                   </p>
-                  <div style={{ padding: '12px 14px', background: 'var(--color-bg-light)', borderLeft: '3px solid var(--color-gold)', fontSize: '13.5px', color: 'var(--color-deep-blue)', marginBottom: '20px' }}>
-                    <strong>Результат:</strong> {fmt.result}
+
+                  <div style={{
+                    background: 'var(--color-bg-light)',
+                    padding: '14px 16px',
+                    borderLeft: '3px solid var(--color-gold)',
+                    marginBottom: '28px'
+                  }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                      Результат:
+                    </span>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      {fmt.result}
+                    </span>
                   </div>
                 </div>
 
                 <a
                   href="#form"
                   onClick={() => setActiveContext(fmt.context)}
-                  className="card-arrow"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    color: 'var(--color-primary)',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    paddingTop: '14px',
-                    borderTop: '1px solid rgba(23, 50, 77, 0.06)'
-                  }}
+                  className="btn btn-primary"
+                  style={{ textAlign: 'center', width: '100%' }}
                 >
-                  <span>{fmt.cta}</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
+                  {fmt.cta}
                 </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 4. ЧТО ПРОВЕРЯЕМ В ДОГОВОРЕ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Что проверяем в договоре: <br />8 направлений анализа
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Правовая оценка текста и приложений, чтобы исключить судебные уязвимости, потерю активов и неконтролируемые санкции.
-            </p>
-          </div>
-
-          <div className="grid grid-2" style={{ gap: '24px' }}>
-            {reviewScope.map((item, idx) => (
-              <div
-                key={idx}
-                className="hover-lift"
-                style={{
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                  padding: '28px 26px',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '10px'
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'var(--color-gold)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', fontWeight: 700 }}>
-                    0{idx + 1}
-                  </div>
-                  <h3 style={{ margin: 0, fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', fontWeight: 600 }}>
-                    {item.title}
-                  </h3>
-                </div>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-main)', lineHeight: 1.55 }}>
-                  {item.what}
-                </p>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontStyle: 'italic', borderTop: '1px dashed rgba(23, 50, 77, 0.1)', paddingTop: '8px', marginTop: '4px' }}>
-                  Почему важно: {item.why}
-                </div>
               </div>
             ))}
           </div>
@@ -700,127 +907,117 @@ export default function RazrabotkaEkspertizaClient() {
             </p>
           </div>
 
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '12px',
-            marginBottom: '24px'
-          }}>
-            {contractTypes.map((item, idx) => (
-              <span
+          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '28px' }}>
+            {contractCategories.map((cat, idx) => (
+              <div
                 key={idx}
+                className="card hover-lift"
                 style={{
                   background: 'var(--color-white)',
                   border: '1px solid var(--color-border)',
-                  padding: '10px 18px',
-                  fontSize: '14.5px',
-                  color: 'var(--color-deep-blue)',
-                  fontWeight: 500,
-                  display: 'inline-block'
+                  borderTop: '3px solid var(--color-gold)',
+                  padding: '26px 26px',
+                  borderRadius: '0',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
                 }}
               >
-                {item}
-              </span>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  {cat.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {cat.items}
+                </p>
+              </div>
             ))}
           </div>
 
-          <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', margin: 0 }}>
-            Строительный подряд относится к отраслевому направлению{' '}
-            <Link
-              href="/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/"
-              style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}
-            >
-              юриста по недвижимости и строительству для бизнеса
-            </Link>.
-          </p>
+          <div
+            className="card"
+            style={{
+              background: 'var(--color-white)',
+              border: '1px solid var(--color-border)',
+              borderLeft: '4px solid var(--color-gold)',
+              padding: '20px 24px',
+              borderRadius: '0',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '14px'
+            }}
+          >
+            <div style={{ color: 'var(--color-gold)', fontSize: '20px', lineHeight: 1, flexShrink: 0 }}>ℹ️</div>
+            <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              Строительный подряд относится к отраслевому направлению{' '}
+              <Link
+                href="/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/"
+                style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}
+              >
+                юриста по недвижимости и строительству для бизнеса
+              </Link>.
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ═══ 6. ЧТО НУЖНО ДЛЯ НАЧАЛА РАБОТЫ ═══ */}
+      {/* ═══ 6. ЧТО ПОТРЕБУЕТСЯ ДЛЯ НАЧАЛА РАБОТЫ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Что нужно для начала работы
+              Что потребуется для начала работы
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Для первого звонка достаточно кратко описать задачу. Для проведения экспертизы или разработки понадобятся материалы:
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '28px' }}>
-            <div style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-              padding: '36px 32px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '20px'
-            }}>
-              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                Проект или коммерческие условия
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+          <div className="grid grid-2" style={{ gap: '20px', marginBottom: '32px' }}>
+            {prepDocs.map((item, idx) => (
+              <div
+                key={idx}
+                className="card"
+                style={{
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  padding: '22px 24px',
+                  borderRadius: '0',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '16px'
+                }}
+              >
+                <div style={{ color: 'var(--color-primary)', marginTop: '2px', flexShrink: 0 }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>Проект договора или шаблон</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Текст контрагента либо шаблон, используемый в компании на текущий момент.</span>
-                  </div>
-                </li>
-                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>Приложения и спецификации</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Коммерческое предложение, техническое задание, графики платежей и поставок.</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
+                </div>
+                <div>
+                  <h3 style={{ fontSize: '15.5px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: '0 0 6px 0' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
 
-            <div style={{
-              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+          <div
+            className="card"
+            style={{
+              background: 'var(--color-bg-light)',
               border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
-              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-              padding: '36px 32px',
+              borderLeft: '4px solid var(--color-gold)',
+              padding: '24px 28px',
+              borderRadius: '0',
               display: 'flex',
-              flexDirection: 'column',
-              gap: '20px'
-            }}>
-              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
-                Процессы и переписка
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>Описание реального процесса</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Кто, что, когда делает и какими первичными документами подтверждается закрытие обязательств.</span>
-                  </div>
-                </li>
-                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="9 11 12 14 22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '3px' }}>Переписка по разногласиям</strong>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Замечания контрагента, спорные формулировки и контрольная дата подписания.</span>
-                  </div>
-                </li>
-              </ul>
+              alignItems: 'center',
+              gap: '16px'
+            }}
+          >
+            <div style={{ color: 'var(--color-gold)', fontSize: '24px', lineHeight: 1, flexShrink: 0 }}>ℹ️</div>
+            <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <strong>Конфиденциальность:</strong> Передаваемые проекты документов и коммерческие условия охраняются соглашением о неразглашении (NDA). Мы не передаём информацию третьим лицам.
             </div>
           </div>
         </div>
@@ -828,12 +1025,59 @@ export default function RazrabotkaEkspertizaClient() {
 
       {/* ═══ 7. КАК ПРОХОДИТ РАБОТА ═══ */}
       <ProcessBlock
-        title="Как проходит работа"
-        subtitle="Пять последовательных этапов для подготовки безопасного договора."
+        title="Как проходит работа по договору"
+        subtitle="Пять последовательных этапов для подготовки безопасного и исполнимого договора."
         steps={workSteps}
       />
 
-      {/* ═══ 8. СТОИМОСТЬ УСЛУГ ═══ */}
+      {/* ═══ 8. РЕЗУЛЬТАТ РАБОТЫ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Результат работы
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Формат результата согласуется до начала работы и даёт руководителю чёткую картину рисков и готовые решения.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '20px' }}>
+            {deliverables.map((item, idx) => (
+              <div
+                key={idx}
+                className="card"
+                style={{
+                  background: 'var(--color-bg-light)',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '4px solid var(--color-gold)',
+                  padding: '22px 24px',
+                  borderRadius: '0',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '16px'
+                }}
+              >
+                <div style={{ color: 'var(--color-gold)', marginTop: '2px', flexShrink: 0 }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h3 style={{ fontSize: '16px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 6px 0' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 9. СТОИМОСТЬ УСЛУГ ═══ */}
       <PricingBlock
         title="Стоимость разработки и экспертизы договоров"
         subtitle="Стоимость зависит от объёма и сложности документов, количества приложений и участников, формата результата, необходимости переговоров и срока конкретного задания. Цену и состав работ согласуем до начала работы."
@@ -844,7 +1088,7 @@ export default function RazrabotkaEkspertizaClient() {
         ctaButtonLink="#form"
       />
 
-      {/* ═══ 9. ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
+      {/* ═══ 10. ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
       <CasesBlock
         title="Примеры из практики"
         cases={cases}
@@ -852,7 +1096,7 @@ export default function RazrabotkaEkspertizaClient() {
         resultLabel="Ключевой результат"
       />
 
-      {/* ═══ 10. СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      {/* ═══ 11. СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
@@ -864,38 +1108,39 @@ export default function RazrabotkaEkspertizaClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          <div className="grid grid-4" style={{ gap: '24px' }}>
             {relatedServices.map((rel, idx) => (
-              <Link key={idx} href={rel.link} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                <div
-                  className="card related-service-card hover-lift"
-                  style={{
-                    height: '100%',
-                    padding: '30px 26px',
-                    background: 'var(--color-white)',
-                    border: '1px solid var(--color-border)',
-                    borderTop: '3px solid var(--color-gold)',
-                    borderRadius: '0',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between'
-                  }}
-                >
-                  <div>
-                    <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.35 }}>
-                      {rel.title}
-                    </h3>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                      {rel.desc}
-                    </p>
-                  </div>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, marginTop: '20px', paddingTop: '14px', borderTop: '1px solid rgba(23, 50, 77, 0.06)' }}>
-                    <span>Подробнее</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </div>
+              <Link
+                key={idx}
+                href={rel.link}
+                className="card hover-lift"
+                style={{
+                  height: '100%',
+                  padding: '28px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  textDecoration: 'none'
+                }}
+              >
+                <div>
+                  <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.35 }}>
+                    {rel.title}
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    {rel.desc}
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '20px', paddingTop: '12px', borderTop: '1px solid rgba(23, 50, 77, 0.06)' }}>
+                  <span>Подробнее</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </div>
               </Link>
             ))}
@@ -903,7 +1148,7 @@ export default function RazrabotkaEkspertizaClient() {
         </div>
       </section>
 
-      {/* ═══ 11. FAQ ═══ */}
+      {/* ═══ 12. FAQ ═══ */}
       <FAQBlock
         faqs={faqs}
         title={<>Ответы на<br />частые вопросы</>}
@@ -912,7 +1157,7 @@ export default function RazrabotkaEkspertizaClient() {
         ctaLink="#form"
       />
 
-      {/* ═══ 12. ФИНАЛЬНАЯ ФОРМА ═══ */}
+      {/* ═══ 13. ФИНАЛЬНАЯ ФОРМА ═══ */}
       <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>

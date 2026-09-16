@@ -749,33 +749,35 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                     <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '16px' }}>
                       <a
                         href="#form"
+                        className="btn btn-gold"
                         style={{
                           display: 'inline-flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           gap: '8px',
-                          background: 'linear-gradient(135deg, #C1A066 0%, #B89C72 100%)',
-                          color: '#10273B',
+                          backgroundColor: 'var(--color-gold)',
+                          color: 'var(--color-deep-blue)',
                           padding: '13px 26px',
-                          borderRadius: '2px',
+                          borderRadius: '0',
                           fontSize: '14.5px',
                           fontWeight: 700,
                           textDecoration: 'none',
                           cursor: 'pointer',
-                          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                          boxShadow: '0 4px 14px rgba(193, 160, 102, 0.25)',
-                          letterSpacing: '0.01em'
+                          transition: 'all 0.25s ease',
+                          boxShadow: '0 4px 14px rgba(184, 156, 114, 0.3)',
+                          letterSpacing: '0.01em',
+                          border: 'none'
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.background = '#FFFFFF';
+                          e.currentTarget.style.backgroundColor = '#FFFFFF';
                           e.currentTarget.style.color = 'var(--color-deep-blue)';
-                          e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 255, 255, 0.3)';
+                          e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 255, 255, 0.35)';
                           e.currentTarget.style.transform = 'translateY(-2px)';
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.background = 'linear-gradient(135deg, #C1A066 0%, #B89C72 100%)';
-                          e.currentTarget.style.color = '#10273B';
-                          e.currentTarget.style.boxShadow = '0 4px 14px rgba(193, 160, 102, 0.25)';
+                          e.currentTarget.style.backgroundColor = 'var(--color-gold)';
+                          e.currentTarget.style.color = 'var(--color-deep-blue)';
+                          e.currentTarget.style.boxShadow = '0 4px 14px rgba(184, 156, 114, 0.3)';
                           e.currentTarget.style.transform = 'translateY(0)';
                         }}
                         onClick={(e) => {
