@@ -329,7 +329,8 @@ export default function ZemelnoGradostroitelnoeClient() {
         }
         superTitle={
           <span className="hero-title-span-mobile" style={{ display: 'inline-block' }}>
-            Недвижимость и строительство • Земля и градостроительство • Липецк
+            Недвижимость и строительство • <br />
+            Земля и градостроительство • Липецк
           </span>
         }
         title={
