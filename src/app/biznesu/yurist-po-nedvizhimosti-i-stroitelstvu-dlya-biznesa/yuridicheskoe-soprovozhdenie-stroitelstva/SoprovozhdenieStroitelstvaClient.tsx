@@ -668,7 +668,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '20px', position: 'relative' }}>
+          <div className="grid grid-3" style={{ gap: '20px', position: 'relative', gridAutoRows: '1fr' }}>
             {auditDirections.map((item, idx) => (
               <div
                 key={idx}
@@ -682,6 +682,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
+                  minHeight: '235px',
                   height: '100%',
                   position: 'relative'
                 }}
@@ -706,7 +707,8 @@ export default function SoprovozhdenieStroitelstvaClient() {
                     fontFamily: 'var(--font-serif)', 
                     color: 'var(--color-deep-blue)', 
                     margin: '6px 0 10px 0', 
-                    lineHeight: 1.35 
+                    lineHeight: 1.35,
+                    minHeight: '48px'
                   }}>
                     {item.title}
                   </h3>
@@ -714,7 +716,8 @@ export default function SoprovozhdenieStroitelstvaClient() {
                     fontSize: '14px', 
                     color: 'var(--color-text-secondary)', 
                     lineHeight: 1.55, 
-                    margin: 0 
+                    margin: 0,
+                    minHeight: '80px'
                   }}>
                     {item.desc}
                   </p>
@@ -734,6 +737,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
+                minHeight: '235px',
                 height: '100%',
                 position: 'relative',
                 overflow: 'hidden',
@@ -759,7 +763,8 @@ export default function SoprovozhdenieStroitelstvaClient() {
                   fontWeight: 600,
                   color: '#FFFFFF',
                   margin: '6px 0 10px 0',
-                  lineHeight: 1.35
+                  lineHeight: 1.35,
+                  minHeight: '48px'
                 }}>
                   Нужен аудит строительного проекта?
                 </h3>
@@ -768,13 +773,14 @@ export default function SoprovozhdenieStroitelstvaClient() {
                   fontSize: '14px',
                   color: '#CBD5E1',
                   lineHeight: 1.55,
-                  margin: 0
+                  margin: 0,
+                  minHeight: '80px'
                 }}>
                   Предоставим письменное заключение с анализом рисков, условий генподряда и правовыми рекомендациями.
                 </p>
               </div>
 
-              <div style={{ marginTop: '20px', position: 'relative', zIndex: 1 }}>
+              <div style={{ marginTop: 'auto', paddingTop: '16px', position: 'relative', zIndex: 1 }}>
                 <a
                   href="#form"
                   style={{

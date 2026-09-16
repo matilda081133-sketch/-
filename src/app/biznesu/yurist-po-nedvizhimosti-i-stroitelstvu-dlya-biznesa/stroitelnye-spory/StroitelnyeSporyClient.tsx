@@ -804,20 +804,24 @@ export default function StroitelnyeSporyClient() {
         <div className="container" style={{ textAlign: 'center' }}>
           <div style={{
             display: 'inline-flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
             padding: '6px',
-            backgroundColor: 'var(--color-bg-light)',
+            backgroundColor: '#F7F4ED',
             borderRadius: '4px',
             gap: '6px',
             border: '1px solid var(--color-border)'
           }}>
             <button
+              type="button"
               onClick={() => setActiveRole('plaintiff')}
               style={{
-                padding: '10px 24px',
+                fontFamily: 'var(--font-sans)',
+                padding: '11px 24px',
                 borderRadius: '2px',
                 border: 'none',
-                fontWeight: 700,
-                fontSize: '14.5px',
+                fontWeight: 600,
+                fontSize: '15px',
                 cursor: 'pointer',
                 backgroundColor: activeRole === 'plaintiff' ? 'var(--color-primary)' : 'transparent',
                 color: activeRole === 'plaintiff' ? '#FFFFFF' : 'var(--color-deep-blue)',
@@ -827,13 +831,15 @@ export default function StroitelnyeSporyClient() {
               Маршрут истца (взыскание / подряд)
             </button>
             <button
+              type="button"
               onClick={() => setActiveRole('defendant')}
               style={{
-                padding: '10px 24px',
+                fontFamily: 'var(--font-sans)',
+                padding: '11px 24px',
                 borderRadius: '2px',
                 border: 'none',
-                fontWeight: 700,
-                fontSize: '14.5px',
+                fontWeight: 600,
+                fontSize: '15px',
                 cursor: 'pointer',
                 backgroundColor: activeRole === 'defendant' ? 'var(--color-primary)' : 'transparent',
                 color: activeRole === 'defendant' ? '#FFFFFF' : 'var(--color-deep-blue)',
