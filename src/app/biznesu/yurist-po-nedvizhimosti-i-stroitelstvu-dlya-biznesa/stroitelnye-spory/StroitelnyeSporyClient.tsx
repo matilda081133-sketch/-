@@ -13,6 +13,7 @@ import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 
 export default function StroitelnyeSporyClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeRole, setActiveRole] = useState<'plaintiff' | 'defendant'>('plaintiff');
 
   const faqs = [
     {
@@ -33,7 +34,7 @@ export default function StroitelnyeSporyClient() {
     },
     {
       q: 'Кто оплачивает строительно-техническую экспертизу?',
-      a: 'Внесудебное досудебное исследование оплачивает заказавшая его сторона. При назначении судебной экспертизы депозит вносит ходатайствующая сторона, а по результатам рассмотрения дела судебные расходы в полном объёме возлагаются на проигравшую сторону (ст. 110 АПК РФ).'
+      a: 'Внесудебное исследование первоначально оплачивает заказавшая его сторона. При назначении судебной экспертизы деньги на депозит суда обычно вносит сторона, заявившая ходатайство, либо стороны в порядке, установленном судом. В итоговом судебном акте расходы распределяются с учётом результата рассмотрения требований: при частичном удовлетворении иска — пропорционально, а расходы на представителя взыскиваются в разумных пределах.'
     },
     {
       q: 'Можно взыскать стоимость дополнительных работ?',
@@ -49,7 +50,7 @@ export default function StroitelnyeSporyClient() {
     },
     {
       q: 'Обязателен ли досудебный претензионный порядок?',
-      a: 'Да, в арбитражном процессе по спорам из договоров подряда претензионный порядок обязателен (ч. 5 ст. 4 АПК РФ). Срок ожидания ответа составляет 30 календарных дней со дня направления претензии, если иной срок не установлен договором.'
+      a: 'Для большинства денежных требований из договоров строительного подряда между организациями и ИП претензионный порядок обязателен. Обычно обратиться в арбитражный суд можно через 30 календарных дней после направления претензии, если закон или договор не устанавливает другой срок. Однако из правила существуют исключения, а ответчику по уже поданному иску не требуется предварительно направлять собственную претензию только для подготовки отзыва. Применимый порядок проверяется по предмету требований и условиям договора.'
     },
     {
       q: 'От чего зависят срок и стоимость ведения строительного спора?',
@@ -151,60 +152,69 @@ export default function StroitelnyeSporyClient() {
 
   const pricingTiers: PricingTier[] = [
     {
-      title: 'Правовой аудит конфликта и документов',
-      price: 'от 20 000 ₽',
-      subtitle: 'Анализ договора, смет, переписки, форм КС-2/КС-3, оценка судебной перспективы и рисков.',
-      buttonText: 'Выбрать тариф',
-      buttonHref: '#contacts-form',
+      title: 'Правовой аудит спора',
+      price: 'от 25 000 ₽',
+      subtitle: 'Анализ договора, КС-2/КС-3, актов и деловой переписки перед судом',
+      buttonText: 'Заказать аудит',
+      buttonHref: '#form',
       features: [
-        { name: 'Изучение договора и исполнительной базы', value: '✓' },
-        { name: 'Оценка рисков односторонней приёмки', value: '✓' },
-        { name: 'Расчёт суммы долга и неустойки', value: '✓' },
-        { name: 'Письменное заключение с планом действий', value: '✓' }
+        { name: 'Правовой анализ договора и первички', value: '✓' },
+        { name: 'Оценка судебно-технических перспектив', value: '✓' },
+        { name: 'Проверка претензионного порядка', value: '✓' },
+        { name: 'Формирование письменного заключения', value: '✓' }
       ],
       popular: false
     },
     {
-      title: 'Досудебное урегулирование и претензия',
-      price: 'от 30 000 ₽',
-      subtitle: 'Подготовка аргументированной претензии/ответа, участие в переговорах, фиксация осмотра объекта.',
-      buttonText: 'Выбрать тариф',
-      buttonHref: '#contacts-form',
+      title: 'Досудебное урегулирование',
+      price: 'от 35 000 ₽',
+      subtitle: 'Претензия, контр-претензия, проведение переговоров и актирование',
+      buttonText: 'Начать урегулирование',
+      buttonHref: '#form',
       features: [
-        { name: 'Составление претензии с расчётом требований', value: '✓' },
-        { name: 'Правовое оформление комиссионного осмотра', value: '✓' },
-        { name: 'Переговоры с контрагентом по мирному соглашению', value: '✓' },
-        { name: 'Фиксация доказательств перед подачей иска', value: '✓' }
+        { name: 'Составление мотивированной претензии / отзыва', value: '✓' },
+        { name: 'Организация технической фиксации дефектов', value: '✓' },
+        { name: 'Участие в переговорах сторон', value: '✓' },
+        { name: 'Подготовка соглашения / протокола разногласий', value: '✓' }
       ],
       popular: true
     },
     {
-      title: 'Ведение дела в суде: первая инстанция',
-      price: 'от 70 000 ₽',
-      subtitle: 'Полное судебное представительство в арбитражном суде от иска до вынесения решения.',
-      buttonText: 'Выбрать тариф',
-      buttonHref: '#contacts-form',
+      title: 'Арбитражное дело под ключ',
+      price: 'от 75 000 ₽',
+      subtitle: 'Полное сопровождение дела в арбитражном суде первой инстанции',
+      buttonText: 'Заказать ведение дела',
+      buttonHref: '#form',
       features: [
-        { name: 'Подготовка иска / отзыва и доказательной базы', value: '✓' },
-        { name: 'Формулирование вопросов для строительной экспертизы', value: '✓' },
-        { name: 'Участие во всех судебных заседаниях', value: '✓' },
-        { name: 'Взыскание судебных расходов с оппонента', value: '✓' }
+        { name: 'Подготовка иска / отзыва / встречного иска', value: '✓' },
+        { name: 'Обеспечительные меры (арест счетов)', value: '✓' },
+        { name: 'Формирование вопросов судебной экспертизе', value: '✓' },
+        { name: 'Участие во всех судебных заседаниях', value: '✓' }
       ],
       popular: false
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: 'Сделки с коммерческой недвижимостью',
+      desc: 'Сопровождение купли-продажи коммерческих зданий, земельных массивов, складов и производственных комплексов.',
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/soprovozhdenie-sdelok-s-kommercheskoy-nedvizhimostyu/'
     },
     {
-      title: 'Комплексная защита: суд + экспертиза + исполнение',
-      price: 'от 110 000 ₽',
-      subtitle: 'Комплексное сопровождение спора: суд, надзор за экспертизой, апелляция и фактическое взыскание.',
-      buttonText: 'Выбрать тариф',
-      buttonHref: '#contacts-form',
-      features: [
-        { name: 'Представительство во всех инстанциях', value: '✓' },
-        { name: 'Внесудебная и судебная экспертиза', value: '✓' },
-        { name: 'Работа с обеспечительными мерами', value: '✓' },
-        { name: 'Исполнительное производство до получения денег', value: '✓' }
-      ],
-      popular: false
+      title: 'Аренда коммерческой недвижимости',
+      desc: 'Аудит и составление договоров аренды для арендаторов и арендодателей, защита обеспечительных платежей.',
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-arendy-kommercheskoy-nedvizhimosti/'
+    },
+    {
+      title: 'Земля и градостроительство',
+      desc: 'Градостроительный аудит, смена ВРИ, внесение изменений в ПЗЗ, получение ГПЗУ и оформление участков.',
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/zemelno-gradostroitelnoe-soprovozhdenie/'
+    },
+    {
+      title: 'Сопровождение строительства и реконструкции',
+      desc: 'Правовое сопровождение от старта проекта и договоров подряда до получения разрешения на ввод объекта в эксплуатацию.',
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-stroitelstva/'
     }
   ];
 
@@ -230,7 +240,7 @@ export default function StroitelnyeSporyClient() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/stroitelnye-spory/#service',
         name: 'Юрист по строительным спорам в Липецке',
-        serviceType: 'Юридическая помощь в строительных спорах и арбитраже',
+        serviceType: 'Юридические услуги по строительным спорам и арбитражным делам',
         provider: {
           '@id': 'https://dejure-help.ru/#legalservice'
         },
@@ -285,7 +295,7 @@ export default function StroitelnyeSporyClient() {
       />
 
       {/* ═══ 2. ТИПОВЫЕ СИТУАЦИИ СПОРА ═══ */}
-      <section style={{ backgroundColor: 'var(--color-white)', padding: '64px 0' }}>
+      <section style={{ backgroundColor: 'var(--color-white)', padding: '64px 0' }} id="situations">
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 40px' }}>
             <h2 className="nowrap-desk" style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
@@ -319,21 +329,6 @@ export default function StroitelnyeSporyClient() {
                   overflow: 'hidden'
                 }}
               >
-                <div style={{
-                  position: 'absolute',
-                  top: '-15px',
-                  right: '-15px',
-                  width: '90px',
-                  height: '90px',
-                  opacity: 0.04,
-                  pointerEvents: 'none',
-                  color: 'var(--color-deep-blue)'
-                }}>
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                  </svg>
-                </div>
-
                 <div>
                   {sit.tag && (
                     <div style={{
@@ -450,7 +445,6 @@ export default function StroitelnyeSporyClient() {
       </section>
 
       {/* ═══ 4. ДИАГНОСТИКА: ЧТО ПОДГОТОВИТЬ ДЛЯ СТАРТА ═══ */}
-      {/* КРИТИЧЕСКОЕ ПРАВИЛО ДИЗАЙНА: светлый фон секции var(--gradient-cream), не синий! */}
       <section style={{ background: 'var(--gradient-cream)', padding: '64px 0' }}>
         <div className="container">
           <div style={{
@@ -533,50 +527,139 @@ export default function StroitelnyeSporyClient() {
         </div>
       </section>
 
-      {/* ═══ 5. ЭТАПЫ ВЕДЕНИЯ СПОРА (PROCESS BLOCK) ═══ */}
+      {/* ═══ 5. ЭТАПЫ ВЕДЕНИЯ СПОРА (PROCESS BLOCK С РАЗДЕЛЕНИЕМ ИСТЦА И ОТВЕТЧИКА) ═══ */}
+      <section style={{ backgroundColor: 'var(--color-white)', paddingTop: '40px', paddingBottom: '0' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <div style={{
+            display: 'inline-flex',
+            padding: '6px',
+            backgroundColor: '#F1F5F9',
+            borderRadius: '8px',
+            gap: '6px',
+            boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.06)'
+          }}>
+            <button
+              onClick={() => setActiveRole('plaintiff')}
+              style={{
+                padding: '10px 24px',
+                borderRadius: '6px',
+                border: 'none',
+                fontWeight: 700,
+                fontSize: '14.5px',
+                cursor: 'pointer',
+                backgroundColor: activeRole === 'plaintiff' ? 'var(--color-primary)' : 'transparent',
+                color: activeRole === 'plaintiff' ? '#FFFFFF' : 'var(--color-deep-blue)',
+                transition: 'all 0.2s ease',
+                boxShadow: activeRole === 'plaintiff' ? '0 2px 8px rgba(23,50,77,0.2)' : 'none'
+              }}
+            >
+              Маршрут истца (взыскание / подряд)
+            </button>
+            <button
+              onClick={() => setActiveRole('defendant')}
+              style={{
+                padding: '10px 24px',
+                borderRadius: '6px',
+                border: 'none',
+                fontWeight: 700,
+                fontSize: '14.5px',
+                cursor: 'pointer',
+                backgroundColor: activeRole === 'defendant' ? 'var(--color-primary)' : 'transparent',
+                color: activeRole === 'defendant' ? '#FFFFFF' : 'var(--color-deep-blue)',
+                transition: 'all 0.2s ease',
+                boxShadow: activeRole === 'defendant' ? '0 2px 8px rgba(23,50,77,0.2)' : 'none'
+              }}
+            >
+              Маршрут ответчика (защита от претензий)
+            </button>
+          </div>
+        </div>
+      </section>
+
       <ProcessBlock
-        title="Как строится ведение строительного спора"
-        subtitle="Восемь последовательных этапов от правовой диагностики до реального взыскания средств"
-        steps={[
+        title={activeRole === 'plaintiff' ? "Порядок действий для истца в строительном споре" : "Порядок защиты для ответчика в строительном споре"}
+        subtitle="Состав и последовательность работы зависят от роли клиента: требования истца, защита ответчика и исполнение решения проходят по разным маршрутам."
+        steps={activeRole === 'plaintiff' ? [
           {
             num: '01',
             title: 'Аудит документов и фиксация',
-            desc: 'Изучаем договор, сметы, формы КС-2/КС-3, переписку и наличие доказательств направления извещений.'
+            desc: 'Изучаем договор, сметы, формы КС-2/КС-3, переписку и наличие извещений о готовности к приёмке.'
           },
           {
             num: '02',
-            title: 'Сохранение доказательств',
+            title: 'Техническая фиксация и осмотр',
             desc: 'Организуем осмотр объекта, фиксацию дефектов или объёмов работ с привлечением технического эксперта.'
           },
           {
             num: '03',
             title: 'Расчёт требований и санкций',
-            desc: 'Формируем обоснованный расчёт суммы основного долга, неустойки, убытков и процентов по ст. 395 ГК РФ.'
+            desc: 'Формируем обоснованный расчёт суммы основного долга, договорной неустойки, убытков и процентов по ст. 395 ГК РФ.'
           },
           {
             num: '04',
-            title: 'Обязательный досудебный порядок',
-            desc: 'Составляем мотивированную претензию либо ответ на претензию оппонента со ссылками на закон и практику.'
+            title: 'Досудебная стадия',
+            desc: 'Для будущего истца проверяем обязательность претензионного порядка, срок ожидания и направляем претензию. Для ответчика анализируем полученные требования, готовим ответ и фиксируем возражения и встречные требования.'
           },
           {
             num: '05',
-            title: 'Подача иска и обеспечительные меры',
-            desc: 'Направляем исковое заявление в арбитражный суд, ходатайствуем об аресте счетов должника для гарантии выплат.'
+            title: 'Иск, отзыв и обеспечительные меры',
+            desc: 'В зависимости от роли клиента готовим иск, отзыв или встречный иск. При наличии предусмотренных законом оснований заявляем обеспечительные меры, например арест денежных средств в пределах требований, чтобы снизить риск неисполнения будущего решения.'
           },
           {
             num: '06',
             title: 'Судебная экспертиза',
-            desc: 'Формируем точные вопросы для эксперта, участвуем в выборе экспертного учреждения и опровергаем доводы оппонента.'
+            desc: 'Формируем вопросы для эксперта, участвуем в выборе экспертной организации и допросе эксперта в суде.'
           },
           {
             num: '07',
             title: 'Судебное представительство',
-            desc: 'Защищаем интересы клиента во всех заседаниях арбитражного суда первой, апелляционной и кассационной инстанций.'
+            desc: 'Защищаем позицию истца во всех заседаниях арбитражного суда первой, апелляционной и кассационной инстанций.'
           },
           {
             num: '08',
             title: 'Исполнение решения суда',
-            desc: 'Получаем исполнительный лист, направляем его в банк должника или УФССП до полного фактического взыскания.'
+            desc: 'Получаем исполнительный лист, определяем доступный способ взыскания и предъявляем документ в банк или ФССП. Сопровождаем согласованные исполнительные действия; фактическое получение денег зависит от активов должника и установленных законом ограничений.'
+          }
+        ] : [
+          {
+            num: '01',
+            title: 'Анализ иска и материалов',
+            desc: 'Изучаем исковое заявление, приложенные расчёты, формы КС-2/КС-3, определения суда и процессуальные сроки.'
+          },
+          {
+            num: '02',
+            title: 'Проверка нарушений и сроков',
+            desc: 'Проверяем соблюдение истцом досудебного порядка, процедуру сдачи работ и сроки исковой давности.'
+          },
+          {
+            num: '03',
+            title: 'Контр-анализ объёмов и качества',
+            desc: 'Привлекаем технического специалиста для оценки реального качества работ и причин возникновения дефектов.'
+          },
+          {
+            num: '04',
+            title: 'Досудебная стадия',
+            desc: 'Для будущего истца проверяем обязательность претензионного порядка, срок ожидания и направляем претензию. Для ответчика анализируем полученные требования, готовим ответ и фиксируем возражения и встречные требования.'
+          },
+          {
+            num: '05',
+            title: 'Иск, отзыв и обеспечительные меры',
+            desc: 'В зависимости от роли клиента готовим иск, отзыв или встречный иск. При наличии предусмотренных законом оснований заявляем обеспечительные меры, например арест денежных средств в пределах требований, чтобы снизить риск неисполнения будущего решения.'
+          },
+          {
+            num: '06',
+            title: 'Экспертная позиция',
+            desc: 'Готовим альтернативные вопросы судебному эксперту, заявляем отвод недобросовестным экспертным учреждениям.'
+          },
+          {
+            num: '07',
+            title: 'Защита в арбитражном суде',
+            desc: 'Отстаиваем интересы ответчика в заседаниях, снижаем неустойку по ст. 333 ГК РФ и отбиваем претензии.'
+          },
+          {
+            num: '08',
+            title: 'Исполнение решения суда',
+            desc: 'Получаем исполнительный лист, определяем доступный способ взыскания и предъявляем документ в банк или ФССП. Сопровождаем согласованные исполнительные действия; фактическое получение денег зависит от активов должника и установленных законом ограничений.'
           }
         ]}
       />
@@ -601,7 +684,61 @@ export default function StroitelnyeSporyClient() {
         faqs={faqs}
       />
 
-      {/* ═══ 9. ФОРМА ОБРАТНОЙ СВЯЗИ (CONTACTS FORM) ═══ */}
+      {/* ═══ 9. СМЕЖНЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+              Смежные направления практики по недвижимости и строительству
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              Если вашей компании требуется комплексное решение, ознакомьтесь с другими направлениями строительной практики:
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '24px' }}>
+            {relatedServices.map((rel, idx) => (
+              <Link key={idx} href={rel.link} style={{ textDecoration: 'none' }} className="card-link">
+                <div
+                  className="card hover-lift"
+                  style={{
+                    height: '100%',
+                    minHeight: '180px',
+                    padding: '26px 24px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-primary)',
+                    borderRadius: '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  <div>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                      {rel.title}
+                    </h3>
+                    <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {rel.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                    <span>Подробнее об услуге</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 10. ФОРМА ОБРАТНОЙ СВЯЗИ (CONTACTS FORM) ═══ */}
       <ContactsForm
         title="Обсудите строительный спор с арбитражным юристом"
         subtitle="Оставьте заявку на предварительный анализ спора. Мы свяжемся с вами в течение 15 минут в рабочее время."
@@ -680,6 +817,7 @@ export default function StroitelnyeSporyClient() {
                   }}
                 />
               </div>
+
               <div style={{ marginBottom: '16px' }}>
                 <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
                   Телефон для связи
@@ -697,13 +835,14 @@ export default function StroitelnyeSporyClient() {
                   }}
                 />
               </div>
-              <div style={{ marginBottom: '20px' }}>
+
+              <div style={{ marginBottom: '24px' }}>
                 <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                  Суть конфликта
+                  Краткое описание спора
                 </label>
                 <textarea
                   rows={3}
-                  placeholder="Неоплата по КС-2 на сумму... или претензия по дефектам..."
+                  placeholder="Взыскание задолженности по КС-2, претензии по качеству, срыв сроков..."
                   style={{
                     width: '100%',
                     padding: '12px 14px',
@@ -714,6 +853,7 @@ export default function StroitelnyeSporyClient() {
                   }}
                 />
               </div>
+
               <button
                 type="submit"
                 className="btn btn-primary"

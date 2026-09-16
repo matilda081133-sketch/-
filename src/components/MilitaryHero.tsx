@@ -154,75 +154,73 @@ export default function MilitaryHero({
             </div>
             
             {/* Right Column for Photo or Unconstrained Creative */}
-            <div className="military-hero-right" style={{ width: '100%', maxWidth: '440px', margin: '0 auto', flexShrink: 0, display: 'flex', flexDirection: 'column', paddingTop: imageMarginTop || 0, marginTop: 0 }}>
-              {rightContent ? (
-                rightContent
-              ) : (
-                <div className="hero-photo-hover" style={{ 
-                  width: '100%',
-                  borderRadius: '0',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)',
-                  zIndex: 1,
-                  display: 'block',
-                  background: 'transparent'
-                }}>
-                  {imageUrl ? (
-                    <img 
-                      src={imageUrl} 
-                      alt={imageName || title?.toString() || 'Специалист'} 
-                      width={440}
-                      height={460}
-                      fetchPriority="high"
-                      decoding="async"
-                      style={{ width: '100%', height: '460px', objectFit: 'cover', objectPosition: imageObjectPosition || 'center 20%', display: 'block', filter: 'brightness(1.05)', aspectRatio: '440/460' }} 
-                      className="hero-photo-img" 
-                    />
-                  ) : (
-                    <div style={{ padding: '40px', textAlign: 'center', fontStyle: 'italic', color: 'var(--color-text-secondary)' }}>
-                      [Фото специалиста]
-                    </div>
-                  )}
-                  {(imageName || imageSubtitle) && (
-                    <div style={{
-                      padding: '16px 20px',
-                      background: 'rgba(255, 255, 255, 0.75)',
-                      backdropFilter: 'blur(10px)',
-                      borderTop: '3px solid var(--color-gold)',
-                      borderLeft: '1px solid rgba(255, 255, 255, 0.9)',
-                      borderRight: '1px solid rgba(255, 255, 255, 0.9)',
-                      borderBottom: '1px solid rgba(255, 255, 255, 0.9)',
-                      boxShadow: '0 4px 14px rgba(16, 39, 59, 0.08)'
-                    }}>
-                      {imageName && (
-                        <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '2px', lineHeight: 1.3 }}>
-                          {imageName === 'Дмитрий Сергеевич Конопкин' || imageName === 'Конопкин Дмитрий Сергеевич' ? (
-                            <>Конопкин <br />Дмитрий Сергеевич</>
-                          ) : imageName === 'Марина Валерьевна Смольянинова' || imageName === 'Смольянинова Марина Валерьевна' ? (
-                            <>Смольянинова <br />Марина Валерьевна</>
-                          ) : (
-                            imageName
-                          )}
-                        </div>
-                      )}
-                      {imageSubtitle && (
-                        <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontWeight: 500, lineHeight: 1.35 }}>
-                          {typeof imageSubtitle === 'string' && imageSubtitle.includes('куратор') ? (
-                            <>
-                              {imageSubtitle.split('куратор')[0].trim().replace(/,$/, '')},<br />
-                              куратор{imageSubtitle.split('куратор')[1]}
-                            </>
-                          ) : (
-                            imageSubtitle
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
+            {hasRight && (
+              <div className="military-hero-right" style={{ width: '100%', maxWidth: '440px', margin: '0 auto', flexShrink: 0, display: 'flex', flexDirection: 'column', paddingTop: imageMarginTop || 0, marginTop: 0 }}>
+                {rightContent ? (
+                  rightContent
+                ) : (
+                  <div className="hero-photo-hover" style={{ 
+                    width: '100%',
+                    borderRadius: '0',
+                    overflow: 'hidden',
+                    position: 'relative',
+                    boxShadow: '0 4px 14px rgba(16, 39, 59, 0.12)',
+                    zIndex: 1,
+                    display: 'block',
+                    background: 'transparent'
+                  }}>
+                    {imageUrl && (
+                      <img 
+                        src={imageUrl} 
+                        alt={imageName || title?.toString() || 'Специалист'} 
+                        width={440}
+                        height={460}
+                        fetchPriority="high"
+                        decoding="async"
+                        style={{ width: '100%', height: '460px', objectFit: 'cover', objectPosition: imageObjectPosition || 'center 20%', display: 'block', filter: 'brightness(1.05)', aspectRatio: '440/460' }} 
+                        className="hero-photo-img" 
+                      />
+                    )}
+                    {(imageName || imageSubtitle) && (
+                      <div style={{
+                        padding: '16px 20px',
+                        background: 'rgba(255, 255, 255, 0.75)',
+                        backdropFilter: 'blur(10px)',
+                        borderTop: '3px solid var(--color-gold)',
+                        borderLeft: '1px solid rgba(255, 255, 255, 0.9)',
+                        borderRight: '1px solid rgba(255, 255, 255, 0.9)',
+                        borderBottom: '1px solid rgba(255, 255, 255, 0.9)',
+                        boxShadow: '0 4px 14px rgba(16, 39, 59, 0.08)'
+                      }}>
+                        {imageName && (
+                          <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '2px', lineHeight: 1.3 }}>
+                            {imageName === 'Дмитрий Сергеевич Конопкин' || imageName === 'Конопкин Дмитрий Сергеевич' ? (
+                              <>Конопкин <br />Дмитрий Сергеевич</>
+                            ) : imageName === 'Марина Валерьевна Смольянинова' || imageName === 'Смольянинова Марина Валерьевна' ? (
+                              <>Смольянинова <br />Марина Валерьевна</>
+                            ) : (
+                              imageName
+                            )}
+                          </div>
+                        )}
+                        {imageSubtitle && (
+                          <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontWeight: 500, lineHeight: 1.35 }}>
+                            {typeof imageSubtitle === 'string' && imageSubtitle.includes('куратор') ? (
+                              <>
+                                {imageSubtitle.split('куратор')[0].trim().replace(/,$/, '')},<br />
+                                куратор{imageSubtitle.split('куратор')[1]}
+                              </>
+                            ) : (
+                              imageSubtitle
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
 
           </div>
         <style dangerouslySetInnerHTML={{ __html: `
