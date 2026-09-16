@@ -589,17 +589,31 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                       padding: '4px' 
                     }}>
                       <svg width="100%" height="100%" viewBox="0 0 200 100" fill="none">
-                        <rect x="15" y="10" width="170" height="80" fill="rgba(193, 160, 102, 0.12)" stroke="#10273B" strokeWidth="1.5" />
-                        <line x1="95" y1="10" x2="95" y2="90" stroke="#10273B" strokeWidth="1.2" />
-                        <line x1="95" y1="50" x2="185" y2="50" stroke="#10273B" strokeWidth="1.2" />
-                        <line x1="15" y1="55" x2="95" y2="55" stroke="#10273B" strokeWidth="1.2" strokeDasharray="2 2" />
-                        <path d="M95 35 A15 15 0 0 0 80 50" fill="none" stroke="#C1A066" strokeWidth="0.8" />
-                        <path d="M115 50 A15 15 0 0 0 130 35" fill="none" stroke="#C1A066" strokeWidth="0.8" />
-                        <text x="20" y="34" fill="#10273B" fontSize="8.5" fontWeight="bold">Складской блок 480 м²</text>
-                        <text x="20" y="74" fill="#10273B" fontSize="8.5" fontWeight="bold">Производство 820 м²</text>
-                        <text x="102" y="32" fill="#10273B" fontSize="8.5" fontWeight="bold">Зона разгрузки</text>
-                        <text x="102" y="72" fill="#10273B" fontSize="8.5" fontWeight="bold">Парковка / АБК</text>
-                        <text x="130" y="86" fill="#80633F" fontSize="9.5" fontWeight="bold">S = 2 400 м²</text>
+                        <rect x="10" y="8" width="180" height="84" fill="rgba(193, 160, 102, 0.10)" stroke="#10273B" strokeWidth="1.2" />
+                        <line x1="100" y1="8" x2="100" y2="92" stroke="#10273B" strokeWidth="1" />
+                        <line x1="10" y1="50" x2="100" y2="50" stroke="#10273B" strokeWidth="1" strokeDasharray="2 2" />
+                        <line x1="100" y1="50" x2="190" y2="50" stroke="#10273B" strokeWidth="1" strokeDasharray="2 2" />
+                        <path d="M100 32 A12 12 0 0 0 88 44" fill="none" stroke="#C1A066" strokeWidth="0.8" />
+                        <path d="M112 50 A12 12 0 0 0 124 38" fill="none" stroke="#C1A066" strokeWidth="0.8" />
+                        
+                        {/* Складской блок */}
+                        <text x="16" y="24" fill="#10273B" fontSize="7" fontWeight="bold">Складской блок</text>
+                        <text x="16" y="36" fill="#80633F" fontSize="7.5" fontWeight="bold">480 м²</text>
+                        
+                        {/* Производство */}
+                        <text x="16" y="66" fill="#10273B" fontSize="7" fontWeight="bold">Производство</text>
+                        <text x="16" y="78" fill="#80633F" fontSize="7.5" fontWeight="bold">820 м²</text>
+                        
+                        {/* Зона разгрузки */}
+                        <text x="106" y="24" fill="#10273B" fontSize="7" fontWeight="bold">Зона разгрузки</text>
+                        <text x="106" y="36" fill="#64748B" fontSize="6.5">доки / пандусы</text>
+                        
+                        {/* Парковка / АБК */}
+                        <text x="106" y="64" fill="#10273B" fontSize="7" fontWeight="bold">Парковка / АБК</text>
+                        
+                        {/* Общая площадь */}
+                        <rect x="106" y="72" width="76" height="14" rx="2" fill="#10273B" />
+                        <text x="144" y="82" textAnchor="middle" fill="#FFFFFF" fontSize="7.5" fontWeight="bold">S = 2 400 м²</text>
                       </svg>
                     </div>
 
@@ -931,7 +945,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px' }}>
+          <div className="grid grid-3" style={{ gap: '20px' }}>
             {[
               { 
                 tag: 'Активы и владение',
@@ -963,11 +977,11 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                 key={idx} 
                 className="hover-lift"
                 style={{
-                  padding: '36px 30px',
+                  padding: '26px 24px',
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
                   display: 'flex',
                   flexDirection: 'column',
                   position: 'relative',
@@ -975,21 +989,21 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                   transition: 'all 0.3s ease'
                 }}
               >
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.05, pointerEvents: 'none' }}>
+                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
                     <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                   </svg>
                 </div>
 
                 <div style={{ 
-                  fontSize: '12px', 
+                  fontSize: '11.5px', 
                   fontWeight: 700, 
                   color: 'var(--color-gold)', 
                   textTransform: 'uppercase', 
                   letterSpacing: '0.08em', 
-                  marginBottom: '14px',
+                  marginBottom: '10px',
                   background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 12px',
+                  padding: '3px 10px',
                   alignSelf: 'flex-start',
                   borderRadius: '2px',
                   display: 'inline-block',
@@ -1000,12 +1014,12 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                 </div>
 
                 <h3 style={{ 
-                  fontSize: '20px', 
+                  fontSize: '18px', 
                   fontFamily: 'var(--font-serif)', 
                   fontWeight: 600, 
                   color: 'var(--color-deep-blue)', 
                   lineHeight: 1.35, 
-                  margin: '0 0 14px 0',
+                  margin: '0 0 10px 0',
                   position: 'relative',
                   zIndex: 1
                 }}>
@@ -1013,9 +1027,9 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                 </h3>
 
                 <p style={{ 
-                  fontSize: '15px', 
+                  fontSize: '14px', 
                   color: 'var(--color-text-secondary)', 
-                  lineHeight: 1.6, 
+                  lineHeight: 1.5, 
                   margin: 0,
                   position: 'relative',
                   zIndex: 1
@@ -1025,13 +1039,13 @@ export default function YuristNedvizhimostStroitelstvoClient() {
               </div>
             ))}
 
-            {/* Карточка 6: Экспресс-анализ (Завершающая 2-й ряд CTA-карточка) */}
+            {/* Карточка 6: Определить стадию и следующий шаг (Компактная CTA-карточка) */}
             <div className="hover-lift" style={{ 
-              padding: '36px 30px', 
+              padding: '26px 24px', 
               background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
               border: '1px solid rgba(193, 160, 102, 0.35)',
               borderTop: '3px solid var(--color-gold)',
-              boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+              boxShadow: '0 6px 24px rgba(16, 39, 59, 0.15)',
               display: 'flex', 
               flexDirection: 'column', 
               justifyContent: 'space-between',
@@ -1039,53 +1053,30 @@ export default function YuristNedvizhimostStroitelstvoClient() {
               overflow: 'hidden',
               transition: 'all 0.3s ease'
             }}>
-              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
-                <svg width="100" height="100" viewBox="0 0 24 24" fill="#C1A066">
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
+                <svg width="90" height="90" viewBox="0 0 24 24" fill="#C1A066">
                   <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
               </div>
 
               <div>
-                <div style={{ 
-                  fontSize: '12px', 
-                  fontWeight: 700, 
-                  color: 'var(--color-gold)', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.08em', 
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.15)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  display: 'inline-block'
-                }}>
-                  Экспресс-анализ
-                </div>
                 <h3 style={{ 
                   fontFamily: 'var(--font-serif)', 
-                  fontSize: '17px', 
+                  fontSize: '18px', 
                   fontWeight: 600, 
                   color: '#FFFFFF', 
-                  margin: '0 0 14px 0', 
+                  margin: '0 0 10px 0', 
                   lineHeight: 1.35,
-                  minHeight: '68px',
                   position: 'relative',
                   zIndex: 1
                 }}>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                    Определить стадию
-                  </span>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                    и следующий шаг
-                  </span>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                    по вашей ситуации
-                  </span>
+                  Определить стадию и следующий шаг по вашей ситуации
                 </h3>
                 <p style={{ 
-                  fontSize: '14.5px', 
+                  fontSize: '14px', 
                   color: '#CBD5E1', 
-                  lineHeight: 1.6, 
-                  margin: '0 0 20px 0', 
+                  lineHeight: 1.5, 
+                  margin: '0 0 16px 0', 
                   position: 'relative', 
                   zIndex: 1 
                 }}>
@@ -1093,25 +1084,25 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                 </p>
               </div>
 
-              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto' }}>
+              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '12px' }}>
                 <a
                   href="#form"
-                  className="btn btn-gold"
                   style={{
-                    display: 'block',
-                    textAlign: 'center',
-                    padding: '12px 18px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-gold)',
                     fontSize: '14px',
-                    fontWeight: 700,
-                    backgroundColor: 'var(--color-gold)',
-                    color: 'var(--color-deep-blue)',
-                    borderRadius: '2px',
+                    fontWeight: 600,
                     textDecoration: 'none',
-                    transition: 'all 0.2s ease',
-                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                    transition: 'opacity 0.2s ease'
                   }}
                 >
-                  Определить стадию и следующий шаг
+                  <span>Определить стадию и следующий шаг</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </a>
               </div>
             </div>
