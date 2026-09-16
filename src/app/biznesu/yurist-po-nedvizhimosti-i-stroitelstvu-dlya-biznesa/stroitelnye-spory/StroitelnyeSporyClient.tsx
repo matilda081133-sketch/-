@@ -957,20 +957,47 @@ export default function StroitelnyeSporyClient() {
       {/* ═══ 9. СМЕЖНЫЕ УСЛУГИ ═══ */}
       <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px', textAlign: 'left' }}>
-            <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
-              Смежные юридические услуги
-            </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              Если вашей компании требуется комплексное решение, ознакомьтесь с другими направлениями строительной практики:
-            </p>
+          <div style={{ marginBottom: '36px' }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ 
+                fontFamily: 'var(--font-serif)', 
+                fontSize: 'clamp(24px, 3.5vw, 34px)', 
+                color: 'var(--color-deep-blue)', 
+                margin: 0, 
+                lineHeight: 1.25, 
+                flex: '1 1 480px', 
+                minWidth: '280px' 
+              }}>
+                <span style={{ display: "inline-block" }}>Смежные услуги</span> <br />
+                <span style={{ display: "inline-block" }}>строительной практики</span>
+              </h2>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}>
+                Комплексная юридическая помощь бизнесу: сопровождение проектов, договоры, арбитражный процесс и взыскание задолженности.
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '24px' }}>
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
             {relatedServices.map((rel, idx) => (
-              <Link key={idx} href={rel.link} style={{ textDecoration: 'none' }} className="card-link">
+              <Link key={idx} href={rel.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                 <div
-                  className="card hover-lift"
+                  className="card related-service-card hover-lift"
                   style={{
                     height: '100%',
                     minHeight: '180px',
