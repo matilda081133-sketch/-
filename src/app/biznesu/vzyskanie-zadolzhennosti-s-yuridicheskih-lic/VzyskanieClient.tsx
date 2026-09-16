@@ -530,10 +530,6 @@ export default function VzyskanieClient() {
 
   return (
     <main style={{ position: 'relative', overflowX: 'hidden' }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Header />
 
       {/* ═══ БЛОК 1: ПЕРВЫЙ ЭКРАН (HERO) ═══ */}
@@ -585,12 +581,12 @@ export default function VzyskanieClient() {
           { text: 'Оцениваем доказательства и взыскиваемость' },
           { text: 'Согласуем каждый этап до подачи иска' },
           { text: 'Работаем на результат до фактического исполнения' },
-          { text: 'Куратор — адвокат Дмитрий Сергеевич Конопкин' }
+          { text: 'Куратор направления — Владимир Викторович Начешников' }
         ]}
-        imageUrl="/images/konopkin.jpg"
-        imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления"
-        imageObjectPosition="center 25%"
+        imageUrl="/images/nacheshnikov.jpg"
+        imageName="Владимир Викторович Начешников"
+        imageSubtitle="Специалист ЮК «Де-Юре», куратор направления"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: В КАКОЙ СИТУАЦИИ ВАМ НУЖНА ПОМОЩЬ (ШАБЛОН «СИТУАЦИИ») ═══ */}
@@ -1619,16 +1615,16 @@ export default function VzyskanieClient() {
 
       {/* ═══ БЛОК 9: КУРАТОР НАПРАВЛЕНИЯ (SPECIALIST BLOCK) ═══ */}
       <SpecialistBlock
-        title="Куратор направления"
-        name="Дмитрий Сергеевич Конопкин"
-        position="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления"
-        imageUrl="/images/konopkin.jpg"
+        title="Куратор направления — Владимир Викторович Начешников"
+        name="Владимир Викторович Начешников"
+        position="Специалист ЮК «Де-Юре», куратор направления"
+        imageUrl="/images/nacheshnikov.jpg"
         imagePosition="center 15%"
-        profileHref="/specialisty/konopkin-dmitriy-sergeevich/"
-        profileText="Подробнее об адвокате Дмитрии Сергеевиче Конопкине →"
+        profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
+        profileText="Подробнее о Владимире Викторовиче Начешникове →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Дмитрий Сергеевич курирует сложные коммерческие и арбитражные споры по взысканию задолженности с юридических лиц: оценивает доказательственную базу, разрабатывает процессуальную стратегию и представляет интересы бизнеса в суде.
+            Владимир Начешников проводит первичный разбор долговой ситуации, определяет маршрут взыскания и координирует работу профильных специалистов на досудебной, судебной, исполнительной и банкротной стадиях.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
@@ -1645,7 +1641,7 @@ export default function VzyskanieClient() {
             </li>
           </ul>
         ]}
-        buttonText="Задать вопрос Дмитрию Сергеевичу"
+        buttonText="Обсудить взыскание задолженности"
         buttonHref="#form"
       />
 

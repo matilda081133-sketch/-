@@ -11,13 +11,21 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Защита бизнеса от взыскания задолженности в Липецке | Де-Юре',
     description: 'Проверим требования кредитора, расчёт долга и доказательства, подготовим ответ на претензию или отзыв на иск, представим интересы бизнеса в суде.',
-    url: 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/',
+    url: 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
     type: 'website',
+    images: [
+      {
+        url: 'https://dejure-help.ru/images/og/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Защита бизнеса от взыскания задолженности в Липецке',
+      },
+    ],
   },
   alternates: {
-    canonical: 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/',
+    canonical: 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/',
   },
 };
 
@@ -26,8 +34,22 @@ export default function ZashchitaPage() {
     '@context': 'https://schema.org',
     '@graph': [
       {
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#organization',
+        'name': 'Юридическая компания «Де-Юре»',
+        'url': 'https://dejure-help.ru/',
+        'telephone': '+7 (4742) 20-15-25',
+        'address': {
+          '@type': 'PostalAddress',
+          'streetAddress': 'ул. Советская, д. 35, оф. 213',
+          'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
+          'addressCountry': 'RU'
+        }
+      },
+      {
         '@type': 'Service',
-        '@id': 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/#service',
+        '@id': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/#service',
         'name': 'Защита бизнеса от взыскания задолженности в Липецке',
         'serviceType': 'Юридическая защита ответчиков и должников в арбитражных спорах',
         'description': 'Правовой анализ требований кредитора, подготовка возражений на иск, снижение неустойки по ст. 333 ГК РФ, отмена обеспечительных мер, согласование мирового соглашения и рассрочки.',
@@ -37,53 +59,42 @@ export default function ZashchitaPage() {
           { '@type': 'Country', 'name': 'Россия' }
         ],
         'provider': {
-          '@type': 'LegalService',
-          '@id': 'https://matilda081133-sketch.github.io/#organization',
-          'name': 'Юридическая компания «Де-Юре»',
-          'url': 'https://matilda081133-sketch.github.io/',
-          'telephone': '+7 (4742) 20-15-25',
-          'address': {
-            '@type': 'PostalAddress',
-            'streetAddress': 'ул. Советская, д. 35, оф. 213',
-            'addressLocality': 'Липецк',
-            'postalCode': '398001',
-            'addressCountry': 'RU'
-          }
+          '@id': 'https://dejure-help.ru/#organization'
         }
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/#breadcrumbs',
+        '@id': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/#breadcrumbs',
         'itemListElement': [
           {
             '@type': 'ListItem',
             'position': 1,
             'name': 'Главная',
-            'item': 'https://matilda081133-sketch.github.io/'
+            'item': 'https://dejure-help.ru/'
           },
           {
             '@type': 'ListItem',
             'position': 2,
             'name': 'Бизнесу',
-            'item': 'https://matilda081133-sketch.github.io/-/biznesu/'
+            'item': 'https://dejure-help.ru/biznesu/'
           },
           {
             '@type': 'ListItem',
             'position': 3,
             'name': 'Взыскание задолженности с юридических лиц',
-            'item': 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/'
+            'item': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/'
           },
           {
             '@type': 'ListItem',
             'position': 4,
             'name': 'Защита бизнеса',
-            'item': 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/'
+            'item': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/'
           }
         ]
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/#faq',
+        '@id': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/#faq',
         'mainEntity': [
           {
             '@type': 'Question',

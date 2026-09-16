@@ -11,13 +11,21 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Взыскание задолженности с юридических лиц в Липецке | Де-Юре',
     description: 'Проверим долг и финансовое состояние должника, проведём претензионную работу, представим интересы в суде и согласуем действия до фактического взыскания.',
-    url: 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/',
+    url: 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
     type: 'website',
+    images: [
+      {
+        url: 'https://dejure-help.ru/images/og/vzyskanie-zadolzhennosti-s-yuridicheskih-lic-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Взыскание задолженности с юридических лиц в Липецке',
+      },
+    ],
   },
   alternates: {
-    canonical: 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/',
+    canonical: 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/',
   },
 };
 
@@ -26,8 +34,22 @@ export default function VzyskaniePage() {
     '@context': 'https://schema.org',
     '@graph': [
       {
+        '@type': 'LegalService',
+        '@id': 'https://dejure-help.ru/#organization',
+        'name': 'Юридическая компания «Де-Юре»',
+        'url': 'https://dejure-help.ru/',
+        'telephone': '+7 (4742) 20-15-25',
+        'address': {
+          '@type': 'PostalAddress',
+          'streetAddress': 'ул. Советская, д. 35, оф. 213',
+          'addressLocality': 'Липецк',
+          'addressRegion': 'Липецкая область',
+          'addressCountry': 'RU'
+        }
+      },
+      {
         '@type': 'Service',
-        '@id': 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/#service',
+        '@id': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/#service',
         'name': 'Взыскание задолженности с юридических лиц в Липецке',
         'serviceType': 'Юридические услуги по взысканию дебиторской задолженности с организаций и ИП',
         'description': 'Комплексное взыскание долгов бизнеса: правовой анализ документов, проверка платежеспособности должника, досудебная претензия, представительство в арбитражном суде и сопровождение исполнения.',
@@ -37,47 +59,36 @@ export default function VzyskaniePage() {
           { '@type': 'Country', 'name': 'Россия' }
         ],
         'provider': {
-          '@type': 'LegalService',
-          '@id': 'https://matilda081133-sketch.github.io/#organization',
-          'name': 'Юридическая компания «Де-Юре»',
-          'url': 'https://matilda081133-sketch.github.io/',
-          'telephone': '+7 (4742) 20-15-25',
-          'address': {
-            '@type': 'PostalAddress',
-            'streetAddress': 'ул. Советская, д. 35, оф. 213',
-            'addressLocality': 'Липецк',
-            'postalCode': '398001',
-            'addressCountry': 'RU'
-          }
+          '@id': 'https://dejure-help.ru/#organization'
         }
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/#breadcrumbs',
+        '@id': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/#breadcrumbs',
         'itemListElement': [
           {
             '@type': 'ListItem',
             'position': 1,
             'name': 'Главная',
-            'item': 'https://matilda081133-sketch.github.io/'
+            'item': 'https://dejure-help.ru/'
           },
           {
             '@type': 'ListItem',
             'position': 2,
             'name': 'Бизнесу',
-            'item': 'https://matilda081133-sketch.github.io/-/biznesu/'
+            'item': 'https://dejure-help.ru/biznesu/'
           },
           {
             '@type': 'ListItem',
             'position': 3,
             'name': 'Взыскание задолженности с юридических лиц',
-            'item': 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/'
+            'item': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/'
           }
         ]
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://matilda081133-sketch.github.io/-/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/#faq',
+        '@id': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/#faq',
         'mainEntity': [
           {
             '@type': 'Question',

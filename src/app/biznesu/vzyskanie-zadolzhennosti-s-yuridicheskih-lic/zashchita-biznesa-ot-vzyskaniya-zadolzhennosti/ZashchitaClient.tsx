@@ -464,10 +464,6 @@ export default function ZashchitaClient() {
 
   return (
     <main style={{ position: 'relative', overflowX: 'hidden' }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Header />
 
       {/* ═══ БЛОК 1: ПЕРВЫЙ ЭКРАН (HERO) ═══ */}
@@ -516,12 +512,12 @@ export default function ZashchitaClient() {
           { text: 'Оцениваем риски и контррасчёт до суда' },
           { text: 'Снижаем неустойку по ст. 333 ГК РФ' },
           { text: 'Снимаем аресты со счетов и активов' },
-          { text: 'Куратор — адвокат Дмитрий Сергеевич Конопкин' }
+          { text: 'Куратор направления — Владимир Викторович Начешников' }
         ]}
-        imageUrl="/images/konopkin.jpg"
-        imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления"
-        imageObjectPosition="center 25%"
+        imageUrl="/images/nacheshnikov.jpg"
+        imageName="Владимир Викторович Начешников"
+        imageSubtitle="Специалист ЮК «Де-Юре», куратор направления"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: В КАКОЙ СИТУАЦИИ ВАМ НУЖНА ПОМОЩЬ (ШАБЛОН «СИТУАЦИИ») ═══ */}
@@ -1519,16 +1515,16 @@ export default function ZashchitaClient() {
 
       {/* ═══ БЛОК 9: КУРАТОР НАПРАВЛЕНИЯ (SPECIALIST BLOCK) ═══ */}
       <SpecialistBlock
-        title="Куратор направления"
-        name="Дмитрий Сергеевич Конопкин"
-        position="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления"
-        imageUrl="/images/konopkin.jpg"
+        title="Куратор направления — Владимир Викторович Начешников"
+        name="Владимир Викторович Начешников"
+        position="Специалист ЮК «Де-Юре», куратор направления"
+        imageUrl="/images/nacheshnikov.jpg"
         imagePosition="center 15%"
-        profileHref="/specialisty/konopkin-dmitriy-sergeevich/"
-        profileText="Подробнее об адвокате Дмитрии Сергеевиче Конопкине →"
+        profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
+        profileText="Подробнее о Владимире Викторовиче Начешникове →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Дмитрий Сергеевич курирует защиту бизнеса в арбитражных спорах: проверяет расчёты и доказательства истцов, выявляет основания для снижения штрафных санкций по ст. 333 ГК РФ и формирует доказательственную базу для арбитражного суда.
+            Владимир Начешников проводит первичный разбор долговой ситуации, определяет маршрут взыскания и координирует работу профильных специалистов на досудебной, судебной, исполнительной и банкротной стадиях.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
@@ -1545,7 +1541,7 @@ export default function ZashchitaClient() {
             </li>
           </ul>
         ]}
-        buttonText="Задать вопрос Дмитрию Сергеевичу"
+        buttonText="Обсудить взыскание задолженности"
         buttonHref="#form"
       />
 
