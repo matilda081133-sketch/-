@@ -125,7 +125,7 @@ export default function IspolnitelnoeClient() {
       />
 
       {/* BLOK 2: RISKI */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
@@ -133,8 +133,8 @@ export default function IspolnitelnoeClient() {
               <span style={{ display: 'inline-block' }}>сталкивается бизнес</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>В&nbsp;исполнительном производстве промедление грозит</span> <br />
-              <span style={{ display: 'inline-block' }}>реальными финансовыми потерями как для&nbsp;должника, так и&nbsp;для&nbsp;взыскателя.</span>
+              <span style={{ display: 'inline-block' }}>В исполнительном производстве промедление грозит</span> <br />
+              <span style={{ display: 'inline-block' }}>реальными финансовыми потерями как для должника, так и для взыскателя.</span>
             </p>
           </div>
           
@@ -143,90 +143,133 @@ export default function IspolnitelnoeClient() {
               { 
                 tag: 'Риск блокировки', 
                 title: <><span style={{ display: 'inline-block' }}>Арест</span> <span style={{ display: 'inline-block' }}>расчётных счетов</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Приостановка платежей,</span> <span style={{ display: 'inline-block' }}>невозможность выдачи зарплаты</span> <span style={{ display: 'inline-block' }}>и&nbsp;расчётов с&nbsp;контрагентами.</span></> 
+                desc: <><span style={{ display: 'inline-block' }}>Приостановка платежей,</span> <span style={{ display: 'inline-block' }}>невозможность выдачи зарплаты</span> <span style={{ display: 'inline-block' }}>и расчётов с контрагентами.</span></>,
+                btnText: 'Снять арест со счёта',
+                btnHref: '#form'
               },
               { 
                 tag: 'Риск изъятия', 
                 title: <><span style={{ display: 'inline-block' }}>Арест</span> <span style={{ display: 'inline-block' }}>имущества</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Изъятие оборудования, транспорта</span> <span style={{ display: 'inline-block' }}>или&nbsp;товаров в&nbsp;обороте,</span> <span style={{ display: 'inline-block' }}>остановка бизнес-процессов.</span></> 
+                desc: <><span style={{ display: 'inline-block' }}>Изъятие оборудования, транспорта</span> <span style={{ display: 'inline-block' }}>или товаров в обороте,</span> <span style={{ display: 'inline-block' }}>остановка бизнес-процессов.</span></>,
+                btnText: 'Защитить имущество',
+                btnHref: '#form'
               },
               { 
                 tag: 'Риск потери', 
                 title: <><span style={{ display: 'inline-block' }}>Утрата</span> <span style={{ display: 'inline-block' }}>активов</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Реализация имущества должника</span> <span style={{ display: 'inline-block' }}>по&nbsp;заниженной стоимости</span> <span style={{ display: 'inline-block' }}>на&nbsp;торгах.</span></> 
+                desc: <><span style={{ display: 'inline-block' }}>Реализация имущества должника</span> <span style={{ display: 'inline-block' }}>по заниженной стоимости</span> <span style={{ display: 'inline-block' }}>на торгах.</span></>,
+                btnText: 'Оценить активы',
+                btnHref: '#form'
               },
               { 
                 tag: 'Риск возврата документа', 
                 title: <><span style={{ display: 'inline-block' }}>Исполнительный лист</span> <span style={{ display: 'inline-block' }}>вернули без взыскания</span></>, 
-                desc: 'Пристав окончил производство или вернул исполнительный документ, хотя не все сведения о счетах и имуществе должника были проверены.'
+                desc: 'Пристав окончил производство или вернул исполнительный документ, хотя не все сведения о счетах и имуществе должника были проверены.',
+                btnText: 'Проверить лист',
+                btnHref: '#form'
               },
               { 
                 tag: 'Риск дополнительных расходов', 
                 title: <><span style={{ display: 'inline-block' }}>Начислен</span> <span style={{ display: 'inline-block' }}>исполнительский сбор</span></>, 
-                desc: 'Компания получила постановление о взыскании исполнительского сбора либо не согласна с его размером и основаниями начисления.'
+                desc: 'Компания получила постановление о взыскании исполнительского сбора либо не согласна с его размером и основаниями начисления.',
+                btnText: 'Оспорить сбор',
+                btnHref: '#form'
               },
               { 
                 tag: 'Риск бездействия', 
                 title: <><span style={{ display: 'inline-block' }}>Затягивание</span> <span style={{ display: 'inline-block' }}>взыскания</span></>, 
-                desc: <><span style={{ display: 'inline-block' }}>Риск вывода активов должником</span> <span style={{ display: 'inline-block' }}>из-за&nbsp;медлительности</span> <span style={{ display: 'inline-block' }}>судебных приставов.</span></> 
+                desc: <><span style={{ display: 'inline-block' }}>Риск вывода активов должником</span> <span style={{ display: 'inline-block' }}>из-за медлительности</span> <span style={{ display: 'inline-block' }}>судебных приставов.</span></>,
+                btnText: 'Ускорить взыскание',
+                btnHref: '#form'
               }
             ].map((risk, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '36px 30px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              <div key={i} className="card hover-lift" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
                 border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                borderTop: '3px solid var(--color-gold)',
+                borderRadius: '0',
+                padding: '32px 28px',
                 display: 'flex',
                 flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease'
+                overflow: 'hidden'
               }}>
-                {/* Одинаковый фирменный фоновый векторный водяной знак */}
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
 
-                <div style={{ 
-                  fontSize: '12px', 
-                  fontWeight: 700, 
-                  color: 'var(--color-gold)', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.08em', 
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {risk.tag}
+                <div>
+                  {risk.tag && (
+                    <div style={{
+                      fontSize: '11.5px',
+                      fontWeight: 700,
+                      color: 'var(--color-primary)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                      marginBottom: '12px',
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '3px 8px',
+                      display: 'inline-block',
+                      borderRadius: '2px'
+                    }}>
+                      {risk.tag}
+                    </div>
+                  )}
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '18px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35
+                  }}>
+                    {risk.title}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0
+                  }}>
+                    {risk.desc}
+                  </p>
                 </div>
-                <h3 style={{ 
-                  fontFamily: 'var(--font-serif)', 
-                  fontSize: '17px', 
-                  fontWeight: 600,
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 14px 0',
-                  lineHeight: 1.4,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {risk.title}
-                </h3>
-                <p style={{ 
-                  fontSize: '15px', 
-                  color: 'var(--color-text-secondary)', 
-                  lineHeight: 1.6,
-                  margin: 0,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {risk.desc}
-                </p>
+
+                <a
+                  href={risk.btnHref}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13.5px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '20px',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <span>{risk.btnText}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
               </div>
             ))}
           </div>
