@@ -361,6 +361,10 @@ export default function ArendaKommercheskayaClient() {
         }
         secondaryCtaText="Что проверит юрист"
         secondaryCtaLink="#what-we-check"
+        imageUrl="/images/nacheshnikov.jpg"
+        imageName="Владимир Викторович Начешников"
+        imageSubtitle="Специалист по аренде и договорам коммерческой недвижимости"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ 2. КОГДА НУЖЕН ЮРИСТ ПО АРЕНДЕ (СИТУАЦИИ) — ШАБЛОН ═══ */}
@@ -564,8 +568,11 @@ export default function ArendaKommercheskayaClient() {
                     fontSize: '14px',
                     fontWeight: 600,
                     textDecoration: 'none',
-                    transition: 'opacity 0.2s ease'
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
                   }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#dfca9e')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
                   onClick={(e) => {
                     e.preventDefault();
                     const el = document.getElementById('form');

@@ -346,6 +346,10 @@ export default function StroitelnyeSporyClient() {
         }
         secondaryCtaText="Что проверит юрист"
         secondaryCtaLink="#situations"
+        imageUrl="/images/nacheshnikov.jpg"
+        imageName="Владимир Викторович Начешников"
+        imageSubtitle="Специалист по строительным спорам и подрядным договорам"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ 2. ТИПОВЫЕ СИТУАЦИИ (СИТУАЦИИ) ═══ */}
@@ -570,8 +574,11 @@ export default function StroitelnyeSporyClient() {
                     fontSize: '14px',
                     fontWeight: 600,
                     textDecoration: 'none',
-                    transition: 'opacity 0.2s ease'
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
                   }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#dfca9e')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
                   onClick={(e) => {
                     e.preventDefault();
                     const el = document.getElementById('form');

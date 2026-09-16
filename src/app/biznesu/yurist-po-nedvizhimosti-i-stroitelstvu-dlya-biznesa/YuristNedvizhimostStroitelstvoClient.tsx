@@ -748,45 +748,66 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                   </div>
 
                   {isLast ? (
-                    sit.buttonText && (
-                      <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '16px' }}>
-                        <a
-                          href={sit.href || '#form'}
-                          className="btn btn-gold"
-                          style={{
-                            display: 'inline-block',
-                            textAlign: 'center',
-                            padding: '12px 24px',
-                            fontSize: '14.5px',
-                            fontWeight: 700,
-                            backgroundColor: 'var(--color-gold)',
-                            color: 'var(--color-deep-blue)',
-                            borderRadius: '2px',
-                            textDecoration: 'none',
-                            transition: 'all 0.2s ease',
-                            boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
-                          }}
-                        >
-                          {sit.buttonText}
-                        </a>
-                      </div>
-                    )
+                    <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '12px' }}>
+                      <a
+                        href="#form"
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          color: 'var(--color-gold)',
+                          fontSize: '14px',
+                          fontWeight: 600,
+                          textDecoration: 'none',
+                          cursor: 'pointer',
+                          transition: 'all 0.2s ease'
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = '#dfca9e')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const el = document.getElementById('form');
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                          else window.location.hash = 'form';
+                        }}
+                      >
+                        <span>{sit.buttonText || 'Комплексная консультация'}</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
                   ) : (
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      color: 'var(--color-primary)',
-                      fontSize: '13px',
-                      fontWeight: 600,
-                      marginTop: '20px'
-                    }}>
+                    <a
+                      href="#form"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        color: 'var(--color-primary)',
+                        fontSize: '13.5px',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                        marginTop: '20px',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s ease'
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const el = document.getElementById('form');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        else window.location.hash = 'form';
+                      }}
+                    >
                       <span>Защитить проект</span>
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                       </svg>
-                    </div>
+                    </a>
                   )}
                 </div>
               );
@@ -1095,7 +1116,16 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                     fontSize: '14px',
                     fontWeight: 600,
                     textDecoration: 'none',
-                    transition: 'opacity 0.2s ease'
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#dfca9e')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
                   <span>Определить стадию и следующий шаг</span>

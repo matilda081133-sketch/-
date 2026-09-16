@@ -523,11 +523,11 @@ export default function SdelkiKommercheskayaClient() {
             <div 
               className="hover-lift" 
               style={{
-                padding: '36px 30px',
+                padding: '26px 24px',
                 background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
                 border: '1px solid rgba(193, 160, 102, 0.35)',
                 borderTop: '3px solid var(--color-gold)',
-                boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+                boxShadow: '0 6px 24px rgba(16, 39, 59, 0.15)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -536,35 +536,19 @@ export default function SdelkiKommercheskayaClient() {
                 transition: 'all 0.3s ease'
               }}
             >
-              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
-                <svg width="100" height="100" viewBox="0 0 24 24" fill="#C1A066">
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
+                <svg width="90" height="90" viewBox="0 0 24 24" fill="#C1A066">
                   <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
               </div>
 
               <div>
-                <div style={{
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.15)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  display: 'inline-block',
-                  borderRadius: '2px'
-                }}>
-                  Экспертиза проекта
-                </div>
-
                 <h3 style={{
                   fontFamily: 'var(--font-serif)',
                   fontSize: '18px',
                   fontWeight: 600,
                   color: '#FFFFFF',
-                  margin: '0 0 14px 0',
+                  margin: '0 0 10px 0',
                   lineHeight: 1.35,
                   position: 'relative',
                   zIndex: 1
@@ -573,10 +557,10 @@ export default function SdelkiKommercheskayaClient() {
                 </h3>
 
                 <p style={{
-                  fontSize: '14.5px',
+                  fontSize: '14px',
                   color: '#CBD5E1',
-                  lineHeight: 1.6,
-                  margin: '0 0 20px 0',
+                  lineHeight: 1.5,
+                  margin: '0 0 16px 0',
                   position: 'relative',
                   zIndex: 1
                 }}>
@@ -584,25 +568,34 @@ export default function SdelkiKommercheskayaClient() {
                 </p>
               </div>
 
-              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto' }}>
+              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '12px' }}>
                 <a
                   href="#form"
-                  className="btn btn-gold"
                   style={{
-                    display: 'block',
-                    textAlign: 'center',
-                    padding: '12px 18px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-gold)',
                     fontSize: '14px',
-                    fontWeight: 700,
-                    backgroundColor: 'var(--color-gold)',
-                    color: 'var(--color-deep-blue)',
-                    borderRadius: '2px',
+                    fontWeight: 600,
                     textDecoration: 'none',
-                    transition: 'all 0.2s ease',
-                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#dfca9e')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
-                  Проверить договор контрагента
+                  <span>Проверить проект договора</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </a>
               </div>
             </div>
