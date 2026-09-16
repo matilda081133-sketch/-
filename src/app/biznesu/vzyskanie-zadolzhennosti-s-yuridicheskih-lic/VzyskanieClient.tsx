@@ -141,36 +141,58 @@ export default function VzyskanieClient() {
     ]
   };
 
-  const situations = [
+  const situations: { tag: string; title: React.ReactNode; desc: React.ReactNode; btnText: string; btnHref: string }[] = [
     {
       tag: 'Просрочка оплаты',
       title: 'Контрагент перестал платить',
-      desc: 'Есть договор и документы об исполнении, но срок оплаты прошёл. Требуется мотивированная претензия и подготовка к судебному взысканию.'
+      desc: 'Есть договор и документы об исполнении, но срок оплаты прошёл. Требуется мотивированная претензия и подготовка к судебному взысканию.',
+      btnText: 'Оценить задолженность',
+      btnHref: '#audit'
     },
     {
       tag: 'Оспаривание долга',
       title: 'Должник оспаривает долг',
-      desc: 'Не признаёт поставку, объём работ, акт, срок или расчёт. Формируем доказательственную базу и закрываем возражения ответчика.'
+      desc: 'Не признаёт поставку, объём работ, акт, срок или расчёт. Формируем доказательственную базу и закрываем возражения ответчика.',
+      btnText: 'Проверить доказательства',
+      btnHref: '#audit'
     },
     {
       tag: 'Риск потери активов',
       title: 'Есть риск потери активов',
-      desc: 'У должника новые иски, исполнительные производства, ликвидация или признаки неплатёжеспособности. Необходимы обеспечительные меры.'
+      desc: 'У должника новые иски, исполнительные производства, ликвидация или признаки неплатёжеспособности. Необходимы обеспечительные меры.',
+      btnText: 'Оценить срочность',
+      btnHref: '#urgent'
     },
     {
       tag: 'Исполнение решения',
       title: 'Решение суда уже получено',
-      desc: 'Нужно определить, предъявлять исполнительный лист напрямую в банк, приставам (ФССП) или использовать банкротный маршрут.'
+      desc: (
+        <>
+          Нужно определить, предъявлять исполнительный лист напрямую в банк, приставам (ФССП) или использовать банкротный маршрут.{' '}
+          <span style={{ display: 'block', marginTop: '8px' }}>
+            Если исполнительный лист уже получен и задача связана с банком, приставами или розыском имущества должника, перейдите в направление{' '}
+            <Link href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
+              «Исполнительное производство для бизнеса»
+            </Link>.
+          </span>
+        </>
+      ),
+      btnText: 'Перейти к исполнению',
+      btnHref: '/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/'
     },
     {
       tag: 'Дебиторский портфель',
       title: 'Должников много (портфель)',
-      desc: 'Нужна единая система работы с пулом просроченной дебиторской задолженности, сегментация по рискам и регулярная отчётность.'
+      desc: 'Нужна единая система работы с пулом просроченной дебиторской задолженности, сегментация по рискам и регулярная отчётность.',
+      btnText: 'Обсудить портфель',
+      btnHref: '#form'
     },
     {
       tag: 'Защита бизнеса',
       title: 'Требуют деньги с вашей компании',
-      desc: 'Вашей компании предъявили необоснованную претензию или иск. Защитим от завышенных требований и снизим неустойку.'
+      desc: 'Вашей компании предъявили необоснованную претензию или иск. Защитим от завышенных требований и снизим неустойку.',
+      btnText: 'Перейти к защите бизнеса',
+      btnHref: '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/'
     }
   ];
 
@@ -275,7 +297,7 @@ export default function VzyskanieClient() {
     }
   ];
 
-  const stages: { num: string; stage: React.ReactNode; works: string; result: string }[] = [
+  const stages: { num: string; stage: React.ReactNode; works: React.ReactNode; label?: string; result: string }[] = [
     {
       num: '01',
       stage: 'Анализ документов и состояния должника',
@@ -302,9 +324,19 @@ export default function VzyskanieClient() {
     },
     {
       num: '05',
-      stage: 'Банкротный маршрут и субсидиарная ответственность',
-      works: 'При невозможности взыскания оцениваем экономический смысл банкротства должника, подаём публикацию на Федресурс, инициируем привлечение руководства к субсидиарной ответственности.',
-      result: 'Взыскание задолженности с контролирующих лиц (директоров, учредителей) либо включение в реестр кредиторов.'
+      stage: 'Оценка банкротного маршрута',
+      works: (
+        <>
+          Если обычное взыскание не даёт результата и у должника есть признаки неплатёжеспособности, проверяем основания и экономический смысл участия кредитора в деле о банкротстве. Дальнейшие действия согласуются как отдельный банкротный проект.{' '}
+          <span style={{ display: 'block', marginTop: '8px' }}>
+            <Link href="/biznesu/bankrotstvo-biznesa/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}>
+              Представление интересов кредитора в банкротстве →
+            </Link>
+          </span>
+        </>
+      ),
+      label: 'Цель этапа',
+      result: 'Определить целесообразность перехода в банкротную процедуру и перечень последующих действий.'
     }
   ];
 
@@ -415,7 +447,14 @@ export default function VzyskanieClient() {
     },
     {
       q: 'Вы работаете, если решение суда уже есть?',
-      a: 'Да, применимый объём зависит от исполнительного документа и теку стадии. Если задача сосредоточена на действиях банка или приставов, она передаётся в профильное направление.'
+      a: (
+        <>
+          Да. Объём работы зависит от исполнительного документа и текущей стадии. Если основная задача связана с действиями банка, приставов или розыском имущества должника, её передаём в направление{' '}
+          <Link href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
+            «Исполнительное производство для бизнеса»
+          </Link>.
+        </>
+      )
     },
     {
       q: 'Можно ли работать дистанционно?',
@@ -674,35 +713,49 @@ export default function VzyskanieClient() {
                   </p>
                 </div>
 
-                <a
-                  href="#form"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    color: 'var(--color-primary)',
-                    fontSize: '13.5px',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    marginTop: '20px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.getElementById('form');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    else window.location.hash = 'form';
-                  }}
-                >
-                  <span>Защитить проект</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
+                {item.btnHref.startsWith('/') ? (
+                  <Link
+                    href={item.btnHref}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--color-primary)',
+                      fontSize: '13.5px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      marginTop: '20px',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    <span>{item.btnText}</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </Link>
+                ) : (
+                  <a
+                    href={item.btnHref}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--color-primary)',
+                      fontSize: '13.5px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      marginTop: '20px',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    <span>{item.btnText}</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                )}
               </div>
             ))}
           </div>

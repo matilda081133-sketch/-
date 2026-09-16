@@ -2,7 +2,7 @@
 
 interface FAQ {
   q: string;
-  a: string;
+  a: string | React.ReactNode;
 }
 
 interface FAQBlockProps {
