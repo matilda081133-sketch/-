@@ -593,8 +593,6 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                         <line x1="100" y1="8" x2="100" y2="92" stroke="#10273B" strokeWidth="1" />
                         <line x1="10" y1="50" x2="100" y2="50" stroke="#10273B" strokeWidth="1" strokeDasharray="2 2" />
                         <line x1="100" y1="50" x2="190" y2="50" stroke="#10273B" strokeWidth="1" strokeDasharray="2 2" />
-                        <path d="M100 32 A12 12 0 0 0 88 44" fill="none" stroke="#C1A066" strokeWidth="0.8" />
-                        <path d="M112 50 A12 12 0 0 0 124 38" fill="none" stroke="#C1A066" strokeWidth="0.8" />
                         
                         {/* Складской блок */}
                         <text x="16" y="24" fill="#10273B" fontSize="7" fontWeight="bold">Складской блок</text>
