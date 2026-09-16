@@ -184,8 +184,8 @@ export default function ZashchitaClient() {
       desc: (
         <>
           Определим, какие действия уже совершены и относится ли задача к отдельному направлению исполнительного производства.{' '}
-          <span style={{ display: 'block', marginTop: '6px' }}>
-            <Link href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
+          <span style={{ display: 'block', marginTop: '6px', whiteSpace: 'nowrap' }}>
+            <Link href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/" style={{ color: 'var(--color-primary)', textDecoration: 'underline', whiteSpace: 'nowrap' }}>
               Перейти к исполнительному производству →
             </Link>
           </span>
