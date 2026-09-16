@@ -1016,7 +1016,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                 key={idx} 
                 className="hover-lift"
                 style={{
-                  padding: '26px 24px',
+                  padding: '22px 20px 20px 20px',
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
@@ -1024,29 +1024,29 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  minHeight: '270px',
+                  minHeight: '210px',
                   height: '100%',
                   position: 'relative',
                   overflow: 'hidden',
                   transition: 'all 0.3s ease'
                 }}
               >
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.05, pointerEvents: 'none' }}>
-                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.04, pointerEvents: 'none' }}>
+                  <svg width="75" height="75" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
                     <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                   </svg>
                 </div>
 
                 <div>
                   <div style={{ 
-                    fontSize: '11.5px', 
+                    fontSize: '11px', 
                     fontWeight: 700, 
                     color: 'var(--color-gold)', 
                     textTransform: 'uppercase', 
                     letterSpacing: '0.08em', 
-                    marginBottom: '10px',
+                    marginBottom: '8px',
                     background: 'rgba(193, 160, 102, 0.1)',
-                    padding: '3px 10px',
+                    padding: '2px 8px',
                     alignSelf: 'flex-start',
                     borderRadius: '2px',
                     display: 'inline-block',
@@ -1057,12 +1057,12 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                   </div>
 
                   <h3 style={{ 
-                    fontSize: '18px', 
+                    fontSize: '16.5px', 
                     fontFamily: 'var(--font-serif)', 
                     fontWeight: 600, 
                     color: 'var(--color-deep-blue)', 
-                    lineHeight: 1.35, 
-                    margin: '0 0 10px 0',
+                    lineHeight: 1.3, 
+                    margin: '0 0 6px 0',
                     position: 'relative',
                     zIndex: 1
                   }}>
@@ -1070,9 +1070,9 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                   </h3>
 
                   <p style={{ 
-                    fontSize: '14px', 
+                    fontSize: '13.5px', 
                     color: 'var(--color-text-secondary)', 
-                    lineHeight: 1.5, 
+                    lineHeight: 1.45, 
                     margin: 0,
                     position: 'relative',
                     zIndex: 1
@@ -1087,7 +1087,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
             <div 
               className="hover-lift" 
               style={{ 
-                padding: '26px 24px', 
+                padding: '22px 20px 20px 20px', 
                 background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
                 border: '1px solid rgba(193, 160, 102, 0.35)',
                 borderTop: '3px solid var(--color-gold)',
@@ -1095,7 +1095,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                 display: 'flex', 
                 flexDirection: 'column', 
                 justifyContent: 'space-between',
-                minHeight: '270px',
+                minHeight: '210px',
                 height: '100%',
                 position: 'relative', 
                 overflow: 'hidden',
@@ -1109,7 +1109,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
               }}
             >
               <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
-                <svg width="90" height="90" viewBox="0 0 24 24" fill="#C1A066">
+                <svg width="75" height="75" viewBox="0 0 24 24" fill="#C1A066">
                   <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
               </div>
@@ -1117,20 +1117,20 @@ export default function YuristNedvizhimostStroitelstvoClient() {
               <div>
                 <h3 style={{ 
                   fontFamily: 'var(--font-serif)', 
-                  fontSize: '18px', 
+                  fontSize: '16.5px', 
                   fontWeight: 600, 
                   color: '#FFFFFF', 
-                  margin: '0 0 10px 0', 
-                  lineHeight: 1.35,
+                  margin: '0 0 6px 0', 
+                  lineHeight: 1.3,
                   position: 'relative',
                   zIndex: 1
                 }}>
                   Определить стадию и следующий шаг по вашей ситуации
                 </h3>
                 <p style={{ 
-                  fontSize: '14px', 
+                  fontSize: '13.5px', 
                   color: '#CBD5E1', 
-                  lineHeight: 1.5, 
+                  lineHeight: 1.45, 
                   margin: 0, 
                   position: 'relative', 
                   zIndex: 1 
@@ -1139,7 +1139,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                 </p>
               </div>
 
-              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '16px' }}>
+              <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', paddingTop: '10px' }}>
                 <a
                   href="#form"
                   style={{
@@ -1147,7 +1147,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                     alignItems: 'center',
                     gap: '6px',
                     color: 'var(--color-gold)',
-                    fontSize: '14px',
+                    fontSize: '13.5px',
                     fontWeight: 600,
                     textDecoration: 'none',
                     cursor: 'pointer',
@@ -1163,7 +1163,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
                   }}
                 >
                   <span>Определить стадию и следующий шаг</span>
-                  <span style={{ fontSize: '16px' }}>&rarr;</span>
+                  <span style={{ fontSize: '15px' }}>&rarr;</span>
                 </a>
               </div>
             </div>
