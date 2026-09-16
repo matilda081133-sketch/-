@@ -266,7 +266,7 @@ export default function SporyPostavkaClient() {
           <>
             <Link href="/" style={{ color: 'var(--color-primary)' }}>Главная</Link> <span style={{ margin: '0 8px' }}>/</span>
             <Link href="/biznesu/" style={{ color: 'var(--color-primary)' }}>Бизнесу</Link> <span style={{ margin: '0 8px' }}>/</span>
-            <span style={{ color: 'var(--color-primary)' }}>Договорное право</span> <span style={{ margin: '0 8px' }}>/</span>
+            <Link href="/biznesu/dogovornoe-pravo/" style={{ color: 'var(--color-primary)' }}>Договорное право</Link> <span style={{ margin: '0 8px' }}>/</span>
             <span style={{ color: 'var(--color-text-muted)' }}>Споры по договору поставки</span>
           </>
         }

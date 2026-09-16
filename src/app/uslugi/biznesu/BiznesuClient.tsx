@@ -38,7 +38,7 @@ export default function BiznesuClient() {
       groupName: 'Споры, взыскание и исполнение',
       title: 'Договорное право',
       desc: 'Разработка и правовая экспертиза договоров, протоколы разногласий, споры по договорам поставки и подряда.',
-      link: null
+      link: '/biznesu/dogovornoe-pravo/'
     },
     {
       id: 'B2B-04',

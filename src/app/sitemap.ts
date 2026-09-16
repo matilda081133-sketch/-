@@ -24,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Взыскание задолженности с юрлиц (B2B)
     '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/',
     '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/',
+    // Договорный юрист для бизнеса (Кластер B2B-04)
+    '/biznesu/dogovornoe-pravo/',
+    '/biznesu/dogovornoe-pravo/razrabotka-i-ekspertiza-dogovorov/',
+    '/biznesu/dogovornoe-pravo/audit-dogovornoj-raboty/',
+    '/biznesu/dogovornoe-pravo/dogovornye-spory/',
+    '/biznesu/dogovornoe-pravo/spory-po-dogovoru-postavki/',
     // Корпоративный юрист (Кластер BIZ-02)
     '/biznesu/korporativnyj-yurist/',
     '/biznesu/korporativnyj-yurist/korporativnye-spory-mezhdu-uchastnikami/',
