@@ -1682,15 +1682,15 @@ export default function VzyskanieClient() {
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Юридическая практика в сфере защиты интересов бизнеса и арбитражного процесса — с 2016 года</span>
+              <span>Практический опыт в юридических и корпоративных процедурах — с 1997 года.</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Опыт работы в Следственном комитете помогает системно выявлять схемы вывода активов должниками</span>
+              <span>Оценивает правовые риски и экономическую целесообразность взыскания.</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Успешный опыт ведения дел в Арбитражном суде Липецкой области и арбитражных судах РФ</span>
+              <span>Координирует переход дела между судебной, исполнительной и банкротной стадиями.</span>
             </li>
           </ul>
         ]}
@@ -1910,7 +1910,7 @@ export default function VzyskanieClient() {
                   { name: 'page_type', value: 'hub' },
                   { name: 'direction', value: 'vzyskanie_zadolzhennosti' },
                   { name: 'service', value: 'vzyskanie_zadolzhennosti_s_yuridicheskih_lic' },
-                  { name: 'curator', value: 'konopkin-dmitriy-sergeevich' }
+                  { name: 'curator', value: 'nacheshnikov-vladimir-viktorovich' }
                 ]}
               />
             </div>

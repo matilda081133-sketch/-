@@ -1811,7 +1811,7 @@ export default function ZashchitaClient() {
                   { name: 'page_type', value: 'service' },
                   { name: 'direction', value: 'vzyskanie_zadolzhennosti' },
                   { name: 'service', value: 'zashchita_biznesa_ot_vzyskaniya' },
-                  { name: 'curator', value: 'konopkin-dmitriy-sergeevich' }
+                  { name: 'curator', value: 'nacheshnikov-vladimir-viktorovich' }
                 ]}
               />
             </div>
