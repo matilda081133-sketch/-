@@ -532,6 +532,21 @@ export default function ArendaKommercheskayaClient() {
               </div>
 
               <div>
+                <div style={{
+                  fontSize: '11.5px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '3px 8px',
+                  display: 'inline-block',
+                  borderRadius: '2px'
+                }}>
+                  Возврат помещения
+                </div>
+
                 <h3 style={{
                   fontFamily: 'var(--font-serif)',
                   fontSize: '18px',
