@@ -15,6 +15,19 @@ export const metadata: Metadata = {
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
     type: 'website',
+      images: [
+      {
+        url: 'https://dejure-help.ru/images/og/nezakonnoe-uvolnenie-og.jpg',
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'Сопровождение увольнения работника в Липецке — ЮК «Де-Юре»'
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://dejure-help.ru/images/og/nezakonnoe-uvolnenie-og.jpg'],
   },
   alternates: {
     canonical: "https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-uvolneniya-rabotnika/",

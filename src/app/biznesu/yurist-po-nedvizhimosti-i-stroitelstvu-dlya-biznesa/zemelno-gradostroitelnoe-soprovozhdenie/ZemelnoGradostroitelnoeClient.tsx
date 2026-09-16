@@ -78,7 +78,7 @@ export default function ZemelnoGradostroitelnoeClient() {
     },
     {
       title: 'Оформление публичной земли',
-      desc: 'Аренда или выкуп муниципального/государственного земельного участка под коммерческий объект с торгов или без торгов по ст. 39.6 ЗК РФ.',
+      desc: 'Предоставление государственного или муниципального земельного участка в аренду либо собственность: на торгах или, когда закон допускает, без проведения торгов. Правовой маршрут определяем по статьям 39.3, 39.6 и другим применимым нормам Земельного кодекса РФ.',
       tag: 'Публичная земля'
     }
   ];
@@ -251,19 +251,7 @@ export default function ZemelnoGradostroitelnoeClient() {
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
         },
-        areaServed: ['Липецк', 'Липецкая область'],
-        employee: {
-          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
-        }
-      },
-      {
-        '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
-        name: 'Владимир Викторович Начешников',
-        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
-        worksFor: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        }
+        areaServed: ['Липецк', 'Липецкая область']
       },
       {
         '@type': 'Service',
@@ -351,9 +339,6 @@ export default function ZemelnoGradostroitelnoeClient() {
         }
         secondaryCtaText="Что проверит юрист"
         secondaryCtaLink="#situations"
-        imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Специалист по градостроительному праву и недвижимости"
       />
 
       {/* ═══ 2. КОГДА НУЖЕН ЮРИСТ (СИТУАЦИИ) ═══ */}
@@ -575,7 +560,7 @@ export default function ZemelnoGradostroitelnoeClient() {
                   position: 'relative',
                   zIndex: 1
                 }}>
-                  Оценим основания ограничений, снизим санитарно-защитные разрывы или оспорим незаконный отказ в суде по главе 24 АПК РФ.
+                  Оценим правовые основания ограничений, определим порядок изменения границ или режима санитарно-защитной зоны с привлечением профильных специалистов и оспорим незаконный отказ государственного органа.
                 </p>
               </div>
 

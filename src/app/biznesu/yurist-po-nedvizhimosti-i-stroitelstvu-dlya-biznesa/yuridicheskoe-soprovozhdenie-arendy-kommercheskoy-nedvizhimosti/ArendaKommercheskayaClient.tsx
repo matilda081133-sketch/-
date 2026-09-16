@@ -243,19 +243,7 @@ export default function ArendaKommercheskayaClient() {
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
         },
-        areaServed: ['Липецк', 'Липецкая область'],
-        employee: {
-          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
-        }
-      },
-      {
-        '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
-        name: 'Владимир Викторович Начешников',
-        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
-        worksFor: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        }
+        areaServed: ['Липецк', 'Липецкая область']
       },
       {
         '@type': 'Service',
@@ -373,10 +361,6 @@ export default function ArendaKommercheskayaClient() {
         }
         secondaryCtaText="Что проверит юрист"
         secondaryCtaLink="#what-we-check"
-        imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Специалист по аренде и договорам коммерческой недвижимости"
-        imageObjectPosition="center 15%"
       />
 
       {/* ═══ 2. КОГДА НУЖЕН ЮРИСТ ПО АРЕНДЕ (СИТУАЦИИ) — ШАБЛОН ═══ */}
