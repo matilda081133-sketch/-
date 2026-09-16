@@ -674,40 +674,78 @@ export default function AuditDogovornojRabotyClient() {
               </div>
             ))}
 
-            {/* Карточка-призыв span-2 */}
+            {/* Карточка 9: Индивидуальный аудит */}
             <div
-              className="card service-card service-card-span-2"
+              className="card hover-lift"
               style={{
-                background: 'var(--color-deep-blue)',
+                background: 'linear-gradient(135deg, rgba(23, 50, 77, 0.98) 0%, rgba(16, 39, 59, 0.98) 100%)',
                 color: '#fff',
-                padding: '36px 32px',
+                border: '1px solid var(--color-border)',
                 borderTop: '3px solid var(--color-gold)',
+                borderRadius: '0',
+                padding: '32px 28px',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                position: 'relative',
+                overflow: 'hidden'
               }}
             >
               <div>
-                <span style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '12px' }}>
+                <div style={{
+                  fontSize: '11.5px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '12px',
+                  background: 'rgba(193, 160, 102, 0.15)',
+                  padding: '3px 8px',
+                  display: 'inline-block',
+                  borderRadius: '2px'
+                }}>
                   Индивидуальный аудит
-                </span>
-                <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: '#fff', marginBottom: '14px', lineHeight: 1.3 }}>
-                  Нужна проверка специфического массива или процедуры?
+                </div>
+
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '18px',
+                  fontWeight: 600,
+                  color: '#ffffff',
+                  margin: '0 0 12px 0',
+                  lineHeight: 1.35
+                }}>
+                  Специфический массив или процедура?
                 </h3>
-                <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, margin: 0 }}>
-                  Проанализируем договорный контур холдинга, правила взаимодействия с филиалами или подготовим аудит перед внедрением корпоративной системы ЭДО.
+
+                <p style={{
+                  fontSize: '14px',
+                  color: 'rgba(255, 255, 255, 0.85)',
+                  lineHeight: 1.6,
+                  margin: 0
+                }}>
+                  Проанализируем контур холдинга, правила работы с филиалами или подготовим аудит перед внедрением ЭДО.
                 </p>
               </div>
-              <div style={{ marginTop: '24px' }}>
-                <a
-                  href="#form"
-                  className="btn btn-gold white-btn-custom"
-                  onClick={() => setActiveContext('custom-audit')}
-                  style={{ display: 'inline-block' }}
-                >
-                  Обсудить задачу с юристом
-                </a>
-              </div>
+
+              <a
+                href="#form"
+                onClick={() => setActiveContext('custom-audit')}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  color: 'var(--color-gold)',
+                  fontSize: '13.5px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  marginTop: '20px',
+                  cursor: 'pointer'
+                }}
+              >
+                <span>Обсудить задачу →</span>
+              </a>
             </div>
           </div>
         </div>

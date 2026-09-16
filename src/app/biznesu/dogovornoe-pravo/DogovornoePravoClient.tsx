@@ -724,10 +724,11 @@ export default function DogovornoePravoClient() {
               </Link>
             ))}
 
-            {/* Карточка 5: «Не нашли свою ситуацию?» */}
+            {/* Карточка 5: «Не нашли свою ситуацию?», занимающая доступное пространство в строке с 4-й картой */}
             <div
               className="card service-card service-card-span-2"
               style={{
+                gridColumn: 'span 2',
                 padding: '32px 36px',
                 background: 'var(--color-deep-blue)',
                 border: '1px solid transparent',
@@ -743,12 +744,38 @@ export default function DogovornoePravoClient() {
                 boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)'
               }}
             >
-              <div style={{ flex: '1 1 300px' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+              <style dangerouslySetInnerHTML={{ __html: `
+                .service-card-span-2 {
+                  grid-column: span 2;
+                }
+                @media (max-width: 991px) {
+                  .service-card-span-2 {
+                    grid-column: span 1 !important;
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                  }
+                }
+                .white-btn-custom {
+                  background-color: var(--color-white) !important;
+                  color: #10273B !important;
+                  border: 1px solid var(--color-white) !important;
+                  white-space: nowrap;
+                  font-weight: 600;
+                  padding: 14px 28px !important;
+                  transition: all 0.3s ease !important;
+                }
+                .white-btn-custom:hover {
+                  background-color: var(--color-primary) !important;
+                  color: var(--color-white) !important;
+                  border-color: var(--color-primary) !important;
+                }
+              `}} />
+              <div style={{ flex: '1 1 320px' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
                   Не нашли свою ситуацию?
                 </h3>
                 <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.55, maxWidth: '580px' }}>
-                  Договорная задача может затрагивать расчёты, налоги, корпоративные полномочия или будущий спор. Опишите детали в форме — определим подходящий формат помощи.
+                  <span style={{ display: 'inline-block' }}>Договорная задача может затрагивать расчёты, налоги или будущий спор.</span> <br /> <span style={{ display: 'inline-block' }}>Опишите детали в форме — определим подходящий формат помощи.</span>
                 </p>
               </div>
               <div style={{ flexShrink: 0 }}>
