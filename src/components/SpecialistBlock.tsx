@@ -165,7 +165,7 @@ export default function SpecialistBlock({
           gap: 40px;
           align-items: center;
         }
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
           .specialist-grid {
             grid-template-columns: 400px 1fr;
             gap: 60px;

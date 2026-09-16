@@ -1036,13 +1036,13 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
               <span>
-                Специализируется на судебном банкротстве граждан, защите единственного жилья и исключении рисков оспаривания сделок.
+                Специализируется на судебном банкротстве граждан, защите интересов клиента в вопросах имущества и анализе сделок, которые могут быть оспорены.
               </span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
               <span>
-                Ведёт дела в Арбитражном суде Липецкой области и представляет интересы доверителей дистанционно по всей России.
+                Ведёт дела о банкротстве граждан в Арбитражном суде Липецкой области и сопровождает клиентов до судебного решения о списании долгов.
               </span>
             </li>
           </ul>,
@@ -1118,7 +1118,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
             }
           `}} />
           
-          <div className="grid grid-4" style={{ gap: '20px' }}>
+          <div className="grid grid-3" style={{ gap: '20px' }}>
             <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
                 className="card related-service-card" 
@@ -1191,7 +1191,7 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
               </div>
             </Link>
 
-            <Link href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+            <Link href="/grazhdanam/kreditnyj-yurist/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
                 className="card related-service-card" 
                 style={{ 
@@ -1211,46 +1211,10 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
               >
                 <div>
                   <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                    <span style={{ display: 'inline-block' }}>Снятие ареста</span> <br /><span style={{ display: 'inline-block' }}>со счетов и карт</span>
+                    <span style={{ display: 'inline-block' }}>Кредитный юрист</span>
                   </h3>
                   <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                    Разблокировка зарплатных, пенсионных и социальных счетов у приставов.
-                  </p>
-                </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
-                  Подробнее 
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/biznesu/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div 
-                className="card related-service-card" 
-                style={{ 
-                  height: '100%', 
-                  minHeight: '160px',
-                  padding: '28px 22px', 
-                  background: 'var(--color-white)', 
-                  border: '1px solid var(--color-border)', 
-                  borderTop: '3px solid var(--color-primary)',
-                  borderRadius: '0',
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'space-between',
-                  transition: 'all 0.3s',
-                  position: 'relative'
-                }}
-              >
-                <div>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                    <span style={{ display: 'inline-block' }}>Банкротство</span> <br /><span style={{ display: 'inline-block' }}>индивидуального предпринимателя</span>
-                  </h3>
-                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                    Разобрать личные и предпринимательские обязательства действующего или закрытого ИП.
+                    Оспорить спорный долг, незаконные начисления, кредитный договор или обязательство, возникновение которого клиент не признаёт.
                   </p>
                 </div>
                 <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>

@@ -166,7 +166,7 @@ export default function ContactsForm({
         </div>
       )}
 
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      <form onSubmit={handleSubmit} method="post" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         {hiddenFields?.map((field, i) => (
           <input key={i} type="hidden" name={field.name} value={field.value} />
         ))}
