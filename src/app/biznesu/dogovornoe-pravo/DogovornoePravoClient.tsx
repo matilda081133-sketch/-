@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import MilitaryHero from '@/components/MilitaryHero';
+import ProcessBlock from '@/components/ProcessBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 
@@ -62,91 +63,75 @@ export default function DogovornoePravoClient() {
       title: 'Нужно подготовить договор под конкретную сделку',
       desc: 'Уточним бизнес-модель, предмет, порядок оплаты и приёмки, ответственность, прекращение отношений и другие существенные для сделки условия.',
       link: '/biznesu/dogovornoe-pravo/razrabotka-i-ekspertiza-dogovorov/',
-      btnText: 'К разработке договора →'
+      btnText: 'К разработке договора'
     },
     {
       tag: 'Договор контрагента',
       title: 'Предложили подписать договор на условиях другой стороны',
       desc: 'Проверим текст и приложения, выделим правовые и коммерческие риски, подготовим правки или протокол разногласий.',
       link: '/biznesu/dogovornoe-pravo/razrabotka-i-ekspertiza-dogovorov/',
-      btnText: 'К экспертизе проекта →'
+      btnText: 'К экспертизе проекта'
     },
     {
       tag: 'Изменения',
       title: 'Нужно изменить или расторгнуть действующий договор',
       desc: 'Оценим условия договора, основания и последствия выбранного способа; подготовим соглашение, уведомление или переговорную позицию.',
       link: '/biznesu/dogovornoe-pravo/razrabotka-i-ekspertiza-dogovorov/',
-      btnText: 'Согласовать изменения →'
+      btnText: 'Согласовать изменения'
     },
     {
       tag: 'Система договоров',
       title: 'В компании накопились разные шаблоны и несогласованные процессы',
       desc: 'Проверим договорную базу, распределение ролей, порядок согласования, хранение документов и контроль обязательств; предложим приоритетные изменения.',
       link: '/biznesu/dogovornoe-pravo/audit-dogovornoj-raboty/',
-      btnText: 'К аудиту работы →'
+      btnText: 'К аудиту работы'
     },
     {
       tag: 'Конфликт',
       title: 'Контрагент нарушил условия или предъявил требования',
       desc: 'Сопоставим договор, исполнение и доказательства, оценим требования и возражения, подготовим претензионную или судебную позицию.',
       link: '/biznesu/dogovornoe-pravo/dogovornye-spory/',
-      btnText: 'К договорным спорам →'
+      btnText: 'К договорным спорам'
     },
     {
       tag: 'Поставка',
       title: 'Возник спор о товаре, сроках, приёмке или оплате поставки',
       desc: 'Разберём документы поставки и фактическое исполнение, поможем сформировать требования или защиту от требований другой стороны.',
       link: '/biznesu/dogovornoe-pravo/spory-po-dogovoru-postavki/',
-      btnText: 'К спорам по поставке →'
-    },
-    {
-      tag: 'Переговоры',
-      title: 'Условия сделки не удаётся согласовать',
-      desc: 'Определим критичные пункты, предложим юридически исполнимые формулировки и при необходимости подключимся к переговорам.',
-      link: '/biznesu/dogovornoe-pravo/razrabotka-i-ekspertiza-dogovorov/',
-      btnText: 'Подключить юриста →'
-    },
-    {
-      tag: 'Неясная задача',
-      title: 'Вопрос затрагивает несколько договоров или направлений',
-      desc: 'Кратко опишите задачу. Мы уточним обстоятельства и предложим подходящий формат: разовая проверка, аудит, переговоры или сопровождение спора.',
-      link: '#contact-form',
-      btnText: 'Описать задачу →',
-      isFormAction: true,
-      contextValue: 'unclear'
+      btnText: 'К спорам по поставке'
     }
   ];
 
   const directions = [
     {
       title: 'Разработка и правовая экспертиза договоров',
-      url: '/biznesu/dogovornoe-pravo/razrabotka-i-ekspertiza-dogovorov/',
-      desc: 'Подготовим договор под сделку или проверим проект контрагента. Выделим риски, предложим правки, подготовим протокол разногласий, дополнительное соглашение или иную согласованную документацию.',
-      badge: 'B2B-04-01'
+      badge: 'B2B-04-01',
+      desc: 'Подготовка договора под конкретную сделку, аудит проекта контрагента, протоколы разногласий, оценка рисков и согласование спорных пунктов.',
+      url: '/biznesu/dogovornoe-pravo/razrabotka-i-ekspertiza-dogovorov/'
     },
     {
       title: 'Аудит договорной работы компании',
-      url: '/biznesu/dogovornoe-pravo/audit-dogovornoj-raboty/',
-      desc: 'Проверим типовые договоры и процесс работы с ними: полномочия, согласование, версии, подписание, хранение, контроль сроков и исполнения. Сформируем перечень рисков и приоритетов изменений.',
-      badge: 'B2B-04-02'
+      badge: 'B2B-04-02',
+      desc: 'Проверка применяемых типовых форм, маршрутов согласования, порядка подписания, хранения документов и регламентов контроля обязательств.',
+      url: '/biznesu/dogovornoe-pravo/audit-dogovornoj-raboty/'
     },
     {
       title: 'Договорные споры для бизнеса',
-      url: '/biznesu/dogovornoe-pravo/dogovornye-spory/',
-      desc: 'Оценим договор, исполнение и доказательства. Подготовим требования или возражения, проведём претензионную работу, переговоры и при согласованном объёме представим компанию в арбитражном суде.',
-      badge: 'B2B-04-03'
+      badge: 'B2B-04-03',
+      desc: 'Досудебное урегулирование, претензионная переписка, переговоры и судебная защита при неисполнении обязательств, просрочке и взыскании убытков.',
+      url: '/biznesu/dogovornoe-pravo/dogovornye-spory/'
     },
     {
       title: 'Споры по договору поставки',
-      url: '/biznesu/dogovornoe-pravo/spory-po-dogovoru-postavki/',
-      desc: 'Защитим интересы поставщика или покупателя в споре о количестве, качестве, комплектности, сроках, приёмке, оплате товара, неустойке и расторжении договора.',
-      badge: 'B2B-04-04'
+      badge: 'B2B-04-04',
+      desc: 'Специализированная помощь поставщикам и покупателям: проверка первичных документов (УПД, ТОРГ-12), приёмка, качество товара, возврат аванса и взыскание задолженности.',
+      url: '/biznesu/dogovornoe-pravo/spory-po-dogovoru-postavki/'
     }
   ];
 
   const contractTypes = [
-    'Поставка товаров и оборудования',
-    'Возмездное оказание услуг',
+    'Поставка и оптовая купля-продажа',
+    'Возмездное оказание коммерческих услуг',
     'Подряд (кроме строительного)',
     'Коммерческая аренда и субаренда',
     'Купля-продажа коммерческого имущества',
@@ -174,25 +159,16 @@ export default function DogovornoePravoClient() {
     },
     {
       title: 'Подготовит юридические документы',
-      desc: 'Разработает или отредактирует договор, протокол разногласий, дополнительное соглашение, уведомление, претензию, ответ или процессуальные документы в согласованном объёме.'
+      desc: 'Разработает или отредактирует договор, протокол разногласий, дополнительное соглашение, уведомление, претензию, ответ или процессуальные документы.'
     },
     {
       title: 'Подключится к переговорам',
       desc: 'Поможет сформировать позицию, расставить приоритеты и обсудить спорные условия с контрагентом без подмены коммерческих решений руководителя.'
     },
     {
-      title: 'Сопроводит спор',
+      title: 'Сопроводит спор в суде',
       desc: 'Сформирует требования или возражения, организует доказательства и при согласовании представит компанию в арбитражном суде.'
     }
-  ];
-
-  const prepChecklist = [
-    'Проект или подписанный договор со всеми приложениями, спецификациями и дополнительными соглашениями',
-    'Коммерческое предложение, техническое задание, заявки, заказы и иные документы, описывающие сделку',
-    'Переписка о согласовании условий или исполнении обязательств',
-    'Акты, накладные, универсальные передаточные документы (УПД), счета и платёжные поручения — если договор уже исполняется или возник спор',
-    'Претензии, ответы, уведомления, иск, определение суда и сведения о ближайшей контрольной дате — если конфликт уже начался',
-    'Внутренние шаблоны, регламенты и перечень проблемных ситуаций — для аудита договорной работы'
   ];
 
   const workSteps = [
@@ -213,23 +189,14 @@ export default function DogovornoePravoClient() {
     },
     {
       num: '04',
-      title: 'Выполняем согласованные действия',
+      title: 'Выполняем действия',
       desc: 'Готовим или проверяем документы, участвуем в переговорах, ведём претензионную или судебную работу.'
     },
     {
       num: '05',
-      title: 'Передаём результат и следующие шаги',
+      title: 'Передаём результат',
       desc: 'Направляем согласованный документ или позицию, объясняем дальнейшие действия и контрольные точки.'
     }
-  ];
-
-  const deliverables = [
-    'Проект договора, адаптированный под конкретную сделку и процессы компании',
-    'Таблица замечаний и рисков, редакция спорных условий, протокол разногласий или дополнительное соглашение',
-    'Заключение по договорной базе и приоритетный план изменений',
-    'Обновлённые шаблоны и рекомендации по согласованию, подписанию, хранению и контролю обязательств',
-    'Претензия, ответ, уведомление, соглашение об урегулировании или переговорная позиция',
-    'Исковая позиция, процессуальные документы и представительство в суде в пределах договора с клиентом'
   ];
 
   const pricingTiers: PricingTier[] = [
@@ -238,7 +205,7 @@ export default function DogovornoePravoClient() {
       price: 'ХХХ ₽',
       subtitle: 'Разбор ситуации: обстоятельства, цель, анализ доступных документов, риски и сценарии.',
       buttonText: 'Записаться на консультацию',
-      buttonHref: '#contact-form',
+      buttonHref: '#form',
       features: [
         { name: 'Анализ обстоятельств и целей сделки', value: '✓' },
         { name: 'Первичный разбор доступных документов', value: '✓' },
@@ -250,68 +217,72 @@ export default function DogovornoePravoClient() {
     {
       title: 'Разработка или экспертиза договора',
       price: 'от ХХХ ₽',
-      subtitle: 'Один договор / комплект: анализ сделки, подготовка или проверка текста, замечания и правки.',
-      buttonText: 'Уточнить стоимость',
-      buttonHref: '#contact-form',
+      subtitle: 'Подготовка проекта под сделку либо проверка проекта контрагента с таблицей рисков и правками.',
+      buttonText: 'Заказать экспертизу / разработку',
+      buttonHref: '#form',
+      popular: true,
+      badgeText: 'ВОСТРЕБОВАНО',
       features: [
-        { name: 'Детальный анализ бизнес-модели сделки', value: '✓' },
-        { name: 'Подготовка проекта или экспертиза проекта контрагента', value: '✓' },
-        { name: 'Формулирование правок или протокола разногласий', value: '✓' },
-        { name: 'Обсуждение результатов и рекомендации', value: '✓' }
-      ],
-      popular: true
+        { name: 'Анализ условий под процессы компании', value: '✓' },
+        { name: 'Выявление скрытых и несимметричных рисков', value: '✓' },
+        { name: 'Подготовка безопасных формулировок', value: '✓' },
+        { name: 'Протокол разногласий или новая редакция', value: '✓' }
+      ]
     },
     {
-      title: 'Аудит договорной работы',
+      title: 'Аудит договорной работы компании',
       price: 'от ХХХ ₽',
-      subtitle: 'Система документов: объём аудита определяется после знакомства с базой договоров и шаблонами.',
-      buttonText: 'Обсудить аудит',
-      buttonHref: '#contact-form',
+      subtitle: 'Комплексная проверка применяемых шаблонов, маршрутов согласования и регламентов контроля обязательств.',
+      buttonText: 'Обсудить аудит базы',
+      buttonHref: '#form',
+      popular: false,
       features: [
-        { name: 'Проверка выборки договоров и шаблонов', value: '✓' },
-        { name: 'Анализ маршрутов и полномочий подписантов', value: '✓' },
-        { name: 'Диагностический отчёт и карта системных рисков', value: '✓' },
-        { name: 'Приоритетный план исправлений и регламентов', value: '✓' }
-      ],
-      popular: false
+        { name: 'Анализ типовых договоров и приложений', value: '✓' },
+        { name: 'Оценка порядка согласования и подписания', value: '✓' },
+        { name: 'Выявление системных повторяющихся уязвимостей', value: '✓' },
+        { name: 'Рекомендации и обновлённые шаблоны', value: '✓' }
+      ]
     },
     {
-      title: 'Договорный спор',
+      title: 'Сопровождение договорного спора',
       price: 'от ХХХ ₽',
-      subtitle: 'Претензионный или судебный этап: анализ позиции, требования, возражения, переговоры и суд.',
-      buttonText: 'Оценить задачу',
-      buttonHref: '#contact-form',
+      subtitle: 'Досудебное урегулирование или ведение спора из договора в арбитражном суде.',
+      buttonText: 'Оценить перспективу спора',
+      buttonHref: '#form',
+      popular: false,
       features: [
-        { name: 'Сопоставление условий договора с исполнением', value: '✓' },
-        { name: 'Подготовка мотивированной претензии или отзыва', value: '✓' },
-        { name: 'Участие в досудебных переговорах', value: '✓' },
-        { name: 'Судебное представительство по согласованному этапу', value: '✓' }
-      ],
-      popular: false
+        { name: 'Анализ договора, первичных документов и доказательств', value: '✓' },
+        { name: 'Подготовка претензии или мотивированного ответа', value: '✓' },
+        { name: 'Участие в переговорах об урегулировании', value: '✓' },
+        { name: 'Судебное представительство в арбитражном суде', value: '✓' }
+      ]
     }
   ];
 
   const cases: CaseData[] = [
     {
-      title: 'Согласовали условия поставки до подписания договора',
+      title: 'Исключили несимметричные штрафы и изменили условия приёмки',
       category: 'Экспертиза договора',
-      problem: 'Компания получила проект договора покупателя с односторонними основаниями для отказа от приёмки, несбалансированной ответственностью и неопределённым порядком подтверждения заявок.',
-      action: 'Сопоставили проект с фактической схемой поставок, выделили критичные условия, подготовили редакцию пунктов о заявках, приёмке, оплате, претензиях и ответственности, а также таблицу разногласий для переговоров.',
-      result: 'Стороны согласовали рабочую редакцию договора, в которой порядок поставки и подтверждающие документы соответствовали реальному процессу компании, а спорные риски были распределены понятнее.'
+      problem: 'Покупатель предложил поставщику подписать договор с короткими сроками приёмки, правом удержания оплаты до года и несоразмерными штрафами за незначительную задержку отгрузки.',
+      action: 'Провели правовую экспертизу проекта, подготовили протокол разногласий, сформулировали аргументы для переговоров и переписали разделы о приёмке, ответственности и порядке расчётов.',
+      result: 'Стороны согласовали рабочую редакцию договора, в которой порядок поставки и подтверждающие документы соответствовали реальному процессу компании, а спорные риски были распределены понятнее.',
+      isDemo: false
     },
     {
       title: 'Обновили договорную базу и порядок согласования',
       category: 'Аудит договорной работы',
       problem: 'В компании использовались разные версии шаблонов, договоры согласувались по электронной почте без единого маршрута, а контроль сроков продления зависел от отдельных сотрудников.',
       action: 'Проверили типовые договоры и процесс их движения, определили повторяющиеся риски, разделили обязательные и вариативные условия, предложили матрицу согласования, правила версий и перечень контрольных дат.',
-      result: 'Компания получила обновлённые шаблоны и понятный порядок договорной работы, который снизил зависимость от неформальных договорённостей между подразделениями.'
+      result: 'Компания получила обновлённые шаблоны и понятный порядок договорной работы, который снизил зависимость от неформальных договорённостей между подразделениями.',
+      isDemo: false
     },
     {
       title: 'Урегулировали разногласия по объёму и оплате услуг',
       category: 'Договорный спор',
       problem: 'Заказчик отказался оплачивать часть услуг, ссылаясь на отсутствие результата, хотя договор описывал процесс оказания и предусматривал подтверждение исполнения отчётами и перепиской.',
       action: 'Сопоставили условия договора с фактическими действиями и документами, восстановили последовательность согласований, подготовили правовую позицию и претензию, затем участвовали в переговорах о закрытии взаимных требований.',
-      result: 'Стороны согласовали оплату подтверждённого объёма услуг и прекратили спор на условиях письменного соглашения без перехода к длительному судебному разбирательству.'
+      result: 'Стороны согласовали оплату подтверждённого объёма услуг и прекратили спор на условиях письменного соглашения без перехода к длительному судебному разбирательству.',
+      isDemo: false
     }
   ];
 
@@ -366,45 +337,31 @@ export default function DogovornoePravoClient() {
         },
         areaServed: ['Липецк', 'Липецкая область'],
         url: 'https://dejure-help.ru/biznesu/dogovornoe-pravo/',
-        description: 'Договорный юрист для бизнеса в Липецке: разработка и экспертиза договоров, аудит договорной работы, урегулирование договорных споров.',
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: 'Направления договорного права для бизнеса',
-          itemListElement: [
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Разработка и правовая экспертиза договоров',
-                url: 'https://dejure-help.ru/biznesu/dogovornoe-pravo/razrabotka-i-ekspertiza-dogovorov/'
-              }
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Аудит договорной работы компании',
-                url: 'https://dejure-help.ru/biznesu/dogovornoe-pravo/audit-dogovornoj-raboty/'
-              }
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Договорные споры для бизнеса',
-                url: 'https://dejure-help.ru/biznesu/dogovornoe-pravo/dogovornye-spory/'
-              }
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Споры по договору поставки',
-                url: 'https://dejure-help.ru/biznesu/dogovornoe-pravo/spory-po-dogovoru-postavki/'
-              }
-            }
-          ]
-        }
+        description: 'Договорный юрист для бизнеса в Липецке: разработка и экспертиза договоров, аудит договорной работы, урегулирование договорных споров.'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/dogovornoe-pravo/#breadcrumb',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Главная',
+            item: 'https://dejure-help.ru/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Бизнесу',
+            item: 'https://dejure-help.ru/biznesu/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Договорное право',
+            item: 'https://dejure-help.ru/biznesu/dogovornoe-pravo/'
+          }
+        ]
       },
       {
         '@type': 'FAQPage',
@@ -447,10 +404,10 @@ export default function DogovornoePravoClient() {
           { text: 'Берём согласованные этапы: от проекта договора до спора' }
         ]}
         primaryCtaText="Обсудить договорную задачу"
-        primaryCtaLink="#contact-form"
+        primaryCtaLink="#form"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
         secondaryCtaText="Выбрать услугу"
-        secondaryCtaLink="#service-directions"
+        secondaryCtaLink="#directions"
         rightContent={
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
             <div style={{
@@ -502,7 +459,6 @@ export default function DogovornoePravoClient() {
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '12px' }}>
-                      {/* Раздел: Предмет */}
                       <div style={{ background: 'rgba(247, 244, 237, 0.7)', borderLeft: '3px solid #C1A066', padding: '6px 8px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
                           <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>1. ПРЕДМЕТ И МОДЕЛЬ СДЕЛКИ</span>
@@ -511,7 +467,6 @@ export default function DogovornoePravoClient() {
                         <div style={{ width: '90%', height: '2px', background: 'rgba(23,50,77,0.15)' }} />
                       </div>
 
-                      {/* Раздел: Цена и расчёты */}
                       <div style={{ background: 'rgba(247, 244, 237, 0.7)', borderLeft: '3px solid #C1A066', padding: '6px 8px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
                           <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>2. ЦЕНА И ПОРЯДОК ОПЛАТЫ</span>
@@ -520,7 +475,6 @@ export default function DogovornoePravoClient() {
                         <div style={{ width: '85%', height: '2px', background: 'rgba(23,50,77,0.15)' }} />
                       </div>
 
-                      {/* Раздел: Ответственность */}
                       <div style={{ background: 'rgba(247, 244, 237, 0.7)', borderLeft: '3px solid #C1A066', padding: '6px 8px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
                           <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>3. ОТВЕТСТВЕННОСТЬ И НЕУСТОЙКА</span>
@@ -529,7 +483,6 @@ export default function DogovornoePravoClient() {
                         <div style={{ width: '95%', height: '2px', background: 'rgba(23,50,77,0.15)' }} />
                       </div>
 
-                      {/* Раздел: Приёмка */}
                       <div style={{ background: 'rgba(247, 244, 237, 0.7)', borderLeft: '3px solid #C1A066', padding: '6px 8px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
                           <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)' }}>4. ПРИЁМКА И ДОКУМЕНТООБОРОТ</span>
@@ -556,14 +509,10 @@ export default function DogovornoePravoClient() {
         }
       />
 
-      {/* ═══ СТРОКА ДОВЕРИЯ ═══ */}
+      {/* ═══ 1.1. СТРОКА ДОВЕРИЯ ═══ */}
       <section style={{ backgroundColor: 'var(--color-bg-light)', borderBottom: '1px solid var(--color-border)', padding: '24px 0' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '24px'
-          }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
               <div style={{ color: 'var(--color-gold)', fontSize: '20px', lineHeight: 1 }}>✓</div>
               <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.5 }}>
@@ -586,193 +535,246 @@ export default function DogovornoePravoClient() {
         </div>
       </section>
 
-      {/* ═══ 2. С КАКОЙ ДОГОВОРНОЙ ЗАДАЧЕЙ ВЫ СТОЛКНУЛИСЬ ═══ */}
-      <section id="situations" style={{ backgroundColor: 'var(--color-white)', padding: '64px 0' }}>
+      {/* ═══ 2. СИТУАЦИИ ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 44px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              С какой договорной задачей вы столкнулись
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              С какой договорной задачей <br />вы столкнулись
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Помогаем бизнесу на разных стадиях договорной работы — до подписания, в процессе исполнения и при возникновении разногласий. Выберите ситуацию, которая ближе к вашей задаче.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '20px'
-          }}>
+          <div className="grid grid-3" style={{ gap: '28px' }}>
             {situations.map((sit, idx) => (
               <div
                 key={idx}
                 className="card hover-lift"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
                   borderRadius: '0',
-                  padding: '28px 24px',
+                  padding: '32px 28px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+
                 <div>
-                  <span style={{
-                    display: 'inline-block',
+                  <div style={{
                     fontSize: '11.5px',
                     fontWeight: 700,
+                    color: 'var(--color-primary)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.06em',
-                    color: 'var(--color-gold)',
-                    marginBottom: '10px'
+                    marginBottom: '12px',
+                    background: 'rgba(23, 50, 77, 0.06)',
+                    padding: '3px 8px',
+                    display: 'inline-block',
+                    borderRadius: '2px'
                   }}>
                     {sit.tag}
-                  </span>
-                  <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.35 }}>
+                  </div>
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '18px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35
+                  }}>
                     {sit.title}
                   </h3>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '20px' }}>
+
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0
+                  }}>
                     {sit.desc}
                   </p>
                 </div>
 
-                {sit.isFormAction ? (
-                  <a
-                    href="#contact-form"
-                    onClick={() => setActiveContext(sit.contextValue || 'unclear')}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      fontSize: '14px',
-                      fontWeight: 600,
-                      color: 'var(--color-primary)',
-                      textDecoration: 'none',
-                      gap: '6px'
-                    }}
-                  >
-                    {sit.btnText}
-                  </a>
-                ) : (
-                  <Link
-                    href={sit.link}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      fontSize: '14px',
-                      fontWeight: 600,
-                      color: 'var(--color-primary)',
-                      textDecoration: 'none',
-                      gap: '6px'
-                    }}
-                  >
-                    {sit.btnText}
-                  </Link>
-                )}
+                <Link
+                  href={sit.link}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13.5px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '20px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
+                >
+                  <span>{sit.btnText}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══ 3. НАПРАВЛЕНИЯ ПОМОЩИ (2x2 GRID) ═══ */}
-      <section id="service-directions" style={{ backgroundColor: 'var(--color-bg-light)', padding: '64px 0', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
+      {/* ═══ 3. НАПРАВЛЕНИЯ ПОМОЩИ ═══ */}
+      <section id="directions" className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 44px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Направления помощи
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Выберите услугу по текущей задаче. Если договор ещё согласуется — начните с разработки и экспертизы. Если проблема системная — с аудита. При конфликте перейдите к договорным спорам.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '24px'
-          }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             {directions.map((dir, idx) => (
-              <Link
-                key={idx}
-                href={dir.url}
-                className="card hover-lift"
-                style={{
-                  background: 'var(--color-white)',
-                  border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-primary)',
-                  padding: '32px 28px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  textDecoration: 'none',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
-                }}
-              >
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                    <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', letterSpacing: '0.05em' }}>
+              <Link key={idx} href={dir.url} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                <div
+                  className="card service-card hover-lift"
+                  style={{
+                    height: '100%',
+                    minHeight: '200px',
+                    padding: '30px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-primary)',
+                    borderRadius: '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                    transition: 'all 0.3s ease',
+                    position: 'relative',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <div>
+                    <div style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: 'var(--color-gold)',
+                      letterSpacing: '0.05em',
+                      marginBottom: '10px',
+                      textTransform: 'uppercase'
+                    }}>
                       {dir.badge}
-                    </span>
-                    <span style={{ fontSize: '13px', color: 'var(--color-primary)', fontWeight: 600 }}>
-                      Подробнее →
-                    </span>
+                    </div>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
+                      {dir.title}
+                    </h3>
+                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {dir.desc}
+                    </p>
                   </div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px', lineHeight: 1.35 }}>
-                    {dir.title}
-                  </h3>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-                    {dir.desc}
-                  </p>
+                  <div
+                    className="card-arrow"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: 'var(--color-primary)',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      marginTop: 'auto',
+                      paddingTop: '14px',
+                      borderTop: '1px solid rgba(23, 50, 77, 0.06)',
+                      transition: 'transform 0.3s'
+                    }}
+                  >
+                    <span>Подробнее</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
                 </div>
               </Link>
             ))}
-          </div>
 
-          {/* Плашка «Не нашли свою ситуацию?» */}
-          <div style={{
-            marginTop: '36px',
-            background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
-            padding: '32px 36px',
-            color: 'var(--color-white)',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '24px',
-            borderLeft: '4px solid var(--color-gold)'
-          }}>
-            <div style={{ maxWidth: '720px' }}>
-              <h3 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-white)', marginBottom: '8px' }}>
-                Не нашли свою ситуацию?
-              </h3>
-              <p style={{ fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
-                Договорная задача может затрагивать расчёты, налоги, корпоративные полномочия, недвижимость или будущий спор. Кратко опишите, что нужно сделать и на какой стадии находится вопрос — мы определим подходящий состав помощи.
-              </p>
-            </div>
-            <a
-              href="#contact-form"
-              onClick={() => setActiveContext('custom-situation')}
-              className="btn btn-gold"
-              style={{ padding: '14px 28px', whiteSpace: 'nowrap' }}
+            {/* Карточка 5: «Не нашли свою ситуацию?» */}
+            <div
+              className="card service-card service-card-span-2"
+              style={{
+                padding: '32px 36px',
+                background: 'var(--color-deep-blue)',
+                border: '1px solid transparent',
+                borderRadius: '0',
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '28px',
+                transition: 'all 0.3s',
+                position: 'relative',
+                borderTop: '3px solid var(--color-gold)',
+                boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)'
+              }}
             >
-              Обсудить задачу
-            </a>
+              <div style={{ flex: '1 1 300px' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                  Не нашли свою ситуацию?
+                </h3>
+                <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.55, maxWidth: '580px' }}>
+                  Договорная задача может затрагивать расчёты, налоги, корпоративные полномочия или будущий спор. Опишите детали в форме — определим подходящий формат помощи.
+                </p>
+              </div>
+              <div style={{ flexShrink: 0 }}>
+                <a
+                  href="#form"
+                  className="btn white-btn-custom"
+                  style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
+                  onClick={() => setActiveContext('custom-situation')}
+                >
+                  Обсудить задачу
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ 4. КАКИЕ ДОГОВОРЫ ПРОВЕРЯЕМ И РАЗРАБАТЫВАЕМ ═══ */}
-      <section style={{ backgroundColor: 'var(--color-white)', padding: '64px 0' }}>
+      {/* ═══ 4. КАКИЕ ДОГОВОРЫ ПРОВЕРЯЕМ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 36px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              Работаем с основными договорами бизнеса
+          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Работаем с основными <br />договорами бизнеса
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              Содержание проверки зависит не от названия документа, а от сделки, распределения обязанностей, порядка расчётов и доказательств исполнения. Работаем как с типовыми, так и со смешанными договорными конструкциями.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Содержание проверки зависит не от названия документа, а от сделки, распределения обязанностей, порядка расчётов и доказательств исполнения.
             </p>
           </div>
 
@@ -780,9 +782,7 @@ export default function DogovornoePravoClient() {
             display: 'flex',
             flexWrap: 'wrap',
             gap: '12px',
-            justifyContent: 'center',
-            maxWidth: '960px',
-            margin: '0 auto'
+            marginBottom: '24px'
           }}>
             {contractTypes.map((item, idx) => (
               <span
@@ -791,7 +791,7 @@ export default function DogovornoePravoClient() {
                   background: 'var(--color-bg-light)',
                   border: '1px solid var(--color-border)',
                   padding: '10px 18px',
-                  fontSize: '14px',
+                  fontSize: '14.5px',
                   color: 'var(--color-deep-blue)',
                   fontWeight: 500,
                   display: 'inline-block'
@@ -802,51 +802,60 @@ export default function DogovornoePravoClient() {
             ))}
           </div>
 
-          <div style={{ textAlign: 'center', marginTop: '24px' }}>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>
-              Строительный подряд относится к отраслевому направлению{' '}
-              <Link
-                href="/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/"
-                style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}
-              >
-                юриста по недвижимости и строительству для бизнеса
-              </Link>.
-            </p>
-          </div>
+          <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', margin: 0 }}>
+            Строительный подряд относится к отраслевому направлению{' '}
+            <Link
+              href="/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/"
+              style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}
+            >
+              юриста по недвижимости и строительству для бизнеса
+            </Link>.
+          </p>
         </div>
       </section>
 
       {/* ═══ 5. ЧТО СДЕЛАЕТ ДОГОВОРНЫЙ ЮРИСТ ═══ */}
-      <section style={{ backgroundColor: 'var(--color-bg-light)', padding: '64px 0', borderTop: '1px solid var(--color-border)' }}>
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 44px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Что сделает договорный юрист
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              Состав работы зависит от стадии: проект договора, действующая система документов или уже возникший конфликт. До начала работы согласуем конкретный результат и границы задания.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Состав работы зависит от стадии: проект договора, действующая система документов или уже возникший конфликт. До начала работы согласуем конкретный результат.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '20px'
-          }}>
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
             {lawyerActions.map((act, idx) => (
-              <div
-                key={idx}
-                style={{
-                  background: 'var(--color-white)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '2px solid var(--color-gold)',
-                  padding: '28px 24px'
-                }}
-              >
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>
+              <div key={idx} className="hover-lift" style={{
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                padding: '36px 30px 32px 30px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  0{idx + 1}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {act.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {act.desc}
                 </p>
               </div>
@@ -856,201 +865,165 @@ export default function DogovornoePravoClient() {
       </section>
 
       {/* ═══ 6. ЧТО ПОДГОТОВИТЬ ДЛЯ КОНСУЛЬТАЦИИ ═══ */}
-      <section style={{ backgroundColor: 'var(--color-white)', padding: '64px 0' }}>
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{
-            background: 'var(--color-bg-light)',
-            border: '1px solid var(--color-border)',
-            borderLeft: '4px solid var(--color-gold)',
-            padding: '40px 36px',
-            maxWidth: '920px',
-            margin: '0 auto'
-          }}>
-            <h2 style={{ fontSize: '26px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              Что подготовить для консультации
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Что подготовить <br />для консультации
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '24px' }}>
-              Для первого разговора достаточно кратко описать задачу и назвать стадию. Для содержательного анализа обычно понадобятся документы ниже; точный перечень юрист уточнит после знакомства с ситуацией:
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Для первого разговора достаточно кратко описать задачу и назвать стадию. Для содержательного анализа обычно понадобятся документы ниже:
             </p>
+          </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              {prepChecklist.map((item, idx) => (
-                <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <div style={{ color: 'var(--color-gold)', fontSize: '18px', lineHeight: 1, marginTop: '2px' }}>✓</div>
-                  <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                    {item}
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                Документы по сделке и согласованию
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Проект или подписанный договор</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Со всеми приложениями, спецификациями, графиками платежей и дополнительными соглашениями.</span>
                   </div>
-                </div>
-              ))}
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>ТЗ и коммерческие условия</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Коммерческое предложение, техническое задание, заявки, заказы и деловая переписка сторон.</span>
+                  </div>
+                </li>
+              </ul>
             </div>
 
-            <div style={{ marginTop: '24px', paddingTop: '18px', borderTop: '1px solid var(--color-border)', fontSize: '13.5px', color: 'var(--color-text-muted)' }}>
-              Не передавайте конфиденциальные документы через открытую форму на сайте. После первичного звонка юрист согласует защищённый и удобный канал обмена файлами.
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                Исполнение, конфликт или шаблоны
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Первичные документы и переписка</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Акты, УПД, товарные накладные, счета и платёжные поручения — если договор уже исполняется или возник спор.</span>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Претензии или внутренние регламенты</strong>
+                    <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>Претензии, ответы, исковые заявления — при конфликте; формы договоров и регламенты — при аудите базы.</span>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ 7. КАК ПРОХОДИТ РАБОТА (01 - 05) ═══ */}
-      <section style={{ backgroundColor: 'var(--color-bg-light)', padding: '64px 0', borderTop: '1px solid var(--color-border)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 44px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              Как проходит работа
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              Можно поручить отдельный этап или согласовать комплексную работу. Взаимодействуем с руководителем, штатным юристом и профильными подразделениями компании.
-            </p>
-          </div>
+      {/* ═══ 7. КАК ПРОХОДИТ РАБОТА ═══ */}
+      <ProcessBlock
+        title="Как проходит работа"
+        subtitle="Пять последовательных этапов для решения договорной задачи бизнеса."
+        steps={workSteps}
+      />
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '20px'
-          }}>
-            {workSteps.map((step, idx) => (
-              <div
-                key={idx}
-                style={{
-                  background: 'var(--color-white)',
-                  border: '1px solid var(--color-border)',
-                  padding: '24px 20px',
-                  display: 'flex',
-                  flexDirection: 'column'
-                }}
-              >
-                <div style={{
-                  fontSize: '28px',
-                  fontWeight: 800,
-                  color: 'var(--color-gold)',
-                  fontFamily: 'var(--font-serif)',
-                  lineHeight: 1,
-                  marginBottom: '12px'
-                }}>
-                  {step.num}
-                </div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>
-                  {step.title}
-                </h3>
-                <p style={{ fontSize: '13.5px', color: 'var(--color-text-muted)', lineHeight: 1.55, margin: 0 }}>
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div style={{
-            marginTop: '32px',
-            background: 'var(--color-white)',
-            border: '1px solid var(--color-border)',
-            padding: '20px 24px',
-            textAlign: 'center',
-            fontSize: '14.5px',
-            color: 'var(--color-text-muted)',
-            lineHeight: 1.6
-          }}>
-            Консультации и рабочие встречи можно проводить по телефону или видеосвязи, а документы передавать в электронном виде согласованным способом. Необходимость личного участия зависит от задачи, переговоров и судебной стадии.
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 8. ВОЗМОЖНЫЙ РЕЗУЛЬТАТ РАБОТЫ ═══ */}
-      <section style={{ backgroundColor: 'var(--color-white)', padding: '64px 0' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 40px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              Что может быть результатом
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              Результат зависит от задачи и согласованного этапа. На старте фиксируем, какой документ, вывод или действие должна получить компания.
-            </p>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '16px',
-            maxWidth: '1000px',
-            margin: '0 auto'
-          }}>
-            {deliverables.map((item, idx) => (
-              <div
-                key={idx}
-                style={{
-                  background: 'var(--color-bg-light)',
-                  border: '1px solid var(--color-border)',
-                  padding: '18px 20px',
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '12px'
-                }}
-              >
-                <div style={{ color: 'var(--color-gold)', fontSize: '18px', lineHeight: 1 }}>✓</div>
-                <div style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                  {item}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 9. СТОИМОСТЬ УСЛУГ ═══ */}
+      {/* ═══ 8. СТОИМОСТЬ УСЛУГ ═══ */}
       <PricingBlock
         title="Стоимость услуг договорного юриста"
         subtitle="Стоимость зависит от объёма и сложности документов, срочности конкретного задания, количества участников, необходимости переговоров и стадии спора. Состав работ и порядок оплаты согласуем до начала работы."
         tiers={pricingTiers}
+        ctaTitle="Точную стоимость определим до начала работы"
+        ctaSubtitle="Сначала изучим обстоятельства и документы, предложим подходящий формат помощи и согласуем стоимость. Она не изменится без согласования с вами."
+        ctaButtonText="Получить расчёт стоимости"
+        ctaButtonLink="#form"
       />
 
-      {/* ═══ 10. ПРИМЕРЫ ДОГОВОРНЫХ ЗАДАЧ ═══ */}
+      {/* ═══ 9. ПРИМЕРЫ ИЗ ПРАКТИКИ ═══ */}
       <CasesBlock
         title="Примеры договорных задач"
         cases={cases}
+        showDemoWarning={false}
+        resultLabel="Ключевой результат"
       />
 
-      {/* ═══ 11. СВЯЗАННЫЕ НАПРАВЛЕНИЯ ═══ */}
-      <section style={{ backgroundColor: 'var(--color-bg-light)', padding: '64px 0', borderTop: '1px solid var(--color-border)' }}>
+      {/* ═══ 10. СВЯЗАННЫЕ НАПРАВЛЕНИЯ ═══ */}
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 40px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              Если задача выходит за рамки договора
+          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Если задача выходит <br />за рамки договора
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Договорные вопросы часто переплетаются с другими правовыми направлениями бизнеса. Подберём профильного специалиста под вашу задачу.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '20px'
-          }}>
+          <div className="grid grid-4" style={{ gap: '20px' }}>
             {relatedDirections.map((rel, idx) => (
-              <Link
-                key={idx}
-                href={rel.link}
-                className="card hover-lift"
-                style={{
-                  background: 'var(--color-white)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-gold)',
-                  padding: '24px 20px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  textDecoration: 'none'
-                }}
-              >
-                <div>
-                  <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>
-                    {rel.title}
-                  </h3>
-                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-muted)', lineHeight: 1.55, margin: 0 }}>
-                    {rel.desc}
-                  </p>
-                </div>
-                <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-primary)', fontWeight: 600 }}>
-                  Перейти к направлению →
+              <Link key={idx} href={rel.link} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                <div
+                  className="card related-service-card hover-lift"
+                  style={{
+                    height: '100%',
+                    padding: '28px 24px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-gold)',
+                    borderRadius: '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between'
+                  }}
+                >
+                  <div>
+                    <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.35 }}>
+                      {rel.title}
+                    </h3>
+                    <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                      {rel.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '20px', paddingTop: '12px', borderTop: '1px solid rgba(23, 50, 77, 0.06)' }}>
+                    <span>Подробнее</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -1058,67 +1031,66 @@ export default function DogovornoePravoClient() {
         </div>
       </section>
 
-      {/* ═══ 12. ОФИС И ГЕОГРАФИЯ РАБОТЫ ═══ */}
-      <section style={{ backgroundColor: 'var(--color-white)', padding: '56px 0', borderTop: '1px solid var(--color-border)' }}>
-        <div className="container">
-          <div style={{
-            background: 'linear-gradient(135deg, rgba(23, 50, 77, 0.03) 0%, rgba(193, 160, 102, 0.05) 100%)',
-            border: '1px solid var(--color-border)',
-            padding: '36px 32px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '24px'
-          }}>
-            <div style={{ maxWidth: '680px' }}>
-              <h2 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>
-                Работаем с бизнесом в Липецке и дистанционно
-              </h2>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
-                Принимаем в офисе по адресу: г. Липецк, ул. Советская, д. 35, офис 213. Консультации, анализ и подготовку документов можно организовать дистанционно. Личное участие согласуем, если оно требуется для переговоров, осмотра документов или судебной работы.
-              </p>
-            </div>
-            <div>
-              <a href="tel:+74742201525" style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-deep-blue)', textDecoration: 'none', display: 'block', marginBottom: '6px' }}>
-                +7 (4742) 20-15-25
-              </a>
-              <span style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>
-                Пн-Пт с 9:00 до 18:00
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 13. FAQ ═══ */}
+      {/* ═══ 11. FAQ ═══ */}
       <FAQBlock
-        title="Часто задаваемые вопросы"
-        subtitle="Ответы на типовые вопросы о разработке, экспертизе, аудите договоров и разрешении споров."
         faqs={faqs}
+        title={<>Ответы на<br />частые вопросы</>}
+        subtitle="Собрали ответы на ключевые вопросы по разработке, проверке, аудиту и спорам из договоров для бизнеса."
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
       />
 
-      {/* ═══ 14. ФИНАЛЬНЫЙ CTA И ФОРМА ═══ */}
-      <section id="contact-form" style={{ backgroundColor: 'var(--color-bg-light)', padding: '64px 0', borderTop: '1px solid var(--color-border)' }}>
+      {/* ═══ 12. ФИНАЛЬНАЯ ФОРМА ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 36px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '12px' }}>
-              Обсудите договорную задачу с юристом
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              Кратко опишите, что нужно сделать: подготовить или проверить договор, оценить договорную систему либо подключиться к спору. Мы уточним обстоятельства и сообщим, какие материалы понадобятся для дальнейшего разбора.
-            </p>
-          </div>
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }} />
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Получите первичную оценку <br />договора или задачи
+              </h2>
 
-          <div style={{ maxWidth: '640px', margin: '0 auto' }}>
-            <ContactsForm
-              title=""
-              subtitle=""
-              buttonText="Оставить заявку"
-              hiddenFields={[{ name: 'context', value: activeContext }]}
-            />
-            <div style={{ marginTop: '16px', fontSize: '12.5px', color: 'var(--color-text-muted)', textAlign: 'center', lineHeight: 1.5 }}>
-              Не указывайте в форме коммерческую тайну, персональные данные работников и контрагентов, банковские реквизиты и другие конфиденциальные сведения. Документы можно передать после согласования безопасного способа связи.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Опишите условия сделки, стадию согласования или суть разногласий. Договорный юрист изучит обстоятельства и свяжется с вами для обсуждения безопасного формата работы.
+              </p>
+
+              <div style={{ marginTop: '32px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  <span>Прямой телефон: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>+7 (4742) 20-15-25</a></span>
+                </div>
+                <div style={{ marginTop: '12px', fontSize: '14px', color: 'var(--color-text-secondary)', paddingLeft: '36px' }}>
+                  Пн–Пт: 9:00 – 18:00 • ул. Советская, д. 35, оф. 213
+                </div>
+                <div style={{ marginTop: '8px', fontSize: '13.5px', color: 'var(--color-gold-text)', paddingLeft: '36px', fontWeight: 500 }}>
+                  Перезвоним в течение 15 минут в рабочее время
+                </div>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm
+                  title="Написать нам"
+                  subtitle=""
+                  buttonText="Оставить заявку"
+                  commentPlaceholder="Кратко опишите задачу по договору…"
+                  subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                  hiddenFields={[
+                    { name: 'pageId', value: 'B2B-04' },
+                    { name: 'pageTitle', value: 'Договорный юрист для бизнеса в Липецке' },
+                    { name: 'practice', value: 'Договорное право' },
+                    { name: 'context', value: activeContext }
+                  ]}
+                />
+              </div>
             </div>
           </div>
         </div>

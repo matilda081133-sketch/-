@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import MilitaryHero from '@/components/MilitaryHero';
+import ProcessBlock from '@/components/ProcessBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 
@@ -69,49 +70,57 @@ export default function AuditDogovornojRabotyClient() {
       tag: 'Шаблоны',
       title: 'Подразделения используют разные версии договоров',
       desc: 'Определим, какие формы реально применяются, где расходятся условия и кто имеет право менять утверждённый шаблон.',
-      context: 'templates'
+      context: 'templates',
+      btnText: 'Обсудить шаблоны'
     },
     {
       tag: 'Согласование',
       title: 'Договоры долго ходят между отделами',
       desc: 'Проверим маршрут, роли, основания для повторных согласований и точки, где документ возвращается без понятного решения.',
-      context: 'approval'
+      context: 'approval',
+      btnText: 'Ускорить согласование'
     },
     {
       tag: 'Подписание',
       title: 'Неясно, кто и на каком основании подписывает документы',
       desc: 'Проверим правила подтверждения полномочий, доверенности, замещение и контроль подписанных версий.',
-      context: 'authority'
+      context: 'authority',
+      btnText: 'Проверить полномочия'
     },
     {
       tag: 'Учёт',
       title: 'Нет единого реестра и актуального комплекта документов',
       desc: 'Оценим нумерацию, статусы, связь договора с приложениями и соглашениями, хранение оригиналов и электронных файлов.',
-      context: 'registry'
+      context: 'registry',
+      btnText: 'Навести порядок'
     },
     {
       tag: 'Исполнение',
       title: 'Сроки, пролонгации и обязательства контролируются вручную',
       desc: 'Выявим условия, которые требуют событийного контроля, ответственных и подтверждающих документов.',
-      context: 'performance'
+      context: 'performance',
+      btnText: 'Настроить контроль'
     },
     {
       tag: 'Риски',
       title: 'Одни и те же спорные условия повторяются в сделках',
       desc: 'Проверим выборку и отделим единичную ошибку от системного дефекта шаблона или процедуры.',
-      context: 'recurring-risk'
+      context: 'recurring-risk',
+      btnText: 'Исключить риски'
     },
     {
       tag: 'Рост',
       title: 'Компания выросла, а правила остались неформальными',
       desc: 'Сопоставим реальный поток договоров с ролями, нагрузкой и необходимым уровнем контроля.',
-      context: 'growth'
+      context: 'growth',
+      btnText: 'Систематизировать работу'
     },
     {
       tag: 'Изменения',
       title: 'Внедряется ЭДО, новая учётная система или структура',
       desc: 'Проверим, какие юридические и организационные правила нужно закрепить до переноса процесса в цифровой инструмент.',
-      context: 'change'
+      context: 'change',
+      btnText: 'Подготовить к ЭДО'
     }
   ];
 
@@ -160,6 +169,7 @@ export default function AuditDogovornojRabotyClient() {
 
   const auditFormats = [
     {
+      badge: 'Формат 01',
       title: 'Диагностика проблемной зоны',
       desc: 'Проверяем один процесс: например, согласование, полномочия, реестр или контроль исполнения.',
       result: 'Краткое заключение и список приоритетных действий.',
@@ -167,6 +177,7 @@ export default function AuditDogovornojRabotyClient() {
       context: 'diagnostic'
     },
     {
+      badge: 'Формат 02',
       title: 'Аудит массива договоров',
       desc: 'Анализируем согласованную выборку заключённых договоров и шаблонов, выявляем повторяющиеся дефекты и риски.',
       result: 'Реестр наблюдений, риск-карта и рекомендации по формам.',
@@ -174,6 +185,7 @@ export default function AuditDogovornojRabotyClient() {
       context: 'mass-audit'
     },
     {
+      badge: 'Формат 03',
       title: 'Комплексный аудит',
       desc: 'Проверяем документы и жизненный цикл договора с участием ключевых подразделений.',
       result: 'Отчёт, карта процесса, реестр рисков и дорожная карта изменений.',
@@ -181,6 +193,7 @@ export default function AuditDogovornojRabotyClient() {
       context: 'complex-audit'
     },
     {
+      badge: 'Формат 04',
       title: 'Аудит и последующее внедрение',
       desc: 'После диагностики отдельно оцениваем разработку регламентов, матриц, заявок, шаблонов и контрольных инструментов.',
       result: 'Согласованный проект изменений; состав не входит автоматически в базовый аудит.',
@@ -190,13 +203,34 @@ export default function AuditDogovornojRabotyClient() {
   ];
 
   const prepDocs = [
-    'Краткое описание бизнеса, видов сделок и подразделений, участвующих в договорном цикле',
-    'Перечень используемых шаблонов и примерный объём договоров за согласованный период',
-    'Локальные положения, инструкции, матрицы полномочий и маршруты согласования — если они есть',
-    'Согласованная выборка договоров вместе с приложениями, дополнительными соглашениями и документами исполнения',
-    'Примеры заявки на договор, листа согласования, реестра, доверенностей и уведомлений',
-    'Описание повторяющихся проблем и интервью с ключевыми участниками процесса',
-    'Сведения об используемых ЭДО, CRM, учётных системах и хранилищах — без передачи паролей и доступов'
+    {
+      title: 'Описание бизнес-модели и сделок',
+      desc: 'Краткое описание бизнеса, видов сделок и подразделений, участвующих в договорном цикле компании.'
+    },
+    {
+      title: 'Перечень шаблонов и объём',
+      desc: 'Перечень используемых шаблонов и примерный объём договоров за согласованный аналитический период.'
+    },
+    {
+      title: 'Локальные регламенты и правила',
+      desc: 'Локальные положения, инструкции, матрицы полномочий и регламенты согласования — если они утверждены.'
+    },
+    {
+      title: 'Выборка договоров и приложений',
+      desc: 'Согласованная выборка договоров вместе с приложениями, дополнительными соглашениями и документами исполнения.'
+    },
+    {
+      title: 'Маршрутные документы и формы',
+      desc: 'Примеры заявки на договор, листа согласования, реестра, доверенностей и официальных уведомлений.'
+    },
+    {
+      title: 'Повторяющиеся проблемы и интервью',
+      desc: 'Описание повторяющихся проблемных точек и готовность к коротким интервью с ключевыми участниками процесса.'
+    },
+    {
+      title: 'Сведения об используемых системах',
+      desc: 'Сведения об используемых системах ЭДО, CRM, 1С и хранилищах — строго без передачи паролей и доступов.'
+    }
   ];
 
   const workSteps = [
@@ -208,12 +242,12 @@ export default function AuditDogovornojRabotyClient() {
     {
       num: '02',
       title: 'Формируем выборку и программу',
-      desc: 'Согласуем категории документов, критерии отбора, интервью и состав результата.'
+      desc: 'Согласуем категории документов, критерии отбора, интервью и итоговый состав материалов.'
     },
     {
       num: '03',
       title: 'Изучаем документы и процесс',
-      desc: 'Анализируем договоры, шаблоны, локальные правила и фактические действия участников; уточняем расхождения.'
+      desc: 'Анализируем договоры, шаблоны, локальные правила и фактические действия участников; выявляем расхождения.'
     },
     {
       num: '04',
@@ -223,23 +257,40 @@ export default function AuditDogovornojRabotyClient() {
     {
       num: '05',
       title: 'Готовим отчёт и дорожную карту',
-      desc: 'Описываем выводы, приоритеты, быстрые меры и изменения, требующие отдельного проекта.'
+      desc: 'Описываем выводы, приоритеты, быстрые меры и изменения, требующие отдельного проектного внедрения.'
     },
     {
       num: '06',
       title: 'Обсуждаем результаты',
-      desc: 'Проводим встречу с ответственными, объясняем выводы и согласуем возможный следующий этап.'
+      desc: 'Проводим презентацию выводов руководству и ответственным лицам, согласуем возможный план внедрения.'
     }
   ];
 
   const deliverables = [
-    'Диагностический отчёт по согласованному периметру и методике выборки',
-    'Реестр выявленных рисков с приоритетом, причиной и возможным последствием',
-    'Карта текущего договорного процесса и отмеченные точки разрыва — если аудит охватывает процесс',
-    'Перечень шаблонов и документов, которые нужно обновить, объединить или вывести из использования',
-    'Рекомендации по ролям, полномочиям, согласованию, учёту, исполнению и хранению',
-    'Дорожная карта: что можно исправить быстро, что требует проекта и какие подразделения должны участвовать',
-    'Презентация выводов ответственным сотрудникам — если включена в согласованный формат'
+    {
+      title: 'Диагностический отчёт',
+      desc: 'Развёрнутое экспертное заключение по согласованному периметру, методологии выборки и правовой оценке.'
+    },
+    {
+      title: 'Реестр выявленных рисков',
+      desc: 'Систематизированный реестр рисков с градацией приоритетов, описанием причин и потенциальных финансовых последствий.'
+    },
+    {
+      title: 'Карта текущего процесса',
+      desc: 'Наглядная схема движения договора и отмеченные точки сбоев — если аудит охватывает жизненный цикл документа.'
+    },
+    {
+      title: 'Анализ шаблонов и форм',
+      desc: 'Перечень шаблонов и типовых документов, которые требуют обновления, унификации или вывода из оборота.'
+    },
+    {
+      title: 'Рекомендации по контролю',
+      desc: 'Практические рекомендации по ролям сотрудников, матрице полномочий, согласованию, исполнению и архиву.'
+    },
+    {
+      title: 'Пошаговая дорожная карта',
+      desc: 'Чёткий план действий: быстрые исправления без бюджета, среднесрочные доработки и масштабные изменения.'
+    }
   ];
 
   const pricingTiers: PricingTier[] = [
@@ -248,7 +299,7 @@ export default function AuditDogovornojRabotyClient() {
       price: 'от ХХХ ₽',
       subtitle: 'Одна согласованная проблема; ограниченная выборка; краткое заключение и список действий.',
       buttonText: 'Обсудить диагностику',
-      buttonHref: '#contact-form',
+      buttonHref: '#form',
       features: [
         { name: 'Анализ конкретного узкого места или процесса', value: '✓' },
         { name: 'Оценка выборки документов по выбранной зоне', value: '✓' },
@@ -262,7 +313,7 @@ export default function AuditDogovornojRabotyClient() {
       price: 'от ХХХ ₽',
       subtitle: 'Согласованная выборка договоров и шаблонов; системные наблюдения; риск-карта и рекомендации.',
       buttonText: 'Уточнить стоимость',
-      buttonHref: '#contact-form',
+      buttonHref: '#form',
       features: [
         { name: 'Анализ репрезентативной выборки договоров', value: '✓' },
         { name: 'Выявление повторяющихся дефектов и уязвимостей', value: '✓' },
@@ -276,7 +327,7 @@ export default function AuditDogovornojRabotyClient() {
       price: 'от ХХХ ₽',
       subtitle: 'Документы, процесс и интервью; отчёт, реестр рисков и дорожная карта изменений.',
       buttonText: 'Обсудить аудит',
-      buttonHref: '#contact-form',
+      buttonHref: '#form',
       features: [
         { name: 'Аудит договоров, регламентов и маршрутов', value: '✓' },
         { name: 'Интервью с ключевыми участниками процесса', value: '✓' },
@@ -290,7 +341,7 @@ export default function AuditDogovornojRabotyClient() {
       price: 'по оценке',
       subtitle: 'Отдельный этап после аудита: регламенты, матрицы, формы, шаблоны и контрольные инструменты.',
       buttonText: 'Обсудить следующий этап',
-      buttonHref: '#contact-form',
+      buttonHref: '#form',
       features: [
         { name: 'Разработка утверждённых типовых договоров', value: '✓' },
         { name: 'Подготовка регламента договорной работы', value: '✓' },
@@ -328,22 +379,22 @@ export default function AuditDogovornojRabotyClient() {
   const relatedServices = [
     {
       title: 'Договорный юрист для бизнеса',
-      desc: 'Вернуться на общий хаб направления для выбора формата правовой помощи.',
+      desc: 'Вернуться на общий хаб направления для выбора комплексного правового формата.',
       link: '/biznesu/dogovornoe-pravo/'
     },
     {
-      title: 'Разработка и проверка договора',
-      desc: 'После аудита нужно точечно разработать конкретный шаблон или проверить крупную сделку.',
+      title: 'Разработка и экспертиза договоров',
+      desc: 'После аудита точечно разработать индивидуальный шаблон или проверить сложную сделку.',
       link: '/biznesu/dogovornoe-pravo/razrabotka-i-ekspertiza-dogovorov/'
     },
     {
       title: 'Помощь в договорном споре',
-      desc: 'В процессе проверки обнаружен реальный конфликт по оплате, срокам или неисполнению.',
+      desc: 'Если в ходе аудита выявлен острый конфликт по оплате, нарушению сроков или убыткам.',
       link: '/biznesu/dogovornoe-pravo/dogovornye-spory/'
     },
     {
       title: 'Юридическое сопровождение бизнеса',
-      desc: 'Передать регулярную договорную и корпоративную функцию внешней команде на абонентской основе.',
+      desc: 'Передать регулярную договорную функцию внешней юридической команде Де-Юре.',
       link: '/biznesu/yuridicheskoe-soprovozhdenie-biznesa/'
     }
   ];
@@ -411,16 +462,16 @@ export default function AuditDogovornojRabotyClient() {
             <span style={{ color: 'var(--color-text-muted)' }}>Аудит договорной работы</span>
           </>
         }
-        superTitle="Договорное право • Для бизнеса"
+        superTitle="Договорное право • B2B • Липецк"
         title="Аудит договорной работы компании"
         subtitle="Проверим договоры, шаблоны и весь путь документа — от заявки до исполнения и хранения. Выявим системные риски и подготовим приоритетный план изменений."
         trustItems={[
-          { text: 'Анализируем документы и реальный процесс' },
+          { text: 'Анализируем документы и реальный процесс компании' },
           { text: 'Отделяем критичные риски от организационных недочётов' },
           { text: 'Передаём отчёт, карту рисков и план действий' }
         ]}
         primaryCtaText="Обсудить аудит"
-        primaryCtaLink="#contact-form"
+        primaryCtaLink="#form"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
         secondaryCtaText="Что проверяем"
         secondaryCtaLink="#audit-scope"
@@ -452,7 +503,6 @@ export default function AuditDogovornojRabotyClient() {
                       </div>
                     </div>
 
-                    {/* Схема жизненного цикла */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '12px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(247, 244, 237, 0.8)', padding: '5px 8px', borderLeft: '3px solid #C1A066' }}>
                         <span style={{ fontSize: '6px', fontWeight: 'bold', color: '#C1A066' }}>01</span>
@@ -488,14 +538,10 @@ export default function AuditDogovornojRabotyClient() {
         }
       />
 
-      {/* ═══ СТРОКА ДОВЕРИЯ ═══ */}
+      {/* ═══ 1.1. СТРОКА ДОВЕРИЯ ═══ */}
       <section style={{ backgroundColor: 'var(--color-bg-light)', borderBottom: '1px solid var(--color-border)', padding: '24px 0' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '24px'
-          }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
               <div style={{ color: 'var(--color-gold)', fontSize: '20px', lineHeight: 1 }}>✓</div>
               <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.5 }}>
@@ -518,115 +564,201 @@ export default function AuditDogovornojRabotyClient() {
         </div>
       </section>
 
-      {/* ═══ 2. КОГДА КОМПАНИИ НУЖЕН АУДИТ ═══ */}
-      <section style={{ backgroundColor: 'var(--color-white)', padding: '64px 0' }}>
+      {/* ═══ 2. КОГДА ДОГОВОРНАЯ РАБОТА ТРЕБУЕТ ПРОВЕРКИ ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 44px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              Когда договорная работа требует системной проверки
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Когда договорная работа <br />требует системной проверки
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Отдельные ошибки часто оказываются симптомами одного процесса: непонятных ролей, неуправляемых версий, формального согласования или отсутствия контроля после подписания.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '20px'
-          }}>
+          <div className="grid grid-3" style={{ gap: '28px' }}>
             {situations.map((sit, idx) => (
               <div
                 key={idx}
                 className="card hover-lift"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
                   borderRadius: '0',
-                  padding: '28px 24px',
+                  padding: '32px 28px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+
                 <div>
-                  <span style={{
-                    display: 'inline-block',
+                  <div style={{
                     fontSize: '11.5px',
                     fontWeight: 700,
+                    color: 'var(--color-primary)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.06em',
-                    color: 'var(--color-gold)',
-                    marginBottom: '10px'
+                    marginBottom: '12px',
+                    background: 'rgba(23, 50, 77, 0.06)',
+                    padding: '3px 8px',
+                    display: 'inline-block',
+                    borderRadius: '2px'
                   }}>
                     {sit.tag}
-                  </span>
-                  <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.35 }}>
+                  </div>
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '18px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35
+                  }}>
                     {sit.title}
                   </h3>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '20px' }}>
+
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0
+                  }}>
                     {sit.desc}
                   </p>
                 </div>
 
                 <a
-                  href="#contact-form"
+                  href="#form"
                   onClick={() => setActiveContext(sit.context)}
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    fontSize: '14px',
-                    fontWeight: 600,
+                    gap: '6px',
                     color: 'var(--color-primary)',
+                    fontSize: '13.5px',
+                    fontWeight: 600,
                     textDecoration: 'none',
-                    gap: '6px'
+                    marginTop: '20px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
                   }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
                 >
-                  Обсудить проверку →
+                  <span>{sit.btnText}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </a>
               </div>
             ))}
+
+            {/* Карточка-призыв span-2 */}
+            <div
+              className="card service-card service-card-span-2"
+              style={{
+                background: 'var(--color-deep-blue)',
+                color: '#fff',
+                padding: '36px 32px',
+                borderTop: '3px solid var(--color-gold)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}
+            >
+              <div>
+                <span style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '12px' }}>
+                  Индивидуальный аудит
+                </span>
+                <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: '#fff', marginBottom: '14px', lineHeight: 1.3 }}>
+                  Нужна проверка специфического массива или процедуры?
+                </h3>
+                <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, margin: 0 }}>
+                  Проанализируем договорный контур холдинга, правила взаимодействия с филиалами или подготовим аудит перед внедрением корпоративной системы ЭДО.
+                </p>
+              </div>
+              <div style={{ marginTop: '24px' }}>
+                <a
+                  href="#form"
+                  className="btn btn-gold white-btn-custom"
+                  onClick={() => setActiveContext('custom-audit')}
+                  style={{ display: 'inline-block' }}
+                >
+                  Обсудить задачу с юристом
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ 3. УНИКАЛЬНЫЙ БЛОК: ЧТО ПРОВЕРЯЕМ В ДОГОВОРНОЙ СИСТЕМЕ ═══ */}
-      <section id="audit-scope" style={{ backgroundColor: 'var(--color-bg-light)', padding: '64px 0', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
+      {/* ═══ 3. ЧТО ПРОВЕРЯЕМ В ДОГОВОРНОЙ СИСТЕМЕ ═══ */}
+      <section id="audit-scope" className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 44px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Что проверяем в договорной системе
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Точный периметр зависит от масштаба компании и задачи. Ниже — основные зоны, из которых формируется программа аудита.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '20px'
-          }}>
+          <div className="grid grid-2" style={{ gap: '24px' }}>
             {auditScope.map((scope, idx) => (
               <div
                 key={idx}
+                className="card hover-lift"
                 style={{
                   background: 'var(--color-white)',
                   border: '1px solid var(--color-border)',
                   borderLeft: '4px solid var(--color-gold)',
-                  padding: '24px 22px'
+                  padding: '28px 26px',
+                  borderRadius: '0',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
                 }}
               >
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>
-                  {scope.title}
-                </h3>
-                <div style={{ marginBottom: '10px', fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                  <strong>Что анализируем:</strong> {scope.what}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
+                  <span style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: 'var(--color-gold)',
+                    fontFamily: 'var(--font-serif)'
+                  }}>
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: 0 }}>
+                    {scope.title}
+                  </h3>
                 </div>
-                <div style={{ fontSize: '13.5px', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>
-                  <strong>Результат проверки:</strong> {scope.result}
+
+                <div style={{ marginBottom: '12px', fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+                  <strong style={{ color: 'var(--color-primary)' }}>Что анализируем:</strong> {scope.what}
+                </div>
+
+                <div style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                  <strong style={{ color: 'var(--color-deep-blue)' }}>Результат проверки:</strong> {scope.result}
                 </div>
               </div>
             ))}
@@ -635,54 +767,80 @@ export default function AuditDogovornojRabotyClient() {
       </section>
 
       {/* ═══ 4. ФОРМАТЫ АУДИТА ═══ */}
-      <section style={{ backgroundColor: 'var(--color-white)', padding: '64px 0' }}>
+      <section className="section bg-white" id="formats" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 44px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              Выберите подходящий масштаб проверки
+          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Выберите подходящий <br />масштаб проверки
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Начать можно с ограниченной диагностики одной проблемной зоны или провести полный аудит договорной функции. Итоговый формат определяем после первого разговора.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '24px'
-          }}>
+          <div className="grid grid-2" style={{ gap: '24px' }}>
             {auditFormats.map((fmt, idx) => (
               <div
                 key={idx}
-                className="card hover-lift"
+                className="card service-card hover-lift"
                 style={{
-                  background: 'var(--color-bg-light)',
+                  padding: '32px 30px',
+                  background: 'var(--color-white)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
-                  padding: '32px 28px',
+                  borderRadius: '0',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
                 }}
               >
                 <div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '12px' }}>
+                  <div style={{
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    color: 'var(--color-gold)',
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase',
+                    marginBottom: '10px'
+                  }}>
+                    {fmt.badge}
+                  </div>
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '20px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    marginBottom: '12px',
+                    lineHeight: 1.3
+                  }}>
                     {fmt.title}
                   </h3>
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '18px' }}>
+
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
                     {fmt.desc}
                   </p>
-                  <div style={{ background: 'var(--color-white)', padding: '12px 14px', borderLeft: '3px solid var(--color-gold)', marginBottom: '24px' }}>
-                    <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Результат:</span>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-muted)' }}>{fmt.result}</span>
+
+                  <div style={{
+                    background: 'var(--color-bg-light)',
+                    padding: '14px 16px',
+                    borderLeft: '3px solid var(--color-gold)',
+                    marginBottom: '28px'
+                  }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                      Результат:
+                    </span>
+                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                      {fmt.result}
+                    </span>
                   </div>
                 </div>
 
                 <a
-                  href="#contact-form"
+                  href="#form"
                   onClick={() => setActiveContext(fmt.context)}
-                  className="btn btn-gold"
+                  className="btn btn-primary"
                   style={{ textAlign: 'center', width: '100%' }}
                 >
                   {fmt.cta}
@@ -694,138 +852,117 @@ export default function AuditDogovornojRabotyClient() {
       </section>
 
       {/* ═══ 5. ЧТО ПОТРЕБУЕТСЯ ДЛЯ АУДИТА ═══ */}
-      <section style={{ backgroundColor: 'var(--color-bg-light)', padding: '64px 0', borderTop: '1px solid var(--color-border)' }}>
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{
-            background: 'var(--color-white)',
-            border: '1px solid var(--color-border)',
-            borderLeft: '4px solid var(--color-gold)',
-            padding: '40px 36px',
-            maxWidth: '920px',
-            margin: '0 auto'
-          }}>
-            <h2 style={{ fontSize: '26px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Что потребуется для аудита
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '24px' }}>
-              На первом этапе не нужно выгружать весь архив. Сначала определим цель, период и выборку, затем согласуем безопасный способ передачи:
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              На первом этапе не нужно выгружать весь архив компании. Сначала определим цель, период и выборку, затем согласуем безопасный способ передачи:
             </p>
+          </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              {prepDocs.map((item, idx) => (
-                <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <div style={{ color: 'var(--color-gold)', fontSize: '18px', lineHeight: 1, marginTop: '2px' }}>✓</div>
-                  <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                    {item}
-                  </div>
+          <div className="grid grid-2" style={{ gap: '20px', marginBottom: '32px' }}>
+            {prepDocs.map((item, idx) => (
+              <div
+                key={idx}
+                className="card"
+                style={{
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  padding: '22px 24px',
+                  borderRadius: '0',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '16px'
+                }}
+              >
+                <div style={{ color: 'var(--color-primary)', marginTop: '2px', flexShrink: 0 }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                 </div>
-              ))}
-            </div>
+                <div>
+                  <h3 style={{ fontSize: '15.5px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: '0 0 6px 0' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
 
-            <div style={{ marginTop: '24px', paddingTop: '18px', borderTop: '1px solid var(--color-border)', fontSize: '13.5px', color: 'var(--color-text-muted)' }}>
-              Не передавайте логины, пароли и базы через открытую форму. Доступы и каналы обмена согласуются отдельным регламентом безопасности.
+          <div
+            className="card"
+            style={{
+              background: 'var(--color-white)',
+              border: '1px solid var(--color-border)',
+              borderLeft: '4px solid var(--color-gold)',
+              padding: '24px 28px',
+              borderRadius: '0',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '16px'
+            }}
+          >
+            <div style={{ color: 'var(--color-gold)', fontSize: '24px', lineHeight: 1, flexShrink: 0 }}>ℹ️</div>
+            <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <strong>Конфиденциальность:</strong> Не передавайте логины, пароли и полные базы через открытую форму на сайте. Доступы и защищённые каналы обмена согласуются отдельным регламентом безопасности перед началом работы.
             </div>
           </div>
         </div>
       </section>
 
       {/* ═══ 6. КАК ПРОХОДИТ АУДИТ ═══ */}
-      <section style={{ backgroundColor: 'var(--color-white)', padding: '64px 0' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 44px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
-              Как проходит аудит договорной работы
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              Программа строится под задачу компании: сначала фиксируем границы, затем проверяем документы и реальный процесс, после чего обсуждаем выводы и приоритеты.
-            </p>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '20px'
-          }}>
-            {workSteps.map((step, idx) => (
-              <div
-                key={idx}
-                style={{
-                  background: 'var(--color-bg-light)',
-                  border: '1px solid var(--color-border)',
-                  padding: '24px 20px',
-                  display: 'flex',
-                  flexDirection: 'column'
-                }}
-              >
-                <div style={{
-                  fontSize: '28px',
-                  fontWeight: 800,
-                  color: 'var(--color-gold)',
-                  fontFamily: 'var(--font-serif)',
-                  lineHeight: 1,
-                  marginBottom: '12px'
-                }}>
-                  {step.num}
-                </div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>
-                  {step.title}
-                </h3>
-                <p style={{ fontSize: '13.5px', color: 'var(--color-text-muted)', lineHeight: 1.55, margin: 0 }}>
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div style={{
-            marginTop: '32px',
-            background: 'var(--color-bg-light)',
-            border: '1px solid var(--color-border)',
-            padding: '20px 24px',
-            textAlign: 'center',
-            fontSize: '14.5px',
-            color: 'var(--color-text-muted)',
-            lineHeight: 1.6
-          }}>
-            Интервью можно провести по телефону или видеосвязи, а документы передать электронно согласованным способом. Выезд в офис и очные рабочие сессии оцениваются по задаче.
-          </div>
-        </div>
-      </section>
+      <ProcessBlock
+        title="Как проходит аудит договорной работы"
+        subtitle="Программа строится под задачу компании: сначала фиксируем границы, затем проверяем документы и реальный процесс, после чего обсуждаем выводы и приоритеты."
+        steps={workSteps}
+      />
 
       {/* ═══ 7. РЕЗУЛЬТАТ АУДИТА ═══ */}
-      <section style={{ backgroundColor: 'var(--color-bg-light)', padding: '64px 0', borderTop: '1px solid var(--color-border)' }}>
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 40px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Результат аудита
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              Состав результата фиксируется до начала работы. Он должен позволять руководителю увидеть не только ошибки, но и порядок их исправления.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Состав результата фиксируется до начала работы. Он позволяет руководителю увидеть не только дефекты, но и точный порядок их исправления.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '16px',
-            maxWidth: '1000px',
-            margin: '0 auto'
-          }}>
+          <div className="grid grid-2" style={{ gap: '20px' }}>
             {deliverables.map((item, idx) => (
               <div
                 key={idx}
+                className="card"
                 style={{
-                  background: 'var(--color-white)',
+                  background: 'var(--color-bg-light)',
                   border: '1px solid var(--color-border)',
-                  padding: '18px 20px',
+                  borderLeft: '4px solid var(--color-gold)',
+                  padding: '22px 24px',
+                  borderRadius: '0',
                   display: 'flex',
                   alignItems: 'flex-start',
-                  gap: '12px'
+                  gap: '16px'
                 }}
               >
-                <div style={{ color: 'var(--color-gold)', fontSize: '18px', lineHeight: 1 }}>✓</div>
-                <div style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                  {item}
+                <div style={{ color: 'var(--color-gold)', marginTop: '2px', flexShrink: 0 }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h3 style={{ fontSize: '16px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 6px 0' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
+                    {item.desc}
+                  </p>
                 </div>
               </div>
             ))}
@@ -847,32 +984,30 @@ export default function AuditDogovornojRabotyClient() {
       />
 
       {/* ═══ 10. СВЯЗАННЫЕ УСЛУГИ ═══ */}
-      <section style={{ backgroundColor: 'var(--color-bg-light)', padding: '64px 0', borderTop: '1px solid var(--color-border)' }}>
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto 40px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '14px' }}>
+          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Связанные услуги
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              Если по результатам аудита потребуется разработка документов или защита в конкретном споре.
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Если по результатам аудита потребуется переработка шаблонов, точечная проверка крупной сделки или защита в судебном споре.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '20px'
-          }}>
+          <div className="grid grid-4" style={{ gap: '24px' }}>
             {relatedServices.map((rel, idx) => (
               <Link
                 key={idx}
                 href={rel.link}
                 className="card hover-lift"
                 style={{
+                  height: '100%',
+                  padding: '28px 24px',
                   background: 'var(--color-white)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
-                  padding: '24px 20px',
+                  borderRadius: '0',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -880,15 +1015,19 @@ export default function AuditDogovornojRabotyClient() {
                 }}
               >
                 <div>
-                  <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>
+                  <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.35 }}>
                     {rel.title}
                   </h3>
-                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-muted)', lineHeight: 1.55, margin: 0 }}>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
                     {rel.desc}
                   </p>
                 </div>
-                <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-primary)', fontWeight: 600 }}>
-                  Перейти к услуге →
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '20px', paddingTop: '12px', borderTop: '1px solid rgba(23, 50, 77, 0.06)' }}>
+                  <span>Подробнее</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </div>
               </Link>
             ))}
@@ -896,67 +1035,66 @@ export default function AuditDogovornojRabotyClient() {
         </div>
       </section>
 
-      {/* ═══ 11. ОФИС И ФОРМАТ РАБОТЫ ═══ */}
-      <section style={{ backgroundColor: 'var(--color-white)', padding: '56px 0', borderTop: '1px solid var(--color-border)' }}>
-        <div className="container">
-          <div style={{
-            background: 'linear-gradient(135deg, rgba(23, 50, 77, 0.03) 0%, rgba(193, 160, 102, 0.05) 100%)',
-            border: '1px solid var(--color-border)',
-            padding: '36px 32px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '24px'
-          }}>
-            <div style={{ maxWidth: '680px' }}>
-              <h2 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '10px' }}>
-                Работаем в Липецке и дистанционно
-              </h2>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
-                Принимаем в офисе по адресу: г. Липецк, ул. Советская, д. 35, офис 213. Интервью и обсуждение результатов можно провести дистанционно, а документы передать электронно согласованным способом. Необходимость выезда в компанию определяется периметром аудита.
-              </p>
-            </div>
-            <div>
-              <a href="tel:+74742201525" style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-deep-blue)', textDecoration: 'none', display: 'block', marginBottom: '6px' }}>
-                +7 (4742) 20-15-25
-              </a>
-              <span style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>
-                Пн-Пт с 9:00 до 18:00
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 12. FAQ ═══ */}
+      {/* ═══ 11. FAQ ═══ */}
       <FAQBlock
-        title="Часто задаваемые вопросы"
-        subtitle="Ответы на вопросы по правовому аудиту договорной базы, шаблонов и процессов компании."
         faqs={faqs}
+        title={<>Ответы на<br />частые вопросы</>}
+        subtitle="Ответы на вопросы по правовому аудиту договорной базы, шаблонов и процессов компании."
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
       />
 
-      {/* ═══ 13. ФИНАЛЬНАЯ ФОРМА ═══ */}
-      <section id="contact-form" style={{ backgroundColor: 'var(--color-bg-light)', padding: '64px 0', borderTop: '1px solid var(--color-border)' }}>
+      {/* ═══ 12. ФИНАЛЬНАЯ ФОРМА ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 36px' }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 700, color: 'var(--color-deep-blue)', marginBottom: '12px' }}>
-              Обсудите аудит договорной работы
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              Опишите, что не устраивает в текущем процессе: договоры долго согласуются, используются разные шаблоны, теряются версии или не контролируется исполнение. Мы уточним задачу и предложим подходящий периметр проверки.
-            </p>
-          </div>
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start', paddingTop: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }} />
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                Обсудите аудит договорной <br />работы компании
+              </h2>
 
-          <div style={{ maxWidth: '640px', margin: '0 auto' }}>
-            <ContactsForm
-              title=""
-              subtitle=""
-              buttonText="Оставить заявку"
-              hiddenFields={[{ name: 'context', value: activeContext }]}
-            />
-            <div style={{ marginTop: '16px', fontSize: '12.5px', color: 'var(--color-text-muted)', textAlign: 'center', lineHeight: 1.5 }}>
-              Не указывайте в форме коммерческую тайну, реквизиты, персональные данные сотрудников и контрагентов. Документы можно передать после согласования безопасного способа связи.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Опишите, что не устраивает в текущем процессе: договоры долго согласуются, используются разные шаблоны, теряются версии или не контролируется исполнение. Мы уточним задачу и предложим подходящий периметр проверки.
+              </p>
+
+              <div style={{ marginTop: '32px' }}>
+                <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  <span>Прямой телефон: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>+7 (4742) 20-15-25</a></span>
+                </div>
+                <div style={{ marginTop: '12px', fontSize: '14px', color: 'var(--color-text-secondary)', paddingLeft: '36px' }}>
+                  Пн–Пт: 9:00 – 18:00 • ул. Советская, д. 35, оф. 213
+                </div>
+                <div style={{ marginTop: '8px', fontSize: '13.5px', color: 'var(--color-gold-text)', paddingLeft: '36px', fontWeight: 500 }}>
+                  Перезвоним в течение 15 минут в рабочее время
+                </div>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <ContactsForm
+                  title="Оставить заявку"
+                  subtitle=""
+                  buttonText="Оставить заявку"
+                  commentPlaceholder="Опишите задачу по аудиту договоров…"
+                  subtext="Не указывайте в форме коммерческую тайну и пароли. Документы передаются после согласования защищённого канала связи."
+                  hiddenFields={[
+                    { name: 'pageId', value: 'B2B-04-02' },
+                    { name: 'pageTitle', value: 'Аудит договорной работы компании в Липецке' },
+                    { name: 'practice', value: 'Договорное право' },
+                    { name: 'context', value: activeContext }
+                  ]}
+                />
+              </div>
             </div>
           </div>
         </div>
