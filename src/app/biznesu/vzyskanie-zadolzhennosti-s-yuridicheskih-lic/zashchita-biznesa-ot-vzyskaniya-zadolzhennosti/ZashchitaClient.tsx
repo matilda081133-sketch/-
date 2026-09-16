@@ -535,7 +535,9 @@ export default function ZashchitaClient() {
             Проверим обоснованность требований кредитора, расчёт долга и первичные документы. Подготовим контррасчёт, возражения или встречный иск, защитим компанию в арбитражном суде, снизим неустойку и снимем обеспечительные меры.
           </span>
         }
-        primaryCtaText="Оценить перспективы защиты"
+        primaryCtaText="Проверить требования кредитора"
+        secondaryCtaText="Получили иск — передать документы"
+        secondaryCtaLink="#documents"
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_primary_cta_defense"
         primaryCtaSubtext={
@@ -1578,24 +1580,24 @@ export default function ZashchitaClient() {
         profileText="Подробнее о Владимире Викторовиче Начешникове →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Владимир Начешников проводит первичный разбор долговой ситуации, определяет маршрут взыскания и координирует работу профильных специалистов на досудебной, судебной, исполнительной и банкротной стадиях.
+            Владимир Начешников проводит первичный разбор требований кредитора, определяет маршрут защиты и координирует работу профильных специалистов на претензионной, судебной и исполнительной стадиях.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Юридическая практика в сфере защиты интересов бизнеса и арбитражного процесса — с 2016 года</span>
+              <span>Практический опыт в юридических и корпоративных процедурах — с 1997 года.</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Опыт работы в Следственном комитете помогает выявлять фиктивные требования и схемы давления</span>
+              <span>Помогает отделить обоснованную сумму от спорных требований и санкций.</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Успешный опыт снижения штрафов и отмены обеспечительных мер в арбитражных судах РФ</span>
+              <span>Координирует судебную защиту, урегулирование и дальнейшие действия по исполнению.</span>
             </li>
           </ul>
         ]}
-        buttonText="Обсудить взыскание задолженности"
+        buttonText="Обсудить защиту бизнеса"
         buttonHref="#form"
       />
 
