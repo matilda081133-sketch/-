@@ -28,6 +28,7 @@ type ExtendedHeroProps = HeroProps & {
   imageMarginTop?: string;
   imageObjectPosition?: string;
   rightContent?: React.ReactNode;
+  afterTrustContent?: React.ReactNode;
 };
 
 export default function MilitaryHero({
@@ -50,7 +51,8 @@ export default function MilitaryHero({
   trustMarginTop,
   imageMarginTop,
   imageObjectPosition,
-  rightContent
+  rightContent,
+  afterTrustContent
 }: ExtendedHeroProps) {
   const hasRight = Boolean(imageUrl || rightContent);
 
@@ -111,6 +113,12 @@ export default function MilitaryHero({
               {/* Three Bullet USPs (TrustStrip) - PLACED ABOVE CTA BUTTON & BELOW DESCRIPTION */}
               {trustPosition === 'above-cta' && trustItems && trustItems.length > 0 && (
                 <TrustStrip items={trustItems} marginTop={trustMarginTop || '16px'} />
+              )}
+
+              {afterTrustContent && (
+                <div style={{ marginTop: '16px', marginBottom: '8px' }}>
+                  {afterTrustContent}
+                </div>
               )}
 
               {/* Primary Call to Action */}

@@ -129,19 +129,47 @@ export default function DogovornoePravoClient() {
     }
   ];
 
-  const contractTypes = [
-    'Поставка и оптовая купля-продажа',
-    'Возмездное оказание коммерческих услуг',
-    'Подряд (кроме строительного)',
-    'Коммерческая аренда и субаренда',
-    'Купля-продажа коммерческого имущества',
-    'Транспортная экспедиция и перевозка',
-    'Складское и ответственное хранение',
-    'Заем и финансовые обязательства',
-    'Агентирование, комиссия и поручение',
-    'Финансовый лизинг',
-    'Уступка права требования (цессия) и перевод долга',
-    'Лицензионные и смешанные договоры'
+  const contractCategories = [
+    {
+      num: '01',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Торговля</span>
+          <span style={{ display: 'block' }}>и поставка</span>
+        </>
+      ),
+      items: 'Договоры поставки товаров и оборудования, дистрибуция, оптовая купля-продажа, коммерческая концессия и агентские договоры.'
+    },
+    {
+      num: '02',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Услуги</span>
+          <span style={{ display: 'block' }}>и подряд</span>
+        </>
+      ),
+      items: 'Возмездное оказание услуг, проектные и монтажные работы, IT-разработка и лицензии, логистика и транспортная экспедиция.'
+    },
+    {
+      num: '03',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Имущественные</span>
+          <span style={{ display: 'block' }}>сделки</span>
+        </>
+      ),
+      items: 'Аренда коммерческих помещений, складов и земельных участков, лизинг спецтехники, оборудования и автотранспорта.'
+    },
+    {
+      num: '04',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Обеспечение</span>
+          <span style={{ display: 'block' }}>и финансы</span>
+        </>
+      ),
+      items: 'Договоры займа, поручительства, залога, уступки прав требования (цессия), перевод долга и соглашения о новации.'
+    }
   ];
 
   const lawyerActions = [
@@ -150,7 +178,11 @@ export default function DogovornoePravoClient() {
       desc: 'Уточни фактическую модель отношений, роли сторон, порядок расчётов, приёмки, обмена документами и критичные для бизнеса условия.'
     },
     {
-      title: 'Проверит документы и полномочия',
+      title: (
+        <>
+          Проверит документы <br />и полномочия
+        </>
+      ),
       desc: 'Сопоставит договор, приложения, спецификации, доверенности, переписку и имеющиеся подтверждения исполнения.'
     },
     {
@@ -557,13 +589,28 @@ export default function DogovornoePravoClient() {
       {/* ═══ 2. СИТУАЦИИ ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              С какой договорной задачей <br />вы столкнулись
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Помогаем бизнесу на разных стадиях договорной работы — до подписания, в процессе исполнения и при возникновении разногласий. Выберите ситуацию, которая ближе к вашей задаче.
-            </p>
+          <div className="situations-header-row" style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            gap: '32px',
+            marginBottom: '48px',
+            flexWrap: 'wrap'
+          }}>
+            <div style={{ flex: '1 1 340px' }}>
+              <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', margin: 0, lineHeight: 1.2 }}>
+                С какой договорной задачей <br />вы столкнулись
+              </h2>
+            </div>
+            <div className="situations-subtitle-right" style={{
+              flex: '1 1 380px',
+              maxWidth: '540px',
+              textAlign: 'right'
+            }}>
+              <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+                Помогаем бизнесу на разных стадиях договорной работы — до подписания, в процессе исполнения и при возникновении разногласий. Выберите ситуацию, которая ближе к вашей задаче.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
@@ -748,7 +795,7 @@ export default function DogovornoePravoClient() {
               className="card service-card service-card-span-2"
               style={{
                 gridColumn: 'span 2',
-                padding: '30px',
+                padding: '32px 36px',
                 background: 'var(--color-deep-blue)',
                 border: '1px solid transparent',
                 borderRadius: '0',
@@ -756,7 +803,7 @@ export default function DogovornoePravoClient() {
                 flexDirection: 'row',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                gap: '24px',
+                gap: '28px',
                 transition: 'all 0.3s',
                 position: 'relative',
                 borderTop: '3px solid var(--color-gold)',
@@ -775,26 +822,29 @@ export default function DogovornoePravoClient() {
                   }
                 }
                 .white-btn-custom {
-                  background-color: #FFFFFF !important;
+                  background-color: var(--color-white) !important;
                   color: #10273B !important;
-                  border: 1px solid #FFFFFF !important;
+                  border: 1px solid var(--color-white) !important;
                   white-space: nowrap;
                   font-weight: 600;
-                  padding: 10px 20px !important;
-                  font-size: 13.5px !important;
+                  padding: 14px 28px !important;
+                  font-size: 15px !important;
                   transition: all 0.3s ease !important;
                 }
                 .white-btn-custom:hover {
-                  background-color: var(--color-gold) !important;
-                  color: #10273B !important;
-                  border-color: var(--color-gold) !important;
+                  background-color: var(--color-primary) !important;
+                  color: var(--color-white) !important;
+                  border-color: var(--color-primary) !important;
+                }
+                .white-btn-custom span {
+                  color: inherit !important;
                 }
               `}} />
               <div style={{ flex: '1 1 320px' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.35, fontWeight: 600 }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3, fontWeight: 600 }}>
                   Не нашли свою ситуацию?
                 </h3>
-                <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55, maxWidth: '580px' }}>
+                <p style={{ margin: '0', fontSize: '16px', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.55, maxWidth: '580px' }}>
                   Договорная задача может затрагивать расчёты, налоги или будущий спор. Опишите детали в форме — определим подходящий формат помощи.
                 </p>
               </div>
@@ -805,7 +855,7 @@ export default function DogovornoePravoClient() {
                   style={{ display: 'inline-block', textAlign: 'center', textDecoration: 'none' }}
                   onClick={() => setActiveContext('custom-situation')}
                 >
-                  <span style={{ color: '#10273B', fontWeight: 600 }}>Получить консультацию</span>
+                  <span>Получить консультацию</span>
                 </a>
               </div>
             </div>
@@ -813,51 +863,89 @@ export default function DogovornoePravoClient() {
         </div>
       </section>
 
-      {/* ═══ 4. КАКИЕ ДОГОВОРЫ ПРОВЕРЯЕМ ═══ */}
+      {/* ═══ 4. С КАКИМИ ДОГОВОРАМИ РАБОТАЕМ (ПО ШАБЛОНУ КАРТОЧКИ-НАВИГАТОРА) ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Работаем с основными <br />договорами бизнеса
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Содержание проверки зависит не от названия документа, а от сделки, распределения обязанностей, порядка расчётов и доказательств исполнения.
-            </p>
-          </div>
-
+          {/* Темно-синяя карточка-навигатор */}
           <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '12px',
-            marginBottom: '24px'
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            position: 'relative'
           }}>
-            {contractTypes.map((item, idx) => (
-              <span
-                key={idx}
-                style={{
-                  background: 'var(--color-bg-light)',
-                  border: '1px solid var(--color-border)',
-                  padding: '10px 18px',
-                  fontSize: '14.5px',
-                  color: 'var(--color-deep-blue)',
-                  fontWeight: 500,
-                  display: 'inline-block'
-                }}
-              >
-                {item}
-              </span>
-            ))}
-          </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+              <div>
+                <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  С какими договорами работаем
+                </h2>
+              </div>
+              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '520px', lineHeight: 1.5 }}>
+                <span style={{ display: 'block' }}>Разрабатываем и проверяем типовые, нестандартные</span>
+                <span style={{ display: 'block' }}>и смешанные договоры для коммерческих компаний.</span>
+              </div>
+            </div>
 
-          <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', margin: 0 }}>
-            Строительный подряд относится к отраслевому направлению{' '}
-            <Link
-              href="/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/"
-              style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}
+            <div className="grid grid-4" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
+              {contractCategories.map((cat, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    padding: '22px 20px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '10px'
+                  }}
+                >
+                  <h3 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                    <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>
+                      {cat.num}
+                    </span>
+                    <span>{cat.title}</span>
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                    {cat.items}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Шаблонная плашка внутри карточки */}
+            <div
+              style={{
+                marginTop: '20px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderLeft: '3px solid var(--color-gold)',
+                padding: '14px 18px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                position: 'relative',
+                zIndex: 1
+              }}
             >
-              юриста по недвижимости и строительству для бизнеса
-            </Link>.
-          </p>
+              <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="16" x2="12" y2="12" />
+                  <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+              </div>
+              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55 }}>
+                Строительный подряд относится к отраслевому направлению{' '}
+                <Link
+                  href="/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/"
+                  style={{ color: 'var(--color-gold)', fontWeight: 600, textDecoration: 'underline' }}
+                >
+                  юриста по недвижимости и строительству для бизнеса
+                </Link>.
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -916,7 +1004,7 @@ export default function DogovornoePravoClient() {
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Что подготовить <br />для консультации
+              Что подготовить для консультации
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Для первого разговора достаточно кратко описать задачу и назвать стадию. Для содержательного анализа обычно понадобятся документы ниже:

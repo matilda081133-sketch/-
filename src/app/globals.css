@@ -169,6 +169,7 @@ h4 { font-size: 1.25rem; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 44px;
   padding: 16px 36px;
   background-color: var(--color-primary);
   color: #FFFFFF !important;
@@ -1553,4 +1554,33 @@ summary:focus-visible {
 .risk-card-item--navy {
   --item-accent-color: var(--color-primary);
 }
+
+/* Situations Header Two-Column & Geography Instances Responsiveness */
+@media (max-width: 768px) {
+  .situations-header-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+  .situations-subtitle-right {
+    text-align: left !important;
+    max-width: 100% !important;
+  }
+
+  .geography-instances-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .geography-instances-grid > div {
+    border-left: none !important;
+    padding-left: 0 !important;
+    border-bottom: 1px solid rgba(193, 160, 102, 0.28);
+    padding-bottom: 16px;
+  }
+  .geography-instances-grid > div:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+}
+
 
