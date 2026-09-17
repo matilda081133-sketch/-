@@ -212,7 +212,7 @@ export default function AdvokatNarkotikiClient() {
   const faqItems = [
   {
     "q": "Каковы последствия признания вины в сбыте на первом допросе?",
-    "a": "Первичные признательные показания, данные в присутствии адвоката по назначению, суды почти всегда кладут в основу обвинительного приговора. Крайне важно не давать никаких показаний по ст. 51 Конституции РФ до консультации с выбранным адвокатом."
+    "a": "Признательные показания могут получить существенное доказательственное значение, особенно если они даны в присутствии защитника. До допроса важно конфиденциально обсудить со специалистом процессуальный статус, известные обстоятельства и риски. Решение использовать статью 51 Конституции РФ принимается применительно к конкретным вопросам и ситуации, а не как универсальное решение."
   },
   {
     "q": "Можно ли переквалифицировать сбыт (ст. 228.1) на хранение (ст. 228)?",
@@ -321,7 +321,7 @@ export default function AdvokatNarkotikiClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Дела о наркотиках</span>
           </>
         }
-        superTitle="Защита по ст. 228, 228.1, 229 УК РФ • Липецк"
+        superTitle="ЗАЩИТА ПО СТ. 228 И 228.1 УК РФ • ЛИПЕЦК И ОБЛАСТЬ"
         title={
           <span style={{ display: 'block', maxWidth: '100%' }}>
             <span style={{ display: 'block' }}>Адвокат по делам</span>
@@ -473,6 +473,371 @@ export default function AdvokatNarkotikiClient() {
                 </a>
               </div>
             ))}
+          </div>
+
+
+          {/* ═══ СОДЕРЖАТЕЛЬНЫЕ БЛОКИ ИЗ ТЗ ПО ДЕЛАМ О НАРКОТИКАХ ═══ */}
+
+          {/* РАЗДЕЛ 1: ЧТО ПРОИЗОШЛО И НА КАКОЙ СТАДИИ НАХОДИТСЯ ДЕЛО */}
+          <div style={{ marginTop: '56px', marginBottom: '56px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '32px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Маршрутизатор по стадии
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Что произошло и на какой стадии находится дело
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Первые действия определяют дальнейший ход расследования. Подключаем адвоката на любой стадии дела.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '24px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '28px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '10px' }}>
+                    Срочно: Задержание / Обыск
+                  </span>
+                  <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.3 }}>
+                    Меня задержали или идёт обыск
+                  </h4>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                    Первая задача — установить точное место, орган и процессуальный статус; подключить адвоката до ключевых объяснений и первого допроса, чтобы исключить давление и самооговор.
+                  </p>
+                </div>
+                <div style={{ marginTop: '20px' }}>
+                  <a href="tel:+74742201525" className="btn btn-primary" style={{ display: 'inline-block', width: '100%', textAlign: 'center', padding: '12px 20px', fontSize: '14px' }} data-analytics="phone_click">
+                    Позвонить адвокату
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '28px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '10px' }}>
+                    Стадия расследования
+                  </span>
+                  <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.3 }}>
+                    Дело расследуется
+                  </h4>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                    Первая задача — получить и изучить документы, проверить квалификацию, допустимость доказательств, выводы химической экспертизы и спланировать ближайшие процессуальные действия.
+                  </p>
+                </div>
+                <div style={{ marginTop: '20px' }}>
+                  <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', width: '100%', textAlign: 'center', padding: '12px 20px', fontSize: '14px' }}>
+                    Передать ситуацию на анализ
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid #4A6B82', padding: '28px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '10px' }}>
+                    Помощь родственникам
+                  </span>
+                  <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.3 }}>
+                    Ищу защиту близкому
+                  </h4>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                    Первая задача — собрать минимум данных о задержании и незамедлительно организовать конфиденциальный контакт адвоката с доверителем в ИВС или СИЗО.
+                  </p>
+                </div>
+                <div style={{ marginTop: '20px' }}>
+                  <a href="#form" className="btn btn-outline" style={{ display: 'inline-block', width: '100%', textAlign: 'center', padding: '12px 20px', fontSize: '14px' }}>
+                    Помочь близкому
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid #10273B', padding: '28px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '10px' }}>
+                    Судебная стадия
+                  </span>
+                  <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.3 }}>
+                    Дело в суде
+                  </h4>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                    Первая задача — изучить обвинительное заключение и все тома материалов уголовного дела, определить предмет судебного спора и разработать план защиты.
+                  </p>
+                </div>
+                <div style={{ marginTop: '20px' }}>
+                  <a href="#form" className="btn btn-outline" style={{ display: 'inline-block', width: '100%', textAlign: 'center', padding: '12px 20px', fontSize: '14px' }}>
+                    Нужна защита в суде
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* РАЗДЕЛ 2: ХРАНЕНИЕ ИЛИ УМЫСЕЛ НА СБЫТ */}
+          <div style={{ marginTop: '56px', marginBottom: '56px', background: 'var(--gradient-cream)', padding: '40px 36px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)' }}>
+            <div style={{ maxWidth: '850px', marginBottom: '28px' }}>
+              <h3 style={{ fontSize: 'clamp(22px, 2.8vw, 32px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Хранение или умысел на сбыт
+              </h3>
+              <p style={{ fontSize: '15.5px', color: 'var(--color-deep-blue)', opacity: 0.95, margin: 0, lineHeight: 1.65, fontWeight: 500 }}>
+                Разграничение хранения без цели сбыта (ст. 228 УК РФ) и сбыта либо покушения на него (ст. 228.1 УК РФ) — фундаментальный вопрос защиты. Для переквалификации обвинения исследуются обстоятельства приобретения, количество, фасовка, цифровые следы и фактические действия.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', padding: '24px 20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Обстоятельства приобретения
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Когда, где и каким способом объект оказался у лица; подтверждается ли версия личного употребления независимыми данными и показаниями.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '24px 20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Количество и упаковка
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Как объект обнаружен и упакован, изменялась ли упаковка при изъятии, обнаружены ли весы, зиплоки, упаковочные материалы.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '24px 20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Цифровые следы
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Кому принадлежали устройство и аккаунт, полный ли контекст извлечён, совпадают ли время, геолокация фото и действия участника.
+                </p>
+              </div>
+            </div>
+
+            <div style={{ marginTop: '20px', background: '#FFFFFF', padding: '16px 20px', borderLeft: '3px solid var(--color-primary)', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+              <strong style={{ color: 'var(--color-deep-blue)' }}>Важно: </strong>
+              Страница не должна обещать автоматическую переквалификацию. Даже отсутствие факта передачи не всегда исключает обвинение в покушении на сбыт: значение имеют установленный умысел и совершённые действия.
+            </div>
+          </div>
+
+          {/* РАЗДЕЛ 3: РАЗМЕР, ВЕЩЕСТВО И РЕЗУЛЬТАТЫ ЭКСПЕРТИЗЫ */}
+          <div style={{ marginTop: '56px', marginBottom: '56px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '32px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Судебно-химическая экспертиза
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Размер, вещество и результаты экспертизы
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Квалификация по конкретной части статьи зависит от размера вещества: значительный, крупный или особо крупный. Тщательно проверяем справку об исследовании и заключение эксперта.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '24px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px', borderTop: '3px solid var(--color-primary)' }}>
+                <h4 style={{ fontSize: '17.5px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Методика исследования
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Проверяем соблюдение методических рекомендаций ЭКЦ МВД, методику высушивания до постоянной массы, определение влажности и разделение нейтральных наполнителей от активного наркотического вещества.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px', borderTop: '3px solid var(--color-gold)' }}>
+                <h4 style={{ fontSize: '17.5px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Расчёт массы и размера
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Сопоставляем выводы эксперта с Постановлением Правительства РФ № 1002. В ряде случаев исключение нейтральных примесей позволяет снизить размер с крупного до значительного, что кардинально меняет санкцию.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px', borderTop: '3px solid #4A6B82' }}>
+                <h4 style={{ fontSize: '17.5px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Целостность и опечатывание
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Анализируем сохранность упаковки, целостность пломб и пояснительных надписей понятых при передаче объекта из места изъятия в экспертное учреждение. Нарушение опечатывания влечёт недопустимость заключения.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* РАЗДЕЛ 4: ПРОВЕРКА ЗАКУПКИ, НАБЛЮДЕНИЯ И ДРУГИХ ОРМ */}
+          <div style={{ marginTop: '56px', marginBottom: '56px', background: '#F8FAFC', padding: '40px 36px', border: '1px solid var(--color-border)' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '32px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Оперативно-розыскная деятельность
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Проверка закупки, наблюдения и других ОРМ
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Материалы оперативного эксперимента, проверочной закупки и наблюдения подлежат строгой проверке на соответствие требованиям Федерального закона «Об ОРД».
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '24px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px' }}>
+                <strong style={{ fontSize: '17px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '10px', fontFamily: 'var(--font-serif)' }}>
+                  Основания проведения ОРМ
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Проверяем наличие официального постановления руководителя органа на проведение закупки, наличие предварительной оперативной информации о признаках сбыта и законность привлечения агента.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px' }}>
+                <strong style={{ fontSize: '17px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '10px', fontFamily: 'var(--font-serif)' }}>
+                  Исключение провокации
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Выявляем факты активного склонения, настойчивых уговоров или давления со стороны оперативных сотрудников и закупщика. Признаки провокации влекут признание результатов ОРМ недопустимыми доказательствами.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px' }}>
+                <strong style={{ fontSize: '17px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '10px', fontFamily: 'var(--font-serif)' }}>
+                  Порядок рассекречивания
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Контролируем соблюдение Инструкции о порядке представления результатов ОРД следователю или в суд, а также процедуру осмотра и выдачи денежных средств закупщику.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* РАЗДЕЛ 5: ОБЫСК, ДОСМОТР, ИЗЪЯТИЕ И ПОНЯТЫЕ */}
+          <div style={{ marginTop: '56px', marginBottom: '56px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '32px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Процессуальные нарушения
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Обыск, досмотр, изъятие и понятые
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Нарушение установленного законом порядка обнаружения, изъятия и фиксации предметов лишает протокол юридической силы на основании ст. 75 УПК РФ.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '24px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px', borderTop: '3px solid var(--color-primary)' }}>
+                <h4 style={{ fontSize: '17.5px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Протоколы досмотра и обыска
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Проверяем законность оснований остановки и досмотра, наличие судебного решения при обыске в жилище, разъяснение процессуальных прав и правильность внесения замечаний участниками.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px', borderTop: '3px solid var(--color-gold)' }}>
+                <h4 style={{ fontSize: '17.5px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Статус и участие понятых
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Проверяем незаинтересованность понятых (исключение штатных стажёров или зависимых лиц), их непрерывное присутствие при обнаружении веществ и соответствие их показаний тексту протокола.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px', borderTop: '3px solid #4A6B82' }}>
+                <h4 style={{ fontSize: '17.5px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Фиксация смывов и срезов
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Анализируем правильность изъятия смывов с рук, срезов ногтевых пластин и карманов одежды. Отсутствие следов на теле и одежде опровергает контакт лица с изъятым веществом.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* РАЗДЕЛ 6: ВОЗМОЖНЫЕ ПРАВОВЫЕ МАРШРУТЫ */}
+          <div style={{ marginTop: '56px', marginBottom: '56px', background: '#FAF7F2', padding: '40px 36px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '32px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Стратегия защиты
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Возможные правовые маршруты
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Направление работы выстраивается индивидуально в зависимости от доказательств, квалификации и стадии производства по делу.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '24px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px' }}>
+                <strong style={{ fontSize: '17.5px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '10px', fontFamily: 'var(--font-serif)' }}>
+                  Срочная защита после задержания
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Адвокат устанавливает статус и место нахождения доверителя, проводит конфиденциальную консультацию, участвует в допросе в качестве подозреваемого и фиксирует юридически значимые обстоятельства.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px' }}>
+                <strong style={{ fontSize: '17.5px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '10px', fontFamily: 'var(--font-serif)' }}>
+                  Защита на предварительном расследовании
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Изучаются протоколы, экспертизы, цифровые и оперативные материалы; заявляются ходатайства и жалобы; проверяются обоснованность каждого эпизода, квалификация, роль и мера пресечения.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px' }}>
+                <strong style={{ fontSize: '17.5px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '10px', fontFamily: 'var(--font-serif)' }}>
+                  Оспаривание цели сбыта или роли
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Подходит, когда обвинение выводит умысел или соучастие из косвенных признаков. Стратегия строится на полном контексте и индивидуальных действиях для переквалификации на хранение.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px' }}>
+                <strong style={{ fontSize: '17.5px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '10px', fontFamily: 'var(--font-serif)' }}>
+                  Защита в суде
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Команда сопоставляет обвинение с исследованными доказательствами, представляет позицию, допрашивает участников, понятых и экспертов, добиваясь оценки каждого спорного обстоятельства.
+                </p>
+              </div>
+            </div>
+
+            <div style={{ marginTop: '20px', background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+              <strong style={{ color: 'var(--color-deep-blue)' }}>Ограничение: </strong>
+              Нельзя обещать освобождение, прекращение дела, исключение доказательства, переквалификацию или наказание без лишения свободы. Возможность каждого результата определяется после изучения материалов и зависит от решений следствия и суда.
+            </div>
+          </div>
+
+          {/* РАЗДЕЛ 7: КАКИЕ ДОКУМЕНТЫ НУЖНЫ ДЛЯ ПЕРВИЧНОГО АНАЛИЗА */}
+          <div style={{ marginTop: '56px', marginBottom: '56px', background: '#FFFFFF', padding: '40px 36px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Какие документы нужны для первичного анализа
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Для предметной оценки перспектив по статьям 228 и 228.1 УК РФ рекомендуется подготовить следующие процессуальные документы:
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px', marginBottom: '28px' }}>
+              {[
+                'повестку, протокол задержания, постановления о возбуждении дела, привлечении в качестве обвиняемого и мере пресечения — если они есть;',
+                'протокол личного обыска, осмотра, обыска, выемки и приложения к ним;',
+                'опись изъятого, сведения об упаковке и копии документов, выданных после процессуального действия;',
+                'справку об исследовании, постановление о назначении экспертизы и заключение эксперта;',
+                'протоколы допросов, очных ставок, предъявления для опознания и других действий;',
+                'обвинительное заключение и судебные извещения, если дело уже передано в суд;',
+                'краткую хронологию событий, известные данные об органе и ближайшие даты.'
+              ].map((item, idx) => (
+                <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: '#F8FAFC', padding: '16px 18px', border: '1px solid var(--color-border)' }}>
+                  <div style={{ width: '8px', height: '8px', minWidth: '8px', background: 'var(--color-gold)', borderRadius: '50%', marginTop: '7px' }}></div>
+                  <span style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-primary)', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+              Если документы не выданы или находятся у следователя, это не препятствует первичному разговору. Не загружать материалы через публичные комментарии и рекламные формы; безопасный способ передачи согласовать после контакта.
+            </div>
           </div>
 
           {/* Сопутствующие уголовные услуги */}

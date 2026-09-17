@@ -446,6 +446,302 @@ export default function AdvokatMoshennichestvoClient() {
             ))}
           </div>
 
+
+          {/* ═══ СОДЕРЖАТЕЛЬНЫЕ БЛОКИ ИЗ ТЗ ПО МОШЕННИЧЕСТВУ ═══ */}
+
+          {/* РАЗДЕЛ 1: ВАША РОЛЬ И СТАДИЯ ДЕЛА */}
+          <div style={{ marginTop: '56px', marginBottom: '56px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '32px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Маршрутизатор по статусу
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Ваша роль и стадия дела
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Первоочередные процессуальные действия зависят от вашего статуса и этапа дела. Не делайте поспешных заявлений до выработки защитной стратегии.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '24px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '28px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '10px' }}>
+                    Статус: Проверяемый / Обвиняемый
+                  </span>
+                  <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.3 }}>
+                    Меня проверяют или обвиняют
+                  </h4>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                    Главная задача — не допустить формирования необдуманной позиции. Оцениваем состав преступления, направленность и момент возникновения умысла, обоснованность размера ущерба, индивидуальную роль и допустимость доказательств. Адвокат подключается до первого опроса или допроса.
+                  </p>
+                </div>
+                <div style={{ marginTop: '20px' }}>
+                  <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', width: '100%', textAlign: 'center', padding: '12px 20px', fontSize: '14px' }}>
+                    Нужна защита
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '28px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '10px' }}>
+                    Срочно: Задержание близкого
+                  </span>
+                  <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.3 }}>
+                    Ищу адвоката для близкого
+                  </h4>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                    Главная задача — экстренно установить подразделение (ОЭБиПК, следственный отдел МВД или СК), точное место нахождения задержанного, процессуальный статус и планируемые действия. Организуем срочный выезд адвоката для конфиденциального свидания до ключевого допроса.
+                  </p>
+                </div>
+                <div style={{ marginTop: '20px' }}>
+                  <a href="#form" className="btn btn-primary" style={{ display: 'inline-block', width: '100%', textAlign: 'center', padding: '12px 20px', fontSize: '14px' }}>
+                    Помочь близкому
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid #4A6B82', padding: '28px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '10px' }}>
+                    Статус: Потерпевший
+                  </span>
+                  <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.3 }}>
+                    Я пострадал от мошенничества
+                  </h4>
+                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                    Главная задача — зафиксировать доказательства хищения, не допустить формального отказа в возбуждении уголовного дела под предлогом гражданско-правового спора, добиться признания потерпевшим и гражданским истцом и наложить арест на имущество виновных для возмещения вреда.
+                  </p>
+                </div>
+                <div style={{ marginTop: '20px' }}>
+                  <a href="#form" className="btn btn-outline" style={{ display: 'inline-block', width: '100%', textAlign: 'center', padding: '12px 20px', fontSize: '14px' }}>
+                    Защитить права потерпевшего
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* РАЗДЕЛ 2: МОШЕННИЧЕСТВО ИЛИ ГРАЖДАНСКО-ПРАВОВОЙ СПОР */}
+          <div style={{ marginTop: '56px', marginBottom: '56px', background: 'var(--gradient-cream)', padding: '40px 36px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)' }}>
+            <div style={{ maxWidth: '850px', marginBottom: '28px' }}>
+              <h3 style={{ fontSize: 'clamp(22px, 2.8vw, 32px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Мошенничество или гражданско-правовой спор
+              </h3>
+              <p style={{ fontSize: '15.5px', color: 'var(--color-deep-blue)', opacity: 0.95, margin: 0, lineHeight: 1.65, fontWeight: 500 }}>
+                Само по себе неисполнение договора, задержка возврата денег, убыток или банкротство контрагента не дают автоматического ответа о наличии мошенничества. Для статьи 159 УК РФ исследуют, было ли хищение путём обмана или злоупотребления доверием, когда возник умысел на завладение имуществом и какие действия подтверждают либо опровергают намерение исполнить обязательство.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', padding: '24px 20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Переговоры до передачи имущества
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Показывают, какая информация сообщалась и могла ли она вводить контрагента в заблуждение относительно условий и намерений.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '24px 20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Роль каждого участника
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Совместная работа, служебное подчинение или знакомство сами по себе не доказывают общий преступный умысел и конкретную роль.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '24px 20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Размер и характер ущерба
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Расчёт должен опираться на фактические операции, стоимость имущества и применимые правила квалификации без необоснованных начислений.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* РАЗДЕЛ 3: ЧТО МОЖЕТ ПОДТВЕРЖДАТЬ ИЛИ ОПРОВЕРГАТЬ УМЫСЕЛ */}
+          <div style={{ marginTop: '56px', marginBottom: '56px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '32px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Субъективная сторона
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Что может подтверждать или опровергать умысел
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Для квалификации по ст. 159 УК РФ следствие обязано доказать прямой корыстный умысел, направленный на безвозмездное изъятие чужого имущества.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '24px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '28px 24px', borderTop: '3px solid var(--color-primary)' }}>
+                <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.35 }}>
+                  Момент возникновения умысла
+                </h4>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Для договорного мошенничества принципиально, существовал ли умысел до получения имущества или права на него. Если обязательство не исполнено из-за последующих объективных финансовых или хозяйственных трудностей, уголовная ответственность исключается.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '28px 24px', borderTop: '3px solid var(--color-gold)' }}>
+                <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.35 }}>
+                  Ресурсы и реальные действия
+                </h4>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Закупки, наём сотрудников, договоры с подрядчиками, частичное исполнение обязательств и деловая переписка подтверждают реальное намерение исполнить сделку и служат главным доказательством отсутствия первоначального обмана.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '28px 24px', borderTop: '3px solid #4A6B82' }}>
+                <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.35 }}>
+                  Внешние объективные факторы
+                </h4>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Срыв поставок контрагентами, блокировка счетов кредитными организациями, изменения законодательства, валютные колебания и форс-мажор доказывают предпринимательский риск, а не преднамеренное преступное завладение активами.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* РАЗДЕЛ 4: ДОГОВОРЫ, ПЛАТЕЖИ И ЭЛЕКТРОННАЯ ПЕРЕПИСКА */}
+          <div style={{ marginTop: '56px', marginBottom: '56px', background: '#F8FAFC', padding: '40px 36px', border: '1px solid var(--color-border)' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '32px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Доказательственная база
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Договоры, платежи и электронная переписка
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Письменные и цифровые следы служат объективной основой доказывания действительных взаимоотношений сторон сделки.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '24px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px' }}>
+                <strong style={{ fontSize: '17px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '10px', fontFamily: 'var(--font-serif)' }}>
+                  Движение денег и имущества
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Важно установить точное назначение операций, конечных получателей, встречные поставки, произведённые возвраты и прямую связь платежей с обязательством. Анализируем банковские выписки и назначения платежей.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px' }}>
+                <strong style={{ fontSize: '17px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '10px', fontFamily: 'var(--font-serif)' }}>
+                  Договорная и первичная база
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Договоры, спецификации, товарные накладные, акты приёма-передачи, путевые листы и доверенности. Проверяем полномочия подписантов, подлинность подписей и соответствие фактической хронологии хозяйственных операций.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '26px 22px' }}>
+                <strong style={{ fontSize: '17px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '10px', fontFamily: 'var(--font-serif)' }}>
+                  Электронная переписка и коммуникация
+                </strong>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Корпоративная почта, сообщения в мессенджерах, аудиозаписи и протоколы разногласий помогают восстановить контекст переговоров и подтверждают отсутствие намеренного введения контрагента в заблуждение.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* РАЗДЕЛ 5: ВОЗМОЖНЫЕ ПРАВОВЫЕ МАРШРУТЫ */}
+          <div style={{ marginTop: '56px', marginBottom: '56px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '32px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Процессуальная стратегия
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Возможные правовые маршруты
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Направление работы зависит от стадии рассмотрения материала, состава участников и собранных доказательств.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '24px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '28px', borderLeft: '4px solid var(--color-primary)' }}>
+                <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Защита до возбуждения дела
+                </h4>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Подходит при проверке сообщения о преступлении (в порядке ст. 144–145 УПК РФ). Анализируем запросы и документы, готовим участие доверителя в опросах и даче объяснений, представляем значимые оправдательные материалы и обжалуем незаконные действия проверяющих при наличии оснований.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '28px', borderLeft: '4px solid var(--color-gold)' }}>
+                <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Защита на предварительном расследовании
+                </h4>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Проверяем законность возбуждения дела и предъявленного обвинения, участвуем в следственных действиях (допросы, очные ставки, обыски), заявляем ходатайства и жалобы, работаем с квалификацией, индивидуальной ролью, размером ущерба и мерой пресечения.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '28px', borderLeft: '4px solid #10273B' }}>
+                <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Защита в суде
+                </h4>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Формируем судебную позицию, участвуем в судебном следствии, исследовании доказательств, перекрёстных допросах свидетелей и прениях сторон. Объём работы определяется после детального ознакомления со всеми материалами уголовного дела и обвинительным заключением.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '28px', borderLeft: '4px solid #4A6B82' }}>
+                <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Представительство потерпевшего
+                </h4>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Собираем и структурируем документы, сопровождаем подачу заявления о преступлении и процессуальные действия, заявляем гражданский иск и ходатайства, направленные на арест счетов и активов виновных лиц для обеспечения реального возмещения вреда.
+                </p>
+              </div>
+            </div>
+
+            <div style={{ marginTop: '20px', background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+              <strong style={{ color: 'var(--color-deep-blue)' }}>Ограничение: </strong>
+              Конкретный маршрут и возможный процессуальный результат определяются только после изучения фактов. На странице нельзя обещать отказ в возбуждении дела, прекращение преследования, изменение меры пресечения, оправдательный приговор или возврат всей суммы.
+            </div>
+          </div>
+
+          {/* РАЗДЕЛ 6: ЧТО ПРЕДОСТАВИТЬ ДЛЯ ПЕРВИЧНОГО АНАЛИЗА */}
+          <div style={{ marginTop: '56px', marginBottom: '56px', background: '#FAF7F2', padding: '40px 36px', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Что предоставить для первичного анализа
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Если у вас имеются перечисленные документы, подготовьте их к первой консультации для максимально точной оценки перспектив:
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px', marginBottom: '28px' }}>
+              {[
+                'повестку, уведомление, постановление о возбуждении дела, привлечении в качестве обвиняемого или избрании меры пресечения — если они есть;',
+                'протоколы обыска, выемки, задержания, допросов и перечень изъятого имущества и документов;',
+                'договоры, приложения, акты, счета, накладные, деловую переписку и документы об исполнении обязательств;',
+                'банковские выписки, платёжные поручения, расписки и сведения о возвратах денежных средств;',
+                'заключения экспертов, ревизий, аудиторских исследований и расчёт предполагаемого ущерба;',
+                'краткую хронологию событий, перечень участников и ближайшие известные процессуальные даты.'
+              ].map((item, idx) => (
+                <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', background: '#FFFFFF', padding: '16px 18px', border: '1px solid var(--color-border)' }}>
+                  <div style={{ width: '8px', height: '8px', minWidth: '8px', background: 'var(--color-gold)', borderRadius: '50%', marginTop: '7px' }}></div>
+                  <span style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ background: 'rgba(255, 255, 255, 0.8)', padding: '16px 20px', borderLeft: '3px solid var(--color-primary)', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+              Если документов нет или они изъяты, всё равно можно обратиться. Не пересылайте материалы через публичные комментарии и рекламные формы; способ безопасной передачи согласуйте с командой.
+            </div>
+          </div>
+
           {/* Сопутствующие уголовные услуги */}
           <div style={{ background: '#F4F5F7', padding: '24px 28px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)' }}>
             <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>

@@ -15,7 +15,19 @@ export const metadata: Metadata = {
     url: 'https://dejure-help.ru/biznesu/arbitrazhnyj-yurist/obzhalovanie-resheniya-arbitrazhnogo-suda/',
     type: 'website',
     locale: 'ru_RU',
-    siteName: 'Юридическая компания «Де-Юре»'
+    siteName: 'Юридическая компания «Де-Юре»',
+    images: [
+      {
+        url: 'https://dejure-help.ru/images/og/obzhalovanie-resheniya-arbitrazhnogo-suda.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Обжалование решения арбитражного суда — ЮК Де-Юре'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://dejure-help.ru/images/og/obzhalovanie-resheniya-arbitrazhnogo-suda.jpg']
   }
 };
 
