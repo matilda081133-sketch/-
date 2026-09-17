@@ -116,10 +116,21 @@ export default function RazrabotkaEkspertizaClient() {
     }
   ];
 
-  const formats = [
+  const formats: {
+    badge: string;
+    title: React.ReactNode;
+    desc: string;
+    result: string;
+    context: string;
+    cta: string;
+  }[] = [
     {
       badge: 'Формат 01',
-      title: 'Разработка договора с нуля',
+      title: (
+        <>
+          Разработка договора<br />с&nbsp;нуля
+        </>
+      ),
       desc: 'Создаём договор под конкретную коммерческую модель, регламенты и документооборот компании. Включаем необходимые приложения и акты.',
       result: 'Готовый рабочий проект договора и комплект приложений.',
       context: 'drafting',
