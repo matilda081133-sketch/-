@@ -172,17 +172,15 @@ export default function SporyPoOsagoClient() {
         imageObjectPosition="center 25%"
       />
 
-      {/* ═══ БЛОК 2: С КАКИМИ НАРУШЕНИЯМИ ОБРАЩАЮТСЯ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 2: С КАКИМИ НАРУШЕНИЯМИ ОБРАЩАЮТСЯ (ШАБЛОН «СИТУАЦИИ») ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Когда спор со страховой</span> <br />
-              <span style={{ display: 'inline-block' }}>требует проверки</span>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              Когда спор со страховой требует проверки
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Помогаем потерпевшим при любых разногласиях со страховой компанией:</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>от занижения выплаты и затягивания сроков до срыва ремонта на СТО.</span>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Помогаем потерпевшим при любых разногласиях со страховой компанией: от занижения выплаты и затягивания сроков до срыва ремонта на СТО.
             </p>
           </div>
 
@@ -191,89 +189,131 @@ export default function SporyPoOsagoClient() {
               {
                 tag: 'Недоплата',
                 title: 'Страховая выплатила меньше ожидаемого',
-                desc: 'Не учтены повреждения, работы или детали; спорна причинная связь; расчёт не позволяет восстановить автомобиль.'
+                desc: 'Не учтены повреждения, работы или детали; спорна причинная связь; расчёт не позволяет восстановить автомобиль.',
+                btnText: 'Проверить расчёт'
               },
               {
                 tag: 'Отказ',
                 title: 'В страховой выплате отказали',
-                desc: 'Страховщик ссылается на отсутствие страхового случая, неполный пакет документов, обстоятельства ДТП или иные основания.'
+                desc: 'Страховщик ссылается на отсутствие страхового случая, неполный пакет документов, обстоятельства ДТП или иные основания.',
+                btnText: 'Оспорить отказ'
               },
               {
                 tag: 'Сроки',
                 title: 'Затянули принятие решения',
-                desc: 'Нет страховой выплаты, направления на ремонт или мотивированного письменного ответа в установленный законом 20-дневный срок.'
+                desc: 'Нет страховой выплаты, направления на ремонт или мотивированного письменного ответа в установленный законом 20-дневный срок.',
+                btnText: 'Ускорить выплату'
               },
               {
                 tag: 'СТО',
                 title: 'Проблемы с направлением на ремонт',
-                desc: 'Станция техобслуживания не принимает автомобиль, требует доплату, не согласует работы или нарушает требования закона.'
+                desc: 'Станция техобслуживания не принимает автомобиль, требует доплату, не согласует работы или нарушает требования закона.',
+                btnText: 'Защитить права на СТО'
               },
               {
                 tag: 'Качество',
                 title: 'Ремонт затягивается или выполнен плохо',
-                desc: 'Нарушены сроки восстановительного ремонта, часть повреждений не устранена, обнаружены дефекты или авто вернули без ремонта.'
+                desc: 'Нарушены сроки восстановительного ремонта, часть повреждений не устранена, обнаружены дефекты или авто вернули без ремонта.',
+                btnText: 'Предъявить претензию'
               },
               {
                 tag: 'Убытки',
                 title: 'Не возместили связанные убытки',
-                desc: 'Отказ в компенсации расходов на эвакуацию, независимую экспертизу, хранение транспортного средства или утрату товарной стоимости (УТС).'
+                desc: 'Отказ в компенсации расходов на эвакуацию, независимую экспертизу, хранение транспортного средства или утрату товарной стоимости (УТС).',
+                btnText: 'Взыскать убытки'
               }
             ].map((item, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '36px 30px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease'
-              }}>
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              <div
+                key={i}
+                className="card hover-lift"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '32px 28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
 
-                <div style={{
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.tag}
+                <div>
+                  {item.tag && (
+                    <div style={{
+                      fontSize: '11.5px',
+                      fontWeight: 700,
+                      color: 'var(--color-primary)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                      marginBottom: '12px',
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '3px 8px',
+                      display: 'inline-block',
+                      borderRadius: '2px'
+                    }}>
+                      {item.tag}
+                    </div>
+                  )}
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '18px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35
+                  }}>
+                    {item.title}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0
+                  }}>
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '18px',
-                  fontWeight: 600,
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 14px 0',
-                  lineHeight: 1.35,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.title}
-                </h3>
-                <p style={{
-                  fontSize: '15px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  margin: 0,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.desc}
-                </p>
+
+                <a
+                  href="#form"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13.5px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '20px',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <span>{item.btnText}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
               </div>
             ))}
           </div>
@@ -1019,14 +1059,11 @@ export default function SporyPoOsagoClient() {
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Другие автомобильные ситуации
-              </span>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Связанные услуги
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Смежные направления помощи при дорожно-транспортных</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>происшествиях и страховых спорах.</span>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Смежные направления помощи при дорожно-транспортных происшествиях и страховых спорах.
             </p>
           </div>
 
@@ -1049,9 +1086,19 @@ export default function SporyPoOsagoClient() {
             .all-services-link:hover {
               color: var(--color-gold) !important;
             }
+            @media (max-width: 991px) {
+              .related-services-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+              }
+            }
+            @media (max-width: 600px) {
+              .related-services-grid {
+                grid-template-columns: 1fr !important;
+              }
+            }
           `}} />
           
-          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
+          <div className="related-services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginBottom: '28px' }}>
             {relatedServices.map((rel, idx) => (
               <Link key={idx} href={rel.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                 <div 

@@ -173,21 +173,15 @@ export default function DtpBezOsagoClient() {
         imageObjectPosition="center 25%"
       />
 
-      {/* ═══ БЛОК 2: ЧТО ДЕЛАТЬ СРАЗУ ПОСЛЕ ДТП БЕЗ ОСАГО ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 2: ЧТО ДЕЛАТЬ СРАЗУ ПОСЛЕ ДТП БЕЗ ОСАГО (ШАБЛОН «СИТУАЦИИ») ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Если полиса нет, особенно важно
-              </span>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                правильно оформить происшествие
-              </span>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              Если полиса нет, особенно важно правильно оформить происшествие
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Чёткий алгоритм действий сразу после аварии защищает право</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>на полное возмещение причинённого имущественного вреда.</span>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Чёткий алгоритм действий сразу после аварии защищает право на полное возмещение причинённого имущественного вреда.
             </p>
           </div>
 
@@ -195,124 +189,146 @@ export default function DtpBezOsagoClient() {
             {[
               {
                 tag: 'Безопасность',
-                title: (
-                  <>
-                    <span style={{ display: 'block' }}>Выполните</span>
-                    <span style={{ display: 'block' }}>обязанности водителя</span>
-                  </>
-                ),
-                desc: 'Остановитесь, включите аварийную сигнализацию, выставьте знак; при наличии пострадавших немедленно вызовите экстренные службы.'
+                title: 'Выполните обязанности водителя',
+                desc: 'Остановитесь, включите аварийную сигнализацию, выставьте знак; при наличии пострадавших немедленно вызовите экстренные службы.',
+                btnText: 'Узнать порядок'
               },
               {
                 tag: 'Оформление',
                 title: 'Вызовите сотрудников полиции',
-                desc: 'Не оформляйте европротокол: упрощённый порядок незаконен без полиса у одного из участников. Сообщите в полицию и ждите экипаж.'
+                desc: 'Не оформляйте европротокол: упрощённый порядок незаконен без полиса у одного из участников. Сообщите в полицию и ждите экипаж.',
+                btnText: 'Как оформить ДТП'
               },
               {
                 tag: 'Фиксация',
-                title: (
-                  <>
-                    <span style={{ display: 'block' }}>Сфотографируйте</span>
-                    <span style={{ display: 'block' }}>место происшествия</span>
-                  </>
-                ),
-                desc: 'Зафиксируйте общий план, положение машин, следы торможения, дорожные знаки, разметку и детали каждого повреждения. Сохраните видеорегистратор.'
+                title: 'Сфотографируйте место происшествия',
+                desc: 'Зафиксируйте общий план, положение машин, следы торможения, дорожные знаки, разметку и детали каждого повреждения. Сохраните видеорегистратор.',
+                btnText: 'Зафиксировать ущерб'
               },
               {
                 tag: 'Контакты',
-                title: (
-                  <>
-                    <span style={{ display: 'block' }}>Запишите данные</span>
-                    <span style={{ display: 'block' }}>участников и свидетелей</span>
-                  </>
-                ),
-                desc: 'Зафиксируйте данные водителя, собственника авто, свидетелей, а также сведения о работодателе или путевом листе, если авто служебное.'
+                title: 'Запишите данные участников и свидетелей',
+                desc: 'Зафиксируйте данные водителя, собственника авто, свидетелей, а также сведения о работодателе или путевом листе, если авто служебное.',
+                btnText: 'Проверить ответчика'
               },
               {
                 tag: 'Расписка',
                 title: 'Не ограничивайтесь распиской',
-                desc: 'Расписка без схемы, документов полиции и оценки не гарантирует выплату. До фиксации обстоятельств не подписывайте отказ от претензий.'
+                desc: 'Расписка без схемы, документов полиции и оценки не гарантирует выплату. До фиксации обстоятельств не подписывайте отказ от претензий.',
+                btnText: 'Оценить расписку'
               },
               {
                 tag: 'Сохранность',
-                title: (
-                  <>
-                    <span style={{ display: 'block' }}>Не ремонтируйте</span>
-                    <span style={{ display: 'block' }}>авто до осмотра</span>
-                  </>
-                ),
-                desc: 'До полноценной фиксации повреждений экспертом не разбирайте и не продавайте авто; сохраняйте квитанции эвакуатора и платной стоянки.'
+                title: 'Не ремонтируйте авто до осмотра',
+                desc: 'До полноценной фиксации повреждений экспертом не разбирайте и не продавайте авто; сохраняйте квитанции эвакуатора и платной стоянки.',
+                btnText: 'Назначить экспертизу'
               }
             ].map((item, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '36px 30px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease'
-              }}>
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              <div
+                key={i}
+                className="card hover-lift"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '32px 28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
 
-                <div style={{
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.tag}
+                <div>
+                  {item.tag && (
+                    <div style={{
+                      fontSize: '11.5px',
+                      fontWeight: 700,
+                      color: 'var(--color-primary)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                      marginBottom: '12px',
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '3px 8px',
+                      display: 'inline-block',
+                      borderRadius: '2px'
+                    }}>
+                      {item.tag}
+                    </div>
+                  )}
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '18px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35
+                  }}>
+                    {item.title}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0
+                  }}>
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '18px',
-                  fontWeight: 600,
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 14px 0',
-                  lineHeight: 1.35,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.title}
-                </h3>
-                <p style={{
-                  fontSize: '15px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  margin: 0,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.desc}
-                </p>
+
+                <a
+                  href="#form"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13.5px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '20px',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <span>{item.btnText}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
               </div>
             ))}
           </div>
 
           <div style={{
-            background: 'var(--color-white)',
-            border: '1px solid var(--color-border)',
-            borderLeft: '4px solid var(--color-gold)',
-            padding: '24px 30px',
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
+            background: 'rgba(23, 50, 77, 0.04)',
+            borderLeft: '3px solid var(--color-gold)',
+            padding: '20px 24px',
+            fontStyle: 'italic',
+            fontSize: '14.5px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.6
           }}>
-            <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>
-              <strong>Если ДТП уже оформлено:</strong> Не считайте дело потерянным автоматически. Юрист проверит сохранившиеся документы, фото, записи камер и переписку, установит надлежащего ответчика и организует осмотр автомобиля с надлежащим уведомлением второй стороны.
-            </p>
+            <strong>Если ДТП уже оформлено:</strong> Не считайте дело потерянным автоматически. Юрист проверит сохранившиеся документы, фото, записи камер и переписку, установит надлежащего ответчика и организует осмотр автомобиля с надлежащим уведомлением второй стороны.
           </div>
         </div>
       </section>
@@ -1145,14 +1161,11 @@ export default function DtpBezOsagoClient() {
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Другие автомобильные ситуации
-              </span>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Связанные услуги
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Смежные направления помощи при дорожно-транспортных</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>происшествиях и страховых спорах.</span>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Смежные направления помощи при дорожно-транспортных происшествиях и страховых спорах.
             </p>
           </div>
 
@@ -1175,9 +1188,19 @@ export default function DtpBezOsagoClient() {
             .all-services-link:hover {
               color: var(--color-gold) !important;
             }
+            @media (max-width: 991px) {
+              .related-services-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+              }
+            }
+            @media (max-width: 600px) {
+              .related-services-grid {
+                grid-template-columns: 1fr !important;
+              }
+            }
           `}} />
           
-          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
+          <div className="related-services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginBottom: '28px' }}>
             {relatedServices.map((rel, idx) => (
               <Link key={idx} href={rel.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                 <div 

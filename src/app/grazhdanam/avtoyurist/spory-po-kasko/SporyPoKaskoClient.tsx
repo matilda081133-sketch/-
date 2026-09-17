@@ -151,17 +151,15 @@ export default function SporyPoKaskoClient() {
         imageObjectPosition="center 25%"
       />
 
-      {/* ═══ БЛОК 2: С КАКИМИ СПОРАМИ ОБРАЩАЮТСЯ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 2: С КАКИМИ СПОРАМИ ОБРАЩАЮТСЯ (ШАБЛОН «СИТУАЦИИ») ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Проверяем не только отказ,</span> <br />
-              <span style={{ display: 'inline-block' }}>но и исполнение договора</span>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              Проверяем не только отказ, но и исполнение договора
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>В отличие от ОСАГО, правила КАСКО определяются конкретной программой страхования.</span> <br className="hidden-mobile" />
-              <span style={{ display: 'inline-block' }}>Помогаем разобраться в условиях полиса, обоснованности позиции страховщика и защитить Ваши права.</span>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              В отличие от ОСАГО, правила КАСКО определяются конкретной программой страхования. Помогаем разобраться в условиях полиса, обоснованности позиции страховщика и защитить Ваши права.
             </p>
           </div>
 
@@ -170,89 +168,131 @@ export default function SporyPoKaskoClient() {
               {
                 tag: 'Отказ',
                 title: 'Отказ в страховом возмещении',
-                desc: 'Страховщик ссылается на исключение, нарушение обязанностей, недостоверные сведения, отсутствие документов или нестраховой характер события.'
+                desc: 'Страховщик ссылается на исключение, нарушение обязанностей, недостоверные сведения, отсутствие документов или нестраховой характер события.',
+                btnText: 'Оспорить отказ'
               },
               {
                 tag: 'Недоплата',
                 title: 'Заниженная выплата',
-                desc: 'Не учтены повреждения или работы, применён спорный износ, амортизация, франшиза или иной порядок расчёта.'
+                desc: 'Не учтены повреждения или работы, применён спорный износ, амортизация, франшиза или иной порядок расчёта.',
+                btnText: 'Пересчитать выплату'
               },
               {
                 tag: 'Ремонт',
                 title: 'Проблемы с ремонтом',
-                desc: 'Не выдают направление, СТО требует доплату, ремонт затягивается, объём не согласован или результат некачественный.'
+                desc: 'Не выдают направление, СТО требует доплату, ремонт затягивается, объём не согласован или результат некачественный.',
+                btnText: 'Защитить права на СТО'
               },
               {
                 tag: 'Тотал',
                 title: 'Полная гибель автомобиля',
-                desc: 'Спор касается критерия «тотала», страховой суммы, амортизации, предшествующих повреждений или стоимости годных остатков.'
+                desc: 'Спор касается критерия «тотала», страховой суммы, амортизации, предшествующих повреждений или стоимости годных остатков.',
+                btnText: 'Оспорить тотал'
               },
               {
                 tag: 'Угон',
                 title: 'Угон или хищение',
-                desc: 'Оспариваются обстоятельства события, комплект ключей и документов, сроки уведомления, выгодоприобретатель или порядок выплаты.'
+                desc: 'Оспариваются обстоятельства события, комплект ключей и документов, сроки уведомления, выгодоприобретатель или порядок выплаты.',
+                btnText: 'Взыскать по угону'
               },
               {
                 tag: 'Сроки',
                 title: 'Нарушение срока',
-                desc: 'Страховщик не принимает решение или не исполняет признанное обязательство в срок, определённый договором и правилами.'
+                desc: 'Страховщик не принимает решение или не исполняет признанное обязательство в срок, определённый договором и правилами.',
+                btnText: 'Ускорить выплату'
               }
             ].map((item, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '36px 30px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease'
-              }}>
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              <div
+                key={i}
+                className="card hover-lift"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '32px 28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
 
-                <div style={{
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.tag}
+                <div>
+                  {item.tag && (
+                    <div style={{
+                      fontSize: '11.5px',
+                      fontWeight: 700,
+                      color: 'var(--color-primary)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                      marginBottom: '12px',
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '3px 8px',
+                      display: 'inline-block',
+                      borderRadius: '2px'
+                    }}>
+                      {item.tag}
+                    </div>
+                  )}
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '18px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35
+                  }}>
+                    {item.title}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0
+                  }}>
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '18px',
-                  fontWeight: 600,
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 14px 0',
-                  lineHeight: 1.35,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.title}
-                </h3>
-                <p style={{
-                  fontSize: '15px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  margin: 0,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.desc}
-                </p>
+
+                <a
+                  href="#form"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13.5px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '20px',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <span>{item.btnText}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
               </div>
             ))}
           </div>
@@ -980,16 +1020,15 @@ export default function SporyPoKaskoClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 11: ДРУГИЕ АВТОМОБИЛЬНЫЕ СИТУАЦИИ ═══ */}
-            {/* ═══ БЛОК: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      {/* ═══ БЛОК 11: СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Связанные услуги
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              <span style={{ display: 'inline-block' }}>Смежные направления помощи</span> <br /><span style={{ display: 'inline-block' }}>при спорах со страховыми компаниями</span> <br /><span style={{ display: 'inline-block' }}>и участниками дорожного движения.</span>
+              Смежные направления помощи при дорожно-транспортных происшествиях и страховых спорах.
             </p>
           </div>
 
@@ -1012,9 +1051,19 @@ export default function SporyPoKaskoClient() {
             .all-services-link:hover {
               color: var(--color-gold) !important;
             }
+            @media (max-width: 991px) {
+              .related-services-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+              }
+            }
+            @media (max-width: 600px) {
+              .related-services-grid {
+                grid-template-columns: 1fr !important;
+              }
+            }
           `}} />
           
-          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
+          <div className="related-services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginBottom: '28px' }}>
             {relatedServices.map((rel, idx) => (
               <Link key={idx} href={rel.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                 <div 

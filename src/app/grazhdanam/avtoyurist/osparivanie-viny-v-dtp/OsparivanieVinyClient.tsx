@@ -88,6 +88,11 @@ export default function OsparivanieVinyClient() {
       link: '/grazhdanam/avtoyurist/spory-po-osago/'
     },
     {
+      title: 'Взыскание ущерба при ДТП без ОСАГО',
+      desc: 'Взыскание компенсации ущерба, если у виновника происшествия отсутствует полис.',
+      link: '/grazhdanam/avtoyurist/vzyskanie-ushcherba-pri-dtp-bez-osago/'
+    },
+    {
       title: 'Споры по КАСКО',
       desc: 'Защита прав автовладельцев при отказе страховой компании в выплате, признании случая нестраховым или тотале.',
       link: '/grazhdanam/avtoyurist/spory-po-kasko/'
@@ -165,135 +170,184 @@ export default function OsparivanieVinyClient() {
         imageObjectPosition="center 25%"
       />
 
-      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ ОСПАРИВАТЬ ВИНУ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ ОСПАРИВАТЬ ВИНУ (ШАБЛОН «СИТУАЦИИ») ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: 'inline-block' }}>В каких ситуациях помогаем</span> <br />
-              <span style={{ display: 'inline-block' }}>оспорить вину в&nbsp;ДТП</span>
+              В каких ситуациях помогаем оспорить вину в ДТП
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Спор о виновности зависит от зафиксированных обстоятельств и процессуальной стадии.</span> <br />
-              <span style={{ display: 'inline-block' }}>Помогаем доказать реальную картину аварии и защитить Ваши законные интересы.</span>
+              Спор о виновности зависит от зафиксированных обстоятельств и процессуальной стадии. Помогаем доказать реальную картину аварии и защитить Ваши законные интересы.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
             {[
               {
                 tag: 'Постановление КоАП',
-                title: <><span style={{ display: 'block' }}>Вменили нарушение ПДД,</span><span style={{ display: 'block' }}>с которым Вы не согласны</span></>,
-                desc: 'Проверим протокол, схему, замеры и объяснения, выявим процессуальные нарушения и подадим жалобу по главе 30 КоАП РФ в установленный 10-дневный срок.'
+                title: 'Вменили нарушение ПДД, с которым Вы не согласны',
+                desc: 'Проверим протокол, схему, замеры и объяснения, выявим процессуальные нарушения и подадим жалобу по главе 30 КоАП РФ в установленный 10-дневный срок.',
+                btnText: 'Обжаловать постановление'
               },
               {
                 tag: 'Обоюдная вина',
-                title: <><span style={{ display: 'block' }}>Обоюдная вина и выплата</span><span style={{ display: 'block' }}>страховщика 50% по ОСАГО</span></>,
-                desc: 'Докажем реальное соотношение действий водителей: равные доли действуют по умолчанию, суд вправе установить иную обоснованную степень (например, 80/20).'
+                title: 'Обоюдная вина и выплата страховщика 50% по ОСАГО',
+                desc: 'Докажем реальное соотношение действий водителей: равные доли действуют по умолчанию, суд вправе установить иную обоснованную степень (например, 80/20).',
+                btnText: 'Изменить долю вины'
               },
               {
                 tag: 'Иск об ущербе',
-                title: <><span style={{ display: 'block' }}>Предъявлен иск о взыскании</span><span style={{ display: 'block' }}>полного ущерба от ДТП</span></>,
-                desc: 'Защитим от завышенных требований: докажем отсутствие причинной связи и техническую возможность истца предотвратить столкновение.'
+                title: 'Предъявлен иск о взыскании полного ущерба от ДТП',
+                desc: 'Защитим от завышенных требований: докажем отсутствие причинной связи и техническую возможность истца предотвратить столкновение.',
+                btnText: 'Защититься от иска'
               },
               {
                 tag: 'Неполная схема',
-                title: <><span style={{ display: 'block' }}>Не согласны со схемой ДТП</span><span style={{ display: 'block' }}>или объяснениями участников</span></>,
-                desc: 'Сопоставим фото, видеозаписи, следы торможения и обломков, чтобы устранить неточности, искажения и противоречия в материалах ГИБДД.'
+                title: 'Не согласны со схемой ДТП или объяснениями участников',
+                desc: 'Сопоставим фото, видеозаписи, следы торможения и обломков, чтобы устранить неточности, искажения и противоречия в материалах ГИБДД.',
+                btnText: 'Оспорить схему'
               },
               {
                 tag: 'Отказ страховой',
-                title: <><span style={{ display: 'block' }}>Страховая компания отказала</span><span style={{ display: 'block' }}>в выплате из-за виновности</span></>,
-                desc: 'Пройдём обязательный досудебный порядок (претензия и финансовый уполномоченный) и установим истинные обстоятельства в суде.'
+                title: 'Страховая компания отказала в выплате из-за виновности',
+                desc: 'Пройдём обязательный досудебный порядок (претензия и финансовый уполномоченный) и установим истинные обстоятельства в суде.',
+                btnText: 'Оспорить отказ'
               },
               {
                 tag: 'Пострадавшие',
-                title: <><span style={{ display: 'block' }}>В ДТП причинен вред здоровью</span><span style={{ display: 'block' }}>или значительный ущерб</span></>,
-                desc: 'При тяжком вреде или гибели людей нужна отдельная защита по уголовному делу. Обстоятельства ДТП оцениваются с учётом уголовных рисков.'
+                title: 'В ДТП причинен вред здоровью или значительный ущерб',
+                desc: 'При тяжком вреде или гибели людей нужна отдельная защита по уголовному делу. Обстоятельства ДТП оцениваются с учётом уголовных рисков.',
+                btnText: 'Оценить риски'
               }
             ].map((item, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '36px 30px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease'
-              }}>
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              <div
+                key={i}
+                className="card hover-lift"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '32px 28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
-                <div style={{
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.tag}
+
+                <div>
+                  {item.tag && (
+                    <div style={{
+                      fontSize: '11.5px',
+                      fontWeight: 700,
+                      color: 'var(--color-primary)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                      marginBottom: '12px',
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '3px 8px',
+                      display: 'inline-block',
+                      borderRadius: '2px'
+                    }}>
+                      {item.tag}
+                    </div>
+                  )}
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '18px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35
+                  }}>
+                    {item.title}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0
+                  }}>
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '17px',
-                  fontWeight: 600,
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 14px 0',
-                  lineHeight: 1.4,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.title}
-                </h3>
-                <p style={{
-                  fontSize: '15px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  margin: 0,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.desc}
-                </p>
+
+                <a
+                  href="#form"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13.5px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '20px',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <span>{item.btnText}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
               </div>
             ))}
           </div>
 
-          {/* Белая карточка с тенью */}
           <div style={{
-            background: '#FFFFFF',
-            border: '1px solid rgba(23, 50, 77, 0.08)',
-            borderLeft: '4px solid var(--color-gold)',
-            padding: '28px 32px',
+            background: 'rgba(23, 50, 77, 0.04)',
+            borderLeft: '3px solid var(--color-gold)',
+            padding: '20px 24px',
+            fontStyle: 'italic',
+            fontSize: '14.5px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.6,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
-            gap: '20px',
-            boxShadow: '0 10px 30px rgba(23, 50, 77, 0.09), 0 2px 8px rgba(23, 50, 77, 0.04)'
+            gap: '16px'
           }}>
             <div style={{ maxWidth: '720px' }}>
-              <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
-                <span style={{ display: 'block' }}>Не знаете, с чего начать оспаривание?</span>
-              </h4>
-              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                <span style={{ display: 'block' }}>Пришлите схему ДТП, видеозапись или постановление —</span>
-                <span style={{ display: 'block' }}>юрист оценит доказательства и предложит практический маршрут защиты.</span>
-              </p>
+              <strong>Не знаете, с чего начать оспаривание?</strong> Пришлите схему ДТП, видеозапись или постановление — юрист оценит доказательства и предложит практический маршрут защиты.
             </div>
-            <a href="#form" className="btn btn-primary" style={{ whiteSpace: 'nowrap', padding: '12px 24px', fontSize: '14px' }} data-analytics="cta_click">
-              Разобрать материалы ДТП
+            <a href="#form" style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              color: 'var(--color-primary)',
+              fontSize: '13.5px',
+              fontWeight: 600,
+              textDecoration: 'none',
+              whiteSpace: 'nowrap'
+            }}>
+              <span>Разобрать материалы ДТП</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </a>
           </div>
         </div>
@@ -792,15 +846,15 @@ export default function OsparivanieVinyClient() {
         faqs={faqs}
       />
 
-            {/* ═══ БЛОК: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      {/* ═══ БЛОК 10: СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Связанные услуги
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              <span style={{ display: 'inline-block' }}>Смежные направления помощи</span> <br /><span style={{ display: 'inline-block' }}>при ДТП, спорах о виновности</span> <br /><span style={{ display: 'inline-block' }}>и страховых разногласиях.</span>
+              Смежные направления помощи при дорожно-транспортных происшествиях и страховых спорах.
             </p>
           </div>
 
@@ -823,9 +877,19 @@ export default function OsparivanieVinyClient() {
             .all-services-link:hover {
               color: var(--color-gold) !important;
             }
+            @media (max-width: 991px) {
+              .related-services-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+              }
+            }
+            @media (max-width: 600px) {
+              .related-services-grid {
+                grid-template-columns: 1fr !important;
+              }
+            }
           `}} />
           
-          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '28px' }}>
+          <div className="related-services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginBottom: '28px' }}>
             {relatedServices.map((rel, idx) => (
               <Link key={idx} href={rel.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                 <div 

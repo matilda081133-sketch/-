@@ -1260,22 +1260,23 @@ export default function RazrabotkaEkspertizaClient() {
           </div>
 
           <div
-            className="card"
             style={{
-              background: 'var(--color-bg-light)',
+              background: 'rgba(23, 50, 77, 0.04)',
               border: '1px solid var(--color-border)',
-              borderLeft: '4px solid var(--color-gold)',
-              padding: '24px 28px',
+              borderLeft: '3px solid var(--color-gold)',
+              padding: '18px 22px',
               borderRadius: '0',
               display: 'flex',
               alignItems: 'center',
-              gap: '16px'
+              gap: '14px',
+              marginTop: '24px'
             }}
           >
-            <div style={{ color: 'var(--color-gold)', fontSize: '24px', lineHeight: 1, flexShrink: 0 }}>ℹ️</div>
-            <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <strong>Конфиденциальность:</strong> Передаваемые проекты документов и коммерческие условия охраняются соглашением о неразглашении (NDA). Мы не передаём информацию третьим лицам.
-            </div>
+            <div style={{ color: 'var(--color-gold)', fontSize: '20px', lineHeight: 1, flexShrink: 0, fontStyle: 'normal' }}>ℹ️</div>
+            <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55, fontStyle: 'italic' }}>
+              <strong style={{ fontStyle: 'normal', color: 'var(--color-deep-blue)' }}>Конфиденциальность:</strong>{' '}
+              Передаваемые проекты документов и коммерческие условия охраняются соглашением о неразглашении (NDA). Мы не передаём информацию третьим лицам.
+            </p>
           </div>
         </div>
       </section>
