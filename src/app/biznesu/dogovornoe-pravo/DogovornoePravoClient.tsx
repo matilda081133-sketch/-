@@ -1118,13 +1118,28 @@ export default function DogovornoePravoClient() {
       {/* ═══ 10. СВЯЗАННЫЕ НАПРАВЛЕНИЯ ═══ */}
       <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Если задача выходит <br />за рамки договора
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Договорные вопросы часто переплетаются с другими правовыми направлениями бизнеса. Подберём профильного специалиста под вашу задачу.
-            </p>
+          <div className="situations-header-row" style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            gap: '32px',
+            marginBottom: '40px',
+            flexWrap: 'wrap'
+          }}>
+            <div style={{ flex: '1 1 340px' }}>
+              <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', margin: 0, lineHeight: 1.2 }}>
+                Если задача выходит <br />за рамки договора
+              </h2>
+            </div>
+            <div className="situations-subtitle-right" style={{
+              flex: '1 1 380px',
+              maxWidth: '540px',
+              textAlign: 'right'
+            }}>
+              <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+                Договорные вопросы часто переплетаются с другими правовыми направлениями бизнеса. Подберём профильного специалиста под вашу задачу.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-4" style={{ gap: '20px' }}>
