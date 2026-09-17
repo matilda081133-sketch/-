@@ -69,6 +69,20 @@ export default function KadrovyjAuditClient() {
       ]
     },
     {
+      "@type": "Person",
+      "@id": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person",
+      "name": "Марина Валерьевна Смольянинова",
+      "jobTitle": "Ведущий юрист",
+      "image": "https://dejure-help.ru/images/smolyaninova.jpg",
+      "url": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/",
+      "worksFor": {
+        "@type": "LegalService",
+        "@id": "https://dejure-help.ru/#organization",
+        "name": "Юридическая компания «Де-Юре»",
+        "url": "https://dejure-help.ru"
+      }
+    },
+    {
       "@type": "Service",
       "name": "Кадровый аудит организации в Липецке",
       "description": "Превентивная юридическая проверка кадровой документации и трудовых процессов компании для снижения рисков проверок ГИТ и судебных споров.",

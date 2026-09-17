@@ -69,6 +69,20 @@ export default function RassledovanieSluchayaClient() {
       ]
     },
     {
+      "@type": "Person",
+      "@id": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person",
+      "name": "Марина Валерьевна Смольянинова",
+      "jobTitle": "Ведущий юрист",
+      "image": "https://dejure-help.ru/images/smolyaninova.jpg",
+      "url": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/",
+      "worksFor": {
+        "@type": "LegalService",
+        "@id": "https://dejure-help.ru/#organization",
+        "name": "Юридическая компания «Де-Юре»",
+        "url": "https://dejure-help.ru"
+      }
+    },
+    {
       "@type": "Service",
       "name": "Расследование несчастного случая на производстве в Липецке",
       "description": "Срочная юридическая поддержка работодателя при производственных травмах: соблюдение порядка расследования, взаимодействие с ГИТ, СФР и прокуратурой.",

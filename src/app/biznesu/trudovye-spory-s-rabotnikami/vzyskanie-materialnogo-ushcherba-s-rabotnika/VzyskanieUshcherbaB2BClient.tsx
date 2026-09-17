@@ -69,6 +69,20 @@ export default function VzyskanieUshcherbaB2BClient() {
       ]
     },
     {
+      "@type": "Person",
+      "@id": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person",
+      "name": "Марина Валерьевна Смольянинова",
+      "jobTitle": "Ведущий юрист",
+      "image": "https://dejure-help.ru/images/smolyaninova.jpg",
+      "url": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/",
+      "worksFor": {
+        "@type": "LegalService",
+        "@id": "https://dejure-help.ru/#organization",
+        "name": "Юридическая компания «Де-Юре»",
+        "url": "https://dejure-help.ru"
+      }
+    },
+    {
       "@type": "Service",
       "name": "Взыскание материального ущерба с работника в Липецке",
       "description": "Правовое сопровождение процедуры привлечения работника к материальной ответственности: от акта инвентаризации до взыскания через суд.",

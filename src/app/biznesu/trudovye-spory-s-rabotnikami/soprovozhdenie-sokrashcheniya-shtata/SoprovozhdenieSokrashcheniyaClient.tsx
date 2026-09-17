@@ -69,6 +69,20 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
       ]
     },
     {
+      "@type": "Person",
+      "@id": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person",
+      "name": "Марина Валерьевна Смольянинова",
+      "jobTitle": "Ведущий юрист",
+      "image": "https://dejure-help.ru/images/smolyaninova.jpg",
+      "url": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/",
+      "worksFor": {
+        "@type": "LegalService",
+        "@id": "https://dejure-help.ru/#organization",
+        "name": "Юридическая компания «Де-Юре»",
+        "url": "https://dejure-help.ru"
+      }
+    },
+    {
       "@type": "Service",
       "name": "Юридическое сопровождение сокращения штата в Липецке",
       "description": "Полный правовой контроль процедуры сокращения численности или штата: от приказа до выплат и защиты от восстановления работников.",

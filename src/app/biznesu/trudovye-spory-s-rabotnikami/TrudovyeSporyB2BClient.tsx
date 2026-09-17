@@ -75,6 +75,20 @@ export default function TrudovyeSporyB2BClient() {
       ]
     },
     {
+      "@type": "Person",
+      "@id": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person",
+      "name": "Марина Валерьевна Смольянинова",
+      "jobTitle": "Ведущий юрист",
+      "image": "https://dejure-help.ru/images/smolyaninova.jpg",
+      "url": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/",
+      "worksFor": {
+        "@type": "LegalService",
+        "@id": "https://dejure-help.ru/#organization",
+        "name": "Юридическая компания «Де-Юре»",
+        "url": "https://dejure-help.ru"
+      }
+    },
+    {
       "@type": "Service",
       "name": "Трудовые споры с работниками в Липецке",
       "description": "Юридическая помощь работодателям в трудовых спорах с работниками: увольнение, сокращение, проверки ГИТ, кадровый аудит, взыскание ущерба и судебная защита.",
@@ -160,6 +174,16 @@ export default function TrudovyeSporyB2BClient() {
     "tag": "ЧП на производстве",
     "title": "Произошёл несчастный случай",
     "desc": "Работодателю необходимо без промедления выполнить обязательные действия, организовать расследование и правильно оформить материалы."
+  },
+  {
+    "tag": "Кадровый аудит",
+    "title": (
+      <>
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Нужно проверить</span>{' '}
+        <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>кадровые риски заранее</span>
+      </>
+    ),
+    "desc": "Кадровый аудит помогает выявить нарушения в документах и процессах до жалобы, проверки или трудового конфликта."
   }
 ];
   
