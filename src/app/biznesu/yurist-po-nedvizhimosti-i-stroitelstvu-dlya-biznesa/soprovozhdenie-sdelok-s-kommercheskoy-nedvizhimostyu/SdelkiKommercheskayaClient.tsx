@@ -344,7 +344,7 @@ export default function SdelkiKommercheskayaClient() {
               с коммерческой
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              недвижимостью
+              недвижимостью в Липецке
             </span>
           </span>
         }

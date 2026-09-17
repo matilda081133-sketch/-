@@ -437,7 +437,7 @@ export default function YuristNedvizhimostStroitelstvoClient() {
               и строительству
             </span>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              для бизнеса
+              для бизнеса в Липецке
             </span>
           </span>
         }
