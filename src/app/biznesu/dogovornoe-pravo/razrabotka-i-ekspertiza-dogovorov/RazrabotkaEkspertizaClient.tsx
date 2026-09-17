@@ -385,8 +385,8 @@ export default function RazrabotkaEkspertizaClient() {
       link: '/biznesu/dogovornoe-pravo/spory-po-dogovoru-postavki/'
     },
     {
-      title: 'Взыскание задолженности с юрлиц',
-      desc: 'Возврат долгов по договорам поставки, подряда и услуг через досудебный порядок, арбитражный суд и приставов.',
+      title: 'Взыскание задолженности с юридических лиц',
+      desc: 'Комплексный арбитражный возврат долгов по договорам поставки, подряда, аренды и оказания услуг.',
       link: '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/'
     }
   ];
@@ -964,9 +964,8 @@ export default function RazrabotkaEkspertizaClient() {
             }}>
               Выбор формата работы
             </div>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
-              <span style={{ display: 'inline-block' }}>Какой формат помощи</span> <br />
-              <span style={{ display: 'inline-block' }}>нужен бизнесу</span>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(26px, 3.4vw, 38px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              Какой формат помощи нужен бизнесу
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Выберите необходимый объём юридического участия: от разовой оценки рисков до полной разработки индивидуального комплекта документов.
@@ -1088,7 +1087,6 @@ export default function RazrabotkaEkspertizaClient() {
             borderTop: '3px solid var(--color-gold)',
             boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
             padding: '36px 32px',
-            marginBottom: '24px',
             position: 'relative'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
@@ -1128,77 +1126,137 @@ export default function RazrabotkaEkspertizaClient() {
                 </div>
               ))}
             </div>
-          </div>
 
-          <div
-            className="card"
-            style={{
-              background: 'var(--color-white)',
-              border: '1px solid var(--color-border)',
-              borderLeft: '4px solid var(--color-gold)',
-              padding: '20px 24px',
-              borderRadius: '0',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '14px'
-            }}
-          >
-            <div style={{ color: 'var(--color-gold)', fontSize: '20px', lineHeight: 1, flexShrink: 0 }}>ℹ️</div>
-            <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              Строительный подряд относится к отраслевому направлению{' '}
-              <Link
-                href="/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/"
-                style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}
-              >
-                юриста по недвижимости и строительству для бизнеса
-              </Link>.
+            {/* Шаблонная плашка внутри карточки */}
+            <div
+              style={{
+                marginTop: '20px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderLeft: '3px solid var(--color-gold)',
+                padding: '14px 18px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                position: 'relative',
+                zIndex: 1
+              }}
+            >
+              <div style={{ color: 'var(--color-gold)', fontSize: '18px', lineHeight: 1, flexShrink: 0 }}>ℹ️</div>
+              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55 }}>
+                Строительный подряд относится к отраслевому направлению{' '}
+                <Link
+                  href="/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/"
+                  style={{ color: 'var(--color-gold)', fontWeight: 600, textDecoration: 'underline' }}
+                >
+                  юриста по недвижимости и строительству для бизнеса
+                </Link>.
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ 6. ЧТО ПОТРЕБУЕТСЯ ДЛЯ НАЧАЛА РАБОТЫ ═══ */}
+      {/* ═══ 6. ЧТО ПОТРЕБУЕТСЯ ДЛЯ НАЧАЛА РАБОТЫ И РЕЗУЛЬТАТ (2 КАРТОЧКИ) ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Что потребуется для начала работы
+          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              Что потребуется для начала работы и результат
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Для первого звонка достаточно кратко описать задачу. Для проведения экспертизы или разработки понадобятся материалы:
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
+              Для первого звонка достаточно кратко описать задачу. Состав необходимых материалов и итоговый формат документов фиксируются до начала работы:
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '20px', marginBottom: '32px' }}>
-            {prepDocs.map((item, idx) => (
-              <div
-                key={idx}
-                className="card"
-                style={{
-                  background: 'var(--color-white)',
-                  border: '1px solid var(--color-border)',
-                  padding: '22px 24px',
-                  borderRadius: '0',
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '16px'
-                }}
-              >
-                <div style={{ color: 'var(--color-primary)', marginTop: '2px', flexShrink: 0 }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '15.5px', fontWeight: 700, color: 'var(--color-deep-blue)', margin: '0 0 6px 0' }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
-                    {item.desc}
-                  </p>
-                </div>
+          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '32px' }}>
+            {/* Карточка 1: Что потребуется */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Что потребуется от вас
+                </h3>
               </div>
-            ))}
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Для первого разговора достаточно описать сделку. Для правовой экспертизы или разработки понадобятся:
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {prepDocs.map((item, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                        {item.title}
+                      </strong>
+                      <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                        {item.desc}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Карточка 2: Результат работы */}
+            <div style={{
+              background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                  Результат работы юриста
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                Формат согласовывается заранее и даёт руководителю чёткую картину рисков и готовые решения:
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {deliverables.map((item, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '15px', color: 'var(--color-deep-blue)', marginBottom: '2px', lineHeight: 1.35 }}>
+                        {item.title}
+                      </strong>
+                      <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                        {item.desc}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div
@@ -1228,53 +1286,6 @@ export default function RazrabotkaEkspertizaClient() {
         subtitle="Пять последовательных этапов для подготовки безопасного и исполнимого договора."
         steps={workSteps}
       />
-
-      {/* ═══ 8. РЕЗУЛЬТАТ РАБОТЫ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Результат работы
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Формат результата согласуется до начала работы и даёт руководителю чёткую картину рисков и готовые решения.
-            </p>
-          </div>
-
-          <div className="grid grid-2" style={{ gap: '20px' }}>
-            {deliverables.map((item, idx) => (
-              <div
-                key={idx}
-                className="card"
-                style={{
-                  background: 'var(--color-bg-light)',
-                  border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-gold)',
-                  padding: '22px 24px',
-                  borderRadius: '0',
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '16px'
-                }}
-              >
-                <div style={{ color: 'var(--color-gold)', marginTop: '2px', flexShrink: 0 }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '16px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 6px 0' }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ═══ 9. СТОИМОСТЬ УСЛУГ ═══ */}
       <PricingBlock
@@ -1307,42 +1318,71 @@ export default function RazrabotkaEkspertizaClient() {
             </p>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '24px' }}>
+          <style dangerouslySetInnerHTML={{ __html: `
+            .related-service-card {
+              border-top: 3px solid var(--color-primary) !important;
+            }
+            .related-service-card:hover {
+              border-top: 3px solid var(--color-gold) !important;
+              transform: translateY(-4px);
+              box-shadow: 0 12px 30px rgba(23, 50, 77, 0.08) !important;
+            }
+            .related-service-card:hover .card-arrow {
+              color: var(--color-gold) !important;
+            }
+            .related-service-card:hover .card-arrow svg {
+              stroke: var(--color-gold) !important;
+              transform: translateX(4px);
+            }
+            .all-services-link:hover {
+              color: var(--color-gold) !important;
+            }
+          `}} />
+
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
             {relatedServices.map((rel, idx) => (
-              <Link
-                key={idx}
-                href={rel.link}
-                className="card hover-lift"
-                style={{
-                  height: '100%',
-                  padding: '28px 24px',
-                  background: 'var(--color-white)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-gold)',
-                  borderRadius: '0',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  textDecoration: 'none'
-                }}
-              >
-                <div>
-                  <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '12px', lineHeight: 1.35 }}>
-                    {rel.title}
-                  </h3>
-                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                    {rel.desc}
-                  </p>
-                </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '20px', paddingTop: '12px', borderTop: '1px solid rgba(23, 50, 77, 0.06)' }}>
-                  <span>Подробнее</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
+              <Link key={idx} href={rel.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+                <div
+                  className="card related-service-card hover-lift"
+                  style={{
+                    height: '100%',
+                    minHeight: '180px',
+                    padding: '26px 24px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-primary)',
+                    borderRadius: '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  <div>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                      {rel.title}
+                    </h3>
+                    <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {rel.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                    <span>Подробнее</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
                 </div>
               </Link>
             ))}
+          </div>
+
+          <div style={{ marginTop: '28px' }}>
+            <Link href="/biznesu/dogovornoe-pravo/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
+              Смотреть все услуги договорного права для бизнеса →
+            </Link>
           </div>
         </div>
       </section>

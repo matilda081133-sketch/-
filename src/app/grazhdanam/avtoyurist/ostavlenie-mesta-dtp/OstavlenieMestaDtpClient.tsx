@@ -951,66 +951,52 @@ export default function OstavlenieMestaDtpClient() {
               border-top: 3px solid var(--color-primary) !important;
             }
             .related-service-card:hover {
-              border-top: 3px solid var(--color-primary) !important;
+              border-top: 3px solid var(--color-gold) !important;
+              transform: translateY(-4px);
+              box-shadow: 0 12px 30px rgba(23, 50, 77, 0.08) !important;
             }
             .related-service-card:hover .card-arrow {
               color: var(--color-gold) !important;
             }
             .related-service-card:hover .card-arrow svg {
               stroke: var(--color-gold) !important;
+              transform: translateX(4px);
             }
             .all-services-link:hover {
               color: var(--color-gold) !important;
             }
           `}} />
 
-          <div className="grid grid-4" style={{ gap: '20px' }}>
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
             {[
               {
-                title: (
-                  <>
-                    <span style={{ display: 'inline-block' }}>Лишение</span> <br /><span style={{ display: 'inline-block' }}>водительских прав</span>
-                  </>
-                ),
+                title: 'Лишение водительских прав',
                 desc: 'Защита по ч. 4–5 ст. 12.15, ст. 12.8, 12.26, 12.9 ч. 4–5 КоАП РФ и другим составам.',
                 link: '/grazhdanam/avtoyurist/lishenie-voditelskih-prav/'
               },
               {
-                title: (
-                  <>
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оспаривание вины</span>{' '}
-                    <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>в дорожном происшествии</span>
-                  </>
-                ),
+                title: 'Оспаривание вины в ДТП',
                 desc: 'Оспаривание выводов ГИБДД, автотехническая экспертиза, защита при спорных обстоятельствах аварии.',
                 link: '/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/'
               },
               {
-                title: (
-                  <>
-                    <span style={{ display: 'inline-block' }}>Взыскание</span> <br /><span style={{ display: 'inline-block' }}>с виновника ДТП</span>
-                  </>
-                ),
+                title: 'Взыскание с виновника ДТП',
                 desc: 'Взыскание непокрытой части ущерба при действующем ОСАГО: сверх страхового лимита или разницы между страховым возмещением и фактическим ущербом.',
                 link: '/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/'
               },
               {
-                title: (
-                  <>
-                    <span style={{ display: 'inline-block' }}>Споры</span> <br /><span style={{ display: 'inline-block' }}>по ОСАГО</span>
-                  </>
-                ),
+                title: 'Споры по ОСАГО',
                 desc: 'Защита при отказе, занижении выплаты, просрочке или срыве ремонта по полису ОСАГО.',
                 link: '/grazhdanam/avtoyurist/spory-po-osago/'
               }
             ].map((rel, idx) => (
-              <Link key={idx} href={rel.link} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <Link key={idx} href={rel.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                 <div 
                   className="card related-service-card hover-lift" 
                   style={{ 
                     height: '100%', 
                     minHeight: '180px',
-                    padding: '28px 22px', 
+                    padding: '26px 24px', 
                     background: 'var(--color-white)', 
                     border: '1px solid var(--color-border)', 
                     borderTop: '3px solid var(--color-primary)',
@@ -1018,21 +1004,21 @@ export default function OstavlenieMestaDtpClient() {
                     display: 'flex', 
                     flexDirection: 'column', 
                     justifyContent: 'space-between',
-                    transition: 'all 0.3s',
-                    position: 'relative'
+                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                    transition: 'all 0.3s ease'
                   }}
                 >
                   <div>
-                    <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
                       {rel.title}
                     </h3>
-                    <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                       {rel.desc}
                     </p>
                   </div>
-                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
-                    Подробнее 
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                    <span>Подробнее</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -1042,8 +1028,8 @@ export default function OstavlenieMestaDtpClient() {
             ))}
           </div>
 
-          <div style={{ marginTop: '32px' }}>
-            <Link href="/grazhdanam/avtoyurist/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
+          <div style={{ marginTop: '28px' }}>
+            <Link href="/grazhdanam/avtoyurist/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
               Смотреть все услуги автоюриста →
             </Link>
           </div>

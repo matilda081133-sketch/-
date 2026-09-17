@@ -80,6 +80,29 @@ export default function DtpBezOsagoClient() {
     }
   ];
 
+  const relatedServices = [
+    {
+      title: 'Взыскание с виновника ДТП',
+      desc: 'Взыскание ущерба сверх страхового лимита ОСАГО или непокрытой части вреда.',
+      link: '/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/'
+    },
+    {
+      title: 'Споры по ОСАГО',
+      desc: 'Защита при отказе, занижении выплаты, просрочке или срыве ремонта по ОСАГО.',
+      link: '/grazhdanam/avtoyurist/spory-po-osago/'
+    },
+    {
+      title: 'Оспаривание вины в ДТП',
+      desc: 'Защита при спорных обстоятельствах аварии, обоюдной вине или необоснованном обвинении.',
+      link: '/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/'
+    },
+    {
+      title: 'Споры по КАСКО',
+      desc: 'Защита при отказе, недоплате, споре по ремонту, угону или полной гибели авто.',
+      link: '/grazhdanam/avtoyurist/spory-po-kasko/'
+    }
+  ];
+
   return (
     <main>
       <Header />
@@ -1138,167 +1161,64 @@ export default function DtpBezOsagoClient() {
               border-top: 3px solid var(--color-primary) !important;
             }
             .related-service-card:hover {
-              border-top: 3px solid var(--color-primary) !important;
+              border-top: 3px solid var(--color-gold) !important;
+              transform: translateY(-4px);
+              box-shadow: 0 12px 30px rgba(23, 50, 77, 0.08) !important;
             }
             .related-service-card:hover .card-arrow {
               color: var(--color-gold) !important;
             }
             .related-service-card:hover .card-arrow svg {
               stroke: var(--color-gold) !important;
+              transform: translateX(4px);
             }
             .all-services-link:hover {
               color: var(--color-gold) !important;
             }
           `}} />
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 380px))', gap: '20px' }}>
-            <Link href="/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div 
-                className="card related-service-card" 
-                style={{ 
-                  height: '100%', 
-                  minHeight: '160px',
-                  padding: '28px 22px', 
-                  background: 'var(--color-white)', 
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  borderRadius: '0',
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'space-between',
-                  transition: 'all 0.3s',
-                  position: 'relative'
-                }}
-              >
-                <div>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                    <span style={{ display: 'inline-block' }}>Взыскание</span> <br /><span style={{ display: 'inline-block' }}>с виновника ДТП</span>
-                  </h3>
-                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                    Взыскание ущерба сверх страхового лимита ОСАГО или непокрытой части вреда.
-                  </p>
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
+            {relatedServices.map((rel, idx) => (
+              <Link key={idx} href={rel.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+                <div 
+                  className="card related-service-card hover-lift" 
+                  style={{ 
+                    height: '100%', 
+                    minHeight: '180px',
+                    padding: '26px 24px', 
+                    background: 'var(--color-white)', 
+                    border: '1px solid var(--color-border)', 
+                    borderTop: '3px solid var(--color-primary)',
+                    borderRadius: '0',
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  <div>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                      {rel.title}
+                    </h3>
+                    <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {rel.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                    <span>Подробнее</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
                 </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
-                  Подробнее 
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/grazhdanam/avtoyurist/spory-po-osago/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div 
-                className="card related-service-card" 
-                style={{ 
-                  height: '100%', 
-                  minHeight: '160px',
-                  padding: '28px 22px', 
-                  background: 'var(--color-white)', 
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  borderRadius: '0',
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'space-between',
-                  transition: 'all 0.3s',
-                  position: 'relative'
-                }}
-              >
-                <div>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                    <span style={{ display: 'inline-block' }}>Споры</span> <br /><span style={{ display: 'inline-block' }}>по ОСАГО</span>
-                  </h3>
-                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                    Защита при отказе, занижении выплаты, просрочке или срыве ремонта по ОСАГО.
-                  </p>
-                </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
-                  Подробнее 
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div 
-                className="card related-service-card" 
-                style={{ 
-                  height: '100%', 
-                  minHeight: '160px',
-                  padding: '28px 22px', 
-                  background: 'var(--color-white)', 
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  borderRadius: '0',
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'space-between',
-                  transition: 'all 0.3s',
-                  position: 'relative'
-                }}
-              >
-                <div>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                    <span style={{ display: 'inline-block' }}>Оспаривание</span> <br /><span style={{ display: 'inline-block' }}>вины в ДТП</span>
-                  </h3>
-                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                    Защита при спорных обстоятельствах аварии, обоюдной вине или необоснованном обвинении.
-                  </p>
-                </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
-                  Подробнее 
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/grazhdanam/avtoyurist/spory-po-kasko/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div 
-                className="card related-service-card" 
-                style={{ 
-                  height: '100%', 
-                  minHeight: '160px',
-                  padding: '28px 22px', 
-                  background: 'var(--color-white)', 
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
-                  borderRadius: '0',
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'space-between',
-                  transition: 'all 0.3s',
-                  position: 'relative'
-                }}
-              >
-                <div>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                    <span style={{ display: 'inline-block' }}>Споры</span> <br /><span style={{ display: 'inline-block' }}>по КАСКО</span>
-                  </h3>
-                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                    Защита при отказе, недоплате, споре по ремонту, угону или полной гибели авто.
-                  </p>
-                </div>
-                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, transition: 'transform 0.3s' }}>
-                  Подробнее 
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
 
-          <div style={{ marginTop: '32px' }}>
-            <Link href="/grazhdanam/avtoyurist/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
+          <div style={{ marginTop: '28px' }}>
+            <Link href="/grazhdanam/avtoyurist/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
               Смотреть все услуги автоюриста →
             </Link>
           </div>
