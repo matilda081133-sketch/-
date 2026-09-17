@@ -473,17 +473,22 @@ export default function DogovornyeSporyClient() {
         secondaryCtaLink="#dispute-stage"
         rightContent={
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
+            {/* Darkening gradient under the creative to highlight the background graphic */}
             <div style={{
               position: 'absolute',
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              width: '130%',
-              height: '130%',
-              background: 'radial-gradient(circle, rgba(193, 160, 102, 0.15) 0%, rgba(23, 50, 77, 0.04) 40%, transparent 70%)',
+              width: '150%',
+              height: '150%',
+              background: 'radial-gradient(circle, rgba(23, 50, 77, 0.12) 0%, rgba(23, 50, 77, 0.05) 30%, transparent 60%)',
               zIndex: 0,
               pointerEvents: 'none'
             }} />
+            {/* Background Graphic: Courthouse (Centered behind mockup, shifted right) */}
+            <svg className="hero-vector-svg" style={{ position: 'absolute', top: '35%', left: '100%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', opacity: 0.08, zIndex: 0, pointerEvents: 'none' }} viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="0.6">
+              <path d="M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"/>
+            </svg>
 
             <div className="mockup-container" style={{ zIndex: 1, margin: 0 }}>
               <div style={{ position: 'absolute', width: '220px', height: '220px', background: 'var(--color-primary)', filter: 'blur(90px)', opacity: 0.12, borderRadius: '50%' }} />
