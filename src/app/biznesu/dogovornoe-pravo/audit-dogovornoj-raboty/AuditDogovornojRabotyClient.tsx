@@ -960,7 +960,13 @@ export default function AuditDogovornojRabotyClient() {
               gap: '16px'
             }}
           >
-            <div style={{ color: 'var(--color-gold)', fontSize: '24px', lineHeight: 1, flexShrink: 0 }}>ℹ️</div>
+            <div style={{ color: 'var(--color-gold)', flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="16" x2="12" y2="12" />
+                <line x1="12" y1="8" x2="12.01" y2="8" />
+              </svg>
+            </div>
             <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <strong>Конфиденциальность:</strong> Не передавайте логины, пароли и полные базы через открытую форму на сайте. Доступы и защищённые каналы обмена согласуются отдельным регламентом безопасности перед началом работы.
             </div>

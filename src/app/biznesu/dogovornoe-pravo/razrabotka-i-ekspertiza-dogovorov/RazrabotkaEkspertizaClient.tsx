@@ -1052,9 +1052,9 @@ export default function RazrabotkaEkspertizaClient() {
                 </div>
 
                 <div style={{
-                  background: '#FFFFFF',
+                  background: '#FAF7F2',
                   padding: '16px 18px',
-                  border: '1px solid var(--color-border)',
+                  border: '1px solid rgba(193, 160, 102, 0.25)',
                   borderLeft: '3px solid var(--color-gold)',
                   marginTop: 'auto',
                   position: 'relative',
@@ -1062,8 +1062,9 @@ export default function RazrabotkaEkspertizaClient() {
                   boxShadow: '0 2px 8px rgba(23, 50, 77, 0.03)'
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
                     <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                       Результат
@@ -1155,7 +1156,13 @@ export default function RazrabotkaEkspertizaClient() {
                 zIndex: 1
               }}
             >
-              <div style={{ color: 'var(--color-gold)', fontSize: '18px', lineHeight: 1, flexShrink: 0 }}>ℹ️</div>
+              <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="16" x2="12" y2="12" />
+                  <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+              </div>
               <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55 }}>
                 Строительный подряд относится к отраслевому направлению{' '}
                 <Link
@@ -1285,7 +1292,13 @@ export default function RazrabotkaEkspertizaClient() {
               marginTop: '24px'
             }}
           >
-            <div style={{ color: 'var(--color-gold)', fontSize: '20px', lineHeight: 1, flexShrink: 0, fontStyle: 'normal' }}>ℹ️</div>
+            <div style={{ color: 'var(--color-gold)', flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="16" x2="12" y2="12" />
+                <line x1="12" y1="8" x2="12.01" y2="8" />
+              </svg>
+            </div>
             <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55, fontStyle: 'italic' }}>
               <strong style={{ fontStyle: 'normal', color: 'var(--color-deep-blue)' }}>Конфиденциальность:</strong>{' '}
               Передаваемые проекты документов и коммерческие условия охраняются соглашением о неразглашении (NDA). Мы не передаём информацию третьим лицам.
