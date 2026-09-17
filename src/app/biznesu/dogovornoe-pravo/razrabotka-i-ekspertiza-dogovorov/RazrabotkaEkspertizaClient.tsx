@@ -877,7 +877,7 @@ export default function RazrabotkaEkspertizaClient() {
               className="hover-lift"
               style={{
                 background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
-                padding: '36px 30px 32px 30px',
+                padding: '24px 24px 20px 24px',
                 border: '1px solid rgba(193, 160, 102, 0.35)',
                 borderTop: '4px solid var(--color-gold)',
                 boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
@@ -889,8 +889,8 @@ export default function RazrabotkaEkspertizaClient() {
                 transition: 'all 0.3s ease'
               }}
             >
-              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
-                <svg width="110" height="110" viewBox="0 0 24 24" fill="#C1A066">
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.08, pointerEvents: 'none' }}>
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="#C1A066">
                   <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
               </div>
@@ -898,34 +898,37 @@ export default function RazrabotkaEkspertizaClient() {
               <div>
                 <h3 style={{
                   fontFamily: 'var(--font-serif)',
-                  fontSize: '18px',
+                  fontSize: '17px',
                   fontWeight: 600,
                   color: '#FFFFFF',
-                  margin: '8px 0 14px 0',
-                  lineHeight: 1.35
+                  margin: '2px 0 8px 0',
+                  lineHeight: 1.3
                 }}>
                   Нужна проверка договора перед подписанием?
                 </h3>
 
                 <p style={{
-                  fontSize: '14.5px',
+                  fontSize: '13.5px',
                   color: '#CBD5E1',
-                  lineHeight: 1.6,
+                  lineHeight: 1.5,
                   margin: 0
                 }}>
                   Предоставим письменное заключение с выявленными рисками, протоколом разногласий и рекомендациями по тексту.
                 </p>
               </div>
 
-              <div style={{ marginTop: '24px', position: 'relative', zIndex: 1 }}>
+              <div style={{ marginTop: '14px', position: 'relative', zIndex: 1 }}>
                 <a
                   href="#form"
                   className="btn btn-gold"
                   style={{
-                    display: 'inline-block',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px',
                     textAlign: 'center',
-                    padding: '12px 20px',
-                    fontSize: '14px',
+                    padding: '8px 16px',
+                    fontSize: '13.5px',
                     fontWeight: 700,
                     backgroundColor: 'var(--color-gold)',
                     color: 'var(--color-deep-blue)',
@@ -933,7 +936,8 @@ export default function RazrabotkaEkspertizaClient() {
                     textDecoration: 'none',
                     width: '100%',
                     boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)',
-                    transition: 'all 0.2s ease'
+                    transition: 'all 0.2s ease',
+                    cursor: 'pointer'
                   }}
                   onClick={(e) => {
                     e.preventDefault();
@@ -942,7 +946,11 @@ export default function RazrabotkaEkspertizaClient() {
                     else window.location.hash = 'form';
                   }}
                 >
-                  Заказать экспертизу договора
+                  <span>Заказать экспертизу договора</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </a>
               </div>
             </div>
