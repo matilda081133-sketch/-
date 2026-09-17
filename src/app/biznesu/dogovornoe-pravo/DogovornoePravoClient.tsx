@@ -733,12 +733,12 @@ export default function DogovornoePravoClient() {
               </Link>
             ))}
 
-            {/* Карточка 5: «Не нашли свою ситуацию?», занимающая доступное пространство в строке с 4-й картой */}
+            {/* Карточка 5: «Не нашли свою ситуацию?», оформленная по каноническому шаблону направлений */}
             <div
               className="card service-card service-card-span-2"
               style={{
                 gridColumn: 'span 2',
-                padding: '32px 36px',
+                padding: '30px',
                 background: 'var(--color-deep-blue)',
                 border: '1px solid transparent',
                 borderRadius: '0',
@@ -746,7 +746,7 @@ export default function DogovornoePravoClient() {
                 flexDirection: 'row',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                gap: '28px',
+                gap: '24px',
                 transition: 'all 0.3s',
                 position: 'relative',
                 borderTop: '3px solid var(--color-gold)',
@@ -765,36 +765,37 @@ export default function DogovornoePravoClient() {
                   }
                 }
                 .white-btn-custom {
-                  background-color: var(--color-white) !important;
+                  background-color: #FFFFFF !important;
                   color: #10273B !important;
-                  border: 1px solid var(--color-white) !important;
+                  border: 1px solid #FFFFFF !important;
                   white-space: nowrap;
                   font-weight: 600;
-                  padding: 14px 28px !important;
+                  padding: 10px 20px !important;
+                  font-size: 13.5px !important;
                   transition: all 0.3s ease !important;
                 }
                 .white-btn-custom:hover {
-                  background-color: var(--color-primary) !important;
-                  color: var(--color-white) !important;
-                  border-color: var(--color-primary) !important;
+                  background-color: var(--color-gold) !important;
+                  color: #10273B !important;
+                  border-color: var(--color-gold) !important;
                 }
               `}} />
               <div style={{ flex: '1 1 320px' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', lineHeight: 1.3 }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.35, fontWeight: 600 }}>
                   Не нашли свою ситуацию?
                 </h3>
-                <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.55, maxWidth: '580px' }}>
-                  <span style={{ display: 'inline-block' }}>Договорная задача может затрагивать расчёты, налоги или будущий спор.</span> <br /> <span style={{ display: 'inline-block' }}>Опишите детали в форме — определим подходящий формат помощи.</span>
+                <p style={{ margin: '0', fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55, maxWidth: '580px' }}>
+                  Договорная задача может затрагивать расчёты, налоги или будущий спор. Опишите детали в форме — определим подходящий формат помощи.
                 </p>
               </div>
               <div style={{ flexShrink: 0 }}>
                 <a
                   href="#form"
                   className="btn white-btn-custom"
-                  style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
+                  style={{ display: 'inline-block', textAlign: 'center', textDecoration: 'none' }}
                   onClick={() => setActiveContext('custom-situation')}
                 >
-                  Обсудить задачу
+                  <span style={{ color: '#10273B', fontWeight: 600 }}>Получить консультацию</span>
                 </a>
               </div>
             </div>

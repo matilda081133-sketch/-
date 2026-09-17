@@ -503,14 +503,12 @@ export default function VzyskanieStoimostiDoliClient() {
       {/* ═══ БЛОК 3: ЧТО ВЛИЯЕТ НА ДЕЙСТВИТЕЛЬНУЮ СТОИМОСТЬ ДОЛИ (ПО ШАБЛОНУ НАПРАВЛЕНИЙ) ═══ */}
       <section className="section" id="valuation" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              <span style={{ display: 'inline-block' }}>Что влияет на действительную</span> <br />
-              <span style={{ display: 'inline-block' }}>стоимость доли в ООО</span>
+          <div style={{ maxWidth: '850px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(26px, 3.4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Что влияет на действительную стоимость доли в ООО
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
-              <span style={{ display: 'inline-block' }}>Рыночная оценка чистых активов компании —</span> <br />
-              <span style={{ display: 'inline-block' }}>главный инструмент справедливой выплаты вышедшему участнику.</span>
+              Рыночная оценка чистых активов компании — главный инструмент справедливой выплаты вышедшему участнику.
             </p>
           </div>
 

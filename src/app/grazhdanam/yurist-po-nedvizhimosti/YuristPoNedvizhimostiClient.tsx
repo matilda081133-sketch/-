@@ -619,7 +619,7 @@ export default function YuristPoNedvizhimostiClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px' }}>
+          <div className="grid grid-3" style={{ gap: '28px', gridAutoRows: '1fr' }}>
             {situations.map((sit, i) => (
               <div
                 key={i}
@@ -726,7 +726,7 @@ export default function YuristPoNedvizhimostiClient() {
 
             {/* Карточка 9: Экспресс-анализ (CTA-карточка в 3-й строке) */}
             <div className="hover-lift" style={{ 
-              padding: '36px 30px', 
+              padding: '32px 28px', 
               background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
               border: '1px solid rgba(193, 160, 102, 0.35)',
               borderTop: '3px solid var(--color-gold)',
@@ -746,68 +746,66 @@ export default function YuristPoNedvizhimostiClient() {
 
               <div>
                 <div style={{ 
-                  fontSize: '12px', 
+                  fontSize: '11.5px', 
                   fontWeight: 700, 
                   color: 'var(--color-gold)', 
                   textTransform: 'uppercase', 
-                  letterSpacing: '0.08em', 
-                  marginBottom: '14px',
+                  letterSpacing: '0.06em', 
+                  marginBottom: '12px',
                   background: 'rgba(193, 160, 102, 0.15)',
-                  padding: '4px 10px',
+                  padding: '3px 8px',
                   alignSelf: 'flex-start',
-                  display: 'inline-block'
+                  display: 'inline-block',
+                  borderRadius: '2px'
                 }}>
                   Экспресс-анализ
                 </div>
                 <h3 style={{ 
                   fontFamily: 'var(--font-serif)', 
-                  fontSize: '17px', 
+                  fontSize: '18px', 
                   fontWeight: 600, 
                   color: '#FFFFFF', 
-                  margin: '0 0 14px 0', 
+                  margin: '0 0 12px 0', 
                   lineHeight: 1.35,
-                  minHeight: '68px',
                   position: 'relative',
                   zIndex: 1
                 }}>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                    Определить стадию
-                  </span>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                    и следующий шаг
-                  </span>
-                  <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                    по вашей ситуации
-                  </span>
+                  Определить следующий шаг
                 </h3>
                 <p style={{ 
-                  fontSize: '14.5px', 
+                  fontSize: '14px', 
                   color: '#CBD5E1', 
                   lineHeight: 1.6,
-                  margin: '0 0 20px 0',
+                  margin: 0,
                   position: 'relative',
                   zIndex: 1
                 }}>
-                  Передайте документы юристу по недвижимости: проверим объект, сторону сделки, процессуальные сроки и подберём законный маршрут защиты.
+                  Проверим объект, сторону сделки, процессуальные сроки и подберём законный маршрут защиты.
                 </p>
               </div>
 
-              <div style={{ position: 'relative', zIndex: 1 }}>
+              <div style={{ position: 'relative', zIndex: 1, marginTop: '20px' }}>
                 <a
                   href="#form"
                   className="btn btn-gold"
                   style={{
                     display: 'block',
                     textAlign: 'center',
-                    padding: '12px 18px',
-                    fontSize: '14px',
+                    padding: '9px 14px',
+                    fontSize: '13px',
                     fontWeight: 700,
                     backgroundColor: 'var(--color-gold)',
                     color: 'var(--color-deep-blue)',
-                    borderRadius: '2px',
+                    borderRadius: '0',
                     textDecoration: 'none',
                     transition: 'all 0.2s ease',
                     boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
                   Определить стадию и следующий шаг

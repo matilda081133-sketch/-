@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -495,8 +495,7 @@ export default function SemejnyjClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Услуги</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>семейного юриста</span>
+              Услуги семейного юриста
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Выберите конкретное направление, чтобы узнать порядок действий, необходимые документы и варианты решения вашей задачи.

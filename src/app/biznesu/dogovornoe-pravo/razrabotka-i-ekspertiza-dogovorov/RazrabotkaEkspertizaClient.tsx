@@ -188,19 +188,43 @@ export default function RazrabotkaEkspertizaClient() {
 
   const contractCategories = [
     {
-      title: 'Торговля и поставка',
+      num: '01',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Торговля</span>
+          <span style={{ display: 'block' }}>и поставка</span>
+        </>
+      ),
       items: 'Договоры поставки товаров и оборудования, дистрибуция, оптовая купля-продажа, коммерческая концессия и агентские договоры.'
     },
     {
-      title: 'Услуги и подряд',
+      num: '02',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Услуги</span>
+          <span style={{ display: 'block' }}>и подряд</span>
+        </>
+      ),
       items: 'Возмездное оказание услуг, проектные и монтажные работы, IT-разработка и лицензии, логистика и транспортная экспедиция.'
     },
     {
-      title: 'Имущественные сделки',
+      num: '03',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Имущественные</span>
+          <span style={{ display: 'block' }}>сделки</span>
+        </>
+      ),
       items: 'Аренда коммерческих помещений, складов и земельных участков, лизинг спецтехники, оборудования и автотранспорта.'
     },
     {
-      title: 'Обеспечение и финансы',
+      num: '04',
+      title: (
+        <>
+          <span style={{ display: 'block' }}>Обеспечение</span>
+          <span style={{ display: 'block' }}>и финансы</span>
+        </>
+      ),
       items: 'Договоры займа, поручительства, залога, уступки прав требования (цессия), перевод долга и соглашения о новации.'
     }
   ];
@@ -926,125 +950,184 @@ export default function RazrabotkaEkspertizaClient() {
         </div>
       </section>
 
-      {/* ═══ 4. КАКОЙ ФОРМАТ ПОМОЩИ НУЖЕН ═══ */}
+      {/* ═══ 4. КАКОЙ ФОРМАТ ПОМОЩИ НУЖЕН (ШАБЛОН СЦЕНАРИЕВ / ВЫБОР ПОРЯДКА) ═══ */}
       <section id="formats" className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Какой формат помощи нужен
+          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '12px'
+            }}>
+              Выбор формата работы
+            </div>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Какой формат помощи</span> <br />
+              <span style={{ display: 'inline-block' }}>нужен бизнесу</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Выберите необходимый объём юридического участия: от разовой оценки рисков до полной разработки индивидуального комплекта документов.
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '24px' }}>
+          <div className="grid grid-2" style={{ gap: '28px' }}>
             {formats.map((fmt, idx) => (
               <div
                 key={idx}
-                className="card service-card hover-lift"
+                className="hover-lift"
                 style={{
-                  padding: '32px 30px',
-                  background: 'var(--color-white)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
-                  borderRadius: '0',
+                  padding: '34px 28px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)'
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
+                {/* Фирменный водяной знак */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.05, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+
                 <div>
                   <div style={{
-                    fontSize: '11px',
+                    fontSize: '11.5px',
                     fontWeight: 700,
                     color: 'var(--color-gold)',
-                    letterSpacing: '0.05em',
                     textTransform: 'uppercase',
-                    marginBottom: '10px'
+                    letterSpacing: '0.08em',
+                    marginBottom: '14px',
+                    background: 'rgba(193, 160, 102, 0.12)',
+                    padding: '4px 10px',
+                    alignSelf: 'flex-start',
+                    display: 'inline-block',
+                    position: 'relative',
+                    zIndex: 1
                   }}>
                     {fmt.badge}
                   </div>
-
                   <h3 style={{
+                    fontSize: '18px',
                     fontFamily: 'var(--font-serif)',
-                    fontSize: '20px',
-                    fontWeight: 600,
                     color: 'var(--color-deep-blue)',
-                    marginBottom: '12px',
-                    lineHeight: 1.3
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35,
+                    fontWeight: 600,
+                    position: 'relative',
+                    zIndex: 1
                   }}>
                     {fmt.title}
                   </h3>
-
-                  <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+                  <p style={{
+                    fontSize: '14.5px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: '0 0 24px 0',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
                     {fmt.desc}
                   </p>
-
-                  <div style={{
-                    background: 'var(--color-bg-light)',
-                    padding: '14px 16px',
-                    borderLeft: '3px solid var(--color-gold)',
-                    marginBottom: '28px'
-                  }}>
-                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                      Результат:
-                    </span>
-                    <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                      {fmt.result}
-                    </span>
-                  </div>
                 </div>
 
-                <a
-                  href="#form"
-                  onClick={() => setActiveContext(fmt.context)}
-                  className="btn btn-primary"
-                  style={{ textAlign: 'center', width: '100%' }}
-                >
-                  {fmt.cta}
-                </a>
+                <div style={{
+                  background: '#FFFFFF',
+                  padding: '16px 18px',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '3px solid var(--color-gold)',
+                  marginTop: 'auto',
+                  position: 'relative',
+                  zIndex: 1,
+                  boxShadow: '0 2px 8px rgba(23, 50, 77, 0.03)'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                      Результат
+                    </strong>
+                  </div>
+                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
+                    {fmt.result}
+                  </span>
+                </div>
+
+                <div style={{ marginTop: '20px', position: 'relative', zIndex: 1 }}>
+                  <a
+                    href="#form"
+                    onClick={() => setActiveContext(fmt.context)}
+                    className="btn btn-primary"
+                    style={{ textAlign: 'center', width: '100%', padding: '12px 20px', fontSize: '14px', display: 'block' }}
+                  >
+                    {fmt.cta}
+                  </a>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══ 5. С КАКИМИ ДОГОВОРАМИ РАБОТАЕМ ═══ */}
-      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ 5. С КАКИМИ ДОГОВОРАМИ РАБОТАЕМ (ПО ШАБЛОНУ КАРТОЧКИ-НАВИГАТОРА) ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              С какими договорами <br />работаем
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Разрабатываем и проверяем типовые, нестандартные и смешанные договоры для коммерческих компаний и предпринимателей.
-            </p>
-          </div>
-
-          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '28px' }}>
-            {contractCategories.map((cat, idx) => (
-              <div
-                key={idx}
-                className="card hover-lift"
-                style={{
-                  background: 'var(--color-white)',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-gold)',
-                  padding: '26px 26px',
-                  borderRadius: '0',
-                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
-                }}
-              >
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
-                  {cat.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {cat.items}
-                </p>
+          {/* Темно-синяя карточка-навигатор */}
+          <div style={{
+            background: 'linear-gradient(135deg, #10273B 0%, #17375E 50%, #0D1E2D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            marginBottom: '24px',
+            position: 'relative'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+              <div>
+                <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  С какими договорами работаем
+                </h2>
               </div>
-            ))}
+              <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', maxWidth: '520px', lineHeight: 1.5 }}>
+                <span style={{ display: 'block' }}>Разрабатываем и проверяем типовые, нестандартные</span>
+                <span style={{ display: 'block' }}>и смешанные договоры для коммерческих компаний.</span>
+              </div>
+            </div>
+
+            <div className="grid grid-4" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
+              {contractCategories.map((cat, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    padding: '22px 20px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '10px'
+                  }}
+                >
+                  <h3 style={{ fontSize: '16.5px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.35, display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                    <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0 }}>
+                      {cat.num}
+                    </span>
+                    <span>{cat.title}</span>
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                    {cat.items}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div
