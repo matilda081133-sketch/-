@@ -396,7 +396,12 @@ export default function DogovornoePravoClient() {
           </>
         }
         superTitle="Договорное право • Для бизнеса"
-        title="Договорный юрист для бизнеса в Липецке"
+        title={
+          <span>
+            <span style={{ display: 'inline-block' }}>Договорный юрист</span> <br />
+            <span style={{ display: 'inline-block' }}>для бизнеса в&nbsp;Липецке</span>
+          </span>
+        }
         subtitle="Разработаем или проверим договор, оценим систему договорной работы и защитим интересы компании при конфликте с контрагентом."
         trustItems={[
           { text: 'Проверяем условия и документы сделки' },
