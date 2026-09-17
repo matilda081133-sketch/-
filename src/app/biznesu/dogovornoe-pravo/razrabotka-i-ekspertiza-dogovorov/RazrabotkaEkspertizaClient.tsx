@@ -154,43 +154,35 @@ export default function RazrabotkaEkspertizaClient() {
   const reviewScope = [
     {
       title: 'Предмет и модель сделки',
-      what: 'Что именно должна сделать каждая сторона, в какой последовательности и с каким измеримым результатом.',
-      why: 'Размытый предмет осложняет исполнение, приёмку и требования сторон.'
+      desc: 'Чёткая фиксация обязанностей сторон, этапов и измеримого результата. Исключаем риск признания договора незаключённым.'
     },
     {
       title: 'Цена и порядок расчётов',
-      what: 'Формула цены, НДС, авансирование, этапы, основания платежа, удержания, изменение стоимости.',
-      why: 'Оплата должна быть связана с понятными событиями и первичными документами.'
+      desc: 'Формула цены, условия авансирования, этапы платежей, привязка к первичным документам и защита от необоснованных удержаний.'
     },
     {
       title: 'Сроки исполнения и заявки',
-      what: 'Начало и окончание, этапы, порядок подачи заявок, продление, перенос и последствия просрочки.',
-      why: 'Неоднозначные сроки создают споры о моменте нарушения обязательств.'
+      desc: 'График исполнения, регламент подачи заявок, основания продления и предотвращение споров о моменте нарушения обязательств.'
     },
     {
       title: 'Приёмка и документооборот',
-      what: 'Акты, накладные, универсальные передаточные документы (УПД), электронный документооборот, сроки проверки.',
-      why: 'Договор должен учитывать реальный процесс фиксации исполнения.'
+      desc: 'Порядок подписания актов и УПД, правила электронного документооборота (ЭДО), регламент проверки без скрытых ловушек молчаливой приёмки.'
     },
     {
       title: 'Качество и гарантийные обязательства',
-      what: 'Требования к товару или услуге, гарантийный период, порядок фиксации дефектов и сроки их устранения.',
-      why: 'Общие фразы без чёткой процедуры не защищают от убытков.'
+      desc: 'Требования к товарам и работам, гарантийный период, порядок фиксации дефектов, сроки устранения и защита от необоснованных претензий.'
     },
     {
       title: 'Ответственность и штрафные санкции',
-      what: 'Неустойка, пени, штрафы, ограничение ответственности, возмещение потерь, заверения об обстоятельствах.',
-      why: 'Проверяем соразмерность санкций и отсутствие несимметричных штрафов.'
+      desc: 'Соразмерность неустоек и штрафов, ограничение ответственности, заверения об обстоятельствах и возмещение потерь без односторонних перекосов.'
     },
     {
       title: 'Изменение и расторжение',
-      what: 'Основания одностороннего отказа, порядок уведомлений, последствия прекращения сделки, возврат предоплаты.',
-      why: 'Важно предусмотреть безопасный выход из сделки без судебных штрафов.'
+      desc: 'Основания для одностороннего отказа от исполнения, порядок направления уведомлений, возврат предоплаты и безопасный выход из сделки.'
     },
     {
       title: 'Подсудность и претензионный порядок',
-      what: 'Срок ответа на претензию, выбор суда, электронные уведомления и адреса для юридически значимых сообщений.',
-      why: 'Формальные оговорки должны исключать территориальные неудобства при споре.'
+      desc: 'Сроки рассмотрения претензий, электронные юридически значимые адреса, выбор удобного суда и исключение выездных споров.'
     }
   ];
 
@@ -549,19 +541,28 @@ export default function RazrabotkaEkspertizaClient() {
         <div className="container">
           <div className="grid grid-3" style={{ gap: '24px' }}>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-              <div style={{ color: 'var(--color-gold)', fontSize: '20px', lineHeight: 1 }}>✓</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                <polyline points="9 11 12 14 22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+              </svg>
               <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.5 }}>
                 Проверяем договор на соответствие реальным бизнес-процессам компании.
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-              <div style={{ color: 'var(--color-gold)', fontSize: '20px', lineHeight: 1 }}>✓</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                <polyline points="9 11 12 14 22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+              </svg>
               <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.5 }}>
                 Предлагаем конкретные формулировки и протоколы разногласий.
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-              <div style={{ color: 'var(--color-gold)', fontSize: '20px', lineHeight: 1 }}>✓</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                <polyline points="9 11 12 14 22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+              </svg>
               <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', fontWeight: 500, lineHeight: 1.5 }}>
                 Сроки, формат результата и стоимость фиксируем до начала работы.
               </div>
@@ -757,55 +758,170 @@ export default function RazrabotkaEkspertizaClient() {
         </div>
       </section>
 
-      {/* ═══ 3. ЧТО ПРОВЕРЯЕМ В ДОГОВОРЕ ═══ */}
-      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ 3. ЧТО ПРОВЕРЯЕМ В ДОГОВОРЕ — НАПРАВЛЕНИЯ ЭКСПЕРТИЗЫ ═══ */}
+      <section className="section bg-light" id="review-scope" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
-          <div style={{ maxWidth: '750px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Что проверяем в договоре: <br />8 направлений анализа
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '12px'
+            }}>
+              Комплексный правовой аудит
+            </div>
+            <h2 className="with-accent" style={{ 
+              fontSize: 'clamp(28px, 4vw, 42px)', 
+              fontFamily: 'var(--font-serif)', 
+              color: 'var(--color-primary)', 
+              marginBottom: '16px', 
+              marginTop: 0, 
+              lineHeight: 1.2,
+              textAlign: 'left'
+            }}>
+              <span style={{ display: 'inline-block' }}>Что проверяем в договоре:</span> <br />
+              <span style={{ display: 'inline-block' }}>8 направлений анализа</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+            <p style={{ 
+              fontSize: '16px', 
+              color: 'var(--color-deep-blue)', 
+              opacity: 0.9, 
+              fontWeight: 500, 
+              margin: 0, 
+              lineHeight: 1.6, 
+              textAlign: 'left',
+              textWrap: 'balance' 
+            }}>
               Правовая оценка текста и приложений, чтобы исключить судебные уязвимости, потерю активов и неконтролируемые санкции.
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '24px' }}>
+          <div className="grid grid-3" style={{ gap: '20px', position: 'relative' }}>
             {reviewScope.map((item, idx) => (
               <div
                 key={idx}
-                className="card hover-lift"
+                className="hover-lift"
                 style={{
-                  background: 'var(--color-white)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
                   border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-gold)',
-                  padding: '28px 26px',
-                  borderRadius: '0',
-                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
-                  <span style={{
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    color: 'var(--color-gold)',
-                    fontFamily: 'var(--font-serif)'
-                  }}>
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
-                  <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: 0 }}>
-                    {item.title}
-                  </h3>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  0{idx + 1}
                 </div>
-
-                <div style={{ marginBottom: '12px', fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-                  <strong style={{ color: 'var(--color-primary)' }}>Что анализируем:</strong> {item.what}
-                </div>
-
-                <div style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                  <strong style={{ color: 'var(--color-deep-blue)' }}>Почему важно:</strong> {item.why}
-                </div>
+                <h3 style={{ 
+                  fontSize: '18px', 
+                  fontFamily: 'var(--font-serif)', 
+                  color: 'var(--color-deep-blue)', 
+                  margin: '8px 0 14px 0', 
+                  lineHeight: 1.35 
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{ 
+                  fontSize: '14.5px', 
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: 1.6, 
+                  margin: 0 
+                }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
+
+            {/* Карточка 9: Завершающая CTA карточка аудита */}
+            <div 
+              className="hover-lift"
+              style={{
+                background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+                padding: '36px 30px 32px 30px',
+                border: '1px solid rgba(193, 160, 102, 0.35)',
+                borderTop: '4px solid var(--color-gold)',
+                boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.1, pointerEvents: 'none' }}>
+                <svg width="110" height="110" viewBox="0 0 24 24" fill="#C1A066">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+
+              <div>
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '18px',
+                  fontWeight: 600,
+                  color: '#FFFFFF',
+                  margin: '8px 0 14px 0',
+                  lineHeight: 1.35
+                }}>
+                  Нужна проверка договора перед подписанием?
+                </h3>
+
+                <p style={{
+                  fontSize: '14.5px',
+                  color: '#CBD5E1',
+                  lineHeight: 1.6,
+                  margin: 0
+                }}>
+                  Предоставим письменное заключение с выявленными рисками, протоколом разногласий и рекомендациями по тексту.
+                </p>
+              </div>
+
+              <div style={{ marginTop: '24px', position: 'relative', zIndex: 1 }}>
+                <a
+                  href="#form"
+                  className="btn btn-gold"
+                  style={{
+                    display: 'inline-block',
+                    textAlign: 'center',
+                    padding: '12px 20px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    backgroundColor: 'var(--color-gold)',
+                    color: 'var(--color-deep-blue)',
+                    borderRadius: '0',
+                    textDecoration: 'none',
+                    width: '100%',
+                    boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
+                  }}
+                >
+                  Заказать экспертизу договора
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
