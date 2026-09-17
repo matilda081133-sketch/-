@@ -45,11 +45,25 @@ export default function VzyskaniePage() {
           'addressLocality': 'Липецк',
           'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
+        },
+        'employee': {
+          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
+        }
+      },
+      {
+        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
+        '@type': 'Person',
+        'name': 'Владимир Викторович Начешников',
+        'url': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+        'jobTitle': 'Куратор направления взыскания задолженности с юридических лиц',
+        'worksFor': {
+          '@id': 'https://dejure-help.ru/#organization'
         }
       },
       {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/#service',
+        'url': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/',
         'name': 'Взыскание задолженности с юридических лиц в Липецке',
         'serviceType': 'Юридические услуги по взысканию дебиторской задолженности с организаций и ИП',
         'description': 'Комплексное взыскание долгов бизнеса: правовой анализ документов, проверка платежеспособности должника, досудебная претензия, представительство в арбитражном суде и сопровождение исполнения.',

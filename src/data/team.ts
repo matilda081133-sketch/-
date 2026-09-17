@@ -537,7 +537,7 @@ export const teamData: Record<string, TeamMember> = {
         ],
         links: [
           { url: '/grazhdanam/bankrotstvo-fizicheskih-lic/', text: 'Судебное банкротство →' },
-          { url: '/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/', text: 'Внесудебное банкротство через МФЦ' }
+          { url: '/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/', text: 'Внесудебное банкротство через МФЦ →' }
         ],
         link: { url: '/grazhdanam/bankrotstvo-fizicheskih-lic/', text: 'О банкротстве физических лиц →' }
       },

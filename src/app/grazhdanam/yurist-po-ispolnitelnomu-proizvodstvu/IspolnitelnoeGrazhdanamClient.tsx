@@ -41,7 +41,14 @@ export default function IspolnitelnoeGrazhdanamClient() {
   const faqs = [
     {
       q: 'Можно ли списать долги по закрытому исполнительному производству?',
-      a: 'Если исполнительное производство окончено из-за отсутствия имущества (п. 4 ч. 1 ст. 46 № 229-ФЗ), вы можете <a href="/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/" style="color: var(--color-primary); text-decoration: underline;">Проверить условия банкротства через МФЦ</a>.'
+      a: (
+        <>
+          Если исполнительное производство окончено из-за отсутствия имущества (п. 4 ч. 1 ст. 46 № 229-ФЗ), вы можете{' '}
+          <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
+            проверить условия банкротства через МФЦ
+          </Link>.
+        </>
+      )
     },
     {
       q: 'Вы помогаете должникам или только взыскателям?',
@@ -895,7 +902,72 @@ export default function IspolnitelnoeGrazhdanamClient() {
         disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и иные сопутствующие расходы."
       />
 
-      {/* ═══ БЛОК 10: FAQ ═══ */}
+      {/* ═══ БЛОК 10: СМЕЖНЫЕ НАПРАВЛЕНИЯ ═══ */}
+      <section className="section bg-light" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', marginBottom: '36px' }}>
+            <h2 className="with-accent" style={{ fontSize: '32px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '12px', marginTop: 0 }}>
+              Смежные направления помощи
+            </h2>
+            <p style={{ fontSize: '15.5px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
+              Если исполнительное производство связано с кредитной задолженностью или долги невозможно погасить:
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '20px' }}>
+            <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '28px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)', transition: 'all 0.3s ease' }}>
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    Внесудебное банкротство через МФЦ
+                  </h3>
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Бесплатное списание задолженности от 25 000 до 1 000 000 ₽ при оконченном или длительном исполнительном производстве.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
+                  <span>Подробнее о процедуре</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+              </div>
+            </Link>
+            <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '28px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)', transition: 'all 0.3s ease' }}>
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    Судебное банкротство граждан
+                  </h3>
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Полное освобождение от долгов через арбитражный суд при невозможности закрыть обязательства перед кредиторами.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+              </div>
+            </Link>
+            <Link href="/grazhdanam/kreditnyj-yurist/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div className="card hover-lift" style={{ height: '100%', padding: '28px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)', transition: 'all 0.3s ease' }}>
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+                    Кредитный юрист
+                  </h3>
+                  <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    Споры с банками и МФО, отмена судебных приказов, снижение неустоек и защита прав заёмщика.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600 }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 11: FAQ ═══ */}
       <FAQBlock
         superTitle="Частые вопросы клиентов"
         title={<><span>Ответы на</span> <br /><span>частые вопросы</span></>}

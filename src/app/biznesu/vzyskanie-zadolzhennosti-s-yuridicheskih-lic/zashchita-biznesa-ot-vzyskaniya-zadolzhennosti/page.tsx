@@ -45,12 +45,26 @@ export default function ZashchitaPage() {
           'addressLocality': 'Липецк',
           'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
+        },
+        'employee': {
+          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
+        }
+      },
+      {
+        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
+        '@type': 'Person',
+        'name': 'Владимир Викторович Начешников',
+        'url': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+        'jobTitle': 'Куратор направления взыскания задолженности с юридических лиц',
+        'worksFor': {
+          '@id': 'https://dejure-help.ru/#organization'
         }
       },
       {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/#service',
         'name': 'Защита бизнеса от взыскания задолженности в Липецке',
+        'url': 'https://dejure-help.ru/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/zashchita-biznesa-ot-vzyskaniya-zadolzhennosti/',
         'serviceType': 'Юридическая защита ответчиков и должников в арбитражных спорах',
         'description': 'Правовой анализ требований кредитора, подготовка возражений на иск, снижение неустойки по ст. 333 ГК РФ, отмена обеспечительных мер, согласование мирового соглашения и рассрочки.',
         'areaServed': [

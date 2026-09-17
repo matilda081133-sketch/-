@@ -407,11 +407,7 @@ export default async function SpecialistPage({ params }: PageProps) {
                     </div>
                   ))}
                 </div>
-                {spec.link ? (
-                  <Link href={spec.link.url} className="btn-outline" style={{ display: 'block', textAlign: 'center', width: '100%', padding: '12px', fontSize: '14px', marginTop: 'auto' }} data-analytics="specialization-click" data-direction={spec.title}>
-                    {spec.link.text}
-                  </Link>
-                ) : spec.links && spec.links.length > 0 ? (
+                {spec.links && spec.links.length > 0 ? (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: 'auto', width: '100%' }}>
                     {spec.links.map((lnk, k) => (
                       <Link key={k} href={lnk.url} className="btn-outline" style={{ display: 'block', textAlign: 'center', width: '100%', padding: '10px 12px', fontSize: '13px', lineHeight: 1.35 }} data-analytics="specialization-click" data-direction={spec.title}>
@@ -419,6 +415,10 @@ export default async function SpecialistPage({ params }: PageProps) {
                       </Link>
                     ))}
                   </div>
+                ) : spec.link ? (
+                  <Link href={spec.link.url} className="btn-outline" style={{ display: 'block', textAlign: 'center', width: '100%', padding: '12px', fontSize: '14px', marginTop: 'auto' }} data-analytics="specialization-click" data-direction={spec.title}>
+                    {spec.link.text}
+                  </Link>
                 ) : (
                   <a href="#consultation" className="btn-outline" style={{ display: 'block', textAlign: 'center', width: '100%', padding: '12px', fontSize: '14px', marginTop: 'auto' }} data-analytics="specialization-click" data-direction={spec.title}>
                     Получить консультацию →
