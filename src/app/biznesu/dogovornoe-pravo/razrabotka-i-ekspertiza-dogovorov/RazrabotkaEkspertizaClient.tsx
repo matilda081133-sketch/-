@@ -985,7 +985,7 @@ export default function RazrabotkaEkspertizaClient() {
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '28px' }}>
+          <div className="grid grid-4" style={{ gap: '20px' }}>
             {formats.map((fmt, idx) => (
               <div
                 key={idx}
@@ -994,7 +994,7 @@ export default function RazrabotkaEkspertizaClient() {
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-primary)',
-                  padding: '34px 28px',
+                  padding: '28px 20px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -1012,14 +1012,14 @@ export default function RazrabotkaEkspertizaClient() {
 
                 <div>
                   <div style={{
-                    fontSize: '11.5px',
+                    fontSize: '11px',
                     fontWeight: 700,
                     color: 'var(--color-gold)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.08em',
-                    marginBottom: '14px',
+                    marginBottom: '12px',
                     background: 'rgba(193, 160, 102, 0.12)',
-                    padding: '4px 10px',
+                    padding: '3px 8px',
                     alignSelf: 'flex-start',
                     display: 'inline-block',
                     position: 'relative',
@@ -1028,11 +1028,11 @@ export default function RazrabotkaEkspertizaClient() {
                     {fmt.badge}
                   </div>
                   <h3 style={{
-                    fontSize: '18px',
+                    fontSize: '17px',
                     fontFamily: 'var(--font-serif)',
                     color: 'var(--color-deep-blue)',
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.35,
+                    margin: '0 0 10px 0',
+                    lineHeight: 1.3,
                     fontWeight: 600,
                     position: 'relative',
                     zIndex: 1
@@ -1040,10 +1040,10 @@ export default function RazrabotkaEkspertizaClient() {
                     {fmt.title}
                   </h3>
                   <p style={{
-                    fontSize: '14.5px',
+                    fontSize: '13.5px',
                     color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: '0 0 24px 0',
+                    lineHeight: 1.55,
+                    margin: '0 0 20px 0',
                     position: 'relative',
                     zIndex: 1
                   }}>
@@ -1053,7 +1053,7 @@ export default function RazrabotkaEkspertizaClient() {
 
                 <div style={{
                   background: '#FAF7F2',
-                  padding: '16px 18px',
+                  padding: '14px 16px',
                   border: '1px solid rgba(193, 160, 102, 0.25)',
                   borderLeft: '3px solid var(--color-gold)',
                   marginTop: 'auto',
@@ -1061,26 +1061,26 @@ export default function RazrabotkaEkspertizaClient() {
                   zIndex: 1,
                   boxShadow: '0 2px 8px rgba(23, 50, 77, 0.03)'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '5px' }}>
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                       <polyline points="9 11 12 14 22 4" />
                       <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
-                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                    <strong style={{ fontSize: '11px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                       Результат
                     </strong>
                   </div>
-                  <span style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
+                  <span style={{ fontSize: '13px', color: 'var(--color-deep-blue)', lineHeight: 1.45, fontWeight: 500, display: 'block' }}>
                     {fmt.result}
                   </span>
                 </div>
 
-                <div style={{ marginTop: '20px', position: 'relative', zIndex: 1 }}>
+                <div style={{ marginTop: '18px', position: 'relative', zIndex: 1 }}>
                   <a
                     href="#form"
                     onClick={() => setActiveContext(fmt.context)}
                     className="btn btn-primary"
-                    style={{ textAlign: 'center', width: '100%', padding: '12px 20px', fontSize: '14px', display: 'block' }}
+                    style={{ textAlign: 'center', width: '100%', padding: '11px 12px', fontSize: '13px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                   >
                     {fmt.cta}
                   </a>
