@@ -26,7 +26,7 @@ export interface PricingTier {
 
 interface PricingBlockProps {
   title?: string;
-  subtitle?: string;
+  subtitle?: string | React.ReactNode;
   tiers?: PricingTier[];
   ctaTitle?: string | React.ReactNode;
   ctaSubtitle?: string | React.ReactNode;
@@ -271,7 +271,11 @@ export default function PricingBlock({
             flexWrap: 'wrap', 
             gap: '24px', 
             alignItems: 'center', 
-            justifyContent: 'space-between' 
+            justifyContent: 'space-between',
+            maxWidth: '1152px',
+            width: '100%',
+            marginLeft: 'auto',
+            marginRight: 'auto'
           }}>
             <div style={{ flex: '1 1 400px' }}>
               <h3 style={{ fontSize: '22px', marginBottom: '10px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontWeight: 700 }}>{ctaTitle}</h3>
@@ -306,6 +310,12 @@ export default function PricingBlock({
           gap: 30px;
           max-width: 850px;
           margin: 0 auto;
+        }
+        .pricing-cta-banner {
+          max-width: 1152px !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          width: 100% !important;
         }
         @media (max-width: 991px) and (min-width: 768px) {
           .pricing-grid-5 {
