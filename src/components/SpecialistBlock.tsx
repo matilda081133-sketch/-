@@ -117,18 +117,10 @@ export default function SpecialistBlock({
             <h3 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', marginBottom: '12px', fontFamily: 'var(--font-serif)' }}>
               {profileHref ? (
                 <a href={profileHref} style={{ color: 'inherit', textDecoration: 'none' }}>
-                  {name === 'Владимир Викторович Начешников' || name === 'Начешников Владимир Викторович' ? (
-                    <>Начешников <br />Владимир Викторович</>
-                  ) : (
-                    name
-                  )}
+                  {name}
                 </a>
               ) : (
-                name === 'Владимир Викторович Начешников' || name === 'Начешников Владимир Викторович' ? (
-                  <>Начешников <br />Владимир Викторович</>
-                ) : (
-                  name
-                )
+                name
               )}
             </h3>
             <div style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '16px', marginBottom: '32px', textTransform: 'uppercase', letterSpacing: '0.05em', whiteSpace: 'pre-line' }}>

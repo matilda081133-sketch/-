@@ -224,43 +224,44 @@ export default function BankrotstvoBiznesaClient() {
     },
     {
       title: 'Подготовка заявления или требования',
-      subtitle: 'Анализ оснований и процессуальный комплект',
+      subtitle: 'Включение в реестр или подача на банкротство',
       price: 'от 25 000 ₽',
       popular: false,
       features: [
-        { name: 'Формирование расчёта и доказательственной базы', value: 'Да' },
-        { name: 'Подготовка заявления с полным пакетом приложений', value: 'Да' },
-        { name: 'Направление участникам и электронная подача в суд', value: 'Да' }
+        { name: 'Расчёт требований и неустоек', value: 'Да' },
+        { name: 'Формирование доказательственной базы', value: 'Да' },
+        { name: 'Подача в арбитражный суд', value: 'Да' },
+        { name: 'Контроль принятия к производству', value: 'Да' }
       ],
       buttonText: 'Подготовить документ',
       buttonHref: '#form'
     },
     {
       title: 'Сопровождение процедуры',
-      subtitle: 'Представительство должника или кредитора',
+      subtitle: 'Комплексное участие во всех стадиях',
       price: 'от 50 000 ₽',
       popular: false,
       features: [
-        { name: 'Участие в заседаниях арбитражного суда', value: 'Да' },
-        { name: 'Контроль и участие в собраниях кредиторов', value: 'Да' },
-        { name: 'Взаимодействие с арбитражным управляющим', value: 'Да' },
-        { name: 'Регулярная правовая отчётность доверителю', value: 'Да' }
+        { name: 'Участие в собраниях кредиторов', value: 'Да' },
+        { name: 'Анализ отчётов арбитражного управляющего', value: 'Да' },
+        { name: 'Контроль реализации имущества', value: 'Да' },
+        { name: 'Защита от неправомерных действий', value: 'Да' }
       ],
       buttonText: 'Обсудить сопровождение',
       buttonHref: '#form'
     },
     {
       title: 'Обособленный банкротный спор',
-      subtitle: 'Субсидиарная ответственность, сделки, жалобы',
+      subtitle: 'Субсидиарная ответственность, сделки, убытки',
       price: 'от 40 000 ₽',
       popular: false,
       features: [
-        { name: 'Формирование доказательственной базы', value: 'Да' },
-        { name: 'Подготовка мотивированных возражений или жалоб', value: 'Да' },
-        { name: 'Представительство в судебных инстанциях', value: 'Да' },
-        { name: 'Обжалование судебных актов при необходимости', value: 'Да' }
+        { name: 'Формирование правовой позиции', value: 'Да' },
+        { name: 'Сбор доказательств и контррасчёты', value: 'Да' },
+        { name: 'Судебное представительство во всех инстанциях', value: 'Да' },
+        { name: 'Обжалование судебных актов', value: 'Да' }
       ],
-      buttonText: 'Передать спор',
+      buttonText: 'Защитить интересы',
       buttonHref: '#form'
     }
   ];
@@ -516,46 +517,74 @@ export default function BankrotstvoBiznesaClient() {
                 )}
               </div>
             ))}
-          </div>
 
-          {/* Баннер «Не нашли свою ситуацию?» */}
-          <div
-            style={{
-              background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
-              padding: '40px 48px',
-              borderTop: '3px solid var(--color-gold)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '32px',
-              flexWrap: 'wrap',
-              boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
-            }}
-          >
-            <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
-              <h3 style={{ margin: '0 0 12px 0', fontSize: '26px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
-                Не нашли свою ситуацию?
-              </h3>
-              <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
-                <span style={{ display: 'inline-block' }}>Опишите вашу банкротную ситуацию в форме. Изучим имеющиеся документы</span> <br />
-                <span style={{ display: 'inline-block' }}>и предложим возможные варианты решения.</span>
-              </p>
-            </div>
-            <div style={{ flexShrink: 0 }}>
-              <a
-                href="#form"
-                className="btn white-btn-custom"
-                style={{
-                  display: 'inline-block',
-                  textAlign: 'center',
-                  fontSize: '15px',
-                  padding: '14px 28px',
-                  fontWeight: 600,
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                Описать ситуацию
-              </a>
+            {/* Карточка 8: «Не нашли свою ситуацию?», занимающая доступное пространство в строке с 7-й картой («Участник дела») */}
+            <div
+              className="card service-card service-card-span-2"
+              style={{
+                background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+                padding: '32px 36px',
+                border: '1px solid transparent',
+                borderTop: '3px solid var(--color-gold)',
+                borderRadius: '0',
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '28px',
+                position: 'relative',
+                boxShadow: '0 8px 24px rgba(11, 28, 42, 0.2)'
+              }}
+            >
+              <style dangerouslySetInnerHTML={{ __html: `
+                .service-card-span-2 {
+                  grid-column: span 2;
+                }
+                @media (max-width: 991px) {
+                  .service-card-span-2 {
+                    grid-column: span 1 !important;
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                  }
+                }
+                .white-btn-custom {
+                  background-color: var(--color-white) !important;
+                  color: #10273B !important;
+                  border: 1px solid var(--color-white) !important;
+                  white-space: nowrap;
+                  font-weight: 600;
+                  padding: 14px 28px !important;
+                  transition: all 0.3s ease !important;
+                }
+                .white-btn-custom:hover {
+                  background-color: var(--color-gold) !important;
+                  color: var(--color-deep-blue) !important;
+                  border-color: var(--color-gold) !important;
+                }
+              `}} />
+              <div style={{ flex: '1 1 300px' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '24px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
+                  Не нашли свою ситуацию?
+                </h3>
+                <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, maxWidth: '580px' }}>
+                  <span style={{ display: 'inline-block' }}>Опишите вашу банкротную ситуацию в форме. Изучим имеющиеся документы</span> <br />
+                  <span style={{ display: 'inline-block' }}>и предложим возможные варианты решения.</span>
+                </p>
+              </div>
+              <div style={{ flexShrink: 0 }}>
+                <a
+                  href="#form"
+                  className="btn white-btn-custom"
+                  style={{
+                    display: 'inline-block',
+                    textAlign: 'center',
+                    fontSize: '15px',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Описать ситуацию
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -628,17 +657,61 @@ export default function BankrotstvoBiznesaClient() {
             </span>
           </div>
 
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              text-decoration: none !important;
+              font-weight: 600 !important;
+              transition: all 0.3s ease !important;
+              border-radius: 0 !important;
+              display: inline-block !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+              transform: translateY(-2px);
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
             <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
               +7 (910) 350-31-11
             </a>
-            <span style={{ color: 'rgba(255,255,255,0.4)' }}>|</span>
-            <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: '14px' }}>
-              Консультация дежурного юриста по банкротству
-            </span>
-            <a href="#form" className="btn btn-urgent-call" style={{ marginLeft: 'auto', padding: '12px 28px', fontSize: '14px' }}>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Обсудить срочную ситуацию
             </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+              Консультация дежурного юриста по банкротству
+            </span>
           </div>
         </div>
       </section>
@@ -763,32 +836,93 @@ export default function BankrotstvoBiznesaClient() {
             ))}
           </div>
 
-          {/* Ошибки, которых нельзя допускать */}
+          {/* ЧЕГО КАТЕГОРИЧЕСКИ НЕ СЛЕДУЕТ ДЕЛАТЬ ПЕРЕД ПРОЦЕДУРОЙ (ШАБЛОН КАРТОЧКИ) */}
           <div style={{
-            background: 'var(--gradient-cream)',
-            border: '1px solid var(--color-border)',
-            borderLeft: '4px solid #D9534F',
-            padding: '32px 36px',
-            boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+            background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+            border: '1px solid rgba(193, 160, 102, 0.4)',
+            borderTop: '3px solid var(--color-gold)',
+            boxShadow: '0 8px 30px rgba(16, 39, 59, 0.18)',
+            padding: '36px 32px',
+            position: 'relative'
           }}>
-            <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
-              Чего категорически не следует делать перед процедурой:
-            </h3>
-            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '16px' }}>
-              Необдуманные действия в преддверии банкротства создают прямые основания для привлечения руководства к субсидиарной ответственности:
-            </p>
-            <div className="grid grid-2" style={{ gap: '16px' }}>
-              <div style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                • <strong>Не выводить активы</strong> по заниженным ценам или через цепочки аффилированных лиц — сделки легко оспариваются.
+            <div className="stages-header-row" style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '24px',
+              marginBottom: '24px',
+              position: 'relative',
+              zIndex: 1
+            }}>
+              <div style={{ flex: '1 1 auto', minWidth: '280px' }}>
+                <h3 style={{ fontSize: 'clamp(19px, 2.2vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                  <span style={{ display: 'inline-block' }}>Чего категорически не следует</span> <br />
+                  <span style={{ display: 'inline-block' }}>делать перед процедурой:</span>
+                </h3>
               </div>
-              <div style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                • <strong>Не оформлять номинальную смену директора</strong> — закон возлагает ответственность на фактических бенефициаров (КДЛ).
+              <div className="stages-subtitle-right" style={{
+                fontSize: '13.5px',
+                color: 'rgba(255, 255, 255, 0.85)',
+                maxWidth: '520px',
+                lineHeight: 1.5,
+                textAlign: 'right',
+                flex: '0 0 auto'
+              }}>
+                Необдуманные действия в преддверии банкротства создают прямые основания для привлечения руководства к субсидиарной ответственности:
               </div>
-              <div style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                • <strong>Не уничтожать бухгалтерскую базу и документацию</strong> — это создаёт презумпцию вины КДЛ по ст. 61.11 Закона о банкротстве.
+            </div>
+
+            <div className="grid grid-4" style={{ gap: '16px', position: 'relative', zIndex: 1 }}>
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.25, display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0, lineHeight: 1.2 }}>01</span>
+                  <span style={{ lineHeight: 1.25 }}>
+                    <span style={{ display: 'block' }}>Не выводить</span>
+                    <span style={{ display: 'block' }}>активы</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Сделки по заниженным ценам или через цепочки аффилированных лиц — легко оспариваются в суде.
+                </p>
               </div>
-              <div style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
-                • <strong>Не подписывать документы задним числом</strong> — судебная экспертиза давности выявит фальсификацию с передачей в следственные органы.
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.25, display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0, lineHeight: 1.2 }}>02</span>
+                  <span style={{ lineHeight: 1.25 }}>
+                    <span style={{ display: 'block' }}>Не менять директора</span>
+                    <span style={{ display: 'block' }}>на «номинала»</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Закон возлагает ответственность на фактических бенефициаров и контролирующих лиц (КДЛ).
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.25, display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0, lineHeight: 1.2 }}>03</span>
+                  <span style={{ lineHeight: 1.25 }}>
+                    <span style={{ display: 'block' }}>Не уничтожать</span>
+                    <span style={{ display: 'block' }}>базу и документы</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Утрата бухгалтерии создаёт презумпцию вины КДЛ по ст. 61.11 Закона о банкротстве.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '22px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <h4 style={{ fontSize: '16px', color: '#FFFFFF', margin: 0, fontWeight: 600, lineHeight: 1.25, display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', flexShrink: 0, lineHeight: 1.2 }}>04</span>
+                  <span style={{ lineHeight: 1.25 }}>
+                    <span style={{ display: 'block' }}>Не подписывать</span>
+                    <span style={{ display: 'block' }}>задним числом</span>
+                  </span>
+                </h4>
+                <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
+                  Судебная экспертиза давности выявит фальсификацию с передачей в следственные органы.
+                </p>
               </div>
             </div>
           </div>
@@ -811,20 +945,20 @@ export default function BankrotstvoBiznesaClient() {
       <SpecialistBlock
         title="Куратор направления"
         name="Владимир Викторович Начешников"
-        position="Специалист по корпоративным процедурам и банкротству бизнеса, куратор направления"
+        position="Специалист по арбитражным спорам и банкротству, куратор корпоративного направления"
         imageUrl="/images/nacheshnikov.jpg"
         imagePosition="center 15%"
         profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
         profileText="Подробнее о Владимире Викторовиче Начешникове →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Банкротство предприятия — это сложный арбитражный процесс, в котором сталкиваются интересы должника, банков, налоговых органов и контрагентов.
+            Банкротство должника — это не формальная ликвидация компании, а сложный судебный процесс с высокими рисками личной субсидиарной ответственности руководства и учредителей.
           </span>,
           <span key="2" style={{ color: 'var(--color-deep-blue)', display: 'block', marginTop: '12px' }}>
-            Владимир Викторович координирует правовой аудит ситуации, выстраивает процессуальную стратегию и контролирует ключевые этапы дела в Арбитражном суде Липецкой области.
+            Владимир Викторович лично руководит правовым аудитом кризисной ситуации, оценивает безопасность сделок за трёхлетний период и формирует выверенную позицию для арбитражного суда.
           </span>
         ]}
-        buttonText="Записаться на консультацию к куратору"
+        buttonText="Обсудить ситуацию с куратором"
         buttonHref="#form"
       />
 

@@ -597,27 +597,30 @@ export default function VklyuchenieVReestrClient() {
                 className="urgent-card hover-lift"
                 style={{
                   background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '30px 24px',
                   borderTop: '4px solid var(--color-gold)',
-                  padding: '30px 26px',
-                  borderRadius: '0',
-                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  <strong style={{ fontSize: '12.5px', color: 'var(--color-deep-blue)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                    Риск промедления
-                  </strong>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                      {card.title}
+                    </div>
+                  </div>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                    {card.desc}
+                  </p>
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.35 }}>
-                  {card.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {card.desc}
-                </p>
               </div>
             ))}
           </div>
@@ -719,26 +722,21 @@ export default function VklyuchenieVReestrClient() {
       {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
         title="Куратор направления"
-        name={
-          <>
-            Владимир<br />
-            Викторович Начешников
-          </>
-        }
-        position="Специалист по арбитражным процессам и банкротству юридических лиц, куратор направления"
+        name="Владимир Викторович Начешников"
+        position="Специалист по арбитражным спорам и банкротству, куратор корпоративного направления"
         imageUrl="/images/nacheshnikov.jpg"
         imagePosition="center 15%"
         profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
         profileText="Подробнее о Владимире Викторовиче Начешникове →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Подача заявления о включении в реестр — это полноценный судебный спор. Арбитражный управляющий обязан проверять каждое требование на мнимость и завышение процентов.
+            Банкротство должника — это не формальная ликвидация компании, а сложный судебный процесс с высокими рисками личной субсидиарной ответственности руководства и учредителей.
           </span>,
           <span key="2" style={{ color: 'var(--color-deep-blue)', display: 'block', marginTop: '12px' }}>
-            Владимир Викторович лично формирует структуру требования, проверяет первичные акты и отстаивает включение требований доверителей в Арбитражном суде Липецкой области.
+            Владимир Викторович лично руководит правовым аудитом кризисной ситуации, оценивает безопасность сделок за трёхлетний период и формирует выверенную позицию для арбитражного суда.
           </span>
         ]}
-        buttonText="Обсудить требование с куратором"
+        buttonText="Обсудить ситуацию с куратором"
         buttonHref="#form"
       />
 

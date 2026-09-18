@@ -112,7 +112,7 @@ export default function PricingBlock({
 
   return (
     <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--gradient-cream)', ...sectionStyle }}>
-      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="container" style={{ position: 'relative', zIndex: 1, ...(tiers.length >= 5 ? { maxWidth: '1400px' } : {}) }}>
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <h2 style={{ 
             marginTop: 0, 
@@ -162,14 +162,14 @@ export default function PricingBlock({
         )}
 
         <div 
-          className={`pricing-grid-container ${tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
+          className={`pricing-grid-container ${tiers.length >= 5 ? "pricing-grid-5" : tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
         >
           {tiers.map((tier, idx) => (
             <div key={idx} style={{
               background: tier.popular ? 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)' : 'var(--color-white)',
               color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)',
               borderRadius: '0',
-              padding: tiers.length === 4 ? '32px 16px' : '40px 30px',
+              padding: tiers.length >= 5 ? '26px 12px' : tiers.length === 4 ? '32px 16px' : '40px 30px',
               boxShadow: tier.popular ? '0 20px 40px rgba(16, 39, 59, 0.15)' : '0 10px 30px rgba(0,0,0,0.05)',
               border: tier.popular ? '1px solid transparent' : '1px solid rgba(23, 50, 77, 0.1)',
               position: 'relative',
@@ -196,31 +196,32 @@ export default function PricingBlock({
                   fontSize: '12px',
                   fontWeight: 'bold',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.1em'
+                  letterSpacing: '0.1em',
+                  whiteSpace: 'nowrap'
                 }}>
                   {tier.badgeText}
                 </div>
               )}
               
-              <div style={{ minHeight: '185px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', marginBottom: '24px' }}>
-                <h3 style={{ fontSize: tiers.length === 4 ? '20px' : '22px', margin: '0 0 8px 0', color: 'inherit', textAlign: 'center', lineHeight: 1.3 }}>{tier.title}</h3>
-                <p style={{ fontSize: '14px', opacity: 0.8, margin: '0 0 12px 0', textAlign: 'center', lineHeight: 1.5 }}>{tier.subtitle}</p>
+              <div style={{ minHeight: tiers.length >= 5 ? '165px' : '185px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', marginBottom: tiers.length >= 5 ? '18px' : '24px' }}>
+                <h3 style={{ fontSize: tiers.length >= 5 ? '16.5px' : tiers.length === 4 ? '20px' : '22px', margin: '0 0 8px 0', color: 'inherit', textAlign: 'center', lineHeight: 1.3 }}>{tier.title}</h3>
+                <p style={{ fontSize: tiers.length >= 5 ? '12.5px' : '14px', opacity: 0.8, margin: '0 0 12px 0', textAlign: 'center', lineHeight: 1.45 }}>{tier.subtitle}</p>
                 
                 {tier.price && (
-                  <div style={{ fontSize: '28px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', marginTop: 'auto', textAlign: 'center' }}>
+                  <div style={{ fontSize: tiers.length >= 5 ? '22px' : '28px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', marginTop: 'auto', textAlign: 'center' }}>
                     {tier.price}
                   </div>
                 )}
               </div>
 
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: tiers.length >= 5 ? '0 0 24px 0' : '0 0 32px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: tiers.length >= 5 ? '12px' : '16px' }}>
                 {tier.features.map((feature, fIdx) => (
-                  <li key={fIdx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '8px', fontSize: '13px', opacity: 0.9 }}>
-                    <div style={{ display: 'flex', gap: '8px', flex: '1 1 0%', minWidth: 0 }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={tier.popular ? "rgba(255,255,255,0.5)" : "var(--color-primary)"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span style={{ lineHeight: 1.35, wordBreak: 'break-word' }}>{feature.name}</span>
+                  <li key={fIdx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '6px', fontSize: tiers.length >= 5 ? '12px' : '13px', opacity: 0.9 }}>
+                    <div style={{ display: 'flex', gap: '6px', flex: '1 1 0%', minWidth: 0 }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={tier.popular ? "rgba(255,255,255,0.5)" : "var(--color-primary)"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span style={{ lineHeight: 1.3, wordBreak: 'break-word' }}>{feature.name}</span>
                     </div>
-                    <span style={{ fontWeight: 600, whiteSpace: 'nowrap', color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)' }}>{feature.value}</span>
+                    <span style={{ fontWeight: 600, whiteSpace: 'nowrap', color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)', marginLeft: '4px' }}>{feature.value}</span>
                   </li>
                 ))}
               </ul>
@@ -229,12 +230,12 @@ export default function PricingBlock({
                 width: '100%', 
                 textAlign: 'center',
                 borderRadius: '0',
-                fontSize: '15px',
-                padding: '14px 16px',
+                fontSize: tiers.length >= 5 ? '13px' : '15px',
+                padding: tiers.length >= 5 ? '12px 6px' : '14px 16px',
                 whiteSpace: 'normal',
                 textWrap: 'balance',
                 lineHeight: 1.3,
-                minHeight: '52px'
+                minHeight: tiers.length >= 5 ? '48px' : '52px'
               }}>
                 {tier.buttonText || 'Узнать точную стоимость'}
               </a>
@@ -288,19 +289,29 @@ export default function PricingBlock({
           align-items: stretch;
           width: 100%;
         }
-        .pricing-grid-3 {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 30px;
+        .pricing-grid-5 {
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+          gap: 12px;
         }
         .pricing-grid-4 {
           grid-template-columns: repeat(4, minmax(0, 1fr));
           gap: 16px;
+        }
+        .pricing-grid-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 30px;
         }
         .pricing-grid-2 {
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 30px;
           max-width: 850px;
           margin: 0 auto;
+        }
+        @media (max-width: 991px) and (min-width: 768px) {
+          .pricing-grid-5 {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 16px !important;
+          }
         }
         @media (max-width: 1024px) and (min-width: 768px) {
           .pricing-grid-3, .pricing-grid-4 {
@@ -309,7 +320,7 @@ export default function PricingBlock({
           }
         }
         @media (max-width: 767px) {
-          .pricing-grid-container, .pricing-grid-3, .pricing-grid-4, .pricing-grid-2 {
+          .pricing-grid-container, .pricing-grid-5, .pricing-grid-4, .pricing-grid-3, .pricing-grid-2 {
             grid-template-columns: 1fr !important;
             gap: 20px !important;
           }

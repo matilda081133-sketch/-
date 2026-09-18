@@ -396,6 +396,10 @@ export default function IskArbitrazhClient() {
           { text: 'Ходатайства об обеспечительных мерах и аресте счетов' },
           { text: 'Официальная подача через систему «Мой Арбитр»' }
         ]}
+        imageUrl="/images/nacheshnikov.jpg"
+        imageName="Владимир Викторович Начешников"
+        imageSubtitle="Специалист по арбитражным спорам и защите бизнеса, куратор направления"
+        imageObjectPosition="center 15%"
         afterTrustContent={
           <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, margin: '16px 0 24px 0', lineHeight: 1.5, fontWeight: 500 }}>
             Иск и комплект документов готовит юрист по арбитражным спорам. Состав работ и стоимость фиксируем до начала подготовки.

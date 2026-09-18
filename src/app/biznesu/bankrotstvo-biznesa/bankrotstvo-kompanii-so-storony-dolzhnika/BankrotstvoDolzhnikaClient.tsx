@@ -602,34 +602,37 @@ export default function BankrotstvoDolzhnikaClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
+          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '40px' }}>
             {urgentCards.map((card, cIdx) => (
               <div
                 key={cIdx}
                 className="urgent-card hover-lift"
                 style={{
                   background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '30px 24px',
                   borderTop: '4px solid var(--color-gold)',
-                  padding: '30px 26px',
-                  borderRadius: '0',
-                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  <strong style={{ fontSize: '12.5px', color: 'var(--color-deep-blue)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                    Риск промедления
-                  </strong>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                      {card.title}
+                    </div>
+                  </div>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                    {card.desc}
+                  </p>
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.35 }}>
-                  {card.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {card.desc}
-                </p>
               </div>
             ))}
           </div>
@@ -637,35 +640,77 @@ export default function BankrotstvoDolzhnikaClient() {
           <div style={{
             background: 'rgba(255, 255, 255, 0.08)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '24px 28px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            gap: '20px'
+            padding: '16px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
+            lineHeight: 1.6
           }}>
-            <div style={{ maxWidth: '680px' }}>
-              <strong style={{ display: 'block', fontSize: '16px', color: '#FFFFFF', marginBottom: '4px' }}>
-                Не совершайте платежей «задним числом» и не передавайте активы до правовой оценки
-              </strong>
-              <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.5 }}>
-                Любые нетипичные переводы перед судом оспариваются конкурсным управляющим и служат доказательством недобросовестности.
-              </span>
+            <span style={{ display: 'inline-block' }}>
+              <strong style={{ color: '#FFFFFF' }}>Важно:</strong> Не совершайте платежей «задним числом» и не передавайте активы до правовой оценки.
+            </span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>
+              Любые нетипичные переводы перед судом оспариваются конкурсным управляющим и служат доказательством недобросовестности.
+            </span>
+          </div>
+
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              text-decoration: none !important;
+              font-weight: 600 !important;
+              transition: all 0.3s ease !important;
+              border-radius: 0 !important;
+              display: inline-block !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+              transform: translateY(-2px);
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+                +7 (910) 350-31-11
+              </a>
+              <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+                Позвонить юристу
+              </a>
+              <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+                Срочная консультация
+              </a>
             </div>
-            <a
-              href="#form"
-              className="btn"
-              style={{
-                background: 'var(--color-gold)',
-                color: 'var(--color-deep-blue)',
-                fontWeight: 700,
-                padding: '14px 26px',
-                whiteSpace: 'nowrap',
-                textDecoration: 'none'
-              }}
-            >
-              Срочная консультация
-            </a>
+            <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px' }}>
+              Консультация дежурного юриста по банкротству
+            </span>
           </div>
         </div>
       </section>
@@ -731,12 +776,7 @@ export default function BankrotstvoDolzhnikaClient() {
       {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
         title="Куратор направления"
-        name={
-          <>
-            Владимир<br />
-            Викторович Начешников
-          </>
-        }
+        name="Владимир Викторович Начешников"
         position="Специалист по арбитражным спорам и банкротству, куратор корпоративного направления"
         imageUrl="/images/nacheshnikov.jpg"
         imagePosition="center 15%"

@@ -583,8 +583,13 @@ export default function ArbitrazhClient() {
         trustItems={[
           { text: 'Работаем со стороны истца, ответчика и третьего лица' },
           { text: 'Подключаемся до подачи иска и к уже начавшемуся делу' },
-          { text: 'Объём, этап и стоимость согласуем до начала работы' }
+          { text: 'Объём, этап и стоимость согласуем до начала работы' },
+          { text: 'Куратор направления — Владимир Викторович Начешников' }
         ]}
+        imageUrl="/images/nacheshnikov.jpg"
+        imageName="Владимир Викторович Начешников"
+        imageSubtitle="Специалист по арбитражным спорам и защите бизнеса, куратор направления"
+        imageObjectPosition="center 15%"
         afterTrustContent={
           <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, margin: '16px 0 24px 0', lineHeight: 1.5, fontWeight: 500 }}>
             Дело передаём юристу по арбитражным спорам после первичного анализа документов и стадии процесса.
