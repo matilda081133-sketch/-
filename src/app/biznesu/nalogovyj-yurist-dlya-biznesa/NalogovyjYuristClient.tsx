@@ -23,7 +23,8 @@ export default function NalogovyjYuristClient() {
         </span>
       ),
       desc: 'Определим обоснованность требования по ст. 93, 93.1 НК РФ, подготовим безопасные пояснения и подготовим должностных лиц к допросу в инспекции.',
-      btnText: 'Ответить на требование'
+      btnText: 'Ответить на требование',
+      href: '#form'
     },
     {
       tag: 'Налоговая проверка',
@@ -34,7 +35,8 @@ export default function NalogovyjYuristClient() {
         </span>
       ),
       desc: 'Контролируем законность действий проверяющих, сопровождаем осмотры и выемки, собираем доказательства реальности хозяйственных операций.',
-      btnText: 'Сопровождение ВНП'
+      btnText: 'Сопровождение ВНП',
+      href: '/biznesu/nalogovyj-yurist-dlya-biznesa/soprovozhdenie-nalogovyh-proverok/'
     },
     {
       tag: 'Акт проверки',
@@ -45,7 +47,8 @@ export default function NalogovyjYuristClient() {
         </span>
       ),
       desc: 'Проверим факты, доказательства и расчет недоимки, подготовим мотивированные возражения на акт в течение 1 месяца и отстоим позицию на рассмотрении.',
-      btnText: 'Возражения на акт'
+      btnText: 'Возражения на акт',
+      href: '#form'
     },
     {
       tag: 'Решение ФНС',
@@ -56,7 +59,8 @@ export default function NalogovyjYuristClient() {
         </span>
       ),
       desc: 'Определим объём и стратегию обжалования, подадим апелляционную жалобу в УФНС и оспорим решение в Арбитражном суде Липецкой области.',
-      btnText: 'Оспорить решение'
+      btnText: 'Оспорить решение',
+      href: '/biznesu/nalogovyj-yurist-dlya-biznesa/osparivanie-donachislenij-i-reshenij-fns/'
     },
     {
       tag: 'Дробление бизнеса',
@@ -67,7 +71,8 @@ export default function NalogovyjYuristClient() {
         </span>
       ),
       desc: 'Опровергнем критерии формального разделения бизнеса, подтвердим самостоятельность компаний и ИП, деловую цель и раздельный учет.',
-      btnText: 'Защита от дробления'
+      btnText: 'Защита от дробления',
+      href: '/biznesu/nalogovyj-yurist-dlya-biznesa/zashchita-pri-obvinenii-v-droblenii-biznesa/'
     },
     {
       tag: 'Уголовные риски',
@@ -78,7 +83,8 @@ export default function NalogovyjYuristClient() {
         </span>
       ),
       desc: 'Синхронизируем налоговые возражения с уголовно-правовой защитой руководства по ст. 199 УК РФ до возбуждения уголовного дела.',
-      btnText: 'Снять уголовный риск'
+      btnText: 'Снять уголовный риск',
+      href: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/'
     }
   ];
 
@@ -253,282 +259,468 @@ export default function NalogovyjYuristClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'inline-block' }}>Налоговый юрист</span> <br />
-            <span style={{ display: 'inline-block', color: 'var(--color-gold)' }}>для бизнеса в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Налоговый юрист
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              для бизнеса в Липецке
+            </span>
           </span>
         }
-        subtitle="Помогаем компаниям и предпринимателям при требованиях и проверках ФНС, доначислениях, обжаловании решений и обвинениях в дроблении бизнеса."
-        trustItems={[
-          'Изучим материалы и определим текущую стадию налогового спора',
-          'Проверим доводы ФНС, доказательства и обоснованность расчёта недоимки',
-          'Сформируем позицию и сопроводим защиту в УФНС и арбитражном суде',
-          'Координируем налоговую защиту со смежными уголовными рисками (ст. 199 УК РФ)'
-        ]}
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '760px', textWrap: 'balance' }}>
+            Помогаем компаниям и предпринимателям при требованиях и проверках ФНС, доначислениях, обжаловании решений и обвинениях в дроблении бизнеса.
+          </span>
+        }
         primaryCtaText="Обсудить налоговую ситуацию"
         primaryCtaLink="#form"
+        primaryCtaSubtext={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Конфиденциальный звонок куратору направления:
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
+        }
         secondaryCtaText="Направления помощи"
         secondaryCtaLink="#directions"
+        imageUrl="/images/bobkin.jpg"
+        imageName="Аркадий Евгеньевич Бобкин"
+        imageSubtitle="Директор, управляющий партнёр ЮК «Де-Юре», куратор направления"
+        imageObjectPosition="center 15%"
+        trustItems={[
+          {
+            text: (
+              <span>
+                <strong>Изучим материалы</strong> и определим текущую стадию налогового спора
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Проверим доводы ФНС</strong>, доказательства и обоснованность расчёта недоимки
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Сформируем позицию</strong> и сопроводим защиту в УФНС и арбитражном суде
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Координируем защиту</strong> со смежными уголовными рисками (ст. 199 УК РФ)
+              </span>
+            )
+          }
+        ]}
       />
 
-      {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
-      <section id="situations" style={{ padding: '60px 0', background: 'var(--color-bg-light)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      {/* ═══ БЛОК 2: СИТУАЦИИ (ШАБЛОН «СИТУАЦИИ») ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              НАЛОГОВЫЕ СПОРЫ И ПРОВЕРКИ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              С какими налоговыми ситуациями обращается бизнес
+              НАЛОГОВЫЕ СПОРЫ И ПРОВЕРКИ
+            </div>
+            <h2
+              className="with-accent"
+              style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(28px, 4vw, 42px)',
+                color: 'var(--color-deep-blue)',
+                marginBottom: '16px',
+                marginTop: 0,
+                lineHeight: 1.2,
+                textAlign: 'left'
+              }}
+            >
+              <span style={{ display: 'inline-block' }}>С какими налоговыми</span> <br />
+              <span style={{ display: 'inline-block' }}>ситуациями обращается бизнес</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p
+              style={{
+                fontSize: '16px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.6,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}
+            >
               Помогаем определить масштаб рисков, выстроить единую позицию компании и выбрать порядок действий на текущей стадии взаимодействия с ФНС.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '24px'
-            }}
-          >
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
             {taxSituations.map((sit, idx) => (
               <div
                 key={idx}
+                className="card hover-lift"
                 style={{
-                  position: 'relative',
-                  overflow: 'hidden',
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)',
-                  padding: '28px',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.05)',
-                  border: '1px solid rgba(0,0,0,0.06)',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '32px 28px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
                 <div
                   style={{
                     position: 'absolute',
-                    top: '-10px',
-                    right: '-10px',
-                    width: '70px',
-                    height: '70px',
+                    top: '-15px',
+                    right: '-15px',
+                    width: '90px',
+                    height: '90px',
                     opacity: 0.04,
-                    pointerEvents: 'none'
+                    pointerEvents: 'none',
+                    color: 'var(--color-deep-blue)'
                   }}
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
 
                 <div>
-                  <div
-                    style={{
-                      display: 'inline-block',
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      color: 'var(--color-gold)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px',
-                      background: 'rgba(218, 165, 32, 0.1)',
-                      padding: '4px 10px',
-                      borderRadius: '4px',
-                      marginBottom: '14px'
-                    }}
-                  >
-                    {sit.tag}
-                  </div>
+                  {sit.tag && (
+                    <div
+                      style={{
+                        fontSize: '11.5px',
+                        fontWeight: 700,
+                        color: 'var(--color-primary)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                        marginBottom: '12px',
+                        background: 'rgba(23, 50, 77, 0.06)',
+                        padding: '3px 8px',
+                        display: 'inline-block',
+                        borderRadius: '2px'
+                      }}
+                    >
+                      {sit.tag}
+                    </div>
+                  )}
+
                   <h3
                     style={{
+                      fontFamily: 'var(--font-serif)',
                       fontSize: '18px',
-                      fontWeight: 700,
-                      color: 'var(--color-text-main)',
-                      marginBottom: '12px',
-                      lineHeight: '1.3'
+                      fontWeight: 600,
+                      color: 'var(--color-deep-blue)',
+                      margin: '0 0 12px 0',
+                      lineHeight: 1.35
                     }}
                   >
                     {sit.title}
                   </h3>
+
                   <p
                     style={{
                       fontSize: '14px',
                       color: 'var(--color-text-secondary)',
-                      lineHeight: '1.5',
-                      marginBottom: '20px'
+                      lineHeight: 1.6,
+                      margin: 0
                     }}
                   >
                     {sit.desc}
                   </p>
                 </div>
 
-                <a
-                  href="#form"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    color: 'var(--color-deep-blue)',
-                    textDecoration: 'none',
-                    borderBottom: '1px dashed var(--color-deep-blue)',
-                    width: 'fit-content',
-                    paddingBottom: '2px'
-                  }}
-                >
-                  {sit.btnText} →
-                </a>
+                <div style={{ marginTop: '20px' }}>
+                  {sit.href && sit.href.startsWith('/') ? (
+                    <Link
+                      href={sit.href}
+                      className="situation-btn"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        color: 'var(--color-primary)',
+                        fontSize: '13.5px',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                        cursor: 'pointer',
+                        transition: 'all 0.25s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = 'var(--color-gold)';
+                        const svg = e.currentTarget.querySelector('svg');
+                        if (svg) {
+                          svg.style.transform = 'translateX(4px)';
+                          svg.style.stroke = 'var(--color-gold)';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = 'var(--color-primary)';
+                        const svg = e.currentTarget.querySelector('svg');
+                        if (svg) {
+                          svg.style.transform = 'translateX(0)';
+                          svg.style.stroke = 'currentColor';
+                        }
+                      }}
+                    >
+                      <span>{sit.btnText}</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.25s ease, stroke 0.25s ease' }}>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </Link>
+                  ) : (
+                    <a
+                      href="#form"
+                      className="situation-btn"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        color: 'var(--color-primary)',
+                        fontSize: '13.5px',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                        cursor: 'pointer',
+                        transition: 'all 0.25s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = 'var(--color-gold)';
+                        const svg = e.currentTarget.querySelector('svg');
+                        if (svg) {
+                          svg.style.transform = 'translateX(4px)';
+                          svg.style.stroke = 'var(--color-gold)';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = 'var(--color-primary)';
+                        const svg = e.currentTarget.querySelector('svg');
+                        if (svg) {
+                          svg.style.transform = 'translateX(0)';
+                          svg.style.stroke = 'currentColor';
+                        }
+                      }}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const el = document.getElementById('form');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        else window.location.hash = 'form';
+                      }}
+                    >
+                      <span>{sit.btnText}</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.25s ease, stroke 0.25s ease' }}>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Баннер «Не нашли свою ситуацию?» */}
+          <div
+            style={{
+              background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+              padding: '40px 48px',
+              borderTop: '3px solid var(--color-gold)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '32px',
+              flexWrap: 'wrap',
+              boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
+            }}
+          >
+            <style dangerouslySetInnerHTML={{ __html: `
+              .white-btn-custom {
+                background-color: var(--color-white) !important;
+                color: #10273B !important;
+                border: 1px solid var(--color-white) !important;
+                white-space: nowrap;
+                font-weight: 600;
+                padding: 14px 28px !important;
+                transition: all 0.3s ease !important;
+              }
+              .white-btn-custom:hover {
+                background-color: var(--color-gold) !important;
+                color: var(--color-deep-blue) !important;
+                border-color: var(--color-gold) !important;
+              }
+            `}} />
+            <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
+              <h3 style={{ margin: '0 0 12px 0', fontSize: '26px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
+                Не нашли свою ситуацию?
+              </h3>
+              <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>Опишите вашу налоговую ситуацию в форме. Изучим имеющиеся документы</span> <br />
+                <span style={{ display: 'inline-block' }}>и предложим возможные варианты решения.</span>
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a
+                href="#form"
+                className="btn white-btn-custom"
+                style={{
+                  display: 'inline-block',
+                  textAlign: 'center',
+                  fontSize: '15px',
+                  padding: '14px 28px',
+                  fontWeight: 600,
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                Описать ситуацию
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ═══ БЛОК 3: НАПРАВЛЕНИЯ ПОМОЩИ (ДОЧЕРНИЕ УСЛУГИ) ═══ */}
-      <section id="directions" style={{ padding: '60px 0', background: '#ffffff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      <section id="directions" className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              ПРОФИЛЬНЫЕ УСЛУГИ КЛАСТЕРА
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              Направления налоговой защиты бизнеса
+              ПРОФИЛЬНЫЕ УСЛУГИ КЛАСТЕРА
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>Направления налоговой</span> <br />
+              <span style={{ display: 'inline-block' }}>защиты бизнеса</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Выберите услугу по текущей стадии проверки или основанию претензий. Мы подключимся на любом этапе взаимодействия с налоговой инспекцией.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '24px',
-              marginBottom: '32px'
-            }}
-          >
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
             {subServices.map((sub, idx) => (
-              <div
+              <Link
                 key={idx}
-                style={{
-                  background: 'var(--color-bg-light)',
-                  borderRadius: '12px',
-                  padding: '32px',
-                  border: '1px solid rgba(0,0,0,0.06)',
-                  borderLeft: '4px solid var(--color-gold)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between'
-                }}
+                href={sub.href}
+                style={{ textDecoration: 'none', display: 'block', height: '100%' }}
               >
-                <div>
-                  <h3
-                    style={{
-                      fontSize: '20px',
-                      fontWeight: 700,
-                      color: 'var(--color-text-main)',
-                      marginBottom: '12px',
-                      lineHeight: 1.3
-                    }}
-                  >
-                    {sub.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: '14.5px',
-                      color: 'var(--color-text-secondary)',
-                      lineHeight: 1.6,
-                      marginBottom: '24px'
-                    }}
-                  >
-                    {sub.desc}
-                  </p>
-                </div>
-                <Link
-                  href={sub.href}
+                <div
+                  className="card service-card hover-lift"
                   style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '14px',
-                    fontWeight: 700,
-                    color: 'var(--color-deep-blue)',
-                    textDecoration: 'none'
+                    height: '100%',
+                    minHeight: '220px',
+                    padding: '32px 28px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderTop: '3px solid var(--color-gold)',
+                    borderRadius: '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                    transition: 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease',
+                    position: 'relative',
+                    cursor: 'pointer'
                   }}
                 >
-                  Подробнее об услуге →
-                </Link>
-              </div>
+                  <div>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600, minHeight: '48px' }}>
+                      {sub.title}
+                    </h3>
+                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {sub.desc}
+                    </p>
+                  </div>
+                  <div
+                    className="card-arrow"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: 'var(--color-primary)',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      marginTop: 'auto',
+                      paddingTop: '14px',
+                      borderTop: '1px solid rgba(23, 50, 77, 0.06)',
+                      transition: 'transform 0.3s'
+                    }}
+                  >
+                    <span>Подробнее об услуге</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s' }}>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
 
+          {/* Карточка-баннер: «Не уверены, какая именно услуга вам подходит?» */}
           <div
             style={{
-              background: 'var(--color-bg-light)',
-              borderRadius: '8px',
-              padding: '24px',
-              textAlign: 'center',
-              border: '1px dashed rgba(0,0,0,0.15)'
+              background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+              padding: '40px 48px',
+              borderTop: '3px solid var(--color-gold)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '32px',
+              flexWrap: 'wrap',
+              boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
             }}
           >
-            <div style={{ fontWeight: 700, fontSize: '16px', color: 'var(--color-text-main)', marginBottom: '4px' }}>
-              Не уверены, какая именно услуга вам подходит?
+            <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
+              <h3 style={{ margin: '0 0 12px 0', fontSize: '24px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
+                Не уверены, какая именно услуга вам подходит?
+              </h3>
+              <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>Налоговая ситуация может быстро переходить от требования к проверке и доначислениям.</span> <br />
+                <span style={{ display: 'inline-block' }}>Опишите документы — мы определим стадию и следующий шаг.</span>
+              </p>
             </div>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', maxWidth: '700px', margin: '0 auto 16px auto' }}>
-              Налоговая ситуация может быстро переходить от требования к проверке и доначислениям. Опишите документы — мы определим стадию и следующий шаг.
-            </p>
-            <a
-              href="#form"
-              style={{
-                background: 'var(--color-deep-blue)',
-                color: '#ffffff',
-                padding: '10px 20px',
-                borderRadius: '6px',
-                fontSize: '14px',
-                fontWeight: 600,
-                textDecoration: 'none',
-                display: 'inline-block'
-              }}
-            >
-              Обсудить налоговую ситуацию
-            </a>
+            <div style={{ flexShrink: 0 }}>
+              <a
+                href="#form"
+                className="btn white-btn-custom"
+                style={{
+                  display: 'inline-block',
+                  textAlign: 'center',
+                  fontSize: '15px',
+                  padding: '14px 28px',
+                  fontWeight: 600,
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                Обсудить налоговую ситуацию
+              </a>
+            </div>
           </div>
         </div>
       </section>

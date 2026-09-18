@@ -607,31 +607,19 @@ export default function ZashchitaPriProverkeObepClient() {
           `}} />
 
           {/* Зона связи */}
-          <div style={{
-            borderTop: '1px solid rgba(255,255,255,0.15)',
-            paddingTop: '28px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '20px',
-            flexWrap: 'wrap'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
-                +7 (910) 350-31-11
-              </a>
-              <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
-                Позвонить юристу
-              </a>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              <span style={{ color: 'rgba(255,255,255,0.75)', fontSize: '14px' }}>
-                Защита при проверках ОБЭП и вызовах на опросы
-              </span>
-              <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px', whiteSpace: 'nowrap' }}>
-                Вызвать адвоката
-              </a>
-            </div>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+              +7 (910) 350-31-11
+            </a>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Вызвать адвоката
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+              Защита при проверках ОБЭП и вызовах на опросы
+            </span>
           </div>
         </div>
       </section>
@@ -694,7 +682,12 @@ export default function ZashchitaPriProverkeObepClient() {
       {/* ═══ БЛОК 5: ЭТАПЫ (PROCESSBLOCK) ═══ */}
       <ProcessBlock
         title="Порядок работы при проверке ОБЭП"
-        subtitle="Слаженные и юридически выверенные действия команды для скорейшего снятия претензий с компании."
+        subtitle={
+          <>
+            <span style={{ display: 'inline-block' }}>Слаженные и юридически выверенные действия команды</span> <br />
+            <span style={{ display: 'inline-block' }}>для скорейшего снятия претензий с компании.</span>
+          </>
+        }
         steps={processSteps}
         ctaTitle="Получили запрос из полиции или вызов?"
         ctaSubtitle="Передайте запрос на анализ. Подготовим безопасный ответ и организуем защиту руководства."
@@ -754,7 +747,12 @@ export default function ZashchitaPriProverkeObepClient() {
 
       {/* ═══ БЛОК 8: КЕЙСЫ (CASESBLOCK) ═══ */}
       <CasesBlock
-        title="Примеры прекращения проверок ОБЭП"
+        title={
+          <span style={{ display: 'block' }}>
+            <span style={{ display: 'inline-block' }}>Примеры прекращения</span> <br />
+            <span style={{ display: 'inline-block' }}>проверок ОБЭП</span>
+          </span>
+        }
         cases={practiceCases}
       />
       <div className="container" style={{ marginTop: '-40px', marginBottom: '60px', textAlign: 'center' }}>

@@ -104,30 +104,18 @@ export default function ZashchitaPriObyskeClient() {
     }
   ];
 
-  const firstMinutesSteps = [
+  const urgentRisks = [
     {
-      title: 'Назначить одного координатора',
-      desc: 'Определите руководителя или юриста, который взаимодействует со следователем. Исключите панику и несогласованные реплики персонала.'
+      title: 'Запрос документов или вызов на опрос с коротким сроком',
+      desc: 'Передача неполных или избыточных документов без правового анализа, а также спонтанные объяснения сотрудников создают основу для обвинения, которую сложно изменить в суде.'
     },
     {
-      title: 'Срочно связаться с адвокатом',
-      desc: 'Сообщите точный адрес, подразделение (МВД, СК РФ, ФСБ), ФИО руководителя следственной группы и реквизиты постановления.'
+      title: 'Обыск, выемка техники или изъятие серверов',
+      desc: 'Изъятие ключевых носителей и первичных документов парализует работу организации. Без контроля специалиста протоколы подписываются с опасными процессуальными неточностями.'
     },
     {
-      title: 'Проверить полномочия и основания',
-      desc: 'Потребуйте предъявить служебные удостоверения и постановление суда либо следователя. Убедитесь в точности адреса и реквизитов фирмы.'
-    },
-    {
-      title: 'Инструктировать сотрудников',
-      desc: 'Напомните сотрудникам о праве не давать показаний без адвоката (ст. 51 Конституции РФ). Никаких неформальных бесед с оперативниками.'
-    },
-    {
-      title: 'Контролировать фиксацию изъятого',
-      desc: 'Все предметы, папки и носители должны опечатываться в присутствии понятых с указанием индивидуальных номеров и характеристик.'
-    },
-    {
-      title: 'Требовать копирования баз данных',
-      desc: 'По ст. 164.1 УПК РФ заявите ходатайство о копировании критичной информации и баз 1С на ваши чистые носители с участием специалиста.'
+      title: 'Передача акта налоговой проверки в следственные органы',
+      desc: 'Срок реакции ограничен: по истечении 75 дней после требования об уплате материалы передаются в СК РФ. Необходимы согласованные действия налоговых юристов и уголовных адвокатов.'
     }
   ];
 
@@ -331,27 +319,72 @@ export default function ZashchitaPriObyskeClient() {
         }
         superTitle={
           <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
-            <span style={{ display: 'inline-block' }}>УГОЛОВНО-ПРАВОВАЯ ЗАЩИТА БИЗНЕСА •</span> <br />
+            <span style={{ display: 'inline-block' }}>СЛЕДСТВЕННЫЕ ДЕЙСТВИЯ И ОБЫСКИ •</span> <br />
             <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
           </span>
         }
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'inline-block' }}>Защита при обыске</span> <br />
-            <span style={{ display: 'inline-block', color: 'var(--color-gold)' }}>и выемке в компании</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Защита бизнеса при
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              обыске и выемке в Липецке
+            </span>
           </span>
         }
-        subtitle="Организуем немедленное участие адвоката, проверим основания и границы мероприятия, поможем зафиксировать изъятие документов и техники, предотвратим паралич бизнес-процессов."
-        trustItems={[
-          'Подключаемся во время следственного действия или сразу после него',
-          'Контролируем действия следователя, оперов, спецназа и понятых',
-          'Защищаем серверы, ПК и базы данных по ст. 164.1 УПК РФ',
-          'Вносим процессуальные замечания и добиваемся возврата техники'
-        ]}
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '760px', textWrap: 'balance' }}>
+            Организуем немедленное участие адвоката, проверим основания и границы мероприятия, поможем зафиксировать изъятие документов и техники, предотвратим паралич бизнес-процессов.
+          </span>
+        }
         primaryCtaText="Связаться с адвокатом"
         primaryCtaLink="#form"
-        secondaryCtaText="Первые действия"
-        secondaryCtaLink="#urgent"
+        primaryCtaAnalytics="click_primary_cta_obysk"
+        primaryCtaSubtext={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Срочный выезд адвоката на обыск:
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
+        }
+        imageUrl="/images/bobkin.jpg"
+        imageName="Аркадий Евгеньевич Бобкин"
+        imageSubtitle="Директор, управляющий партнёр ЮК «Де-Юре», куратор направления"
+        imageObjectPosition="center 15%"
+        trustItems={[
+          {
+            text: (
+              <span>
+                <strong>Срочный выезд адвоката</strong> с момента звонка
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Контроль законности действий</strong> следователя и оперов
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Защита серверов и баз данных</strong> по ст. 164.1 УПК РФ
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Внесение замечаний в протокол</strong> и возврат изъятого
+              </span>
+            )
+          }
+        ]}
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
@@ -516,144 +549,125 @@ export default function ZashchitaPriObyskeClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ПЕРВЫЕ МИНУТЫ И СРОЧНОСТЬ ═══ */}
-      <section
-        id="urgent"
-        style={{
-          padding: '70px 0',
-          background: 'var(--color-deep-blue)',
-          color: '#ffffff',
-          position: 'relative'
-        }}
-      >
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
-              style={{
-                fontSize: '13px',
-                fontWeight: 700,
-                color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              АЛГОРИТМ ПРИ ПОЯВЛЕНИИ СИЛОВИКОВ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: '#ffffff',
-                marginTop: '8px',
-                marginBottom: '12px'
-              }}
-            >
-              Что важно сделать в первые минуты обыска или выемки
+      {/* ═══ БЛОК 3: КОГДА НЕЛЬЗЯ ЗАТЯГИВАТЬ С ОБРАЩЕНИЕМ (#URGENT) ═══ */}
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }} id="urgent">
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'inline-block' }}>Когда нельзя затягивать</span> <br />
+              <span style={{ display: 'inline-block' }}>с обращением к юристу</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)', maxWidth: '800px', margin: '0 auto' }}>
-              Спокойствие и соблюдение четкого протокола защитят руководство и сотрудников от уголовных рисков.
+            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', margin: '16px 0' }} />
+            <p style={{ fontSize: '16px', color: '#E8ECF1', lineHeight: 1.65, margin: 0 }}>
+              В уголовно-правовой сфере первые действия и объяснения определяют дальнейший ход дела. Задержка может привести к необратимой фиксации позиции обвинения.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '24px',
-              marginBottom: '40px'
-            }}
-          >
-            {firstMinutesSteps.map((step, idx) => (
+          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '36px' }}>
+            {urgentRisks.map((risk, idx) => (
               <div
                 key={idx}
+                className="urgent-card"
                 style={{
-                  background: 'rgba(255, 255, 255, 0.06)',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  borderRadius: '12px',
-                  padding: '24px',
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '30px 24px',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
                   display: 'flex',
-                  gap: '16px'
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%'
                 }}
               >
-                <div
-                  style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '50%',
-                    background: 'var(--color-gold)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#ffffff',
-                    fontWeight: 800,
-                    fontSize: '14px',
-                    flexShrink: 0
-                  }}
-                >
-                  {idx + 1}
-                </div>
                 <div>
-                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '6px' }}>
-                    {step.title}
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
-                    {step.desc}
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                      {risk.title}
+                    </div>
+                  </div>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                    {risk.desc}
                   </p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div
-            style={{
-              background: 'rgba(0,0,0,0.25)',
-              borderRadius: '12px',
-              padding: '24px',
-              borderLeft: '4px solid var(--color-gold)',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '20px'
-            }}
-          >
-            <div>
-              <div style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '4px' }}>
-                В офисе уже находятся сотрудники правоохранительных органов?
-              </div>
-              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)' }}>
-                Немедленно наберите номер дежурного адвоката ЮК «Де-Юре».
-              </div>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              <a
-                href="tel:+74742201525"
-                style={{
-                  fontSize: '18px',
-                  fontWeight: 800,
-                  color: 'var(--color-gold)',
-                  textDecoration: 'none',
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                +7 (4742) 20-15-25
-              </a>
-              <a
-                href="tel:+74742201525"
-                style={{
-                  background: 'var(--color-gold)',
-                  color: '#ffffff',
-                  padding: '12px 24px',
-                  borderRadius: '6px',
-                  fontSize: '14px',
-                  fontWeight: 700,
-                  textDecoration: 'none',
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                Вызвать адвоката
-              </a>
-            </div>
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '16px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
+            lineHeight: 1.6
+          }}>
+            <span style={{ display: 'inline-block' }}>
+              <strong style={{ color: '#FFFFFF' }}>Если проверка, обыск или допрос уже начались:</strong> Свяжитесь с юристом до подписания протоколов и передачи документов.
+            </span>
+          </div>
+
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              text-decoration: none !important;
+              font-weight: 600 !important;
+              transition: all 0.3s ease !important;
+              border-radius: 0 !important;
+              display: inline-block !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+              transform: translateY(-2px);
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+              +7 (910) 350-31-11
+            </a>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Срочная консультация
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+              Срочная правовая помощь при проверках и следственных действиях
+            </span>
           </div>
         </div>
       </section>

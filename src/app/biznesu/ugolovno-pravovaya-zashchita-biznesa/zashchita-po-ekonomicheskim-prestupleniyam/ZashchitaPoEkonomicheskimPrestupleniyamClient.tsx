@@ -511,7 +511,8 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
             </h2>
             <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', margin: '16px 0' }} />
             <p style={{ fontSize: '16px', color: '#E8ECF1', lineHeight: 1.65, margin: 0 }}>
-              Неверная позиция на первых допросах способна закрепить версию следствия о преступном сговоре группы лиц.
+              <span style={{ display: 'inline-block' }}>Неверная позиция на первых допросах способна закрепить версию</span> <br />
+              <span style={{ display: 'inline-block' }}>следствия о преступном сговоре группы лиц.</span>
             </p>
           </div>
 
@@ -607,31 +608,19 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
           `}} />
 
           {/* Зона связи */}
-          <div style={{
-            borderTop: '1px solid rgba(255,255,255,0.15)',
-            paddingTop: '28px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '20px',
-            flexWrap: 'wrap'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
-                +7 (910) 350-31-11
-              </a>
-              <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
-                Позвонить юристу
-              </a>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              <span style={{ color: 'rgba(255,255,255,0.75)', fontSize: '14px' }}>
-                Срочный выезд адвоката по экономическим делам
-              </span>
-              <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px', whiteSpace: 'nowrap' }}>
-                Срочная защита
-              </a>
-            </div>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+              +7 (910) 350-31-11
+            </a>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Срочная защита
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+              Срочный выезд адвоката по экономическим делам
+            </span>
           </div>
         </div>
       </section>
@@ -694,7 +683,12 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
       {/* ═══ БЛОК 5: ЭТАПЫ (PROCESSBLOCK) ═══ */}
       <ProcessBlock
         title="Стратегия защиты на следствии и в суде"
-        subtitle="Системная работа уголовных адвокатов и аналитиков по экономическим спорам для защиты доверителя."
+        subtitle={
+          <>
+            <span style={{ display: 'inline-block' }}>Системная работа уголовных адвокатов и аналитиков по экономическим</span> <br />
+            <span style={{ display: 'inline-block' }}>спорам для защиты доверителя.</span>
+          </>
+        }
         steps={processSteps}
         ctaTitle="Нужна квалифицированная защита по делу?"
         ctaSubtitle="Свяжитесь с куратором направления. Изучим постановление о возбуждении дела и выстроим план защиты."

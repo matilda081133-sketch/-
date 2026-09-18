@@ -280,118 +280,149 @@ export default function SoprovozhdenieProverokClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'inline-block' }}>Сопровождение налоговых</span> <br />
-            <span style={{ display: 'inline-block', color: 'var(--color-gold)' }}>проверок в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Сопровождение налоговых
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              проверок в Липецке
+            </span>
           </span>
         }
-        subtitle="Помогаем бизнесу отвечать на требования ФНС, проходить камеральные и выездные проверки, участвовать в мероприятиях налогового контроля и готовить возражения на акт."
-        trustItems={[
-          'Проверим основания, объем и сроки требований инспекции',
-          'Согласуем единую позицию руководства, бухгалтерии и персонала',
-          'Очное участие юриста при допросах, осмотрах и рассмотрении акта',
-          'Подготовим мотивированные возражения и снизим сумму доначислений'
-        ]}
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '760px', textWrap: 'balance' }}>
+            Помогаем бизнесу отвечать на требования ФНС, проходить камеральные и выездные проверки, участвовать в мероприятиях налогового контроля и готовить возражения на акт.
+          </span>
+        }
         primaryCtaText="Обсудить налоговую проверку"
         primaryCtaLink="#form"
+        primaryCtaSubtext={
+          <span style={{ display: 'block' }}>
+            <span style={{ display: 'inline-block' }}>Или позвоните для оперативного разбора:</span>{' '}
+            <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
+        }
         secondaryCtaText="Риски проверок"
         secondaryCtaLink="#urgent"
+        imageUrl="/images/bobkin.jpg"
+        imageName="Аркадий Евгеньевич Бобкин"
+        imageSubtitle="Директор, управляющий партнёр ЮК «Де-Юре», куратор направления"
+        imageObjectPosition="center 15%"
+        trustItems={[
+          {
+            text: (
+              <span>
+                <strong>Проверим основания</strong>, объем и сроки требований инспекции
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Согласуем единую позицию</strong> руководства, бухгалтерии и персонала
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Очное участие юриста</strong> при допросах, осмотрах и рассмотрении акта
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Подготовим возражения</strong> и снизим сумму доначислений
+              </span>
+            )
+          }
+        ]}
       />
 
-      {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
-      <section id="situations" style={{ padding: '60px 0', background: 'var(--color-bg-light)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      {/* ═══ БЛОК 2: СИТУАЦИИ (ШАБЛОН «СИТУАЦИИ») ═══ */}
+      <section id="situations" className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              СТАДИИ НАЛОГОВОГО КОНТРОЛЯ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              В каких ситуациях мы помогаем бизнесу
+              СТАДИИ НАЛОГОВОГО КОНТРОЛЯ
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>В каких ситуациях</span> <br />
+              <span style={{ display: 'inline-block' }}>мы помогаем бизнесу</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Подключаемся на любой текущей стадии проверки и выстраиваем согласованную защиту интересов компании.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '24px'
-            }}
-          >
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
             {situations.map((sit, idx) => (
               <div
                 key={idx}
+                className="card hover-lift"
                 style={{
                   position: 'relative',
                   overflow: 'hidden',
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)',
-                  padding: '28px',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.05)',
-                  border: '1px solid rgba(0,0,0,0.06)',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  padding: '28px 22px',
+                  borderRadius: '0',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+                  border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                  justifyContent: 'space-between'
                 }}
               >
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '-10px',
-                    right: '-10px',
-                    width: '70px',
-                    height: '70px',
-                    opacity: 0.04,
-                    pointerEvents: 'none'
-                  }}
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
 
                 <div>
                   <div
                     style={{
-                      display: 'inline-block',
                       fontSize: '11px',
                       fontWeight: 700,
-                      color: 'var(--color-gold)',
+                      color: 'var(--color-primary)',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.5px',
-                      background: 'rgba(218, 165, 32, 0.1)',
-                      padding: '4px 10px',
-                      borderRadius: '4px',
-                      marginBottom: '14px'
+                      letterSpacing: '0.05em',
+                      marginBottom: '10px',
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '2px 6px',
+                      display: 'inline-block'
                     }}
                   >
                     {sit.tag}
                   </div>
                   <h3
                     style={{
-                      fontSize: '18px',
-                      fontWeight: 700,
-                      color: 'var(--color-text-main)',
-                      marginBottom: '12px',
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '17px',
+                      fontWeight: 600,
+                      color: 'var(--color-deep-blue)',
+                      marginBottom: '10px',
                       lineHeight: '1.3'
                     }}
                   >
@@ -399,10 +430,10 @@ export default function SoprovozhdenieProverokClient() {
                   </h3>
                   <p
                     style={{
-                      fontSize: '14px',
+                      fontSize: '13.5px',
                       color: 'var(--color-text-secondary)',
                       lineHeight: '1.5',
-                      marginBottom: '20px'
+                      margin: 0
                     }}
                   >
                     {sit.desc}
@@ -411,252 +442,309 @@ export default function SoprovozhdenieProverokClient() {
 
                 <a
                   href="#form"
+                  className="situation-btn"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '6px',
+                    color: 'var(--color-primary)',
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: 'var(--color-deep-blue)',
                     textDecoration: 'none',
-                    borderBottom: '1px dashed var(--color-deep-blue)',
-                    width: 'fit-content',
-                    paddingBottom: '2px'
+                    marginTop: '16px',
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = 'var(--color-gold)';
+                    const svg = e.currentTarget.querySelector('svg');
+                    if (svg) {
+                      svg.style.transform = 'translateX(4px)';
+                      svg.style.stroke = 'var(--color-gold)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'var(--color-primary)';
+                    const svg = e.currentTarget.querySelector('svg');
+                    if (svg) {
+                      svg.style.transform = 'translateX(0)';
+                      svg.style.stroke = 'currentColor';
+                    }
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
-                  {sit.btnText} →
+                  <span>{sit.btnText}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.25s ease, stroke 0.25s ease' }}>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </a>
               </div>
             ))}
           </div>
+
+          {/* Плашка «Не нашли свою ситуацию?» */}
+          <div
+            style={{
+              background: 'var(--color-deep-blue)',
+              borderRadius: '0',
+              padding: '40px 48px',
+              borderTop: '3px solid var(--color-gold)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '32px',
+              flexWrap: 'wrap',
+              boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
+            }}
+          >
+            <style dangerouslySetInnerHTML={{ __html: `
+              .white-btn-custom {
+                background-color: var(--color-white) !important;
+                color: #10273B !important;
+                border: 1px solid var(--color-white) !important;
+                white-space: nowrap;
+                font-weight: 600;
+                padding: 14px 28px !important;
+                transition: all 0.3s ease !important;
+              }
+              .white-btn-custom:hover {
+                background-color: var(--color-gold) !important;
+                color: var(--color-deep-blue) !important;
+                border-color: var(--color-gold) !important;
+              }
+            `}} />
+            <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
+              <h3 style={{ margin: '0 0 12px 0', fontSize: '26px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
+                Не нашли свою ситуацию?
+              </h3>
+              <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>Опишите вашу налоговую ситуацию в форме. Изучим имеющиеся документы</span> <br />
+                <span style={{ display: 'inline-block' }}>и предложим безопасный порядок действий.</span>
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a
+                href="#form"
+                className="btn white-btn-custom"
+                style={{
+                  display: 'inline-block',
+                  textAlign: 'center',
+                  fontSize: '15px',
+                  padding: '14px 28px',
+                  fontWeight: 600,
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                Описать ситуацию
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: РИСКИ И СРОЧНОСТЬ ═══ */}
-      <section
-        id="urgent"
-        style={{
-          padding: '70px 0',
-          background: 'var(--color-deep-blue)',
-          color: '#ffffff',
-          position: 'relative'
-        }}
-      >
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      {/* ═══ БЛОК 3: КРИТИЧЕСКИЕ ОШИБКИ БИЗНЕСА (#URGENT) ═══ */}
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }} id="urgent">
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              КРИТИЧЕСКИЕ ОШИБКИ БИЗНЕСА
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: '#ffffff',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              Что опасно делать при налоговой проверке без юриста
+              КРИТИЧЕСКИЕ ОШИБКИ БИЗНЕСА
+            </div>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'inline-block' }}>Что опасно делать при</span> <br />
+              <span style={{ display: 'inline-block' }}>налоговой проверке без юриста</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)', maxWidth: '800px', margin: '0 auto' }}>
-              Ошибки, допущенные при даче первых пояснений или на допросах, практически невозможно исправить в суде.
+            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', margin: '16px 0' }} />
+            <p style={{ fontSize: '16px', color: '#E8ECF1', lineHeight: 1.65, margin: 0 }}>
+              <span style={{ display: 'inline-block' }}>Ошибки, допущенные при даче первых пояснений или на допросах,</span> <br />
+              <span style={{ display: 'inline-block' }}>практически невозможно исправить в суде.</span>
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '24px',
-              marginBottom: '40px'
-            }}
-          >
-            {urgentRisks.map((item, idx) => (
+          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '36px' }}>
+            {urgentRisks.map((risk, idx) => (
               <div
                 key={idx}
+                className="urgent-card"
                 style={{
-                  background: 'rgba(255, 255, 255, 0.06)',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  borderRadius: '12px',
-                  padding: '28px',
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '30px 24px',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '12px'
+                  justifyContent: 'space-between',
+                  height: '100%'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div
-                    style={{
-                      width: '32px',
-                      height: '32px',
-                      borderRadius: '50%',
-                      background: 'rgba(218, 165, 32, 0.2)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: 'var(--color-gold)',
-                      fontWeight: 700,
-                      fontSize: '14px'
-                    }}
-                  >
-                    !
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                      {risk.title}
+                    </div>
                   </div>
-                  <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#ffffff', margin: 0 }}>
-                    {item.title}
-                  </h3>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                    {risk.desc}
+                  </p>
                 </div>
-                <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
-                  {item.desc}
-                </p>
               </div>
             ))}
           </div>
 
-          <div
-            style={{
-              background: 'rgba(0,0,0,0.25)',
-              borderRadius: '12px',
-              padding: '24px',
-              borderLeft: '4px solid var(--color-gold)',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '20px'
-            }}
-          >
-            <div>
-              <div style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '4px' }}>
-                Получили акт налоговой проверки или повестку на допрос в ИФНС?
-              </div>
-              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)' }}>
-                Проанализируем документы и согласуем стратегию защиты в течение 1 рабочего дня.
-              </div>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              <a
-                href="tel:+74742201525"
-                style={{
-                  fontSize: '18px',
-                  fontWeight: 800,
-                  color: 'var(--color-gold)',
-                  textDecoration: 'none',
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                +7 (4742) 20-15-25
-              </a>
-              <a
-                href="#form"
-                style={{
-                  background: 'var(--color-gold)',
-                  color: '#ffffff',
-                  padding: '12px 24px',
-                  borderRadius: '6px',
-                  fontSize: '14px',
-                  fontWeight: 700,
-                  textDecoration: 'none',
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                Срочная консультация
-              </a>
-            </div>
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '16px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
+            lineHeight: 1.6
+          }}>
+            <span style={{ display: 'inline-block' }}>
+              <strong style={{ color: '#FFFFFF' }}>Получили акт налоговой проверки или повестку на допрос в ИФНС?</strong> Проанализируем документы и согласуем стратегию защиты в течение 1 рабочего дня.
+            </span>
+          </div>
+
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              text-decoration: none !important;
+              font-weight: 600 !important;
+              transition: all 0.3s ease !important;
+              border-radius: 0 !important;
+              display: inline-block !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+              transform: translateY(-2px);
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+              +7 (4742) 20-15-25
+            </a>
+            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Срочная консультация
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+              Срочный выезд налогового юриста при проверке
+            </span>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: КОНТУРЫ СОПРОВОЖДЕНИЯ ═══ */}
-      <section id="directions" style={{ padding: '60px 0', background: '#ffffff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      {/* ═══ БЛОК 4: КОМПЛЕКСНАЯ ПОМОЩЬ (#CHECK) ═══ */}
+      <section className="section bg-white" id="check" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              КОМПЛЕКСНАЯ ПОМОЩЬ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              Что входит в юридическое сопровождение проверки
+              КОМПЛЕКСНАЯ ПОМОЩЬ
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>Что входит в юридическое</span> <br />
+              <span style={{ display: 'inline-block' }}>сопровождение проверки</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Обеспечиваем непрерывный правовой контроль всех действий инспекторов от первого запроса до итогового решения.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '24px'
-            }}
-          >
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative', marginBottom: '40px' }}>
             {directions.map((dir, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: 'var(--color-bg-light)',
-                  borderRadius: '12px',
-                  padding: '28px',
-                  border: '1px solid rgba(0,0,0,0.06)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
-                  gap: '16px'
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <div
-                  style={{
-                    fontSize: '22px',
-                    fontWeight: 900,
-                    color: 'var(--color-gold)',
-                    lineHeight: 1
-                  }}
-                >
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
                   {dir.num}
                 </div>
-                <div>
-                  <h3
-                    style={{
-                      fontSize: '17px',
-                      fontWeight: 700,
-                      color: 'var(--color-text-main)',
-                      marginBottom: '8px',
-                      lineHeight: 1.3
-                    }}
-                  >
-                    {dir.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: '14px',
-                      color: 'var(--color-text-secondary)',
-                      lineHeight: 1.5,
-                      margin: 0
-                    }}
-                  >
-                    {dir.desc}
-                  </p>
-                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
+                  {dir.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {dir.desc}
+                </p>
               </div>
             ))}
           </div>

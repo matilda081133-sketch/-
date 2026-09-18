@@ -325,61 +325,95 @@ export default function ZashchitaPoNalogovymPrestupleniyamClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'inline-block' }}>Защита по налоговым</span> <br />
-            <span style={{ display: 'inline-block', color: 'var(--color-gold)' }}>преступлениям</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Защита по налоговым
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              преступлениям в Липецке
+            </span>
           </span>
         }
-        subtitle="Разберём материалы налоговой и уголовной проверки, оценим расчёты, роль и процессуальный статус каждого участника, сформируем позицию и организуем защиту адвоката."
-        trustItems={[
-          'Разделяем налоговый спор с ФНС и уголовно-правовую часть ситуации',
-          'Анализируем обоснованность расчета недоимки и привлекаем аудиторов',
-          'Разделяем интересы компании, собственника, руководителя и бухгалтера',
-          'Очная защита адвоката на допросах в СК РФ и процессуальных действиях'
-        ]}
-        primaryCtaText="Обсудить ситуацию"
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '760px', textWrap: 'balance' }}>
+            Разберём материалы налоговой и уголовной проверки, оценим расчёты, роль и процессуальный статус каждого участника, сформируем позицию и организуем защиту адвоката.
+          </span>
+        }
+        primaryCtaText="Обсудить налоговое дело"
         primaryCtaLink="#form"
+        primaryCtaSubtext={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Конфиденциальный звонок куратору направления:
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
+        }
         secondaryCtaText="Срочные риски"
         secondaryCtaLink="#urgent"
+        imageUrl="/images/bobkin.jpg"
+        imageName="Аркадий Евгеньевич Бобкин"
+        imageSubtitle="Директор, управляющий партнёр ЮК «Де-Юре», куратор направления"
+        imageObjectPosition="center 15%"
+        trustItems={[
+          {
+            text: (
+              <span>
+                <strong>Разделяем налоговый спор</strong> с ФНС и уголовно-правовую часть ситуации
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Анализируем обоснованность</strong> расчета недоимки и привлекаем аудиторов
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Разделяем интересы</strong> компании, собственника, руководителя и бухгалтера
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Очная защита адвоката</strong> на допросах в СК РФ и процессуальных действиях
+              </span>
+            )
+          }
+        ]}
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
-      <section id="situations" style={{ padding: '60px 0', background: 'var(--color-bg-light)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      <section id="situations" className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              КАТЕГОРИИ РИСКОВ И СОСТАВОВ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              С какими ситуациями по налогам к нам обращаются
+              КАТЕГОРИИ РИСКОВ И СОСТАВОВ
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>С какими ситуациями по налогам</span> <br />
+              <span style={{ display: 'inline-block' }}>к нам обращаются</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Конкретная квалификация зависит от редакции закона, суммы недоимки, роли должностного лица и наличия доказательств прямого умысла.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '24px'
-            }}
-          >
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             {taxSituations.map((sit, idx) => (
               <div
                 key={idx}
@@ -416,16 +450,15 @@ export default function ZashchitaPoNalogovymPrestupleniyamClient() {
                 <div>
                   <div
                     style={{
-                      display: 'inline-block',
                       fontSize: '11px',
                       fontWeight: 700,
                       color: 'var(--color-primary)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
+                      marginBottom: '10px',
                       background: 'rgba(23, 50, 77, 0.06)',
                       padding: '2px 6px',
-                      borderRadius: '2px',
-                      marginBottom: '10px'
+                      display: 'inline-block'
                     }}
                   >
                     {sit.tag}
@@ -500,148 +533,178 @@ export default function ZashchitaPoNalogovymPrestupleniyamClient() {
                 </a>
               </div>
             ))}
+
+            {/* Карточка 9: «Не нашли свою ситуацию?» */}
+            <div
+              className="card service-card"
+              style={{
+                height: '100%',
+                minHeight: '200px',
+                padding: '30px',
+                background: 'var(--color-deep-blue)',
+                border: '1px solid transparent',
+                borderTop: '3px solid var(--color-gold)',
+                borderRadius: '0',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                position: 'relative',
+                boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)'
+              }}
+            >
+              <div>
+                <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: '#FFFFFF', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
+                  Не нашли свою ситуацию?
+                </h3>
+                <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55 }}>
+                  Опишите обстоятельства вашей налоговой проверки или суть претензий. Адвокат изучит документы и сформирует безопасный порядок действий.
+                </p>
+              </div>
+              <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(255, 255, 255, 0.15)' }}>
+                <a
+                  href="#form"
+                  className="btn white-btn-custom"
+                  style={{
+                    backgroundColor: '#FFFFFF',
+                    color: '#10273B',
+                    border: '1px solid #FFFFFF',
+                    padding: '10px 18px',
+                    fontSize: '13.5px',
+                    fontWeight: 600,
+                    display: 'inline-block',
+                    width: '100%',
+                    textAlign: 'center',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Получить консультацию
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: СРОЧНОСТЬ И РИСКИ ═══ */}
-      <section
-        id="urgent"
-        style={{
-          padding: '70px 0',
-          background: 'var(--color-deep-blue)',
-          color: '#ffffff',
-          position: 'relative'
-        }}
-      >
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
-              style={{
-                fontSize: '13px',
-                fontWeight: 700,
-                color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              КРИТИЧЕСКИЕ ТОЧКИ В НАЛОГОВОМ ПРОЦЕССЕ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: '#ffffff',
-                marginTop: '8px',
-                marginBottom: '12px'
-              }}
-            >
-              Когда налоговый контроль переходит в уголовное преследование
+      {/* ═══ БЛОК 3: КОГДА НЕЛЬЗЯ ЗАТЯГИВАТЬ (#URGENT) ═══ */}
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }} id="urgent">
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'inline-block' }}>Когда нельзя затягивать</span> <br />
+              <span style={{ display: 'inline-block' }}>с обращением к юристу</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)', maxWidth: '800px', margin: '0 auto' }}>
-              Промедление между вынесением решения ФНС и началом работы адвоката часто приводит к необратимому возбуждению уголовного дела.
+            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', margin: '16px 0' }} />
+            <p style={{ fontSize: '16px', color: '#E8ECF1', lineHeight: 1.65, margin: 0 }}>
+              <span style={{ display: 'inline-block' }}>В уголовно-правовой сфере первые действия и объяснения определяют</span> <br />
+              <span style={{ display: 'inline-block' }}>дальнейший ход дела. Задержка может привести к необратимой фиксации позиции обвинения.</span>
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '24px',
-              marginBottom: '40px'
-            }}
-          >
-            {urgentRisks.map((item, idx) => (
+          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '36px' }}>
+            {urgentRisks.map((risk, idx) => (
               <div
                 key={idx}
+                className="urgent-card"
                 style={{
-                  background: 'rgba(255, 255, 255, 0.06)',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  borderRadius: '12px',
-                  padding: '28px',
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '30px 24px',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '12px'
+                  justifyContent: 'space-between',
+                  height: '100%'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div
-                    style={{
-                      width: '32px',
-                      height: '32px',
-                      borderRadius: '50%',
-                      background: 'rgba(218, 165, 32, 0.2)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: 'var(--color-gold)',
-                      fontWeight: 700,
-                      fontSize: '14px'
-                    }}
-                  >
-                    !
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                      {risk.title}
+                    </div>
                   </div>
-                  <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#ffffff', margin: 0 }}>
-                    {item.title}
-                  </h3>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                    {risk.desc}
+                  </p>
                 </div>
-                <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5, margin: 0 }}>
-                  {item.desc}
-                </p>
               </div>
             ))}
           </div>
 
-          <div
-            style={{
-              background: 'rgba(0,0,0,0.25)',
-              borderRadius: '12px',
-              padding: '24px',
-              borderLeft: '4px solid var(--color-gold)',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '20px'
-            }}
-          >
-            <div>
-              <div style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '4px' }}>
-                Материалы проверки переданы в Следственный комитет или вызвали на опрос?
-              </div>
-              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)' }}>
-                Свяжитесь с нами до дачи первых показаний и подписания протоколов.
-              </div>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              <a
-                href="tel:+74742201525"
-                style={{
-                  fontSize: '18px',
-                  fontWeight: 800,
-                  color: 'var(--color-gold)',
-                  textDecoration: 'none',
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                +7 (4742) 20-15-25
-              </a>
-              <a
-                href="#form"
-                style={{
-                  background: 'var(--color-gold)',
-                  color: '#ffffff',
-                  padding: '12px 24px',
-                  borderRadius: '6px',
-                  fontSize: '14px',
-                  fontWeight: 700,
-                  textDecoration: 'none',
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                Срочная консультация
-              </a>
-            </div>
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '16px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
+            lineHeight: 1.6
+          }}>
+            <span style={{ display: 'inline-block' }}>
+              <strong style={{ color: '#FFFFFF' }}>Материалы проверки переданы в Следственный комитет или вызвали на опрос?</strong> Свяжитесь с нами до дачи первых показаний и подписания протоколов.
+            </span>
+          </div>
+
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              text-decoration: none !important;
+              font-weight: 600 !important;
+              transition: all 0.3s ease !important;
+              border-radius: 0 !important;
+              display: inline-block !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+              transform: translateY(-2px);
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+              +7 (910) 350-31-11
+            </a>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Срочная защита
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+              Срочный выезд адвоката по налоговым преступлениям
+            </span>
           </div>
         </div>
       </section>

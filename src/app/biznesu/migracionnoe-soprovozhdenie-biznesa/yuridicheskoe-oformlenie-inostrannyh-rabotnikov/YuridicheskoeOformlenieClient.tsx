@@ -84,26 +84,32 @@ export default function YuridicheskoeOformlenieClient() {
 
   const checkPoints = [
     {
+      num: '01',
       title: 'Личность и миграционный статус',
       desc: 'Паспорт и нотариальный перевод при необходимости; основание и срок законного пребывания или проживания в РФ; проверка по реестрам МВД.'
     },
     {
+      num: '02',
       title: 'Право на трудовую деятельность',
       desc: 'Нужен ли патент либо действует льготный режим (ЕАЭС, РВП, ВНЖ); соответствие территории действия и указанной специальности фактической работе.'
     },
     {
+      num: '03',
       title: 'Действительность разрешений и чеков',
       desc: 'Сроки действия патента, реквизиты, непрерывность ежемесячных авансовых платежей по НДФЛ, отсутствие оснований для аннулирования.'
     },
     {
+      num: '04',
       title: 'Условия и место выполнения работы',
       desc: 'Работодатель/заказчик, точный адрес объекта в Липецкой области, должность, трудовая функция, дата фактического начала работ.'
     },
     {
+      num: '05',
       title: 'Трудовой или гражданско-правовой договор',
       desc: 'Наличие всех обязательных миграционных реквизитов, сведений о полисе ДМС/ОМС, документов о статусе и условий оплаты труда.'
     },
     {
+      num: '06',
       title: 'Уведомление подразделения МВД',
       desc: 'Заполнение актуальной формы уведомления, определение надлежащего территориального органа МВД, способ подачи и фиксация подтверждения.'
     }
@@ -285,21 +291,63 @@ export default function YuridicheskoeOformlenieClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'inline-block' }}>Юридическое оформление</span> <br />
-            <span style={{ display: 'inline-block', color: 'var(--color-gold)' }}>иностранных работников в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'inline-block' }}>Юридическое оформление</span> <br />
+            <span className="hero-title-span-mobile" style={{ display: 'inline-block', color: 'var(--color-gold)' }}>иностранных работников в Липецке</span>
           </span>
         }
-        subtitle="Проверим, вправе ли иностранный гражданин работать у вашей компании, подготовим кадровые документы и уведомим МВД в строгий 3-дневный срок."
-        trustItems={[
-          'Определим точные требования по правовому статусу конкретного работника',
-          'Проверим паспорт, миграционный статус, патент и чеки авансовых платежей',
-          'Подготовим или проверим договор и официальное уведомление территориального органа МВД',
-          'Зафиксируем доказательства подачи документов и передадим график контрольных дат'
-        ]}
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '760px', textWrap: 'balance' }}>
+            Проверим, вправе ли иностранный гражданин работать у вашей компании, подготовим кадровые документы и уведомим МВД в строгий 3-дневный срок.
+          </span>
+        }
         primaryCtaText="Проверить документы работника"
         primaryCtaLink="#form"
+        primaryCtaSubtext={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Конфиденциальный звонок куратору направления:
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
+        }
         secondaryCtaText="Что проверяем"
         secondaryCtaLink="#included"
+        imageUrl="/images/konopkin.jpg"
+        imageName="Дмитрий Сергеевич Конопкин"
+        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное сопровождение бизнеса»"
+        imageObjectPosition="center 15%"
+        trustItems={[
+          {
+            text: (
+              <span>
+                <strong>Определим точные требования</strong> по правовому статусу конкретного работника
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Проверим паспорт</strong>, миграционный статус, патент и чеки авансовых платежей
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Подготовим или проверим договор</strong> и официальное уведомление территориального органа МВД
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Зафиксируем доказательства</strong> подачи документов и передадим график контрольных дат
+              </span>
+            )
+          }
+        ]}
       />
 
       {/* Дисклеймер под Hero */}
@@ -309,208 +357,300 @@ export default function YuridicheskoeOformlenieClient() {
         </div>
       </div>
 
-      {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
-      <section id="situations" style={{ padding: '60px 0', background: 'var(--color-bg-light)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      {/* ═══ БЛОК 2: СИТУАЦИИ (ШАБЛОН «СИТУАЦИИ») ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              СИТУАЦИИ ОФОРМЛЕНИЯ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              Когда работодателю важно проверить оформление сотрудника
+              СИТУАЦИИ ОФОРМЛЕНИЯ
+            </div>
+            <h2
+              className="with-accent"
+              style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(28px, 4vw, 42px)',
+                color: 'var(--color-deep-blue)',
+                marginBottom: '16px',
+                marginTop: 0,
+                lineHeight: 1.2,
+                textAlign: 'left'
+              }}
+            >
+              <span style={{ display: 'inline-block' }}>Когда работодателю важно</span> <br />
+              <span style={{ display: 'inline-block' }}>проверить оформление сотрудника</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p
+              style={{
+                fontSize: '16px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.6,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}
+            >
               Требования зависят от гражданства, правового статуса, региона и вида деятельности. Ошибка в сроке или форме влечёт штраф до 800 000 ₽ за каждого человека.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '24px'
-            }}
-          >
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
             {situations.map((sit, idx) => (
               <div
                 key={idx}
+                className="card hover-lift"
                 style={{
-                  position: 'relative',
-                  overflow: 'hidden',
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)',
-                  padding: '28px',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.05)',
-                  border: '1px solid rgba(0,0,0,0.06)',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '32px 28px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
                 <div
                   style={{
                     position: 'absolute',
-                    top: '-10px',
-                    right: '-10px',
-                    width: '70px',
-                    height: '70px',
+                    top: '-15px',
+                    right: '-15px',
+                    width: '90px',
+                    height: '90px',
                     opacity: 0.04,
-                    pointerEvents: 'none'
+                    pointerEvents: 'none',
+                    color: 'var(--color-deep-blue)'
                   }}
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
 
                 <div>
-                  <div
-                    style={{
-                      display: 'inline-block',
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      color: 'var(--color-gold)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px',
-                      background: 'rgba(218, 165, 32, 0.1)',
-                      padding: '4px 10px',
-                      borderRadius: '4px',
-                      marginBottom: '14px'
-                    }}
-                  >
-                    {sit.tag}
-                  </div>
+                  {sit.tag && (
+                    <div
+                      style={{
+                        fontSize: '11.5px',
+                        fontWeight: 700,
+                        color: 'var(--color-primary)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                        marginBottom: '12px',
+                        background: 'rgba(23, 50, 77, 0.06)',
+                        padding: '3px 8px',
+                        display: 'inline-block',
+                        borderRadius: '2px'
+                      }}
+                    >
+                      {sit.tag}
+                    </div>
+                  )}
+
                   <h3
                     style={{
+                      fontFamily: 'var(--font-serif)',
                       fontSize: '18px',
-                      fontWeight: 700,
-                      color: 'var(--color-text-main)',
-                      marginBottom: '12px',
-                      lineHeight: '1.3'
+                      fontWeight: 600,
+                      color: 'var(--color-deep-blue)',
+                      margin: '0 0 12px 0',
+                      lineHeight: 1.35
                     }}
                   >
                     {sit.title}
                   </h3>
+
                   <p
                     style={{
                       fontSize: '14px',
                       color: 'var(--color-text-secondary)',
-                      lineHeight: '1.5',
-                      marginBottom: '20px'
+                      lineHeight: 1.6,
+                      margin: 0
                     }}
                   >
                     {sit.desc}
                   </p>
                 </div>
 
-                <a
-                  href="#form"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    color: 'var(--color-deep-blue)',
-                    textDecoration: 'none',
-                    borderBottom: '1px dashed var(--color-deep-blue)',
-                    width: 'fit-content',
-                    paddingBottom: '2px'
-                  }}
-                >
-                  {sit.btnText} →
-                </a>
+                <div style={{ marginTop: '20px' }}>
+                  <a
+                    href="#form"
+                    className="situation-btn"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--color-primary)',
+                      fontSize: '13.5px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      cursor: 'pointer',
+                      transition: 'all 0.25s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = 'var(--color-gold)';
+                      const svg = e.currentTarget.querySelector('svg');
+                      if (svg) {
+                        svg.style.transform = 'translateX(4px)';
+                        svg.style.stroke = 'var(--color-gold)';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = 'var(--color-primary)';
+                      const svg = e.currentTarget.querySelector('svg');
+                      if (svg) {
+                        svg.style.transform = 'translateX(0)';
+                        svg.style.stroke = 'currentColor';
+                      }
+                    }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById('form');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      else window.location.hash = 'form';
+                    }}
+                  >
+                    <span>{sit.btnText}</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.25s ease, stroke 0.25s ease' }}>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Баннер «Не нашли свою ситуацию?» */}
+          <div
+            style={{
+              background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+              padding: '40px 48px',
+              borderTop: '3px solid var(--color-gold)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '32px',
+              flexWrap: 'wrap',
+              boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
+            }}
+          >
+            <style dangerouslySetInnerHTML={{ __html: `
+              .white-btn-custom {
+                background-color: var(--color-white) !important;
+                color: #10273B !important;
+                border: 1px solid var(--color-white) !important;
+                white-space: nowrap;
+                font-weight: 600;
+                padding: 14px 28px !important;
+                transition: all 0.3s ease !important;
+              }
+              .white-btn-custom:hover {
+                background-color: var(--color-gold) !important;
+                color: var(--color-deep-blue) !important;
+                border-color: var(--color-gold) !important;
+              }
+            `}} />
+            <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
+              <h3 style={{ margin: '0 0 12px 0', fontSize: '26px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
+                Не нашли свою ситуацию?
+              </h3>
+              <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>Опишите вашу миграционную задачу. Изучим имеющиеся документы иностранца</span> <br />
+                <span style={{ display: 'inline-block' }}>и определим безопасный порядок оформления.</span>
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a
+                href="#form"
+                className="btn white-btn-custom"
+                style={{
+                  display: 'inline-block',
+                  textAlign: 'center',
+                  fontSize: '15px',
+                  padding: '14px 28px',
+                  fontWeight: 600,
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                Описать ситуацию
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ЧТО ПРОВЕРЯЕМ ДО ДОПУСКА К РАБОТЕ ═══ */}
-      <section id="included" style={{ padding: '60px 0', background: '#ffffff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      {/* ═══ БЛОК 3: ЧТО ПРОВЕРЯЕМ ДО ДОПУСКА К РАБОТЕ (#INCLUDED) ═══ */}
+      <section className="section bg-white" id="included" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              ПРАВОВОЙ КОНТРОЛЬ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              Что проверяет юрист до допуска иностранца к работе
+              ПРАВОВОЙ КОНТРОЛЬ
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>Что проверяет юрист до</span> <br />
+              <span style={{ display: 'inline-block' }}>допуска иностранца к работе</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Сначала подтверждаем законное право конкретного гражданина на выполнение конкретной работы у вашего юрлица или ИП.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '24px'
-            }}
-          >
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative' }}>
             {checkPoints.map((item, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: 'var(--color-bg-light)',
-                  borderRadius: '12px',
-                  padding: '28px',
-                  border: '1px solid rgba(0,0,0,0.06)',
-                  borderLeft: '4px solid var(--color-gold)'
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <h3
-                  style={{
-                    fontSize: '18px',
-                    fontWeight: 700,
-                    color: 'var(--color-text-main)',
-                    marginBottom: '10px'
-                  }}
-                >
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {item.title}
                 </h3>
-                <p
-                  style={{
-                    fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 1.6,
-                    margin: 0
-                  }}
-                >
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {item.desc}
                 </p>
               </div>
