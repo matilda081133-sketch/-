@@ -107,15 +107,35 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
   const urgentRisks = [
     {
       title: 'Подмена арбитражного спора уголовным обвинением',
-      desc: 'Следственные органы нередко квалифицируют обычный предпринимательский риск или задержку оплаты как мошенничество с целью давления.'
+      desc: 'Следственные органы нередко квалифицируют обычный предпринимательский риск или задержку оплаты как мошенничество с целью давления.',
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+      )
     },
     {
       title: 'Риск избрания жесткой меры пресечения',
-      desc: 'Ходатайство следователя о заключении под стражу или домашнем аресте лишает руководителя возможности управлять бизнесом и защищать позицию.'
+      desc: 'Ходатайство следователя о заключении под стражу или домашнем аресте лишает руководителя возможности управлять бизнесом и защищать позицию.',
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+      )
     },
     {
       title: 'Блокировка деятельности через арест имущества',
-      desc: 'Наложение ареста на счета, склады и готовую продукцию приводит к срыву поставок перед третьими лицами и банкротству компании.'
+      desc: 'Наложение ареста на счета, склады и готовую продукцию приводит к срыву поставок перед третьими лицами и банкротству компании.',
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        </svg>
+      )
     }
   ];
 
@@ -448,36 +468,34 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '36px' }}>
+          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '36px' }}>
             {urgentRisks.map((risk, idx) => (
               <div
                 key={idx}
                 className="urgent-card"
                 style={{
                   background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
-                  padding: '28px 24px',
+                  padding: '30px 24px',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '12px',
-                  borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.1)'
+                  justifyContent: 'space-between',
+                  height: '100%'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <polyline points="12 6 12 12 16 14" />
-                  </svg>
-                  <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Опасность
-                  </span>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                    {risk.icon}
+                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                      {risk.title}
+                    </div>
+                  </div>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                    {risk.desc}
+                  </p>
                 </div>
-                <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: 0, fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
-                  {risk.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: '#3A4B5C', margin: 0, lineHeight: 1.55 }}>
-                  {risk.desc}
-                </p>
               </div>
             ))}
           </div>
@@ -485,41 +503,72 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
           <div style={{
             background: 'rgba(255, 255, 255, 0.08)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '20px 24px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '16px'
+            padding: '16px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
+            lineHeight: 1.6
           }}>
-            <div>
-              <div style={{ color: '#FFFFFF', fontSize: '15px', fontWeight: 600 }}>
-                Возбуждено уголовное дело или вызывают на допрос?
-              </div>
-              <div style={{ color: '#BACAD9', fontSize: '13.5px', marginTop: '4px' }}>
-                Обеспечим участие адвоката с первого процессуального действия.
-              </div>
-            </div>
-            <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-              <a
-                href="tel:+79103503111"
-                style={{
-                  color: 'var(--color-gold)',
-                  fontWeight: 700,
-                  fontSize: '17px',
-                  textDecoration: 'none'
-                }}
-              >
-                +7 (910) 350-31-11
-              </a>
-              <a
-                href="#form"
-                className="btn btn-primary"
-                style={{ padding: '10px 20px', fontSize: '14px' }}
-              >
-                Срочная защита
-              </a>
-            </div>
+            <span style={{ display: 'inline-block' }}>
+              <strong style={{ color: '#FFFFFF' }}>Возбуждено уголовное дело или вызывают на допрос?</strong> Обеспечим участие адвоката с первого процессуального действия.
+            </span>
+          </div>
+
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              text-decoration: none !important;
+              font-weight: 600 !important;
+              transition: all 0.3s ease !important;
+              border-radius: 0 !important;
+              display: inline-block !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+              transform: translateY(-2px);
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+              +7 (910) 350-31-11
+            </a>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Срочная защита
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+              Срочный выезд адвоката по экономическим делам
+            </span>
           </div>
         </div>
       </section>
