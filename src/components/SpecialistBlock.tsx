@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export interface SpecialistBlockProps {
   title?: string | React.ReactNode;
-  name: string;
+  name: string | React.ReactNode;
   position: string | React.ReactNode;
   description: (string | React.ReactNode)[];
   photoPlaceholder?: string;
@@ -72,7 +72,7 @@ export default function SpecialistBlock({
                   <a href={profileHref} style={{ display: 'block', width: '100%', height: '100%' }}>
                     <img 
                       src={imageUrl} 
-                      alt={name} 
+                      alt={typeof name === 'string' ? name : 'Владимир Викторович Начешников'} 
                       width={500}
                       height={667}
                       loading="lazy"
@@ -90,7 +90,7 @@ export default function SpecialistBlock({
                 ) : (
                   <img 
                     src={imageUrl} 
-                    alt={name} 
+                    alt={typeof name === 'string' ? name : 'Владимир Викторович Начешников'} 
                     width={500}
                     height={667}
                     loading="lazy"
