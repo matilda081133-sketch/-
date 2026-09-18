@@ -580,7 +580,6 @@ export default function IspolnitelnoeGrazhdanamClient() {
                 padding: '36px 30px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                 border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 display: 'flex',
                 flexDirection: 'column',
@@ -697,7 +696,6 @@ export default function IspolnitelnoeGrazhdanamClient() {
                     justifyContent: 'space-between',
                     transition: 'all 0.3s',
                     position: 'relative',
-                    borderTop: '3px solid var(--color-primary)',
                     boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
                     boxSizing: 'border-box'
                   }}
@@ -916,7 +914,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
 
           <div className="grid grid-3" style={{ gap: '20px' }}>
             <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div className="card hover-lift" style={{ height: '100%', padding: '28px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)', transition: 'all 0.3s ease' }}>
+              <div className="card related-service-card hover-lift" style={{ height: '100%', padding: '28px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)', transition: 'all 0.3s ease' }}>
                 <div>
                   <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
                     Внесудебное банкротство через МФЦ
@@ -932,7 +930,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
               </div>
             </Link>
             <Link href="/grazhdanam/bankrotstvo-fizicheskih-lic/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div className="card hover-lift" style={{ height: '100%', padding: '28px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)', transition: 'all 0.3s ease' }}>
+              <div className="card related-service-card hover-lift" style={{ height: '100%', padding: '28px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)', transition: 'all 0.3s ease' }}>
                 <div>
                   <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
                     Судебное банкротство граждан
@@ -948,7 +946,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
               </div>
             </Link>
             <Link href="/grazhdanam/kreditnyj-yurist/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div className="card hover-lift" style={{ height: '100%', padding: '28px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)', transition: 'all 0.3s ease' }}>
+              <div className="card related-service-card hover-lift" style={{ height: '100%', padding: '28px 24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)', transition: 'all 0.3s ease' }}>
                 <div>
                   <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
                     Кредитный юрист

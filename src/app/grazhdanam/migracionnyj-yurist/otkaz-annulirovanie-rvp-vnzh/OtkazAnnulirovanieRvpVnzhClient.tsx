@@ -245,7 +245,6 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
                 padding: '36px 30px',
                 background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                 border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                 display: 'flex',
                 flexDirection: 'column',
@@ -446,7 +445,7 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
           </div>
           <div className="grid grid-4" style={{ gap: '20px' }}>
             <Link href="/grazhdanam/migracionnyj-yurist/obzhalovanie-resheniya-o-deportacii/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card related-service-card hover-lift" style={{ height: '100%', minHeight: '180px', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s' }}>
+              <div className="card related-service-card hover-lift" style={{ height: '100%', minHeight: '180px', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
                     Обжалование решения о депортации
@@ -463,7 +462,7 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
             </Link>
 
             <Link href="/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card related-service-card hover-lift" style={{ height: '100%', minHeight: '180px', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s' }}>
+              <div className="card related-service-card hover-lift" style={{ height: '100%', minHeight: '180px', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
                     Исключение из реестра контролируемых лиц
@@ -480,7 +479,7 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
             </Link>
 
             <Link href="/grazhdanam/migracionnyj-yurist/poluchenie-rvp/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card related-service-card hover-lift" style={{ height: '100%', minHeight: '180px', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s' }}>
+              <div className="card related-service-card hover-lift" style={{ height: '100%', minHeight: '180px', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
                     Помощь в получении РВП
@@ -497,7 +496,7 @@ export default function OtkazAnnulirovanieRvpVnzhClient() {
             </Link>
 
             <Link href="/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-              <div className="card related-service-card hover-lift" style={{ height: '100%', minHeight: '180px', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s' }}>
+              <div className="card related-service-card hover-lift" style={{ height: '100%', minHeight: '180px', padding: '24px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.3s' }}>
                 <div>
                   <h4 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
                     Помощь в получении вида на жительство (ВНЖ)

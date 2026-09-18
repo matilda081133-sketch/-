@@ -439,7 +439,6 @@ export default function OsparivanieVinyClient() {
             <div style={{
               background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
               padding: '36px 32px',
               display: 'flex',
@@ -904,7 +903,6 @@ export default function OsparivanieVinyClient() {
                     padding: '26px 24px', 
                     background: 'var(--color-white)', 
                     border: '1px solid var(--color-border)', 
-                    borderTop: '3px solid var(--color-primary)',
                     borderRadius: '0',
                     display: 'flex', 
                     flexDirection: 'column', 

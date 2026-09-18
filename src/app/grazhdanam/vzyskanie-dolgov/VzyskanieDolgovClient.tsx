@@ -976,7 +976,7 @@ export default function VzyskanieDolgovClient() {
           <div className="grid grid-4" style={{ gap: '20px' }}>
             <Link
               href="/grazhdanam/vzyskanie-dolgov/zashchita-ot-trebovaniy-po-dolgu/"
-              className="card hover-lift"
+              className="card related-service-card hover-lift"
               style={{
                 background: '#FAFAFA',
                 border: '1px solid var(--color-border)',
@@ -1000,7 +1000,7 @@ export default function VzyskanieDolgovClient() {
 
             <Link
               href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/"
-              className="card hover-lift"
+              className="card related-service-card hover-lift"
               style={{
                 background: '#FAFAFA',
                 border: '1px solid var(--color-border)',
@@ -1024,7 +1024,7 @@ export default function VzyskanieDolgovClient() {
 
             <Link
               href="/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/"
-              className="card hover-lift"
+              className="card related-service-card hover-lift"
               style={{
                 background: '#FAFAFA',
                 border: '1px solid var(--color-border)',
@@ -1048,7 +1048,7 @@ export default function VzyskanieDolgovClient() {
 
             <Link
               href="/grazhdanam/kreditnyj-yurist/"
-              className="card hover-lift"
+              className="card related-service-card hover-lift"
               style={{
                 background: '#FAFAFA',
                 border: '1px solid var(--color-border)',

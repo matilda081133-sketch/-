@@ -374,7 +374,8 @@ h4 { font-size: 1.25rem; }
   cursor: pointer;
   border-top: 3px solid var(--color-primary) !important;
 }
-.related-service-card:hover {
+.related-service-card:hover,
+a:hover .related-service-card {
   transform: translateY(-6px) translateZ(0) !important;
   box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
   border-top: 3px solid var(--color-gold) !important;
@@ -386,13 +387,15 @@ h4 { font-size: 1.25rem; }
 .related-service-card .card-arrow {
   transition: color 0.35s ease, transform 0.35s ease !important;
 }
-.related-service-card:hover .card-arrow {
+.related-service-card:hover .card-arrow,
+a:hover .related-service-card .card-arrow {
   color: var(--color-gold) !important;
 }
 .related-service-card .card-arrow svg {
   transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), stroke 0.35s ease !important;
 }
-.related-service-card:hover .card-arrow svg {
+.related-service-card:hover .card-arrow svg,
+a:hover .related-service-card .card-arrow svg {
   transform: translateX(6px) !important;
   stroke: var(--color-gold) !important;
 }

@@ -723,7 +723,7 @@ export default function RazdelClient() {
 
           <div className="grid grid-3" style={{ gap: '20px' }}>
             <Link href="/grazhdanam/zhilishchnyj-yurist/spory-s-upravlyayushchej-kompaniej-i-zhkh/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div className="card service-card" style={{ height: '100%', padding: '32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
+              <div className="card service-card related-service-card hover-lift" style={{ height: '100%', padding: '32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
                   Споры с УК, ТСЖ и ЖКХ
                 </h3>
@@ -737,7 +737,7 @@ export default function RazdelClient() {
             </Link>
 
             <Link href="/grazhdanam/zhilishchnyj-yurist/vyselenie-i-vypiska-iz-kvartiry-cherez-sud/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div className="card service-card" style={{ height: '100%', padding: '32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
+              <div className="card service-card related-service-card hover-lift" style={{ height: '100%', padding: '32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
                   Выселение и выписка через суд
                 </h3>
@@ -751,7 +751,7 @@ export default function RazdelClient() {
             </Link>
 
             <Link href="/grazhdanam/zhilishchnyj-yurist/vselenie-i-ustranenie-prepyatstvij-v-polzovanii-kvartiroj/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div className="card service-card" style={{ height: '100%', padding: '32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
+              <div className="card service-card related-service-card hover-lift" style={{ height: '100%', padding: '32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
                   Вселение и порядок пользования
                 </h3>

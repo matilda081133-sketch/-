@@ -469,7 +469,6 @@ export default function SoprovozhdenieSdelokClient() {
                   padding: '28px 24px',
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
@@ -649,7 +648,6 @@ export default function SoprovozhdenieSdelokClient() {
             <div style={{
               background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
               border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)',
               boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
               padding: '36px 32px',
               display: 'flex',
@@ -837,13 +835,12 @@ export default function SoprovozhdenieSdelokClient() {
           <div className="grid grid-3" style={{ gap: '20px' }}>
             <Link href="/grazhdanam/yurist-po-nedvizhimosti/spory-s-zastrojshchikom/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
-                className="card" 
+                className="card related-service-card hover-lift" 
                 style={{ 
                   height: '100%', 
                   padding: '32px', 
                   background: 'var(--color-white)', 
                   border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
                   borderRadius: '0',
                   display: 'flex', 
                   flexDirection: 'column'
@@ -863,13 +860,12 @@ export default function SoprovozhdenieSdelokClient() {
 
             <Link href="/grazhdanam/yurist-po-nedvizhimosti/priznanie-prava-sobstvennosti-na-nedvizhimost/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
-                className="card" 
+                className="card related-service-card hover-lift" 
                 style={{ 
                   height: '100%', 
                   padding: '32px', 
                   background: 'var(--color-white)', 
                   border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
                   borderRadius: '0',
                   display: 'flex', 
                   flexDirection: 'column'
@@ -889,13 +885,12 @@ export default function SoprovozhdenieSdelokClient() {
 
             <Link href="/grazhdanam/yurist-po-nedvizhimosti/osparivanie-sdelok-s-nedvizhimostyu/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
-                className="card" 
+                className="card related-service-card hover-lift" 
                 style={{ 
                   height: '100%', 
                   padding: '32px', 
                   background: 'var(--color-white)', 
                   border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
                   borderRadius: '0',
                   display: 'flex', 
                   flexDirection: 'column'

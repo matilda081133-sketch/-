@@ -923,7 +923,7 @@ export default function ZashchitaOtTrebovaniyClient() {
           <div className="grid grid-4" style={{ gap: '20px' }}>
             <Link
               href="/grazhdanam/vzyskanie-dolgov/"
-              className="card hover-lift"
+              className="card related-service-card hover-lift"
               style={{
                 background: '#FAFAFA',
                 border: '1px solid var(--color-border)',
@@ -947,7 +947,7 @@ export default function ZashchitaOtTrebovaniyClient() {
 
             <Link
               href="/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/"
-              className="card hover-lift"
+              className="card related-service-card hover-lift"
               style={{
                 background: '#FAFAFA',
                 border: '1px solid var(--color-border)',
@@ -971,7 +971,7 @@ export default function ZashchitaOtTrebovaniyClient() {
 
             <Link
               href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/"
-              className="card hover-lift"
+              className="card related-service-card hover-lift"
               style={{
                 background: '#FAFAFA',
                 border: '1px solid var(--color-border)',
@@ -995,7 +995,7 @@ export default function ZashchitaOtTrebovaniyClient() {
 
             <Link
               href="/grazhdanam/kreditnyj-yurist/"
-              className="card hover-lift"
+              className="card related-service-card hover-lift"
               style={{
                 background: '#FAFAFA',
                 border: '1px solid var(--color-border)',

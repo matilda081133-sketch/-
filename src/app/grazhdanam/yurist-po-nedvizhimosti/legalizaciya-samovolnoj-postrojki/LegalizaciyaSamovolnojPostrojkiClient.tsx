@@ -442,7 +442,6 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
                   padding: '28px 24px',
                   background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
                   border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
                   boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
@@ -628,13 +627,12 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
           <div className="grid grid-3" style={{ gap: '20px' }}>
             <Link href="/grazhdanam/yurist-po-nedvizhimosti/priznanie-prava-sobstvennosti-na-nedvizhimost/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
-                className="card" 
+                className="card related-service-card hover-lift" 
                 style={{ 
                   height: '100%', 
                   padding: '32px', 
                   background: 'var(--color-white)', 
                   border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
                   borderRadius: '0',
                   display: 'flex', 
                   flexDirection: 'column'
@@ -654,13 +652,12 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
 
             <Link href="/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
-                className="card" 
+                className="card related-service-card hover-lift" 
                 style={{ 
                   height: '100%', 
                   padding: '32px', 
                   background: 'var(--color-white)', 
                   border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
                   borderRadius: '0',
                   display: 'flex', 
                   flexDirection: 'column'
@@ -680,13 +677,12 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
 
             <Link href="/grazhdanam/yurist-po-nedvizhimosti/soprovozhdenie-sdelok-s-nedvizhimostyu/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
               <div 
-                className="card" 
+                className="card related-service-card hover-lift" 
                 style={{ 
                   height: '100%', 
                   padding: '32px', 
                   background: 'var(--color-white)', 
                   border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
                   borderRadius: '0',
                   display: 'flex', 
                   flexDirection: 'column'

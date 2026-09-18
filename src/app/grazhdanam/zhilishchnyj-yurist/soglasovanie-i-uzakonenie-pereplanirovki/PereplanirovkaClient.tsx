@@ -713,7 +713,7 @@ export default function PereplanirovkaClient() {
 
           <div className="grid grid-3" style={{ gap: '20px' }}>
             <Link href="/grazhdanam/zhilishchnyj-yurist/zaliv-kvartiry/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div className="card service-card" style={{ height: '100%', padding: '32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
+              <div className="card service-card related-service-card hover-lift" style={{ height: '100%', padding: '32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
                   Залив квартиры
                 </h3>
@@ -727,7 +727,7 @@ export default function PereplanirovkaClient() {
             </Link>
 
             <Link href="/grazhdanam/zhilishchnyj-yurist/vselenie-i-ustranenie-prepyatstvij-v-polzovanii-kvartiroj/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div className="card service-card" style={{ height: '100%', padding: '32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
+              <div className="card service-card related-service-card hover-lift" style={{ height: '100%', padding: '32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
                   Вселение и порядок пользования
                 </h3>
@@ -741,7 +741,7 @@ export default function PereplanirovkaClient() {
             </Link>
 
             <Link href="/grazhdanam/zhilishchnyj-yurist/razdel-licevyh-schetov-i-poryadka-oplaty-zhku/" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-              <div className="card service-card" style={{ height: '100%', padding: '32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
+              <div className="card service-card related-service-card hover-lift" style={{ height: '100%', padding: '32px', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: '0', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
                   Раздел оплаты ЖКУ
                 </h3>

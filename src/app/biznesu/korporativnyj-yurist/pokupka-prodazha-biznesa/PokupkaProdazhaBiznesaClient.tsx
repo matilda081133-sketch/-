@@ -662,7 +662,6 @@ export default function PokupkaProdazhaBiznesaClient() {
                     padding: '26px 24px',
                     background: 'var(--color-white)',
                     border: '1px solid var(--color-border)',
-                    borderTop: '3px solid var(--color-primary)',
                     borderRadius: '0',
                     display: 'flex',
                     flexDirection: 'column',
