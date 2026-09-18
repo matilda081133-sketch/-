@@ -36,7 +36,14 @@ export default function SpecialistBlock({
       <div className="container">
         {title && (
           <h2 className="section-title text-center" style={{ marginBottom: '40px' }}>
-            {title}
+            {typeof title === 'string' && title.includes('Куратор направления — Владимир Викторович Начешников') ? (
+              <>
+                <span style={{ display: 'inline-block' }}>Куратор направления — Владимир</span> <br />
+                <span style={{ display: 'inline-block' }}>Викторович Начешников</span>
+              </>
+            ) : (
+              title
+            )}
           </h2>
         )}
         

@@ -1571,7 +1571,7 @@ export default function ZashchitaClient() {
 
       {/* ═══ БЛОК 9: КУРАТОР НАПРАВЛЕНИЯ (SPECIALIST BLOCK) ═══ */}
       <SpecialistBlock
-        title="Куратор направления — Владимир Викторович Начешников"
+        title={<><span style={{ display: 'inline-block' }}>Куратор направления — Владимир</span> <br /><span style={{ display: 'inline-block' }}>Викторович Начешников</span></>}
         name="Владимир Викторович Начешников"
         position="Специалист ЮК «Де-Юре», куратор направления"
         imageUrl="/images/nacheshnikov.jpg"
