@@ -271,329 +271,542 @@ export default function YuristPriProverkeMvdClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'inline-block' }}>Юрист при миграционной</span> <br />
-            <span style={{ display: 'inline-block', color: 'var(--color-gold)' }}>проверке МВД в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'inline-block' }}>Юрист при миграционной</span> <br />
+            <span className="hero-title-span-mobile" style={{ display: 'inline-block', color: 'var(--color-gold)' }}>проверке МВД в Липецке</span>
           </span>
         }
-        subtitle="Проверим основание и объём требований, организуем подготовку документов и пояснений, подключимся к взаимодействию с МВД и защитим компанию от незаконных претензий."
-        trustItems={[
-          'Оценим законность распоряжения, требования МВД и сроки ответа',
-          'Организуем единый контролируемый канал общения с проверяющими',
-          'Подготовим выверенные копии, опись, ответы и мотивированные возражения',
-          'Срочно подключимся на объекте для фиксации процессуальных нарушений'
-        ]}
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '760px', textWrap: 'balance' }}>
+            Проверим основание и объём требований, организуем подготовку документов и пояснений, подключимся к взаимодействию с МВД и защитим компанию от незаконных претензий.
+          </span>
+        }
         primaryCtaText="Срочно подключить юриста"
         primaryCtaLink="#form"
+        primaryCtaSubtext={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Конфиденциальный звонок куратору направления:
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
+        }
         secondaryCtaText="Что делать при визите"
         secondaryCtaLink="#urgent-action"
+        imageUrl="/images/konopkin.jpg"
+        imageName="Дмитрий Сергеевич Конопкин"
+        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное сопровождение бизнеса»"
+        imageObjectPosition="center 15%"
+        trustItems={[
+          {
+            text: (
+              <span>
+                <strong>Оценим законность распоряжения</strong>, требования МВД и сроки ответа
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Организуем единый контролируемый</strong> канал общения с проверяющими
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Подготовим выверенные копии</strong>, опись, ответы и мотивированные возражения
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Срочно подключимся на объекте</strong> для фиксации процессуальных нарушений
+              </span>
+            )
+          }
+        ]}
       />
 
-      {/* ═══ ЭКСТРЕННЫЙ БЛОК: ЧТО ДЕЛАТЬ ПРИ ПРОВЕРКЕ ═══ */}
-      <section id="urgent-action" style={{ background: 'var(--color-deep-blue)', color: '#ffffff', padding: '60px 0' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      {/* ═══ ЭКСТРЕННЫЙ БЛОК: ЧТО ДЕЛАТЬ ПРИ ПРОВЕРКЕ (#URGENT-ACTION) ═══ */}
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }} id="urgent-action">
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              ЭКСТРЕННЫЙ АЛГОРИТМ
-            </span>
-            <h2
-              style={{
-                fontSize: '30px',
-                fontWeight: 800,
-                color: '#ffffff',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              Сотрудники полиции уже на объекте? Что делать прямо сейчас
+              ЭКСТРЕННЫЙ АЛГОРИТМ
+            </div>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'inline-block' }}>Сотрудники полиции уже на объекте?</span> <br />
+              <span style={{ display: 'inline-block' }}>Что делать прямо сейчас</span>
             </h2>
-            <p style={{ fontSize: '15.5px', color: 'rgba(255,255,255,0.8)', maxWidth: '750px', margin: '0 auto' }}>
+            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', margin: '16px 0' }} />
+            <p style={{ fontSize: '16px', color: '#E8ECF1', lineHeight: 1.65, margin: 0 }}>
               Сохраняйте спокойствие. Не препятствуйте законным действиям сотрудников, но и не допускайте бесконтрольного опроса и изъятия документов.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '20px',
-              marginBottom: '32px'
-            }}
-          >
+          <div className="grid grid-2" style={{ gap: '20px', marginBottom: '36px' }}>
             {urgentRules.map((rule, idx) => (
               <div
                 key={idx}
+                className="urgent-card"
                 style={{
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  borderTop: '3px solid var(--color-gold)',
-                  borderRadius: '10px',
-                  padding: '24px'
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '30px 24px',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%'
                 }}
               >
-                <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-gold)', marginBottom: '8px' }}>
-                  {rule.title}
-                </div>
-                <div style={{ fontSize: '13.5px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.55 }}>
-                  {rule.desc}
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                      {rule.title}
+                    </div>
+                  </div>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                    {rule.desc}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Плашка срочного звонка */}
-          <div
-            style={{
-              background: 'rgba(218, 165, 32, 0.15)',
-              border: '1px solid var(--color-gold)',
-              borderRadius: '10px',
-              padding: '20px 28px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '20px'
-            }}
-          >
-            <div>
-              <div style={{ fontWeight: 700, fontSize: '18px', color: '#ffffff' }}>
-                Требуется срочный выезд или консультация юриста?
-              </div>
-              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.85)', marginTop: '4px' }}>
-                Прямая линия связи с дежурным юристом коллегии по миграционным проверкам в Липецке.
-              </div>
-            </div>
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '16px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
+            lineHeight: 1.6
+          }}>
+            <span style={{ display: 'inline-block' }}>
+              <strong style={{ color: '#FFFFFF' }}>Требуется срочный выезд или консультация юриста?</strong> Прямая линия связи с дежурным юристом коллегии по миграционным проверкам в Липецке.
+            </span>
+          </div>
+
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              text-decoration: none !important;
+              font-weight: 600;
+              transition: all 0.3s ease !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.15) !important;
+              border-color: #FFFFFF !important;
+              color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              transition: all 0.3s ease !important;
+            }
+            .btn-urgent-call:hover {
+              background: #d4af37 !important;
+              transform: translateY(-1px);
+            }
+          `}} />
+
+          {/* Плашка срочной связи */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            gap: '16px',
+            flexWrap: 'wrap'
+          }}>
+            <a href="tel:+79103503111" style={{
+              color: 'var(--color-gold)',
+              fontSize: '20px',
+              fontWeight: 700,
+              textDecoration: 'none',
+              fontFamily: 'var(--font-serif)',
+              letterSpacing: '0.02em',
+              marginRight: '8px'
+            }}>
+              +7 (910) 350-31-11
+            </a>
             <a
-              href="tel:+74742201525"
+              href="tel:+79103503111"
+              className="btn btn-urgent-call"
               style={{
                 background: 'var(--color-gold)',
                 color: 'var(--color-deep-blue)',
-                padding: '12px 28px',
-                borderRadius: '8px',
                 fontWeight: 700,
-                fontSize: '16px',
+                padding: '12px 24px',
+                fontSize: '14px',
                 textDecoration: 'none',
-                whiteSpace: 'nowrap'
+                display: 'inline-block'
               }}
             >
-              +7 (4742) 20-15-25
+              Вызвать юриста на проверку
             </a>
+            <a
+              href="#form"
+              className="btn btn-urgent-outline"
+              style={{
+                padding: '12px 24px',
+                fontSize: '14px',
+                display: 'inline-block'
+              }}
+            >
+              Срочная защита
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+              Прямая линия связи с дежурным юристом коллегии в Липецке
+            </span>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
-      <section id="situations" style={{ padding: '60px 0', background: 'var(--color-bg-light)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      {/* ═══ БЛОК 2: СИТУАЦИИ (ШАБЛОН «СИТУАЦИИ») ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              СЦЕНАРИИ ВЗАИМОДЕЙСТВИЯ С МВД
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              С какими формами проверки сталкивается бизнес
+              СЦЕНАРИИ ВЗАИМОДЕЙСТВИЯ С МВД
+            </div>
+            <h2
+              className="with-accent"
+              style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(28px, 4vw, 42px)',
+                color: 'var(--color-deep-blue)',
+                marginBottom: '16px',
+                marginTop: 0,
+                lineHeight: 1.2,
+                textAlign: 'left'
+              }}
+            >
+              <span style={{ display: 'inline-block' }}>С какими формами проверки</span> <br />
+              <span style={{ display: 'inline-block' }}>сталкивается бизнес</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p
+              style={{
+                fontSize: '16px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.6,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}
+            >
               Подключаемся на любой стадии: от получения первого письменного запроса до сопровождения рейдовых мероприятий на объекте.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '24px'
-            }}
-          >
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
             {situations.map((sit, idx) => (
               <div
                 key={idx}
+                className="card hover-lift"
                 style={{
-                  position: 'relative',
-                  overflow: 'hidden',
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)',
-                  padding: '28px',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.05)',
-                  border: '1px solid rgba(0,0,0,0.06)',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '32px 28px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
                 <div
                   style={{
                     position: 'absolute',
-                    top: '-10px',
-                    right: '-10px',
-                    width: '70px',
-                    height: '70px',
+                    top: '-15px',
+                    right: '-15px',
+                    width: '90px',
+                    height: '90px',
                     opacity: 0.04,
-                    pointerEvents: 'none'
+                    pointerEvents: 'none',
+                    color: 'var(--color-deep-blue)'
                   }}
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
                     <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
                   </svg>
                 </div>
 
                 <div>
-                  <div
-                    style={{
-                      display: 'inline-block',
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      color: 'var(--color-gold)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px',
-                      background: 'rgba(218, 165, 32, 0.1)',
-                      padding: '4px 10px',
-                      borderRadius: '4px',
-                      marginBottom: '14px'
-                    }}
-                  >
-                    {sit.tag}
-                  </div>
+                  {sit.tag && (
+                    <div
+                      style={{
+                        fontSize: '11.5px',
+                        fontWeight: 700,
+                        color: 'var(--color-primary)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                        marginBottom: '12px',
+                        background: 'rgba(23, 50, 77, 0.06)',
+                        padding: '3px 8px',
+                        display: 'inline-block',
+                        borderRadius: '2px'
+                      }}
+                    >
+                      {sit.tag}
+                    </div>
+                  )}
+
                   <h3
                     style={{
+                      fontFamily: 'var(--font-serif)',
                       fontSize: '18px',
-                      fontWeight: 700,
-                      color: 'var(--color-text-main)',
-                      marginBottom: '12px',
-                      lineHeight: '1.3'
+                      fontWeight: 600,
+                      color: 'var(--color-deep-blue)',
+                      margin: '0 0 12px 0',
+                      lineHeight: 1.35
                     }}
                   >
                     {sit.title}
                   </h3>
+
                   <p
                     style={{
                       fontSize: '14px',
                       color: 'var(--color-text-secondary)',
-                      lineHeight: '1.5',
-                      marginBottom: '20px'
+                      lineHeight: 1.6,
+                      margin: 0
                     }}
                   >
                     {sit.desc}
                   </p>
                 </div>
 
-                <a
-                  href="#form"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    color: 'var(--color-deep-blue)',
-                    textDecoration: 'none',
-                    borderBottom: '1px dashed var(--color-deep-blue)',
-                    width: 'fit-content',
-                    paddingBottom: '2px'
-                  }}
-                >
-                  {sit.btnText} →
-                </a>
+                <div style={{ marginTop: '20px' }}>
+                  <a
+                    href="#form"
+                    className="situation-btn"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--color-primary)',
+                      fontSize: '13.5px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      cursor: 'pointer',
+                      transition: 'all 0.25s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = 'var(--color-gold)';
+                      const svg = e.currentTarget.querySelector('svg');
+                      if (svg) {
+                        svg.style.transform = 'translateX(4px)';
+                        svg.style.stroke = 'var(--color-gold)';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = 'var(--color-primary)';
+                      const svg = e.currentTarget.querySelector('svg');
+                      if (svg) {
+                        svg.style.transform = 'translateX(0)';
+                        svg.style.stroke = 'currentColor';
+                      }
+                    }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById('form');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      else window.location.hash = 'form';
+                    }}
+                  >
+                    <span>{sit.btnText}</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.25s ease, stroke 0.25s ease' }}>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Баннер «Не нашли свою ситуацию?» */}
+          <div
+            style={{
+              background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+              padding: '40px 48px',
+              borderTop: '3px solid var(--color-gold)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '32px',
+              flexWrap: 'wrap',
+              boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
+            }}
+          >
+            <style dangerouslySetInnerHTML={{ __html: `
+              .white-btn-custom {
+                background-color: var(--color-white) !important;
+                color: #10273B !important;
+                border: 1px solid var(--color-white) !important;
+                white-space: nowrap;
+                font-weight: 600;
+                padding: 14px 28px !important;
+                transition: all 0.3s ease !important;
+              }
+              .white-btn-custom:hover {
+                background-color: var(--color-gold) !important;
+                color: var(--color-deep-blue) !important;
+                border-color: var(--color-gold) !important;
+              }
+            `}} />
+            <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
+              <h3 style={{ margin: '0 0 12px 0', fontSize: '26px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
+                Не нашли свою ситуацию?
+              </h3>
+              <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>Проверяющие органы уже выставили требования или прибыли на объект?</span> <br />
+                <span style={{ display: 'inline-block' }}>Опишите обстоятельства — юрист подключится к защите немедленно.</span>
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a
+                href="#form"
+                className="btn white-btn-custom"
+                style={{
+                  display: 'inline-block',
+                  textAlign: 'center',
+                  fontSize: '15px',
+                  padding: '14px 28px',
+                  fontWeight: 600,
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                Описать ситуацию
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ЧТО ДЕЛАЕТ ЮРИСТ ═══ */}
-      <section style={{ padding: '60px 0', background: '#ffffff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      {/* ═══ БЛОК 3: ЧТО ДЕЛАЕТ ЮРИСТ (#CONTROL) ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              ПРАВОВОЙ КОНТРОЛЬ МЕРОПРИЯТИЙ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              Действия юриста при сопровождении проверки
+              ПРАВОВОЙ КОНТРОЛЬ МЕРОПРИЯТИЙ
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>Действия юриста при</span> <br />
+              <span style={{ display: 'inline-block' }}>сопровождении проверки</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Контролируем каждый шаг проверяющих органов для защиты прав предприятия и исключения необоснованных претензий.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '24px'
-            }}
-          >
-            <div style={{ background: 'var(--color-bg-light)', padding: '28px', borderRadius: '12px', borderLeft: '4px solid var(--color-gold)' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-text-main)', marginBottom: '10px' }}>
-                Проверка оснований и полномочий
-              </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                Сверяем распоряжение о проверке, проверяем наличие подписи уполномоченного руководителя, срок проведения проверки и соответствие проверяемого объекта указанному в приказе.
-              </p>
-            </div>
-            <div style={{ background: 'var(--color-bg-light)', padding: '28px', borderRadius: '12px', borderLeft: '4px solid var(--color-gold)' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-text-main)', marginBottom: '10px' }}>
-                Контроль передачи материалов
-              </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                Формируем реестр выдаваемых документов, заверяем копии надлежащим образом и требуем расписку должностного лица с отметкой о дате и времени получения.
-              </p>
-            </div>
-            <div style={{ background: 'var(--color-bg-light)', padding: '28px', borderRadius: '12px', borderLeft: '4px solid var(--color-gold)' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-text-main)', marginBottom: '10px' }}>
-                Участие при даче объяснений
-              </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                Разъясняем сотрудникам положения ст. 51 Конституции РФ, пресекаем наводящие и искажающие вопросы инспекторов, вносим возражения непосредственно в протокол опроса.
-              </p>
-            </div>
-            <div style={{ background: 'var(--color-bg-light)', padding: '28px', borderRadius: '12px', borderLeft: '4px solid var(--color-gold)' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-text-main)', marginBottom: '10px' }}>
-                Письменные возражения на акт
-              </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                При выявлении замечаний составляем аргументированные возражения на акт проверки с приложением подтверждающих документов до вынесения решения о возбуждении дела.
-              </p>
-            </div>
+          <div className="grid grid-2" style={{ gap: '24px' }}>
+            {[
+              {
+                num: '01',
+                title: 'Проверка оснований и полномочий',
+                desc: 'Сверяем распоряжение о проверке, проверяем наличие подписи уполномоченного руководителя, срок проведения проверки и соответствие проверяемого объекта указанному в приказе.'
+              },
+              {
+                num: '02',
+                title: 'Контроль передачи материалов',
+                desc: 'Формируем реестр выдаваемых документов, заверяем копии надлежащим образом и требуем расписку должностного лица с отметкой о дате и времени получения.'
+              },
+              {
+                num: '03',
+                title: 'Участие при даче объяснений',
+                desc: 'Разъясняем сотрудникам положения ст. 51 Конституции РФ, пресекаем наводящие и искажающие вопросы инспекторов, вносим возражения непосредственно в протокол опроса.'
+              },
+              {
+                num: '04',
+                title: 'Письменные возражения на акт',
+                desc: 'При выявлении замечаний составляем аргументированные возражения на акт проверки с приложением подтверждающих документов до вынесения решения о возбуждении дела.'
+              }
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="hover-lift"
+                style={{
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
+                }}
+              >
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
+                  {item.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

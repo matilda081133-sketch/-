@@ -303,21 +303,63 @@ export default function ZashchitaPo1815KoapClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'inline-block' }}>Защита работодателя</span> <br />
-            <span style={{ display: 'inline-block', color: 'var(--color-gold)' }}>по статье 18.15 КоАП РФ в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'inline-block' }}>Защита работодателя</span> <br />
+            <span className="hero-title-span-mobile" style={{ display: 'inline-block', color: 'var(--color-gold)' }}>по статье 18.15 КоАП РФ в Липецке</span>
           </span>
         }
-        subtitle="Проверим квалификацию, доказательства и процедуру, подготовим позицию к протоколу или рассмотрению дела и обжалуем постановление о штрафе в суде."
-        trustItems={[
-          'Разберём, какая часть статьи вменяется и кому именно (компании или директору)',
-          'Проверим факт допуска к работе, документы, уведомления и материалы МВД',
-          'Подготовим объяснения, ходатайства, возражения и доказательственную базу',
-          'Оценим основания для прекращения дела, назначения предупреждения или снижения штрафа'
-        ]}
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '760px', textWrap: 'balance' }}>
+            Проверим квалификацию, доказательства и процедуру, подготовим позицию к протоколу или рассмотрению дела и обжалуем постановление о штрафе в суде.
+          </span>
+        }
         primaryCtaText="Срочно оценить дело"
         primaryCtaLink="#form"
+        primaryCtaSubtext={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Конфиденциальный звонок куратору направления:
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
+        }
         secondaryCtaText="Стадии производства"
         secondaryCtaLink="#case-stages"
+        imageUrl="/images/konopkin.jpg"
+        imageName="Дмитрий Сергеевич Конопкин"
+        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное сопровождение бизнеса»"
+        imageObjectPosition="center 15%"
+        trustItems={[
+          {
+            text: (
+              <span>
+                <strong>Разберём, какая часть статьи</strong> вменяется и кому именно (компании или директору)
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Проверим факт допуска</strong> к работе, документы, уведомления и материалы МВД
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Подготовим объяснения</strong>, ходатайства, возражения и доказательственную базу
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Оценим основания</strong> для прекращения дела, назначения предупреждения или снижения штрафа
+              </span>
+            )
+          }
+        ]}
       />
 
       {/* Срочное предупреждение о сроках под Hero */}
@@ -330,205 +372,297 @@ export default function ZashchitaPo1815KoapClient() {
         </div>
       </div>
 
-      {/* ═══ БЛОК 2: СТАДИИ ДЕЛА ═══ */}
-      <section id="case-stages" style={{ padding: '60px 0', background: 'var(--color-bg-light)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      {/* ═══ БЛОК 2: СТАДИИ ДЕЛА (ШАБЛОН «СИТУАЦИИ») ═══ */}
+      <section className="section bg-white" id="case-stages" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              ПРОЦЕССУАЛЬНЫЕ СТАДИИ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              На какой стадии находится ваше административное дело
+              ПРОЦЕССУАЛЬНЫЕ СТАДИИ
+            </div>
+            <h2
+              className="with-accent"
+              style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(28px, 4vw, 42px)',
+                color: 'var(--color-deep-blue)',
+                marginBottom: '16px',
+                marginTop: 0,
+                lineHeight: 1.2,
+                textAlign: 'left'
+              }}
+            >
+              <span style={{ display: 'inline-block' }}>На какой стадии находится</span> <br />
+              <span style={{ display: 'inline-block' }}>ваше административное дело</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p
+              style={{
+                fontSize: '16px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.6,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}
+            >
               Чем раньше адвокат подключается к делу, тем выше шансы пресечь процессуальные нарушения и добиться прекращения производства.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '24px'
-            }}
-          >
+          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '32px' }}>
             {caseStages.map((sit, idx) => (
               <div
                 key={idx}
+                className="card hover-lift"
                 style={{
-                  position: 'relative',
-                  overflow: 'hidden',
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)',
-                  padding: '28px',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.05)',
-                  border: '1px solid rgba(0,0,0,0.06)',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '32px 28px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
                 <div
                   style={{
                     position: 'absolute',
-                    top: '-10px',
-                    right: '-10px',
-                    width: '70px',
-                    height: '70px',
+                    top: '-15px',
+                    right: '-15px',
+                    width: '90px',
+                    height: '90px',
                     opacity: 0.04,
-                    pointerEvents: 'none'
+                    pointerEvents: 'none',
+                    color: 'var(--color-deep-blue)'
                   }}
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
                   </svg>
                 </div>
 
                 <div>
-                  <div
-                    style={{
-                      display: 'inline-block',
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      color: 'var(--color-gold)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px',
-                      background: 'rgba(218, 165, 32, 0.1)',
-                      padding: '4px 10px',
-                      borderRadius: '4px',
-                      marginBottom: '14px'
-                    }}
-                  >
-                    {sit.tag}
-                  </div>
+                  {sit.tag && (
+                    <div
+                      style={{
+                        fontSize: '11.5px',
+                        fontWeight: 700,
+                        color: 'var(--color-primary)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                        marginBottom: '12px',
+                        background: 'rgba(23, 50, 77, 0.06)',
+                        padding: '3px 8px',
+                        display: 'inline-block',
+                        borderRadius: '2px'
+                      }}
+                    >
+                      {sit.tag}
+                    </div>
+                  )}
+
                   <h3
                     style={{
+                      fontFamily: 'var(--font-serif)',
                       fontSize: '18px',
-                      fontWeight: 700,
-                      color: 'var(--color-text-main)',
-                      marginBottom: '12px',
-                      lineHeight: '1.3'
+                      fontWeight: 600,
+                      color: 'var(--color-deep-blue)',
+                      margin: '0 0 12px 0',
+                      lineHeight: 1.35
                     }}
                   >
                     {sit.title}
                   </h3>
+
                   <p
                     style={{
                       fontSize: '14px',
                       color: 'var(--color-text-secondary)',
-                      lineHeight: '1.5',
-                      marginBottom: '20px'
+                      lineHeight: 1.6,
+                      margin: 0
                     }}
                   >
                     {sit.desc}
                   </p>
                 </div>
 
-                <a
-                  href="#form"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    color: 'var(--color-deep-blue)',
-                    textDecoration: 'none',
-                    borderBottom: '1px dashed var(--color-deep-blue)',
-                    width: 'fit-content',
-                    paddingBottom: '2px'
-                  }}
-                >
-                  {sit.btnText} →
-                </a>
+                <div style={{ marginTop: '20px' }}>
+                  <a
+                    href="#form"
+                    className="situation-btn"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--color-primary)',
+                      fontSize: '13.5px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      cursor: 'pointer',
+                      transition: 'all 0.25s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = 'var(--color-gold)';
+                      const svg = e.currentTarget.querySelector('svg');
+                      if (svg) {
+                        svg.style.transform = 'translateX(4px)';
+                        svg.style.stroke = 'var(--color-gold)';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = 'var(--color-primary)';
+                      const svg = e.currentTarget.querySelector('svg');
+                      if (svg) {
+                        svg.style.transform = 'translateX(0)';
+                        svg.style.stroke = 'currentColor';
+                      }
+                    }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById('form');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      else window.location.hash = 'form';
+                    }}
+                  >
+                    <span>{sit.btnText}</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.25s ease, stroke 0.25s ease' }}>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Баннер «Не нашли свою ситуацию?» */}
+          <div
+            style={{
+              background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
+              padding: '40px 48px',
+              borderTop: '3px solid var(--color-gold)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '32px',
+              flexWrap: 'wrap',
+              boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
+            }}
+          >
+            <style dangerouslySetInnerHTML={{ __html: `
+              .white-btn-custom {
+                background-color: var(--color-white) !important;
+                color: #10273B !important;
+                border: 1px solid var(--color-white) !important;
+                white-space: nowrap;
+                font-weight: 600;
+                padding: 14px 28px !important;
+                transition: all 0.3s ease !important;
+              }
+              .white-btn-custom:hover {
+                background-color: var(--color-gold) !important;
+                color: var(--color-deep-blue) !important;
+                border-color: var(--color-gold) !important;
+              }
+            `}} />
+            <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
+              <h3 style={{ margin: '0 0 12px 0', fontSize: '26px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
+                Не нашли свою ситуацию?
+              </h3>
+              <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+                <span style={{ display: 'inline-block' }}>По делу уже вынесен протокол или постановление о штрафе?</span> <br />
+                <span style={{ display: 'inline-block' }}>Пришлите документы — оценим основания для отмены или снижения санкций.</span>
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <a
+                href="#form"
+                className="btn white-btn-custom"
+                style={{
+                  display: 'inline-block',
+                  textAlign: 'center',
+                  fontSize: '15px',
+                  padding: '14px 28px',
+                  fontWeight: 600,
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                Описать ситуацию
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ═══ БЛОК 3: ЧТО ВМЕНЯЮТ ПО СТАТЬЕ 18.15 ═══ */}
-      <section style={{ padding: '60px 0', background: '#ffffff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      <section id="qualification" className="section bg-light" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              КВАЛИФИКАЦИЯ НАРУШЕНИЯ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              Что вменяют работодателю по статье 18.15 КоАП РФ
+              КВАЛИФИКАЦИЯ НАРУШЕНИЯ
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>Что вменяют работодателю</span> <br />
+              <span style={{ display: 'inline-block' }}>по статье 18.15 КоАП РФ</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Каждая часть статьи имеет собственный предмет доказывания, круг доказательств и процессуальные особенности защиты.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '24px'
-            }}
-          >
+          <div className="grid grid-2" style={{ gap: '24px' }}>
             {articleParts.map((item, idx) => (
               <div
                 key={idx}
+                className="card service-card hover-lift"
                 style={{
-                  background: 'var(--color-bg-light)',
-                  borderRadius: '12px',
-                  padding: '30px',
-                  border: '1px solid rgba(0,0,0,0.06)',
-                  borderLeft: '4px solid var(--color-gold)',
+                  height: '100%',
+                  padding: '32px 28px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between'
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
+                  position: 'relative'
                 }}
               >
                 <div>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '6px' }}>
+                  <div style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px', background: 'rgba(23, 50, 77, 0.06)', padding: '3px 8px', display: 'inline-block', borderRadius: '2px' }}>
                     {item.part}
                   </div>
-                  <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-text-main)', marginBottom: '12px' }}>
+                  <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '16px' }}>
+                  <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                     {item.desc}
                   </p>
                 </div>
-                <div style={{ background: '#ffffff', padding: '12px 16px', borderRadius: '6px', fontSize: '13px', color: 'var(--color-deep-blue)', fontWeight: 600, border: '1px solid rgba(0,0,0,0.08)' }}>
+                <div style={{ background: 'var(--color-bg-light)', padding: '14px 16px', borderRadius: '4px', fontSize: '13px', color: 'var(--color-deep-blue)', fontWeight: 600, borderLeft: '3px solid var(--color-gold)', lineHeight: 1.5 }}>
                   {item.sanction}
                 </div>
               </div>
@@ -537,61 +671,67 @@ export default function ZashchitaPo1815KoapClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК: ВОЗМОЖНЫЕ ПРАВОВЫЕ РЕЗУЛЬТАТЫ ═══ */}
-      <section style={{ padding: '60px 0', background: 'var(--color-bg-light)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
+      {/* ═══ БЛОК 4: ВОЗМОЖНЫЕ ПРАВОВЫЕ РЕЗУЛЬТАТЫ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                fontSize: '13px',
+                fontSize: '12.5px',
                 fontWeight: 700,
                 color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              ПРАВОВЫЕ СЦЕНАРИИ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 marginBottom: '12px'
               }}
             >
-              Какие цели ставит защита по административному делу
+              ПРАВОВЫЕ СЦЕНАРИИ
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25, textAlign: 'left' }}>
+              <span style={{ display: 'inline-block' }}>Какие цели ставит защита</span> <br />
+              <span style={{ display: 'inline-block' }}>по административному делу</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Цель определяется после детального анализа материалов проверки, протокола и имеющихся доказательств.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '20px'
-            }}
-          >
+          <div className="grid grid-2" style={{ gap: '24px' }}>
             {legalGoals.map((goal, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: '#ffffff',
-                  borderRadius: '10px',
-                  padding: '24px',
-                  boxShadow: '0 2px 10px rgba(0,0,0,0.04)',
-                  border: '1px solid rgba(0,0,0,0.06)'
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <div style={{ fontWeight: 700, fontSize: '17px', color: 'var(--color-deep-blue)', marginBottom: '8px' }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  0{idx + 1}
+                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
                   {goal.title}
-                </div>
-                <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {goal.desc}
-                </div>
+                </p>
               </div>
             ))}
           </div>
