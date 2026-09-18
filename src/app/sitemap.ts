@@ -40,6 +40,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/',
     '/biznesu/korporativnyj-yurist/reorganizaciya-biznesa/',
     '/biznesu/korporativnyj-yurist/zashchita-korporativnogo-kontrolya/',
+    // Банкротство бизнеса (Кластер B2B-02)
+    '/biznesu/bankrotstvo-biznesa/',
+    '/biznesu/bankrotstvo-biznesa/bankrotstvo-kompanii-so-storony-dolzhnika/',
+    '/biznesu/bankrotstvo-biznesa/predstavlenie-interesov-kreditora/',
+    '/biznesu/bankrotstvo-biznesa/vklyuchenie-v-reestr-trebovanij-kreditorov/',
+    '/biznesu/bankrotstvo-biznesa/zashchita-ot-subsidiarnoj-otvetstvennosti/',
+    '/biznesu/bankrotstvo-biznesa/osparivanie-sdelok-pri-bankrotstve/',
+    '/biznesu/bankrotstvo-biznesa/obzhalovanie-dejstvij-arbitrazhnogo-upravlyayushchego/',
+    // Юридическое сопровождение бизнеса (Кластер B2B-03)
+    '/biznesu/yuridicheskoe-soprovozhdenie-biznesa/',
+    '/biznesu/yuridicheskoe-soprovozhdenie-biznesa/yuridicheskij-audit-biznesa/',
     // Банкротство физических лиц
     '/grazhdanam/bankrotstvo-fizicheskih-lic/',
     '/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/',

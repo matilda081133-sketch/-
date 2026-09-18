@@ -10,7 +10,7 @@ export interface CaseData {
   description?: string | React.ReactNode;
   action?: string | React.ReactNode;
   points?: (string | React.ReactNode)[];
-  result: string | React.ReactNode;
+  result?: string | React.ReactNode;
   duration?: string;
   isDemo?: boolean;
 }
@@ -39,7 +39,7 @@ export default function CasesBlock({
     category: c.category || (c.duration ? `Срок: ${c.duration}` : 'Практика'),
     problem: c.problem || c.description || '',
     action: c.action || (c.points ? c.points.join('. ') : ''),
-    result: c.result,
+    result: c.result || 'Задачи успешно выполнены по утвержденному регламенту',
   }));
   return (
     <section className="section bg-white" style={{ padding: 'clamp(48px, 6vw, 80px) 0' }}>

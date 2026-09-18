@@ -35,6 +35,7 @@ interface PricingBlockProps {
   disclaimer?: string | React.ReactNode;
   guaranteeText?: string;
   sectionStyle?: React.CSSProperties;
+  showDemoWarning?: boolean;
 }
 
 export default function PricingBlock({
@@ -47,7 +48,8 @@ export default function PricingBlock({
   ctaButtonLink = "#form",
   disclaimer,
   guaranteeText,
-  sectionStyle
+  sectionStyle,
+  showDemoWarning
 }: PricingBlockProps) {
   const defaultTiers: PricingTier[] = [
     {
@@ -133,6 +135,31 @@ export default function PricingBlock({
             {subtitle}
           </p>
         </div>
+
+        {showDemoWarning && (
+          <div
+            style={{
+              backgroundColor: '#fffbeb',
+              border: '1px solid #fef3c7',
+              borderRadius: '8px',
+              padding: '14px 20px',
+              marginBottom: '32px',
+              fontSize: '13px',
+              color: '#92400e',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              maxWidth: '850px',
+              margin: '0 auto 32px auto',
+              lineHeight: 1.5
+            }}
+          >
+            <span style={{ fontSize: '18px', flexShrink: 0 }}>ℹ</span>
+            <span>
+              Указанные тарифы и объёмы услуг носят ориентировочный характер. Точный состав работ, лимиты и регламент взаимодействия фиксируются в договоре после предварительного анализа задач бизнеса.
+            </span>
+          </div>
+        )}
 
         <div 
           className={`pricing-grid-container ${tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
