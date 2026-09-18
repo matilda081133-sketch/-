@@ -32,6 +32,13 @@ export default function AdvokatUgolovnyjClient() {
         }
       },
       {
+        "@type": "Person",
+        "@id": "https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person",
+        "name": "Аркадий Бобкин",
+        "jobTitle": "Куратор практики уголовного права",
+        "url": "https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/"
+      },
+      {
         "@type": "BreadcrumbList",
         "@id": "https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/#breadcrumbs",
         "itemListElement": [
@@ -635,7 +642,7 @@ export default function AdvokatUgolovnyjClient() {
           { text: 'Определим срочность, процессуальный статус и ближайшие риски' },
           { text: 'Изучим материалы и сформируем согласованную стратегию' },
           { text: 'Куратор практики — юрист А. Е. Бобкин (22 года следственного опыта)' },
-          { text: 'Непосредственную защиту ведут адвокаты коллегии' }
+          { text: 'Если требуется статус адвоката — подбираем специалиста под категорию дела' }
         ]}
         imageUrl="/images/bobkin.jpg"
         imageName="Аркадий Евгеньевич Бобкин"
@@ -1151,7 +1158,7 @@ export default function AdvokatUgolovnyjClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 7 (6.8): КУРАТОР И АДВОКАТЫ НАПРАВЛЕНИЯ ═══ */}
+      {/* ═══ БЛОК 7 (6.8): КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
         title="Куратор практики"
         name="Аркадий Евгеньевич Бобкин"
@@ -1162,222 +1169,15 @@ export default function AdvokatUgolovnyjClient() {
         profileText="Подробнее об Аркадии Евгеньевиче Бобкине →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block', lineHeight: 1.6 }}>
-            Директор и управляющий партнёр ЮК «Де-Юре». Юрист с 1997 года. Более 22 лет работал в следственных подразделениях налоговой полиции и МВД, в том числе следователем по особо важным делам и руководителем следственной части. Анализирует сложные уголовно-правовые ситуации, оценивает материалы с учётом логики расследования, определяет стратегию и состав команды.
+            Аркадий Бобкин — куратор направления «Уголовное право». Проводит первичный разбор ситуации, определяет задачи по делу, подбирает необходимых специалистов и координирует их работу на всех этапах.
           </span>,
-          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Анализ материалов доследственных проверок и уголовных дел</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Оценка уголовно-правовых и процессуальных рисков</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Участие в разработке позиции, тактики и стратегии защиты</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Координация работы адвокатов и привлечённых специалистов</span>
-            </li>
-          </ul>
+          <p key="adv" style={{ color: 'var(--color-text-secondary)', margin: '14px 0 0 0', fontSize: '14.5px', lineHeight: 1.6 }}>
+            Если для защиты или представительства требуется статус адвоката, Аркадий Бобкин подбирает специалиста с учётом категории дела, процессуальной стадии и необходимых компетенций.
+          </p>
         ]}
         buttonText="Обсудить ситуацию с куратором"
         buttonHref="#form"
       />
-
-      {/* Адвокаты Коллегии адвокатов «Де-Юре» */}
-      <section className="section bg-white" style={{ padding: '60px 0 80px 0', borderTop: '1px solid var(--color-border)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '36px', textAlign: 'left' }}>
-            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.2vw, 32px)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
-              Адвокаты Коллегии адвокатов «Де-Юре», осуществляющие защиту:
-            </h3>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              Непосредственную защиту подозреваемых и обвиняемых, участие в следственных действиях и судах ведут адвокаты Коллегии адвокатов «Де-Юре»:
-            </p>
-          </div>
-
-          <div className="grid grid-2" style={{ gap: '28px', maxWidth: '760px' }}>
-            {/* Конопкин Д.С. */}
-            <div 
-              className="card team-card hover-lift" 
-              style={{ 
-                padding: '24px', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between',
-                background: '#FFFFFF',
-                border: '1px solid rgba(16, 39, 59, 0.08)',
-                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
-                boxSizing: 'border-box',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
-                <Link 
-                  href="/specialisty/konopkin-dmitriy-sergeevich/" 
-                  style={{ 
-                    display: 'block', 
-                    height: '360px', 
-                    width: '100%', 
-                    marginBottom: '16px', 
-                    borderRadius: '0', 
-                    flexShrink: 0, 
-                    overflow: 'hidden', 
-                    position: 'relative', 
-                    background: 'var(--color-cream)', 
-                    textDecoration: 'none' 
-                  }}
-                >
-                  <img 
-                    src="/images/konopkin.jpg" 
-                    alt="Конопкин Дмитрий Сергеевич" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }} 
-                    loading="lazy" 
-                  />
-                </Link>
-                <h4 style={{ margin: '0 0 8px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, minHeight: '48px', display: 'block' }}>
-                  <Link href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ color: 'inherit', textDecoration: 'none' }}>
-                    <span style={{ display: 'block' }}>Конопкин</span>
-                    <span style={{ display: 'block' }}>Дмитрий Сергеевич</span>
-                  </Link>
-                </h4>
-                <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start', whiteSpace: 'pre-line' }}>
-                  Адвокат, председатель Коллегии адвокатов «Де-Юре»
-                </p>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '13.5px', margin: 0, lineHeight: 1.5 }}>
-                  Шесть лет работал в Следственном комитете, в том числе старшим следователем по особо важным делам. Защищает по уголовным делам и помогает потерпевшим.
-                </p>
-              </div>
-              <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
-                <Link 
-                  href="/specialisty/konopkin-dmitriy-sergeevich/" 
-                  className="spec-card-btn" 
-                  style={{ 
-                    fontSize: '13.5px', 
-                    fontWeight: 600, 
-                    textDecoration: 'none', 
-                    display: 'inline-flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center',
-                    width: '100%',
-                    padding: '10px 16px',
-                    border: '1px solid var(--color-primary, #10273B)',
-                    borderRadius: '0px',
-                    gap: '6px'
-                  }}
-                >
-                  <span>Подробнее об адвокате</span>
-                  <span className="spec-card-arrow">→</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Гусев О.Ю. */}
-            <div 
-              className="card team-card hover-lift" 
-              style={{ 
-                padding: '24px', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between',
-                background: '#FFFFFF',
-                border: '1px solid rgba(16, 39, 59, 0.08)',
-                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
-                boxSizing: 'border-box',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
-                <Link 
-                  href="/specialisty/gusev-oleg-yurevich/" 
-                  style={{ 
-                    display: 'block', 
-                    height: '360px', 
-                    width: '100%', 
-                    marginBottom: '16px', 
-                    borderRadius: '0', 
-                    flexShrink: 0, 
-                    overflow: 'hidden', 
-                    position: 'relative', 
-                    background: 'var(--color-cream)', 
-                    textDecoration: 'none' 
-                  }}
-                >
-                  <img 
-                    src="/images/gusev.jpg" 
-                    alt="Гусев Олег Юрьевич" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 12%' }} 
-                    loading="lazy" 
-                  />
-                </Link>
-                <h4 style={{ margin: '0 0 8px 0', fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, minHeight: '48px', display: 'block' }}>
-                  <Link href="/specialisty/gusev-oleg-yurevich/" style={{ color: 'inherit', textDecoration: 'none' }}>
-                    <span style={{ display: 'block' }}>Гусев</span>
-                    <span style={{ display: 'block' }}>Олег Юрьевич</span>
-                  </Link>
-                </h4>
-                <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start', whiteSpace: 'pre-line' }}>
-                  Адвокат, управляющий партнёр Коллегии адвокатов «Де-Юре»
-                </p>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '13.5px', margin: 0, lineHeight: 1.5 }}>
-                  Юридическая практика с 1995 года, адвокат с 2015 года, семь лет работал заместителем прокурора района. Ведёт общеуголовные и экономические дела, участвует в обжаловании.
-                </p>
-              </div>
-              <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
-                <Link 
-                  href="/specialisty/gusev-oleg-yurevich/" 
-                  className="spec-card-btn" 
-                  style={{ 
-                    fontSize: '13.5px', 
-                    fontWeight: 600, 
-                    textDecoration: 'none', 
-                    display: 'inline-flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center',
-                    width: '100%',
-                    padding: '10px 16px',
-                    border: '1px solid var(--color-primary, #10273B)',
-                    borderRadius: '0px',
-                    gap: '6px'
-                  }}
-                >
-                  <span>Подробнее об адвокате</span>
-                  <span className="spec-card-arrow">→</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <p style={{ fontSize: '13.5px', color: 'var(--color-text-muted)', marginTop: '24px', lineHeight: 1.5, textAlign: 'center' }}>
-            * Конкретный адвокат и состав команды определяются после проверки конфликта интересов, стадии, категории и объёма дела.
-          </p>
-        </div>
-      </section>
-
-      <style dangerouslySetInnerHTML={{__html: `
-        .spec-card-btn {
-          background-color: transparent;
-          color: var(--color-primary, #10273B);
-          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .team-card:hover .spec-card-btn,
-        .spec-card-btn:hover {
-          background-color: var(--color-primary, #10273B) !important;
-          color: #FFFFFF !important;
-          border-color: var(--color-primary, #10273B) !important;
-        }
-        .spec-card-arrow {
-          transition: transform 0.3s ease;
-          display: inline-block;
-        }
-        .team-card:hover .spec-card-arrow,
-        .spec-card-btn:hover .spec-card-arrow {
-          transform: translateX(4px);
-        }
-      `}} />
 
       {/* ═══ БЛОК 8 (6.9): ПРИМЕРЫ ДЕЛ ИЗ ПРАКТИКИ ═══ */}
       <CasesBlock

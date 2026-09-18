@@ -219,6 +219,13 @@ export default function ZashchitaPoterpevshegoClient() {
         }
       },
       {
+        "@type": "Person",
+        "@id": "https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person",
+        "name": "Аркадий Бобкин",
+        "jobTitle": "Куратор практики уголовного права",
+        "url": "https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/"
+      },
+      {
         "@type": "BreadcrumbList",
         "@id": "https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/#breadcrumbs",
         "itemListElement": [
@@ -317,7 +324,7 @@ export default function ZashchitaPoterpevshegoClient() {
         }
         trustItems={[
           { text: 'Стратегию определяет Аркадий Бобкин — 22 года следственного опыта' },
-          { text: 'Защиту и процессуальные действия ведут адвокаты коллегии' },
+          { text: 'Аркадий Бобкин курирует направление: проводит первичный разбор ситуации, определяет необходимый состав специалистов и организует работу по делу с учётом его категории и стадии.' },
           { text: 'Фиксируем состав услуг и условия в соглашении до начала работы' },
           { text: 'Полная конфиденциальность и соблюдение адвокатской тайны' }
         ]}
@@ -472,26 +479,12 @@ export default function ZashchitaPoterpevshegoClient() {
         profileHref="/specialisty/bobkin-arkadiy-evgenevich/"
         profileText="Подробнее об Аркадии Евгеньевиче Бобкине →"
         description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Юрист с 1997 года. Более 22 лет работы в следственных подразделениях налоговой полиции и МВД (следователь по ОВД, начальник следственной части). Определяет генеральную стратегию защиты, проверяет процессуальные уязвимости следствия и координирует работу профильных адвокатов.
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block', lineHeight: 1.6 }}>
+            Аркадий Бобкин — куратор направления «Уголовное право». Проводит первичный разбор ситуации, определяет задачи по делу, подбирает необходимых специалистов и координирует их работу на всех этапах.
           </span>,
-          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Анализ материалов доследственных проверок и доказательств обвинения</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Непосредственную защиту в органах следствия и суде ведут адвокаты коллегии</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '7px' }}></div>
-              <span style={{ lineHeight: 1.45 }}>
-                Строгая конфиденциальность и соблюдение<br />
-                тайны следствия и адвокатской тайны
-              </span>
-            </li>
-          </ul>
+          <p key="adv" style={{ color: 'var(--color-text-secondary)', margin: '14px 0 0 0', fontSize: '14.5px', lineHeight: 1.6 }}>
+            Если для защиты или представительства требуется статус адвоката, Аркадий Бобкин подбирает специалиста с учётом категории дела, процессуальной стадии и необходимых компетенций.
+          </p>
         ]}
         buttonText="Задать вопрос куратору"
         buttonHref="#form"

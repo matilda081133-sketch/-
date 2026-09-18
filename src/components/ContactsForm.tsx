@@ -95,7 +95,7 @@ export default function ContactsForm({
     } catch (err: any) {
       console.error('Ошибка отправки заявки:', err);
       setLoading(false);
-      setError('Не удалось отправить форму. Проверьте соединение или позвоните нам прямо сейчас.');
+      setError('Не удалось отправить заявку. Проверьте номер телефона или позвоните нам.');
     }
   };
 
@@ -118,7 +118,7 @@ export default function ContactsForm({
         </svg>
         <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 12px 0', lineHeight: 1.2 }}>Заявка отправлена</h3>
         <p style={{ margin: 0, color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, maxWidth: '320px' }}>
-          Мы получили ваши данные и перезвоним вам в ближайшее время.
+          Мы свяжемся с вами в рабочее время по указанному номеру.
         </p>
       </div>
     );
@@ -150,7 +150,7 @@ export default function ContactsForm({
           fontSize: '14px', 
           lineHeight: 1.5 
         }}>
-          <div style={{ fontWeight: 'bold', marginBottom: '6px' }}>Не удалось отправить форму</div>
+          <div style={{ fontWeight: 'bold', marginBottom: '6px' }}>Не удалось отправить заявку</div>
           <div style={{ marginBottom: '10px' }}>{error}</div>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
             <a href="tel:+74742201525" style={{ color: '#9B2C2C', fontWeight: 'bold', textDecoration: 'underline' }}>
