@@ -449,14 +449,14 @@ export default function PredstavlenieKreditoraClient() {
           {
             text: (
               <span>
-                <strong>Практический опыт с 1997 года</strong> в арбитражных процессах и спорах о банкротстве
+                <strong>Практический опыт с 1997 года</strong> в арбитражных процессах<br />и спорах о банкротстве
               </span>
             )
           },
           {
             text: (
               <span>
-                <strong>Реальный возврат средств</strong> через оспаривание сделок и субсидиарную ответственность
+                <strong>Реальный возврат средств</strong> через оспаривание<br />сделок и субсидиарную ответственность
               </span>
             )
           }
@@ -595,7 +595,8 @@ export default function PredstavlenieKreditoraClient() {
               </span>
             </div>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.8vw, 38px)', color: '#FFFFFF', margin: '0 0 16px 0', lineHeight: 1.25 }}>
-              Когда пассивность кредитора приводит к потере денег
+              Когда пассивность <br />
+              кредитора приводит к потере денег
             </h2>
             <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.82)', margin: 0, lineHeight: 1.65 }}>
               В банкротстве действует принцип «активный кредитор защищает свои деньги». Бездействие кредитора позволяет должнику распродать активы и списать долг:
@@ -835,6 +836,25 @@ export default function PredstavlenieKreditoraClient() {
             </div>
           </div>
 
+          <style dangerouslySetInnerHTML={{ __html: `
+            .related-service-card {
+              border-top: 3px solid var(--color-primary) !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .related-service-card:hover {
+              border-top: 3px solid var(--color-gold) !important;
+              transform: translateY(-6px) !important;
+              box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
+            }
+            .related-service-card:hover .card-arrow {
+              color: var(--color-gold) !important;
+            }
+            .related-service-card:hover .card-arrow svg {
+              stroke: var(--color-gold) !important;
+              transform: translateX(6px) !important;
+            }
+          `}} />
+
           <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
             {relatedServices.map((rel, idx) => (
               <Link key={idx} href={rel.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
@@ -846,13 +866,11 @@ export default function PredstavlenieKreditoraClient() {
                     padding: '26px 24px',
                     background: 'var(--color-white)',
                     border: '1px solid var(--color-border)',
-                    borderTop: '3px solid var(--color-primary)',
                     borderRadius: '0',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
-                    transition: 'all 0.3s ease'
+                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
                   }}
                 >
                   <div>

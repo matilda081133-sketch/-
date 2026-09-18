@@ -370,12 +370,15 @@ h4 { font-size: 1.25rem; }
 .related-service-card {
   will-change: transform, box-shadow;
   transform: translateZ(0);
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, border-top-color 0.35s ease !important;
   cursor: pointer;
+  border-top: 3px solid var(--color-primary) !important;
 }
 .related-service-card:hover {
   transform: translateY(-6px) translateZ(0) !important;
   box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
+  border-top: 3px solid var(--color-gold) !important;
+  border-top-color: var(--color-gold) !important;
   border-left-color: rgba(23, 50, 77, 0.25) !important;
   border-right-color: rgba(23, 50, 77, 0.25) !important;
   border-bottom-color: rgba(23, 50, 77, 0.25) !important;

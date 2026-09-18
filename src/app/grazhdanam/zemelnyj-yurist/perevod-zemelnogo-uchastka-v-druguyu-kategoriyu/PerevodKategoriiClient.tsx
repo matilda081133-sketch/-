@@ -811,8 +811,7 @@ export default function PerevodKategoriiClient() {
             .related-service-card {
               border-top: 3px solid var(--color-primary) !important;
             }
-            .related-service-card:hover {
-              border-top: 3px solid var(--color-primary) !important;
+            -top: 3px solid var(--color-gold) !important;
             }
             .related-service-card:hover .card-arrow {
               color: var(--color-gold) !important;
