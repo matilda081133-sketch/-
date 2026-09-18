@@ -107,38 +107,15 @@ export default function ZashchitaPriProverkeObepClient() {
   const urgentRisks = [
     {
       title: 'Спонтанные объяснения и передача лишних документов',
-      desc: 'Первые показания, данные без консультации юриста, фиксируются в протоколах опроса и становятся ключевым доказательством обвинения.',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-          <polyline points="14 2 14 8 20 8" />
-          <line x1="16" y1="13" x2="8" y2="13" />
-          <line x1="16" y1="17" x2="8" y2="17" />
-          <polyline points="10 9 9 9 8 9" />
-        </svg>
-      )
+      desc: 'Первые показания, данные без консультации юриста, фиксируются в протоколах опроса и становятся ключевым доказательством обвинения.'
     },
     {
       title: 'Проведение «обследования» под видом обыска',
-      desc: 'Гласное обследование в рамках ОРД имеет строгие ограничения. Без адвоката силовики часто проводят фактический обыск без судебного решения.',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          <line x1="12" y1="8" x2="12" y2="12" />
-          <line x1="12" y1="16" x2="12.01" y2="16" />
-        </svg>
-      )
+      desc: 'Гласное обследование в рамках ОРД имеет строгие ограничения. Без адвоката силовики часто проводят фактический обыск без судебного решения.'
     },
     {
       title: 'Игнорирование сроков ответа на запросы',
-      desc: 'Необоснованный отказ грозит штрафами и силовым визитом, а бесконтрольная передача коммерческих тайн ставит компанию под удар.',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-          <circle cx="12" cy="12" r="10" />
-          <line x1="12" y1="8" x2="12" y2="12" />
-          <line x1="12" y1="16" x2="12.01" y2="16" />
-        </svg>
-      )
+      desc: 'Необоснованный отказ грозит штрафами и силовым визитом, а бесконтрольная передача коммерческих тайн ставит компанию под удар.'
     }
   ];
 
@@ -438,6 +415,21 @@ export default function ZashchitaPriProverkeObepClient() {
                   overflow: 'hidden'
                 }}
               >
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+
                 <div>
                   <div style={{
                     fontSize: '11px',
@@ -461,6 +453,7 @@ export default function ZashchitaPriProverkeObepClient() {
                 </div>
                 <a
                   href="#form"
+                  className="situation-btn"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -469,10 +462,38 @@ export default function ZashchitaPriProverkeObepClient() {
                     fontSize: '13px',
                     fontWeight: 600,
                     textDecoration: 'none',
-                    marginTop: '16px'
+                    marginTop: '16px',
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = 'var(--color-gold)';
+                    const svg = e.currentTarget.querySelector('svg');
+                    if (svg) {
+                      svg.style.transform = 'translateX(4px)';
+                      svg.style.stroke = 'var(--color-gold)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'var(--color-primary)';
+                    const svg = e.currentTarget.querySelector('svg');
+                    if (svg) {
+                      svg.style.transform = 'translateX(0)';
+                      svg.style.stroke = 'currentColor';
+                    }
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
-                  <span>{item.btnText} →</span>
+                  <span>{item.btnText}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.25s ease, stroke 0.25s ease' }}>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </a>
               </div>
             ))}
@@ -513,7 +534,11 @@ export default function ZashchitaPriProverkeObepClient() {
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
-                    {risk.icon}
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
                     <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
                       {risk.title}
                     </div>
@@ -582,59 +607,83 @@ export default function ZashchitaPriProverkeObepClient() {
           `}} />
 
           {/* Зона связи */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
-              +7 (910) 350-31-11
-            </a>
-            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
-              Позвонить юристу
-            </a>
-            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
-              Вызвать адвоката
-            </a>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
-              Защита при проверках ОБЭП и вызовах на опросы
-            </span>
+          <div style={{
+            borderTop: '1px solid rgba(255,255,255,0.15)',
+            paddingTop: '28px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '20px',
+            flexWrap: 'wrap'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+                +7 (910) 350-31-11
+              </a>
+              <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+                Позвонить юристу
+              </a>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+              <span style={{ color: 'rgba(255,255,255,0.75)', fontSize: '14px' }}>
+                Защита при проверках ОБЭП и вызовах на опросы
+              </span>
+              <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px', whiteSpace: 'nowrap' }}>
+                Вызвать адвоката
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: КОНТУРЫ ЗАЩИТЫ ═══ */}
-      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+      {/* ═══ БЛОК 4: СОСТАВ ЮРИДИЧЕСКОЙ ПОМОЩИ (КАНОНИЧЕСКИЙ ШАБЛОН #CHECK) ═══ */}
+      <section className="section bg-white" id="check" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '48px', textAlign: 'left' }}>
-            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
               <span style={{ display: 'inline-block' }}>Состав юридической помощи</span> <br />
               <span style={{ display: 'inline-block' }}>при проверках ОБЭП</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               Обеспечиваем защиту интересов компании на каждом этапе взаимодействия с оперативными сотрудниками.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px' }}>
-            {obepContours.map((contour, idx) => (
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative', marginBottom: '40px' }}>
+            {obepContours.map((item, idx) => (
               <div
                 key={idx}
-                className="card"
+                className="hover-lift"
                 style={{
-                  background: '#FFFFFF',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
                   border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-gold)',
-                  padding: '30px 26px',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '12px'
+                  position: 'relative'
                 }}
               >
-                <div style={{ fontSize: '22px', fontWeight: 800, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)' }}>
-                  {contour.num}
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
                 </div>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, fontWeight: 600 }}>
-                  {contour.title}
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
+                  {item.title}
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
-                  {contour.desc}
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {item.desc}
                 </p>
               </div>
             ))}
@@ -744,7 +793,7 @@ export default function ZashchitaPriProverkeObepClient() {
             }}>
               <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 34px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.25, flex: '1 1 480px', minWidth: '280px' }}>
                 <span style={{ display: 'inline-block' }}>Смежные направления</span> <br />
-                <span style={{ display: 'inline-block' }}>практики</span>
+                <span style={{ display: 'inline-block' }}>практики для бизнеса</span>
               </h2>
               <p style={{
                 flex: '0 1 440px',
@@ -757,7 +806,7 @@ export default function ZashchitaPriProverkeObepClient() {
                 textAlign: 'left',
                 textWrap: 'balance'
               }}>
-                Если задача затрагивает другие сферы деятельности компании:
+                Если ситуация выходит за рамки проверки ОБЭП, привлекаем экспертов смежных практик компании «Де-Юре» — по налогам, арбитражу, корпоративным спорам и банкротству.
               </p>
             </div>
           </div>
@@ -777,8 +826,7 @@ export default function ZashchitaPriProverkeObepClient() {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
-                    transition: 'all 0.3s ease'
+                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
                   }}
                 >
                   <div>
@@ -790,8 +838,8 @@ export default function ZashchitaPriProverkeObepClient() {
                     </p>
                   </div>
                   <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
-                    <span>Подробнее →</span>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <span>Подробнее об услуге</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.35s ease, stroke 0.35s ease' }}>
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -802,21 +850,80 @@ export default function ZashchitaPriProverkeObepClient() {
           </div>
 
           <div>
-            <Link href="/biznesu/" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <Link href="/biznesu/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.3s ease' }}>
               Смотреть все юридические услуги для бизнеса →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 11: ФИНАЛЬНАЯ ФОРМА (#FORM) ═══ */}
-      <section id="form" className="section bg-white" style={{ padding: '80px 0' }}>
-        <div className="container" style={{ maxWidth: '760px' }}>
-          <ContactsForm
-            title="Защита бизнеса при проверке ОБЭП"
-            subtitle="Укажите суть запроса или причину вызова в полицию. Мы оперативно свяжемся с вами и согласуем порядок неотложных действий."
-            buttonText="Получить консультацию по проверке"
-          />
+      {/* ═══ БЛОК 11: ФИНАЛЬНАЯ ФОРМА (СВЯЗАТЬСЯ С НАМИ) — КАНОНИЧЕСКИЙ ШАБЛОН ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получите первичную</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>оценку ситуации</span>
+              </h2>
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Укажите суть запроса ОБЭП или причину вызова сотрудников на опрос. Адвокат оперативно изучит обстоятельства и свяжется с вами для выработки безопасной позиции.
+              </p>
+
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Прямой контакт со специалистом</strong>
+                </div>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Дежурный телефон: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a><br />
+                  Городской телефон: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                </p>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
+                  Липецк, ул. Советская, д. 35, офис 213 (приём руководителей по предварительной записи)
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Адвокатская тайна и конфиденциальность:</strong>
+                Все переданные сведения и документы охраняются Федеральным законом № 63-ФЗ «Об адвокатской деятельности и адвокатуре в РФ». Не указывайте в форме паспортные данные и коммерческую тайну — защищённый способ передачи согласуем после контакта.
+              </div>
+            </div>
+
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте контакты и суть вопроса. Адвокат свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
+                buttonText="Получить помощь адвоката"
+                commentPlaceholder="Кратко укажите суть ситуации: запрос документов ОБЭП, вызов на опрос, проверка КУСП…"
+                hiddenFields={[
+                  { name: 'source_page', value: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/' },
+                  { name: 'page_type', value: 'service' },
+                  { name: 'direction', value: 'criminal-defense' },
+                  { name: 'service', value: 'zashchita-pri-proverke-obep' }
+                ]}
+              />
+            </div>
+          </div>
         </div>
       </section>
 

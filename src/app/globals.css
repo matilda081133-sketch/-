@@ -367,6 +367,23 @@ h4 { font-size: 1.25rem; }
   color: var(--color-gold-text);
 }
 
+/* Situation card link / button hover animation */
+.situation-btn {
+  transition: color 0.25s ease !important;
+}
+.situation-btn svg {
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), stroke 0.25s ease !important;
+}
+.situation-btn:hover,
+.card:hover .situation-btn {
+  color: var(--color-gold) !important;
+}
+.situation-btn:hover svg,
+.card:hover .situation-btn svg {
+  transform: translateX(4px) !important;
+  stroke: var(--color-gold) !important;
+}
+
 .related-service-card {
   will-change: transform, box-shadow;
   transform: translateZ(0);
@@ -1588,5 +1605,27 @@ summary:focus-visible {
     padding-bottom: 0 !important;
   }
 }
+
+/* Related Services Cards */
+.related-service-card {
+  border-top: 3px solid var(--color-primary) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.related-service-card:hover {
+  border-top: 3px solid var(--color-gold) !important;
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
+}
+.related-service-card:hover .card-arrow {
+  color: var(--color-gold) !important;
+}
+.related-service-card:hover .card-arrow svg {
+  stroke: var(--color-gold) !important;
+  transform: translateX(6px) !important;
+}
+.all-services-link:hover {
+  color: var(--color-gold) !important;
+}
+
 
 

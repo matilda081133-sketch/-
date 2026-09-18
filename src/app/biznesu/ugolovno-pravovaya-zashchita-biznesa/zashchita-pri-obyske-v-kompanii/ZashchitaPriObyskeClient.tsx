@@ -395,34 +395,33 @@ export default function ZashchitaPriObyskeClient() {
             {obyskSituations.map((sit, idx) => (
               <div
                 key={idx}
+                className="card hover-lift"
                 style={{
                   position: 'relative',
                   overflow: 'hidden',
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)',
-                  padding: '28px',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.05)',
-                  border: '1px solid rgba(0,0,0,0.06)',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  padding: '28px 22px',
+                  borderRadius: '0',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+                  border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                  justifyContent: 'space-between'
                 }}
               >
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '-10px',
-                    right: '-10px',
-                    width: '70px',
-                    height: '70px',
-                    opacity: 0.04,
-                    pointerEvents: 'none'
-                  }}
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
 
@@ -432,23 +431,24 @@ export default function ZashchitaPriObyskeClient() {
                       display: 'inline-block',
                       fontSize: '11px',
                       fontWeight: 700,
-                      color: 'var(--color-gold)',
+                      color: 'var(--color-primary)',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.5px',
-                      background: 'rgba(218, 165, 32, 0.1)',
-                      padding: '4px 10px',
-                      borderRadius: '4px',
-                      marginBottom: '14px'
+                      letterSpacing: '0.05em',
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '2px 6px',
+                      borderRadius: '2px',
+                      marginBottom: '10px'
                     }}
                   >
                     {sit.tag}
                   </div>
                   <h3
                     style={{
-                      fontSize: '18px',
-                      fontWeight: 700,
-                      color: 'var(--color-text-main)',
-                      marginBottom: '12px',
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '17px',
+                      fontWeight: 600,
+                      color: 'var(--color-deep-blue)',
+                      marginBottom: '10px',
                       lineHeight: '1.3'
                     }}
                   >
@@ -456,10 +456,10 @@ export default function ZashchitaPriObyskeClient() {
                   </h3>
                   <p
                     style={{
-                      fontSize: '14px',
+                      fontSize: '13.5px',
                       color: 'var(--color-text-secondary)',
                       lineHeight: '1.5',
-                      marginBottom: '20px'
+                      margin: 0
                     }}
                   >
                     {sit.desc}
@@ -468,20 +468,47 @@ export default function ZashchitaPriObyskeClient() {
 
                 <a
                   href="#form"
+                  className="situation-btn"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '6px',
+                    color: 'var(--color-primary)',
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: 'var(--color-deep-blue)',
                     textDecoration: 'none',
-                    borderBottom: '1px dashed var(--color-deep-blue)',
-                    width: 'fit-content',
-                    paddingBottom: '2px'
+                    marginTop: '16px',
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = 'var(--color-gold)';
+                    const svg = e.currentTarget.querySelector('svg');
+                    if (svg) {
+                      svg.style.transform = 'translateX(4px)';
+                      svg.style.stroke = 'var(--color-gold)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'var(--color-primary)';
+                    const svg = e.currentTarget.querySelector('svg');
+                    if (svg) {
+                      svg.style.transform = 'translateX(0)';
+                      svg.style.stroke = 'currentColor';
+                    }
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
                   }}
                 >
-                  {sit.btnText} →
+                  <span>{sit.btnText}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.25s ease, stroke 0.25s ease' }}>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </a>
               </div>
             ))}
@@ -631,89 +658,55 @@ export default function ZashchitaPriObyskeClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 4: КОНТРОЛЬ ПРОЦЕДУРЫ ═══ */}
-      <section id="directions" style={{ padding: '60px 0', background: '#ffffff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span
-              style={{
-                fontSize: '13px',
-                fontWeight: 700,
-                color: 'var(--color-gold)',
-                letterSpacing: '1px',
-                textTransform: 'uppercase'
-              }}
-            >
-              ПРАВОВОЙ КОНТРОЛЬ НА МЕСТЕ
-            </span>
-            <h2
-              style={{
-                fontSize: '32px',
-                fontWeight: 800,
-                color: 'var(--color-text-main)',
-                marginTop: '8px',
-                marginBottom: '12px'
-              }}
-            >
-              Что проверяет и фиксирует адвокат во время мероприятия
+      {/* ═══ БЛОК 4: ЧТО ПРОВЕРЯЕТ И ФИКСИРУЕТ АДВОКАТ (КАНОНИЧЕСКИЙ ШАБЛОН #CHECK) ═══ */}
+      <section className="section bg-white" id="check" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'inline-block' }}>Что проверяет и фиксирует</span> <br />
+              <span style={{ display: 'inline-block' }}>адвокат во время обыска</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', maxWidth: '750px', margin: '0 auto' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6, textWrap: 'balance' }}>
               Любое процессуальное нарушение, зафиксированное защитником в протоколе, в дальнейшем позволяет признать изъятые доказательства недопустимыми.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '24px'
-            }}
-          >
-            {lawyerCheckpoints.map((cp, idx) => (
+          <div className="grid grid-3" style={{ gap: '28px', position: 'relative', marginBottom: '40px' }}>
+            {lawyerCheckpoints.map((item, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: 'var(--color-bg-light)',
-                  borderRadius: '12px',
-                  padding: '28px',
-                  border: '1px solid rgba(0,0,0,0.06)',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 30px 32px 30px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
-                  gap: '16px'
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <div
-                  style={{
-                    fontSize: '22px',
-                    fontWeight: 900,
-                    color: 'var(--color-gold)',
-                    lineHeight: 1
-                  }}
-                >
-                  {cp.num}
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '24px',
+                  background: 'var(--color-gold)',
+                  color: '#FFFFFF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  padding: '2px 10px',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
                 </div>
-                <div>
-                  <h3
-                    style={{
-                      fontSize: '17px',
-                      fontWeight: 700,
-                      color: 'var(--color-text-main)',
-                      marginBottom: '8px',
-                      lineHeight: 1.3
-                    }}
-                  >
-                    {cp.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: '14px',
-                      color: 'var(--color-text-secondary)',
-                      lineHeight: 1.5,
-                      margin: 0
-                    }}
-                  >
-                    {cp.desc}
-                  </p>
-                </div>
+                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '8px 0 14px 0', lineHeight: 1.35 }}>
+                  {item.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -808,7 +801,7 @@ export default function ZashchitaPriObyskeClient() {
             }}>
               <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 34px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.25, flex: '1 1 480px', minWidth: '280px' }}>
                 <span style={{ display: 'inline-block' }}>Смежные направления</span> <br />
-                <span style={{ display: 'inline-block' }}>практики</span>
+                <span style={{ display: 'inline-block' }}>практики для бизнеса</span>
               </h2>
               <p style={{
                 flex: '0 1 440px',
@@ -821,7 +814,7 @@ export default function ZashchitaPriObyskeClient() {
                 textAlign: 'left',
                 textWrap: 'balance'
               }}>
-                Если задача затрагивает другие сферы деятельности компании:
+                Если ситуация выходит за рамки обыска и следственных действий, привлекаем экспертов смежных практик компании «Де-Юре» — по налогам, арбитражу, корпоративным спорам и банкротству.
               </p>
             </div>
           </div>
@@ -841,8 +834,7 @@ export default function ZashchitaPriObyskeClient() {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
-                    transition: 'all 0.3s ease'
+                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
                   }}
                 >
                   <div>
@@ -854,8 +846,8 @@ export default function ZashchitaPriObyskeClient() {
                     </p>
                   </div>
                   <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
-                    <span>Подробнее →</span>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <span>Подробнее об услуге</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.35s ease, stroke 0.35s ease' }}>
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -866,89 +858,78 @@ export default function ZashchitaPriObyskeClient() {
           </div>
 
           <div>
-            <Link href="/biznesu/" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <Link href="/biznesu/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.3s ease' }}>
               Смотреть все юридические услуги для бизнеса →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 11: ФОРМА И КОНТАКТЫ ═══ */}
-      <section id="form" style={{ padding: '70px 0', background: '#ffffff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '40px',
-              alignItems: 'start'
-            }}
-          >
-            <div>
-              <span
-                style={{
-                  fontSize: '13px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  letterSpacing: '1px',
-                  textTransform: 'uppercase'
-                }}
-              >
-                ЭКСТРЕННАЯ ЮРИДИЧЕСКАЯ ПОМОЩЬ
-              </span>
-              <h2
-                style={{
-                  fontSize: '32px',
-                  fontWeight: 800,
-                  color: 'var(--color-text-main)',
-                  marginTop: '8px',
-                  marginBottom: '16px'
-                }}
-              >
-                Вызовите адвоката или оставьте заявку
+      {/* ═══ БЛОК 11: ФИНАЛЬНАЯ ФОРМА (СВЯЗАТЬСЯ С НАМИ) — КАНОНИЧЕСКИЙ ШАБЛОН ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Связаться с нами
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Получите первичную</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>оценку ситуации</span>
               </h2>
-              <p
-                style={{
-                  fontSize: '15px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  marginBottom: '24px'
-                }}
-              >
-                Если мероприятие уже началось, рекомендуем немедленно позвонить по телефону. Если обыск завершился, опишите, какой орган его проводил и что было изъято. Мы оперативно свяжемся с вами для правовой помощи.
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
+                Если обыск или выемка уже начались — немедленно звоните дежурному юристу. Если следственные действия завершились, оставьте контакты для правового анализа протоколов и возврата изъятого.
               </p>
-              <div
-                style={{
-                  background: 'var(--color-bg-light)',
-                  padding: '20px',
-                  borderRadius: '8px',
-                  borderLeft: '4px solid var(--color-gold)',
-                  marginBottom: '24px'
-                }}
-              >
-                <div style={{ fontWeight: 700, fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-                  Полная конфиденциальность
+
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Прямой контакт со специалистом</strong>
                 </div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
-                  Все сведения охраняются законом о государственной и адвокатской тайне. Документы не попадут к третьим лицам.
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Дежурный телефон: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a><br />
+                  Городской телефон: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                </p>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
+                  Липецк, ул. Советская, д. 35, офис 213 (приём руководителей по предварительной записи)
                 </div>
               </div>
-              <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
-                Офис в Липецке: <strong>ул. Советская, д. 35, оф. 213</strong>
-                <br />
-                Телефон экстренной связи: <strong>+7 (4742) 20-15-25</strong>
+
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Адвокатская тайна и конфиденциальность:</strong>
+                Все переданные сведения и документы охраняются Федеральным законом № 63-ФЗ «Об адвокатской деятельности и адвокатуре в РФ». Не указывайте в форме паспортные данные и коммерческую тайну — защищённый способ передачи согласуем после контакта.
               </div>
             </div>
 
-            <div
-              style={{
-                background: 'var(--color-bg-light)',
-                padding: '32px',
-                borderRadius: '12px',
-                border: '1px solid rgba(0,0,0,0.08)'
-              }}
-            >
-              <ContactsForm />
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Написать нам"
+                subtitle={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Оставьте контакты и суть вопроса. Адвокат свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
+                  </>
+                }
+                subtext={
+                  <>
+                    <span style={{ display: 'inline-block' }}>Если вы оставите заявку вечером или в&nbsp;выходной день,</span> <br />
+                    <span style={{ display: 'inline-block' }}>мы перезвоним в&nbsp;ближайший рабочий день.</span>
+                  </>
+                }
+                buttonText="Вызвать адвоката / Оставить заявку"
+                commentPlaceholder="Кратко опишите ситуацию: обыск, выемка техники, изъятие серверов, проверяющий орган…"
+                hiddenFields={[
+                  { name: 'source_page', value: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/' },
+                  { name: 'page_type', value: 'service' },
+                  { name: 'direction', value: 'criminal-defense' },
+                  { name: 'service', value: 'zashchita-pri-obyske-v-kompanii' }
+                ]}
+              />
             </div>
           </div>
         </div>
