@@ -2,13 +2,14 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MilitaryHero from '@/components/MilitaryHero';
 import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
+import SpecialistBlock from '@/components/SpecialistBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 
 export default function VzyskanieDolgovClient() {
   const situations = [
@@ -149,26 +150,63 @@ export default function VzyskanieDolgovClient() {
     }
   ];
 
-  const pricingFactors = [
+  const pricingTiers: PricingTier[] = [
     {
-      format: 'Первичный правовой анализ',
-      details: 'Количество документов, объём переписки, расчёт, сроки и необходимость проверить альтернативные основания требования.'
+      title: 'Первичный анализ',
+      subtitle: 'Оценка расписки и доказательств',
+      popular: false,
+      price: 'По согласованию',
+      features: [
+        { name: 'Правовой анализ расписки или договора', value: 'Включено' },
+        { name: 'Проверка банковских выписок и переписки', value: 'Включено' },
+        { name: 'Расчёт основного долга, процентов и неустойки', value: 'Включено' },
+        { name: 'Оценка рисков возражений и перспектив исполнения', value: 'Включено' }
+      ],
+      buttonText: 'Заказать анализ',
+      buttonHref: '#form'
     },
     {
-      format: 'Требование и переговоры',
-      details: 'Сложность расчёта, число участников, проект соглашения, график и обеспечение исполнения.'
+      title: 'Досудебное урегулирование',
+      subtitle: 'Требование, претензия, переговоры',
+      popular: true,
+      badgeText: 'Популярно',
+      price: 'По согласованию',
+      features: [
+        { name: 'Подготовка мотивированного требования о возврате', value: 'Включено' },
+        { name: 'Фиксация признания долга и прерывания давности', value: 'Включено' },
+        { name: 'Разработка проекта соглашения или графика выплат', value: 'Включено' },
+        { name: 'Обеспечение исполнения обязательства', value: 'Включено' }
+      ],
+      buttonText: 'Начать урегулирование',
+      buttonHref: '#form'
     },
     {
-      format: 'Подготовка заявления',
-      details: 'Судебный приказ или иск, подсудность, объём доказательств, число требований и участников.'
+      title: 'Судебное взыскание',
+      subtitle: 'Приказ или иск «под ключ»',
+      popular: false,
+      price: 'По согласованию',
+      features: [
+        { name: 'Подготовка заявления о судебном приказе или иска', value: 'Включено' },
+        { name: 'Формирование доказательственной базы для суда', value: 'Включено' },
+        { name: 'Заявление ходатайств об обеспечительных мерах', value: 'Включено' },
+        { name: 'Представительство юриста в судебных заседаниях', value: 'Включено' }
+      ],
+      buttonText: 'Взыскать через суд',
+      buttonHref: '#form'
     },
     {
-      format: 'Представительство',
-      details: 'Стадия дела, число заседаний, возражения, экспертиза, встречные требования и процессуальные документы.'
-    },
-    {
-      format: 'Исполнительный этап',
-      details: 'Способ предъявления документа, объём действий и необходимость отдельного сопровождения производства.'
+      title: 'Исполнительный этап',
+      subtitle: 'Работа с приставами и банками',
+      popular: false,
+      price: 'По согласованию',
+      features: [
+        { name: 'Предъявление листа в банк или ФССП', value: 'Включено' },
+        { name: 'Розыск счетов и имущества должника', value: 'Включено' },
+        { name: 'Контроль действий пристава и сроков', value: 'Включено' },
+        { name: 'Обжалование бездействия при необходимости', value: 'Включено' }
+      ],
+      buttonText: 'Подключить юриста',
+      buttonHref: '#form'
     }
   ];
 
@@ -285,16 +323,17 @@ export default function VzyskanieDolgovClient() {
           </p>
         }
         primaryCtaText="Разобрать ситуацию с долгом"
-        primaryCtaLink="#debt-form"
+        primaryCtaLink="#form"
+        primaryCtaSubtext="Ответим в течение 15 минут в рабочее время"
         secondaryCtaText="Позвонить юристу"
-        secondaryCtaLink="tel:+79103503111"
+        secondaryCtaLink="tel:+74742201525"
         imageUrl="/images/smolyaninova.jpg"
         imageName="Смольянинова Марина Валерьевна"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре» • куратор направления"
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
             <h2
@@ -320,30 +359,85 @@ export default function VzyskanieDolgovClient() {
                 key={idx}
                 className="card hover-lift"
                 style={{
-                  background: '#FFFFFF',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
                   padding: '24px 20px',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '12px'
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
-                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                  {item.tag}
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '80px',
+                  height: '80px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
                 </div>
-                <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.35, fontWeight: 600 }}>
-                  {item.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
-                  {item.text}
-                </p>
+
+                <div>
+                  <div style={{
+                    fontSize: '11.5px',
+                    fontWeight: 700,
+                    color: 'var(--color-primary)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.06em',
+                    marginBottom: '10px',
+                    background: 'rgba(23, 50, 77, 0.06)',
+                    padding: '3px 8px',
+                    display: 'inline-block',
+                    borderRadius: '2px'
+                  }}>
+                    {item.tag}
+                  </div>
+                  <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', lineHeight: 1.35, fontWeight: 600, fontFamily: 'var(--font-serif)' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
+                    {item.text}
+                  </p>
+                </div>
+
+                <a
+                  href="#form"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '16px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
+                >
+                  <span>Оценить перспективу</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
               </div>
             ))}
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <a href="#debt-form" className="btn btn-primary" style={{ padding: '14px 28px' }}>
+            <a href="#form" className="btn btn-primary" style={{ padding: '14px 28px' }}>
               Понять, какие доказательства важны →
             </a>
           </div>
@@ -396,8 +490,10 @@ export default function VzyskanieDolgovClient() {
                   'Срок возврата, исковая давность, частичные платежи и признание долга.',
                   'Расчёт основного долга, процентов, неустойки и судебных расходов.'
                 ].map((txt, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '10px', fontSize: '14.5px', color: 'var(--color-text-main)', lineHeight: 1.5 }}>
-                    <span style={{ color: 'var(--color-gold)', fontWeight: 'bold' }}>✓</span>
+                  <li key={i} style={{ display: 'flex', gap: '10px', fontSize: '14.5px', color: 'var(--color-text-main)', lineHeight: 1.5, alignItems: 'flex-start' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
                     <span>{txt}</span>
                   </li>
                 ))}
@@ -428,8 +524,10 @@ export default function VzyskanieDolgovClient() {
                   'Соразмерность расходов ожидаемому результату и последовательность исполнительных действий.',
                   'Необходимость отдельного сопровождения исполнительного производства после получения документа.'
                 ].map((txt, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '10px', fontSize: '14.5px', color: 'var(--color-text-main)', lineHeight: 1.5 }}>
-                    <span style={{ color: 'var(--color-deep-blue)', fontWeight: 'bold' }}>✓</span>
+                  <li key={i} style={{ display: 'flex', gap: '10px', fontSize: '14.5px', color: 'var(--color-text-main)', lineHeight: 1.5, alignItems: 'flex-start' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
                     <span>{txt}</span>
                   </li>
                 ))}
@@ -566,7 +664,7 @@ export default function VzyskanieDolgovClient() {
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <a href="#debt-form" className="btn btn-primary" style={{ padding: '14px 28px' }}>
+            <a href="#form" className="btn btn-primary" style={{ padding: '14px 28px' }}>
               Определить правовое основание требования →
             </a>
           </div>
@@ -668,7 +766,7 @@ export default function VzyskanieDolgovClient() {
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <a href="#debt-form" className="btn btn-primary" style={{ padding: '14px 28px' }}>
+            <a href="#form" className="btn btn-primary" style={{ padding: '14px 28px' }}>
               Обсудить состав помощи →
             </a>
           </div>
@@ -770,7 +868,9 @@ export default function VzyskanieDolgovClient() {
                   'Краткую хронологию: когда, кому, сколько и на каком основании передано.'
                 ].map((item, idx) => (
                   <div key={idx} style={{ display: 'flex', gap: '10px', fontSize: '14.5px', color: 'var(--color-text-main)', lineHeight: 1.5 }}>
-                    <span style={{ color: 'var(--color-gold)', fontWeight: 'bold' }}>✓</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-deep-blue)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
                     <span>{item}</span>
                   </div>
                 ))}
@@ -793,74 +893,50 @@ export default function VzyskanieDolgovClient() {
       </section>
 
       {/* ═══ БЛОК 9: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--color-cream)' }}>
-        <div className="container">
+      <SpecialistBlock
+        title="Куратор направления"
+        name="Марина Валерьевна Смольянинова"
+        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления по взысканию задолженности</>}
+        imageUrl="/images/smolyaninova.jpg"
+        imagePosition="center 25%"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Марина Смольянинова оценивает взыскание с учётом всего маршрута: от доказательств и судебной позиции до практических вопросов исполнения. Более 13 лет работы в ФССП, в том числе на руководящих должностях, и более 5 лет судебной практики помогают заранее видеть, какие действия после решения действительно имеют значение, а какие создают только формальную активность.
+          </span>,
           <div
-            className="card"
+            key="2"
             style={{
-              background: '#FFFFFF',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-gold)',
-              padding: '40px',
-              maxWidth: '900px',
-              margin: '0 auto',
-              boxShadow: '0 8px 30px rgba(16, 39, 59, 0.06)'
+              borderLeft: '3px solid var(--color-gold)',
+              paddingLeft: '16px',
+              fontStyle: 'italic',
+              fontSize: '14.5px',
+              color: 'var(--color-deep-blue)',
+              margin: '16px 0 0 0'
             }}
           >
-            <div className="grid grid-2" style={{ gap: '36px', alignItems: 'center' }}>
-              <div>
-                <div style={{ width: '100%', maxWidth: '280px', borderRadius: '4px', overflow: 'hidden', margin: '0 auto', border: '1px solid var(--color-border)' }}>
-                  <Image
-                    src="/images/smolyaninova.jpg"
-                    alt="Марина Смольянинова, ведущий юрист ЮК Де-Юре"
-                    width={320}
-                    height={400}
-                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
-                  />
-                </div>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase' }}>
-                  Куратор направления
-                </div>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '26px', color: 'var(--color-deep-blue)', margin: 0 }}>
-                  Смольянинова Марина Валерьевна
-                </h3>
-                <div style={{ fontSize: '15px', color: 'var(--color-primary)', fontWeight: 600 }}>
-                  Ведущий юрист ЮК «Де-Юре»
-                </div>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  Марина Смольянинова оценивает взыскание с учётом всего маршрута: от доказательств и судебной позиции до практических вопросов исполнения. Более 13 лет работы в ФССП, в том числе на руководящих должностях, и более 5 лет судебной практики помогают заранее видеть, какие действия после решения действительно имеют значение, а какие создают только формальную активность.
-                </p>
-                <div
-                  style={{
-                    borderLeft: '3px solid var(--color-gold)',
-                    paddingLeft: '16px',
-                    fontStyle: 'italic',
-                    fontSize: '14px',
-                    color: 'var(--color-deep-blue)'
-                  }}
-                >
-                  «Важно не просто получить судебный акт, а заранее понимать, на каких доказательствах строится требование и как решение будет исполняться на практике».
-                </div>
-                <div style={{ marginTop: '8px' }}>
-                  <Link
-                    href="/specialisty/smolyaninova-marina-valerevna/"
-                    style={{ color: 'var(--color-primary)', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}
-                  >
-                    Подробнее о специалисте →
-                  </Link>
-                </div>
-                <div>
-                  <a href="#debt-form" className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '14px' }}>
-                    Обсудить ситуацию с командой направления
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            «Важно не просто получить судебный акт, а заранее понимать, на каких доказательствах строится требование и как решение будет исполняться на практике».
+          </div>,
+          <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Более 13 лет работы в ФССП, включая руководящие должности</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Специализация — взыскание долгов, досудебное урегулирование и исполнительное производство</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Сопровождает доверителей в Липецке и Липецкой области, а также дистанционно по всей РФ</span>
+            </li>
+          </ul>,
+          <a key="4" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о специалисте →
+          </a>
+        ]}
+        buttonText="Обсудить ситуацию с куратором"
+        buttonHref="#form"
+      />
 
       {/* ═══ БЛОК 10: КЕЙСЫ ИЗ ПРАКТИКИ ═══ */}
       <CasesBlock
@@ -881,71 +957,12 @@ export default function VzyskanieDolgovClient() {
       </div>
 
       {/* ═══ БЛОК 11: СТОИМОСТЬ ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
-            <h2
-              className="with-accent"
-              style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(26px, 3.5vw, 38px)',
-                color: 'var(--color-deep-blue)',
-                marginBottom: '16px',
-                lineHeight: 1.25
-              }}
-            >
-              Стоимость зависит от доказательств и стадии спора
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-              Анализ расписки, подготовка требования и ведение дела с экспертизой или обеспечительными мерами — разные объёмы. До начала работы фиксируем задачу, состав этапа и стоимость.
-            </p>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '32px' }}>
-            {pricingFactors.map((tier, idx) => (
-              <div
-                key={idx}
-                className="card"
-                style={{
-                  background: '#FFFFFF',
-                  border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-gold)',
-                  padding: '20px 24px',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  flexWrap: 'wrap',
-                  gap: '16px'
-                }}
-              >
-                <div style={{ flex: '1 1 320px' }}>
-                  <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600 }}>
-                    {tier.format}
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-                    {tier.details}
-                  </p>
-                </div>
-                <div>
-                  <a href="#debt-form" className="btn btn-outline" style={{ fontSize: '13px', padding: '9px 18px' }}>
-                    Уточнить состав
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: '0 0 24px 0' }}>
-            Госпошлина, нотариальные, экспертные, почтовые и иные внешние расходы не включаются автоматически и согласуются отдельно.
-          </p>
-
-          <div style={{ textAlign: 'center' }}>
-            <a href="#debt-form" className="btn btn-primary" style={{ padding: '14px 28px' }}>
-              Уточнить стоимость по Вашей ситуации →
-            </a>
-          </div>
-        </div>
-      </section>
+      <PricingBlock
+        title="Стоимость зависит от доказательств и стадии спора"
+        subtitle="Анализ расписки, подготовка требования и ведение дела с экспертизой или обеспечительными мерами — разные объёмы. До начала работы фиксируем задачу, состав этапа и стоимость."
+        tiers={pricingTiers}
+        disclaimer="Госпошлина, нотариальные, экспертные, почтовые и иные внешние расходы не включаются автоматически и согласуются отдельно."
+      />
 
       {/* ═══ БЛОК 12: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
@@ -1121,7 +1138,7 @@ export default function VzyskanieDolgovClient() {
       </section>
 
       {/* ═══ БЛОК 15: ФИНАЛЬНАЯ ФОРМА ═══ */}
-      <section id="debt-form" className="section bg-white" style={{ padding: '80px 0' }}>
+      <section id="form" className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container" style={{ maxWidth: '720px' }}>
           <ContactsForm
             title="Обсудить взыскание долга"

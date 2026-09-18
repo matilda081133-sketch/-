@@ -613,22 +613,28 @@ export default function ZashchitaOtvetchikaClient() {
             ))}
           </div>
 
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+          <div className="urgent-bar-row" style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'nowrap' }}>
+            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '19px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em', whiteSpace: 'nowrap', flexShrink: 0 }} data-analytics="phone_click">
               +7 (4742) 20-15-25
             </a>
-            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '12px 22px', fontSize: '14.5px', whiteSpace: 'nowrap', flexShrink: 0 }} data-analytics="phone_click">
               Срочная консультация
             </a>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-              <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
-                Передать иск на анализ
-              </a>
-              <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px' }}>
-                Ответим в рабочее время и согласуем процессуальные действия
-              </span>
-            </div>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '12px 22px', fontSize: '14.5px', whiteSpace: 'nowrap', flexShrink: 0 }}>
+              Передать иск на анализ
+            </a>
+            <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '13.5px', whiteSpace: 'nowrap', flexShrink: 0 }}>
+              Ответим в рабочее время и согласуем процессуальные действия
+            </span>
           </div>
+          <style jsx>{`
+            @media (max-width: 1100px) {
+              .urgent-bar-row {
+                flex-wrap: wrap !important;
+                gap: 12px !important;
+              }
+            }
+          `}</style>
         </div>
       </section>
 
