@@ -293,6 +293,29 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
     }
   ];
 
+  const relatedServices = [
+    {
+      title: 'Налоговый юрист для бизнеса',
+      desc: 'Проверки ФНС, возражения на акты, обжалование доначислений до уголовной стадии.',
+      link: '/biznesu/nalogovyj-yurist-dlya-biznesa/'
+    },
+    {
+      title: 'Корпоративный юрист',
+      desc: 'Защита контроля над ООО, споры участников, исключение участника, дедлоки.',
+      link: '/biznesu/korporativnyj-yurist/'
+    },
+    {
+      title: 'Разблокировка счёта по 115-ФЗ',
+      desc: 'Снятие ограничений банков, ответы на запросы финмониторинга, реабилитация в МВК.',
+      link: '/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/'
+    },
+    {
+      title: 'Банкротство бизнеса',
+      desc: 'Защита руководства от субсидиарной ответственности и оспаривания сделок.',
+      link: '/biznesu/bankrotstvo-biznesa/'
+    }
+  ];
+
   return (
     <main>
       <Header />
@@ -695,89 +718,89 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
         faqs={faqs}
       />
 
-      {/* ═══ БЛОК 10: СМЕЖНЫЕ НАПРАВЛЕНИЯ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0', borderTop: '1px solid var(--color-border)' }}>
+      {/* ═══ БЛОК: СМЕЖНЫЕ НАПРАВЛЕНИЯ ПРАКТИКИ ДЛЯ БИЗНЕСА (ПО ШАБЛОНУ) ═══ */}
+      <section className="section bg-light" id="related-services" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3vw, 32px)', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>
-              Смежные направления практики
-            </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0 }}>
-              Если дело затрагивает сопутствующие отрасли права:
-            </p>
+          <div style={{ marginBottom: '36px' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '10px'
+            }}>
+              Смежные направления практики для бизнеса
+            </div>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 34px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.25, flex: '1 1 480px', minWidth: '280px' }}>
+                <span style={{ display: 'inline-block' }}>Смежные направления</span> <br />
+                <span style={{ display: 'inline-block' }}>практики</span>
+              </h2>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}>
+                Если задача затрагивает другие сферы деятельности компании:
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '20px' }}>
-            <Link
-              href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/"
-              className="card related-service-card hover-lift"
-              style={{
-                background: '#FAFAFA',
-                border: '1px solid var(--color-border)',
-                padding: '24px 20px',
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '8px'
-              }}
-            >
-              <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
-                Налоговые преступления
-              </div>
-              <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-                Защита по ст. 199, 199.1, 199.2 УК РФ после проверок ФНС и СК РФ.
-              </p>
-              <div style={{ color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: 'auto' }}>
-                Подробнее →
-              </div>
-            </Link>
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
+            {relatedServices.map((rel, idx) => (
+              <Link key={idx} href={rel.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+                <div
+                  className="card related-service-card hover-lift"
+                  style={{
+                    height: '100%',
+                    minHeight: '180px',
+                    padding: '26px 24px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    borderRadius: '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  <div>
+                    <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                      {rel.title}
+                    </h3>
+                    <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                      {rel.desc}
+                    </p>
+                  </div>
+                  <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                    <span>Подробнее →</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
 
-            <Link
-              href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/"
-              className="card related-service-card hover-lift"
-              style={{
-                background: '#FAFAFA',
-                border: '1px solid var(--color-border)',
-                padding: '24px 20px',
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '8px'
-              }}
-            >
-              <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
-                Защита при проверке ОБЭП
-              </div>
-              <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-                Сопровождение доследственных проверок КУСП до возбуждения дела.
-              </p>
-              <div style={{ color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: 'auto' }}>
-                Подробнее →
-              </div>
-            </Link>
-
-            <Link
-              href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/"
-              className="card related-service-card hover-lift"
-              style={{
-                background: '#FAFAFA',
-                border: '1px solid var(--color-border)',
-                padding: '24px 20px',
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '8px'
-              }}
-            >
-              <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
-                Хаб уголовно-правовой защиты
-              </div>
-              <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-                Все направления уголовно-правовой безопасности компаний.
-              </p>
-              <div style={{ color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: 'auto' }}>
-                На страницу хаба →
-              </div>
+          <div>
+            <Link href="/biznesu/" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              Смотреть все юридические услуги для бизнеса →
             </Link>
           </div>
         </div>
