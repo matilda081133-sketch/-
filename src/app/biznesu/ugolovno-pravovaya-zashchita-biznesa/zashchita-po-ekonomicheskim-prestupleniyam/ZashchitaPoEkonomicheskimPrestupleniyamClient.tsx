@@ -1,0 +1,751 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import MilitaryHero from '@/components/MilitaryHero';
+import ContactsForm from '@/components/ContactsForm';
+import FAQBlock from '@/components/FAQBlock';
+import ProcessBlock from '@/components/ProcessBlock';
+import CasesBlock, { CaseData } from '@/components/CasesBlock';
+import SpecialistBlock from '@/components/SpecialistBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
+
+export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
+  const economicSituations = [
+    {
+      tag: 'Статья 159 УК РФ',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Мошенничество в сфере</span> <br />
+          <span style={{ display: 'inline-block' }}>предпринимательской деятельности</span>
+        </span>
+      ),
+      desc: 'Обвинения в неисполнении договоров, хищении авансов или бюджетных средств. Доказываем гражданско-правовую природу спора и отсутствие изначального умысла.',
+      btnText: 'Защита по ст. 159'
+    },
+    {
+      tag: 'Статья 160 УК РФ',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Присвоение или растрата</span> <br />
+          <span style={{ display: 'inline-block' }}>вверенного имущества</span>
+        </span>
+      ),
+      desc: 'Претензии к директорам или материально ответственным лицам по расходованию средств компании, выплатам премий или отчуждению техники.',
+      btnText: 'Защита по ст. 160'
+    },
+    {
+      tag: 'Статья 201 УК РФ',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Злоупотребление</span> <br />
+          <span style={{ display: 'inline-block' }}>полномочиями директора</span>
+        </span>
+      ),
+      desc: 'Иски и уголовные дела от соучредителей или кредиторов за заключение невыгодных сделок, продажу активов или конфликт интересов.',
+      btnText: 'Защита по ст. 201'
+    },
+    {
+      tag: 'Статья 171 УК РФ',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Незаконное предпринимательство</span> <br />
+          <span style={{ display: 'inline-block' }}>и работа без лицензии</span>
+        </span>
+      ),
+      desc: 'Претензии надзорных органов к деятельности без обязательного членства в СРО, лицензий или при превышении допустимых лимитов.',
+      btnText: 'Защита по ст. 171'
+    },
+    {
+      tag: 'Статья 204 УК РФ',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Коммерческий подкуп</span> <br />
+          <span style={{ display: 'inline-block' }}>и откаты при закупках</span>
+        </span>
+      ),
+      desc: 'Обвинения сотрудников отдела снабжения или руководства в получении незаконного вознаграждения за выбор поставщика или подписание актов.',
+      btnText: 'Защита по ст. 204'
+    },
+    {
+      tag: 'Банкротные составы',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Неправомерные действия</span> <br />
+          <span style={{ display: 'inline-block' }}>при банкротстве (ст. 195–197)</span>
+        </span>
+      ),
+      desc: 'Обвинения в сокрытии имущества от кредиторов, фиктивном или преднамеренном банкротстве компании.',
+      btnText: 'Защита от ст. 195-197'
+    },
+    {
+      tag: 'Давление контрагента',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Хозяйственный спор</span> <br />
+          <span style={{ display: 'inline-block' }}>перевели в уголовное русло</span>
+        </span>
+      ),
+      desc: 'Недобросовестный партнер использует силовиков как инструмент давления при наличии спора в арбитражном суде.',
+      btnText: 'Снять давление'
+    },
+    {
+      tag: 'Арест счетов',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Арест расчётных счетов</span> <br />
+          <span style={{ display: 'inline-block' }}>и имущества организации</span>
+        </span>
+      ),
+      desc: 'Следователь наложил арест на активы юрлица в рамках дела против должностного лица. Добиваемся отмены обеспечительных мер.',
+      btnText: 'Снять арест'
+    }
+  ];
+
+  const urgentRisks = [
+    {
+      title: 'Подмена арбитражного спора уголовным обвинением',
+      desc: 'Следственные органы нередко квалифицируют обычный предпринимательский риск или задержку оплаты как мошенничество с целью давления.'
+    },
+    {
+      title: 'Риск избрания жесткой меры пресечения',
+      desc: 'Ходатайство следователя о заключении под стражу или домашнем аресте лишает руководителя возможности управлять бизнесом и защищать позицию.'
+    },
+    {
+      title: 'Блокировка деятельности через арест имущества',
+      desc: 'Наложение ареста на счета, склады и готовую продукцию приводит к срыву поставок перед третьими лицами и банкротству компании.'
+    }
+  ];
+
+  const defenseContours = [
+    {
+      num: '01',
+      title: 'Доказывание отсутствия умысла на хищение',
+      desc: 'Собираем доказательства реальности хозяйственных операций: деловую переписку, первичные накладные, акты, данные систем трекинга и путевые листы.'
+    },
+    {
+      num: '02',
+      title: 'Финансово-экономические экспертизы',
+      desc: 'Привлекаем независимых судебных аудиторов для расчета реального баланса взаимных обязательств и опровержения вменяемого следствием размера ущерба.'
+    },
+    {
+      num: '03',
+      title: 'Участие адвокатов во всех следственных действиях',
+      desc: 'Очная защита на допросах в качестве свидетеля, подозреваемого и обвиняемого, участие в очных ставках и проверках показаний на месте.'
+    },
+    {
+      num: '04',
+      title: 'Противодействие необоснованным мерам пресечения',
+      desc: 'Добиваемся избрания меры пресечения, не связанной с изоляцией от общества (залог, подписка о невыезде), используя запрет на арест предпринимателей (ч. 1.1 ст. 108 УПК РФ).'
+    },
+    {
+      num: '05',
+      title: 'Защита активов и снятие арестов',
+      desc: 'Оспариваем судебные постановления об аресте имущества третьих лиц, не имеющих отношения к делу, и добиваемся разблокировки операционных счетов.'
+    },
+    {
+      num: '06',
+      title: 'Судебное представительство в уголовном процессе',
+      desc: 'Защита прав доверителя в суде первой инстанции, апелляционное и кассационное обжалование незаконных приговоров и постановлений.'
+    }
+  ];
+
+  const processSteps = [
+    {
+      num: '01',
+      title: 'Изучение процессуальных документов и фабулы',
+      desc: 'Анализируем постановление о возбуждении дела, протоколы допросов, результаты выемок и материалы доследственной проверки.'
+    },
+    {
+      num: '02',
+      title: 'Выстраивание альтернативной экономической модели',
+      desc: 'Готовим контррасчеты и доказательства того, что спор лежит исключительно в гражданско-правовой плоскости.'
+    },
+    {
+      num: '03',
+      title: 'Процессуальная защита на предварительном следствии',
+      desc: 'Адвокаты компании заявляют обоснованные ходатайства о назначении экспертиз, вызове ключевых свидетелей и приобщении документов защиты.'
+    },
+    {
+      num: '04',
+      title: 'Обжалование нарушений следователя',
+      desc: 'Используем механизмы ст. 124–125 УПК РФ для признания незаконными действий и решений органов следствия через прокурора и суд.'
+    },
+    {
+      num: '05',
+      title: 'Защита в суде и прекращение преследования',
+      desc: 'Последовательно отстаиваем позицию невиновности, добиваясь прекращения дела, переквалификации на мягкие составы или оправдательного приговора.'
+    }
+  ];
+
+  const pricingTiers: PricingTier[] = [
+    {
+      title: 'Анализ дела и выработка стратегии',
+      subtitle: 'Оценка материалов следствия',
+      popular: false,
+      price: 'от 30 000 ₽',
+      features: [
+        { name: 'Изучение постановлений и доказательств обвинения', value: 'Включено' },
+        { name: 'Оценка рисков переквалификации и мер пресечения', value: 'Включено' },
+        { name: 'Формирование доказательственной базы защиты', value: 'Включено' },
+        { name: 'Подготовка плана первоочередных процессуальных шагов', value: 'Включено' }
+      ],
+      buttonText: 'Заказать стратегию',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Защита на предварительном следствии',
+      subtitle: 'Комплексное ведение дела у следователя',
+      popular: true,
+      badgeText: 'Ключевой этап',
+      price: 'от 90 000 ₽',
+      features: [
+        { name: 'Участие адвоката во всех допросах и следственных действиях', value: 'Включено' },
+        { name: 'Защита при избрании и продлении меры пресечения', value: 'Включено' },
+        { name: 'Ходатайства о назначении судебных экспертиз', value: 'Включено' },
+        { name: 'Работа по снятию ареста с расчетных счетов', value: 'Включено' }
+      ],
+      buttonText: 'Привлечь защиту',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Судебное представительство',
+      subtitle: 'Защита в суде первой и проверочных инстанций',
+      popular: false,
+      price: 'от 120 000 ₽',
+      features: [
+        { name: 'Защита в судебных заседаниях по существу дела', value: 'Включено' },
+        { name: 'Допрос свидетелей обвинения и экспертов', value: 'Включено' },
+        { name: 'Подготовка и выступление в судебных прениях', value: 'Включено' },
+        { name: 'Апелляционное обжалование при необходимости', value: 'Включено' }
+      ],
+      buttonText: 'Защита в суде',
+      buttonHref: '#form'
+    }
+  ];
+
+  const practiceCases: CaseData[] = [
+    {
+      category: 'Статья 159 УК РФ',
+      title: 'Прекращение уголовного дела о мошенничестве в отношении директора завода',
+      problem: 'Следственный орган возбудил дело по ч. 4 ст. 159 УК РФ, утверждая, что директор металлообрабатывающего предприятия похитил 24 млн ₽ предоплаты за поставку металлоконструкций.',
+      action: 'Защита собрала доказательства закупки сырья и переписки о форс-мажоре у поставщика проката. Добились назначения комплексной бухгалтерской экспертизы, подтвердившей целевое расходование 100% полученных средств.',
+      result: 'Уголовное преследование в отношении руководителя прекращено за отсутствием состава преступления, спор урегулирован в арбитражном суде.'
+    },
+    {
+      category: 'Статья 201 УК РФ',
+      title: 'Отказ в аресте генерального директора и переквалификация дела',
+      problem: 'Следователь ходатайствовал о заключении директора под стражу по обвинению в злоупотреблении полномочиями, повлекшем ущерб банку-кредитору на сумму 48 млн ₽.',
+      action: 'В судебном заседании доказали статус предпринимателя доверителя и незаконность содержания под стражей по ст. 108 УПК РФ. Предоставили гарантийные обязательства поручителей и встречные иски.',
+      result: 'Суд отказал в удовлетворении ходатайства следователя об аресте, избрав запрет определенных действий. В дальнейшем дело переквалифицировано без риска лишения свободы.'
+    },
+    {
+      category: 'Арест активов',
+      title: 'Снятие ареста с автопарка и счетов логистической компании',
+      problem: 'По делу одного из соучредителей следователь наложил арест на 18 грузовых автомобилей, находившихся в лизинге у юрлица, что грозило срывом контрактов торговых сетей.',
+      action: 'Подали жалобу в порядке ст. 125 УПК РФ, доказав, что автотранспорт принадлежит лизинговой компании и используется в непрерывной хозяйственной деятельности непричастного предприятия.',
+      result: 'Суд отменил постановление об аресте имущества, транспорт вернулся на линии.'
+    }
+  ];
+
+  const faqs = [
+    {
+      q: 'Можно ли избежать заключения под стражу по экономическому преступлению?',
+      a: 'Да. В силу ч. 1.1 ст. 108 УПК РФ заключение под стражу в отношении подозреваемых или обвиняемых в преступлениях в сфере предпринимательской деятельности (ст. 159, 160, 165, 201 УК РФ и др.) не допускается, если преступления совершены в связи с осуществлением предпринимательской деятельности. Защита представляет документы, подтверждающие коммерческий статус сделки.'
+    },
+    {
+      q: 'Чем обвинение по ст. 159 УК РФ отличается от неисполнения договора в арбитраже?',
+      a: 'Ключевое отличие — наличие изначального прямого умысла на безвозмездное изъятие чужих средств ещё до заключения сделки. Если компания предпринимала реальные шаги к исполнению обязательств, несла расходы или попала в форс-мажор, это классический арбитражный спор, исключающий уголовную ответственность.'
+    },
+    {
+      q: 'Может ли один адвокат защищать компанию и генерального директора?',
+      a: 'Адвокат защищает конкретное физическое лицо (руководителя, учредителя или бухгалтера). Если интересы юридического лица и должностного лица полностью совпадают, противоречий нет. Однако при возникновении конфликта интересов защита каждого участника поручается отдельным адвокатам команды.'
+    },
+    {
+      q: 'Что делать, если следователь требует дать показания без адвоката?',
+      a: 'Вы имеете конституционное право отказаться от дачи показаний до прибытия вашего защитника по соглашению (ст. 48, 51 Конституции РФ). Дача показаний с назначенным следователем дежурным адвокатом несёт высокий риск необратимых ошибок.'
+    },
+    {
+      q: 'Помогает ли добровольное возмещение ущерба прекратить уголовное дело?',
+      a: 'По ряду экономических составов возмещение ущерба является законным основанием для прекращения уголовного преследования или освобождения от уголовной ответственности (ст. 76.1 УК РФ, ст. 28.1 УПК РФ).'
+    }
+  ];
+
+  return (
+    <main>
+      <Header />
+
+      {/* ═══ БЛОК 1: HERO ═══ */}
+      <MilitaryHero
+        breadcrumbs={
+          <>
+            <Link href="/">Главная</Link>
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+            <Link href="/biznesu/">Бизнесу</Link>
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+            <Link href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/">Уголовно-правовая защита бизнеса</Link>
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Защита по экономическим преступлениям</span>
+          </>
+        }
+        superTitle={
+          <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
+            <span style={{ display: 'inline-block' }}>УГОЛОВНО-ПРАВОВАЯ ЗАЩИТА БИЗНЕСА •</span> <br />
+            <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
+          </span>
+        }
+        title={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Защита по экономическим
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              преступлениям в Липецке
+            </span>
+          </span>
+        }
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '760px', textWrap: 'balance' }}>
+            Организуем защиту собственников, руководителей и сотрудников при претензиях по экономическим составам: от доследственной проверки до предварительного следствия и арбитражно-уголовной защиты.
+          </span>
+        }
+        primaryCtaText="Обсудить экономическое дело"
+        primaryCtaLink="#form"
+        primaryCtaAnalytics="click_primary_cta_econ"
+        primaryCtaSubtext={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Конфиденциальный звонок куратору направления:
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
+        }
+        imageUrl="/images/bobkin.jpg"
+        imageName="Аркадий Евгеньевич Бобкин"
+        imageSubtitle="Директор, управляющий партнёр ЮК «Де-Юре», куратор направления"
+        imageObjectPosition="center 15%"
+        trustItems={[
+          {
+            text: (
+              <span>
+                <strong>Защита по ст. 159, 160, 201, 171 УК РФ</strong> и смежным составам
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Разграничение коммерческих споров</strong> и уголовных обвинений
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Противодействие арестам счетов</strong> и жестким мерам пресечения
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Опытные адвокаты</strong> с практикой защиты топ-менеджеров
+              </span>
+            )
+          }
+        ]}
+      />
+
+      {/* ═══ БЛОК 2: СИТУАЦИИ (#SITUATIONS) ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>По каким статьям и поводам</span> <br />
+              <span style={{ display: 'inline-block' }}>возникают претензии к бизнесу</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
+              В экономической сфере грань между предпринимательским риском и составом преступления тонка. Поможем вовремя отделить законный бизнес от необоснованных обвинений.
+            </p>
+          </div>
+
+          <div className="grid grid-4" style={{ gap: '24px', marginBottom: '32px' }}>
+            {economicSituations.map((item, i) => (
+              <div
+                key={i}
+                className="card hover-lift"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '28px 22px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <div>
+                  <div style={{
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    color: 'var(--color-primary)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                    marginBottom: '10px',
+                    background: 'rgba(23, 50, 77, 0.06)',
+                    padding: '2px 6px',
+                    display: 'inline-block'
+                  }}>
+                    {item.tag}
+                  </div>
+                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '17px', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.3 }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                    {item.desc}
+                  </p>
+                </div>
+                <a
+                  href="#form"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '16px'
+                  }}
+                >
+                  <span>{item.btnText} →</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 3: КОГДА НЕЛЬЗЯ ЗАТЯГИВАТЬ (#URGENT) ═══ */}
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }} id="urgent">
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'inline-block' }}>Критические риски</span> <br />
+              <span style={{ display: 'inline-block' }}>по экономическим делам</span>
+            </h2>
+            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', margin: '16px 0' }} />
+            <p style={{ fontSize: '16px', color: '#E8ECF1', lineHeight: 1.65, margin: 0 }}>
+              Неверная позиция на первых допросах способна закрепить версию следствия о преступном сговоре группы лиц.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '36px' }}>
+            {urgentRisks.map((risk, idx) => (
+              <div
+                key={idx}
+                className="urgent-card"
+                style={{
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '28px 24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.1)'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Опасность
+                  </span>
+                </div>
+                <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: 0, fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
+                  {risk.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: '#3A4B5C', margin: 0, lineHeight: 1.55 }}>
+                  {risk.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '20px 24px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '16px'
+          }}>
+            <div>
+              <div style={{ color: '#FFFFFF', fontSize: '15px', fontWeight: 600 }}>
+                Возбуждено уголовное дело или вызывают на допрос?
+              </div>
+              <div style={{ color: '#BACAD9', fontSize: '13.5px', marginTop: '4px' }}>
+                Обеспечим участие адвоката с первого процессуального действия.
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+              <a
+                href="tel:+79103503111"
+                style={{
+                  color: 'var(--color-gold)',
+                  fontWeight: 700,
+                  fontSize: '17px',
+                  textDecoration: 'none'
+                }}
+              >
+                +7 (910) 350-31-11
+              </a>
+              <a
+                href="#form"
+                className="btn btn-primary"
+                style={{ padding: '10px 20px', fontSize: '14px' }}
+              >
+                Срочная защита
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 4: КОНТУРЫ ЗАЩИТЫ ═══ */}
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Состав защиты по уголовным делам</span> <br />
+              <span style={{ display: 'inline-block' }}>в сфере бизнеса</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
+              Разрабатываем доказательственную базу, опираясь на первичные финансовые документы и реальные условия рынка.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '24px' }}>
+            {defenseContours.map((contour, idx) => (
+              <div
+                key={idx}
+                className="card"
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  padding: '30px 26px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px'
+                }}
+              >
+                <div style={{ fontSize: '22px', fontWeight: 800, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)' }}>
+                  {contour.num}
+                </div>
+                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, fontWeight: 600 }}>
+                  {contour.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
+                  {contour.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 5: ЭТАПЫ (PROCESSBLOCK) ═══ */}
+      <ProcessBlock
+        title="Стратегия защиты на следствии и в суде"
+        subtitle="Системная работа уголовных адвокатов и аналитиков по экономическим спорам для защиты доверителя."
+        steps={processSteps}
+        ctaTitle="Нужна квалифицированная защита по делу?"
+        ctaSubtitle="Свяжитесь с куратором направления. Изучим постановление о возбуждении дела и выстроим план защиты."
+        ctaButtonText="Обсудить уголовное дело"
+        ctaButtonHref="#form"
+      />
+
+      {/* ═══ БЛОК 6: КУРАТОР (SPECIALISTBLOCK) ═══ */}
+      <SpecialistBlock
+        title="Куратор направления"
+        name="Аркадий Евгеньевич Бобкин"
+        position={<>Директор, управляющий партнёр ЮК «Де-Юре»,<br />куратор направления «Уголовно-правовая защита бизнеса»</>}
+        imageUrl="/images/bobkin.jpg"
+        imagePosition="center 15%"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Аркадий Евгеньевич координирует выработку стратегии защиты по экономическим делам, привлечение экспертов и работу адвокатов. Проработав 22 года следователем по особо важным делам и руководителем Следственной части МВД, он знает типичные слабые места следственных конструкций обвинения.
+          </span>,
+          <div
+            key="2"
+            style={{
+              borderLeft: '3px solid var(--color-gold)',
+              paddingLeft: '16px',
+              fontStyle: 'italic',
+              fontSize: '14.5px',
+              color: 'var(--color-deep-blue)',
+              margin: '16px 0 0 0'
+            }}
+          >
+            «В экономических преступлениях решающую роль играют экспертизы и цифры. Если доказать суду реальность товарного движения и обоснованность затрат, обвинение рассыпается».
+          </div>,
+          <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>22 года следственной работы по сложным многоэпизодным экономическим делам</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Процессуальную защиту доверителей осуществляют практикующие адвокаты компании</span>
+            </li>
+          </ul>,
+          <a key="4" href="/specialisty/bobkin-arkadiy-evgenevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее об опыте куратора →
+          </a>
+        ]}
+        buttonText="Связаться с куратором"
+        buttonHref="#form"
+      />
+
+      {/* ═══ БЛОК 7: СТОИМОСТЬ (PRICINGBLOCK) ═══ */}
+      <PricingBlock
+        title="Стоимость защиты по экономическим делам"
+        subtitle="Цена услуг фиксируется в соглашении об оказании юридической помощи и зависит от стадии процесса и инкриминируемой статьи."
+        tiers={pricingTiers}
+        disclaimer="Оплата независимых финансовых и товароведческих экспертиз, нотариальных расходов и командировок за пределы региона согласуется отдельно."
+      />
+
+      {/* ═══ БЛОК 8: КЕЙСЫ (CASESBLOCK) ═══ */}
+      <CasesBlock
+        title="Примеры прекращения экономических дел"
+        cases={practiceCases}
+      />
+      <div className="container" style={{ marginTop: '-40px', marginBottom: '60px', textAlign: 'center' }}>
+        <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontStyle: 'italic', margin: 0 }}>
+          Исход дела определяется совокупностью фактических обстоятельств и своевременностью вступления защитника.
+        </p>
+      </div>
+
+      {/* ═══ БЛОК 9: FAQ ═══ */}
+      <FAQBlock
+        title="Частые вопросы по экономическим преступлениям"
+        subtitle="Ответы юристов на актуальные вопросы об избрании мер пресечения, доказывании умысла и защите имущества."
+        faqs={faqs}
+      />
+
+      {/* ═══ БЛОК 10: СМЕЖНЫЕ НАПРАВЛЕНИЯ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0', borderTop: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3vw, 32px)', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>
+              Смежные направления практики
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0 }}>
+              Если дело затрагивает сопутствующие отрасли права:
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '20px' }}>
+            <Link
+              href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/"
+              className="card related-service-card hover-lift"
+              style={{
+                background: '#FAFAFA',
+                border: '1px solid var(--color-border)',
+                padding: '24px 20px',
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '8px'
+              }}
+            >
+              <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Налоговые преступления
+              </div>
+              <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                Защита по ст. 199, 199.1, 199.2 УК РФ после проверок ФНС и СК РФ.
+              </p>
+              <div style={{ color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: 'auto' }}>
+                Подробнее →
+              </div>
+            </Link>
+
+            <Link
+              href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/"
+              className="card related-service-card hover-lift"
+              style={{
+                background: '#FAFAFA',
+                border: '1px solid var(--color-border)',
+                padding: '24px 20px',
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '8px'
+              }}
+            >
+              <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Защита при проверке ОБЭП
+              </div>
+              <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                Сопровождение доследственных проверок КУСП до возбуждения дела.
+              </p>
+              <div style={{ color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: 'auto' }}>
+                Подробнее →
+              </div>
+            </Link>
+
+            <Link
+              href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/"
+              className="card related-service-card hover-lift"
+              style={{
+                background: '#FAFAFA',
+                border: '1px solid var(--color-border)',
+                padding: '24px 20px',
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '8px'
+              }}
+            >
+              <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Хаб уголовно-правовой защиты
+              </div>
+              <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                Все направления уголовно-правовой безопасности компаний.
+              </p>
+              <div style={{ color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: 'auto' }}>
+                На страницу хаба →
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 11: ФИНАЛЬНАЯ ФОРМА (#FORM) ═══ */}
+      <section id="form" className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container" style={{ maxWidth: '760px' }}>
+          <ContactsForm
+            title="Защита по экономическим преступлениям"
+            subtitle="Опишите фабулу претензий или инкриминируемую статью. Команда адвокатов оперативно свяжется с вами для выработки безопасной стратегии защиты."
+            buttonText="Получить консультацию адвоката"
+          />
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}

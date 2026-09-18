@@ -51,6 +51,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Юридическое сопровождение бизнеса (Кластер B2B-03)
     '/biznesu/yuridicheskoe-soprovozhdenie-biznesa/',
     '/biznesu/yuridicheskoe-soprovozhdenie-biznesa/yuridicheskij-audit-biznesa/',
+    // Уголовно-правовая защита бизнеса
+    '/biznesu/ugolovno-pravovaya-zashchita-biznesa/',
+    '/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/',
+    '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/',
+    '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-ekonomicheskim-prestupleniyam/',
+    '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/',
+    '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/',
+    // Разблокировка расчётного счёта по 115-ФЗ
+    '/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/',
+    // Налоговый юрист для бизнеса
+    '/biznesu/nalogovyj-yurist-dlya-biznesa/',
+    '/biznesu/nalogovyj-yurist-dlya-biznesa/soprovozhdenie-nalogovyh-proverok/',
+    '/biznesu/nalogovyj-yurist-dlya-biznesa/osparivanie-donachislenij-i-reshenij-fns/',
+    '/biznesu/nalogovyj-yurist-dlya-biznesa/zashchita-pri-obvinenii-v-droblenii-biznesa/',
+    // Миграционное сопровождение бизнеса
+    '/biznesu/migracionnoe-soprovozhdenie-biznesa/',
+    '/biznesu/migracionnoe-soprovozhdenie-biznesa/yuridicheskoe-oformlenie-inostrannyh-rabotnikov/',
+    '/biznesu/migracionnoe-soprovozhdenie-biznesa/migracionnyj-audit-rabotodatelya/',
+    '/biznesu/migracionnoe-soprovozhdenie-biznesa/yurist-pri-migracionnoj-proverke-mvd/',
+    '/biznesu/migracionnoe-soprovozhdenie-biznesa/zashchita-rabotodatelya-po-state-18-15-koap-rf/',
     // Банкротство физических лиц
     '/grazhdanam/bankrotstvo-fizicheskih-lic/',
     '/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/',

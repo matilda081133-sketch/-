@@ -1,0 +1,751 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import MilitaryHero from '@/components/MilitaryHero';
+import ContactsForm from '@/components/ContactsForm';
+import FAQBlock from '@/components/FAQBlock';
+import ProcessBlock from '@/components/ProcessBlock';
+import CasesBlock, { CaseData } from '@/components/CasesBlock';
+import SpecialistBlock from '@/components/SpecialistBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
+
+export default function ZashchitaPriProverkeObepClient() {
+  const obepSituations = [
+    {
+      tag: 'Запрос документов',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Поступил запрос из ОБЭП</span> <br />
+          <span style={{ display: 'inline-block' }}>или полиции по ст. 13 ЗоП</span>
+        </span>
+      ),
+      desc: 'Требуют предоставить договоры, выписки, 1С-базы и первичку. Проверим законность требования, срок и сформируем мотивированный ответ.',
+      btnText: 'Проверить запрос'
+    },
+    {
+      tag: 'Вызов директора',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Вызов генерального директора</span> <br />
+          <span style={{ display: 'inline-block' }}>для дачи объяснений</span>
+        </span>
+      ),
+      desc: 'Подготовим правовую позицию, снимем риски самооговора и обеспечим участие адвоката при опросе оперативными сотрудниками.',
+      btnText: 'Подготовить директора'
+    },
+    {
+      tag: 'Опрос главбуха',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Вызов главного бухгалтера</span> <br />
+          <span style={{ display: 'inline-block' }}>или финансового директора</span>
+        </span>
+      ),
+      desc: 'Вопросы о расчётах, цепочках поставщиков и НДС. Разграничим ответственность и предотвратим квалификацию по налоговым статьям.',
+      btnText: 'Защита бухгалтера'
+    },
+    {
+      tag: 'Опрос персонала',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Опрос сотрудников компании</span> <br />
+          <span style={{ display: 'inline-block' }}>на рабочих местах или в ОВД</span>
+        </span>
+      ),
+      desc: 'Инструктаж сотрудников о процессуальных правах, ст. 51 Конституции РФ и правилах поведения при психологическом давлении.',
+      btnText: 'Инструктаж персонала'
+    },
+    {
+      tag: 'Встречная проверка',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Проверка по контрагенту</span> <br />
+          <span style={{ display: 'inline-block' }}>или субподрядчику</span>
+        </span>
+      ),
+      desc: 'Запрос связан с расследованием в отношении вашего партнёра. Важно предоставить документы так, чтобы претензии не перешли на вашу компанию.',
+      btnText: 'Оценить риски'
+    },
+    {
+      tag: 'Осмотр офиса',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Гласное обследование помещений</span> <br />
+          <span style={{ display: 'inline-block' }}>в рамках закона об ОРД</span>
+        </span>
+      ),
+      desc: 'Оперативники пришли в офис или на склад. Контролируем полномочия, состав распоряжения, действия понятых и изъятие носителей.',
+      btnText: 'Срочный выезд'
+    },
+    {
+      tag: 'Угроза дела',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Угроза возбуждения</span> <br />
+          <span style={{ display: 'inline-block' }}>уголовного дела (КУСП)</span>
+        </span>
+      ),
+      desc: 'Доследственная проверка подходит к завершению. Срочно подаём мотивированные ходатайства и контрдоказательства отсутствия состава.',
+      btnText: 'Предотвратить дело'
+    },
+    {
+      tag: 'Превышение полномочий',
+      title: (
+        <span>
+          <span style={{ display: 'inline-block' }}>Нарушение прав бизнеса</span> <br />
+          <span style={{ display: 'inline-block' }}>сотрудниками полиции</span>
+        </span>
+      ),
+      desc: 'Незаконное удержание имущества, угрозы или воспрепятствование законной деятельности компании. Подготовим жалобы в прокуратуру и УСБ.',
+      btnText: 'Обжаловать действия'
+    }
+  ];
+
+  const urgentRisks = [
+    {
+      title: 'Спонтанные объяснения и передача лишних документов',
+      desc: 'Первые показания, данные без консультации юриста, фиксируются в протоколах опроса и становятся ключевым доказательством обвинения.'
+    },
+    {
+      title: 'Проведение «обследования» под видом обыска',
+      desc: 'Гласное обследование в рамках ОРД имеет строгие ограничения. Без адвоката силовики часто проводят фактический обыск без судебного решения.'
+    },
+    {
+      title: 'Игнорирование сроков ответа на запросы',
+      desc: 'Необоснованный отказ грозит штрафами и силовым визитом, а бесконтрольная передача коммерческих тайн ставит компанию под удар.'
+    }
+  ];
+
+  const obepContours = [
+    {
+      num: '01',
+      title: 'Анализ законности запроса ОБЭП',
+      desc: 'Проверяем наличие зарегистрированного материала КУСП, обоснованность ссылок на закон «О полиции» и «Об ОРД», а также пределы полномочий органа.'
+    },
+    {
+      num: '02',
+      title: 'Фильтрация предоставляемых документов',
+      desc: 'Исключаем передачу избыточных файлов, черновиков, личной переписки и документов, не относящихся к предмету проверки, подготавливая заверенные копии по описи.'
+    },
+    {
+      num: '03',
+      title: 'Подготовка руководства и сотрудников к опросам',
+      desc: 'Разбираем возможные провокационные вопросы оперативников, разъясняем ст. 51 Конституции РФ и выстраиваем фактологически непротиворечивую позицию.'
+    },
+    {
+      num: '04',
+      title: 'Очное участие адвоката при следственных действиях',
+      desc: 'Адвокат сопровождает директора и сотрудников на опросах в отделе полиции, пресекает давление и фиксирует любые процессуальные отклонения.'
+    },
+    {
+      num: '05',
+      title: 'Внесение замечаний и оперативное обжалование',
+      desc: 'При выявлении нарушений незамедлительно подаём жалобы вышестоящему руководству МВД, в прокуратуру Липецкой области и суд.'
+    },
+    {
+      num: '06',
+      title: 'Предотвращение возбуждения уголовного дела',
+      desc: 'Своевременно представляем доказательства добросовестности компании, экономической обоснованности сделок и отсутствия признаков преступления.'
+    }
+  ];
+
+  const processSteps = [
+    {
+      num: '01',
+      title: 'Экспресс-анализ ситуации в течение 1 часа',
+      desc: 'Изучаем запрос, постановление или повестку. Определяем, в отношении кого проводится проверка и насколько высок риск возбуждения дела.'
+    },
+    {
+      num: '02',
+      title: 'Выработка инструкций и ограничение утечек',
+      desc: 'Даём руководству и бухгалтерии четкие правила коммуникации с оперативниками и регламент сбора запрошенной информации.'
+    },
+    {
+      num: '03',
+      title: 'Формирование письменной позиции и ответа',
+      desc: 'Составляем мотивированный ответ на запрос с приложением строго необходимого объёма заверенных копий документов.'
+    },
+    {
+      num: '04',
+      title: 'Сопровождение вызовов и следственных действий',
+      desc: 'Адвокаты компании лично участвуют во всех опросах, осмотрах и проверочных мероприятиях сотрудников ОБЭП.'
+    },
+    {
+      num: '05',
+      title: 'Добиваемся вынесения постановления об отказе',
+      desc: 'Контролируем процессуальные сроки (от 3 до 30 суток по ст. 144 УПК РФ) и добиваемся законного прекращения проверки без уголовных последствий.'
+    }
+  ];
+
+  const pricingTiers: PricingTier[] = [
+    {
+      title: 'Правовой анализ запроса ОБЭП',
+      subtitle: 'Оценка требований и подготовка ответа',
+      popular: false,
+      price: 'от 20 000 ₽',
+      features: [
+        { name: 'Правовая экспертиза обоснованности запроса', value: 'Включено' },
+        { name: 'Определение безопасного перечня документов', value: 'Включено' },
+        { name: 'Подготовка мотивированного ответа в ОВД', value: 'Включено' },
+        { name: 'Инструктаж контактного лица компании', value: 'Включено' }
+      ],
+      buttonText: 'Заказать ответ на запрос',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Сопровождение опроса / вызова',
+      subtitle: 'Очное участие адвоката в полиции',
+      popular: true,
+      badgeText: 'Популярно',
+      price: 'от 35 000 ₽',
+      features: [
+        { name: 'Предварительная подготовка доверителя к опросу', value: 'Включено' },
+        { name: 'Выезд адвоката в отдел полиции / ОБЭП', value: 'Включено' },
+        { name: 'Участие в даче объяснений и контроль протокола', value: 'Включено' },
+        { name: 'Пресечение психологического давления силовиков', value: 'Включено' }
+      ],
+      buttonText: 'Привлечь адвоката',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Комплексная защита при проверке',
+      subtitle: 'Полное ведение доследственной проверки КУСП',
+      popular: false,
+      price: 'от 75 000 ₽',
+      features: [
+        { name: 'Неограниченное число выездов адвокатов', value: 'Включено' },
+        { name: 'Подготовка всех ответов, возражений и ходатайств', value: 'Включено' },
+        { name: 'Сопровождение всех опросов руководства и штата', value: 'Включено' },
+        { name: 'Достижение постановления об отказе в возбуждении', value: 'Включено' }
+      ],
+      buttonText: 'Комплексная защита',
+      buttonHref: '#form'
+    }
+  ];
+
+  const practiceCases: CaseData[] = [
+    {
+      category: 'Запрос документов',
+      title: 'Предотвращение необоснованного изъятия финансовой базы холдинга',
+      problem: 'УЭБиПК запросило полную базу 1С, электронную переписку и договоры за 3 года по анонимному сообщению о неуплате налогов.',
+      action: 'Подготовили мотивированный ответ с указанием на отсутствие в запросе данных о зарегистрированном КУСП и ссылок на конкретные составы. Предоставили локальную выписку по конкретной сделке.',
+      result: 'Оперативники удовлетворились полученными материалами, повторных запросов и визитов в компанию не последовало.'
+    },
+    {
+      category: 'Вызов на опрос',
+      title: 'Защита директора агрокомплекса от обвинений в нецелевом расходовании субсидии',
+      problem: 'Руководителя предприятия вызвали в ОБЭП для дачи объяснений по поводу использования региональной субсидии на покупку семян.',
+      action: 'Адвокат подготовил руководителя к опросу, собрал платежные поручения, акты посевной кампании и заключение агроэксперта. Сопроводил опрос в ОБЭП.',
+      result: 'Проверка завершена вынесением постановления об отказе в возбуждении уголовного дела.'
+    },
+    {
+      category: 'Обследование помещений',
+      title: 'Пресечение незаконного изъятия компьютерной техники при обследовании офиса',
+      problem: 'Оперативники прибыли с распоряжением на гласное обследование и попытались демонтировать системные блоки бухгалтерии.',
+      action: 'Срочно прибывший юрист указал на отсутствие права на неизбирательное изъятие оргтехники без копирования данных на месте, предусмотренного ст. 15 закона об ОРД.',
+      result: 'Техника оставлена в офисе, информация скопирована на предоставленный диск, работа компании не прекращалась.'
+    }
+  ];
+
+  const faqs = [
+    {
+      q: 'Чем проверка ОБЭП отличается от уголовного дела?',
+      a: 'Проверка ОБЭП — это доследственная стадия (проводится в рамках закона «О полиции», «Об ОРД» или ст. 144–145 УПК РФ). Уголовное дело ещё не возбуждено, и обвинение никому не предъявлено. Это ключевое время, когда грамотные действия могут полностью закрыть вопрос.'
+    },
+    {
+      q: 'Обязан ли директор являться в ОБЭП по звонку сотрудника?',
+      a: 'Нет. Телефонный звонок не является официальным уведомлением. Вызов должен быть оформлен официальной повесткой с указанием статуса вызываемого лица, номера материала проверки и цели вызова.'
+    },
+    {
+      q: 'Можно ли не отвечать на запрос ОБЭП о предоставлении документов?',
+      a: 'Игнорировать запрос нельзя, так как за невыполнение законных требований полиции предусмотрена ответственность по ст. 19.7 КоАП РФ. Однако если запрос незаконен или чрезмерен, на него направляется мотивированный отказ или уточняющий ответ.'
+    },
+    {
+      q: 'Имеет ли право оперативник изымать компьютеры при гласном обследовании?',
+      a: 'По закону «Об ОРД» при изъятии электронных носителей представитель компании имеет право потребовать скопировать информацию на месте на свои носители. Изъятие серверов без предоставления возможности копирования незаконно.'
+    },
+    {
+      q: 'Может ли адвокат присутствовать при даче объяснений в ОБЭП?',
+      a: 'Да, право на получение квалифицированной юридической помощи гарантировано ст. 48 Конституции РФ на любых этапах взаимодействия с правоохранительными органами, включая дачу объяснений до возбуждения дела.'
+    }
+  ];
+
+  return (
+    <main>
+      <Header />
+
+      {/* ═══ БЛОК 1: HERO ═══ */}
+      <MilitaryHero
+        breadcrumbs={
+          <>
+            <Link href="/">Главная</Link>
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+            <Link href="/biznesu/">Бизнесу</Link>
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+            <Link href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/">Уголовно-правовая защита бизнеса</Link>
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Защита при проверке ОБЭП</span>
+          </>
+        }
+        superTitle={
+          <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
+            <span style={{ display: 'inline-block' }}>ДОСЛЕДСТВЕННАЯ ПРОВЕРКА И ОПРОСЫ •</span> <br />
+            <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
+          </span>
+        }
+        title={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Защита бизнеса при
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              проверке ОБЭП в Липецке
+            </span>
+          </span>
+        }
+        subtitle={
+          <span style={{ display: 'inline-block', maxWidth: '760px', textWrap: 'balance' }}>
+            Анализируем запросы документов, готовим руководителей и сотрудников к опросам, сопровождаем проверочные действия и выстраиваем единую позицию компании на стадии доследственной проверки.
+          </span>
+        }
+        primaryCtaText="Обсудить проверку ОБЭП"
+        primaryCtaLink="#form"
+        primaryCtaAnalytics="click_primary_cta_obep"
+        primaryCtaSubtext={
+          <span style={{ display: 'block' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              Срочный выезд адвоката в отдел полиции:
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+            </span>
+          </span>
+        }
+        imageUrl="/images/bobkin.jpg"
+        imageName="Аркадий Евгеньевич Бобкин"
+        imageSubtitle="Директор, управляющий партнёр ЮК «Де-Юре», куратор направления"
+        imageObjectPosition="center 15%"
+        trustItems={[
+          {
+            text: (
+              <span>
+                <strong>Подключение в день обращения</strong> и срочный выезд к силовикам
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Анализ обоснованности запросов</strong> и защита от изъятия лишних данных
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Инструктаж топ-менеджеров</strong> и персонала перед дачей показаний
+              </span>
+            )
+          },
+          {
+            text: (
+              <span>
+                <strong>Участие квалифицированных адвокатов</strong> во всех проверочных действиях
+              </span>
+            )
+          }
+        ]}
+      />
+
+      {/* ═══ БЛОК 2: СИТУАЦИИ (#SITUATIONS) ═══ */}
+      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>С какими действиями ОБЭП</span> <br />
+              <span style={{ display: 'inline-block' }}>столкнулась компания</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
+              Выберите сценарий проверки. На стадии КУСП каждый документ и сказанное слово имеют решающее значение для будущего компании.
+            </p>
+          </div>
+
+          <div className="grid grid-4" style={{ gap: '24px', marginBottom: '32px' }}>
+            {obepSituations.map((item, i) => (
+              <div
+                key={i}
+                className="card hover-lift"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '28px 22px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <div>
+                  <div style={{
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    color: 'var(--color-primary)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                    marginBottom: '10px',
+                    background: 'rgba(23, 50, 77, 0.06)',
+                    padding: '2px 6px',
+                    display: 'inline-block'
+                  }}>
+                    {item.tag}
+                  </div>
+                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '17px', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.3 }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                    {item.desc}
+                  </p>
+                </div>
+                <a
+                  href="#form"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '16px'
+                  }}
+                >
+                  <span>{item.btnText} →</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 3: КОГДА НЕЛЬЗЯ ЗАТЯГИВАТЬ (#URGENT) ═══ */}
+      <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }} id="urgent">
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'inline-block' }}>Риски затягивания</span> <br />
+              <span style={{ display: 'inline-block' }}>на стадии проверки ОБЭП</span>
+            </h2>
+            <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', margin: '16px 0' }} />
+            <p style={{ fontSize: '16px', color: '#E8ECF1', lineHeight: 1.65, margin: 0 }}>
+              Доследственная проверка длится от 3 до 30 дней. Позиция, зафиксированная в этот период, ложится в основу постановления о возбуждении уголовного дела.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '36px' }}>
+            {urgentRisks.map((risk, idx) => (
+              <div
+                key={idx}
+                className="urgent-card"
+                style={{
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '28px 24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.1)'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-gold)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Зона риска
+                  </span>
+                </div>
+                <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: 0, fontWeight: 700, fontFamily: 'var(--font-serif)', lineHeight: 1.35 }}>
+                  {risk.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: '#3A4B5C', margin: 0, lineHeight: 1.55 }}>
+                  {risk.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '20px 24px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '16px'
+          }}>
+            <div>
+              <div style={{ color: '#FFFFFF', fontSize: '15px', fontWeight: 600 }}>
+                Срочно вызвали на опрос в полицию?
+              </div>
+              <div style={{ color: '#BACAD9', fontSize: '13.5px', marginTop: '4px' }}>
+                Не ходите в ОВД в одиночку. Подключите адвоката до подписания объяснений.
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+              <a
+                href="tel:+79103503111"
+                style={{
+                  color: 'var(--color-gold)',
+                  fontWeight: 700,
+                  fontSize: '17px',
+                  textDecoration: 'none'
+                }}
+              >
+                +7 (910) 350-31-11
+              </a>
+              <a
+                href="#form"
+                className="btn btn-primary"
+                style={{ padding: '10px 20px', fontSize: '14px' }}
+              >
+                Вызвать адвоката
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 4: КОНТУРЫ ЗАЩИТЫ ═══ */}
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '48px', textAlign: 'left' }}>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2 }}>
+              <span style={{ display: 'inline-block' }}>Состав юридической помощи</span> <br />
+              <span style={{ display: 'inline-block' }}>при проверках ОБЭП</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
+              Обеспечиваем защиту интересов компании на каждом этапе взаимодействия с оперативными сотрудниками.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '24px' }}>
+            {obepContours.map((contour, idx) => (
+              <div
+                key={idx}
+                className="card"
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  padding: '30px 26px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px'
+                }}
+              >
+                <div style={{ fontSize: '22px', fontWeight: 800, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)' }}>
+                  {contour.num}
+                </div>
+                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, fontWeight: 600 }}>
+                  {contour.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
+                  {contour.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 5: ЭТАПЫ (PROCESSBLOCK) ═══ */}
+      <ProcessBlock
+        title="Порядок работы при проверке ОБЭП"
+        subtitle="Слаженные и юридически выверенные действия команды для скорейшего снятия претензий с компании."
+        steps={processSteps}
+        ctaTitle="Получили запрос из полиции или вызов?"
+        ctaSubtitle="Передайте запрос на анализ. Подготовим безопасный ответ и организуем защиту руководства."
+        ctaButtonText="Передать запрос на анализ"
+        ctaButtonHref="#form"
+      />
+
+      {/* ═══ БЛОК 6: КУРАТОР (SPECIALISTBLOCK) ═══ */}
+      <SpecialistBlock
+        title="Куратор направления"
+        name="Аркадий Евгеньевич Бобкин"
+        position={<>Директор, управляющий партнёр ЮК «Де-Юре»,<br />куратор направления «Уголовно-правовая защита бизнеса»</>}
+        imageUrl="/images/bobkin.jpg"
+        imagePosition="center 15%"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Аркадий Евгеньевич 22 года служил в следственных органах налоговой полиции и Следственной части МВД РФ. Он детально знает внутренние методики работы ОБЭП, основания проверок и порядок сбора доказательств, что позволяет эффективно пресекать злоупотребления и защищать бизнес.
+          </span>,
+          <div
+            key="2"
+            style={{
+              borderLeft: '3px solid var(--color-gold)',
+              paddingLeft: '16px',
+              fontStyle: 'italic',
+              fontSize: '14.5px',
+              color: 'var(--color-deep-blue)',
+              margin: '16px 0 0 0'
+            }}
+          >
+            «На стадии проверки ОБЭП оперативники рассчитывают на растерянность руководства. Спокойная, уверенная работа с адвокатом охлаждает пыл проверяющих и переводит диалог в строго законное русло».
+          </div>,
+          <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>22 года следственной практики в налоговой полиции и Следственной части МВД</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
+              <span>Очное участие адвокатов компании во всех опросах и следственных действиях</span>
+            </li>
+          </ul>,
+          <a key="4" href="/specialisty/bobkin-arkadiy-evgenevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о кураторе направления →
+          </a>
+        ]}
+        buttonText="Проконсультироваться с куратором"
+        buttonHref="#form"
+      />
+
+      {/* ═══ БЛОК 7: СТОИМОСТЬ (PRICINGBLOCK) ═══ */}
+      <PricingBlock
+        title="Стоимость защиты при проверке ОБЭП"
+        subtitle="Стоимость фиксируется в соглашении и не подлежит увеличению без изменения согласованного объёма процессуальных действий."
+        tiers={pricingTiers}
+        disclaimer="При необходимости срочного ночного выезда или работы за пределами Липецка условия согласуются индивидуально."
+      />
+
+      {/* ═══ БЛОК 8: КЕЙСЫ (CASESBLOCK) ═══ */}
+      <CasesBlock
+        title="Примеры прекращения проверок ОБЭП"
+        cases={practiceCases}
+      />
+      <div className="container" style={{ marginTop: '-40px', marginBottom: '60px', textAlign: 'center' }}>
+        <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontStyle: 'italic', margin: 0 }}>
+          Результат зависит от своевременности подключения защитников и полноты предоставленных документов.
+        </p>
+      </div>
+
+      {/* ═══ БЛОК 9: FAQ ═══ */}
+      <FAQBlock
+        title="Частые вопросы о проверках ОБЭП"
+        subtitle="Практические рекомендации юристов по защите прав компании и сотрудников при доследственных мероприятиях."
+        faqs={faqs}
+      />
+
+      {/* ═══ БЛОК 10: СМЕЖНЫЕ НАПРАВЛЕНИЯ ═══ */}
+      <section className="section bg-white" style={{ padding: '80px 0', borderTop: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3vw, 32px)', color: 'var(--color-deep-blue)', marginBottom: '12px' }}>
+              Смежные направления защиты
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0 }}>
+              Если проверка переходит в другие процессуальные формы:
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '20px' }}>
+            <Link
+              href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/"
+              className="card related-service-card hover-lift"
+              style={{
+                background: '#FAFAFA',
+                border: '1px solid var(--color-border)',
+                padding: '24px 20px',
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '8px'
+              }}
+            >
+              <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Защита при обыске в компании
+              </div>
+              <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                Срочный выезд адвоката при обыске, выемке техники и осмотре офиса.
+              </p>
+              <div style={{ color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: 'auto' }}>
+                Подробнее →
+              </div>
+            </Link>
+
+            <Link
+              href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-ekonomicheskim-prestupleniyam/"
+              className="card related-service-card hover-lift"
+              style={{
+                background: '#FAFAFA',
+                border: '1px solid var(--color-border)',
+                padding: '24px 20px',
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '8px'
+              }}
+            >
+              <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Экономические преступления
+              </div>
+              <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                Защита руководства по ст. 159, 160, 201 УК РФ при возбуждении дела.
+              </p>
+              <div style={{ color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: 'auto' }}>
+                Подробнее →
+              </div>
+            </Link>
+
+            <Link
+              href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/"
+              className="card related-service-card hover-lift"
+              style={{
+                background: '#FAFAFA',
+                border: '1px solid var(--color-border)',
+                padding: '24px 20px',
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '8px'
+              }}
+            >
+              <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Хаб уголовно-правовой защиты
+              </div>
+              <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                Все направления правовой помощи бизнесу и координация адвокатов.
+              </p>
+              <div style={{ color: 'var(--color-primary)', fontSize: '13px', fontWeight: 600, marginTop: 'auto' }}>
+                На главную хаба →
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 11: ФИНАЛЬНАЯ ФОРМА (#FORM) ═══ */}
+      <section id="form" className="section bg-white" style={{ padding: '80px 0' }}>
+        <div className="container" style={{ maxWidth: '760px' }}>
+          <ContactsForm
+            title="Защита бизнеса при проверке ОБЭП"
+            subtitle="Укажите суть запроса или причину вызова в полицию. Мы оперативно свяжемся с вами и согласуем порядок неотложных действий."
+            buttonText="Получить консультацию по проверке"
+          />
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}

@@ -56,7 +56,7 @@ export default function BiznesuClient() {
       groupName: 'Корпоративные, налоговые и кадровые вопросы',
       title: 'Корпоративный юрист',
       desc: 'Корпоративные споры, конфликты между участниками, выход участника и взыскание стоимости доли, защита от незаконной смены контроля.',
-      link: null
+      link: '/biznesu/korporativnyj-yurist/'
     },
     {
       id: 'B2B-06',
@@ -64,7 +64,7 @@ export default function BiznesuClient() {
       groupName: 'Корпоративные, налоговые и кадровые вопросы',
       title: 'Налоговый юрист для бизнеса',
       desc: 'Сопровождение камеральных и выездных проверок, подготовка возражений, оспаривание доначислений и решений ФНС.',
-      link: null
+      link: '/biznesu/nalogovyj-yurist-dlya-biznesa/'
     },
     {
       id: 'B2B-07',
@@ -80,7 +80,7 @@ export default function BiznesuClient() {
       groupName: 'Корпоративные, налоговые и кадровые вопросы',
       title: 'Миграционное сопровождение бизнеса',
       desc: 'Оформление иностранных работников, уведомления и кадровые документы, проверки МВД, обжалование штрафов.',
-      link: null
+      link: '/biznesu/migracionnoe-soprovozhdenie-biznesa/'
     },
     {
       id: 'B2B-09',
@@ -88,7 +88,7 @@ export default function BiznesuClient() {
       groupName: 'Корпоративные, налоговые и кадровые вопросы',
       title: 'Разблокировка расчётного счёта по 115-ФЗ',
       desc: 'Ответы на запросы банка, подготовка документов, обжалование отказов в операциях и снятие ограничений по счёту и дистанционному обслуживанию.',
-      link: null
+      link: '/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/'
     },
 
     // Группа 3. Сопровождение, активы и кризисные ситуации
@@ -98,7 +98,7 @@ export default function BiznesuClient() {
       groupName: 'Сопровождение, активы и кризисные ситуации',
       title: 'Юридическое сопровождение бизнеса',
       desc: 'Регулярная договорная, претензионная и корпоративная работа, правовая поддержка руководителя и подразделений компании.',
-      link: null
+      link: '/biznesu/yuridicheskoe-soprovozhdenie-biznesa/'
     },
     {
       id: 'B2B-11',
@@ -106,7 +106,7 @@ export default function BiznesuClient() {
       groupName: 'Сопровождение, активы и кризисные ситуации',
       title: 'Банкротство бизнеса',
       desc: 'Банкротство компаний и ИП, защита от субсидиарной ответственности, представительство кредиторов и оспаривание сделок.',
-      link: null
+      link: '/biznesu/bankrotstvo-biznesa/'
     },
     {
       id: 'B2B-12',
@@ -114,7 +114,7 @@ export default function BiznesuClient() {
       groupName: 'Сопровождение, активы и кризисные ситуации',
       title: 'Юрист по недвижимости и строительству для бизнеса',
       desc: 'Сделки с коммерческой недвижимостью, строительный подряд, разрешения на строительство и ввод, земельные и градостроительные вопросы.',
-      link: null
+      link: '/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/'
     },
     {
       id: 'B2B-13',
@@ -122,7 +122,7 @@ export default function BiznesuClient() {
       groupName: 'Сопровождение, активы и кризисные ситуации',
       title: 'Уголовно-правовая защита бизнеса',
       desc: 'Защита руководителей и сотрудников при обысках, допросах и уголовном преследовании по экономическим, налоговым и коррупционным составам.',
-      link: null
+      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/'
     }
   ];
 
