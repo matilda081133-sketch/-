@@ -43,6 +43,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Банкротство физических лиц
     '/grazhdanam/bankrotstvo-fizicheskih-lic/',
     '/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/',
+    // Взыскание долгов с физических лиц (Кластер CIV-08)
+    '/grazhdanam/vzyskanie-dolgov/',
+    '/grazhdanam/vzyskanie-dolgov/zashchita-ot-trebovaniy-po-dolgu/',
     // Земля
     '/grazhdanam/zemelnyj-yurist/',
     '/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/',

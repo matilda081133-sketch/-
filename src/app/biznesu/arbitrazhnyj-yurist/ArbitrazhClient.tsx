@@ -586,7 +586,7 @@ export default function ArbitrazhClient() {
           { text: 'Объём, этап и стоимость согласуем до начала работы' }
         ]}
         afterTrustContent={
-          <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', margin: '16px 0 24px 0', lineHeight: 1.5 }}>
+          <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, margin: '16px 0 24px 0', lineHeight: 1.5, fontWeight: 500 }}>
             Дело передаём юристу по арбитражным спорам после первичного анализа документов и стадии процесса.
           </p>
         }

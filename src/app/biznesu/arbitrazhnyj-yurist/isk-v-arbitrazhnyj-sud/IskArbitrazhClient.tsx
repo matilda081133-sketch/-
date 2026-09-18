@@ -397,7 +397,7 @@ export default function IskArbitrazhClient() {
           { text: 'Официальная подача через систему «Мой Арбитр»' }
         ]}
         afterTrustContent={
-          <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', margin: '16px 0 24px 0', lineHeight: 1.5 }}>
+          <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, margin: '16px 0 24px 0', lineHeight: 1.5, fontWeight: 500 }}>
             Иск и комплект документов готовит юрист по арбитражным спорам. Состав работ и стоимость фиксируем до начала подготовки.
           </p>
         }

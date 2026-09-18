@@ -387,7 +387,7 @@ export default function ObzhalovanieClient() {
           { text: 'Восстановление пропущенных процессуальных сроков' }
         ]}
         afterTrustContent={
-          <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', margin: '16px 0 24px 0', lineHeight: 1.5 }}>
+          <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, margin: '16px 0 24px 0', lineHeight: 1.5, fontWeight: 500 }}>
             Решение и материалы дела изучает юрист по арбитражным спорам. После анализа сообщаем перспективы, процессуальный маршрут и стоимость работы.
           </p>
         }
