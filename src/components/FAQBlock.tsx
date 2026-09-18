@@ -1,12 +1,17 @@
 'use client';
 
-interface FAQ {
-  q: string;
-  a: string | React.ReactNode;
+export interface FAQ {
+  q?: string;
+  a?: string | React.ReactNode;
+  question?: string;
+  answer?: string | React.ReactNode;
 }
+
+export type FAQItem = FAQ;
 
 interface FAQBlockProps {
   faqs?: FAQ[];
+  items?: FAQItem[];
   superTitle?: string;
   title?: string | React.ReactNode;
   subtitle?: string | React.ReactNode;
@@ -14,7 +19,7 @@ interface FAQBlockProps {
   ctaLink?: string;
 }
 
-export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые вопросы клиентов", title = "Ответы на важные вопросы", subtitle = "Мы собрали самые частые вопросы наших доверителей. Если вы не нашли ответ на свой вопрос — свяжитесь с нами для индивидуальной консультации.", ctaText = "Задать свой вопрос", ctaLink = "#form" }: FAQBlockProps) {
+export default function FAQBlock({ faqs: propFaqs, items: propItems, superTitle = "Частые вопросы клиентов", title = "Ответы на важные вопросы", subtitle = "Мы собрали самые частые вопросы наших доверителей. Если вы не нашли ответ на свой вопрос — свяжитесь с нами для индивидуальной консультации.", ctaText = "Задать свой вопрос", ctaLink = "#form" }: FAQBlockProps) {
   const defaultFaqs = [
     {
       q: 'Как проходит первое обращение?',
@@ -58,7 +63,11 @@ export default function FAQBlock({ faqs: propFaqs, superTitle = "Частые в
     }
   ];
 
-  const faqs = propFaqs || defaultFaqs;
+  const rawList: any[] = propItems || propFaqs || defaultFaqs;
+  const faqs = rawList.map((item) => ({
+    q: (item.q || item.question || '') as string,
+    a: (item.a || item.answer || '') as string | React.ReactNode,
+  }));
 
   return (
     <section className="section bg-white" style={{ padding: 'clamp(48px, 6vw, 80px) 0', borderTop: '1px solid var(--color-border)' }}>

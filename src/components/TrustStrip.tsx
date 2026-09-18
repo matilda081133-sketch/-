@@ -3,7 +3,7 @@ import React from 'react';
 type TrustItem = {
   icon?: React.ReactNode;
   text: React.ReactNode;
-};
+} | string;
 
 const defaultIcons = [
   // Icon 1: Profile / Shield
@@ -55,7 +55,7 @@ export default function TrustStrip({ items, marginTop }: { items: TrustItem[]; m
           fontWeight: 500,
           whiteSpace: 'pre-line'
         }}>
-          {bullet.text}
+          {typeof bullet === 'string' ? bullet : bullet.text}
         </div>
       ))}
     </div>

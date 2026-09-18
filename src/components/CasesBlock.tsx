@@ -4,17 +4,21 @@ import React from 'react';
 import Link from 'next/link';
 
 export interface CaseData {
-  category: string | React.ReactNode;
+  category?: string | React.ReactNode;
   title: string | React.ReactNode;
-  problem: string | React.ReactNode;
-  action: string | React.ReactNode;
+  problem?: string | React.ReactNode;
+  description?: string | React.ReactNode;
+  action?: string | React.ReactNode;
+  points?: (string | React.ReactNode)[];
   result: string | React.ReactNode;
+  duration?: string;
   isDemo?: boolean;
 }
 
 interface CasesBlockProps {
   cases: CaseData[];
   title?: string | React.ReactNode;
+  subtitle?: string | React.ReactNode;
   showAllLink?: string;
   showAllText?: string;
   showDemoWarning?: boolean;
@@ -24,11 +28,19 @@ interface CasesBlockProps {
 export default function CasesBlock({ 
   cases, 
   title = "Результаты нашей работы", 
+  subtitle,
   showAllLink = "/praktika",
   showAllText = "Смотреть все дела",
   showDemoWarning = false,
   resultLabel = "Результат"
 }: CasesBlockProps) {
+  const normalizedCases = cases.map((c) => ({
+    ...c,
+    category: c.category || (c.duration ? `Срок: ${c.duration}` : 'Практика'),
+    problem: c.problem || c.description || '',
+    action: c.action || (c.points ? c.points.join('. ') : ''),
+    result: c.result,
+  }));
   return (
     <section className="section bg-white" style={{ padding: 'clamp(48px, 6vw, 80px) 0' }}>
       <div className="container">
@@ -40,9 +52,16 @@ export default function CasesBlock({
             </span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
-            <h2 style={{ margin: 0, fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.25 }}>
-              {title}
-            </h2>
+            <div>
+              <h2 style={{ margin: 0, fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.25 }}>
+                {title}
+              </h2>
+              {subtitle && (
+                <p style={{ margin: '8px 0 0', color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.5 }}>
+                  {subtitle}
+                </p>
+              )}
+            </div>
             {showAllLink && (
               <a href={showAllLink} className="btn btn-outline" style={{ padding: '12px 24px', height: 'fit-content', whiteSpace: 'nowrap' }}>
                 {showAllText}
@@ -52,7 +71,7 @@ export default function CasesBlock({
         </div>
         
         <div className="cases-grid">
-          {cases.map((caseItem, idx) => (
+          {normalizedCases.map((caseItem, idx) => (
             <div key={idx} className="case-card group" style={{ 
               padding: '36px 30px 30px 30px', 
               border: '1px solid var(--color-border)', 

@@ -13,6 +13,7 @@ interface ContactsFormProps {
   hiddenFields?: { name: string; value: string }[];
   subtext?: React.ReactNode;
   agreementNotice?: React.ReactNode;
+  analyticsGoal?: string;
 }
 
 export default function ContactsForm({ 

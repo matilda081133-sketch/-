@@ -3,18 +3,25 @@ import React from 'react';
 
 export interface PricingFeature {
   name: string | React.ReactNode;
-  value: string;
+  value?: string;
 }
 
 export interface PricingTier {
-  title: string | React.ReactNode;
-  subtitle: string | React.ReactNode;
+  title?: string | React.ReactNode;
+  name?: string | React.ReactNode;
+  subtitle?: string | React.ReactNode;
+  description?: string | React.ReactNode;
   popular?: boolean;
+  isPopular?: boolean;
   badgeText?: string;
+  badge?: string;
   price?: string;
-  features: PricingFeature[];
+  period?: string;
+  features: (PricingFeature | string)[];
   buttonText?: string;
+  ctaText?: string;
   buttonHref?: string;
+  ctaHref?: string;
 }
 
 interface PricingBlockProps {
@@ -84,7 +91,22 @@ export default function PricingBlock({
     }
   ];
 
-  const tiers = propTiers || defaultTiers;
+  const rawTiers = propTiers || defaultTiers;
+  const tiers = rawTiers.map((tier) => ({
+    ...tier,
+    title: tier.title || tier.name || '',
+    subtitle: tier.subtitle || tier.description || '',
+    popular: tier.popular ?? tier.isPopular ?? false,
+    badgeText: tier.badgeText || tier.badge || '',
+    price: tier.price,
+    features: (tier.features || []).map((f) =>
+      typeof f === 'string'
+        ? { name: f, value: '' }
+        : { name: f.name || '', value: f.value || '' }
+    ),
+    buttonText: tier.buttonText || tier.ctaText || 'Выбрать тариф',
+    buttonHref: tier.buttonHref || tier.ctaHref || '#form',
+  }));
 
   return (
     <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--gradient-cream)', ...sectionStyle }}>

@@ -1,19 +1,26 @@
 import React from 'react';
 import TrustStrip from './TrustStrip';
 
+type TrustItem = { icon?: React.ReactNode; text: React.ReactNode } | string;
+
 type HeroProps = {
   breadcrumbs?: React.ReactNode;
-  superTitle: React.ReactNode;
+  superTitle?: React.ReactNode;
+  badge?: React.ReactNode;
   title: React.ReactNode;
   subtitle: React.ReactNode;
-  primaryCtaText: React.ReactNode;
+  primaryCtaText?: React.ReactNode;
+  primaryButtonText?: React.ReactNode;
   primaryCtaSubtext?: React.ReactNode;
   primaryCtaLink?: string;
+  primaryButtonHref?: string;
   primaryCtaAnalytics?: string;
   secondaryCtaText?: React.ReactNode;
+  secondaryButtonText?: React.ReactNode;
   secondaryCtaLink?: string;
+  secondaryButtonHref?: string;
   urgentHint?: string;
-  trustItems?: { icon?: React.ReactNode; text: React.ReactNode }[];
+  trustItems?: TrustItem[];
   trustPosition?: 'above-cta' | 'below-cta';
 };
 
@@ -34,14 +41,19 @@ type ExtendedHeroProps = HeroProps & {
 export default function MilitaryHero({
   breadcrumbs,
   superTitle,
+  badge,
   title,
   subtitle,
   primaryCtaText,
+  primaryButtonText,
   primaryCtaSubtext,
-  primaryCtaLink = '#form',
+  primaryCtaLink,
+  primaryButtonHref,
   primaryCtaAnalytics,
   secondaryCtaText,
+  secondaryButtonText,
   secondaryCtaLink,
+  secondaryButtonHref,
   urgentHint,
   trustItems = [],
   trustPosition = 'above-cta',
@@ -54,6 +66,11 @@ export default function MilitaryHero({
   rightContent,
   afterTrustContent
 }: ExtendedHeroProps) {
+  const effectiveSuperTitle = superTitle || badge;
+  const effectivePrimaryText = primaryCtaText || primaryButtonText || 'Получить консультацию';
+  const effectivePrimaryLink = primaryCtaLink || primaryButtonHref || '#form';
+  const effectiveSecondaryText = secondaryCtaText || secondaryButtonText;
+  const effectiveSecondaryLink = secondaryCtaLink || secondaryButtonHref;
   const hasRight = Boolean(imageUrl || rightContent);
 
   return (
@@ -87,7 +104,7 @@ export default function MilitaryHero({
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px', flexWrap: 'wrap' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: '#9B7E55', flexShrink: 0 }}></div>
                 <span className="military-hero-supertitle" style={{ textTransform: 'uppercase', letterSpacing: '0.08em', fontSize: 'clamp(11px, 2vw, 14px)', fontWeight: 600, color: 'var(--color-gold-text, #80633F)', overflowWrap: 'anywhere' }}>
-                  {superTitle}
+                  {effectiveSuperTitle}
                 </span>
               </div>
               
@@ -124,12 +141,12 @@ export default function MilitaryHero({
               {/* Primary Call to Action */}
               <div className="military-hero-cta" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px', marginTop: '20px', marginBottom: urgentHint ? '16px' : '24px' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px' }}>
-                  <a href={primaryCtaLink} className="btn btn-primary military-hero-primary-btn" data-analytics={primaryCtaAnalytics || "military_hero_consultation_click"}>
-                    {primaryCtaText}
+                  <a href={effectivePrimaryLink} className="btn btn-primary military-hero-primary-btn" data-analytics={primaryCtaAnalytics || "military_hero_consultation_click"}>
+                    {effectivePrimaryText}
                   </a>
-                  {secondaryCtaText && secondaryCtaLink && (
-                    <a href={secondaryCtaLink} className="btn btn-outline" style={{ padding: '15px 36px', fontSize: '15px' }}>
-                      {secondaryCtaText}
+                  {effectiveSecondaryText && effectiveSecondaryLink && (
+                    <a href={effectiveSecondaryLink} className="btn btn-outline" style={{ padding: '15px 36px', fontSize: '15px' }}>
+                      {effectiveSecondaryText}
                     </a>
                   )}
                 </div>

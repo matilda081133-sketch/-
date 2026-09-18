@@ -4,8 +4,10 @@ import React from 'react';
 
 export interface ProcessStep {
   num?: string;
+  number?: string;
   title: string | React.ReactNode;
-  desc: string | React.ReactNode;
+  desc?: string | React.ReactNode;
+  description?: string | React.ReactNode;
   isBanner?: boolean;
 }
 
@@ -32,8 +34,13 @@ export default function ProcessBlock({
   alignTitle = 'center',
   footerNote
 }: ProcessBlockProps) {
-  const regularSteps = steps.filter(s => !s.isBanner);
-  const bannerSteps = steps.filter(s => s.isBanner);
+  const normalizedSteps = steps.map((s, i) => ({
+    ...s,
+    num: s.num || s.number || String(i + 1).padStart(2, '0'),
+    desc: s.desc || s.description || '',
+  }));
+  const regularSteps = normalizedSteps.filter(s => !s.isBanner);
+  const bannerSteps = normalizedSteps.filter(s => s.isBanner);
 
   // Сценарий: 7 регулярных шагов + 1 баннер (8 элементов всего) -> Ряд 1: 4 шага (01,02,03,04) в grid-4; Ряд 2: 3 шага (05,06,07) + Баннер в grid-4
   const is7Plus1Banner = regularSteps.length === 7 && bannerSteps.length === 1;
