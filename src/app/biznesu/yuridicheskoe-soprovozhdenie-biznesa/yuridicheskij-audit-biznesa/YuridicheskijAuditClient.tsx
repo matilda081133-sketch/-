@@ -457,8 +457,8 @@ export default function YuridicheskijAuditClient() {
         }
         superTitle={
           <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
-            <span style={{ display: 'inline-block' }}>ЮРИДИЧЕСКИЙ АУДИТ КОМПАНИЙ • КОМПЛЕКСНЫЙ ПРАВОВОЙ АНАЛИЗ •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и область</span>
+            <span style={{ display: 'inline-block' }}>ЮРИДИЧЕСКИЙ АУДИТ КОМПАНИЙ • КОМПЛЕКСНЫЙ</span> <br />
+            <span style={{ display: 'inline-block' }}>ПРАВОВОЙ АНАЛИЗ • Липецк и область</span>
           </span>
         }
         title={
@@ -693,34 +693,38 @@ export default function YuridicheskijAuditClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
+          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '40px' }}>
             {urgentCards.map((card, cIdx) => (
               <div
                 key={cIdx}
-                className="urgent-card hover-lift"
+                className="urgent-card"
                 style={{
                   background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '30px 24px',
                   borderTop: '4px solid var(--color-gold)',
-                  padding: '30px 26px',
-                  borderRadius: '0',
-                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  <strong style={{ fontSize: '12.5px', color: 'var(--color-deep-blue)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                    Зона уязвимости
-                  </strong>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                      {card.title}
+                    </div>
+                  </div>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                    {card.desc}
+                  </p>
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.35 }}>
-                  {card.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {card.desc}
-                </p>
               </div>
             ))}
           </div>
@@ -728,35 +732,73 @@ export default function YuridicheskijAuditClient() {
           <div style={{
             background: 'rgba(255, 255, 255, 0.08)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '24px 28px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            gap: '20px'
+            padding: '16px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
+            lineHeight: 1.6
           }}>
-            <div style={{ maxWidth: '680px' }}>
-              <strong style={{ display: 'block', fontSize: '16px', color: '#FFFFFF', marginBottom: '4px' }}>
-                Выявить правовую уязвимость в 10 раз дешевле, чем вести арбитражный процесс
-              </strong>
-              <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.5 }}>
-                Проведём независимый юридический скрининг документации вашей компании с фиксацией персональных рекомендаций.
+            <span style={{ display: 'inline-block' }}>
+              <strong style={{ color: '#FFFFFF' }}>Предупреждение:</strong> Выявить правовую уязвимость в 10 раз дешевле, чем вести арбитражный процесс.
+            </span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>
+              Проведём независимый юридический скрининг документации вашей компании с фиксацией персональных рекомендаций.
+            </span>
+          </div>
+
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              transition: all 0.3s ease !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+              transform: translateY(-2px);
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+              +7 (4742) 20-15-25
+            </a>
+            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить юристу
+            </a>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+              <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+                Срочная консультация
+              </a>
+              <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px' }}>
+                Ответим в рабочее время и согласуем независимый аудит
               </span>
             </div>
-            <a
-              href="#form"
-              className="btn"
-              style={{
-                background: 'var(--color-gold)',
-                color: 'var(--color-deep-blue)',
-                fontWeight: 700,
-                padding: '14px 26px',
-                whiteSpace: 'nowrap',
-                textDecoration: 'none'
-              }}
-            >
-              Срочная диагностика
-            </a>
           </div>
         </div>
       </section>
@@ -765,21 +807,19 @@ export default function YuridicheskijAuditClient() {
       <section className="section bg-white" id="check" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '12px', color: 'var(--color-primary)', fontWeight: 600 }}>
-                Модульная структура
-              </span>
+            <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>
+              Модульная структура
             </div>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', lineHeight: 1.25 }}>
-              Что именно можно проверить в рамках правового аудита
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'inline-block' }}>Что именно можно проверить</span> <br />
+              <span style={{ display: 'inline-block' }}>в рамках правового аудита</span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Вы можете заказать как комплексный аудит всей группы компаний, так и отдельный целевой модуль под конкретную задачу бизнеса:
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px', marginBottom: '48px' }}>
+          <div className="grid grid-4" style={{ gap: '24px', marginBottom: '40px' }}>
             {auditModules.map((mod, idx) => (
               <div
                 key={idx}
@@ -787,9 +827,9 @@ export default function YuridicheskijAuditClient() {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-primary)',
+                  borderTop: '4px solid var(--color-gold)',
                   borderRadius: '0',
-                  padding: '28px 24px',
+                  padding: '30px 24px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -797,21 +837,10 @@ export default function YuridicheskijAuditClient() {
                 }}
               >
                 <div>
-                  <div style={{
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    color: 'var(--color-primary)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.06em',
-                    marginBottom: '10px',
-                    background: 'rgba(23, 50, 77, 0.05)',
-                    padding: '3px 8px',
-                    display: 'inline-block',
-                    borderRadius: '2px'
-                  }}>
+                  <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>
                     Модуль 0{idx + 1}
                   </div>
-                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.35 }}>
+                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.35, fontWeight: 700 }}>
                     {mod.title}
                   </h3>
                   <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 16px 0' }}>
@@ -830,97 +859,186 @@ export default function YuridicheskijAuditClient() {
                 </div>
               </div>
             ))}
+
+            {/* 8-я карточка: Персональный аудит */}
+            <div
+              className="card"
+              style={{
+                background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)',
+                border: '1px solid #1A3956',
+                borderTop: '4px solid var(--color-gold)',
+                borderRadius: '0',
+                padding: '30px 24px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: '0 4px 16px rgba(16, 39, 59, 0.12)',
+                color: '#FFFFFF'
+              }}
+            >
+              <div>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>
+                  Индивидуальный аудит
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', color: '#FFFFFF', margin: '0 0 12px 0', lineHeight: 1.35, fontWeight: 700 }}>
+                  Персональный периметр под вашу отрасль
+                </h3>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, margin: 0 }}>
+                  Сформируем индивидуальный перечень модулей с учётом масштаба бизнеса, количества юридических лиц и специфики контрагентов.
+                </p>
+              </div>
+              <div style={{ marginTop: '20px' }}>
+                <a
+                  href="#form"
+                  className="btn"
+                  style={{
+                    display: 'block',
+                    textAlign: 'center',
+                    backgroundColor: 'var(--color-gold)',
+                    color: 'var(--color-deep-blue)',
+                    fontWeight: 700,
+                    fontSize: '14px',
+                    padding: '12px 20px',
+                    borderRadius: '0',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Заказать расчёт
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Правовые границы */}
           <div style={{
             background: 'var(--gradient-cream)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '28px 32px',
-            marginBottom: '60px'
+            padding: '24px 30px',
+            border: '1px solid var(--color-border)',
+            borderLeftWidth: '4px'
           }}>
-            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '19px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontWeight: 700 }}>
               Правовые границы аудита: что юридическая проверка не заменяет
             </h3>
-            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
               Юридический аудит оценивает исключительно правовую сторону согласованных документов и процедур. Он не является обязательным аудитом бухгалтерской отчётности, налоговой инспекцией, строительно-технической экспертизой или независимой оценкой рыночной стоимости активов. Если для однозначного вывода требуются специальные познания, юрист прямо фиксирует ограничение в письменном отчёте.
             </p>
           </div>
+        </div>
+      </section>
 
-          {/* Согласование периметра */}
-          <div style={{ maxWidth: '780px', marginBottom: '32px' }}>
-            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '24px', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
-              Как согласуется периметр проверки
-            </h3>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+      {/* ═══ БЛОК 5: КАК СОГЛАСУЕТСЯ ПЕРИМЕТР ПРОВЕРКИ (#perimeter) ═══ */}
+      <section className="section bg-light" id="perimeter" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', marginBottom: '48px' }}>
+            <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>
+              Регламент согласования
+            </div>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'inline-block' }}>Как согласуется периметр</span> <br />
+              <span style={{ display: 'inline-block' }}>проверки бизнеса</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Мы не требуем сразу передавать весь архив за 5 лет. Подготовка проходит последовательно и прозрачно:
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '60px' }}>
+          <div className="grid grid-5" style={{ gap: '20px' }}>
             {perimeterSteps.map((step, idx) => (
               <div
                 key={idx}
+                className="card hover-lift"
                 style={{
-                  background: 'var(--color-cream)',
-                  padding: '24px 20px',
-                  borderTop: '2px solid var(--color-primary)'
+                  background: '#FFFFFF',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  borderRadius: '0',
+                  padding: '28px 20px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                  ШАГ {step.num}
-                </span>
-                <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '16px', color: 'var(--color-deep-blue)', margin: '8px 0 8px 0', lineHeight: 1.35 }}>
+                <div style={{
+                  width: '46px',
+                  height: '46px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  border: '2px solid var(--color-gold)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '18px',
+                  fontWeight: 700,
+                  color: 'var(--color-deep-blue)',
+                  marginBottom: '16px'
+                }}>
+                  {step.num}
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.35, fontWeight: 700 }}>
                   {step.title}
-                </h4>
+                </h3>
                 <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
                   {step.desc}
                 </p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Шкала рисков */}
-          <div style={{ maxWidth: '780px', marginBottom: '24px' }}>
-            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '24px', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
-              Шкала классификации выявленных рисков
-            </h3>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+      {/* ═══ БЛОК 6: ШКАЛА РИСКОВ И ИТОГИ АУДИТА (#results) ═══ */}
+      <section className="section bg-white" id="results" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', marginBottom: '48px' }}>
+            <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>
+              Методология и результаты
+            </div>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              <span style={{ display: 'inline-block' }}>Шкала классификации</span> <br />
+              <span style={{ display: 'inline-block' }}>выявленных рисков</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Все находки ранжируются по утверждённой шкале. Руководитель видит не абстрактный перечень замечаний, а прозрачную приоритизацию:
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '60px' }}>
+          <div className="grid grid-5" style={{ gap: '20px', marginBottom: '56px' }}>
             {riskScale.map((item, idx) => (
               <div
                 key={idx}
+                className="card hover-lift"
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: '170px 1fr 280px',
-                  gap: '20px',
-                  alignItems: 'center',
-                  padding: '16px 20px',
-                  backgroundColor: '#F8FAFC',
+                  background: '#FFFFFF',
                   border: '1px solid var(--color-border)',
-                  borderLeft: `4px solid ${item.badgeColor}`
+                  borderTop: `4px solid ${item.badgeColor}`,
+                  borderRadius: '0',
+                  padding: '24px 20px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span
-                    style={{
-                      width: '10px',
-                      height: '10px',
-                      borderRadius: '50%',
-                      backgroundColor: item.badgeColor,
-                      display: 'inline-block'
-                    }}
-                  />
-                  <strong style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)' }}>{item.level}</strong>
+                <div>
+                  <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    marginBottom: '12px',
+                    padding: '4px 10px',
+                    background: 'rgba(23, 50, 77, 0.04)',
+                    borderRadius: '2px'
+                  }}>
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: item.badgeColor }} />
+                    <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-deep-blue)' }}>{item.level}</span>
+                  </div>
+                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 16px 0' }}>
+                    {item.meaning}
+                  </p>
                 </div>
-                <div style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  {item.meaning}
-                </div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)', lineHeight: 1.45 }}>
+                <div style={{ borderTop: '1px solid var(--color-border-light)', paddingTop: '12px', fontSize: '12px', color: 'var(--color-text-muted)', lineHeight: 1.45 }}>
                   <strong style={{ color: 'var(--color-deep-blue)' }}>Действие:</strong> {item.action}
                 </div>
               </div>
@@ -929,57 +1047,76 @@ export default function YuridicheskijAuditClient() {
 
           {/* Что получает клиент & Пример находки */}
           <div className="grid grid-2" style={{ gap: '32px' }}>
-            <div style={{
-              background: '#FFFFFF',
-              padding: '32px',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)'
-            }}>
-              <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '20px', color: 'var(--color-deep-blue)', margin: '0 0 16px 0' }}>
+            <div
+              className="card"
+              style={{
+                background: '#FFFFFF',
+                padding: '36px 32px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-primary)',
+                borderRadius: '0',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+              }}
+            >
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '20px', color: 'var(--color-deep-blue)', margin: '0 0 20px 0', fontWeight: 700 }}>
                 Что получает руководство по итогам аудита
-              </h4>
-              <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>
-                <li>Чёткое описание согласованного периметра и ограничений проверки</li>
-                <li>Перечень всех изученных договоров, актов и решений органов управления</li>
-                <li>Структурированный реестр рисков со ссылками на пункты и нормы права</li>
-                <li>Оценку критичности каждого замечания по утверждённой шкале</li>
-                <li>Первоочередной шаг и пошаговую дорожную карту исправлений</li>
-                <li>Очную либо дистанционную презентацию результатов первому лицу</li>
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                {[
+                  'Чёткое описание согласованного периметра и ограничений проверки',
+                  'Перечень всех изученных договоров, актов и решений органов управления',
+                  'Структурированный реестр рисков со ссылками на пункты и нормы права',
+                  'Оценку критичности каждого замечания по утверждённой шкале',
+                  'Первоочередной шаг и пошаговую дорожную карту исправлений',
+                  'Очную либо дистанционную презентацию результатов первому лицу'
+                ].map((deliv, dIdx) => (
+                  <li key={dIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>{deliv}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            <div style={{
-              background: 'var(--color-cream)',
-              padding: '32px',
-              border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-gold)'
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                <span style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+            <div
+              className="card"
+              style={{
+                background: 'var(--gradient-cream)',
+                padding: '36px 32px',
+                border: '1px solid var(--color-border)',
+                borderTop: '4px solid var(--color-gold)',
+                borderRadius: '0',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                   Пример оформления в отчёте
                 </span>
                 <span style={{
                   fontSize: '11px',
-                  padding: '2px 8px',
-                  backgroundColor: 'rgba(220, 38, 38, 0.12)',
-                  color: '#dc2626',
+                  padding: '3px 10px',
+                  backgroundColor: 'rgba(234, 88, 12, 0.12)',
+                  color: '#ea580c',
                   fontWeight: 700,
                   borderRadius: '2px'
                 }}>
                   Уровень: Высокий
                 </span>
               </div>
-              <h5 style={{ fontFamily: 'var(--font-serif)', fontSize: '16.5px', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', fontWeight: 700, lineHeight: 1.35 }}>
                 Находка: Подписание договоров без подтверждения полномочий
-              </h5>
-              <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <div>
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                <div style={{ background: '#FFFFFF', padding: '12px 16px', borderLeft: '3px solid var(--color-primary)' }}>
                   <strong style={{ color: 'var(--color-deep-blue)' }}>Основание:</strong> Выборка контрактов за 2025 г., отсутствие доверенностей в архиве.
                 </div>
-                <div>
+                <div style={{ background: '#FFFFFF', padding: '12px 16px', borderLeft: '3px solid #ea580c' }}>
                   <strong style={{ color: 'var(--color-deep-blue)' }}>Риск:</strong> Возможность оспаривания сделок и отказа контрагентов от оплаты поставленного товара.
                 </div>
-                <div>
+                <div style={{ background: '#FFFFFF', padding: '12px 16px', borderLeft: '3px solid var(--color-gold)' }}>
                   <strong style={{ color: 'var(--color-deep-blue)' }}>Рекомендация:</strong> Актуализировать матрицу полномочий, выдать нотариальные доверенности и ввести входной контроль договоров.
                 </div>
               </div>

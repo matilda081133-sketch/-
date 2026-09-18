@@ -846,8 +846,7 @@ export default function VzyskanieClient() {
         <div className="container">
           <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
-              <span style={{ display: 'inline-block' }}>Когда нельзя затягивать</span> <br />
-              <span style={{ display: 'inline-block' }}>со взысканием</span>
+              Когда нельзя затягивать со взысканием
             </h2>
             <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', marginBottom: '40px', maxWidth: '720px', lineHeight: 1.6 }}>

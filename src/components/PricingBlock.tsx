@@ -263,9 +263,9 @@ export default function PricingBlock({
             marginTop: '40px', 
             background: 'var(--color-white)', 
             border: '1px solid var(--color-border)',
-            borderTop: '4px solid var(--color-primary)', 
-            boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)', 
-            padding: '36px 32px', 
+            borderTop: '3px solid var(--color-primary)', 
+            boxShadow: '0 10px 30px rgba(16, 39, 59, 0.12), 0 2px 8px rgba(16, 39, 59, 0.08)', 
+            padding: '38px 40px', 
             borderRadius: '0', 
             display: 'flex', 
             flexWrap: 'wrap', 
@@ -278,11 +278,11 @@ export default function PricingBlock({
             marginRight: 'auto'
           }}>
             <div style={{ flex: '1 1 400px' }}>
-              <h3 style={{ fontSize: '22px', marginBottom: '10px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontWeight: 700 }}>{ctaTitle}</h3>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>{ctaSubtitle}</p>
+              <h3 style={{ fontSize: '24px', marginBottom: '10px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontWeight: 600 }}>{ctaTitle}</h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>{ctaSubtitle}</p>
             </div>
             <div style={{ flexShrink: 0 }}>
-              <a href={ctaButtonLink || '#form'} className="btn btn-primary" style={{ padding: '14px 32px', fontSize: '15px', display: 'inline-block' }}>{ctaButtonText}</a>
+              <a href={ctaButtonLink || '#form'} className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '15px', borderRadius: '0', whiteSpace: 'nowrap', display: 'inline-block' }}>{ctaButtonText}</a>
             </div>
           </div>
         )}

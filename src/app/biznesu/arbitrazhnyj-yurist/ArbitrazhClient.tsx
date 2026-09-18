@@ -591,7 +591,7 @@ export default function ArbitrazhClient() {
         imageSubtitle="Специалист по арбитражным спорам и защите бизнеса, куратор направления"
         imageObjectPosition="center 15%"
         afterTrustContent={
-          <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, margin: '16px 0 24px 0', lineHeight: 1.5, fontWeight: 500 }}>
+          <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, margin: '16px 0 24px 0', lineHeight: 1.55, fontWeight: 500, maxWidth: '560px' }}>
             Дело передаём юристу по арбитражным спорам<br />после первичного анализа документов и стадии процесса.
           </p>
         }
@@ -883,19 +883,17 @@ export default function ArbitrazhClient() {
           </div>
 
           {/* Зона связи */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
-                +7 (4742) 20-15-25
-              </a>
-              <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
-                Позвонить юристу
-              </a>
-              <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
-                Сообщить о документе
-              </a>
-            </div>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }}>
+              +7 (4742) 20-15-25
+            </a>
+            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Сообщить о документе
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
               Ответим в рабочее время и согласуем процессуальные действия
             </span>
           </div>

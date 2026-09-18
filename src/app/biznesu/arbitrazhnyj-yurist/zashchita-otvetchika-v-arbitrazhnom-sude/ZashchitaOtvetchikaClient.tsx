@@ -278,7 +278,11 @@ export default function ZashchitaOtvetchikaClient() {
 
   const cases: CaseData[] = [
     {
-      category: 'Договор поставки • АС Липецкой области',
+      category: (
+        <>
+          Договор поставки • АС<br />Липецкой области
+        </>
+      ),
       title: (
         <>
           Снижение неустойки поставщика на 82% <br />
@@ -290,7 +294,11 @@ export default function ZashchitaOtvetchikaClient() {
       result: 'Суд снизил неустойку на 2,54\u00A0млн\u00A0₽ и утвердил комфортный график погашения остатка.'
     },
     {
-      category: 'Строительный подряд • АС Воронежской области',
+      category: (
+        <>
+          Строительный подряд • АС<br />Воронежской области
+        </>
+      ),
       title: (
         <>
           Встречный иск подрядчика: отказ истцу и взыскание <br />
@@ -312,7 +320,11 @@ export default function ZashchitaOtvetchikaClient() {
       )
     },
     {
-      category: 'Обеспечительные меры • АС Липецкой области',
+      category: (
+        <>
+          Обеспечительные меры • АС<br />Липецкой области
+        </>
+      ),
       title: 'Снятие ареста с расчётных счетов производственного предприятия',
       problem: 'Истец добился ареста счетов завода на сумму 12\u00A0млн\u00A0₽, что остановило выплату зарплат 150 работникам.',
       action: 'Подали срочное ходатайство об отмене мер, доказали несоразмерность ограничений и стабильное финансовое положение предприятия.',
@@ -601,21 +613,21 @@ export default function ZashchitaOtvetchikaClient() {
             ))}
           </div>
 
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
-                +7 (4742) 20-15-25
-              </a>
-              <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
-                Срочная консультация
-              </a>
-              <a href="#form" className="btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+              +7 (4742) 20-15-25
+            </a>
+            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Срочная консультация
+            </a>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+              <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
                 Передать иск на анализ
               </a>
+              <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px' }}>
+                Ответим в рабочее время и согласуем процессуальные действия
+              </span>
             </div>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
-              Ответим в рабочее время и согласуем процессуальные действия
-            </span>
           </div>
         </div>
       </section>

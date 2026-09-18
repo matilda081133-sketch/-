@@ -73,7 +73,11 @@ export default function YuridicheskoeSoprovozhdenieClient() {
       href: '/biznesu/dogovornoe-pravo/'
     },
     {
-      title: 'Взыскание задолженности и арбитраж',
+      title: (
+        <>
+          Взыскание задолженности<br />и арбитраж
+        </>
+      ),
       desc: 'Досудебное урегулирование, взыскание долгов с юрлиц в Арбитражном суде Липецкой области и исполнительное производство.',
       href: '/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/'
     },
@@ -88,7 +92,11 @@ export default function YuridicheskoeSoprovozhdenieClient() {
       href: '/biznesu/trudovye-spory-s-rabotnikami/'
     },
     {
-      title: 'Банкротство бизнеса и защита КДЛ',
+      title: (
+        <>
+          Банкротство бизнеса<br />и защита КДЛ
+        </>
+      ),
       desc: 'Сопровождение компаний при кризисе, защита директора от субсидиарной ответственности и возврат долгов через банкротство.',
       href: '/biznesu/bankrotstvo-biznesa/'
     }
@@ -356,8 +364,8 @@ export default function YuridicheskoeSoprovozhdenieClient() {
         }
         superTitle={
           <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
-            <span style={{ display: 'inline-block' }}>ЮРИДИЧЕСКИЕ УСЛУГИ ДЛЯ БИЗНЕСА • АУТСОРСИНГ •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и область</span>
+            <span style={{ display: 'inline-block' }}>ЮРИДИЧЕСКИЕ УСЛУГИ ДЛЯ БИЗНЕСА •</span> <br />
+            <span style={{ display: 'inline-block' }}>АУТСОРСИНГ • Липецк и область</span>
           </span>
         }
         title={
@@ -406,14 +414,14 @@ export default function YuridicheskoeSoprovozhdenieClient() {
           {
             text: (
               <span>
-                <strong>Единое окно</strong> для обращений генерального директора и руководителей подразделений
+                <strong>Единое окно</strong> для обращений генерального директора<br />и руководителей подразделений
               </span>
             )
           },
           {
             text: (
               <span>
-                <strong>Команда профильных юристов</strong>: договоры, арбитраж, налоги, кадры и банкротство
+                <strong>Команда профильных юристов</strong>: договоры,<br />арбитраж, налоги, кадры и банкротство
               </span>
             )
           }
@@ -595,34 +603,38 @@ export default function YuridicheskoeSoprovozhdenieClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
+          <div className="grid grid-3" style={{ gap: '20px', marginBottom: '40px' }}>
             {urgentCards.map((card, cIdx) => (
               <div
                 key={cIdx}
-                className="urgent-card hover-lift"
+                className="urgent-card"
                 style={{
                   background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '30px 24px',
                   borderTop: '4px solid var(--color-gold)',
-                  padding: '30px 26px',
-                  borderRadius: '0',
-                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  <strong style={{ fontSize: '12.5px', color: 'var(--color-deep-blue)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                    Зона риска
-                  </strong>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
+                      {card.title}
+                    </div>
+                  </div>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                    {card.desc}
+                  </p>
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.35 }}>
-                  {card.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {card.desc}
-                </p>
               </div>
             ))}
           </div>
@@ -630,35 +642,73 @@ export default function YuridicheskoeSoprovozhdenieClient() {
           <div style={{
             background: 'rgba(255, 255, 255, 0.08)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '24px 28px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            gap: '20px'
+            padding: '16px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
+            lineHeight: 1.6
           }}>
-            <div style={{ maxWidth: '680px' }}>
-              <strong style={{ display: 'block', fontSize: '16px', color: '#FFFFFF', marginBottom: '4px' }}>
-                Предупредить проблему в договоре в 10 раз дешевле, чем судиться в арбитраже
-              </strong>
-              <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.5 }}>
-                Выстроим надёжный превентивный контроль входящих контрактов и претензий с первого дня сотрудничества.
+            <span style={{ display: 'inline-block' }}>
+              <strong style={{ color: '#FFFFFF' }}>Предупреждение:</strong> Предупредить проблему в договоре в 10 раз дешевле, чем судиться в арбитраже.
+            </span> <br className="hidden-mobile" />
+            <span style={{ display: 'inline-block' }}>
+              Выстроим надёжный превентивный контроль входящих контрактов и претензий с первого дня сотрудничества.
+            </span>
+          </div>
+
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              transition: all 0.3s ease !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+              transform: translateY(-2px);
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+              +7 (4742) 20-15-25
+            </a>
+            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить юристу
+            </a>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+              <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+                Срочная консультация
+              </a>
+              <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px' }}>
+                Ответим в рабочее время и согласуем формат поддержки
               </span>
             </div>
-            <a
-              href="#form"
-              className="btn"
-              style={{
-                background: 'var(--color-gold)',
-                color: 'var(--color-deep-blue)',
-                fontWeight: 700,
-                padding: '14px 26px',
-                whiteSpace: 'nowrap',
-                textDecoration: 'none'
-              }}
-            >
-              Срочная консультация
-            </a>
           </div>
         </div>
       </section>
