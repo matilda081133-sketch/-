@@ -288,7 +288,7 @@ export default function ZashchitaOtTrebovaniyClient() {
         secondaryCtaLink="tel:+79103503111"
         imageUrl="/images/smolyaninova.jpg"
         imageName="Смольянинова Марина Валерьевна"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре» • куратор направления"
       />
 
       {/* ═══ БЛОК 2: ЧТО СДЕЛАТЬ СЕЙЧАС (СРОЧНЫЙ БЛОК) ═══ */}

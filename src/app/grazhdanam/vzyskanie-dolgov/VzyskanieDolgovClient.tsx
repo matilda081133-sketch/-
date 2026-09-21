@@ -329,7 +329,7 @@ export default function VzyskanieDolgovClient() {
         secondaryCtaLink="tel:+74742201525"
         imageUrl="/images/smolyaninova.jpg"
         imageName="Смольянинова Марина Валерьевна"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре» • куратор направления"
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
