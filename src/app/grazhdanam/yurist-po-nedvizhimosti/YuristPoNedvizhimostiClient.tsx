@@ -568,8 +568,6 @@ export default function YuristPoNedvizhimostiClient() {
                         <line x1="90" y1="10" x2="90" y2="90" stroke="#10273B" strokeWidth="1.2" />
                         <line x1="90" y1="50" x2="180" y2="50" stroke="#10273B" strokeWidth="1.2" />
                         <line x1="20" y1="55" x2="90" y2="55" stroke="#10273B" strokeWidth="1.2" strokeDasharray="2 2" />
-                        <path d="M90 35 A15 15 0 0 0 75 50" fill="none" stroke="#C1A066" strokeWidth="0.8" />
-                        <path d="M110 50 A15 15 0 0 0 125 35" fill="none" stroke="#C1A066" strokeWidth="0.8" />
                         <text x="30" y="36" fill="#10273B" fontSize="6.5" fontWeight="bold">Гостиная 22.4 м²</text>
                         <text x="30" y="75" fill="#10273B" fontSize="6.5" fontWeight="bold">Кухня 12.8 м²</text>
                         <text x="100" y="32" fill="#10273B" fontSize="6.5" fontWeight="bold">Спальня 16.5 м²</text>
