@@ -728,171 +728,224 @@ export default function OsparivanieReshenijFnsClient() {
       {/* ═══ БЛОК 9: FAQ ═══ */}
       <FAQBlock items={faqs} />
 
-      {/* ═══ БЛОК 10: СВЯЗАННЫЕ УСЛУГИ ═══ */}
-      <section style={{ padding: '60px 0', background: 'var(--color-bg-light)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <h2
-            style={{
-              fontSize: '26px',
-              fontWeight: 800,
-              color: 'var(--color-text-main)',
-              marginBottom: '24px',
-              textAlign: 'center'
-            }}
-          >
-            Связанные налоговые услуги
-          </h2>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '16px'
-            }}
-          >
-            <Link
-              href="/biznesu/nalogovyj-yurist-dlya-biznesa/"
+      {/* ═══ БЛОК 10: СВЯЗАННЫЕ НАЛОГОВЫЕ УСЛУГИ — КАНОНИЧЕСКИЙ ШАБЛОН ═══ */}
+      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--color-bg-light)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
               style={{
-                background: '#ffffff',
-                padding: '20px',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                color: 'var(--color-text-main)',
-                border: '1px solid rgba(0,0,0,0.06)',
-                fontWeight: 600,
-                fontSize: '15px',
-                display: 'block'
+                fontSize: '12.5px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                marginBottom: '12px'
               }}
             >
-              ← Все услуги налогового юриста
+              СМЕЖНЫЕ НАПРАВЛЕНИЯ
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Связанные налоговые</span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>услуги</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Комплексная защита налоговых интересов бизнеса: от сопровождения проверок до досудебного и судебного обжалования решений инспекций и уголовно-правовой защиты.
+            </p>
+          </div>
+
+          <div className="grid grid-4" style={{ gap: '24px' }}>
+            <Link href="/biznesu/nalogovyj-yurist-dlya-biznesa/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Все услуги налогового юриста
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Комплексное налоговое консультирование бизнеса, аудит фискальных рисков и выстраивание правовой защиты.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
             </Link>
-            <Link
-              href="/biznesu/nalogovyj-yurist-dlya-biznesa/soprovozhdenie-nalogovyh-proverok/"
-              style={{
-                background: '#ffffff',
-                padding: '20px',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                color: 'var(--color-text-main)',
-                border: '1px solid rgba(0,0,0,0.06)',
-                fontWeight: 600,
-                fontSize: '15px',
-                display: 'block'
-              }}
-            >
-              Сопровождение налоговых проверок →
+
+            <Link href="/biznesu/nalogovyj-yurist-dlya-biznesa/soprovozhdenie-nalogovyh-proverok/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Сопровождение налоговых проверок
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Правовой контроль камеральных и выездных проверок ИФНС, участие в допросах свидетелей и подготовка возражений.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
             </Link>
-            <Link
-              href="/biznesu/nalogovyj-yurist-dlya-biznesa/zashchita-pri-obvinenii-v-droblenii-biznesa/"
-              style={{
-                background: '#ffffff',
-                padding: '20px',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                color: 'var(--color-text-main)',
-                border: '1px solid rgba(0,0,0,0.06)',
-                fontWeight: 600,
-                fontSize: '15px',
-                display: 'block'
-              }}
-            >
-              Защита при дроблении бизнеса →
+
+            <Link href="/biznesu/nalogovyj-yurist-dlya-biznesa/zashchita-pri-obvinenii-v-droblenii-biznesa/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Защита при дроблении бизнеса
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Правовой анализ группы компаний, защита деловой цели разделения и применение налоговой амнистии 2025–2030.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
             </Link>
-            <Link
-              href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/"
-              style={{
-                background: '#ffffff',
-                padding: '20px',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                color: 'var(--color-text-main)',
-                border: '1px solid rgba(0,0,0,0.06)',
-                fontWeight: 600,
-                fontSize: '15px',
-                display: 'block'
-              }}
-            >
-              Защита по ст. 199 УК РФ →
+
+            <Link href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Защита по ст. 199 УК РФ
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Уголовно-правовая защита руководителей и учредителей при налоговых проверках СК РФ и возбуждении уголовных дел.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 11: ФОРМА И КОНТАКТЫ ═══ */}
-      <section id="form" style={{ padding: '70px 0', background: '#ffffff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '40px',
-              alignItems: 'start'
-            }}
-          >
-            <div>
-              <span
-                style={{
-                  fontSize: '13px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  letterSpacing: '1px',
-                  textTransform: 'uppercase'
-                }}
-              >
-                ОЦЕНКА РЕШЕНИЯ ФНС
-              </span>
-              <h2
-                style={{
-                  fontSize: '32px',
-                  fontWeight: 800,
-                  color: 'var(--color-text-main)',
-                  marginTop: '8px',
-                  marginBottom: '16px'
-                }}
-              >
-                Обсудите оспаривание решения налоговой
+      {/* ═══ БЛОК 11: ФИНАЛЬНАЯ ФОРМА — КАНОНИЧЕСКИЙ ШАБЛОН ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  ОЦЕНКА РЕШЕНИЯ ФНС
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите оспаривание</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>решения налоговой</span>
               </h2>
-              <p
-                style={{
-                  fontSize: '15px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  marginBottom: '24px'
-                }}
-              >
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
                 Укажите дату вынесения или вручения решения, общую сумму доначислений и подавалась ли жалоба в УФНС. Мы свяжемся с вами в течение 15 минут в рабочее время для первичного анализа ситуации.
               </p>
-              <div
-                style={{
-                  background: 'var(--color-bg-light)',
-                  padding: '20px',
-                  borderRadius: '8px',
-                  borderLeft: '4px solid var(--color-gold)',
-                  marginBottom: '24px'
-                }}
-              >
-                <div style={{ fontWeight: 700, fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-                  Конфиденциальность гарантирована
+
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация налогового юриста</strong>
                 </div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
-                  Все сведения охраняются режимом строгой профессиональной и коммерческой тайны.
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Телефон для связи: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                </p>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
+                  Офис в Липецке: ул. Советская, д. 35, оф. 213 (приём по записи)
                 </div>
               </div>
-              <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
-                Офис в Липецке: <strong>ул. Советская, д. 35, оф. 213</strong>
-                <br />
-                Телефон для связи: <strong>+7 (4742) 20-15-25</strong>
+
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность гарантирована</strong>
+                Все сведения охраняются режимом строгой профессиональной и коммерческой тайны.
               </div>
             </div>
 
-            <div
-              style={{
-                background: 'var(--color-bg-light)',
-                padding: '32px',
-                borderRadius: '12px',
-                border: '1px solid rgba(0,0,0,0.08)'
-              }}
-            >
-              <ContactsForm />
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Написать нам"
+                subtitle="Оставьте имя и номер телефона. При желании кратко опишите ситуацию — это поможет юристу подготовиться к разговору."
+                subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                buttonText="Оставить заявку"
+                commentPlaceholder="Кратко опишите решение: сумма доначислений, статьи НК РФ, текущая стадия…"
+                hiddenFields={[
+                  { name: 'source_page', value: '/biznesu/nalogovyj-yurist-dlya-biznesa/osparivanie-donachislenij-i-reshenij-fns/' },
+                  { name: 'service', value: 'Оспаривание решений ФНС' },
+                  { name: 'direction', value: 'tax-disputes' }
+                ]}
+              />
             </div>
           </div>
         </div>

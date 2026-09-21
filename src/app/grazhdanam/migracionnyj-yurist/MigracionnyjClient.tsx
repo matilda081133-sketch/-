@@ -368,9 +368,21 @@ export default function MigracionnyjClient() {
       </section>
 
       {/* ═══ БЛОК 3: С КАКИМИ СИТУАЦИЯМИ МЫ ПОМОГАЕМ ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      <section id="situations" className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
+              style={{
+                fontSize: '12.5px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                marginBottom: '12px'
+              }}
+            >
+              СИТУАЦИИ И ВЫЗОВЫ
+            </div>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>С какими ситуациями</span>{' '}
               <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>мы помогаем гражданам</span>
@@ -380,124 +392,191 @@ export default function MigracionnyjClient() {
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '28px' }}>
+          <div className="grid grid-3" style={{ gap: '24px' }}>
             {[
               {
                 tag: 'Въезд / Граница',
                 title: (
-                  <>
+                  <span>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Не пускают в Россию</span>{' '}
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или поставили запрет въезда</span>
-                  </>
+                  </span>
                 ),
-                desc: 'Установим орган и статью закона (114-ФЗ), истребуем акт, оценим гуманитарные и семейные основания для отмены ограничения.'
+                desc: 'Установим орган и статью закона (114-ФЗ), истребуем акт, оценим гуманитарные и семейные основания для отмены ограничения.',
+                btnText: 'Снять запрет въезда'
               },
               {
                 tag: 'Суд / Выдворение',
                 title: (
-                  <>
+                  <span>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Суд вынес решение</span>{' '}
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>об административном выдворении</span>
-                  </>
+                  </span>
                 ),
-                desc: 'Проверим постановление и дату его получения, подготовим жалобу, представим доказательства невиновности или несоразмерности наказания. Основания и порядок освобождения из ЦВСИГ оценим отдельно по судебным актам.'
+                desc: 'Проверим постановление и дату его получения, подготовим жалобу, представим доказательства невиновности или несоразмерности наказания. Основания и порядок освобождения из ЦВСИГ оценим отдельно по судебным актам.',
+                btnText: 'Обжаловать выдворение'
               },
               {
                 tag: 'Статус / Аннулирование',
                 title: (
-                  <>
+                  <span>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Отказали в РВП или ВНЖ</span>{' '}
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>либо аннулировали документ</span>
-                  </>
+                  </span>
                 ),
-                desc: 'Проверим обоснованность отказа МВД, подготовим административный иск и защитим право проживать в России.'
+                desc: 'Проверим обоснованность отказа МВД, подготовим административный иск и защитим право проживать в России.',
+                btnText: 'Оспорить отказ'
               },
               {
                 tag: 'Режим высылки',
                 title: (
-                  <>
+                  <span>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Внесли в реестр</span>{' '}
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>контролируемых лиц</span>
-                  </>
+                  </span>
                 ),
-                desc: 'Установим основание включения в реестр, проверим исходное решение и определим законный маршрут исключения. После появления основания для исключения проконтролируем актуализацию сведений и прекращение ограничений.'
+                desc: 'Установим основание включения в реестр, проверим исходное решение и определим законный маршрут исключения. После появления основания для исключения проконтролируем актуализацию сведений и прекращение ограничений.',
+                btnText: 'Исключить из реестра'
               },
               {
                 tag: 'Проживание / РВП и ВНЖ',
                 title: (
-                  <>
+                  <span>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оформление РВП</span>{' '}
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>или вида на жительство (ВНЖ)</span>
-                  </>
+                  </span>
                 ),
-                desc: 'Определим подходящее основание (по квоте или без квоты), соберём безупречный комплект документов и сопроводим подачу.'
+                desc: 'Определим подходящее основание (по квоте или без квоты), соберём безупречный комплект документов и сопроводим подачу.',
+                btnText: 'Оформить статус'
               },
               {
                 tag: 'Паспорт / Гражданство',
                 title: (
-                  <>
+                  <span>
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Приём в гражданство</span>{' '}
                     <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Российской Федерации</span>
-                  </>
+                  </span>
                 ),
-                desc: 'Проверим применимое основание по закону № 138-ФЗ, выявим противоречия и основания возможного отклонения, подготовим заявление и сопроводим процедуру до решения и Присяги в согласованном объёме.'
+                desc: 'Проверим применимое основание по закону № 138-ФЗ, выявим противоречия и основания возможного отклонения, подготовим заявление и сопроводим процедуру до решения и Присяги в согласованном объёме.',
+                btnText: 'Получить гражданство'
               }
             ].map((item, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '36px 30px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease'
-              }}>
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              <div
+                key={i}
+                className="card hover-lift"
+                style={{
+                  position: 'relative',
+                  overflow: 'hidden',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  padding: '28px 22px',
+                  borderRadius: '0',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
 
-                <div style={{ 
-                  fontSize: '12px', 
-                  fontWeight: 700, 
-                  color: 'var(--color-gold)', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.08em', 
-                  marginBottom: '14px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.tag}
+                <div>
+                  <div
+                    style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: 'var(--color-primary)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      marginBottom: '10px',
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '2px 6px',
+                      display: 'inline-block'
+                    }}
+                  >
+                    {item.tag}
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '17px',
+                      fontWeight: 600,
+                      color: 'var(--color-deep-blue)',
+                      marginBottom: '10px',
+                      lineHeight: '1.3'
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: '13.5px',
+                      color: 'var(--color-text-secondary)',
+                      lineHeight: '1.5',
+                      margin: 0
+                    }}
+                  >
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 style={{ 
-                  fontFamily: 'var(--font-serif)', 
-                  fontSize: '17px', 
-                  fontWeight: 600,
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 14px 0',
-                  lineHeight: 1.4,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.title}
-                </h3>
-                <p style={{ 
-                  fontSize: '15px', 
-                  color: 'var(--color-text-secondary)', 
-                  lineHeight: 1.6,
-                  margin: 0,
-                  position: 'relative',
-                  zIndex: 1
-                }}>
-                  {item.desc}
-                </p>
+
+                <a
+                  href="#form"
+                  className="situation-btn"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '16px',
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = 'var(--color-gold)';
+                    const svg = e.currentTarget.querySelector('svg');
+                    if (svg) {
+                      svg.style.transform = 'translateX(4px)';
+                      svg.style.stroke = 'var(--color-gold)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'var(--color-primary)';
+                    const svg = e.currentTarget.querySelector('svg');
+                    if (svg) {
+                      svg.style.transform = 'translateX(0)';
+                      svg.style.stroke = 'currentColor';
+                    }
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
+                  }}
+                >
+                  <span>{item.btnText}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.25s ease, stroke 0.25s ease' }}>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
               </div>
             ))}
           </div>
