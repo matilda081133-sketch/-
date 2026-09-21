@@ -149,7 +149,9 @@ export default function KreditnyjYuristClient() {
         'судебный приказ о взыскании',
         'задолженности по кредиту'
       ],
-      desc: 'Дата получения, суд, взыскатель, сумма и наличие оснований восстановить срок, если он пропущен.'
+      desc: 'Дата получения, суд, взыскатель, сумма и наличие оснований восстановить срок, если он пропущен.',
+      linkHref: '/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/',
+      linkText: 'Проверить срок отмены'
     },
     {
       tag: 'Коллекторы',
@@ -176,7 +178,9 @@ export default function KreditnyjYuristClient() {
         'уже арестовал счета',
         'или удерживает доход'
       ],
-      desc: 'Это отдельная стадия. Нужен переход к юристу по исполнительному производству, если спор связан с действиями ФССП.'
+      desc: 'Это отдельная стадия. Нужен переход к юристу по исполнительному производству, если спор связан с действиями ФССП.',
+      linkHref: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/',
+      linkText: 'Перейти к исполнительному производству'
     }
   ];
 
@@ -248,8 +252,8 @@ export default function KreditnyjYuristClient() {
     },
     {
       num: '06',
-      title: 'Контроль исполнения решения',
-      desc: 'Получаем судебный акт, проверяем правильность расчёта, прекращение начислений и защищаем от незаконных действий приставов.'
+      title: 'Определение следующего юридического маршрута',
+      desc: 'После завершения кредитного спора определяем дальнейшие действия. Вопросы арестов, удержаний и действий приставов передаём в направление по исполнительному производству.'
     }
   ];
 
@@ -596,35 +600,61 @@ export default function KreditnyjYuristClient() {
                   </p>
                 </div>
 
-                <a
-                  href="#form"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    color: 'var(--color-primary)',
-                    fontSize: '13.5px',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    marginTop: '20px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.getElementById('form');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    else window.location.hash = 'form';
-                  }}
-                >
-                  <span>Защитить права</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
+                {item.linkHref ? (
+                  <Link
+                    href={item.linkHref}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--color-primary)',
+                      fontSize: '13.5px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      marginTop: '20px',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
+                  >
+                    <span>{item.linkText}</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </Link>
+                ) : (
+                  <a
+                    href="#form"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--color-primary)',
+                      fontSize: '13.5px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      marginTop: '20px',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById('form');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      else window.location.hash = 'form';
+                    }}
+                  >
+                    <span>Защитить права</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                )}
               </div>
             ))}
 

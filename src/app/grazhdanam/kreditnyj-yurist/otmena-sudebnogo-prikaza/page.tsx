@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import OtmenaPrikazaClient from './OtmenaPrikazaClient';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://dejure-help.ru'),
   title: 'Отмена судебного приказа в Липецке — юрист | Де-Юре',
   description: 'Поможем отменить судебный приказ по кредиту или займу: проверим срок, подготовим возражения, обоснуем позднюю подачу и сопроводим прекращение взыскания.',
   alternates: {
@@ -16,10 +17,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: 'https://dejure-help.ru/images/og/otmena-sudebnogo-prikaza.jpg',
         width: 1200,
         height: 630,
-        alt: 'Отмена судебного приказа в Липецке — ЮК Де-Юре',
+        alt: 'Отмена судебного приказа в Липецке — ЮК «Де-Юре»',
       },
     ],
   },
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Отмена судебного приказа в Липецке | Де-Юре',
     description: 'Поможем отменить судебный приказ по кредиту или займу: проверим срок и подготовим возражения.',
-    images: ['/images/og-image.jpg'],
+    images: ['https://dejure-help.ru/images/og/otmena-sudebnogo-prikaza.jpg'],
   },
 };
 
