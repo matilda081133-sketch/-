@@ -934,10 +934,31 @@ export default function MigracionnyjClient() {
             ))}
           </div>
 
-          <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '720px', margin: 0 }}>
-            <span style={{ display: 'inline-block' }}>Точный состав работы и стоимость фиксируются в договоре</span> <br />
-            <span style={{ display: 'inline-block' }}>после изучения документов и оценки сложности ситуации.</span>
-          </p>
+          <div
+            style={{
+              background: 'rgba(23, 50, 77, 0.04)',
+              border: '1px solid var(--color-border)',
+              borderLeft: '3px solid var(--color-gold)',
+              padding: '18px 24px',
+              borderRadius: '0',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '14px',
+              marginTop: '0'
+            }}
+          >
+            <div style={{ color: 'var(--color-gold)', flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="16" x2="12" y2="12" />
+                <line x1="12" y1="8" x2="12.01" y2="8" />
+              </svg>
+            </div>
+            <p style={{ margin: 0, fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.6, fontStyle: 'italic' }}>
+              <span style={{ display: 'inline-block' }}>Точный состав работы и стоимость фиксируются в договоре</span>{' '}
+              <span style={{ display: 'inline-block' }}>после изучения документов и оценки сложности ситуации.</span>
+            </p>
+          </div>
         </div>
       </section>
 
