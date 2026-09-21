@@ -2,17 +2,17 @@ import { Metadata } from 'next';
 import ZashchitaPriObyskeClient from './ZashchitaPriObyskeClient';
 
 export const metadata: Metadata = {
-  title: 'Адвокат при обыске и выемке в компании в Липецке | Де-Юре',
+  title: 'Защита при обыске и выемке в компании в Липецке | Де-Юре',
   description:
-    'Организуем помощь адвоката при обыске или выемке в компании: документы, техника, сотрудники, протокол и действия после мероприятия. Липецк.',
+    'Срочная помощь при обыске и выемке в офисе компании: выезд адвоката, фиксация нарушений, защита серверов и документов. Липецк и Липецкая область.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: 'Защита бизнеса при обыске и выемке | Де-Юре',
+    title: 'Защита при обыске и выемке в компании | Де-Юре',
     description:
-      'Срочная юридическая помощь компании во время обыска или выемки и после завершения мероприятия.',
+      'Контроль процедуры, фиксация нарушений, защита цифровой инфраструктуры и прав компании во время следственных действий.',
     url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Адвокат при обыске и выемке в компании в Липецке | Де-Юре',
+    title: 'Защита при обыске и выемке в компании в Липецке | Де-Юре',
     description:
-      'Организуем помощь адвоката при обыске или выемке в компании: документы, техника, сотрудники, протокол и действия после мероприятия. Липецк.',
+      'Срочная помощь при обыске и выемке в офисе компании: выезд адвоката, фиксация нарушений, защита серверов и документов. Липецк и Липецкая область.',
     images: ['https://dejure-help.ru/images/og/zashchita-pri-obyske-v-kompanii-og.jpg'],
   },
   alternates: {
@@ -54,6 +54,16 @@ export default function ZashchitaPriObyskePage() {
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person',
+        name: 'Аркадий Евгеньевич Бобкин',
+        jobTitle: 'Директор, управляющий партнёр',
+        url: 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#organization'
         }
       },
       {
@@ -81,17 +91,27 @@ export default function ZashchitaPriObyskePage() {
           {
             '@type': 'ListItem',
             position: 4,
-            name: 'Защита при обыске и выемке',
+            name: 'Защита при обыске в компании',
             item: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/'
           }
         ]
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/#webpage',
+        name: 'Защита при обыске и выемке в компании в Липецке | Де-Юре',
+        description: 'Срочная помощь при обыске и выемке в офисе компании: выезд адвоката, фиксация нарушений, защита серверов и документов. Липецк и Липецкая область.',
+        url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/',
+        about: {
+          '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/#service'
+        }
       },
       {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/#service',
         name: 'Защита при обыске и выемке в компании в Липецке',
         description:
-          'Организуем помощь адвоката при обыске или выемке в компании: документы, техника, сотрудники, протокол и действия после мероприятия. Липецк.',
+          'Срочная помощь при обыске и выемке в офисе компании: выезд адвоката, фиксация нарушений, защита серверов и документов. Липецк и Липецкая область.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'
@@ -100,6 +120,92 @@ export default function ZashchitaPriObyskePage() {
           '@type': 'AdministrativeArea',
           name: 'Липецк и Липецкая область'
         }
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/#faq',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Что сообщить адвокату, если обыск уже начался?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Назовите адрес, наименование компании и органа, данные контактного лица, кто находится на месте и какие документы предъявлены. Если безопасно и допустимо, сохраните реквизиты документа, но не задерживайте обращение ради полного пересказа.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Обязаны ли ждать адвоката до начала обыска?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Универсально обещать приостановку мероприятия до прибытия адвоката нельзя. Нужно заявить о желании получить юридическую помощь и действовать с учётом конкретной процедуры и указаний подключившегося адвоката.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Можно ли не пускать сотрудников правоохранительных органов в офис?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Оценка зависит от полномочий, предъявленных документов и характера действия. Не следует физически препятствовать законным действиям; основания и замечания должен оценить адвокат.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Чем обыск отличается от выемки?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'При выемке обычно речь идёт об определённых предметах или документах, а обыск направлен на их обнаружение. Конкретное основание и порядок определяются процессуальными документами и законом.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Что делать, если изымают компьютеры или сервер?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Нужно зафиксировать, что именно изымается, как описывается и упаковывается, и обсудить с адвокатом применимые ходатайства о копировании информации и сохранении критичных данных. Возможность копирования и изъятия зависит от обстоятельств и норм УПК РФ.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Могут ли во время обыска опрашивать сотрудников?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Сначала важно определить, какое действие предлагают конкретному человеку и в каком статусе. Интересы компании и сотрудника могут различаться, поэтому общая инструкция для всех небезопасна.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Что указывать в замечаниях к протоколу?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'В замечаниях фиксируют существенные расхождения между фактическим ходом мероприятия и его описанием. Формулировки лучше согласовать с участвующим адвокатом, не заменяя их эмоциональной оценкой.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Что делать после окончания обыска?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Сохраните полученные документы, перечень изъятого и внутреннюю хронологию событий, определите затронутые системы и сотрудников. Затем нужно оценить протокол, риски и дальнейшие действия.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Можно ли вернуть изъятые документы и технику?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Порядок зависит от процессуального статуса имущества, оснований изъятия и дальнейших решений по делу. Сначала анализируются протокол, перечень и документы, после чего определяется допустимый способ обращения.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Когда эта страница не подходит?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Если компания получила только запрос или вызов и обыск не проводится, нужна услуга по проверке ОБЭП. Для личного задержания, допроса или обыска дома нужна срочная B2C-помощь адвоката.'
+            }
+          }
+        ]
       }
     ]
   };

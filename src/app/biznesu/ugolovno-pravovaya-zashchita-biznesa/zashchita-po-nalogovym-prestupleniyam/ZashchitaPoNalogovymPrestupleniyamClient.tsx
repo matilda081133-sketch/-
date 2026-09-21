@@ -33,7 +33,7 @@ export default function ZashchitaPoNalogovymPrestupleniyamClient() {
           <span style={{ display: 'inline-block' }}>налогового агента</span>
         </span>
       ),
-      desc: 'Обвинения в неудержании или неперечислении НДФЛ и иных сборов в личных интересах руководства или для операционных нужд компании.',
+      desc: 'Претензии по неудержанию или неперечислению налогов, подлежащих удержанию и перечислению налоговым агентом. Для уголовной квалификации оцениваются размер, умысел и наличие личного интереса.',
       btnText: 'Защита по ст. 199.1'
     },
     {
@@ -106,16 +106,16 @@ export default function ZashchitaPoNalogovymPrestupleniyamClient() {
 
   const urgentRisks = [
     {
-      title: 'Обязательная передача материалов из ФНС в Следственный комитет',
-      desc: 'По п. 3 ст. 32 НК РФ, если недоимка по вступившему в силу решению проверки не погашена в течение 75 дней, инспекция обязана направить материалы в СК РФ для возбуждения уголовного дела.'
+      title: 'Передача материалов в следственные органы',
+      desc: 'При наличии предусмотренных законом условий налоговый орган направляет материалы в следственные органы. Само направление материалов не означает автоматического возбуждения уголовного дела.'
     },
     {
-      title: 'Личная уголовная ответственность физических лиц',
-      desc: 'Юридическое лицо нельзя привлечь к уголовной ответственности. Уголовное дело всегда возбуждается персонально против генерального директора, учредителя или главного бухгалтера.'
+      title: 'Нужно определить статус каждого участника',
+      desc: 'Уголовную ответственность несут физические лица, но уголовное дело может быть возбуждено и по факту события. Круг участников и их процессуальный статус устанавливаются в ходе проверки или расследования.'
     },
     {
-      title: 'Арест личного имущества и счетов компании',
-      desc: 'Для обеспечения гражданского иска о возмещении налогового ущерба следователь незамедлительно ходатайствует об аресте недвижимости, транспорта и банковских счетов руководства.'
+      title: 'Возможны ограничения в отношении имущества',
+      desc: 'Арест имущества и счетов применяется только при наличии оснований и по установленной законом процедуре. Возможность, объём и порядок обжалования ограничений оцениваются по материалам конкретного дела.'
     }
   ];
 
@@ -123,7 +123,7 @@ export default function ZashchitaPoNalogovymPrestupleniyamClient() {
     {
       num: '01',
       title: 'Синхронизация с арбитражным спором против ФНС',
-      desc: 'Координируем позицию защиты с обжалованием решения налогового органа в арбитражном суде. Признание решения инспекции незаконным лишает обвинение базового доказательства.'
+      desc: 'Координируем позицию защиты с обжалованием решения налогового органа в арбитражном суде. Признание решения инспекции незаконным может существенно повлиять на оценку доказательств, но не предопределяет автоматически исход доследственной проверки или уголовного дела.'
     },
     {
       num: '02',
@@ -265,11 +265,11 @@ export default function ZashchitaPoNalogovymPrestupleniyamClient() {
     },
     {
       q: 'Прекращается ли уголовное дело, если полностью погасить недоимку, пени и штраф?',
-      a: 'Да, в соответствии со ст. 76.1 УК РФ и ст. 28.1 УПК РФ лицо, впервые совершившее преступление по ст. 199–199.1 УК РФ, освобождается от уголовной ответственности, если ущерб бюджету возмещен в полном объеме до назначения судебного заседания.'
+      a: 'Закон предусматривает специальные условия освобождения от ответственности для отдельных налоговых составов. Их применимость зависит от статьи, обстоятельств, стадии дела, полноты платежей и соблюдения других требований закона. Автоматическое прекращение дела обещать нельзя.'
     },
     {
       q: 'Как арбитражный спор с ФНС влияет на расследование уголовного дела?',
-      a: 'Хотя нормы об абсолютной преюдиции скорректированы, вступившее в силу решение арбитражного суда в пользу налогоплательщика признает решение ФНС незаконным и исключает факт ущерба бюджету, что разрушает позицию обвинения.'
+      a: 'Решение арбитражного суда учитывается при оценке налоговых обстоятельств и доказательств, но не предопределяет автоматически выводы по уголовному делу. Значение решения определяется с учётом его содержания и остальных материалов.'
     },
     {
       q: 'Что делать, если генерального директора или главного бухгалтера вызывают на опрос в ОЭБиПК?',
@@ -277,26 +277,26 @@ export default function ZashchitaPoNalogovymPrestupleniyamClient() {
     }
   ];
 
-  const relatedServices = [
+    const relatedServices = [
     {
       title: 'Налоговый юрист для бизнеса',
       desc: 'Проверки ФНС, возражения на акты, обжалование доначислений до уголовной стадии.',
       link: '/biznesu/nalogovyj-yurist-dlya-biznesa/'
     },
     {
-      title: 'Корпоративный юрист',
-      desc: 'Защита контроля над ООО, споры участников, исключение участника, дедлоки.',
-      link: '/biznesu/korporativnyj-yurist/'
+      title: 'Защита бизнеса при проверке ОБЭП',
+      desc: 'Анализ законности запросов полиции, подготовка руководства и сотрудников к опросам.',
+      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/'
     },
     {
-      title: 'Разблокировка счёта по 115-ФЗ',
-      desc: 'Снятие ограничений банков, ответы на запросы финмониторинга, реабилитация в МВК.',
-      link: '/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/'
+      title: 'Защита по экономическим преступлениям',
+      desc: 'Защита директоров и собственников по статьям 159, 160, 201 УК РФ.',
+      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-ekonomicheskim-prestupleniyam/'
     },
     {
-      title: 'Банкротство бизнеса',
-      desc: 'Защита руководства от субсидиарной ответственности и оспаривания сделок.',
-      link: '/biznesu/bankrotstvo-biznesa/'
+      title: 'Защита при обыске и выемке в компании',
+      desc: 'Срочный выезд, контроль процедуры, защита цифровой инфраструктуры компании.',
+      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/'
     }
   ];
 
@@ -692,17 +692,27 @@ export default function ZashchitaPoNalogovymPrestupleniyamClient() {
           `}} />
 
           {/* Зона связи */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
-              +7 (910) 350-31-11
-            </a>
-            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
-              Позвонить юристу
-            </a>
-            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
-              Срочная защита
-            </a>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+          <div style={{
+            borderTop: '1px solid rgba(255,255,255,0.15)',
+            paddingTop: '28px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: '20px',
+            flexWrap: 'wrap'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+                +7 (910) 350-31-11
+              </a>
+              <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+                Позвонить юристу
+              </a>
+              <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+                Срочная защита
+              </a>
+            </div>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
               Срочный выезд адвоката по налоговым преступлениям
             </span>
           </div>
@@ -778,37 +788,14 @@ export default function ZashchitaPoNalogovymPrestupleniyamClient() {
         imageUrl="/images/bobkin.jpg"
         imagePosition="center 15%"
         description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Аркадий Евгеньевич координирует выработку стратегии защиты по налоговым преступлениям, привлечение экспертов-аудиторов и работу адвокатов. Проработав 22 года в следственных подразделениях налоговой полиции и МВД, в том числе следователем по особо важным делам и начальником Следственной части, он знает специфику передачи материалов из ФНС и слабые места налоговых обвинений.
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block', lineHeight: 1.65, fontSize: '15.5px' }}>
+            Аркадий Евгеньевич участвует в первичной оценке ситуации и разработке правовой позиции, координирует работу команды специалистов по сложным уголовно-правовым вопросам бизнеса. 22 года работал в следственных подразделениях налоговой полиции и МВД, в том числе следователем по особо важным делам и руководителем Следственной части. При необходимости процессуальную защиту осуществляет независимый адвокат, подключённый к делу.
           </span>,
-          <div
-            key="2"
-            style={{
-              borderLeft: '3px solid var(--color-gold)',
-              paddingLeft: '16px',
-              fontStyle: 'italic',
-              fontSize: '14.5px',
-              color: 'var(--color-deep-blue)',
-              margin: '16px 0 0 0'
-            }}
-          >
-            «По налоговым составам ключевая битва происходит задолго до суда — на стадии проверки обоснованности расчёта недоимки и доказывания отсутствия умысла. Мы знаем эту систему изнутри».
-          </div>,
-          <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>22 года в следственных подразделениях налоговой полиции и Следственного комитета МВД</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Процессуальную защиту доверителей осуществляют практикующие адвокаты партнерской коллегии</span>
-            </li>
-          </ul>,
-          <a key="4" href="/specialisty/bobkin-arkadiy-evgenevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-            Подробнее об опыте куратора →
+          <a key="2" href="/specialisty/bobkin-arkadiy-evgenevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее об Аркадии Евгеньевиче Бобкине →
           </a>
         ]}
-        buttonText="Связаться с куратором"
+        buttonText="Обсудить ситуацию с куратором"
         buttonHref="#form"
       />
 
@@ -952,8 +939,8 @@ export default function ZashchitaPoNalogovymPrestupleniyamClient() {
               </div>
 
               <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Адвокатская тайна и конфиденциальность:</strong>
-                Все переданные сведения и документы охраняются Федеральным законом № 63-ФЗ «Об адвокатской деятельности и адвокатуре в РФ». Не указывайте в форме паспортные данные и коммерческую тайну — защищённый способ передачи согласуем после контакта.
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность обращения</strong>
+                Не указывайте в форме паспортные данные, коммерческую тайну и другие чувствительные сведения. Защищённый способ передачи документов согласуем после первого контакта. После подключения адвоката сведения, связанные с оказанием им юридической помощи, охраняются адвокатской тайной.
               </div>
             </div>
 
@@ -962,7 +949,7 @@ export default function ZashchitaPoNalogovymPrestupleniyamClient() {
                 title="Написать нам"
                 subtitle={
                   <>
-                    <span style={{ display: 'inline-block' }}>Оставьте контакты и суть вопроса. Адвокат свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>Оставьте контакты и суть вопроса. Специалист свяжется с вами</span> <br />
                     <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
                   </>
                 }

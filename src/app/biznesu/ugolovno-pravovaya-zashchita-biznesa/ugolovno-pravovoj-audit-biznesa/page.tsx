@@ -4,15 +4,15 @@ import UgolovnoPravovojAuditClient from './UgolovnoPravovojAuditClient';
 export const metadata: Metadata = {
   title: 'Уголовно-правовой аудит бизнеса в Липецке | Де-Юре',
   description:
-    'Проверяем сделки, процессы, полномочия и документы компании на уголовно-правовые риски. Готовим приоритетные рекомендации для бизнеса.',
+    'Превентивный аудит уголовных рисков компании: анализ договоров, сделок, налоговых схем и управленческих решений. Липецк и Липецкая область.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: 'Уголовно-правовой аудит бизнеса | Де-Юре',
+    title: 'Уголовно-правовой аудит бизнеса в Липецке | Де-Юре',
     description:
-      'Оценим уголовно-правовые риски процессов и решений компании до появления проверки или уголовного дела.',
+      'Анализируем риски сделок, договоров и решений руководства до того, как они привлекут внимание силовых структур.',
     url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Уголовно-правовой аудит бизнеса в Липецке | Де-Юре',
     description:
-      'Проверяем сделки, процессы, полномочия и документы компании на уголовно-правовые риски. Готовим приоритетные рекомендации для бизнеса.',
+      'Превентивный аудит уголовных рисков компании: анализ договоров, сделок, налоговых схем и управленческих решений. Липецк и Липецкая область.',
     images: ['https://dejure-help.ru/images/og/ugolovno-pravovoj-audit-biznesa-og.jpg'],
   },
   alternates: {
@@ -54,6 +54,16 @@ export default function UgolovnoPravovojAuditPage() {
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person',
+        name: 'Аркадий Евгеньевич Бобкин',
+        jobTitle: 'Директор, управляющий партнёр',
+        url: 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#organization'
         }
       },
       {
@@ -87,11 +97,21 @@ export default function UgolovnoPravovojAuditPage() {
         ]
       },
       {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/#webpage',
+        name: 'Уголовно-правовой аудит бизнеса в Липецке | Де-Юре',
+        description: 'Превентивный аудит уголовных рисков компании: анализ договоров, сделок, налоговых схем и управленческих решений. Липецк и Липецкая область.',
+        url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/',
+        about: {
+          '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/#service'
+        }
+      },
+      {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/#service',
         name: 'Уголовно-правовой аудит бизнеса в Липецке',
         description:
-          'Проверяем сделки, процессы, полномочия и документы компании на уголовно-правовые риски. Готовим приоритетные рекомендации для бизнеса.',
+          'Превентивный аудит уголовных рисков компании: анализ договоров, сделок, налоговых схем и управленческих решений. Липецк и Липецкая область.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'
@@ -100,6 +120,52 @@ export default function UgolovnoPravovojAuditPage() {
           '@type': 'AdministrativeArea',
           name: 'Липецк и Липецкая область'
         }
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/#faq',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Чем уголовно-правовой аудит отличается от обычного бухгалтерского или налогового аудита?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Бухгалтерский аудит проверяет правильность проводок и баланса, налоговый — правильность исчисления налогов. Уголовно-правовой аудит оценивает действия руководства глазами следователя: есть ли в сделках признаки обмана, злоупотребления, растраты или сговора, которые могут стать основанием для уголовного дела.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Гарантирует ли аудит, что компанию никогда не проверит ОБЭП или СК?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Нет. Аудит не исключает проверку, претензии правоохранительных органов или возбуждение уголовного дела. Его результат — перечень выявленных обстоятельств, оценка рисков и рекомендации по законным изменениям в документах и процессах компании.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Узнают ли сотрудники о проведении аудита?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Формат проверки определяется собственником. Аудит может проводиться полностью конфиденциально на основе удалённой выгрузки документов без уведомления рядового персонала компании.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Что делать, если в ходе аудита будут обнаружены критические риски?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Мы не просто указываем на проблему, а даём практический алгоритм её закрытия: внесение изменений в документы, заключение мировых соглашений, проведение корректировок в бухучёте или изменение схемы владения.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Как обеспечивается тайна полученных вами сведений?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'До передачи первых документов подписывается двустороннее соглашение о конфиденциальности с фиксацией штрафных санкций. Информация передаётся по зашифрованным каналам связи.'
+            }
+          }
+        ]
       }
     ]
   };

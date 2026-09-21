@@ -111,7 +111,7 @@ export default function UgolovnoPravovayaZashchitaClient() {
     },
     {
       title: 'Передача акта налоговой проверки в следственные органы',
-      desc: 'Срок реакции ограничен: по истечении 75 дней после требования об уплате материалы передаются в СК РФ. Необходимы согласованные действия налоговых юристов и уголовных адвокатов.'
+      desc: 'При наличии предусмотренных законом условий налоговый орган направляет материалы в следственные органы. Само направление материалов не означает автоматического возбуждения уголовного дела. Стадию и порядок действий необходимо определять по решению ФНС, требованиям и сведениям о фактической передаче материалов.'
     }
   ];
 
@@ -357,7 +357,7 @@ export default function UgolovnoPravovayaZashchitaClient() {
     },
     {
       q: 'Кто осуществляет процессуальную защиту руководителя по уголовному делу?',
-      a: 'Процессуальную защиту подозреваемого, обвиняемого или свидетеля осуществляет исключительно профессиональный адвокат с действующим ордером. ЮК «Де-Юре» организует стратегическую координацию, экономическую аналитику и работу адвокатов.'
+      a: 'Процессуальную защиту подозреваемого или обвиняемого осуществляет адвокат. Свидетелю адвокат оказывает юридическую помощь с учётом его процессуального статуса. ЮК «Де-Юре» организует первичную оценку ситуации, разработку общей правовой позиции и согласованную работу профильных специалистов.'
     },
     {
       q: 'Можно ли провести уголовно-правовой аудит, если проверки ещё нет?',
@@ -818,17 +818,27 @@ export default function UgolovnoPravovayaZashchitaClient() {
           `}} />
 
           {/* Зона связи */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
-              +7 (910) 350-31-11
-            </a>
-            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
-              Позвонить юристу
-            </a>
-            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
-              Срочная консультация
-            </a>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+          <div style={{
+            borderTop: '1px solid rgba(255,255,255,0.15)',
+            paddingTop: '28px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: '20px',
+            flexWrap: 'wrap'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+                +7 (910) 350-31-11
+              </a>
+              <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+                Позвонить юристу
+              </a>
+              <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+                Срочная консультация
+              </a>
+            </div>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
               Срочная правовая помощь при проверках и следственных действиях
             </span>
           </div>
@@ -965,10 +975,10 @@ export default function UgolovnoPravovayaZashchitaClient() {
               zIndex: 1
             }}>
               <div style={{ flex: '1 1 auto', minWidth: '280px' }}>
-                <h3 style={{ fontSize: 'clamp(19px, 2.2vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
+                <h2 style={{ fontSize: 'clamp(19px, 2.2vw, 24px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', margin: 0, lineHeight: 1.25 }}>
                   <span style={{ display: 'inline-block' }}>Не обязательно ждать</span> <br />
                   <span style={{ display: 'inline-block' }}>возбуждения уголовного дела</span>
-                </h3>
+                </h2>
               </div>
               <div className="stages-subtitle-right" style={{
                 fontSize: '13.5px',
@@ -1032,37 +1042,10 @@ export default function UgolovnoPravovayaZashchitaClient() {
         imageUrl="/images/bobkin.jpg"
         imagePosition="center 15%"
         description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Аркадий Евгеньевич участвует в первичной оценке ситуации и разработке правовой позиции, координирует работу команды специалистов по сложным уголовно-правовым вопросам бизнеса. 22 года работал в следственных подразделениях налоговой полиции и МВД, в том числе следователем по особо важным делам и руководителем Следственной части.
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block', lineHeight: 1.65, fontSize: '15.5px' }}>
+            Аркадий Евгеньевич участвует в первичной оценке ситуации и разработке правовой позиции, координирует работу команды специалистов по сложным уголовно-правовым вопросам бизнеса. 22 года работал в следственных подразделениях налоговой полиции и МВД, в том числе следователем по особо важным делам и руководителем Следственной части. При необходимости процессуальную защиту осуществляет независимый адвокат, подключённый к делу.
           </span>,
-          <div
-            key="2"
-            style={{
-              borderLeft: '3px solid var(--color-gold)',
-              paddingLeft: '16px',
-              fontStyle: 'italic',
-              fontSize: '14.5px',
-              color: 'var(--color-deep-blue)',
-              margin: '16px 0 0 0'
-            }}
-          >
-            «В уголовно-правовой защите бизнеса победа закладывается до начала следственных действий: в грамотном аудите сделок, выверенных ответах на запросы и защите топ-менеджеров от необдуманных шагов».
-          </div>,
-          <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>22 года следственной практики в налоговой полиции и Следственной части МВД</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Координация уголовной, налоговой и корпоративной составляющих защиты</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Процессуальную защиту подозреваемого или обвиняемого осуществляет адвокат компании</span>
-            </li>
-          </ul>,
-          <a key="4" href="/specialisty/bobkin-arkadiy-evgenevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+          <a key="2" href="/specialisty/bobkin-arkadiy-evgenevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
             Подробнее об Аркадии Евгеньевиче Бобкине →
           </a>
         ]}
@@ -1355,8 +1338,8 @@ export default function UgolovnoPravovayaZashchitaClient() {
               </div>
 
               <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Адвокатская тайна и конфиденциальность:</strong>
-                Все переданные сведения и документы охраняются Федеральным законом № 63-ФЗ «Об адвокатской деятельности и адвокатуре в РФ». Не указывайте в форме паспортные данные и коммерческую тайну — защищённый способ передачи согласуем после контакта.
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность обращения</strong>
+                Не указывайте в форме паспортные данные, коммерческую тайну и другие чувствительные сведения. Защищённый способ передачи документов согласуем после первого контакта. После подключения адвоката сведения, связанные с оказанием им юридической помощи, охраняются адвокатской тайной.
               </div>
             </div>
 

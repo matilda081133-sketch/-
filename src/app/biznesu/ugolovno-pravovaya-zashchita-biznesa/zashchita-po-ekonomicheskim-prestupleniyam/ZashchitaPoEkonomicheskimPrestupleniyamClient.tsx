@@ -138,7 +138,7 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
     {
       num: '04',
       title: 'Противодействие необоснованным мерам пресечения',
-      desc: 'Добиваемся избрания меры пресечения, не связанной с изоляцией от общества (залог, подписка о невыезде), используя запрет на арест предпринимателей (ч. 1.1 ст. 108 УПК РФ).'
+      desc: 'Обосновываем применение менее строгой меры пресечения с учётом характера обвинения, связи ситуации с предпринимательской деятельностью и условий, установленных статьёй 108 УПК РФ.'
     },
     {
       num: '05',
@@ -253,11 +253,11 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
   const faqs = [
     {
       q: 'Можно ли избежать заключения под стражу по экономическому преступлению?',
-      a: 'Да. В силу ч. 1.1 ст. 108 УПК РФ заключение под стражу в отношении подозреваемых или обвиняемых в преступлениях в сфере предпринимательской деятельности (ст. 159, 160, 165, 201 УК РФ и др.) не допускается, если преступления совершены в связи с осуществлением предпринимательской деятельности. Защита представляет документы, подтверждающие коммерческий статус сделки.'
+      a: 'Возможность заключения под стражу оценивается с учётом статьи обвинения, обстоятельств дела, связи деяния с предпринимательской деятельностью и предусмотренных законом исключений. Защита представляет документы и доводы в пользу применения менее строгой меры пресечения, но решение принимает суд.'
     },
     {
       q: 'Чем обвинение по ст. 159 УК РФ отличается от неисполнения договора в арбитраже?',
-      a: 'Ключевое отличие — наличие изначального прямого умысла на безвозмездное изъятие чужих средств ещё до заключения сделки. Если компания предпринимала реальные шаги к исполнению обязательств, несла расходы или попала в форс-мажор, это классический арбитражный спор, исключающий уголовную ответственность.'
+      a: 'Для уголовной квалификации необходимо установить признаки хищения и умысел, существовавший в юридически значимый момент. Фактическое исполнение обязательств, понесённые расходы и деловая переписка могут иметь значение для разграничения уголовного обвинения и гражданско-правового спора, но вывод делается после анализа всех обстоятельств.'
     },
     {
       q: 'Может ли один адвокат защищать компанию и генерального директора?',
@@ -265,7 +265,7 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
     },
     {
       q: 'Что делать, если следователь требует дать показания без адвоката?',
-      a: 'Вы имеете конституционное право отказаться от дачи показаний до прибытия вашего защитника по соглашению (ст. 48, 51 Конституции РФ). Дача показаний с назначенным следователем дежурным адвокатом несёт высокий риск необратимых ошибок.'
+      a: 'Сначала необходимо определить процессуальный статус человека, разъяснённые ему права и характер предстоящего действия. Вопрос об участии адвоката и порядке дачи показаний решается применительно к конкретной ситуации.'
     },
     {
       q: 'Помогает ли добровольное возмещение ущерба прекратить уголовное дело?',
@@ -273,26 +273,26 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
     }
   ];
 
-  const relatedServices = [
+    const relatedServices = [
     {
-      title: 'Налоговый юрист для бизнеса',
-      desc: 'Проверки ФНС, возражения на акты, обжалование доначислений до уголовной стадии.',
-      link: '/biznesu/nalogovyj-yurist-dlya-biznesa/'
+      title: 'Защита бизнеса при проверке ОБЭП',
+      desc: 'Анализ обоснованности запросов, подготовка ответов, инструктаж персонала и защита от давления.',
+      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/'
     },
     {
-      title: 'Корпоративный юрист',
-      desc: 'Защита контроля над ООО, споры участников, исключение участника, дедлоки.',
-      link: '/biznesu/korporativnyj-yurist/'
+      title: 'Защита при обыске и выемке в компании',
+      desc: 'Срочный выезд адвоката, контроль процедуры, защита серверов и непрерывности бизнеса.',
+      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/'
     },
     {
-      title: 'Разблокировка счёта по 115-ФЗ',
-      desc: 'Снятие ограничений банков, ответы на запросы финмониторинга, реабилитация в МВК.',
-      link: '/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/'
+      title: 'Защита по налоговым преступлениям',
+      desc: 'Защита должностных лиц компании при проверках СК РФ и уголовных делах по ст. 199 УК РФ.',
+      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/'
     },
     {
-      title: 'Банкротство бизнеса',
-      desc: 'Защита руководства от субсидиарной ответственности и оспаривания сделок.',
-      link: '/biznesu/bankrotstvo-biznesa/'
+      title: 'Уголовно-правовой аудит бизнеса',
+      desc: 'Превентивная проверка хозяйственных операций, договоров и решений на предмет уголовных рисков.',
+      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/'
     }
   ];
 
@@ -331,7 +331,7 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '760px', textWrap: 'balance' }}>
-            Организуем защиту собственников, руководителей и сотрудников при претензиях по экономическим составам: от доследственной проверки до предварительного следствия и арбитражно-уголовной защиты.
+            Организуем защиту собственников, руководителей и сотрудников при претензиях по экономическим составам: от доследственной проверки и предварительного следствия до рассмотрения уголовного дела в суде.
           </span>
         }
         primaryCtaText="Обсудить экономическое дело"
@@ -608,17 +608,27 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
           `}} />
 
           {/* Зона связи */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
-              +7 (910) 350-31-11
-            </a>
-            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
-              Позвонить юристу
-            </a>
-            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
-              Срочная защита
-            </a>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+          <div style={{
+            borderTop: '1px solid rgba(255,255,255,0.15)',
+            paddingTop: '28px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: '20px',
+            flexWrap: 'wrap'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+                +7 (910) 350-31-11
+              </a>
+              <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+                Позвонить юристу
+              </a>
+              <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+                Срочная защита
+              </a>
+            </div>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
               Срочный выезд адвоката по экономическим делам
             </span>
           </div>
@@ -704,37 +714,14 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
         imageUrl="/images/bobkin.jpg"
         imagePosition="center 15%"
         description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Аркадий Евгеньевич координирует выработку стратегии защиты по экономическим делам, привлечение экспертов и работу адвокатов. Проработав 22 года следователем по особо важным делам и руководителем Следственной части МВД, он знает типичные слабые места следственных конструкций обвинения.
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block', lineHeight: 1.65, fontSize: '15.5px' }}>
+            Аркадий Евгеньевич участвует в первичной оценке ситуации и разработке правовой позиции, координирует работу команды специалистов по сложным уголовно-правовым вопросам бизнеса. 22 года работал в следственных подразделениях налоговой полиции и МВД, в том числе следователем по особо важным делам и руководителем Следственной части. При необходимости процессуальную защиту осуществляет независимый адвокат, подключённый к делу.
           </span>,
-          <div
-            key="2"
-            style={{
-              borderLeft: '3px solid var(--color-gold)',
-              paddingLeft: '16px',
-              fontStyle: 'italic',
-              fontSize: '14.5px',
-              color: 'var(--color-deep-blue)',
-              margin: '16px 0 0 0'
-            }}
-          >
-            «В экономических преступлениях решающую роль играют экспертизы и цифры. Если доказать суду реальность товарного движения и обоснованность затрат, обвинение рассыпается».
-          </div>,
-          <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>22 года следственной работы по сложным многоэпизодным экономическим делам</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Процессуальную защиту доверителей осуществляют практикующие адвокаты компании</span>
-            </li>
-          </ul>,
-          <a key="4" href="/specialisty/bobkin-arkadiy-evgenevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-            Подробнее об опыте куратора →
+          <a key="2" href="/specialisty/bobkin-arkadiy-evgenevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее об Аркадии Евгеньевиче Бобкине →
           </a>
         ]}
-        buttonText="Связаться с куратором"
+        buttonText="Обсудить ситуацию с куратором"
         buttonHref="#form"
       />
 
@@ -867,7 +854,7 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
                 <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>оценку ситуации</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Опишите фабулу претензий или инкриминируемую статью. Команда адвокатов изучит материалы и свяжется с вами для выработки безопасной стратегии защиты.
+                Кратко укажите суть ситуации и инкриминируемую статью. Специалист свяжется с вами, уточнит обстоятельства и при необходимости организует подключение адвоката.
               </p>
 
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
@@ -887,8 +874,8 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
               </div>
 
               <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Адвокатская тайна и конфиденциальность:</strong>
-                Все переданные сведения и документы охраняются Федеральным законом № 63-ФЗ «Об адвокатской деятельности и адвокатуре в РФ». Не указывайте в форме паспортные данные и коммерческую тайну — защищённый способ передачи согласуем после контакта.
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность обращения</strong>
+                Не указывайте в форме паспортные данные, коммерческую тайну и другие чувствительные сведения. Защищённый способ передачи документов согласуем после первого контакта. После подключения адвоката сведения, связанные с оказанием им юридической помощи, охраняются адвокатской тайной.
               </div>
             </div>
 
@@ -897,7 +884,7 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamClient() {
                 title="Написать нам"
                 subtitle={
                   <>
-                    <span style={{ display: 'inline-block' }}>Оставьте контакты и суть вопроса. Адвокат свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>Оставьте контакты и суть вопроса. Специалист свяжется с вами</span> <br />
                     <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
                   </>
                 }

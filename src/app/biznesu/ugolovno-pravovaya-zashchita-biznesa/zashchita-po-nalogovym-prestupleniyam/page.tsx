@@ -4,15 +4,15 @@ import ZashchitaPoNalogovymPrestupleniyamClient from './ZashchitaPoNalogovymPres
 export const metadata: Metadata = {
   title: 'Защита по налоговым преступлениям в Липецке | Де-Юре',
   description:
-    'Защита директоров и главбухов по ст. 199–199.2 УК РФ. Помощь при передаче налоговых материалов в следственные органы. Липецк и область.',
+    'Уголовная защита должностных лиц бизнеса по налоговым статьям 199, 199.1, 199.2 УК РФ. Сопровождение в СК РФ и суде в Липецке и Липецкой области.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: 'Защита по налоговым преступлениям | Де-Юре',
+    title: 'Защита по налоговым преступлениям в Липецке | Де-Юре',
     description:
-      'Организуем защиту руководителей и бухгалтеров при передаче материалов ФНС в следственные органы и делах по ст. 199 УК РФ.',
+      'Защита руководства и учредителей при уголовных делах по ст. 199 УК РФ. Сопровождение доследственных проверок и следствия в СК РФ.',
     url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Защита по налоговым преступлениям в Липецке | Де-Юре',
     description:
-      'Защита директоров и главбухов по ст. 199–199.2 УК РФ. Помощь при передаче налоговых материалов в следственные органы. Липецк и область.',
+      'Уголовная защита должностных лиц бизнеса по налоговым статьям 199, 199.1, 199.2 УК РФ. Сопровождение в СК РФ и суде в Липецке и Липецкой области.',
     images: ['https://dejure-help.ru/images/og/zashchita-po-nalogovym-prestupleniyam-og.jpg'],
   },
   alternates: {
@@ -54,6 +54,16 @@ export default function ZashchitaPoNalogovymPrestupleniyamPage() {
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person',
+        name: 'Аркадий Евгеньевич Бобкин',
+        jobTitle: 'Директор, управляющий партнёр',
+        url: 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/',
+        worksFor: {
+          '@id': 'https://dejure-help.ru/#organization'
         }
       },
       {
@@ -87,11 +97,21 @@ export default function ZashchitaPoNalogovymPrestupleniyamPage() {
         ]
       },
       {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/#webpage',
+        name: 'Защита по налоговым преступлениям в Липецке | Де-Юре',
+        description: 'Уголовная защита должностных лиц бизнеса по налоговым статьям 199, 199.1, 199.2 УК РФ. Сопровождение в СК РФ и суде в Липецке и Липецкой области.',
+        url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/',
+        about: {
+          '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/#service'
+        }
+      },
+      {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/#service',
         name: 'Защита по налоговым преступлениям в Липецке',
         description:
-          'Защита директоров и главбухов по ст. 199–199.2 УК РФ. Помощь при передаче налоговых материалов в следственные органы. Липецк и область.',
+          'Уголовная защита должностных лиц бизнеса по налоговым статьям 199, 199.1, 199.2 УК РФ. Сопровождение в СК РФ и суде в Липецке и Липецкой области.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'
@@ -100,6 +120,60 @@ export default function ZashchitaPoNalogovymPrestupleniyamPage() {
           '@type': 'AdministrativeArea',
           name: 'Липецк и Липецкая область'
         }
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/#faq',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Означает ли доначисление налогов инспекцией автоматическое возбуждение уголовного дела?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Нет. Налоговая недоимка и решение инспекции сами по себе не доказывают наличие уголовного состава. Для возбуждения дела по ст. 199 УК РФ следствие обязано доказать прямой умысел руководителя или главбуха на уклонение от налогообложения и превышение крупного размера недоимки (от 18,75 млн ₽ за 3 года).'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'В какой момент налоговая инспекция передает материалы в Следственный комитет?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Согласно п. 3 ст. 32 Налогового кодекса РФ, если налогоплательщик не уплатил суммы недоимки, пеней и штрафов в течение 75 дней со дня вступления в силу решения о привлечении к налоговой ответственности, налоговый орган обязан в течение 10 дней направить материалы в следственный орган.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Можно ли одному адвокату одновременно защищать директора и главного бухгалтера?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Только в том случае, если их показания и интересы не противоречат друг другу. Однако в налоговых делах следствие часто пытается склонить бухгалтера к показаниям против руководителя. При малейшем несовпадении позиций закон запрещает одному адвокату представлять обоих участников.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Прекращается ли уголовное дело, если полностью погасить недоимку, пени и штраф?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Закон предусматривает специальные условия освобождения от ответственности для отдельных налоговых составов. Их применимость зависит от статьи, обстоятельств, стадии дела, полноты платежей и соблюдения других требований закона. Автоматическое прекращение дела обещать нельзя.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Как арбитражный спор с ФНС влияет на расследование уголовного дела?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Решение арбитражного суда учитывается при оценке налоговых обстоятельств и доказательств, но не предопределяет автоматически выводы по уголовному делу. Значение решения определяется с учётом его содержания и остальных материалов.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Что делать, если генерального директора или главного бухгалтера вызывают на опрос в ОЭБиПК?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Не являйтесь на опрос в одиночку. Все первичные показания, данные на этапе доследственной проверки без квалифицированной защиты, следователь в дальнейшем закрепит в протоколах допросов. Перед визитом к силовикам необходимо выработать единую правовую позицию с адвокатом.'
+            }
+          }
+        ]
       }
     ]
   };

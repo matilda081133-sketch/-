@@ -242,7 +242,7 @@ export default function UgolovnoPravovojAuditClient() {
     },
     {
       q: 'Гарантирует ли аудит, что компанию никогда не проверит ОБЭП или СК?',
-      a: 'Ни один честный юрист не может гарантировать отсутствие проверок, так как заявление в полицию может подать любой недобросовестный конкурент или уволенный сотрудник. Но аудит гарантирует, что к моменту проверки у компании будет безупречная документальная база и готовая правовая позиция, исключающая возбуждение дела.'
+      a: 'Нет. Аудит не исключает проверку, претензии правоохранительных органов или возбуждение уголовного дела. Его результат — перечень выявленных обстоятельств, оценка рисков и рекомендации по законным изменениям в документах и процессах компании.'
     },
     {
       q: 'Узнают ли сотрудники о проведении аудита?',
@@ -258,26 +258,26 @@ export default function UgolovnoPravovojAuditClient() {
     }
   ];
 
-  const relatedServices = [
+    const relatedServices = [
     {
-      title: 'Налоговый юрист для бизнеса',
-      desc: 'Проверки ФНС, возражения на акты, обжалование доначислений до уголовной стадии.',
-      link: '/biznesu/nalogovyj-yurist-dlya-biznesa/'
+      title: 'Защита бизнеса при проверке ОБЭП',
+      desc: 'Анализ обоснованности запросов, подготовка ответов, инструктаж персонала и защита от давления.',
+      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/'
     },
     {
-      title: 'Корпоративный юрист',
-      desc: 'Защита контроля над ООО, споры участников, исключение участника, дедлоки.',
-      link: '/biznesu/korporativnyj-yurist/'
+      title: 'Защита по экономическим преступлениям',
+      desc: 'Защита собственников и руководителей по обвинениям в мошенничестве, растрате и злоупотреблении.',
+      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-ekonomicheskim-prestupleniyam/'
     },
     {
-      title: 'Разблокировка счёта по 115-ФЗ',
-      desc: 'Снятие ограничений банков, ответы на запросы финмониторинга, реабилитация в МВК.',
-      link: '/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/'
+      title: 'Защита по налоговым преступлениям',
+      desc: 'Защита должностных лиц компании при проверках СК РФ и уголовных делах по ст. 199 УК РФ.',
+      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/'
     },
     {
-      title: 'Банкротство бизнеса',
-      desc: 'Защита руководства от субсидиарной ответственности и оспаривания сделок.',
-      link: '/biznesu/bankrotstvo-biznesa/'
+      title: 'Защита при обыске и выемке в компании',
+      desc: 'Срочный выезд адвоката, контроль процедуры, защита серверов и непрерывности бизнеса.',
+      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/'
     }
   ];
 
@@ -560,37 +560,14 @@ export default function UgolovnoPravovojAuditClient() {
         imageUrl="/images/bobkin.jpg"
         imagePosition="center 15%"
         description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Аркадий Евгеньевич координирует проведение аудита и разработку практических рекомендаций по безопасности бизнеса. 22 года службы в следственных подразделениях налоговой полиции и Следственной части МВД позволяют заранее видеть риски, которые не замечают штатные юристы и бухгалтеры.
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block', lineHeight: 1.65, fontSize: '15.5px' }}>
+            Аркадий Евгеньевич участвует в первичной оценке ситуации и разработке правовой позиции, координирует работу команды специалистов по сложным уголовно-правовым вопросам бизнеса. 22 года работал в следственных подразделениях налоговой полиции и МВД, в том числе следователем по особо важным делам и руководителем Следственной части. При необходимости процессуальную защиту осуществляет независимый адвокат, подключённый к делу.
           </span>,
-          <div
-            key="2"
-            style={{
-              borderLeft: '3px solid var(--color-gold)',
-              paddingLeft: '16px',
-              fontStyle: 'italic',
-              fontSize: '14.5px',
-              color: 'var(--color-deep-blue)',
-              margin: '16px 0 0 0'
-            }}
-          >
-            «Задача аудита — не напугать собственника статьями УК РФ, а дать конкретный набор безопасных управленческих и договорных решений, исключающих риски».
-          </div>,
-          <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>22 года опыта расследования экономических и налоговых дел в МВД и налоговой полиции</span>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
-              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Разработка комплексных комплаенс-программ для производственных и торговых холдингов</span>
-            </li>
-          </ul>,
-          <a key="4" href="/specialisty/bobkin-arkadiy-evgenevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+          <a key="2" href="/specialisty/bobkin-arkadiy-evgenevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
             Подробнее об Аркадии Евгеньевиче Бобкине →
           </a>
         ]}
-        buttonText="Задать вопрос куратору"
+        buttonText="Обсудить ситуацию с куратором"
         buttonHref="#form"
       />
 
@@ -743,8 +720,8 @@ export default function UgolovnoPravovojAuditClient() {
               </div>
 
               <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Адвокатская тайна и конфиденциальность:</strong>
-                Все переданные сведения и документы охраняются Федеральным законом № 63-ФЗ «Об адвокатской деятельности и адвокатуре в РФ». Не указывайте в форме паспортные данные и коммерческую тайну — защищённый способ передачи согласуем после контакта.
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Конфиденциальность обращения</strong>
+                Не указывайте в форме паспортные данные, коммерческую тайну и другие чувствительные сведения. Защищённый способ передачи документов согласуем после первого контакта. После подключения адвоката сведения, связанные с оказанием им юридической помощи, охраняются адвокатской тайной.
               </div>
             </div>
 
@@ -753,7 +730,7 @@ export default function UgolovnoPravovojAuditClient() {
                 title="Написать нам"
                 subtitle={
                   <>
-                    <span style={{ display: 'inline-block' }}>Оставьте контакты и суть вопроса. Куратор свяжется с вами</span> <br />
+                    <span style={{ display: 'inline-block' }}>Оставьте контакты и суть вопроса. Специалист свяжется с вами</span> <br />
                     <span style={{ display: 'inline-block' }}>в течение 15 минут в рабочее время.</span>
                   </>
                 }
