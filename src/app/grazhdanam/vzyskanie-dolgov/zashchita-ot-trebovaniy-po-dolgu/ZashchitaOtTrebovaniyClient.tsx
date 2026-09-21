@@ -266,7 +266,7 @@ export default function ZashchitaOtTrebovaniyClient() {
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
             <Link href="/grazhdanam/vzyskanie-dolgov/" style={{ color: 'var(--color-text-secondary)', textDecoration: 'none' }}>Взыскание долгов</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <span style={{ color: 'var(--color-text-main)' }}>Защита от требований</span>
+            <span style={{ color: 'var(--color-text-main)' }}>Защита от требований по долгу</span>
           </>
         }
         superTitle="Частные денежные споры • защита ответчика • Липецк"
@@ -288,7 +288,7 @@ export default function ZashchitaOtTrebovaniyClient() {
         secondaryCtaLink="tel:+79103503111"
         imageUrl="/images/smolyaninova.jpg"
         imageName="Смольянинова Марина Валерьевна"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре» • куратор направления"
+        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления"
       />
 
       {/* ═══ БЛОК 2: ЧТО СДЕЛАТЬ СЕЙЧАС (СРОЧНЫЙ БЛОК) ═══ */}
@@ -564,7 +564,7 @@ export default function ZashchitaOtTrebovaniyClient() {
                 <li>• Завышенные начисления: проверяем ставку, период и соразмерность санкций.</li>
               </ul>
               <div style={{ fontSize: '13px', color: 'var(--color-deep-blue)', fontWeight: 600, background: 'rgba(16, 39, 59, 0.04)', padding: '12px 16px', borderRadius: '4px' }}>
-                Уменьшение процентов и неустойки по ст. 333 ГК РФ требует обязательного расчётного обоснования.
+                Основания для снижения неустойки и других начислений оцениваем раздельно. По каждому требованию проверяем его правовую природу, ставку, период и расчёт.
               </div>
             </div>
           </div>
@@ -684,6 +684,20 @@ export default function ZashchitaOtTrebovaniyClient() {
                   }}
                 >
                   «Защита начинается не с отрицания долга, а с точного ответа на четыре вопроса: что передано, на каком основании, что уже возвращено и чем это подтверждается».
+                </div>
+                <div>
+                  <Link
+                    href="/specialisty/smolyaninova-marina-valerevna/"
+                    style={{
+                      fontSize: '14px',
+                      color: 'var(--color-primary)',
+                      textDecoration: 'underline',
+                      textUnderlineOffset: '4px',
+                      fontWeight: 500
+                    }}
+                  >
+                    Подробнее о специалисте →
+                  </Link>
                 </div>
                 <div>
                   <a href="#defense-form" className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '14px' }}>

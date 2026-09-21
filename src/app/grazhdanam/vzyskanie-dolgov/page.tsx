@@ -50,7 +50,7 @@ export default function VzyskanieDolgovPage() {
         'telephone': '+7 (4742) 20-15-25',
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': 'ул. Советская, д. 35, оф. 213',
+          'streetAddress': 'ул. Советская, 35',
           'addressLocality': 'Липецк',
           'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
@@ -99,6 +99,9 @@ export default function VzyskanieDolgovPage() {
         'description':
           'Поможем взыскать долг по расписке, договору займа или без расписки: оценим доказательства и исполнимость, подготовим требования и представим интересы в суде.',
         'inLanguage': 'ru-RU',
+        'isPartOf': {
+          '@id': 'https://dejure-help.ru/#website'
+        },
         'about': {
           '@id': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/#service'
         },

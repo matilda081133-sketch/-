@@ -50,7 +50,7 @@ export default function ZashchitaOtTrebovaniyPage() {
         'telephone': '+7 (4742) 20-15-25',
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': 'ул. Советская, д. 35, оф. 213',
+          'streetAddress': 'ул. Советская, 35',
           'addressLocality': 'Липецк',
           'addressRegion': 'Липецкая область',
           'addressCountry': 'RU'
@@ -99,6 +99,9 @@ export default function ZashchitaOtTrebovaniyPage() {
         'description':
           'Проверим расписку, передачу денег, расчёт, сроки и доказательства возврата. Подготовим возражения и защитим ответчика по частному долгу в суде.',
         'inLanguage': 'ru-RU',
+        'isPartOf': {
+          '@id': 'https://dejure-help.ru/#website'
+        },
         'about': {
           '@id': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/zashchita-ot-trebovaniy-po-dolgu/#service'
         },
