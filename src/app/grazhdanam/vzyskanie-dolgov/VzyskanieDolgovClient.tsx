@@ -940,14 +940,8 @@ export default function VzyskanieDolgovClient() {
 
       {/* ═══ БЛОК 10: КЕЙСЫ ИЗ ПРАКТИКИ ═══ */}
       <CasesBlock
-        title={
-          <div>
-            <span style={{ display: 'block', marginBottom: '8px' }}>Примеры из практики по взысканию долгов</span>
-            <span style={{ display: 'block', fontSize: '15px', color: 'var(--color-text-secondary)', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}>
-              Результат взыскания зависит от содержания документов, поведения сторон, сроков и возможности исполнить решение. Поэтому одинаковая сумма долга может требовать разной стратегии.
-            </span>
-          </div>
-        }
+        title="Примеры из практики по взысканию долгов"
+        subtitle="Результат взыскания зависит от содержания документов, поведения сторон, сроков и возможности исполнить решение. Поэтому одинаковая сумма долга может требовать разной стратегии."
         cases={casesData}
       />
       <div className="container" style={{ marginTop: '-40px', marginBottom: '60px', textAlign: 'center' }}>
@@ -1144,6 +1138,8 @@ export default function VzyskanieDolgovClient() {
             title="Обсудить взыскание долга"
             subtitle="Кратко укажите, на чём основан долг и наступил ли срок возврата. Команда направления свяжется с Вами и сообщит, какие документы нужны для оценки."
             buttonText="Получить консультацию"
+            commentPlaceholder="Например: есть расписка, срок прошёл, частично возвращено…"
+            subtext="Не прикладывайте документы с персональными и финансовыми данными к обычной форме. Способ передачи согласуем после связи."
           />
         </div>
       </section>

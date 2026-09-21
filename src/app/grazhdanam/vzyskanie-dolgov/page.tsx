@@ -83,8 +83,27 @@ export default function VzyskanieDolgovPage() {
           { '@type': 'City', 'name': 'Липецк' },
           { '@type': 'Country', 'name': 'Россия' }
         ],
+        'audience': {
+          '@type': 'Audience',
+          'audienceType': 'Взыскатели — физические лица'
+        },
         'provider': {
           '@id': 'https://dejure-help.ru/#organization'
+        }
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/#webpage',
+        'url': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/',
+        'name': 'Взыскание долгов с физических лиц в Липецке | Де-Юре',
+        'description':
+          'Поможем взыскать долг по расписке, договору займа или без расписки: оценим доказательства и исполнимость, подготовим требования и представим интересы в суде.',
+        'inLanguage': 'ru-RU',
+        'about': {
+          '@id': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/#service'
+        },
+        'breadcrumb': {
+          '@id': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/#breadcrumbs'
         }
       },
       {

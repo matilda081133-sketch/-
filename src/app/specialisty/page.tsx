@@ -53,7 +53,8 @@ const specialistAreas: Record<string, { name: string; href?: string }[]> = {
   'smolyaninova-marina-valerevna': [
     { name: 'Исполнительное производство', href: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
     { name: 'Семейное право', href: '/grazhdanam/semejnyj-yurist/' },
-    { name: 'Трудовое право', href: '/grazhdanam/trudovoj-yurist/' }
+    { name: 'Трудовое право', href: '/grazhdanam/trudovoj-yurist/' },
+    { name: 'Взыскание задолженности', href: '/grazhdanam/vzyskanie-dolgov/' }
   ],
   'gusev-oleg-yurevich': [
     { name: 'Общеуголовные дела', href: '/grazhdanam/advokat-po-ugolovnym-delam/' },

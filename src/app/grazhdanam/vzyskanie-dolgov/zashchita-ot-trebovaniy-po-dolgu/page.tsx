@@ -83,8 +83,27 @@ export default function ZashchitaOtTrebovaniyPage() {
           { '@type': 'City', 'name': 'Липецк' },
           { '@type': 'Country', 'name': 'Россия' }
         ],
+        'audience': {
+          '@type': 'Audience',
+          'audienceType': 'Ответчики по частным денежным требованиям'
+        },
         'provider': {
           '@id': 'https://dejure-help.ru/#organization'
+        }
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/zashchita-ot-trebovaniy-po-dolgu/#webpage',
+        'url': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/zashchita-ot-trebovaniy-po-dolgu/',
+        'name': 'Защита от взыскания долга по расписке в Липецке | Де-Юре',
+        'description':
+          'Проверим расписку, передачу денег, расчёт, сроки и доказательства возврата. Подготовим возражения и защитим ответчика по частному долгу в суде.',
+        'inLanguage': 'ru-RU',
+        'about': {
+          '@id': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/zashchita-ot-trebovaniy-po-dolgu/#service'
+        },
+        'breadcrumb': {
+          '@id': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/zashchita-ot-trebovaniy-po-dolgu/#breadcrumbs'
         }
       },
       {

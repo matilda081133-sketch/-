@@ -393,7 +393,7 @@ export default function ZashchitaOtTrebovaniyClient() {
                 Получили судебный приказ о взыскании долга?
               </div>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-                Проверьте дату получения и 10-дневный процессуальный срок подачи возражений. Отмена приказа требует отдельного процессуального документа.
+                Проверьте дату получения и срок подачи возражений. Отмена приказа требует отдельного процессуального документа.
               </p>
             </div>
             <div>
@@ -698,14 +698,8 @@ export default function ZashchitaOtTrebovaniyClient() {
 
       {/* ═══ БЛОК 8: КЕЙСЫ ИЗ ПРАКТИКИ ═══ */}
       <CasesBlock
-        title={
-          <div>
-            <span style={{ display: 'block', marginBottom: '8px' }}>Примеры защиты от требований по долгам</span>
-            <span style={{ display: 'block', fontSize: '15px', color: 'var(--color-text-secondary)', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}>
-              В частном денежном споре результат зависит от содержания документов и того, что стороны делали после передачи денег. Один и тот же довод работает по-разному при разных доказательствах.
-            </span>
-          </div>
-        }
+        title="Примеры защиты от требований по долгам"
+        subtitle="В частном денежном споре результат зависит от содержания документов и того, что стороны делали после передачи денег. Один и тот же довод работает по-разному при разных доказательствах."
         cases={casesData}
       />
       <div className="container" style={{ marginTop: '-40px', marginBottom: '60px', textAlign: 'center' }}>
@@ -899,6 +893,7 @@ export default function ZashchitaOtTrebovaniyClient() {
         title="Частые вопросы о защите от требований по долгу"
         subtitle="Практические разъяснения юриста о расписках, безденежности займа, снижении процентов и процессуальных сроках."
         faqs={faqItems}
+        ctaLink="#defense-form"
       />
 
       {/* ═══ БЛОК 13: СВЯЗАННЫЕ УСЛУГИ ═══ */}
@@ -1027,6 +1022,8 @@ export default function ZashchitaOtTrebovaniyClient() {
             title="Разобрать требование по долгу"
             subtitle="Укажите, что Вы получили: претензию, судебный приказ, иск или повестку. Если известна дата суда или получения документа, напишите её в описании."
             buttonText="Получить консультацию"
+            commentPlaceholder="Например: получен иск по расписке, заседание назначено на…"
+            subtext="Не прикладывайте документы с персональными и финансовыми данными. Способ передачи согласуем после связи."
           />
         </div>
       </section>

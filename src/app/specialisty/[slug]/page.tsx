@@ -383,7 +383,7 @@ export default async function SpecialistPage({ params }: PageProps) {
           <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '40px' }}>
             {member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'Направления работы' : 'Направления юридической помощи'}
           </h2>
-          <div className="grid grid-3" style={{ gap: '24px' }}>
+          <div className={`grid ${member.specializations.length === 4 || member.specializations.length === 2 ? 'grid-2' : 'grid-3'}`} style={{ gap: '24px' }}>
             {member.specializations.map((spec, i) => (
               <div key={i} className="hover-lift" style={{ 
                 display: 'flex', 

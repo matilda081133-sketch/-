@@ -232,7 +232,9 @@ export default function MilitaryHero({
                         )}
                         {imageSubtitle && (
                           <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontWeight: 500, lineHeight: 1.35 }}>
-                            {typeof imageSubtitle === 'string' && imageSubtitle.includes('куратор') ? (
+                            {typeof imageSubtitle === 'string' && imageSubtitle.includes('•') ? (
+                              imageSubtitle
+                            ) : typeof imageSubtitle === 'string' && imageSubtitle.includes('куратор') ? (
                               <>
                                 {imageSubtitle.split('куратор')[0].trim().replace(/,$/, '')},<br />
                                 куратор{imageSubtitle.split('куратор')[1]}
