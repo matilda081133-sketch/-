@@ -804,11 +804,17 @@ export default function Razblokirovka115fzClient() {
           <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Практический опыт в сфере корпоративного и финансового сопровождения с 1997 года</span>
+              <span style={{ display: 'block', textWrap: 'balance' }}>
+                <span style={{ display: 'inline-block' }}>Практический опыт в сфере корпоративного</span> <br />
+                <span style={{ display: 'inline-block' }}>и финансового сопровождения с 1997 года</span>
+              </span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Реализованы десятки успешных процедур реабилитации бизнеса в банках и МВК ЦБ РФ</span>
+              <span style={{ display: 'block', textWrap: 'balance' }}>
+                <span style={{ display: 'inline-block' }}>Реализованы десятки успешных процедур</span> <br />
+                <span style={{ display: 'inline-block' }}>реабилитации бизнеса в банках и МВК ЦБ РФ</span>
+              </span>
             </li>
           </ul>,
           <a key="4" href="/specialisty/nacheshnikov-vladimir-viktorovich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
