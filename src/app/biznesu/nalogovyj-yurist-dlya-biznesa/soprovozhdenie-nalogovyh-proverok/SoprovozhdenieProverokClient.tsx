@@ -833,8 +833,7 @@ export default function SoprovozhdenieProverokClient() {
               СМЕЖНЫЕ НАПРАВЛЕНИЯ
             </div>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Связанные налоговые</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>услуги</span>
+              Связанные налоговые услуги
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Комплексная защита налоговых интересов бизнеса: от превентивного консультирования до судебного оспаривания решений инспекций и уголовно-правовой защиты.

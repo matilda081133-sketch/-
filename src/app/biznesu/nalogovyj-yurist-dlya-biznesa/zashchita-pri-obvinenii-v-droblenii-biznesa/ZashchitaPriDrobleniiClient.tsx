@@ -788,7 +788,10 @@ export default function ZashchitaPriDrobleniiClient() {
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Практический опыт защиты производственных холдингов и торговых сетей региона</span>
+              <span style={{ display: 'block', textWrap: 'balance' }}>
+                <span style={{ display: 'inline-block' }}>Практический опыт защиты производственных</span> <br />
+                <span style={{ display: 'inline-block' }}>холдингов и торговых сетей региона</span>
+              </span>
             </li>
           </ul>,
           <a key="4" href="/specialisty/bobkin-arkadiy-evgenevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
@@ -838,8 +841,7 @@ export default function ZashchitaPriDrobleniiClient() {
               СМЕЖНЫЕ НАПРАВЛЕНИЯ
             </div>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Связанные налоговые</span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>услуги</span>
+              Связанные налоговые услуги
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Комплексная защита налоговых интересов бизнеса: от сопровождения камеральных и выездных проверок до оспаривания доначислений и защиты от уголовной ответственности.

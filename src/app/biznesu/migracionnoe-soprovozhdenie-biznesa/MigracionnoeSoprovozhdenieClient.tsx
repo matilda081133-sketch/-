@@ -551,14 +551,19 @@ export default function MigracionnoeSoprovozhdenieClient() {
                 color: var(--color-deep-blue) !important;
                 border-color: var(--color-gold) !important;
               }
+              @media (min-width: 860px) {
+                .b2b-migration-banner-line {
+                  white-space: nowrap !important;
+                }
+              }
             `}} />
-            <div style={{ flex: '1 1 700px', minWidth: '280px' }}>
+            <div style={{ flex: '1 1 auto', minWidth: '280px' }}>
               <h3 style={{ margin: '0 0 12px 0', fontSize: '26px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
                 Не нашли свою ситуацию?
               </h3>
-              <p style={{ margin: 0, fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55 }}>
-                <span style={{ display: 'block' }}>Миграционный вопрос может одновременно затрагивать статус работника, трудовые договоры и действия МВД.</span>
-                <span style={{ display: 'block' }}>Опишите задачу — мы определим подходящий формат работы.</span>
+              <p style={{ margin: 0, fontSize: '14px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
+                <span className="b2b-migration-banner-line" style={{ display: 'block' }}>Миграционный вопрос может одновременно затрагивать статус работника, трудовые договоры и действия МВД.</span>
+                <span className="b2b-migration-banner-line" style={{ display: 'block' }}>Опишите задачу — мы определим подходящий формат работы.</span>
               </p>
             </div>
             <div style={{ flexShrink: 0 }}>
