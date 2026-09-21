@@ -10,7 +10,6 @@ import MilitaryHero from '@/components/MilitaryHero';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
-import SpecialistBlock from '@/components/SpecialistBlock';
 
 export default function VklyuchenieVReestrClient() {
   const situations = [
@@ -37,7 +36,7 @@ export default function VklyuchenieVReestrClient() {
     {
       tag: 'Пропущенный срок',
       title: 'Двухмесячный срок закрытия реестра пропущен кредитором',
-      desc: 'Оценим уважительность причин пропуска, проверим возможность восстановления срока либо обеспечим включение требований «за реестр».'
+      desc: 'Проверим процедуру, дату публикации, причины пропуска и правовой режим требования. Не будем обещать восстановление срока или включение на обычных условиях до изучения материалов дела.'
     },
     {
       tag: 'Текущие платежи',
@@ -277,99 +276,8 @@ export default function VklyuchenieVReestrClient() {
     }
   ];
 
-  const jsonLdGraph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/#legalservice',
-        name: 'Юридическая компания Де-Юре',
-        url: 'https://dejure-help.ru/',
-        telephone: '+7 (4742) 20-15-25',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
-          addressLocality: 'Липецк',
-          addressRegion: 'Липецкая область',
-          addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        employee: {
-          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
-        }
-      },
-      {
-        '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
-        name: 'Владимир Викторович Начешников',
-        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
-        worksFor: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        }
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/vklyuchenie-v-reestr-trebovanij-kreditorov/#service',
-        name: 'Включение в реестр требований кредиторов в Липецке',
-        serviceType: 'Юридическое сопровождение включения в реестр требований кредиторов в деле о банкротстве',
-        provider: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        url: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/vklyuchenie-v-reestr-trebovanij-kreditorov/',
-        description: 'Проверка сроков и публикаций в ЕФРСБ, расчёт задолженности, подача заявления в арбитражный суд и судебное представительство при возражениях.'
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/vklyuchenie-v-reestr-trebovanij-kreditorov/#breadcrumb',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Главная',
-            item: 'https://dejure-help.ru/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Бизнесу',
-            item: 'https://dejure-help.ru/biznesu/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Банкротство бизнеса',
-            item: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 4,
-            name: 'Включение в реестр требований',
-            item: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/vklyuchenie-v-reestr-trebovanij-kreditorov/'
-          }
-        ]
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/vklyuchenie-v-reestr-trebovanij-kreditorov/#faq',
-        mainEntity: faqItems.map(item => ({
-          '@type': 'Question',
-          name: item.q,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: item.a
-          }
-        }))
-      }
-    ]
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
-      />
       <Header />
 
       {/* ═══ БЛОК 1: HERO ═══ */}
@@ -388,7 +296,7 @@ export default function VklyuchenieVReestrClient() {
         superTitle={
           <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
             <span style={{ display: 'inline-block' }}>БАНКРОТСТВО КОМПАНИИ • РЕЕСТР ТРЕБОВАНИЙ •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и арбитраж</span>
+            <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
           </span>
         }
         title={
@@ -406,7 +314,7 @@ export default function VklyuchenieVReestrClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Проверим публикацию в ЕФРСБ, стадию дела и режим долга. Подготовим заявление и доказательства, подадим документы через систему «Мой Арбитр» и защитим требование в арбитражном суде.
+            Проверим публикацию, стадию дела и режим долга. Подготовим заявление и доказательства, подадим их в установленном порядке и представим кредитора при возражениях.
           </span>
         }
         primaryCtaText="Проверить срок и требование"
@@ -418,19 +326,17 @@ export default function VklyuchenieVReestrClient() {
               Перезвоним в рабочее время
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              или ответим по телефону: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
+              или ответим по телефону: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
             </span>
           </span>
         }
-        imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Куратор направления арбитражного и банкротного права"
-        imageObjectPosition="center 15%"
+        imageUrl="/images/hero_office.png"
+        imageObjectPosition="center center"
         trustItems={[
           {
             text: (
               <span>
-                <strong>Куратор направления</strong> — Владимир Викторович Начешников
+                <strong>Проверка публикаций</strong> в ЕФРСБ и газете «Коммерсантъ»
               </span>
             )
           },
@@ -444,12 +350,85 @@ export default function VklyuchenieVReestrClient() {
           {
             text: (
               <span>
-                <strong>Доказывание долга</strong> по первичным документам даже без решения суда
+                <strong>Судебная защита требования</strong> при возражениях должника и АУ
               </span>
             )
           }
         ]}
       />
+
+      {/* ═══ БЛОК: ЧТО СДЕЛАТЬ СЕЙЧАС (#urgent-actions) ═══ */}
+      <section className="section bg-light" style={{ padding: '48px 0', background: 'var(--gradient-cream)', borderBottom: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '28px' }}>
+            <div style={{
+              fontSize: '12px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '8px'
+            }}>
+              Первые шаги кредитора
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 32px)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.25 }}>
+              Что сделать сейчас
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              Порядок первоочередных действий кредитора до подачи заявления в арбитражный суд:
+            </p>
+          </div>
+
+          <div className="grid grid-4" style={{ gap: '20px' }}>
+            {[
+              {
+                num: '01',
+                title: 'Идентифицировать дело',
+                desc: 'Найти номер дела либо подготовить ИНН/ОГРН должника.'
+              },
+              {
+                num: '02',
+                title: 'Зафиксировать публикацию',
+                desc: 'Сохранить ссылку и дату публикации сообщения в ЕФРСБ.'
+              },
+              {
+                num: '03',
+                title: 'Зафиксировать период долга',
+                desc: 'Зафиксировать основание долга и дату его возникновения.'
+              },
+              {
+                num: '04',
+                title: 'Исключить спешку с шаблонами',
+                desc: 'Не подавать шаблонное заявление до проверки адресатов, госпошлины и доказательств направления документов участникам.'
+              }
+            ].map((step, idx) => (
+              <div
+                key={idx}
+                className="card hover-lift"
+                style={{
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  padding: '24px 20px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '10px'
+                }}
+              >
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)' }}>
+                  {step.num}
+                </div>
+                <h3 style={{ margin: 0, fontSize: '16px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                  {step.title}
+                </h3>
+                <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ═══ БЛОК 2: ТИПОВЫЕ СИТУАЦИИ (#situations) ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
@@ -583,10 +562,10 @@ export default function VklyuchenieVReestrClient() {
               </span>
             </div>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.8vw, 38px)', color: '#FFFFFF', margin: '0 0 16px 0', lineHeight: 1.25 }}>
-              Не откладывайте подачу заявления — пропуск срока необратим
+              Не считайте срок по памяти — сначала проверьте публикацию и стадию
             </h2>
             <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.82)', margin: 0, lineHeight: 1.65 }}>
-              Сроки в банкротстве исчисляются строго по публикациям в официальных источниках. Ошибка в расчете даты лишает кредитора права голоса и гарантий выплат:
+              Ошибка в определении процедуры, публикации или режима требования может изменить порядок его рассмотрения и объём прав кредитора:
             </p>
           </div>
 
@@ -635,10 +614,7 @@ export default function VklyuchenieVReestrClient() {
             lineHeight: 1.6
           }}>
             <span style={{ display: 'inline-block' }}>
-              <strong style={{ color: '#FFFFFF' }}>Важно:</strong> Проверим дату публикации в ЕФРСБ и подготовим заявление за 48 часов.
-            </span> <br className="hidden-mobile" />
-            <span style={{ display: 'inline-block' }}>
-              Успеем подать документы до закрытия реестра и обеспечим надлежащее уведомление арбитражного управляющего.
+              <strong style={{ color: '#FFFFFF' }}>Важно:</strong> Проверим дату публикации, ближайшее процессуальное событие и комплект документов. Срок подготовки определим после первичного анализа.
             </span>
           </div>
 
@@ -759,27 +735,6 @@ export default function VklyuchenieVReestrClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
-      <SpecialistBlock
-        title="Куратор направления"
-        name="Владимир Викторович Начешников"
-        position="Специалист по арбитражным спорам и банкротству, куратор корпоративного направления"
-        imageUrl="/images/nacheshnikov.jpg"
-        imagePosition="center 15%"
-        profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
-        profileText="Подробнее о Владимире Викторовиче Начешникове →"
-        description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Банкротство должника — это не формальная ликвидация компании, а сложный судебный процесс с высокими рисками личной субсидиарной ответственности руководства и учредителей.
-          </span>,
-          <span key="2" style={{ color: 'var(--color-deep-blue)', display: 'block', marginTop: '12px' }}>
-            Владимир Викторович лично руководит правовым аудитом кризисной ситуации, оценивает безопасность сделок за трёхлетний период и формирует выверенную позицию для арбитражного суда.
-          </span>
-        ]}
-        buttonText="Обсудить ситуацию с куратором"
-        buttonHref="#form"
-      />
-
       {/* ═══ БЛОК 6: ПРАКТИКА И КЕЙСЫ ═══ */}
       <CasesBlock
         title={<><span style={{ display: 'inline-block' }}>Практика включения требований</span> <br /><span style={{ display: 'inline-block' }}>в реестр кредиторов</span></>}
@@ -812,7 +767,7 @@ export default function VklyuchenieVReestrClient() {
         tiers={pricingTiers}
         disclaimer="Госпошлина за рассмотрение требований в арбитражном суде, нотариальные расходы и почтовые отправления оплачиваются отдельно и при удовлетворении заявления возмещаются за счет должника."
         ctaTitle="Рассчитаем стоимость подготовки заявления"
-        ctaSubtitle="Оставьте заявку — куратор проведет предварительный аудит дела и свяжется с вами."
+        ctaSubtitle="Оставьте заявку — юрист проведет предварительный аудит дела и свяжется с вами."
         ctaButtonText="Рассчитать стоимость"
         ctaButtonLink="#form"
       />
@@ -951,7 +906,7 @@ export default function VklyuchenieVReestrClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните нам: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                  Позвоните нам: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
                 </p>
                 <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
                   Липецк, ул. Советская, д. 35, офис 213 (приём по записи)

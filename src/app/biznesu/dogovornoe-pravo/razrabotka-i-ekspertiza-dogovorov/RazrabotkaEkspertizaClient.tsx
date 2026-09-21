@@ -392,7 +392,7 @@ export default function RazrabotkaEkspertizaClient() {
     },
     {
       title: 'Споры по договору поставки',
-      desc: 'Узкопрофильная защита поставщиков и покупателей: проверка УПД, ТОРГ-12, транспортных накладных и взыскание долгов.',
+      desc: 'Защита поставщика или покупателя при споре о сроках, количестве, качестве, комплектности, приёмке или оплате товара.',
       link: '/biznesu/dogovornoe-pravo/spory-po-dogovoru-postavki/'
     },
     {
@@ -413,7 +413,7 @@ export default function RazrabotkaEkspertizaClient() {
         telephone: '+7 (4742) 20-15-25',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          streetAddress: 'ул. Советская, 35',
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'

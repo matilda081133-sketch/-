@@ -10,7 +10,6 @@ import MilitaryHero from '@/components/MilitaryHero';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
-import SpecialistBlock from '@/components/SpecialistBlock';
 
 export default function PredstavlenieKreditoraClient() {
   const situations = [
@@ -48,8 +47,8 @@ export default function PredstavlenieKreditoraClient() {
 
   const urgentCards = [
     {
-      title: 'Срок закрытия реестра — 2 месяца',
-      desc: 'В процедуре наблюдения и конкурсного производства установлен жёсткий двухмесячный срок на подачу требований. Опоздание переводит долг «за реестр», где шансы на возврат стремятся к нулю.'
+      title: 'Сроки предъявления требований',
+      desc: 'Сроки зависят от введённой процедуры, даты публикации и статуса долга. Своевременный правовой анализ позволяет правильно определить режим требования и не утратить процессуальные права.'
     },
     {
       title: 'Первое собрание кредиторов',
@@ -85,12 +84,12 @@ export default function PredstavlenieKreditoraClient() {
     {
       title: 'Оспаривание сделок должника',
       what: 'Выявляем отчуждение техники, недвижимости и платежи с предпочтением за 3 года до банкротства.',
-      why: 'Вернуть выведенные активы обратно в конкурсную массу для пропорционального погашения долгов.'
+      why: 'Определить признаки спорной сделки и целесообразность отдельного обособленного спора. Ведение спора оформляется как отдельная услуга.'
     },
     {
       title: 'Субсидиарная ответственность КДЛ',
       what: 'Устанавливаем виновные действия руководителей, непередачу бухгалтерской базы и неподачу заявления.',
-      why: 'Взыскать непогашенный долг напрямую с личного имущества бенефициаров и директора компании.'
+      why: 'Определить наличие оснований для требований к контролирующим лицам, необходимые доказательства и целесообразность отдельного спора.'
     }
   ];
 
@@ -289,99 +288,8 @@ export default function PredstavlenieKreditoraClient() {
     }
   ];
 
-  const jsonLdGraph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/#legalservice',
-        name: 'Юридическая компания Де-Юре',
-        url: 'https://dejure-help.ru/',
-        telephone: '+7 (4742) 20-15-25',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
-          addressLocality: 'Липецк',
-          addressRegion: 'Липецкая область',
-          addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        employee: {
-          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
-        }
-      },
-      {
-        '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
-        name: 'Владимир Викторович Начешников',
-        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
-        worksFor: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        }
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/predstavlenie-interesov-kreditora/#service',
-        name: 'Представление интересов кредитора в банкротстве компании в Липецке',
-        serviceType: 'Юридическое представительство кредиторов в делах о несостоятельности (банкротстве)',
-        provider: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        url: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/predstavlenie-interesov-kreditora/',
-        description: 'Защита прав кредиторов в банкротстве должников в Липецке: включение в реестр, контроль управляющего, собрания кредиторов, оспаривание сделок должника.'
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/predstavlenie-interesov-kreditora/#breadcrumb',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Главная',
-            item: 'https://dejure-help.ru/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Бизнесу',
-            item: 'https://dejure-help.ru/biznesu/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Банкротство бизнеса',
-            item: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 4,
-            name: 'Представление интересов кредитора',
-            item: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/predstavlenie-interesov-kreditora/'
-          }
-        ]
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/predstavlenie-interesov-kreditora/#faq',
-        mainEntity: faqItems.map(item => ({
-          '@type': 'Question',
-          name: item.q,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: item.a
-          }
-        }))
-      }
-    ]
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
-      />
       <Header />
 
       {/* ═══ БЛОК 1: HERO ═══ */}
@@ -400,7 +308,7 @@ export default function PredstavlenieKreditoraClient() {
         superTitle={
           <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
             <span style={{ display: 'inline-block' }}>БАНКРОТСТВО КОМПАНИИ • КРЕДИТОР •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и арбитраж</span>
+            <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
           </span>
         }
         title={
@@ -409,7 +317,7 @@ export default function PredstavlenieKreditoraClient() {
               Представление интересов
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
-              кредитора в банкротстве
+              кредитора в банкротстве компании
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               в Липецке
@@ -430,33 +338,31 @@ export default function PredstavlenieKreditoraClient() {
               Перезвоним в рабочее время
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              или ответим по телефону: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
+              или ответим по телефону: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
             </span>
           </span>
         }
-        imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Куратор направления арбитражного и банкротного права"
-        imageObjectPosition="center 15%"
+        imageUrl="/images/hero_office_premium.png"
+        imageObjectPosition="center center"
         trustItems={[
           {
             text: (
               <span>
-                <strong>Куратор направления</strong> — Владимир Викторович Начешников
+                <strong>Комплексное представительство</strong> кредитора в процедуре
               </span>
             )
           },
           {
             text: (
               <span>
-                <strong>Практический опыт с 1997 года</strong> в арбитражных процессах<br />и спорах о банкротстве
+                <strong>Участие в собраниях</strong> кредиторов и судебных заседаниях
               </span>
             )
           },
           {
             text: (
               <span>
-                <strong>Реальный возврат средств</strong> через оспаривание<br />сделок и субсидиарную ответственность
+                <strong>Проверка отчётов</strong>, публикаций и порядка расчётов
               </span>
             )
           }
@@ -595,11 +501,11 @@ export default function PredstavlenieKreditoraClient() {
               </span>
             </div>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.8vw, 38px)', color: '#FFFFFF', margin: '0 0 16px 0', lineHeight: 1.25 }}>
-              Когда пассивность <br />
-              кредитора приводит к потере денег
+              Проверьте позицию кредитора <br />
+              до ближайшего процессуального события
             </h2>
             <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.82)', margin: 0, lineHeight: 1.65 }}>
-              В банкротстве действует принцип «активный кредитор защищает свои деньги». Бездействие кредитора позволяет должнику распродать активы и списать долг:
+              В банкротстве недостаточно иметь неоплаченный договор или судебное решение. Объём прав зависит от стадии дела, момента возникновения долга, содержания публикаций, доказательств, обеспечения и своевременности действий.
             </p>
           </div>
 
@@ -769,29 +675,21 @@ export default function PredstavlenieKreditoraClient() {
               </div>
             ))}
           </div>
+
+          <div style={{
+            background: '#FFFFFF',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '18px 24px',
+            marginTop: '32px',
+            fontSize: '14px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.6
+          }}>
+            <strong>Важно:</strong> Самостоятельное включение в реестр, жалоба на управляющего, оспаривание конкретной сделки и отдельный спор о субсидиарной ответственности не входят автоматически в комплексное представительство и согласовываются отдельно.
+          </div>
         </div>
       </section>
-
-      {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
-      <SpecialistBlock
-        title="Куратор направления"
-        name="Владимир Викторович Начешников"
-        position="Специалист по арбитражным спорам и банкротству, куратор корпоративного направления"
-        imageUrl="/images/nacheshnikov.jpg"
-        imagePosition="center 15%"
-        profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
-        profileText="Подробнее о Владимире Викторовиче Начешникове →"
-        description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Банкротство должника — это не формальная ликвидация компании, а сложный судебный процесс с высокими рисками личной субсидиарной ответственности руководства и учредителей.
-          </span>,
-          <span key="2" style={{ color: 'var(--color-deep-blue)', display: 'block', marginTop: '12px' }}>
-            Владимир Викторович лично руководит правовым аудитом кризисной ситуации, оценивает безопасность сделок за трёхлетний период и формирует выверенную позицию для арбитражного суда.
-          </span>
-        ]}
-        buttonText="Обсудить ситуацию с куратором"
-        buttonHref="#form"
-      />
 
       {/* ═══ БЛОК 6: ПРАКТИКА И КЕЙСЫ ═══ */}
       <CasesBlock
@@ -825,7 +723,7 @@ export default function PredstavlenieKreditoraClient() {
         tiers={pricingTiers}
         disclaimer="Судебные расходы, государственные пошлины, экспертизы и публикации в ЕФРСБ оплачиваются отдельно и при удовлетворении требований подлежат взысканию с конкурсной массы должника."
         ctaTitle="Рассчитаем стоимость защиты взыскателя"
-        ctaSubtitle="Оставьте заявку — куратор проведет предварительный анализ карточки дела и подготовит расчет."
+        ctaSubtitle="Оставьте заявку — юрист проведет предварительный анализ карточки дела и подготовит расчет."
         ctaButtonText="Рассчитать стоимость"
         ctaButtonLink="#form"
       />
@@ -964,7 +862,7 @@ export default function PredstavlenieKreditoraClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните нам: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                  Позвоните нам: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
                 </p>
                 <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
                   Липецк, ул. Советская, д. 35, офис 213 (приём по записи)

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'ЮК «Де-Юре»',
     images: [
       {
-        url: 'https://dejure-help.ru/images/og/real-estate-b2b-lipetsk-og.jpg',
+        url: 'https://dejure-help.ru/images/og/contract-law-b2b-lipetsk-og.jpg',
         width: 1200,
         height: 630,
         type: 'image/jpeg',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: 'Споры по договору поставки в Липецке | Де-Юре',
     description:
       'Поможем поставщику или покупателю в споре по договору поставки: оценим документы, подготовим претензию или защиту и представим бизнес в арбитражном суде.',
-    images: ['https://dejure-help.ru/images/og/real-estate-b2b-lipetsk-og.jpg']
+    images: ['https://dejure-help.ru/images/og/contract-law-b2b-lipetsk-og.jpg']
   }
 };
 

@@ -406,7 +406,7 @@ export default function DogovornyeSporyClient() {
         telephone: '+7 (4742) 20-15-25',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          streetAddress: 'ул. Советская, 35',
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
@@ -424,6 +424,36 @@ export default function DogovornyeSporyClient() {
         areaServed: ['Липецк', 'Липецкая область'],
         url: 'https://dejure-help.ru/biznesu/dogovornoe-pravo/dogovornye-spory/',
         description: 'Поможем разрешить договорный спор: оценим позицию, подготовим претензию или ответ, проведём переговоры и представим интересы бизнеса в арбитражном суде.'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/dogovornoe-pravo/dogovornye-spory/#breadcrumb',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Главная',
+            item: 'https://dejure-help.ru/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Бизнесу',
+            item: 'https://dejure-help.ru/biznesu/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Договорное право',
+            item: 'https://dejure-help.ru/biznesu/dogovornoe-pravo/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 4,
+            name: 'Договорные споры',
+            item: 'https://dejure-help.ru/biznesu/dogovornoe-pravo/dogovornye-spory/'
+          }
+        ]
       },
       {
         '@type': 'FAQPage',

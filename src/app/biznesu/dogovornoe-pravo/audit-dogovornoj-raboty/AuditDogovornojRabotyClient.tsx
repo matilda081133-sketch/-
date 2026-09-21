@@ -410,7 +410,7 @@ export default function AuditDogovornojRabotyClient() {
         telephone: '+7 (4742) 20-15-25',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          streetAddress: 'ул. Советская, 35',
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
@@ -428,6 +428,36 @@ export default function AuditDogovornojRabotyClient() {
         areaServed: ['Липецк', 'Липецкая область'],
         url: 'https://dejure-help.ru/biznesu/dogovornoe-pravo/audit-dogovornoj-raboty/',
         description: 'Проверим договоры, шаблоны и процесс работы с ними: выявим системные риски, узкие места согласования и контроля, подготовим отчёт и план изменений.'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://dejure-help.ru/biznesu/dogovornoe-pravo/audit-dogovornoj-raboty/#breadcrumb',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Главная',
+            item: 'https://dejure-help.ru/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Бизнесу',
+            item: 'https://dejure-help.ru/biznesu/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Договорное право',
+            item: 'https://dejure-help.ru/biznesu/dogovornoe-pravo/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 4,
+            name: 'Аудит договорной работы',
+            item: 'https://dejure-help.ru/biznesu/dogovornoe-pravo/audit-dogovornoj-raboty/'
+          }
+        ]
       },
       {
         '@type': 'FAQPage',

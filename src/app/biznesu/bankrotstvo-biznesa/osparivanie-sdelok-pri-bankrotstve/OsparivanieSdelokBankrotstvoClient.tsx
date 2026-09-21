@@ -10,24 +10,22 @@ import MilitaryHero from '@/components/MilitaryHero';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
-import SpecialistBlock from '@/components/SpecialistBlock';
-
 export default function OsparivanieSdelokBankrotstvoClient() {
   const situations = [
     {
       tag: 'Кредитор / Заявитель',
       title: 'Вывод ликвидного имущества и техники перед банкротством должника',
-      desc: 'Должник распродал активы аффилированным лицам по заниженной цене. Докажем недействительность договоров и вернём имущество в конкурсную массу.'
+      desc: 'Должник реализовал активы аффилированным лицам по заниженной цене. Проверим основание недействительности договоров и обоснуем позицию по возврату имущества в конкурсную массу.'
     },
     {
       tag: 'Покупатель / Ответчик',
       title: 'Управляющий требует признать сделку недействительной и изъять актив',
-      desc: 'Защитим добросовестного покупателя автомобиля, техники или недвижимости. Докажем реальность оплаты, рыночность цены и отсутствие осведомлённости о кризисе.'
+      desc: 'Защитим добросовестного приобретателя имущества или техники. Докажем реальность встречного предоставления, рыночность цены и отсутствие осведомлённости о признаках кризиса.'
     },
     {
       tag: 'Сделка с предпочтением',
       title: 'Оспаривание погашения долга или зачёта по статье 61.3 Закона о банкротстве',
-      desc: 'Платеж в пользу кредитора объявляют предпочтительным. Докажем совершение операции в рамках обычной хозяйственной деятельности компании.'
+      desc: 'Платёж в пользу контрагента объявляют сделкой с предпочтением. Докажем совершение операции в рамках обычной хозяйственной деятельности компании.'
     },
     {
       tag: 'Взаимозачёты и цессия',
@@ -37,27 +35,40 @@ export default function OsparivanieSdelokBankrotstvoClient() {
     {
       tag: 'Связь с субсидиаркой',
       title: 'Сделка одновременно вменяется директору как основание субсидиарной ответственности',
-      desc: 'Выстроим синхронизированную защиту: докажем разумность экономической цели сделки и отсутствие вреда кредиторам, сняв риски с руководителя.'
+      desc: 'Сформируем синхронизированную позицию: докажем разумность экономической цели сделки и отсутствие вреда кредиторам, снизив риски для руководителя.'
     },
     {
       tag: 'Превентивный аудит',
       title: 'Правовая проверка договора перед покупкой имущества у компании в кризисе',
-      desc: 'Проведём комплексный аудит финансового состояния продавца, картотеки арбитражных дел и согласуем безопасную структуру расчётов.'
+      desc: 'Проведём аудит сделки, картотеки арбитражных дел продавца, проверим признаки банкротства и согласуем безопасную структуру расчётов.'
     }
   ];
 
   const urgentCards = [
     {
-      title: 'Периоды подозрительности: 1 месяц, 1 год, 3 года',
-      desc: 'Сделки с предпочтением оспариваются за 1–6 месяцев до возбуждения дела (ст. 61.3), неравноценные сделки — за 1 год, а сделки с целью причинения вреда кредиторам — за 3 года (ст. 61.2).'
+      num: '01',
+      title: 'Зафиксируйте номер дела и заседание',
+      desc: 'Зафиксируйте номер банкротного дела, дату получения заявления или судебного определения, дату ближайшего заседания и полный перечень приложений.'
     },
     {
-      title: 'Риск обеспечительного ареста спорного имущества',
-      desc: 'Управляющий одновременно с подачей заявления в суд заявляет ходатайство о наложении ареста и запрета регистрационных действий на недвижимость или технику ответчика.'
+      num: '02',
+      title: 'Сохраните договор и исполнение',
+      desc: 'Сохраните договор, спецификации, акты приёма-передачи, накладные, счета, банковские выписки, деловую переписку и доказательства фактического движения актива.'
     },
     {
-      title: 'Категорический запрет на фальсификацию первички',
-      desc: 'Попытки изготовить товарные накладные, акты или договоры задним числом выявляются судебной экспертизой давности документов и ведут к безусловному признанию сделки ничтожной.'
+      num: '03',
+      title: 'Составьте хронологию операций',
+      desc: 'Составьте хронологию переговоров, условий сделки, реального исполнения обязательств, финансового состояния должника и известных сторонам обстоятельств.'
+    },
+    {
+      num: '04',
+      title: 'Не изменяйте документы задним числом',
+      desc: 'Не создавайте документы задним числом, не меняйте назначение платежа, не удаляйте деловую переписку и не согласовывайте искусственную версию событий.'
+    },
+    {
+      num: '05',
+      title: 'Не признавайте факты до правового анализа',
+      desc: 'До правового анализа юристом не подписывайте признание отсутствия встречного исполнения, аффилированности, осведомлённости о неплатёжеспособности или согласие вернуть актив.'
     }
   ];
 
@@ -277,99 +288,8 @@ export default function OsparivanieSdelokBankrotstvoClient() {
     }
   ];
 
-  const jsonLdGraph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/#legalservice',
-        name: 'Юридическая компания Де-Юре',
-        url: 'https://dejure-help.ru/',
-        telephone: '+7 (4742) 20-15-25',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
-          addressLocality: 'Липецк',
-          addressRegion: 'Липецкая область',
-          addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        employee: {
-          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
-        }
-      },
-      {
-        '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
-        name: 'Владимир Викторович Начешников',
-        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
-        worksFor: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        }
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/osparivanie-sdelok-pri-bankrotstve/#service',
-        name: 'Оспаривание сделок при банкротстве в Липецке',
-        serviceType: 'Судебное оспаривание и защита сделок должника в деле о банкротстве',
-        provider: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        url: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/osparivanie-sdelok-pri-bankrotstve/',
-        description: 'Оспаривание и судебная защита сделок должника при банкротстве: ст. 61.2 и 61.3 Закона о банкротстве, ст. 10 и 168 ГК РФ, защита добросовестных покупателей.'
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/osparivanie-sdelok-pri-bankrotstve/#breadcrumb',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Главная',
-            item: 'https://dejure-help.ru/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Бизнесу',
-            item: 'https://dejure-help.ru/biznesu/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Банкротство бизнеса',
-            item: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 4,
-            name: 'Оспаривание сделок при банкротстве',
-            item: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/osparivanie-sdelok-pri-bankrotstve/'
-          }
-        ]
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/osparivanie-sdelok-pri-bankrotstve/#faq',
-        mainEntity: faqItems.map(item => ({
-          '@type': 'Question',
-          name: item.q,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: item.a
-          }
-        }))
-      }
-    ]
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
-      />
       <Header />
 
       {/* ═══ БЛОК 1: HERO ═══ */}
@@ -388,7 +308,7 @@ export default function OsparivanieSdelokBankrotstvoClient() {
         superTitle={
           <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
             <span style={{ display: 'inline-block' }}>БАНКРОТСТВО КОМПАНИИ • СДЕЛКИ ДОЛЖНИКА •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и арбитраж</span>
+            <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
           </span>
         }
         title={
@@ -405,46 +325,57 @@ export default function OsparivanieSdelokBankrotstvoClient() {
           </span>
         }
         subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Возврат активов в конкурсную массу по инициативе кредиторов или защита добросовестных приобретателей от отмены договоров по ст. 61.2, 61.3 Закона о банкротстве и ст. 10, 168 ГК РФ.
-          </span>
+          <div>
+            <p style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance', margin: '0 0 16px 0', fontSize: '16px', lineHeight: 1.6 }}>
+              Проверим основание, период, исполнение, доказательства и последствия. Подготовим заявление об оспаривании либо защиту стороны сделки и представим позицию в суде.
+            </p>
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginTop: '12px' }}>
+              <span style={{ padding: '6px 14px', background: 'rgba(23, 50, 77, 0.08)', border: '1px solid var(--color-border)', fontSize: '13px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Хотим оспорить сделку
+              </span>
+              <span style={{ padding: '6px 14px', background: 'rgba(23, 50, 77, 0.08)', border: '1px solid var(--color-border)', fontSize: '13px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Защищаем сделку
+              </span>
+              <span style={{ padding: '6px 14px', background: 'rgba(23, 50, 77, 0.08)', border: '1px solid var(--color-border)', fontSize: '13px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Нужна первичная оценка
+              </span>
+            </div>
+          </div>
         }
-        primaryCtaText="Оценить риски по сделке"
+        primaryCtaText="Разобрать спорную сделку"
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_primary_cta_osparivanie_sdelok"
         primaryCtaSubtext={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Перезвоним в рабочее время
+              Ответим в течение 15 минут в рабочее время
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              или ответим по телефону: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
+              или по телефону: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
             </span>
           </span>
         }
-        imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Куратор направления арбитражного и банкротного права"
+        imageUrl="/images/hero_office.png"
         imageObjectPosition="center 15%"
         trustItems={[
           {
             text: (
               <span>
-                <strong>Куратор направления</strong> — Владимир Викторович Начешников
+                <strong>Две стороны спора:</strong> подача заявления об оспаривании либо защита стороны сделки
               </span>
             )
           },
           {
             text: (
               <span>
-                <strong>Оспаривание и защита</strong> договоров купли-продажи, залога, зачётов и платежей
+                <strong>Специальные основания:</strong> ст. 61.2 и 61.3 Закона о банкротстве, ст. 10 и 168 ГК РФ
               </span>
             )
           },
           {
             text: (
               <span>
-                <strong>Судебная экспертиза</strong> рыночной стоимости имущества и оборудования
+                <strong>Доказательства:</strong> экспертиза рыночной стоимости, проверка расчётов и реальности исполнения
               </span>
             )
           }
@@ -579,45 +510,47 @@ export default function OsparivanieSdelokBankrotstvoClient() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)' }}></div>
               <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                Срочность защиты
+                Что сделать сейчас
               </span>
             </div>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.8vw, 38px)', color: '#FFFFFF', margin: '0 0 16px 0', lineHeight: 1.25 }}>
-              Что необходимо предпринять сразу при угрозе оспаривания сделки
+              Сначала сохраните доказательства и процессуальную возможность спорить
             </h2>
             <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.82)', margin: 0, lineHeight: 1.65 }}>
-              Первые процессуальные шаги определяют исход спора. Сохранение доказательств реальности сделки — фундамент судебной позиции:
+              Пять безопасных действий после выявления сомнительной сделки или получения судебного заявления:
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '36px' }}>
             {urgentCards.map((card, cIdx) => (
               <div
                 key={cIdx}
                 className="urgent-card hover-lift"
                 style={{
                   background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
-                  padding: '30px 24px',
+                  padding: '26px 22px',
                   borderTop: '4px solid var(--color-gold)',
                   boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  height: '100%'
+                  height: '100%',
+                  position: 'relative'
                 }}
               >
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="12" y1="8" x2="12" y2="12"></line>
-                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                      Шаг {card.num}
+                    </span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
-                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
-                      {card.title}
-                    </div>
                   </div>
-                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                  <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', marginBottom: '10px' }}>
+                    {card.title}
+                  </div>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13.5px', lineHeight: 1.55, margin: 0 }}>
                     {card.desc}
                   </p>
                 </div>
@@ -628,18 +561,13 @@ export default function OsparivanieSdelokBankrotstvoClient() {
           <div style={{
             background: 'rgba(255, 255, 255, 0.08)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '16px 24px',
+            padding: '18px 24px',
             marginBottom: '32px',
             color: 'rgba(255, 255, 255, 0.9)',
             fontSize: '14px',
             lineHeight: 1.6
           }}>
-            <span style={{ display: 'inline-block' }}>
-              <strong style={{ color: '#FFFFFF' }}>Важно:</strong> Банкротство продавца не означает автоматической недействительности ранее совершенных договоров.
-            </span> <br className="hidden-mobile" />
-            <span style={{ display: 'inline-block' }}>
-              Суд обязан исследовать добросовестность контрагента, рыночность цены и встречное исполнение. Докажем законность сделки в суде.
-            </span>
+            <strong style={{ color: '#FFFFFF' }}>Важно:</strong> Создание или изменение документов задним числом может повлечь судебную экспертизу давности изготовления, утрату доверия арбитражного суда к доказательствам и дополнительные правовые риски. Единственный законный способ защиты — доказывание реального экономического содержания и рыночности условий сделки в арбитражном суде.
           </div>
 
           <style dangerouslySetInnerHTML={{__html: `
@@ -759,28 +687,7 @@ export default function OsparivanieSdelokBankrotstvoClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
-      <SpecialistBlock
-        title="Куратор направления"
-        name="Владимир Викторович Начешников"
-        position="Специалист по арбитражным спорам и банкротству, куратор корпоративного направления"
-        imageUrl="/images/nacheshnikov.jpg"
-        imagePosition="center 15%"
-        profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
-        profileText="Подробнее о Владимире Викторовиче Начешникове →"
-        description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Банкротство должника — это не формальная ликвидация компании, а сложный судебный процесс с высокими рисками личной субсидиарной ответственности руководства и учредителей.
-          </span>,
-          <span key="2" style={{ color: 'var(--color-deep-blue)', display: 'block', marginTop: '12px' }}>
-            Владимир Викторович лично руководит правовым аудитом кризисной ситуации, оценивает безопасность сделок за трёхлетний период и формирует выверенную позицию для арбитражного суда.
-          </span>
-        ]}
-        buttonText="Обсудить ситуацию с куратором"
-        buttonHref="#form"
-      />
-
-      {/* ═══ БЛОК 6: ПРАКТИКА И КЕЙСЫ ═══ */}
+      {/* ═══ БЛОК 5: ПРАКТИКА И КЕЙСЫ ═══ */}
       <CasesBlock
         title={<><span style={{ display: 'inline-block' }}>Практика оспаривания</span> <br /><span style={{ display: 'inline-block' }}>и защиты сделок должника</span></>}
         cases={casesData}
@@ -789,7 +696,7 @@ export default function OsparivanieSdelokBankrotstvoClient() {
         showDemoWarning={true}
       />
 
-      {/* ═══ БЛОК 7: ПОРЯДОК РАБОТЫ ═══ */}
+      {/* ═══ БЛОК 6: ПОРЯДОК РАБОТЫ ═══ */}
       <ProcessBlock
         title="Порядок совместной работы"
         subtitle="Шесть последовательных шагов: от анализа договора до вынесения итогового судебного акта."
@@ -801,14 +708,14 @@ export default function OsparivanieSdelokBankrotstvoClient() {
         ctaButtonHref="#form"
       />
 
-      {/* ═══ БЛОК 8: ТАРИФЫ И СТОИМОСТЬ ═══ */}
+      {/* ═══ БЛОК 7: ТАРИФЫ И СТОИМОСТЬ ═══ */}
       <PricingBlock
         title="Стоимость оспаривания и защиты сделок"
         subtitle="Фиксированная стоимость услуг юристов в договоре. Судебные экспертизы рассчитываются индивидуально."
         tiers={pricingTiers}
         disclaimer="Стоимость судебной оценочной экспертизы, государственной пошлины и нотариальных расходов оплачивается отдельно и при победе в споре взыскивается с процессуального оппонента."
         ctaTitle="Рассчитаем стоимость ведения спора"
-        ctaSubtitle="Оставьте заявку — куратор проведет предварительный аудит сделки и подготовит смету."
+        ctaSubtitle="Оставьте заявку — юрист проведет предварительный аудит сделки и подготовит смету."
         ctaButtonText="Рассчитать стоимость"
         ctaButtonLink="#form"
       />
@@ -947,7 +854,7 @@ export default function OsparivanieSdelokBankrotstvoClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните нам: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                  Позвоните нам: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
                 </p>
                 <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
                   Липецк, ул. Советская, д. 35, офис 213 (приём по записи)
@@ -965,7 +872,7 @@ export default function OsparivanieSdelokBankrotstvoClient() {
                 title="Заявка на оценку сделки"
                 subtitle="Оставьте контакты и номер дела — юрист свяжется с вами в течение 15 минут в рабочее время."
                 subtext="Если вы оставите заявку вечером или в выходной день, мы свяжемся с вами в ближайший рабочий день."
-                buttonText="Оценить риски по сделке"
+                buttonText="Разобрать спорную сделку"
                 commentPlaceholder="Кратко укажите суть сделки, номер дела или тип отчужденного имущества…"
                 hiddenFields={[
                   { name: 'source_page', value: '/biznesu/bankrotstvo-biznesa/osparivanie-sdelok-pri-bankrotstve/' },

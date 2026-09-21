@@ -10,7 +10,6 @@ import MilitaryHero from '@/components/MilitaryHero';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
-import SpecialistBlock from '@/components/SpecialistBlock';
 
 export default function BankrotstvoDolzhnikaClient() {
   const situations = [
@@ -27,7 +26,7 @@ export default function BankrotstvoDolzhnikaClient() {
     {
       tag: 'Угроза кредитора',
       title: 'Кредитор опубликовал намерение или подал заявление',
-      desc: 'Контрагент инициировал банкротство компании. Требуется срочный аудит обоснованности требований и противодействие навязанной кандидатуре управляющего.'
+      desc: 'Необходимо проверить заявление кредитора, расчёт требований, карточку дела, назначенную дату заседания и ближайшие процессуальные действия компании.'
     },
     {
       tag: 'Неравномерность',
@@ -42,7 +41,7 @@ export default function BankrotstvoDolzhnikaClient() {
     {
       tag: 'Документооборот',
       title: 'Неполнота или риск утраты первичной документации',
-      desc: 'Отсутствие первичных бухгалтерских документов у управляющего — главное основание для взыскания всех долгов компании с руководителя.'
+      desc: 'Непередача или утрата бухгалтерских и корпоративных документов может создать самостоятельный риск для руководителя. Проверим сохранность документов, порядок их передачи и подтверждения совершённых действий.'
     }
   ];
 
@@ -72,7 +71,7 @@ export default function BankrotstvoDolzhnikaClient() {
           и кандидатура АУ
         </>
       ),
-      desc: 'Если первым в суд обратится недобросовестный кредитор, он заявит кандидатуру арбитражного управляющего из своей СРО. Перехватить контроль над инвентаризацией и оценкой станет в разы сложнее.'
+      desc: 'Если заявление уже подано кредитором, необходимо проверить предложенную СРО, соблюдение процедуры определения управляющего и возможные возражения. Юридическая компания не обещает назначение “своего” или контролируемого управляющего.'
     }
   ];
 
@@ -304,99 +303,8 @@ export default function BankrotstvoDolzhnikaClient() {
     }
   ];
 
-  const jsonLdGraph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/#legalservice',
-        name: 'Юридическая компания Де-Юре',
-        url: 'https://dejure-help.ru/',
-        telephone: '+7 (4742) 20-15-25',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
-          addressLocality: 'Липецк',
-          addressRegion: 'Липецкая область',
-          addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        employee: {
-          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
-        }
-      },
-      {
-        '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
-        name: 'Владимир Викторович Начешников',
-        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
-        worksFor: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        }
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/bankrotstvo-kompanii-so-storony-dolzhnika/#service',
-        name: 'Банкротство компании со стороны должника в Липецке',
-        serviceType: 'Юридическое сопровождение банкротства юридических лиц со стороны должника',
-        provider: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        url: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/bankrotstvo-kompanii-so-storony-dolzhnika/',
-        description: 'Диагностика кризиса, аудит обязательств, активов и сделок, защита директора от субсидиарной ответственности и подача заявления в арбитражный суд.'
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/bankrotstvo-kompanii-so-storony-dolzhnika/#breadcrumb',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Главная',
-            item: 'https://dejure-help.ru/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Бизнесу',
-            item: 'https://dejure-help.ru/biznesu/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Банкротство бизнеса',
-            item: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 4,
-            name: 'Банкротство со стороны должника',
-            item: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/bankrotstvo-kompanii-so-storony-dolzhnika/'
-          }
-        ]
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/bankrotstvo-kompanii-so-storony-dolzhnika/#faq',
-        mainEntity: faqItems.map(item => ({
-          '@type': 'Question',
-          name: item.q,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: item.a
-          }
-        }))
-      }
-    ]
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
-      />
       <Header />
 
       {/* ═══ БЛОК 1: HERO ═══ */}
@@ -415,7 +323,7 @@ export default function BankrotstvoDolzhnikaClient() {
         superTitle={
           <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
             <span style={{ display: 'inline-block' }}>БАНКРОТСТВО КОМПАНИИ • ДОЛЖНИК •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и арбитраж</span>
+            <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
           </span>
         }
         title={
@@ -445,33 +353,31 @@ export default function BankrotstvoDolzhnikaClient() {
               Перезвоним в рабочее время
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              или ответим по телефону: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
+              или ответим по телефону: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
             </span>
           </span>
         }
-        imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Куратор направления арбитражного и банкротного права"
-        imageObjectPosition="center 15%"
+        imageUrl="/images/hero_office_premium.png"
+        imageObjectPosition="center center"
         trustItems={[
           {
             text: (
               <span>
-                <strong>Куратор направления</strong> — Владимир Викторович Начешников
+                <strong>Проверяем основания</strong> для обращения компании в суд
               </span>
             )
           },
           {
             text: (
               <span>
-                <strong>Практический опыт с 1997 года</strong> в арбитражных судах и процедурах банкротства
+                <strong>Оцениваем документы</strong>, активы, сделки и риски руководства
               </span>
             )
           },
           {
             text: (
               <span>
-                <strong>Защита руководства</strong> от необоснованной субсидиарной ответственности
+                <strong>Состав работ и порядок оплаты</strong> фиксируем в договоре
               </span>
             )
           }
@@ -786,26 +692,197 @@ export default function BankrotstvoDolzhnikaClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
-      <SpecialistBlock
-        title="Куратор направления"
-        name="Владимир Викторович Начешников"
-        position="Специалист по арбитражным спорам и банкротству, куратор корпоративного направления"
-        imageUrl="/images/nacheshnikov.jpg"
-        imagePosition="center 15%"
-        profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
-        profileText="Подробнее о Владимире Викторовиче Начешникове →"
-        description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Банкротство должника — это не формальная ликвидация компании, а сложный судебный процесс с высокими рисками личной субсидиарной ответственности руководства и учредителей.
-          </span>,
-          <span key="2" style={{ color: 'var(--color-deep-blue)', display: 'block', marginTop: '12px' }}>
-            Владимир Викторович лично руководит правовым аудитом кризисной ситуации, оценивает безопасность сделок за трёхлетний период и формирует выверенную позицию для арбитражного суда.
-          </span>
-        ]}
-        buttonText="Обсудить ситуацию с куратором"
-        buttonHref="#form"
-      />
+      {/* ═══ БЛОК: ЧТО ВХОДИТ В УСЛУГУ ═══ */}
+      <section className="section bg-white" style={{ padding: '72px 0', borderTop: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px', marginBottom: '40px', textAlign: 'left' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '10px'
+            }}>
+              Состав сопровождения
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.8vw, 38px)', color: 'var(--color-deep-blue)', marginBottom: '14px', marginTop: 0, lineHeight: 1.25 }}>
+              Что входит в услугу сопровождения должника
+            </h2>
+            <p style={{ fontSize: '15.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+              Комплекс юридических действий по оценке кризисного состояния, подготовке обращения и представлению интересов компании в суде.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '28px' }}>
+            {[
+              {
+                num: '01',
+                title: 'Комплексный правовой аудит',
+                desc: 'Правовая диагностика ситуации компании до подачи заявления или после возбуждения дела кредитором.'
+              },
+              {
+                num: '02',
+                title: 'Оценка документов и баланса',
+                desc: 'Оценка документов, бухгалтерской отчётности, состава активов и признаков неплатежеспособности.'
+              },
+              {
+                num: '03',
+                title: 'Проверка кредиторов и сделок',
+                desc: 'Проверка структуры кредиторской задолженности и рисков спорных сделок за трёхлетний период.'
+              },
+              {
+                num: '04',
+                title: 'Анализ персональных рисков КДЛ',
+                desc: 'Анализ рисков привлечения контролирующих лиц к субсидиарной ответственности и возмещению убытков.'
+              },
+              {
+                num: '05',
+                title: 'Подготовка заявления в суд',
+                desc: 'Подготовка заявления должника о признании несостоятельным (банкротом) с полным пакетом приложений.'
+              },
+              {
+                num: '06',
+                title: 'Судебное представительство',
+                desc: 'Судебное представительство должника в арбитражном суде на стадии проверки обоснованности заявления.'
+              }
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="card hover-lift"
+                style={{
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-primary)',
+                  padding: '28px 24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px'
+                }}
+              >
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)' }}>
+                  {item.num}
+                </div>
+                <h3 style={{ margin: 0, fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                  {item.title}
+                </h3>
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            background: 'var(--gradient-cream)',
+            border: '1px solid var(--color-border)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '18px 24px',
+            fontSize: '14px',
+            color: 'var(--color-deep-blue)',
+            lineHeight: 1.6
+          }}>
+            <strong>Важно:</strong> Споры о субсидиарной ответственности и конкретных сделках не входят автоматически в сопровождение должника и оформляются отдельным заданием.
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК: ДОКУМЕНТЫ ДЛЯ АНАЛИЗА И ВОЗМОЖНЫЕ РЕЗУЛЬТАТЫ РАБОТЫ ═══ */}
+      <section className="section" style={{ padding: '72px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '32px' }}>
+            {/* Документы для анализа */}
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-primary)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+            }}>
+              <div style={{
+                fontSize: '12px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                marginBottom: '8px'
+              }}>
+                Подготовка к аудиту
+              </div>
+              <h3 style={{ margin: '0 0 16px 0', fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
+                Документы для анализа
+              </h3>
+              <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                Базовый перечень сведений, необходимых юристу для правовой оценки положения должника:
+              </p>
+              <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {[
+                  'Учредительные документы и актуальная выписка из ЕГРЮЛ',
+                  'Бухгалтерская и налоговая отчётность компании за последние 3 года',
+                  'Перечень дебиторов и кредиторов с расшифровкой и основаниями долга',
+                  'Опись имущества и активов на балансе (недвижимость, транспорт, оборудование)',
+                  'Договоры и первичные документы по ключевым сделкам за 3 года',
+                  'Сведения о расчётных счетах, выписки банков по движению денежных средств',
+                  'Материалы исполнительных производств, судебные решения, претензии',
+                  'Внутренние приказы, трудовые договоры и штатное расписание'
+                ].map((doc, idx) => (
+                  <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45 }}>
+                    <span style={{ color: 'var(--color-gold)', fontWeight: 700, flexShrink: 0, marginTop: '1px' }}>—</span>
+                    <span>{doc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Возможные результаты работы */}
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid var(--color-border)',
+              borderTop: '3px solid var(--color-gold)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+            }}>
+              <div style={{
+                fontSize: '12px',
+                fontWeight: 700,
+                color: 'var(--color-primary)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                marginBottom: '8px'
+              }}>
+                Итоги сопровождения
+              </div>
+              <h3 style={{ margin: '0 0 16px 0', fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3 }}>
+                Возможные результаты работы
+              </h3>
+              <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                Правовые и процессуальные результаты работы команды по сопровождению должника:
+              </p>
+              <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {[
+                  'Объективная правовая оценка перспектив и рисков банкротства до обращения в суд',
+                  'Юридически выверенный комплект заявления и приложений без оснований для оставления без движения',
+                  'Корректная правовая фиксация момента возникновения признаков неплатежеспособности для защиты руководства',
+                  'Своевременная инвентаризация и структурирование документарного архива компании',
+                  'Судебная защита интересов должника при проверке обоснованности требований заявителей',
+                  'Прозрачный план действий и разделение рисков компании и личной ответственности руководства'
+                ].map((res, idx) => (
+                  <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45 }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>{res}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ═══ БЛОК 6: ПРАКТИКА И КЕЙСЫ ═══ */}
       <CasesBlock
@@ -823,7 +900,7 @@ export default function BankrotstvoDolzhnikaClient() {
         alignTitle="center"
         steps={processSteps}
         ctaTitle="Готовы провести диагностику компании?"
-        ctaSubtitle="Оставьте заявку на разбор ситуации — куратор направления свяжется с вами в рабочее время."
+        ctaSubtitle="Оставьте заявку на разбор ситуации — специалист свяжется с вами в рабочее время."
         ctaButtonText="Обсудить ситуацию"
         ctaButtonHref="#form"
       />
@@ -835,7 +912,7 @@ export default function BankrotstvoDolzhnikaClient() {
         tiers={pricingTiers}
         disclaimer="Вознаграждение арбитражного управляющего (от 30 000 ₽/мес.), обязательные публикации в ЕФРСБ и газете «Коммерсантъ», судебные депозиты и экспертизы оплачиваются отдельно в соответствии с требованиями Федерального закона № 127-ФЗ."
         ctaTitle="Рассчитаем точную смету сопровождения"
-        ctaSubtitle="Оставьте заявку — куратор проведет предварительный анализ ситуации и подготовит предложение."
+        ctaSubtitle="Оставьте заявку — специалист проведет предварительный анализ ситуации и подготовит предложение."
         ctaButtonText="Запросить смету"
         ctaButtonLink="#form"
       />
@@ -974,7 +1051,7 @@ export default function BankrotstvoDolzhnikaClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните нам: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                  Позвоните нам: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
                 </p>
                 <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
                   Липецк, ул. Советская, д. 35, офис 213 (приём по записи)

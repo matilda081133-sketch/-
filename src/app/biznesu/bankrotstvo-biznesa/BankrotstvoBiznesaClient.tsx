@@ -9,7 +9,6 @@ import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import FAQBlock, { FAQItem } from '@/components/FAQBlock';
-import SpecialistBlock from '@/components/SpecialistBlock';
 import ContactsForm from '@/components/ContactsForm';
 
 export default function BankrotstvoBiznesaClient() {
@@ -72,7 +71,7 @@ export default function BankrotstvoBiznesaClient() {
     },
     {
       title: 'Опубликовано сообщение в ЕФРСБ или «Коммерсанте»',
-      desc: 'Публикация запускает жёсткие процессуальные сроки на закрытие реестра требований кредиторов (30 дней при наблюдении, 2 месяца при конкурсном).'
+      desc: 'Дата и последствия процессуального действия зависят от введённой процедуры, содержания публикации и статуса требования. Сначала необходимо проверить сообщение в ЕФРСБ, судебные акты и ближайшее событие в деле.'
     },
     {
       title: 'Предъявлено требование о субсидиарной ответственности',
@@ -343,7 +342,7 @@ export default function BankrotstvoBiznesaClient() {
         superTitle={
           <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
             <span style={{ display: 'inline-block' }}>БАНКРОТСТВО БИЗНЕСА •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и Арбитражный суд</span>
+            <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
           </span>
         }
         title={
@@ -377,13 +376,10 @@ export default function BankrotstvoBiznesaClient() {
         trustItems={[
           { text: 'Работаем со стороны должника и кредитора' },
           { text: 'Сначала проверяем стадию, документы и риски' },
-          { text: 'Состав работ и порядок оплаты фиксируем в договоре' },
-          { text: 'Куратор направления — Владимир Викторович Начешников' }
+          { text: 'Состав работ и порядок оплаты фиксируем в договоре' }
         ]}
-        imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Специалист по сопровождению процедур банкротства и арбитражным спорам, куратор направления"
-        imageObjectPosition="center 15%"
+        imageUrl="/images/hero_office.png"
+        imageObjectPosition="center"
       />
 
       {/* ═══ БЛОК 2: ВЫБЕРИТЕ СВОЮ СИТУАЦИЮ (КАНОНИЧЕСКИЙ ШАБЛОН «СИТУАЦИИ») ═══ */}
@@ -649,12 +645,7 @@ export default function BankrotstvoBiznesaClient() {
             fontSize: '14px',
             lineHeight: 1.6
           }}>
-            <span style={{ display: 'inline-block' }}>
-              <strong style={{ color: '#FFFFFF' }}>Важно:</strong> Пропуск срока на включение в реестр требований кредиторов при наблюдении лишает права голоса на первом собрании.
-            </span> <br className="hidden-mobile" />
-            <span style={{ display: 'inline-block' }}>
-              В конкурсном производстве реестр закрывается через 2 месяца с момента публикации без возможности восстановления для коммерческих требований.
-            </span>
+            <strong style={{ color: '#FFFFFF' }}>Важно:</strong> При пропуске срока необходимо проверить процедуру, дату публикации, вид требования, причины пропуска и доступный порядок его предъявления. Возможность восстановления и последствия опоздания оцениваются по конкретному делу.
           </div>
 
           <style dangerouslySetInnerHTML={{__html: `
@@ -929,6 +920,139 @@ export default function BankrotstvoBiznesaClient() {
         </div>
       </section>
 
+      {/* ═══ БЛОК 5.1: ДОКУМЕНТЫ ДЛЯ ПЕРВИЧНОГО РАЗБОРА И ЧТО ПОЛУЧАЕТ КЛИЕНТ ═══ */}
+      <section className="section" style={{ padding: '72px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '32px' }}>
+            {/* Документы для первичного разбора */}
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid var(--color-border)',
+              borderTop: '4px solid var(--color-primary)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+            }}>
+              <div style={{
+                fontSize: '11.5px',
+                fontWeight: 700,
+                color: 'var(--color-primary)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                marginBottom: '10px'
+              }}>
+                Подготовка к консультации
+              </div>
+              <h3 style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', lineHeight: 1.3 }}>
+                Документы для первичного разбора
+              </h3>
+              <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+                Для первого звонка или встречи достаточно предоставить базовые сведения — остальной массив согласуем после оценки:
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                {[
+                  'ИНН или ОГРН компании, карточка дела в арбитражном суде (при наличии);',
+                  'публикация в ЕФРСБ или газете «Коммерсантъ» (если процедура уже инициирована);',
+                  'документы по спорному требованию, основание долга и первичные закрывающие акты;',
+                  'полученное заявление, претензия или судебное определение с назначенной датой;',
+                  'пояснение по роли в споре: должник, кредитор, руководитель или сторона сделки.'
+                ].map((doc, idx) => (
+                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <div style={{
+                      width: '22px',
+                      height: '22px',
+                      borderRadius: '50%',
+                      backgroundColor: 'rgba(23, 50, 77, 0.08)',
+                      color: 'var(--color-primary)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      flexShrink: 0,
+                      marginTop: '2px'
+                    }}>
+                      ✓
+                    </div>
+                    <span style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+                      {doc}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Что получает клиент */}
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid var(--color-border)',
+              borderTop: '4px solid var(--color-gold)',
+              padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)'
+            }}>
+              <div style={{
+                fontSize: '11.5px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                marginBottom: '10px'
+              }}>
+                Результат обращения
+              </div>
+              <h3 style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', lineHeight: 1.3 }}>
+                Что получает клиент
+              </h3>
+              <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+                По итогам правового аудита открытых источников и переданных материалов доверитель получает конкретные ориентиры:
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                {[
+                  'правовой анализ рисков с учётом текущей стадии банкротного дела;',
+                  'сопоставление открытых данных (КАД, ЕФРСБ) с фактическими документами;',
+                  'сценарии действий: сохранение активов, включение в реестр, защита КДЛ или сделки;',
+                  'прозрачный расчёт стоимости юридического сопровождения до заключения договора.'
+                ].map((res, idx) => (
+                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <div style={{
+                      width: '22px',
+                      height: '22px',
+                      borderRadius: '50%',
+                      backgroundColor: 'rgba(193, 160, 102, 0.15)',
+                      color: 'var(--color-gold)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      flexShrink: 0,
+                      marginTop: '2px'
+                    }}>
+                      ✓
+                    </div>
+                    <span style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+                      {res}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: 'auto', paddingTop: '24px' }}>
+                <a
+                  href="#form"
+                  className="btn btn-primary"
+                  style={{ width: '100%', textAlign: 'center', padding: '12px 20px', fontSize: '14px', textDecoration: 'none' }}
+                >
+                  Обсудить ситуацию с юристом
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ БЛОК 6: КАК СТРОИТСЯ РАБОТА (PROCESS BLOCK) ═══ */}
       <ProcessBlock
         title="Как строится работа"
@@ -941,27 +1065,6 @@ export default function BankrotstvoBiznesaClient() {
         ctaButtonHref="#form"
       />
 
-      {/* ═══ БЛОК 7: КУРАТОР НАПРАВЛЕНИЯ (КАНОНИЧЕСКИЙ SPECIALIST BLOCK) ═══ */}
-      <SpecialistBlock
-        title="Куратор направления"
-        name="Владимир Викторович Начешников"
-        position="Специалист по арбитражным спорам и банкротству, куратор корпоративного направления"
-        imageUrl="/images/nacheshnikov.jpg"
-        imagePosition="center 15%"
-        profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
-        profileText="Подробнее о Владимире Викторовиче Начешникове →"
-        description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Банкротство должника — это не формальная ликвидация компании, а сложный судебный процесс с высокими рисками личной субсидиарной ответственности руководства и учредителей.
-          </span>,
-          <span key="2" style={{ color: 'var(--color-deep-blue)', display: 'block', marginTop: '12px' }}>
-            Владимир Викторович лично руководит правовым аудитом кризисной ситуации, оценивает безопасность сделок за трёхлетний период и формирует выверенную позицию для арбитражного суда.
-          </span>
-        ]}
-        buttonText="Обсудить ситуацию с куратором"
-        buttonHref="#form"
-      />
-
       {/* ═══ БЛОК 8: СТОИМОСТЬ (PRICING BLOCK) ═══ */}
       <PricingBlock
         title="Стоимость юридической помощи при банкротстве бизнеса"
@@ -969,7 +1072,7 @@ export default function BankrotstvoBiznesaClient() {
         tiers={pricingTiers}
         disclaimer="Вознаграждение арбитражного управляющего, государственные пошлины, обязательные публикации в ЕФРСБ и газете «Коммерсантъ», судебные депозиты, расходы на оценку и торги указываются отдельно и не включаются в гонорар юристов."
         ctaTitle="Рассчитаем точную смету сопровождения"
-        ctaSubtitle="Оставьте заявку — куратор направления изучит вводные данные и свяжется с вами в течение 15 минут."
+        ctaSubtitle="Оставьте заявку — юристы изучат вводные данные и свяжутся с вами в течение 15 минут в рабочее время."
         ctaButtonText="Рассчитать стоимость"
         ctaButtonLink="#form"
       />

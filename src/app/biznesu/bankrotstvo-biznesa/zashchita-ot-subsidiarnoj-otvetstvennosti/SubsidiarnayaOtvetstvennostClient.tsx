@@ -10,7 +10,6 @@ import MilitaryHero from '@/components/MilitaryHero';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
-import SpecialistBlock from '@/components/SpecialistBlock';
 
 export default function SubsidiarnayaOtvetstvennostClient() {
   const situations = [
@@ -42,22 +41,35 @@ export default function SubsidiarnayaOtvetstvennostClient() {
     {
       tag: 'Арест активов',
       title: 'Суд наложил арест на личные банковские счета и имущество семьи',
-      desc: 'Подготовим мотивированное ходатайство об отмене или замене обеспечительных мер, снимем блокировку со счетов для обеспечения нормальной жизни.'
+      desc: 'Проверим основания и объём обеспечительных мер, подготовим ходатайство об их отмене или замене и представим позицию в суде. Решение принимает суд.'
     }
   ];
 
   const urgentCards = [
     {
-      title: 'Срочная подготовка мотивированного отзыва',
-      desc: 'Срок подачи отзыва ограничен датой первого судебного заседания. Непредставление письменных возражений толкуется судом как фактическое согласие с доводами заявителя.'
+      num: '01',
+      title: 'Зафиксируйте дату получения и заседание',
+      desc: 'Зафиксируйте дату получения заявления, определения, запроса или извещения и найдите номер банкротного дела в картотеке арбитражных дел.'
     },
     {
-      title: 'Угроза ареста личного имущества и счетов',
-      desc: 'Заявители вместе с подачей иска почти всегда требуют наложения обеспечительных мер на недвижимость, автомобили и банковские карты ответчика и членов его семьи.'
+      num: '02',
+      title: 'Сохраните заявление и судебные акты',
+      desc: 'Сохраните заявление со всеми приложениями, судебные акты и сведения о ближайшем заседании, чтобы не пропустить процессуальный срок.'
     },
     {
-      title: 'Категорический запрет на спешный вывод активов',
-      desc: 'Дарение или продажа имущества родственникам перед заседанием немедленно квалифицируются судом как злоупотребление правом и приводят к гарантированному проигрышу дела.'
+      num: '03',
+      title: 'Обеспечьте сохранность баз и переписки',
+      desc: 'Обеспечьте сохранность бухгалтерской базы, корпоративных документов, деловой переписки и носителей информации — не удаляйте и не изменяйте их.'
+    },
+    {
+      num: '04',
+      title: 'Составьте хронологию полномочий',
+      desc: 'Составьте хронологию своих полномочий, ключевых решений, финансового кризиса и передачи дел без попытки задним числом «исправить» документы.'
+    },
+    {
+      num: '05',
+      title: 'Не подписывайте признание фактов',
+      desc: 'До проверки позиции не подписывайте объяснения, признание фактов, мировое соглашение или документы о распоряжении активами только ради ухода от взыскания.'
     }
   ];
 
@@ -277,99 +289,8 @@ export default function SubsidiarnayaOtvetstvennostClient() {
     }
   ];
 
-  const jsonLdGraph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/#legalservice',
-        name: 'Юридическая компания Де-Юре',
-        url: 'https://dejure-help.ru/',
-        telephone: '+7 (4742) 20-15-25',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
-          addressLocality: 'Липецк',
-          addressRegion: 'Липецкая область',
-          addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        employee: {
-          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
-        }
-      },
-      {
-        '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
-        name: 'Владимир Викторович Начешников',
-        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
-        worksFor: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        }
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/zashchita-ot-subsidiarnoj-otvetstvennosti/#service',
-        name: 'Защита от субсидиарной ответственности в Липецке',
-        serviceType: 'Защита директоров и учредителей от субсидиарной ответственности при банкротстве',
-        provider: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        url: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/zashchita-ot-subsidiarnoj-otvetstvennosti/',
-        description: 'Защита генеральных директоров, бенефициаров и учредителей в арбитражном суде: опровержение статуса КДЛ, снятие арестов с личного имущества, доказывание добросовестности.'
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/zashchita-ot-subsidiarnoj-otvetstvennosti/#breadcrumb',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Главная',
-            item: 'https://dejure-help.ru/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Бизнесу',
-            item: 'https://dejure-help.ru/biznesu/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Банкротство бизнеса',
-            item: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 4,
-            name: 'Защита от субсидиарной ответственности',
-            item: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/zashchita-ot-subsidiarnoj-otvetstvennosti/'
-          }
-        ]
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/zashchita-ot-subsidiarnoj-otvetstvennosti/#faq',
-        mainEntity: faqItems.map(item => ({
-          '@type': 'Question',
-          name: item.q,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: item.a
-          }
-        }))
-      }
-    ]
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
-      />
       <Header />
 
       {/* ═══ БЛОК 1: HERO ═══ */}
@@ -388,7 +309,7 @@ export default function SubsidiarnayaOtvetstvennostClient() {
         superTitle={
           <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
             <span style={{ display: 'inline-block' }}>БАНКРОТСТВО КОМПАНИИ • ЗАЩИТА РУКОВОДСТВА •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и арбитраж</span>
+            <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
           </span>
         }
         title={
@@ -406,10 +327,10 @@ export default function SubsidiarnayaOtvetstvennostClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Защитим генерального директора, бенефициаров и учредителей компании при предъявлении требований арбитражного управляющего или кредиторов на любой стадии банкротства.
+            Проверим, почему вас считают контролирующим лицом, какие действия связывают с долгами компании и как рассчитана сумма. Сохраним доказательства и подготовим позицию для суда.
           </span>
         }
-        primaryCtaText="Защитить имущество и права"
+        primaryCtaText="Разобрать основания требования"
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_primary_cta_subsidiarnaya_otvetstvennost"
         primaryCtaSubtext={
@@ -418,19 +339,17 @@ export default function SubsidiarnayaOtvetstvennostClient() {
               Перезвоним в рабочее время
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              или ответим по телефону: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
+              или ответим по телефону: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
             </span>
           </span>
         }
-        imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Куратор направления арбитражного и банкротного права"
-        imageObjectPosition="center 15%"
+        imageUrl="/images/hero_office_premium.png"
+        imageObjectPosition="center center"
         trustItems={[
           {
             text: (
               <span>
-                <strong>Куратор направления</strong> — Владимир Викторович Начешников
+                <strong>Проверка статуса КДЛ</strong> и оснований вменяемой ответственности
               </span>
             )
           },
@@ -444,7 +363,7 @@ export default function SubsidiarnayaOtvetstvennostClient() {
           {
             text: (
               <span>
-                <strong>Снятие арестов</strong> с личных счетов, недвижимости и автотранспорта
+                <strong>Формирование возражений</strong> и защита позиции в арбитражном суде
               </span>
             )
           }
@@ -456,8 +375,8 @@ export default function SubsidiarnayaOtvetstvennostClient() {
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: 'inline-block' }}>Субъекты субсидиарной</span> <br />
-              <span style={{ display: 'inline-block' }}>ответственности в банкротстве</span>
+              <span style={{ display: 'inline-block' }}>В каких ситуациях нужна защита</span> <br />
+              <span style={{ display: 'inline-block' }}>от субсидиарной ответственности</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Закон позволяет привлекать широкий круг лиц. Стратегия защиты принципиально зависит от вашей процессуальной роли, дат полномочий и реального объёма контроля.
@@ -579,45 +498,47 @@ export default function SubsidiarnayaOtvetstvennostClient() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)' }}></div>
               <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                Срочность защиты
+                Что сделать сейчас
               </span>
             </div>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.8vw, 38px)', color: '#FFFFFF', margin: '0 0 16px 0', lineHeight: 1.25 }}>
-              Получили заявление о субсидиарной ответственности? Время ограничено
+              Сначала сохраните доказательства и процессуальную возможность возражать
             </h2>
             <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.82)', margin: 0, lineHeight: 1.65 }}>
-              В отличие от обычного искового производства, в банкротстве бремя доказывания добросовестности возлагается непосредственно на руководителя компании:
+              Пять обязательных действий после получения заявления, судебного определения или запроса арбитражного управляющего:
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '36px' }}>
             {urgentCards.map((card, cIdx) => (
               <div
                 key={cIdx}
                 className="urgent-card hover-lift"
                 style={{
                   background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
-                  padding: '30px 24px',
+                  padding: '26px 22px',
                   borderTop: '4px solid var(--color-gold)',
                   boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  height: '100%'
+                  height: '100%',
+                  position: 'relative'
                 }}
               >
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="12" y1="8" x2="12" y2="12"></line>
-                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                      Шаг {card.num}
+                    </span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
-                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
-                      {card.title}
-                    </div>
                   </div>
-                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
+                  <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', marginBottom: '10px' }}>
+                    {card.title}
+                  </div>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13.5px', lineHeight: 1.55, margin: 0 }}>
                     {card.desc}
                   </p>
                 </div>
@@ -628,18 +549,13 @@ export default function SubsidiarnayaOtvetstvennostClient() {
           <div style={{
             background: 'rgba(255, 255, 255, 0.08)',
             borderLeft: '4px solid var(--color-gold)',
-            padding: '16px 24px',
+            padding: '18px 24px',
             marginBottom: '32px',
             color: 'rgba(255, 255, 255, 0.9)',
             fontSize: '14px',
             lineHeight: 1.6
           }}>
-            <span style={{ display: 'inline-block' }}>
-              <strong style={{ color: '#FFFFFF' }}>Важно:</strong> Субсидиарная ответственность не списывается через банкротство физического лица.
-            </span> <br className="hidden-mobile" />
-            <span style={{ display: 'inline-block' }}>
-              Взысканный долг остаётся навсегда. Единственный способ защитить личные активы и семью — отбить требования в арбитражном суде.
-            </span>
+            <strong style={{ color: '#FFFFFF' }}>Важно:</strong> Субсидиарная ответственность не списывается через личное банкротство гражданина. Взысканный долг остаётся навсегда. Попытки вывести имущество, переписать доли или изменить документы задним числом создают риск экспертизы и уголовно-правовые последствия. Законный путь защиты — доказывание добросовестности и обоснованности решений в арбитражном суде.
           </div>
 
           <style dangerouslySetInnerHTML={{__html: `
@@ -759,28 +675,7 @@ export default function SubsidiarnayaOtvetstvennostClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
-      <SpecialistBlock
-        title="Куратор направления"
-        name="Владимир Викторович Начешников"
-        position="Специалист по арбитражным спорам и банкротству, куратор корпоративного направления"
-        imageUrl="/images/nacheshnikov.jpg"
-        imagePosition="center 15%"
-        profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
-        profileText="Подробнее о Владимире Викторовиче Начешникове →"
-        description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Банкротство должника — это не формальная ликвидация компании, а сложный судебный процесс с высокими рисками личной субсидиарной ответственности руководства и учредителей.
-          </span>,
-          <span key="2" style={{ color: 'var(--color-deep-blue)', display: 'block', marginTop: '12px' }}>
-            Владимир Викторович лично руководит правовым аудитом кризисной ситуации, оценивает безопасность сделок за трёхлетний период и формирует выверенную позицию для арбитражного суда.
-          </span>
-        ]}
-        buttonText="Обсудить ситуацию с куратором"
-        buttonHref="#form"
-      />
-
-      {/* ═══ БЛОК 6: ПРАКТИКА И КЕЙСЫ ═══ */}
+      {/* ═══ БЛОК 5: ПРАКТИКА И КЕЙСЫ ═══ */}
       <CasesBlock
         title={<><span style={{ display: 'inline-block' }}>Практика защиты руководства</span> <br /><span style={{ display: 'inline-block' }}>от субсидиарной ответственности</span></>}
         cases={casesData}
@@ -789,7 +684,7 @@ export default function SubsidiarnayaOtvetstvennostClient() {
         showDemoWarning={true}
       />
 
-      {/* ═══ БЛОК 7: ПОРЯДОК РАБОТЫ ═══ */}
+      {/* ═══ БЛОК 6: ПОРЯДОК РАБОТЫ ═══ */}
       <ProcessBlock
         title="Порядок совместной работы"
         subtitle="Шесть последовательных шагов защиты — от аудита заявления до победы в арбитражном суде."
@@ -801,14 +696,14 @@ export default function SubsidiarnayaOtvetstvennostClient() {
         ctaButtonHref="#form"
       />
 
-      {/* ═══ БЛОК 8: ТАРИФЫ И СТОИМОСТЬ ═══ */}
+      {/* ═══ БЛОК 7: ТАРИФЫ И СТОИМОСТЬ ═══ */}
       <PricingBlock
         title="Стоимость защиты от субсидиарной ответственности"
         subtitle="Фиксированная стоимость юридических услуг в договоре без скрытых доплат."
         tiers={pricingTiers}
         disclaimer="Судебные расходы, государственные пошлины, экспертизы и нотариальные расходы оплачиваются отдельно и при вынесении решения в пользу доверителя взыскиваются с заявителя."
         ctaTitle="Рассчитаем стоимость защиты в арбитраже"
-        ctaSubtitle="Оставьте заявку — куратор изучит текст заявления и сформирует стратегию защиты."
+        ctaSubtitle="Оставьте заявку — юрист изучит текст заявления и сформирует стратегию защиты."
         ctaButtonText="Рассчитать стоимость"
         ctaButtonLink="#form"
       />
@@ -934,11 +829,11 @@ export default function SubsidiarnayaOtvetstvennostClient() {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Защитите активы</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Подготовьте позицию</span>{' '}
                 <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>до судебного заседания</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Сообщите номер дела, вашу процессуальную роль и сумму вменяемых требований. Юрист изучит карточку дела и назовёт перечень материалов для защиты.
+                Сообщите номер дела, вашу процессуальную роль и суть вменяемых требований. Юрист изучит карточку дела и назовёт перечень материалов для защиты.
               </p>
 
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
@@ -947,7 +842,7 @@ export default function SubsidiarnayaOtvetstvennostClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните нам: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                  Позвоните нам: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
                 </p>
                 <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
                   Липецк, ул. Советская, д. 35, офис 213 (приём по записи)
@@ -965,7 +860,7 @@ export default function SubsidiarnayaOtvetstvennostClient() {
                 title="Заявка на защиту"
                 subtitle="Оставьте контакты и номер дела — юрист свяжется с вами в течение 15 минут в рабочее время."
                 subtext="Если вы оставите заявку вечером или в выходной день, мы свяжемся с вами в ближайший рабочий день."
-                buttonText="Защитить имущество и права"
+                buttonText="Разобрать основания требования"
                 commentPlaceholder="Кратко укажите суть требований, номер дела или сумму иска…"
                 hiddenFields={[
                   { name: 'source_page', value: '/biznesu/bankrotstvo-biznesa/zashchita-ot-subsidiarnoj-otvetstvennosti/' },

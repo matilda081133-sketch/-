@@ -10,54 +10,93 @@ import MilitaryHero from '@/components/MilitaryHero';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
-import SpecialistBlock from '@/components/SpecialistBlock';
-
 export default function ObzhalovanieUpravlyayushchegoClient() {
   const situations = [
     {
       tag: 'Бездействие',
-      title: 'Управляющий затягивает процедуру и не разыскивает активы',
-      desc: 'Не направляет запросы в госорганы, не проводит инвентаризацию и уклоняется от подачи заявлений об оспаривании подозрительных сделок должника.'
+      title: 'Нет ответа или процессуального действия управляющего',
+      desc: 'Проверяем содержание обращения, подтверждение доставки, нормативную обязанность управляющего и то, какое право затронуто задержкой.'
     },
     {
-      tag: 'Нарушения на торгах',
-      title: 'Занижение стоимости имущества и непрозрачные аукционы',
-      desc: 'Утверждает заведомо невыгодное положение о торгах, занижает стартовую стоимость объектов и создает препятствия для независимых участников.'
+      tag: 'Документы и отчёты',
+      title: 'Не предоставляют документы или сведения кредиторам',
+      desc: 'Проверяем процессуальный статус заявителя в деле, объём права на информацию, сделанный запрос и основания фактического отказа.'
     },
     {
-      tag: 'Завышенные расходы',
-      title: 'Необоснованное расходование конкурсной массы на специалистов',
-      desc: 'Привлекает карманных юристов, оценщиков и бухгалтеров по завышенным ставкам, искусственно уменьшая объём выплат реестровым кредиторам.'
+      tag: 'Активы должника',
+      title: 'Имущество не ищут, не сохраняют или реализуют сомнительно',
+      desc: 'Проверяем обязанность по инвентаризации, сведения об активе, решения собрания кредиторов, оценку, публикации и последствия для конкурсной массы.'
     },
     {
-      tag: 'Сокрытие информации',
-      title: 'Игнорирование запросов и непредставление отчетов кредиторам',
-      desc: 'Отказывается знакомить кредиторов с материалами дела, не направляет финансовые отчеты и скрывает сведения о движении средств на спецсчетах.'
+      tag: 'Собрание кредиторов',
+      title: 'Нарушения при созыве и проведении собрания кредиторов',
+      desc: 'Проверяем надлежащее уведомление, законность повестки, допуск участников, порядок подсчёта голосов, протокол и способ судебной защиты.'
     },
     {
-      tag: 'Конфликт интересов',
-      title: 'Аффилированность управляющего с должником или мажоритарием',
-      desc: 'Действует в узких интересах должника или связанного кредитора, игнорируя законные права остальных участников дела о банкротстве.'
+      tag: 'Торги и расчёты',
+      title: 'Спорные торги, расчёты или нарушение очередности выплат',
+      desc: 'Определяем процессуальную стадию: достаточно ли жалобы на действия управляющего либо требуется отдельный обособленный спор о торгах или сделке.'
     },
     {
-      tag: 'Взыскание убытков',
-      title: 'Причинение прямого финансового ущерба конкурсному имуществу',
-      desc: 'Утрата имущества, непринятие мер по взысканию дебиторской задолженности. Взыщем убытки за счёт страховки АУ и компенсационного фонда СРО.'
+      tag: 'Сделки и долги',
+      title: 'Отказ оспаривать сделку или взыскивать задолженность',
+      desc: 'Проверяем обоснованность требований кредитора, доказательства, экономическую целесообразность, полномочия и судебную перспективу.'
     }
   ];
 
   const urgentCards = [
     {
-      title: 'Срочное приостановление незаконных торгов',
-      desc: 'Если управляющий опубликовал положение о торгах с заниженной ценой или торги уже идут, требуется экстренное ходатайство в арбитражный суд об обеспечительных мерах.'
+      num: '01',
+      title: 'Зафиксируйте конкретный эпизод',
+      desc: 'Запишите, какое именно действие совершено либо какую обязанность управляющий должен был исполнить, но допустил бездействие.'
     },
     {
-      title: 'Официальная фиксация факта нарушения',
-      desc: 'Суд отклонит жалобу, если бездействие не зафиксировано документально. Требуется направить официальный запрос с описью вложения и зафиксировать пропуск законного срока ответа.'
+      num: '02',
+      title: 'Сохраните исходные документы',
+      desc: 'Сохраните исходные письма, запросы, почтовые квитанции, отчёты, публикации в ЕФРСБ, протоколы и карточку дела — не редактируйте оригиналы.'
     },
     {
-      title: 'Предельные процессуальные сроки процедуры',
-      desc: 'Жалобу с требованием об отстранении управляющего необходимо заявлять до утверждения судом отчета о завершении процедуры банкротства.'
+      num: '03',
+      title: 'Определите ближайшее событие',
+      desc: 'Отметьте ближайшее необратимое или влияющее на права событие: собрание кредиторов, торги, расчёты, передачу имущества или судебное заседание.'
+    },
+    {
+      num: '04',
+      title: 'Не рассылайте эмоциональных жалоб',
+      desc: 'Не угрожайте управляющему и не рассылайте одну эмоциональную жалобу во все инстанции: адресат строго зависит от требуемого результата.'
+    },
+    {
+      num: '05',
+      title: 'Передайте материалы на анализ',
+      desc: 'Не публикуйте конфиденциальные сведения. После контакта юрист согласует безопасный канал передачи и список необходимых материалов.'
+    }
+  ];
+
+  const complaintRoutes = [
+    {
+      title: 'Арбитражный суд в деле о банкротстве',
+      target: 'Защитить права в конкретной процедуре и получить судебный акт по действию или бездействию управляющего.',
+      notReplace: 'Не заменяет автоматическое отстранение, взыскание убытков и административное наказание.'
+    },
+    {
+      title: 'Саморегулируемая организация (СРО)',
+      target: 'Проверить соблюдение членом СРО стандартов и правил профессиональной деятельности арбитражных управляющих.',
+      notReplace: 'Не заменяет судебное восстановление нарушенного права и отмену процессуальных последствий.'
+    },
+    {
+      title: 'Управление Росреестра',
+      target: 'Поставить вопрос о нарушении законодательства о банкротстве и административном контроле (ст. 14.13 КоАП РФ).',
+      notReplace: 'Не заменяет судебную жалобу в рамках дела о банкротстве и самостоятельный спор.'
+    },
+    {
+      title: 'Взыскание убытков / страхование / КФ',
+      target: 'Добиться имущественной компенсации при наличии доказанного ущерба, противоправности и причинной связи.',
+      notReplace: 'Не входит в простую жалобу — требует самостоятельного иска с отдельным расчётом и сметой.'
+    },
+    {
+      title: 'Процессуальное обжалование судебного акта',
+      target: 'Пересмотреть определение или решение арбитражного суда в апелляционной или кассационной инстанции.',
+      notReplace: 'Не является жалобой на управляющего — относится к арбитражному судопроизводству.'
     }
   ];
 
@@ -277,99 +316,8 @@ export default function ObzhalovanieUpravlyayushchegoClient() {
     }
   ];
 
-  const jsonLdGraph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'LegalService',
-        '@id': 'https://dejure-help.ru/#legalservice',
-        name: 'Юридическая компания Де-Юре',
-        url: 'https://dejure-help.ru/',
-        telephone: '+7 (4742) 20-15-25',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
-          addressLocality: 'Липецк',
-          addressRegion: 'Липецкая область',
-          addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        employee: {
-          '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person'
-        }
-      },
-      {
-        '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/#person',
-        name: 'Владимир Викторович Начешников',
-        url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
-        worksFor: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        }
-      },
-      {
-        '@type': 'Service',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/obzhalovanie-dejstvij-arbitrazhnogo-upravlyayushchego/#service',
-        name: 'Обжалование действий арбитражного управляющего в Липецке',
-        serviceType: 'Юридическое сопровождение жалоб на арбитражных управляющих и взыскание убытков',
-        provider: {
-          '@id': 'https://dejure-help.ru/#legalservice'
-        },
-        areaServed: ['Липецк', 'Липецкая область'],
-        url: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/obzhalovanie-dejstvij-arbitrazhnogo-upravlyayushchego/',
-        description: 'Жалобы на арбитражного управляющего по ст. 60 Закона о банкротстве в Арбитражном суде Липецкой области: отстранение, приостановление торгов, взыскание убытков.'
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/obzhalovanie-dejstvij-arbitrazhnogo-upravlyayushchego/#breadcrumb',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Главная',
-            item: 'https://dejure-help.ru/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Бизнесу',
-            item: 'https://dejure-help.ru/biznesu/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Банкротство бизнеса',
-            item: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/'
-          },
-          {
-            '@type': 'ListItem',
-            position: 4,
-            name: 'Обжалование действий управляющего',
-            item: 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/obzhalovanie-dejstvij-arbitrazhnogo-upravlyayushchego/'
-          }
-        ]
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': 'https://dejure-help.ru/biznesu/bankrotstvo-biznesa/obzhalovanie-dejstvij-arbitrazhnogo-upravlyayushchego/#faq',
-        mainEntity: faqItems.map(item => ({
-          '@type': 'Question',
-          name: item.q,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: item.a
-          }
-        }))
-      }
-    ]
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
-      />
       <Header />
 
       {/* ═══ БЛОК 1: HERO ═══ */}
@@ -388,7 +336,7 @@ export default function ObzhalovanieUpravlyayushchegoClient() {
         superTitle={
           <span style={{ whiteSpace: 'normal', display: 'inline-block', lineHeight: 1.4 }}>
             <span style={{ display: 'inline-block' }}>БАНКРОТСТВО КОМПАНИИ • СУДЕБНЫЙ НАДЗОР ЗА АУ •</span> <br />
-            <span style={{ display: 'inline-block' }}>Липецк и арбитраж</span>
+            <span style={{ display: 'inline-block' }}>Липецк и Липецкая область</span>
           </span>
         }
         title={
@@ -405,62 +353,272 @@ export default function ObzhalovanieUpravlyayushchegoClient() {
           </span>
         }
         subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Защитим права кредиторов и должника при незаконных действиях, бездействии, затягивании процедуры, занижении стоимости активов на торгах или необоснованных расходах конкурсного управляющего.
-          </span>
+          <div>
+            <p style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance', margin: '0 0 16px 0', fontSize: '16px', lineHeight: 1.6 }}>
+              Проверим конкретное действие или бездействие, нарушение вашего права и нужный результат. Подготовим судебную жалобу либо обращение в компетентный орган и представим позицию.
+            </p>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '12px' }}>
+              <span style={{ padding: '6px 12px', background: 'rgba(23, 50, 77, 0.08)', border: '1px solid var(--color-border)', fontSize: '12.5px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Управляющий бездействует
+              </span>
+              <span style={{ padding: '6px 12px', background: 'rgba(23, 50, 77, 0.08)', border: '1px solid var(--color-border)', fontSize: '12.5px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Совершил спорное действие
+              </span>
+              <span style={{ padding: '6px 12px', background: 'rgba(23, 50, 77, 0.08)', border: '1px solid var(--color-border)', fontSize: '12.5px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Не предоставляет сведения
+              </span>
+              <span style={{ padding: '6px 12px', background: 'rgba(23, 50, 77, 0.08)', border: '1px solid var(--color-border)', fontSize: '12.5px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Затронуты торги, собрание или расчёты
+              </span>
+              <span style={{ padding: '6px 12px', background: 'rgba(23, 50, 77, 0.08)', border: '1px solid var(--color-border)', fontSize: '12.5px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>
+                Не знаю, куда обращаться
+              </span>
+            </div>
+          </div>
         }
-        primaryCtaText="Проверить нарушения управляющего"
+        primaryCtaText="Разобрать действия управляющего"
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_primary_cta_obzhalovanie_upravlyayushchego"
         primaryCtaSubtext={
           <span style={{ display: 'block' }}>
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              Перезвоним в рабочее время
+              Ответим в течение 15 минут в рабочее время
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              или ответим по телефону: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
+              или по телефону: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
             </span>
           </span>
         }
-        imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Куратор направления арбитражного и банкротного права"
+        imageUrl="/images/hero_office.png"
         imageObjectPosition="center 15%"
         trustItems={[
           {
             text: (
               <span>
-                <strong>Куратор направления</strong> — Владимир Викторович Начешников
+                <strong>Адресаты жалобы:</strong> арбитражный суд в деле о банкротстве, Росреестр и профильная СРО
               </span>
             )
           },
           {
             text: (
               <span>
-                <strong>Жалобы по ст. 60 Закона № 127-ФЗ</strong>, Росреестр и дисциплинарные комитеты СРО
+                <strong>Предмет проверки:</strong> конкретное действие, бездействие, нарушение прав и обязанностей по закону
               </span>
             )
           },
           {
             text: (
               <span>
-                <strong>Приостановление торгов</strong>, отстранение АУ и взыскание реальных убытков
+                <strong>Доказательства:</strong> фиксация запросов, подтверждение доставки, проверка отчётов и публикаций
               </span>
             )
           }
         ]}
       />
 
-      {/* ═══ БЛОК 2: ТИПОВЫЕ СИТУАЦИИ (#situations) ═══ */}
-      <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 2: ЧТО СДЕЛАТЬ СЕЙЧАС (#urgent) ═══ */}
+      <section className="section" id="urgent" style={{ background: 'var(--color-deep-blue)', color: '#FFFFFF', padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', marginBottom: '48px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+              <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)' }}></div>
+              <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                Что сделать сейчас
+              </span>
+            </div>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.8vw, 38px)', color: '#FFFFFF', margin: '0 0 16px 0', lineHeight: 1.25 }}>
+              Сначала зафиксируйте нарушение и сохраните доказательства
+            </h2>
+            <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.82)', margin: 0, lineHeight: 1.65 }}>
+              Пять безопасных действий при нарушении ваших прав арбитражным управляющим:
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '36px' }}>
+            {urgentCards.map((card, cIdx) => (
+              <div
+                key={cIdx}
+                className="urgent-card hover-lift"
+                style={{
+                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
+                  padding: '26px 22px',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%',
+                  position: 'relative'
+                }}
+              >
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                      Шаг {card.num}
+                    </span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', marginBottom: '10px' }}>
+                    {card.title}
+                  </div>
+                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '13.5px', lineHeight: 1.55, margin: 0 }}>
+                    {card.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.08)',
+            borderLeft: '4px solid var(--color-gold)',
+            padding: '18px 24px',
+            marginBottom: '32px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: '14px',
+            lineHeight: 1.6
+          }}>
+            <strong style={{ color: '#FFFFFF' }}>Важно:</strong> Подготовим запросы и соберём доказательства, необходимые для подтверждения статуса заявителя, спорного действия или бездействия и нарушения его прав. Эмоциональные обращения без документальной фиксации фактов отклоняются судом и надзорными органами.
+          </div>
+
+          <style dangerouslySetInnerHTML={{__html: `
+            .urgent-card {
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .urgent-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
+            }
+            .btn-urgent-outline {
+              border: 1px solid rgba(255,255,255,0.8) !important;
+              color: #FFFFFF !important;
+              background: transparent !important;
+              text-decoration: none !important;
+              font-weight: 600 !important;
+              transition: all 0.3s ease !important;
+              border-radius: 0 !important;
+              display: inline-block !important;
+            }
+            .btn-urgent-outline:hover {
+              background: rgba(255,255,255,0.18) !important;
+              color: #FFFFFF !important;
+              border-color: #FFFFFF !important;
+            }
+            .btn-urgent-call {
+              display: inline-block !important;
+              border-radius: 0 !important;
+              text-decoration: none !important;
+              background-color: var(--color-gold) !important;
+              color: var(--color-deep-blue) !important;
+              font-weight: 700 !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              border: 1px solid var(--color-gold) !important;
+            }
+            .btn-urgent-call:hover {
+              background-color: #FFFFFF !important;
+              color: #0B1C2A !important;
+              border-color: #FFFFFF !important;
+              transform: translateY(-2px);
+            }
+          `}} />
+
+          {/* Зона связи */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+              +7 (910) 350-31-11
+            </a>
+            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+              Позвонить юристу
+            </a>
+            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+              Срочная консультация
+            </a>
+            <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px', marginLeft: '4px' }}>
+              Консультация юриста по банкротным спорам
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 3: КУДА ОБРАЩАТЬСЯ (#routes) ═══ */}
+      <section className="section bg-white" id="routes" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
+              <div style={{ width: '40px', height: '2px', background: 'var(--color-primary)' }}></div>
+              <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                Маршрутизация жалобы
+              </span>
+            </div>
+            <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              Куда обращаться: пять направлений защиты прав
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
+              Выбор органа или суда строго зависит от нужного результата: процессуальное восстановление прав в деле о банкротстве, профессиональный надзор СРО, административный контроль или взыскание убытков.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+            {complaintRoutes.map((route, rIdx) => (
+              <div
+                key={rIdx}
+                className="hover-lift"
+                style={{
+                  background: 'var(--gradient-cream)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-primary)',
+                  padding: '28px 24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                }}
+              >
+                <div>
+                  <div style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: 'var(--color-gold)',
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                    marginBottom: '10px'
+                  }}>
+                    Маршрут 0{rIdx + 1}
+                  </div>
+                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.35 }}>
+                    {route.title}
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.55, margin: '0 0 12px 0' }}>
+                    <strong>Цель:</strong> {route.target}
+                  </p>
+                </div>
+                <div style={{ borderTop: '1px dashed var(--color-border)', paddingTop: '10px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  <strong style={{ color: 'var(--color-primary)' }}>Ограничение:</strong> {route.notReplace}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ БЛОК 4: С КАКИМИ СИТУАЦИЯМИ РАБОТАЕМ (#situations) ═══ */}
+      <section className="section bg-light" id="situations" style={{ padding: '80px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
+              <div style={{ width: '40px', height: '2px', background: 'var(--color-gold)' }}></div>
+              <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                Предмет проверки
+              </span>
+            </div>
             <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.2, textAlign: 'left' }}>
-              <span style={{ display: 'inline-block' }}>Типичные нарушения в работе</span> <br />
-              <span style={{ display: 'inline-block' }}>арбитражных управляющих</span>
+              <span style={{ display: 'inline-block' }}>С какими ситуациями</span> <br />
+              <span style={{ display: 'inline-block' }}>работаем</span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
-              Пресекаем злоупотребления арбитражных управляющих и восстанавливаем законный баланс интересов сторон в судебном порядке.
+              Проверяем факты и выбираем надлежащий процессуальный способ защиты прав участника дела о банкротстве.
             </p>
           </div>
 
@@ -470,7 +628,7 @@ export default function ObzhalovanieUpravlyayushchegoClient() {
                 key={idx}
                 className="card hover-lift"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  background: '#FFFFFF',
                   border: '1px solid var(--color-border)',
                   borderTop: '3px solid var(--color-gold)',
                   borderRadius: '0',
@@ -483,21 +641,6 @@ export default function ObzhalovanieUpravlyayushchegoClient() {
                   overflow: 'hidden'
                 }}
               >
-                <div style={{
-                  position: 'absolute',
-                  top: '-15px',
-                  right: '-15px',
-                  width: '90px',
-                  height: '90px',
-                  opacity: 0.04,
-                  pointerEvents: 'none',
-                  color: 'var(--color-deep-blue)'
-                }}>
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                  </svg>
-                </div>
-
                 <div>
                   {sit.tag && (
                     <div style={{
@@ -560,7 +703,7 @@ export default function ObzhalovanieUpravlyayushchegoClient() {
                     else window.location.hash = 'form';
                   }}
                 >
-                  <span>Пресечь нарушения</span>
+                  <span>Разобрать ситуацию</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -568,135 +711,6 @@ export default function ObzhalovanieUpravlyayushchegoClient() {
                 </a>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ БЛОК 3: СРОЧНОСТЬ (#urgent) ═══ */}
-      <section className="section" id="urgent" style={{ background: 'var(--color-deep-blue)', color: '#FFFFFF', padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)' }}></div>
-              <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                Срочность реагирования
-              </span>
-            </div>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.8vw, 38px)', color: '#FFFFFF', margin: '0 0 16px 0', lineHeight: 1.25 }}>
-              Когда промедление с жалобой приводит к невосполнимым потерям
-            </h2>
-            <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.82)', margin: 0, lineHeight: 1.65 }}>
-              В банкротном процессе время работает на недобросовестного управляющего: активы могут быть проданы на торгах, а деньги распределены:
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
-            {urgentCards.map((card, cIdx) => (
-              <div
-                key={cIdx}
-                className="urgent-card hover-lift"
-                style={{
-                  background: 'linear-gradient(135deg, #FAF7F2 0%, #F3ECDF 100%)',
-                  padding: '30px 24px',
-                  borderTop: '4px solid var(--color-gold)',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  height: '100%'
-                }}
-              >
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="12" y1="8" x2="12" y2="12"></line>
-                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                    </svg>
-                    <div style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)' }}>
-                      {card.title}
-                    </div>
-                  </div>
-                  <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontSize: '14px', lineHeight: 1.55, margin: 0 }}>
-                    {card.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.08)',
-            borderLeft: '4px solid var(--color-gold)',
-            padding: '16px 24px',
-            marginBottom: '32px',
-            color: 'rgba(255, 255, 255, 0.9)',
-            fontSize: '14px',
-            lineHeight: 1.6
-          }}>
-            <span style={{ display: 'inline-block' }}>
-              <strong style={{ color: '#FFFFFF' }}>Важно:</strong> Суд оценивает только надлежащим образом зафиксированные процессуальные доказательства.
-            </span> <br className="hidden-mobile" />
-            <span style={{ display: 'inline-block' }}>
-              Составим официальные запросы и обеспечим документальную базу нарушений для гарантированного рассмотрения жалобы арбитражным судом.
-            </span>
-          </div>
-
-          <style dangerouslySetInnerHTML={{__html: `
-            .urgent-card {
-              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-            }
-            .urgent-card:hover {
-              transform: translateY(-6px);
-              box-shadow: 0 18px 36px rgba(0,0,0,0.28) !important;
-            }
-            .btn-urgent-outline {
-              border: 1px solid rgba(255,255,255,0.8) !important;
-              color: #FFFFFF !important;
-              background: transparent !important;
-              text-decoration: none !important;
-              font-weight: 600 !important;
-              transition: all 0.3s ease !important;
-              border-radius: 0 !important;
-              display: inline-block !important;
-            }
-            .btn-urgent-outline:hover {
-              background: rgba(255,255,255,0.18) !important;
-              color: #FFFFFF !important;
-              border-color: #FFFFFF !important;
-            }
-            .btn-urgent-call {
-              display: inline-block !important;
-              border-radius: 0 !important;
-              text-decoration: none !important;
-              background-color: var(--color-gold) !important;
-              color: var(--color-deep-blue) !important;
-              font-weight: 700 !important;
-              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-              border: 1px solid var(--color-gold) !important;
-            }
-            .btn-urgent-call:hover {
-              background-color: #FFFFFF !important;
-              color: #0B1C2A !important;
-              border-color: #FFFFFF !important;
-              transform: translateY(-2px);
-            }
-          `}} />
-
-          {/* Зона связи */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-            <a href="tel:+79103503111" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
-              +7 (910) 350-31-11
-            </a>
-            <a href="tel:+79103503111" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
-              Позвонить юристу
-            </a>
-            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
-              Срочная консультация
-            </a>
-            <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px', marginLeft: '4px' }}>
-              Консультация дежурного юриста по банкротству
-            </span>
           </div>
         </div>
       </section>
@@ -759,27 +773,6 @@ export default function ObzhalovanieUpravlyayushchegoClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
-      <SpecialistBlock
-        title="Куратор направления"
-        name="Владимир Викторович Начешников"
-        position="Специалист по арбитражным спорам и банкротству, куратор корпоративного направления"
-        imageUrl="/images/nacheshnikov.jpg"
-        imagePosition="center 15%"
-        profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
-        profileText="Подробнее о Владимире Викторовиче Начешникове →"
-        description={[
-          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Банкротство должника — это не формальная ликвидация компании, а сложный судебный процесс с высокими рисками личной субсидиарной ответственности руководства и учредителей.
-          </span>,
-          <span key="2" style={{ color: 'var(--color-deep-blue)', display: 'block', marginTop: '12px' }}>
-            Владимир Викторович лично руководит правовым аудитом кризисной ситуации, оценивает безопасность сделок за трёхлетний период и формирует выверенную позицию для арбитражного суда.
-          </span>
-        ]}
-        buttonText="Обсудить ситуацию с куратором"
-        buttonHref="#form"
-      />
-
       {/* ═══ БЛОК 6: ПРАКТИКА И КЕЙСЫ ═══ */}
       <CasesBlock
         title={<><span style={{ display: 'inline-block' }}>Практика обжалования действий</span> <br /><span style={{ display: 'inline-block' }}>арбитражных управляющих</span></>}
@@ -808,7 +801,7 @@ export default function ObzhalovanieUpravlyayushchegoClient() {
         tiers={pricingTiers}
         disclaimer="Госпошлина за рассмотрение жалобы, почтовые расходы и стоимость судебных экспертиз оплачиваются отдельно и при удовлетворении требований подлежат взысканию с арбитражного управляющего."
         ctaTitle="Рассчитаем стоимость подачи жалобы"
-        ctaSubtitle="Оставьте заявку — куратор проведет предварительный аудит нарушений и подготовит смету."
+        ctaSubtitle="Оставьте заявку — юрист проведет предварительный аудит нарушений и подготовит смету."
         ctaButtonText="Рассчитать стоимость"
         ctaButtonLink="#form"
       />
@@ -947,7 +940,7 @@ export default function ObzhalovanieUpravlyayushchegoClient() {
                   <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация юриста</strong>
                 </div>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-                  Позвоните нам: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                  Позвоните нам: <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (910) 350-31-11</a>
                 </p>
                 <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
                   Липецк, ул. Советская, д. 35, офис 213 (приём по записи)
@@ -965,7 +958,7 @@ export default function ObzhalovanieUpravlyayushchegoClient() {
                 title="Заявка на проверку действий АУ"
                 subtitle="Оставьте контакты и номер дела — юрист свяжется с вами в течение 15 минут в рабочее время."
                 subtext="Если вы оставите заявку вечером или в выходной день, мы свяжемся с вами в ближайший рабочий день."
-                buttonText="Проверить нарушения управляющего"
+                buttonText="Разобрать действия управляющего"
                 commentPlaceholder="Кратко укажите суть нарушений: торги, затягивание, непредставление отчетов…"
                 hiddenFields={[
                   { name: 'source_page', value: '/biznesu/bankrotstvo-biznesa/obzhalovanie-dejstvij-arbitrazhnogo-upravlyayushchego/' },

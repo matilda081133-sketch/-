@@ -47,7 +47,7 @@ export default function ObzhalovanieUpravlyayushchegoPage() {
         '@id': 'https://dejure-help.ru/#organization',
         'name': 'Юридическая компания «Де-Юре»',
         'url': 'https://dejure-help.ru/',
-        'telephone': '+7 (4742) 20-15-25',
+        'telephone': '+7 (910) 350-31-11',
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'ул. Советская, д. 35, оф. 213',

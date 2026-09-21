@@ -105,26 +105,22 @@ export default function DogovornoePravoClient() {
   const directions = [
     {
       title: 'Разработка и правовая экспертиза договоров',
-      badge: 'B2B-04-01',
       desc: 'Подготовка договора под конкретную сделку, аудит проекта контрагента, протоколы разногласий, оценка рисков и согласование спорных пунктов.',
       url: '/biznesu/dogovornoe-pravo/razrabotka-i-ekspertiza-dogovorov/'
     },
     {
       title: 'Аудит договорной работы компании',
-      badge: 'B2B-04-02',
       desc: 'Проверка применяемых типовых форм, маршрутов согласования, порядка подписания, хранения документов и регламентов контроля обязательств.',
       url: '/biznesu/dogovornoe-pravo/audit-dogovornoj-raboty/'
     },
     {
       title: 'Договорные споры для бизнеса',
-      badge: 'B2B-04-03',
       desc: 'Досудебное урегулирование, претензионная переписка, переговоры и судебная защита при неисполнении обязательств, просрочке и взыскании убытков.',
       url: '/biznesu/dogovornoe-pravo/dogovornye-spory/'
     },
     {
       title: 'Споры по договору поставки',
-      badge: 'B2B-04-04',
-      desc: 'Специализированная помощь поставщикам и покупателям: проверка первичных документов (УПД, ТОРГ-12), приёмка, качество товара, возврат аванса и взыскание задолженности.',
+      desc: 'Защитим интересы поставщика или покупателя в споре о количестве, качестве, комплектности, сроках, приёмке, оплате товара, неустойке и расторжении договора.',
       url: '/biznesu/dogovornoe-pravo/spory-po-dogovoru-postavki/'
     }
   ];
@@ -352,7 +348,7 @@ export default function DogovornoePravoClient() {
         telephone: '+7 (4742) 20-15-25',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
+          streetAddress: 'ул. Советская, 35',
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
@@ -747,16 +743,6 @@ export default function DogovornoePravoClient() {
                   }}
                 >
                   <div>
-                    <div style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      color: 'var(--color-gold)',
-                      letterSpacing: '0.05em',
-                      marginBottom: '10px',
-                      textTransform: 'uppercase'
-                    }}>
-                      {dir.badge}
-                    </div>
                     <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600 }}>
                       {dir.title}
                     </h3>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'ЮК «Де-Юре»',
     images: [
       {
-        url: 'https://dejure-help.ru/images/og/real-estate-b2b-lipetsk-og.jpg',
+        url: 'https://dejure-help.ru/images/og/contract-law-b2b-lipetsk-og.jpg',
         width: 1200,
         height: 630,
         type: 'image/jpeg',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: 'Аудит договорной работы компании — Де-Юре',
     description:
       'Проверим договорную систему бизнеса и покажем, какие риски и процессы нужно исправлять в первую очередь.',
-    images: ['https://dejure-help.ru/images/og/real-estate-b2b-lipetsk-og.jpg']
+    images: ['https://dejure-help.ru/images/og/contract-law-b2b-lipetsk-og.jpg']
   }
 };
 
