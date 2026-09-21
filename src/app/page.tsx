@@ -1,4 +1,4 @@
-// !!! VERSION 29.07 MAIN PAGE - FROZEN BY USER REQUEST !!!
+import { Metadata } from 'next';
 import Link from 'next/link';
 import TeamCarousel from '@/components/TeamCarousel';
 import Header from '@/components/Header';
@@ -11,6 +11,36 @@ import CasesBlock from '@/components/CasesBlock';
 import ReviewsBlock from '@/components/ReviewsBlock';
 import ContactsForm from '@/components/ContactsForm';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Юридическая помощь гражданам и бизнесу в Липецке | ЮК «Де-Юре»',
+  description: 'Квалифицированная юридическая помощь гражданам и бизнесу в Липецке. Арбитраж, недвижимость, банкротство, семейные и жилищные споры. Более 10 лет практики.',
+  alternates: {
+    canonical: 'https://dejure-help.ru/',
+  },
+  openGraph: {
+    title: 'Юридическая помощь гражданам и бизнесу в Липецке | ЮК «Де-Юре»',
+    description: 'Квалифицированная юридическая помощь гражданам и бизнесу в Липецке. Арбитраж, недвижимость, банкротство, семейные и жилищные споры. Более 10 лет практики.',
+    url: 'https://dejure-help.ru/',
+    siteName: 'Юридическая компания «Де-Юре»',
+    locale: 'ru_RU',
+    type: 'website',
+    images: [
+      {
+        url: 'https://dejure-help.ru/images/og-main.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Юридическая компания «Де-Юре» Липецк',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Юридическая помощь гражданам и бизнесу в Липецке | ЮК «Де-Юре»',
+    description: 'Квалифицированная юридическая помощь гражданам и бизнесу в Липецке. Арбитраж, недвижимость, банкротство, семейные и жилищные споры. Более 10 лет практики.',
+    images: ['https://dejure-help.ru/images/og-main.jpg'],
+  },
+};
 
 export default function Home() {
   return (

@@ -104,28 +104,6 @@ export default function Header() {
         <nav className="desktop-nav" style={{ display: 'flex', gap: '28px', alignItems: 'center', flexWrap: 'nowrap', whiteSpace: 'nowrap' }}>
           <div style={{ display: 'flex', gap: '28px', alignItems: 'center', fontSize: '14px' }}>
             
-            {/* О компании */}
-            <div 
-              className="nav-item-dropdown" 
-              onMouseEnter={() => setOpenDropdown('about')} 
-              onMouseLeave={() => setOpenDropdown(null)}
-              onFocus={() => setOpenDropdown('about')}
-              onBlur={() => setOpenDropdown(null)}
-            >
-              <Link href="/o-kompanii" className="nav-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-                <span>О компании</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openDropdown === 'about' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', opacity: 0.7 }}>
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </Link>
-              <ul id="dropdown-about" className={`dropdown-simple ${openDropdown === 'about' ? 'show' : ''}`}>
-                <li><Link href="/o-kompanii" className="dropdown-link-2">О компании</Link></li>
-                <li><Link href="/specialisty" className="dropdown-link-2">Специалисты</Link></li>
-                <li><Link href="/otzyvy" className="dropdown-link-2">Отзывы</Link></li>
-                <li><Link href="/stoimost" className="dropdown-link-2">Стоимость</Link></li>
-              </ul>
-            </div>
-
             {/* Гражданам */}
             <div 
               className="nav-item-dropdown"
@@ -170,8 +148,8 @@ export default function Header() {
               </ul>
             </div>
 
+            <Link href="/specialisty" className="nav-link">Специалисты</Link>
             <Link href="/praktika" className="nav-link">Практика</Link>
-            <Link href="/publikacii" className="nav-link">Публикации</Link>
             <Link href="/kontakty" className="nav-link">Контакты</Link>
           </div>
           
@@ -396,46 +374,11 @@ export default function Header() {
             )}
           </div>
 
-          {/* Аккордеон: О компании */}
-          <div className="mobile-nav-group">
-            <button 
-              className="mobile-nav-trigger"
-              onClick={() => toggleMobileAccordion('about')}
-              style={{
-                width: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '14px 0',
-                background: 'none',
-                border: 'none',
-                borderBottom: '1px solid var(--color-border)',
-                fontSize: '18px',
-                fontWeight: 700,
-                color: 'var(--color-deep-blue)',
-                cursor: 'pointer'
-              }}
-            >
-              <span>О компании</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ transform: mobileAccordion === 'about' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}>
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            {mobileAccordion === 'about' && (
-              <div style={{ padding: '12px 0 12px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <Link href="/o-kompanii" onClick={closeMobileMenu} style={{ color: 'var(--color-text-main)', fontSize: '15px' }}>О компании</Link>
-                <Link href="/specialisty" onClick={closeMobileMenu} style={{ color: 'var(--color-text-main)', fontSize: '15px' }}>Специалисты</Link>
-                <Link href="/otzyvy" onClick={closeMobileMenu} style={{ color: 'var(--color-text-main)', fontSize: '15px' }}>Отзывы</Link>
-                <Link href="/stoimost" onClick={closeMobileMenu} style={{ color: 'var(--color-text-main)', fontSize: '15px' }}>Стоимость</Link>
-              </div>
-            )}
-          </div>
-
+          <Link href="/specialisty" onClick={closeMobileMenu} style={{ padding: '14px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', borderBottom: '1px solid var(--color-border)', textDecoration: 'none' }}>
+            Специалисты
+          </Link>
           <Link href="/praktika" onClick={closeMobileMenu} style={{ padding: '14px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', borderBottom: '1px solid var(--color-border)', textDecoration: 'none' }}>
             Практика
-          </Link>
-          <Link href="/publikacii" onClick={closeMobileMenu} style={{ padding: '14px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', borderBottom: '1px solid var(--color-border)', textDecoration: 'none' }}>
-            Публикации
           </Link>
           <Link href="/kontakty" onClick={closeMobileMenu} style={{ padding: '14px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', borderBottom: '1px solid var(--color-border)', textDecoration: 'none' }}>
             Контакты

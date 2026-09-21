@@ -64,7 +64,7 @@ export default function NotFound() {
             <Link href="/" className="btn" style={{ padding: '14px 32px', fontSize: '15px' }}>
               На главную страницу
             </Link>
-            <a href="tel:+74742000000" className="btn-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+            <a href="tel:+74742201525" className="btn-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
               Позвонить в компанию
             </a>
           </div>

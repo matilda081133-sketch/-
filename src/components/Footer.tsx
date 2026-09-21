@@ -44,12 +44,8 @@ export default function Footer() {
   ];
 
   const companyLinks = [
-    { title: "О компании", href: "/o-kompanii" },
     { title: "Специалисты", href: "/specialisty" },
-    { title: "Отзывы", href: "/otzyvy" },
-    { title: "Стоимость", href: "/stoimost" },
     { title: "Практика", href: "/praktika" },
-    { title: "Публикации", href: "/publikacii" },
     { title: "Контакты", href: "/kontakty" }
   ];
 
@@ -198,8 +194,7 @@ export default function Footer() {
             >
               Настройки cookie
             </button>
-            <Link href="/terms">Правовой дисклеймер</Link>
-            <Link href="/sitemap">Карта сайта</Link>
+            <Link href="/sitemap.xml">Карта сайта</Link>
           </div>
         </div>
       </div>

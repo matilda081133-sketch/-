@@ -450,41 +450,102 @@ export default function VzyskanieNeustojkiDDUClient() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="hover-lift"
+                className="card hover-lift"
                 style={{
-                  padding: '28px 24px',
-                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
                   border: '1px solid var(--color-border)',
-                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '30px 24px',
                   display: 'flex',
                   flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   position: 'relative',
                   overflow: 'hidden'
                 }}
               >
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="90" height="90" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
-                <div style={{ 
-                  fontSize: '11px', 
-                  fontWeight: 600, 
-                  color: 'var(--color-gold)', 
-                  marginBottom: '12px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '3px 8px',
-                  alignSelf: 'flex-start',
-                  borderRadius: '2px'
-                }}>
-                  {item.tag}
+
+                <div>
+                  {item.tag && (
+                    <div style={{
+                      fontSize: '11.5px',
+                      fontWeight: 700,
+                      color: 'var(--color-primary)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                      marginBottom: '12px',
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '3px 8px',
+                      display: 'inline-block',
+                      borderRadius: '2px'
+                    }}>
+                      {item.tag}
+                    </div>
+                  )}
+
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '18px',
+                    fontWeight: 600,
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35
+                  }}>
+                    {item.title}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0
+                  }}>
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.35, margin: '0 0 10px 0' }}>
-                  {item.title}
-                </h3>
-                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                  {item.desc}
-                </p>
+
+                <a
+                  href="#form"
+                  className="situation-btn"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13.5px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '20px',
+                    cursor: 'pointer'
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
+                  }}
+                >
+                  <span>Взыскать сумму</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
               </div>
             ))}
           </div>
@@ -492,10 +553,10 @@ export default function VzyskanieNeustojkiDDUClient() {
           <div className="card service-card cta-banner-card" style={{ 
             width: '100%', 
             padding: '32px 36px', 
-            background: 'var(--color-deep-blue)', 
+            background: 'linear-gradient(145deg, #10273B 0%, #17324D 100%)', 
             borderRadius: '0',
             borderTop: '3px solid var(--color-gold)',
-            boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
+            boxShadow: '0 8px 24px rgba(16, 39, 59, 0.28)',
             display: 'flex',
             flexWrap: 'wrap',
             gap: '24px',
@@ -513,8 +574,24 @@ export default function VzyskanieNeustojkiDDUClient() {
             <div style={{ flexShrink: 0 }}>
               <a 
                 href="#form" 
-                className="btn white-btn-custom" 
-                style={{ display: 'inline-block', textAlign: 'center', fontSize: '15px' }}
+                className="btn btn-gold" 
+                style={{
+                  display: 'inline-block',
+                  textAlign: 'center',
+                  padding: '12px 24px',
+                  fontSize: '14.5px',
+                  fontWeight: 700,
+                  backgroundColor: 'var(--color-gold)',
+                  color: 'var(--color-deep-blue)',
+                  borderRadius: '0',
+                  boxShadow: '0 4px 12px rgba(193, 160, 102, 0.25)'
+                }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById('form');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  else window.location.hash = 'form';
+                }}
               >
                 Проверить допсоглашение
               </a>

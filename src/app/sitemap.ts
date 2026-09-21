@@ -74,9 +74,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Банкротство физических лиц
     '/grazhdanam/bankrotstvo-fizicheskih-lic/',
     '/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/',
+    // Кредитный юрист (Кластер CIV-02)
+    '/grazhdanam/kreditnyj-yurist/',
+    '/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/',
     // Взыскание долгов с физических лиц (Кластер CIV-08)
     '/grazhdanam/vzyskanie-dolgov/',
     '/grazhdanam/vzyskanie-dolgov/zashchita-ot-trebovaniy-po-dolgu/',
+    // Жилищный юрист (Кластер CIV-03)
+    '/grazhdanam/zhilishchnyj-yurist/',
+    '/grazhdanam/zhilishchnyj-yurist/zaliv-kvartiry/',
+    '/grazhdanam/zhilishchnyj-yurist/vyselenie-i-vypiska-iz-kvartiry-cherez-sud/',
+    '/grazhdanam/zhilishchnyj-yurist/vselenie-i-ustranenie-prepyatstvij-v-polzovanii-kvartiroj/',
+    '/grazhdanam/zhilishchnyj-yurist/spory-s-upravlyayushchej-kompaniej-i-zhkh/',
+    '/grazhdanam/zhilishchnyj-yurist/razdel-licevyh-schetov-i-poryadka-oplaty-zhku/',
+    '/grazhdanam/zhilishchnyj-yurist/soglasovanie-i-uzakonenie-pereplanirovki/',
     // Земля
     '/grazhdanam/zemelnyj-yurist/',
     '/grazhdanam/zemelnyj-yurist/spory-o-granicah-zemelnogo-uchastka/',
@@ -193,8 +204,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return allRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
     priority: route === '' ? 1.0 : route.includes('/specialisty/') ? 0.8 : route.split('/').length <= 3 ? 0.9 : 0.85,
   }));
 }
