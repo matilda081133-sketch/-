@@ -303,8 +303,12 @@ export default function ZashchitaPo1815KoapClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'inline-block' }}>Защита работодателя</span> <br />
-            <span className="hero-title-span-mobile" style={{ display: 'inline-block', color: 'var(--color-gold)' }}>по статье 18.15 КоАП РФ в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Защита работодателя
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              по статье 18.15 КоАП РФ в Липецке
+            </span>
           </span>
         }
         subtitle={

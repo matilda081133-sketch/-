@@ -51,7 +51,7 @@ export default function CasesBlock({
               Практика
             </span>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '20px' }}>
             <div style={{ maxWidth: '820px', flex: '1 1 500px' }}>
               <h2 style={{ margin: 0, fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.25 }}>
                 {title}

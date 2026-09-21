@@ -173,8 +173,8 @@ export default function UdoClient() {
     "link": "/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/"
   },
   {
-    "title": "Экономические преступления",
-    "link": "/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-ekonomicheskim-prestupleniyam/"
+    "title": "Адвокат по делам о наркотиках",
+    "link": "/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-delam-o-narkotikah/"
   }
 ];
   const faqItems = [
@@ -192,7 +192,7 @@ export default function UdoClient() {
   },
   {
     "q": "Чем ст. 80 УК РФ отличается от УДО?",
-    "a": "По ст. 80 УК РФ происходит не полное освобождение, а замена лишения свободы на более мягкий вид наказания (принудительные работы в ИЦ). Сроки для подачи по ст. 80 часто наступают раньше, чем на УДО."
+    "a": "Статья 80 УК РФ предусматривает замену неотбытой части наказания более мягким видом наказания (например, принудительными работами или исправительными работами), тогда как УДО (ст. 79 УК РФ) полностью освобождает от отбывания наказания под условием соблюдения установленных обязанностей. Сроки, после отбытия которых возможно обращение по ст. 80 УК РФ, по ряду категорий преступлений наступают раньше, чем для УДО. Защита оценивает, какой вариант в текущей ситуации перспективнее, либо подаёт ходатайства последовательно."
   }
 ];
 
@@ -299,14 +299,14 @@ export default function UdoClient() {
         superTitle="УДО и замена наказания (ст. 79, 80 УК РФ) • Липецк"
         title={
           <span style={{ display: 'block', maxWidth: '100%' }}>
-            <span style={{ display: 'block' }}>Условно-досрочное освобождение</span>
-            <span style={{ display: 'block' }}>помощь адвоката по УДО</span>
+            <span style={{ display: 'block' }}>Условно-досрочное</span>
+            <span style={{ display: 'block' }}>освобождение</span>
             <span style={{ display: 'block' }}>в Липецке</span>
           </span>
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Оценим формальные и фактические основания для УДО: отбытую часть срока, взыскания и поощрения, возмещение ущерба, гарантии жилья и работы. Соберём доказательства и представим интересы в суде.
+            Проверим, наступил ли срок для обращения, изучим поведение за весь период и соберём документы, которые помогают суду оценить исправление и готовность к жизни после освобождения. Подготовим ходатайство и представим позицию в суде.
           </span>
         }
         primaryCtaText="Обсудить ситуацию с адвокатом"
@@ -449,6 +449,478 @@ export default function UdoClient() {
             ))}
           </div>
 
+          {/* ═══ СОДЕРЖАТЕЛЬНЫЕ РАЗДЕЛЫ ПО УСЛОВНО-ДОСРОЧНОМУ ОСВОБОЖДЕНИЮ ═══ */}
+
+          {/* 1. БЫСТРАЯ ПРОВЕРКА ГОТОВНОСТИ К УДО */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Предварительный аудит
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Что нужно проверить до подачи ходатайства об УДО
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Суд оценивает исправление осуждённого в совокупности. Прежде чем обращаться с ходатайством, необходимо детально исследовать 5 ключевых факторов.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Сроки и зачёты</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Наступил ли срок?</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Проверяем приговор, категорию и состав преступления, назначенный и фактически отбытый срок, зачёты содержания под стражей (ст. 72 УК РФ) и изменения приговора. Раннее обращение возвращается без рассмотрения.
+                  </p>
+                </div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Динамика поведения</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Как отбывал наказание?</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Изучаем весь период: взыскания и поощрения, даты и основания, условия содержания, участие в воспитательных мероприятиях. Суд обязан исследовать всю динамику, а не изолированные факты.
+                  </p>
+                </div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Занятость в ИК</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Есть ли труд и обучение?</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Анализируем трудоустройство в колонии, поданные заявления о желании трудиться, освоение новых профессий и объективные причины отсутствия занятости (отсутствие рабочих мест, здоровье).
+                  </p>
+                </div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Исполнение обязательств</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Как возмещается вред?</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Проверяем исполнительные документы, удержания из зарплаты, добровольные переводы потерпевшим, баланс дохода и отсутствие признаков уклонения от погашения ущерба.
+                  </p>
+                </div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Ресоциализация</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Что будет после освобождения?</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Формируем пакет социальных гарантий: подтверждённое жильё (согласие собственника, выписка ЕГРН), гарантийное письмо работодателя, семейные обязательства и план адаптации.
+                  </p>
+                </div>
+              </div>
+
+              <div style={{ background: 'var(--gradient-cream)', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-deep-blue)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Юридическая помощь</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Оценить перспективу УДО</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Передайте приговор и сведения о колонии для первичного расчёта контрольных дат и составления доказательственной карты.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-primary" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Рассчитать срок УДО</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 2. КАКАЯ ЧАСТЬ СРОКА ДОЛЖНА БЫТЬ ОТБЫТА */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Сроки по закону (ст. 79, 93 УК РФ)
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Какая часть срока должна быть отбыта для права на УДО
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Закон устанавливает обязательные доли назначенного наказания в зависимости от категории преступления и состава. Фактически отбытый срок лишения свободы не может быть менее 6 месяцев.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)', padding: '22px 20px' }}>
+                <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', marginBottom: '6px' }}>не менее 1/3</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Небольшая и средняя тяжесть</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Преступления, за которые максимальное наказание не превышает 3 лет (небольшая тяжесть) либо 5 лет умышленно / 10 лет по неосторожности (средняя тяжесть).
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)', padding: '22px 20px' }}>
+                <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', marginBottom: '6px' }}>не менее 1/2</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Тяжкие преступления</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Умышленные деяния с наказанием до 10 лет лишения свободы (ч. 3–4 ст. 158, ч. 2–3 ст. 159, ч. 2 ст. 228 УК РФ и др.), если они не подпадают под спецправила 3/4.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)', padding: '22px 20px' }}>
+                <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', marginBottom: '6px' }}>не менее 2/3</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Особо тяжкие составы</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Умышленные преступления с наказанием свыше 10 лет либо пожизненным, а также лица, которым ранее уже отменялось условно-досрочное освобождение.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)', padding: '22px 20px' }}>
+                <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', marginBottom: '6px' }}>не менее 3/4</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Специальные составы</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Тяжкие и особо тяжкие преступления в сфере незаконного оборота наркотиков (ст. 228.1, 229, 229.1 УК РФ), террористическая деятельность, преступления против несовершеннолетних.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)', padding: '22px 20px' }}>
+                <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', marginBottom: '6px' }}>не менее 4/5</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Лица до 14 лет</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Преступления против половой неприкосновенности несовершеннолетних, не достигших 14-летнего возраста.
+                </p>
+              </div>
+
+              <div style={{ background: 'var(--gradient-cream)', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-deep-blue)', padding: '22px 20px' }}>
+                <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '6px' }}>≥ 6 месяцев</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Минимальный срок</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Фактически отбытый осуждённым срок лишения свободы не может быть менее полугода, даже если рассчитанная доля составляет меньший период.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. ЧТО ИМЕННО ОЦЕНИВАЕТ СУД */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Судебное исследование
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Что именно исследует суд при рассмотрении ходатайства
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Закон не устанавливает автоматического права на освобождение по наступлению срока. Суд делает вывод об исправлении осуждённого на основе комплексного анализа всех сторон его личности.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                  <div style={{ width: '8px', height: '8px', background: 'var(--color-primary)', borderRadius: '50%' }}></div>
+                  <h4 style={{ margin: 0, fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>Поведение за весь период наказания</h4>
+                </div>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 12px 0' }}>
+                  Суд изучает характеристику учреждения, наличие взысканий и поощрений, динамику изменения поведения, соблюдение правил внутреннего распорядка колонии и перевод в облегчённые условия.
+                </p>
+                <div style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>Подтверждение: справка о поощрениях и взысканиях, характеристика ИК</div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                  <div style={{ width: '8px', height: '8px', background: 'var(--color-primary)', borderRadius: '50%' }}></div>
+                  <h4 style={{ margin: 0, fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>Отношение к труду и обучению</h4>
+                </div>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 12px 0' }}>
+                  Оценивается добросовестный труд на производстве колонии, освоение рабочих специальностей, получение среднего или профессионального образования, участие в благоустройстве отряда.
+                </p>
+                <div style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>Подтверждение: справка о трудовой занятости, дипломы, свидетельства ПТУ</div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                  <div style={{ width: '8px', height: '8px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
+                  <h4 style={{ margin: 0, fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>Возмещение причинённого вреда</h4>
+                </div>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 12px 0' }}>
+                  Исследуется исполнение приговора в части гражданского иска, регулярность отчислений из зарплаты, добровольные платежи осуждённого и близких, а также объективные причины частичного возмещения.
+                </p>
+                <div style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>Подтверждение: справка бухгалтерии ИК об удержаниях, квитанции, расписки</div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                  <div style={{ width: '8px', height: '8px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
+                  <h4 style={{ margin: 0, fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>План жизни и социальная адаптация</h4>
+                </div>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 12px 0' }}>
+                  Суду важно понимать, куда осуждённый отправится после освобождения: наличие гарантированного места проживания, возможность трудоустройства, социальные связи с семьёй и детьми.
+                </p>
+                <div style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>Подтверждение: гарантийное письмо работодателя, документы на жильё</div>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. ПОВЕДЕНИЕ, ВЗЫСКАНИЯ И ПООЩРЕНИЯ */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Правовая позиция
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Поведение, взыскания и поощрения: оценка в динамике
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Наличие взысканий в личном деле — не автоматический повод для отказа. Пленум Верховного Суда РФ № 8 прямо запрещает формальный подход при оценке дисциплинарной истории.
+              </p>
+            </div>
+
+            <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)', padding: '28px' }}>
+              <div className="grid grid-3" style={{ gap: '24px' }}>
+                <div>
+                  <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Старые и погашенные взыскания</h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Взыскания, полученные в начале срока или более года назад, считаются снятыми или погашенными. Суд не вправе отказывать в УДО лишь на том основании, что нарушения когда-либо имели место.
+                  </p>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Позитивная динамика</h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Решающую роль играет поведение в предшествующий подаче ходатайства период: отсутствие свежих нарушений, получение благодарностей, снятие прежних взысканий мерами поощрения.
+                  </p>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Оспаривание нарушений</h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Если администрация искусственно наложила дисциплинарное взыскание перед наступлением срока УДО (ШИЗО, выговор), адвокат подаёт жалобу в прокуратуру и суд в отдельном порядке.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 5. ВОЗМЕЩЕНИЕ ВРЕДА И ОТНОШЕНИЕ К СОДЕЯННОМУ */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Материальная сторона
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Возмещение вреда и отношение к приговору
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Наличие крупного невыплаченного гражданского иска или непризнание вины часто пугают родственников. Разъясняем реальные требования закона.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '24px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Частичное возмещение вреда допустимо
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 12px 0' }}>
+                  Закон требует возмещения вреда в размере, определённом приговором суда, либо <strong>принятия мер к возмещению</strong> в меру реальных возможностей. Если зарплата в колонии составляет 5 000–10 000 ₽, осуждённый объективно не может быстро закрыть миллионный иск.
+                </p>
+                <div style={{ background: '#F8FAFC', padding: '12px 16px', borderLeft: '3px solid var(--color-primary)', fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+                  Суду важно доказать: удержания производились регулярно, осуждённый не отказывался от работы, а после освобождения имеет гарантии заработка для продолжения выплат.
+                </div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Непризнание вины не исключает УДО
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 12px 0' }}>
+                  Конституционный Суд РФ неоднократно разъяснял: непризнание осуждённым вины в совершённом преступлении не может служить законным основанием для отказа в условно-досрочном освобождении.
+                </p>
+                <div style={{ background: '#F8FAFC', padding: '12px 16px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+                  Суд в стадии исполнения приговора не вправе проверять обоснованность осуждения. Оценивается только соблюдение режима и исправление в период отбывания наказания.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 6. ПОРЯДОК ОБРАЩЕНИЯ И РАССМОТРЕНИЯ */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Процессуальный регламент
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Порядок подачи ходатайства и рассмотрения в суде
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Вопрос об УДО разрешает районный (городской) суд <strong>по месту нахождения исправительного учреждения</strong>, независимо от того, какой суд вынес исходный приговор.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px 18px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', marginBottom: '6px' }}>ЭТАП 01</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Расчёт срока обращения</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Проверяем точные даты наступления права с учётом зачётов времени под стражей, апелляций и кассационных пересмотров.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px 18px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', marginBottom: '6px' }}>ЭТАП 02</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Сбор документов с воли</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Запрашиваем гарантийные письма работодателей, подтверждения наличия жилья, справки о семье, иждивенцах и здоровье близких.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px 18px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', marginBottom: '6px' }}>ЭТАП 03</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Подготовка ходатайства</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Составляем мотивированное ходатайство, где каждый аргумент подтверждён официальным документом и практикой Верховного Суда РФ.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px 18px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', marginBottom: '6px' }}>ЭТАП 04</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Подача через спецотдел</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Ходатайство направляется осуждённым через спецчасть колонии либо адвокатом напрямую в суд по месту отбывания наказания.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px 18px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', marginBottom: '6px' }}>ЭТАП 05</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Участие в заседании</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Адвокат лично участвует в судебном заседании, обосновывает позицию, парирует доводы прокурора и представителя учреждения.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px 18px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', marginBottom: '6px' }}>ЭТАП 06</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Вступление в силу</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Постановление суда вступает в силу по истечении 15 суток, если не обжаловано прокурором, после чего осуждённый освобождается.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 7. ДОКУМЕНТЫ ДЛЯ ОЦЕНКИ И СУДА */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Доказательственная база
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Перечень документов для оценки перспектив и суда
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Успех ходатайства зависит от качества доказательств. Документы собираются параллельно: частью из личного дела в колонии, частью — родственниками и адвокатом на свободе.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', borderBottom: '1px solid var(--color-border)', paddingBottom: '8px' }}>
+                  Обязательный процессуальный минимум
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  <li>Копия вступившего в силу приговора суда (с отметкой о вступлении).</li>
+                  <li>Апелляционные, кассационные и надзорные постановления (если приговор изменялся).</li>
+                  <li>Справка об отбытом сроке наказания и зачётах времени содержания в СИЗО.</li>
+                  <li>Постановление суда об отказе в УДО (если ранее подавалось ходатайство).</li>
+                </ul>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', borderBottom: '1px solid var(--color-border)', paddingBottom: '8px' }}>
+                  Материалы из исправительного учреждения
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  <li>Характеристика администрации учреждения на осуждённого.</li>
+                  <li>Справка о наличии поощрений и взысканий за весь период отбывания.</li>
+                  <li>Справка о трудовой деятельности, освоенных специальностях и табелях выходов.</li>
+                  <li>Заключение психологической службы и участие в воспитательных программах.</li>
+                </ul>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', borderBottom: '1px solid var(--color-border)', paddingBottom: '8px' }}>
+                  Документы о возмещении вреда
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  <li>Справка бухгалтерии колонии о суммах удержаний по исполнительному листу.</li>
+                  <li>Квитанции почтовых и банковских переводов потерпевшим от родственников.</li>
+                  <li>Справка о размере начисляемой заработной платы в учреждении.</li>
+                  <li>Письменная позиция потерпевшего либо мировое соглашение (при наличии).</li>
+                </ul>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', borderBottom: '1px solid var(--color-border)', paddingBottom: '8px' }}>
+                  Социальные гарантии с воли
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  <li>Гарантийное письмо работодателя с обязательством трудоустройства и окладом.</li>
+                  <li>Выписка из ЕГРН на жильё, согласие собственника на проживание и регистрацию.</li>
+                  <li>Свидетельства о рождении несовершеннолетних детей, свидетельство о браке.</li>
+                  <li>Медицинские документы о заболеваниях осуждённого либо престарелых родителей.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 8. УДО, СТАТЬЯ 80 УК РФ ИЛИ ОБЖАЛОВАНИЕ ОТКАЗА */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Стратегия защиты
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                УДО, статья 80 УК РФ или обжалование отказа
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Если срок для УДО ещё не подошёл или позиция администрации колонии негативна, выбираем наиболее надёжный процессуальный маршрут.
+              </p>
+            </div>
+
+            <div className="grid grid-4" style={{ gap: '18px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '20px 16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>УДО (ст. 79 УК РФ)</h4>
+                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                    Полное освобождение от дальнейшего отбывания наказания. Подходит, когда наступил срок и собраны доказательства исправления.
+                  </p>
+                </div>
+                <div style={{ marginTop: '14px', fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)' }}>Основной маршрут</div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '20px 16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Замена (ст. 80 УК РФ)</h4>
+                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                    Замена лишения свободы на принудительные работы (ПТР), исправительные работы или штраф. Часто доступна раньше УДО.
+                  </p>
+                </div>
+                <div style={{ marginTop: '14px', fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)' }}>Альтернатива УДО</div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '20px 16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Обжалование отказа</h4>
+                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                    Апелляционная жалоба в областной суд в течение 15 суток при формальном подходе, ссылке на тяжесть преступления или процессуальных ошибках.
+                  </p>
+                </div>
+                <div style={{ marginTop: '14px', fontSize: '12px', fontWeight: 600, color: 'var(--color-gold)' }}>Срок — 15 суток</div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-deep-blue)', padding: '20px 16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Повторное обращение</h4>
+                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                    Подача нового ходатайства через 6 месяцев после отказа суда первой инстанции с устранением всех указанных недостатков.
+                  </p>
+                </div>
+                <div style={{ marginTop: '14px', fontSize: '12px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>Через 6 месяцев</div>
+              </div>
+            </div>
+          </div>
+
           {/* Сопутствующие уголовные услуги */}
           <div style={{ background: '#F4F5F7', padding: '24px 28px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)' }}>
             <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>
@@ -541,7 +1013,7 @@ export default function UdoClient() {
                 <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с адвокатом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Укажите, в каком органе проводится проверка или расследование, процессуальный статус и какие документы вручены. Обращение передадим Аркадию Евгеньевичу Бобкину для первичного правового анализа.
+                Укажите учреждение, статью приговора, назначенный срок, фактически отбытую часть и наличие непогашенных взысканий для оценки перспективы обращения. Обращение передадим Аркадию Евгеньевичу Бобкину для первичного правового анализа.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
@@ -576,7 +1048,7 @@ export default function UdoClient() {
                   </>
                 }
                 buttonText="Отправить обращение"
-                commentPlaceholder="Опишите вашу ситуацию: орган, статья, вызов, задержание..."
+                commentPlaceholder="Учреждение, статья приговора, назначенный срок, фактически отбыто, взыскания..."
                 hiddenFields={[
                   { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/uslovno-dosrochnoe-osvobozhdenie/' },
                   { name: 'direction', value: 'advokat_ugolovnyj' },

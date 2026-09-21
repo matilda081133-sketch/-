@@ -393,7 +393,7 @@ export default function ZashchitaOtvetchikaClient() {
           </span>
         }
         subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
+          <span style={{ display: 'inline-block', maxWidth: '880px', textWrap: 'balance' }}>
             Получили иск или определение арбитражного суда? Проверим предмет и основания требований, процессуальные сроки, доказательства и подсудность, подготовим отзыв и представим интересы компании в суде.
           </span>
         }
@@ -401,10 +401,8 @@ export default function ZashchitaOtvetchikaClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="click_primary_cta_zashchita_otvetchika"
         afterTrustContent={
-          <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, margin: '16px 0 24px 0', lineHeight: 1.55, fontWeight: 500, maxWidth: '560px' }}>
-            Наша задача — отбить необоснованные требования,<br />
-            снизить сумму взыскания и защитить деньги и активы<br />
-            компании доступными процессуальными средствами.
+          <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, margin: '16px 0 24px 0', lineHeight: 1.55, fontWeight: 500, maxWidth: '860px' }}>
+            Наша задача — отбить необоснованные требования, снизить сумму взыскания и защитить деньги и активы компании доступными процессуальными средствами.
           </p>
         }
         primaryCtaSubtext={
@@ -423,10 +421,6 @@ export default function ZashchitaOtvetchikaClient() {
           { text: 'Представляем компанию во всех судебных инстанциях.' },
           { text: 'Обжалуем неблагоприятные судебные акты.' }
         ]}
-        imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Специалист по арбитражным спорам и защите бизнеса, куратор направления"
-        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}

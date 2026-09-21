@@ -165,6 +165,10 @@ export default function AdvokatVzyatkiClient() {
     "link": "/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-ekonomicheskim-prestupleniyam/"
   },
   {
+    "title": "Мошенничество",
+    "link": "/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-moshennichestvu/"
+  },
+  {
     "title": "Задержание, обыск и допрос",
     "link": "/grazhdanam/advokat-po-ugolovnym-delam/advokat-pri-zaderzhanii-obyske-i-doprose/"
   },
@@ -180,7 +184,7 @@ export default function AdvokatVzyatkiClient() {
   },
   {
     "q": "В чем разница между взяткой и подарком чиновнику?",
-    "a": "Обычный подарок стоимостью до 3 000 рублей разрешен ст. 575 ГК РФ в связи с протокольными мероприятиями. Взятка всегда обусловлена встречным действием или общим покровительством и не имеет минимального порога (ст. 291.2 УК РФ — мелкое взяточничество до 10 000 руб.)."
+    "a": "Сумма до 3 000 ₽ сама по себе не делает передачу законным подарком. Гражданский кодекс РФ допускает обычные подарки стоимостью не более трех тысяч рублей работникам определенных сфер (например, медицинских или образовательных учреждений), однако это не распространяется на случаи, когда выгода передается должностному лицу за совершение действий (бездействия), входящих в его служебные полномочия. Если передача обусловлена должностным положением, обвинение квалифицирует это как получение взятки независимо от суммы."
   },
   {
     "q": "Как освободиться от ответственности за дачу взятки?",
@@ -302,7 +306,7 @@ export default function AdvokatVzyatkiClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Защита государственных и муниципальных служащих, сотрудников контролирующих органов и предпринимателей по делам о получении, даче и посредничестве во взяточничестве, превышении и злоупотреблении полномочиями.
+            Защитим при проверке и обвинении в получении или даче взятки, посредничестве, злоупотреблении и превышении полномочий. Проверим статус, служебные функции, договорённости, движение ценностей, последствия и законность доказательств.
           </span>
         }
         primaryCtaText="Обсудить ситуацию с адвокатом"
@@ -443,6 +447,348 @@ export default function AdvokatVzyatkiClient() {
                 </a>
               </div>
             ))}
+          </div>
+
+          {/* ═══ СОДЕРЖАТЕЛЬНЫЕ РАЗДЕЛЫ ПО ДОЛЖНОСТНЫМ ДЕЛАМ И ВЗЯТКАМ ═══ */}
+
+          {/* 1. Кого и в чём обвиняют (Маршрутизатор ролей) */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Маршрутизатор ролей
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Кого и в чём обвиняют: выберите вашу ситуацию
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Защита по коррупционным и должностным делам строится индивидуально с учётом статуса, круга полномочий и стадии процессуальной проверки.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Госслужба и полномочия</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Должностное лицо / Получатель</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Проверка или обвинение по ст. 285, 286, 290, 292, 293 УК РФ. Проверяем источник публичных полномочий, служебные регламенты, причинную связь с решением и законность оперативного эксперимента.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-primary" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Защитить должностное лицо</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Бизнес и граждане</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Предполагаемый взяткодатель</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Деньги или выгода переданы либо предложены чиновнику (ст. 291, 291.2 УК РФ). Оцениваем признаки вымогательства взятки, добровольность обращения и основания для освобождения от ответственности.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-primary" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Оценить риски ст. 291 УК РФ</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-deep-blue)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Содействие</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Предполагаемый посредник</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Обвинение в передаче предмета или способствовании договоренности (ст. 291.1 УК РФ). Отделяем бытовую помощь от осознанного посредничества и проверяем размер и направленность умысла.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-primary" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Защита посредника</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Срочная помощь</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Родственник задержанного</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Близкого задержали с поличным или проводят обыск дома. Подключаем адвоката к следственным действиям, посещаем изолятор (ИВС/СИЗО) и готовим позицию по мере пресечения.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-primary" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Срочный выезд адвоката</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 2. Получение, дача или посредничество */}
+          <div style={{ marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Квалификация коррупционных составов
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Получение, дача или посредничество: специфика защиты
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Размер вознаграждения влияет на тяжесть части статьи, но не подменяет доказанность самого состава преступления, служебной связи и умысла.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              <div style={{ background: '#F8FAFC', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                  Получение взятки (ст. 290 УК РФ)
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Исследуется, входило ли действие (бездействие) в служебные полномочия либо мог ли чиновник способствовать решению в силу должности. Проверяются факт получения выгоды, отсутствие провокации и соответствие размера инкриминируемой части статьи.
+                </p>
+              </div>
+
+              <div style={{ background: '#F8FAFC', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                  Дача взятки (ст. 291 УК РФ)
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Защита оценивает адресата, мотив предложения, добровольность передачи и наличие вымогательства со стороны чиновника. При соблюдении условий примечания к статье добиваемся освобождения доверителя от уголовной ответственности.
+                </p>
+              </div>
+
+              <div style={{ background: '#F8FAFC', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                  Посредничество во взяточничестве (ст. 291.1 УК РФ)
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Ответственность наступает за непосредственную передачу взятки по поручению или содействие соглашению. Защита проверяет осведомленность лица о коррупционной цели, размер взятки (от 25 000 ₽) и разграничивает посредничество с мошенничеством.
+                </p>
+              </div>
+
+              <div style={{ background: '#F8FAFC', border: '1px solid var(--color-border)', padding: '24px' }}>
+                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                  Мелкое взяточничество (ст. 291.2 УК РФ)
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Сумма взятки не превышает 10 000 рублей. Проверяются способ передачи, отсутствие вымогательства, наличие судимости по аналогичным составам и перспектива прекращения дела с назначением судебного штрафа (ст. 76.2 УК РФ).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. Злоупотребление или превышение полномочий */}
+          <div style={{ marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Служебные преступления
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Злоупотребление или превышение полномочий
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Не каждое управленческое или процедурное нарушение образует состав преступления. Для квалификации следствие обязано доказать конкретные признаки.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px', borderLeft: '4px solid var(--color-primary)' }}>
+                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Злоупотребление (ст. 285 УК РФ)
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Использование служебных полномочий вопреки интересам службы. Обязательны два признака: корыстная или иная личная заинтересованность и наступление существенного вреда правам граждан, организаций или государства.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px', borderLeft: '4px solid var(--color-gold)' }}>
+                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Превышение (ст. 286 УК РФ)
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Совершение действий, явно выходящих за пределы полномочий должностного лица. Защита доказывает, что решение соответствовало регламенту, принималось в ситуации крайней необходимости или носило коллегиальный характер.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px', borderLeft: '4px solid var(--color-deep-blue)' }}>
+                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                  Подлог и халатность (ст. 292, 293 УК РФ)
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Разграничиваем умышленное внесение ложных данных в официальные документы и небрежность при отсутствии технической или кадровой возможности исполнить служебные обязанности в полном объеме.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. Взятка, подарок, коммерческий подкуп или мошенничество */}
+          <div style={{ marginBottom: '48px', background: '#F8FAFC', padding: '32px 28px', border: '1px solid var(--color-border)' }}>
+            <h3 style={{ fontSize: 'clamp(22px, 2.8vw, 30px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0' }}>
+              Взятка, подарок, коммерческий подкуп или мошенничество
+            </h3>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
+              Точная квалификация деяния — основа стратегии защиты. Смешение этих составов следствием часто приводит к необоснованному ужесточению обвинения:
+            </p>
+
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', padding: '20px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ color: 'var(--color-deep-blue)', fontSize: '16px', display: 'block', marginBottom: '8px' }}>Взятка vs Законный подарок</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Взятка всегда обусловлена служебным поведением должностного лица (действием, бездействием, покровительством). Законный подарок имеет самостоятельное основание (праздник, протокольное мероприятие) и не связан с выполнением служебных обязанностей.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '20px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ color: 'var(--color-deep-blue)', fontSize: '16px', display: 'block', marginBottom: '8px' }}>Взятка vs Коммерческий подкуп (ст. 204 УК РФ)</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Субъектом взятки является только публичное должностное лицо (госорган, муниципалитет, контрольное ведомство). Передача незаконного вознаграждения руководителю или менеджеру коммерческой организации квалифицируется как коммерческий подкуп.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '20px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ color: 'var(--color-deep-blue)', fontSize: '16px', display: 'block', marginBottom: '8px' }}>Взятка vs Мошенничество (ст. 159 УК РФ)</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Если лицо обещало «решить вопрос», но заведомо не обладало полномочиями и возможностью повлиять на решение, содеянное является хищением путем обмана (мошенничеством), санкция за которое существенно мягче, чем за получение взятки.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '20px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ color: 'var(--color-deep-blue)', fontSize: '16px', display: 'block', marginBottom: '8px' }}>Благодарность vs Взятка</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Передача вознаграждения после совершения служебного действия оценивается по наличию предварительной договоренности. При отсутствии предварительного соглашения состав получения взятки отсутствует.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 5. Проверка ОРМ, записей и передачи предмета */}
+          <div style={{ marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Доказательственная база
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Проверка ОРМ, записей и передачи предмета
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Коррупционные дела основываются на оперативно-розыскных мероприятиях (ОРМ). Нарушения при их проведении влекут признание доказательств недопустимыми.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px' }}>
+                <h4 style={{ fontSize: '16.5px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                  Оперативный эксперимент и провокация
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Проверяем, исходила ли инициатива от доверителя или его склоняли к получению ценностей, которые без давления правоохранителей не были бы приняты. Доказываем провокацию взятки в нарушение ст. 5 ФЗ «Об ОРД».
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px' }}>
+                <h4 style={{ fontSize: '16.5px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                  Аудио-, видеозаписи и переписка
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Анализируем целостность файлов, непрерывность записи, контекст разговора до и после ключевых фраз. Инициируем фоноскопические и лингвистические экспертизы для исключения монтажа и субъективной трактовки слов.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px' }}>
+                <h4 style={{ fontSize: '16.5px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                  Меченые купюры и смывы с рук
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Проверяем постановление об осмотре и выдаче денег заявителю, фиксацию серийных номеров, порядок изъятия, упаковки и опечатывания, а также соблюдение методики отбора контрольных смывов люминесцентного состава.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px' }}>
+                <h4 style={{ fontSize: '16.5px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                  Протоколы следственных действий и понятые
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Выявляем фиктивное участие понятых, несоответствие времени составления протоколов фактическим событиям и нарушения порядка рассекречивания результатов ОРД для приобщения к делу.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 6. Должностные полномочия и связь с вознаграждением */}
+          <div style={{ marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Служебный анализ
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Должностные полномочия и связь с вознаграждением
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Ключевой фактор защиты — сопоставление вменяемых действий с официальными регламентами, приказами и реальной практикой принятия решений в ведомстве.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                  Анализ регламентов
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Изучаем должностную инструкцию, приказы о распределении обязанностей и временном замещении для установления точных рамок прав и обязанностей доверителя.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                  Маршрут решений
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Восстанавливаем цепочку согласований документа: визы коллег, заключения профильных отделов и коллегиальные решения, исключающие единоличную вину.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+                  Отсутствие корысти
+                </h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Доказываем направленность действий на обеспечение нормальной работы ведомства, исполнение вышестоящих указаний или добросовестное заблуждение.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 7. Возможные правовые маршруты */}
+          <div style={{ marginBottom: '56px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Стратегия защиты
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Возможные правовые маршруты защиты
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                После изучения материалов адвокат формирует правовую позицию, направленную на прекращение дела, смягчение обвинения либо оправдание.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', padding: '22px' }}>
+                <strong style={{ color: 'var(--color-deep-blue)', fontSize: '16px', display: 'block', marginBottom: '6px' }}>Отсутствие состава или события</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Доказывание законности действий служащего, отсутствия коррупционного соглашения или отсутствия существенного вреда. Прекращение дела следователем либо оправдательный приговор суда.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', padding: '22px' }}>
+                <strong style={{ color: 'var(--color-deep-blue)', fontSize: '16px', display: 'block', marginBottom: '6px' }}>Переквалификация обвинения</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Исключение необоснованных квалифицирующих признаков (вымогательство, группа лиц по предварительному сговору, особо крупный размер) либо переход на мошенничество или халатность с не связанными с лишением свободы мерами.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-deep-blue)', padding: '22px' }}>
+                <strong style={{ color: 'var(--color-deep-blue)', fontSize: '16px', display: 'block', marginBottom: '6px' }}>Исключение доказательств ОРМ</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Признание протоколов оперативного эксперимента, фонограмм и досмотров недопустимыми доказательствами ввиду процессуальных нарушений, что разрушает конструкцию обвинения.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', padding: '22px' }}>
+                <strong style={{ color: 'var(--color-deep-blue)', fontSize: '16px', display: 'block', marginBottom: '6px' }}>Специальное освобождение и смягчение</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Применение примечаний к ст. 291 и 291.1 УК РФ при добровольном сообщении и вымогательстве, а также сбор совокупности смягчающих обстоятельств для назначения наказания ниже низшего предела (ст. 64 УК РФ).
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Сопутствующие уголовные услуги */}

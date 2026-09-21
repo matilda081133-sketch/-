@@ -4,14 +4,14 @@ import ZashchitaPoterpevshegoClient from './ZashchitaPoterpevshegoClient';
 export const metadata: Metadata = {
   title: 'Адвокат для потерпевшего по уголовному делу в Липецке | Де-Юре',
   description:
-    'Представительство потерпевших по уголовным делам в Липецке: возбуждение дела, гражданский иск, возмещение ущерба, контроль следствия и участие в суде.',
+    'Представительство потерпевшего на следствии и в суде: ходатайства, жалобы, гражданский иск, возмещение вреда и обжалование решений.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/',
   },
   openGraph: {
     title: 'Адвокат для потерпевшего по уголовному делу в Липецке | Де-Юре',
     description:
-      'Представительство потерпевших по уголовным делам в Липецке: возбуждение дела, гражданский иск, возмещение ущерба, контроль следствия и участие в суде.',
+      'Представительство потерпевшего на следствии и в суде: ходатайства, жалобы, гражданский иск, возмещение вреда и обжалование решений.',
     url: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/',
     type: 'website',
     images: [

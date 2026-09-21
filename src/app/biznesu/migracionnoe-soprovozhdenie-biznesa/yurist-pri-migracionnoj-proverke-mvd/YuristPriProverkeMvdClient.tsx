@@ -271,8 +271,12 @@ export default function YuristPriProverkeMvdClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'inline-block' }}>Юрист при миграционной</span> <br />
-            <span className="hero-title-span-mobile" style={{ display: 'inline-block', color: 'var(--color-gold)' }}>проверке МВД в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Юрист при миграционной
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              проверке МВД в Липецке
+            </span>
           </span>
         }
         subtitle={

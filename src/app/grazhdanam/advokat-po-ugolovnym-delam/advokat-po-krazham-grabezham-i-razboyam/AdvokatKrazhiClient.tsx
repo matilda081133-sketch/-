@@ -306,7 +306,7 @@ export default function AdvokatKrazhiClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Комплексная защита подозреваемых, обвиняемых и потерпевших по делам о хищении имущества (тайном, открытом или с применением насилия). Докажем отсутствие умысла, переквалифицируем обвинение на менее тяжкую статью и добьёмся прекращения дела.
+            Подключимся после задержания, обыска, опознания или вызова на допрос. Проверим, было ли изъятие тайным или открытым, характер насилия и угрозы, размер ущерба, роль каждого участника и допустимость доказательств. Цель защиты — исключить необоснованные квалифицирующие признаки, добиться прекращения преследования, изменения квалификации или смягчения наказания.
           </span>
         }
         primaryCtaText="Обсудить ситуацию с адвокатом"
@@ -448,6 +448,415 @@ export default function AdvokatKrazhiClient() {
               </div>
             ))}
           </div>
+
+          {/* ═══ СОДЕРЖАТЕЛЬНЫЕ РАЗДЕЛЫ ПО КРАЖАМ, ГРАБЕЖАМ И РАЗБОЯМ ═══ */}
+
+          {/* 1. Ваша роль и стадия дела */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Маршрутизатор по статусу
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Ваша роль и стадия дела
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Первая задача защиты определяется процессуальным статусом участника и моментом вступления адвоката в дело.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Срочно</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Меня задержали</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Установить процессуальный статус и ближайшее действие, пресечь давление и организовать конфиденциальную встречу с адвокатом до первого допроса.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-primary" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Вызвать адвоката</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Следствие</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Дело расследуется</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Изучить постановления и протоколы, проверить квалификацию, доказательства, индивидуальную роль и основания меры пресечения.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-outline" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Передать материалы</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid #4A6B82', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Родственникам</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Ищу защиту близкому</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Собрать минимум данных о задержании и незамедлительно обеспечить контакт адвоката с доверителем в ИВС или СИЗО.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-outline" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Помочь близкому</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid #10273B', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Суд</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Дело в суде</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Выделить предмет спора, сопоставить материалы с доказательствами защиты и составить план исследования доказательств.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-outline" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Защита в суде</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid #C5A059', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Свидетель</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Свидетель с риском</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Оценить риск изменения статуса на подозреваемого при вызове по совместной поездке, продаже вещи или камерам; обеспечить явку с адвокатом.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-outline" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Адвокат на допрос</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid #718096', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Потерпевший</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Я потерпевший</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Зафиксировать размер вреда, добиться признания потерпевшим, заявить гражданский иск и контролировать расследование.
+                  </p>
+                </div>
+                <a href="/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/" className="btn btn-outline" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Защита потерпевшего</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 2. Кража, грабёж или разбой */}
+          <div style={{ marginTop: '48px', marginBottom: '48px', background: 'var(--gradient-cream)', padding: '36px 32px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)' }}>
+            <div style={{ maxWidth: '850px', marginBottom: '24px' }}>
+              <h3 style={{ fontSize: 'clamp(22px, 2.8vw, 32px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.25 }}>
+                Кража, грабёж или разбой
+              </h3>
+              <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.95, margin: 0, lineHeight: 1.65 }}>
+                Название состава определяется не бытовым словом, а установленными обстоятельствами дела. Ключевые вопросы — каким было изъятие (тайным или открытым), понимал ли человек, что его действия замечены, применялись ли насилие или угроза и насколько они были опасны. Итоговая правовая оценка всегда требует детального изучения доказательств.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', padding: '24px 20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Кража · ст. 158 УК РФ
+                </strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 10px 0' }}>
+                  Тайное хищение чужого имущества. Действия совершаются незаметно для собственника и окружающих.
+                </p>
+                <div style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>
+                  Проверяется: условия наблюдения, осознание незаметности, момент обнаружения, стоимость, проникновение.
+                </div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '24px 20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Грабёж · ст. 161 УК РФ
+                </strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 10px 0' }}>
+                  Открытое хищение чужого имущества. Совершается в присутствии собственника или очевидцев, когда виновный осознаёт открытый характер.
+                </p>
+                <div style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>
+                  Проверяется: кто видел изъятие, осознание открытости, неопасное насилие или угроза, индивидуальная роль.
+                </div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '24px 20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Разбой · ст. 162 УК РФ
+                </strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 10px 0' }}>
+                  Нападение в целях хищения с опасным насилием либо угрозой его применения. Окончено с момента начала нападения.
+                </p>
+                <div style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>
+                  Проверяется: реальность и характер угрозы, опасность насилия, свойства предмета, цель и момент нападения.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. Статья 158 УК РФ: кража */}
+          <div style={{ marginTop: '48px', marginBottom: '48px' }}>
+            <h3 style={{ fontSize: 'clamp(22px, 2.8vw, 30px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Статья 158 УК РФ: кража
+            </h3>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Кража характеризуется тайным способом завладения имуществом. Для определения квалификации и тяжести последствий исследуются:
+            </p>
+            <div className="grid grid-3" style={{ gap: '18px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Тайность изъятия</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Осознавал ли человек незаметность действий. Если очевидцы наблюдали изъятие, но виновный добросовестно полагал, что действует тайно, содеянное квалифицируется как кража.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Признак проникновения</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Проверяются назначение объекта (помещение, хранилище, жилище), режим доступа, законность нахождения и момент возникновения умысла на хищение.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Кража с банковского счёта</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Квалификация по п. «г» ч. 3 ст. 158 УК РФ (тяжкое преступление). Защита проверяет умысел, суммы транзакций, статус карты (найдена/передана) и основания для переквалификации.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. Статья 161 УК РФ: грабёж */}
+          <div style={{ marginTop: '48px', marginBottom: '48px' }}>
+            <h3 style={{ fontSize: 'clamp(22px, 2.8vw, 30px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Статья 161 УК РФ: грабёж
+            </h3>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Грабёж предполагает открытый способ завладения чужим имуществом. Ключевые аспекты правовой защиты:
+            </p>
+            <div className="grid grid-3" style={{ gap: '18px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Осознание открытости</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Хищение является открытым только тогда, когда виновный осознавал, что потерпевший или другие лица понимают противоправный характер происходящего, но игнорировал это.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Неопасное насилие</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Побои, связывание или удержание, не причинившие вреда здоровью и не создававшие угрозы жизни. Доказывание отсутствия признаков разбойного нападения.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Момент перерастания</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Если начавшееся тайное хищение было замечено, но виновный бросил вещь и скрылся, грабёж отсутствует. Защита восстанавливает точную хронологию действий.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 5. Статья 162 УК РФ: разбой */}
+          <div style={{ marginTop: '48px', marginBottom: '48px' }}>
+            <h3 style={{ fontSize: 'clamp(22px, 2.8vw, 30px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Статья 162 УК РФ: разбой
+            </h3>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Разбой относится к категории особо тяжких преступлений против собственности. Предмет защиты:
+            </p>
+            <div className="grid grid-3" style={{ gap: '18px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Признак нападения</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Внезапный агрессивный акт, направленный на завладение имуществом. Отделение внезапного нападения от спонтанного бытового конфликта без корыстной цели.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Опасное насилие</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Причинение вреда здоровью (тяжкого, средней тяжести, легкого) либо насилие, создававшее реальную опасность для жизни в момент применения.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Момент окончания</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Состав считается оконченным с момента начала применения насилия или угрозы. Фактическое завладение вещью не требуется для квалификации.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 6. Насилие, угроза и использование оружия */}
+          <div style={{ marginTop: '48px', marginBottom: '48px', background: '#F8FAFC', padding: '32px 28px', border: '1px solid var(--color-border)' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Насилие, угроза и использование оружия
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Разграничение степени опасности насилия и статуса используемых предметов определяет границу между статьями 161 и 162 УК РФ:
+            </p>
+            <div className="grid grid-3" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Характер насилия</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Исследование судебно-медицинских экспертиз, механизма травм и причинно-следственной связи для исключения вменения опасного насилия.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Реальность угрозы</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Анализ слов, жестов, обстановки и субъективного восприятия угрозы: имелись ли реальные основания опасаться немедленной расправы.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Оружие или предметы</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Проверка конструктивных свойств предметов, способа их демонстрации и осведомленности остальных участников о наличии предмета.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 7. Размер ущерба и квалифицирующие признаки */}
+          <div style={{ marginTop: '48px', marginBottom: '48px' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Размер ущерба и квалифицирующие признаки
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Размер ущерба непосредственно влияет на часть статьи и строгость возможного наказания:
+            </p>
+            <div className="grid grid-3" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', marginBottom: '4px' }}>Потерпевшему</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-serif)' }}>Значительный ущерб</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  От 5 000 рублей. Оценивается с учетом имущественного положения гражданина, его доходов, наличия иждивенцев и совокупного дохода семьи.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', marginBottom: '4px' }}>От 250 000 ₽</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-serif)' }}>Крупный размер</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Тяжкий квалифицирующий признак. Требует назначения независимой товароведческой экспертизы с учетом амортизации и износа.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', marginBottom: '4px' }}>От 1 000 000 ₽</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-serif)' }}>Особо крупный размер</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Следствие часто исходит из покупной цены новых вещей. Адвокат добивается оценки фактической рыночной стоимости имущества на день хищения.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 8. Группа лиц и индивидуальная роль */}
+          <div style={{ marginTop: '48px', marginBottom: '48px', background: 'var(--gradient-cream)', padding: '32px 28px', border: '1px solid var(--color-border)' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
+              Группа лиц и индивидуальная роль
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.6, marginBottom: '20px', opacity: 0.95 }}>
+              Присутствие рядом с местом преступления не тождественно предварительному сговору. Защита отделяет доказанные действия конкретного лица от общих формулировок обвинения:
+            </p>
+            <div className="grid grid-3" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Предварительный сговор</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Проверяются время, место и содержание договоренности. Без доказанной предварительной договоренности признак группы подлежит исключению.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Эксцесс исполнителя</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Если один из участников применил опасное насилие или оружие без ведома остальных, соучастники не несут ответственности за разбой.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Индивидуальный вклад</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Установление того, кто именно входил в помещение, кто изымал вещь, а кто лишь ожидал или подвозил без осведомленности о преступлении.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 9. Какие доказательства требуют проверки */}
+          <div style={{ marginTop: '48px', marginBottom: '48px' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Какие доказательства требуют проверки
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Позиция защиты формируется на основе всесторонней ревизии доказательственной базы стороны обвинения:
+            </p>
+            <div className="grid grid-2" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)', padding: '18px 20px' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Протоколы следственных действий</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Задержание, личный досмотр, осмотр места происшествия, выемка: проверка участия реальных понятых, непрерывности фиксации и соблюдения правил упаковки изъятых вещей.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)', padding: '18px 20px' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Видеозаписи камер наблюдения</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Истребование исходных файлов до, во время и после события; проверка непрерывности, угла обзора, слышимости окликов и признаков видеомонтажа.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)', padding: '18px 20px' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Опознание и первые показания</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Сопоставление первичных описаний внешности с протоколами опознания, проверка условий восприятия и исключение предварительного показа фотографий подозреваемого.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)', padding: '18px 20px' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Экспертизы, биллинг и переписка</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Товароведческая оценка ущерба, судебно-медицинская экспертиза вреда здоровью, детализация телефонных соединений и геолокация для проверки алиби.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 10. Возможные правовые маршруты */}
+          <div style={{ marginTop: '48px', marginBottom: '56px' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Возможные правовые маршруты
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Маршруты определяют направления работы защиты в зависимости от установленных фактов и доказательств:
+            </p>
+            <div className="grid grid-3" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '6px' }}>Маршрут 1</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Отсутствие события или непричастность</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Сбор доказательств алиби, оспаривание результатов опознания, проверка альтернативных версий и ходатайство о прекращении преследования.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '6px' }}>Маршрут 2</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Переквалификация обвинения</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Исключение признаков грабежа в пользу кражи, исключение разбоя, снятие отягчающих квалифицирующих признаков группы, оружия или проникновения.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '6px' }}>Маршрут 3</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Исключение доказательств</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Признание протоколов обыска, выемки или опознания недопустимыми доказательствами ввиду грубых нарушений требований УПК РФ.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '6px' }}>Маршрут 4</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Смягчение наказания</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Возмещение ущерба, сбор смягчающих обстоятельств, назначение наказания ниже низшего предела (ст. 64 УК РФ) или условного срока (ст. 73 УК РФ).
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '6px' }}>Маршрут 5</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Примирение сторон</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  По делам небольшой и средней тяжести при первичном привлечении — полное заглаживание вреда и прекращение уголовного дела по ст. 25 УПК РФ.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '6px' }}>Маршрут 6</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Защита потерпевшего</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Обеспечение процессуального статуса, розыск и опись похищенного имущества, подача гражданского иска и контроль за реальным возмещением вреда.
+                </p>
+              </div>
+            </div>
+          </div>
+
 
           {/* Сопутствующие уголовные услуги */}
           <div style={{ background: '#F4F5F7', padding: '24px 28px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)' }}>

@@ -291,8 +291,12 @@ export default function YuridicheskoeOformlenieClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'inline-block' }}>Юридическое оформление</span> <br />
-            <span className="hero-title-span-mobile" style={{ display: 'inline-block', color: 'var(--color-gold)' }}>иностранных работников в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Юридическое оформление
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              иностранных работников в Липецке
+            </span>
           </span>
         }
         subtitle={

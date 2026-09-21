@@ -165,6 +165,10 @@ export default function AdvokatEkonomicheskieClient() {
 ];
   const relatedLinks = [
   {
+    "title": "Уголовно-правовая защита бизнеса",
+    "link": "/biznesu/ugolovno-pravovaya-zashchita-biznesa/"
+  },
+  {
     "title": "Должностные преступления и взятки",
     "link": "/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-dolzhnostnym-prestupleniyam-i-vzyatkam/"
   },
@@ -180,7 +184,7 @@ export default function AdvokatEkonomicheskieClient() {
   const faqItems = [
   {
     "q": "Могут ли арестовать директора по налоговой статье (ст. 199)?",
-    "a": "В силу ч. 1.1 ст. 108 УПК РФ заключение под стражу к предпринимателям и руководителям по экономическим и налоговым составам не применяется, если преступление совершено в связи с осуществлением предпринимательской деятельности."
+    "a": "По делам о преступлениях в сфере предпринимательской деятельности действует специальный запрет на заключение под стражу, установленный частью 1.1 статьи 108 УПК РФ. Если преступление связано с осуществлением предпринимательской или управленческой деятельности в коммерческой организации, следователь не вправе ходатайствовать об аресте при отсутствии исключительных обстоятельств. Защита незамедлительно представляет доказательства предпринимательского характера деятельности для избрания более мягкой меры пресечения (залог, домашний арест или запрет определенных действий)."
   },
   {
     "q": "Как прекратить уголовное дело по налогам без судимости?",
@@ -296,7 +300,7 @@ export default function AdvokatEkonomicheskieClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Экономические преступления</span>
           </>
         }
-        superTitle="Защита бизнеса и руководителей • Липецк"
+        superTitle="УГОЛОВНАЯ ЗАЩИТА РУКОВОДИТЕЛЕЙ И УЧАСТНИКОВ БИЗНЕСА • ЛИПЕЦК И ОБЛАСТЬ"
         title={
           <span style={{ display: 'block', maxWidth: '100%' }}>
             <span style={{ display: 'block' }}>Адвокат по экономическим</span>
@@ -448,6 +452,299 @@ export default function AdvokatEkonomicheskieClient() {
               </div>
             ))}
           </div>
+
+          {/* ═══ СОДЕРЖАТЕЛЬНЫЕ РАЗДЕЛЫ ПО ЭКОНОМИЧЕСКИМ ПРЕСТУПЛЕНИЯМ ═══ */}
+
+          {/* Разграничение: Личная защита vs Защита бизнеса */}
+          <div style={{ marginTop: '56px', marginBottom: '36px', background: '#F8FAFC', padding: '28px 26px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)' }}>
+            <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+              Разграничение личной уголовной защиты и защиты компании
+            </h4>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+              На этой странице представлена <strong>личная уголовная защита</strong> конкретных физических лиц: собственников, генеральных директоров, главных бухгалтеров и топ-менеджеров при проверках, допросах, уголовном преследовании и в суде. Если ваша задача — комплексная защита самой организации, сохранение активов юридического лица, пресечение проверок контролирующих органов и сопровождение бизнеса в целом, перейдите в раздел{' '}
+              <Link href="/biznesu/ugolovno-pravovaya-zashchita-biznesa/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                Уголовно-правовая защита бизнеса
+              </Link>.
+            </p>
+          </div>
+
+          {/* 1. Роль человека и стадия дела */}
+          <div style={{ marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Маршрутизатор
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Роль человека и стадия дела
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Защита по экономическим делам требует разделения личного статуса должностного лица и корпоративных интересов предприятия.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Руководство</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Собственник / Директор</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Проверка по операциям компании, контрагентам, кредитам, налогам или банкротству. Сохранение контроля, исключение ареста активов и персональная защита.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-primary" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Защитить руководителя</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Финансы</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Главный бухгалтер</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Вызов на опрос или допрос в ОБЭП / СК по налоговым декларациям, первичным документам и платежам. Оценка личного риска и выработка безопасных показаний.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-outline" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Защита бухгалтера</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid #4A6B82', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Полномочия</span>
+                  <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Сотрудник / Подписант</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Подписывал документы по указанию руководства без понимания схемы. Доказывание отсутствия осведомленности и умысла на совершение преступления.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-outline" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13.5px' }}>Определить статус</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 2. Какие экономические составы сопровождаем */}
+          <div style={{ marginTop: '48px', marginBottom: '48px', background: 'var(--gradient-cream)', padding: '36px 32px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)' }}>
+            <div style={{ maxWidth: '850px', marginBottom: '24px' }}>
+              <h3 style={{ fontSize: 'clamp(22px, 2.8vw, 32px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
+                Какие экономические составы сопровождаем
+              </h3>
+              <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.95, margin: 0, lineHeight: 1.65 }}>
+                Оказываем защиту по ключевым составам экономической направленности (главы 21, 22 и 23 УК РФ), привлекая при необходимости судебных бухгалтеров, налоговых юристов и финансовых аналитиков.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '18px' }}>
+              <div style={{ background: '#FFFFFF', padding: '22px 18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15.5px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Налоговые преступления
+                </strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 8px 0' }}>
+                  Ст. 198, 199, 199.1, 199.2 УК РФ: уклонение от уплаты налогов, сокрытие денежных средств от взыскания недоимки.
+                </p>
+                <span style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>Защита: параллельный арбитражный процесс, ревизия решений ФНС.</span>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '22px 18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15.5px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Присвоение и растрата
+                </strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 8px 0' }}>
+                  Ст. 160 УК РФ: обвинения генерального директора в хищении активов, выплате премий, продаже техники или списании имущества.
+                </p>
+                <span style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>Защита: подтверждение деловой цели и рыночной стоимости.</span>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '22px 18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15.5px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Злоупотребление полномочиями
+                </strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 8px 0' }}>
+                  Ст. 201 УК РФ: использование полномочий вопреки интересам коммерческой организации для извлечения выгод.
+                </p>
+                <span style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>Защита: протоколы органов управления, экономический анализ сделки.</span>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '22px 18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15.5px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Банкротные составы
+                </strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 8px 0' }}>
+                  Ст. 195, 196, 197 УК РФ: неправомерные действия при банкротстве, преднамеренное или фиктивное банкротство предприятия.
+                </p>
+                <span style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>Защита: финансово-экономическая экспертиза платёжеспособности.</span>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '22px 18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15.5px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Финансовые и валютные составы
+                </strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 8px 0' }}>
+                  Ст. 172, 174, 174.1, 193 УК РФ: незаконная банковская деятельность, легализация денежных средств, невозврат валюты.
+                </p>
+                <span style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>Защита: происхождение активов, аудит банковских проводок.</span>
+              </div>
+
+              <div style={{ background: '#FFFFFF', padding: '22px 18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15.5px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
+                  Кредиты и субсидии
+                </strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: '0 0 8px 0' }}>
+                  Ст. 159.1, 176 УК РФ: незаконное получение кредита, предоставление ложных сведений о финансовом состоянии заемщика.
+                </p>
+                <span style={{ fontSize: '12.5px', color: 'var(--color-primary)', fontWeight: 600 }}>Защита: целевой характер расходования, отсутствие умысла на невозврат.</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. Хозяйственный риск или преступный умысел */}
+          <div style={{ marginTop: '48px', marginBottom: '48px' }}>
+            <h3 style={{ fontSize: 'clamp(22px, 2.8vw, 30px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Хозяйственный риск или преступный умысел
+            </h3>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Правоохранительные органы нередко пытаются криминализировать обычные коммерческие неудачи или неисполнение гражданско-правовых договоров:
+            </p>
+            <div className="grid grid-3" style={{ gap: '18px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Реальность сделок</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Сбор доказательств фактического движения товаров, выполнения работ, наличия ресурсов у контрагентов и деловой цели каждой спорной операции.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Обоснованный риск</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Применение положений ст. 41 УК РФ (обоснованный риск): решения руководства принимались в интересах развития бизнеса с соблюдением осмотрительности.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Отсутствие корысти</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Доказывание того, что полученные средства были полностью направлены на производственные нужды, выплату зарплаты или расчеты с контрагентами.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. Документы, полномочия и движение денег */}
+          <div style={{ marginTop: '48px', marginBottom: '48px', background: '#F8FAFC', padding: '32px 28px', border: '1px solid var(--color-border)' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Документы, полномочия и движение денег
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Экономическое обвинение строится на бумажном следе. Защита проводит сплошной аудит доказательств стороны обвинения:
+            </p>
+            <div className="grid grid-3" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Ревизия первичных документов</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Сопоставление договоров, счетов-фактур, транспортных накладных и актов сверки с фактическими датами и складским учётом.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Разграничение полномочий</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Устав, трудовые договоры, должностные инструкции и доверенности: проверка того, кто фактически принимал решения и отдавал распоряжения.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Анализ банковских выписок</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Построение карты движения финансовых потоков, разделение расчетов по основной деятельности и сомнительных транзакций.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 5. Цифровые доказательства и переписка */}
+          <div style={{ marginTop: '48px', marginBottom: '48px' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Цифровые доказательства и переписка
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Переписка в мессенджерах, электронная почта и базы 1С — ключевые доказательства следствия, требующие специального правового контроля:
+            </p>
+            <div className="grid grid-3" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-serif)' }}>Законность изъятия</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Проверка соблюдения ст. 164.1 УПК РФ: обязательное участие специалиста при изъятии электронных носителей и право законного владельца на копирование данных.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-serif)' }}>Контекст переписки</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Пресечение манипуляций вырванными из контекста цитатами из рабочих чатов, сопоставление переписки с реальными производственными задачами.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-serif)' }}>Аудит баз данных</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Фиксация версий баз 1С и ERP-систем на момент изъятия, исключение несанкционированного внесения изменений сторонними лицами.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 6. Обыск, изъятие техники и арест активов */}
+          <div style={{ marginTop: '48px', marginBottom: '48px', background: 'var(--gradient-cream)', padding: '32px 28px', border: '1px solid var(--color-border)' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
+              Обыск, изъятие техники и арест активов
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.6, marginBottom: '20px', opacity: 0.95 }}>
+              Силовые процессуальные действия парализуют деятельность бизнеса. Адвокат минимизирует ущерб законными средствами:
+            </p>
+            <div className="grid grid-3" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Адвокатский контроль обыска</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Присутствие адвоката исключает вбросы, давление на персонал и незаконное изъятие не относящихся к делу документов и личных вещей.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Копирование рабочих баз</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Реализация права на изготовление копий серверов и документов в порядке ч. 2.1 ст. 82 УПК РФ для продолжения текущей работы предприятия.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Снятие ареста со счетов</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Обжалование несоразмерного ареста банковских счетов и производственных фондов, доказывание принадлежности имущества третьим лицам.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 7. Возможные правовые маршруты */}
+          <div style={{ marginTop: '48px', marginBottom: '56px' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Возможные правовые маршруты
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Маршрут защиты согласуется индивидуально после аудита документов и оценки рисков:
+            </p>
+            <div className="grid grid-3" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '6px' }}>Маршрут 1</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Отказ в возбуждении дела</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  На стадии проверки предоставить мотивированные пояснения, аудиторские заключения и арбитражные акты, исключив повод для возбуждения уголовного дела.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '6px' }}>Маршрут 2</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Прекращение за отсутствием состава</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Доказывание отсутствия умысла, реальности хозяйственных операций, обоснованного риска или отсутствия ущерба/недоимки (п. 2 ч. 1 ст. 24 УПК РФ).
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '6px' }}>Маршрут 3</div>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Возмещение ущерба / уплата недоимки</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  По налоговым преступлениям (ст. 28.1 УПК РФ) — полное прекращение уголовного преследования при возмещении недоимки, пеней и штрафов до суда.
+                </p>
+              </div>
+            </div>
+          </div>
+
 
           {/* Сопутствующие уголовные услуги */}
           <div style={{ background: '#F4F5F7', padding: '24px 28px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)' }}>

@@ -808,7 +808,12 @@ export default function ZashchitaPriDrobleniiClient() {
 
       {/* ═══ БЛОК 8: КЕЙСЫ ═══ */}
       <CasesBlock
-        title="Практика по делам о дроблении бизнеса"
+        title={
+          <>
+            <span style={{ display: 'inline-block' }}>Практика по делам</span> <br />
+            <span style={{ display: 'inline-block' }}>о дроблении бизнеса</span>
+          </>
+        }
         subtitle="Примеры защиты структуры холдингов, торговых сетей и применения налоговой амнистии"
         cases={practiceCases}
       />

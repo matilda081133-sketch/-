@@ -165,6 +165,10 @@ export default function AdvokatDtpClient() {
 ];
   const relatedLinks = [
   {
+    "title": "Автоюрист",
+    "link": "/grazhdanam/avtoyurist/"
+  },
+  {
     "title": "Защита прав потерпевшего",
     "link": "/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/"
   },
@@ -306,7 +310,7 @@ export default function AdvokatDtpClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Защита водителей и представительство интересов потерпевших по делам о дорожно-транспортных происшествиях с тяжким вредом здоровью или смертельным исходом. Назначим независимую автотехническую экспертизу и докажем отсутствие технической возможности предотвратить наезд.
+            Подключимся сразу после аварии, на стадии доследственной проверки, следствия или суда. Проанализируем схему ДТП, протоколы, видеозаписи и заключения автотехнической и медицинской экспертиз. Защитим водителя либо представим интересы потерпевших и добьёмся компенсации вреда.
           </span>
         }
         primaryCtaText="Обсудить ситуацию с адвокатом"
@@ -449,6 +453,306 @@ export default function AdvokatDtpClient() {
             ))}
           </div>
 
+          {/* ═══ СОДЕРЖАТЕЛЬНЫЕ РАЗДЕЛЫ ПО ДТП С ПОСТРАДАВШИМИ (СТ. 264 УК РФ) ═══ */}
+
+          {/* 1. Маршрутизатор по роли клиента */}
+          <div style={{ marginTop: '56px', marginBottom: '36px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Маршрутизатор по роли
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Ваша роль и первоочередная задача
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Задачи защиты и представительства принципиально различаются в зависимости от процессуального статуса участника ДТП.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '24px 22px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Защита</span>
+                  <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Водитель под подозрением</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Проверить вменяемый пункт ПДД, техническую возможность избежать ДТП, причинную связь с последствиями, процедуру освидетельствования и заключения экспертиз.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-primary" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 18px', fontSize: '14px' }}>Защитить водителя</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '24px 22px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Представительство</span>
+                  <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Пострадавший или семья погибшего</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Оформить процессуальный статус потерпевшего, поставить вопросы перед экспертами, контролировать следствие, заявить гражданский иск и добиться возмещения ущерба.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-outline" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 18px', fontSize: '14px' }}>Представительство потерпевшего</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid #4A6B82', padding: '24px 22px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Родственники</span>
+                  <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Родственник водителя</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Если водитель задержан или госпитализирован, оперативно собрать первичные данные, согласовать соглашение и организовать участие адвоката в неотложных действиях.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-outline" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 18px', fontSize: '14px' }}>Помочь родственнику</a>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid #10273B', padding: '24px 22px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Судебный процесс</span>
+                  <h4 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Дело передано в суд</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Детальный анализ обвинительного заключения, вызов и допрос автоэкспертов, примирение сторон (по ч. 1 и 3 ст. 264 УК РФ) либо доказывание невиновности.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-outline" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 18px', fontSize: '14px' }}>Защита в суде</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Разграничение с автоюристом */}
+          <div style={{ marginBottom: '48px', background: '#F8FAFC', padding: '24px 28px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)' }}>
+            <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>
+              Разграничение с услугами автоюриста
+            </h4>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+              Уголовные дела по ст. 264 УК РФ и административно-гражданские споры по ДТП (ОСАГО, КАСКО, ущерб автомобилю) — принципиально разные направления с разной правовой природой и последствиями. При ст. 264 УК РФ решается вопрос об уголовной ответственности и реальном лишении свободы. Если вам требуется помощь по возмещению материального ущерба автомобилю без вреда здоровью или споры со страховыми компаниями, обратитесь к нашему{' '}
+              <Link href="/grazhdanam/avtoyurist/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                Автоюристу
+              </Link>.
+            </p>
+          </div>
+
+          {/* 2. Что требуется доказать по статье 264 УК РФ */}
+          <div style={{ marginTop: '48px', marginBottom: '48px' }}>
+            <h3 style={{ fontSize: 'clamp(22px, 2.8vw, 32px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Что требуется доказать по статье 264 УК РФ
+            </h3>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Для уголовной ответственности недостаточно одного лишь факта аварии и наступивших тяжёлых последствий. Состав преступления образует совокупность обязательных элементов:
+            </p>
+            <div className="grid grid-3" style={{ gap: '18px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Факт управления</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Установление лица, фактически находившегося за рулём автомобиля в момент столкновения (показания свидетелей, записи регистраторов, биологические следы на подушках безопасности).
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Нарушение конкретного пункта ПДД</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Обвинение обязано указать точный пункт Правил (скоростной режим, дистанция, правила проезда перекрёстков), несоблюдение которого вменяется водителю.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>Тяжесть последствий</h4>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Причинение именно тяжкого вреда здоровью либо гибель людей. Лёгкий и средний вред здоровью образуют состав административного правонарушения (ст. 12.24 КоАП РФ).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. Нарушение ПДД и причинная связь */}
+          <div style={{ marginTop: '48px', marginBottom: '48px', background: 'var(--gradient-cream)', padding: '36px 32px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)' }}>
+            <div style={{ maxWidth: '850px', marginBottom: '22px' }}>
+              <h3 style={{ fontSize: 'clamp(22px, 2.8vw, 30px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
+                Нарушение ПДД и причинная связь
+              </h3>
+              <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.95, margin: 0, lineHeight: 1.65 }}>
+                Ключевой рубеж уголовной защиты — доказывание отсутствия прямой причинно-следственной связи между действиями водителя и наступившими последствиями. Нарушение правил должно быть непосредственной технической причиной аварии, а не сопутствующим фактором.
+              </p>
+            </div>
+            <div className="grid grid-3" style={{ gap: '18px' }}>
+              <div style={{ background: '#FFFFFF', padding: '20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Техническая возможность</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Имел ли водитель реальную возможность предотвратить ДТП с момента возникновения опасности, учитывая видимость, освещение, скорость и время реакции.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Действия пешехода или второго водителя</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Внезапный выход пешехода вне перехода или грубое нарушение ПДД встречным транспортом часто исключают вину водителя, не имевшего возможности среагировать.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '20px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Дорожные условия</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Гололёд, отсутствие освещения, неисправность светофоров или дефекты дорожного полотна проверяются как внешние обстоятельства непреодолимого характера.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. Автотехническая и медицинская экспертизы */}
+          <div style={{ marginTop: '48px', marginBottom: '48px' }}>
+            <h3 style={{ fontSize: 'clamp(22px, 2.8vw, 30px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Автотехническая и медицинская экспертизы
+            </h3>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Уголовные дела по ДТП базируются на экспертных заключениях. Ошибки в исходных данных или расчётах экспертов могут полностью исказить выводы следствия:
+            </p>
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', padding: '22px' }}>
+                <h4 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>
+                  Судебная автотехническая экспертиза
+                </h4>
+                <ul style={{ paddingLeft: '20px', margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  <li>Ревизия исходных данных: коэффициента сцепления, уклона, фактической видимости;</li>
+                  <li>Определение скорости движения ТС по длине тормозного следа и деформациям;</li>
+                  <li>Расчёт остановочного пути и момента возникновения опасности для движения;</li>
+                  <li>Формулирование дополнительных вопросов эксперту и назначение повторной экспертизы.</li>
+                </ul>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', padding: '22px' }}>
+                <h4 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0', fontFamily: 'var(--font-serif)' }}>
+                  Судебно-медицинская экспертиза (СМЭ)
+                </h4>
+                <ul style={{ paddingLeft: '20px', margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  <li>Проверка критериев отнесения вреда к категории тяжкого (опасность для жизни, утрата органа);</li>
+                  <li>Установление точного механизма травм: получены ли они внутри салона или при наезде;</li>
+                  <li>Выявление дефектов оказания медпомощи пострадавшему в стационаре;</li>
+                  <li>Определение точной причины наступления смерти и её связи с ДТП.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 5. Действия водителя после ДТП */}
+          <div style={{ marginTop: '48px', marginBottom: '48px', background: '#F8FAFC', padding: '32px 28px', border: '1px solid var(--color-border)' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Действия водителя после ДТП
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Первые действия водителя непосредственно после аварии критически важны для квалификации и меры пресечения:
+            </p>
+            <div className="grid grid-3" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Оказание помощи и вызов служб</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Немедленный вызов скорой помощи и полиции (112), содействие в спасении пострадавших. Фиксация звонков исключает вменение оставления в опасности.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Исключение признака оставления места</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Если водитель отвозил пострадавшего в больницу на попутном авто или своём ТС, защита доказывает отсутствие умысла скрыться с места аварии.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Сохранение исходных данных</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Оригиналы записей с видеорегистратора, фото следов осыпи стекол и тормозного пути, контакты очевидцев необходимо сохранить без изменения файлов.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 6. Защита водителя */}
+          <div style={{ marginTop: '48px', marginBottom: '48px' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Защита водителя
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Стратегия защиты водителя строится на последовательном исследовании обстоятельств дорожной ситуации:
+            </p>
+            <div className="grid grid-3" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-serif)' }}>Отсутствие состава</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Доказывание отсутствия технической возможности предотвратить столкновение или наезд, прекращение уголовного дела на стадии следствия или в суде.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-serif)' }}>Снятие отягчающих признаков</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Опровержение состояния опьянения ввиду нарушений порядка освидетельствования, исключение признака оставления места ДТП (перевод на основную часть статьи).
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '20px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontFamily: 'var(--font-serif)' }}>Примирение сторон</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  По ч. 1 и ч. 3 ст. 264 УК РФ — организация заглаживания вреда, заключение соглашения и прекращение уголовного дела судом по ст. 25 УПК РФ.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 7. Представительство пострадавшего или семьи погибшего */}
+          <div style={{ marginTop: '48px', marginBottom: '48px', background: 'var(--gradient-cream)', padding: '32px 28px', border: '1px solid var(--color-border)' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
+              Представительство пострадавшего или семьи погибшего
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.6, marginBottom: '20px', opacity: 0.95 }}>
+              Адвокат потерпевшего обеспечивает полноту расследования и гарантирует защиту финансовых интересов семьи:
+            </p>
+            <div className="grid grid-3" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Контроль расследования</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Признание потерпевшим, формулирование вопросов перед экспертами, ходатайства об изъятии записей камер и недопущение необоснованного прекращения дела.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Гражданский иск</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Расчёт и взыскание компенсации морального вреда, расходов на лечение, реабилитацию, погребение, утраченного заработка и содержания иждивенцев.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '18px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Арест имущества виновника</strong>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Ходатайство перед следователем и судом о наложении ареста на автомобили, недвижимость и счета виновника для реального исполнения приговора.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 8. Документы для первичного анализа */}
+          <div style={{ marginTop: '48px', marginBottom: '56px' }}>
+            <h3 style={{ fontSize: 'clamp(20px, 2.6vw, 28px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+              Документы для первичного анализа
+            </h3>
+            <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+              Для первой оценки ситуации и определения перспектив дела полезно подготовить следующие сведения и документы:
+            </p>
+            <div className="grid grid-2" style={{ gap: '16px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)', padding: '18px 20px' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Процессуальные материалы ДТП</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Схема места ДТП, справка о ДТП, протокол осмотра места происшествия, письменные объяснения участников, постановление о возбуждении дела или назначении экспертизы.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)', padding: '18px 20px' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Видеозаписи и фотоматериалы</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Оригинал файла видеорегистратора без монтажа и конвертации, фото расположения автомобилей, тормозных следов, дорожных знаков и состояния покрытия.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)', padding: '18px 20px' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Медицинские документы</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Выписные эпикризы, справки скорой помощи, заключения судебно-медицинской экспертизы о степени тяжести вреда или свидетельство о смерти.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)', padding: '18px 20px' }}>
+                <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)', display: 'block', marginBottom: '6px' }}>Документы о расходах</strong>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Чеки на покупку медикаментов, оплату платных медицинских услуг, протезирования, чеки на ритуальные услуги и справки о доходах для расчёта вреда.
+                </p>
+              </div>
+            </div>
+          </div>
+
+
           {/* Сопутствующие уголовные услуги */}
           <div style={{ background: '#F4F5F7', padding: '24px 28px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)' }}>
             <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>
@@ -541,7 +845,7 @@ export default function AdvokatDtpClient() {
                 <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с адвокатом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Укажите, в каком органе проводится проверка или расследование, процессуальный статус и какие документы вручены. Обращение передадим Аркадию Евгеньевичу Бобкину для первичного правового анализа.
+                Укажите вашу роль — водитель, пострадавший или родственник, дату и место ДТП, известные последствия и текущую стадию проверки или уголовного дела.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>

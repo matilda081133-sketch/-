@@ -164,7 +164,7 @@ export default function ObzhalovanieClient() {
           <span style={{ display: 'inline-block' }}>со счёта банком</span>
         </span>
       ),
-      desc: 'После получения исполнительного листа взыскатель может предъявить его в банк или службу судебных приставов для принудительного списания средств.'
+      desc: 'После получения исполнительного листа взыскатель может предъявить его в банк или службу судебных приставов. Проверим риск взыскания и основания для приостановления исполнения.'
     },
     {
       title: (
@@ -363,7 +363,7 @@ export default function ObzhalovanieClient() {
           </span>
         }
         subtitle={
-          <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
+          <span style={{ display: 'inline-block', maxWidth: '880px', textWrap: 'balance' }}>
             Проверим решение и материалы дела, найдём основания для апелляции или кассации и будем добиваться отмены либо изменения неблагоприятного судебного акта. При наличии оснований заявим о приостановлении исполнения.
           </span>
         }
@@ -387,16 +387,10 @@ export default function ObzhalovanieClient() {
           { text: 'Восстановление пропущенных процессуальных сроков' }
         ]}
         afterTrustContent={
-          <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, margin: '16px 0 24px 0', lineHeight: 1.55, fontWeight: 500, maxWidth: '560px' }}>
-            Решение и материалы дела изучает юрист по арбитражным спорам.<br />
-            После анализа сообщаем перспективы, процессуальный маршрут<br />
-            и стоимость работы.
+          <p style={{ fontSize: '15px', color: 'var(--color-deep-blue)', opacity: 0.9, margin: '16px 0 24px 0', lineHeight: 1.55, fontWeight: 500, maxWidth: '860px' }}>
+            Решение и материалы дела изучает юрист по арбитражным спорам. После анализа сообщаем перспективы, процессуальный маршрут и стоимость работы.
           </p>
         }
-        imageUrl="/images/nacheshnikov.jpg"
-        imageName="Владимир Викторович Начешников"
-        imageSubtitle="Специалист по арбитражным спорам и защите бизнеса, куратор направления"
-        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}

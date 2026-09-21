@@ -4,7 +4,7 @@ import AdvokatVzyatkiClient from './AdvokatVzyatkiClient';
 export const metadata: Metadata = {
   title: 'Адвокат по делам о взятках и должностным преступлениям в Липецке | Де-Юре',
   description:
-    'Защита по обвинениям во взятках (ст. 290, 291 УК РФ), коммерческом подкупе, превышении полномочий в Липецке. Аудит ОРМ, защита от провокаций, следственный опыт.',
+    'Защита по делам о получении и даче взятки, посредничестве, злоупотреблении и превышении полномочий в Липецке. Проверка, следствие и суд.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-dolzhnostnym-prestupleniyam-i-vzyatkam/',
   },

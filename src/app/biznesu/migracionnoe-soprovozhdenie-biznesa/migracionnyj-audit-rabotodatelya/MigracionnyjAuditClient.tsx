@@ -305,8 +305,12 @@ export default function MigracionnyjAuditClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'inline-block' }}>Миграционный аудит</span> <br />
-            <span className="hero-title-span-mobile" style={{ display: 'inline-block', color: 'var(--color-gold)' }}>работодателя в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Миграционный аудит
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              работодателя в Липецке
+            </span>
           </span>
         }
         subtitle={

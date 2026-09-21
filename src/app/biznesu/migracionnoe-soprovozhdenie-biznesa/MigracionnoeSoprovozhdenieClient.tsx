@@ -135,6 +135,11 @@ export default function MigracionnoeSoprovozhdenieClient() {
       num: '06',
       title: 'Передаём результат и рекомендации',
       desc: 'Разъясняем итог, дальнейшие процессуальные действия и меры, которые помогут снизить повторные риски при работе с иностранцами.'
+    },
+    {
+      isBanner: true,
+      title: 'Дистанционный формат работы',
+      desc: 'Первичную консультацию, обмен документами, аудит и подготовку части материалов можно начать дистанционно. Необходимость личного участия юриста или адвоката зависит от стадии проверки или дела и выбранного формата защиты.'
     }
   ];
 
@@ -278,8 +283,12 @@ export default function MigracionnoeSoprovozhdenieClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'inline-block' }}>Миграционное сопровождение</span> <br />
-            <span className="hero-title-span-mobile" style={{ display: 'inline-block', color: 'var(--color-gold)' }}>бизнеса в Липецке</span>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              Миграционное сопровождение
+            </span>{' '}
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+              бизнеса в Липецке
+            </span>
           </span>
         }
         subtitle={
@@ -517,12 +526,12 @@ export default function MigracionnoeSoprovozhdenieClient() {
           <div
             style={{
               background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)',
-              padding: '40px 48px',
+              padding: '36px 36px',
               borderTop: '3px solid var(--color-gold)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              gap: '32px',
+              gap: '24px',
               flexWrap: 'wrap',
               boxShadow: '0 12px 30px rgba(11, 28, 42, 0.15)'
             }}
@@ -543,13 +552,13 @@ export default function MigracionnoeSoprovozhdenieClient() {
                 border-color: var(--color-gold) !important;
               }
             `}} />
-            <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
+            <div style={{ flex: '1 1 700px', minWidth: '280px' }}>
               <h3 style={{ margin: '0 0 12px 0', fontSize: '26px', fontFamily: 'var(--font-serif)', color: '#FFFFFF', lineHeight: 1.3 }}>
                 Не нашли свою ситуацию?
               </h3>
-              <p style={{ margin: 0, fontSize: '15px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6 }}>
-                <span style={{ display: 'inline-block' }}>Миграционный вопрос может одновременно затрагивать статус работника, трудовые договоры и действия МВД.</span> <br />
-                <span style={{ display: 'inline-block' }}>Опишите задачу — мы определим подходящий формат работы.</span>
+              <p style={{ margin: 0, fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.55 }}>
+                <span style={{ display: 'block' }}>Миграционный вопрос может одновременно затрагивать статус работника, трудовые договоры и действия МВД.</span>
+                <span style={{ display: 'block' }}>Опишите задачу — мы определим подходящий формат работы.</span>
               </p>
             </div>
             <div style={{ flexShrink: 0 }}>
@@ -597,7 +606,7 @@ export default function MigracionnoeSoprovozhdenieClient() {
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '24px', marginBottom: '32px' }}>
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '32px' }}>
             {subServices.map((sub, idx) => (
               <Link
                 key={idx}
@@ -609,7 +618,7 @@ export default function MigracionnoeSoprovozhdenieClient() {
                   style={{
                     height: '100%',
                     minHeight: '220px',
-                    padding: '32px 28px',
+                    padding: '28px 20px',
                     background: 'var(--color-white)',
                     border: '1px solid var(--color-border)',
                     borderTop: '3px solid var(--color-gold)',
@@ -624,10 +633,10 @@ export default function MigracionnoeSoprovozhdenieClient() {
                   }}
                 >
                   <div>
-                    <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600, minHeight: '48px' }}>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '17px', color: 'var(--color-deep-blue)', lineHeight: 1.35, fontFamily: 'var(--font-serif)', fontWeight: 600, minHeight: '66px' }}>
                       {sub.title}
                     </h3>
-                    <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    <p style={{ margin: '0 0 20px 0', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                       {sub.desc}
                     </p>
                   </div>
@@ -638,10 +647,10 @@ export default function MigracionnoeSoprovozhdenieClient() {
                       alignItems: 'center',
                       gap: '8px',
                       color: 'var(--color-primary)',
-                      fontSize: '14px',
+                      fontSize: '13.5px',
                       fontWeight: 600,
                       marginTop: 'auto',
-                      paddingTop: '14px',
+                      paddingTop: '12px',
                       borderTop: '1px solid rgba(23, 50, 77, 0.06)',
                       transition: 'transform 0.3s'
                     }}
@@ -706,25 +715,6 @@ export default function MigracionnoeSoprovozhdenieClient() {
         title="Как проходит работа по миграционному сопровождению"
         steps={processSteps}
       />
-
-      {/* Плашка о дистанционном формате */}
-      <section style={{ padding: '0 0 40px 0', background: '#ffffff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div
-            style={{
-              background: 'var(--color-bg-light)',
-              padding: '20px 24px',
-              borderRadius: '8px',
-              borderLeft: '4px solid var(--color-gold)',
-              fontSize: '14.5px',
-              color: 'var(--color-text-secondary)',
-              lineHeight: 1.6
-            }}
-          >
-            <strong style={{ color: 'var(--color-deep-blue)' }}>Дистанционный формат работы:</strong> Первичную консультацию, обмен документами, аудит и подготовку части материалов можно начать дистанционно. Необходимость личного участия юриста или адвоката зависит от стадии проверки или дела и выбранного формата защиты.
-          </div>
-        </div>
-      </section>
 
       {/* ═══ БЛОК 6: ЦЕНЫ ═══ */}
       <PricingBlock

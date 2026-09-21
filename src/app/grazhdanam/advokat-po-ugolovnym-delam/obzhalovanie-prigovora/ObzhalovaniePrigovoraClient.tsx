@@ -69,27 +69,47 @@ export default function ObzhalovaniePrigovoraClient() {
   }
 ];
   const processSteps: ProcessStep[] = [
-  {
-    "num": "01",
-    "title": "Подача краткой жалобы в 15-дневный срок",
-    "desc": "Предотвращаем вступление приговора в законную силу и сохраняем статус подсудимого."
-  },
-  {
-    "num": "02",
-    "title": "Изучение протокола, аудиозаписи и дела",
-    "desc": "Аудит всех томов дела и сопоставление письменного протокола с аудиозаписью процесса."
-  },
-  {
-    "num": "03",
-    "title": "Подготовка мотивированной жалобы",
-    "desc": "Формулирование конкретных юридических оснований для отмены или изменения приговора."
-  },
-  {
-    "num": "04",
-    "title": "Защита в суде апелляции или кассации",
-    "desc": "Личное выступление адвоката в судебном заседании, допрос свидетелей и участие в прениях."
-  }
-];
+    {
+      num: '01',
+      title: 'Фиксируем дату и статус',
+      desc: 'Устанавливаем точную дату провозглашения приговора или вручения копии, меру пресечения, статус заявителя и историю обжалования.'
+    },
+    {
+      num: '02',
+      title: 'Проверяем срок и инстанцию',
+      desc: 'Определяем доступную инстанцию (апелляция, сплошная или выборочная кассация), контролируем процессуальный срок и порядок подачи.'
+    },
+    {
+      num: '03',
+      title: 'Истребуем судебные акты',
+      desc: 'Получаем обязательный минимум материалов: приговор, апелляционные и кассационные определения, протокол заседания и аудиозапись.'
+    },
+    {
+      num: '04',
+      title: 'Согласуем состав и стоимость',
+      desc: 'Фиксируем объём изучения томов дела, задачи, командировки, участие в судебных заседаниях и цену до начала работы.'
+    },
+    {
+      num: '05',
+      title: 'Формируем карту нарушений',
+      desc: 'Сопоставляем выводы приговора с протоколами, аудиозаписью и доказательствами; выявляем существенные нарушения УПК и УК РФ.'
+    },
+    {
+      num: '06',
+      title: 'Готовим жалобу и возражения',
+      desc: 'Составляем мотивированную апелляционную или кассационную жалобу, дополнения, ходатайства либо возражения на жалобу обвинения.'
+    },
+    {
+      num: '07',
+      title: 'Защищаем позицию в суде',
+      desc: 'Адвокат лично участвует в судебном заседании вышестоящего суда, обосновывает нарушения и отвечает на вопросы коллегии судей.'
+    },
+    {
+      num: '08',
+      title: 'Анализируем решение суда',
+      desc: 'Оцениваем принятый судебный акт, разъясняем порядок исполнения решения либо готовим обжалование в следующей инстанции.'
+    }
+  ];
   const pricingTiers: PricingTier[] = [
   {
     "title": "Аудит приговора и материалов дела",
@@ -306,7 +326,7 @@ export default function ObzhalovaniePrigovoraClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Проанализируем приговор суда, протокол судебного заседания и материалы уголовного дела. Выявим существенные нарушения норм УПК и УК РФ, подготовим мотивированную апелляционную или кассационную жалобу и добьёмся отмены или смягчения наказания.
+            Изучим приговор и материалы дела, определим доступную инстанцию и проверим, какие нарушения могли повлиять на вывод о виновности, квалификацию или наказание. Подготовим жалобу, возражения и представим позицию в суде.
           </span>
         }
         primaryCtaText="Обсудить ситуацию с адвокатом"
@@ -449,6 +469,392 @@ export default function ObzhalovaniePrigovoraClient() {
             ))}
           </div>
 
+          {/* ═══ СОДЕРЖАТЕЛЬНЫЕ РАЗДЕЛЫ ПО ОБЖАЛОВАНИЮ ПРИГОВОРА ═══ */}
+
+          {/* 1. БЫСТРЫЙ МАРШРУТИЗАТОР ПО СТАДИЯМ И ИНСТАНЦИЯМ */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Процессуальная маршрутизация
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Какой порядок обжалования подходит вашей ситуации
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Выбор судебной инстанции и порядка подачи жалобы зависит от даты вынесения приговора, факта вступления в законную силу и предыдущей истории рассмотрения.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Срок — 15 суток</span>
+                  <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Приговор вынесен недавно</h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Приговор ещё не вступил в законную силу. Подаётся апелляционная жалоба в Липецкий областной суд (через районный суд, вынесший приговор).
+                  </p>
+                </div>
+                <div style={{ marginTop: '14px', fontSize: '12.5px', fontWeight: 600, color: 'var(--color-primary)' }}>Маршрут: Апелляция</div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Осуждённый в СИЗО</span>
+                  <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Вручение копии под стражей</h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Для лица под стражей 15-суточный срок апелляции исчисляется <strong>со дня фактического вручения</strong> ему копии приговора под расписку.
+                  </p>
+                </div>
+                <div style={{ marginTop: '14px', fontSize: '12.5px', fontWeight: 600, color: 'var(--color-primary)' }}>Маршрут: Спецсрок апелляции</div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Пропуск срока</span>
+                  <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>15 суток прошли по уважительной причине</h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Подаём ходатайство о восстановлении пропущенного срока судье первой инстанции с подтверждением причин (болезнь, задержка выдачи приговора).
+                  </p>
+                </div>
+                <div style={{ marginTop: '14px', fontSize: '12.5px', fontWeight: 600, color: 'var(--color-gold)' }}>Маршрут: Восстановление срока</div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Вступил в силу (до 6 мес)</span>
+                  <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Апелляция уже прошла</h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Подаётся жалоба по правилам сплошной кассации в Первый кассационный суд общей юрисдикции (Саратов) с обязательным открытым заседанием.
+                  </p>
+                </div>
+                <div style={{ marginTop: '14px', fontSize: '12.5px', fontWeight: 600, color: 'var(--color-primary)' }}>Маршрут: Сплошная кассация</div>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-deep-blue)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Прошло более 6 месяцев</span>
+                  <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Шестимесячный срок пропущен</h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Подача жалобы по процедуре выборочной кассации судье кассационного суда либо непосредственно председателю Верховного Суда РФ.
+                  </p>
+                </div>
+                <div style={{ marginTop: '14px', fontSize: '12.5px', fontWeight: 600, color: 'var(--color-deep-blue)' }}>Маршрут: Выборочная кассация</div>
+              </div>
+
+              <div style={{ background: 'var(--gradient-cream)', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '24px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>Риск ухудшения</span>
+                  <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>Жалоба прокурора или потерпевшего</h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Обвинение требует отменить мягкий приговор или увеличить срок. Готовим письменные возражения и защищаем приговор в суде.
+                  </p>
+                </div>
+                <a href="#form" className="btn btn-primary" style={{ marginTop: '16px', textAlign: 'center', padding: '10px 16px', fontSize: '13px' }}>Подготовить возражения</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 2. ЧТО ПРОВЕРЯЕТ АДВОКАТ ПРИ АНАЛИЗЕ ПРИГОВОРА */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Аудит материалов дела
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Что проверяет адвокат при изучении судебных актов
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Эффективная жалоба строится не на общих фразах о несогласии, а на выявлении конкретных противоречий и нарушений закона, допущенных следствием и судом первой инстанции.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <div style={{ width: '8px', height: '8px', background: 'var(--color-primary)', borderRadius: '50%' }}></div>
+                  <h4 style={{ margin: 0, fontSize: '16px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>Соответствие выводов суда доказательствам</h4>
+                </div>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Проверяем, не содержат ли выводы приговора существенных противоречий, учтены ли доказательства защиты и не истолкованы ли неустранимые сомнения во вред осуждённому.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <div style={{ width: '8px', height: '8px', background: 'var(--color-primary)', borderRadius: '50%' }}></div>
+                  <h4 style={{ margin: 0, fontSize: '16px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>Допустимость положенных в основу доказательств</h4>
+                </div>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Проверяем соблюдение порядка проведения ОРД, обысков, выемок, экспертиз и допросов. Доказательства, полученные с нарушением закона (ст. 75 УПК РФ), подлежат исключению.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <div style={{ width: '8px', height: '8px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
+                  <h4 style={{ margin: 0, fontSize: '16px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>Соблюдение фундаментальных прав на защиту</h4>
+                </div>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Исследуем законность состава суда, тайну совещательной комнаты, непредоставление последнего слова, отказ в вызове свидетелей и сопоставляем протокол с аудиозаписью процесса.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <div style={{ width: '8px', height: '8px', background: 'var(--color-gold)', borderRadius: '50%' }}></div>
+                  <h4 style={{ margin: 0, fontSize: '16px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)' }}>Квалификация деяния и справедливость срока</h4>
+                </div>
+                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  Оцениваем правильность применения статей УК РФ, учёт смягчающих обстоятельств (ст. 61 УК РФ), возможность назначения наказания ниже низшего предела (ст. 64 УК РФ) или условного осуждения (ст. 73 УК РФ).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. ОСНОВАНИЯ ДЛЯ ОТМЕНЫ ИЛИ ИЗМЕНЕНИЯ ПРИГОВОРА */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Законные критерии (ст. 389.15, 401.15 УПК РФ)
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                4 законных основания для отмены или изменения приговора
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Вышестоящий суд отменяет либо изменяет приговор исключительно по основаниям, прямо закреплённым в уголовно-процессуальном законе.
+              </p>
+            </div>
+
+            <div className="grid grid-4" style={{ gap: '18px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '20px 16px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Фактические выводы</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Выводы суда первой инстанции не подтверждаются исследованными доказательствами либо содержат существенные противоречия.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '20px 16px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Нарушения УПК РФ</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Нарушение права на защиту, правил доказывания, отказ в предоставлении переводчика или нарушение процедуры прений сторон.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '20px 16px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Неверная статья</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Ошибочная квалификация действий (например, вменение сбыта наркотиков вместо хранения, либо мошенничества вместо гражданского спора).
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-deep-blue)', padding: '20px 16px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Несправедливый срок</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Чрезмерная суровость назначенного наказания вследствие неприменения обязательных смягчающих норм или положений о рецидиве.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. АПЕЛЛЯЦИЯ И КАССАЦИЯ: КЛЮЧЕВЫЕ РАЗЛИЧИЯ */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Сравнительный анализ
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Апелляция и кассация: ключевые различия процедур
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Апелляция и кассация преследуют разные процессуальные цели. Понимание их различий определяет структуру жалобы и характер заявляемых ходатайств.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '24px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '24px' }}>
+                <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+                  Апелляционная инстанция (ст. 389.1–389.36 УПК РФ)
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  <li><strong>Статус акта:</strong> Приговор ещё НЕ вступил в законную силу.</li>
+                  <li><strong>Срок подачи:</strong> 15 суток со дня провозглашения (или вручения копии осуждённому в СИЗО).</li>
+                  <li><strong>Предмет проверки:</strong> Полная проверка законности, обоснованности и справедливости приговора.</li>
+                  <li><strong>Доказательства:</strong> Возможно непосредственное исследование доказательств и допрос свидетелей.</li>
+                  <li><strong>Куда подаётся:</strong> Через суд первой инстанции в апелляционную инстанцию (Липецкий областной суд).</li>
+                </ul>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '24px' }}>
+                <h4 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0' }}>
+                  Кассационная инстанция (ст. 401.1–401.17 УПК РФ)
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  <li><strong>Статус акта:</strong> Приговор УЖЕ вступил в законную силу после апелляции.</li>
+                  <li><strong>Срок подачи:</strong> 6 месяцев для сплошной кассации; далее — правила выборочной кассации.</li>
+                  <li><strong>Предмет проверки:</strong> Исключительно существенные нарушения материального или процессуального права.</li>
+                  <li><strong>Доказательства:</strong> Суд не переоценивает факты дела заново; проверяется только строгое соблюдение закона.</li>
+                  <li><strong>Куда подаётся:</strong> В Первый кассационный суд общей юрисдикции (г. Саратов) либо Верховный Суд РФ.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 5. ДОКУМЕНТЫ ДЛЯ ПЕРВИЧНОЙ ОЦЕНКИ */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Доказательства и материалы
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Документы, необходимые для подготовки жалобы
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Для первичной экспресс-оценки достаточно приговора. Для составления сильной мотивированной жалобы исследуется весь массив процесса.
+              </p>
+            </div>
+
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', borderBottom: '1px solid var(--color-border)', paddingBottom: '8px' }}>
+                  Обязательный минимум
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                  <li>Копия обжалуемого приговора районного (городского) суда.</li>
+                  <li>Апелляционное определение (при обращении в кассационную инстанцию).</li>
+                  <li>Справка о дате провозглашения приговора либо расписка о вручении копии в СИЗО.</li>
+                </ul>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', borderBottom: '1px solid var(--color-border)', paddingBottom: '8px' }}>
+                  Материалы судебного процесса
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                  <li>Протокол судебного заседания первой инстанции и аудиозапись процесса.</li>
+                  <li>Письменные ходатайства стороны защиты, отклонённые судьёй.</li>
+                  <li>Текст речи защитника в прениях и последнее слово подсудимого.</li>
+                </ul>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', borderBottom: '1px solid var(--color-border)', paddingBottom: '8px' }}>
+                  Доказательственная база обвинения
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                  <li>Ключевые заключения судебно-медицинских, почерковедческих или иных экспертиз.</li>
+                  <li>Протоколы следственных действий (осмотра места происшествия, выемки, обыска).</li>
+                  <li>Сведения об оперативно-розыскных мероприятиях (ОРД) при их наличии в деле.</li>
+                </ul>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', padding: '22px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0', borderBottom: '1px solid var(--color-border)', paddingBottom: '8px' }}>
+                  Предыдущие обращения и ответы
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                  <li>Первоначальная апелляционная или кассационная жалоба назначенного адвоката.</li>
+                  <li>Апелляционное или кассационное представление прокурора (при наличии).</li>
+                  <li>Жалобы потерпевших и возражения на них.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 6. ВОЗМОЖНЫЕ РЕЗУЛЬТАТЫ ОБЖАЛОВАНИЯ */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Полномочия инстанций
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Возможные результаты рассмотрения жалобы в суде
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                В зависимости от характера допущенных нарушений вышестоящий суд наделён законом широкими полномочиями по пересмотру приговора.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '20px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', padding: '22px 18px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Смягчение наказания</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Снижение срока лишения свободы, замена реального срока на условный (ст. 73 УК РФ) либо изменение вида исправительного учреждения на более мягкий.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', padding: '22px 18px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Переквалификация</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Изменение статьи или части обвинения на менее тяжкую (например, исключение квалифицирующих признаков «группа лиц», «особо крупный размер»).
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-primary)', padding: '22px 18px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Новое рассмотрение</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Отмена приговора и возврат дела в суд первой инстанции в ином составе суда при грубых процессуальных нарушениях порядка разбирательства.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', padding: '22px 18px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Прекращение дела</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Полная отмена судебного акта с прекращением уголовного дела при отсутствии события или состава преступления либо за истечением сроков давности.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-gold)', padding: '22px 18px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Оправдательный приговор</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Вынесение апелляционной инстанцией нового оправдательного приговора с признанием права осуждённого на полную реабилитацию.
+                </p>
+              </div>
+
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '3px solid var(--color-deep-blue)', padding: '22px 18px' }}>
+                <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Защита приговора</h4>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  Отказ в удовлетворении представления прокурора или жалобы потерпевшего, требовавших ужесточения наказания или реального срока.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 7. ЗАЩИТА ОТ УХУДШЕНИЯ ПОЛОЖЕНИЯ */}
+          <div style={{ marginTop: '56px', marginBottom: '48px' }}>
+            <div style={{ maxWidth: '820px', marginBottom: '28px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+                Защита от риска
+              </div>
+              <h3 style={{ fontSize: 'clamp(24px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+                Возражения на жалобу обвинения: защита от ухудшения
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Если прокуратура или потерпевший подали апелляционное представление с требованием ужесточить приговор, пассивная позиция недопустима.
+              </p>
+            </div>
+
+            <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)', padding: '28px' }}>
+              <div className="grid grid-2" style={{ gap: '24px' }}>
+                <div>
+                  <h4 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                    Пределы поворота к худшему
+                  </h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                    По общему правилу (ст. 389.24 УПК РФ) суд апелляционной инстанции вправе ухудшить положение осуждённого <strong>только по представлению прокурора либо жалобе потерпевшего</strong> и строго в пределах заявленных ими доводов. Если обжаловал только осуждённый, назначить более строгое наказание закон запрещает.
+                  </p>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: '0 0 10px 0' }}>
+                    Подготовка мотивированных возражений
+                  </h4>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                    Адвокат готовит письменные возражения на доводы обвинения, доказывает соразмерность и законность вынесенного мягкого приговора и отстаивает неизменность судебного акта в судебном заседании.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Сопутствующие уголовные услуги */}
           <div style={{ background: '#F4F5F7', padding: '24px 28px', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)' }}>
             <div style={{ fontWeight: 600, color: 'var(--color-deep-blue)', marginBottom: '8px', fontSize: '15px' }}>
@@ -541,7 +947,7 @@ export default function ObzhalovaniePrigovoraClient() {
                 <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с адвокатом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Укажите, в каком органе проводится проверка или расследование, процессуальный статус и какие документы вручены. Обращение передадим Аркадию Евгеньевичу Бобкину для первичного правового анализа.
+                Укажите суд, дату вынесения приговора, статью УК РФ, назначенное наказание и текущую процессуальную стадию (до или после вступления в силу). Обращение передадим Аркадию Евгеньевичу Бобкину для первичного правового анализа.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
@@ -576,7 +982,7 @@ export default function ObzhalovaniePrigovoraClient() {
                   </>
                 }
                 buttonText="Отправить обращение"
-                commentPlaceholder="Опишите вашу ситуацию: орган, статья, вызов, задержание..."
+                commentPlaceholder="Суд первой инстанции, статья приговора, срок, дата вынесения, мера пресечения..."
                 hiddenFields={[
                   { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/obzhalovanie-prigovora/' },
                   { name: 'direction', value: 'advokat_ugolovnyj' },

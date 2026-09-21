@@ -19,7 +19,19 @@ interface FAQBlockProps {
   ctaLink?: string;
 }
 
-export default function FAQBlock({ faqs: propFaqs, items: propItems, superTitle = "Частые вопросы клиентов", title = "Ответы на важные вопросы", subtitle = "Мы собрали самые частые вопросы наших доверителей. Если вы не нашли ответ на свой вопрос — свяжитесь с нами для индивидуальной консультации.", ctaText = "Задать свой вопрос", ctaLink = "#form" }: FAQBlockProps) {
+export default function FAQBlock({ 
+  faqs: propFaqs, 
+  items: propItems, 
+  superTitle = "Частые вопросы клиентов", 
+  title = (
+    <>
+      <span style={{ display: 'inline-block' }}>Ответы на</span> <br /><span style={{ display: 'inline-block' }}>важные вопросы</span>
+    </>
+  ), 
+  subtitle = "Мы собрали самые частые вопросы наших доверителей. Если вы не нашли ответ на свой вопрос — свяжитесь с нами для индивидуальной консультации.", 
+  ctaText = "Задать свой вопрос", 
+  ctaLink = "#form" 
+}: FAQBlockProps) {
   const defaultFaqs = [
     {
       q: 'Как проходит первое обращение?',

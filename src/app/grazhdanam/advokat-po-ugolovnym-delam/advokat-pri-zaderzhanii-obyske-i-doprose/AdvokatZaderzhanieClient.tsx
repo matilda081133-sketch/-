@@ -188,7 +188,7 @@ export default function AdvokatZaderzhanieClient() {
   const faqItems = [
   {
     "q": "Имею ли я право молчать на допросе?",
-    "a": "Да, в соответствии со статьей 51 Конституции РФ никто не обязан свидетельствовать против себя самого, своего супруга и близких родственников. Отказ от дачи показаний не является доказательством виновности."
+    "a": "Статья 51 Конституции защищает от обязанности свидетельствовать против себя, супруга и близких родственников, но не является универсальной заменой подготовки по всем вопросам. Отказ от дачи показаний целесообразен, пока не выяснены статус, суть претензий и имеющиеся доказательства. Однако в дальнейшем мотивированные и последовательные показания могут быть необходимы для защиты, поэтому решение об использовании ст. 51 принимается совместно с адвокатом по каждому конкретному вопросу."
   },
   {
     "q": "Могут ли провести обыск без присутствия адвоката?",
@@ -196,7 +196,7 @@ export default function AdvokatZaderzhanieClient() {
   },
   {
     "q": "Что делать, если дежурный адвокат склоняет к признанию вины?",
-    "a": "Вы имеете право отказаться от услуг назначенного государством адвоката и потребовать вызова защитника по соглашению. Напишите отказ собственноручно в протоколе."
+    "a": "Подозреваемый или обвиняемый вправе в любой момент отказаться от помощи назначенного дознавателем или следователем защитника (ст. 52 УПК РФ) и пригласить выбранного адвоката по соглашению. Отказ от назначенного защитника должен быть заявлен в письменном виде. Дознаватель или следователь обязан предоставить разумное время для явки выбранного адвоката и не вправе принуждать к проведению следственных действий с назначенным защитником при наличии соглашения с другим адвокатом."
   },
   {
     "q": "Сколько времени длится допрос без перерыва?",
@@ -314,7 +314,7 @@ export default function AdvokatZaderzhanieClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Срочное подключение адвоката в рабочее время при вызове, опросе, допросе, обыске, выемке или задержании. Защитим права, исключим давление, проконтролируем составление протокола и выработаем безопасную позицию.
+            Подключим адвоката к текущему или назначенному процессуальному действию: уточним статус и основание, защитим права, зафиксируем нарушения и определим следующий шаг по делу.
           </span>
         }
         primaryCtaText="Обсудить ситуацию с адвокатом"
@@ -337,6 +337,110 @@ export default function AdvokatZaderzhanieClient() {
         imageSubtitle="Директор ЮК «Де-Юре», куратор практики уголовного права"
         imageObjectPosition="50% -75px"
       />
+
+      {/* ═══ СРОЧНЫЙ БЛОК: ЧТО ДЕЛАТЬ В ПЕРВЫЕ МИНУТЫ ═══ */}
+      <section className="section" style={{ backgroundColor: 'var(--gradient-cream)', padding: '64px 0', borderBottom: '1px solid var(--color-border)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', marginBottom: '36px' }}>
+            <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+              Срочная памятка
+            </div>
+            <h2 style={{ fontSize: 'clamp(26px, 3.6vw, 38px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.25 }}>
+              Что делать в первые минуты: выберите сценарий
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              При контакте со следственными или оперативными органами ключевая задача — зафиксировать обстоятельства и не ухудшить свое процессуальное положение до прибытия адвоката.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '24px' }}>
+            {/* Сценарий 1: Памятка первых действий */}
+            <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '28px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>
+                  Базовые правила
+                </span>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
+                  Что сделать до звонка адвокату
+                </h3>
+                <ul style={{ paddingLeft: '18px', margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  <li style={{ marginBottom: '6px' }}>Уточните ФИО, должности сотрудников, орган и документ-основание.</li>
+                  <li style={{ marginBottom: '6px' }}>Не оказывайте физического сопротивления; несогласие выражайте словами для внесения в протокол.</li>
+                  <li style={{ marginBottom: '6px' }}>Не уничтожайте, не прячьте и не передавайте технику или документы третьим лицам.</li>
+                  <li style={{ marginBottom: '6px' }}>Используйте право не свидетельствовать против себя и близких (ст. 51 Конституции РФ).</li>
+                  <li>Внимательно читайте каждый протокол перед подписанием и требуйте выдачи копии.</li>
+                </ul>
+              </div>
+              <a href="#form" className="btn btn-primary" style={{ textAlign: 'center', padding: '10px 18px', fontSize: '14px' }}>
+                Позвонить адвокату
+              </a>
+            </div>
+
+            {/* Сценарий 2: Если человека задержали */}
+            <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '28px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>
+                  Ограничение свободы
+                </span>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
+                  Если человека задержали
+                </h3>
+                <ul style={{ paddingLeft: '18px', margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  <li style={{ marginBottom: '6px' }}><strong>Что сообщить близким:</strong> фактическое время и место задержания, орган, куда доставили, и состояние здоровья.</li>
+                  <li style={{ marginBottom: '6px' }}><strong>Действия адвоката:</strong> выезд в орган, установление статуса, проверка фиксации точного времени ограничения свободы.</li>
+                  <li style={{ marginBottom: '6px' }}><strong>Беседа наедине:</strong> проведение конфиденциальной встречи с подзащитным до первого официального допроса.</li>
+                  <li><strong>Мера пресечения:</strong> срочный сбор документов (семья, жилье, здоровье) для суда по ст. 108 УПК РФ против ареста в СИЗО.</li>
+                </ul>
+              </div>
+              <a href="#form" className="btn btn-primary" style={{ textAlign: 'center', padding: '10px 18px', fontSize: '14px' }}>
+                Помочь задержанному
+              </a>
+            </div>
+
+            {/* Сценарий 3: Обыск, осмотр или выемка */}
+            <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-deep-blue)', padding: '28px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>
+                  Следственные действия в помещении
+                </span>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
+                  Если проводят обыск или выемку
+                </h3>
+                <ul style={{ paddingLeft: '18px', margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  <li style={{ marginBottom: '6px' }}><strong>Основание:</strong> требуйте предъявления постановления следователя или судебного решения.</li>
+                  <li style={{ marginBottom: '6px' }}><strong>Адвокат:</strong> заявите письменное ходатайство о допуске вашего адвоката к участию в обыске.</li>
+                  <li style={{ marginBottom: '6px' }}><strong>Понятые и видео:</strong> следите, чтобы сотрудники не расходились по разным комнатам без понятых.</li>
+                  <li><strong>Опись изъятого:</strong> требуйте детального описания каждого телефона, компьютера и документа с номерами и упаковкой.</li>
+                </ul>
+              </div>
+              <a href="#form" className="btn btn-primary" style={{ textAlign: 'center', padding: '10px 18px', fontSize: '14px' }}>
+                Адвокат при обыске
+              </a>
+            </div>
+
+            {/* Сценарий 4: Допрос или беседа */}
+            <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-primary)', padding: '28px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>
+                  Вызов по повестке
+                </span>
+                <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0' }}>
+                  Если вызвали на допрос или беседу
+                </h3>
+                <ul style={{ paddingLeft: '18px', margin: '0 0 16px 0', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                  <li style={{ marginBottom: '6px' }}><strong>Статус:</strong> уточните, в каком качестве вас вызывают — свидетеля, потерпевшего или подозреваемого.</li>
+                  <li style={{ marginBottom: '6px' }}><strong>Право на адвоката:</strong> свидетель и подозреваемый вправе явиться на допрос со своим адвокатом (ст. 189 УПК РФ).</li>
+                  <li style={{ marginBottom: '6px' }}><strong>Подготовка:</strong> до явки восстановите события и согласуйте с защитником границы безопасных ответов.</li>
+                  <li><strong>Замечания:</strong> адвокат пресечет наводящие вопросы и добьется точной формулировки показаний в протоколе.</li>
+                </ul>
+              </div>
+              <a href="#form" className="btn btn-primary" style={{ textAlign: 'center', padding: '10px 18px', fontSize: '14px' }}>
+                Подготовиться к допросу
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
