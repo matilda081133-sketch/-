@@ -310,29 +310,33 @@ export default function Razblokirovka115fzClient() {
         trustItems={[
           {
             text: (
-              <span>
-                <strong>Проанализируем уведомление банка</strong>, спорные операции и подтверждающие документы
+              <span style={{ display: 'block', whiteSpace: 'normal', textWrap: 'balance' }}>
+                <span style={{ display: 'inline-block' }}><strong>Проанализируем уведомление банка</strong>,</span> <br />
+                <span style={{ display: 'inline-block' }}>спорные операции и подтверждающие документы</span>
               </span>
             )
           },
           {
             text: (
-              <span>
-                <strong>Подготовим мотивированные пояснения</strong> и сопроводим обращение в банк или МВК ЦБ РФ
+              <span style={{ display: 'block', whiteSpace: 'normal', textWrap: 'balance' }}>
+                <span style={{ display: 'inline-block' }}><strong>Подготовим мотивированные пояснения</strong></span> <br />
+                <span style={{ display: 'inline-block' }}>и сопроводим обращение в банк или МВК ЦБ РФ</span>
               </span>
             )
           },
           {
             text: (
-              <span>
-                <strong>Оспорим присвоение высокого</strong> уровня риска в платформе «Знай своего клиента» (ЗСК)
+              <span style={{ display: 'block', whiteSpace: 'normal', textWrap: 'balance' }}>
+                <span style={{ display: 'inline-block' }}><strong>Оспорим присвоение высокого уровня риска</strong></span> <br />
+                <span style={{ display: 'inline-block' }}>в платформе «Знай своего клиента» (ЗСК)</span>
               </span>
             )
           },
           {
             text: (
-              <span>
-                <strong>Взыщем незаконные заградительные тарифы</strong> (10–25%) при закрытии счета в суде
+              <span style={{ display: 'block', whiteSpace: 'normal', textWrap: 'balance' }}>
+                <span style={{ display: 'inline-block' }}><strong>Взыщем незаконные заградительные тарифы</strong></span> <br />
+                <span style={{ display: 'inline-block' }}>(10–25%) при закрытии счета в суде</span>
               </span>
             )
           }
@@ -394,7 +398,7 @@ export default function Razblokirovka115fzClient() {
                   color: 'var(--color-deep-blue)'
                 }}>
                   <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
 
@@ -673,17 +677,27 @@ export default function Razblokirovka115fzClient() {
           `}} />
 
           {/* Зона связи */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '28px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-            <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
-              +7 (4742) 20-15-25
-            </a>
-            <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
-              Позвонить специалисту
-            </a>
-            <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
-              Срочная консультация
-            </a>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginLeft: '4px' }}>
+          <div style={{
+            borderTop: '1px solid rgba(255,255,255,0.15)',
+            paddingTop: '28px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: '20px',
+            flexWrap: 'wrap'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <a href="tel:+74742201525" style={{ color: '#FFFFFF', fontSize: '20px', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.02em' }} data-analytics="phone_click">
+                +7 (4742) 20-15-25
+              </a>
+              <a href="tel:+74742201525" className="btn-urgent-call" style={{ padding: '14px 28px', fontSize: '15px' }} data-analytics="phone_click">
+                Позвонить специалисту
+              </a>
+              <a href="#form" className="btn btn-urgent-outline" style={{ padding: '14px 28px', fontSize: '15px' }}>
+                Срочная консультация
+              </a>
+            </div>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>
               Срочный анализ запроса финмониторинга и подготовка позиции
             </span>
           </div>
@@ -814,7 +828,12 @@ export default function Razblokirovka115fzClient() {
 
       {/* ═══ БЛОК 8: КЕЙСЫ ═══ */}
       <CasesBlock
-        title="Примеры из практики по банковским ограничениям"
+        title={
+          <span>
+            <span style={{ display: 'inline-block' }}>Примеры из практики</span> <br />
+            <span style={{ display: 'inline-block' }}>по банковским ограничениям</span>
+          </span>
+        }
         subtitle="Реабилитация компаний, восстановление ДБО и судебное взыскание незаконных банковских комиссий"
         cases={practiceCases}
       />
@@ -822,178 +841,258 @@ export default function Razblokirovka115fzClient() {
       {/* ═══ БЛОК 9: FAQ ═══ */}
       <FAQBlock items={faqs} />
 
-      {/* ═══ БЛОК 10: СВЯЗАННЫЕ УСЛУГИ ═══ */}
-      <section style={{ padding: '60px 0', background: 'var(--color-bg-light)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <h2
-            className="with-accent"
-            style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(24px, 3vw, 32px)',
-              color: 'var(--color-deep-blue)',
-              marginBottom: '24px',
-              textAlign: 'center'
-            }}
-          >
-            Если ограничение связано не только со 115-ФЗ
-          </h2>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '16px'
-            }}
-          >
-            <Link
-              href="/biznesu/korporativnyj-yurist/"
-              className="hover-lift"
-              style={{
-                background: '#ffffff',
-                padding: '20px',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                color: 'var(--color-text-main)',
-                border: '1px solid rgba(0,0,0,0.06)',
-                fontWeight: 600,
-                fontSize: '15px',
-                display: 'block'
-              }}
-            >
-              Корпоративный юрист для бизнеса →
+      {/* ═══ БЛОК 10: СВЯЗАННЫЕ УСЛУГИ — КАНОНИЧЕСКИЙ ШАБЛОН ═══ */}
+      <section className="section" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
+        <div className="container">
+          <div style={{ marginBottom: '36px' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '10px'
+            }}>
+              Смежные направления практики для бизнеса
+            </div>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3.5vw, 34px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.25, flex: '1 1 480px', minWidth: '280px' }}>
+                <span style={{ display: 'inline-block' }}>Если ограничение связано</span> <br /><span style={{ display: 'inline-block' }}>не только со 115-ФЗ</span>
+              </h2>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}>
+                Комплексная защита интересов компании при налоговых претензиях, корпоративных конфликтах, принудительном взыскании и арбитражных спорах.
+              </p>
+            </div>
+          </div>
+
+          <style dangerouslySetInnerHTML={{ __html: `
+            .related-service-card {
+              border-top: 3px solid var(--color-primary) !important;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .related-service-card:hover {
+              border-top: 3px solid var(--color-gold) !important;
+              transform: translateY(-6px) !important;
+              box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
+            }
+            .related-service-card:hover .card-arrow {
+              color: var(--color-gold) !important;
+            }
+            .related-service-card:hover .card-arrow svg {
+              stroke: var(--color-gold) !important;
+              transform: translateX(6px) !important;
+            }
+          `}} />
+
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
+            <Link href="/biznesu/korporativnyj-yurist/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Корпоративный юрист для бизнеса
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Корпоративные договоры, защита контроля, разрешение споров между участниками и сделки с долями ООО.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
             </Link>
-            <Link
-              href="/biznesu/nalogovyj-yurist-dlya-biznesa/"
-              className="hover-lift"
-              style={{
-                background: '#ffffff',
-                padding: '20px',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                color: 'var(--color-text-main)',
-                border: '1px solid rgba(0,0,0,0.06)',
-                fontWeight: 600,
-                fontSize: '15px',
-                display: 'block'
-              }}
-            >
-              Налоговый юрист для бизнеса →
+
+            <Link href="/biznesu/nalogovyj-yurist-dlya-biznesa/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Налоговый юрист для бизнеса
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Сопровождение проверок ФНС, отмена необоснованных доначислений, разблокировка счетов по решениям налоговой и защита при обвинениях в дроблении бизнеса.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
             </Link>
-            <Link
-              href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/"
-              className="hover-lift"
-              style={{
-                background: '#ffffff',
-                padding: '20px',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                color: 'var(--color-text-main)',
-                border: '1px solid rgba(0,0,0,0.06)',
-                fontWeight: 600,
-                fontSize: '15px',
-                display: 'block'
-              }}
-            >
-              Исполнительное производство для бизнеса →
+
+            <Link href="/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Исполнительное производство для бизнеса
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Срочное снятие арестов с банковских счетов, отмена постановлений приставов и взыскание задолженности по исполнительным листам.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
             </Link>
-            <Link
-              href="/biznesu/arbitrazhnyj-yurist/"
-              className="hover-lift"
-              style={{
-                background: '#ffffff',
-                padding: '20px',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                color: 'var(--color-text-main)',
-                border: '1px solid rgba(0,0,0,0.06)',
-                fontWeight: 600,
-                fontSize: '15px',
-                display: 'block'
-              }}
-            >
-              Арбитражный юрист →
+
+            <Link href="/biznesu/arbitrazhnyj-yurist/" style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 24px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Арбитражный юрист
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Представительство в арбитражных судах по экономическим спорам, взысканию убытков, признанию сделок недействительными и договорам поставки.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее об услуге</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ═══ БЛОК 11: ФОРМА И КОНТАКТЫ ═══ */}
-      <section id="form" style={{ padding: '70px 0', background: '#ffffff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '40px',
-              alignItems: 'start'
-            }}
-          >
-            <div>
-              <span
-                style={{
-                  fontSize: '12.5px',
-                  fontWeight: 700,
-                  color: 'var(--color-gold)',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase'
-                }}
-              >
-                ОПЕРАТИВНАЯ ПОМОЩЬ
-              </span>
-              <h2
-                className="with-accent"
-                style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: 'clamp(26px, 3.5vw, 36px)',
-                  color: 'var(--color-deep-blue)',
-                  marginTop: '8px',
-                  marginBottom: '16px',
-                  lineHeight: 1.25
-                }}
-              >
-                Обсудите ситуацию по 115-ФЗ со специалистом
+      {/* ═══ БЛОК 11: ФИНАЛЬНАЯ ФОРМА (СВЯЗАТЬСЯ С НАМИ) — КАНОНИЧЕСКИЙ ШАБЛОН ═══ */}
+      <section className="section bg-white" id="form" style={{ scrollMarginTop: '120px', padding: '80px 0' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '60px', alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  ОПЕРАТИВНАЯ ПОМОЩЬ
+                </span>
+              </div>
+              <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Обсудите ситуацию по 115-ФЗ</span>{' '}
+                <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>со специалистом</span>
               </h2>
-              <p
-                style={{
-                  fontSize: '15px',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  marginBottom: '24px'
-                }}
-              >
+              <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
                 Кратко опишите, какой банк направил запрос или ввёл ограничения, и какой срок ответа установлен. Конфиденциальные финансовые документы и выписки передаются только после согласования защищенного канала связи.
               </p>
-              <div
-                style={{
-                  background: 'var(--color-bg-light)',
-                  padding: '20px',
-                  borderRadius: '8px',
-                  borderLeft: '4px solid var(--color-gold)',
-                  marginBottom: '24px'
-                }}
-              >
-                <div style={{ fontWeight: 700, fontSize: '15px', color: 'var(--color-deep-blue)' }}>
-                  Безопасность данных
+
+              <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <strong style={{ fontSize: '16px', color: 'var(--color-deep-blue)' }}>Консультация специалиста по 115-ФЗ</strong>
                 </div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
-                  Мы соблюдаем режим строгой коммерческой тайны. Банковские реквизиты и финансовые показатели не передаются третьим лицам.
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  Телефон для связи: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }} data-analytics="phone_click">+7 (4742) 20-15-25</a>
+                </p>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
+                  Офис в Липецке: ул. Советская, д. 35, оф. 213 (приём по записи)
                 </div>
               </div>
-              <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
-                Офис в Липецке: <strong>ул. Советская, д. 35, оф. 213</strong>
-                <br />
-                Телефон для связи: <strong>+7 (4742) 20-15-25</strong>
+
+              <div style={{ background: 'rgba(23, 50, 77, 0.04)', padding: '16px 20px', borderLeft: '3px solid var(--color-gold)', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                <strong style={{ color: 'var(--color-deep-blue)', display: 'block', marginBottom: '4px' }}>Безопасность данных:</strong>
+                Мы соблюдаем режим строгой коммерческой тайны. Банковские реквизиты и финансовые показатели не передаются третьим лицам.
               </div>
             </div>
 
-            <div
-              style={{
-                background: 'var(--color-bg-light)',
-                padding: '32px',
-                borderRadius: '12px',
-                border: '1px solid rgba(0,0,0,0.08)'
-              }}
-            >
-              <ContactsForm />
+            <div style={{ background: 'var(--gradient-cream)', padding: '40px', border: '1px solid var(--color-border)', borderRadius: '0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <ContactsForm
+                title="Написать нам"
+                subtitle="Оставьте имя и номер телефона. При желании кратко опишите ситуацию — это поможет юристу подготовиться к разговору."
+                subtext="Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день."
+                buttonText="Оставить заявку"
+                commentPlaceholder="Кратко опишите ситуацию: какой банк, блокировка ДБО, запрос документов или заградительный тариф…"
+                hiddenFields={[
+                  { name: 'source_page', value: '/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/' },
+                  { name: 'service', value: 'Разблокировка расчетного счета по 115-ФЗ' },
+                  { name: 'direction', value: '115-fz' }
+                ]}
+              />
             </div>
           </div>
         </div>

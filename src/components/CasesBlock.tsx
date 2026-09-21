@@ -52,7 +52,7 @@ export default function CasesBlock({
             </span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '20px' }}>
-            <div style={{ maxWidth: '820px', flex: '1 1 500px' }}>
+            <div style={{ maxWidth: '820px', flex: '1 1 auto' }}>
               <h2 style={{ margin: 0, fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.25 }}>
                 {title}
               </h2>
@@ -63,7 +63,7 @@ export default function CasesBlock({
               )}
             </div>
             {showAllLink && (
-              <a href={showAllLink} className="btn btn-outline" style={{ padding: '12px 24px', height: 'fit-content', whiteSpace: 'nowrap', flexShrink: 0 }}>
+              <a href={showAllLink} className="btn btn-outline" style={{ padding: '12px 24px', height: 'fit-content', whiteSpace: 'nowrap', flexShrink: 0, alignSelf: 'flex-start' }}>
                 {showAllText}
               </a>
             )}
