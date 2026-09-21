@@ -33,6 +33,7 @@ type ExtendedHeroProps = HeroProps & {
   imageSubtitle?: string;
   trustMarginTop?: string;
   imageMarginTop?: string;
+  ctaMarginTop?: string;
   imageObjectPosition?: string;
   rightContent?: React.ReactNode;
   afterTrustContent?: React.ReactNode;
@@ -62,6 +63,7 @@ export default function MilitaryHero({
   imageSubtitle,
   trustMarginTop,
   imageMarginTop,
+  ctaMarginTop,
   imageObjectPosition,
   rightContent,
   afterTrustContent
@@ -139,7 +141,7 @@ export default function MilitaryHero({
               )}
 
               {/* Primary Call to Action */}
-              <div className="military-hero-cta" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px', marginTop: '20px', marginBottom: urgentHint ? '16px' : '24px' }}>
+              <div className="military-hero-cta" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '14px', marginTop: ctaMarginTop || (trustItems && trustItems.length > 0 ? '20px' : '32px'), marginBottom: urgentHint ? '16px' : '24px' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px' }}>
                   <a href={effectivePrimaryLink} className="btn btn-primary military-hero-primary-btn" data-analytics={primaryCtaAnalytics || "military_hero_consultation_click"}>
                     {effectivePrimaryText}
@@ -151,7 +153,7 @@ export default function MilitaryHero({
                   )}
                 </div>
                 {primaryCtaSubtext && (
-                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginTop: '2px' }}>
+                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginTop: '4px', lineHeight: 1.5 }}>
                     {primaryCtaSubtext}
                   </div>
                 )}

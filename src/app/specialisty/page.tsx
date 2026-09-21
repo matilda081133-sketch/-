@@ -741,23 +741,20 @@ export default function SpecialistyPage() {
           }}>
             {[
               {
-                tag: "Специалисты ЮК",
                 title: "Специалисты ЮК",
                 desc: "Компания определяет профильного специалиста и фиксирует состав работ, сроки и стоимость в договоре с клиентом."
               },
               {
-                tag: "Участие адвоката",
                 title: "Участие адвоката",
                 desc: "Если требуется адвокатский статус, ЮК может рекомендовать или привлечь независимого адвоката соответствующей специализации."
               },
               {
-                tag: "Отдельное соглашение",
                 title: "Отдельное соглашение",
                 desc: "Адвокат самостоятельно согласовывает с доверителем условия адвокатской помощи и заключает с ним отдельное соглашение."
               }
             ].map((item, i) => (
               <div key={i} className="usp-card" style={{ 
-                padding: '40px', 
+                padding: '32px 28px', 
                 borderRight: '1px solid rgba(23, 50, 77, 0.1)',
                 background: 'rgba(247, 244, 237, 0.45)',
                 position: 'relative',
@@ -765,17 +762,28 @@ export default function SpecialistyPage() {
                 flexDirection: 'column',
                 justifyContent: 'flex-start'
               }}>
-                <div>
-                  <div className="usp-accent"></div>
-                  
-                  <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold)', fontWeight: 700, marginBottom: '16px', textTransform: 'uppercase', position: 'relative', zIndex: 1 }}>
-                    {item.tag}
-                  </div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--color-deep-blue)', marginBottom: '20px', fontFamily: 'var(--font-serif)', lineHeight: 1.3, minHeight: '54px', display: 'flex', alignItems: 'flex-start', position: 'relative', zIndex: 1 }}>
-                    {item.title}
-                  </h3>
-                </div>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1 }}>
+                <div className="usp-accent"></div>
+                
+                <h3 style={{ 
+                  fontSize: '20px', 
+                  fontWeight: 'bold', 
+                  color: 'var(--color-deep-blue)', 
+                  marginBottom: '10px', 
+                  fontFamily: 'var(--font-serif)', 
+                  lineHeight: 1.3, 
+                  position: 'relative', 
+                  zIndex: 1 
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{ 
+                  color: 'var(--color-text-secondary)', 
+                  fontSize: '15px', 
+                  lineHeight: 1.6, 
+                  margin: 0, 
+                  position: 'relative', 
+                  zIndex: 1 
+                }}>
                   {item.desc}
                 </p>
               </div>

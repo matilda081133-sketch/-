@@ -332,7 +332,9 @@ export default function VvkPage() {
                 Не уверены, есть ли основания для оспаривания?
               </h3>
               <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, maxWidth: '780px' }}>
-                Опишите, с каким выводом ВВК вы не согласны и какие медицинские документы у вас есть. Дмитрий Сергеевич Конопкин проверит ситуацию и определит возможный порядок действий.
+                <span style={{ display: 'block' }}>Опишите, с каким выводом ВВК вы не согласны и какие</span>
+                <span style={{ display: 'block' }}>медицинские документы у вас есть. Дмитрий Сергеевич Конопкин</span>
+                <span style={{ display: 'block' }}>проверит ситуацию и определит возможный порядок действий.</span>
               </p>
             </div>
             <div style={{ flexShrink: 0 }}>
@@ -434,7 +436,8 @@ export default function VvkPage() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Документы о военной службе и ранении</strong>
@@ -443,7 +446,8 @@ export default function VvkPage() {
                 </li>
                 <li style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                   <div>
                     <strong style={{ display: 'block', fontSize: '16px', color: 'var(--color-deep-blue)', marginBottom: '4px' }}>Независимые заключения и ответы</strong>
