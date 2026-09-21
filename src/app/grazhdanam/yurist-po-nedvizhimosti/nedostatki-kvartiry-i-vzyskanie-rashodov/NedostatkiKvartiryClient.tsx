@@ -89,8 +89,8 @@ export default function NedostatkiKvartiryClient() {
     },
     {
       num: '05',
-      title: 'Получение денег',
-      desc: 'Взыскиваем стоимость ремонта, штраф 50%, неустойку и расходы на экспертизу через банк застройщика.'
+      title: 'Взыскание через банк',
+      desc: 'Взыскиваем обоснованную стоимость устранения дефектов, положенный потребительский штраф, неустойку и расходы на экспертизу через банк застройщика.'
     }
   ];
 
@@ -131,7 +131,7 @@ export default function NedostatkiKvartiryClient() {
       price: 'от 35 000 ₽',
       features: [
         { name: 'Подготовка иска и организация судебной экспертизы', value: '✓' },
-        { name: 'Взыскание стоимости ремонта + штраф 50%', value: '✓' },
+        { name: 'Обоснованная стоимость устранения дефектов + положенный потребительский штраф', value: '✓' },
         { name: 'Взыскание морального вреда и расходов на юриста', value: '✓' },
         { name: 'Участие во всех судебных заседаниях', value: '✓' },
         { name: 'Исполнение решения и перечисление денег', value: '✓' }
@@ -242,10 +242,10 @@ export default function NedostatkiKvartiryClient() {
           </>
         }
         superTitle="Строительный брак • приёмка • экспертиза • Липецк"
-        title={<>Взыскание компенсации <br />за дефекты квартиры <br />в Липецке</>}
+        title={<>Недостатки квартиры <br />и взыскание расходов <br />в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
-            Поможем зафиксировать строительные дефекты при приёмке или в период 5-летней гарантии, привлечём эксперта НОПРИЗ/НОСТРОЙ и взыщем полную стоимость восстановительного ремонта.
+            Зафиксируем строительные дефекты, проведём экспертизу и добьёмся нужного результата: устранения недостатков, уменьшения цены квартиры или выплаты денег на ремонт.
           </span>
         }
         primaryCtaText="Разобрать дефекты"
@@ -405,7 +405,7 @@ export default function NedostatkiKvartiryClient() {
         trustItems={[
           { text: 'Привлечение аттестованных судебных экспертов НОПРИЗ.' },
           { text: 'Составление сметы по официальным нормативам Минстроя РФ.' },
-          { text: 'Взыскание полной стоимости ремонта, штрафа 50% и экспертизы.' }
+          { text: 'Взыскание обоснованной стоимости устранения дефектов, положенного потребительского штрафа и экспертизы.' }
         ]}
       />
 
@@ -508,7 +508,7 @@ export default function NedostatkiKvartiryClient() {
                 Не начинайте чистовой ремонт до проведения экспертизы!
               </h3>
               <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
-                После укладки плитки или ламината зафиксировать дефекты стяжки и стен будет юридически невозможно. Вызовите эксперта для фиксации брака.
+                После укладки плитки или ламината доказать наличие первоначальных дефектов стяжки и стен будет значительно сложнее. Вызовите эксперта для фиксации брака.
               </p>
             </div>
             <div style={{ flexShrink: 0 }}>
@@ -520,6 +520,58 @@ export default function NedostatkiKvartiryClient() {
                 Вызвать эксперта
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ ЧТО МОЖНО ПОТРЕБОВАТЬ ОТ ЗАСТРОЙЩИКА ═══ */}
+      <section className="section bg-white" style={{ padding: '70px 0 10px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '750px', marginBottom: '32px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(26px, 3.8vw, 34px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Что можно потребовать от застройщика
+            </h2>
+          </div>
+
+          <div className="grid grid-4" style={{ gap: '20px' }}>
+            {[
+              {
+                title: 'Устранение дефектов',
+                desc: 'Бесплатно устранить обнаруженные недостатки.'
+              },
+              {
+                title: 'Уменьшение цены',
+                desc: 'Уменьшить цену квартиры.'
+              },
+              {
+                title: 'Возмещение расходов',
+                desc: 'Возместить обоснованные расходы на ремонт.'
+              },
+              {
+                title: 'Расторжение договора',
+                desc: 'При существенных недостатках — расторгнуть ДДУ и вернуть деньги.'
+              }
+            ].map((req, idx) => (
+              <div
+                key={idx}
+                className="card hover-lift"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '24px 20px',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                }}
+              >
+                <div style={{ fontSize: '16px', fontWeight: 600, fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '8px' }}>
+                  {req.title}
+                </div>
+                <div style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                  {req.desc}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -584,7 +636,7 @@ export default function NedostatkiKvartiryClient() {
                   desc: 'Подача иска в суд, назначение судебной строительной экспертизы и защита выводов независимого эксперта.'
                 },
                 {
-                  title: 'Потребительский штраф 50%',
+                  title: 'Положенный потребительский штраф',
                   desc: 'Взыскание штрафа за отказ добровольно возместить ущерб, морального вреда и неустойки по закону о защите прав потребителей.'
                 },
                 {

@@ -118,42 +118,58 @@ export default function YuristPoNedvizhimostiClient() {
     {
       tag: 'ПОКУПКА КВАРТИРЫ',
       title: 'Покупаю недвижимость',
-      desc: 'Нужно проверить объект, продавца, документы, договор и порядок расчётов до передачи денег.'
+      desc: 'Нужно проверить объект, продавца, документы, договор и порядок расчётов до передачи денег.',
+      btnText: 'Проверить объект и сделку',
+      btnHref: '/grazhdanam/yurist-po-nedvizhimosti/soprovozhdenie-sdelok-s-nedvizhimostyu/'
     },
     {
       tag: 'ПРОДАЖА И ДАРЕНИЕ',
       title: 'Продаю или передаю объект',
-      desc: 'Нужно подготовить договор, согласовать условия, регистрацию, расчёты и передачу недвижимости.'
+      desc: 'Нужно подготовить договор, согласовать условия, регистрацию, расчёты и передачу недвижимости.',
+      btnText: 'Безопасно провести сделку',
+      btnHref: '/grazhdanam/yurist-po-nedvizhimosti/soprovozhdenie-sdelok-s-nedvizhimostyu/'
     },
     {
       tag: 'СПОР С ЗАСТРОЙЩИКОМ',
       title: 'Застройщик нарушил обязательства',
-      desc: 'Просрочка передачи, дефекты отделки, отказ платить неустойку или необходимость расторгнуть ДДУ.'
+      desc: 'Просрочка передачи, дефекты отделки, отказ платить неустойку или необходимость расторгнуть ДДУ.',
+      btnText: 'Взыскать с застройщика',
+      btnHref: '/grazhdanam/yurist-po-nedvizhimosti/spory-s-zastrojshchikom/'
     },
     {
       tag: 'ОФОРМЛЕНИЕ ПРАВ',
       title: 'Право не удаётся оформить',
-      desc: 'Не хватает документов, продавец уклоняется от регистрации, или требуется судебное признание права.'
+      desc: 'Не хватает документов, продавец уклоняется от регистрации, или требуется судебное признание права.',
+      btnText: 'Оформить право собственности',
+      btnHref: '/grazhdanam/yurist-po-nedvizhimosti/priznanie-prava-sobstvennosti-na-nedvizhimost/'
     },
     {
       tag: 'ОСПАРИВАНИЕ СДЕЛКИ',
       title: 'Сделку хотят отменить',
-      desc: 'Предъявлен иск либо есть основания оспорить куплю-продажу, дарение или другую передачу объекта.'
+      desc: 'Предъявлен иск либо есть основания оспорить куплю-продажу, дарение или другую передачу объекта.',
+      btnText: 'Оспорить или защитить сделку',
+      btnHref: '/grazhdanam/yurist-po-nedvizhimosti/osparivanie-sdelok-s-nedvizhimostyu/'
     },
     {
       tag: 'САМОВОЛЬНАЯ ПОСТРОЙКА',
       title: 'Постройку требуют снести',
-      desc: 'Нужно оценить возможность сохранения, оформления и судебной защиты дома, здания или пристройки.'
+      desc: 'Нужно оценить возможность сохранения, оформления и судебной защиты дома, здания или пристройки.',
+      btnText: 'Узаконить постройку',
+      btnHref: '/grazhdanam/yurist-po-nedvizhimosti/legalizaciya-samovolnoj-postrojki/'
     },
     {
       tag: 'ПРИОСТАНОВКА В РОСРЕЕСТРЕ',
       title: 'Росреестр приостановил регистрацию',
-      desc: 'Определим причину: устранимые замечания, скрытый спор о праве или пороки представленных документов.'
+      desc: 'Определим причину: устранимые замечания, скрытый спор о праве или пороки представленных документов.',
+      btnText: 'Снять приостановку регистрации',
+      btnHref: '/grazhdanam/yurist-po-nedvizhimosti/priznanie-prava-sobstvennosti-na-nedvizhimost/'
     },
     {
       tag: 'СЛОЖНАЯ СИТУАЦИЯ',
       title: 'Не знаю, с чего начать',
-      desc: 'Опишите объект, участников и текущую стадию — разберём риски и определим профильный маршрут защиты.'
+      desc: 'Опишите объект, участников и текущую стадию — разберём риски и определим профильный маршрут защиты.',
+      btnText: 'Получить план решения',
+      btnHref: '#form'
     }
   ];
 
@@ -690,35 +706,61 @@ export default function YuristPoNedvizhimostiClient() {
                   </p>
                 </div>
 
-                <a
-                  href="#form"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    color: 'var(--color-primary)',
-                    fontSize: '13.5px',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    marginTop: '20px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.getElementById('form');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    else window.location.hash = 'form';
-                  }}
-                >
-                  <span>Защитить права</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
+                {sit.btnHref.startsWith('#') ? (
+                  <a
+                    href={sit.btnHref}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--color-primary)',
+                      fontSize: '13.5px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      marginTop: '20px',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById('form');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      else window.location.hash = 'form';
+                    }}
+                  >
+                    <span>{sit.btnText}</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                ) : (
+                  <Link
+                    href={sit.btnHref}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--color-primary)',
+                      fontSize: '13.5px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      marginTop: '20px',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-gold)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
+                  >
+                    <span>{sit.btnText}</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </Link>
+                )}
               </div>
             ))}
 

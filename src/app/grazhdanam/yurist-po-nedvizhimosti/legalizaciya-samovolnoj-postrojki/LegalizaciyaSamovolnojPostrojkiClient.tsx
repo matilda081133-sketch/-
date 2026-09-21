@@ -494,7 +494,7 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
                 Получили предписание или судебный иск о сносе?
               </h3>
               <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
-                Срочно обратитесь к юристу. Подача встречного иска по ст. 222 ГК РФ и назначение строительной экспертизы позволяют сохранить постройку в 90% случаев.
+                Подадим встречный иск, проведём строительную экспертизу и добьёмся сохранения постройки, если объект соответствует обязательным требованиям.
               </p>
             </div>
             <div style={{ flexShrink: 0 }}>
@@ -515,7 +515,7 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
         <div className="container">
           <div style={{ maxWidth: '750px', marginBottom: '48px' }}>
             <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Условия успешного узаконивания по ст. 222 ГК РФ
+              Что проверим перед легализацией постройки
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
               Четыре обязательных критерия, которые проверяет суд при признании права собственности на самовольную постройку.
@@ -588,6 +588,58 @@ export default function LegalizaciyaSamovolnojPostrojkiClient() {
         resultLabel="Результат"
         cases={cases}
       />
+
+      {/* ═══ КАК УЗАКОНИМ ОБЪЕКТ ═══ */}
+      <section className="section bg-white" style={{ padding: '70px 0 10px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '750px', marginBottom: '32px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(26px, 3.8vw, 34px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Как узаконим объект
+            </h2>
+          </div>
+
+          <div className="grid grid-4" style={{ gap: '20px' }}>
+            {[
+              {
+                title: 'Административный порядок',
+                desc: 'Оформление в административном порядке.'
+              },
+              {
+                title: 'Согласование параметров',
+                desc: 'Согласование реконструкции и новых параметров объекта.'
+              },
+              {
+                title: 'Судебный порядок',
+                desc: 'Признание права собственности через суд.'
+              },
+              {
+                title: 'Защита от сноса',
+                desc: 'Защита от требования администрации о сносе.'
+              }
+            ].map((method, idx) => (
+              <div
+                key={idx}
+                className="card hover-lift"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '24px 20px',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)'
+                }}
+              >
+                <div style={{ fontSize: '16px', fontWeight: 600, fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '8px' }}>
+                  {method.title}
+                </div>
+                <div style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                  {method.desc}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ═══ 5. ПРОЦЕСС ═══ */}
       <ProcessBlock

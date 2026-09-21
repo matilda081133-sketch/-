@@ -239,7 +239,7 @@ export default function PriznaniePravaSobstvennostiClient() {
         title={<>Признание <br />права собственности <br />на недвижимость <br />в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
-            Оформим право собственности через суд на квартиру, дом, новостройку или гараж при утере документов, отказе Росреестра, банкротстве продавца или по приобретательной давности.
+            Оформим право собственности на квартиру, дом, новостройку или гараж и доведём процедуру до получения выписки ЕГРН — через Росреестр, восстановление документов или суд.
           </span>
         }
         primaryCtaText="Признать право через суд"
@@ -401,16 +401,71 @@ export default function PriznaniePravaSobstvennostiClient() {
         ]}
       />
 
-      {/* ═══ 2. СИТУАЦИИ ═══ */}
+      {/* ═══ 2. СПОСОБЫ ОФОРМЛЕНИЯ ПРАВА ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '850px', marginBottom: '48px' }}>
+          <div style={{ maxWidth: '850px', marginBottom: '40px' }}>
             <h2 className="with-accent nowrap-desk" style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
-              Когда право признаётся только через суд
+              Каким способом оформим право собственности
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Если Росреестр отказывает во внесудебной регистрации, единственным законным способом получить собственность остаётся судебный акт.
+              Определим причину отказа Росреестра и добьёмся регистрации права: устраним замечания, восстановим документы либо обратимся в суд.
             </p>
+          </div>
+
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '48px' }}>
+            {[
+              {
+                num: '01',
+                title: 'Регистрация по имеющимся документам'
+              },
+              {
+                num: '02',
+                title: 'Устранение приостановки или отказа Росреестра'
+              },
+              {
+                num: '03',
+                title: 'Восстановление правоустанавливающих документов'
+              },
+              {
+                num: '04',
+                title: 'Признание права собственности через суд'
+              }
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="card hover-lift"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '24px 20px',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}
+              >
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  marginBottom: '10px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {item.num}
+                </div>
+                <div style={{ fontSize: '16px', fontWeight: 600, fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.4 }}>
+                  {item.title}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ maxWidth: '850px', marginBottom: '32px' }}>
+            <h3 style={{ fontSize: '24px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+              Основания для признания права собственности
+            </h3>
           </div>
 
           <div className="grid grid-4" style={{ gap: '24px', marginBottom: '40px' }}>
@@ -732,7 +787,7 @@ export default function PriznaniePravaSobstvennostiClient() {
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                Оформите право собственности через суд
+                Оформите право собственности и получите выписку ЕГРН
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
                 Кратко опишите объект (квартира, дом, гараж), имеющиеся документы и причину невозможности регистрации в обычном порядке. Мы предложим надёжную стратегию защиты.

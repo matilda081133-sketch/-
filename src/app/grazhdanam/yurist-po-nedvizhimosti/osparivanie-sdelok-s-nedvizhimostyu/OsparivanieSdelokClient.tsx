@@ -495,7 +495,7 @@ export default function OsparivanieSdelokClient() {
                 Опасаетесь срочной перепродажи спорного жилья?
               </h3>
               <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '640px' }}>
-                Мы подготовим заявление о наложении обеспечительных мер и судебного запрета регистрационных действий в день обращения.
+                В день обращения подготовим заявление об обеспечительных мерах и подадим его в суд вместе с иском, чтобы остановить дальнейшее отчуждение объекта.
               </p>
             </div>
             <div style={{ flexShrink: 0 }}>
@@ -551,8 +551,8 @@ export default function OsparivanieSdelokClient() {
                 desc: 'Защита позиции во всех судебных инстанциях Липецкой области, допрос свидетелей и опровержение доводов оппонентов.'
               },
               {
-                title: 'Двусторонняя реституция',
-                desc: 'Возврат объекта законному собственнику либо взыскание полной стоимости недвижимости с недобросовестной стороны.'
+                title: 'Результат по спору',
+                desc: 'Добьёмся применимого результата: возврата недвижимости и денег сторонам, взыскания стоимости объекта либо сохранения недвижимости за добросовестным приобретателем.'
               }
             ].map((step, idx) => (
               <div
@@ -589,6 +589,62 @@ export default function OsparivanieSdelokClient() {
                 <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {step.desc}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ КАКОГО РЕЗУЛЬТАТА ДОБИВАЕМСЯ ═══ */}
+      <section className="section bg-white" style={{ padding: '70px 0 10px 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '750px', marginBottom: '32px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(26px, 3.8vw, 34px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+              Какого результата добиваемся
+            </h2>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '24px' }}>
+            {[
+              {
+                num: '01',
+                title: 'Возвращаем недвижимость прежнему собственнику'
+              },
+              {
+                num: '02',
+                title: 'Сохраняем объект за добросовестным покупателем'
+              },
+              {
+                num: '03',
+                title: 'Взыскиваем деньги и убытки, если вернуть объект невозможно'
+              }
+            ].map((res, idx) => (
+              <div
+                key={idx}
+                className="card hover-lift"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  borderRadius: '0',
+                  padding: '28px 24px',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}
+              >
+                <div style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--color-gold)',
+                  marginBottom: '12px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {res.num}
+                </div>
+                <div style={{ fontSize: '16px', fontWeight: 600, fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.45 }}>
+                  {res.title}
+                </div>
               </div>
             ))}
           </div>
