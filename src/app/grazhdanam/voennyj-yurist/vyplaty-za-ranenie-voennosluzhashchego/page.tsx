@@ -13,10 +13,6 @@ import ProcessBlock from '@/components/ProcessBlock';
 export const metadata = {
   title: 'Выплаты за ранение военнослужащего — юрист в Липецке | ЮК «Де-Юре»',
   description: 'Помощь с выплатами за ранение: проверка справок и оснований, запрос документов, обжалование задержки или отказа, представительство в суде.',
-  robots: {
-    index: false,
-    follow: false,
-  },
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/'
   },
@@ -113,14 +109,17 @@ export default function VyplatyRaneniePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "LegalService"],
         "@id": "https://dejure-help.ru/#organization",
         "name": "Юридическая компания «Де-Юре»",
         "url": "https://dejure-help.ru/",
-        "logo": "https://dejure-help.ru/images/logo.png",
+        "telephone": "+7 (4742) 20-15-25",
         "address": {
           "@type": "PostalAddress",
+          "postalCode": "398001",
           "addressLocality": "Липецк",
+          "addressRegion": "Липецкая область",
+          "streetAddress": "ул. Советская, д. 35, оф. 213",
           "addressCountry": "RU"
         }
       },
@@ -274,7 +273,198 @@ export default function VyplatyRaneniePage() {
       </section>
 
       {/* ═══ 4. Компактная карточка CTA ═══ */}
-            {/* ═══ БЛОК: СВЯЗАННЫЕ УСЛУГИ ═══ */}
+      <section className="section bg-white" style={{ padding: '0 0 80px 0' }}>
+        <div className="container">
+          <div style={{ 
+            background: 'var(--color-deep-blue)', 
+            borderTop: '3px solid var(--color-gold)',
+            padding: '36px 40px',
+            boxShadow: '0 12px 35px rgba(23, 50, 77, 0.14)',
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between', 
+            gap: '32px', 
+            flexWrap: 'wrap',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            {/* Vector watermark graphic */}
+            <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', opacity: 0.08, pointerEvents: 'none' }}>
+              <svg width="140" height="140" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+
+            <div style={{ maxWidth: '680px', position: 'relative', zIndex: 1 }}>
+              <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', margin: '0 0 10px 0', lineHeight: 1.3 }}>
+                Не уверены, относится ли ваша ситуация <br />к одному из этих случаев?
+              </h3>
+              <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.5 }}>
+                Опишите обстоятельства и укажите, какие документы у вас есть. Дмитрий Сергеевич Конопкин<br /> изучит информацию и определит возможный порядок действий.
+              </p>
+            </div>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <style dangerouslySetInnerHTML={{__html: `
+                .btn-cta-gold {
+                  background-color: var(--color-gold) !important;
+                  color: var(--color-deep-blue) !important;
+                  border: 1px solid var(--color-gold) !important;
+                  transition: all 0.3s ease !important;
+                  display: inline-block;
+                  text-decoration: none;
+                }
+                .btn-cta-gold:hover {
+                  background-color: transparent !important;
+                  color: #FFFFFF !important;
+                  border-color: var(--color-gold) !important;
+                  box-shadow: 0 0 10px rgba(200, 169, 126, 0.3) !important;
+                }
+              `}} />
+              <a href="#form" className="btn btn-cta-gold" style={{ padding: '14px 32px', fontSize: '15px', fontWeight: 700, whiteSpace: 'nowrap' }}>
+                Обсудить ситуацию
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 5. Куратор направления ═══ */}
+      <SpecialistBlock 
+        title="Куратор направления"
+        name="Дмитрий Сергеевич Конопкин"
+        position="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
+        imageUrl="/images/konopkin.jpg"
+        description={[
+          <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
+            Дмитрий Сергеевич Конопкин лично ведёт работу по вопросам выплат за ранение военнослужащих. Он проверяет медицинские и служебные документы, определяет возможные основания для получения выплат и порядок действий при задержке, отказе или неверном оформлении документов.
+          </span>,
+          <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
+              <span>Адвокат, реестровый номер 48/812.</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
+              <span>С 2016 по 2022 год работал в Следственном управлении Следственного комитета Российской Федерации по Липецкой области; прошёл путь до старшего следователя отдела по расследованию особо важных дел.</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+              <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
+              <span>Ведёт военные дела в Липецкой области и представляет интересы доверителей в других регионах России.</span>
+            </li>
+          </ul>,
+          <a key="3" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о Дмитрии Сергеевиче Конопкине →
+          </a>
+        ]}
+        buttonText="Обсудить ситуацию с адвокатом"
+        buttonHref="#form"
+      />
+
+      {/* ═══ 6. Примеры из практики ═══ */}
+      <CasesBlock 
+        title="Примеры из практики"
+        showDemoWarning={true}
+        cases={[
+          {
+            category: "ВЫПЛАТЫ ВОЕННОСЛУЖАЩИМ",
+            title: "Выплата после восстановления недостающих документов",
+            problem: "После лечения военнослужащий не получил выплату за ранение. Выяснилось, что часть медицинских и служебных документов не была оформлена или передана в установленном порядке.",
+            action: "Проверили имеющиеся документы, определили, каких сведений не хватает, подготовили обращения в медицинскую организацию и воинскую часть и проконтролировали оформление необходимого комплекта.",
+            result: "Недостающие документы были оформлены и направлены для рассмотрения вопроса о назначении выплаты.",
+            isDemo: true
+          },
+          {
+            category: "ВОЕННО-ВРАЧЕБНАЯ ЭКСПЕРТИЗА",
+            title: "Пересмотр документов о тяжести ранения",
+            problem: "Характер и последствия ранения были отражены в документах неполно, из-за чего военнослужащий не мог подтвердить право на выплату в соответствующем размере.",
+            action: "Изучили медицинские документы, сопоставили диагнозы и последствия травмы, подготовили обращения для исправления и дополнения сведений.",
+            result: "Документы были рассмотрены повторно с учётом ранее неотражённых медицинских обстоятельств.",
+            isDemo: true
+          },
+          {
+            category: "ОБЖАЛОВАНИЕ ОТКАЗОВ",
+            title: "Обжалование отказа в назначении выплаты",
+            problem: "Военнослужащему отказали в выплате, несмотря на наличие документов, подтверждающих ранение и обстоятельства его получения.",
+            action: "Проверили основания отказа, собрали подтверждающие документы, подготовили жалобу и представляли интересы военнослужащего при её рассмотрении.",
+            result: "Первоначальное решение было пересмотрено, документы направлены на повторное рассмотрение вопроса о выплате.",
+            isDemo: true
+          }
+        ]}
+      />
+
+      {/* ═══ 7. Как проходит работа ═══ */}
+      <ProcessBlock 
+        title="Как проходит работа"
+        subtitle=""
+        ctaTitle=""
+        steps={[
+          { num: '01', title: 'Разбираем ситуацию', desc: 'Уточняем обстоятельства ранения, какие выплаты уже оформлялись и на каком этапе возникла проблема.' },
+          { num: '02', title: 'Проверяем документы', desc: 'Изучаем медицинские заключения, справки, выписки, решения и полученные отказы.' },
+          { num: '03', title: 'Определяем порядок действий', desc: 'Объясняем, какие документы необходимо получить или исправить и куда следует обращаться.' },
+          { num: '04', title: 'Сопровождаем оформление или обжалование', desc: 'Готовим заявления, запросы и жалобы, взаимодействуем с соответствующими органами, при необходимости обращаемся в суд.' },
+          { num: '05', title: 'Контролируем результат', desc: 'Отслеживаем рассмотрение обращений и информируем клиента о дальнейших действиях.' },
+          { isBanner: true, title: 'Дистанционный формат', desc: 'Консультацию и проверку документов можно провести дистанционно. Необходимость личного участия юриста или адвоката определим после изучения ситуации.' }
+        ]}
+      />
+
+      {/* ═══ 8. Стоимость ═══ */}
+      <PricingBlock 
+        title="Стоимость"
+        subtitle="Точная стоимость зависит от состояния документов, стадии оформления и необходимости обжалования. После первичной консультации специалист определит объём работы и назовёт стоимость до заключения договора."
+        tiers={[
+          {
+            title: 'Консультация и анализ',
+            subtitle: 'Первичный разбор',
+            popular: false,
+            price: 'ХХХ ₽',
+            features: [
+              { name: 'Проверка имеющихся справок', value: '✓' },
+              { name: 'Определение оснований для выплат', value: '✓' },
+              { name: 'План первоочередных действий', value: '✓' }
+            ],
+            buttonText: 'Уточнить стоимость',
+            buttonHref: '#form'
+          },
+          {
+            title: 'Досудебная работа',
+            subtitle: 'Запросы и жалобы',
+            popular: false,
+            price: 'ХХХ ₽',
+            features: [
+              { name: 'Подготовка адвокатских запросов', value: '✓' },
+              { name: 'Обращения в ведомства и части', value: '✓' },
+              { name: 'Жалобы при задержке или отказе', value: '✓' }
+            ],
+            buttonText: 'Уточнить стоимость',
+            buttonHref: '#form'
+          },
+          {
+            title: 'Судебная защита',
+            subtitle: 'Судебное обжалование',
+            popular: false,
+            price: 'ХХХ ₽',
+            features: [
+              { name: 'Подготовка иска или жалобы в суд.', value: '✓' },
+              { name: 'Сбор доказательной базы', value: '✓' },
+              { name: 'Представительство в военном суде', value: '✓' }
+            ],
+            buttonText: 'Уточнить стоимость',
+            buttonHref: '#form'
+          }
+        ]}
+        ctaTitle=""
+      />
+
+      {/* ═══ 9. Ответы на частые вопросы ═══ */}
+      <FAQBlock 
+        faqs={faqs} 
+        title="Частые вопросы о выплатах за ранение"
+        subtitle="Ответы на частые вопросы о проверке справок, причинах задержек, обжаловании отказов и дистанционном ведении дела. Если у вас остался вопрос, задайте его специалисту."
+        ctaText="Задать свой вопрос"
+        ctaLink="#form"
+      />
+
+      {/* ═══ БЛОК: СВЯЗАННЫЕ УСЛУГИ ═══ */}
       <section className="section bg-cream" style={{ padding: '80px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '700px', marginBottom: '40px' }}>
@@ -291,7 +481,8 @@ export default function VyplatyRaneniePage() {
             .related-service-card {
               border-top: 3px solid var(--color-primary) !important;
             }
-            -top: 3px solid var(--color-gold) !important;
+            .related-service-card:hover {
+              border-top: 3px solid var(--color-gold) !important;
             }
             .related-service-card:hover .card-arrow {
               color: var(--color-gold) !important;
@@ -353,10 +544,10 @@ export default function VyplatyRaneniePage() {
                 }}
               >
                 <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                  <span style={{ display: 'inline-block' }}>Споры с военкоматом</span> <br /><span style={{ display: 'inline-block' }}>и командованием</span>
+                  <span style={{ display: 'inline-block' }}>Оспаривание решений</span> <br /><span style={{ display: 'inline-block' }}>и действий военкомата</span>
                 </h3>
                 <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                  Защита при задержке выплат, отказе в оформлении справок о ранении и неправомерных решениях органов военного управления.
+                  Помощь при несогласии с решением призывной комиссии, отказе принять или рассмотреть документы и других нарушениях со стороны военкомата.
                 </p>
                 <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
                   Подробнее 

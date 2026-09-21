@@ -45,15 +45,17 @@ export default function PriznanieUmershimPage() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Organization',
+        '@type': ['Organization', 'LegalService'],
         '@id': 'https://dejure-help.ru/#organization',
         name: 'Юридическая компания «Де-Юре»',
         url: 'https://dejure-help.ru/',
-        logo: 'https://dejure-help.ru/images/logo.png',
+        telephone: '+7 (4742) 20-15-25',
         address: {
           '@type': 'PostalAddress',
+          postalCode: '398001',
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
           addressCountry: 'RU'
         }
       },
@@ -243,7 +245,7 @@ export default function PriznanieUmershimPage() {
                 Первый маршрут
               </div>
               <h3 style={{ fontSize: '24px', color: '#D2B282', marginBottom: '20px', fontFamily: 'var(--font-serif)', position: 'relative', zIndex: 1 }}>
-                Признание<br />безвестно отсутствующим
+                Признание <br />безвестно отсутствующим
               </h3>
               <p style={{ fontSize: '16px', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)', marginBottom: '24px', position: 'relative', zIndex: 1 }}>
                 Подходит, когда длительное время нет сведений о месте пребывания, но обстоятельства не дают достаточных оснований считать гибель установленной.

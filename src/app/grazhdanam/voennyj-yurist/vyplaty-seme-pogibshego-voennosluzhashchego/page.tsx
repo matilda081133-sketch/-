@@ -43,7 +43,7 @@ export default function VyplatySemePogibshegoPage() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'LegalService',
+        '@type': ['Organization', 'LegalService'],
         '@id': 'https://dejure-help.ru/#organization',
         'name': 'Юридическая компания «Де-Юре»',
         'url': 'https://dejure-help.ru/',

@@ -1,4 +1,4 @@
-﻿// !!! FINAL VERSION - FROZEN BY USER REQUEST !!!
+// !!! FINAL VERSION - FROZEN BY USER REQUEST !!!
 // !!! НЕ ИЗМЕНЯТЬ И НЕ ПЕРЕПИСЫВАТЬ ЭТУ СТРАНИЦУ — ФИНАЛЬНАЯ ВЕРСИЯ !!!
 import React from 'react';
 import Header from '@/components/Header';
@@ -14,10 +14,6 @@ import PricingBlock from '@/components/PricingBlock';
 export const metadata = {
   title: 'Военный юрист в Липецке — помощь военнослужащим | ЮК «Де-Юре»',
   description: 'Юридическая помощь военнослужащим, призывникам и их близким в Липецке: ВВК, выплаты, споры с военкоматом, защита по уголовным делам. Работа по России.',
-  robots: {
-    index: false,
-    follow: false,
-  },
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/'
   },
@@ -65,21 +61,24 @@ export default function VoennyjYuristPage() {
     { who: 'Военнослужащим с заболеваниями и последствиями ранений', situation: <><span style={{ display: 'inline-block' }}>Если заключение ВВК</span> <br /><span style={{ display: 'inline-block' }}>не соответствует состоянию здоровья</span></>, help: 'Изучим медицинские документы, оценим основания для обжалования\nи поможем добиться повторного рассмотрения.' },
     { who: 'Призывникам и допризывникам', situation: <><span style={{ display: 'inline-block' }}>Если вы не согласны</span> <br /><span style={{ display: 'inline-block' }}>с решением призывной комиссии</span></>, help: 'Проверим процедуру и\nоснования для отсрочки\nили освобождения, подготовим\nжалобу либо обращение в суд.' },
     { who: 'Родственникам погибших военнослужащих', situation: <><span style={{ display: 'inline-block' }}>Если возникли сложности</span> <br /><span style={{ display: 'inline-block' }}>с оформлением положенных выплат</span></>, help: 'Определим круг получателей и комплект документов, поможем\nобжаловать отказ, задержку или неправильный расчёт.' },
-    { who: 'Родственникам военнослужащих, местонахождение которых неизвестно', situation: <><span style={{ display: 'block' }}>Если необходимо установить</span><span style={{ display: 'block' }}>статус и оформить</span><span style={{ display: 'block' }}>юридические последствия</span></>, help: 'Поможем собрать документы,\nвыбрать правовую процедуру\nи обратиться в компетентные\nорганы или суд.' },
+    { who: 'Родственникам военнослужащих, местонахождение которых неизвестно', situation: <><span style={{ display: 'block' }}>Если необходимо установить </span><span style={{ display: 'block' }}>статус и оформить </span><span style={{ display: 'block' }}>юридические последствия</span></>, help: 'Поможем собрать документы,\nвыбрать правовую процедуру\nи обратиться в компетентные\nорганы или суд.' },
   ];
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "LegalService"],
         "@id": "https://dejure-help.ru/#organization",
         "name": "Юридическая компания «Де-Юре»",
         "url": "https://dejure-help.ru/",
-        "logo": "https://dejure-help.ru/images/logo.png",
+        "telephone": "+7 (4742) 20-15-25",
         "address": {
           "@type": "PostalAddress",
+          "postalCode": "398001",
           "addressLocality": "Липецк",
+          "addressRegion": "Липецкая область",
+          "streetAddress": "ул. Советская, д. 35, оф. 213",
           "addressCountry": "RU"
         }
       },

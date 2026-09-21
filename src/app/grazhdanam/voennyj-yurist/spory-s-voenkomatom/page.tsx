@@ -81,21 +81,19 @@ export default function SporySVoenkomatomPage() {
         name: 'ЮК «Де-Юре»'
       },
       {
-        '@type': 'LegalService',
+        '@type': ['Organization', 'LegalService'],
         '@id': 'https://dejure-help.ru/#organization',
-        name: 'Де-Юре',
+        name: 'Юридическая компания «Де-Юре»',
         url: 'https://dejure-help.ru/',
-        logo: 'https://dejure-help.ru/images/logo.png',
         telephone: '+7 (4742) 20-15-25',
         address: {
           '@type': 'PostalAddress',
           postalCode: '398001',
-          streetAddress: 'ул. Советская, д. 35, оф. 213',
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
           addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область', 'Россия']
+        }
       },
       {
         '@type': 'Service',
@@ -244,7 +242,7 @@ export default function SporySVoenkomatomPage() {
           </>
         }
         superTitle="Военное право • жалобы и судебная защита"
-        title={<><span style={{ display: 'block' }}>Оспаривание</span><span style={{ display: 'block' }}>решений и действий</span><span style={{ display: 'block' }}>военкомата в Липецке</span></>}
+        title={<><span style={{ display: 'block' }}>Оспаривание </span><span style={{ display: 'block' }}>решений и действий </span><span style={{ display: 'block' }}>военкомата в Липецке</span></>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '580px', textWrap: 'balance' }}>
             <span style={{ display: 'inline-block' }}>Проверим решение и документы,</span> <br />

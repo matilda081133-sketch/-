@@ -81,19 +81,19 @@ export default function VvkPage() {
         name: 'ЮК «Де-Юре»'
       },
       {
-        '@type': 'LegalService',
+        '@type': ['Organization', 'LegalService'],
         '@id': 'https://dejure-help.ru/#organization',
-        name: 'ЮК «Де-Юре»',
+        name: 'Юридическая компания «Де-Юре»',
         url: 'https://dejure-help.ru/',
-        logo: 'https://dejure-help.ru/images/logo.png',
         telephone: '+7 (4742) 20-15-25',
         address: {
           '@type': 'PostalAddress',
+          postalCode: '398001',
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
+          streetAddress: 'ул. Советская, д. 35, оф. 213',
           addressCountry: 'RU'
-        },
-        areaServed: ['Липецк', 'Липецкая область', 'Россия']
+        }
       },
       {
         '@type': 'Service',
@@ -356,7 +356,10 @@ export default function VvkPage() {
           </span>,
           <span key="2" style={{ color: 'var(--color-text-secondary)', display: 'block', marginTop: '8px', fontSize: '14px' }}>
             Реестровый номер 48/812 в реестре адвокатов Липецкой области
-          </span>
+          </span>,
+          <a key="3" href="/specialisty/konopkin-dmitriy-sergeevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о Дмитрии Сергеевиче Конопкине →
+          </a>
         ]}
         buttonText="Обсудить ситуацию с адвокатом"
         buttonHref="#form"
@@ -651,10 +654,10 @@ export default function VvkPage() {
                 }}
               >
                 <h3 style={{ margin: '0 0 12px 0', fontSize: '20px', color: 'var(--color-deep-blue)', lineHeight: 1.3, fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                  <span style={{ display: 'inline-block' }}>Споры с военкоматом</span> <br /><span style={{ display: 'inline-block' }}>и командованием</span>
+                  <span style={{ display: 'inline-block' }}>Оспаривание решений</span> <br /><span style={{ display: 'inline-block' }}>и действий военкомата</span>
                 </h3>
                 <p style={{ margin: '0 0 20px 0', fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.5, flexGrow: 1 }}>
-                  Обжалование решений призывных комиссий, отказов в направлении на освидетельствование и неправомерных действий командования.
+                  Помощь при обжаловании решений призывной комиссии, отказе в направлении на освидетельствование и других нарушениях со стороны военкомата.
                 </p>
                 <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontSize: '15px', fontWeight: 600, transition: 'transform 0.3s' }}>
                   Подробнее 
