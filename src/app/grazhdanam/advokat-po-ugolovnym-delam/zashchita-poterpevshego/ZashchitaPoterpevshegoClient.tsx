@@ -535,9 +535,9 @@ export default function ZashchitaPoterpevshegoClient() {
 
               <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border)', borderTop: '4px solid var(--color-gold)', padding: '24px 20px' }}>
                 <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>04. Арест активов (ст. 115)</span>
-                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Обеспечение исполнения приговора</h4>
+                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Обеспечение гражданского иска</h4>
                 <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
-                  Инициируем перед следователем и судом розыск имущества обвиняемого и наложение ареста на недвижимость, банковские счета, доли в бизнесе и автомобили до возможного вывода активов.
+                  Собираем доступные сведения об имуществе обвиняемого и заявляем ходатайства о принятии мер по обеспечению гражданского иска (наложение ареста на недвижимость, банковские счета и транспорт).
                 </p>
               </div>
 
