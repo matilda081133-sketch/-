@@ -9,6 +9,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
+import ArbitrazhMockup from '@/components/ArbitrazhMockup';
 
 export default function ObzhalovanieClient() {
   const jsonLd = {
@@ -391,6 +392,7 @@ export default function ObzhalovanieClient() {
             Решение и материалы дела изучает юрист по арбитражным спорам. После анализа сообщаем перспективы, процессуальный маршрут и стоимость работы.
           </p>
         }
+        rightContent={<ArbitrazhMockup variant="obzhalovanie" />}
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}

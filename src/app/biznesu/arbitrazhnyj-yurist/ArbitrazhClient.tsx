@@ -9,6 +9,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
+import ArbitrazhMockup from '@/components/ArbitrazhMockup';
 
 
 export default function ArbitrazhClient() {
@@ -590,6 +591,7 @@ export default function ArbitrazhClient() {
             Дело передаём юристу по арбитражным спорам после первичного анализа документов и стадии процесса.
           </p>
         }
+        rightContent={<ArbitrazhMockup variant="hub" />}
       />
 
       {/* ═══ БЛОК 2: С КАКОЙ СИТУАЦИЕЙ СТОЛКНУЛАСЬ КОМПАНИЯ ═══ */}

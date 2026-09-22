@@ -9,6 +9,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
+import ArbitrazhMockup from '@/components/ArbitrazhMockup';
 
 export default function ZashchitaOtvetchikaClient() {
   const jsonLd = {
@@ -421,6 +422,7 @@ export default function ZashchitaOtvetchikaClient() {
           { text: 'Представляем компанию во всех судебных инстанциях.' },
           { text: 'Обжалуем неблагоприятные судебные акты.' }
         ]}
+        rightContent={<ArbitrazhMockup variant="zashchita" />}
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}

@@ -9,6 +9,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
+import ArbitrazhMockup from '@/components/ArbitrazhMockup';
 
 export default function IskArbitrazhClient() {
   const jsonLd = {
@@ -405,6 +406,7 @@ export default function IskArbitrazhClient() {
             Иск и комплект документов готовит юрист по арбитражным спорам. Состав работ и стоимость фиксируем до начала подготовки.
           </p>
         }
+        rightContent={<ArbitrazhMockup variant="isk" />}
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
