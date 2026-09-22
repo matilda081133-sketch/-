@@ -142,6 +142,16 @@ h4 { font-size: 1.25rem; }
     padding-top: 96px !important;
     padding-bottom: 40px !important;
   }
+
+  /* Mobile DOM & rendering performance: defer off-screen section layout and paint */
+  #reviews,
+  #pricing,
+  #faq,
+  #consultation,
+  footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
 }
 
 /* Backgrounds */

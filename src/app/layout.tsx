@@ -43,16 +43,16 @@ export default function RootLayout({
                     document.head.appendChild(k);
                   }
                 }
-                var events = ['scroll', 'touchstart', 'pointerdown', 'mousemove', 'keydown'];
+                var events = ['scroll', 'touchstart', 'pointerdown', 'keydown'];
                 function onUserInteract() {
                   loadMetrika();
-                  events.forEach(function(e) { window.removeEventListener(e, onUserInteract, { passive: true }); });
+                  events.forEach(function(e) { window.removeEventListener(e, onUserInteract); });
                 }
                 events.forEach(function(e) { window.addEventListener(e, onUserInteract, { passive: true }); });
                 if ('requestIdleCallback' in window) {
-                  requestIdleCallback(function() { setTimeout(loadMetrika, 3500); });
+                  requestIdleCallback(function() { setTimeout(loadMetrika, 7000); });
                 } else {
-                  setTimeout(loadMetrika, 3500);
+                  setTimeout(loadMetrika, 7000);
                 }
               })();
             `,

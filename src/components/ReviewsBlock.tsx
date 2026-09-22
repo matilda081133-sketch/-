@@ -26,7 +26,7 @@ export default function ReviewsBlock() {
           {/* Yandex Maps Mock */}
           <div className="review-badge-card" style={{ borderLeft: '4px solid #FC3F1D' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-              <img src="/images/yandex_logo.webp" alt="Yandex" width="44" height="44" loading="lazy" style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} />
+              <img src="/images/yandex_logo.webp" alt="Yandex" width="44" height="44" loading="lazy" decoding="async" style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} />
               <div>
                 <div style={{ color: 'var(--color-deep-blue)', fontSize: '17px', fontWeight: 600, marginBottom: '4px' }}>Яндекс Карты</div>
                 <div style={{ color: 'var(--color-text-secondary)', fontSize: '13.5px', fontStyle: 'italic' }}>рейтинг будет добавлен...</div>
@@ -39,7 +39,7 @@ export default function ReviewsBlock() {
           <div className="review-badge-card" style={{ borderLeft: '4px solid #A3C83D' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <div style={{ width: '44px', height: '44px', overflow: 'hidden', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <img src="/images/2gis_logo.webp" alt="2GIS" width="44" height="44" loading="lazy" style={{ objectFit: 'contain', flexShrink: 0 }} />
+                <img src="/images/2gis_logo.webp" alt="2GIS" width="44" height="44" loading="lazy" decoding="async" style={{ objectFit: 'contain', flexShrink: 0 }} />
               </div>
               <div>
                 <div style={{ color: 'var(--color-deep-blue)', fontSize: '17px', fontWeight: 600, marginBottom: '4px' }}>Отзывы 2ГИС</div>

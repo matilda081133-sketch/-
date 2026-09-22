@@ -10,10 +10,15 @@ export default function Header() {
   const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
 
   useEffect(() => {
+    let prev = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrolled = window.scrollY > 50;
+      if (scrolled !== prev) {
+        prev = scrolled;
+        setIsScrolled(scrolled);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -89,6 +94,7 @@ export default function Header() {
               className="desktop-logo"
               width={110}
               height={110}
+              decoding="async"
               style={{ height: '110px', width: 'auto', transform: 'scale(1.25)', transformOrigin: 'left center' }} 
             />
             <img 
@@ -97,6 +103,8 @@ export default function Header() {
               className="mobile-logo"
               width={56}
               height={56}
+              decoding="async"
+              fetchPriority="high"
               style={{ height: '56px', width: 'auto', display: 'none', objectFit: 'contain' }} 
             />
           </Link>

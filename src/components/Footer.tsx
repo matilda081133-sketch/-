@@ -70,6 +70,7 @@ export default function Footer() {
                   width={110}
                   height={110}
                   loading="lazy"
+                  decoding="async"
                   style={{ height: '130px', width: 'auto', transform: 'scale(1.4)', transformOrigin: 'left center', filter: 'brightness(0) invert(1)' }} 
                 />
               </Link>

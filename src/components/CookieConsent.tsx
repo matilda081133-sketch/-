@@ -21,7 +21,7 @@ export default function CookieConsent() {
   useEffect(() => {
     const existing = getConsent();
     if (!existing) {
-      const timer = setTimeout(showBanner, 800);
+      const timer = setTimeout(showBanner, 2500);
       return () => clearTimeout(timer);
     }
   }, [showBanner]);

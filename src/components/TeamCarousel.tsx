@@ -221,7 +221,7 @@ export default function TeamCarousel({
                 <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
                   <Link href={person.link} style={{ display: 'block', height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)', textDecoration: 'none' }}>
                     {person.img ? (
-                      <img src={person.img} alt={person.rawName} width={300} height={270} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} loading="lazy" />
+                      <img src={person.img} alt={person.rawName} width={300} height={270} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} loading="lazy" decoding="async" />
                     ) : (
                       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)' }}>
                         <div style={{ width: '40px', height: '40px', border: '1px solid rgba(212, 175, 55, 0.4)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', fontSize: '20px' }}>DJ</div>

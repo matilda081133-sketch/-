@@ -124,7 +124,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+          <div className="hero-right-col" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
             {/* Darkening gradient under the creative to highlight the background graphic */}
             <div style={{
               position: 'absolute',
