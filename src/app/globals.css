@@ -15,9 +15,9 @@
   --color-accent: #2A4C6E;
   --gradient-light: linear-gradient(145deg, #FFFFFF 0%, #F7F4ED 100%);
 
-  /* РўРёРїРѕРіСЂР°С„РёРєР° */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Merriweather', 'Georgia', serif;
+  /* Типографика */
+  --font-sans: var(--font-sans), 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-serif), 'Merriweather', 'Georgia', serif;
 
   /* РўРµРЅРё Рё СЌС„С„РµРєС‚С‹ (РЎРѕРІСЂРµРјРµРЅРЅРѕСЃС‚СЊ) */
   --shadow-sm: 0 4px 12px rgba(23, 50, 77, 0.04);
@@ -286,12 +286,13 @@ h4 { font-size: 1.25rem; }
 
 /* Hero Graphic Animation */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+  0% { transform: translate3d(0, 0px, 0); }
+  50% { transform: translate3d(0, -15px, 0); }
+  100% { transform: translate3d(0, 0px, 0); }
 }
 .hero-graphic {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* Cards with Micro-interactions */
@@ -493,8 +494,8 @@ a:hover .related-service-card .card-arrow svg {
 }
 
 @keyframes floatVertical {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
 }
 
 @keyframes pulseSeal {
@@ -514,10 +515,10 @@ a:hover .related-service-card .card-arrow svg {
   cursor: pointer;
 }
 
-.doc-wrapper-float-1 { animation: floatVertical 10s ease-in-out infinite; position: absolute; transform-style: preserve-3d; z-index: 4; }
-.doc-wrapper-float-2 { animation: floatVertical 11s ease-in-out infinite reverse; position: absolute; transform-style: preserve-3d; z-index: 3; }
-.doc-wrapper-float-3 { animation: floatVertical 12s ease-in-out infinite; position: absolute; transform-style: preserve-3d; z-index: 2; }
-.doc-wrapper-float-4 { animation: floatVertical 13s ease-in-out infinite reverse; position: absolute; transform-style: preserve-3d; z-index: 1; }
+.doc-wrapper-float-1 { animation: floatVertical 10s ease-in-out infinite; position: absolute; transform-style: preserve-3d; z-index: 4; will-change: transform; }
+.doc-wrapper-float-2 { animation: floatVertical 11s ease-in-out infinite reverse; position: absolute; transform-style: preserve-3d; z-index: 3; will-change: transform; }
+.doc-wrapper-float-3 { animation: floatVertical 12s ease-in-out infinite; position: absolute; transform-style: preserve-3d; z-index: 2; will-change: transform; }
+.doc-wrapper-float-4 { animation: floatVertical 13s ease-in-out infinite reverse; position: absolute; transform-style: preserve-3d; z-index: 1; will-change: transform; }
 
 .doc-sheet {
   width: 320px;
@@ -1625,6 +1626,20 @@ summary:focus-visible {
 }
 .all-services-link:hover {
   color: var(--color-gold) !important;
+}
+
+/* Performance: Defer layout & paint calculations for below-the-fold sections */
+@supports (content-visibility: auto) {
+  #services,
+  #team,
+  #advocates,
+  #reviews,
+  #pricing,
+  #faq,
+  #contacts-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 700px;
+  }
 }
 
 

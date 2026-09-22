@@ -54,7 +54,7 @@ export default function TeamCarousel({
       rawName: 'Бобкин Аркадий Евгеньевич',
       role: 'Директор, управляющий партнёр\nЮК «Де-Юре»',
       desc: 'Специализация: уголовно-правовые, налоговые и сложные коммерческие споры. Юридический стаж с 1997 года. Более 22 лет работы в следственных подразделениях МВД и налоговой полиции.',
-      img: '/images/bobkin.jpg',
+      img: '/images/bobkin.webp',
       link: '/specialisty/bobkin-arkadiy-evgenevich/',
       imgPosition: 'center 15%'
     },
@@ -68,7 +68,7 @@ export default function TeamCarousel({
       rawName: 'Конопкин Дмитрий Сергеевич',
       role: 'Адвокат\nРег. № 48/812 в реестре адвокатов Липецкой области',
       desc: 'Специализация: военное право, защита по уголовным делам. Юридический стаж с 2016 года. Опыт работы в Следственном комитете РФ. Статус адвоката с 2022 года.',
-      img: '/images/konopkin.jpg',
+      img: '/images/konopkin.webp',
       link: '/specialisty/konopkin-dmitriy-sergeevich/',
       imgPosition: 'center 18%'
     },
@@ -82,7 +82,7 @@ export default function TeamCarousel({
       rawName: 'Смольянинова Марина Валерьевна',
       role: 'Ведущий юрист ЮК «Де-Юре»',
       desc: 'Специализация: гражданские и семейные споры, недвижимость, взыскание задолженности. Опыт работы в УФССП России более 10 лет, из них 6 лет на руководящих должностях.',
-      img: '/images/smolyaninova.jpg',
+      img: '/images/smolyaninova.webp',
       link: '/specialisty/smolyaninova-marina-valerevna/',
       imgPosition: 'center 20%'
     },
@@ -96,7 +96,7 @@ export default function TeamCarousel({
       rawName: 'Начешников Владимир Викторович',
       role: 'Специалист по корпоративным процедурам и сопровождению бизнеса',
       desc: 'Сопровождает создание, реорганизацию и прекращение деятельности юридических лиц, изменения в структуре управления, сделки с долями. Опыт с 1997 года.',
-      img: '/images/nacheshnikov.jpg',
+      img: '/images/nacheshnikov.webp',
       link: '/specialisty/nacheshnikov-vladimir-viktorovich/',
       imgPosition: 'center 20%'
     },
@@ -110,7 +110,7 @@ export default function TeamCarousel({
       rawName: 'Гусев Олег Юрьевич',
       role: 'Адвокат\nРег. № 48/672 в реестре адвокатов Липецкой области',
       desc: 'Специализация: адвокат по уголовным делам. Опыт работы в прокуратуре 7 лет, в том числе заместителем прокурора района. Адвокатская практика с 2015 года.',
-      img: '/images/gusev.jpg',
+      img: '/images/gusev.webp',
       link: '/specialisty/gusev-oleg-yurevich/',
       imgPosition: 'center 15%'
     },
@@ -125,7 +125,7 @@ export default function TeamCarousel({
       rawName: 'Полозова Елена Анатольевна',
       role: 'Юрист ЮК «Де-Юре»',
       desc: 'Специализация: военное и трудовое право. Консультации, досудебная работа, подготовка юридических документов и помощь при обжаловании.',
-      img: '/images/polozova.jpg',
+      img: '/images/polozova.webp',
       link: '/specialisty/polozova-elena-anatolevna/',
       imgPosition: 'center 20%'
     }
@@ -221,7 +221,7 @@ export default function TeamCarousel({
                 <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
                   <Link href={person.link} style={{ display: 'block', height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)', textDecoration: 'none' }}>
                     {person.img ? (
-                      <img src={person.img} alt={person.rawName} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} loading="lazy" />
+                      <img src={person.img} alt={person.rawName} width={300} height={270} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} loading="lazy" />
                     ) : (
                       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)' }}>
                         <div style={{ width: '40px', height: '40px', border: '1px solid rgba(212, 175, 55, 0.4)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', fontSize: '20px' }}>DJ</div>
