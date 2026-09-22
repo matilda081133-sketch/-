@@ -23,7 +23,8 @@ export default function ContactsForm({
   commentPlaceholder = "Кратко опишите ситуацию или вопрос…",
   hiddenFields,
   subtext = "Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день.",
-  agreementNotice
+  agreementNotice,
+  analyticsGoal
 }: ContactsFormProps = {}) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -90,6 +91,12 @@ export default function ContactsForm({
       if (result.success) {
         setLoading(false);
         setSubmitted(true);
+        if (typeof window !== 'undefined' && typeof window.trackGoal === 'function') {
+          window.trackGoal('FORM_SUBMIT', { page: payload.page_title, cta: payload.ctaSource });
+          if (analyticsGoal) {
+            window.trackGoal(analyticsGoal, { page: payload.page_title });
+          }
+        }
       } else {
         throw new Error(result.error || 'Ошибка отправки в CRM');
       }
@@ -303,6 +310,18 @@ export default function ContactsForm({
             {subtext}
           </div>
         )}
+
+        <div style={{ marginTop: '10px', textAlign: 'center', fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+          Или напишите напрямую в{' '}
+          <a
+            href="https://t.me/dejure_help_bot"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}
+          >
+            Telegram-бот «Де-Юре»
+          </a>
+        </div>
       </form>
     </div>
   );

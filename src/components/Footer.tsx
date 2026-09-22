@@ -84,6 +84,47 @@ export default function Footer() {
               </a>
               <span style={{ color: 'rgba(255,255,255,0.6)' }}>г. Липецк, ул. Советская, д. 35, оф. 213</span>
             </div>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginTop: '16px', flexWrap: 'wrap' }}>
+              <a
+                href="https://t.me/dejure_help_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  color: 'var(--color-white)',
+                  textDecoration: 'none',
+                  fontSize: '12px',
+                  padding: '6px 12px',
+                  background: 'rgba(255,255,255,0.1)',
+                  borderRadius: '4px',
+                  transition: 'background 0.2s'
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM17.697 7.71216C17.5188 9.5888 16.7444 14.1545 16.3508 16.2575C16.1843 17.1472 15.8562 17.4456 15.5383 17.4749C14.8475 17.5385 14.3229 17.0189 13.654 16.5805C12.6074 15.8945 12.0156 15.4674 10.9998 14.7978C9.82586 14.024 10.5898 13.5985 11.2562 12.9063C11.4307 12.7252 14.4574 9.97235 14.5159 9.72322C14.5232 9.69205 14.5299 9.57574 14.4608 9.51433C14.3917 9.45292 14.2898 9.47395 14.2159 9.49071C14.1111 9.51447 12.4363 10.6215 9.19207 12.8115C8.71676 13.138 8.28637 13.2971 7.90091 13.2888C7.47573 13.2796 6.65774 13.048 6.04987 12.8504C5.30429 12.608 4.71077 12.4799 4.76239 12.0678C4.78928 11.8531 5.08477 11.6335 5.64887 11.4089C9.13426 9.89069 11.4587 8.88722 12.6222 8.39851C15.9443 7.00298 16.6346 6.76077 17.0845 6.75283C17.1834 6.75109 17.4045 6.77561 17.5473 6.89146C17.6679 6.9893 17.7011 7.12169 17.7088 7.21447C17.7165 7.30725 17.7258 7.51866 17.697 7.71216Z"/></svg>
+                Telegram
+              </a>
+              <a
+                href="https://max.ru/id4800009680_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  color: 'var(--color-white)',
+                  textDecoration: 'none',
+                  fontSize: '12px',
+                  padding: '6px 12px',
+                  background: 'rgba(255,255,255,0.1)',
+                  borderRadius: '4px',
+                  transition: 'background 0.2s'
+                }}
+              >
+                Чат MAX
+              </a>
+            </div>
           </div>
 
           {/* Column 2: Гражданам (с аккордеоном на мобильном) */}

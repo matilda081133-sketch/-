@@ -340,7 +340,7 @@ export default function SporyPostavkaClient() {
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
         secondaryCtaText="С чем поможем"
         secondaryCtaLink="#supply-situations"
-        imageUrl="/images/spory-postavki-hero.jpg"
+        imageUrl="/images/spory-postavki-hero.webp"
         imageObjectPosition="center"
       />
 

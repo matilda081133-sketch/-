@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import CookieConsent from '@/components/CookieConsent';
 import ConsentManager from '@/components/ConsentManager';
+import GoalTracker from '@/components/GoalTracker';
 
 export const metadata: Metadata = {
   title: '«Де-Юре» | Юридическая компания в Липецке',
@@ -69,6 +70,7 @@ export default function RootLayout({
         {children}
         <CookieConsent />
         <ConsentManager />
+        <GoalTracker />
       </body>
     </html>
   );
