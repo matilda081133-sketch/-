@@ -4,14 +4,14 @@ import OstavlenieMestaDtpClient from './OstavlenieMestaDtpClient';
 
 export const metadata: Metadata = {
   title: 'Адвокат при оставлении места ДТП в Липецке | Де-Юре',
-  description: 'Защита по ч. 2 ст. 12.27 КоАП РФ в Липецке: анализ материалов и видеозаписей, подготовка позиции, участие в суде и обжалование. Адвокат Дмитрий Конопкин.',
+  description: 'Защита по ч. 2 ст. 12.27 КоАП РФ в Липецке: анализ материалов и видеозаписей, подготовка позиции, участие в суде и обжалование. Адвокат Дмитрий Конопкин. 📞 +7 (4742) 20-15-25.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: 'Защита при оставлении места ДТП в Липецке | Де-Юре',
-    description: 'Проверим обстоятельства, доказательства умысла и соблюдение процедуры, подготовим защиту в суде или при обжаловании.',
+    description: 'Проверим обстоятельства, доказательства умысла и соблюдение процедуры, подготовим защиту в суде или при обжаловании. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -117,7 +117,7 @@ export default function OstavlenieMestaDtpPage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/#webpage',
         name: 'Адвокат при оставлении места ДТП в Липецке | Де-Юре',
-        description: 'Защита по ч. 2 ст. 12.27 КоАП РФ в Липецке: анализ материалов и видеозаписей, подготовка позиции, участие в суде и обжалование. Адвокат Дмитрий Конопкин.',
+        description: 'Защита по ч. 2 ст. 12.27 КоАП РФ в Липецке: анализ материалов и видеозаписей, подготовка позиции, участие в суде и обжалование. Адвокат Дмитрий Конопкин. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/#service'
@@ -128,7 +128,7 @@ export default function OstavlenieMestaDtpPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/#service',
         name: 'Защита при оставлении места ДТП',
         serviceType: 'Юридическая помощь по делам об оставлении места дорожно-транспортного происшествия',
-        description: 'Защита по части 2 статьи 12.27 КоАП РФ в Липецке: проверка умысла, анализ видео и повреждений, подготовка позиции для ГИБДД и суда.',
+        description: 'Защита по части 2 статьи 12.27 КоАП РФ в Липецке: проверка умысла, анализ видео и повреждений, подготовка позиции для ГИБДД и суда. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/ostavlenie-mesta-dtp/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

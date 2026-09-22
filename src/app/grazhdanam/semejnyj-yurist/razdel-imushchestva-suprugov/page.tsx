@@ -3,13 +3,13 @@ import RazdelImushchestvaSuprugovClient from './RazdelImushchestvaSuprugovClient
 
 export const metadata: Metadata = {
   title: 'Раздел имущества супругов в Липецке | Де-Юре',
-  description: 'Юридическая помощь при разделе имущества супругов в Липецке: недвижимость, ипотека, автомобили, долги, скрытые активы. Соглашение или защита в суде.',
+  description: 'Юридическая помощь при разделе имущества супругов в Липецке: недвижимость, ипотека, автомобили, долги, скрытые активы. Соглашение или защита в суде. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/razdel-imushchestva-suprugov/',
   },
   openGraph: {
     title: 'Раздел имущества супругов в Липецке | Де-Юре',
-    description: 'Юридическая помощь при разделе имущества супругов в Липецке: недвижимость, ипотека, автомобили, долги, скрытые активы. Соглашение или защита в суде.',
+    description: 'Юридическая помощь при разделе имущества супругов в Липецке: недвижимость, ипотека, автомобили, долги, скрытые активы. Соглашение или защита в суде. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/razdel-imushchestva-suprugov/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',

@@ -3,13 +3,13 @@ import UstanovlenieIOsparivanieOttsovstvaClient from './UstanovlenieIOsparivanie
 
 export const metadata: Metadata = {
   title: 'Установление и оспаривание отцовства в Липецке | Де-Юре',
-  description: 'Юридическая помощь в Липецке при установлении и оспаривании отцовства: оценка доказательств, подготовка иска, экспертиза и представительство в суде.',
+  description: 'Юридическая помощь в Липецке при установлении и оспаривании отцовства: оценка доказательств, подготовка иска, экспертиза и представительство в суде. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/ustanovlenie-i-osparivanie-ottsovstva/',
   },
   openGraph: {
     title: 'Установление и оспаривание отцовства в Липецке | Де-Юре',
-    description: 'Юридическая помощь в Липецке при установлении и оспаривании отцовства: оценка доказательств, подготовка иска, экспертиза и представительство в суде.',
+    description: 'Юридическая помощь в Липецке при установлении и оспаривании отцовства: оценка доказательств, подготовка иска, экспертиза и представительство в суде. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/ustanovlenie-i-osparivanie-ottsovstva/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',

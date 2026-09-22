@@ -7,13 +7,13 @@ import { teamData } from '@/data/team';
 
 export const metadata: Metadata = {
   title: 'Специалисты и адвокаты «Де-Юре»',
-  description: 'Специалисты ЮК «Де-Юре» и независимые адвокаты в Липецке по гражданским, уголовным, военным и бизнес-спорам. Опыт, направления работы и персональные страницы.',
+  description: 'Специалисты ЮК «Де-Юре» и независимые адвокаты в Липецке по гражданским, уголовным, военным и бизнес-спорам. Опыт, направления работы и персональные страницы. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/specialisty/',
   },
   openGraph: {
     title: 'Специалисты и адвокаты «Де-Юре»',
-    description: 'Специалисты ЮК «Де-Юре» и независимые адвокаты в Липецке по гражданским, уголовным, военным и бизнес-спорам.',
+    description: 'Специалисты ЮК «Де-Юре» и независимые адвокаты в Липецке по гражданским, уголовным, военным и бизнес-спорам. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/specialisty/',
     images: [{
       url: 'https://dejure-help.ru/images/og/specialisty.jpg',
@@ -288,8 +288,12 @@ export default function SpecialistyPage() {
                       }}
                     >
                         <img 
-                        src={sp.image}
+                          src={sp.image}
                           alt={altText}
+                          width={330}
+                          height={440}
+                          loading="lazy"
+                          decoding="async"
                           style={{ 
                             position: 'absolute',
                             top: 0,
@@ -497,6 +501,10 @@ export default function SpecialistyPage() {
                         <img 
                           src={sp.image} 
                           alt={altText}
+                          width={330}
+                          height={440}
+                          loading="lazy"
+                          decoding="async"
                           style={{ 
                             position: 'absolute',
                             top: 0,

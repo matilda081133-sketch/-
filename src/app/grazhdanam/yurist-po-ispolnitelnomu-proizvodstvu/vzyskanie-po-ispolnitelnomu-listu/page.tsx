@@ -4,13 +4,13 @@ import VzyskanieIspolnitelnyListClient from './VzyskanieIspolnitelnyListClient';
 
 export const metadata: Metadata = {
   title: 'Взыскание по исполнительному листу в Липецке | Де-Юре',
-  description: 'Поможем взыскать деньги по исполнительному листу: выберем способ предъявления, найдём активы, проконтролируем пристава или подадим документ в банк.',
+  description: 'Поможем взыскать деньги по исполнительному листу: выберем способ предъявления, найдём активы, проконтролируем пристава или подадим документ в банк. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/',
   },
   openGraph: {
     title: 'Взыскание по исполнительному листу | Де-Юре',
-    description: 'Проверим исполнительный документ, выберем канал взыскания и сопроводим получение присуждённых денег.',
+    description: 'Проверим исполнительный документ, выберем канал взыскания и сопроводим получение присуждённых денег. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -100,7 +100,7 @@ export default function VzyskanieIspolnitelnyListPage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/#webpage',
         name: 'Взыскание по исполнительному листу в Липецке | Де-Юре',
-        description: 'Поможем взыскать деньги по исполнительному листу: выберем способ предъявления, найдём активы, проконтролируем пристава или подадим документ в банк.',
+        description: 'Поможем взыскать деньги по исполнительному листу: выберем способ предъявления, найдём активы, проконтролируем пристава или подадим документ в банк. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/#service'
@@ -110,7 +110,7 @@ export default function VzyskanieIspolnitelnyListPage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/#service',
         name: 'Взыскание по исполнительному листу в Липецке',
-        description: 'Поможем взыскать деньги по исполнительному листу: выберем способ предъявления, найдём активы, проконтролируем пристава или подадим документ в банк.',
+        description: 'Поможем взыскать деньги по исполнительному листу: выберем способ предъявления, найдём активы, проконтролируем пристава или подадим документ в банк. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

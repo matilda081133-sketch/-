@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -649,7 +649,7 @@ export default function IspolnitelnoeClient() {
             features: [
               { name: 'Изучение документов', value: 'Да' },
               { name: 'Оценка рисков', value: 'Да' },
-              { name: 'Письменное заключение', value: 'По запросу' },
+              { name: 'Письменное заключение', value: 'от 5 000 ₽' },
               { name: 'Взаимодействие с ФССП', value: 'Нет' }
             ],
             buttonText: 'Обсудить ситуацию',

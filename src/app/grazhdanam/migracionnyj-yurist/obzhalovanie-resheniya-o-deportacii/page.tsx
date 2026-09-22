@@ -3,13 +3,13 @@ import ObzhalovanieResheniyaODeportaciiClient from './ObzhalovanieResheniyaODepo
 
 export const metadata: Metadata = {
   title: 'Обжалование решения о депортации в Липецке — помощь адвоката | Де-Юре',
-  description: 'Судебное обжалование решения МВД о депортации по КАС РФ. Заявление мер предварительной защиты (ст. 85 КАС РФ), приостановление высылки. ЮК «Де-Юре».',
+  description: 'Судебное обжалование решения МВД о депортации по КАС РФ. Заявление мер предварительной защиты (ст. 85 КАС РФ), приостановление высылки. ЮК «Де-Юре». 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-resheniya-o-deportacii/',
   },
   openGraph: {
     title: 'Обжалование решения о депортации в Липецке — помощь адвоката | Де-Юре',
-    description: 'Судебное обжалование решения МВД о депортации по КАС РФ. Заявление мер предварительной защиты (ст. 85 КАС РФ), приостановление высылки. ЮК «Де-Юре».',
+    description: 'Судебное обжалование решения МВД о депортации по КАС РФ. Заявление мер предварительной защиты (ст. 85 КАС РФ), приостановление высылки. ЮК «Де-Юре». 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-resheniya-o-deportacii/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',

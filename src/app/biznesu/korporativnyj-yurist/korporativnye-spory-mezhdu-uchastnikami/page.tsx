@@ -3,15 +3,13 @@ import KorporativnyeSporyClient from './KorporativnyeSporyClient';
 
 export const metadata: Metadata = {
   title: 'Юрист по корпоративным спорам в Липецке | Де-Юре',
-  description:
-    'Помощь при конфликтах участников ООО, корпоративном тупике, оспаривании решений, доступе к документам, убытках директора и защите прав участника.',
+  description: 'Помощь при конфликтах участников ООО, корпоративном тупике, оспаривании решений, доступе к документам, убытках директора и защите прав участника. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/korporativnye-spory-mezhdu-uchastnikami/'
   },
   openGraph: {
     title: 'Юрист по корпоративным спорам в Липецке | Де-Юре',
-    description:
-      'Помощь при конфликтах участников ООО, корпоративном тупике, оспаривании решений, доступе к документам, убытках директора и защите прав участника.',
+    description: 'Помощь при конфликтах участников ООО, корпоративном тупике, оспаривании решений, доступе к документам, убытках директора и защите прав участника. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/korporativnye-spory-mezhdu-uchastnikami/',
     type: 'website',
         images: [

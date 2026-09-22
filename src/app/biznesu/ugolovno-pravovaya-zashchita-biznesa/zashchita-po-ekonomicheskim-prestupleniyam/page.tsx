@@ -3,16 +3,14 @@ import ZashchitaPoEkonomicheskimPrestupleniyamClient from './ZashchitaPoEkonomic
 
 export const metadata: Metadata = {
   title: 'Защита по экономическим преступлениям в Липецке | Де-Юре',
-  description:
-    'Уголовно-правовая защита руководителей и собственников бизнеса по экономическим статьям: мошенничество, растрата, злоупотребления в Липецке и области.',
+  description: 'Уголовно-правовая защита руководителей и собственников бизнеса по экономическим статьям: мошенничество, растрата, злоупотребления в Липецке и области. 📞 +7 (4742) 20-15-25.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: 'Защита по экономическим преступлениям в Липецке | Де-Юре',
-    description:
-      'Защита руководства и бизнеса по статьям 159, 160, 201 УК РФ. Проверка обоснованности обвинений, защита активов и свободы.',
+    description: 'Защита руководства и бизнеса по статьям 159, 160, 201 УК РФ. Проверка обоснованности обвинений, защита активов и свободы. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-ekonomicheskim-prestupleniyam/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -29,8 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Защита по экономическим преступлениям в Липецке | Де-Юре',
-    description:
-      'Уголовно-правовая защита руководителей и собственников бизнеса по экономическим статьям: мошенничество, растрата, злоупотребления в Липецке и области.',
+    description: 'Уголовно-правовая защита руководителей и собственников бизнеса по экономическим статьям: мошенничество, растрата, злоупотребления в Липецке и области. 📞 +7 (4742) 20-15-25.',
     images: ['https://dejure-help.ru/images/og/zashchita-po-ekonomicheskim-prestupleniyam-og.jpg'],
   },
   alternates: {
@@ -100,7 +97,7 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamPage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-ekonomicheskim-prestupleniyam/#webpage',
         name: 'Защита по экономическим преступлениям в Липецке | Де-Юре',
-        description: 'Уголовно-правовая защита руководителей и собственников бизнеса по экономическим статьям: мошенничество, растрата, злоупотребления в Липецке и области.',
+        description: 'Уголовно-правовая защита руководителей и собственников бизнеса по экономическим статьям: мошенничество, растрата, злоупотребления в Липецке и области. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-ekonomicheskim-prestupleniyam/',
         about: {
           '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-ekonomicheskim-prestupleniyam/#service'
@@ -110,8 +107,7 @@ export default function ZashchitaPoEkonomicheskimPrestupleniyamPage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-ekonomicheskim-prestupleniyam/#service',
         name: 'Защита по экономическим преступлениям в Липецке',
-        description:
-          'Уголовно-правовая защита руководителей и собственников бизнеса по экономическим статьям: мошенничество, растрата, злоупотребления в Липецке и области.',
+        description: 'Уголовно-правовая защита руководителей и собственников бизнеса по экономическим статьям: мошенничество, растрата, злоупотребления в Липецке и области. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-ekonomicheskim-prestupleniyam/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

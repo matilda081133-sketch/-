@@ -3,15 +3,13 @@ import AdvokatEkonomicheskieClient from './AdvokatEkonomicheskieClient';
 
 export const metadata: Metadata = {
   title: 'Адвокат по экономическим преступлениям в Липецке | Де-Юре',
-  description:
-    'Защита руководителей, предпринимателей и бухгалтеров по экономическим и налоговым преступлениям (ст. 199, 160, 201 УК РФ) в Липецке. Экс-следователи по ОВД.',
+  description: 'Защита руководителей, предпринимателей и бухгалтеров по экономическим и налоговым преступлениям (ст. 199, 160, 201 УК РФ) в Липецке. Экс-следователи по ОВД. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-ekonomicheskim-prestupleniyam/',
   },
   openGraph: {
     title: 'Адвокат по экономическим преступлениям в Липецке | Де-Юре',
-    description:
-      'Защита руководителей, предпринимателей и бухгалтеров по экономическим и налоговым преступлениям (ст. 199, 160, 201 УК РФ) в Липецке. Экс-следователи по ОВД.',
+    description: 'Защита руководителей, предпринимателей и бухгалтеров по экономическим и налоговым преступлениям (ст. 199, 160, 201 УК РФ) в Липецке. Экс-следователи по ОВД. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-ekonomicheskim-prestupleniyam/',
     type: 'website',
     images: [

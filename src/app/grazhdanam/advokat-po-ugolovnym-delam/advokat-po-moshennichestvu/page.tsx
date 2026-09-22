@@ -3,15 +3,13 @@ import AdvokatMoshennichestvoClient from './AdvokatMoshennichestvoClient';
 
 export const metadata: Metadata = {
   title: 'Адвокат по мошенничеству в Липецке — ст. 159 УК РФ | Де-Юре',
-  description:
-    'Защита по делам о мошенничестве (ст. 159 УК РФ) в Липецке: проверка умысла, анализ договоров, платежей, переписки. Сопровождение допросов, следствия и суда.',
+  description: 'Защита по делам о мошенничестве (ст. 159 УК РФ) в Липецке: проверка умысла, анализ договоров, платежей, переписки. Сопровождение допросов, следствия и суда. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-moshennichestvu/',
   },
   openGraph: {
     title: 'Адвокат по мошенничеству в Липецке — ст. 159 УК РФ | Де-Юре',
-    description:
-      'Защита по делам о мошенничестве (ст. 159 УК РФ) в Липецке: проверка умысла, анализ договоров, платежей, переписки. Сопровождение допросов, следствия и суда.',
+    description: 'Защита по делам о мошенничестве (ст. 159 УК РФ) в Липецке: проверка умысла, анализ договоров, платежей, переписки. Сопровождение допросов, следствия и суда. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-moshennichestvu/',
     type: 'website',
     images: [

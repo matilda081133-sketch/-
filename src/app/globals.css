@@ -143,14 +143,32 @@ h4 { font-size: 1.25rem; }
     padding-bottom: 40px !important;
   }
 
-  /* Mobile DOM & rendering performance: defer off-screen section layout and paint */
+  /* Mobile DOM & rendering performance: defer off-screen section layout and paint across all pages */
   #reviews,
   #pricing,
   #faq,
   #consultation,
+  #form,
+  #cases,
+  #specialist,
+  .section-process,
+  .process-block,
+  .help-block,
   footer {
     content-visibility: auto;
     contain-intrinsic-size: auto 600px;
+  }
+
+  /* GPU optimization: soften extreme blur radius on mobile devices */
+  [style*="blur(90px)"],
+  [style*="blur(100px)"] {
+    filter: blur(30px) !important;
+  }
+
+  /* Clean up empty right column on pages with hidden document creatives on mobile */
+  .military-hero-right:has(.hero-right-col-creative),
+  .military-hero-right:has(.mockup-container) {
+    display: none !important;
   }
 }
 

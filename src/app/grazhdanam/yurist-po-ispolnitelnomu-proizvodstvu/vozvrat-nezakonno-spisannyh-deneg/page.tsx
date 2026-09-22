@@ -4,13 +4,13 @@ import VozvratDenegClient from './VozvratDenegClient';
 
 export const metadata: Metadata = {
   title: 'Возврат незаконно списанных приставами денег в Липецке | Де-Юре',
-  description: 'Поможем вернуть деньги, незаконно списанные приставами: защищённые выплаты, повторное или избыточное взыскание, чужой долг. Юрист в Липецке.',
+  description: 'Поможем вернуть деньги, незаконно списанные приставами: защищённые выплаты, повторное или избыточное взыскание, чужой долг. Юрист в Липецке. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/',
   },
   openGraph: {
     title: 'Возврат незаконно списанных приставами денег | Де-Юре',
-    description: 'Проверим основание списания и движение средств, подготовим заявления, жалобу или документы для судебного возврата денег.',
+    description: 'Проверим основание списания и движение средств, подготовим заявления, жалобу или документы для судебного возврата денег. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -100,7 +100,7 @@ export default function VozvratDenegPage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/#webpage',
         name: 'Возврат незаконно списанных приставами денег в Липецке | Де-Юре',
-        description: 'Поможем вернуть деньги, незаконно списанные приставами: защищённые выплаты, повторное или избыточное взыскание, чужой долг. Юрист в Липецке.',
+        description: 'Поможем вернуть деньги, незаконно списанные приставами: защищённые выплаты, повторное или избыточное взыскание, чужой долг. Юрист в Липецке. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/#service'
@@ -110,7 +110,7 @@ export default function VozvratDenegPage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/#service',
         name: 'Возврат незаконно списанных приставами денежных средств в Липецке',
-        description: 'Проверим основание списания и движение средств, подготовим заявления, жалобу или документы для судебного возврата денег.',
+        description: 'Проверим основание списания и движение средств, подготовим заявления, жалобу или документы для судебного возврата денег. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

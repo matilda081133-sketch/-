@@ -3,14 +3,14 @@ import SnyatieArestaAvtoClient from './SnyatieArestaAvtoClient';
 
 export const metadata: Metadata = {
   title: 'Снятие ареста с автомобиля приставами в Липецке | Де-Юре',
-  description: 'Поможем снять арест с автомобиля или запрет регистрационных действий: проверим основания, подготовим обращение приставу, жалобу или иск.',
+  description: 'Поможем снять арест с автомобиля или запрет регистрационных действий: проверим основания, подготовим обращение приставу, жалобу или иск. 📞 +7 (4742) 20-15-25.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: 'Снятие ареста и запрета с автомобиля | Де-Юре',
-    description: 'Проверим ограничения на автомобиль и выберем правовой маршрут: обращение к приставу, жалоба или судебное освобождение имущества.',
+    description: 'Проверим ограничения на автомобиль и выберем правовой маршрут: обращение к приставу, жалоба или судебное освобождение имущества. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -103,7 +103,7 @@ export default function SnyatieArestaAvtoPage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/#webpage',
         name: 'Снятие ареста с автомобиля приставами в Липецке | Де-Юре',
-        description: 'Поможем снять арест с автомобиля или запрет регистрационных действий: проверим основания, подготовим обращение приставу, жалобу или иск.',
+        description: 'Поможем снять арест с автомобиля или запрет регистрационных действий: проверим основания, подготовим обращение приставу, жалобу или иск. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/#service'
@@ -113,7 +113,7 @@ export default function SnyatieArestaAvtoPage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/#service',
         name: 'Снятие ареста с автомобиля и запрета на регистрационные действия',
-        description: 'Проверка ограничений, подготовка заявлений приставу, жалоб и исков об освобождении автомобиля от ареста в Липецке и по России.',
+        description: 'Проверка ограничений, подготовка заявлений приставу, жалоб и исков об освобождении автомобиля от ареста в Липецке и по России. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

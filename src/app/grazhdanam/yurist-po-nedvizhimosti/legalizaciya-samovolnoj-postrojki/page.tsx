@@ -3,13 +3,13 @@ import LegalizaciyaSamovolnojPostrojkiClient from './LegalizaciyaSamovolnojPostr
 
 export const metadata = {
   title: 'Как узаконить самовольную постройку в Липецке — помощь юриста | Де-Юре',
-  description: 'Легализация дома, пристройки и реконструкции в Липецке: проверим участок и параметры, выберем порядок, подготовим документы, суд и регистрацию.',
+  description: 'Легализация дома, пристройки и реконструкции в Липецке: проверим участок и параметры, выберем порядок, подготовим документы, суд и регистрацию. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/legalizaciya-samovolnoj-postrojki/'
   },
   openGraph: {
     title: 'Легализация самовольной постройки в Липецке | Де-Юре',
-    description: 'Узаконивание самовольно возведённых домов, пристроек и реконструкций в Липецке: экспертиза строительных норм, защита от сноса, суд по ст. 222 ГК РФ.',
+    description: 'Узаконивание самовольно возведённых домов, пристроек и реконструкций в Липецке: экспертиза строительных норм, защита от сноса, суд по ст. 222 ГК РФ. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/yurist-po-nedvizhimosti/legalizaciya-samovolnoj-postrojki/',
     siteName: 'ЮК «Де-Юре»',
     images: [
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Как узаконить самовольную постройку в Липецке — помощь юриста | Де-Юре',
-    description: 'Легализация дома, пристройки и реконструкции в Липецке: проверим участок и параметры, выберем порядок, подготовим документы, суд и регистрацию.',
+    description: 'Легализация дома, пристройки и реконструкции в Липецке: проверим участок и параметры, выберем порядок, подготовим документы, суд и регистрацию. 📞 +7 (4742) 20-15-25.',
     images: ['https://dejure-help.ru/images/og/unauthorized-construction-legalization-og.jpg']
   }
 };

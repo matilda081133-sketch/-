@@ -3,15 +3,13 @@ import UdoClient from './UdoClient';
 
 export const metadata: Metadata = {
   title: 'Условно-досрочное освобождение: адвокат по УДО в Липецке | Де-Юре',
-  description:
-    'Помощь адвоката по УДО (ст. 79 УК РФ) и замене наказания (ст. 80 УК РФ) в Липецке и Липецкой области. Сбор документов, снятие взысканий, суд.',
+  description: 'Помощь адвоката по УДО (ст. 79 УК РФ) и замене наказания (ст. 80 УК РФ) в Липецке и Липецкой области. Сбор документов, снятие взысканий, суд. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/uslovno-dosrochnoe-osvobozhdenie/',
   },
   openGraph: {
     title: 'Условно-досрочное освобождение: адвокат по УДО в Липецке | Де-Юре',
-    description:
-      'Помощь адвоката по УДО (ст. 79 УК РФ) и замене наказания (ст. 80 УК РФ) в Липецке и Липецкой области. Сбор документов, снятие взысканий, суд.',
+    description: 'Помощь адвоката по УДО (ст. 79 УК РФ) и замене наказания (ст. 80 УК РФ) в Липецке и Липецкой области. Сбор документов, снятие взысканий, суд. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/uslovno-dosrochnoe-osvobozhdenie/',
     type: 'website',
     images: [

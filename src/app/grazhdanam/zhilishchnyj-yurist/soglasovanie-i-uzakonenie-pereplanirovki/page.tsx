@@ -4,13 +4,13 @@ import PereplanirovkaClient from './PereplanirovkaClient';
 
 export const metadata: Metadata = {
   title: 'Узаконение перепланировки в Липецке под ключ | Де-Юре',
-  description: 'Проверим допустимость перепланировки, организуем проект и технические документы, согласуем работы, приёмку и изменения ЕГРН. При необходимости — суд.',
+  description: 'Проверим допустимость перепланировки, организуем проект и технические документы, согласуем работы, приёмку и изменения ЕГРН. При необходимости — суд. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/soglasovanie-i-uzakonenie-pereplanirovki/'
   },
   openGraph: {
     title: 'Узаконение перепланировки в Липецке под ключ | Де-Юре',
-    description: 'Проверим допустимость перепланировки, организуем проект и технические документы, согласуем работы, приёмку и изменения ЕГРН. При необходимости — суд.',
+    description: 'Проверим допустимость перепланировки, организуем проект и технические документы, согласуем работы, приёмку и изменения ЕГРН. При необходимости — суд. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/soglasovanie-i-uzakonenie-pereplanirovki/',
     siteName: 'ЮК «Де-Юре»',
     images: [

@@ -4,13 +4,13 @@ import SporyPoOsagoClient from './SporyPoOsagoClient';
 
 export const metadata: Metadata = {
   title: 'Юрист по спорам по ОСАГО в Липецке — отказ или недоплата страховой | Де-Юре',
-  description: 'Помощь автоюриста по ОСАГО в Липецке: занижение выплаты, некачественный ремонт, отказ в возмещении. Претензия, финансовый уполномоченный и суд.',
+  description: 'Помощь автоюриста по ОСАГО в Липецке: занижение выплаты, некачественный ремонт, отказ в возмещении. Претензия, финансовый уполномоченный и суд. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-osago/',
   },
   openGraph: {
     title: 'Юрист по спорам по ОСАГО в Липецке | Де-Юре',
-    description: 'Взыскание страховых выплат по ОСАГО, оспаривание недоплат и некачественного ремонта.',
+    description: 'Взыскание страховых выплат по ОСАГО, оспаривание недоплат и некачественного ремонта. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-osago/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -94,7 +94,7 @@ export default function SporyPoOsagoPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-osago/#webpage',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-osago/',
         name: 'Юрист по спорам по ОСАГО в Липецке — отказ или недоплата страховой | Де-Юре',
-        description: 'Помощь автоюриста по ОСАГО в Липецке: занижение выплаты, некачественный ремонт, отказ в возмещении.',
+        description: 'Помощь автоюриста по ОСАГО в Липецке: занижение выплаты, некачественный ремонт, отказ в возмещении. 📞 +7 (4742) 20-15-25.',
         inLanguage: 'ru-RU',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-osago/#service'
@@ -105,7 +105,7 @@ export default function SporyPoOsagoPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-osago/#service',
         name: 'Споры по ОСАГО',
         serviceType: 'Юридическая помощь по обязательным страховым спорам ОСАГО',
-        description: 'Защита интересов автовладельцев при занижении выплат ОСАГО, некачественном ремонте, отказах страховщиков и взыскании неустоек.',
+        description: 'Защита интересов автовладельцев при занижении выплат ОСАГО, некачественном ремонте, отказах страховщиков и взыскании неустоек. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-osago/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

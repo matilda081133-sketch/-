@@ -3,15 +3,13 @@ import ZashchitaOtvetchikaClient from './ZashchitaOtvetchikaClient';
 
 export const metadata: Metadata = {
   title: 'Защита ответчика в арбитражном суде в Липецке | Де-Юре',
-  description:
-    'Получили иск в арбитражный суд? Проверим материалы и сроки, подготовим отзыв и ходатайства, выстроим позицию и представим интересы ответчика.',
+  description: 'Получили иск в арбитражный суд? Проверим материалы и сроки, подготовим отзыв и ходатайства, выстроим позицию и представим интересы ответчика. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/biznesu/arbitrazhnyj-yurist/zashchita-otvetchika-v-arbitrazhnom-sude/'
   },
   openGraph: {
     title: 'Защита ответчика в арбитражном суде в Липецке | Де-Юре',
-    description:
-      'Защита интересов ответчика в арбитражном суде: срочный анализ иска, подготовка мотивированного отзыва, возражения, экспертиза и процессуальное представительство.',
+    description: 'Защита интересов ответчика в арбитражном суде: срочный анализ иска, подготовка мотивированного отзыва, возражения, экспертиза и процессуальное представительство. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/arbitrazhnyj-yurist/zashchita-otvetchika-v-arbitrazhnom-sude/',
     type: 'website',
     locale: 'ru_RU',

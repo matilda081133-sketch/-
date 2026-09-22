@@ -4,13 +4,13 @@ import RazdelClient from './RazdelClient';
 
 export const metadata: Metadata = {
   title: 'Раздел лицевых счетов и оплаты ЖКУ в Липецке — юрист | Де-Юре',
-  description: 'Определим порядок оплаты ЖКУ между собственниками или жильцами: соглашение, отдельные платёжные документы, иск и защита по долгу в Липецке.',
+  description: 'Определим порядок оплаты ЖКУ между собственниками или жильцами: соглашение, отдельные платёжные документы, иск и защита по долгу в Липецке. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/razdel-licevyh-schetov-i-poryadka-oplaty-zhku/'
   },
   openGraph: {
     title: 'Раздел лицевых счетов и оплаты ЖКУ в Липецке — юрист | Де-Юре',
-    description: 'Определим порядок оплаты ЖКУ между собственниками или жильцами: соглашение, отдельные платёжные документы, иск и защита по долгу в Липецке.',
+    description: 'Определим порядок оплаты ЖКУ между собственниками или жильцами: соглашение, отдельные платёжные документы, иск и защита по долгу в Липецке. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/razdel-licevyh-schetov-i-poryadka-oplaty-zhku/',
     siteName: 'ЮК «Де-Юре»',
     images: [

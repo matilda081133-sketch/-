@@ -3,13 +3,13 @@ import RazdelNasledstvaMezhduNaslednikamiClient from './RazdelNasledstvaMezhduNa
 
 export const metadata: Metadata = {
   title: 'Раздел наследства между наследниками в Липецке | Де-Юре',
-  description: 'Помощь в разделе наследственного имущества в Липецке: мирное соглашение, расчёт компенсации, преимущественное право и судебный раздел. Сопроводим до регистрации прав.',
+  description: 'Помощь в разделе наследственного имущества в Липецке: мирное соглашение, расчёт компенсации, преимущественное право и судебный раздел. Сопроводим до регистрации прав. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/razdel-nasledstva-mezhdu-naslednikami/',
   },
   openGraph: {
     title: 'Раздел наследства между наследниками в Липецке | Де-Юре',
-    description: 'Помощь в разделе наследственного имущества в Липецке: мирное соглашение, расчёт компенсации, преимущественное право и судебный раздел. Сопроводим до регистрации прав.',
+    description: 'Помощь в разделе наследственного имущества в Липецке: мирное соглашение, расчёт компенсации, преимущественное право и судебный раздел. Сопроводим до регистрации прав. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/razdel-nasledstva-mezhdu-naslednikami/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',

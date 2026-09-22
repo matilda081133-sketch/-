@@ -4,13 +4,13 @@ import SporyUKClient from './SporyUKClient';
 
 export const metadata: Metadata = {
   title: 'Споры с управляющей компанией и ЖКХ в Липецке — юрист | Де-Юре',
-  description: 'Поможем оспорить начисления, добиться перерасчёта, ремонта общего имущества и реакции УК или ТСЖ. Претензии, жалобы и суд в Липецке.',
+  description: 'Поможем оспорить начисления, добиться перерасчёта, ремонта общего имущества и реакции УК или ТСЖ. Претензии, жалобы и суд в Липецке. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/spory-s-upravlyayushchej-kompaniej-i-zhkh/'
   },
   openGraph: {
     title: 'Споры с управляющей компанией и ЖКХ в Липецке — юрист | Де-Юре',
-    description: 'Поможем оспорить начисления, добиться перерасчёта, ремонта общего имущества и реакции УК или ТСЖ. Претензии, жалобы и суд в Липецке.',
+    description: 'Поможем оспорить начисления, добиться перерасчёта, ремонта общего имущества и реакции УК или ТСЖ. Претензии, жалобы и суд в Липецке. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/spory-s-upravlyayushchej-kompaniej-i-zhkh/',
     siteName: 'ЮК «Де-Юре»',
     images: [

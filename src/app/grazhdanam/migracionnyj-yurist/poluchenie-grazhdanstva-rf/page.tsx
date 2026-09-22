@@ -3,13 +3,13 @@ import PoluchenieGrazhdanstvaRfClient from './PoluchenieGrazhdanstvaRfClient';
 
 export const metadata: Metadata = {
   title: 'Получение гражданства РФ в Липецке — помощь миграционного юриста | Де-Юре',
-  description: 'Помощь в оформлении гражданства РФ в Липецке по закону № 138-ФЗ: общий и упрощенный порядок, сбор документов, сопровождение подачи в МВД.',
+  description: 'Помощь в оформлении гражданства РФ в Липецке по закону № 138-ФЗ: общий и упрощенный порядок, сбор документов, сопровождение подачи в МВД. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-grazhdanstva-rf/',
   },
   openGraph: {
     title: 'Получение гражданства РФ в Липецке — помощь миграционного юриста | Де-Юре',
-    description: 'Помощь в оформлении гражданства РФ в Липецке по закону № 138-ФЗ: общий и упрощенный порядок, сбор документов, сопровождение подачи в МВД.',
+    description: 'Помощь в оформлении гражданства РФ в Липецке по закону № 138-ФЗ: общий и упрощенный порядок, сбор документов, сопровождение подачи в МВД. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/poluchenie-grazhdanstva-rf/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',

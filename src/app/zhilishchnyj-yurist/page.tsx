@@ -4,7 +4,7 @@ import ZhilishchnyjYuristClient from '../grazhdanam/zhilishchnyj-yurist/Zhilishc
 
 export const metadata: Metadata = {
   title: 'Жилищный юрист в Липецке — помощь по жилищным спорам | Де-Юре',
-  description: 'Помощь жилищного юриста в Липецке: выписка и вселение, споры с УК и соседями, залив квартиры, оплата ЖКУ, приватизация и перепланировка.',
+  description: 'Помощь жилищного юриста в Липецке: выписка и вселение, споры с УК и соседями, залив квартиры, оплата ЖКУ, приватизация и перепланировка. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/'
   },

@@ -4,13 +4,13 @@ import SporyPoKaskoClient from './SporyPoKaskoClient';
 
 export const metadata: Metadata = {
   title: 'Юрист по спорам с КАСКО в Липецке — взыскание выплат со страховой | Де-Юре',
-  description: 'Помощь автоюриста по КАСКО в Липецке: отказ в выплате, занижение суммы, затягивание сроков ремонта по КАСКО. Досудебное урегулирование и суд.',
+  description: 'Помощь автоюриста по КАСКО в Липецке: отказ в выплате, занижение суммы, затягивание сроков ремонта по КАСКО. Досудебное урегулирование и суд. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-kasko/',
   },
   openGraph: {
     title: 'Юрист по спорам с КАСКО в Липецке | Де-Юре',
-    description: 'Взыскание страхового возмещения по КАСКО, оспаривание отказов и занижений выплат.',
+    description: 'Взыскание страхового возмещения по КАСКО, оспаривание отказов и занижений выплат. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-kasko/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -94,7 +94,7 @@ export default function SporyPoKaskoPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-kasko/#webpage',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-kasko/',
         name: 'Юрист по спорам с КАСКО в Липецке — взыскание выплат со страховой | Де-Юре',
-        description: 'Помощь автоюриста по КАСКО в Липецке: отказ в выплате, занижение суммы, затягивание сроков ремонта по КАСКО.',
+        description: 'Помощь автоюриста по КАСКО в Липецке: отказ в выплате, занижение суммы, затягивание сроков ремонта по КАСКО. 📞 +7 (4742) 20-15-25.',
         inLanguage: 'ru-RU',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-kasko/#service'
@@ -105,7 +105,7 @@ export default function SporyPoKaskoPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-kasko/#service',
         name: 'Споры по КАСКО',
         serviceType: 'Юридическая помощь в спорах со страховыми компаниями по договорам добровольного страхования КАСКО',
-        description: 'Оспаривание незаконных отказов в выплате, взыскание недоплаченного страхового возмещения, неустоек и штрафов по КАСКО.',
+        description: 'Оспаривание незаконных отказов в выплате, взыскание недоплаченного страхового возмещения, неустоек и штрафов по КАСКО. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/spory-po-kasko/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

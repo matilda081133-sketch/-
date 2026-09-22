@@ -612,6 +612,10 @@ export default function PraktikaClient() {
                 <img
                   src={caseItem.specialist.image}
                   alt={caseItem.specialist.name}
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: '64px',
                     height: '64px',

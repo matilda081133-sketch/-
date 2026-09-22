@@ -4,13 +4,13 @@ import VselenieClient from './VselenieClient';
 
 export const metadata: Metadata = {
   title: 'Вселение и порядок пользования квартирой в Липецке — юрист | Де-Юре',
-  description: 'Поможем получить доступ к квартире, прекратить препятствия или определить порядок пользования. Оценим право, доказательства и судебную перспективу. Липецк.',
+  description: 'Поможем получить доступ к квартире, прекратить препятствия или определить порядок пользования. Оценим право, доказательства и судебную перспективу. Липецк. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/vselenie-i-ustranenie-prepyatstvij-v-polzovanii-kvartiroj/'
   },
   openGraph: {
     title: 'Вселение и порядок пользования квартирой в Липецке — юрист | Де-Юре',
-    description: 'Поможем получить доступ к квартире, прекратить препятствия или определить порядок пользования. Оценим право, доказательства и судебную перспективу. Липецк.',
+    description: 'Поможем получить доступ к квартире, прекратить препятствия или определить порядок пользования. Оценим право, доказательства и судебную перспективу. Липецк. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/zhilishchnyj-yurist/vselenie-i-ustranenie-prepyatstvij-v-polzovanii-kvartiroj/',
     siteName: 'ЮК «Де-Юре»',
     images: [

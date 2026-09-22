@@ -3,14 +3,14 @@ import IspolnitelnoeGrazhdanamClient from './IspolnitelnoeGrazhdanamClient';
 
 export const metadata: Metadata = {
   title: 'Юрист по исполнительному производству в Липецке | Де-Юре',
-  description: 'Юрист по исполнительному производству в Липецке: помощь должникам и взыскателям, жалобы на приставов, аресты, списания и исполнение решений суда.',
+  description: 'Юрист по исполнительному производству в Липецке: помощь должникам и взыскателям, жалобы на приставов, аресты, списания и исполнение решений суда. 📞 +7 (4742) 20-15-25.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: 'Юрист по исполнительному производству в Липецке | Де-Юре',
-    description: 'Помощь гражданам-должникам и взыскателям: споры с приставами, незаконные списания, аресты и взыскание по исполнительному листу.',
+    description: 'Помощь гражданам-должникам и взыскателям: споры с приставами, незаконные списания, аресты и взыскание по исполнительному листу. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -98,7 +98,7 @@ export default function IspolnitelnoeGrazhdanamPage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/#webpage',
         name: 'Юрист по исполнительному производству в Липецке | Де-Юре',
-        description: 'Юрист по исполнительному производству в Липецке: помощь должникам и взыскателям, жалобы на приставов, аресты, списания и исполнение решений суда.',
+        description: 'Юрист по исполнительному производству в Липецке: помощь должникам и взыскателям, жалобы на приставов, аресты, списания и исполнение решений суда. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/#service'
@@ -108,7 +108,7 @@ export default function IspolnitelnoeGrazhdanamPage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/#service',
         name: 'Юрист по исполнительному производству для граждан',
-        description: 'Помощь гражданам-должникам и взыскателям: споры с приставами, незаконные списания, аресты счетов и автомобиля, взыскание по исполнительному листу.',
+        description: 'Помощь гражданам-должникам и взыскателям: споры с приставами, незаконные списания, аресты счетов и автомобиля, взыскание по исполнительному листу. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

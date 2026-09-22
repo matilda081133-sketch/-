@@ -4,13 +4,13 @@ import VzyskanieVinovnikClient from './VzyskanieVinovnikClient';
 
 export const metadata: Metadata = {
   title: 'Взыскание ущерба с виновника ДТП в Липецке — помощь автоюриста | Де-Юре',
-  description: 'Взыскание ущерба с виновника ДТП в Липецке: возмещение сверх лимита ОСАГО, утрата товарной стоимости, франшиза, досудебная претензия и суд.',
+  description: 'Взыскание ущерба с виновника ДТП в Липецке: возмещение сверх лимита ОСАГО, утрата товарной стоимости, франшиза, досудебная претензия и суд. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/',
   },
   openGraph: {
     title: 'Взыскание ущерба с виновника ДТП в Липецке | Де-Юре',
-    description: 'Взыскание разницы между страховой выплатой и реальным ущербом, возмещение УТС и сопутствующих расходов с виновника аварии.',
+    description: 'Взыскание разницы между страховой выплатой и реальным ущербом, возмещение УТС и сопутствующих расходов с виновника аварии. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -94,7 +94,7 @@ export default function VzyskanieVinovnikPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/#webpage',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/',
         name: 'Взыскание ущерба с виновника ДТП в Липецке — помощь автоюриста | Де-Юре',
-        description: 'Взыскание ущерба с виновника ДТП в Липецке: возмещение сверх лимита ОСАГО, утрата товарной стоимости.',
+        description: 'Взыскание ущерба с виновника ДТП в Липецке: возмещение сверх лимита ОСАГО, утрата товарной стоимости. 📞 +7 (4742) 20-15-25.',
         inLanguage: 'ru-RU',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/#service'
@@ -105,7 +105,7 @@ export default function VzyskanieVinovnikPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/#service',
         name: 'Взыскание ущерба с виновника ДТП',
         serviceType: 'Юридическая помощь по взысканию имущественного вреда с причинителя вреда при ДТП',
-        description: 'Проведение независимой оценки ущерба без износа, подготовка досудебной претензии, представительство в суде и на стадии исполнения решения.',
+        description: 'Проведение независимой оценки ущерба без износа, подготовка досудебной претензии, представительство в суде и на стадии исполнения решения. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-s-vinovnika-dtp/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

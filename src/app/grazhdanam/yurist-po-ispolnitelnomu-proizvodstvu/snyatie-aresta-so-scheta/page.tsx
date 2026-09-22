@@ -3,14 +3,14 @@ import SnyatieArestaSchetaClient from './SnyatieArestaSchetaClient';
 
 export const metadata: Metadata = {
   title: 'Снятие ареста со счёта приставами в Липецке | Де-Юре',
-  description: 'Поможем снять арест со счёта или банковской карты: проверим основание, подготовим заявление или жалобу и проконтролируем исполнение банком.',
+  description: 'Поможем снять арест со счёта или банковской карты: проверим основание, подготовим заявление или жалобу и проконтролируем исполнение банком. 📞 +7 (4742) 20-15-25.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: 'Снятие ареста со счёта приставами | Де-Юре',
-    description: 'Проверим исполнительное производство, добьёмся отмены или корректировки ареста и проконтролируем передачу постановления в банк.',
+    description: 'Проверим исполнительное производство, добьёмся отмены или корректировки ареста и проконтролируем передачу постановления в банк. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -103,7 +103,7 @@ export default function SnyatieArestaSchetaPage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/#webpage',
         name: 'Снятие ареста со счёта приставами в Липецке | Де-Юре',
-        description: 'Поможем снять арест со счёта или банковской карты: проверим основание, подготовим заявление или жалобу и проконтролируем исполнение банком.',
+        description: 'Поможем снять арест со счёта или банковской карты: проверим основание, подготовим заявление или жалобу и проконтролируем исполнение банком. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/#service'
@@ -113,7 +113,7 @@ export default function SnyatieArestaSchetaPage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/#service',
         name: 'Снятие ареста со счёта или банковской карты в Липецке',
-        description: 'Проверка оснований ареста карты и счёта, подготовка заявлений приставу, жалоб и исков в Липецке и по России.',
+        description: 'Проверка оснований ареста карты и счёта, подготовка заявлений приставу, жалоб и исков в Липецке и по России. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

@@ -112,6 +112,31 @@ export default function PricingBlock({
 
   return (
     <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--gradient-cream)', ...sectionStyle }}>
+      {/* Schema.org Offer Catalog for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            'name': typeof title === 'string' ? title : 'Стоимость юридических услуг в Липецке',
+            'itemListElement': tiers.map((tier, tIdx) => {
+              const numPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
+              return {
+                '@type': 'Offer',
+                'position': tIdx + 1,
+                'name': typeof tier.title === 'string' ? tier.title : 'Юридическая услуга',
+                'description': typeof tier.subtitle === 'string' ? tier.subtitle : undefined,
+                'price': numPrice || '0',
+                'priceCurrency': 'RUB',
+                'availability': 'https://schema.org/InStock',
+                'url': 'https://dejure-help.ru/#pricing'
+              };
+            })
+          })
+        }}
+      />
+
       <div className="container" style={{ position: 'relative', zIndex: 1, ...(tiers.length >= 5 ? { maxWidth: '1400px' } : {}) }}>
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <h2 style={{ 
@@ -164,7 +189,11 @@ export default function PricingBlock({
         <div 
           className={`pricing-grid-container ${tiers.length >= 5 ? "pricing-grid-5" : tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
         >
-          {tiers.map((tier, idx) => (
+          {tiers.map((tier, idx) => {
+            const numericPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
+            const tierTitleStr = typeof tier.title === 'string' ? tier.title : 'Юридическая услуга';
+            const tierSubtitleStr = typeof tier.subtitle === 'string' ? tier.subtitle : '';
+            return (
             <div key={idx} style={{
               background: tier.popular ? 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)' : 'var(--color-white)',
               color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)',
@@ -182,7 +211,18 @@ export default function PricingBlock({
               boxSizing: 'border-box'
             }}
             className="pricing-tier-card"
+            itemScope
+            itemType="https://schema.org/Offer"
             >
+              {numericPrice && (
+                <>
+                  <meta itemProp="price" content={numericPrice} />
+                  <meta itemProp="priceCurrency" content="RUB" />
+                  <meta itemProp="availability" content="https://schema.org/InStock" />
+                  <meta itemProp="name" content={tierTitleStr} />
+                  {tierSubtitleStr && <meta itemProp="description" content={tierSubtitleStr} />}
+                </>
+              )}
               {tier.popular && Boolean(tier.badgeText) && (
                 <div style={{
                   position: 'absolute',
@@ -240,7 +280,8 @@ export default function PricingBlock({
                 {tier.buttonText || 'Узнать точную стоимость'}
               </a>
             </div>
-          ))}
+          );
+          })}
         </div>
 
         {(disclaimer || guaranteeText) && (

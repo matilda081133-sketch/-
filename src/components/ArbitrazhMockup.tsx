@@ -103,7 +103,7 @@ export default function ArbitrazhMockup({ variant = 'hub' }: ArbitrazhMockupProp
   }[variant];
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
+    <div className="hero-right-col-creative" style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
       {/* Background Soft Glow */}
       <div
         style={{

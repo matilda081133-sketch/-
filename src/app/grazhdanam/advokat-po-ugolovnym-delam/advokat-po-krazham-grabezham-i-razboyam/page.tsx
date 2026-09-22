@@ -3,15 +3,13 @@ import AdvokatKrazhiClient from './AdvokatKrazhiClient';
 
 export const metadata: Metadata = {
   title: 'Адвокат по краже, грабежу и разбою в Липецке | Де-Юре',
-  description:
-    'Защита по обвинениям в краже (ст. 158), грабеже (ст. 161), разбое (ст. 162 УК РФ) в Липецке. Оспаривание квалификации, оценка ущерба, прекращение за примирением.',
+  description: 'Защита по обвинениям в краже (ст. 158), грабеже (ст. 161), разбое (ст. 162 УК РФ) в Липецке. Оспаривание квалификации, оценка ущерба, прекращение за примирением. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-krazham-grabezham-i-razboyam/',
   },
   openGraph: {
     title: 'Адвокат по краже, грабежу и разбою в Липецке | Де-Юре',
-    description:
-      'Защита по обвинениям в краже (ст. 158), грабеже (ст. 161), разбое (ст. 162 УК РФ) в Липецке. Оспаривание квалификации, оценка ущерба, прекращение за примирением.',
+    description: 'Защита по обвинениям в краже (ст. 158), грабеже (ст. 161), разбое (ст. 162 УК РФ) в Липецке. Оспаривание квалификации, оценка ущерба, прекращение за примирением. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-krazham-grabezham-i-razboyam/',
     type: 'website',
     images: [

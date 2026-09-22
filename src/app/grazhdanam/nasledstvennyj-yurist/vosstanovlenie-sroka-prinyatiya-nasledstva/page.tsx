@@ -3,13 +3,13 @@ import VosstanovlenieSrokaPrinyatiyaNasledstvaClient from './VosstanovlenieSroka
 
 export const metadata: Metadata = {
   title: 'Восстановление срока принятия наследства в Липецке | Де-Юре',
-  description: 'Помощь в восстановлении пропущенного 6-месячного срока принятия наследства через суд в Липецке по ст. 1155 ГК РФ. Докажем уважительность причин и защитим вашу долю.',
+  description: 'Помощь в восстановлении пропущенного 6-месячного срока принятия наследства через суд в Липецке по ст. 1155 ГК РФ. Докажем уважительность причин и защитим вашу долю. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva/',
   },
   openGraph: {
     title: 'Восстановление срока принятия наследства в Липецке | Де-Юре',
-    description: 'Помощь в восстановлении пропущенного 6-месячного срока принятия наследства через суд в Липецке по ст. 1155 ГК РФ. Докажем уважительность причин и защитим вашу долю.',
+    description: 'Помощь в восстановлении пропущенного 6-месячного срока принятия наследства через суд в Липецке по ст. 1155 ГК РФ. Докажем уважительность причин и защитим вашу долю. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',

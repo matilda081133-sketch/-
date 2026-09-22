@@ -4,13 +4,13 @@ import OtmenaPrikazaClient from './OtmenaPrikazaClient';
 export const metadata: Metadata = {
   metadataBase: new URL('https://dejure-help.ru'),
   title: 'Отмена судебного приказа в Липецке — юрист | Де-Юре',
-  description: 'Поможем отменить судебный приказ по кредиту или займу: проверим срок, подготовим возражения, обоснуем позднюю подачу и сопроводим прекращение взыскания.',
+  description: 'Поможем отменить судебный приказ по кредиту или займу: проверим срок, подготовим возражения, обоснуем позднюю подачу и сопроводим прекращение взыскания. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/',
   },
   openGraph: {
     title: 'Отмена судебного приказа по кредиту | Де-Юре',
-    description: 'Проверим срок, подготовим возражения и определим действия, если приказ уже передан на исполнение.',
+    description: 'Проверим срок, подготовим возражения и определим действия, если приказ уже передан на исполнение. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/',
     siteName: 'Юридическая компания Де-Юре',
     locale: 'ru_RU',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Отмена судебного приказа в Липецке | Де-Юре',
-    description: 'Поможем отменить судебный приказ по кредиту или займу: проверим срок и подготовим возражения.',
+    description: 'Поможем отменить судебный приказ по кредиту или займу: проверим срок и подготовим возражения. 📞 +7 (4742) 20-15-25.',
     images: ['https://dejure-help.ru/images/og/otmena-sudebnogo-prikaza.jpg'],
   },
 };

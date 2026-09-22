@@ -3,15 +3,13 @@ import ObzhalovaniePrigovoraClient from './ObzhalovaniePrigovoraClient';
 
 export const metadata: Metadata = {
   title: 'Обжалование приговора по уголовному делу в Липецке | Де-Юре',
-  description:
-    'Апелляционное и кассационное обжалование приговоров по уголовным делам в Липецке. Аудит протоколов, выявление нарушений УПК, отмена и смягчение наказания.',
+  description: 'Апелляционное и кассационное обжалование приговоров по уголовным делам в Липецке. Аудит протоколов, выявление нарушений УПК, отмена и смягчение наказания. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/obzhalovanie-prigovora/',
   },
   openGraph: {
     title: 'Обжалование приговора по уголовному делу в Липецке | Де-Юре',
-    description:
-      'Апелляционное и кассационное обжалование приговоров по уголовным делам в Липецке. Аудит протоколов, выявление нарушений УПК, отмена и смягчение наказания.',
+    description: 'Апелляционное и кассационное обжалование приговоров по уголовным делам в Липецке. Аудит протоколов, выявление нарушений УПК, отмена и смягчение наказания. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/obzhalovanie-prigovora/',
     type: 'website',
     images: [

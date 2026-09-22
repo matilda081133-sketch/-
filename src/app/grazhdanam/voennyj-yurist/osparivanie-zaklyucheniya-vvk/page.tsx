@@ -12,13 +12,13 @@ import PricingBlock from '@/components/PricingBlock';
 
 export const metadata = {
   title: 'Оспаривание заключения ВВК — юрист в Липецке | Де-Юре',
-  description: 'Оспаривание заключения ВВК: анализ заключения и медицинских документов, жалоба в вышестоящую ВВК и судебное обжалование в Липецке.',
+  description: 'Оспаривание заключения ВВК: анализ заключения и медицинских документов, жалоба в вышестоящую ВВК и судебное обжалование в Липецке. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/',
   },
   openGraph: {
     title: 'Оспаривание заключения ВВК — юрист в Липецке | Де-Юре',
-    description: 'Оспаривание заключения ВВК: анализ заключения и медицинских документов, жалоба в вышестоящую ВВК и судебное обжалование в Липецке.',
+    description: 'Оспаривание заключения ВВК: анализ заключения и медицинских документов, жалоба в вышестоящую ВВК и судебное обжалование в Липецке. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/',
     siteName: 'ЮК «Де-Юре»',
     images: [{ url: 'https://dejure-help.ru/images/konopkin.jpg', width: 1200, height: 630 }],
@@ -101,7 +101,7 @@ export default function VvkPage() {
         name: 'Оспаривание заключения ВВК',
         serviceType: 'Юридическая помощь по оспариванию заключения ВВК',
         url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/',
-        description: 'Оспаривание заключения военно-врачебной комиссии: анализ медицинских документов, подача жалобы в вышестоящую ВВК и судебное обжалование в Липецке.',
+        description: 'Оспаривание заключения военно-врачебной комиссии: анализ медицинских документов, подача жалобы в вышестоящую ВВК и судебное обжалование в Липецке. 📞 +7 (4742) 20-15-25.',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'
         },
@@ -112,7 +112,7 @@ export default function VvkPage() {
         '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
         name: 'Конопкин Дмитрий Сергеевич',
         jobTitle: 'Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»',
-        description: 'Реестровый номер 48/812 в реестре адвокатов Липецкой области. Специалист по оспариванию заключений ВВК и защите прав военнослужащих.',
+        description: 'Реестровый номер 48/812 в реестре адвокатов Липецкой области. Специалист по оспариванию заключений ВВК и защите прав военнослужащих. 📞 +7 (4742) 20-15-25.',
         image: 'https://dejure-help.ru/images/konopkin.jpg',
         url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
         affiliation: {
@@ -142,7 +142,7 @@ export default function VvkPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/#webpage',
         url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/',
         name: 'Оспаривание заключения ВВК — юрист в Липецке | Де-Юре',
-        description: 'Оспаривание заключения ВВК: анализ заключения и медицинских документов, жалоба в вышестоящую ВВК и судебное обжалование в Липецке.',
+        description: 'Оспаривание заключения ВВК: анализ заключения и медицинских документов, жалоба в вышестоящую ВВК и судебное обжалование в Липецке. 📞 +7 (4742) 20-15-25.',
         breadcrumb: {
           '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/#breadcrumb'
         },

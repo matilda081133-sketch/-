@@ -4,13 +4,13 @@ import DtpBezOsagoClient from './DtpBezOsagoClient';
 
 export const metadata: Metadata = {
   title: 'Взыскание ущерба при ДТП без ОСАГО в Липецке — помощь автоюриста | Де-Юре',
-  description: 'Помощь автоюриста в Липецке, если у виновника ДТП нет полиса ОСАГО: установление собственника, независимая экспертиза, арест имущества и суд.',
+  description: 'Помощь автоюриста в Липецке, если у виновника ДТП нет полиса ОСАГО: установление собственника, независимая экспертиза, арест имущества и суд. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-pri-dtp-bez-osago/',
   },
   openGraph: {
     title: 'Взыскание ущерба при ДТП без ОСАГО в Липецке | Де-Юре',
-    description: 'Взыскание ущерба с виновника без полиса ОСАГО: независимая оценка, досудебная претензия, судебный иск и исполнение решения.',
+    description: 'Взыскание ущерба с виновника без полиса ОСАГО: независимая оценка, досудебная претензия, судебный иск и исполнение решения. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-pri-dtp-bez-osago/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -94,7 +94,7 @@ export default function DtpBezOsagoPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-pri-dtp-bez-osago/#webpage',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-pri-dtp-bez-osago/',
         name: 'Взыскание ущерба при ДТП без ОСАГО в Липецке — помощь автоюриста | Де-Юре',
-        description: 'Помощь автоюриста в Липецке, если у виновника ДТП нет полиса ОСАГО.',
+        description: 'Помощь автоюриста в Липецке, если у виновника ДТП нет полиса ОСАГО. 📞 +7 (4742) 20-15-25.',
         inLanguage: 'ru-RU',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-pri-dtp-bez-osago/#service'
@@ -105,7 +105,7 @@ export default function DtpBezOsagoPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-pri-dtp-bez-osago/#service',
         name: 'Взыскание ущерба при ДТП без ОСАГО',
         serviceType: 'Юридическая помощь по взысканию вреда с виновников ДТП без полиса страхования',
-        description: 'Организация независимой экспертизы, розыск имущества и счетов виновника, досудебная претензионная работа и взыскание ущерба через суд.',
+        description: 'Организация независимой экспертизы, розыск имущества и счетов виновника, досудебная претензионная работа и взыскание ущерба через суд. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/vzyskanie-ushcherba-pri-dtp-bez-osago/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

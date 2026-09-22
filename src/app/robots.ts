@@ -10,5 +10,6 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ['/api/', '/_next/'],
     },
     sitemap: 'https://dejure-help.ru/sitemap.xml',
+    host: 'https://dejure-help.ru',
   };
 }

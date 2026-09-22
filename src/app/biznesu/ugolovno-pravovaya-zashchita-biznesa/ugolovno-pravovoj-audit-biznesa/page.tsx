@@ -3,16 +3,14 @@ import UgolovnoPravovojAuditClient from './UgolovnoPravovojAuditClient';
 
 export const metadata: Metadata = {
   title: 'Уголовно-правовой аудит бизнеса в Липецке | Де-Юре',
-  description:
-    'Превентивный аудит уголовных рисков компании: анализ договоров, сделок, налоговых схем и управленческих решений. Липецк и Липецкая область.',
+  description: 'Превентивный аудит уголовных рисков компании: анализ договоров, сделок, налоговых схем и управленческих решений. Липецк и Липецкая область. 📞 +7 (4742) 20-15-25.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: 'Уголовно-правовой аудит бизнеса в Липецке | Де-Юре',
-    description:
-      'Анализируем риски сделок, договоров и решений руководства до того, как они привлекут внимание силовых структур.',
+    description: 'Анализируем риски сделок, договоров и решений руководства до того, как они привлекут внимание силовых структур. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -29,8 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Уголовно-правовой аудит бизнеса в Липецке | Де-Юре',
-    description:
-      'Превентивный аудит уголовных рисков компании: анализ договоров, сделок, налоговых схем и управленческих решений. Липецк и Липецкая область.',
+    description: 'Превентивный аудит уголовных рисков компании: анализ договоров, сделок, налоговых схем и управленческих решений. Липецк и Липецкая область. 📞 +7 (4742) 20-15-25.',
     images: ['https://dejure-help.ru/images/og/ugolovno-pravovoj-audit-biznesa-og.jpg'],
   },
   alternates: {
@@ -100,7 +97,7 @@ export default function UgolovnoPravovojAuditPage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/#webpage',
         name: 'Уголовно-правовой аудит бизнеса в Липецке | Де-Юре',
-        description: 'Превентивный аудит уголовных рисков компании: анализ договоров, сделок, налоговых схем и управленческих решений. Липецк и Липецкая область.',
+        description: 'Превентивный аудит уголовных рисков компании: анализ договоров, сделок, налоговых схем и управленческих решений. Липецк и Липецкая область. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/',
         about: {
           '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/#service'
@@ -110,8 +107,7 @@ export default function UgolovnoPravovojAuditPage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/#service',
         name: 'Уголовно-правовой аудит бизнеса в Липецке',
-        description:
-          'Превентивный аудит уголовных рисков компании: анализ договоров, сделок, налоговых схем и управленческих решений. Липецк и Липецкая область.',
+        description: 'Превентивный аудит уголовных рисков компании: анализ договоров, сделок, налоговых схем и управленческих решений. Липецк и Липецкая область. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/ugolovno-pravovoj-audit-biznesa/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

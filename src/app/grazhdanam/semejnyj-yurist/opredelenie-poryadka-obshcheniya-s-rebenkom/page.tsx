@@ -3,13 +3,13 @@ import OpredeleniePoryadkaObshcheniyaSRebenkomClient from './OpredeleniePoryadka
 
 export const metadata: Metadata = {
   title: 'Порядок общения с ребёнком в Липецке | Де-Юре',
-  description: 'Юридическая помощь в спорах о порядке общения с ребёнком в Липецке: график встреч, соглашение, суд, изменение и исполнение установленного порядка.',
+  description: 'Юридическая помощь в спорах о порядке общения с ребёнком в Липецке: график встреч, соглашение, суд, изменение и исполнение установленного порядка. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/opredelenie-poryadka-obshcheniya-s-rebenkom/',
   },
   openGraph: {
     title: 'Порядок общения с ребёнком в Липецке | Де-Юре',
-    description: 'Юридическая помощь в спорах о порядке общения с ребёнком в Липецке: график встреч, соглашение, суд, изменение и исполнение установленного порядка.',
+    description: 'Юридическая помощь в спорах о порядке общения с ребёнком в Липецке: график встреч, соглашение, суд, изменение и исполнение установленного порядка. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/opredelenie-poryadka-obshcheniya-s-rebenkom/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',

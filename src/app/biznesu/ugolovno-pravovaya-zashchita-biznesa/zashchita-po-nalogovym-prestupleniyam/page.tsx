@@ -3,16 +3,14 @@ import ZashchitaPoNalogovymPrestupleniyamClient from './ZashchitaPoNalogovymPres
 
 export const metadata: Metadata = {
   title: 'Защита по налоговым преступлениям в Липецке | Де-Юре',
-  description:
-    'Уголовная защита должностных лиц бизнеса по налоговым статьям 199, 199.1, 199.2 УК РФ. Сопровождение в СК РФ и суде в Липецке и Липецкой области.',
+  description: 'Уголовная защита должностных лиц бизнеса по налоговым статьям 199, 199.1, 199.2 УК РФ. Сопровождение в СК РФ и суде в Липецке и Липецкой области. 📞 +7 (4742) 20-15-25.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: 'Защита по налоговым преступлениям в Липецке | Де-Юре',
-    description:
-      'Защита руководства и учредителей при уголовных делах по ст. 199 УК РФ. Сопровождение доследственных проверок и следствия в СК РФ.',
+    description: 'Защита руководства и учредителей при уголовных делах по ст. 199 УК РФ. Сопровождение доследственных проверок и следствия в СК РФ. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -29,8 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Защита по налоговым преступлениям в Липецке | Де-Юре',
-    description:
-      'Уголовная защита должностных лиц бизнеса по налоговым статьям 199, 199.1, 199.2 УК РФ. Сопровождение в СК РФ и суде в Липецке и Липецкой области.',
+    description: 'Уголовная защита должностных лиц бизнеса по налоговым статьям 199, 199.1, 199.2 УК РФ. Сопровождение в СК РФ и суде в Липецке и Липецкой области. 📞 +7 (4742) 20-15-25.',
     images: ['https://dejure-help.ru/images/og/zashchita-po-nalogovym-prestupleniyam-og.jpg'],
   },
   alternates: {
@@ -100,7 +97,7 @@ export default function ZashchitaPoNalogovymPrestupleniyamPage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/#webpage',
         name: 'Защита по налоговым преступлениям в Липецке | Де-Юре',
-        description: 'Уголовная защита должностных лиц бизнеса по налоговым статьям 199, 199.1, 199.2 УК РФ. Сопровождение в СК РФ и суде в Липецке и Липецкой области.',
+        description: 'Уголовная защита должностных лиц бизнеса по налоговым статьям 199, 199.1, 199.2 УК РФ. Сопровождение в СК РФ и суде в Липецке и Липецкой области. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/',
         about: {
           '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/#service'
@@ -110,8 +107,7 @@ export default function ZashchitaPoNalogovymPrestupleniyamPage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/#service',
         name: 'Защита по налоговым преступлениям в Липецке',
-        description:
-          'Уголовная защита должностных лиц бизнеса по налоговым статьям 199, 199.1, 199.2 УК РФ. Сопровождение в СК РФ и суде в Липецке и Липецкой области.',
+        description: 'Уголовная защита должностных лиц бизнеса по налоговым статьям 199, 199.1, 199.2 УК РФ. Сопровождение в СК РФ и суде в Липецке и Липецкой области. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

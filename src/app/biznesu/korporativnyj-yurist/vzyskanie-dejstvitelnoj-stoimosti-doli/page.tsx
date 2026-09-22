@@ -3,15 +3,13 @@ import VzyskanieStoimostiDoliClient from './VzyskanieStoimostiDoliClient';
 
 export const metadata: Metadata = {
   title: 'Взыскание действительной стоимости доли ООО в Липецке | Де-Юре',
-  description:
-    'Помощь при невыплате или занижении действительной стоимости доли ООО: анализ расчёта и активов, оценка, претензия, переговоры и судебное взыскание.',
+  description: 'Помощь при невыплате или занижении действительной стоимости доли ООО: анализ расчёта и активов, оценка, претензия, переговоры и судебное взыскание. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/'
   },
   openGraph: {
     title: 'Взыскание действительной стоимости доли ООО в Липецке | Де-Юре',
-    description:
-      'Помощь при невыплате или занижении действительной стоимости доли ООО: анализ расчёта и активов, оценка, претензия, переговоры и судебное взыскание.',
+    description: 'Помощь при невыплате или занижении действительной стоимости доли ООО: анализ расчёта и активов, оценка, претензия, переговоры и судебное взыскание. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/vzyskanie-dejstvitelnoj-stoimosti-doli/',
     type: 'website',
         images: [

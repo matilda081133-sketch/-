@@ -3,13 +3,13 @@ import OtkazAnnulirovanieRvpVnzhClient from './OtkazAnnulirovanieRvpVnzhClient';
 
 export const metadata: Metadata = {
   title: 'Обжалование отказа и аннулирования РВП / ВНЖ в Липецке — адвокат | Де-Юре',
-  description: 'Помощь при отказе в выдаче или аннулировании РВП и ВНЖ в Липецке. При аннулировании - 15 дней на выезд. Жалоба в МВД и судебная защита.',
+  description: 'Помощь при отказе в выдаче или аннулировании РВП и ВНЖ в Липецке. При аннулировании - 15 дней на выезд. Жалоба в МВД и судебная защита. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/',
   },
   openGraph: {
     title: 'Обжалование отказа и аннулирования РВП / ВНЖ в Липецке — адвокат | Де-Юре',
-    description: 'Помощь при отказе в выдаче или аннулировании РВП и ВНЖ в Липецке. При аннулировании - 15 дней на выезд. Жалоба в МВД и судебная защита.',
+    description: 'Помощь при отказе в выдаче или аннулировании РВП и ВНЖ в Липецке. При аннулировании - 15 дней на выезд. Жалоба в МВД и судебная защита. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',

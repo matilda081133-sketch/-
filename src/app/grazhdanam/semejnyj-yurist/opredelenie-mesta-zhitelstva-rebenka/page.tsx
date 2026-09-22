@@ -3,13 +3,13 @@ import OpredelenieMestaZhitelstvaRebenkaClient from './OpredelenieMestaZhitelstv
 
 export const metadata: Metadata = {
   title: 'Определение места жительства ребёнка в Липецке | Де-Юре',
-  description: 'Юридическая помощь в спорах о месте жительства ребёнка в Липецке: оценка обстоятельств, доказательства, орган опеки и представительство в суде.',
+  description: 'Юридическая помощь в спорах о месте жительства ребёнка в Липецке: оценка обстоятельств, доказательства, орган опеки и представительство в суде. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/opredelenie-mesta-zhitelstva-rebenka/',
   },
   openGraph: {
     title: 'Определение места жительства ребёнка в Липецке | Де-Юре',
-    description: 'Юридическая помощь в спорах о месте жительства ребёнка в Липецке: оценка обстоятельств, доказательства, орган опеки и представительство в суде.',
+    description: 'Юридическая помощь в спорах о месте жительства ребёнка в Липецке: оценка обстоятельств, доказательства, орган опеки и представительство в суде. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/opredelenie-mesta-zhitelstva-rebenka/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',

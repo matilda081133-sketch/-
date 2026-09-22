@@ -3,13 +3,13 @@ import ObzhalovanieNezhelatelnostiPrebyvaniyaClient from './ObzhalovanieNezhelat
 
 export const metadata: Metadata = {
   title: 'Обжалование нежелательности пребывания в РФ в Липецке — адвокат | Де-Юре',
-  description: 'Отмена решений Минюста, Роспотребнадзора, МВД, ФСБ о нежелательности пребывания по ст. 25.10 114-ФЗ. Судебная защита прав иностранцев в Липецке. ЮК «Де-Юре».',
+  description: 'Отмена решений Минюста, Роспотребнадзора, МВД, ФСБ о нежелательности пребывания по ст. 25.10 114-ФЗ. Судебная защита прав иностранцев в Липецке. ЮК «Де-Юре». 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-nezhelatelnosti-prebyvaniya/',
   },
   openGraph: {
     title: 'Обжалование нежелательности пребывания в РФ в Липецке — адвокат | Де-Юре',
-    description: 'Отмена решений Минюста, Роспотребнадзора, МВД, ФСБ о нежелательности пребывания по ст. 25.10 114-ФЗ. Судебная защита прав иностранцев в Липецке. ЮК «Де-Юре».',
+    description: 'Отмена решений Минюста, Роспотребнадзора, МВД, ФСБ о нежелательности пребывания по ст. 25.10 114-ФЗ. Судебная защита прав иностранцев в Липецке. ЮК «Де-Юре». 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-nezhelatelnosti-prebyvaniya/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',

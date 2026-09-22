@@ -3,13 +3,13 @@ import ObzhalovanieAdministrativnogoVydvoreniyaClient from './ObzhalovanieAdmini
 
 export const metadata: Metadata = {
   title: 'Обжалование административного выдворения в Липецке — адвокат | Де-Юре',
-  description: 'Срочное обжалование выдворения в 10-дневный срок по КоАП РФ. Освобождение из ЦВСИГ, апелляция и кассация в Липецке. ЮК «Де-Юре».',
+  description: 'Срочное обжалование выдворения в 10-дневный срок по КоАП РФ. Освобождение из ЦВСИГ, апелляция и кассация в Липецке. ЮК «Де-Юре». 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-administrativnogo-vydvoreniya/',
   },
   openGraph: {
     title: 'Обжалование административного выдворения в Липецке — адвокат | Де-Юре',
-    description: 'Срочное обжалование выдворения в 10-дневный срок по КоАП РФ. Освобождение из ЦВСИГ, апелляция и кассация в Липецке. ЮК «Де-Юре».',
+    description: 'Срочное обжалование выдворения в 10-дневный срок по КоАП РФ. Освобождение из ЦВСИГ, апелляция и кассация в Липецке. ЮК «Де-Юре». 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/obzhalovanie-administrativnogo-vydvoreniya/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',

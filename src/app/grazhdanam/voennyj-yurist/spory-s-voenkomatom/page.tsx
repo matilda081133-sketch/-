@@ -12,13 +12,13 @@ import PricingBlock from '@/components/PricingBlock';
 
 export const metadata = {
   title: 'Оспаривание решений военкомата в Липецке — адвокат | Де-Юре',
-  description: 'Проверка решений и действий военкомата и призывной комиссии, подготовка жалобы или административного иска, представительство. ЮК «Де-Юре».',
+  description: 'Проверка решений и действий военкомата и призывной комиссии, подготовка жалобы или административного иска, представительство. ЮК «Де-Юре». 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/',
   },
   openGraph: {
     title: 'Оспаривание решений военкомата в Липецке — адвокат | Де-Юре',
-    description: 'Проверка решений и действий военкомата и призывной комиссии, подготовка жалобы или административного иска, представительство. ЮК «Де-Юре».',
+    description: 'Проверка решений и действий военкомата и призывной комиссии, подготовка жалобы или административного иска, представительство. ЮК «Де-Юре». 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/',
     siteName: 'ЮК «Де-Юре»',
     images: [{ url: 'https://dejure-help.ru/images/konopkin.jpg', width: 1200, height: 630 }],
@@ -101,7 +101,7 @@ export default function SporySVoenkomatomPage() {
         name: 'Оспаривание решений и действий военкомата',
         serviceType: 'Юридическая помощь при оспаривании решений и действий военкомата и призывной комиссии',
         url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/',
-        description: 'Проверим решение и документы, определим подходящий порядок обжалования, подготовим жалобу или административный иск и представим ваши интересы.',
+        description: 'Проверим решение и документы, определим подходящий порядок обжалования, подготовим жалобу или административный иск и представим ваши интересы. 📞 +7 (4742) 20-15-25.',
         areaServed: {
           '@type': 'AdministrativeArea',
           name: 'Липецк и Липецкая область'
@@ -145,7 +145,7 @@ export default function SporySVoenkomatomPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#webpage',
         url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/',
         name: 'Оспаривание решений военкомата в Липецке — адвокат | Де-Юре',
-        description: 'Проверка решений и действий военкомата и призывной комиссии, подготовка жалобы или административного иска, представительство. ЮК «Де-Юре».',
+        description: 'Проверка решений и действий военкомата и призывной комиссии, подготовка жалобы или административного иска, представительство. ЮК «Де-Юре». 📞 +7 (4742) 20-15-25.',
         breadcrumb: { '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#breadcrumb' },
         mainEntity: { '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#service' },
         isPartOf: { '@id': 'https://dejure-help.ru/#website' },

@@ -3,15 +3,13 @@ import PokupkaProdazhaBiznesaClient from './PokupkaProdazhaBiznesaClient';
 
 export const metadata: Metadata = {
   title: 'Покупка и продажа бизнеса в Липецке — юридическое сопровождение | Де-Юре',
-  description:
-    'Проверка и сопровождение покупки или продажи действующего бизнеса: due diligence, структура сделки, договоры, расчёты, закрытие и переход управления.',
+  description: 'Проверка и сопровождение покупки или продажи действующего бизнеса: due diligence, структура сделки, договоры, расчёты, закрытие и переход управления. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/'
   },
   openGraph: {
     title: 'Покупка и продажа бизнеса в Липецке — юридическое сопровождение | Де-Юре',
-    description:
-      'Проверка и сопровождение покупки или продажи действующего бизнеса: due diligence, структура сделки, договоры, расчёты, закрытие и переход управления.',
+    description: 'Проверка и сопровождение покупки или продажи действующего бизнеса: due diligence, структура сделки, договоры, расчёты, закрытие и переход управления. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/korporativnyj-yurist/pokupka-prodazha-biznesa/',
     type: 'website',
         images: [

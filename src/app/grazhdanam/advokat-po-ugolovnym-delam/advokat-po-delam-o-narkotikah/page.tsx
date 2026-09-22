@@ -3,15 +3,13 @@ import AdvokatNarkotikiClient from './AdvokatNarkotikiClient';
 
 export const metadata: Metadata = {
   title: 'Адвокат по статье 228 в Липецке — дела о наркотиках | Де-Юре',
-  description:
-    'Защита по делам о наркотиках (ст. 228, 228.1 УК РФ) в Липецке. Проверка законности задержания, досмотра, экспертиз и веса вещества. Следственный опыт.',
+  description: 'Защита по делам о наркотиках (ст. 228, 228.1 УК РФ) в Липецке. Проверка законности задержания, досмотра, экспертиз и веса вещества. Следственный опыт. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-delam-o-narkotikah/',
   },
   openGraph: {
     title: 'Адвокат по статье 228 в Липецке — дела о наркотиках | Де-Юре',
-    description:
-      'Защита по делам о наркотиках (ст. 228, 228.1 УК РФ) в Липецке. Проверка законности задержания, досмотра, экспертиз и веса вещества. Следственный опыт.',
+    description: 'Защита по делам о наркотиках (ст. 228, 228.1 УК РФ) в Липецке. Проверка законности задержания, досмотра, экспертиз и веса вещества. Следственный опыт. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-delam-o-narkotikah/',
     type: 'website',
     images: [

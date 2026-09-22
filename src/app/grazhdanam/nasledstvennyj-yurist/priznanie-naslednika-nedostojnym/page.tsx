@@ -3,13 +3,13 @@ import PriznanieNaslednikaNedostojnymClient from './PriznanieNaslednikaNedostojn
 
 export const metadata: Metadata = {
   title: 'Признание наследника недостойным в Липецке | Де-Юре',
-  description: 'Юридическая помощь по делам о признании наследника недостойным и исключении из наследства в Липецке. Проверим основания по ст. 1117 ГК РФ и представим интересы в суде.',
+  description: 'Юридическая помощь по делам о признании наследника недостойным и исключении из наследства в Липецке. Проверим основания по ст. 1117 ГК РФ и представим интересы в суде. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/priznanie-naslednika-nedostojnym/',
   },
   openGraph: {
     title: 'Признание наследника недостойным в Липецке | Де-Юре',
-    description: 'Юридическая помощь по делам о признании наследника недостойным и исключении из наследства в Липецке. Проверим основания по ст. 1117 ГК РФ и представим интересы в суде.',
+    description: 'Юридическая помощь по делам о признании наследника недостойным и исключении из наследства в Липецке. Проверим основания по ст. 1117 ГК РФ и представим интересы в суде. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/nasledstvennyj-yurist/priznanie-naslednika-nedostojnym/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',

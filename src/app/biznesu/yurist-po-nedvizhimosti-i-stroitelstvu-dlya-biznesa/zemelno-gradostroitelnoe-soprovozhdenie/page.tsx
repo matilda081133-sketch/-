@@ -4,15 +4,13 @@ import ZemelnoGradostroitelnoeClient from './ZemelnoGradostroitelnoeClient';
 
 export const metadata: Metadata = {
   title: 'Земельный и градостроительный юрист для бизнеса в Липецке | Де-Юре',
-  description:
-    'Земельно-градостроительное сопровождение бизнеса в Липецке: аудит участка, получение земли, ВРИ и ПЗЗ, ГПЗУ, планировка территории, ЗОУИТ и обжалование отказов.',
+  description: 'Земельно-градостроительное сопровождение бизнеса в Липецке: аудит участка, получение земли, ВРИ и ПЗЗ, ГПЗУ, планировка территории, ЗОУИТ и обжалование отказов. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/zemelno-gradostroitelnoe-soprovozhdenie/'
   },
   openGraph: {
     title: 'Земельный и градостроительный юрист для бизнеса в Липецке | Де-Юре',
-    description:
-      'Земельно-градостроительное сопровождение бизнеса в Липецке: аудит участка, получение земли, ВРИ и ПЗЗ, ГПЗУ, планировка территории, ЗОУИТ и обжалование отказов.',
+    description: 'Земельно-градостроительное сопровождение бизнеса в Липецке: аудит участка, получение земли, ВРИ и ПЗЗ, ГПЗУ, планировка территории, ЗОУИТ и обжалование отказов. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/zemelno-gradostroitelnoe-soprovozhdenie/',
     siteName: 'ЮК «Де-Юре»',
     images: [
@@ -30,8 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Земельный и градостроительный юрист для бизнеса в Липецке | Де-Юре',
-    description:
-      'Земельно-градостроительное сопровождение бизнеса в Липецке: аудит участка, получение земли, ВРИ и ПЗЗ, ГПЗУ, планировка территории, ЗОУИТ и обжалование отказов.',
+    description: 'Земельно-градостроительное сопровождение бизнеса в Липецке: аудит участка, получение земли, ВРИ и ПЗЗ, ГПЗУ, планировка территории, ЗОУИТ и обжалование отказов. 📞 +7 (4742) 20-15-25.',
     images: ['https://dejure-help.ru/images/og/real-estate-b2b-lipetsk-og.jpg']
   }
 };

@@ -4,13 +4,13 @@ import LisheniePravClient from './LisheniePravClient';
 
 export const metadata: Metadata = {
   title: 'Защита при лишении водительских прав в Липецке — адвокат по КоАП РФ | Де-Юре',
-  description: 'Помощь автоюриста при угрозе лишения водительских прав в Липецке: ст. 12.8, 12.26, 12.15, 12.27 КоАП РФ. Анализ протоколов, защита в суде и обжалование.',
+  description: 'Помощь автоюриста при угрозе лишения водительских прав в Липецке: ст. 12.8, 12.26, 12.15, 12.27 КоАП РФ. Анализ протоколов, защита в суде и обжалование. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/avtoyurist/lishenie-voditelskih-prav/',
   },
   openGraph: {
     title: 'Защита при лишении водительских прав в Липецке | Де-Юре',
-    description: 'Защита интересов водителей по делам об административных правонарушениях: проверка процедур, видеозаписей и обжалование постановлений.',
+    description: 'Защита интересов водителей по делам об административных правонарушениях: проверка процедур, видеозаписей и обжалование постановлений. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/avtoyurist/lishenie-voditelskih-prav/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -94,7 +94,7 @@ export default function LisheniePravPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/lishenie-voditelskih-prav/#webpage',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/lishenie-voditelskih-prav/',
         name: 'Защита при лишении водительских прав в Липецке — адвокат по КоАП РФ | Де-Юре',
-        description: 'Помощь автоюриста при угрозе лишения водительских прав в Липецке: ст. 12.8, 12.26, 12.15, 12.27 КоАП РФ.',
+        description: 'Помощь автоюриста при угрозе лишения водительских прав в Липецке: ст. 12.8, 12.26, 12.15, 12.27 КоАП РФ. 📞 +7 (4742) 20-15-25.',
         inLanguage: 'ru-RU',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/lishenie-voditelskih-prav/#service'
@@ -105,7 +105,7 @@ export default function LisheniePravPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/lishenie-voditelskih-prav/#service',
         name: 'Защита при лишении водительских прав',
         serviceType: 'Юридическая помощь и защита по делам об административных правонарушениях с риском лишения прав',
-        description: 'Проверка протоколов ГИБДД, освидетельствования, видеозаписей, формирование правовой позиции и защита водителя в мировых и районных судах.',
+        description: 'Проверка протоколов ГИБДД, освидетельствования, видеозаписей, формирование правовой позиции и защита водителя в мировых и районных судах. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/lishenie-voditelskih-prav/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

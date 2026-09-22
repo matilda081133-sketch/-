@@ -7,13 +7,13 @@ import CopyAddressButton from '@/components/CopyAddressButton';
 
 export const metadata = {
   title: 'Контакты юридической компании «Де-Юре» в Липецке',
-  description: 'Телефон, адрес офиса, режим работы и реквизиты ЮК «Де-Юре» в Липецке. Свяжитесь с нами или постройте маршрут до офиса.',
+  description: 'Телефон, адрес офиса, режим работы и реквизиты ЮК «Де-Юре» в Липецке. Свяжитесь с нами или постройте маршрут до офиса. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/kontakty/',
   },
   openGraph: {
     title: 'Контакты юридической компании «Де-Юре» в Липецке',
-    description: 'Телефон, адрес офиса, режим работы и реквизиты ЮК «Де-Юре» в Липецке. Свяжитесь с нами или постройте маршрут до офиса.',
+    description: 'Телефон, адрес офиса, режим работы и реквизиты ЮК «Де-Юре» в Липецке. Свяжитесь с нами или постройте маршрут до офиса. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/kontakty/',
     images: [{ url: 'https://dejure-help.ru/images/office-building.jpg', width: 1200, height: 630 }],
   }
@@ -28,7 +28,7 @@ export default function ContactsPage() {
     url: 'https://dejure-help.ru/',
     logo: 'https://dejure-help.ru/images/logo_dark.png',
     image: 'https://dejure-help.ru/images/office-building.jpg',
-    description: 'Юридическая помощь гражданам и бизнесу в Липецке.',
+    description: 'Юридическая помощь гражданам и бизнесу в Липецке. 📞 +7 (4742) 20-15-25.',
     telephone: '+7 (4742) 20-15-25',
     email: 'info@dejure-help.ru',
     address: {
@@ -322,6 +322,10 @@ export default function ContactsPage() {
                     <img 
                       src="/images/office-building.jpg" 
                       alt="Здание бизнес-центра Антарес в Липецке" 
+                      width={600}
+                      height={280}
+                      loading="lazy"
+                      decoding="async"
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   </div>
@@ -341,6 +345,10 @@ export default function ContactsPage() {
                     <img 
                       src="/images/office-entrance.jpg" 
                       alt="Вход в офис 213 юридической компании Де-Юре" 
+                      width={600}
+                      height={280}
+                      loading="lazy"
+                      decoding="async"
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   </div>

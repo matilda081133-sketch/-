@@ -4,15 +4,13 @@ import ArendaKommercheskayaClient from './ArendaKommercheskayaClient';
 
 export const metadata: Metadata = {
   title: 'Юридическое сопровождение аренды коммерческой недвижимости в Липецке | Де-Юре',
-  description:
-    'Юрист по аренде коммерческой недвижимости в Липецке: проверка и подготовка договора, переговоры, регистрация, изменение условий, расторжение и возврат объекта.',
+  description: 'Юрист по аренде коммерческой недвижимости в Липецке: проверка и подготовка договора, переговоры, регистрация, изменение условий, расторжение и возврат объекта. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-arendy-kommercheskoy-nedvizhimosti/'
   },
   openGraph: {
     title: 'Юридическое сопровождение аренды коммерческой недвижимости в Липецке | Де-Юре',
-    description:
-      'Юрист по аренде коммерческой недвижимости в Липецке: проверка и подготовка договора, переговоры, регистрация, изменение условий, расторжение и возврат объекта.',
+    description: 'Юрист по аренде коммерческой недвижимости в Липецке: проверка и подготовка договора, переговоры, регистрация, изменение условий, расторжение и возврат объекта. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/yuridicheskoe-soprovozhdenie-arendy-kommercheskoy-nedvizhimosti/',
     siteName: 'ЮК «Де-Юре»',
     images: [
@@ -30,8 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Юридическое сопровождение аренды коммерческой недвижимости в Липецке | Де-Юре',
-    description:
-      'Юрист по аренде коммерческой недвижимости в Липецке: проверка и подготовка договора, переговоры, регистрация, изменение условий, расторжение и возврат объекта.',
+    description: 'Юрист по аренде коммерческой недвижимости в Липецке: проверка и подготовка договора, переговоры, регистрация, изменение условий, расторжение и возврат объекта. 📞 +7 (4742) 20-15-25.',
     images: ['https://dejure-help.ru/images/og/real-estate-b2b-lipetsk-og.jpg']
   }
 };

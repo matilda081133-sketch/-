@@ -3,15 +3,13 @@ import ZashchitaPoterpevshegoClient from './ZashchitaPoterpevshegoClient';
 
 export const metadata: Metadata = {
   title: 'Адвокат для потерпевшего по уголовному делу в Липецке | Де-Юре',
-  description:
-    'Представительство потерпевшего на следствии и в суде: ходатайства, жалобы, гражданский иск, возмещение вреда и обжалование решений.',
+  description: 'Представительство потерпевшего на следствии и в суде: ходатайства, жалобы, гражданский иск, возмещение вреда и обжалование решений. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/',
   },
   openGraph: {
     title: 'Адвокат для потерпевшего по уголовному делу в Липецке | Де-Юре',
-    description:
-      'Представительство потерпевшего на следствии и в суде: ходатайства, жалобы, гражданский иск, возмещение вреда и обжалование решений.',
+    description: 'Представительство потерпевшего на следствии и в суде: ходатайства, жалобы, гражданский иск, возмещение вреда и обжалование решений. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/',
     type: 'website',
     images: [

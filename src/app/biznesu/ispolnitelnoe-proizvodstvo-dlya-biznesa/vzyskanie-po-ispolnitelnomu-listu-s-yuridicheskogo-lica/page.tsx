@@ -3,10 +3,10 @@ import VzyskanieClient from './VzyskanieClient';
 
 export const metadata: Metadata = {
   title: 'Взыскание по исполнительному листу с юридического лица в Липецке | ЮК «Де-Юре»',
-  description: 'Юридическое сопровождение взыскания задолженности по исполнительным листам с юридических лиц в Липецке: предъявление в банки, работа с ФССП, розыск активов должника, обжалование бездействия приставов.',
+  description: 'Юридическое сопровождение взыскания задолженности по исполнительным листам с юридических лиц в Липецке: предъявление в банки, работа с ФССП, розыск активов должника, обжалование бездействия приставов. 📞 +7 (4742) 20-15-25.',
   openGraph: {
     title: 'Взыскание по исполнительному листу с юридического лица в Липецке | ЮК «Де-Юре»',
-    description: 'Поможем реально получить деньги по исполнительному листу с компании-должника: напрямую через банк или через ФССП с розыском имущества и контролем действий пристава.',
+    description: 'Поможем реально получить деньги по исполнительному листу с компании-должника: напрямую через банк или через ФССП с розыском имущества и контролем действий пристава. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -103,7 +103,7 @@ export default function VzyskaniePage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/#webpage',
         name: 'Взыскание по исполнительному листу с юридического лица в Липецке | ЮК «Де-Юре»',
-        description: 'Юридическое сопровождение взыскания задолженности по исполнительным листам с юридических лиц в Липецке: предъявление в банки, работа с ФССП, розыск активов должника, обжалование бездействия приставов.',
+        description: 'Юридическое сопровождение взыскания задолженности по исполнительным листам с юридических лиц в Липецке: предъявление в банки, работа с ФССП, розыск активов должника, обжалование бездействия приставов. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/',
         about: {
           '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/#service'
@@ -113,7 +113,7 @@ export default function VzyskaniePage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/#service',
         name: 'Взыскание по исполнительному листу с юридического лица',
-        description: 'Взыскание по исполнительному листу с юридического лица в Липецке: предъявление в банки, работа с ФССП, розыск счетов и имущества, обжалование бездействия судебного пристава.',
+        description: 'Взыскание по исполнительному листу с юридического лица в Липецке: предъявление в банки, работа с ФССП, розыск счетов и имущества, обжалование бездействия судебного пристава. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/vzyskanie-po-ispolnitelnomu-listu-s-yuridicheskogo-lica/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

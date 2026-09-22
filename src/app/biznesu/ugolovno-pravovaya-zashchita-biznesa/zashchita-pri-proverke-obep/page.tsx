@@ -3,16 +3,14 @@ import ZashchitaPriProverkeObepClient from './ZashchitaPriProverkeObepClient';
 
 export const metadata: Metadata = {
   title: 'Защита бизнеса при проверке ОБЭП в Липецке | Де-Юре',
-  description:
-    'Помогаем бизнесу при проверке ОБЭП: анализируем запросы, готовим документы, руководителей и сотрудников, координируем защиту. Липецк и область.',
+  description: 'Помогаем бизнесу при проверке ОБЭП: анализируем запросы, готовим документы, руководителей и сотрудников, координируем защиту. Липецк и область. 📞 +7 (4742) 20-15-25.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: 'Защита бизнеса при проверке ОБЭП | Де-Юре',
-    description:
-      'Оценим запрос и стадию проверки, подготовим позицию компании и организуем помощь руководителям и сотрудникам.',
+    description: 'Оценим запрос и стадию проверки, подготовим позицию компании и организуем помощь руководителям и сотрудникам. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -29,8 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Защита бизнеса при проверке ОБЭП в Липецке | Де-Юре',
-    description:
-      'Помогаем бизнесу при проверке ОБЭП: анализируем запросы, готовим документы, руководителей и сотрудников, координируем защиту. Липецк и область.',
+    description: 'Помогаем бизнесу при проверке ОБЭП: анализируем запросы, готовим документы, руководителей и сотрудников, координируем защиту. Липецк и область. 📞 +7 (4742) 20-15-25.',
     images: ['https://dejure-help.ru/images/og/zashchita-pri-proverke-obep-og.jpg'],
   },
   alternates: {
@@ -100,7 +97,7 @@ export default function ZashchitaPriProverkeObepPage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/#webpage',
         name: 'Защита бизнеса при проверке ОБЭП в Липецке | Де-Юре',
-        description: 'Помогаем бизнесу при проверке ОБЭП: анализируем запросы, готовим документы, руководителей и сотрудников, координируем защиту. Липецк и область.',
+        description: 'Помогаем бизнесу при проверке ОБЭП: анализируем запросы, готовим документы, руководителей и сотрудников, координируем защиту. Липецк и область. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/',
         about: {
           '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/#service'
@@ -110,8 +107,7 @@ export default function ZashchitaPriProverkeObepPage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/#service',
         name: 'Защита бизнеса при проверке ОБЭП в Липецке',
-        description:
-          'Помогаем бизнесу при проверке ОБЭП: анализируем запросы, готовим документы, руководителей и сотрудников, координируем защиту. Липецк и область.',
+        description: 'Помогаем бизнесу при проверке ОБЭП: анализируем запросы, готовим документы, руководителей и сотрудников, координируем защиту. Липецк и область. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-proverke-obep/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

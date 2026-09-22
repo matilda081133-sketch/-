@@ -3,16 +3,14 @@ import UgolovnoPravovayaZashchitaClient from './UgolovnoPravovayaZashchitaClient
 
 export const metadata: Metadata = {
   title: 'Уголовно-правовая защита бизнеса в Липецке | Де-Юре',
-  description:
-    'Помогаем компаниям, собственникам и руководителям при проверках, обысках и уголовном преследовании. Оценка рисков и координация защиты в Липецке.',
+  description: 'Помогаем компаниям, собственникам и руководителям при проверках, обысках и уголовном преследовании. Оценка рисков и координация защиты в Липецке. 📞 +7 (4742) 20-15-25.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: 'Уголовно-правовая защита бизнеса в Липецке — ЮК «Де-Юре»',
-    description:
-      'Оценка уголовно-правовых рисков, помощь при действиях правоохранительных органов и организация защиты бизнеса и руководителей.',
+    description: 'Оценка уголовно-правовых рисков, помощь при действиях правоохранительных органов и организация защиты бизнеса и руководителей. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -29,8 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Уголовно-правовая защита бизнеса в Липецке | Де-Юре',
-    description:
-      'Оценка уголовно-правовых рисков, помощь при действиях правоохранительных органов и организация защиты бизнеса и руководителей.',
+    description: 'Оценка уголовно-правовых рисков, помощь при действиях правоохранительных органов и организация защиты бизнеса и руководителей. 📞 +7 (4742) 20-15-25.',
     images: ['https://dejure-help.ru/images/og/ugolovno-pravovaya-zashchita-biznesa-og.jpg'],
   },
   alternates: {
@@ -94,7 +91,7 @@ export default function UgolovnoPravovayaZashchitaPage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/#webpage',
         name: 'Уголовно-правовая защита бизнеса в Липецке | Де-Юре',
-        description: 'Помогаем компаниям, собственникам и руководителям при проверках, обысках и уголовном преследовании. Оценка рисков и координация защиты в Липецке.',
+        description: 'Помогаем компаниям, собственникам и руководителям при проверках, обысках и уголовном преследовании. Оценка рисков и координация защиты в Липецке. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/',
         about: {
           '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/#service'
@@ -104,8 +101,7 @@ export default function UgolovnoPravovayaZashchitaPage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/#service',
         name: 'Уголовно-правовая защита бизнеса в Липецке',
-        description:
-          'Помогаем компаниям, собственникам и руководителям при проверках, обысках и уголовном преследовании. Оценка рисков и координация защиты в Липецке.',
+        description: 'Помогаем компаниям, собственникам и руководителям при проверках, обысках и уголовном преследовании. Оценка рисков и координация защиты в Липецке. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

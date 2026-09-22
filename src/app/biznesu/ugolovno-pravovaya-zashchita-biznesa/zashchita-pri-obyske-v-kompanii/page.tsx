@@ -3,16 +3,14 @@ import ZashchitaPriObyskeClient from './ZashchitaPriObyskeClient';
 
 export const metadata: Metadata = {
   title: 'Защита при обыске и выемке в компании в Липецке | Де-Юре',
-  description:
-    'Срочная помощь при обыске и выемке в офисе компании: выезд адвоката, фиксация нарушений, защита серверов и документов. Липецк и Липецкая область.',
+  description: 'Срочная помощь при обыске и выемке в офисе компании: выезд адвоката, фиксация нарушений, защита серверов и документов. Липецк и Липецкая область. 📞 +7 (4742) 20-15-25.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: 'Защита при обыске и выемке в компании | Де-Юре',
-    description:
-      'Контроль процедуры, фиксация нарушений, защита цифровой инфраструктуры и прав компании во время следственных действий.',
+    description: 'Контроль процедуры, фиксация нарушений, защита цифровой инфраструктуры и прав компании во время следственных действий. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',
@@ -29,8 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Защита при обыске и выемке в компании в Липецке | Де-Юре',
-    description:
-      'Срочная помощь при обыске и выемке в офисе компании: выезд адвоката, фиксация нарушений, защита серверов и документов. Липецк и Липецкая область.',
+    description: 'Срочная помощь при обыске и выемке в офисе компании: выезд адвоката, фиксация нарушений, защита серверов и документов. Липецк и Липецкая область. 📞 +7 (4742) 20-15-25.',
     images: ['https://dejure-help.ru/images/og/zashchita-pri-obyske-v-kompanii-og.jpg'],
   },
   alternates: {
@@ -100,7 +97,7 @@ export default function ZashchitaPriObyskePage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/#webpage',
         name: 'Защита при обыске и выемке в компании в Липецке | Де-Юре',
-        description: 'Срочная помощь при обыске и выемке в офисе компании: выезд адвоката, фиксация нарушений, защита серверов и документов. Липецк и Липецкая область.',
+        description: 'Срочная помощь при обыске и выемке в офисе компании: выезд адвоката, фиксация нарушений, защита серверов и документов. Липецк и Липецкая область. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/',
         about: {
           '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/#service'
@@ -110,8 +107,7 @@ export default function ZashchitaPriObyskePage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/#service',
         name: 'Защита при обыске и выемке в компании в Липецке',
-        description:
-          'Срочная помощь при обыске и выемке в офисе компании: выезд адвоката, фиксация нарушений, защита серверов и документов. Липецк и Липецкая область.',
+        description: 'Срочная помощь при обыске и выемке в офисе компании: выезд адвоката, фиксация нарушений, защита серверов и документов. Липецк и Липецкая область. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-pri-obyske-v-kompanii/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

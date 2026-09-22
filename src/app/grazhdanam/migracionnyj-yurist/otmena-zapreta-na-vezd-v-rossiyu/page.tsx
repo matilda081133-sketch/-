@@ -3,13 +3,13 @@ import OtmenaZapretaNaVezdVRossiyuClient from './OtmenaZapretaNaVezdVRossiyuClie
 
 export const metadata: Metadata = {
   title: 'Отмена запрета на въезд в Россию в Липецке — миграционный адвокат | Де-Юре',
-  description: 'Снятие запрета и неразрешения на въезд в РФ: проверка по базам МВД/ФСБ, досудебное и судебное обжалование, защита семьи. ЮК «Де-Юре».',
+  description: 'Снятие запрета и неразрешения на въезд в РФ: проверка по базам МВД/ФСБ, досудебное и судебное обжалование, защита семьи. ЮК «Де-Юре». 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otmena-zapreta-na-vezd-v-rossiyu/',
   },
   openGraph: {
     title: 'Отмена запрета на въезд в Россию в Липецке — миграционный адвокат | Де-Юре',
-    description: 'Снятие запрета и неразрешения на въезд в РФ: проверка по базам МВД/ФСБ, досудебное и судебное обжалование, защита семьи. ЮК «Де-Юре».',
+    description: 'Снятие запрета и неразрешения на въезд в РФ: проверка по базам МВД/ФСБ, досудебное и судебное обжалование, защита семьи. ЮК «Де-Юре». 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/migracionnyj-yurist/otmena-zapreta-na-vezd-v-rossiyu/',
     siteName: 'Юридическая компания «Де-Юре»',
     locale: 'ru_RU',

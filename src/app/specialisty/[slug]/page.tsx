@@ -335,6 +335,10 @@ export default async function SpecialistPage({ params }: PageProps) {
                 <img 
                   src={member.image} 
                   className="specialist-img-responsive"
+                  width={440}
+                  height={540}
+                  fetchPriority="high"
+                  decoding="async"
                   alt={
                     member.slug === 'konopkin-dmitriy-sergeevich'
                       ? 'Конопкин Дмитрий Сергеевич — адвокат'

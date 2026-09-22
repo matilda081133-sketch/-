@@ -3,13 +3,13 @@ import ObzhalovanieClient from './ObzhalovanieClient';
 
 export const metadata = {
   title: 'Обжалование действий судебного пристава в Липецке | Де-Юре',
-  description: 'Обжалуем незаконные постановления, действия и бездействие судебных приставов в Липецке. Анализ материалов, жалоба руководителю или обращение в суд.',
+  description: 'Обжалуем незаконные постановления, действия и бездействие судебных приставов в Липецке. Анализ материалов, жалоба руководителю или обращение в суд. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/',
   },
   openGraph: {
     title: 'Обжалование действий и бездействия судебного пристава | Де-Юре',
-    description: 'Проверим материалы исполнительного производства, выберем порядок обжалования, подготовим документы и представим Ваши интересы.',
+    description: 'Проверим материалы исполнительного производства, выберем порядок обжалования, подготовим документы и представим Ваши интересы. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -99,7 +99,7 @@ export default function ObzhalovaniePage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/#webpage',
         name: 'Обжалование действий судебного пристава в Липецке | Де-Юре',
-        description: 'Обжалуем незаконные постановления, действия и бездействие судебных приставов в Липецке. Анализ материалов, жалоба руководителю или обращение в суд.',
+        description: 'Обжалуем незаконные постановления, действия и бездействие судебных приставов в Липецке. Анализ материалов, жалоба руководителю или обращение в суд. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/#service'
@@ -109,7 +109,7 @@ export default function ObzhalovaniePage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/#service',
         name: 'Обжалование действий и бездействия судебного пристава в Липецке',
-        description: 'Обжалование незаконных постановлений, действий и бездействия судебных приставов-исполнителей. Анализ материалов дела, жалоба в порядке подчинённости, административный иск в суд.',
+        description: 'Обжалование незаконных постановлений, действий и бездействия судебных приставов-исполнителей. Анализ материалов дела, жалоба в порядке подчинённости, административный иск в суд. 📞 +7 (4742) 20-15-25.',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'
         },

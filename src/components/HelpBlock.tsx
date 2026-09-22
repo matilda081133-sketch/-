@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 interface HelpItem {
   title: string;
@@ -60,6 +60,10 @@ export default function HelpBlock({
             <img 
               src="/images/team.jpg" 
               alt={title}
+              width={600}
+              height={300}
+              loading="lazy"
+              decoding="async"
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
             />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(23, 50, 77, 0.2), transparent)' }}></div>

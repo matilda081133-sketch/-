@@ -3,13 +3,13 @@ import VnesudebnoeBankrotstvoMfcClient from './VnesudebnoeBankrotstvoMfcClient';
 
 export const metadata: Metadata = {
   title: 'Банкротство через МФЦ в Липецке — помощь юриста | Де-Юре',
-  description: 'Проверим условия внесудебного банкротства через МФЦ, исполнительные производства и список кредиторов. Поможем подготовить заявление без лишних рисков.',
+  description: 'Проверим условия внесудебного банкротства через МФЦ, исполнительные производства и список кредиторов. Поможем подготовить заявление без лишних рисков. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/',
   },
   openGraph: {
     title: 'Внесудебное банкротство через МФЦ в Липецке | Де-Юре',
-    description: 'Проверим, подходит ли бесплатная процедура через МФЦ, и поможем корректно подготовить сведения о долгах и кредиторах.',
+    description: 'Проверим, подходит ли бесплатная процедура через МФЦ, и поможем корректно подготовить сведения о долгах и кредиторах. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/',
     siteName: 'Юридическая компания Де-Юре',
     locale: 'ru_RU',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Внесудебное банкротство через МФЦ в Липецке | Де-Юре',
-    description: 'Проверим условия внесудебного банкротства через МФЦ, исполнительные производства и список кредиторов.',
+    description: 'Проверим условия внесудебного банкротства через МФЦ, исполнительные производства и список кредиторов. 📞 +7 (4742) 20-15-25.',
     images: ['https://dejure-help.ru/images/og/bankrotstvo-cherez-mfc-og.jpg'],
   },
 };

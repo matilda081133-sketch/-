@@ -4,13 +4,13 @@ import OsparivanieVinyClient from './OsparivanieVinyClient';
 
 export const metadata: Metadata = {
   title: 'Оспаривание вины в ДТП в Липецке — помощь автоюриста | Де-Юре',
-  description: 'Помощь автоюриста по оспариванию вины в ДТП в Липецке: анализ схемы и видео, трасологическая экспертиза, защита в ГИБДД и суде.',
+  description: 'Помощь автоюриста по оспариванию вины в ДТП в Липецке: анализ схемы и видео, трасологическая экспертиза, защита в ГИБДД и суде. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/',
   },
   openGraph: {
     title: 'Оспаривание вины в ДТП в Липецке | Де-Юре',
-    description: 'Помощь автоюриста по оспариванию вины в ДТП в Липецке: анализ схемы и видео, трасологическая экспертиза, защита в ГИБДД и суде.',
+    description: 'Помощь автоюриста по оспариванию вины в ДТП в Липецке: анализ схемы и видео, трасологическая экспертиза, защита в ГИБДД и суде. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -98,7 +98,7 @@ export default function OsparivanieVinyPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/#webpage',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/',
         name: 'Оспаривание вины в ДТП в Липецке — помощь автоюриста | Де-Юре',
-        description: 'Помощь автоюриста по оспариванию вины в ДТП в Липецке: анализ схемы и видео, трасологическая экспертиза, защита в ГИБДД и суде.',
+        description: 'Помощь автоюриста по оспариванию вины в ДТП в Липецке: анализ схемы и видео, трасологическая экспертиза, защита в ГИБДД и суде. 📞 +7 (4742) 20-15-25.',
         inLanguage: 'ru-RU',
         about: {
           '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/#service'
@@ -109,7 +109,7 @@ export default function OsparivanieVinyPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/#service',
         name: 'Оспаривание вины в ДТП',
         serviceType: 'Юридическая помощь по установлению обстоятельств ДТП и оспариванию вины',
-        description: 'Анализ материалов ДТП, видеозаписей, схемы происшествия, назначение судебной автотехнической экспертизы и защита прав водителя в суде.',
+        description: 'Анализ материалов ДТП, видеозаписей, схемы происшествия, назначение судебной автотехнической экспертизы и защита прав водителя в суде. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/grazhdanam/avtoyurist/osparivanie-viny-v-dtp/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'

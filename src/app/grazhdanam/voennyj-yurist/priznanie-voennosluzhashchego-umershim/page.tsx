@@ -12,13 +12,13 @@ import CasesBlock from '@/components/CasesBlock';
 
 export const metadata = {
   title: 'Признание безвестно отсутствующим и объявление умершим | Де-Юре',
-  description: 'Помощь семье пропавшего военнослужащего в Липецке: проверка обстоятельств и сроков, подготовка заявления, сбор доказательств и представительство в суде.',
+  description: 'Помощь семье пропавшего военнослужащего в Липецке: проверка обстоятельств и сроков, подготовка заявления, сбор доказательств и представительство в суде. 📞 +7 (4742) 20-15-25.',
   alternates: {
     canonical: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
   },
   openGraph: {
     title: 'Признание безвестно отсутствующим и объявление умершим | Де-Юре',
-    description: 'Помощь семье пропавшего военнослужащего в Липецке: проверка обстоятельств и сроков, подготовка заявления, сбор доказательств и представительство в суде.',
+    description: 'Помощь семье пропавшего военнослужащего в Липецке: проверка обстоятельств и сроков, подготовка заявления, сбор доказательств и представительство в суде. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
     siteName: 'ЮК «Де-Юре»',
     images: [{ url: 'https://dejure-help.ru/images/konopkin.jpg', width: 1200, height: 630 }],
@@ -65,7 +65,7 @@ export default function PriznanieUmershimPage() {
         name: 'Признание военнослужащего безвестно отсутствующим или объявление умершим',
         serviceType: 'Юридическая помощь по признанию военнослужащего безвестно отсутствующим или объявлению умершим',
         url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
-        description: 'Помощь семье пропавшего военнослужащего: разграничение процедур, сбор доказательств, истребование документов и судебная защита в Липецке.',
+        description: 'Помощь семье пропавшего военнослужащего: разграничение процедур, сбор доказательств, истребование документов и судебная защита в Липецке. 📞 +7 (4742) 20-15-25.',
         provider: { '@id': 'https://dejure-help.ru/#organization' },
         areaServed: ['Липецк', 'Липецкая область', 'Россия']
       },
@@ -74,7 +74,7 @@ export default function PriznanieUmershimPage() {
         '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
         name: 'Дмитрий Сергеевич Конопкин',
         jobTitle: 'Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»',
-        description: 'Реестровый номер 48/812 в реестре адвокатов Липецкой области. Специалист по защите прав военнослужащих и их семей.',
+        description: 'Реестровый номер 48/812 в реестре адвокатов Липецкой области. Специалист по защите прав военнослужащих и их семей. 📞 +7 (4742) 20-15-25.',
         image: 'https://dejure-help.ru/images/konopkin.jpg',
         url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
         worksFor: { '@id': 'https://dejure-help.ru/#organization' }
@@ -94,7 +94,7 @@ export default function PriznanieUmershimPage() {
         '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/#webpage',
         url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
         name: 'Признание военнослужащего безвестно отсутствующим или объявление умершим — юрист в Липецке | Де-Юре',
-        description: 'Помощь семье пропавшего военнослужащего: разграничение процедур, сбор доказательств, истребование документов и судебная защита в Липецке.',
+        description: 'Помощь семье пропавшего военнослужащего: разграничение процедур, сбор доказательств, истребование документов и судебная защита в Липецке. 📞 +7 (4742) 20-15-25.',
         breadcrumb: { '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/#breadcrumb' },
         mainEntity: { '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/#service' }
       },

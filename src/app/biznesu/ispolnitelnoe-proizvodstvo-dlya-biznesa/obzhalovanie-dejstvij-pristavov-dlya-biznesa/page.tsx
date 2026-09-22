@@ -3,10 +3,10 @@ import ObzhalovanieClient from './ObzhalovanieClient';
 
 export const metadata: Metadata = {
   title: 'Обжалование действий судебных приставов для бизнеса в Липецке | ЮК «Де-Юре»',
-  description: 'Юридическая помощь бизнесу при незаконных действиях или бездействии судебных приставов в Липецке: обжалование незаконных арестов счетов и имущества, отмена постановлений, жалобы в ФССП, прокуратуру и арбитражный суд.',
+  description: 'Юридическая помощь бизнесу при незаконных действиях или бездействии судебных приставов в Липецке: обжалование незаконных арестов счетов и имущества, отмена постановлений, жалобы в ФССП, прокуратуру и арбитражный суд. 📞 +7 (4742) 20-15-25.',
   openGraph: {
     title: 'Обжалование действий судебных приставов для бизнеса в Липецке | ЮК «Де-Юре»',
-    description: 'Защищаем права компании при нарушениях со стороны ФССП: снимаем незаконные аресты, отменяем неправомерные постановления, добиваемся активных действий по взысканию.',
+    description: 'Защищаем права компании при нарушениях со стороны ФССП: снимаем незаконные аресты, отменяем неправомерные постановления, добиваемся активных действий по взысканию. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -107,7 +107,7 @@ export default function ObzhalovaniePage() {
         '@type': 'WebPage',
         '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/#webpage',
         name: 'Обжалование действий судебных приставов для бизнеса в Липецке | ЮК «Де-Юре»',
-        description: 'Юридическая помощь бизнесу при незаконных действиях или бездействии судебных приставов в Липецке: обжалование незаконных арестов счетов и имущества, отмена постановлений, жалобы в ФССП, прокуратуру и арбитражный суд.',
+        description: 'Юридическая помощь бизнесу при незаконных действиях или бездействии судебных приставов в Липецке: обжалование незаконных арестов счетов и имущества, отмена постановлений, жалобы в ФССП, прокуратуру и арбитражный суд. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/',
         about: {
           '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/#service'
@@ -117,7 +117,7 @@ export default function ObzhalovaniePage() {
         '@type': 'Service',
         '@id': 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/#service',
         name: 'Обжалование действий судебных приставов для бизнеса',
-        description: 'Юридическая помощь бизнесу при незаконных действиях или бездействии судебных приставов в Липецке: обжалование незаконных арестов счетов и имущества, отмена постановлений, жалобы в ФССП, прокуратуру и арбитражный суд.',
+        description: 'Юридическая помощь бизнесу при незаконных действиях или бездействии судебных приставов в Липецке: обжалование незаконных арестов счетов и имущества, отмена постановлений, жалобы в ФССП, прокуратуру и арбитражный суд. 📞 +7 (4742) 20-15-25.',
         url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/obzhalovanie-dejstvij-pristavov-dlya-biznesa/',
         provider: {
           '@id': 'https://dejure-help.ru/#organization'
