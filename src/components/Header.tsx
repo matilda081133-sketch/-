@@ -98,7 +98,7 @@ export default function Header() {
               style={{ height: '110px', width: 'auto', transform: 'scale(1.25)', transformOrigin: 'left center' }} 
             />
             <img 
-              src="/images/logo_dark.webp" 
+              src="/images/logo_mobile.png" 
               alt="Де-Юре" 
               className="mobile-logo"
               width={56}

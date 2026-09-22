@@ -71,7 +71,8 @@ export default function CookieConsent() {
         padding: '20px 24px',
         boxShadow: '0 12px 36px rgba(16, 39, 59, 0.18)',
         zIndex: 9999,
-        animation: 'deJureCookieFadeIn 0.4s ease-out'
+        animation: 'deJureCookieFadeIn 0.4s ease-out',
+        willChange: 'transform, opacity'
       }}
     >
       {/* Close / decline button */}

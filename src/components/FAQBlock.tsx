@@ -135,7 +135,7 @@ export default function FAQBlock({
                     height: '36px',
                     borderRadius: '50%',
                     border: '1px solid rgba(255, 255, 255, 0.2)',
-                    transition: 'all 0.3s ease',
+                    transition: 'transform 0.3s ease, background-color 0.3s ease',
                     flexShrink: 0,
                     color: 'var(--color-white)'
                   }}>
