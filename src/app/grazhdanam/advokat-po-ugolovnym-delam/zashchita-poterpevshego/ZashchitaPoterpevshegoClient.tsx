@@ -699,7 +699,7 @@ export default function ZashchitaPoterpevshegoClient() {
                 <div style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', marginBottom: '6px' }}>ст. 131 УПК РФ</div>
                 <h4 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', margin: '0 0 8px 0' }}>Взыскание расходов на адвоката</h4>
                 <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
-                  Вознаграждение адвоката-представителя признаётся процессуальными издержками и по заявлению потерпевшего взыскивается судом с осуждённого в полном объёме или разумных пределах.
+                  Расходы потерпевшего на представителя могут быть признаны процессуальными издержками и взысканы в порядке, установленном УПК РФ. Размер, источник и порядок возмещения расходов определяет суд с учётом обстоятельств дела.
                 </p>
               </div>
 

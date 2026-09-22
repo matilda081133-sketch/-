@@ -28,6 +28,7 @@ interface PricingBlockProps {
   title?: string;
   subtitle?: string | React.ReactNode;
   tiers?: PricingTier[];
+  pageUrl?: string;
   ctaTitle?: string | React.ReactNode;
   ctaSubtitle?: string | React.ReactNode;
   ctaButtonText?: string;
@@ -42,6 +43,7 @@ export default function PricingBlock({
   title = "Стоимость юридических услуг в Липецке",
   subtitle = "Честные цены, закрепленные в договоре. Никаких скрытых платежей.",
   tiers: propTiers,
+  pageUrl,
   ctaTitle = "Точную стоимость определим до начала работы",
   ctaSubtitle = "Сначала изучим обстоятельства и документы, предложим подходящий формат помощи и согласуем стоимость. Она не изменится без согласования с вами.",
   ctaButtonText = "Получить расчёт стоимости",
@@ -130,7 +132,7 @@ export default function PricingBlock({
                 'price': numPrice || '0',
                 'priceCurrency': 'RUB',
                 'availability': 'https://schema.org/InStock',
-                'url': 'https://dejure-help.ru/#pricing'
+                'url': pageUrl ? (pageUrl.endsWith('/') ? `${pageUrl}#pricing` : `${pageUrl}/#pricing`) : 'https://dejure-help.ru/#pricing'
               };
             })
           })

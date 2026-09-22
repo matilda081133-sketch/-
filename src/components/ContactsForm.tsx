@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import PhoneInput from './PhoneInput';
 import { sendLeadToCRM } from '../lib/crm';
 
 interface ContactsFormProps {
@@ -205,12 +204,14 @@ export default function ContactsForm({
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <label htmlFor="phone" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Телефон <span style={{ color: 'var(--color-gold)' }}>*</span></label>
-          <PhoneInput 
+          <input 
+            type="tel"
             id="phone"
             name="phone"
             autoComplete="tel"
             required
-            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            pattern="^\+?[0-9() -]{7,20}$"
+            placeholder="+7 (___) ___-__-__"
             style={{ 
               padding: '14px 16px', 
               border: '1px solid rgba(23, 50, 77, 0.2)', 
@@ -222,6 +223,8 @@ export default function ContactsForm({
               color: 'var(--color-deep-blue)',
               fontFamily: 'inherit'
             }} 
+            onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'}
+            onBlur={(e) => e.target.style.borderColor = 'rgba(23, 50, 77, 0.2)'}
           />
         </div>
         
