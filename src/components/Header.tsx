@@ -83,10 +83,10 @@ export default function Header() {
 
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="container header-container" style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', width: '100%' }}>
         
         {/* Логотип */}
-        <div className="header-logo-col" style={{ flex: '0.4 0 0', display: 'flex', alignItems: 'center' }}>
+        <div className="header-logo-col" style={{ display: 'flex', alignItems: 'center', justifySelf: 'start' }}>
           <Link href="/" onClick={closeMobileMenu} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <img 
               src="/images/logo_dark.webp" 
@@ -110,8 +110,8 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Десктопная навигация (СТРОГО ПО ЦЕНТРУ) */}
-        <nav className="desktop-nav" style={{ display: 'flex', gap: 'clamp(16px, 1.8vw, 28px)', alignItems: 'center', flexWrap: 'nowrap', whiteSpace: 'nowrap', flex: '0 0 auto', justifyContent: 'center', fontSize: '14px' }}>
+        {/* Десктопная навигация (СТРОГО ПО ЦЕНТРУ ЭКРАНА) */}
+        <nav className="desktop-nav" style={{ display: 'flex', gap: 'clamp(14px, 1.6vw, 26px)', alignItems: 'center', flexWrap: 'nowrap', whiteSpace: 'nowrap', justifySelf: 'center', fontSize: '14px' }}>
           {/* Гражданам */}
           <div 
             className="nav-item-dropdown"
@@ -162,7 +162,7 @@ export default function Header() {
         </nav>
 
         {/* Десктопные контакты (СПРАВА) */}
-        <div className="desktop-contacts" style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: '1.6 0 0', justifyContent: 'flex-end' }}>
+        <div className="desktop-contacts" style={{ display: 'flex', alignItems: 'center', gap: '20px', justifySelf: 'end' }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', fontSize: '13px', lineHeight: 1.4 }}>
             <a href="tel:+74742201525" style={{ fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', fontSize: '15px' }}>+7 (4742) 20-15-25</a>
             <Link href="/kontakty" className="header-address" style={{ color: 'var(--color-text-secondary)', fontSize: '12px', textDecoration: 'none' }}>Липецк, ул. Советская, 35</Link>
@@ -431,6 +431,12 @@ export default function Header() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 991px) {
+          .header-container,
+          .site-header .container {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+          }
           .desktop-nav,
           .desktop-contacts {
             display: none !important;
@@ -443,6 +449,17 @@ export default function Header() {
           }
           .mobile-logo {
             display: block !important;
+          }
+        }
+        @media (max-width: 1140px) and (min-width: 992px) {
+          .header-address {
+            display: none !important;
+          }
+          .desktop-contacts {
+            gap: 12px !important;
+          }
+          .desktop-nav {
+            gap: 12px !important;
           }
         }
       `}} />
