@@ -190,12 +190,12 @@ export default function YuristPoNedvizhimostiClient() {
       link: '/grazhdanam/yurist-po-nedvizhimosti/vzyskanie-neustojki-po-ddu/'
     },
     {
-      title: 'Расторжение договора ДДУ',
+      title: 'Расторжение ДДУ',
       desc: 'Проверим основания и последствия выхода из договора, подготовим уведомление, соглашение или судебные требования.',
       link: '/grazhdanam/yurist-po-nedvizhimosti/rastorzhenie-ddu/'
     },
     {
-      title: 'Компенсация за недостатки квартиры',
+      title: 'Недостатки квартиры и взыскание расходов',
       desc: 'Поможем зафиксировать дефекты, определить надлежащее требование и взыскать обоснованные расходы или компенсацию.',
       link: '/grazhdanam/yurist-po-nedvizhimosti/nedostatki-kvartiry-i-vzyskanie-rashodov/'
     },
