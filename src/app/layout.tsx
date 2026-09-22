@@ -1,22 +1,7 @@
 import type { Metadata } from 'next';
-import { Inter, Merriweather } from 'next/font/google';
 import './globals.css';
 import CookieConsent from '@/components/CookieConsent';
 import ConsentManager from '@/components/ConsentManager';
-
-const inter = Inter({
-  subsets: ['cyrillic', 'latin'],
-  display: 'swap',
-  variable: '--font-sans',
-  weight: ['400', '500', '600', '700'],
-});
-
-const merriweather = Merriweather({
-  subsets: ['cyrillic', 'latin'],
-  display: 'swap',
-  variable: '--font-serif',
-  weight: ['400', '700'],
-});
 
 export const metadata: Metadata = {
   title: '«Де-Юре» | Юридическая компания в Липецке',
@@ -29,8 +14,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className={`${inter.variable} ${merriweather.variable}`}>
+    <html lang="ru">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
         {/* Yandex.Metrika counter with deferred script load to prevent TBT blocking */}
         <script
           type="text/javascript"

@@ -16,8 +16,8 @@
   --gradient-light: linear-gradient(145deg, #FFFFFF 0%, #F7F4ED 100%);
 
   /* Типографика */
-  --font-sans: var(--font-sans), 'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif: var(--font-serif), 'Merriweather', 'Georgia', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Merriweather', 'Georgia', serif;
 
   /* РўРµРЅРё Рё СЌС„С„РµРєС‚С‹ (РЎРѕРІСЂРµРјРµРЅРЅРѕСЃС‚СЊ) */
   --shadow-sm: 0 4px 12px rgba(23, 50, 77, 0.04);
@@ -1627,20 +1627,3 @@ summary:focus-visible {
 .all-services-link:hover {
   color: var(--color-gold) !important;
 }
-
-/* Performance: Defer layout & paint calculations for below-the-fold sections */
-@supports (content-visibility: auto) {
-  #services,
-  #team,
-  #advocates,
-  #reviews,
-  #pricing,
-  #faq,
-  #contacts-section {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 700px;
-  }
-}
-
-
-
