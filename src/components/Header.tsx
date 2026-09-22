@@ -86,7 +86,7 @@ export default function Header() {
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         
         {/* Логотип */}
-        <div className="header-logo-col" style={{ flex: '1 0 0', display: 'flex', alignItems: 'center' }}>
+        <div className="header-logo-col" style={{ flex: '0.4 0 0', display: 'flex', alignItems: 'center' }}>
           <Link href="/" onClick={closeMobileMenu} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <img 
               src="/images/logo_dark.webp" 
@@ -162,7 +162,7 @@ export default function Header() {
         </nav>
 
         {/* Десктопные контакты (СПРАВА) */}
-        <div className="desktop-contacts" style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: '1 0 0', justifyContent: 'flex-end' }}>
+        <div className="desktop-contacts" style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: '1.6 0 0', justifyContent: 'flex-end' }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', fontSize: '13px', lineHeight: 1.4 }}>
             <a href="tel:+74742201525" style={{ fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', fontSize: '15px' }}>+7 (4742) 20-15-25</a>
             <Link href="/kontakty" className="header-address" style={{ color: 'var(--color-text-secondary)', fontSize: '12px', textDecoration: 'none' }}>Липецк, ул. Советская, 35</Link>
