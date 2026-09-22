@@ -81,115 +81,115 @@ export default function Header() {
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         
         {/* Логотип */}
-        <Link href="/" onClick={closeMobileMenu} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-          <img 
-            src="/images/logo_dark.webp" 
-            alt="Де-Юре" 
-            className="desktop-logo"
-            width={110}
-            height={110}
-            style={{ height: '110px', width: 'auto', transform: 'scale(1.25)', transformOrigin: 'left center' }} 
-          />
-          <img 
-            src="/images/logo_dark.webp" 
-            alt="Де-Юре" 
-            className="mobile-logo"
-            width={56}
-            height={56}
-            style={{ height: '56px', width: 'auto', display: 'none', objectFit: 'contain' }} 
-          />
-        </Link>
+        <div className="header-logo-col" style={{ flex: '1 0 0', display: 'flex', alignItems: 'center' }}>
+          <Link href="/" onClick={closeMobileMenu} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+            <img 
+              src="/images/logo_dark.webp" 
+              alt="Де-Юре" 
+              className="desktop-logo"
+              width={110}
+              height={110}
+              style={{ height: '110px', width: 'auto', transform: 'scale(1.25)', transformOrigin: 'left center' }} 
+            />
+            <img 
+              src="/images/logo_dark.webp" 
+              alt="Де-Юре" 
+              className="mobile-logo"
+              width={56}
+              height={56}
+              style={{ height: '56px', width: 'auto', display: 'none', objectFit: 'contain' }} 
+            />
+          </Link>
+        </div>
 
-        {/* Десктопная навигация */}
-        <nav className="desktop-nav" style={{ display: 'flex', gap: '28px', alignItems: 'center', flexWrap: 'nowrap', whiteSpace: 'nowrap' }}>
-          <div style={{ display: 'flex', gap: '28px', alignItems: 'center', fontSize: '14px' }}>
-            
-            {/* Гражданам */}
-            <div 
-              className="nav-item-dropdown"
-              onMouseEnter={() => setOpenDropdown('b2c')} 
-              onMouseLeave={() => setOpenDropdown(null)}
-              onFocus={() => setOpenDropdown('b2c')}
-              onBlur={() => setOpenDropdown(null)}
-            >
-              <Link href="/grazhdanam" className="nav-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-                <span>Гражданам</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openDropdown === 'b2c' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', opacity: 0.7 }}>
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </Link>
-              <ul id="dropdown-b2c" className={`dropdown-simple ${openDropdown === 'b2c' ? 'show' : ''}`}>
-                <li><Link href="/grazhdanam" className="dropdown-link-2" style={{ fontWeight: 'bold' }}>Обзор раздела</Link></li>
-                {b2cHubs.map((hub, idx) => (
-                  <li key={idx}><Link href={hub.href} className="dropdown-link-2">{hub.title}</Link></li>
-                ))}
-              </ul>
-            </div>
+        {/* Десктопная навигация (СТРОГО ПО ЦЕНТРУ) */}
+        <nav className="desktop-nav" style={{ display: 'flex', gap: 'clamp(16px, 1.8vw, 28px)', alignItems: 'center', flexWrap: 'nowrap', whiteSpace: 'nowrap', flex: '0 0 auto', justifyContent: 'center', fontSize: '14px' }}>
+          {/* Гражданам */}
+          <div 
+            className="nav-item-dropdown"
+            onMouseEnter={() => setOpenDropdown('b2c')} 
+            onMouseLeave={() => setOpenDropdown(null)}
+            onFocus={() => setOpenDropdown('b2c')}
+            onBlur={() => setOpenDropdown(null)}
+          >
+            <Link href="/grazhdanam" className="nav-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+              <span>Гражданам</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openDropdown === 'b2c' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', opacity: 0.7 }}>
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </Link>
+            <ul id="dropdown-b2c" className={`dropdown-simple ${openDropdown === 'b2c' ? 'show' : ''}`}>
+              <li><Link href="/grazhdanam" className="dropdown-link-2" style={{ fontWeight: 'bold' }}>Обзор раздела</Link></li>
+              {b2cHubs.map((hub, idx) => (
+                <li key={idx}><Link href={hub.href} className="dropdown-link-2">{hub.title}</Link></li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Бизнесу */}
-            <div 
-              className="nav-item-dropdown"
-              onMouseEnter={() => setOpenDropdown('b2b')} 
-              onMouseLeave={() => setOpenDropdown(null)}
-              onFocus={() => setOpenDropdown('b2b')}
-              onBlur={() => setOpenDropdown(null)}
-            >
-              <Link href="/biznesu" className="nav-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-                <span>Бизнесу</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openDropdown === 'b2b' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', opacity: 0.7 }}>
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </Link>
-              <ul id="dropdown-b2b" className={`dropdown-simple ${openDropdown === 'b2b' ? 'show' : ''}`}>
-                <li><Link href="/biznesu" className="dropdown-link-2" style={{ fontWeight: 'bold' }}>Обзор раздела</Link></li>
-                {b2bHubs.map((hub, idx) => (
-                  <li key={idx}><Link href={hub.href} className="dropdown-link-2">{hub.title}</Link></li>
-                ))}
-              </ul>
-            </div>
+          {/* Бизнесу */}
+          <div 
+            className="nav-item-dropdown"
+            onMouseEnter={() => setOpenDropdown('b2b')} 
+            onMouseLeave={() => setOpenDropdown(null)}
+            onFocus={() => setOpenDropdown('b2b')}
+            onBlur={() => setOpenDropdown(null)}
+          >
+            <Link href="/biznesu" className="nav-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+              <span>Бизнесу</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openDropdown === 'b2b' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', opacity: 0.7 }}>
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </Link>
+            <ul id="dropdown-b2b" className={`dropdown-simple ${openDropdown === 'b2b' ? 'show' : ''}`}>
+              <li><Link href="/biznesu" className="dropdown-link-2" style={{ fontWeight: 'bold' }}>Обзор раздела</Link></li>
+              {b2bHubs.map((hub, idx) => (
+                <li key={idx}><Link href={hub.href} className="dropdown-link-2">{hub.title}</Link></li>
+              ))}
+            </ul>
+          </div>
 
-            <Link href="/specialisty" className="nav-link">Специалисты</Link>
-            <Link href="/praktika" className="nav-link">Практика</Link>
-            <Link href="/kontakty" className="nav-link">Контакты</Link>
+          <Link href="/specialisty" className="nav-link">Специалисты</Link>
+          <Link href="/praktika" className="nav-link">Практика</Link>
+          <Link href="/kontakty" className="nav-link">Контакты</Link>
+        </nav>
+
+        {/* Десктопные контакты (СПРАВА) */}
+        <div className="desktop-contacts" style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: '1 0 0', justifyContent: 'flex-end' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', fontSize: '13px', lineHeight: 1.4 }}>
+            <a href="tel:+74742201525" style={{ fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', fontSize: '15px' }}>+7 (4742) 20-15-25</a>
+            <Link href="/kontakty" className="header-address" style={{ color: 'var(--color-text-secondary)', fontSize: '12px', textDecoration: 'none' }}>Липецк, ул. Советская, 35</Link>
           </div>
           
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginLeft: 'auto' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', fontSize: '13px', lineHeight: 1.4 }}>
-              <a href="tel:+74742201525" style={{ fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', fontSize: '15px' }}>+7 (4742) 20-15-25</a>
-              <Link href="/kontakty" className="header-address" style={{ color: 'var(--color-text-secondary)', fontSize: '12px', textDecoration: 'none' }}>Липецк, ул. Советская, 35</Link>
-            </div>
-            
-            <div style={{ width: '1px', height: '24px', backgroundColor: 'var(--color-border)' }} />
+          <div style={{ width: '1px', height: '24px', backgroundColor: 'var(--color-border)' }} />
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <a
-                href="https://t.me/dejure_help_bot"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Чат-бот Telegram"
-                aria-label="Чат-бот Telegram"
-                className="social-icon"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM17.697 7.71216C17.5188 9.5888 16.7444 14.1545 16.3508 16.2575C16.1843 17.1472 15.8562 17.4456 15.5383 17.4749C14.8475 17.5385 14.3229 17.0189 13.654 16.5805C12.6074 15.8945 12.0156 15.4674 10.9998 14.7978C9.82586 14.024 10.5898 13.5985 11.2562 12.9063C11.4307 12.7252 14.4574 9.97235 14.5159 9.72322C14.5232 9.69205 14.5299 9.57574 14.4608 9.51433C14.3917 9.45292 14.2898 9.47395 14.2159 9.49071C14.1111 9.51447 12.4363 10.6215 9.19207 12.8115C8.71676 13.138 8.28637 13.2971 7.90091 13.2888C7.47573 13.2796 6.65774 13.048 6.04987 12.8504C5.30429 12.608 4.71077 12.4799 4.76239 12.0678C4.78928 11.8531 5.08477 11.6335 5.64887 11.4089C9.13426 9.89069 11.4587 8.88722 12.6222 8.39851C15.9443 7.00298 16.6346 6.76077 17.0845 6.75283C17.1834 6.75109 17.4045 6.77561 17.5473 6.89146C17.6679 6.9893 17.7011 7.12169 17.7088 7.21447C17.7165 7.30725 17.7258 7.51866 17.697 7.71216Z"/>
-                </svg>
-              </a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <a
+              href="https://t.me/dejure_help_bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Чат-бот Telegram"
+              aria-label="Чат-бот Telegram"
+              className="social-icon"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM17.697 7.71216C17.5188 9.5888 16.7444 14.1545 16.3508 16.2575C16.1843 17.1472 15.8562 17.4456 15.5383 17.4749C14.8475 17.5385 14.3229 17.0189 13.654 16.5805C12.6074 15.8945 12.0156 15.4674 10.9998 14.7978C9.82586 14.024 10.5898 13.5985 11.2562 12.9063C11.4307 12.7252 14.4574 9.97235 14.5159 9.72322C14.5232 9.69205 14.5299 9.57574 14.4608 9.51433C14.3917 9.45292 14.2898 9.47395 14.2159 9.49071C14.1111 9.51447 12.4363 10.6215 9.19207 12.8115C8.71676 13.138 8.28637 13.2971 7.90091 13.2888C7.47573 13.2796 6.65774 13.048 6.04987 12.8504C5.30429 12.608 4.71077 12.4799 4.76239 12.0678C4.78928 11.8531 5.08477 11.6335 5.64887 11.4089C9.13426 9.89069 11.4587 8.88722 12.6222 8.39851C15.9443 7.00298 16.6346 6.76077 17.0845 6.75283C17.1834 6.75109 17.4045 6.77561 17.5473 6.89146C17.6679 6.9893 17.7011 7.12169 17.7088 7.21447C17.7165 7.30725 17.7258 7.51866 17.697 7.71216Z"/>
+              </svg>
+            </a>
 
-              <a
-                href="https://max.ru/id4800009680_bot"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Чат-бот MAX"
-                aria-label="Чат-бот MAX"
-                className="social-icon"
-              >
-                <svg width="20" height="20" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24C0 10.7452 10.7452 0 24 0ZM24.2314 12.5C17.8663 12.5 12.4942 17.4255 12.4941 23.9727C12.4941 26.714 13.0015 28.6059 13.4482 30.3047C13.8233 31.6836 14.1543 32.9467 14.1543 34.4414C14.3143 36.4326 17.9823 35.2685 19.1406 33.7793C20.9718 35.1031 22.0251 35.4346 24.292 35.4346C30.5586 35.4011 35.6151 30.2999 35.5938 24.0332C35.5937 17.6682 30.602 12.5 24.2314 12.5ZM24.3857 18.1592V18.165C27.5981 18.349 30.0709 21.0719 29.9453 24.2871C29.7296 27.4955 26.9854 29.9406 23.7734 29.7861C22.768 29.7055 21.8016 29.3614 20.9717 28.7881C20.4699 29.2899 19.6648 29.9402 19.3447 29.8633C18.6774 29.6868 17.8938 26.2951 18.335 23.5098C18.87 20.1452 21.2859 17.9993 24.3857 18.1592Z"/>
-                </svg>
-              </a>
-            </div>
+            <a
+              href="https://max.ru/id4800009680_bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Чат-бот MAX"
+              aria-label="Чат-бот MAX"
+              className="social-icon"
+            >
+              <svg width="20" height="20" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24C0 10.7452 10.7452 0 24 0ZM24.2314 12.5C17.8663 12.5 12.4942 17.4255 12.4941 23.9727C12.4941 26.714 13.0015 28.6059 13.4482 30.3047C13.8233 31.6836 14.1543 32.9467 14.1543 34.4414C14.3143 36.4326 17.9823 35.2685 19.1406 33.7793C20.9718 35.1031 22.0251 35.4346 24.292 35.4346C30.5586 35.4011 35.6151 30.2999 35.5938 24.0332C35.5937 17.6682 30.602 12.5 24.2314 12.5ZM24.3857 18.1592V18.165C27.5981 18.349 30.0709 21.0719 29.9453 24.2871C29.7296 27.4955 26.9854 29.9406 23.7734 29.7861C22.768 29.7055 21.8016 29.3614 20.9717 28.7881C20.4699 29.2899 19.6648 29.9402 19.3447 29.8633C18.6774 29.6868 17.8938 26.2951 18.335 23.5098C18.87 20.1452 21.2859 17.9993 24.3857 18.1592Z"/>
+              </svg>
+            </a>
           </div>
-        </nav>
+        </div>
 
         {/* Мобильные кнопки действия (< 992px) */}
         <div className="mobile-header-actions" style={{ display: 'none', alignItems: 'center', gap: '8px' }}>
@@ -423,7 +423,8 @@ export default function Header() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 991px) {
-          .desktop-nav {
+          .desktop-nav,
+          .desktop-contacts {
             display: none !important;
           }
           .mobile-header-actions {
