@@ -54,9 +54,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/specialisty/',
     '/praktika/',
     '/kontakty/',
-    '/privacy/',
-    '/consent/',
-    '/cookies/',
     // Арбитражный юрист (Кластер BIZ-01)
     '/biznesu/arbitrazhnyj-yurist/',
     '/biznesu/arbitrazhnyj-yurist/isk-v-arbitrazhnyj-sud/',

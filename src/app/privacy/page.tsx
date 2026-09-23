@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://dejure-help.ru/privacy/',
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function PrivacyPage() {

@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://dejure-help.ru/cookies/',
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 // ─── Sub-components ──────────────────────────────────────────────────────────

@@ -24,6 +24,11 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
       - name: Install dependencies
         run: npm install
 
@@ -49,7 +54,83 @@ jobs:
             -e "s|'/-/|'/|g"
           echo "JS done."
 
-      - name: Deploy to Timeweb via FTP
+      - name: Package static build for atomic deployment
+        run: |
+          echo "=== Creating deploy.zip from out/ ==="
+          cd out
+          zip -r -q ../deploy.zip .
+          cd ..
+          ls -lh deploy.zip
+
+      - name: Zero-Downtime Atomic Deploy to Timeweb
+        id: atomic_deploy
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          echo "=== Preparing Zero-Downtime Deployment ==="
+          DEPLOY_TOKEN=$(openssl rand -hex 16)
+          cp scripts/deploy_extract.template.php deploy_extract.php
+          sed -i "s/__DEPLOY_TOKEN__/$DEPLOY_TOKEN/g" deploy_extract.php
+
+          echo "=== Uploading deploy.zip and extractor via fast FTP ==="
+          python3 - << 'EOF'
+          import ftplib
+          import os
+          import sys
+
+          host = os.environ['FTP_HOST'].strip()
+          user = os.environ['FTP_USERNAME'].strip()
+          passwd = os.environ['FTP_PASSWORD'].strip()
+
+          try:
+              ftp = ftplib.FTP()
+              ftp.connect(host, 21, timeout=30)
+              ftp.login(user, passwd)
+              print(f"FTP Connected successfully to {host}")
+
+              try:
+                  ftp.cwd('/public_html')
+              except Exception:
+                  try:
+                      ftp.cwd('public_html')
+                  except Exception as e:
+                      print(f"CWD notice: {e}")
+
+              print("Uploading deploy.zip...")
+              with open('deploy.zip', 'rb') as f:
+                  ftp.storbinary('STOR deploy.zip', f)
+              print("deploy.zip upload complete.")
+
+              print("Uploading deploy_extract.php...")
+              with open('deploy_extract.php', 'rb') as f:
+                  ftp.storbinary('STOR deploy_extract.php', f)
+              print("deploy_extract.php upload complete.")
+
+              ftp.quit()
+              print("FTP connection closed cleanly.")
+          except Exception as e:
+              print(f"FTP Error: {e}", file=sys.stderr)
+              sys.exit(1)
+          EOF
+
+          echo "=== Triggering atomic extraction ==="
+          HTTP_RESPONSE=$(curl -s -w "\n%{http_code}" --max-time 60 "https://dejure-help.ru/deploy_extract.php?token=${DEPLOY_TOKEN}")
+          HTTP_CODE=$(echo "$HTTP_RESPONSE" | tail -n1)
+          BODY=$(echo "$HTTP_RESPONSE" | head -n-1)
+          echo "HTTP Status: $HTTP_CODE"
+          echo "Response Body: $BODY"
+
+          if [ "$HTTP_CODE" -eq 200 ] && echo "$BODY" | grep -q '"success":true'; then
+            echo "=== Zero-Downtime deployment successfully completed in < 1s! ==="
+          else
+            echo "Atomic extraction failed or returned unexpected response. Falling back..."
+            exit 1
+          fi
+
+      - name: Fallback to FTP-Deploy-Action (if atomic deploy fails)
+        if: failure() && steps.atomic_deploy.outcome == 'failure'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}

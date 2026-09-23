@@ -74,7 +74,7 @@ export default function ZashchitaPriDrobleniiClient() {
       ),
       desc: 'Если размер неисполненной налоговой обязанности достигает крупного размера и ФНС усматривает признаки умышленного уклонения, возникает риск уголовного дела по ст. 199 УК РФ. Согласуем налоговую позицию с уголовно-правовой защитой и снизим риски для руководителей и собственников.',
       btnText: 'Снять уголовный риск',
-      link: '/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/'
+      link: 'https://dejure-help.ru/biznesu/ugolovno-pravovaya-zashchita-biznesa/zashchita-po-nalogovym-prestupleniyam/'
     }
   ];
 
@@ -437,7 +437,7 @@ export default function ZashchitaPriDrobleniiClient() {
                 </div>
 
                 <a
-                  href="#form"
+                  href={sit.link || "#form"}
                   className="situation-btn"
                   style={{
                     display: 'inline-flex',
