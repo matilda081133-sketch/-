@@ -326,7 +326,7 @@ export default function MigracionnyjAuditClient() {
               Конфиденциальный звонок куратору направления:
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+              <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
             </span>
           </span>
         }
@@ -799,11 +799,13 @@ export default function MigracionnyjAuditClient() {
       {/* ═══ БЛОК 5: ЭТАПЫ РАБОТЫ ═══ */}
       <ProcessBlock
         title="Пять этапов миграционного аудита"
+        subtitle="Проводим аудит по согласованному объёму: проверяем работников, документы и внутренние процессы, фиксируем риски и передаём план их законного устранения."
         steps={processSteps}
       />
 
       {/* ═══ БЛОК 6: ЦЕНЫ ═══ */}
       <PricingBlock
+        pageUrl="https://dejure-help.ru/biznesu/migracionnoe-soprovozhdenie-biznesa/migracionnyj-audit-rabotodatelya/"
         title="Стоимость миграционного аудита"
         subtitle="Стоимость определяется после согласования объема: количества работников, проверяемых объектов и состояния кадрового архива."
         tiers={pricingTiers}
@@ -983,7 +985,37 @@ export default function MigracionnyjAuditClient() {
                 border: '1px solid rgba(0,0,0,0.08)'
               }}
             >
-              <ContactsForm />
+              <ContactsForm
+              customFields={
+                <>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="company" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Компания (необязательно)</label>
+                    <input type="text" id="company" name="company" placeholder="ООО «Компания»" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="workers_count" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Количество иностранных работников</label>
+                    <select id="workers_count" name="workers_count" defaultValue="1–5" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }}>
+                      <option value="1–5">1–5</option>
+                      <option value="6–20">6–20</option>
+                      <option value="21–50">21–50</option>
+                      <option value="более 50">Более 50</option>
+                      <option value="не знаю">Не знаю</option>
+                    </select>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="audit_stage" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Стадия</label>
+                    <select id="audit_stage" name="audit_stage" defaultValue="плановый аудит" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }}>
+                      <option value="плановый аудит">Плановый аудит</option>
+                      <option value="готовимся к возможной проверке">Готовимся к возможной проверке</option>
+                      <option value="получили запрос">Получили запрос</option>
+                      <option value="проверка началась">Проверка началась</option>
+                    </select>
+                  </div>
+                </>
+              }
+              buttonText="Получить оценку аудита"
+              commentLabel="Комментарий (необязательно)"
+            />
             </div>
           </div>
         </div>

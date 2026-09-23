@@ -51,6 +51,9 @@ export default function ZashchitaPriDrobleniiPage() {
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
+        },
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person'
         }
       },
       {
@@ -119,10 +122,10 @@ export default function ZashchitaPriDrobleniiPage() {
                   },
                   {
                         "@type": "Question",
-                        "name": "Как работает налоговая амнистия по дроблению бизнеса в 2025 году?",
+                        "name": "Как работает налоговая амнистия по дроблению бизнеса в 2025–2026 годах?",
                         "acceptedAnswer": {
                               "@type": "Answer",
-                              "text": "Согласно ст. 6 Федерального закона № 176-ФЗ, для налогоплательщиков, добровольно отказавшихся от дробления бизнеса с налогового периода 2025 года, суммы налогов, пеней и штрафов по решениям за 2022–2024 годы не взыскиваются и подлежат списанию."
+                              "text": "Механизм позволяет прекратить обязанность по уплате связанных с дроблением налогов, пеней и штрафов за 2022–2024 годы при соблюдении установленных законом условий добровольного отказа от дробления в 2025–2026 годах. Проверим применимость амнистии к конкретной ситуации и определим действия, необходимые для её использования."
                         }
                   },
                   {
@@ -150,7 +153,17 @@ export default function ZashchitaPriDrobleniiPage() {
                         }
                   }
             ]
-      }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person",
+        "name": "Аркадий Евгеньевич Бобкин",
+        "url": "https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/",
+        "jobTitle": "Директор, управляющий партнёр ЮК «Де-Юре»",
+        "worksFor": {
+                "@id": "https://dejure-help.ru/#organization"
+        }
+}
     ]
   };
 

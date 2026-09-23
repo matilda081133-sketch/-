@@ -304,7 +304,7 @@ export default function MigracionnoeSoprovozhdenieClient() {
               Конфиденциальный звонок куратору направления:
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+              <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
             </span>
           </span>
         }
@@ -718,11 +718,13 @@ export default function MigracionnoeSoprovozhdenieClient() {
       {/* ═══ БЛОК 5: ЭТАПЫ РАБОТЫ ═══ */}
       <ProcessBlock
         title="Как проходит работа по миграционному сопровождению"
+        subtitle="Миграционные задачи работодателя требуют точного учёта статуса работников, документов и стадии ситуации. На каждом этапе фиксируем состав работ, сроки и следующий результат."
         steps={processSteps}
       />
 
       {/* ═══ БЛОК 6: ЦЕНЫ ═══ */}
       <PricingBlock
+        pageUrl="https://dejure-help.ru/biznesu/migracionnoe-soprovozhdenie-biznesa/"
         title="Стоимость миграционного сопровождения бизнеса"
         subtitle="Стоимость зависит от количества иностранных работников, их статуса, объёма документов, срочности и стадии проверки МВД. Фиксируется в договоре."
         tiers={pricingTiers}

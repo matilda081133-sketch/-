@@ -292,7 +292,7 @@ export default function YuristPriProverkeMvdClient() {
               Конфиденциальный звонок куратору направления:
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+              <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
             </span>
           </span>
         }
@@ -448,7 +448,7 @@ export default function YuristPriProverkeMvdClient() {
             gap: '16px',
             flexWrap: 'wrap'
           }}>
-            <a href="tel:+79103503111" style={{
+            <a href="tel:+74742201525" style={{
               color: 'var(--color-gold)',
               fontSize: '20px',
               fontWeight: 700,
@@ -457,10 +457,10 @@ export default function YuristPriProverkeMvdClient() {
               letterSpacing: '0.02em',
               marginRight: '8px'
             }}>
-              +7 (910) 350-31-11
+              +7 (4742) 20-15-25
             </a>
             <a
-              href="tel:+79103503111"
+              href="tel:+74742201525"
               className="btn btn-urgent-call"
               style={{
                 background: 'var(--color-gold)',
@@ -860,11 +860,13 @@ export default function YuristPriProverkeMvdClient() {
       {/* ═══ БЛОК 5: ЭТАПЫ РАБОТЫ ═══ */}
       <ProcessBlock
         title="Порядок работы юриста при проверке МВД"
+        subtitle="При миграционной проверке важны скорость и единый порядок действий. Сразу определяем стадию, контролируем передачу документов и фиксируем процессуально значимые обстоятельства."
         steps={processSteps}
       />
 
       {/* ═══ БЛОК 6: ЦЕНЫ ═══ */}
       <PricingBlock
+        pageUrl="https://dejure-help.ru/biznesu/migracionnoe-soprovozhdenie-biznesa/yurist-pri-migracionnoj-proverke-mvd/"
         title="Стоимость сопровождения проверки"
         subtitle="Стоимость определяется в зависимости от формата (дистанционный ответ на запрос либо очный выезд на объект) и фиксируется в договоре."
         tiers={pricingTiers}
@@ -1044,7 +1046,32 @@ export default function YuristPriProverkeMvdClient() {
                 border: '1px solid rgba(0,0,0,0.08)'
               }}
             >
-              <ContactsForm />
+              <ContactsForm
+              customFields={
+                <>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="company" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Компания (необязательно)</label>
+                    <input type="text" id="company" name="company" placeholder="ООО «Компания»" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="inspection_stage" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Стадия</label>
+                    <select id="inspection_stage" name="inspection_stage" defaultValue="получен запрос" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }}>
+                      <option value="получен запрос">Получен запрос</option>
+                      <option value="вызвали в МВД">Вызвали в МВД</option>
+                      <option value="сотрудники на объекте">Сотрудники на объекте</option>
+                      <option value="проверяют работников">Проверяют работников</option>
+                      <option value="составляют протокол">Составляют протокол</option>
+                    </select>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="event_datetime" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Дата и время события</label>
+                    <input type="text" id="event_datetime" name="event_datetime" placeholder="Например: сегодня в 14:00 или 25.09" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
+                  </div>
+                </>
+              }
+              buttonText="Подключить юриста"
+              commentLabel="Комментарий (необязательно)"
+            />
             </div>
           </div>
         </div>

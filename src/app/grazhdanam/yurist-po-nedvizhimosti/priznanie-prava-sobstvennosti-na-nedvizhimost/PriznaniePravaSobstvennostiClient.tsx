@@ -235,18 +235,18 @@ export default function PriznaniePravaSobstvennostiClient() {
             <span style={{ color: 'var(--color-text-main)' }}>Признание права собственности</span>
           </>
         }
-        superTitle="Судебное признание права • ст. 218, 234 ГК РФ • Липецк"
+        superTitle="ОФОРМЛЕНИЕ ПРАВА • РОСРЕЕСТР • СУД • ЛИПЕЦК"
         title={<>Признание <br />права собственности <br />на недвижимость <br />в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
             Оформим право собственности на квартиру, дом, новостройку или гараж и доведём процедуру до получения выписки ЕГРН — через Росреестр, восстановление документов или суд.
           </span>
         }
-        primaryCtaText="Признать право через суд"
+        primaryCtaText="Оформить право собственности"
         primaryCtaLink="#form"
         primaryCtaAnalytics="recognition_hero_click"
         primaryCtaSubtext="Перезвоним в течение 15 минут в рабочее время"
-        secondaryCtaText="Основания иска"
+        secondaryCtaText="Способы оформления"
         secondaryCtaLink="#situations"
         rightContent={
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', width: '100%' }}>
@@ -395,9 +395,9 @@ export default function PriznaniePravaSobstvennostiClient() {
           </div>
         }
         trustItems={[
-          { text: 'Оформление прав при полной утрате исходных документов.' },
-          { text: 'Применение срока приобретательной давности по ст. 234 ГК РФ.' },
-          { text: 'Внесение записи в ЕГРН на основании решения суда под ключ.' }
+          { text: 'Устранение приостановки или отказа Росреестра.' },
+          { text: 'Восстановление правоустанавливающих документов.' },
+          { text: 'Признание права через суд и регистрация в ЕГРН, когда внесудебного порядка недостаточно.' }
         ]}
       />
 

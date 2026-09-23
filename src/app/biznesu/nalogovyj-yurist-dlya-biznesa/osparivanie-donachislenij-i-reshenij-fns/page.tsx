@@ -51,6 +51,9 @@ export default function OsparivanieReshenijFnsPage() {
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
+        },
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person'
         }
       },
       {
@@ -146,11 +149,21 @@ export default function OsparivanieReshenijFnsPage() {
                         "name": "Что происходит с уголовным риском, если решение ФНС обжалуется в суде?",
                         "acceptedAnswer": {
                               "@type": "Answer",
-                              "text": "По закону, если решение не вступило в силу (подана апелляционная жалоба), срок 75 дней для передачи материалов в Следственный комитет не течет. Однако после вступления решения в силу даже судебное обжалование само по себе не приостанавливает передачу материалов в СК РФ, поэтому требуется ходатайствовать о приостановлении действия решения."
+                              "text": "Пока апелляционная жалоба не рассмотрена и решение ФНС не вступило в силу, 75-дневный срок не начинается. После вступления решения в силу судебное обжалование само по себе не устраняет уголовный риск. Юристы добиваются приостановления взыскания и одновременно согласуют налоговую позицию со стратегией защиты руководителей."
                         }
                   }
             ]
-      }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person",
+        "name": "Аркадий Евгеньевич Бобкин",
+        "url": "https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/",
+        "jobTitle": "Директор, управляющий партнёр ЮК «Де-Юре»",
+        "worksFor": {
+                "@id": "https://dejure-help.ru/#organization"
+        }
+}
     ]
   };
 

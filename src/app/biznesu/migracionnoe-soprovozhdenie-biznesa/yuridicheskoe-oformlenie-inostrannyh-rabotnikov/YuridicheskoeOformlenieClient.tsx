@@ -44,7 +44,7 @@ export default function YuridicheskoeOformlenieClient() {
           <span style={{ display: 'inline-block' }}>Беларуси, Армении, Казахстана, Киргизии</span>
         </span>
       ),
-      desc: 'Патент не требуется, но сохраняются обязательные требования к трудовому договору и 3-дневному уведомлению территориального органа МВД.',
+      desc: 'Патент не требуется, но сохраняются обязательные требования к трудовому договору и уведомлению территориального органа МВД в течение трёх рабочих дней с даты заключения или прекращения договора.',
       btnText: 'Оформить сотрудника ЕАЭС'
     },
     {
@@ -77,7 +77,7 @@ export default function YuridicheskoeOformlenieClient() {
           <span style={{ display: 'inline-block' }}>с иностранным работником</span>
         </span>
       ),
-      desc: 'Подготовим кадровые документы, проверим основание расторжения и направим обязательное уведомление в МВД строго в срок до 3 рабочих дней.',
+      desc: 'Подготовим кадровые документы, проверим основание расторжения и направим обязательное уведомление в МВД в течение трёх рабочих дней с даты заключения или прекращения договора.',
       btnText: 'Оформить увольнение'
     }
   ];
@@ -144,7 +144,7 @@ export default function YuridicheskoeOformlenieClient() {
     {
       num: '06',
       title: 'Контролируем сдачу и сроки',
-      desc: 'Контролируем направление уведомления в 3-дневный срок, получаем подтверждение подачи и передаём компании календарь контрольных дат.'
+      desc: 'Контролируем направление уведомления в течение трёх рабочих дней с даты заключения или прекращения договора, получаем подтверждение подачи и передаём компании календарь контрольных дат.'
     }
   ];
 
@@ -173,7 +173,7 @@ export default function YuridicheskoeOformlenieClient() {
         { name: 'Правовой аудит полного пакета документов иностранца', value: 'Включено' },
         { name: 'Подготовка трудового договора / ГПД с миграционными пунктами', value: 'Включено' },
         { name: 'Заполнение формы уведомления МВД по актуальному регламенту', value: 'Включено' },
-        { name: 'Контроль подачи уведомления в течение 3 рабочих дней', value: 'Включено' },
+        { name: 'Контроль подачи уведомления в течение трёх рабочих дней с даты заключения или прекращения договора', value: 'Включено' },
         { name: 'Памятка кадровой службе по контрольным датам и платежам', value: 'Включено' }
       ],
       buttonText: 'Оформить сотрудника',
@@ -230,7 +230,7 @@ export default function YuridicheskoeOformlenieClient() {
     },
     {
       q: 'Нужно ли подавать уведомление в МВД при приёме гражданина страны ЕАЭС?',
-      a: 'Да. Освобождение граждан государств ЕАЭС (Беларусь, Казахстан, Армения, Киргизия) от обязанности получать патент не освобождает работодателя от обязанности уведомить орган МВД о заключении или расторжении трудового договора в 3-дневный срок.'
+      a: 'Да. Освобождение граждан государств ЕАЭС (Беларусь, Казахстан, Армения, Киргизия) от обязанности получать патент не освобождает работодателя от обязанности уведомить орган МВД о заключении или расторжении трудового договора в течение трёх рабочих дней с даты заключения или прекращения договора.'
     },
     {
       q: 'Вы помогаете получить или переоформить патент?',
@@ -246,10 +246,10 @@ export default function YuridicheskoeOformlenieClient() {
     },
     {
       q: 'Защищает ли договор ГПХ от проверок миграционной службы?',
-      a: 'Нет. Обязанность проверки права на работу и 3-дневного уведомления МВД распространяется как на трудовые договоры, так и на договоры ГПХ. Кроме того, притворное прикрытие трудовых отношений договором ГПХ создаёт дополнительные риски со стороны трудовой инспекции.'
+      a: 'Нет. Обязанность проверки права на работу и уведомления МВД в течение трёх рабочих дней с даты заключения или прекращения договора распространяется как на трудовые договоры, так и на договоры ГПХ. Кроме того, притворное прикрытие трудовых отношений договором ГПХ создаёт дополнительные риски со стороны трудовой инспекции.'
     },
     {
-      q: 'Что делать, если 3-дневный срок уведомления МВД уже пропущен?',
+      q: 'Что делать, если срок уведомления МВД уже пропущен?',
       a: 'Не направляйте документы хаотично задним числом. Необходимо срочно связаться с юристом для правового анализа ситуации, установления точной даты заключения договора и формирования защитной позиции до инициации проверки МВД.'
     },
     {
@@ -291,17 +291,17 @@ export default function YuridicheskoeOformlenieClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'normal', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               Юридическое оформление
             </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'normal', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               иностранных работников в Липецке
             </span>
           </span>
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '760px', textWrap: 'balance' }}>
-            Проверим, вправе ли иностранный гражданин работать у вашей компании, подготовим кадровые документы и уведомим МВД в строгий 3-дневный срок.
+            Проверим, вправе ли иностранный гражданин работать у вашей компании, подготовим кадровые документы и уведомим МВД в течение трёх рабочих дней с даты заключения или прекращения договора.
           </span>
         }
         primaryCtaText="Проверить документы работника"
@@ -312,7 +312,7 @@ export default function YuridicheskoeOformlenieClient() {
               Конфиденциальный звонок куратору направления:
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+              <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
             </span>
           </span>
         }
@@ -708,11 +708,13 @@ export default function YuridicheskoeOformlenieClient() {
       {/* ═══ БЛОК 5: ЭТАПЫ РАБОТЫ ═══ */}
       <ProcessBlock
         title="Порядок юридического оформления иностранного работника"
+        subtitle="Порядок оформления зависит от гражданства, миграционного статуса и условий работы сотрудника. Проверяем документы до допуска, готовим кадровый комплект и контролируем обязательные уведомления."
         steps={processSteps}
       />
 
       {/* ═══ БЛОК 6: ЦЕНЫ ═══ */}
       <PricingBlock
+        pageUrl="https://dejure-help.ru/biznesu/migracionnoe-soprovozhdenie-biznesa/yuridicheskoe-oformlenie-inostrannyh-rabotnikov/"
         title="Стоимость юридического оформления"
         subtitle="Цена фиксируется в договоре и зависит от статуса работника, комплектности документов и необходимости подготовки кадровых актов."
         tiers={pricingTiers}
@@ -892,7 +894,44 @@ export default function YuridicheskoeOformlenieClient() {
                 border: '1px solid rgba(0,0,0,0.08)'
               }}
             >
-              <ContactsForm />
+              <ContactsForm
+              customFields={
+                <>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="company" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Компания (необязательно)</label>
+                    <input type="text" id="company" name="company" placeholder="ООО «Компания»" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="worker_status" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Статус работника</label>
+                    <select id="worker_status" name="worker_status" defaultValue="патент" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }}>
+                      <option value="патент">Патент</option>
+                      <option value="ЕАЭС">ЕАЭС (Беларусь, Казахстан, Армения, Киргизия)</option>
+                      <option value="РВП">РВП (разрешение на временное проживание)</option>
+                      <option value="ВНЖ">ВНЖ (вид на жительство)</option>
+                      <option value="иной">Иной статус</option>
+                      <option value="не знаю">Не знаю</option>
+                    </select>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="task" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Задача</label>
+                    <select id="task" name="task" defaultValue="приём" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }}>
+                      <option value="приём">Приём на работу</option>
+                      <option value="договор">Составление / проверка договора</option>
+                      <option value="уведомление МВД">Уведомление МВД</option>
+                      <option value="изменения">Изменения условий / продление</option>
+                      <option value="увольнение">Увольнение / расторжение договора</option>
+                      <option value="другое">Другое</option>
+                    </select>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="action_date" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Дата действия</label>
+                    <input type="date" id="action_date" name="action_date" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
+                  </div>
+                </>
+              }
+              buttonText="Отправить на проверку"
+              commentLabel="Комментарий (необязательно)"
+            />
             </div>
           </div>
         </div>

@@ -117,7 +117,7 @@ export default function VzyskanieNeustojkiDDUClient() {
       price: 'от 25 000 ₽',
       features: [
         { name: 'Подготовка иска и расчёт требований', value: '✓' },
-        { name: 'Взыскание штрафа 50% и морального вреда', value: '✓' },
+        { name: 'Взыскание компенсации морального вреда и положенного потребительского штрафа', value: '✓' },
         { name: 'Мотивированные возражения против ст. 333 ГК', value: '✓' },
         { name: 'Участие во всех судебных заседаниях', value: '✓' },
         { name: 'Взыскание судебных расходов с застройщика', value: '✓' }
@@ -134,7 +134,7 @@ export default function VzyskanieNeustojkiDDUClient() {
         { name: 'Взыскание законной неустойки по ДДУ', value: '✓' },
         { name: 'Доказывание расходов на аренду жилья', value: '✓' },
         { name: 'Взыскание переплаты по процентам кредита', value: '✓' },
-        { name: 'Штраф 50% на совокупную сумму убытков', value: '✓' },
+        { name: 'Положенный потребительский штраф при наличии оснований', value: '✓' },
         { name: 'Получение исполнительного листа и исполнение', value: '✓' }
       ],
       buttonText: 'Взыскать с убытками',
@@ -246,7 +246,7 @@ export default function VzyskanieNeustojkiDDUClient() {
         title={<>Взыскание неустойки <br />по ДДУ в Липецке</>}
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '560px', textWrap: 'balance' }}>
-            Рассчитаем неустойку по ч. 2 ст. 6 закона № 214-ФЗ с учётом актуальных мораториев и ставок ЦБ РФ. Взыщем неустойку, убытки на аренду, штраф 50% и моральный вред.
+            Рассчитаем неустойку по ч. 2 ст. 6 закона № 214-ФЗ с учётом актуальных мораториев и ставок ЦБ РФ. Взыщем неустойку, подтверждённые убытки на аренду, компенсацию морального вреда и положенный потребительский штраф.
           </span>
         }
         primaryCtaText="Рассчитать неустойку"
@@ -361,7 +361,7 @@ export default function VzyskanieNeustojkiDDUClient() {
                       <img src="/images/logo_dark.png" alt="Де-Юре" style={{ width: '55px', height: 'auto', opacity: 0.9 }} />
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}>
                         <span style={{ fontSize: '6px', fontWeight: 'bold', color: 'var(--color-deep-blue)', letterSpacing: '0.05em' }}>ФЗ № 214-ФЗ</span>
-                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>Штраф 50% + Убытки</span>
+                        <span style={{ fontSize: '5px', color: 'var(--color-primary)' }}>Потребительский штраф + Убытки</span>
                       </div>
                     </div>
 
@@ -385,7 +385,7 @@ export default function VzyskanieNeustojkiDDUClient() {
                         <text x="35" y="38" fill="#10273B" fontSize="6.5" fontWeight="bold">Срок по ДДУ</text>
                         <text x="110" y="38" fill="#C53030" fontSize="6.5" fontWeight="bold">Период просрочки</text>
                         <text x="35" y="70" fill="#10273B" fontSize="6" fontWeight="bold">Ставка ЦБ РФ</text>
-                        <text x="110" y="70" fill="#1B8738" fontSize="6" fontWeight="bold">+ Штраф 50%</text>
+                        <text x="110" y="70" fill="#1B8738" fontSize="6" fontWeight="bold">+ Потребительский штраф</text>
                       </svg>
                     </div>
 
@@ -421,7 +421,7 @@ export default function VzyskanieNeustojkiDDUClient() {
               </span>
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
-              Грамотно составленный иск включает не только базовую неустойку, но и компенсацию сопутствующих убытков, штраф 50% и моральный вред.
+              Включим в требования неустойку, подтверждённые убытки, компенсацию морального вреда и положенный потребительский штраф.
             </p>
           </div>
 
@@ -439,13 +439,13 @@ export default function VzyskanieNeustojkiDDUClient() {
               },
               {
                 tag: 'ПОТРЕБИТЕЛЬСКИЙ ШТРАФ',
-                title: 'Штраф 50%',
-                desc: 'Штраф в размере 50% от всей присуждённой суммы за отказ добровольно исполнить обоснованную претензию дольщика.'
+                title: 'Потребительский штраф',
+                desc: 'Добьёмся взыскания положенного потребительского штрафа, если застройщик добровольно не исполнит обоснованные требования дольщика.'
               },
               {
                 tag: 'МОРАЛЬНЫЙ ВРЕД',
                 title: 'Моральный вред и расходы',
-                desc: 'Компенсация нравственных страданий, а также возмещение всех понесённых расходов на юридические услуги и доверенности.'
+                desc: 'Компенсация морального вреда, а также возмещение обоснованных и документально подтверждённых судебных расходов.'
               }
             ].map((item, idx) => (
               <div

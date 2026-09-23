@@ -111,7 +111,7 @@ export default function Header() {
         </div>
 
         {/* Десктопная навигация (СТРОГО ПО ЦЕНТРУ ЭКРАНА) */}
-        <nav className="desktop-nav" style={{ display: 'flex', gap: 'clamp(14px, 1.6vw, 26px)', alignItems: 'center', flexWrap: 'nowrap', whiteSpace: 'nowrap', justifySelf: 'center', fontSize: '14px' }}>
+        <nav className="desktop-nav" style={{ display: 'flex', gap: 'clamp(14px, 1.6vw, 26px)', alignItems: 'center', flexWrap: 'nowrap', whiteSpace: 'nowrap', justifySelf: 'center', fontSize: '14px', transform: 'translateX(-28px)' }}>
           {/* Гражданам */}
           <div 
             className="nav-item-dropdown"
@@ -460,6 +460,7 @@ export default function Header() {
           }
           .desktop-nav {
             gap: 12px !important;
+            transform: translateX(-14px) !important;
           }
         }
       `}} />

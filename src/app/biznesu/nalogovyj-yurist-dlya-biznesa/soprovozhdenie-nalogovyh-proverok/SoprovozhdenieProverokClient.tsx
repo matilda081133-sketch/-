@@ -93,7 +93,7 @@ export default function SoprovozhdenieProverokClient() {
     },
     {
       title: 'Пропуск месячного срока на подачу возражений на акт',
-      desc: 'По ст. 100 НК РФ у компании есть ровно один месяц со дня получения акта для подачи мотивированных возражений. Пропуск срока лишает шанса снять претензии до решения.'
+      desc: 'По ст. 100 НК РФ у компании есть ровно один месяц со дня получения акта для подачи мотивированных возражений. Пропуск месячного срока существенно снижает возможность снять претензии до вынесения решения. Если срок заканчивается или уже пропущен, необходимо определить, какие доводы и документы ещё можно представить при рассмотрении материалов.'
     }
   ];
 
@@ -234,7 +234,7 @@ export default function SoprovozhdenieProverokClient() {
       a: 'По ст. 93.1 НК РФ налоговый орган вправе истребовать документы (информацию) относительно конкретной сделки вне рамок налоговых проверок. Однако требование должно содержать четкие реквизиты сделки и контрагента. Запросы общего характера без указания сделки являются неправомерными, и на них можно дать мотивированный отказ.'
     },
     {
-      q: 'Может ли юрист или адвокат присутствовать на допросе в качестве свидетеля?',
+      q: 'Может ли юрист или адвокат присутствовать при допросе свидетеля в ФНС?',
       a: 'Да. В силу ч. 1 ст. 48 Конституции РФ и позиции ФНС РФ свидетель при допросе в налоговом органе имеет безусловное право пользоваться юридической помощью адвоката или квалифицированного юриста, который вправе делать замечания и вносить записи в протокол.'
     },
     {
@@ -299,7 +299,7 @@ export default function SoprovozhdenieProverokClient() {
           <span style={{ display: 'block' }}>
             <span style={{ display: 'inline-block' }}>Или позвоните для оперативного разбора:</span>{' '}
             <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+              <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
             </span>
           </span>
         }
@@ -570,8 +570,7 @@ export default function SoprovozhdenieProverokClient() {
             </h2>
             <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', margin: '16px 0' }} />
             <p style={{ fontSize: '16px', color: '#E8ECF1', lineHeight: 1.65, margin: 0 }}>
-              <span style={{ display: 'inline-block' }}>Ошибки, допущенные при даче первых пояснений или на допросах,</span> <br />
-              <span style={{ display: 'inline-block' }}>практически невозможно исправить в суде.</span>
+              Ошибки и противоречия в первых пояснениях или протоколах допросов могут серьёзно осложнить дальнейшую защиту и снизить шансы на отмену доначислений.
             </p>
           </div>
 
@@ -784,11 +783,11 @@ export default function SoprovozhdenieProverokClient() {
           <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>22 года в следственных подразделениях налоговой полиции и Следственного комитета МВД РФ</span>
+              <span>22 года в следственных подразделениях налоговой полиции и МВД.</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Десятки предотвращенных доначислений на стадии рассмотрения материалов проверки</span>
+              <span>В юридической профессии с 1997 года.</span>
             </li>
           </ul>,
           <a key="4" href="/specialisty/bobkin-arkadiy-evgenevich/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
@@ -801,6 +800,7 @@ export default function SoprovozhdenieProverokClient() {
 
       {/* ═══ БЛОК 7: ЦЕНЫ ═══ */}
       <PricingBlock
+        pageUrl="https://dejure-help.ru/biznesu/nalogovyj-yurist-dlya-biznesa/soprovozhdenie-nalogovyh-proverok/"
         title="Стоимость сопровождения налоговой проверки"
         subtitle="Цена зависит от формата проверки (камеральная или выездная), числа проверяемых контрагентов и объема возражений"
         tiers={pricingTiers}
@@ -930,7 +930,7 @@ export default function SoprovozhdenieProverokClient() {
                     Защита при дроблении бизнеса
                   </h3>
                   <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                    Правовой анализ группы компаний, защита деловой цели разделения и применение налоговой амнистии 2025–2030.
+                    Защита деловой цели и самостоятельности компаний, опровержение доводов ФНС и применение налоговой амнистии при соблюдении установленных законом условий.
                   </p>
                 </div>
                 <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>

@@ -52,6 +52,9 @@ export default function ZashchitaPo1815KoapPage() {
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
+        },
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person'
         }
       },
       {
@@ -199,7 +202,14 @@ export default function ZashchitaPo1815KoapPage() {
                         }
                   }
             ]
-      }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person",
+        "name": "Дмитрий Сергеевич Конопкин",
+        "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
+        "jobTitle": "Адвокат, председатель Коллегии адвокатов «Де-Юре»"
+}
     ]
   };
 

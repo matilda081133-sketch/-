@@ -51,6 +51,9 @@ export default function SoprovozhdenieProverokPage() {
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
+        },
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person'
         }
       },
       {
@@ -111,7 +114,7 @@ export default function SoprovozhdenieProverokPage() {
                   },
                   {
                         "@type": "Question",
-                        "name": "Может ли юрист или адвокат присутствовать на допросе в качестве свидетеля?",
+                        "name": "Может ли юрист или адвокат присутствовать при допросе свидетеля в ФНС?",
                         "acceptedAnswer": {
                               "@type": "Answer",
                               "text": "Да. В силу ч. 1 ст. 48 Конституции РФ и позиции ФНС РФ свидетель при допросе в налоговом органе имеет безусловное право пользоваться юридической помощью адвоката или квалифицированного юриста, который вправе делать замечания и вносить записи в протокол."
@@ -150,7 +153,17 @@ export default function SoprovozhdenieProverokPage() {
                         }
                   }
             ]
-      }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person",
+        "name": "Аркадий Евгеньевич Бобкин",
+        "url": "https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/",
+        "jobTitle": "Директор, управляющий партнёр ЮК «Де-Юре»",
+        "worksFor": {
+                "@id": "https://dejure-help.ru/#organization"
+        }
+}
     ]
   };
 

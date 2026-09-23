@@ -77,12 +77,14 @@ export default async function SpecialistPage({ params }: PageProps) {
   const jsonLdPerson = member.slug === 'bobkin-arkadiy-evgenevich' ? {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person',
     name: 'Аркадий Евгеньевич Бобкин',
     jobTitle: 'Директор, управляющий партнёр ЮК «Де-Юре»',
     url: 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/',
     image: 'https://dejure-help.ru/images/bobkin.jpg',
     worksFor: {
       '@type': 'LegalService',
+      '@id': 'https://dejure-help.ru/#organization',
       name: 'ООО ЮК «Де-Юре»',
       url: 'https://dejure-help.ru/'
     },

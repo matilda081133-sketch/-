@@ -386,7 +386,7 @@ export default function NedostatkiKvartiryClient() {
                         <text x="82" y="35" fill="#C53030" fontSize="6" fontWeight="bold">Окна: продувание</text>
                         <text x="130" y="35" fill="#C53030" fontSize="6" fontWeight="bold">Стены: уклон</text>
                         <text x="45" y="70" fill="#1B8738" fontSize="7" fontWeight="bold">Смета Минстроя РФ</text>
-                        <text x="135" y="70" fill="#10273B" fontSize="6" fontWeight="bold">+ Штраф 50%</text>
+                        <text x="125" y="70" fill="#10273B" fontSize="5.5" fontWeight="bold">+ Положенный штраф</text>
                       </svg>
                     </div>
 

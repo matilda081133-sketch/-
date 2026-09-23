@@ -51,6 +51,9 @@ export default function NalogovyjYuristPage() {
           addressLocality: 'Липецк',
           addressRegion: 'Липецкая область',
           addressCountry: 'RU'
+        },
+        employee: {
+          '@id': 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person'
         }
       },
       {
@@ -140,11 +143,21 @@ export default function NalogovyjYuristPage() {
                         "name": "Можно ли приостановить списание денег со счетов на время судебного спора?",
                         "acceptedAnswer": {
                               "@type": "Answer",
-                              "text": "Да. При подаче заявления в арбитражный суд заявляется ходатайство о принятии обеспечительных мер в виде приостановления действия оспариваемого решения ФНС (ст. 199 АПК РФ), что блокирует списание средств инкассовыми поручениями."
+                              "text": "Да. Да. Юристы подготовят ходатайство об обеспечительных мерах и будут добиваться приостановления действия решения ФНС и списания денег со счетов. Решение принимает суд, поэтому само обращение в арбитражный суд взыскание автоматически не останавливает."
                         }
                   }
             ]
-      }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/#person",
+        "name": "Аркадий Евгеньевич Бобкин",
+        "url": "https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/",
+        "jobTitle": "Директор, управляющий партнёр ЮК «Де-Юре»",
+        "worksFor": {
+                "@id": "https://dejure-help.ru/#organization"
+        }
+}
     ]
   };
 

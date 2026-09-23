@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -13,6 +13,7 @@ import SpecialistBlock from '@/components/SpecialistBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 
 export default function ZashchitaPo1815KoapClient() {
+  const [formCaseStage, setFormCaseStage] = useState('составлен протокол');
   const caseStages = [
     {
       tag: 'Вызов на протокол',
@@ -303,10 +304,10 @@ export default function ZashchitaPo1815KoapClient() {
         }
         title={
           <span style={{ display: 'block' }}>
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'normal', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               Защита работодателя
             </span>{' '}
-            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
+            <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'normal', fontSize: 'clamp(22px, 3.2vw, 42px)' }}>
               по статье 18.15 КоАП РФ в Липецке
             </span>
           </span>
@@ -324,7 +325,7 @@ export default function ZashchitaPo1815KoapClient() {
               Конфиденциальный звонок куратору направления:
             </span>{' '}
             <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-              <a href="tel:+79103503111" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (910) 350-31-11</a>
+              <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a>
             </span>
           </span>
         }
@@ -787,11 +788,13 @@ export default function ZashchitaPo1815KoapClient() {
       {/* ═══ БЛОК 5: ЭТАПЫ РАБОТЫ ═══ */}
       <ProcessBlock
         title="Пять этапов защиты по статье 18.15 КоАП РФ"
+        subtitle="Защиту строим с учётом стадии дела, вменяемой части статьи и имеющихся доказательств. На каждом этапе согласуем процессуальные действия и сообщаем о результате."
         steps={processSteps}
       />
 
       {/* ═══ БЛОК 6: ЦЕНЫ ═══ */}
       <PricingBlock
+        pageUrl="https://dejure-help.ru/biznesu/migracionnoe-soprovozhdenie-biznesa/zashchita-rabotodatelya-po-state-18-15-koap-rf/"
         title="Стоимость защиты по ст. 18.15 КоАП РФ"
         subtitle="Стоимость зависит от процессуальной стадии (протокол, рассмотрение или обжалование в суде) и количества привлеченных лиц. Фиксируется в договоре."
         tiers={pricingTiers}
@@ -938,7 +941,7 @@ export default function ZashchitaPo1815KoapClient() {
                   marginBottom: '24px'
                 }}
               >
-                Укажите текущую стадию (составлен протокол, назначено заседание или получено постановление о штрафе) и дату. Мы свяжемся с вами в течение 15 минут в рабочее время.
+                Укажите текущую стадию (составлен протокол, назначено заседание или получено постановление о штрафе) и дату. Для срочного подключения позвоните по номеру +7 (4742) 20-15-25. Если вы оставите заявку, мы свяжемся с вами в ближайшее рабочее время.
               </p>
               <div
                 style={{
@@ -953,7 +956,7 @@ export default function ZashchitaPo1815KoapClient() {
                   Контроль срока обжалования (10 суток)
                 </div>
                 <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
-                  Если постановление уже вынесено, обязательно сохраните конверт с почтовым треком. Срок подачи жалобы исчисляется строго с момента получения.
+                  Если постановление уже вынесено, обязательно сохраните конверт с почтовым треком. По общему правилу жалобу можно подать в течение 10 суток со дня вручения или получения копии постановления. Течение срока начинается на следующий день.
                 </div>
               </div>
               <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
@@ -971,7 +974,61 @@ export default function ZashchitaPo1815KoapClient() {
                 border: '1px solid rgba(0,0,0,0.08)'
               }}
             >
-              <ContactsForm />
+              <ContactsForm
+              customFields={
+                <>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="company" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Компания (необязательно)</label>
+                    <input type="text" id="company" name="company" placeholder="ООО «Компания»" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="koap_part" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Часть статьи</label>
+                    <select id="koap_part" name="koap_part" defaultValue="1" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }}>
+                      <option value="1">1 (привлечение без разрешения/патента)</option>
+                      <option value="2">2 (привлечение без разрешения на привлечение)</option>
+                      <option value="3">3 (неуведомление / нарушение порядка уведомления МВД)</option>
+                      <option value="4">4 (нарушение в Москве, СПб, МО, ЛО)</option>
+                      <option value="5">5 (неуведомление об обучении)</option>
+                      <option value="не знаю">Не знаю</option>
+                    </select>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="case_stage" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Стадия дела</label>
+                    <select
+                      id="case_stage"
+                      name="case_stage"
+                      value={formCaseStage}
+                      onChange={(e) => setFormCaseStage(e.target.value)}
+                      style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }}
+                    >
+                      <option value="проверка">Проверка / опрос</option>
+                      <option value="составлен протокол">Составлен протокол</option>
+                      <option value="рассмотрение">Дело на рассмотрении в МВД или суде</option>
+                      <option value="вынесено постановление">Вынесено постановление о штрафе</option>
+                      <option value="обжалование">Подана жалоба / обжалование</option>
+                    </select>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="next_action_date" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Дата ближайшего действия</label>
+                    <input type="date" id="next_action_date" name="next_action_date" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
+                  </div>
+                  {formCaseStage === 'вынесено постановление' && (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <label htmlFor="decision_received_date" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>
+                        Дата получения постановления
+                      </label>
+                      <input type="date" id="decision_received_date" name="decision_received_date" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
+                    </div>
+                  )}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label htmlFor="workers_or_episodes_count" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Количество работников или эпизодов</label>
+                    <input type="text" id="workers_or_episodes_count" name="workers_or_episodes_count" placeholder="Например: 1 работник / 2 протокола" style={{ padding: '14px 16px', border: '1px solid rgba(23, 50, 77, 0.2)', borderRadius: '0', fontSize: '15px', outline: 'none', background: 'var(--color-white)', color: 'var(--color-deep-blue)', fontFamily: 'inherit' }} />
+                  </div>
+                </>
+              }
+              buttonText="Передать дело на оценку"
+              commentLabel="Комментарий (необязательно)"
+            />
             </div>
           </div>
         </div>

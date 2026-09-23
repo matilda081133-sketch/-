@@ -13,17 +13,21 @@ interface ContactsFormProps {
   subtext?: React.ReactNode;
   agreementNotice?: React.ReactNode;
   analyticsGoal?: string;
+  commentLabel?: string;
+  customFields?: React.ReactNode;
 }
 
 export default function ContactsForm({ 
   title = "Написать нам", 
   subtitle = "Оставьте имя и номер телефона. При желании кратко опишите ситуацию — это поможет юристу подготовиться к разговору.",
   buttonText = "Оставить заявку",
+  commentLabel = "Описание ситуации (необязательно)",
   commentPlaceholder = "Кратко опишите ситуацию или вопрос…",
   hiddenFields,
   subtext = "Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день.",
   agreementNotice,
-  analyticsGoal
+  analyticsGoal,
+  customFields
 }: ContactsFormProps = {}) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -228,8 +232,10 @@ export default function ContactsForm({
           />
         </div>
         
+        {customFields}
+        
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <label htmlFor="message" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Описание ситуации (необязательно)</label>
+          <label htmlFor="message" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>{commentLabel}</label>
           <textarea 
             id="message" 
             name="message"
