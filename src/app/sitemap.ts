@@ -1,7 +1,48 @@
 import { MetadataRoute } from 'next';
 import { teamData } from '@/data/team';
+import { execSync } from 'child_process';
 
 export const dynamic = 'force-static';
+
+function getFileDateMap(): Record<string, string> {
+  const map: Record<string, string> = {};
+  try {
+    const log = execSync('git log --name-only --format="DATE:%cs" -n 300 -- src/app src/data', { encoding: 'utf8' });
+    const lines = log.split('\n');
+    let currentDate: string | null = null;
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (trimmed.startsWith('DATE:')) {
+        currentDate = trimmed.replace('DATE:', '');
+      } else if (trimmed && currentDate) {
+        if (!map[trimmed]) {
+          map[trimmed] = currentDate;
+        }
+      }
+    }
+  } catch (e) {}
+  return map;
+}
+
+function getRouteLastModified(route: string, map: Record<string, string>): Date {
+  const clean = route.replace(/^\/|\/$/g, '');
+  if (!clean) {
+    const d = map['src/app/page.tsx'] || '2026-09-22';
+    return new Date(d);
+  }
+  if (clean.startsWith('specialisty/')) {
+    const d = map['src/data/team.ts'] || '2026-09-22';
+    return new Date(d);
+  }
+  const prefix = `src/app/${clean}/`;
+  let latest = '2026-09-01';
+  for (const [file, date] of Object.entries(map)) {
+    if (file.startsWith(prefix) || file === `src/app/${clean}.tsx` || file === `src/app/${clean}/page.tsx`) {
+      if (date > latest) latest = date;
+    }
+  }
+  return new Date(latest === '2026-09-01' ? '2026-09-22' : latest);
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://dejure-help.ru';
@@ -201,10 +242,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const specialistRoutes = Object.keys(teamData).map((slug) => `/specialisty/${slug}/`);
 
   const allRoutes = [...staticRoutes, ...specialistRoutes];
+  const dateMap = getFileDateMap();
 
   return allRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date('2026-09-22'),
+    lastModified: getRouteLastModified(route, dateMap),
     changeFrequency: (route === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
     priority: route === '' ? 1.0 : route.includes('/specialisty/') ? 0.8 : route.split('/').length <= 3 ? 0.9 : 0.85,
   }));
