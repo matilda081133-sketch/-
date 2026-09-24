@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Host: https://dejure-help.ru
+Sitemap: https://dejure-help.ru/sitemap.xml
