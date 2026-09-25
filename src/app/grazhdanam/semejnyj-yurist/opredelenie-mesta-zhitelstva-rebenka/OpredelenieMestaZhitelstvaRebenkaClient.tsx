@@ -500,6 +500,7 @@ export default function OpredelenieMestaZhitelstvaRebenkaClient() {
       <PricingBlock
         title="Стоимость услуг по определению места жительства ребёнка"
         subtitle="Можно отдельно заказать анализ ситуации, подготовку иска или представительство в суде."
+        pageUrl="https://dejure-help.ru/grazhdanam/semejnyj-yurist/opredelenie-mesta-zhitelstva-rebenka/"
         tiers={pricingTiers}
         ctaTitle=""
         disclaimer="Окончательная стоимость зависит от обстоятельств дела и необходимого объёма работы. Цена и состав услуг фиксируются в договоре до начала работы. Государственные пошлины, нотариальные услуги, экспертизы и другие сопутствующие расходы оплачиваются отдельно."
@@ -569,7 +570,7 @@ export default function OpredelenieMestaZhitelstvaRebenkaClient() {
                 commentPlaceholder="Опишите вашу ситуацию: ..."
                 hiddenFields={[
                   { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/opredelenie-mesta-zhitelstva-rebenka/' },
-                  { name: 'direction', value: 'semejnyj_yurist' },
+                  { name: 'direction', value: 'Семейный юрист' },
                   { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
                 ]}
               />

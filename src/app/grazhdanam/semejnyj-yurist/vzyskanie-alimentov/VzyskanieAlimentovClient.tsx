@@ -486,6 +486,7 @@ export default function VzyskanieAlimentovClient() {
       <PricingBlock
         title="Стоимость услуг по взысканию алиментов"
         subtitle="Выберите подходящий формат: заявление о судебном приказе, исковое производство или участие юриста в суде."
+        pageUrl="https://dejure-help.ru/grazhdanam/semejnyj-yurist/vzyskanie-alimentov/"
         tiers={pricingTiers}
         ctaTitle=""
         disclaimer="Окончательная стоимость зависит от обстоятельств дела и необходимого объёма работы. Цена и состав услуг фиксируются в договоре до начала работы. Государственные пошлины, нотариальные услуги, экспертизы и другие сопутствующие расходы оплачиваются отдельно."
@@ -555,7 +556,7 @@ export default function VzyskanieAlimentovClient() {
                 commentPlaceholder="Опишите вашу ситуацию: ..."
                 hiddenFields={[
                   { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/vzyskanie-alimentov/' },
-                  { name: 'direction', value: 'semejnyj_yurist' },
+                  { name: 'direction', value: 'Семейный юрист' },
                   { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
                 ]}
               />

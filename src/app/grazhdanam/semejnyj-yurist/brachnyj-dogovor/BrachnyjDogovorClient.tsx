@@ -491,6 +491,7 @@ export default function BrachnyjDogovorClient() {
       <PricingBlock
         title="Стоимость услуг по брачному договору"
         subtitle="Можно проверить готовый проект, заказать индивидуальный брачный договор или внести изменения в существующий текст."
+        pageUrl="https://dejure-help.ru/grazhdanam/semejnyj-yurist/brachnyj-dogovor/"
         tiers={pricingTiers}
         ctaTitle=""
         disclaimer="Окончательная стоимость зависит от обстоятельств дела и необходимого объёма работы. Цена и состав услуг фиксируются в договоре до начала работы. Государственные пошлины, нотариальные услуги, экспертизы и другие сопутствующие расходы оплачиваются отдельно."
@@ -560,7 +561,7 @@ export default function BrachnyjDogovorClient() {
                 commentPlaceholder="Опишите вашу ситуацию: ..."
                 hiddenFields={[
                   { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/brachnyj-dogovor/' },
-                  { name: 'direction', value: 'semejnyj_yurist' },
+                  { name: 'direction', value: 'Семейный юрист' },
                   { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
                 ]}
               />

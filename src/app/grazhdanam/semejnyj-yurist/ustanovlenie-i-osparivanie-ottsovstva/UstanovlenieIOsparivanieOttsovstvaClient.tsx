@@ -489,6 +489,7 @@ export default function UstanovlenieIOsparivanieOttsovstvaClient() {
       <PricingBlock
         title="Стоимость услуг по установлению и оспариванию отцовства"
         subtitle="Можно отдельно заказать анализ ситуации, подготовку иска или участие юриста в судебном процессе."
+        pageUrl="https://dejure-help.ru/grazhdanam/semejnyj-yurist/ustanovlenie-i-osparivanie-ottsovstva/"
         tiers={pricingTiers}
         ctaTitle=""
         disclaimer="Окончательная стоимость зависит от обстоятельств дела и необходимого объёма работы. Цена и состав услуг фиксируются в договоре до начала работы. Государственные пошлины, нотариальные услуги, экспертизы и другие сопутствующие расходы оплачиваются отдельно."
@@ -558,7 +559,7 @@ export default function UstanovlenieIOsparivanieOttsovstvaClient() {
                 commentPlaceholder="Опишите вашу ситуацию: ..."
                 hiddenFields={[
                   { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/ustanovlenie-i-osparivanie-ottsovstva/' },
-                  { name: 'direction', value: 'semejnyj_yurist' },
+                  { name: 'direction', value: 'Семейный юрист' },
                   { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
                 ]}
               />

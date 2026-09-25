@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { usePathname } from 'next/navigation';
 
 export interface PricingFeature {
   name: string | React.ReactNode;
@@ -114,6 +115,10 @@ export default function PricingBlock({
     buttonHref: tier.buttonHref || tier.ctaHref || '#form',
   }));
 
+  const pathname = usePathname();
+  const currentBaseUrl = pageUrl || (pathname ? `https://dejure-help.ru${pathname.endsWith('/') ? pathname : pathname + '/'}` : 'https://dejure-help.ru/');
+  const offerUrl = currentBaseUrl.endsWith('/') ? `${currentBaseUrl}#pricing` : `${currentBaseUrl}/#pricing`;
+
   return (
     <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--gradient-cream)', ...sectionStyle }}>
       {/* Schema.org Offer Catalog for SEO */}
@@ -127,9 +132,6 @@ export default function PricingBlock({
             'itemListElement': tiers.map((tier, tIdx) => {
               const numPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
               const isMinPrice = tier.price ? /от/i.test(String(tier.price)) : false;
-              const offerUrl = pageUrl
-                ? (pageUrl.endsWith('/') ? `${pageUrl}#pricing` : `${pageUrl}/#pricing`)
-                : 'https://dejure-help.ru/#pricing';
 
               if (isMinPrice) {
                 return {
@@ -216,9 +218,6 @@ export default function PricingBlock({
             const isMinPrice = tier.price ? /от/i.test(String(tier.price)) : false;
             const tierTitleStr = typeof tier.title === 'string' ? tier.title : 'Юридическая услуга';
             const tierSubtitleStr = typeof tier.subtitle === 'string' ? tier.subtitle : '';
-            const offerUrl = pageUrl
-              ? (pageUrl.endsWith('/') ? `${pageUrl}#pricing` : `${pageUrl}/#pricing`)
-              : 'https://dejure-help.ru/#pricing';
 
             return (
             <div key={idx} style={{
