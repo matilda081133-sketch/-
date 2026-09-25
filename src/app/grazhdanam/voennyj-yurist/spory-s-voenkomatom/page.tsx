@@ -150,6 +150,56 @@ export default function SporySVoenkomatomPage() {
         mainEntity: { '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#service' },
         isPartOf: { '@id': 'https://dejure-help.ru/#website' },
         about: { '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#service' }
+      },
+      {
+        '@type': 'ItemList',
+        'name': 'Стоимость юридической помощи по спорам с военкоматом',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'item': {
+              '@type': 'Offer',
+              'name': 'Консультация по спору с военкоматом',
+              'price': 2000,
+              'priceCurrency': 'RUB',
+              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#form'
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'item': {
+              '@type': 'AggregateOffer',
+              'name': 'Жалоба или заявление',
+              'lowPrice': 5000,
+              'priceCurrency': 'RUB',
+              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#form'
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 3,
+            'item': {
+              '@type': 'AggregateOffer',
+              'name': 'Административный иск',
+              'lowPrice': 10000,
+              'priceCurrency': 'RUB',
+              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#form'
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 4,
+            'item': {
+              '@type': 'AggregateOffer',
+              'name': 'Представительство в суде',
+              'lowPrice': 40000,
+              'priceCurrency': 'RUB',
+              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#form'
+            }
+          }
+        ]
       }
     ]
   };
@@ -516,46 +566,69 @@ export default function SporySVoenkomatomPage() {
       {/* ═══ 4.1. СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
       <PricingBlock 
         title="Стоимость юридической помощи"
-        subtitle="Точная стоимость зависит от состояния документов, стадии дела и необходимости обжалования. После первичной консультации специалист определит объём работы и назовёт стоимость до заключения договора."
+        subtitle="Можно начать с консультации, отдельно заказать жалобу или административный иск, а при необходимости поручить юристу представительство. Подача жалобы или иска не во всех случаях автоматически приостанавливает исполнение решения."
+        ctaTitle=""
+        disclaimer="Окончательная стоимость зависит от объёма материалов, стадии дела, срочности и необходимого объёма работы. Цена и состав услуг фиксируются в договоре до начала работы. Государственные пошлины, нотариальные услуги, экспертизы, медицинские исследования, почтовые расходы и выезд за пределы согласованной территории оплачиваются отдельно. Если после консультации заключается договор на дальнейшую работу, стоимость консультации засчитывается в оплату по договору. Последующее судебное заседание сверх включённых трёх — от 10 000 ₽."
+        pageUrl="/grazhdanam/voennyj-yurist/spory-s-voenkomatom/"
         tiers={[
           {
-            title: <><span style={{ display: 'inline-block' }}>Консультация</span> <br /><span style={{ display: 'inline-block' }}>и анализ</span></>,
-            subtitle: 'Первичный разбор',
+            title: 'Консультация по спору с военкоматом',
+            subtitle: 'Устный разбор решения, действия или бездействия и возможного порядка защиты.',
             popular: false,
-            price: 'от XXX ₽',
+            price: '2 000 ₽',
+            priceUnit: 'за консультацию до 1 часа',
             features: [
-              { name: 'Консультация и анализ документов', value: '✓' },
-              { name: 'Оценка решений и выписок', value: '✓' },
-              { name: 'План первоочередных действий', value: '✓' }
+              { name: 'Уточнение предмета и стадии спора', value: 'Включено' },
+              { name: 'Обсуждение имеющихся решений, выписок и повесток', value: 'Включено' },
+              { name: 'Рекомендации по дальнейшим действиям и срочности', value: 'Включено' }
             ],
-            buttonText: 'Уточнить стоимость',
+            exclusions: 'Углублённый анализ материалов, получение выписки, подготовка жалобы или иска не входят.',
+            buttonText: 'Разобрать решение',
             buttonHref: '#form'
           },
           {
-            title: <><span style={{ display: 'inline-block' }}>Досудебная</span> <br /><span style={{ display: 'inline-block' }}>работа</span></>,
-            subtitle: 'Запросы и жалобы',
-            popular: true,
-            badgeText: 'ВОСТРЕБОВАНО',
-            price: 'от XXX ₽',
+            title: 'Жалоба или заявление',
+            subtitle: 'Один документ в военный комиссариат, призывную комиссию субъекта или иной компетентный орган.',
+            popular: false,
+            price: 'от 5 000 ₽',
+            priceUnit: 'за один документ',
             features: [
-              { name: 'Подготовка адвокатских запросов', value: '✓' },
-              { name: 'Жалобы в призывную комиссию субъекта РФ', value: '✓' },
-              { name: 'Истребование документов и ответов', value: '✓' }
+              { name: 'Изучение материалов, необходимых для документа', value: 'Включено' },
+              { name: 'Определение адресата и требований', value: 'Включено' },
+              { name: 'Подготовка текста; срок — от 3 рабочих дней', value: 'Включено' }
             ],
-            buttonText: 'Уточнить стоимость',
+            exclusions: 'Получение документов, подача, контроль рассмотрения и представительство не входят.',
+            buttonText: 'Заказать жалобу',
             buttonHref: '#form'
           },
           {
-            title: <><span style={{ display: 'inline-block' }}>Судебная</span> <br /><span style={{ display: 'inline-block' }}>защита</span></>,
-            subtitle: 'Судебное обжалование',
+            title: 'Административный иск',
+            subtitle: 'Подготовка одного административного искового заявления об оспаривании решения, действия или бездействия.',
             popular: false,
-            price: 'от XXX ₽',
+            price: 'от 10 000 ₽',
+            priceUnit: 'за один процессуальный документ',
             features: [
-              { name: 'Подготовка иска или жалобы в суд', value: '✓' },
-              { name: 'Сбор доказательной базы', value: '✓' },
-              { name: 'Представительство интересов в суде', value: '✓' }
+              { name: 'Подготовка административного искового заявления', value: 'Включено' },
+              { name: 'Формирование позиции по переданным материалам', value: 'Включено' },
+              { name: 'Срок подготовки — от 3 рабочих дней', value: 'Включено' }
             ],
-            buttonText: 'Уточнить стоимость',
+            exclusions: 'Подача, пошлина, сбор доказательств, ходатайства и представительство не входят.',
+            buttonText: 'Заказать административный иск',
+            buttonHref: '#form'
+          },
+          {
+            title: 'Представительство в суде',
+            subtitle: 'Участие юриста в суде первой инстанции по спору с военкоматом или призывной комиссией.',
+            popular: false,
+            price: 'от 40 000 ₽',
+            priceUnit: 'до 3 судебных заседаний',
+            features: [
+              { name: 'Участие в предварительных и основных заседаниях', value: 'Включено' },
+              { name: 'Представление правовой позиции клиента', value: 'Включено' },
+              { name: 'Информирование о ходе дела', value: 'Включено' }
+            ],
+            exclusions: 'Иск, ходатайства, экспертизы и последующие заседания не входят. Последующее заседание — от 10 000 ₽.',
+            buttonText: 'Обсудить судебное обжалование',
             buttonHref: '#form'
           }
         ]}
