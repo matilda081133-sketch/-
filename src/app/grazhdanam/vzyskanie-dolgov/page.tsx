@@ -231,6 +231,56 @@ export default function VzyskanieDolgovPage() {
             }
           }
         ]
+      },
+      {
+        '@type': 'ItemList',
+        'numberOfItems': 4,
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'item': {
+              '@type': 'Offer',
+              'name': 'Первичный анализ',
+              'price': 2000,
+              'priceCurrency': 'RUB',
+              'url': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/#form'
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'item': {
+              '@type': 'AggregateOffer',
+              'name': 'Досудебное урегулирование',
+              'lowPrice': 10000,
+              'priceCurrency': 'RUB',
+              'url': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/#form'
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 3,
+            'item': {
+              '@type': 'AggregateOffer',
+              'name': 'Судебное взыскание',
+              'lowPrice': 35000,
+              'priceCurrency': 'RUB',
+              'url': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/#form'
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 4,
+            'item': {
+              '@type': 'AggregateOffer',
+              'name': 'Исполнительный этап',
+              'lowPrice': 15000,
+              'priceCurrency': 'RUB',
+              'url': 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/#form'
+            }
+          }
+        ]
       }
     ]
   };
