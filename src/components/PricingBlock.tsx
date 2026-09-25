@@ -16,8 +16,10 @@ export interface PricingTier {
   badgeText?: string;
   badge?: string;
   price?: string;
+  priceUnit?: string;
   period?: string;
   features: (PricingFeature | string)[];
+  exclusions?: string;
   buttonText?: string;
   ctaText?: string;
   buttonHref?: string;
@@ -254,6 +256,11 @@ export default function PricingBlock({
                     {tier.price}
                   </div>
                 )}
+                {tier.priceUnit && (
+                  <div style={{ fontSize: '13px', opacity: 0.7, textAlign: 'center', marginTop: '4px', lineHeight: 1.3 }}>
+                    {tier.priceUnit}
+                  </div>
+                )}
               </div>
 
               <ul style={{ listStyle: 'none', padding: 0, margin: tiers.length >= 5 ? '0 0 24px 0' : '0 0 32px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: tiers.length >= 5 ? '12px' : '16px' }}>
@@ -267,6 +274,12 @@ export default function PricingBlock({
                   </li>
                 ))}
               </ul>
+
+              {tier.exclusions && (
+                <p style={{ fontSize: '12px', opacity: 0.7, margin: '0 0 16px 0', lineHeight: 1.4, fontStyle: 'italic', textAlign: 'center' }}>
+                  {tier.exclusions}
+                </p>
+              )}
 
               <a href={tier.buttonHref || "#form"} className={`btn ${tier.popular ? 'btn-popular' : 'btn-regular'}`} style={{ 
                 width: '100%', 
