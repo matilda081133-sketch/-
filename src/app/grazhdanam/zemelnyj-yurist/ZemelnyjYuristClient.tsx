@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import Header from '@/components/Header';
@@ -613,6 +613,93 @@ export default function ZemelnyjYuristClient() {
                 </a>
               </div>
             ))}
+
+            {/* Карточка «Не нашли свою ситуацию?» — занимает оставшиеся 2 колонки рядом с «Категория земли» */}
+            <div
+              className="card hover-lift sit-notfound-span2"
+              style={{
+                background: 'var(--color-deep-blue)',
+                border: '1px solid transparent',
+                borderTop: '3px solid var(--color-gold)',
+                borderRadius: '0',
+                padding: '32px 28px',
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '24px',
+                boxShadow: '0 8px 16px rgba(16, 39, 59, 0.28)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              <style dangerouslySetInnerHTML={{ __html: `
+                .sit-notfound-span2 {
+                  grid-column: span 2;
+                }
+                @media (max-width: 991px) {
+                  .sit-notfound-span2 {
+                    grid-column: span 1 !important;
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                  }
+                }
+                .sit-notfound-btn {
+                  background-color: var(--color-white) !important;
+                  color: #10273B !important;
+                  border: 1px solid var(--color-white) !important;
+                  white-space: nowrap;
+                  font-weight: 600;
+                  padding: 14px 28px !important;
+                  font-size: 15px;
+                  text-decoration: none;
+                  display: inline-block;
+                  text-align: center;
+                  transition: all 0.3s ease !important;
+                  cursor: pointer;
+                }
+                .sit-notfound-btn:hover {
+                  background-color: var(--color-primary) !important;
+                  color: var(--color-white) !important;
+                  border-color: var(--color-primary) !important;
+                }
+              `}} />
+              <div style={{ flex: '1 1 260px' }}>
+                <h3 style={{
+                  margin: '0 0 10px 0',
+                  fontSize: '22px',
+                  fontFamily: 'var(--font-serif)',
+                  color: 'var(--color-white)',
+                  lineHeight: 1.3
+                }}>
+                  Не нашли свою ситуацию?
+                </h3>
+                <p style={{
+                  margin: 0,
+                  fontSize: '14.5px',
+                  color: 'rgba(255,255,255,0.88)',
+                  lineHeight: 1.6,
+                  maxWidth: '480px'
+                }}>
+                  Опишите ваш земельный вопрос в форме. Изучим документы и предложим возможные варианты решения.
+                </p>
+              </div>
+              <div style={{ flexShrink: 0 }}>
+                <a
+                  href="#form"
+                  className="sit-notfound-btn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else window.location.hash = 'form';
+                    handleCtaClick('land_hub_situations_other', 'Не нашли свою ситуацию?');
+                  }}
+                >
+                  Обсудить ситуацию
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
