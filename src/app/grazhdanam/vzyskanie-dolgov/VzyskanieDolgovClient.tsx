@@ -10,6 +10,7 @@ import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
 import PricingBlock, { PricingTier } from '@/components/PricingBlock';
+import ProcessBlock from '@/components/ProcessBlock';
 
 export default function VzyskanieDolgovClient() {
   const situations = [
@@ -168,8 +169,7 @@ export default function VzyskanieDolgovClient() {
     {
       title: 'Досудебное урегулирование',
       subtitle: 'Требование, претензия, переговоры',
-      popular: true,
-      badgeText: 'Популярно',
+      popular: false,
       price: 'По согласованию',
       features: [
         { name: 'Подготовка мотивированного требования о возврате', value: 'Включено' },
@@ -182,7 +182,7 @@ export default function VzyskanieDolgovClient() {
     },
     {
       title: 'Судебное взыскание',
-      subtitle: 'Приказ или иск «под ключ»',
+      subtitle: 'Приказ или иск с полным сопровождением',
       popular: false,
       price: 'По согласованию',
       features: [
@@ -549,10 +549,11 @@ export default function VzyskanieDolgovClient() {
               className="with-accent"
               style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(26px, 3.5vw, 38px)',
+                fontSize: 'clamp(22px, 2.8vw, 32px)',
                 color: 'var(--color-deep-blue)',
                 marginBottom: '16px',
-                lineHeight: 1.25
+                lineHeight: 1.25,
+                whiteSpace: 'nowrap'
               }}
             >
               Три правовых маршрута по документам
@@ -774,59 +775,13 @@ export default function VzyskanieDolgovClient() {
       </section>
 
       {/* ═══ БЛОК 7: КАК ПРОХОДИТ РАБОТА ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0', background: 'var(--color-cream)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
-            <h2
-              className="with-accent"
-              style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(26px, 3.5vw, 38px)',
-                color: 'var(--color-deep-blue)',
-                marginBottom: '16px',
-                lineHeight: 1.25
-              }}
-            >
-              Как проходит работа
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, lineHeight: 1.6, margin: 0 }}>
-              Понятный маршрут взаимодействия без лишней бюрократии и с постоянной обратной связью.
-            </p>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: '24px', marginBottom: '32px' }}>
-            {processSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="card"
-                style={{
-                  background: '#FFFFFF',
-                  border: '1px solid var(--color-border)',
-                  borderTop: '3px solid var(--color-gold)',
-                  padding: '28px 22px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '10px'
-                }}
-              >
-                <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--color-gold)', fontFamily: 'var(--font-serif)' }}>
-                  {step.num}
-                </div>
-                <h3 style={{ fontSize: '18px', color: 'var(--color-deep-blue)', margin: 0, fontWeight: 600 }}>
-                  {step.title}
-                </h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', textAlign: 'center', margin: 0 }}>
-            Консультации и согласование позиции возможны дистанционно. Способ передачи финансовых документов и необходимость личного участия определяются после первичного обращения.
-          </p>
-        </div>
-      </section>
+      <ProcessBlock
+        steps={processSteps}
+        title="Как проходит работа"
+        subtitle="Понятный маршрут взаимодействия без лишней бюрократии и с постоянной обратной связью."
+        footerNote="Консультации и согласование позиции возможны дистанционно. Способ передачи финансовых документов и необходимость личного участия определяются после первичного обращения."
+        alignTitle="left"
+      />
 
       {/* ═══ БЛОК 8: ЧТО ПОДГОТОВИТЬ К КОНСУЛЬТАЦИИ ═══ */}
       <section className="section bg-white" style={{ padding: '80px 0' }}>
