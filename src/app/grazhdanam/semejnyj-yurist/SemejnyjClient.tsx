@@ -706,6 +706,7 @@ export default function SemejnyjClient() {
       <PricingBlock
         title="Стоимость услуг семейного юриста"
         subtitle="Вы можете обратиться за отдельной консультацией, заказать подготовку документа или поручить юристу представительство в суде. Стоимость и состав выбранной услуги фиксируются в договоре до начала работы."
+        pageUrl="https://dejure-help.ru/grazhdanam/semejnyj-yurist/"
         tiers={pricingTiers}
         ctaTitle=""
         disclaimer="Окончательная стоимость зависит от обстоятельств дела и необходимого объёма работы. Цена и состав услуг фиксируются в договоре до начала работы. Государственные пошлины, нотариальные услуги, экспертизы и другие сопутствующие расходы оплачиваются отдельно."
@@ -808,6 +809,18 @@ export default function SemejnyjClient() {
                   width: 'auto'
                 }}
                 data-analytics="click_promo_document_card"
+                data-service="Подготовка документа по семейному делу"
+                data-direction="Семейный юрист"
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new CustomEvent('dejure:select_service', {
+                      detail: {
+                        service: 'Подготовка документа по семейному делу',
+                        direction: 'Семейный юрист'
+                      }
+                    }));
+                  }
+                }}
               >
                 Заказать документ
               </a>
@@ -879,8 +892,8 @@ export default function SemejnyjClient() {
                 buttonText="Отправить обращение"
                 commentPlaceholder="Опишите вашу ситуацию: состав имущества, спор о детях или развод..."
                 hiddenFields={[
-                  { name: 'source_page', value: '/grazhdanam/semejnyj-yurist/' },
-                  { name: 'direction', value: 'semejnyj_yurist' },
+                  { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/' },
+                  { name: 'direction', value: 'Семейный юрист' },
                   { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
                 ]}
               />

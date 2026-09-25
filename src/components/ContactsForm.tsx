@@ -32,6 +32,41 @@ export default function ContactsForm({
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedService, setSelectedService] = useState<string>('');
+  const [selectedDirection, setSelectedDirection] = useState<string>('');
+  const [currentUrl, setCurrentUrl] = useState<string>('');
+
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentUrl(window.location.href);
+    }
+
+    const handleSelectService = (e: any) => {
+      if (e?.detail?.service) {
+        setSelectedService(e.detail.service);
+      }
+      if (e?.detail?.direction) {
+        setSelectedDirection(e.detail.direction);
+      }
+    };
+
+    const handleClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest('[data-service]');
+      if (target) {
+        const s = target.getAttribute('data-service');
+        const d = target.getAttribute('data-direction');
+        if (s) setSelectedService(s);
+        if (d) setSelectedDirection(d);
+      }
+    };
+
+    window.addEventListener('dejure:select_service', handleSelectService);
+    document.addEventListener('click', handleClick);
+    return () => {
+      window.removeEventListener('dejure:select_service', handleSelectService);
+      document.removeEventListener('click', handleClick);
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -76,16 +111,21 @@ export default function ContactsForm({
       }
     }
 
+    const fullCurrentUrl = typeof window !== 'undefined' ? window.location.href : (extraData.source_page || '');
+
     const payload = {
       name,
       phone: phone ? (phone.startsWith('+') ? "'" + phone : phone) : '',
       message,
       specialist,
       pageId: extraData.pageId || 'CIV-05',
-      ctaSource: extraData.ctaSource || 'form_submit',
+      ctaSource: extraData.ctaSource || (selectedService ? 'pricing_card' : 'form_submit'),
       pricingFormat: extraData.pricingFormat || '',
+      selected_service: selectedService || extraData.selected_service || '',
+      direction: selectedDirection || extraData.direction || '',
+      source_page: fullCurrentUrl,
       ...extraData,
-      page_url: typeof window !== 'undefined' ? window.location.href : '',
+      page_url: fullCurrentUrl,
       page_title: typeof window !== 'undefined' ? document.title : ''
     };
 
@@ -181,6 +221,52 @@ export default function ContactsForm({
         {hiddenFields?.map((field, i) => (
           <input key={i} type="hidden" name={field.name} value={field.value} />
         ))}
+        {selectedService && (
+          <input type="hidden" name="selected_service" value={selectedService} />
+        )}
+        {selectedDirection && (
+          <input type="hidden" name="direction" value={selectedDirection} />
+        )}
+        {currentUrl && (
+          <input type="hidden" name="source_page" value={currentUrl} />
+        )}
+
+        {selectedService && (
+          <div style={{
+            background: 'rgba(176, 141, 87, 0.1)',
+            borderLeft: '3px solid var(--color-gold)',
+            padding: '12px 16px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '12px'
+          }}>
+            <div>
+              <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Выбранная услуга
+              </span>
+              <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+                {selectedService}
+              </strong>
+            </div>
+            <button
+              type="button"
+              onClick={() => setSelectedService('')}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: 'var(--color-text-secondary)',
+                fontSize: '20px',
+                lineHeight: 1,
+                cursor: 'pointer',
+                padding: '4px 8px'
+              }}
+              title="Сбросить выбор услуги"
+            >
+              ×
+            </button>
+          </div>
+        )}
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <label htmlFor="name" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Имя (необязательно)</label>

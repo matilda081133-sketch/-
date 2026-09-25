@@ -126,6 +126,24 @@ export default function PricingBlock({
             'name': typeof title === 'string' ? title : 'Стоимость юридических услуг в Липецке',
             'itemListElement': tiers.map((tier, tIdx) => {
               const numPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
+              const isMinPrice = tier.price ? /от/i.test(String(tier.price)) : false;
+              const offerUrl = pageUrl
+                ? (pageUrl.endsWith('/') ? `${pageUrl}#pricing` : `${pageUrl}/#pricing`)
+                : 'https://dejure-help.ru/#pricing';
+
+              if (isMinPrice) {
+                return {
+                  '@type': 'AggregateOffer',
+                  'position': tIdx + 1,
+                  'name': typeof tier.title === 'string' ? tier.title : 'Юридическая услуга',
+                  'description': typeof tier.subtitle === 'string' ? tier.subtitle : undefined,
+                  'lowPrice': numPrice || '0',
+                  'priceCurrency': 'RUB',
+                  'availability': 'https://schema.org/InStock',
+                  'url': offerUrl
+                };
+              }
+
               return {
                 '@type': 'Offer',
                 'position': tIdx + 1,
@@ -134,7 +152,7 @@ export default function PricingBlock({
                 'price': numPrice || '0',
                 'priceCurrency': 'RUB',
                 'availability': 'https://schema.org/InStock',
-                'url': pageUrl ? (pageUrl.endsWith('/') ? `${pageUrl}#pricing` : `${pageUrl}/#pricing`) : 'https://dejure-help.ru/#pricing'
+                'url': offerUrl
               };
             })
           })
@@ -195,8 +213,13 @@ export default function PricingBlock({
         >
           {tiers.map((tier, idx) => {
             const numericPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
+            const isMinPrice = tier.price ? /от/i.test(String(tier.price)) : false;
             const tierTitleStr = typeof tier.title === 'string' ? tier.title : 'Юридическая услуга';
             const tierSubtitleStr = typeof tier.subtitle === 'string' ? tier.subtitle : '';
+            const offerUrl = pageUrl
+              ? (pageUrl.endsWith('/') ? `${pageUrl}#pricing` : `${pageUrl}/#pricing`)
+              : 'https://dejure-help.ru/#pricing';
+
             return (
             <div key={idx} style={{
               background: tier.popular ? 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)' : 'var(--color-white)',
@@ -216,14 +239,19 @@ export default function PricingBlock({
             }}
             className="pricing-tier-card"
             itemScope
-            itemType="https://schema.org/Offer"
+            itemType={isMinPrice ? "https://schema.org/AggregateOffer" : "https://schema.org/Offer"}
             >
               {numericPrice && (
                 <>
-                  <meta itemProp="price" content={numericPrice} />
+                  {isMinPrice ? (
+                    <meta itemProp="lowPrice" content={numericPrice} />
+                  ) : (
+                    <meta itemProp="price" content={numericPrice} />
+                  )}
                   <meta itemProp="priceCurrency" content="RUB" />
                   <meta itemProp="availability" content="https://schema.org/InStock" />
                   <meta itemProp="name" content={tierTitleStr} />
+                  <meta itemProp="url" content={offerUrl} />
                   {tierSubtitleStr && <meta itemProp="description" content={tierSubtitleStr} />}
                 </>
               )}
@@ -281,17 +309,31 @@ export default function PricingBlock({
                 </p>
               )}
 
-              <a href={tier.buttonHref || "#form"} className={`btn ${tier.popular ? 'btn-popular' : 'btn-regular'}`} style={{ 
-                width: '100%', 
-                textAlign: 'center',
-                borderRadius: '0',
-                fontSize: tiers.length >= 5 ? '13px' : '15px',
-                padding: tiers.length >= 5 ? '12px 6px' : '14px 16px',
-                whiteSpace: 'normal',
-                textWrap: 'balance',
-                lineHeight: 1.3,
-                minHeight: tiers.length >= 5 ? '48px' : '52px'
-              }}>
+              <a 
+                href={tier.buttonHref || "#form"} 
+                data-service={tierTitleStr}
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new CustomEvent('dejure:select_service', {
+                      detail: {
+                        service: tierTitleStr
+                      }
+                    }));
+                  }
+                }}
+                className={`btn ${tier.popular ? 'btn-popular' : 'btn-regular'}`} 
+                style={{ 
+                  width: '100%', 
+                  textAlign: 'center',
+                  borderRadius: '0',
+                  fontSize: tiers.length >= 5 ? '13px' : '15px',
+                  padding: tiers.length >= 5 ? '12px 6px' : '14px 16px',
+                  whiteSpace: 'normal',
+                  textWrap: 'balance',
+                  lineHeight: 1.3,
+                  minHeight: tiers.length >= 5 ? '48px' : '52px'
+                }}
+              >
                 {tier.buttonText || 'Узнать точную стоимость'}
               </a>
             </div>

@@ -8,6 +8,9 @@ export interface LeadPayload {
   pricingFormat?: string;
   page_url?: string;
   page_title?: string;
+  direction?: string;
+  source_page?: string;
+  selected_service?: string;
   [key: string]: any;
 }
 
@@ -37,19 +40,26 @@ function getUtmParams(): Record<string, string> {
 export async function sendLeadToCRM(payload: LeadPayload): Promise<{ success: boolean; bitrixLeadId?: number; error?: string }> {
   const utm = getUtmParams();
 
-  const titleTopic = payload.specialist || 'Консультация';
+  const titleTopic = payload.selected_service || payload.direction || payload.specialist || 'Консультация';
   const titleName = payload.name?.trim() || 'Клиент';
   const leadTitle = `Заявка с сайта: ${titleTopic} (${titleName})`;
 
   const commentParts: string[] = [];
+  if (payload.direction) {
+    commentParts.push(`<b>Направление:</b> ${payload.direction}`);
+  }
+  if (payload.selected_service) {
+    commentParts.push(`<b>Выбранная услуга:</b> ${payload.selected_service}`);
+  }
   if (payload.message?.trim()) {
     commentParts.push(`<b>Описание ситуации:</b> ${payload.message.trim()}`);
   }
   if (payload.specialist) {
-    commentParts.push(`<b>Услуга / Специалист:</b> ${payload.specialist}`);
+    commentParts.push(`<b>Специалист:</b> ${payload.specialist}`);
   }
-  if (payload.page_url) {
-    commentParts.push(`<b>Страница:</b> <a href="${payload.page_url}">${payload.page_url}</a>`);
+  const pageLink = payload.source_page || payload.page_url;
+  if (pageLink) {
+    commentParts.push(`<b>Страница заявки:</b> <a href="${pageLink}">${pageLink}</a>`);
   }
   if (payload.page_title) {
     commentParts.push(`<b>Заголовок страницы:</b> ${payload.page_title}`);
