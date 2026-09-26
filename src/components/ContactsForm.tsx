@@ -15,6 +15,7 @@ interface ContactsFormProps {
   analyticsGoal?: string;
   commentLabel?: string;
   customFields?: React.ReactNode;
+  direction?: string;
 }
 
 export default function ContactsForm({ 
@@ -27,26 +28,40 @@ export default function ContactsForm({
   subtext = "Если вы оставите заявку вечером или в выходной день, мы перезвоним в ближайший рабочий день.",
   agreementNotice,
   analyticsGoal,
-  customFields
+  customFields,
+  direction
 }: ContactsFormProps = {}) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedService, setSelectedService] = useState<string>('');
-  const [selectedDirection, setSelectedDirection] = useState<string>('');
+  const initialDirection = direction || hiddenFields?.find(f => f.name === 'direction')?.value || '';
+  const [selectedDirection, setSelectedDirection] = useState<string>(initialDirection);
   const [currentUrl, setCurrentUrl] = useState<string>('');
 
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
       setCurrentUrl(window.location.href);
+      if (!selectedDirection) {
+        const path = window.location.pathname;
+        if (path.includes('/voennyj-yurist')) {
+          setSelectedDirection('Военное право');
+        } else if (path.includes('/semejnyj-yurist')) {
+          setSelectedDirection('Семейный юрист');
+        }
+      }
     }
 
     const handleSelectService = (e: any) => {
       if (e?.detail?.service) {
         setSelectedService(e.detail.service);
+        const sInput = document.getElementById('form_selected_service') as HTMLInputElement;
+        if (sInput) sInput.value = e.detail.service;
       }
       if (e?.detail?.direction) {
         setSelectedDirection(e.detail.direction);
+        const dInput = document.getElementById('form_direction') as HTMLInputElement;
+        if (dInput) dInput.value = e.detail.direction;
       }
     };
 
@@ -55,18 +70,26 @@ export default function ContactsForm({
       if (target) {
         const s = target.getAttribute('data-service');
         const d = target.getAttribute('data-direction');
-        if (s) setSelectedService(s);
-        if (d) setSelectedDirection(d);
+        if (s) {
+          setSelectedService(s);
+          const sInput = document.getElementById('form_selected_service') as HTMLInputElement;
+          if (sInput) sInput.value = s;
+        }
+        if (d) {
+          setSelectedDirection(d);
+          const dInput = document.getElementById('form_direction') as HTMLInputElement;
+          if (dInput) dInput.value = d;
+        }
       }
     };
 
     window.addEventListener('dejure:select_service', handleSelectService);
-    document.addEventListener('click', handleClick);
+    document.addEventListener('click', handleClick, true);
     return () => {
       window.removeEventListener('dejure:select_service', handleSelectService);
-      document.removeEventListener('click', handleClick);
+      document.removeEventListener('click', handleClick, true);
     };
-  }, []);
+  }, [selectedDirection]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -111,7 +134,12 @@ export default function ContactsForm({
       }
     }
 
-    const fullCurrentUrl = typeof window !== 'undefined' ? window.location.href : (extraData.source_page || '');
+    const fullCurrentUrl = typeof window !== 'undefined' ? window.location.href : (currentUrl || extraData.source_page || '');
+
+    const finalDirection = selectedDirection || extraData.direction || (
+      typeof window !== 'undefined' && window.location.pathname.includes('/voennyj-yurist') ? 'Военное право' :
+      typeof window !== 'undefined' && window.location.pathname.includes('/semejnyj-yurist') ? 'Семейный юрист' : ''
+    );
 
     const payload = {
       name,
@@ -122,7 +150,7 @@ export default function ContactsForm({
       ctaSource: extraData.ctaSource || (selectedService ? 'pricing_card' : 'form_submit'),
       pricingFormat: extraData.pricingFormat || '',
       selected_service: selectedService || extraData.selected_service || '',
-      direction: selectedDirection || extraData.direction || '',
+      direction: finalDirection,
       source_page: fullCurrentUrl,
       ...extraData,
       page_url: fullCurrentUrl,
@@ -218,44 +246,46 @@ export default function ContactsForm({
       )}
 
       <form onSubmit={handleSubmit} method="post" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        {hiddenFields?.map((field, i) => (
+        {hiddenFields?.filter(f => !['selected_service', 'direction', 'source_page'].includes(f.name)).map((field, i) => (
           <input key={i} type="hidden" name={field.name} value={field.value} />
         ))}
-        {selectedService && (
-          <input type="hidden" name="selected_service" value={selectedService} />
-        )}
-        {selectedDirection && (
-          <input type="hidden" name="direction" value={selectedDirection} />
-        )}
-        {currentUrl && (
-          <input type="hidden" name="source_page" value={currentUrl} />
-        )}
+        <input type="hidden" id="form_selected_service" name="selected_service" value={selectedService} />
+        <input type="hidden" id="form_direction" name="direction" value={selectedDirection} />
+        <input type="hidden" id="form_source_page" name="source_page" value={currentUrl} />
 
         {selectedService && (
-          <div style={{
-            background: 'rgba(176, 141, 87, 0.1)',
-            borderLeft: '3px solid var(--color-gold)',
-            padding: '12px 16px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '12px'
-          }}>
+          <div
+            id="selected-service-badge"
+            style={{
+              background: '#F0F4F8',
+              border: '1px solid #C4D3E3',
+              borderLeft: '4px solid #10273B',
+              padding: '12px 16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '12px'
+            }}
+          >
             <div>
-              <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <span style={{ fontSize: '11px', color: '#6C7A89', display: 'block', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
                 Выбранная услуга
               </span>
-              <strong style={{ fontSize: '15px', color: 'var(--color-deep-blue)' }}>
+              <strong style={{ fontSize: '15px', color: '#10273B' }}>
                 {selectedService}
               </strong>
             </div>
             <button
               type="button"
-              onClick={() => setSelectedService('')}
+              onClick={() => {
+                setSelectedService('');
+                const sInput = document.getElementById('form_selected_service') as HTMLInputElement;
+                if (sInput) sInput.value = '';
+              }}
               style={{
                 background: 'none',
                 border: 'none',
-                color: 'var(--color-text-secondary)',
+                color: '#6C7A89',
                 fontSize: '20px',
                 lineHeight: 1,
                 cursor: 'pointer',

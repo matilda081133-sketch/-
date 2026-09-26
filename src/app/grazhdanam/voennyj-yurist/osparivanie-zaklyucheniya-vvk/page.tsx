@@ -111,7 +111,7 @@ export default function VvkPage() {
         '@type': 'Person',
         '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
         name: 'Конопкин Дмитрий Сергеевич',
-        jobTitle: 'Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»',
+        jobTitle: 'Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»',
         description: 'Реестровый номер 48/812 в реестре адвокатов Липецкой области. Специалист по оспариванию заключений ВВК и защите прав военнослужащих. 📞 +7 (4742) 20-15-25.',
         image: 'https://dejure-help.ru/images/konopkin.jpg',
         url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
@@ -167,56 +167,6 @@ export default function VvkPage() {
             text: faq.a
           }
         }))
-      },
-      {
-        '@type': 'ItemList',
-        'name': 'Стоимость юридической помощи по оспариванию ВВК',
-        'itemListElement': [
-          {
-            '@type': 'ListItem',
-            'position': 1,
-            'item': {
-              '@type': 'Offer',
-              'name': 'Консультация по заключению ВВК',
-              'price': 2000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/#form'
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 2,
-            'item': {
-              '@type': 'AggregateOffer',
-              'name': 'Жалоба в вышестоящую ВВК',
-              'lowPrice': 5000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/#form'
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 3,
-            'item': {
-              '@type': 'AggregateOffer',
-              'name': 'Административный иск по заключению ВВК',
-              'lowPrice': 10000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/#form'
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 4,
-            'item': {
-              '@type': 'AggregateOffer',
-              'name': 'Представительство в суде по ВВК',
-              'lowPrice': 40000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/#form'
-            }
-          }
-        ]
       }
     ]
   };
@@ -289,7 +239,7 @@ export default function VvkPage() {
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
+        imageSubtitle="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
         imageMarginTop="0px"
         trustItems={[
           { text: <><span style={{ display: 'inline-block' }}>Проверяем заключение</span> <span style={{ display: 'inline-block' }}>и медицинские документы</span></> },
@@ -400,7 +350,7 @@ export default function VvkPage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Конопкин Дмитрий Сергеевич"
-        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Военное право»</>}
+        position={<>Адвокат, независимый партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
         imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
@@ -578,7 +528,8 @@ export default function VvkPage() {
         subtitle="Выберите отдельный этап: консультацию, жалобу в вышестоящую ВВК, административный иск или представительство в суде. Юридическая помощь не заменяет медицинское обследование и не гарантирует изменение заключения."
         ctaTitle=""
         disclaimer="Окончательная стоимость зависит от объёма материалов, стадии дела, срочности и необходимого объёма работы. Цена и состав услуг фиксируются в договоре до начала работы. Государственные пошлины, нотариальные услуги, экспертизы, медицинские исследования, почтовые расходы и выезд за пределы согласованной территории оплачиваются отдельно. Если после консультации заключается договор на дальнейшую работу, стоимость консультации засчитывается в оплату по договору. Последующее судебное заседание сверх включённых трёх — от 10 000 ₽."
-        pageUrl="/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/"
+        pageUrl="https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/"
+        direction="Военное право"
         tiers={[
           {
             title: 'Консультация по заключению ВВК',
@@ -791,6 +742,11 @@ export default function VvkPage() {
                   subtitle="" 
                   buttonText="Получить консультацию"
                   commentPlaceholder="Например: ВВК не учла заболевание и установила категорию «Б»..."
+                  direction="Военное право"
+                  hiddenFields={[
+                    { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/' },
+                    { name: 'direction', value: 'Военное право' }
+                  ]}
                 />
               </div>
             </div>

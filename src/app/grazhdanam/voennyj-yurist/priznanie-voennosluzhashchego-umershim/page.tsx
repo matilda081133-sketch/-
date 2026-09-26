@@ -73,7 +73,7 @@ export default function PriznanieUmershimPage() {
         '@type': 'Person',
         '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
         name: 'Дмитрий Сергеевич Конопкин',
-        jobTitle: 'Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»',
+        jobTitle: 'Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»',
         description: 'Реестровый номер 48/812 в реестре адвокатов Липецкой области. Специалист по защите прав военнослужащих и их семей. 📞 +7 (4742) 20-15-25.',
         image: 'https://dejure-help.ru/images/konopkin.jpg',
         url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
@@ -106,45 +106,6 @@ export default function PriznanieUmershimPage() {
           name: faq.q,
           acceptedAnswer: { '@type': 'Answer', text: faq.a }
         }))
-      },
-      {
-        '@type': 'ItemList',
-        'name': 'Стоимость юридической помощи по признанию безвестно отсутствующим или умершим',
-        'itemListElement': [
-          {
-            '@type': 'ListItem',
-            'position': 1,
-            'item': {
-              '@type': 'Offer',
-              'name': 'Консультация по выбору процедуры',
-              'price': 2000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/#form'
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 2,
-            'item': {
-              '@type': 'AggregateOffer',
-              'name': 'Заявление в суд',
-              'lowPrice': 10000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/#form'
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 3,
-            'item': {
-              '@type': 'AggregateOffer',
-              'name': 'Представительство в суде',
-              'lowPrice': 40000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/#form'
-            }
-          }
-        ]
       }
     ]
   };
@@ -190,7 +151,7 @@ export default function PriznanieUmershimPage() {
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
+        imageSubtitle="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
         imageMarginTop="20px"
         trustItems={[
           { text: <><span style={{ display: 'inline-block' }}>Определяем подходящий</span> <span style={{ display: 'inline-block' }}>юридический статус</span></> },
@@ -375,7 +336,7 @@ export default function PriznanieUmershimPage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Военное право»</>}
+        position={<>Адвокат, независимый партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
         imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
@@ -604,7 +565,8 @@ export default function PriznanieUmershimPage() {
         ]}
         ctaTitle=""
         disclaimer="Окончательная стоимость зависит от объёма материалов, стадии дела, срочности и необходимого объёма работы. Цена и состав услуг фиксируются в договоре до начала работы. Государственные пошлины, нотариальные услуги, экспертизы, медицинские исследования, почтовые расходы и выезд за пределы согласованной территории оплачиваются отдельно. Если после консультации заключается договор на дальнейшую работу, стоимость консультации засчитывается в оплату по договору. Последующее судебное заседание сверх включённых трёх — от 10 000 ₽."
-        pageUrl="/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/"
+        pageUrl="https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/"
+        direction="Военное право"
       />
 
       {/* ═══ 8. ЧАСТЫЕ ВОПРОСЫ ═══ */}
@@ -721,7 +683,15 @@ export default function PriznanieUmershimPage() {
 
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
               <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
-                <ContactsForm title="Написать нам" subtitle="" />
+                <ContactsForm 
+                  title="Написать нам" 
+                  subtitle="" 
+                  direction="Военное право"
+                  hiddenFields={[
+                    { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/' },
+                    { name: 'direction', value: 'Военное право' }
+                  ]}
+                />
               </div>
             </div>
           </div>

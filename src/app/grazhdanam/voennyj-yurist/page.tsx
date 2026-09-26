@@ -116,59 +116,9 @@ export default function VoennyjYuristPage() {
       {
         "@type": "Person",
         "name": "Дмитрий Сергеевич Конопкин",
-        "jobTitle": "Адвокат",
+        "jobTitle": "Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»",
         "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
         "worksFor": { "@id": "https://dejure-help.ru/#organization" }
-      },
-      {
-        "@type": "ItemList",
-        "name": "Стоимость юридической помощи военнослужащим",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Offer",
-              "name": "Консультация военного юриста",
-              "price": 2000,
-              "priceCurrency": "RUB",
-              "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/#form"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "AggregateOffer",
-              "name": "Жалоба или заявление в военный орган",
-              "lowPrice": 5000,
-              "priceCurrency": "RUB",
-              "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/#form"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "AggregateOffer",
-              "name": "Представительство в ведомстве или комиссии",
-              "lowPrice": 15000,
-              "priceCurrency": "RUB",
-              "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/#form"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "AggregateOffer",
-              "name": "Представительство в суде первой инстанции",
-              "lowPrice": 40000,
-              "priceCurrency": "RUB",
-              "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/#form"
-            }
-          }
-        ]
       }
     ]
   };
@@ -206,7 +156,7 @@ export default function VoennyjYuristPage() {
         ctaMarginTop="36px"
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
+        imageSubtitle="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
         trustItems={[]}
       />
 
@@ -524,7 +474,7 @@ export default function VoennyjYuristPage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Военное право»</>}
+        position={<>Адвокат, независимый партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
         imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
@@ -604,7 +554,8 @@ export default function VoennyjYuristPage() {
         subtitle="Можно начать с консультации, заказать отдельный документ или поручить юристу представительство в ведомстве либо суде. Стоимость и границы выбранной услуги фиксируются в договоре до начала работы."
         ctaTitle=""
         disclaimer="Окончательная стоимость зависит от объёма материалов, стадии дела, срочности и необходимого объёма работы. Цена и состав услуг фиксируются в договоре до начала работы. Государственные пошлины, нотариальные услуги, экспертизы, медицинские исследования, почтовые расходы и выезд за пределы согласованной территории оплачиваются отдельно. Если после консультации заключается договор на дальнейшую работу, стоимость консультации засчитывается в оплату по договору. Последующее судебное заседание сверх включённых трёх — от 10 000 ₽."
-        pageUrl="/grazhdanam/voennyj-yurist/"
+        pageUrl="https://dejure-help.ru/grazhdanam/voennyj-yurist/"
+        direction="Военное право"
         tiers={[
           {
             title: 'Консультация военного юриста',
@@ -706,7 +657,15 @@ export default function VoennyjYuristPage() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
               <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
-                <ContactsForm title="Написать нам" subtitle="" />
+                <ContactsForm 
+                  title="Написать нам" 
+                  subtitle="" 
+                  direction="Военное право"
+                  hiddenFields={[
+                    { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/' },
+                    { name: 'direction', value: 'Военное право' }
+                  ]}
+                />
               </div>
             </div>
           </div>

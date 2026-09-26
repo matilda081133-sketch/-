@@ -112,7 +112,7 @@ export default function SporySVoenkomatomPage() {
         '@type': 'Person',
         '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
         name: 'Конопкин Дмитрий Сергеевич',
-        jobTitle: 'Адвокат, председатель Коллегии адвокатов «Де-Юре»',
+        jobTitle: 'Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»',
         url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
         image: 'https://dejure-help.ru/images/konopkin.jpg',
         worksFor: { '@id': 'https://dejure-help.ru/#organization' },
@@ -150,56 +150,6 @@ export default function SporySVoenkomatomPage() {
         mainEntity: { '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#service' },
         isPartOf: { '@id': 'https://dejure-help.ru/#website' },
         about: { '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#service' }
-      },
-      {
-        '@type': 'ItemList',
-        'name': 'Стоимость юридической помощи по спорам с военкоматом',
-        'itemListElement': [
-          {
-            '@type': 'ListItem',
-            'position': 1,
-            'item': {
-              '@type': 'Offer',
-              'name': 'Консультация по спору с военкоматом',
-              'price': 2000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#form'
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 2,
-            'item': {
-              '@type': 'AggregateOffer',
-              'name': 'Жалоба или заявление',
-              'lowPrice': 5000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#form'
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 3,
-            'item': {
-              '@type': 'AggregateOffer',
-              'name': 'Административный иск',
-              'lowPrice': 10000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#form'
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 4,
-            'item': {
-              '@type': 'AggregateOffer',
-              'name': 'Представительство в суде',
-              'lowPrice': 40000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/#form'
-            }
-          }
-        ]
       }
     ]
   };
@@ -306,7 +256,7 @@ export default function SporySVoenkomatomPage() {
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
+        imageSubtitle="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
         trustItems={[
           { text: 'Проверяем принятое решение и имеющиеся материалы' },
           { text: <>Выбираем порядок обжалования — в призывной<br />комиссии субъекта РФ или в суде</> },
@@ -520,7 +470,7 @@ export default function SporySVoenkomatomPage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Военное право»</>}
+        position={<>Адвокат, независимый партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
         imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
@@ -569,7 +519,8 @@ export default function SporySVoenkomatomPage() {
         subtitle="Можно начать с консультации, отдельно заказать жалобу или административный иск, а при необходимости поручить юристу представительство. Подача жалобы или иска не во всех случаях автоматически приостанавливает исполнение решения."
         ctaTitle=""
         disclaimer="Окончательная стоимость зависит от объёма материалов, стадии дела, срочности и необходимого объёма работы. Цена и состав услуг фиксируются в договоре до начала работы. Государственные пошлины, нотариальные услуги, экспертизы, медицинские исследования, почтовые расходы и выезд за пределы согласованной территории оплачиваются отдельно. Если после консультации заключается договор на дальнейшую работу, стоимость консультации засчитывается в оплату по договору. Последующее судебное заседание сверх включённых трёх — от 10 000 ₽."
-        pageUrl="/grazhdanam/voennyj-yurist/spory-s-voenkomatom/"
+        pageUrl="https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/"
+        direction="Военное право"
         tiers={[
           {
             title: 'Консультация по спору с военкоматом',
@@ -779,6 +730,11 @@ export default function SporySVoenkomatomPage() {
                   subtitle="" 
                   buttonText="Получить консультацию"
                   commentPlaceholder="Например: Военкомат отказал в отсрочке и выдал повестку..."
+                  direction="Военное право"
+                  hiddenFields={[
+                    { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/' },
+                    { name: 'direction', value: 'Военное право' }
+                  ]}
                 />
               </div>
             </div>

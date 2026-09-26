@@ -70,7 +70,7 @@ export default function VyplatySemePogibshegoPage() {
         '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
         'name': 'Дмитрий Сергеевич Конопкин',
         'url': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
-        'jobTitle': 'Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления военного права',
+        'jobTitle': 'Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»',
         'image': 'https://dejure-help.ru/images/konopkin.jpg',
         'worksFor': { '@id': 'https://dejure-help.ru/#organization' }
       },
@@ -157,56 +157,6 @@ export default function VyplatySemePogibshegoPage() {
           { '@id': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/#faq' }
         ],
         'inLanguage': 'ru-RU'
-      },
-      {
-        '@type': 'ItemList',
-        'name': 'Стоимость юридической помощи по выплатам семье погибшего',
-        'itemListElement': [
-          {
-            '@type': 'ListItem',
-            'position': 1,
-            'item': {
-              '@type': 'Offer',
-              'name': 'Консультация по выплатам семье погибшего',
-              'price': 2000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/#form'
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 2,
-            'item': {
-              '@type': 'AggregateOffer',
-              'name': 'Заявление или жалоба по выплате',
-              'lowPrice': 5000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/#form'
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 3,
-            'item': {
-              '@type': 'AggregateOffer',
-              'name': 'Документ для обращения в суд',
-              'lowPrice': 10000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/#form'
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 4,
-            'item': {
-              '@type': 'AggregateOffer',
-              'name': 'Представительство в суде',
-              'lowPrice': 40000,
-              'priceCurrency': 'RUB',
-              'url': 'https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/#form'
-            }
-          }
-        ]
       }
     ]
   };
@@ -348,7 +298,7 @@ export default function VyplatySemePogibshegoPage() {
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
+        imageSubtitle="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
         imageMarginTop="0px"
         trustItems={[
           { text: <><span style={{ display: 'inline-block' }}>Проверяем федеральные и региональные выплаты,</span> <span style={{ display: 'inline-block' }}>а также страховое обеспечение</span></> },
@@ -567,7 +517,7 @@ export default function VyplatySemePogibshegoPage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Военное право»</>}
+        position={<>Адвокат, независимый партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
         imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
@@ -611,7 +561,8 @@ export default function VyplatySemePogibshegoPage() {
         subtitle="Можно отдельно проверить возможный порядок действий, подготовить заявление или жалобу, обратиться в суд и поручить юристу представительство. Цена зависит в том числе от числа заявителей и проверяемых оснований."
         ctaTitle=""
         disclaimer="Окончательная стоимость зависит от объёма материалов, стадии дела, срочности и необходимого объёма работы. Цена и состав услуг фиксируются в договоре до начала работы. Государственные пошлины, нотариальные услуги, экспертизы, медицинские исследования, почтовые расходы и выезд за пределы согласованной территории оплачиваются отдельно. Если после консультации заключается договор на дальнейшую работу, стоимость консультации засчитывается в оплату по договору. Последующее судебное заседание сверх включённых трёх — от 10 000 ₽."
-        pageUrl="/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/"
+        pageUrl="https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/"
+        direction="Военное право"
         tiers={[
           {
             title: 'Консультация по выплатам семье погибшего',
@@ -792,6 +743,11 @@ export default function VyplatySemePogibshegoPage() {
                   subtitle="" 
                   buttonText="Получить консультацию"
                   commentPlaceholder="Кратко опишите обстоятельства и имеющиеся документы..."
+                  direction="Военное право"
+                  hiddenFields={[
+                    { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-seme-pogibshego-voennosluzhashchego/' },
+                    { name: 'direction', value: 'Военное право' }
+                  ]}
                 />
               </div>
             </div>

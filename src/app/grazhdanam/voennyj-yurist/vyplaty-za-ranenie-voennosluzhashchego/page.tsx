@@ -145,7 +145,7 @@ export default function VyplatyRaneniePage() {
         "@type": "Person",
         "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person",
         "name": "Дмитрий Сергеевич Конопкин",
-        "jobTitle": "Адвокат",
+        "jobTitle": "Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»",
         "description": "Реестровый номер 48/812",
         "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
         "image": "https://dejure-help.ru/images/konopkin.jpg",
@@ -168,56 +168,6 @@ export default function VyplatyRaneniePage() {
           "name": faq.q,
           "acceptedAnswer": { "@type": "Answer", "text": faq.a }
         }))
-      },
-      {
-        "@type": "ItemList",
-        "name": "Стоимость юридической помощи по выплатам за ранение",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Offer",
-              "name": "Консультация по выплатам за ранение",
-              "price": 2000,
-              "priceCurrency": "RUB",
-              "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/#form"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "AggregateOffer",
-              "name": "Жалоба или заявление по выплате",
-              "lowPrice": 5000,
-              "priceCurrency": "RUB",
-              "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/#form"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "AggregateOffer",
-              "name": "Документ для обращения в суд",
-              "lowPrice": 10000,
-              "priceCurrency": "RUB",
-              "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/#form"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "AggregateOffer",
-              "name": "Представительство в суде по выплате",
-              "lowPrice": 40000,
-              "priceCurrency": "RUB",
-              "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/#form"
-            }
-          }
-        ]
       }
     ]
   };
@@ -255,7 +205,7 @@ export default function VyplatyRaneniePage() {
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
+        imageSubtitle="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
         imageMarginTop="0px"
         trustItems={[
           { text: <><span style={{ display: 'inline-block' }}>Проверяем правовые основания</span> <span style={{ display: 'inline-block' }}>для получения выплат</span></> },
@@ -440,7 +390,7 @@ export default function VyplatyRaneniePage() {
       <SpecialistBlock 
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
-        position="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Военное право»"
+        position="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
         imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
@@ -521,7 +471,8 @@ export default function VyplatyRaneniePage() {
         subtitle="Стоимость зависит от стадии оформления: первичный разбор, подготовка обращения при задержке или отказе, документ для суда либо представительство в судебном процессе."
         ctaTitle=""
         disclaimer="Окончательная стоимость зависит от объёма материалов, стадии дела, срочности и необходимого объёма работы. Цена и состав услуг фиксируются в договоре до начала работы. Государственные пошлины, нотариальные услуги, экспертизы, медицинские исследования, почтовые расходы и выезд за пределы согласованной территории оплачиваются отдельно. Если после консультации заключается договор на дальнейшую работу, стоимость консультации засчитывается в оплату по договору. Последующее судебное заседание сверх включённых трёх — от 10 000 ₽."
-        pageUrl="/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/"
+        pageUrl="https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/"
+        direction="Военное право"
         tiers={[
           {
             title: 'Консультация по выплатам за ранение',
@@ -727,7 +678,15 @@ export default function VyplatyRaneniePage() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
               <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
-                <ContactsForm title="Написать нам" subtitle="" />
+                <ContactsForm 
+                  title="Написать нам" 
+                  subtitle="" 
+                  direction="Военное право"
+                  hiddenFields={[
+                    { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/vyplaty-za-ranenie-voennosluzhashchego/' },
+                    { name: 'direction', value: 'Военное право' }
+                  ]}
+                />
               </div>
             </div>
           </div>

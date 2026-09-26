@@ -40,6 +40,7 @@ interface PricingBlockProps {
   guaranteeText?: string;
   sectionStyle?: React.CSSProperties;
   showDemoWarning?: boolean;
+  direction?: string;
 }
 
 export default function PricingBlock({
@@ -54,7 +55,8 @@ export default function PricingBlock({
   disclaimer,
   guaranteeText,
   sectionStyle,
-  showDemoWarning
+  showDemoWarning,
+  direction
 }: PricingBlockProps) {
   const defaultTiers: PricingTier[] = [
     {
@@ -116,6 +118,7 @@ export default function PricingBlock({
   }));
 
   const pathname = usePathname();
+  const currentDirection = direction || (pathname?.includes('/voennyj-yurist') ? 'Военное право' : pathname?.includes('/semejnyj-yurist') ? 'Семейный юрист' : '');
   const currentBaseUrl = pageUrl || (pathname ? `https://dejure-help.ru${pathname.endsWith('/') ? pathname : pathname + '/'}` : 'https://dejure-help.ru/');
   const offerUrl = currentBaseUrl.endsWith('/') ? `${currentBaseUrl}#pricing` : `${currentBaseUrl}/#pricing`;
 
@@ -311,11 +314,13 @@ export default function PricingBlock({
               <a 
                 href={tier.buttonHref || "#form"} 
                 data-service={tierTitleStr}
+                data-direction={currentDirection}
                 onClick={() => {
                   if (typeof window !== 'undefined') {
                     window.dispatchEvent(new CustomEvent('dejure:select_service', {
                       detail: {
-                        service: tierTitleStr
+                        service: tierTitleStr,
+                        direction: currentDirection
                       }
                     }));
                   }
