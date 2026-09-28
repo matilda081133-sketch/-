@@ -118,6 +118,54 @@ export default function VzyskanieDolgovClient() {
     }
   ];
 
+  const routesScenarios = [
+    {
+      num: '01',
+      tag: 'Сценарий 01 • Расписка и договор',
+      title: 'Если есть расписка или договор займа',
+      desc: 'Классическая ситуация, когда факт займа и обязательство возврата зафиксированы на бумаге. Проверяем оригинал, условия срока возврата, проценты, частичные оплаты и возможные возражения должника.',
+      proofPoints: [
+        'Кто указан заимодавцем и заёмщиком (полнота реквизитов)',
+        'Подтверждена ли фактическая передача денег в полном объёме',
+        'Наступил ли установленный договором срок возврата займа',
+        'Проверка расчёта процентов (по договору либо ст. 395 ГК РФ)',
+        'Отсутствие пороков формы и встречных долговых расписок'
+      ],
+      solutionTitle: 'Предлагаемое решение',
+      solution: 'Прямой судебный иск о взыскании долга и процентов по ст. 807, 808 ГК РФ с одновременным ходатайством об обеспечительных мерах (арест банковских счетов и имущества должника).'
+    },
+    {
+      num: '02',
+      tag: 'Сценарий 02 • Перевод без расписки',
+      title: 'Если деньги перевели без расписки',
+      desc: 'Отсутствие бумажной расписки не исключает защиту, но делает решающей связь между доказательствами. Банковский перевод подтверждает движение средств, но требует доказывания оснований платежа.',
+      proofPoints: [
+        'Банковская выписка: получатель, дата, сумма и назначение платежа',
+        'Переписка в мессенджерах/почте: факт долга, сроки и возврат',
+        'Частичный возврат: связь поступивших сумм с обязательством',
+        'Письменное признание долга (в сообщениях или аудиозаписях)',
+        'Исключение безвозмездного характера (не подарок и не оплата)'
+      ],
+      solutionTitle: 'Предлагаемое решение',
+      solution: 'Иск о взыскании неосновательного обогащения (ст. 1102 ГК РФ) и процентов по ст. 395 ГК РФ с судебным запросом сведений о банковских счетах ответчика.'
+    },
+    {
+      num: '03',
+      tag: 'Сценарий 03 • Без подтверждения займа',
+      title: 'Деньги передали, но заём не подтверждается',
+      desc: 'Сложные случаи, когда отношения сторон нельзя квалифицировать как заём: платёж связан с несостоявшейся сделкой, срывом подряда/услуги, ошибкой или отсутствующим встречным предоставлением.',
+      proofPoints: [
+        'Оплата за товар, работы или услуги, которые не были предоставлены',
+        'Перечисление аванса в расчёте на несостоявшуюся сделку',
+        'Ошибочный платёж третьему лицу при отсутствии правовых оснований',
+        'Удержание денежных средств после прекращения договорённости',
+        'Фиксация мотивированного отказа от сделки и требования возврата'
+      ],
+      solutionTitle: 'Предлагаемое решение',
+      solution: 'Расторжение договорённости в одностороннем порядке, взыскание неотработанного аванса или убытков по нормам ГК РФ с компенсацией всех судебных расходов.'
+    }
+  ];
+
   const processSteps: ProcessStep[] = [
     {
       num: '01',
@@ -717,10 +765,20 @@ export default function VzyskanieDolgovClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: ТРИ МАРШРУТА ПО ДОКУМЕНТАМ (ШАБЛОН ROUTE CARDS) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0' }}>
+      {/* ═══ БЛОК 5: ТРИ ПРАВОВЫХ МАРШРУТА (ШАБЛОН СЦЕНАРИЕВ И ПРЕДЛАГАЕМЫХ РЕШЕНИЙ) ═══ */}
+      <section className="section bg-white" id="routes" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
+          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '12px'
+            }}>
+              Выбор процессуального порядка
+            </div>
             <h2
               className="with-accent"
               style={{
@@ -729,162 +787,143 @@ export default function VzyskanieDolgovClient() {
                 color: 'var(--color-deep-blue)',
                 marginBottom: '16px',
                 lineHeight: 1.25,
-                marginTop: 0
+                marginTop: 0,
+                textAlign: 'left'
               }}
             >
-              Три правовых маршрута по документам
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                Три правовых маршрута
+              </span>{' '}
+              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
+                по документам
+              </span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-              Стратегия доказывания строится на том, какими документами зафиксированы обязательства и фактическая передача денег.
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+              Стратегия доказывания и предлагаемое решение строятся на том, какими документами зафиксированы обязательства и фактическая передача денег.
             </p>
           </div>
 
           <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
-            {/* Маршрут 1 */}
-            <div
-              className="card hover-lift"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-gold)',
-                padding: '32px 26px',
-                display: 'flex',
-                flexDirection: 'column',
-                boxShadow: '0 4px 18px rgba(16, 39, 59, 0.05)'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                  Маршрут 01
-                </span>
-                <span style={{ fontFamily: 'var(--font-serif)', fontSize: '24px', fontWeight: 700, color: 'rgba(193, 160, 102, 0.35)' }}>
-                  01
-                </span>
-              </div>
-              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.35, fontWeight: 600 }}>
-                Если есть расписка или договор займа
-              </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.55 }}>
-                Документ должен позволять установить стороны, сумму и характер обязательства. Проверяем оригинал, условия возврата, проценты, частичные платежи и возможные возражения:
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13.5px', color: 'var(--color-text-main)' }}>
-                {[
-                  'Кто указан заимодавцем и заёмщиком',
-                  'Подтверждена ли фактическая передача денег',
-                  'Наступил ли срок и предусмотрены ли проценты',
-                  'Нет ли неоднозначных формулировок'
-                ].map((pt, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '3px' }}>
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span>{pt}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ marginTop: 'auto', padding: '12px 14px', background: 'rgba(193, 160, 102, 0.08)', borderLeft: '3px solid var(--color-gold)', fontSize: '12.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
-                Нотариальное удостоверение обычной расписки не обязательно для её силы в суде.
-              </div>
-            </div>
+            {routesScenarios.map((item, i) => (
+              <div
+                key={i}
+                className="hover-lift"
+                style={{
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: i === 1 ? '3px solid var(--color-gold)' : '3px solid var(--color-primary)',
+                  padding: '34px 28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                {/* Фирменный водяной знак */}
+                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.04, pointerEvents: 'none' }}>
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
 
-            {/* Маршрут 2 */}
-            <div
-              className="card hover-lift"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-gold)',
-                padding: '32px 26px',
-                display: 'flex',
-                flexDirection: 'column',
-                boxShadow: '0 4px 18px rgba(16, 39, 59, 0.05)'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                  Маршрут 02
-                </span>
-                <span style={{ fontFamily: 'var(--font-serif)', fontSize: '24px', fontWeight: 700, color: 'rgba(193, 160, 102, 0.35)' }}>
-                  02
-                </span>
-              </div>
-              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.35, fontWeight: 600 }}>
-                Если деньги передали без расписки
-              </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.55 }}>
-                Отсутствие расписки не исключает защиту, но делает решающей связь между доказательствами. Банковский перевод сам по себе не всегда доказывает заём:
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13.5px', color: 'var(--color-text-main)' }}>
-                {[
-                  'Выписка: получатель, дата, сумма и назначение платежа',
-                  'Переписка: обсуждались ли заём, срок и возврат',
-                  'Частичный возврат: связь платежа с обязательством',
-                  'Признание долга: кем, когда и в какой форме сделано'
-                ].map((pt, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '3px' }}>
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span>{pt}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ marginTop: 'auto', padding: '12px 14px', background: 'rgba(193, 160, 102, 0.08)', borderLeft: '3px solid var(--color-gold)', fontSize: '12.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
-                Сопоставляем выписки, переписку и действия сторон в цельную доказательственную базу.
-              </div>
-            </div>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px', position: 'relative', zIndex: 1 }}>
+                    <div style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: 'var(--color-gold)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      background: 'rgba(193, 160, 102, 0.12)',
+                      padding: '4px 10px',
+                      display: 'inline-block'
+                    }}>
+                      {item.tag}
+                    </div>
+                    <span style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '26px',
+                      fontWeight: 700,
+                      color: 'rgba(193, 160, 102, 0.35)',
+                      lineHeight: 1
+                    }}>
+                      {item.num}
+                    </span>
+                  </div>
 
-            {/* Маршрут 3 */}
-            <div
-              className="card hover-lift"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-gold)',
-                padding: '32px 26px',
-                display: 'flex',
-                flexDirection: 'column',
-                boxShadow: '0 4px 18px rgba(16, 39, 59, 0.05)'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                  Маршрут 03
-                </span>
-                <span style={{ fontFamily: 'var(--font-serif)', fontSize: '24px', fontWeight: 700, color: 'rgba(193, 160, 102, 0.35)' }}>
-                  03
-                </span>
-              </div>
-              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.35, fontWeight: 600 }}>
-                Деньги передали, но заём не подтверждается
-              </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.55 }}>
-                Иногда отношения нельзя квалифицировать как заём: платёж связан с несостоявшейся сделкой, ошибкой или отсутствующим встречным предоставлением:
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13.5px', color: 'var(--color-text-main)' }}>
-                {[
-                  'Оплата за товар или услугу, которые не были предоставлены',
-                  'Перечисление в расчёте на несостоявшуюся сделку',
-                  'Ошибочный платёж при отсутствии встречных обязательств',
-                  'Удержание суммы после прекращения договорённости'
-                ].map((pt, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '3px' }}>
-                      <polyline points="20 6 9 17 4 12"></polyline>
+                  <h3 style={{
+                    fontSize: '19px',
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--color-deep-blue)',
+                    margin: '0 0 12px 0',
+                    lineHeight: 1.35,
+                    fontWeight: 600,
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.title}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: '0 0 20px 0',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {item.desc}
+                  </p>
+
+                  <div style={{ marginBottom: '24px', position: 'relative', zIndex: 1 }}>
+                    <div style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
+                      Точки доказывания:
+                    </div>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '9px' }}>
+                      {item.proofPoints.map((pt, pIdx) => (
+                        <li key={pIdx} style={{ display: 'flex', gap: '9px', alignItems: 'flex-start', fontSize: '13.5px', color: 'var(--color-deep-blue)', lineHeight: 1.45 }}>
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Фирменный блок: Предлагаемое решение */}
+                <div style={{
+                  background: '#FFFFFF',
+                  padding: '16px 18px',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '4px solid var(--color-gold)',
+                  marginTop: 'auto',
+                  position: 'relative',
+                  zIndex: 1,
+                  boxShadow: '0 2px 8px rgba(23, 50, 77, 0.03)'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="9 18 15 12 9 6" />
                     </svg>
-                    <span>{pt}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ marginTop: 'auto', padding: '12px 14px', background: 'rgba(193, 160, 102, 0.08)', borderLeft: '3px solid var(--color-gold)', fontSize: '12.5px', color: 'var(--color-deep-blue)', fontWeight: 500 }}>
-                Квалифицируем требование по нормам о неосновательном обогащении (ст. 1102 ГК РФ).
+                    <strong style={{ fontSize: '11.5px', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                      {item.solutionTitle}
+                    </strong>
+                  </div>
+                  <span style={{ fontSize: '13px', color: 'var(--color-deep-blue)', lineHeight: 1.5, fontWeight: 500, display: 'block' }}>
+                    {item.solution}
+                  </span>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
 
           <div style={{ textAlign: 'center' }}>
             <a href="#form" className="btn btn-primary" style={{ padding: '14px 28px' }}>
-              Определить правовое основание требования →
+              Подобрать сценарий взыскания для вашей ситуации →
             </a>
           </div>
         </div>
