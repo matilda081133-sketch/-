@@ -67,6 +67,8 @@ export default function ContactsForm({
           setSelectedDirection('Автоюрист');
         } else if (path.includes('/trudovoj-yurist')) {
           setSelectedDirection('Трудовой юрист');
+        } else if (path.includes('/migracionnyj-yurist')) {
+          setSelectedDirection('Миграционный юрист');
         }
       }
     }
@@ -160,7 +162,8 @@ export default function ContactsForm({
       typeof window !== 'undefined' && window.location.pathname.includes('/semejnyj-yurist') ? 'Семейный юрист' :
       typeof window !== 'undefined' && window.location.pathname.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' :
       typeof window !== 'undefined' && window.location.pathname.includes('/avtoyurist') ? 'Автоюрист' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/trudovoj-yurist') ? 'Трудовой юрист' : ''
+      typeof window !== 'undefined' && window.location.pathname.includes('/trudovoj-yurist') ? 'Трудовой юрист' :
+      typeof window !== 'undefined' && window.location.pathname.includes('/migracionnyj-yurist') ? 'Миграционный юрист' : ''
     );
 
     const payload = {

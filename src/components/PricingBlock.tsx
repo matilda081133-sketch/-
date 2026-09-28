@@ -17,6 +17,7 @@ export interface PricingTier {
   badgeText?: string;
   badge?: string;
   price?: string;
+  numericPrice?: number;
   priceUnit?: string;
   period?: string;
   features: (PricingFeature | string)[];
@@ -151,7 +152,8 @@ export default function PricingBlock({
     pathname?.includes('/zemelnyj-yurist') ? 'Земельный юрист' :
     pathname?.includes('/vzyskanie-dolgov') ? 'Взыскание долгов' :
     pathname?.includes('/avtoyurist') ? 'Автоюрист' :
-    pathname?.includes('/trudovoj-yurist') ? 'Трудовой юрист' : ''
+    pathname?.includes('/trudovoj-yurist') ? 'Трудовой юрист' :
+    pathname?.includes('/migracionnyj-yurist') ? 'Миграционный юрист' : ''
   );
   const currentBaseUrl = pageUrl || (pathname ? `https://dejure-help.ru${pathname.endsWith('/') ? pathname : pathname + '/'}` : 'https://dejure-help.ru/');
   const offerUrl = currentBaseUrl.endsWith('/') ? `${currentBaseUrl}#pricing` : `${currentBaseUrl}/#pricing`;
