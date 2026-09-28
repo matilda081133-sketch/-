@@ -65,6 +65,8 @@ export default function ContactsForm({
           setSelectedDirection('Взыскание долгов');
         } else if (path.includes('/avtoyurist')) {
           setSelectedDirection('Автоюрист');
+        } else if (path.includes('/trudovoj-yurist')) {
+          setSelectedDirection('Трудовой юрист');
         }
       }
     }
@@ -157,7 +159,8 @@ export default function ContactsForm({
       typeof window !== 'undefined' && window.location.pathname.includes('/voennyj-yurist') ? 'Военное право' :
       typeof window !== 'undefined' && window.location.pathname.includes('/semejnyj-yurist') ? 'Семейный юрист' :
       typeof window !== 'undefined' && window.location.pathname.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/avtoyurist') ? 'Автоюрист' : ''
+      typeof window !== 'undefined' && window.location.pathname.includes('/avtoyurist') ? 'Автоюрист' :
+      typeof window !== 'undefined' && window.location.pathname.includes('/trudovoj-yurist') ? 'Трудовой юрист' : ''
     );
 
     const payload = {
