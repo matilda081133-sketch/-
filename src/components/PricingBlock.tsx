@@ -20,7 +20,7 @@ export interface PricingTier {
   priceUnit?: string;
   period?: string;
   features: (PricingFeature | string)[];
-  exclusions?: string;
+  exclusions?: string | string[];
   buttonText?: string;
   ctaText?: string;
   buttonHref?: string;
@@ -36,11 +36,13 @@ interface PricingBlockProps {
   ctaSubtitle?: string | React.ReactNode;
   ctaButtonText?: string;
   ctaButtonLink?: string;
+  ctaService?: string;
   disclaimer?: string | React.ReactNode;
   guaranteeText?: string;
   sectionStyle?: React.CSSProperties;
   showDemoWarning?: boolean;
   direction?: string;
+  gridCols?: 2 | 3 | 4 | '2x2';
 }
 
 export default function PricingBlock({
@@ -52,11 +54,13 @@ export default function PricingBlock({
   ctaSubtitle = "Сначала изучим обстоятельства и документы, предложим подходящий формат помощи и согласуем стоимость. Она не изменится без согласования с вами.",
   ctaButtonText = "Получить расчёт стоимости",
   ctaButtonLink = "#form",
+  ctaService,
   disclaimer,
   guaranteeText,
   sectionStyle,
   showDemoWarning,
-  direction
+  direction,
+  gridCols
 }: PricingBlockProps) {
   const defaultTiers: PricingTier[] = [
     {
@@ -115,54 +119,66 @@ export default function PricingBlock({
     ),
     buttonText: tier.buttonText || tier.ctaText || 'Выбрать тариф',
     buttonHref: tier.buttonHref || tier.ctaHref || '#form',
+    exclusions: Array.isArray(tier.exclusions) ? tier.exclusions.join('; ') : tier.exclusions,
   }));
 
   const pathname = usePathname();
-  const currentDirection = direction || (pathname?.includes('/voennyj-yurist') ? 'Военное право' : pathname?.includes('/semejnyj-yurist') ? 'Семейный юрист' : '');
+  const currentDirection = direction || (
+    pathname?.includes('/voennyj-yurist') ? 'Военное право' :
+    pathname?.includes('/semejnyj-yurist') ? 'Семейный юрист' :
+    pathname?.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' : ''
+  );
   const currentBaseUrl = pageUrl || (pathname ? `https://dejure-help.ru${pathname.endsWith('/') ? pathname : pathname + '/'}` : 'https://dejure-help.ru/');
   const offerUrl = currentBaseUrl.endsWith('/') ? `${currentBaseUrl}#pricing` : `${currentBaseUrl}/#pricing`;
+
+  const pricedTiers = tiers.filter(tier => {
+    const numPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
+    return Boolean(numPrice);
+  });
 
   return (
     <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--gradient-cream)', ...sectionStyle }}>
       {/* Schema.org Offer Catalog for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'ItemList',
-            'name': typeof title === 'string' ? title : 'Стоимость юридических услуг в Липецке',
-            'itemListElement': tiers.map((tier, tIdx) => {
-              const numPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
-              const isMinPrice = tier.price ? /от/i.test(String(tier.price)) : false;
+      {pricedTiers.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'ItemList',
+              'name': typeof title === 'string' ? title : 'Стоимость юридических услуг в Липецке',
+              'itemListElement': pricedTiers.map((tier, tIdx) => {
+                const numPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
+                const isMinPrice = tier.price ? /от/i.test(String(tier.price)) : false;
 
-              if (isMinPrice) {
+                if (isMinPrice) {
+                  return {
+                    '@type': 'AggregateOffer',
+                    'position': tIdx + 1,
+                    'name': typeof tier.title === 'string' ? tier.title : 'Юридическая услуга',
+                    'description': typeof tier.subtitle === 'string' ? tier.subtitle : undefined,
+                    'lowPrice': numPrice || '0',
+                    'priceCurrency': 'RUB',
+                    'availability': 'https://schema.org/InStock',
+                    'url': offerUrl
+                  };
+                }
+
                 return {
-                  '@type': 'AggregateOffer',
+                  '@type': 'Offer',
                   'position': tIdx + 1,
                   'name': typeof tier.title === 'string' ? tier.title : 'Юридическая услуга',
                   'description': typeof tier.subtitle === 'string' ? tier.subtitle : undefined,
-                  'lowPrice': numPrice || '0',
+                  'price': numPrice || '0',
                   'priceCurrency': 'RUB',
                   'availability': 'https://schema.org/InStock',
                   'url': offerUrl
                 };
-              }
-
-              return {
-                '@type': 'Offer',
-                'position': tIdx + 1,
-                'name': typeof tier.title === 'string' ? tier.title : 'Юридическая услуга',
-                'description': typeof tier.subtitle === 'string' ? tier.subtitle : undefined,
-                'price': numPrice || '0',
-                'priceCurrency': 'RUB',
-                'availability': 'https://schema.org/InStock',
-                'url': offerUrl
-              };
+              })
             })
-          })
-        }}
-      />
+          }}
+        />
+      )}
 
       <div className="container" style={{ position: 'relative', zIndex: 1, ...(tiers.length >= 5 ? { maxWidth: '1400px' } : {}) }}>
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
@@ -214,7 +230,7 @@ export default function PricingBlock({
         )}
 
         <div 
-          className={`pricing-grid-container ${tiers.length >= 5 ? "pricing-grid-5" : tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
+          className={`pricing-grid-container ${gridCols === '2x2' ? 'pricing-grid-2x2' : tiers.length >= 5 ? "pricing-grid-5" : tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
         >
           {tiers.map((tier, idx) => {
             const numericPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
@@ -240,8 +256,8 @@ export default function PricingBlock({
               boxSizing: 'border-box'
             }}
             className="pricing-tier-card"
-            itemScope
-            itemType={isMinPrice ? "https://schema.org/AggregateOffer" : "https://schema.org/Offer"}
+            itemScope={Boolean(numericPrice)}
+            itemType={numericPrice ? (isMinPrice ? "https://schema.org/AggregateOffer" : "https://schema.org/Offer") : undefined}
             >
               {numericPrice && (
                 <>
@@ -384,7 +400,26 @@ export default function PricingBlock({
               <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>{ctaSubtitle}</p>
             </div>
             <div style={{ flexShrink: 0 }}>
-              <a href={ctaButtonLink || '#form'} className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '15px', borderRadius: '0', whiteSpace: 'nowrap', display: 'inline-block' }}>{ctaButtonText}</a>
+              <a 
+                href={ctaButtonLink || '#form'} 
+                data-service={ctaService || 'Расчёт комплексной защиты'}
+                data-direction={currentDirection}
+                onClick={() => {
+                  const sName = ctaService || 'Расчёт комплексной защиты';
+                  if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new CustomEvent('dejure:select_service', {
+                      detail: {
+                        service: sName,
+                        direction: currentDirection
+                      }
+                    }));
+                  }
+                }}
+                className="btn btn-primary" 
+                style={{ padding: '16px 36px', fontSize: '15px', borderRadius: '0', whiteSpace: 'nowrap', display: 'inline-block' }}
+              >
+                {ctaButtonText}
+              </a>
             </div>
           </div>
         )}
@@ -402,6 +437,12 @@ export default function PricingBlock({
         .pricing-grid-4 {
           grid-template-columns: repeat(4, minmax(0, 1fr));
           gap: 16px;
+        }
+        .pricing-grid-2x2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 28px;
+          max-width: 1000px;
+          margin: 0 auto;
         }
         .pricing-grid-3 {
           grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -426,13 +467,13 @@ export default function PricingBlock({
           }
         }
         @media (max-width: 1024px) and (min-width: 768px) {
-          .pricing-grid-3, .pricing-grid-4 {
+          .pricing-grid-3, .pricing-grid-4, .pricing-grid-2x2 {
             grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
             gap: 20px !important;
           }
         }
         @media (max-width: 767px) {
-          .pricing-grid-container, .pricing-grid-5, .pricing-grid-4, .pricing-grid-3, .pricing-grid-2 {
+          .pricing-grid-container, .pricing-grid-5, .pricing-grid-4, .pricing-grid-3, .pricing-grid-2, .pricing-grid-2x2 {
             grid-template-columns: 1fr !important;
             gap: 20px !important;
           }

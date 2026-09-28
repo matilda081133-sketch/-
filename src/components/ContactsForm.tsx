@@ -41,13 +41,16 @@ export default function ContactsForm({
 
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
-      setCurrentUrl(window.location.href);
+      const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || (window.location.origin + window.location.pathname);
+      setCurrentUrl(canonical);
       if (!selectedDirection) {
         const path = window.location.pathname;
         if (path.includes('/voennyj-yurist')) {
           setSelectedDirection('Военное право');
         } else if (path.includes('/semejnyj-yurist')) {
           setSelectedDirection('Семейный юрист');
+        } else if (path.includes('/advokat-po-ugolovnym-delam')) {
+          setSelectedDirection('Адвокат по уголовным делам');
         }
       }
     }
@@ -138,7 +141,8 @@ export default function ContactsForm({
 
     const finalDirection = selectedDirection || extraData.direction || (
       typeof window !== 'undefined' && window.location.pathname.includes('/voennyj-yurist') ? 'Военное право' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/semejnyj-yurist') ? 'Семейный юрист' : ''
+      typeof window !== 'undefined' && window.location.pathname.includes('/semejnyj-yurist') ? 'Семейный юрист' :
+      typeof window !== 'undefined' && window.location.pathname.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' : ''
     );
 
     const payload = {
