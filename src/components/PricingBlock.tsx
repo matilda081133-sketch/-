@@ -316,7 +316,9 @@ export default function PricingBlock({
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={tier.popular ? "rgba(255,255,255,0.5)" : "var(--color-primary)"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
                       <span style={{ lineHeight: 1.3, wordBreak: 'break-word' }}>{feature.name}</span>
                     </div>
-                    <span style={{ fontWeight: 600, whiteSpace: 'nowrap', color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)', marginLeft: '4px' }}>{feature.value}</span>
+                    {feature.value && feature.value !== 'Да' && (
+                      <span style={{ fontWeight: 600, whiteSpace: 'nowrap', color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)', marginLeft: '4px' }}>{feature.value}</span>
+                    )}
                   </li>
                 ))}
               </ul>
