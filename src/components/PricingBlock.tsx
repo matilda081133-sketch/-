@@ -28,10 +28,18 @@ export interface PricingTier {
   hideOnMobile?: boolean;
 }
 
+export interface PricingTab {
+  id: string;
+  label: string;
+  tiers: PricingTier[];
+  gridCols?: 2 | 3 | 4 | '2x2';
+}
+
 interface PricingBlockProps {
   title?: string;
   subtitle?: string | React.ReactNode;
   tiers?: PricingTier[];
+  tabs?: PricingTab[];
   pageUrl?: string;
   ctaTitle?: string | React.ReactNode;
   ctaSubtitle?: string | React.ReactNode;
@@ -51,6 +59,7 @@ export default function PricingBlock({
   title = "Стоимость юридических услуг в Липецке",
   subtitle = "Честные цены, закрепленные в договоре. Никаких скрытых платежей.",
   tiers: propTiers,
+  tabs,
   pageUrl,
   ctaTitle = "Точную стоимость определим до начала работы",
   ctaSubtitle = "Сначала изучим обстоятельства и документы, предложим подходящий формат помощи и согласуем стоимость. Она не изменится без согласования с вами.",
@@ -65,6 +74,10 @@ export default function PricingBlock({
   gridCols,
   mobileNote
 }: PricingBlockProps) {
+  const [activeTabId, setActiveTabId] = React.useState<string>(tabs && tabs.length > 0 ? tabs[0].id : '');
+  const activeTab = tabs?.find(t => t.id === activeTabId) || tabs?.[0];
+  const effectiveGridCols = activeTab?.gridCols || gridCols;
+
   const defaultTiers: PricingTier[] = [
     {
       title: 'Гражданам',
@@ -107,7 +120,7 @@ export default function PricingBlock({
     }
   ];
 
-  const rawTiers = propTiers || defaultTiers;
+  const rawTiers = activeTab ? activeTab.tiers : (propTiers || defaultTiers);
   const tiers = rawTiers.map((tier) => ({
     ...tier,
     title: tier.title || tier.name || '',
@@ -133,12 +146,22 @@ export default function PricingBlock({
     pathname?.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' :
     pathname?.includes('/ugolovno-pravovaya-zashchita-biznesa') ? 'Уголовно-правовая защита бизнеса' :
     pathname?.includes('/nasledstvennyj-yurist') ? 'Наследственный юрист' :
-    pathname?.includes('/zhilishchnyj-yurist') ? 'Жилищный юрист' : ''
+    pathname?.includes('/zhilishchnyj-yurist') ? 'Жилищный юрист' :
+    pathname?.includes('/yurist-po-nedvizhimosti') ? 'Юрист по недвижимости' : ''
   );
   const currentBaseUrl = pageUrl || (pathname ? `https://dejure-help.ru${pathname.endsWith('/') ? pathname : pathname + '/'}` : 'https://dejure-help.ru/');
   const offerUrl = currentBaseUrl.endsWith('/') ? `${currentBaseUrl}#pricing` : `${currentBaseUrl}/#pricing`;
 
-  const pricedTiers = tiers.filter(tier => {
+  const allTiersForSchema = tabs
+    ? Array.from(new Map(tabs.flatMap(t => t.tiers).map(t => [typeof t.title === 'string' ? t.title : JSON.stringify(t.title), t])).values())
+    : (propTiers || defaultTiers);
+
+  const pricedTiers = allTiersForSchema.map((tier) => ({
+    ...tier,
+    title: tier.title || tier.name || '',
+    subtitle: tier.subtitle || tier.description || '',
+    price: tier.price
+  })).filter(tier => {
     const numPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
     return Boolean(numPrice);
   });
@@ -236,8 +259,49 @@ export default function PricingBlock({
           </div>
         )}
 
+        {tabs && tabs.length > 1 && (
+          <div 
+            style={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              gap: '12px', 
+              marginBottom: '40px', 
+              flexWrap: 'wrap' 
+            }}
+            role="tablist"
+            aria-label="Маршруты услуг"
+          >
+            {tabs.map((tab) => {
+              const isActive = tab.id === (activeTab?.id || tabs[0].id);
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setActiveTabId(tab.id)}
+                  style={{
+                    padding: '12px 24px',
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease',
+                    border: isActive ? '1px solid #10273B' : '1px solid rgba(16, 39, 59, 0.2)',
+                    backgroundColor: isActive ? '#10273B' : '#FFFFFF',
+                    color: isActive ? '#FFFFFF' : '#10273B',
+                    boxShadow: isActive ? '0 4px 12px rgba(16, 39, 59, 0.15)' : 'none'
+                  }}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         <div 
-          className={`pricing-grid-container ${gridCols === '2x2' ? 'pricing-grid-2x2' : gridCols === 2 ? 'pricing-grid-2' : gridCols === 3 ? 'pricing-grid-3' : gridCols === 4 ? 'pricing-grid-4' : tiers.length >= 5 ? "pricing-grid-5" : tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
+          className={`pricing-grid-container ${effectiveGridCols === '2x2' ? 'pricing-grid-2x2' : effectiveGridCols === 2 ? 'pricing-grid-2' : effectiveGridCols === 3 ? 'pricing-grid-3' : effectiveGridCols === 4 ? 'pricing-grid-4' : tiers.length >= 5 ? "pricing-grid-5" : tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
         >
           {tiers.map((tier, idx) => {
             const numericPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
