@@ -25,6 +25,7 @@ export interface PricingTier {
   ctaText?: string;
   buttonHref?: string;
   ctaHref?: string;
+  hideOnMobile?: boolean;
 }
 
 interface PricingBlockProps {
@@ -43,6 +44,7 @@ interface PricingBlockProps {
   showDemoWarning?: boolean;
   direction?: string;
   gridCols?: 2 | 3 | 4 | '2x2';
+  mobileNote?: React.ReactNode;
 }
 
 export default function PricingBlock({
@@ -60,7 +62,8 @@ export default function PricingBlock({
   sectionStyle,
   showDemoWarning,
   direction,
-  gridCols
+  gridCols,
+  mobileNote
 }: PricingBlockProps) {
   const defaultTiers: PricingTier[] = [
     {
@@ -120,6 +123,7 @@ export default function PricingBlock({
     buttonText: tier.buttonText || tier.ctaText || 'Выбрать тариф',
     buttonHref: tier.buttonHref || tier.ctaHref || '#form',
     exclusions: Array.isArray(tier.exclusions) ? tier.exclusions.join('; ') : tier.exclusions,
+    hideOnMobile: Boolean(tier.hideOnMobile),
   }));
 
   const pathname = usePathname();
@@ -128,7 +132,8 @@ export default function PricingBlock({
     pathname?.includes('/semejnyj-yurist') ? 'Семейный юрист' :
     pathname?.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' :
     pathname?.includes('/ugolovno-pravovaya-zashchita-biznesa') ? 'Уголовно-правовая защита бизнеса' :
-    pathname?.includes('/nasledstvennyj-yurist') ? 'Наследственный юрист' : ''
+    pathname?.includes('/nasledstvennyj-yurist') ? 'Наследственный юрист' :
+    pathname?.includes('/zhilishchnyj-yurist') ? 'Жилищный юрист' : ''
   );
   const currentBaseUrl = pageUrl || (pathname ? `https://dejure-help.ru${pathname.endsWith('/') ? pathname : pathname + '/'}` : 'https://dejure-help.ru/');
   const offerUrl = currentBaseUrl.endsWith('/') ? `${currentBaseUrl}#pricing` : `${currentBaseUrl}/#pricing`;
@@ -257,7 +262,7 @@ export default function PricingBlock({
               minWidth: 0,
               boxSizing: 'border-box'
             }}
-            className="pricing-tier-card"
+            className={`pricing-tier-card ${tier.hideOnMobile ? 'hidden-on-mobile' : ''}`}
             itemScope={Boolean(numericPrice)}
             itemType={numericPrice ? (isMinPrice ? "https://schema.org/AggregateOffer" : "https://schema.org/Offer") : undefined}
             >
@@ -364,6 +369,12 @@ export default function PricingBlock({
           );
           })}
         </div>
+
+        {mobileNote && (
+          <div className="pricing-mobile-note-row">
+            {mobileNote}
+          </div>
+        )}
 
         {(disclaimer || guaranteeText) && (
           <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -476,10 +487,25 @@ export default function PricingBlock({
             gap: 20px !important;
           }
         }
+        .pricing-mobile-note-row {
+          display: none;
+        }
         @media (max-width: 767px) {
           .pricing-grid-container, .pricing-grid-5, .pricing-grid-4, .pricing-grid-3, .pricing-grid-2, .pricing-grid-2x2 {
             grid-template-columns: 1fr !important;
             gap: 20px !important;
+          }
+          .hidden-on-mobile {
+            display: none !important;
+          }
+          .pricing-mobile-note-row {
+            display: block !important;
+            margin-top: 24px;
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-left: 4px solid var(--color-primary);
+            padding: 24px 20px;
+            box-shadow: 0 4px 16px rgba(16, 39, 59, 0.06);
           }
           .pricing-tier-card {
             padding: 28px 20px !important;

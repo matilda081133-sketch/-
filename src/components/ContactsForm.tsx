@@ -55,6 +55,8 @@ export default function ContactsForm({
           setSelectedDirection('Уголовно-правовая защита бизнеса');
         } else if (path.includes('/nasledstvennyj-yurist')) {
           setSelectedDirection('Наследственный юрист');
+        } else if (path.includes('/zhilishchnyj-yurist')) {
+          setSelectedDirection('Жилищный юрист');
         }
       }
     }
