@@ -54,7 +54,7 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
 
       - name: Deploy to Timeweb via FTP
-        timeout-minutes: 8
+        timeout-minutes: 15
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
@@ -62,13 +62,15 @@ jobs:
         run: |
           echo "Connecting to FTP: $FTP_HOST as $FTP_USERNAME"
           lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_HOST" -e "
-            set net:timeout 15;
+            set net:timeout 20;
             set net:max-retries 3;
             set net:reconnect-interval-base 5;
             set ftp:ssl-allow yes;
             set ssl:verify-certificate no;
             set ftp:passive-mode yes;
-            set mirror:parallel-transfer-count 5;
+            set ftp:timezone 'Europe/Moscow';
+            set mirror:parallel-transfer-count 8;
+            mirror --reverse --transfer-all --verbose=1 --include-glob '*.html' out/ /public_html/;
             mirror --reverse --delete --verbose=1 --exclude-glob .git* --exclude-glob node_modules/ out/ /public_html/;
             bye
           "

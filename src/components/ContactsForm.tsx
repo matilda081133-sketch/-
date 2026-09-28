@@ -61,6 +61,8 @@ export default function ContactsForm({
           setSelectedDirection('Юрист по недвижимости');
         } else if (path.includes('/zemelnyj-yurist')) {
           setSelectedDirection('Земельный юрист');
+        } else if (path.includes('/vzyskanie-dolgov')) {
+          setSelectedDirection('Взыскание долгов');
         }
       }
     }
