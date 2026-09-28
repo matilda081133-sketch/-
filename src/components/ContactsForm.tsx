@@ -51,6 +51,8 @@ export default function ContactsForm({
           setSelectedDirection('Семейный юрист');
         } else if (path.includes('/advokat-po-ugolovnym-delam')) {
           setSelectedDirection('Адвокат по уголовным делам');
+        } else if (path.includes('/ugolovno-pravovaya-zashchita-biznesa')) {
+          setSelectedDirection('Уголовно-правовая защита бизнеса');
         }
       }
     }

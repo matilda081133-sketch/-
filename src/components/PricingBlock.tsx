@@ -126,7 +126,8 @@ export default function PricingBlock({
   const currentDirection = direction || (
     pathname?.includes('/voennyj-yurist') ? 'Военное право' :
     pathname?.includes('/semejnyj-yurist') ? 'Семейный юрист' :
-    pathname?.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' : ''
+    pathname?.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' :
+    pathname?.includes('/ugolovno-pravovaya-zashchita-biznesa') ? 'Уголовно-правовая защита бизнеса' : ''
   );
   const currentBaseUrl = pageUrl || (pathname ? `https://dejure-help.ru${pathname.endsWith('/') ? pathname : pathname + '/'}` : 'https://dejure-help.ru/');
   const offerUrl = currentBaseUrl.endsWith('/') ? `${currentBaseUrl}#pricing` : `${currentBaseUrl}/#pricing`;
