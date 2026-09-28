@@ -57,80 +57,33 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
 
   const pricingTiers: PricingTier[] = [
     {
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Консультация</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>и проверка документов</span>
-        </>
-      ),
-      subtitle: 'Анализ оснований, проверка сроков и подготовка комплекта для нотариуса',
+      title: 'Устная консультация по оформлению наследства',
+      subtitle: 'Маршрут и сроки вступления',
+      popular: false,
+      price: '2 000 ₽',
+      priceUnit: 'устная консультация до 1 часа',
       features: [
-      {
-              "name": "Проверка состава документов и родства",
-              "value": "[уточняется]"
-      },
-      {
-              "name": "Расчёт наследственных долей",
-              "value": "[уточняется]"
-      },
-      {
-              "name": "Инструкция по обращению к нотариусу",
-              "value": "[уточняется]"
-      }
-],
-      buttonText: 'Записаться',
+        { name: 'Разбор ситуации, проверка оснований и сроков обращения к нотариусу', value: '' },
+        { name: 'Определение перечня необходимых документов для нотариуса', value: '' },
+        { name: 'Выработка рекомендаций по безопасному вступлению в наследство', value: '' }
+      ],
+      exclusions: 'Предварительное изучение объёмных документов не входит',
+      buttonText: 'Обсудить консультацию',
       buttonHref: '#form'
     },
     {
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Сопровождение</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>у нотариуса</span>
-        </>
-      ),
-      subtitle: 'Ведение дела от первого заявления до получения свидетельств о праве',
-      popular: true,
-      badgeText: 'Популярно',
+      title: 'Сопровождение оформления у нотариуса',
+      subtitle: 'Оформление наследственного дела',
+      popular: false,
+      price: 'Индивидуальный расчёт',
+      priceUnit: 'по согласованию',
       features: [
-      {
-              "name": "Открытие наследственного дела",
-              "value": "[уточняется]"
-      },
-      {
-              "name": "Запросы в ЗАГС, банки и Росреестр",
-              "value": "[уточняется]"
-      },
-      {
-              "name": "Контроль выдачи свидетельств",
-              "value": "[уточняется]"
-      }
-],
-      buttonText: 'Выбрать тариф',
-      buttonHref: '#form'
-    },
-    {
-      title: (
-        <>
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>Оформление «под ключ»</span>{' '}
-          <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с регистрацией</span>
-        </>
-      ),
-      subtitle: 'Полный комплекс услуг, включая регистрацию прав в Росреестре',
-      features: [
-      {
-              "name": "Все нотариальные действия",
-              "value": "[уточняется]"
-      },
-      {
-              "name": "Сбор архивных справок",
-              "value": "[уточняется]"
-      },
-      {
-              "name": "Регистрация права собственности в ЕГРН",
-              "value": "[уточняется]"
-      }
-],
-      buttonText: 'Оформить под ключ',
+        { name: 'Подготовка заявлений и комплекта документов для открытия наследственного дела', value: '' },
+        { name: 'Состав работы определяется после выяснения числа объектов, документов и наследников', value: '' },
+        { name: 'Взаимодействие с нотариусом до получения свидетельств о праве на наследство', value: '' }
+      ],
+      exclusions: 'При возникновении спора о праве защита осуществляется в судебном порядке; нотариальные тарифы и госпошлины оплачиваются отдельно',
+      buttonText: 'Рассчитать сопровождение',
       buttonHref: '#form'
     }
   ];
@@ -547,10 +500,25 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
 
       {/* ═══ БЛОК 6: СТОИМОСТЬ УСЛУГ ═══ */}
       <PricingBlock
-        title="Стоимость услуг наследственного юриста"
-        subtitle="Стоимость зависит от сложности спора, состава имущества, наличия документов и необходимости судебного процесса."
+        title="Стоимость оформления и вступления в наследство"
+        subtitle="Стоимость сопровождения зависит от состава имущества, числа наследников, состояния документов и необходимости сбора архивных справок."
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие судебные расходы."
+        gridCols={2}
+        direction="Наследственный юрист"
+        ctaTitle=""
+        disclaimer={
+          <>
+            Стоимость определяется после изучения документов и числа объектов. Нотариальные пошлины и госпошлины оплачиваются отдельно. При наличии спора между наследниками защита осуществляется в судебном порядке — см.{' '}
+            <Link href="/grazhdanam/nasledstvennyj-yurist/razdel-nasledstva-mezhdu-naslednikami/" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
+              раздел наследства
+            </Link>{' '}
+            или{' '}
+            <Link href="/grazhdanam/nasledstvennyj-yurist/osparivanie-zaveschaniya/" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
+              оспаривание завещания
+            </Link>
+            .
+          </>
+        }
       />
 
       {/* ═══ БЛОК 7: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}

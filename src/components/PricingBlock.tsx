@@ -127,7 +127,8 @@ export default function PricingBlock({
     pathname?.includes('/voennyj-yurist') ? 'Военное право' :
     pathname?.includes('/semejnyj-yurist') ? 'Семейный юрист' :
     pathname?.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' :
-    pathname?.includes('/ugolovno-pravovaya-zashchita-biznesa') ? 'Уголовно-правовая защита бизнеса' : ''
+    pathname?.includes('/ugolovno-pravovaya-zashchita-biznesa') ? 'Уголовно-правовая защита бизнеса' :
+    pathname?.includes('/nasledstvennyj-yurist') ? 'Наследственный юрист' : ''
   );
   const currentBaseUrl = pageUrl || (pathname ? `https://dejure-help.ru${pathname.endsWith('/') ? pathname : pathname + '/'}` : 'https://dejure-help.ru/');
   const offerUrl = currentBaseUrl.endsWith('/') ? `${currentBaseUrl}#pricing` : `${currentBaseUrl}/#pricing`;
@@ -231,7 +232,7 @@ export default function PricingBlock({
         )}
 
         <div 
-          className={`pricing-grid-container ${gridCols === '2x2' ? 'pricing-grid-2x2' : tiers.length >= 5 ? "pricing-grid-5" : tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
+          className={`pricing-grid-container ${gridCols === '2x2' ? 'pricing-grid-2x2' : gridCols === 2 ? 'pricing-grid-2' : gridCols === 3 ? 'pricing-grid-3' : gridCols === 4 ? 'pricing-grid-4' : tiers.length >= 5 ? "pricing-grid-5" : tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
         >
           {tiers.map((tier, idx) => {
             const numericPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';

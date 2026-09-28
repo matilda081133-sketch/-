@@ -53,6 +53,8 @@ export default function ContactsForm({
           setSelectedDirection('Адвокат по уголовным делам');
         } else if (path.includes('/ugolovno-pravovaya-zashchita-biznesa')) {
           setSelectedDirection('Уголовно-правовая защита бизнеса');
+        } else if (path.includes('/nasledstvennyj-yurist')) {
+          setSelectedDirection('Наследственный юрист');
         }
       }
     }
