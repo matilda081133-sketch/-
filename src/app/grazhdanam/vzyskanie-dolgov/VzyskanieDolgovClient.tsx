@@ -1337,7 +1337,9 @@ export default function VzyskanieDolgovClient() {
                   <span style={{ display: 'inline-block' }}>или должник скрывает активы?</span>
                 </h3>
                 <p style={{ margin: '0', fontSize: '15.5px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.55 }}>
-                  Опишите ситуацию в форме. Юрист оценит совокупность доказательств, возможность ареста имущества и предложит законную стратегию возврата.
+                  <span style={{ display: 'inline-block' }}>Опишите ситуацию в форме. Юрист оценит совокупность доказательств,</span>{' '}
+                  <br />
+                  <span style={{ display: 'inline-block' }}>возможность ареста имущества и предложит законную стратегию возврата.</span>
                 </p>
               </div>
               <div style={{ flexShrink: 0 }}>
