@@ -526,8 +526,7 @@ export default function VzyskanieDolgovClient() {
         <div className="container">
           <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
-              <span style={{ display: 'inline-block' }}>Когда важно начать взыскание</span> <br />
-              <span style={{ display: 'inline-block' }}>без промедления</span>
+              Когда важно начать взыскание без промедления
             </h2>
             <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', margin: 0, maxWidth: '720px', lineHeight: 1.6 }}>
@@ -666,293 +665,99 @@ export default function VzyskanieDolgovClient() {
             </p>
           </div>
 
-          <div className="grid grid-2" style={{ gap: '28px', marginBottom: '28px' }}>
-            {/* Контур 1: Доказуемость */}
+          <div className="grid grid-2" style={{ gap: '30px', alignItems: 'stretch', marginBottom: '28px' }}>
+            {/* Карточка 1: Контур 01 • Доказуемость */}
             <div
               style={{
-                position: 'relative',
-                background: '#FFFFFF',
-                borderRadius: '16px',
-                border: '1px solid rgba(193, 160, 102, 0.28)',
-                boxShadow: '0 12px 32px rgba(16, 39, 59, 0.06), 0 2px 6px rgba(16, 39, 59, 0.03)',
-                padding: '38px 32px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-primary)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                padding: '36px 32px',
                 display: 'flex',
-                flexDirection: 'column',
-                overflow: 'hidden'
+                flexDirection: 'column'
               }}
             >
-              {/* Decorative top accent gradient bar */}
-              <div
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '4px',
-                  background: 'linear-gradient(90deg, var(--color-gold) 0%, #E8D3A7 100%)'
-                }}
-              />
-              {/* Decorative subtle background watermark */}
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '20px',
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '76px',
-                  fontWeight: 700,
-                  color: 'rgba(193, 160, 102, 0.07)',
-                  lineHeight: 1,
-                  pointerEvents: 'none',
-                  userSelect: 'none'
-                }}
-              >
-                01
-              </div>
-
-              {/* Header: badge + bespoke emblem */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px', position: 'relative', zIndex: 1 }}>
-                <span
-                  style={{
-                    fontSize: '11px',
-                    fontWeight: 800,
-                    color: 'var(--color-gold)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    background: 'rgba(193, 160, 102, 0.1)',
-                    border: '1px solid rgba(193, 160, 102, 0.28)',
-                    borderRadius: '20px',
-                    padding: '5px 14px'
-                  }}
-                >
-                  Контур 01 • Доказуемость
-                </span>
-                <div
-                  style={{
-                    width: '42px',
-                    height: '42px',
-                    borderRadius: '10px',
-                    background: 'linear-gradient(135deg, rgba(193, 160, 102, 0.18) 0%, rgba(193, 160, 102, 0.05) 100%)',
-                    border: '1px solid rgba(193, 160, 102, 0.3)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--color-gold)',
-                    boxShadow: '0 2px 8px rgba(193, 160, 102, 0.12)'
-                  }}
-                >
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="12" y1="3" x2="12" y2="21"></line>
-                    <path d="M4 7l8-4 8 4"></path>
-                    <path d="M4 7v4a4 4 0 0 0 8 0V7"></path>
-                    <path d="M12 7v4a4 4 0 0 0 8 0V7"></path>
-                    <path d="M9 21h6"></path>
-                  </svg>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', paddingBottom: '16px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', marginBottom: '20px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <line x1="12" y1="3" x2="12" y2="21"></line>
+                  <path d="M4 7l8-4 8 4"></path>
+                  <path d="M4 7v4a4 4 0 0 0 8 0V7"></path>
+                  <path d="M12 7v4a4 4 0 0 0 8 0V7"></path>
+                  <path d="M9 21h6"></path>
+                </svg>
+                <div>
+                  <div style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '3px' }}>
+                    Контур 01 • Доказуемость
+                  </div>
+                  <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                    Судебное признание долга
+                  </h3>
                 </div>
               </div>
 
-              <h3
-                style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '23px',
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 20px 0',
-                  lineHeight: 1.3,
-                  position: 'relative',
-                  zIndex: 1
-                }}
-              >
-                Судебное признание долга
-              </h3>
-
-              {/* Items: bespoke structural rows with custom gold indicators */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', position: 'relative', zIndex: 1 }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 {[
                   'Основание передачи денег и точное содержание договорённости.',
                   'Расписка, договор, платёжные документы, переписка и поведение сторон.',
                   'Срок возврата, исковая давность, частичные платежи и признание долга.',
                   'Расчёт основного долга, процентов, неустойки и судебных расходов.'
-                ].map((txt, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '14px',
-                      padding: '12px 14px',
-                      borderRadius: '10px',
-                      background: 'rgba(249, 246, 240, 0.55)',
-                      border: '1px solid rgba(193, 160, 102, 0.16)'
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: '22px',
-                        height: '22px',
-                        minWidth: '22px',
-                        borderRadius: '6px',
-                        background: 'linear-gradient(135deg, rgba(193, 160, 102, 0.22) 0%, rgba(193, 160, 102, 0.08) 100%)',
-                        border: '1px solid rgba(193, 160, 102, 0.45)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        marginTop: '1px',
-                        flexShrink: 0
-                      }}
-                    >
-                      <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-                        <path d="M2.2 6.2L4.6 8.6L9.8 3.4" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                    <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.52, fontWeight: 450 }}>
-                      {txt}
-                    </span>
-                  </div>
+                ].map((item, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '12px', fontSize: '14.5px', color: 'var(--color-text-main)', lineHeight: 1.5, alignItems: 'flex-start' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
-            {/* Контур 2: Исполнимость */}
+            {/* Карточка 2: Контур 02 • Исполнимость */}
             <div
               style={{
-                position: 'relative',
-                background: '#FFFFFF',
-                borderRadius: '16px',
-                border: '1px solid rgba(23, 50, 77, 0.22)',
-                boxShadow: '0 12px 32px rgba(16, 39, 59, 0.06), 0 2px 6px rgba(16, 39, 59, 0.03)',
-                padding: '38px 32px',
+                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-gold)',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                padding: '36px 32px',
                 display: 'flex',
-                flexDirection: 'column',
-                overflow: 'hidden'
+                flexDirection: 'column'
               }}
             >
-              {/* Decorative top accent gradient bar */}
-              <div
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '4px',
-                  background: 'linear-gradient(90deg, var(--color-deep-blue) 0%, #2B5780 100%)'
-                }}
-              />
-              {/* Decorative subtle background watermark */}
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '20px',
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '76px',
-                  fontWeight: 700,
-                  color: 'rgba(23, 50, 77, 0.06)',
-                  lineHeight: 1,
-                  pointerEvents: 'none',
-                  userSelect: 'none'
-                }}
-              >
-                02
-              </div>
-
-              {/* Header: badge + bespoke emblem */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px', position: 'relative', zIndex: 1 }}>
-                <span
-                  style={{
-                    fontSize: '11px',
-                    fontWeight: 800,
-                    color: 'var(--color-deep-blue)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    background: 'rgba(23, 50, 77, 0.08)',
-                    border: '1px solid rgba(23, 50, 77, 0.22)',
-                    borderRadius: '20px',
-                    padding: '5px 14px'
-                  }}
-                >
-                  Контур 02 • Исполнимость
-                </span>
-                <div
-                  style={{
-                    width: '42px',
-                    height: '42px',
-                    borderRadius: '10px',
-                    background: 'linear-gradient(135deg, rgba(23, 50, 77, 0.14) 0%, rgba(23, 50, 77, 0.04) 100%)',
-                    border: '1px solid rgba(23, 50, 77, 0.25)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--color-deep-blue)',
-                    boxShadow: '0 2px 8px rgba(23, 50, 77, 0.1)'
-                  }}
-                >
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    <path d="M12 8v4"></path>
-                    <path d="M12 16h.01"></path>
-                  </svg>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', paddingBottom: '16px', borderBottom: '1px solid rgba(23, 50, 77, 0.1)', marginBottom: '20px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M12 8v4"></path>
+                  <path d="M12 16h.01"></path>
+                </svg>
+                <div>
+                  <div style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '3px' }}>
+                    Контур 02 • Исполнимость
+                  </div>
+                  <h3 style={{ fontSize: '20px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0 }}>
+                    Фактический возврат средств
+                  </h3>
                 </div>
               </div>
 
-              <h3
-                style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '23px',
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 20px 0',
-                  lineHeight: 1.3,
-                  position: 'relative',
-                  zIndex: 1
-                }}
-              >
-                Фактический возврат средств
-              </h3>
-
-              {/* Items: bespoke structural rows with custom sapphire indicators */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', position: 'relative', zIndex: 1 }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 {[
                   'Известные счета, официальный доход, транспорт, недвижимость — только по законным источникам.',
                   'Сведения о других производствах, банкротстве, семейном и имущественном статусе должника.',
                   'Соразмерность расходов ожидаемому результату и последовательность исполнительных действий.',
                   'Необходимость отдельного сопровождения исполнительного производства после получения документа.'
-                ].map((txt, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '14px',
-                      padding: '12px 14px',
-                      borderRadius: '10px',
-                      background: 'rgba(240, 244, 248, 0.65)',
-                      border: '1px solid rgba(23, 50, 77, 0.12)'
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: '22px',
-                        height: '22px',
-                        minWidth: '22px',
-                        borderRadius: '6px',
-                        background: 'linear-gradient(135deg, rgba(23, 50, 77, 0.18) 0%, rgba(23, 50, 77, 0.06) 100%)',
-                        border: '1px solid rgba(23, 50, 77, 0.35)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        marginTop: '1px',
-                        flexShrink: 0
-                      }}
-                    >
-                      <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-                        <path d="M2.2 6.2L4.6 8.6L9.8 3.4" stroke="var(--color-deep-blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                    <span style={{ fontSize: '14.5px', color: 'var(--color-deep-blue)', lineHeight: 1.52, fontWeight: 450 }}>
-                      {txt}
-                    </span>
-                  </div>
+                ].map((item, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '12px', fontSize: '14.5px', color: 'var(--color-text-main)', lineHeight: 1.5, alignItems: 'flex-start' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <polyline points="9 11 12 14 22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
 
@@ -1263,8 +1068,9 @@ export default function VzyskanieDolgovClient() {
       <section id="directions" className="section bg-white" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0 }}>
-              Состав помощи по взысканию задолженности
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, lineHeight: 1.25 }}>
+              Состав помощи <br />
+              по взысканию задолженности
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
               Подключаемся на любом этапе взыскания: от анализа расписки и досудебной претензии до ареста имущества и фактического перечисления денег.
