@@ -658,7 +658,8 @@ export default function VzyskanieDolgovClient() {
                 marginTop: 0
               }}
             >
-              Доказать долг и получить деньги — две разные задачи
+              Доказать долг и получить деньги — <br />
+              две разные задачи
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, lineHeight: 1.6, margin: 0 }}>
               Суд оценивает, возникло ли обязательство, наступил ли срок возврата и как рассчитана сумма. После решения начинается другая задача: найти законный источник исполнения и правильно взаимодействовать с приставом, банком или иным органом. Поэтому до иска мы оцениваем обе стороны ситуации — доказательства и практическую исполнимость.
@@ -793,12 +794,7 @@ export default function VzyskanieDolgovClient() {
                 textAlign: 'left'
               }}
             >
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                Три правовых маршрута
-              </span>{' '}
-              <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                по документам
-              </span>
+              Три правовых маршрута по документам
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
               Стратегия доказывания и предлагаемое решение строятся на том, какими документами зафиксированы обязательства и фактическая передача денег.
@@ -831,7 +827,7 @@ export default function VzyskanieDolgovClient() {
                 </div>
 
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px', position: 'relative', zIndex: 1 }}>
+                  <div style={{ marginBottom: '14px', position: 'relative', zIndex: 1 }}>
                     <div style={{
                       fontSize: '11px',
                       fontWeight: 700,
@@ -844,15 +840,6 @@ export default function VzyskanieDolgovClient() {
                     }}>
                       {item.tag}
                     </div>
-                    <span style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '26px',
-                      fontWeight: 700,
-                      color: 'rgba(193, 160, 102, 0.35)',
-                      lineHeight: 1
-                    }}>
-                      {item.num}
-                    </span>
                   </div>
 
                   <h3 style={{
