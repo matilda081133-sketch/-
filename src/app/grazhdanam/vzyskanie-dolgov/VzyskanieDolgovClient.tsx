@@ -219,7 +219,8 @@ export default function VzyskanieDolgovClient() {
     {
       title: 'Досудебное урегулирование',
       subtitle: 'Требование, претензия, переговоры',
-      popular: false,
+      popular: true,
+      badgeText: 'Востребовано',
       price: 'от 10 000 ₽',
       priceUnit: 'за этап работы',
       features: [
@@ -793,7 +794,7 @@ export default function VzyskanieDolgovClient() {
       {/* ═══ БЛОК 5: ТРИ ПРАВОВЫХ МАРШРУТА (ШАБЛОН СЦЕНАРИЕВ И ПРЕДЛАГАЕМЫХ РЕШЕНИЙ) ═══ */}
       <section className="section bg-white" id="routes" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '820px', marginBottom: '48px', textAlign: 'left' }}>
+          <div style={{ maxWidth: '1000px', marginBottom: '48px', textAlign: 'left' }}>
             <div style={{
               fontSize: '13px',
               fontWeight: 700,
@@ -808,7 +809,7 @@ export default function VzyskanieDolgovClient() {
               className="with-accent"
               style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontSize: 'clamp(22px, 3.2vw, 36px)',
                 color: 'var(--color-deep-blue)',
                 marginBottom: '16px',
                 lineHeight: 1.25,
@@ -816,12 +817,22 @@ export default function VzyskanieDolgovClient() {
                 textAlign: 'left'
               }}
             >
-              Три правовых маршрута по документам
+              <span className="routes-heading-nowrap" style={{ display: 'inline-block' }}>
+                Три правовых маршрута по документам
+              </span>
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', textWrap: 'balance' }}>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontWeight: 400, lineHeight: 1.6, margin: 0, textAlign: 'left', maxWidth: '820px', textWrap: 'balance' }}>
               Стратегия доказывания и предлагаемое решение строятся на том, какими документами зафиксированы обязательства и фактическая передача денег.
             </p>
           </div>
+
+          <style dangerouslySetInnerHTML={{ __html: `
+            @media (min-width: 768px) {
+              .routes-heading-nowrap {
+                white-space: nowrap !important;
+              }
+            }
+          `}} />
 
           <div className="grid grid-3" style={{ gap: '28px', marginBottom: '40px' }}>
             {routesScenarios.map((item, i) => (
