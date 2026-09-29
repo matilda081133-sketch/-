@@ -1625,144 +1625,223 @@ export default function VzyskanieDolgovClient() {
       />
 
       {/* ═══ БЛОК 14: СМЕЖНЫЕ НАПРАВЛЕНИЯ (ШАБЛОН СВЯЗАННЫХ УСЛУГ) ═══ */}
-      <section className="section bg-white" style={{ padding: '80px 0', borderTop: '1px solid var(--color-border)' }}>
+      <section className="section bg-light" id="related-services" style={{ padding: '64px 0', background: 'var(--gradient-cream)', borderTop: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '40px' }}>
-            <h2
-              style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(28px, 4vw, 36px)',
-                color: 'var(--color-deep-blue)',
-                marginBottom: '12px',
-                marginTop: 0
-              }}
-            >
-              Смежные направления
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0 }}>
-              Если задача выходит за рамки классического взыскания частного долга:
-            </p>
+          <div style={{ marginBottom: '36px' }}>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--color-gold)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '10px'
+            }}>
+              Комплексная правовая помощь
+            </div>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '24px'
+            }}>
+              <h2 className="with-accent" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 3.5vw, 36px)', color: 'var(--color-deep-blue)', margin: 0, lineHeight: 1.25, flex: '1 1 480px', minWidth: '280px' }}>
+                Смежные направления
+              </h2>
+              <p style={{
+                flex: '0 1 440px',
+                minWidth: '280px',
+                fontSize: '15.5px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}>
+                Если задача выходит за рамки классического взыскания частного долга:
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-4" style={{ gap: '20px' }}>
+          <style dangerouslySetInnerHTML={{ __html: `
+            .related-service-card {
+              border-top: 3px solid var(--color-primary) !important;
+            }
+            .related-service-card:hover {
+              border-top: 3px solid var(--color-gold) !important;
+              transform: translateY(-4px);
+              box-shadow: 0 12px 30px rgba(23, 50, 77, 0.08) !important;
+            }
+            .related-service-card:hover .card-arrow {
+              color: var(--color-gold) !important;
+            }
+            .related-service-card:hover .card-arrow svg {
+              stroke: var(--color-gold) !important;
+              transform: translateX(4px);
+            }
+            .all-services-link:hover {
+              color: var(--color-gold) !important;
+            }
+          `}} />
+
+          <div className="grid grid-4" style={{ gap: '20px', marginBottom: '28px' }}>
             <Link
               href="/grazhdanam/vzyskanie-dolgov/zashchita-ot-trebovaniy-po-dolgu/"
-              className="card related-service-card hover-lift"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                padding: '26px 22px',
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                height: '100%',
-                boxShadow: '0 4px 16px rgba(16, 39, 59, 0.05)'
-              }}
+              style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
             >
-              <div>
-                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.35 }}>
-                  Защита от требований по долгу
-                </h4>
-                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
-                  Если долг требуют с Вас по расписке или договору займа, сформируем обоснованную защитную позицию.
-                </p>
-              </div>
-              <div className="card-arrow" style={{ color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span>Перейти к защите</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 22px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Защита от требований по долгу
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Если долг требуют с Вас по расписке или договору займа, сформируем обоснованную защитную позицию.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Перейти к защите</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
               </div>
             </Link>
 
             <Link
               href="/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/"
-              className="card related-service-card hover-lift"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                padding: '26px 22px',
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                height: '100%',
-                boxShadow: '0 4px 16px rgba(16, 39, 59, 0.05)'
-              }}
+              style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
             >
-              <div>
-                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.35 }}>
-                  Юрист по исполнительному производству
-                </h4>
-                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
-                  Судебный акт уже получен, но взыскание затягивается или требуется розыск счетов и имущества.
-                </p>
-              </div>
-              <div className="card-arrow" style={{ color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span>Подробнее</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 22px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Юрист по исполнительному производству
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Судебный акт уже получен, но взыскание затягивается или требуется розыск счетов и имущества.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
               </div>
             </Link>
 
             <Link
               href="/biznesu/vzyskanie-zadolzhennosti-s-yuridicheskih-lic/"
-              className="card related-service-card hover-lift"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                padding: '26px 22px',
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                height: '100%',
-                boxShadow: '0 4px 16px rgba(16, 39, 59, 0.05)'
-              }}
+              style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
             >
-              <div>
-                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.35 }}>
-                  Взыскание задолженности с юридических лиц
-                </h4>
-                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
-                  Должник — организация или обязательство возникло из договоров между предпринимателями.
-                </p>
-              </div>
-              <div className="card-arrow" style={{ color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span>Подробнее</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 22px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Взыскание задолженности с юридических лиц
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Должник — организация или обязательство возникло из договоров между предпринимателями.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
               </div>
             </Link>
 
             <Link
               href="/grazhdanam/kreditnyj-yurist/"
-              className="card related-service-card hover-lift"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                padding: '26px 22px',
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                height: '100%',
-                boxShadow: '0 4px 16px rgba(16, 39, 59, 0.05)'
-              }}
+              style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
             >
-              <div>
-                <h4 style={{ fontSize: '17px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', margin: '0 0 10px 0', lineHeight: 1.35 }}>
-                  Кредитный юрист
-                </h4>
-                <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
-                  Банк, МФО или коллекторы предъявляют требования к Вам как к заёмщику или поручителю.
-                </p>
+              <div
+                className="card related-service-card hover-lift"
+                style={{
+                  height: '100%',
+                  minHeight: '180px',
+                  padding: '26px 22px',
+                  background: 'var(--color-white)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.04)',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div>
+                  <h3 style={{ margin: '0 0 10px 0', fontSize: '17px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', lineHeight: 1.35, fontWeight: 700 }}>
+                    Кредитный юрист
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
+                    Банк, МФО или коллекторы предъявляют требования к Вам как к заёмщику или поручителю.
+                  </p>
+                </div>
+                <div className="card-arrow" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', transition: 'color 0.35s ease' }}>
+                  <span>Подробнее</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
               </div>
-              <div className="card-arrow" style={{ color: 'var(--color-primary)', fontSize: '13.5px', fontWeight: 600, marginTop: '18px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span>Подробнее</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </div>
+            </Link>
+          </div>
+
+          <div style={{ marginTop: '28px' }}>
+            <Link href="/grazhdanam/" className="all-services-link" style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '15px', textDecoration: 'underline', textUnderlineOffset: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s ease' }}>
+              Смотреть все юридические услуги компании «Де-Юре» для граждан →
             </Link>
           </div>
         </div>
