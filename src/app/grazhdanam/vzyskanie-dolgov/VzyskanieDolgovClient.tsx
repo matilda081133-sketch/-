@@ -366,7 +366,13 @@ export default function VzyskanieDolgovClient() {
           </>
         }
         superTitle="Частные долги • помощь взыскателю • Липецк"
-        title="Взыскание долгов с физических лиц в Липецке"
+        title={
+          <>
+            Взыскание долгов <br />
+            с физических лиц <br />
+            в Липецке
+          </>
+        }
         subtitle="Оценим документы, доказательства и реальную перспективу взыскания — от требования должнику до суда и передачи решения на исполнение."
         trustItems={[
           { text: 'По расписке или договору займа' },
@@ -524,15 +530,25 @@ export default function VzyskanieDolgovClient() {
       {/* ═══ БЛОК 3: РИСКИ ПРОМЕДЛЕНИЯ (ШАБЛОН DARK URGENT BANNER) ═══ */}
       <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
-          <div style={{ maxWidth: '800px', marginBottom: '36px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
-              Когда важно начать взыскание без промедления
+          <div style={{ maxWidth: '100%', marginBottom: '36px' }}>
+            <h2 style={{ fontSize: 'clamp(22px, 3.1vw, 36px)', fontFamily: 'var(--font-serif)', color: '#FFFFFF', marginBottom: '12px', marginTop: 0, lineHeight: 1.25 }}>
+              <span className="urgent-heading-nowrap" style={{ display: 'inline-block' }}>
+                Когда важно начать взыскание без промедления
+              </span>
             </h2>
             <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', margin: 0, maxWidth: '720px', lineHeight: 1.6 }}>
               В делах о возврате долгов время почти всегда работает на должника: ликвидное имущество переоформляется, счета обнуляются, а пропуск срока давности безвозвратно лишает права на судебную защиту.
             </p>
           </div>
+
+          <style dangerouslySetInnerHTML={{ __html: `
+            @media (min-width: 992px) {
+              .urgent-heading-nowrap {
+                white-space: nowrap !important;
+              }
+            }
+          `}} />
 
           <div className="grid grid-3" style={{ gap: '24px', marginBottom: '40px' }}>
             <div
@@ -550,7 +566,8 @@ export default function VzyskanieDolgovClient() {
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '44px' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
                   <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
                 <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
                   Истекает 3-летний срок давности
@@ -575,9 +592,9 @@ export default function VzyskanieDolgovClient() {
             >
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '44px' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-                  <line x1="12" y1="9" x2="12" y2="13"></line>
-                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
                 <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
                   Должник избавляется от имущества
@@ -602,9 +619,9 @@ export default function VzyskanieDolgovClient() {
             >
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', minHeight: '44px' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B08D57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="9" y1="9" x2="15" y2="15"></line>
-                  <line x1="15" y1="9" x2="9" y2="15"></line>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
                 <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', marginTop: 0, lineHeight: 1.3 }}>
                   Угроза банкротства должника
