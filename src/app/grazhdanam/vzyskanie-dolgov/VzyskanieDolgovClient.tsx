@@ -1589,7 +1589,12 @@ export default function VzyskanieDolgovClient() {
 
       {/* ═══ БЛОК 11: КЕЙСЫ ИЗ ПРАКТИКИ (ШАБЛОН CASES BLOCK) ═══ */}
       <CasesBlock
-        title="Примеры из практики по взысканию долгов"
+        title={
+          <>
+            <span style={{ display: 'inline-block' }}>Примеры из практики</span> <br />
+            <span style={{ display: 'inline-block' }}>по взысканию долгов</span>
+          </>
+        }
         subtitle="Результат взыскания зависит от содержания документов, поведения сторон, сроков и возможности исполнить решение. Поэтому одинаковая сумма долга может требовать разной стратегии."
         cases={casesData}
       />
