@@ -9,6 +9,7 @@ import MilitaryHero from '@/components/MilitaryHero';
 import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 
 export default function ZashchitaOtTrebovaniyClient() {
   const proofItems = [
@@ -145,26 +146,86 @@ export default function ZashchitaOtTrebovaniyClient() {
     }
   ];
 
-  const pricingFactors = [
+  const pricingTiers: PricingTier[] = [
     {
-      format: 'Правовой анализ',
-      details: 'Объём документов и переписки, число платежей, необходимость расчёта и срочность.'
+      title: 'Консультация по требованию о долге',
+      subtitle: 'Устная консультация и правовой анализ',
+      popular: false,
+      price: '2 000 ₽',
+      priceUnit: 'до 1 часа',
+      features: [
+        { name: 'Определение вида поступившего документа и реквизитов', value: 'Включено' },
+        { name: 'Проверка даты вручения и календаря процессуальных сроков', value: 'Включено' },
+        { name: 'Выбор первоочередного шага: отзыв, возражения или отмена', value: 'Включено' },
+        { name: 'Разъяснение процессуальных рисков и последствий бездействия', value: 'Включено' }
+      ],
+      exclusions: 'Углублённое изучение объёмного комплекта доказательств и письменное заключение оплачиваются отдельно.',
+      buttonText: 'Разобрать требование',
+      buttonHref: '#defense-form'
     },
     {
-      format: 'Письменная позиция',
-      details: 'Претензия или иск, количество требований, доказательств, ходатайств и расчётных периодов.'
+      title: 'Анализ требования и документов',
+      subtitle: 'Правовая оценка материалов дела и расчёта',
+      popular: false,
+      price: 'от 15 000 ₽',
+      priceUnit: 'за анализ материалов дела',
+      features: [
+        { name: 'Правовая экспертиза представленных материалов дела', value: 'Включено' },
+        { name: 'Проверка фактической передачи денег и безденежности займа', value: 'Включено' },
+        { name: 'Анализ расчёта основного долга, процентов и неустойки', value: 'Включено' },
+        { name: 'Оценка оснований для снижения штрафов и пропуска давности', value: 'Включено' }
+      ],
+      exclusions: 'Сбор новых доказательств, направление адвокатских запросов и ознакомление с делом в суде согласовываются отдельно.',
+      buttonText: 'Проверить требование',
+      buttonHref: '#defense-form'
     },
     {
-      format: 'Представительство',
-      details: 'Стадия, число заседаний, экспертиза, встречный иск, новые доказательства и выезд.'
+      title: 'Ответ на претензию',
+      subtitle: 'Досудебный мотивированный отзыв',
+      popular: false,
+      price: 'от 15 000 ₽',
+      priceUnit: 'за один мотивированный документ',
+      features: [
+        { name: 'Составление мотивированного ответа на претензионное письмо', value: 'Включено' },
+        { name: 'Фиксация правовой позиции о несогласии с долгом или суммой', value: 'Включено' },
+        { name: 'Указание на частичный возврат, пропуск срока или безденежность', value: 'Включено' },
+        { name: 'Формирование пакета приложений и подтверждений отправки', value: 'Включено' }
+      ],
+      exclusions: 'Ведение переговоров с кредитором и составление мирового соглашения оплачиваются отдельно.',
+      buttonText: 'Подготовить ответ',
+      buttonHref: '#defense-form'
     },
     {
-      format: 'Апелляция',
-      details: 'Объём дела, содержание решения, срок, допустимые новые материалы и участие в заседании.'
+      title: 'Возражения на иск',
+      subtitle: 'Процессуальный документ в суд первой инстанции',
+      popular: false,
+      price: 'от 10 000 ₽',
+      priceUnit: 'за один процессуальный документ',
+      features: [
+        { name: 'Подготовка мотивированного отзыва на исковое заявление', value: 'Включено' },
+        { name: 'Заявление о применении срока исковой давности (ст. 199 ГК РФ)', value: 'Включено' },
+        { name: 'Ходатайство о снижении неустойки по ст. 333 ГК РФ', value: 'Включено' },
+        { name: 'Формирование доказательственной базы и правовых доводов', value: 'Включено' }
+      ],
+      exclusions: 'Полный контррасчёт за длительные периоды, судебные экспертизы, встречный иск и участие в суде согласуются отдельно.',
+      buttonText: 'Подготовить возражения',
+      buttonHref: '#defense-form'
     },
     {
-      format: 'Переговоры',
-      details: 'Состав требований, условия графика, обеспечение, расходы и оформление прекращения спора.'
+      title: 'Представительство в суде',
+      subtitle: 'Защита ответчика в суде первой инстанции',
+      popular: false,
+      price: 'от 40 000 ₽',
+      priceUnit: 'до 3 судебных заседаний',
+      features: [
+        { name: 'Участие юриста в заседаниях суда первой инстанции (до 3 заседаний)', value: 'Включено' },
+        { name: 'Устное обоснование возражений и допрос свидетелей/экспертов', value: 'Включено' },
+        { name: 'Противодействие обеспечительным мерам и доводам истца', value: 'Включено' },
+        { name: 'Получение судебного акта и подготовка отчёта доверителю', value: 'Включено' }
+      ],
+      exclusions: 'Письменные процессуальные документы оплачиваются отдельно. Каждое заседание сверх включённых трёх — от 10 000 ₽.',
+      buttonText: 'Обсудить защиту',
+      buttonHref: '#defense-form'
     }
   ];
 
@@ -836,71 +897,34 @@ export default function ZashchitaOtTrebovaniyClient() {
       </section>
 
       {/* ═══ БЛОК 11: СТОИМОСТЬ ═══ */}
-      <section className="section bg-light" style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
-            <h2
-              className="with-accent"
-              style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(26px, 3.5vw, 38px)',
-                color: 'var(--color-deep-blue)',
-                marginBottom: '16px',
-                lineHeight: 1.25
-              }}
-            >
-              Стоимость зависит от стадии и доказательств
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-              Анализ претензии, подготовка возражений и ведение дела с экспертизой — разные задачи. До начала работы фиксируем конкретный этап, состав действий и стоимость.
-            </p>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '32px' }}>
-            {pricingFactors.map((tier, idx) => (
-              <div
-                key={idx}
-                className="card"
-                style={{
-                  background: '#FFFFFF',
-                  border: '1px solid var(--color-border)',
-                  borderLeft: '4px solid var(--color-gold)',
-                  padding: '20px 24px',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  flexWrap: 'wrap',
-                  gap: '16px'
-                }}
-              >
-                <div style={{ flex: '1 1 320px' }}>
-                  <h3 style={{ fontSize: '17px', color: 'var(--color-deep-blue)', margin: '0 0 6px 0', fontWeight: 600 }}>
-                    {tier.format}
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
-                    {tier.details}
-                  </p>
-                </div>
-                <div>
-                  <a href="#defense-form" className="btn btn-outline" style={{ fontSize: '13px', padding: '9px 18px' }}>
-                    Уточнить состав
-                  </a>
-                </div>
+      <PricingBlock
+        title="Стоимость защиты по требованию о долге"
+        subtitle="Защиту можно начать с консультации, анализа материалов или одного возражения. До начала работы фиксируем конкретное действие, состав услуг и стоимость."
+        tiers={pricingTiers}
+        gridCols={5}
+        direction="Защита от требований по долгу"
+        pageUrl="https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/zashchita-ot-trebovaniy-po-dolgu/"
+        ctaTitle="Определим точную стоимость до старта работы"
+        ctaSubtitle="Изучим требование, расчёт и доказательства, определим реальные процессуальные риски и согласуем состав защиты до начала работы."
+        ctaButtonText="Разобрать требование по долгу"
+        ctaButtonLink="#defense-form"
+        ctaService="Консультация по требованию о долге"
+        disclaimer={
+          <>
+            <div style={{ maxWidth: '900px', margin: '0 auto 20px auto', textAlign: 'left', background: 'var(--color-white)', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-gold)', padding: '18px 24px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+                <strong>Судебный приказ:</strong> если получен судебный приказ, перейдите в профильный раздел <a href="/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>отмена судебного приказа</a> (срок подачи возражений — 10 дней).
               </div>
-            ))}
-          </div>
-
-          <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', margin: '0 0 24px 0' }}>
-            Госпошлина, нотариальные, экспертные, почтовые и иные внешние расходы согласуются отдельно.
-          </p>
-
-          <div style={{ textAlign: 'center' }}>
-            <a href="#defense-form" className="btn btn-primary" style={{ padding: '14px 28px' }}>
-              Уточнить стоимость защиты →
-            </a>
-          </div>
-        </div>
-      </section>
+              <div style={{ fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
+                <strong>Апелляция и переговоры (рассчитываются индивидуально):</strong> апелляционная жалоба — от 20 000 ₽ за документ; участие в апелляции — от 30 000 ₽ за день; переговоры об урегулировании спора — от 15 000 ₽ (до 4 часов). <a href="#defense-form" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}>Рассчитать стоимость →</a>
+              </div>
+            </div>
+            <span style={{ display: 'block', fontSize: '13.5px', color: 'var(--color-text-secondary)' }}>
+              Госпошлина, нотариальные, экспертные, почтовые и иные внешние расходы оплачиваются отдельно при их необходимости. Окончательный объём услуг и стоимость фиксируются в договоре до начала работы.
+            </span>
+          </>
+        }
+      />
 
       {/* ═══ БЛОК 12: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
       <FAQBlock
@@ -1036,8 +1060,15 @@ export default function ZashchitaOtTrebovaniyClient() {
             title="Разобрать требование по долгу"
             subtitle="Укажите, что Вы получили: претензию, судебный приказ, иск или повестку. Если известна дата суда или получения документа, напишите её в описании."
             buttonText="Получить консультацию"
+            direction="Защита от требований по долгу"
             commentPlaceholder="Например: получен иск по расписке, заседание назначено на…"
             subtext="Не прикладывайте документы с персональными и финансовыми данными. Способ передачи согласуем после связи."
+            hiddenFields={[
+              { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/zashchita-ot-trebovaniy-po-dolgu/' },
+              { name: 'page_type', value: 'service' },
+              { name: 'direction', value: 'Защита от требований по долгу' },
+              { name: 'service', value: 'Защита от требований по долгу' }
+            ]}
           />
         </div>
       </section>

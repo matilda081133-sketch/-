@@ -33,7 +33,7 @@ export interface PricingTab {
   id: string;
   label: string;
   tiers: PricingTier[];
-  gridCols?: 2 | 3 | 4 | '2x2';
+  gridCols?: 2 | 3 | 4 | 5 | '2x2';
 }
 
 interface PricingBlockProps {
@@ -52,7 +52,7 @@ interface PricingBlockProps {
   sectionStyle?: React.CSSProperties;
   showDemoWarning?: boolean;
   direction?: string;
-  gridCols?: 2 | 3 | 4 | '2x2';
+  gridCols?: 2 | 3 | 4 | 5 | '2x2';
   mobileNote?: React.ReactNode;
   topTier?: PricingTier;
 }
@@ -152,6 +152,7 @@ export default function PricingBlock({
     pathname?.includes('/zhilishchnyj-yurist') ? 'Жилищный юрист' :
     pathname?.includes('/yurist-po-nedvizhimosti') ? 'Юрист по недвижимости' :
     pathname?.includes('/zemelnyj-yurist') ? 'Земельный юрист' :
+    pathname?.includes('/zashchita-ot-trebovaniy-po-dolgu') ? 'Защита от требований по долгу' :
     pathname?.includes('/vzyskanie-dolgov') ? 'Взыскание долгов' :
     pathname?.includes('/avtoyurist') ? 'Автоюрист' :
     pathname?.includes('/trudovoj-yurist') ? 'Трудовой юрист' :
