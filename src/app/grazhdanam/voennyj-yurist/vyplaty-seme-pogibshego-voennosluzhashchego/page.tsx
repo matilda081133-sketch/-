@@ -70,9 +70,9 @@ export default function VyplatySemePogibshegoPage() {
         '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
         'name': 'Дмитрий Сергеевич Конопкин',
         'url': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
-        'jobTitle': 'Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»',
-        'image': 'https://dejure-help.ru/images/konopkin.jpg',
-        'worksFor': { '@id': 'https://dejure-help.ru/#organization' }
+        'jobTitle': 'Адвокат',
+        'description': 'Адвокат, реестровый номер 48/812',
+        'image': 'https://dejure-help.ru/images/konopkin.jpg'
       },
       {
         '@type': 'Service',
@@ -298,7 +298,7 @@ export default function VyplatySemePogibshegoPage() {
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        imageSubtitle="Адвокат, реестровый номер 48/812"
         imageMarginTop="0px"
         trustItems={[
           { text: <><span style={{ display: 'inline-block' }}>Проверяем федеральные и региональные выплаты,</span> <span style={{ display: 'inline-block' }}>а также страховое обеспечение</span></> },
@@ -490,7 +490,7 @@ export default function VyplatySemePogibshegoPage() {
                   lineHeight: 1.6,
                   margin: 0
                 }}>
-                  Опишите, кем вы приходитесь военнослужащему и какие документы уже получены. Дмитрий Сергеевич Конопкин изучит информацию и определит возможный порядок действий.
+                  Опишите, кем вы приходитесь военнослужащему и какие документы уже получены. Если для решения вопроса потребуется адвокатская помощь, с вашего согласия ЮК «Де-Юре» передаст обращение Дмитрию Сергеевичу Конопкину. Адвокат самостоятельно изучит обстоятельства и согласует с вами дальнейшее взаимодействие.
                 </p>
               </div>
 
@@ -513,15 +513,15 @@ export default function VyplatySemePogibshegoPage() {
         </div>
       </section>
 
-      {/* 4.6. Куратор направления */}
+      {/* 4.6. Адвокат по военным делам */}
       <SpecialistBlock 
-        title="Куратор направления"
+        title="Адвокат по военным делам"
         name="Дмитрий Сергеевич Конопкин"
-        position={<>Адвокат, независимый партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
+        position="Адвокат, реестровый номер 48/812"
         imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Дмитрий Сергеевич Конопкин курирует работу по оформлению выплат семье погибшего военнослужащего. Проверяет право каждого заявителя и основания по отдельным видам выплат, определяет порядок действий при задержке, отказе или необходимости установить юридически значимый факт.
+            Дмитрий Сергеевич Конопкин работает с вопросами оформления выплат семье погибшего военнослужащего. Изучает право каждого заявителя и основания по отдельным видам выплат, определяет порядок действий при задержке, отказе или необходимости установить юридически значимый факт.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
@@ -543,6 +543,7 @@ export default function VyplatySemePogibshegoPage() {
         ]}
         buttonText="Задать вопрос Дмитрию Сергеевичу"
         buttonHref="#form"
+        disclaimer="Дмитрий Сергеевич Конопкин не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно. ЮК «Де-Юре» сотрудничает с адвокатом по вопросам, требующим адвокатского статуса. Соглашение об оказании адвокатской помощи заключается непосредственно между адвокатом и доверителем."
       />
 
       {/* 4.7. Примеры из практики */}
@@ -720,11 +721,11 @@ export default function VyplatySemePogibshegoPage() {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                <span style={{ display: 'inline-block' }}>Обсудите ситуацию</span> <br /><span style={{ display: 'inline-block' }}>с Дмитрием Сергеевичем Конопкиным</span>
+                <span style={{ display: 'inline-block' }}>Обсудите ситуацию</span> <br /><span style={{ display: 'inline-block' }}>по выплатам семье военнослужащего</span>
               </h2>
               
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Кратко опишите, что произошло, и оставьте контактные данные. <span style={{ color: 'var(--color-deep-blue)', fontWeight: 600 }}>Обращение будет передано Дмитрию Сергеевичу Конопкину.</span> Он уточнит, какие документы у вас есть, изучит обстоятельства и согласует с вами консультацию.
+                Кратко опишите, что произошло, и оставьте контактные данные. Если для решения вопроса потребуется адвокатская помощь, с вашего согласия ЮК «Де-Юре» передаст обращение Дмитрию Сергеевичу Конопкину. Адвокат самостоятельно изучит обстоятельства и согласует с вами дальнейшее взаимодействие.
               </p>
               
               <div style={{ marginTop: '32px' }}>
@@ -739,7 +740,7 @@ export default function VyplatySemePogibshegoPage() {
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
               <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
                 <ContactsForm 
-                  title="Написать адвокату" 
+                  title="Запросить консультацию адвоката" 
                   subtitle="" 
                   buttonText="Получить консультацию"
                   commentPlaceholder="Кратко опишите обстоятельства и имеющиеся документы..."

@@ -111,11 +111,11 @@ export default function SporySVoenkomatomPage() {
       {
         '@type': 'Person',
         '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
-        name: 'Конопкин Дмитрий Сергеевич',
-        jobTitle: 'Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»',
+        name: 'Дмитрий Сергеевич Конопкин',
+        jobTitle: 'Адвокат',
+        description: 'Адвокат, реестровый номер 48/812',
         url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
         image: 'https://dejure-help.ru/images/konopkin.jpg',
-        worksFor: { '@id': 'https://dejure-help.ru/#organization' },
         knowsAbout: ['Военное право', 'Споры с военкоматом', 'Обжалование решений призывной комиссии']
       },
       {
@@ -256,7 +256,7 @@ export default function SporySVoenkomatomPage() {
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        imageSubtitle="Адвокат, реестровый номер 48/812"
         trustItems={[
           { text: 'Проверяем принятое решение и имеющиеся материалы' },
           { text: <>Выбираем порядок обжалования — в призывной<br />комиссии субъекта РФ или в суде</> },
@@ -349,7 +349,7 @@ export default function SporySVoenkomatomPage() {
                 Не уверены, какое решение нужно оспаривать?
               </h3>
               <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, maxWidth: '780px' }}>
-                Дмитрий Сергеевич Конопкин изучит вашу ситуацию и документы, оценит законность решения военкомата и определит возможный порядок действий.
+                Если для решения вопроса потребуется адвокатская помощь, с вашего согласия ЮК «Де-Юре» передаст обращение Дмитрию Сергеевичу Конопкину. Адвокат самостоятельно изучит обстоятельства и согласует с вами дальнейшее взаимодействие.
               </p>
             </div>
             <div style={{ flexShrink: 0 }}>
@@ -466,15 +466,15 @@ export default function SporySVoenkomatomPage() {
         </div>
       </section>
 
-      {/* ═══ 3. КУРАТОР НАПРАВЛЕНИЯ (БЛОК СПЕЦИАЛИСТА) ═══ */}
+      {/* ═══ 3. АДВОКАТ ПО ВОЕННЫМ ДЕЛАМ ═══ */}
       <SpecialistBlock 
-        title="Куратор направления"
+        title="Адвокат по военным делам"
         name="Дмитрий Сергеевич Конопкин"
-        position={<>Адвокат, независимый партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
+        position="Адвокат, реестровый номер 48/812"
         imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Дмитрий Сергеевич Конопкин ведёт военное направление и подключается к спорам с военными комиссариатами и призывными комиссиями. Изучает решение и документы, определяет предмет обжалования и представляет интересы доверителя при внесудебном обжаловании и в суде.
+            Дмитрий Сергеевич Конопкин работает со спорами, связанными с решениями и действиями военных комиссариатов и призывных комиссий. Изучает решение и документы, определяет предмет и порядок обжалования, представляет интересы доверителя при внесудебном обжаловании и в суде.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
@@ -496,6 +496,7 @@ export default function SporySVoenkomatomPage() {
         ]}
         buttonText="Обсудить ситуацию с адвокатом"
         buttonHref="#form"
+        disclaimer="Дмитрий Сергеевич Конопкин не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно. ЮК «Де-Юре» сотрудничает с адвокатом по вопросам, требующим адвокатского статуса. Соглашение об оказании адвокатской помощи заключается непосредственно между адвокатом и доверителем."
       />
 
       {/* ═══ 3.1. ПРАКТИКА ПО СПОРАМ С ВОЕНКОМАТАМИ ═══ */}
@@ -707,11 +708,11 @@ export default function SporySVoenkomatomPage() {
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                Обсудите ситуацию с Дмитрием Сергеевичем Конопкиным
+                Обсудите ситуацию по спору с военкоматом
               </h2>
               
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
-                Кратко опишите, какое решение принял военкомат или какие его действия либо бездействие вы хотите оспорить, и оставьте контактные данные. Обращение будет передано Дмитрию Сергеевичу Конопкину. Он уточнит обстоятельства, проверит, какие документы у вас есть, и согласует с вами консультацию.
+                Кратко опишите, какое решение принял военкомат или какие его действия либо бездействие вы хотите оспорить, и оставьте контактные данные. Если для решения вопроса потребуется адвокатская помощь, с вашего согласия ЮК «Де-Юре» передаст обращение Дмитрию Сергеевичу Конопкину. Адвокат самостоятельно изучит обстоятельства и согласует с вами дальнейшее взаимодействие.
               </p>
               
               <div style={{ marginTop: '32px' }}>
@@ -726,7 +727,7 @@ export default function SporySVoenkomatomPage() {
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
               <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
                 <ContactsForm 
-                  title="Написать нам" 
+                  title="Запросить консультацию адвоката" 
                   subtitle="" 
                   buttonText="Получить консультацию"
                   commentPlaceholder="Например: Военкомат отказал в отсрочке и выдал повестку..."

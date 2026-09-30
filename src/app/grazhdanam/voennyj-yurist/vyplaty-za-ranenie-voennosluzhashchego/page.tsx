@@ -145,11 +145,10 @@ export default function VyplatyRaneniePage() {
         "@type": "Person",
         "@id": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person",
         "name": "Дмитрий Сергеевич Конопкин",
-        "jobTitle": "Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»",
-        "description": "Реестровый номер 48/812",
+        "jobTitle": "Адвокат",
+        "description": "Адвокат, реестровый номер 48/812",
         "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
-        "image": "https://dejure-help.ru/images/konopkin.jpg",
-        "worksFor": { "@id": "https://dejure-help.ru/#organization" }
+        "image": "https://dejure-help.ru/images/konopkin.jpg"
       },
       {
         "@type": "WebPage",
@@ -205,7 +204,7 @@ export default function VyplatyRaneniePage() {
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        imageSubtitle="Адвокат, реестровый номер 48/812"
         imageMarginTop="0px"
         trustItems={[
           { text: <><span style={{ display: 'inline-block' }}>Проверяем правовые основания</span> <span style={{ display: 'inline-block' }}>для получения выплат</span></> },
@@ -357,8 +356,7 @@ export default function VyplatyRaneniePage() {
                 Не уверены, относится ли ваша ситуация <br />к одному из этих случаев?
               </h3>
               <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.6, maxWidth: '780px' }}>
-                <span style={{ display: 'block' }}>Опишите обстоятельства и укажите, какие документы у вас есть. Дмитрий Сергеевич Конопкин</span>
-                <span style={{ display: 'block' }}>изучит информацию и определит возможный порядок действий.</span>
+                Опишите обстоятельства и укажите, какие документы у вас есть. Если для решения вопроса потребуется адвокатская помощь, с вашего согласия ЮК «Де-Юре» передаст обращение Дмитрию Сергеевичу Конопкину. Адвокат самостоятельно изучит обстоятельства и согласует с вами дальнейшее взаимодействие.
               </p>
             </div>
             <div style={{ position: 'relative', zIndex: 1 }}>
@@ -386,15 +384,15 @@ export default function VyplatyRaneniePage() {
         </div>
       </section>
 
-      {/* ═══ 5. Куратор направления ═══ */}
+      {/* ═══ 5. Адвокат по военным делам ═══ */}
       <SpecialistBlock 
-        title="Куратор направления"
+        title="Адвокат по военным делам"
         name="Дмитрий Сергеевич Конопкин"
-        position="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        position="Адвокат, реестровый номер 48/812"
         imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Дмитрий Сергеевич Конопкин лично ведёт работу по вопросам выплат за ранение военнослужащих. Он проверяет медицинские и служебные документы, определяет возможные основания для получения выплат и порядок действий при задержке, отказе или неверном оформлении документов.
+            Дмитрий Сергеевич Конопкин работает с вопросами выплат за ранение военнослужащих. Изучает медицинские и служебные документы, оценивает возможные основания для получения выплат и определяет порядок действий при задержке, отказе или ошибках в оформлении документов.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>
@@ -416,6 +414,7 @@ export default function VyplatyRaneniePage() {
         ]}
         buttonText="Обсудить ситуацию с адвокатом"
         buttonHref="#form"
+        disclaimer="Дмитрий Сергеевич Конопкин не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно. ЮК «Де-Юре» сотрудничает с адвокатом по вопросам, требующим адвокатского статуса. Соглашение об оказании адвокатской помощи заключается непосредственно между адвокатом и доверителем."
       />
 
       {/* ═══ 6. Примеры из практики ═══ */}
@@ -664,7 +663,7 @@ export default function VyplatyRaneniePage() {
               </h2>
               
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Кратко опишите, что произошло, и оставьте контактные данные. <span style={{ color: 'var(--color-deep-blue)', fontWeight: 600 }}>Обращение будет передано Дмитрию Сергеевичу Конопкину.</span> Он уточнит, какие документы у вас есть, изучит обстоятельства и согласует с вами консультацию.
+                Кратко опишите, что произошло, и оставьте контактные данные. Если для решения вопроса потребуется адвокатская помощь, с вашего согласия ЮК «Де-Юре» передаст обращение Дмитрию Сергеевичу Конопкину. Адвокат самостоятельно изучит обстоятельства и согласует с вами дальнейшее взаимодействие.
               </p>
               
               <div style={{ marginTop: '32px' }}>
@@ -679,7 +678,7 @@ export default function VyplatyRaneniePage() {
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'flex-start' }}>
               <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
                 <ContactsForm 
-                  title="Написать нам" 
+                  title="Запросить консультацию адвоката" 
                   subtitle="" 
                   direction="Военное право"
                   hiddenFields={[

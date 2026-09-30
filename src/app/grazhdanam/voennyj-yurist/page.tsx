@@ -116,9 +116,9 @@ export default function VoennyjYuristPage() {
       {
         "@type": "Person",
         "name": "Дмитрий Сергеевич Конопкин",
-        "jobTitle": "Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»",
-        "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
-        "worksFor": { "@id": "https://dejure-help.ru/#organization" }
+        "jobTitle": "Адвокат",
+        "description": "Адвокат, реестровый номер 48/812",
+        "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/"
       }
     ]
   };
@@ -156,7 +156,7 @@ export default function VoennyjYuristPage() {
         ctaMarginTop="36px"
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        imageSubtitle="Адвокат, реестровый номер 48/812"
         trustItems={[]}
       />
 
@@ -470,15 +470,15 @@ export default function VoennyjYuristPage() {
         </div>
       </section>
 
-      {/* ═══ 5. Куратор направления ═══ */}
+      {/* ═══ 5. Адвокат по военным делам ═══ */}
       <SpecialistBlock 
-        title="Куратор направления"
+        title="Адвокат по военным делам"
         name="Дмитрий Сергеевич Конопкин"
-        position={<>Адвокат, независимый партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
+        position="Адвокат, реестровый номер 48/812"
         imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Дмитрий Сергеевич Конопкин курирует работу по военному праву: определяет правовую позицию, контролирует ведение дел и подключается к сложным вопросам, связанным с выплатами, заключениями ВВК, спорами с военкоматами и уголовной защитой военнослужащих. Опыт работы в Следственном комитете помогает оценивать правовые риски и выстраивать защиту по делам, связанным с уголовным преследованием.
+            Дмитрий Сергеевич Конопкин работает с вопросами военного права: уголовной защитой военнослужащих, обжалованием заключений ВВК и решений военкоматов, а также спорами о выплатах. Опыт работы в Следственном комитете помогает ему оценивать процессуальные риски, изучать материалы и выстраивать позицию по сложным делам.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
@@ -500,6 +500,7 @@ export default function VoennyjYuristPage() {
         ]}
         buttonText="Задать вопрос адвокату"
         buttonHref="#form"
+        disclaimer="Дмитрий Сергеевич Конопкин не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно. ЮК «Де-Юре» сотрудничает с адвокатом по вопросам, требующим адвокатского статуса. Соглашение об оказании адвокатской помощи заключается непосредственно между адвокатом и доверителем."
       />
 
       {/* ═══ 6. Примеры из практики ═══ */}
@@ -643,7 +644,7 @@ export default function VoennyjYuristPage() {
               </h2>
               
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Опишите ситуацию и оставьте контактные данные. Обращение передадим Дмитрию Сергеевичу Конопкину. Он изучит обстоятельства и предложит возможный порядок действий.
+                Опишите ситуацию и оставьте контактные данные. Если для решения вопроса потребуется адвокатская помощь, с вашего согласия ЮК «Де-Юре» передаст обращение Дмитрию Сергеевичу Конопкину. Адвокат самостоятельно изучит обстоятельства и согласует с вами дальнейшее взаимодействие.
               </p>
               
               <div style={{ marginTop: '32px' }}>
@@ -658,7 +659,7 @@ export default function VoennyjYuristPage() {
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
               <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
                 <ContactsForm 
-                  title="Написать нам" 
+                  title="Запросить консультацию адвоката" 
                   subtitle="" 
                   direction="Военное право"
                   hiddenFields={[

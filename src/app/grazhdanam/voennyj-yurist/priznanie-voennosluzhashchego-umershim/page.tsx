@@ -73,11 +73,10 @@ export default function PriznanieUmershimPage() {
         '@type': 'Person',
         '@id': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/#person',
         name: 'Дмитрий Сергеевич Конопкин',
-        jobTitle: 'Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»',
-        description: 'Реестровый номер 48/812 в реестре адвокатов Липецкой области. Специалист по защите прав военнослужащих и их семей. 📞 +7 (4742) 20-15-25.',
+        jobTitle: 'Адвокат',
+        description: 'Адвокат, реестровый номер 48/812 в реестре адвокатов Липецкой области. Специалист по защите прав военнослужащих и их семей. 📞 +7 (4742) 20-15-25.',
         image: 'https://dejure-help.ru/images/konopkin.jpg',
-        url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
-        worksFor: { '@id': 'https://dejure-help.ru/#organization' }
+        url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/'
       },
       {
         '@type': 'BreadcrumbList',
@@ -151,7 +150,7 @@ export default function PriznanieUmershimPage() {
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         imageUrl="/images/konopkin.jpg"
         imageName="Дмитрий Сергеевич Конопкин"
-        imageSubtitle="Адвокат, независимый партнёр ЮК «Де-Юре», куратор направления «Военное право»"
+        imageSubtitle="Адвокат, реестровый номер 48/812"
         imageMarginTop="20px"
         trustItems={[
           { text: <><span style={{ display: 'inline-block' }}>Определяем подходящий</span> <span style={{ display: 'inline-block' }}>юридический статус</span></> },
@@ -320,7 +319,7 @@ export default function PriznanieUmershimPage() {
                 Не знаете, какая процедура подходит вашей семье?
               </h3>
               <p style={{ margin: '0', fontSize: '15px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, maxWidth: '780px' }}>
-                Расскажите, когда пропал военнослужащий, какой официальный статус указан в документах и какие ответы уже получены. Дмитрий Сергеевич Конопкин проверит материалы и определит, что необходимо сделать в первую очередь.
+                Расскажите, когда пропал военнослужащий, какой официальный статус указан в документах и какие ответы уже получены. Если для решения вопроса потребуется адвокатская помощь, с вашего согласия ЮК «Де-Юре» передаст обращение Дмитрию Сергеевичу Конопкину. Адвокат самостоятельно изучит обстоятельства и согласует с вами дальнейшее взаимодействие.
               </p>
             </div>
             <div style={{ flexShrink: 0 }}>
@@ -332,15 +331,15 @@ export default function PriznanieUmershimPage() {
         </div>
       </section>
 
-      {/* ═══ 4. БЛОК КУРАТОРА НАПРАВЛЕНИЯ ═══ */}
+      {/* ═══ 4. АДВОКАТ ПО ВОЕННЫМ ДЕЛАМ ═══ */}
       <SpecialistBlock 
-        title="Куратор направления"
+        title="Адвокат по военным делам"
         name="Дмитрий Сергеевич Конопкин"
-        position={<>Адвокат, независимый партнёр ЮК «Де-Юре»,<br />куратор направления «Военное право»</>}
+        position="Адвокат, реестровый номер 48/812"
         imageUrl="/images/konopkin.jpg"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Дмитрий Сергеевич Конопкин курирует судебные процессы по установлению юридического статуса военнослужащих. Он помогает правильно квалифицировать ситуацию, составить запросы в ведомства и сформировать убедительную доказательную базу для обращения в суд.
+            Дмитрий Сергеевич Конопкин работает с судебными делами об установлении юридического статуса военнослужащих. Изучает обстоятельства и документы, помогает определить применимую процедуру, подготовить запросы и сформировать доказательственную базу для обращения в суд.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
@@ -362,6 +361,7 @@ export default function PriznanieUmershimPage() {
         ]}
         buttonText="Обсудить ситуацию с адвокатом"
         buttonHref="#form"
+        disclaimer="Дмитрий Сергеевич Конопкин не является сотрудником ЮК «Де-Юре» и осуществляет адвокатскую деятельность самостоятельно. ЮК «Де-Юре» сотрудничает с адвокатом по вопросам, требующим адвокатского статуса. Соглашение об оказании адвокатской помощи заключается непосредственно между адвокатом и доверителем."
       />
 
       {/* ═══ ДОКУМЕНТЫ ДЛЯ ОБРАЩЕНИЯ В СУД ═══ */}
@@ -665,10 +665,7 @@ export default function PriznanieUmershimPage() {
                 Нужно определить юридический статус пропавшего военнослужащего?
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
-                Кратко опишите, когда пропал военнослужащий,<br />
-                какой статус указан в документах и какие ответы<br />
-                уже получены. Для первичного разговора не<br />
-                требуется полный комплект документов.
+                Кратко опишите, когда пропал военнослужащий, какой статус указан в документах и какие ответы уже получены. Если для решения вопроса потребуется адвокатская помощь, с вашего согласия ЮК «Де-Юре» передаст обращение Дмитрию Сергеевичу Конопкину. Адвокат самостоятельно изучит обстоятельства и согласует с вами дальнейшее взаимодействие.
               </p>
 
               <div style={{ marginTop: '32px' }}>
@@ -684,7 +681,7 @@ export default function PriznanieUmershimPage() {
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
               <div style={{ background: 'var(--gradient-cream)', padding: '40px', borderRadius: '0', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', width: '100%', border: '1px solid rgba(0,0,0,0.06)' }}>
                 <ContactsForm 
-                  title="Написать нам" 
+                  title="Запросить консультацию адвоката" 
                   subtitle="" 
                   direction="Военное право"
                   hiddenFields={[

@@ -16,6 +16,8 @@ export interface SpecialistBlockProps {
   buttonHref?: string;
   profileHref?: string;
   profileText?: string;
+  disclaimer?: React.ReactNode;
+  note?: React.ReactNode;
 }
 
 export default function SpecialistBlock({
@@ -29,7 +31,9 @@ export default function SpecialistBlock({
   buttonText = "Задать вопрос специалисту",
   buttonHref = "#consultation",
   profileHref,
-  profileText
+  profileText,
+  disclaimer,
+  note
 }: SpecialistBlockProps) {
   return (
     <section className="section bg-white" id="specialist">
@@ -164,6 +168,20 @@ export default function SpecialistBlock({
           </div>
           
         </div>
+
+        {(disclaimer || note) && (
+          <div style={{
+            marginTop: '20px',
+            padding: '16px 20px',
+            background: 'rgba(23, 50, 77, 0.04)',
+            borderLeft: '3px solid var(--color-gold)',
+            fontSize: '13px',
+            color: 'var(--color-text-secondary)',
+            lineHeight: 1.55
+          }}>
+            {disclaimer || note}
+          </div>
+        )}
       </div>
       <style dangerouslySetInnerHTML={{__html: `
         .specialist-grid {
