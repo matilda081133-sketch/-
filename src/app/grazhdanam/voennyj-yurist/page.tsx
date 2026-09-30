@@ -56,12 +56,36 @@ export default function VoennyjYuristPage() {
   ];
 
   const situations = [
-    { who: 'Контрактникам, мобилизованным и добровольцам', situation: <><span style={{ display: 'inline-block' }}>Если проводится проверка</span> <br /><span style={{ display: 'inline-block' }}>или возбуждено уголовное дело</span></>, help: 'Оценим обстоятельства и\nпроцессуальный статус,\nизучим документы и определим\nпорядок защиты до объяснений,\nдопроса или задержания.' },
-    { who: 'Военнослужащим после ранения', situation: <><span style={{ display: 'inline-block' }}>Если выплату не назначили,</span> <br /><span style={{ display: 'inline-block' }}>задерживают или рассчитали неверно</span></>, help: 'Проверим основания и документы, подготовим обращения\nи поможем обжаловать отказ или неверный расчёт.' },
-    { who: 'Военнослужащим с заболеваниями и последствиями ранений', situation: <><span style={{ display: 'inline-block' }}>Если заключение ВВК</span> <br /><span style={{ display: 'inline-block' }}>не соответствует состоянию здоровья</span></>, help: 'Изучим медицинские документы, оценим основания для обжалования\nи поможем добиться повторного рассмотрения.' },
-    { who: 'Призывникам и допризывникам', situation: <><span style={{ display: 'inline-block' }}>Если вы не согласны</span> <br /><span style={{ display: 'inline-block' }}>с решением призывной комиссии</span></>, help: 'Проверим процедуру и\nоснования для отсрочки\nили освобождения, подготовим\nжалобу либо обращение в суд.' },
-    { who: 'Родственникам погибших военнослужащих', situation: <><span style={{ display: 'inline-block' }}>Если возникли сложности</span> <br /><span style={{ display: 'inline-block' }}>с оформлением положенных выплат</span></>, help: 'Определим круг получателей и комплект документов, поможем\nобжаловать отказ, задержку или неправильный расчёт.' },
-    { who: 'Родственникам военнослужащих, местонахождение которых неизвестно', situation: <><span style={{ display: 'block' }}>Если необходимо установить </span><span style={{ display: 'block' }}>статус и оформить </span><span style={{ display: 'block' }}>юридические последствия</span></>, help: 'Поможем собрать документы,\nвыбрать правовую процедуру\nи обратиться в компетентные\nорганы или суд.' },
+    {
+      who: 'Контрактникам, мобилизованным и добровольцам',
+      situation: 'Если проводится проверка или возбуждено уголовное дело',
+      help: 'Оценим обстоятельства и процессуальный статус, изучим документы и определим порядок защиты до объяснений, допроса или задержания.'
+    },
+    {
+      who: 'Военнослужащим после ранения',
+      situation: 'Если выплату не назначили, задерживают или рассчитали неверно',
+      help: 'Проверим основания и документы, подготовим обращения и поможем обжаловать отказ или неверный расчёт.'
+    },
+    {
+      who: 'Военнослужащим с заболеваниями и последствиями ранений',
+      situation: 'Если заключение ВВК не соответствует состоянию здоровья',
+      help: 'Изучим медицинские документы, оценим основания для обжалования и поможем добиться повторного рассмотрения.'
+    },
+    {
+      who: 'Призывникам и допризывникам',
+      situation: 'Если вы не согласны с решением призывной комиссии',
+      help: 'Проверим процедуру и основания для отсрочки или освобождения, подготовим жалобу либо обращение в суд.'
+    },
+    {
+      who: 'Родственникам погибших военнослужащих',
+      situation: 'Если возникли сложности с оформлением положенных выплат',
+      help: 'Определим круг получателей и комплект документов, поможем обжаловать отказ, задержку или неправильный расчёт.'
+    },
+    {
+      who: 'Родственникам военнослужащих, местонахождение которых неизвестно',
+      situation: 'Если необходимо установить статус и оформить юридические последствия',
+      help: 'Поможем собрать документы, выбрать правовую процедуру и обратиться в компетентные органы или суд.'
+    },
   ];
 
   const jsonLd = {
@@ -163,8 +187,8 @@ export default function VoennyjYuristPage() {
       {/* ═══ 2. Когда юридическая помощь нужна срочно ═══ */}
       <section style={{ background: 'var(--color-deep-blue)', padding: '64px 0 56px', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
-          <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
-            <span style={{ display: 'inline-block' }}>Когда юридическая</span> <br /><span style={{ display: 'inline-block' }}>помощь нужна срочно</span>
+          <h2 style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-white)', marginBottom: '12px', marginTop: 0 }}>
+            Когда юридическая помощь нужна срочно
           </h2>
           <div style={{ width: '60px', height: '2px', background: 'var(--color-gold)', marginBottom: '20px' }}></div>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginBottom: '40px', maxWidth: '620px', lineHeight: 1.6 }}>
@@ -311,8 +335,8 @@ export default function VoennyjYuristPage() {
       {/* ═══ 3. Кому мы помогаем ═══ */}
       <section className="section bg-white" id="situations" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '700px', marginBottom: '48px' }}>
-            <h2 className="with-accent" style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
+          <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
+            <h2 className="with-accent" style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)', marginBottom: '16px', marginTop: 0 }}>
               Кому мы помогаем
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, lineHeight: 1.6 }}>
@@ -322,46 +346,101 @@ export default function VoennyjYuristPage() {
 
           <div className="grid grid-3" style={{ gap: '28px' }}>
             {situations.map((sit, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '36px 30px',
-                background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
-                border: '1px solid var(--color-border)',
-                borderTop: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease'
-              }}>
-                {/* Vector watermark graphic from SOCH page */}
-                <div style={{ position: 'absolute', bottom: '-15px', right: '-15px', opacity: 0.06, pointerEvents: 'none' }}>
-                  <svg width="100" height="100" viewBox="0 0 24 24" fill="var(--color-deep-blue)">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5l-6-3 6-3 6 3-6 3zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              <div
+                key={i}
+                className="card hover-lift"
+                style={{
+                  position: 'relative',
+                  overflow: 'hidden',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                  padding: '28px 24px',
+                  borderRadius: '0',
+                  boxShadow: '0 4px 16px rgba(23, 50, 77, 0.05)',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '3px solid var(--color-gold)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <div style={{
+                  position: 'absolute',
+                  top: '-15px',
+                  right: '-15px',
+                  width: '90px',
+                  height: '90px',
+                  opacity: 0.04,
+                  pointerEvents: 'none',
+                  color: 'var(--color-deep-blue)'
+                }}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
 
-                <div style={{ 
-                  fontSize: '12px', 
-                  fontWeight: 700, 
-                  color: 'var(--color-gold)', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.08em', 
-                  marginBottom: '12px',
-                  background: 'rgba(193, 160, 102, 0.1)',
-                  padding: '4px 10px',
-                  alignSelf: 'flex-start'
-                }}>
-                  {sit.who}
+                <div>
+                  <div
+                    style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: 'var(--color-primary)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      marginBottom: '10px',
+                      background: 'rgba(23, 50, 77, 0.06)',
+                      padding: '2px 6px',
+                      display: 'inline-block'
+                    }}
+                  >
+                    {sit.who}
+                  </div>
+
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '17px',
+                      fontWeight: 600,
+                      color: 'var(--color-deep-blue)',
+                      marginBottom: '10px',
+                      lineHeight: '1.3'
+                    }}
+                  >
+                    {sit.situation}
+                  </h3>
+
+                  <p
+                    style={{
+                      fontSize: '13.5px',
+                      color: 'var(--color-text-secondary)',
+                      lineHeight: '1.5',
+                      margin: 0
+                    }}
+                  >
+                    {sit.help}
+                  </p>
                 </div>
 
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-deep-blue)', lineHeight: 1.4, margin: '0 0 14px 0' }}>
-                  {sit.situation}
-                </h3>
-
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, position: 'relative', zIndex: 1, whiteSpace: 'pre-line' }}>
-                  {sit.help}
-                </p>
+                <a
+                  href="#form"
+                  className="situation-btn"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginTop: '16px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <span>Разобрать ситуацию</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
               </div>
             ))}
           </div>
