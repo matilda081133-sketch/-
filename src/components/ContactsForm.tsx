@@ -85,12 +85,18 @@ export default function ContactsForm({
       if (e?.detail?.service) {
         setSelectedService(e.detail.service);
         const sInput = document.getElementById('form_selected_service') as HTMLInputElement;
-        if (sInput) sInput.value = e.detail.service;
+        if (sInput) {
+          sInput.value = e.detail.service;
+          sInput.setAttribute('value', e.detail.service);
+        }
       }
       if (e?.detail?.direction) {
         setSelectedDirection(e.detail.direction);
         const dInput = document.getElementById('form_direction') as HTMLInputElement;
-        if (dInput) dInput.value = e.detail.direction;
+        if (dInput) {
+          dInput.value = e.detail.direction;
+          dInput.setAttribute('value', e.detail.direction);
+        }
       }
     };
 
@@ -102,12 +108,18 @@ export default function ContactsForm({
         if (s) {
           setSelectedService(s);
           const sInput = document.getElementById('form_selected_service') as HTMLInputElement;
-          if (sInput) sInput.value = s;
+          if (sInput) {
+            sInput.value = s;
+            sInput.setAttribute('value', s);
+          }
         }
         if (d) {
           setSelectedDirection(d);
           const dInput = document.getElementById('form_direction') as HTMLInputElement;
-          if (dInput) dInput.value = d;
+          if (dInput) {
+            dInput.value = d;
+            dInput.setAttribute('value', d);
+          }
         }
       }
     };
