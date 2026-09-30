@@ -153,7 +153,8 @@ export default function PricingBlock({
     pathname?.includes('/vzyskanie-dolgov') ? 'Взыскание долгов' :
     pathname?.includes('/avtoyurist') ? 'Автоюрист' :
     pathname?.includes('/trudovoj-yurist') ? 'Трудовой юрист' :
-    pathname?.includes('/migracionnyj-yurist') ? 'Миграционный юрист' : ''
+    pathname?.includes('/migracionnyj-yurist') ? 'Миграционный юрист' :
+    pathname?.includes('/bankrotstvo-fizicheskih-lic') ? 'Банкротство физических лиц' : ''
   );
   const currentBaseUrl = pageUrl || (pathname ? `https://dejure-help.ru${pathname.endsWith('/') ? pathname : pathname + '/'}` : 'https://dejure-help.ru/');
   const offerUrl = currentBaseUrl.endsWith('/') ? `${currentBaseUrl}#pricing` : `${currentBaseUrl}/#pricing`;

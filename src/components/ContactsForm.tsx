@@ -69,6 +69,8 @@ export default function ContactsForm({
           setSelectedDirection('Трудовой юрист');
         } else if (path.includes('/migracionnyj-yurist')) {
           setSelectedDirection('Миграционный юрист');
+        } else if (path.includes('/bankrotstvo-fizicheskih-lic')) {
+          setSelectedDirection('Банкротство физических лиц');
         }
       }
     }
@@ -155,7 +157,8 @@ export default function ContactsForm({
       }
     }
 
-    const fullCurrentUrl = typeof window !== 'undefined' ? window.location.href : (currentUrl || extraData.source_page || '');
+    const canonicalPageUrl = currentUrl || extraData.source_page || (typeof window !== 'undefined' ? (window.location.origin + window.location.pathname) : '');
+    const fullCurrentUrl = typeof window !== 'undefined' ? window.location.href : canonicalPageUrl;
 
     const finalDirection = selectedDirection || extraData.direction || (
       typeof window !== 'undefined' && window.location.pathname.includes('/voennyj-yurist') ? 'Военное право' :
@@ -163,7 +166,8 @@ export default function ContactsForm({
       typeof window !== 'undefined' && window.location.pathname.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' :
       typeof window !== 'undefined' && window.location.pathname.includes('/avtoyurist') ? 'Автоюрист' :
       typeof window !== 'undefined' && window.location.pathname.includes('/trudovoj-yurist') ? 'Трудовой юрист' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/migracionnyj-yurist') ? 'Миграционный юрист' : ''
+      typeof window !== 'undefined' && window.location.pathname.includes('/migracionnyj-yurist') ? 'Миграционный юрист' :
+      typeof window !== 'undefined' && window.location.pathname.includes('/bankrotstvo-fizicheskih-lic') ? 'Банкротство физических лиц' : ''
     );
 
     const payload = {
@@ -176,7 +180,7 @@ export default function ContactsForm({
       pricingFormat: extraData.pricingFormat || '',
       selected_service: selectedService || extraData.selected_service || '',
       direction: finalDirection,
-      source_page: fullCurrentUrl,
+      source_page: canonicalPageUrl,
       ...extraData,
       page_url: fullCurrentUrl,
       page_title: typeof window !== 'undefined' ? document.title : ''
