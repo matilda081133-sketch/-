@@ -640,7 +640,8 @@ export default function VoennyjYuristPage() {
           {
             title: 'Консультация военного юриста',
             subtitle: 'Устный разбор ситуации, рисков и возможного порядка действий.',
-            popular: false,
+            popular: true,
+            badgeText: 'Востребовано',
             price: '2 000 ₽',
             priceUnit: 'за консультацию до 1 часа',
             features: [
