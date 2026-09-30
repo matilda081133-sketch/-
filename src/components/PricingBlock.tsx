@@ -54,6 +54,7 @@ interface PricingBlockProps {
   direction?: string;
   gridCols?: 2 | 3 | 4 | '2x2';
   mobileNote?: React.ReactNode;
+  topTier?: PricingTier;
 }
 
 export default function PricingBlock({
@@ -73,7 +74,8 @@ export default function PricingBlock({
   showDemoWarning,
   direction,
   gridCols,
-  mobileNote
+  mobileNote,
+  topTier
 }: PricingBlockProps) {
   const [activeTabId, setActiveTabId] = React.useState<string>(tabs && tabs.length > 0 ? tabs[0].id : '');
   const activeTab = tabs?.find(t => t.id === activeTabId) || tabs?.[0];
@@ -154,14 +156,17 @@ export default function PricingBlock({
     pathname?.includes('/avtoyurist') ? 'Автоюрист' :
     pathname?.includes('/trudovoj-yurist') ? 'Трудовой юрист' :
     pathname?.includes('/migracionnyj-yurist') ? 'Миграционный юрист' :
-    pathname?.includes('/bankrotstvo-fizicheskih-lic') ? 'Банкротство физических лиц' : ''
+    pathname?.includes('/bankrotstvo-fizicheskih-lic') ? 'Банкротство физических лиц' :
+    pathname?.includes('/kreditnyj-yurist') ? 'Кредитный юрист' : ''
   );
   const currentBaseUrl = pageUrl || (pathname ? `https://dejure-help.ru${pathname.endsWith('/') ? pathname : pathname + '/'}` : 'https://dejure-help.ru/');
   const offerUrl = currentBaseUrl.endsWith('/') ? `${currentBaseUrl}#pricing` : `${currentBaseUrl}/#pricing`;
 
-  const allTiersForSchema = tabs
-    ? Array.from(new Map(tabs.flatMap(t => t.tiers).map(t => [typeof t.title === 'string' ? t.title : JSON.stringify(t.title), t])).values())
-    : (propTiers || defaultTiers);
+  const schemaTiersList = [
+    ...(topTier ? [topTier] : []),
+    ...(tabs ? tabs.flatMap(t => t.tiers) : (propTiers || defaultTiers))
+  ];
+  const allTiersForSchema = Array.from(new Map(schemaTiersList.map(t => [typeof t.title === 'string' ? t.title : JSON.stringify(t.title), t])).values());
 
   const pricedTiers = allTiersForSchema.map((tier) => ({
     ...tier,
@@ -263,6 +268,86 @@ export default function PricingBlock({
             <span>
               Указанные тарифы и объёмы услуг носят ориентировочный характер. Точный состав работ, лимиты и регламент взаимодействия фиксируются в договоре после предварительного анализа задач бизнеса.
             </span>
+          </div>
+        )}
+
+        {topTier && (
+          <div 
+            style={{ 
+              maxWidth: '850px', 
+              margin: '0 auto 40px auto', 
+              background: 'var(--color-white)', 
+              border: '1px solid var(--color-border)', 
+              borderLeft: '4px solid var(--color-gold)', 
+              boxShadow: '0 4px 20px rgba(16, 39, 59, 0.08)', 
+              padding: '32px 36px',
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '28px',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            }}
+          >
+            <div style={{ flex: '1 1 450px' }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', flexWrap: 'wrap', marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '22px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: 0, fontWeight: 600, lineHeight: 1.3 }}>
+                  {topTier.title}
+                </h3>
+                {topTier.subtitle && (
+                  <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontWeight: 500 }}>
+                    {topTier.subtitle}
+                  </span>
+                )}
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '14px 0 0 0', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {topTier.features.map((f, fIdx) => {
+                  const fName = typeof f === 'string' ? f : (f as any).name;
+                  return (
+                    <li key={fIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '14px', color: 'var(--color-deep-blue)', lineHeight: 1.45 }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '3px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span>{fName}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+              {topTier.exclusions && (
+                <p style={{ fontSize: '12px', opacity: 0.7, margin: '12px 0 0 0', lineHeight: 1.4, fontStyle: 'italic' }}>
+                  {Array.isArray(topTier.exclusions) ? topTier.exclusions.join('; ') : topTier.exclusions}
+                </p>
+              )}
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '220px', flexShrink: 0, gap: '12px' }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-deep-blue)', lineHeight: 1 }}>
+                  {topTier.price}
+                </div>
+                {topTier.priceUnit && (
+                  <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
+                    {topTier.priceUnit}
+                  </div>
+                )}
+              </div>
+              <a
+                href={topTier.buttonHref || '#form'}
+                data-service={typeof topTier.title === 'string' ? topTier.title : 'Консультация кредитного юриста'}
+                data-direction={currentDirection}
+                onClick={() => {
+                  const sName = typeof topTier.title === 'string' ? topTier.title : 'Консультация кредитного юриста';
+                  if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new CustomEvent('dejure:select_service', {
+                      detail: {
+                        service: sName,
+                        direction: currentDirection
+                      }
+                    }));
+                  }
+                }}
+                className="btn btn-primary"
+                style={{ padding: '14px 28px', fontSize: '15px', borderRadius: '0', whiteSpace: 'nowrap', width: '100%', textAlign: 'center' }}
+              >
+                {topTier.buttonText || 'Разобрать ситуацию'}
+              </a>
+            </div>
           </div>
         )}
 
