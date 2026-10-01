@@ -377,23 +377,28 @@ h4 { font-size: 1.25rem; }
 .service-card {
   will-change: transform, box-shadow;
   transform: translateZ(0);
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, border-top-color 0.35s ease !important;
 }
-.service-card:hover {
+.service-card:hover,
+a:hover .service-card {
   transform: translateY(-6px) translateZ(0) !important;
   box-shadow: 0 16px 36px rgba(23, 50, 77, 0.12) !important;
+  border-top-color: var(--color-gold) !important;
 }
 .service-card .card-arrow svg {
-  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), stroke 0.35s ease;
 }
-.service-card:hover .card-arrow svg {
+.service-card:hover .card-arrow svg,
+a:hover .service-card .card-arrow svg {
   transform: translateX(6px);
+  stroke: var(--color-gold) !important;
 }
 .service-card .card-arrow {
-  transition: color 0.35s ease;
+  transition: color 0.35s ease, transform 0.35s ease;
 }
-.service-card:hover .card-arrow {
-  color: var(--color-gold-text);
+.service-card:hover .card-arrow,
+a:hover .service-card .card-arrow {
+  color: var(--color-gold) !important;
 }
 
 /* Situation card link / button hover animation */

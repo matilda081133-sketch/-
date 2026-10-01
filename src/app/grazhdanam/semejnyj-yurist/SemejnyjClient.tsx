@@ -576,20 +576,18 @@ export default function SemejnyjClient() {
                 style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', height: '100%' }}
               >
                 <div 
-                  className="card service-card hover-lift" 
+                  className="card service-card related-service-card" 
                   style={{ 
                     height: '100%', 
                     minHeight: '260px',
                     padding: '32px 28px', 
                     background: 'var(--color-white)', 
                     border: '1px solid var(--color-border)',
-                    borderTop: '4px solid var(--color-primary)',
                     borderRadius: '0',
                     display: 'flex', 
                     flexDirection: 'column', 
                     justifyContent: 'space-between',
                     boxShadow: '0 4px 20px rgba(23, 50, 77, 0.04)',
-                    transition: 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease',
                     position: 'relative'
                   }}
                 >
@@ -597,7 +595,7 @@ export default function SemejnyjClient() {
                     <h3 style={{ 
                       margin: '0 0 12px 0', 
                       fontSize: '18px', 
-                      fontFamily: 'var(--font-serif)',
+                      fontFamily: 'var(--font-serif)', 
                       color: 'var(--color-deep-blue)', 
                       lineHeight: 1.35,
                       minHeight: '52px'
@@ -618,7 +616,6 @@ export default function SemejnyjClient() {
                     display: 'flex', 
                     alignItems: 'center', 
                     gap: '8px', 
-                    color: 'var(--color-primary)', 
                     fontSize: '14px', 
                     fontWeight: 600,
                     marginTop: 'auto',
@@ -641,13 +638,12 @@ export default function SemejnyjClient() {
                 padding: '32px 28px', 
                 background: 'linear-gradient(135deg, var(--color-deep-blue) 0%, #17324D 100%)', 
                 border: '1px solid var(--color-deep-blue)',
-                borderTop: '4px solid var(--color-gold)',
+                borderTop: '3px solid var(--color-gold) !important',
                 borderRadius: '0',
                 display: 'flex', 
                 flexDirection: 'column', 
                 justifyContent: 'space-between',
                 boxShadow: '0 4px 20px rgba(23, 50, 77, 0.1)',
-                transition: 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease',
                 position: 'relative',
                 color: 'var(--color-white)'
               }}
@@ -686,6 +682,13 @@ export default function SemejnyjClient() {
                   padding: '12px 20px',
                   fontSize: '14px',
                   marginTop: 'auto'
+                }}
+                onClick={(e) => {
+                  const el = document.getElementById('form');
+                  if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }}
               >
                 Обсудить ситуацию
