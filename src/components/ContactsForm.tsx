@@ -53,6 +53,8 @@ export default function ContactsForm({
           setSelectedDirection('Адвокат по уголовным делам');
         } else if (path.includes('/ugolovno-pravovaya-zashchita-biznesa')) {
           setSelectedDirection('Уголовно-правовая защита бизнеса');
+        } else if (path.includes('/arbitrazhnyj-yurist')) {
+          setSelectedDirection('Арбитражный юрист');
         } else if (path.includes('/nasledstvennyj-yurist')) {
           setSelectedDirection('Наследственный юрист');
         } else if (path.includes('/zhilishchnyj-yurist')) {
@@ -182,6 +184,7 @@ export default function ContactsForm({
       typeof window !== 'undefined' && window.location.pathname.includes('/voennyj-yurist') ? 'Военное право' :
       typeof window !== 'undefined' && window.location.pathname.includes('/semejnyj-yurist') ? 'Семейный юрист' :
       typeof window !== 'undefined' && window.location.pathname.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' :
+      typeof window !== 'undefined' && window.location.pathname.includes('/arbitrazhnyj-yurist') ? 'Арбитражный юрист' :
       typeof window !== 'undefined' && window.location.pathname.includes('/zashchita-ot-trebovaniy-po-dolgu') ? 'Защита от требований по долгу' :
       typeof window !== 'undefined' && window.location.pathname.includes('/vzyskanie-dolgov') ? 'Взыскание долгов' :
       typeof window !== 'undefined' && window.location.pathname.includes('/avtoyurist') ? 'Автоюрист' :

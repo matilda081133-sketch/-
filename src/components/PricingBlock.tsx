@@ -148,6 +148,7 @@ export default function PricingBlock({
     pathname?.includes('/semejnyj-yurist') ? 'Семейный юрист' :
     pathname?.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' :
     pathname?.includes('/ugolovno-pravovaya-zashchita-biznesa') ? 'Уголовно-правовая защита бизнеса' :
+    pathname?.includes('/arbitrazhnyj-yurist') ? 'Арбитражный юрист' :
     pathname?.includes('/nasledstvennyj-yurist') ? 'Наследственный юрист' :
     pathname?.includes('/zhilishchnyj-yurist') ? 'Жилищный юрист' :
     pathname?.includes('/yurist-po-nedvizhimosti') ? 'Юрист по недвижимости' :
@@ -331,10 +332,10 @@ export default function PricingBlock({
               </div>
               <a
                 href={topTier.buttonHref || '#form'}
-                data-service={typeof topTier.title === 'string' ? topTier.title : 'Консультация кредитного юриста'}
+                data-service={typeof topTier.title === 'string' ? topTier.title : 'Консультация юриста'}
                 data-direction={currentDirection}
                 onClick={() => {
-                  const sName = typeof topTier.title === 'string' ? topTier.title : 'Консультация кредитного юриста';
+                  const sName = typeof topTier.title === 'string' ? topTier.title : 'Консультация юриста';
                   if (typeof window !== 'undefined') {
                     window.dispatchEvent(new CustomEvent('dejure:select_service', {
                       detail: {
@@ -408,7 +409,7 @@ export default function PricingBlock({
               background: tier.popular ? 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)' : 'var(--color-white)',
               color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)',
               borderRadius: '0',
-              padding: tiers.length >= 5 ? '26px 12px' : tiers.length === 4 ? '32px 16px' : '40px 30px',
+              padding: effectiveGridCols === 3 ? '32px 24px' : tiers.length >= 5 ? '26px 12px' : tiers.length === 4 ? '32px 16px' : '40px 30px',
               boxShadow: tier.popular ? '0 20px 40px rgba(16, 39, 59, 0.15)' : '0 10px 30px rgba(0,0,0,0.05)',
               border: tier.popular ? '1px solid transparent' : '1px solid rgba(23, 50, 77, 0.1)',
               position: 'relative',
