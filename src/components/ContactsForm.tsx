@@ -57,6 +57,8 @@ export default function ContactsForm({
           setSelectedDirection('Арбитражный юрист');
         } else if (path.includes('/vzyskanie-zadolzhennosti-s-yuridicheskih-lic')) {
           setSelectedDirection('Взыскание задолженности с юридических лиц');
+        } else if (path.includes('/korporativnyj-yurist')) {
+          setSelectedDirection('Корпоративный юрист');
         } else if (path.includes('/nasledstvennyj-yurist')) {
           setSelectedDirection('Наследственный юрист');
         } else if (path.includes('/zhilishchnyj-yurist')) {
@@ -188,6 +190,7 @@ export default function ContactsForm({
       typeof window !== 'undefined' && window.location.pathname.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' :
       typeof window !== 'undefined' && window.location.pathname.includes('/arbitrazhnyj-yurist') ? 'Арбитражный юрист' :
       typeof window !== 'undefined' && window.location.pathname.includes('/vzyskanie-zadolzhennosti-s-yuridicheskih-lic') ? 'Взыскание задолженности с юридических лиц' :
+      typeof window !== 'undefined' && window.location.pathname.includes('/korporativnyj-yurist') ? 'Корпоративный юрист' :
       typeof window !== 'undefined' && window.location.pathname.includes('/zashchita-ot-trebovaniy-po-dolgu') ? 'Защита от требований по долгу' :
       typeof window !== 'undefined' && window.location.pathname.includes('/vzyskanie-dolgov') ? 'Взыскание долгов' :
       typeof window !== 'undefined' && window.location.pathname.includes('/avtoyurist') ? 'Автоюрист' :

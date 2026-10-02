@@ -150,6 +150,7 @@ export default function PricingBlock({
     pathname?.includes('/ugolovno-pravovaya-zashchita-biznesa') ? 'Уголовно-правовая защита бизнеса' :
     pathname?.includes('/arbitrazhnyj-yurist') ? 'Арбитражный юрист' :
     pathname?.includes('/vzyskanie-zadolzhennosti-s-yuridicheskih-lic') ? 'Взыскание задолженности с юридических лиц' :
+    pathname?.includes('/korporativnyj-yurist') ? 'Корпоративный юрист' :
     pathname?.includes('/nasledstvennyj-yurist') ? 'Наследственный юрист' :
     pathname?.includes('/zhilishchnyj-yurist') ? 'Жилищный юрист' :
     pathname?.includes('/yurist-po-nedvizhimosti') ? 'Юрист по недвижимости' :
