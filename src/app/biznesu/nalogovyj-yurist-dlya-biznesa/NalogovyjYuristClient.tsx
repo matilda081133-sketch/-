@@ -168,7 +168,7 @@ export default function NalogovyjYuristClient() {
         text: 'Письменное заключение по итогам анализа — от 30 000 ₽',
         priceText: 'от 30 000 ₽',
         ctaText: 'Нужно письменное заключение',
-        serviceName: 'Письменное заключение по налоговому спору',
+        serviceName: 'Письменное заключение по итогам анализа',
         href: '#form'
       }
     },

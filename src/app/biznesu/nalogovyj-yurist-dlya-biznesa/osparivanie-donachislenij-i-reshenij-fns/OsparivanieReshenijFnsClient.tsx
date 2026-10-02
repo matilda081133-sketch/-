@@ -169,7 +169,7 @@ export default function OsparivanieReshenijFnsClient() {
         text: 'Письменное заключение по итогам анализа — от 20 000 ₽',
         priceText: 'от 20 000 ₽',
         ctaText: 'Нужно письменное заключение',
-        serviceName: 'Письменное заключение по решению ФНС',
+        serviceName: 'Письменное заключение по итогам анализа',
         href: '#form'
       }
     },

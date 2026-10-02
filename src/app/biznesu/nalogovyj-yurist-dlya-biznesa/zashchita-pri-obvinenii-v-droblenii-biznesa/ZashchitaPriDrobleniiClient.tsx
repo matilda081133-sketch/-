@@ -183,7 +183,7 @@ export default function ZashchitaPriDrobleniiClient() {
         text: 'Письменное заключение по рискам дробления — от 20 000 ₽',
         priceText: 'от 20 000 ₽',
         ctaText: 'Нужно письменное заключение',
-        serviceName: 'Письменное заключение по дроблению бизнеса',
+        serviceName: 'Письменное заключение по рискам дробления',
         href: '#form'
       }
     },
