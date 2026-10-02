@@ -141,46 +141,47 @@ export default function NalogovyjYuristClient() {
 
   const pricingTiers: PricingTier[] = [
     {
-      title: 'Консультация и правовой аудит',
-      subtitle: 'Оценка претензий ФНС',
+      title: 'Консультация налогового юриста',
+      price: '5 000 ₽',
+      priceUnit: 'устно до 1 часа',
       popular: false,
-      price: 'от 15 000 ₽',
       features: [
-        { name: 'Изучение акта, решения или требований ФНС', value: 'Включено' },
-        { name: 'Оценка обоснованности начислений и рисков', value: 'Включено' },
-        { name: 'Анализ рисков по ст. 199 УК РФ (уголовный состав)', value: 'Включено' },
-        { name: 'Стратегия первоочередных процессуальных шагов', value: 'Включено' }
+        'Устно до 1 часа: определяем стадию, сроки и следующий шаг'
       ],
-      buttonText: 'Заказать аудит',
+      exclusions: 'Изучение материалов для ответа отдельно от 10 000 ₽',
+      buttonText: 'Обсудить ситуацию',
       buttonHref: '#form'
     },
     {
-      title: 'Возражения на акт и жалоба в УФНС',
-      subtitle: 'Досудебное урегулирование спора',
-      popular: true,
-      badgeText: 'Частый выбор',
-      price: 'от 45 000 ₽',
+      title: 'Анализ документов и претензий ФНС',
+      price: 'от 10 000 ₽',
+      priceUnit: 'за анализ',
+      popular: false,
       features: [
-        { name: 'Подготовка мотивированных возражений на акт проверки', value: 'Включено' },
-        { name: 'Формирование доказательственной базы реальности сделок', value: 'Включено' },
-        { name: 'Очное участие при рассмотрении материалов в ФНС', value: 'Включено' },
-        { name: 'Подготовка апелляционной жалобы в УФНС региона', value: 'Включено' }
+        'Изучение согласованного комплекта: требование, акт либо решение',
+        'Устные выводы и следующий шаг'
       ],
-      buttonText: 'Подать возражения',
-      buttonHref: '#form'
+      exclusions: 'Письменное заключение отдельно от 30 000 ₽',
+      buttonText: 'Проверить документы',
+      buttonHref: '#form',
+      extraAction: {
+        text: 'Письменное заключение по итогам анализа — от 30 000 ₽',
+        priceText: 'от 30 000 ₽',
+        ctaText: 'Нужно письменное заключение',
+        serviceName: 'Письменное заключение по налоговому спору',
+        href: '#form'
+      }
     },
     {
-      title: 'Судебное представительство в арбитраже',
-      subtitle: 'Оспаривание решения в суде',
+      title: 'Подготовка возражения или жалобы',
+      price: 'от 20 000 ₽',
+      priceUnit: 'за документ',
       popular: false,
-      price: 'от 80 000 ₽',
       features: [
-        { name: 'Подготовка и подача заявления в арбитражный суд', value: 'Включено' },
-        { name: 'Ходатайство о приостановлении действия решения ФНС', value: 'Включено' },
-        { name: 'Представительство во всех судебных заседаниях', value: 'Включено' },
-        { name: 'Назначение независимой налоговой экспертизы', value: 'Включено' }
+        'Один мотивированный документ по налоговому спору после согласования материалов'
       ],
-      buttonText: 'Судебная защита',
+      exclusions: 'Много эпизодов, контррасчёт и представительство отдельно',
+      buttonText: 'Подготовить документ',
       buttonHref: '#form'
     }
   ];
@@ -776,10 +777,41 @@ export default function NalogovyjYuristClient() {
 
       {/* ═══ БЛОК 6: ЦЕНЫ ═══ */}
       <PricingBlock
-        title="Стоимость юридической помощи по налогам"
-        subtitle="Цена зависит от текущей стадии, количества спорных эпизодов и объема доначислений. Фиксируется в договоре."
+        title="Стоимость помощи по налоговому спору"
+        subtitle="Цена зависит от текущей стадии, объёма документов и сложности спора. Фиксируется в договоре."
         pageUrl="https://dejure-help.ru/biznesu/nalogovyj-yurist-dlya-biznesa/"
+        direction="Налоговый юрист для бизнеса"
         tiers={pricingTiers}
+        ctaTitle=""
+        disclaimer={
+          <div>
+            <p style={{ margin: '0 0 20px 0', fontSize: '14px', lineHeight: 1.6, color: 'var(--color-deep-blue)', opacity: 0.9 }}>
+              Стоимость ведения проверки, обжалования и суда определим после изучения документов и закрепим в договоре. Итоговый состав работ, цена, расходы на экспертов и срочность согласуются до начала и закрепляются в договоре.
+            </p>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '12px 24px',
+              paddingTop: '18px',
+              borderTop: '1px solid rgba(23, 50, 77, 0.12)'
+            }}>
+              <span style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', fontWeight: 600 }}>
+                Стадии защиты:
+              </span>
+              <Link href="/biznesu/nalogovyj-yurist-dlya-biznesa/soprovozhdenie-nalogovyh-proverok/" style={{ fontSize: '13.5px', color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                Сопровождение проверок →
+              </Link>
+              <Link href="/biznesu/nalogovyj-yurist-dlya-biznesa/osparivanie-donachislenij-i-reshenij-fns/" style={{ fontSize: '13.5px', color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                Оспаривание доначислений →
+              </Link>
+              <Link href="/biznesu/nalogovyj-yurist-dlya-biznesa/zashchita-pri-obvinenii-v-droblenii-biznesa/" style={{ fontSize: '13.5px', color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                Защита от дробления →
+              </Link>
+            </div>
+          </div>
+        }
       />
 
       {/* ═══ БЛОК 7: КЕЙСЫ ═══ */}
@@ -1007,7 +1039,7 @@ export default function NalogovyjYuristClient() {
                 hiddenFields={[
                   { name: 'source_page', value: '/biznesu/nalogovyj-yurist-dlya-biznesa/' },
                   { name: 'service', value: 'Налоговый юрист для бизнеса' },
-                  { name: 'direction', value: 'tax' }
+                  { name: 'direction', value: 'Налоговый юрист для бизнеса' }
                 ]}
               />
             </div>

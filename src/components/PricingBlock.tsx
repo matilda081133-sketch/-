@@ -170,6 +170,7 @@ export default function PricingBlock({
     pathname?.includes('/vzyskanie-zadolzhennosti-s-yuridicheskih-lic') ? 'Взыскание задолженности с юридических лиц' :
     pathname?.includes('/korporativnyj-yurist') ? 'Корпоративный юрист' :
     pathname?.includes('/dogovornoe-pravo') ? 'Договорное право' :
+    pathname?.includes('/nalogovyj-yurist-dlya-biznesa') ? 'Налоговый юрист для бизнеса' :
     pathname?.includes('/nasledstvennyj-yurist') ? 'Наследственный юрист' :
     pathname?.includes('/zhilishchnyj-yurist') ? 'Жилищный юрист' :
     pathname?.includes('/yurist-po-nedvizhimosti') ? 'Юрист по недвижимости' :
@@ -194,7 +195,7 @@ export default function PricingBlock({
     .filter(t => t.extraAction)
     .map(t => ({
       title: t.extraAction!.serviceName,
-      price: t.extraAction!.priceText || 'от 35 000 ₽',
+      price: t.extraAction!.priceText || (t.extraAction!.text.match(/(?:от\s+)?[\d\s]+₽/i)?.[0] || 'от 35 000 ₽'),
       subtitle: t.extraAction!.text,
       features: []
     }));
