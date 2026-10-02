@@ -189,7 +189,7 @@ export default function PricingBlock({
 
   const schemaTiersList = [
     ...(topTier ? [topTier] : []),
-    ...(groups ? groups.flatMap(g => g.tiers) : (tabs ? tabs.flatMap(t => t.tiers) : (propTiers || defaultTiers)))
+    ...rawTiers
   ];
   const extraActionTiers: PricingTier[] = schemaTiersList
     .filter(t => t.extraAction)
