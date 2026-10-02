@@ -27,6 +27,22 @@ export interface PricingTier {
   buttonHref?: string;
   ctaHref?: string;
   hideOnMobile?: boolean;
+  extraAction?: PricingExtraAction;
+}
+
+export interface PricingExtraAction {
+  text: string;
+  priceText?: string;
+  ctaText: string;
+  serviceName: string;
+  href?: string;
+}
+
+export interface PricingGroup {
+  title: string;
+  subtitle?: string;
+  tiers: PricingTier[];
+  gridCols?: 2 | 3 | 4 | 5 | '2x2';
 }
 
 export interface PricingTab {
@@ -40,6 +56,7 @@ interface PricingBlockProps {
   title?: string;
   subtitle?: string | React.ReactNode;
   tiers?: PricingTier[];
+  groups?: PricingGroup[];
   tabs?: PricingTab[];
   pageUrl?: string;
   ctaTitle?: string | React.ReactNode;
@@ -61,6 +78,7 @@ export default function PricingBlock({
   title = "Стоимость юридических услуг в Липецке",
   subtitle = "Честные цены, закрепленные в договоре. Никаких скрытых платежей.",
   tiers: propTiers,
+  groups,
   tabs,
   pageUrl,
   ctaTitle = "Точную стоимость определим до начала работы",
@@ -123,7 +141,7 @@ export default function PricingBlock({
     }
   ];
 
-  const rawTiers = activeTab ? activeTab.tiers : (propTiers || defaultTiers);
+  const rawTiers = activeTab ? activeTab.tiers : (propTiers || (groups ? groups.flatMap(g => g.tiers) : defaultTiers));
   const tiers = rawTiers.map((tier) => ({
     ...tier,
     title: tier.title || tier.name || '',
@@ -151,6 +169,7 @@ export default function PricingBlock({
     pathname?.includes('/arbitrazhnyj-yurist') ? 'Арбитражный юрист' :
     pathname?.includes('/vzyskanie-zadolzhennosti-s-yuridicheskih-lic') ? 'Взыскание задолженности с юридических лиц' :
     pathname?.includes('/korporativnyj-yurist') ? 'Корпоративный юрист' :
+    pathname?.includes('/dogovornoe-pravo') ? 'Договорное право' :
     pathname?.includes('/nasledstvennyj-yurist') ? 'Наследственный юрист' :
     pathname?.includes('/zhilishchnyj-yurist') ? 'Жилищный юрист' :
     pathname?.includes('/yurist-po-nedvizhimosti') ? 'Юрист по недвижимости' :
@@ -169,9 +188,17 @@ export default function PricingBlock({
 
   const schemaTiersList = [
     ...(topTier ? [topTier] : []),
-    ...(tabs ? tabs.flatMap(t => t.tiers) : (propTiers || defaultTiers))
+    ...(groups ? groups.flatMap(g => g.tiers) : (tabs ? tabs.flatMap(t => t.tiers) : (propTiers || defaultTiers)))
   ];
-  const allTiersForSchema = Array.from(new Map(schemaTiersList.map(t => [typeof t.title === 'string' ? t.title : JSON.stringify(t.title), t])).values());
+  const extraActionTiers: PricingTier[] = schemaTiersList
+    .filter(t => t.extraAction)
+    .map(t => ({
+      title: t.extraAction!.serviceName,
+      price: t.extraAction!.priceText || 'от 35 000 ₽',
+      subtitle: t.extraAction!.text,
+      features: []
+    }));
+  const allTiersForSchema = Array.from(new Map([...schemaTiersList, ...extraActionTiers].map(t => [typeof t.title === 'string' ? t.title : JSON.stringify(t.title), t])).values());
 
   const pricedTiers = allTiersForSchema.map((tier) => ({
     ...tier,
@@ -182,6 +209,192 @@ export default function PricingBlock({
     const numPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
     return Boolean(numPrice);
   });
+
+  const renderCard = (tier: any, idxKey: any, colsCount?: any) => {
+    const numericPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
+    const isMinPrice = tier.price ? /от/i.test(String(tier.price)) : false;
+    const tierTitleStr = typeof tier.title === 'string' ? tier.title : 'Юридическая услуга';
+    const tierSubtitleStr = typeof tier.subtitle === 'string' ? tier.subtitle : '';
+    const isDense = colsCount === 5 || (colsCount === undefined && tiers.length >= 5);
+    const isFour = colsCount === 4 || (colsCount === undefined && tiers.length === 4);
+    const isThree = colsCount === 3 || (colsCount === undefined && tiers.length === 3);
+
+    return (
+      <div key={idxKey} style={{
+        background: tier.popular ? 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)' : 'var(--color-white)',
+        color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)',
+        borderRadius: '0',
+        padding: isDense ? '26px 12px' : isFour ? '32px 16px' : isThree ? '32px 24px' : '40px 30px',
+        boxShadow: tier.popular ? '0 20px 40px rgba(16, 39, 59, 0.15)' : '0 10px 30px rgba(0,0,0,0.05)',
+        border: tier.popular ? '1px solid transparent' : '1px solid rgba(23, 50, 77, 0.1)',
+        position: 'relative',
+        transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        width: '100%',
+        minWidth: 0,
+        boxSizing: 'border-box'
+      }}
+      className={`pricing-tier-card ${tier.hideOnMobile ? 'hidden-on-mobile' : ''}`}
+      itemScope={Boolean(numericPrice)}
+      itemType={numericPrice ? (isMinPrice ? "https://schema.org/AggregateOffer" : "https://schema.org/Offer") : undefined}
+      >
+        {numericPrice && (
+          <>
+            {isMinPrice ? (
+              <meta itemProp="lowPrice" content={numericPrice} />
+            ) : (
+              <meta itemProp="price" content={numericPrice} />
+            )}
+            <meta itemProp="priceCurrency" content="RUB" />
+            <meta itemProp="availability" content="https://schema.org/InStock" />
+            <meta itemProp="name" content={tierTitleStr} />
+            <meta itemProp="url" content={offerUrl} />
+            {tierSubtitleStr && <meta itemProp="description" content={tierSubtitleStr} />}
+          </>
+        )}
+        {tier.popular && Boolean(tier.badgeText) && (
+          <div style={{
+            position: 'absolute',
+            top: '0',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            background: 'var(--color-white)',
+            color: 'var(--color-deep-blue)',
+            padding: '6px 16px',
+            borderRadius: '0',
+            fontSize: '12px',
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            whiteSpace: 'nowrap'
+          }}>
+            {tier.badgeText}
+          </div>
+        )}
+        
+        <div style={{ minHeight: isDense || isFour ? '165px' : '185px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', marginBottom: isDense ? '18px' : '24px' }}>
+          <h3 style={{ fontSize: isDense ? '16.5px' : isFour ? '18px' : isThree ? '20px' : '22px', margin: '0 0 8px 0', color: 'inherit', textAlign: 'center', lineHeight: 1.3 }}>{tier.title}</h3>
+          <p style={{ fontSize: isDense ? '12.5px' : '14px', opacity: 0.8, margin: '0 0 12px 0', textAlign: 'center', lineHeight: 1.45 }}>{tier.subtitle}</p>
+          
+          {tier.price && (
+            <div style={{ fontSize: isDense ? '22px' : '28px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', marginTop: 'auto', textAlign: 'center' }}>
+              {tier.price}
+            </div>
+          )}
+          {tier.priceUnit && (
+            <div style={{ fontSize: '13px', opacity: 0.7, textAlign: 'center', marginTop: '4px', lineHeight: 1.3 }}>
+              {tier.priceUnit}
+            </div>
+          )}
+        </div>
+
+        <ul style={{ listStyle: 'none', padding: 0, margin: isDense ? '0 0 24px 0' : '0 0 32px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: isDense ? '12px' : '16px' }}>
+          {(tier.features || []).map((feature: any, fIdx: number) => {
+            const fName = typeof feature === 'string' ? feature : feature.name;
+            const fVal = typeof feature === 'string' ? '' : feature.value;
+            return (
+              <li key={fIdx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '6px', fontSize: isDense ? '12px' : '13px', opacity: 0.9 }}>
+                <div style={{ display: 'flex', gap: '6px', flex: '1 1 0%', minWidth: 0 }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={tier.popular ? "rgba(255,255,255,0.5)" : "var(--color-primary)"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span style={{ lineHeight: 1.3, wordBreak: 'break-word' }}>{fName}</span>
+                </div>
+                {fVal && fVal !== 'Да' && (
+                  <span style={{ fontWeight: 600, whiteSpace: 'nowrap', color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)', marginLeft: '4px' }}>{fVal}</span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+
+        {tier.exclusions && (
+          <p style={{ fontSize: '12px', opacity: 0.7, margin: '0 0 16px 0', lineHeight: 1.4, fontStyle: 'italic', textAlign: 'center' }}>
+            {tier.exclusions}
+          </p>
+        )}
+
+        <a 
+          href={tier.buttonHref || "#form"} 
+          data-service={tierTitleStr}
+          data-direction={currentDirection}
+          onClick={() => {
+            if (typeof window !== 'undefined') {
+              window.dispatchEvent(new CustomEvent('dejure:select_service', {
+                detail: {
+                  service: tierTitleStr,
+                  direction: currentDirection
+                }
+              }));
+            }
+          }}
+          className={`btn ${tier.popular ? 'btn-popular' : 'btn-regular'}`} 
+          style={{ 
+            width: '100%', 
+            textAlign: 'center', 
+            borderRadius: '0', 
+            fontSize: isDense ? '13px' : isFour ? '14px' : '15px', 
+            padding: isDense ? '12px 6px' : '14px 16px', 
+            whiteSpace: 'normal', 
+            textWrap: 'balance', 
+            lineHeight: 1.3, 
+            minHeight: isDense ? '48px' : '52px' 
+          }}
+        >
+          {tier.buttonText || 'Узнать точную стоимость'}
+        </a>
+
+        {tier.extraAction && (
+          <div style={{
+            marginTop: '14px',
+            paddingTop: '12px',
+            borderTop: '1px dashed rgba(23, 50, 77, 0.15)',
+            textAlign: 'center',
+            width: '100%'
+          }}>
+            <div style={{
+              fontSize: '12.5px',
+              color: tier.popular ? 'rgba(255,255,255,0.85)' : 'var(--color-deep-blue)',
+              lineHeight: 1.4,
+              marginBottom: '6px'
+            }}>
+              {tier.extraAction.text}
+            </div>
+            <a
+              href={tier.extraAction.href || '#form'}
+              data-service={tier.extraAction.serviceName}
+              data-direction={currentDirection}
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new CustomEvent('dejure:select_service', {
+                    detail: {
+                      service: tier.extraAction!.serviceName,
+                      direction: currentDirection
+                    }
+                  }));
+                }
+              }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
+                fontSize: '12.5px',
+                fontWeight: 600,
+                color: tier.popular ? '#C5A059' : 'var(--color-primary)',
+                textDecoration: 'none',
+                borderBottom: '1px dashed currentColor',
+                paddingBottom: '1px',
+                cursor: 'pointer'
+              }}
+            >
+              <span>{tier.extraAction.ctaText}</span>
+              <span>→</span>
+            </a>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--gradient-cream)', ...sectionStyle }}>
@@ -397,139 +610,49 @@ export default function PricingBlock({
           </div>
         )}
 
-        <div 
-          className={`pricing-grid-container ${effectiveGridCols === '2x2' ? 'pricing-grid-2x2' : effectiveGridCols === 2 ? 'pricing-grid-2' : effectiveGridCols === 3 ? 'pricing-grid-3' : effectiveGridCols === 4 ? 'pricing-grid-4' : tiers.length >= 5 ? "pricing-grid-5" : tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
-        >
-          {tiers.map((tier, idx) => {
-            const numericPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
-            const isMinPrice = tier.price ? /от/i.test(String(tier.price)) : false;
-            const tierTitleStr = typeof tier.title === 'string' ? tier.title : 'Юридическая услуга';
-            const tierSubtitleStr = typeof tier.subtitle === 'string' ? tier.subtitle : '';
-
-            return (
-            <div key={idx} style={{
-              background: tier.popular ? 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)' : 'var(--color-white)',
-              color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)',
-              borderRadius: '0',
-              padding: effectiveGridCols === 3 ? '32px 24px' : tiers.length >= 5 ? '26px 12px' : tiers.length === 4 ? '32px 16px' : '40px 30px',
-              boxShadow: tier.popular ? '0 20px 40px rgba(16, 39, 59, 0.15)' : '0 10px 30px rgba(0,0,0,0.05)',
-              border: tier.popular ? '1px solid transparent' : '1px solid rgba(23, 50, 77, 0.1)',
-              position: 'relative',
-              transition: 'transform 0.4s ease, box-shadow 0.4s ease',
-              display: 'flex',
-              flexDirection: 'column',
-              height: '100%',
-              width: '100%',
-              minWidth: 0,
-              boxSizing: 'border-box'
-            }}
-            className={`pricing-tier-card ${tier.hideOnMobile ? 'hidden-on-mobile' : ''}`}
-            itemScope={Boolean(numericPrice)}
-            itemType={numericPrice ? (isMinPrice ? "https://schema.org/AggregateOffer" : "https://schema.org/Offer") : undefined}
-            >
-              {numericPrice && (
-                <>
-                  {isMinPrice ? (
-                    <meta itemProp="lowPrice" content={numericPrice} />
-                  ) : (
-                    <meta itemProp="price" content={numericPrice} />
-                  )}
-                  <meta itemProp="priceCurrency" content="RUB" />
-                  <meta itemProp="availability" content="https://schema.org/InStock" />
-                  <meta itemProp="name" content={tierTitleStr} />
-                  <meta itemProp="url" content={offerUrl} />
-                  {tierSubtitleStr && <meta itemProp="description" content={tierSubtitleStr} />}
-                </>
-              )}
-              {tier.popular && Boolean(tier.badgeText) && (
-                <div style={{
-                  position: 'absolute',
-                  top: '0',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  background: 'var(--color-white)',
-                  color: 'var(--color-deep-blue)',
-                  padding: '6px 16px',
-                  borderRadius: '0',
-                  fontSize: '12px',
-                  fontWeight: 'bold',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
-                  whiteSpace: 'nowrap'
-                }}>
-                  {tier.badgeText}
-                </div>
-              )}
-              
-              <div style={{ minHeight: tiers.length >= 5 ? '165px' : '185px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', marginBottom: tiers.length >= 5 ? '18px' : '24px' }}>
-                <h3 style={{ fontSize: tiers.length >= 5 ? '16.5px' : tiers.length === 4 ? '20px' : '22px', margin: '0 0 8px 0', color: 'inherit', textAlign: 'center', lineHeight: 1.3 }}>{tier.title}</h3>
-                <p style={{ fontSize: tiers.length >= 5 ? '12.5px' : '14px', opacity: 0.8, margin: '0 0 12px 0', textAlign: 'center', lineHeight: 1.45 }}>{tier.subtitle}</p>
-                
-                {tier.price && (
-                  <div style={{ fontSize: tiers.length >= 5 ? '22px' : '28px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', marginTop: 'auto', textAlign: 'center' }}>
-                    {tier.price}
-                  </div>
-                )}
-                {tier.priceUnit && (
-                  <div style={{ fontSize: '13px', opacity: 0.7, textAlign: 'center', marginTop: '4px', lineHeight: 1.3 }}>
-                    {tier.priceUnit}
-                  </div>
-                )}
-              </div>
-
-              <ul style={{ listStyle: 'none', padding: 0, margin: tiers.length >= 5 ? '0 0 24px 0' : '0 0 32px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: tiers.length >= 5 ? '12px' : '16px' }}>
-                {tier.features.map((feature, fIdx) => (
-                  <li key={fIdx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '6px', fontSize: tiers.length >= 5 ? '12px' : '13px', opacity: 0.9 }}>
-                    <div style={{ display: 'flex', gap: '6px', flex: '1 1 0%', minWidth: 0 }}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={tier.popular ? "rgba(255,255,255,0.5)" : "var(--color-primary)"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span style={{ lineHeight: 1.3, wordBreak: 'break-word' }}>{feature.name}</span>
-                    </div>
-                    {feature.value && feature.value !== 'Да' && (
-                      <span style={{ fontWeight: 600, whiteSpace: 'nowrap', color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)', marginLeft: '4px' }}>{feature.value}</span>
+        {groups && groups.length > 0 ? (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+            {groups.map((group, gIdx) => {
+              const gCols = group.gridCols || (group.tiers.length >= 5 ? 5 : group.tiers.length === 4 ? 4 : group.tiers.length === 3 ? 3 : 2);
+              return (
+                <div key={gIdx} className="pricing-group">
+                  <div style={{ marginBottom: '28px', textAlign: 'center' }}>
+                    <h3 style={{
+                      fontSize: 'clamp(20px, 2.5vw, 24px)',
+                      fontFamily: 'var(--font-serif)',
+                      color: 'var(--color-primary)',
+                      margin: '0 0 6px 0',
+                      fontWeight: 600,
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '12px'
+                    }}>
+                      <span style={{ width: '28px', height: '2px', backgroundColor: 'var(--color-gold)' }}></span>
+                      <span>{group.title}</span>
+                      <span style={{ width: '28px', height: '2px', backgroundColor: 'var(--color-gold)' }}></span>
+                    </h3>
+                    {group.subtitle && (
+                      <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
+                        {group.subtitle}
+                      </p>
                     )}
-                  </li>
-                ))}
-              </ul>
-
-              {tier.exclusions && (
-                <p style={{ fontSize: '12px', opacity: 0.7, margin: '0 0 16px 0', lineHeight: 1.4, fontStyle: 'italic', textAlign: 'center' }}>
-                  {tier.exclusions}
-                </p>
-              )}
-
-              <a 
-                href={tier.buttonHref || "#form"} 
-                data-service={tierTitleStr}
-                data-direction={currentDirection}
-                onClick={() => {
-                  if (typeof window !== 'undefined') {
-                    window.dispatchEvent(new CustomEvent('dejure:select_service', {
-                      detail: {
-                        service: tierTitleStr,
-                        direction: currentDirection
-                      }
-                    }));
-                  }
-                }}
-                className={`btn ${tier.popular ? 'btn-popular' : 'btn-regular'}`} 
-                style={{ 
-                  width: '100%', 
-                  textAlign: 'center',
-                  borderRadius: '0',
-                  fontSize: tiers.length >= 5 ? '13px' : '15px',
-                  padding: tiers.length >= 5 ? '12px 6px' : '14px 16px',
-                  whiteSpace: 'normal',
-                  textWrap: 'balance',
-                  lineHeight: 1.3,
-                  minHeight: tiers.length >= 5 ? '48px' : '52px'
-                }}
-              >
-                {tier.buttonText || 'Узнать точную стоимость'}
-              </a>
-            </div>
-          );
-          })}
-        </div>
+                  </div>
+                  <div 
+                    className={`pricing-grid-container ${gCols === '2x2' ? 'pricing-grid-2x2' : gCols === 2 ? 'pricing-grid-2' : gCols === 3 ? 'pricing-grid-3' : gCols === 4 ? 'pricing-grid-4' : 'pricing-grid-5'}`}
+                  >
+                    {group.tiers.map((tier, idx) => renderCard(tier, `${gIdx}-${idx}`, gCols))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div 
+            className={`pricing-grid-container ${effectiveGridCols === '2x2' ? 'pricing-grid-2x2' : effectiveGridCols === 2 ? 'pricing-grid-2' : effectiveGridCols === 3 ? 'pricing-grid-3' : effectiveGridCols === 4 ? 'pricing-grid-4' : tiers.length >= 5 ? "pricing-grid-5" : tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
+          >
+            {tiers.map((tier, idx) => renderCard(tier, idx, effectiveGridCols))}
+          </div>
+        )}
 
         {mobileNote && (
           <div className="pricing-mobile-note-row">
