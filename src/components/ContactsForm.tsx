@@ -83,6 +83,8 @@ export default function ContactsForm({
           setSelectedDirection('Миграционный юрист');
         } else if (path.includes('/bankrotstvo-fizicheskih-lic')) {
           setSelectedDirection('Банкротство физических лиц');
+        } else if (path.includes('/bankrotstvo-biznesa')) {
+          setSelectedDirection('Банкротство бизнеса');
         } else if (path.includes('/kreditnyj-yurist')) {
           setSelectedDirection('Кредитный юрист');
         } else if (path.includes('/yurist-po-ispolnitelnomu-proizvodstvu')) {
@@ -203,6 +205,7 @@ export default function ContactsForm({
       typeof window !== 'undefined' && window.location.pathname.includes('/trudovoj-yurist') ? 'Трудовой юрист' :
       typeof window !== 'undefined' && window.location.pathname.includes('/migracionnyj-yurist') ? 'Миграционный юрист' :
       typeof window !== 'undefined' && window.location.pathname.includes('/bankrotstvo-fizicheskih-lic') ? 'Банкротство физических лиц' :
+      typeof window !== 'undefined' && window.location.pathname.includes('/bankrotstvo-biznesa') ? 'Банкротство бизнеса' :
       typeof window !== 'undefined' && window.location.pathname.includes('/kreditnyj-yurist') ? 'Кредитный юрист' :
       typeof window !== 'undefined' && window.location.pathname.includes('/yurist-po-ispolnitelnomu-proizvodstvu') ? 'Юрист по исполнительному производству' : ''
     );

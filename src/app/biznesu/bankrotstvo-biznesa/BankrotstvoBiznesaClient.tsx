@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MilitaryHero from '@/components/MilitaryHero';
 import ProcessBlock, { ProcessStep } from '@/components/ProcessBlock';
-import PricingBlock, { PricingTier } from '@/components/PricingBlock';
+import PricingBlock, { PricingGroup } from '@/components/PricingBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import FAQBlock, { FAQItem } from '@/components/FAQBlock';
 import ContactsForm from '@/components/ContactsForm';
@@ -191,79 +191,85 @@ export default function BankrotstvoBiznesaClient() {
       desc: 'Готовим процессуальные документы, участвуем в судебных заседаниях и взаимодействуем с арбитражным управляющим.'
     }
   ];
-
-  const pricingTiers: PricingTier[] = [
+  const pricingGroups: PricingGroup[] = [
     {
-      title: 'Первичная консультация',
-      subtitle: 'Уточнение роли, стадии и задачи',
-      price: 'от 5 000 ₽',
-      popular: false,
-      features: [
-        { name: 'Анализ статуса дела и публикаций в ЕФРСБ', value: 'Да' },
-        { name: 'Определение круга первоочередных рисков', value: 'Да' },
-        { name: 'Список необходимых процессуальных документов', value: 'Да' }
-      ],
-      buttonText: 'Записаться',
-      buttonHref: '#form'
+      title: 'Консультация и анализ',
+      gridCols: 2,
+      tiers: [
+        {
+          title: 'Консультация по банкротной ситуации',
+          price: '5 000 ₽',
+          priceUnit: 'устно до 1 часа',
+          popular: false,
+          features: [
+            'Роль клиента и стадия дела',
+            'Ближайший срок и следующий шаг'
+          ],
+          exclusions: 'Изучение комплекта документов и письменный вывод отдельно',
+          buttonText: 'Обсудить ситуацию',
+          buttonHref: '#form'
+        },
+        {
+          title: 'Правовой анализ банкротного дела',
+          price: 'от 30 000 ₽',
+          priceUnit: 'за анализ',
+          popular: false,
+          features: [
+            'Анализ представленных материалов в согласованном объёме',
+            'Сбор дополнительных сведений — от 40 000 ₽'
+          ],
+          exclusions: 'Письменное заключение после анализа отдельно от 20 000 ₽',
+          buttonText: 'Оценить риски',
+          buttonHref: '#form'
+        }
+      ]
     },
     {
-      title: 'Банкротная диагностика',
-      subtitle: 'Комплексная проверка материалов и реестров',
-      price: 'от 30 000 ₽',
-      popular: true,
-      badgeText: 'Рекомендуется',
-      features: [
-        { name: 'Полная карта обязательств и активов', value: 'Да' },
-        { name: 'Аудит сделок периода подозрительности', value: 'Да' },
-        { name: 'Оценка субсидиарных рисков руководства', value: 'Да' },
-        { name: 'Письменные сценарии действий со сметой', value: 'Да' }
-      ],
-      buttonText: 'Заказать диагностику',
-      buttonHref: '#form'
-    },
-    {
-      title: 'Подготовка заявления или требования',
-      subtitle: 'Включение в реестр или подача на банкротство',
-      price: 'от 25 000 ₽',
-      popular: false,
-      features: [
-        { name: 'Расчёт требований и неустоек', value: 'Да' },
-        { name: 'Формирование доказательственной базы', value: 'Да' },
-        { name: 'Подача в арбитражный суд', value: 'Да' },
-        { name: 'Контроль принятия к производству', value: 'Да' }
-      ],
-      buttonText: 'Подготовить документ',
-      buttonHref: '#form'
-    },
-    {
-      title: 'Сопровождение процедуры',
-      subtitle: 'Комплексное участие во всех стадиях',
-      price: 'от 50 000 ₽',
-      popular: false,
-      features: [
-        { name: 'Участие в собраниях кредиторов', value: 'Да' },
-        { name: 'Анализ отчётов арбитражного управляющего', value: 'Да' },
-        { name: 'Контроль реализации имущества', value: 'Да' },
-        { name: 'Защита от неправомерных действий', value: 'Да' }
-      ],
-      buttonText: 'Обсудить сопровождение',
-      buttonHref: '#form'
-    },
-    {
-      title: 'Обособленный банкротный спор',
-      subtitle: 'Субсидиарная ответственность, сделки, убытки',
-      price: 'от 40 000 ₽',
-      popular: false,
-      features: [
-        { name: 'Формирование правовой позиции', value: 'Да' },
-        { name: 'Сбор доказательств и контррасчёты', value: 'Да' },
-        { name: 'Судебное представительство во всех инстанциях', value: 'Да' },
-        { name: 'Обжалование судебных актов', value: 'Да' }
-      ],
-      buttonText: 'Защитить интересы',
-      buttonHref: '#form'
+      title: 'Разовые судебные услуги и расчёт сопровождения',
+      gridCols: 3,
+      tiers: [
+        {
+          title: 'Заявление или возражения в деле',
+          price: 'от 20 000 ₽',
+          priceUnit: 'за документ',
+          popular: false,
+          features: [
+            'Один процессуальный документ по согласованному вопросу',
+            'Документ для одной роли: должника или кредитора'
+          ],
+          exclusions: 'Подача, приложения и участие отдельно',
+          buttonText: 'Подготовить документ',
+          buttonHref: '#form'
+        },
+        {
+          title: 'Представительство в обособленном споре',
+          price: 'от 50 000 ₽',
+          priceUnit: 'до 3 заседаний',
+          popular: false,
+          features: [
+            'Первая инстанция, до 3 заседаний',
+            'Каждое последующее заседание — от 15 000 ₽'
+          ],
+          exclusions: 'Процессуальные документы отдельно',
+          buttonText: 'Обсудить спор',
+          buttonHref: '#form'
+        },
+        {
+          title: 'Сопровождение процедуры',
+          price: 'Рассчитать',
+          priceUnit: 'по смете',
+          popular: false,
+          features: [
+            'Стадия, роль, число кредиторов и споров',
+            'Действия и период работы фиксируются отдельной сметой'
+          ],
+          exclusions: 'Цена не означает ведение всех стадий',
+          buttonText: 'Рассчитать сопровождение',
+          buttonHref: '#form'
+        }
+      ]
     }
-  ];
+  ];;
 
   const casesData: CaseData[] = [
     {
@@ -1065,16 +1071,15 @@ export default function BankrotstvoBiznesaClient() {
         ctaButtonHref="#form"
       />
 
-      {/* ═══ БЛОК 8: СТОИМОСТЬ (PRICING BLOCK) ═══ */}
+      {/* ═══ БЛОК 8: СТОИМОСТЬ (PRICING BLOCK) ═══ */}
       <PricingBlock
-        title="Стоимость юридической помощи при банкротстве бизнеса"
-        subtitle="Стоимость зависит от роли клиента, стадии дела, объёма документов и количества самостоятельных споров. До начала работы фиксируем состав услуг и порядок оплаты."
-        tiers={pricingTiers}
-        disclaimer="Вознаграждение арбитражного управляющего, государственные пошлины, обязательные публикации в ЕФРСБ и газете «Коммерсантъ», судебные депозиты, расходы на оценку и торги указываются отдельно и не включаются в гонорар юристов."
-        ctaTitle="Рассчитаем точную смету сопровождения"
-        ctaSubtitle="Оставьте заявку — юристы изучат вводные данные и свяжутся с вами в течение 15 минут в рабочее время."
-        ctaButtonText="Рассчитать стоимость"
-        ctaButtonLink="#form"
+        title="Стоимость помощи при банкротстве бизнеса"
+        subtitle="Цена ближайшего действия по вашей роли и стадии дела. Это не стоимость всей процедуры: роль должника, кредитора или контролирующего лица раскрыта на профильных страницах."
+        pageUrl="https://dejure-help.ru/biznesu/bankrotstvo-biznesa/"
+        direction="Банкротство бизнеса"
+        groups={pricingGroups}
+        disclaimer="Стоимость комплексного сопровождения зависит от стадии, объёма документов и числа самостоятельных споров. Состав работ и цену согласуем до начала работы и закрепим в договоре. Госпошлина, депозит, вознаграждение управляющего, публикации, экспертиза, оценка, нотариальные и командировочные расходы оплачиваются отдельно при наличии соответствующих расходов"
+        ctaTitle=""
       />
 
       {/* ═══ БЛОК 9: ПРАКТИКА (CASES BLOCK) ═══ */}
@@ -1145,7 +1150,8 @@ export default function BankrotstvoBiznesaClient() {
                 commentPlaceholder="Кратко укажите суть задачи, номер дела или реквизиты должника…"
                 hiddenFields={[
                   { name: 'source_page', value: '/biznesu/bankrotstvo-biznesa/' },
-                  { name: 'service', value: 'Банкротство бизнеса в Липецке' }
+                  { name: 'service', value: 'Банкротство бизнеса в Липецке' },
+                  { name: 'direction', value: 'Банкротство бизнеса' }
                 ]}
               />
             </div>
