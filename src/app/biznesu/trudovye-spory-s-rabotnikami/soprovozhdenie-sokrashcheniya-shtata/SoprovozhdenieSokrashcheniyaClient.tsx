@@ -9,7 +9,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
-import PricingBlock from '@/components/PricingBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import ProcessBlock from '@/components/ProcessBlock';
 
 export default function SoprovozhdenieSokrashcheniyaClient() {
@@ -243,49 +243,74 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
     "desc": "При возникновении разногласий готовим правовую позицию для трудовой инспекции и суда."
   }
 ];
-  const pricingTiers = [
-  {
-    "title": "Аудит и дорожная карта",
-    "subtitle": "Подготовительный этап",
-    "price": "от 10 000 ₽",
-    "features": [
-      { name: "анализ штатного расписания", value: "Да" },
-      { name: "выявление лиц с иммунитетом", value: "Да" },
-      { name: "разработка графика мероприятий", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_audit_redundancy"
-  },
-  {
-    "popular": true,
-    "badgeText": "Востребовано",
-    "title": "Полный пакет документов",
-    "subtitle": "Документальное сопровождение",
-    "price": "от 25 000 ₽",
-    "features": [
-      { name: "проекты приказов и уведомлений", value: "Да" },
-      { name: "уведомления профсоюза и ЦЗН", value: "Да" },
-      { name: "протоколы комиссии по ст. 179 ТК РФ", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_docs_redundancy"
-  },
-  {
-    "title": "Комплекс «под ключ» + защита",
-    "subtitle": "Сопровождение до завершения",
-    "price": "от 45 000 ₽",
-    "features": [
-      { name: "полный юридический контроль", value: "Да" },
-      { name: "участие в сложных переговорах", value: "Да" },
-      { name: "представительство в суде и ГИТ", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_turnkey_redundancy"
-  }
-];
+  const pricingTiers: PricingTier[] = [
+    {
+      title: 'Консультация по сокращению',
+      price: '5 000 ₽',
+      priceUnit: 'до 1 часа',
+      popular: false,
+      features: [
+        'Планируемые изменения и число работников',
+        'Ближайшие шаги'
+      ],
+      exclusions: 'Проверка статусов и вакансий по документам отдельно',
+      buttonText: 'Обсудить сокращение',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Анализ процедуры сокращения',
+      price: 'от 15 000 ₽',
+      priceUnit: 'в согласованном объёме',
+      popular: true,
+      badgeText: 'Рекомендуем',
+      features: [
+        'Перечень работников и штатное расписание',
+        'Документация по процедуре'
+      ],
+      exclusions: 'Письменная дорожная карта — отдельно, от 10 000 ₽ после анализа',
+      buttonText: 'Проверить процедуру',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Приказ по сокращению',
+      price: 'от 5 000 ₽',
+      priceUnit: 'за один приказ',
+      popular: false,
+      features: [
+        'Один проект приказа',
+        'По согласованной задаче'
+      ],
+      exclusions: 'Уведомления, перечни вакансий и иные документы отдельно',
+      buttonText: 'Подготовить приказ',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Уведомление или обращение',
+      price: 'от 10 000 ₽',
+      priceUnit: 'за один документ',
+      popular: false,
+      features: [
+        'Один документ для работника или компетентного органа',
+        'По согласованной задаче'
+      ],
+      exclusions: 'Отправка и сопровождение исполнения отдельно',
+      buttonText: 'Подготовить уведомление',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Сопровождение сокращения',
+      price: 'Рассчитать',
+      priceUnit: 'по этапам',
+      popular: false,
+      features: [
+        'Количество работников и подразделения',
+        'Документы, консультации и переговоры'
+      ],
+      exclusions: 'Судебные споры — отдельный этап',
+      buttonText: 'Рассчитать процедуру',
+      buttonHref: '#form'
+    }
+  ];
   
 
   return (
@@ -585,9 +610,12 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
       {/* ═══ БЛОК 8: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
       <PricingBlock
         title="Стоимость сопровождения сокращения"
-        subtitle="Стоимость зависит от численности сокращаемых сотрудников и структуры компании."
+        subtitle="Цена зависит от числа работников, подразделений и выбранных этапов. Один документ не равен сопровождению всего сокращения."
+        pageUrl="https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-sokrashcheniya-shtata/"
+        direction="Трудовые споры с работниками"
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие расходы."
+        disclaimer="Итоговая цена зависит от объёма документов, числа работников и стадии спора. Состав работ и стоимость согласуем до начала работы и закрепим в договоре. Госпошлина, экспертизы, нотариальные, почтовые и командировочные расходы при наличии оплачиваются отдельно"
+        ctaTitle=""
       />
 
       {/* ═══ БЛОК 9: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
@@ -730,11 +758,11 @@ export default function SoprovozhdenieSokrashcheniyaClient() {
                 hiddenFields={[
   {
     "name": "source_page",
-    "value": "/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-sokrashcheniya-shtata/"
+    "value": "https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-sokrashcheniya-shtata/"
   },
   {
     "name": "direction",
-    "value": "soprovozhdenie_sokrashcheniya"
+    "value": "Трудовые споры с работниками"
   },
   {
     "name": "selected_specialist",

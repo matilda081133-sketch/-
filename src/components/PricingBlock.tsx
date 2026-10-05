@@ -186,6 +186,7 @@ export default function PricingBlock({
     pathname?.includes('/bankrotstvo-fizicheskih-lic') ? 'Банкротство физических лиц' :
     pathname?.includes('/bankrotstvo-biznesa') ? 'Банкротство бизнеса' :
     pathname?.includes('/yuridicheskoe-soprovozhdenie-biznesa') ? 'Юридическое сопровождение бизнеса' :
+    pathname?.includes('/trudovye-spory-s-rabotnikami') ? 'Трудовые споры с работниками' :
     pathname?.includes('/migracionnoe-soprovozhdenie-biznesa') ? 'Миграционное сопровождение бизнеса' :
     pathname?.includes('/ispolnitelnoe-proizvodstvo-dlya-biznesa') ? 'Исполнительное производство для бизнеса' :
     pathname?.includes('/razblokirovka-raschetnogo-scheta-po-115-fz') ? 'Разблокировка расчётного счёта по 115-ФЗ' :

@@ -9,7 +9,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
-import PricingBlock from '@/components/PricingBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import ProcessBlock from '@/components/ProcessBlock';
 
 export default function SoprovozhdenieUvolneniyaClient() {
@@ -247,51 +247,74 @@ export default function SoprovozhdenieUvolneniyaClient() {
     "desc": "В случае жалобы работника в ГИТ или иска в суд готовим мотивированные возражения и представляем работодателя."
   }
 ];
-  const pricingTiers = [
-  {
-    "title": "Консультация и аудит основания",
-    "subtitle": "Первичная оценка рисков",
-    "price": "от 5 000 ₽",
-    "features": [
-      { name: "анализ трудового договора и инструкций", value: "Да" },
-      { name: "оценка достаточности доказательств", value: "Да" },
-      { name: "выбор законного основания увольнения", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_audit_dismissal"
-  },
-  {
-    "popular": true,
-    "badgeText": "Востребовано",
-    "title": "Полное сопровождение процедуры",
-    "subtitle": "Документы и переговоры",
-    "price": "от 15 000 ₽",
-    "features": [
-      { name: "составление актов", value: "Да" },
-      { name: "запросов", value: "Да" },
-      { name: "приказов", value: "Да" },
-      { name: "подготовка соглашения сторон", value: "Да" },
-      { name: "правовой контроль всей процедуры", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_full_dismissal"
-  },
-  {
-    "title": "Защита в суде / ГИТ",
-    "subtitle": "Судебное представительство",
-    "price": "от 30 000 ₽",
-    "features": [
-      { name: "подготовка отзыва и доказательств", value: "Да" },
-      { name: "участие в судебных заседаниях", value: "Да" },
-      { name: "защита от восстановления работника", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_court_dismissal"
-  }
-];
+  const pricingTiers: PricingTier[] = [
+    {
+      title: 'Консультация по увольнению',
+      price: '5 000 ₽',
+      priceUnit: 'до 1 часа',
+      popular: false,
+      features: [
+        'Основание и стадия',
+        'Документы для проверки и ближайшее решение'
+      ],
+      exclusions: 'Анализ доказательств отдельно',
+      buttonText: 'Обсудить увольнение',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Анализ основания и процедуры',
+      price: 'от 15 000 ₽',
+      priceUnit: 'за одну ситуацию',
+      popular: true,
+      badgeText: 'Рекомендуем',
+      features: [
+        'Проверка представленных документов и рисков',
+        'Дополнительный сбор сведений — от 20 000 ₽'
+      ],
+      exclusions: 'Письменное заключение после анализа — отдельно, от 10 000 ₽',
+      buttonText: 'Проверить основание',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Соглашение о прекращении договора',
+      price: 'от 15 000 ₽',
+      priceUnit: 'за один документ',
+      popular: false,
+      features: [
+        'Один индивидуальный документ',
+        'По согласованным условиям'
+      ],
+      exclusions: 'Переговоры с работником и иные кадровые документы отдельно',
+      buttonText: 'Подготовить соглашение',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Сопровождение процедуры увольнения',
+      price: 'Рассчитать',
+      priceUnit: 'по смете',
+      popular: false,
+      features: [
+        'Основание и перечень действий',
+        'Число работников, документы, сроки и переговоры'
+      ],
+      exclusions: 'Цена одного документа не означает сопровождение всей процедуры',
+      buttonText: 'Рассчитать сопровождение',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Защита работодателя в суде',
+      price: 'от 40 000 ₽',
+      priceUnit: 'до трёх заседаний',
+      popular: false,
+      features: [
+        'До трёх заседаний первой инстанции',
+        'Следующее заседание — от 10 000 ₽'
+      ],
+      exclusions: 'Отзыв, встречные требования и участие в ГИТ отдельно',
+      buttonText: 'Обсудить защиту',
+      buttonHref: '#form'
+    }
+  ];
   
 
   return (
@@ -591,9 +614,19 @@ export default function SoprovozhdenieUvolneniyaClient() {
       {/* ═══ БЛОК 8: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
       <PricingBlock
         title="Стоимость сопровождения увольнения"
-        subtitle="Фиксируем состав услуг и стоимость в договоре до начала работы."
+        subtitle="Цена зависит от основания увольнения, стадии и объёма документов. Цена одного документа не равна сопровождению всей процедуры."
+        pageUrl="https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-uvolneniya-rabotnika/"
+        direction="Трудовые споры с работниками"
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие расходы."
+        disclaimer={
+          <>
+            Итоговая цена зависит от объёма документов, числа работников и стадии спора. Состав работ и стоимость согласуем до начала работы и закрепим в договоре. Госпошлина, экспертизы, нотариальные, почтовые и командировочные расходы при наличии оплачиваются отдельно
+            <span style={{ display: 'block', marginTop: '10px', fontSize: '13px', opacity: 0.7 }}>
+              Договор может предусматривать дополнительное вознаграждение при благоприятном исходе; условия обсуждаются индивидуально
+            </span>
+          </>
+        }
+        ctaTitle=""
       />
 
       {/* ═══ БЛОК 9: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
@@ -736,11 +769,11 @@ export default function SoprovozhdenieUvolneniyaClient() {
                 hiddenFields={[
   {
     "name": "source_page",
-    "value": "/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-uvolneniya-rabotnika/"
+    "value": "https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-uvolneniya-rabotnika/"
   },
   {
     "name": "direction",
-    "value": "soprovozhdenie_uvolneniya"
+    "value": "Трудовые споры с работниками"
   },
   {
     "name": "selected_specialist",

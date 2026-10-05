@@ -9,7 +9,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
-import PricingBlock from '@/components/PricingBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import ProcessBlock from '@/components/ProcessBlock';
 
 export default function SoprovozhdenieProverkiGitClient() {
@@ -243,49 +243,74 @@ export default function SoprovozhdenieProverkiGitClient() {
     "desc": "При несогласии с выводами инспекции готовим возражения на акт, обжалуем предписание или штраф в суде."
   }
 ];
-  const pricingTiers = [
-  {
-    "title": "Анализ запроса и пояснения",
-    "subtitle": "Документарная проверка",
-    "price": "от 10 000 ₽",
-    "features": [
-      { name: "правовой анализ требований ГИТ", value: "Да" },
-      { name: "проверка пакета документов", value: "Да" },
-      { name: "подготовка мотивированного ответа", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_docs_git"
-  },
-  {
-    "popular": true,
-    "badgeText": "Востребовано",
-    "title": "Полное сопровождение проверки",
-    "subtitle": "Под ключ с взаимодействием",
-    "price": "от 25 000 ₽",
-    "features": [
-      { name: "участие во взаимодействии с инспектором", value: "Да" },
-      { name: "контроль процессуальных сроков", value: "Да" },
-      { name: "составление возражений на акт", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_full_git"
-  },
-  {
-    "title": "Обжалование предписания / штрафа",
-    "subtitle": "Судебная защита",
-    "price": "от 30 000 ₽",
-    "features": [
-      { name: "подготовка жалобы в ГИТ / суд", value: "Да" },
-      { name: "представительство в судебных заседаниях", value: "Да" },
-      { name: "отмена штрафов и предписаний", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_appeal_git"
-  }
-];
+  const pricingTiers: PricingTier[] = [
+    {
+      title: 'Консультация по запросу ГИТ',
+      price: '5 000 ₽',
+      priceUnit: 'устно, до 1 часа',
+      popular: false,
+      features: [
+        'Предмет обращения и известный срок',
+        'Необходимый первичный комплект'
+      ],
+      exclusions: 'Подробная проверка документов отдельно',
+      buttonText: 'Проверить срок',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Анализ кадровых документов',
+      price: 'от 10 000 ₽',
+      priceUnit: 'за один договор или комплект',
+      popular: false,
+      features: [
+        'Один договор или ограниченный комплект',
+        'Документы, связанные с запросом'
+      ],
+      exclusions: 'Комплексный аудит всех работников отдельно',
+      buttonText: 'Проверить документы',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Ответ или пояснения для ГИТ',
+      price: 'от 10 000 ₽',
+      priceUnit: 'за один документ',
+      popular: true,
+      badgeText: 'Рекомендуем',
+      features: [
+        'Один письменный ответ по конкретному запросу',
+        'На основании представленных материалов'
+      ],
+      exclusions: 'Иные ответы и устранение нарушений отдельно',
+      buttonText: 'Подготовить ответ',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Участие при взаимодействии с ГИТ',
+      price: '15 000 ₽',
+      priceUnit: 'до четырёх часов участия',
+      popular: false,
+      features: [
+        'Представление интересов в государственном органе',
+        'До четырёх часов'
+      ],
+      exclusions: 'Подготовка документов, повторный выезд и обжалование отдельно',
+      buttonText: 'Поручить участие',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Обжалование результата проверки',
+      price: 'Рассчитать',
+      priceUnit: 'после оценки',
+      popular: false,
+      features: [
+        'Предписание, постановление или иное решение',
+        'Порядок обжалования, документы и участие'
+      ],
+      exclusions: 'Цена согласуется после определения предмета и порядка обжалования',
+      buttonText: 'Оценить обжалование',
+      buttonHref: '#form'
+    }
+  ];
   
 
   return (
@@ -583,10 +608,13 @@ export default function SoprovozhdenieProverkiGitClient() {
 
       {/* ═══ БЛОК 8: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
       <PricingBlock
-        title="Стоимость сопровождения проверок ГИТ"
-        subtitle="Прозрачные тарифы в зависимости от формата и стадии проверки."
+        title="Стоимость помощи при проверке ГИТ"
+        subtitle="Цена зависит от предмета запроса, срока и объёма документов. Участие в проверке и обжалование её результата — разные услуги."
+        pageUrl="https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-proverki-trudovoj-inspekcii/"
+        direction="Трудовые споры с работниками"
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие расходы."
+        disclaimer="Итоговая цена зависит от объёма документов, числа работников и стадии спора. Состав работ и стоимость согласуем до начала работы и закрепим в договоре. Госпошлина, экспертизы, нотариальные, почтовые и командировочные расходы при наличии оплачиваются отдельно"
+        ctaTitle=""
       />
 
       {/* ═══ БЛОК 9: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
@@ -729,11 +757,11 @@ export default function SoprovozhdenieProverkiGitClient() {
                 hiddenFields={[
   {
     "name": "source_page",
-    "value": "/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-proverki-trudovoj-inspekcii/"
+    "value": "https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/soprovozhdenie-proverki-trudovoj-inspekcii/"
   },
   {
     "name": "direction",
-    "value": "soprovozhdenie_proverki_git"
+    "value": "Трудовые споры с работниками"
   },
   {
     "name": "selected_specialist",

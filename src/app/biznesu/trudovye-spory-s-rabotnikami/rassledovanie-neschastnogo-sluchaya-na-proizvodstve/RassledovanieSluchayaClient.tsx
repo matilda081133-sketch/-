@@ -9,7 +9,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
-import PricingBlock from '@/components/PricingBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import ProcessBlock from '@/components/ProcessBlock';
 
 export default function RassledovanieSluchayaClient() {
@@ -243,49 +243,75 @@ export default function RassledovanieSluchayaClient() {
     "desc": "Представляем компанию при разногласиях с ГИТ, доследственных проверках и исках о компенсации вреда."
   }
 ];
-  const pricingTiers = [
-  {
-    "title": "Легкий несчастный случай",
-    "subtitle": "Срок расследования до 3 дней",
-    "price": "от 15 000 ₽",
-    "features": [
-      { name: "подготовка извещений и приказа", value: "Да" },
-      { name: "оформление протоколов опроса", value: "Да" },
-      { name: "составление акта формы Н-1", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_light_accident"
-  },
-  {
-    "popular": true,
-    "badgeText": "Востребовано",
-    "title": "Тяжелый / групповой случай",
-    "subtitle": "Срок расследования до 15 дней",
-    "price": "от 35 000 ₽",
-    "features": [
-      { name: "участие в комиссии с инспектором ГИТ", value: "Да" },
-      { name: "правовая экспертиза инструктажей и СОУТ", value: "Да" },
-      { name: "защита от предписаний и штрафов", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_severe_accident"
-  },
-  {
-    "title": "Комплексная защита руководства",
-    "subtitle": "Включая СК РФ и суд",
-    "price": "от 55 000 ₽",
-    "features": [
-      { name: "сопровождение проверки по ст. 143 УК РФ", value: "Да" },
-      { name: "представительство в прокуратуре", value: "Да" },
-      { name: "защита в суде по искам о моральном вреде", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_defense_accident"
-  }
-];
+  const pricingTiers: PricingTier[] = [
+    {
+      title: 'Консультация по первичным действиям',
+      price: '5 000 ₽',
+      priceUnit: 'до 1 часа',
+      popular: false,
+      features: [
+        'Обстоятельства и известная тяжесть',
+        'Первоочередные обязанности и документы'
+      ],
+      exclusions: 'Работа вне обычного времени оплачивается отдельно по прайсу',
+      buttonText: 'Обсудить случай',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Анализ материалов расследования',
+      price: 'от 15 000 ₽',
+      priceUnit: 'за один случай',
+      popular: true,
+      badgeText: 'Рекомендуем',
+      features: [
+        'Правовая оценка представленного комплекта',
+        'Сбор дополнительных сведений — от 20 000 ₽'
+      ],
+      exclusions: 'Письменное заключение после анализа — отдельно, от 10 000 ₽',
+      buttonText: 'Проверить материалы',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Извещение или ответ в орган',
+      price: 'от 10 000 ₽',
+      priceUnit: 'за один документ',
+      popular: false,
+      features: [
+        'Один документ по согласованной задаче',
+        'Сроки направления и другие извещения — по согласованию'
+      ],
+      exclusions: 'Не подразумевает ведение расследования',
+      buttonText: 'Подготовить документ',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Сопровождение расследования',
+      price: 'Рассчитать',
+      priceUnit: 'по смете',
+      popular: false,
+      features: [
+        'Тяжесть случая и состав комиссии',
+        'Число работников, органов и документов',
+        'Формат участия юриста'
+      ],
+      exclusions: 'Юрист помогает комиссии, но не подменяет её решение',
+      buttonText: 'Рассчитать сопровождение',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Защита по итогам расследования',
+      price: 'Рассчитать',
+      priceUnit: 'после оценки',
+      popular: false,
+      features: [
+        'Вид и стадия претензии или проверки',
+        'Необходимые документы и представительство'
+      ],
+      exclusions: 'Уголовно-правовая защита, если потребуется, — самостоятельный вопрос',
+      buttonText: 'Обсудить защиту',
+      buttonHref: '#form'
+    }
+  ];
   
 
   return (
@@ -583,10 +609,13 @@ export default function RassledovanieSluchayaClient() {
 
       {/* ═══ БЛОК 8: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
       <PricingBlock
-        title="Стоимость сопровождения расследования"
-        subtitle="Стоимость зависит от категории тяжести случая и состава комиссии."
+        title="Стоимость помощи при расследовании несчастного случая"
+        subtitle="Цена зависит от тяжести случая, состава комиссии и объёма документов. Юрист помогает работодателю и комиссии, не подменяя её решение."
+        pageUrl="https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/rassledovanie-neschastnogo-sluchaya-na-proizvodstve/"
+        direction="Трудовые споры с работниками"
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие расходы."
+        disclaimer="Итоговая цена зависит от объёма документов, числа работников и стадии спора. Состав работ и стоимость согласуем до начала работы и закрепим в договоре. Госпошлина, экспертизы, нотариальные, почтовые и командировочные расходы при наличии оплачиваются отдельно"
+        ctaTitle=""
       />
 
       {/* ═══ БЛОК 9: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
@@ -729,11 +758,11 @@ export default function RassledovanieSluchayaClient() {
                 hiddenFields={[
   {
     "name": "source_page",
-    "value": "/biznesu/trudovye-spory-s-rabotnikami/rassledovanie-neschastnogo-sluchaya-na-proizvodstve/"
+    "value": "https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/rassledovanie-neschastnogo-sluchaya-na-proizvodstve/"
   },
   {
     "name": "direction",
-    "value": "rassledovanie_neschastnogo_sluchaya"
+    "value": "Трудовые споры с работниками"
   },
   {
     "name": "selected_specialist",

@@ -9,7 +9,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
-import PricingBlock from '@/components/PricingBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import ProcessBlock from '@/components/ProcessBlock';
 
 export default function VzyskanieUshcherbaB2BClient() {
@@ -243,49 +243,74 @@ export default function VzyskanieUshcherbaB2BClient() {
     "desc": "При превышении предела среднего заработка или несогласии работника готовим иск и представляем работодателя в суде."
   }
 ];
-  const pricingTiers = [
-  {
-    "title": "Аудит документов и процедура",
-    "subtitle": "Служебная проверка",
-    "price": "от 10 000 ₽",
-    "features": [
-      { name: "экспертиза договоров о матответственности", value: "Да" },
-      { name: "составление актов и запросов объяснений", value: "Да" },
-      { name: "расчет предела ответственности", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_audit_damages"
-  },
-  {
-    "popular": true,
-    "badgeText": "Востребовано",
-    "title": "Соглашение о возмещении",
-    "subtitle": "Досудебное урегулирование",
-    "price": "от 15 000 ₽",
-    "features": [
-      { name: "переговоры с работником", value: "Да" },
-      { name: "составление соглашения о рассрочке", value: "Да" },
-      { name: "оформление обеспечения исполнения", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_settle_damages"
-  },
-  {
-    "title": "Судебное взыскание",
-    "subtitle": "Представительство в суде",
-    "price": "от 30 000 ₽",
-    "features": [
-      { name: "подготовка и подача искового заявления", value: "Да" },
-      { name: "участие во всех судебных заседаниях", value: "Да" },
-      { name: "сопровождение исполнительного листа", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_court_damages"
-  }
-];
+  const pricingTiers: PricingTier[] = [
+    {
+      title: 'Консультация по ущербу',
+      price: '5 000 ₽',
+      priceUnit: 'до 1 часа',
+      popular: false,
+      features: [
+        'Событие и документы',
+        'Ближайшие действия и маршрут урегулирования'
+      ],
+      exclusions: 'Анализ документов и расчёта отдельно',
+      buttonText: 'Обсудить ущерб',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Анализ основания и размера',
+      price: 'от 15 000 ₽',
+      priceUnit: 'за один случай',
+      popular: true,
+      badgeText: 'Рекомендуем',
+      features: [
+        'Акты, договоры и расчёт',
+        'Правовой анализ по одному случаю'
+      ],
+      exclusions: 'Оценка имущества и сбор дополнительных доказательств отдельно',
+      buttonText: 'Оценить дело',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Претензия работнику',
+      price: 'от 15 000 ₽',
+      priceUnit: 'за один документ',
+      popular: false,
+      features: [
+        'Одно письменное требование',
+        'По имеющимся сведениям'
+      ],
+      exclusions: 'Переговоры и соглашение о возмещении отдельно',
+      buttonText: 'Подготовить требование',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Иск о возмещении ущерба',
+      price: 'от 10 000 ₽',
+      priceUnit: 'за один документ',
+      popular: false,
+      features: [
+        'Один иск в суд общей юрисдикции',
+        'По предоставленным доказательствам'
+      ],
+      exclusions: 'Сложный расчёт, подача и участие в суде отдельно',
+      buttonText: 'Подготовить иск',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Представительство работодателя',
+      price: 'от 40 000 ₽',
+      priceUnit: 'до трёх заседаний',
+      popular: false,
+      features: [
+        'До трёх заседаний первой инстанции',
+        'Каждое следующее заседание — от 10 000 ₽'
+      ],
+      exclusions: 'Процессуальные документы отдельно',
+      buttonText: 'Поручить дело',
+      buttonHref: '#form'
+    }
+  ];
   
 
   return (
@@ -583,10 +608,20 @@ export default function VzyskanieUshcherbaB2BClient() {
 
       {/* ═══ БЛОК 8: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
       <PricingBlock
-        title="Стоимость сопровождения взыскания ущерба"
-        subtitle="Прозрачные тарифы на досудебную работу и судебное представительство."
+        title="Стоимость взыскания ущерба с работника"
+        subtitle="Цена зависит от основания и размера ущерба, доказательств и стадии. Составление иска и участие в суде оплачиваются отдельно."
+        pageUrl="https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/vzyskanie-materialnogo-ushcherba-s-rabotnika/"
+        direction="Трудовые споры с работниками"
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие расходы."
+        disclaimer={
+          <>
+            Итоговая цена зависит от объёма документов, числа работников и стадии спора. Состав работ и стоимость согласуем до начала работы и закрепим в договоре. Госпошлина, экспертизы, нотариальные, почтовые и командировочные расходы при наличии оплачиваются отдельно
+            <span style={{ display: 'block', marginTop: '10px', fontSize: '13px', opacity: 0.7 }}>
+              Договор может предусматривать дополнительное вознаграждение при благоприятном исходе; условия обсуждаются индивидуально
+            </span>
+          </>
+        }
+        ctaTitle=""
       />
 
       {/* ═══ БЛОК 9: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
@@ -729,11 +764,11 @@ export default function VzyskanieUshcherbaB2BClient() {
                 hiddenFields={[
   {
     "name": "source_page",
-    "value": "/biznesu/trudovye-spory-s-rabotnikami/vzyskanie-materialnogo-ushcherba-s-rabotnika/"
+    "value": "https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/vzyskanie-materialnogo-ushcherba-s-rabotnika/"
   },
   {
     "name": "direction",
-    "value": "vzyskanie_ushcherba_b2b"
+    "value": "Трудовые споры с работниками"
   },
   {
     "name": "selected_specialist",

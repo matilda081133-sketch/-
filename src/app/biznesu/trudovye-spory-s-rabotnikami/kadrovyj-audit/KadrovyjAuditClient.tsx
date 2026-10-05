@@ -9,7 +9,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
-import PricingBlock from '@/components/PricingBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import ProcessBlock from '@/components/ProcessBlock';
 
 export default function KadrovyjAuditClient() {
@@ -243,50 +243,76 @@ export default function KadrovyjAuditClient() {
     "desc": "Передаем исправленные шаблоны документов и проводим инструктаж для руководства и кадровой службы."
   }
 ];
-  const pricingTiers = [
-  {
-    "title": "Экспресс-аудит (до 20 чел.)",
-    "subtitle": "Выборочная проверка базы",
-    "price": "от 15 000 ₽",
-    "features": [
-      { name: "проверка обязательных локальных актов", value: "Да" },
-      { name: "аудит типовых трудовых договоров", value: "Да" },
-      { name: "отчет с рекомендациями", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_express_audit"
-  },
-  {
-    "popular": true,
-    "badgeText": "Востребовано",
-    "title": "Комплексный аудит (до 50 чел.)",
-    "subtitle": "Полная проверка документации",
-    "price": "от 35 000 ₽",
-    "features": [
-      { name: "сплошная проверка всех договоров", value: "Да" },
-      { name: "аудит табелей", value: "Да" },
-      { name: "отпусков и приказов", value: "Да" },
-      { name: "пакет шаблонов для исправления", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_full_audit"
-  },
-  {
-    "title": "Аудит крупного бизнеса (50+ чел.)",
-    "subtitle": "Индивидуальный периметр",
-    "price": "от 55 000 ₽",
-    "features": [
-      { name: "аудит филиалов и обособленных подразделений", value: "Да" },
-      { name: "разработка кадровой политики под ключ", value: "Да" },
-      { name: "сопровождение внедрения регламентов", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_enterprise_audit"
-  }
-];
+  const pricingTiers: PricingTier[] = [
+    {
+      title: 'Консультация по кадровым рискам',
+      price: '5 000 ₽',
+      priceUnit: 'до 1 часа',
+      popular: false,
+      features: [
+        'Запрос компании',
+        'Приоритетный перечень документов'
+      ],
+      exclusions: 'Проверка комплекта отдельно',
+      buttonText: 'Обсудить аудит',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Проверка трудового договора',
+      price: 'от 10 000 ₽',
+      priceUnit: 'за одну форму договора',
+      popular: false,
+      features: [
+        'Одна форма договора',
+        'Относящиеся к ней документы в согласованном объёме'
+      ],
+      exclusions: 'Не означает проверку всех личных дел',
+      buttonText: 'Проверить договор',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Проверка локального документа',
+      price: 'от 10 000 ₽',
+      priceUnit: 'за один акт',
+      popular: false,
+      features: [
+        'Один локальный акт в согласованном объёме',
+        'Выявление правовых рисков'
+      ],
+      exclusions: 'Письменное заключение и переработка акта отдельно',
+      buttonText: 'Проверить акт',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Разработка кадрового документа',
+      price: 'от 15 000 ₽',
+      priceUnit: 'за один документ',
+      popular: false,
+      features: [
+        'Один трудовой договор или должностная инструкция',
+        'Положение или правила — от 30 000 ₽',
+        'Приказ — от 5 000 ₽'
+      ],
+      exclusions: 'Комплект документов для всей компании рассчитывается отдельно',
+      buttonText: 'Подготовить документ',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Кадровый аудит организации',
+      price: 'Рассчитать',
+      priceUnit: 'по периметру',
+      popular: true,
+      badgeText: 'Рекомендуем',
+      features: [
+        'Число работников и филиалы',
+        'Виды документов, выборка или сплошная проверка',
+        'Формат отчёта'
+      ],
+      exclusions: 'Стоимость определяется сметой после согласования периметра',
+      buttonText: 'Рассчитать аудит',
+      buttonHref: '#form'
+    }
+  ];
   
 
   return (
@@ -584,10 +610,13 @@ export default function KadrovyjAuditClient() {
 
       {/* ═══ БЛОК 8: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
       <PricingBlock
-        title="Стоимость кадрового аудита"
-        subtitle="Стоимость зависит от численности персонала компании и глубины проверки."
+        title="Стоимость проверки кадровых документов"
+        subtitle="Проверка одного документа и кадровый аудит организации — разные по объёму работы. Периметр аудита и цену согласуем до начала."
+        pageUrl="https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/kadrovyj-audit/"
+        direction="Трудовые споры с работниками"
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие расходы."
+        disclaimer="Итоговая цена зависит от объёма документов, числа работников и стадии спора. Состав работ и стоимость согласуем до начала работы и закрепим в договоре. Госпошлина, экспертизы, нотариальные, почтовые и командировочные расходы при наличии оплачиваются отдельно"
+        ctaTitle=""
       />
 
       {/* ═══ БЛОК 9: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
@@ -730,11 +759,11 @@ export default function KadrovyjAuditClient() {
                 hiddenFields={[
   {
     "name": "source_page",
-    "value": "/biznesu/trudovye-spory-s-rabotnikami/kadrovyj-audit/"
+    "value": "https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/kadrovyj-audit/"
   },
   {
     "name": "direction",
-    "value": "kadrovyj_audit"
+    "value": "Трудовые споры с работниками"
   },
   {
     "name": "selected_specialist",

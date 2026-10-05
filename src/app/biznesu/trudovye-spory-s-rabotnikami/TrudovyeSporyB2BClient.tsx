@@ -9,7 +9,7 @@ import ContactsForm from '@/components/ContactsForm';
 import FAQBlock from '@/components/FAQBlock';
 import CasesBlock, { CaseData } from '@/components/CasesBlock';
 import SpecialistBlock from '@/components/SpecialistBlock';
-import PricingBlock from '@/components/PricingBlock';
+import PricingBlock, { PricingTier } from '@/components/PricingBlock';
 import ProcessBlock from '@/components/ProcessBlock';
 
 export default function TrudovyeSporyB2BClient() {
@@ -269,49 +269,75 @@ export default function TrudovyeSporyB2BClient() {
     "desc": "Сообщаем о ходе работы, объясняем полученные решения, заранее согласовываем действия, влияющие на сроки или расходы."
   }
 ];
-  const pricingTiers = [
-  {
-    "title": "Консультация и анализ",
-    "subtitle": "Первичная правовая оценка",
-    "price": "от 5 000 ₽",
-    "features": [
-      { name: "консультация по ситуации работодателя", value: "Да" },
-      { name: "анализ основных документов", value: "Да" },
-      { name: "оценка рисков и первоочередных действий", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_consultation_b2b_labor"
-  },
-  {
-    "title": "Досудебная работа",
-    "subtitle": "Документы и урегулирование",
-    "popular": true,
-    "badgeText": "Востребовано",
-    "price": "от 15 000 ₽",
-    "features": [
-      { name: "подготовка кадровых и правовых документов", value: "Да" },
-      { name: "переговоры и письменная позиция", value: "Да" },
-      { name: "обращения и ответы государственным органам", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_pre_court_b2b_labor"
-  },
-  {
-    "title": "Судебная защита",
-    "subtitle": "Представительство работодателя",
-    "price": "от 30 000 ₽",
-    "features": [
-      { name: "подготовка процессуальных документов", value: "Да" },
-      { name: "формирование доказательственной позиции", value: "Да" },
-      { name: "представительство в суде", value: "Да" }
-    ],
-    "buttonText": "Уточнить стоимость",
-    "buttonHref": "#form",
-    "analyticsEvent": "click_pricing_court_b2b_labor"
-  }
-];
+  const pricingTiers: PricingTier[] = [
+    {
+      title: 'Консультация по трудовому вопросу',
+      price: '5 000 ₽',
+      priceUnit: 'устно, до 1 часа',
+      popular: false,
+      features: [
+        'Ситуация и стадия конфликта',
+        'Ближайший срок и следующий шаг'
+      ],
+      exclusions: 'Изучение документов и письменный вывод отдельно',
+      buttonText: 'Обсудить ситуацию',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Анализ трудового спора',
+      price: 'от 15 000 ₽',
+      priceUnit: 'за один конфликт',
+      popular: true,
+      badgeText: 'Рекомендуем',
+      features: [
+        'Правовой анализ представленных документов',
+        'Сбор дополнительных сведений — от 20 000 ₽'
+      ],
+      exclusions: 'Письменное заключение после анализа — отдельно, от 10 000 ₽',
+      buttonText: 'Оценить риски',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Ответ на претензию работника',
+      price: 'от 15 000 ₽',
+      priceUnit: 'за один документ',
+      popular: false,
+      features: [
+        'Один мотивированный ответ',
+        'На письменную претензию работника'
+      ],
+      exclusions: 'Переговоры, дополнительные документы и участие в суде отдельно',
+      buttonText: 'Подготовить ответ',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Кадровый приказ',
+      price: 'от 5 000 ₽',
+      priceUnit: 'за один приказ',
+      popular: false,
+      features: [
+        'Один приказ по согласованной задаче',
+        'Договор или должностная инструкция — от 15 000 ₽',
+        'Устав или положение — от 30 000 ₽'
+      ],
+      exclusions: 'Это не цена всего комплекта документов увольнения или сокращения',
+      buttonText: 'Подготовить приказ',
+      buttonHref: '#form'
+    },
+    {
+      title: 'Представительство в трудовом споре',
+      price: 'от 40 000 ₽',
+      priceUnit: 'до трёх заседаний',
+      popular: false,
+      features: [
+        'Суд первой инстанции, до трёх заседаний',
+        'Следующее заседание — от 10 000 ₽'
+      ],
+      exclusions: 'Письменные процессуальные документы отдельно',
+      buttonText: 'Поручить защиту',
+      buttonHref: '#form'
+    }
+  ];
   
 
   return (
@@ -701,10 +727,20 @@ export default function TrudovyeSporyB2BClient() {
 
       {/* ═══ БЛОК 8: СТОИМОСТЬ ЮРИДИЧЕСКОЙ ПОМОЩИ ═══ */}
       <PricingBlock
-        title="Стоимость юридической помощи"
-        subtitle="Стоимость зависит от стадии спора, объёма документов, срочности и необходимости участия в переговорах, проверке или суде."
+        title="Стоимость помощи работодателю"
+        subtitle="Цена конкретного действия работодателя — от консультации до защиты в суде. В каждой карточке указано, что входит и что оплачивается отдельно."
+        pageUrl="https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/"
+        direction="Трудовые споры с работниками"
         tiers={pricingTiers}
-        disclaimer="Стоимость определяется после уточнения задачи и изучения имеющихся документов. Состав услуг, цена и порядок оплаты фиксируются в договоре до начала работы. Оплата вознаграждения исполнителя не зависит от исхода дела и не включает государственные пошлины и сопутствующие расходы."
+        disclaimer={
+          <>
+            Итоговая цена зависит от объёма документов, числа работников и стадии спора. Состав работ и стоимость согласуем до начала работы и закрепим в договоре. Госпошлина, экспертизы, нотариальные, почтовые и командировочные расходы при наличии оплачиваются отдельно
+            <span style={{ display: 'block', marginTop: '10px', fontSize: '13px', opacity: 0.7 }}>
+              Договор может предусматривать дополнительное вознаграждение при благоприятном исходе; условия обсуждаются индивидуально
+            </span>
+          </>
+        }
+        ctaTitle=""
       />
 
       {/* ═══ БЛОК 9: ЧАСТЫЕ ВОПРОСЫ (FAQ) ═══ */}
@@ -771,11 +807,11 @@ export default function TrudovyeSporyB2BClient() {
                 hiddenFields={[
   {
     "name": "source_page",
-    "value": "/biznesu/trudovye-spory-s-rabotnikami/"
+    "value": "https://dejure-help.ru/biznesu/trudovye-spory-s-rabotnikami/"
   },
   {
     "name": "direction",
-    "value": "trudovye_spory_b2b"
+    "value": "Трудовые споры с работниками"
   },
   {
     "name": "selected_specialist",
