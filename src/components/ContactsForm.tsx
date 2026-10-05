@@ -67,6 +67,8 @@ export default function ContactsForm({
           setSelectedDirection('Наследственный юрист');
         } else if (path.includes('/zhilishchnyj-yurist')) {
           setSelectedDirection('Жилищный юрист');
+        } else if (path.includes('/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa')) {
+          setSelectedDirection('Юрист по недвижимости и строительству для бизнеса');
         } else if (path.includes('/yurist-po-nedvizhimosti')) {
           setSelectedDirection('Юрист по недвижимости');
         } else if (path.includes('/zemelnyj-yurist')) {

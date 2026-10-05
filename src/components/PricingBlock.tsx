@@ -173,6 +173,7 @@ export default function PricingBlock({
     pathname?.includes('/nalogovyj-yurist-dlya-biznesa') ? 'Налоговый юрист для бизнеса' :
     pathname?.includes('/nasledstvennyj-yurist') ? 'Наследственный юрист' :
     pathname?.includes('/zhilishchnyj-yurist') ? 'Жилищный юрист' :
+    pathname?.includes('/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa') ? 'Юрист по недвижимости и строительству для бизнеса' :
     pathname?.includes('/yurist-po-nedvizhimosti') ? 'Юрист по недвижимости' :
     pathname?.includes('/zemelnyj-yurist') ? 'Земельный юрист' :
     pathname?.includes('/zashchita-ot-trebovaniy-po-dolgu') ? 'Защита от требований по долгу' :
