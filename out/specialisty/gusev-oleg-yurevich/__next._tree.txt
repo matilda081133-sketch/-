@@ -1,4 +1,4 @@
 :HL["/_next/static/chunks/2eizlli1cd6d0.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap","style"]
 :HL["/images/gusev.webp","image",{"fetchPriority":"high"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"specialisty","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"gusev-oleg-yurevich","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"f9n2pzdcnrW25Di2TIdOK"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"specialisty","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"gusev-oleg-yurevich","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"nXZSbFqNTFjmwjTce-fRK"}

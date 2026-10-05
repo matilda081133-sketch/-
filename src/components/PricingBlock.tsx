@@ -182,6 +182,7 @@ export default function PricingBlock({
     pathname?.includes('/migracionnyj-yurist') ? 'Миграционный юрист' :
     pathname?.includes('/bankrotstvo-fizicheskih-lic') ? 'Банкротство физических лиц' :
     pathname?.includes('/bankrotstvo-biznesa') ? 'Банкротство бизнеса' :
+    pathname?.includes('/migracionnoe-soprovozhdenie-biznesa') ? 'Миграционное сопровождение бизнеса' :
     pathname?.includes('/razblokirovka-raschetnogo-scheta-po-115-fz') ? 'Разблокировка расчётного счёта по 115-ФЗ' :
     pathname?.includes('/kreditnyj-yurist') ? 'Кредитный юрист' :
     pathname?.includes('/yurist-po-ispolnitelnomu-proizvodstvu') ? 'Юрист по исполнительному производству' : ''
