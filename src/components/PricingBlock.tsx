@@ -20,6 +20,8 @@ export interface PricingTier {
   numericPrice?: number;
   priceUnit?: string;
   period?: string;
+  /** Recurring billing unit for schema.org (e.g. 'MON' for a monthly subscription price) */
+  billingPeriod?: 'MON';
   features: (PricingFeature | string)[];
   exclusions?: string | string[];
   buttonText?: string;
@@ -183,6 +185,7 @@ export default function PricingBlock({
     pathname?.includes('/migracionnyj-yurist') ? 'Миграционный юрист' :
     pathname?.includes('/bankrotstvo-fizicheskih-lic') ? 'Банкротство физических лиц' :
     pathname?.includes('/bankrotstvo-biznesa') ? 'Банкротство бизнеса' :
+    pathname?.includes('/yuridicheskoe-soprovozhdenie-biznesa') ? 'Юридическое сопровождение бизнеса' :
     pathname?.includes('/migracionnoe-soprovozhdenie-biznesa') ? 'Миграционное сопровождение бизнеса' :
     pathname?.includes('/ispolnitelnoe-proizvodstvo-dlya-biznesa') ? 'Исполнительное производство для бизнеса' :
     pathname?.includes('/razblokirovka-raschetnogo-scheta-po-115-fz') ? 'Разблокировка расчётного счёта по 115-ФЗ' :
@@ -258,6 +261,14 @@ export default function PricingBlock({
             <meta itemProp="name" content={tierTitleStr} />
             <meta itemProp="url" content={offerUrl} />
             {tierSubtitleStr && <meta itemProp="description" content={tierSubtitleStr} />}
+            {tier.billingPeriod === 'MON' && (
+              <span itemProp="priceSpecification" itemScope itemType="https://schema.org/UnitPriceSpecification" style={{ display: 'none' }}>
+                <meta itemProp={isMinPrice ? 'minPrice' : 'price'} content={numericPrice} />
+                <meta itemProp="priceCurrency" content="RUB" />
+                <meta itemProp="unitCode" content="MON" />
+                <meta itemProp="unitText" content="месяц" />
+              </span>
+            )}
           </>
         )}
         {tier.popular && Boolean(tier.badgeText) && (
@@ -416,6 +427,14 @@ export default function PricingBlock({
               'itemListElement': pricedTiers.map((tier, tIdx) => {
                 const numPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
                 const isMinPrice = tier.price ? /от/i.test(String(tier.price)) : false;
+                const priceSpecification = tier.billingPeriod === 'MON' ? {
+                  '@type': 'UnitPriceSpecification',
+                  ...(isMinPrice ? { 'minPrice': numPrice || '0' } : { 'price': numPrice || '0' }),
+                  'priceCurrency': 'RUB',
+                  'unitCode': 'MON',
+                  'unitText': 'месяц',
+                  'referenceQuantity': { '@type': 'QuantitativeValue', 'value': 1, 'unitCode': 'MON' }
+                } : undefined;
 
                 if (isMinPrice) {
                   return {
@@ -425,6 +444,7 @@ export default function PricingBlock({
                     'description': typeof tier.subtitle === 'string' ? tier.subtitle : undefined,
                     'lowPrice': numPrice || '0',
                     'priceCurrency': 'RUB',
+                    ...(priceSpecification ? { 'priceSpecification': priceSpecification } : {}),
                     'availability': 'https://schema.org/InStock',
                     'url': offerUrl
                   };
@@ -437,6 +457,7 @@ export default function PricingBlock({
                   'description': typeof tier.subtitle === 'string' ? tier.subtitle : undefined,
                   'price': numPrice || '0',
                   'priceCurrency': 'RUB',
+                  ...(priceSpecification ? { 'priceSpecification': priceSpecification } : {}),
                   'availability': 'https://schema.org/InStock',
                   'url': offerUrl
                 };

@@ -87,6 +87,8 @@ export default function ContactsForm({
           setSelectedDirection('Банкротство физических лиц');
         } else if (path.includes('/bankrotstvo-biznesa')) {
           setSelectedDirection('Банкротство бизнеса');
+        } else if (path.includes('/yuridicheskoe-soprovozhdenie-biznesa')) {
+          setSelectedDirection('Юридическое сопровождение бизнеса');
         } else if (path.includes('/migracionnoe-soprovozhdenie-biznesa')) {
           setSelectedDirection('Миграционное сопровождение бизнеса');
         } else if (path.includes('/ispolnitelnoe-proizvodstvo-dlya-biznesa')) {
@@ -214,6 +216,7 @@ export default function ContactsForm({
       typeof window !== 'undefined' && window.location.pathname.includes('/migracionnyj-yurist') ? 'Миграционный юрист' :
       typeof window !== 'undefined' && window.location.pathname.includes('/bankrotstvo-fizicheskih-lic') ? 'Банкротство физических лиц' :
       typeof window !== 'undefined' && window.location.pathname.includes('/bankrotstvo-biznesa') ? 'Банкротство бизнеса' :
+      typeof window !== 'undefined' && window.location.pathname.includes('/yuridicheskoe-soprovozhdenie-biznesa') ? 'Юридическое сопровождение бизнеса' :
       typeof window !== 'undefined' && window.location.pathname.includes('/migracionnoe-soprovozhdenie-biznesa') ? 'Миграционное сопровождение бизнеса' :
       typeof window !== 'undefined' && window.location.pathname.includes('/ispolnitelnoe-proizvodstvo-dlya-biznesa') ? 'Исполнительное производство для бизнеса' :
       typeof window !== 'undefined' && window.location.pathname.includes('/razblokirovka-raschetnogo-scheta-po-115-fz') ? 'Разблокировка расчётного счёта по 115-ФЗ' :
