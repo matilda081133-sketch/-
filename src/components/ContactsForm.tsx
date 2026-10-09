@@ -2,7 +2,66 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { sendLeadToCRM } from '../lib/crm';
+
+export function resolveDirection(
+  pathname?: string,
+  directionProp?: string,
+  hiddenFields?: { name: string; value: string }[]
+): string {
+  if (directionProp && directionProp.trim()) {
+    return directionProp.trim();
+  }
+
+  const hiddenDir = hiddenFields?.find(f => f.name === 'direction')?.value;
+  if (hiddenDir && hiddenDir.trim()) {
+    return hiddenDir.trim();
+  }
+
+  const cleanPath = pathname ? pathname.replace(/\/+$/, '') : '';
+
+  if (!cleanPath || cleanPath === '' || cleanPath === '/') {
+    return 'Главная страница (Общий запрос)';
+  }
+
+  if (cleanPath.includes('/voennyj-yurist')) return 'Военное право';
+  if (cleanPath.includes('/semejnyj-yurist')) return 'Семейный юрист';
+  if (cleanPath.includes('/ugolovno-pravovaya-zashchita-biznesa')) return 'Уголовно-правовая защита бизнеса';
+  if (cleanPath.includes('/advokat-po-ugolovnym-delam')) return 'Адвокат по уголовным делам';
+  if (cleanPath.includes('/arbitrazhnyj-yurist')) return 'Арбитражный юрист';
+  if (cleanPath.includes('/vzyskanie-zadolzhennosti-s-yuridicheskih-lic')) return 'Взыскание задолженности с юридических лиц';
+  if (cleanPath.includes('/korporativnyj-yurist')) return 'Корпоративный юрист';
+  if (cleanPath.includes('/dogovornoe-pravo')) return 'Договорное право';
+  if (cleanPath.includes('/nalogovyj-yurist-dlya-biznesa')) return 'Налоговый юрист для бизнеса';
+  if (cleanPath.includes('/nasledstvennyj-yurist')) return 'Наследственный юрист';
+  if (cleanPath.includes('/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa')) return 'Юрист по недвижимости и строительству для бизнеса';
+  if (cleanPath.includes('/yurist-po-nedvizhimosti')) return 'Юрист по недвижимости';
+  if (cleanPath.includes('/zhilishchnyj-yurist')) return 'Жилищный юрист';
+  if (cleanPath.includes('/zemelnyj-yurist')) return 'Земельный юрист';
+  if (cleanPath.includes('/zashchita-ot-trebovaniy-po-dolgu')) return 'Защита от требований по долгу';
+  if (cleanPath.includes('/vzyskanie-dolgov')) return 'Взыскание долгов';
+  if (cleanPath.includes('/avtoyurist')) return 'Автоюрист';
+  if (cleanPath.includes('/trudovye-spory-s-rabotnikami')) return 'Трудовые споры с работниками';
+  if (cleanPath.includes('/trudovoj-yurist')) return 'Трудовой юрист';
+  if (cleanPath.includes('/migracionnoe-soprovozhdenie-biznesa')) return 'Миграционное сопровождение бизнеса';
+  if (cleanPath.includes('/migracionnyj-yurist')) return 'Миграционный юрист';
+  if (cleanPath.includes('/bankrotstvo-fizicheskih-lic')) return 'Банкротство физических лиц';
+  if (cleanPath.includes('/bankrotstvo-biznesa')) return 'Банкротство бизнеса';
+  if (cleanPath.includes('/yuridicheskoe-soprovozhdenie-biznesa')) return 'Юридическое сопровождение бизнеса';
+  if (cleanPath.includes('/ispolnitelnoe-proizvodstvo-dlya-biznesa')) return 'Исполнительное производство для бизнеса';
+  if (cleanPath.includes('/razblokirovka-raschetnogo-scheta-po-115-fz')) return 'Разблокировка расчётного счёта по 115-ФЗ';
+  if (cleanPath.includes('/kreditnyj-yurist')) return 'Кредитный юрист';
+  if (cleanPath.includes('/yurist-po-ispolnitelnomu-proizvodstvu')) return 'Юрист по исполнительному производству';
+
+  if (cleanPath.startsWith('/grazhdanam')) return 'Юридическая помощь гражданам';
+  if (cleanPath.startsWith('/biznesu') || cleanPath.startsWith('/uslugi/biznesu')) return 'Юридическая помощь бизнесу';
+  if (cleanPath.startsWith('/kontakty')) return 'Контакты';
+  if (cleanPath.startsWith('/specialisty') || cleanPath.startsWith('/team')) return 'Специалисты';
+  if (cleanPath.startsWith('/praktika')) return 'Судебная практика';
+
+  return 'Общий запрос';
+}
 
 interface ContactsFormProps {
   title?: string;
@@ -31,78 +90,27 @@ export default function ContactsForm({
   customFields,
   direction
 }: ContactsFormProps = {}) {
+  const pathname = usePathname() || '';
+  const initialDirection = resolveDirection(pathname, direction, hiddenFields);
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedService, setSelectedService] = useState<string>('');
-  const initialDirection = direction || hiddenFields?.find(f => f.name === 'direction')?.value || '';
   const [selectedDirection, setSelectedDirection] = useState<string>(initialDirection);
   const [currentUrl, setCurrentUrl] = useState<string>('');
 
   React.useEffect(() => {
+    const currentPath = typeof window !== 'undefined' ? window.location.pathname : pathname;
+    const computedDir = resolveDirection(currentPath, direction, hiddenFields);
+
+    if (!selectedDirection || selectedDirection === 'Общий запрос') {
+      setSelectedDirection(computedDir);
+    }
+
     if (typeof window !== 'undefined') {
       const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || (window.location.origin + window.location.pathname);
       setCurrentUrl(canonical);
-      if (!selectedDirection) {
-        const path = window.location.pathname;
-        if (path.includes('/voennyj-yurist')) {
-          setSelectedDirection('Военное право');
-        } else if (path.includes('/semejnyj-yurist')) {
-          setSelectedDirection('Семейный юрист');
-        } else if (path.includes('/advokat-po-ugolovnym-delam')) {
-          setSelectedDirection('Адвокат по уголовным делам');
-        } else if (path.includes('/ugolovno-pravovaya-zashchita-biznesa')) {
-          setSelectedDirection('Уголовно-правовая защита бизнеса');
-        } else if (path.includes('/arbitrazhnyj-yurist')) {
-          setSelectedDirection('Арбитражный юрист');
-        } else if (path.includes('/vzyskanie-zadolzhennosti-s-yuridicheskih-lic')) {
-          setSelectedDirection('Взыскание задолженности с юридических лиц');
-        } else if (path.includes('/korporativnyj-yurist')) {
-          setSelectedDirection('Корпоративный юрист');
-        } else if (path.includes('/dogovornoe-pravo')) {
-          setSelectedDirection('Договорное право');
-        } else if (path.includes('/nalogovyj-yurist-dlya-biznesa')) {
-          setSelectedDirection('Налоговый юрист для бизнеса');
-        } else if (path.includes('/nasledstvennyj-yurist')) {
-          setSelectedDirection('Наследственный юрист');
-        } else if (path.includes('/zhilishchnyj-yurist')) {
-          setSelectedDirection('Жилищный юрист');
-        } else if (path.includes('/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa')) {
-          setSelectedDirection('Юрист по недвижимости и строительству для бизнеса');
-        } else if (path.includes('/yurist-po-nedvizhimosti')) {
-          setSelectedDirection('Юрист по недвижимости');
-        } else if (path.includes('/zemelnyj-yurist')) {
-          setSelectedDirection('Земельный юрист');
-        } else if (path.includes('/zashchita-ot-trebovaniy-po-dolgu')) {
-          setSelectedDirection('Защита от требований по долгу');
-        } else if (path.includes('/vzyskanie-dolgov')) {
-          setSelectedDirection('Взыскание долгов');
-        } else if (path.includes('/avtoyurist')) {
-          setSelectedDirection('Автоюрист');
-        } else if (path.includes('/trudovoj-yurist')) {
-          setSelectedDirection('Трудовой юрист');
-        } else if (path.includes('/migracionnyj-yurist')) {
-          setSelectedDirection('Миграционный юрист');
-        } else if (path.includes('/bankrotstvo-fizicheskih-lic')) {
-          setSelectedDirection('Банкротство физических лиц');
-        } else if (path.includes('/bankrotstvo-biznesa')) {
-          setSelectedDirection('Банкротство бизнеса');
-        } else if (path.includes('/yuridicheskoe-soprovozhdenie-biznesa')) {
-          setSelectedDirection('Юридическое сопровождение бизнеса');
-        } else if (path.includes('/trudovye-spory-s-rabotnikami')) {
-          setSelectedDirection('Трудовые споры с работниками');
-        } else if (path.includes('/migracionnoe-soprovozhdenie-biznesa')) {
-          setSelectedDirection('Миграционное сопровождение бизнеса');
-        } else if (path.includes('/ispolnitelnoe-proizvodstvo-dlya-biznesa')) {
-          setSelectedDirection('Исполнительное производство для бизнеса');
-        } else if (path.includes('/razblokirovka-raschetnogo-scheta-po-115-fz')) {
-          setSelectedDirection('Разблокировка расчётного счёта по 115-ФЗ');
-        } else if (path.includes('/kreditnyj-yurist')) {
-          setSelectedDirection('Кредитный юрист');
-        } else if (path.includes('/yurist-po-ispolnitelnomu-proizvodstvu')) {
-          setSelectedDirection('Юрист по исполнительному производству');
-        }
-      }
     }
 
     const handleSelectService = (e: any) => {
@@ -154,7 +162,7 @@ export default function ContactsForm({
       window.removeEventListener('dejure:select_service', handleSelectService);
       document.removeEventListener('click', handleClick, true);
     };
-  }, [selectedDirection]);
+  }, [pathname, direction, hiddenFields, selectedDirection]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -202,30 +210,7 @@ export default function ContactsForm({
     const canonicalPageUrl = currentUrl || extraData.source_page || (typeof window !== 'undefined' ? (window.location.origin + window.location.pathname) : '');
     const fullCurrentUrl = typeof window !== 'undefined' ? window.location.href : canonicalPageUrl;
 
-    const finalDirection = selectedDirection || extraData.direction || (
-      typeof window !== 'undefined' && window.location.pathname.includes('/voennyj-yurist') ? 'Военное право' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/semejnyj-yurist') ? 'Семейный юрист' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/advokat-po-ugolovnym-delam') ? 'Адвокат по уголовным делам' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/arbitrazhnyj-yurist') ? 'Арбитражный юрист' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/vzyskanie-zadolzhennosti-s-yuridicheskih-lic') ? 'Взыскание задолженности с юридических лиц' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/korporativnyj-yurist') ? 'Корпоративный юрист' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/dogovornoe-pravo') ? 'Договорное право' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/nalogovyj-yurist-dlya-biznesa') ? 'Налоговый юрист для бизнеса' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/zashchita-ot-trebovaniy-po-dolgu') ? 'Защита от требований по долгу' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/vzyskanie-dolgov') ? 'Взыскание долгов' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/avtoyurist') ? 'Автоюрист' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/trudovoj-yurist') ? 'Трудовой юрист' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/migracionnyj-yurist') ? 'Миграционный юрист' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/bankrotstvo-fizicheskih-lic') ? 'Банкротство физических лиц' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/bankrotstvo-biznesa') ? 'Банкротство бизнеса' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/yuridicheskoe-soprovozhdenie-biznesa') ? 'Юридическое сопровождение бизнеса' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/trudovye-spory-s-rabotnikami') ? 'Трудовые споры с работниками' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/migracionnoe-soprovozhdenie-biznesa') ? 'Миграционное сопровождение бизнеса' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/ispolnitelnoe-proizvodstvo-dlya-biznesa') ? 'Исполнительное производство для бизнеса' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/razblokirovka-raschetnogo-scheta-po-115-fz') ? 'Разблокировка расчётного счёта по 115-ФЗ' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/kreditnyj-yurist') ? 'Кредитный юрист' :
-      typeof window !== 'undefined' && window.location.pathname.includes('/yurist-po-ispolnitelnomu-proizvodstvu') ? 'Юрист по исполнительному производству' : ''
-    );
+    const finalDirection = selectedDirection || extraData.direction || resolveDirection(typeof window !== 'undefined' ? window.location.pathname : pathname, direction, hiddenFields);
 
     const payload = {
       name,
