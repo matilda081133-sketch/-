@@ -81,7 +81,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     name: 'Аркадий Евгеньевич Бобкин',
     jobTitle: 'Директор, управляющий партнёр ЮК «Де-Юре»',
     url: 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/',
-    image: 'https://dejure-help.ru/images/bobkin.jpg',
+    image: 'https://dejure-help.ru/images/bobkin.webp',
     worksFor: {
       '@type': 'LegalService',
       '@id': 'https://dejure-help.ru/#organization',
@@ -100,7 +100,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     jobTitle: 'Адвокат',
     identifier: '48/812',
     url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
-    image: 'https://dejure-help.ru/images/konopkin.jpg',
+    image: 'https://dejure-help.ru/images/konopkin.webp',
     alumniOf: {
       '@type': 'CollegeOrUniversity',
       name: 'Елецкий государственный университет им. И. А. Бунина'
@@ -113,7 +113,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     jobTitle: 'Адвокат',
     identifier: '48/672',
     url: 'https://dejure-help.ru/specialisty/gusev-oleg-yurevich/',
-    image: 'https://dejure-help.ru/images/gusev.jpg',
+    image: 'https://dejure-help.ru/images/gusev.webp',
     alumniOf: {
       '@type': 'CollegeOrUniversity',
       name: 'Воронежский государственный университет'
@@ -124,7 +124,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     name: 'Начешников Владимир Викторович',
     jobTitle: 'Специалист ЮК «Де-Юре»',
     url: 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
-    image: 'https://dejure-help.ru/images/nacheshnikov.jpg',
+    image: 'https://dejure-help.ru/images/nacheshnikov.webp',
     worksFor: {
       '@type': 'LegalService',
       name: 'ООО ЮК «Де-Юре»',
@@ -137,7 +137,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     name: 'Полозова Елена Анатольевна',
     jobTitle: 'Юрист ЮК «Де-Юре»',
     url: 'https://dejure-help.ru/specialisty/polozova-elena-anatolevna/',
-    image: 'https://dejure-help.ru/images/polozova.jpg',
+    image: 'https://dejure-help.ru/images/polozova.webp',
     worksFor: {
       '@type': 'LegalService',
       '@id': 'https://dejure-help.ru/#legalservice',

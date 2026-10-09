@@ -79,7 +79,7 @@ export default function TrudovyeSporyB2BClient() {
       "@id": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person",
       "name": "Марина Валерьевна Смольянинова",
       "jobTitle": "Ведущий юрист",
-      "image": "https://dejure-help.ru/images/smolyaninova.jpg",
+      "image": "https://dejure-help.ru/images/smolyaninova.webp",
       "url": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/",
       "worksFor": {
         "@type": "LegalService",
@@ -398,7 +398,7 @@ export default function TrudovyeSporyB2BClient() {
     "text": "Куратор — Марина Валерьевна Смольянинова"
   }
 ]}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageObjectPosition="50% -75px"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Трудовые споры с работниками»"
@@ -683,7 +683,7 @@ export default function TrudovyeSporyB2BClient() {
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Трудовые споры с работниками»</>}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imagePosition="50% -75px"
         profileHref="/specialisty/smolyaninova-marina-valerevna/"
         profileText="Подробнее о Марине Валерьевне Смольяниновой →"

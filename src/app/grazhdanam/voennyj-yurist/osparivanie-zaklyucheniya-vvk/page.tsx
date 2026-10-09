@@ -21,7 +21,7 @@ export const metadata = {
     description: 'Оспаривание заключения ВВК: анализ заключения и медицинских документов, жалоба в вышестоящую ВВК и судебное обжалование в Липецке. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/osparivanie-zaklyucheniya-vvk/',
     siteName: 'ЮК «Де-Юре»',
-    images: [{ url: 'https://dejure-help.ru/images/konopkin.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://dejure-help.ru/images/konopkin.webp', width: 1200, height: 630 }],
     locale: 'ru_RU',
     type: 'website'
   }
@@ -113,7 +113,7 @@ export default function VvkPage() {
         name: 'Дмитрий Сергеевич Конопкин',
         jobTitle: 'Адвокат',
         description: 'Адвокат, реестровый номер 48/812',
-        image: 'https://dejure-help.ru/images/konopkin.jpg',
+        image: 'https://dejure-help.ru/images/konopkin.webp',
         url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
         knowsAbout: [
           'военно-врачебная комиссия',
@@ -231,7 +231,7 @@ export default function VvkPage() {
         primaryCtaText="Обсудить ситуацию"
         primaryCtaLink="#form"
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, реестровый номер 48/812"
         imageMarginTop="0px"
@@ -343,7 +343,7 @@ export default function VvkPage() {
         title="Адвокат по военным делам"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, реестровый номер 48/812"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Дмитрий Сергеевич Конопкин работает с делами об оспаривании заключений ВВК. Изучает заключение комиссии и медицинские материалы, определяет основания и порядок обжалования, готовит жалобу или обращение в суд и представляет интересы доверителя.

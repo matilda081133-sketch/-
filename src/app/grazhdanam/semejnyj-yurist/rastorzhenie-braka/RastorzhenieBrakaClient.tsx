@@ -293,7 +293,7 @@ export default function RastorzhenieBrakaClient() {
           { text: 'Сопровождение при наличии несовершеннолетних детей' },
           { text: 'Куратор — юрист М. В. Смольянинова' }
         ]}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Семейное право»"
         imageObjectPosition="center 20%"
@@ -463,7 +463,7 @@ export default function RastorzhenieBrakaClient() {
         title="Ведущий юрист по услуге"
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Семейное право»</>}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         profileHref="/specialisty/smolyaninova-marina-valerevna/"
         profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[

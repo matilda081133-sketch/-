@@ -133,7 +133,7 @@ export default function AvtoyuristClient() {
           { text: 'Определим, кому и какие требования можно предъявить' },
           { text: 'Подготовим документы и представим ваши интересы' },
         ]}
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
         imageObjectPosition="center 25%"
@@ -548,7 +548,7 @@ export default function AvtoyuristClient() {
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imagePosition="center 5%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

@@ -347,7 +347,7 @@ export default function ZashchitaOtTrebovaniyClient() {
         primaryCtaLink="#defense-form"
         secondaryCtaText="Позвонить юристу"
         secondaryCtaLink="tel:+79103503111"
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageName="Смольянинова Марина Валерьевна"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре» • куратор направления"
       />
@@ -714,7 +714,7 @@ export default function ZashchitaOtTrebovaniyClient() {
               <div>
                 <div style={{ width: '100%', maxWidth: '280px', borderRadius: '4px', overflow: 'hidden', margin: '0 auto', border: '1px solid var(--color-border)' }}>
                   <Image
-                    src="/images/smolyaninova.jpg"
+                    src="/images/smolyaninova.webp"
                     alt="Марина Смольянинова, ведущий юрист ЮК Де-Юре"
                     width={320}
                     height={400}

@@ -167,7 +167,7 @@ export default function LisheniePravClient() {
           { text: 'Подготовим объяснения, ходатайства, возражения и жалобу' },
           { text: 'Сразу обозначим риски — без обещаний гарантированного результата' }
         ]}
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
         imageObjectPosition="center 25%"
@@ -1013,7 +1013,7 @@ export default function LisheniePravClient() {
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imagePosition="center 5%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

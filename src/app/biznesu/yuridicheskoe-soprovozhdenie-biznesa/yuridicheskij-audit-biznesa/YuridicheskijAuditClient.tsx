@@ -481,7 +481,7 @@ export default function YuridicheskijAuditClient() {
             </span>
           </span>
         }
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imageName="Владимир Викторович Начешников"
         imageSubtitle="Куратор направления правового аудита и арбитража"
         imageObjectPosition="center 15%"
@@ -1127,7 +1127,7 @@ export default function YuridicheskijAuditClient() {
           </>
         }
         position="Специалист по комплексному сопровождению бизнеса и арбитражным процессам, куратор направления"
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imagePosition="center 15%"
         profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
         profileText="Подробнее о Владимире Викторовиче Начешникове →"

@@ -21,7 +21,7 @@ export const metadata = {
     description: 'Помощь семье пропавшего военнослужащего в Липецке: проверка обстоятельств и сроков, подготовка заявления, сбор доказательств и представительство в суде. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/priznanie-voennosluzhashchego-umershim/',
     siteName: 'ЮК «Де-Юре»',
-    images: [{ url: 'https://dejure-help.ru/images/konopkin.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://dejure-help.ru/images/konopkin.webp', width: 1200, height: 630 }],
     locale: 'ru_RU',
     type: 'website'
   }
@@ -75,7 +75,7 @@ export default function PriznanieUmershimPage() {
         name: 'Дмитрий Сергеевич Конопкин',
         jobTitle: 'Адвокат',
         description: 'Адвокат, реестровый номер 48/812 в реестре адвокатов Липецкой области. Специалист по защите прав военнослужащих и их семей. 📞 +7 (4742) 20-15-25.',
-        image: 'https://dejure-help.ru/images/konopkin.jpg',
+        image: 'https://dejure-help.ru/images/konopkin.webp',
         url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/'
       },
       {
@@ -148,7 +148,7 @@ export default function PriznanieUmershimPage() {
         primaryCtaText="Обсудить ситуацию"
         primaryCtaLink="#form"
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, реестровый номер 48/812"
         imageMarginTop="20px"
@@ -336,7 +336,7 @@ export default function PriznanieUmershimPage() {
         title="Адвокат по военным делам"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, реестровый номер 48/812"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Дмитрий Сергеевич Конопкин работает с судебными делами об установлении юридического статуса военнослужащих. Изучает обстоятельства и документы, помогает определить применимую процедуру, подготовить запросы и сформировать доказательственную базу для обращения в суд.

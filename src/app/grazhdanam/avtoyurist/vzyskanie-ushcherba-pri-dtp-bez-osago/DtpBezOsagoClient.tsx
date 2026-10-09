@@ -167,7 +167,7 @@ export default function DtpBezOsagoClient() {
           { text: 'Определим ответчика: водитель, владелец или работодатель' },
           { text: 'Сопроводим оценку, переговоры и судебное взыскание' }
         ]}
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
         imageObjectPosition="center 25%"
@@ -1016,7 +1016,7 @@ export default function DtpBezOsagoClient() {
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imagePosition="center 5%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

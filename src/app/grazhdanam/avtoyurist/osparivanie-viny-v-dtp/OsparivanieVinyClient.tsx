@@ -164,7 +164,7 @@ export default function OsparivanieVinyClient() {
           { text: 'Проверим полную, частичную и обоюдную вину' },
           { text: 'Сохраним доказательства и поможем не пропустить сроки' },
         ]}
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
         imageObjectPosition="center 25%"
@@ -688,7 +688,7 @@ export default function OsparivanieVinyClient() {
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, председатель Коллегии адвокатов «Де-Юре»"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imagePosition="center 5%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

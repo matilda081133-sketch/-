@@ -305,7 +305,7 @@ export default function UdoClient() {
           { text: 'Фиксируем состав услуг и условия в соглашении до начала работы' },
           { text: 'Полная конфиденциальность и соблюдение адвокатской тайны' }
         ]}
-        imageUrl="/images/bobkin.jpg"
+        imageUrl="/images/bobkin.webp"
         imageName="Аркадий Евгеньевич Бобкин"
         imageSubtitle="Директор ЮК «Де-Юре», куратор практики уголовного права"
         imageObjectPosition="50% -75px"
@@ -923,7 +923,7 @@ export default function UdoClient() {
         title="Куратор практики"
         name="Аркадий Евгеньевич Бобкин"
         position={<>Директор, управляющий партнёр<br />ЮК «Де-Юре»,<br />куратор практики уголовного права</>}
-        imageUrl="/images/bobkin.jpg"
+        imageUrl="/images/bobkin.webp"
         imagePosition="center 15%"
         profileHref="/specialisty/bobkin-arkadiy-evgenevich/"
         profileText="Подробнее об Аркадии Евгеньевиче Бобкине →"

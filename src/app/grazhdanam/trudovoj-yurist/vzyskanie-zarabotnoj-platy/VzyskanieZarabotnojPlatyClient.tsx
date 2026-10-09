@@ -548,7 +548,7 @@ export default function VzyskanieZarabotnojPlatyClient() {
           { text: 'Досудебное урегулирование и представительство в суде' },
           { text: 'Куратор — юрист М. В. Смольянинова' }
         ]}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Трудовое право»"
         imageObjectPosition="center 20%"
@@ -1096,7 +1096,7 @@ export default function VzyskanieZarabotnojPlatyClient() {
         title={<><span style={{ display: 'block' }}>Вашим делом займется</span><span style={{ display: 'block' }}>Марина Валерьевна Смольянинова</span></>}
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Трудовое право»</>}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imagePosition="center 20%"
         profileHref="/specialisty/smolyaninova-marina-valerevna/"
         profileText="Подробнее о Марине Валерьевне Смольяниновой →"

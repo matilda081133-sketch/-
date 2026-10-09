@@ -379,7 +379,7 @@ export default function ZemelnoGradostroitelnoeClient() {
         }
         secondaryCtaText="Что проверит юрист"
         secondaryCtaLink="#situations"
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imageName="Владимир Викторович Начешников"
         imageSubtitle="Специалист по земельному праву и градостроительному аудиту"
         imageObjectPosition="center 15%"

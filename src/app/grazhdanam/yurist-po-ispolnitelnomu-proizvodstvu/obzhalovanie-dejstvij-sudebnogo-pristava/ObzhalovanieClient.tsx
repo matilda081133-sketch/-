@@ -348,7 +348,7 @@ export default function ObzhalovanieClient() {
           { text: 'Жалоба в порядке подчинённости и административный иск' },
           { text: 'Защита прав должников и взыскателей' }
         ]}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
         imageObjectPosition="center 25%"
@@ -628,7 +628,7 @@ export default function ObzhalovanieClient() {
         title="Ведущий юрист по услуге"
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         profileHref="/specialisty/smolyaninova-marina-valerevna/"
         profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[

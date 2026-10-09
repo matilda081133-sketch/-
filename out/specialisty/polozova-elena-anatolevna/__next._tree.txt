@@ -1,4 +1,7 @@
-:HL["/_next/static/chunks/2eizlli1cd6d0.css","style"]
-:HL["https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap","style"]
+:HL["/_next/static/chunks/04xlg41ncy_6x.css","style"]
+:HL["/_next/static/media/248e1dc0efc99276-s.p.1d6sb5kuiz5lw.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/6bbcb5b36acd717c-s.p.24zmmel7ed1zj.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/9c72aa0f40e4eef8-s.p.1y4-pdgsjb-pw.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/images/polozova.webp","image",{"fetchPriority":"high"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"specialisty","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"polozova-elena-anatolevna","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"i9b03IxkikxidC392sTPT"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"specialisty","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"polozova-elena-anatolevna","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"e6D-kI3v0CNZjhUz01aQW"}

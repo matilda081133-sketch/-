@@ -278,7 +278,7 @@ export default function SnyatieArestaSchetaClient() {
           { text: 'Защита зарплаты, пенсий и пособий' },
           { text: 'Куратор — 13 лет опыта в ФССП' },
         ]}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
         imageObjectPosition="center 25%"
@@ -800,7 +800,7 @@ export default function SnyatieArestaSchetaClient() {
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imagePosition="center 25%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

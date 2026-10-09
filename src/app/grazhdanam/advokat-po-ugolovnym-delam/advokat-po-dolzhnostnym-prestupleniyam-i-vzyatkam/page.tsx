@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://dejure-help.ru/images/bobkin.jpg',
+        url: 'https://dejure-help.ru/images/bobkin.webp',
         width: 1200,
         height: 630,
         alt: 'Адвокат по должностным преступлениям и взяткам в Липецке — ЮК Де-Юре',

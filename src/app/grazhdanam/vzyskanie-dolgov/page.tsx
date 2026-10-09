@@ -62,7 +62,7 @@ export default function VzyskanieDolgovPage() {
         'name': 'Смольянинова Марина Валерьевна',
         'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
         'jobTitle': 'Ведущий юрист ЮК «Де-Юре»',
-        'image': 'https://dejure-help.ru/images/smolyaninova.jpg',
+        'image': 'https://dejure-help.ru/images/smolyaninova.webp',
         'worksFor': {
           '@id': 'https://dejure-help.ru/#organization'
         }

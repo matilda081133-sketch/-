@@ -547,7 +547,7 @@ export default function KreditnyjYuristClient() {
         primaryCtaLink="#form"
         primaryCtaAnalytics="co_hero_primary_click"
         primaryCtaSubtext="Для начала достаточно кратко описать, кто предъявляет требования и на какой стадии находится спор. Не отправляйте договоры и банковские документы через обычную форму."
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imageName="Владимир Викторович Начешников"
         imageSubtitle="Специалист ЮК «Де-Юре», куратор направления"
         imageObjectPosition="center 15%"
@@ -1355,7 +1355,7 @@ export default function KreditnyjYuristClient() {
         title={<><span style={{ display: 'inline-block' }}>Куратор направления — Владимир</span> <br /><span style={{ display: 'inline-block' }}>Викторович Начешников</span></>}
         name="Владимир Викторович Начешников"
         position="Специалист по корпоративным процедурам и защите заемщиков, куратор направления"
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imagePosition="center 15%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

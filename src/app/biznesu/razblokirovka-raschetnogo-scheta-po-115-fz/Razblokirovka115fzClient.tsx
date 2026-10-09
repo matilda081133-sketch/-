@@ -339,7 +339,7 @@ export default function Razblokirovka115fzClient() {
         }
         secondaryCtaText="Маршруты обжалования"
         secondaryCtaLink="#routes"
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imageName="Владимир Викторович Начешников"
         imageSubtitle="Специалист ЮК «Де-Юре», куратор направления"
         imageObjectPosition="center 15%"
@@ -817,7 +817,7 @@ export default function Razblokirovka115fzClient() {
         title="Куратор направления — Владимир Викторович Начешников"
         name="Владимир Викторович Начешников"
         position={<>Специалист ЮК «Де-Юре» по корпоративным<br />процедурам и сопровождению бизнеса</>}
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imagePosition="center 15%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

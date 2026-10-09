@@ -14,7 +14,7 @@ export const metadata = {
     siteName: 'ЮК «Де-Юре»',
     images: [
       {
-        url: 'https://dejure-help.ru/images/nacheshnikov.jpg',
+        url: 'https://dejure-help.ru/images/nacheshnikov.webp',
         width: 1200,
         height: 630,
         alt: 'Владимир Начешников — специалист ЮК «Де-Юре»'
@@ -27,7 +27,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Банкротство физических лиц в Липецке | Де-Юре',
     description: 'Проверим, подходит ли банкротство в Вашей ситуации, объясним риски для имущества и сопроводим судебную процедуру. 📞 +7 (4742) 20-15-25.',
-    images: ['https://dejure-help.ru/images/nacheshnikov.jpg']
+    images: ['https://dejure-help.ru/images/nacheshnikov.webp']
   }
 };
 

@@ -375,7 +375,7 @@ export default function ZashchitaPoterpevshegoClient() {
           { text: 'Если для представительства требуется статус адвоката, Аркадий Бобкин подбирает специалиста с учётом категории дела, процессуальной стадии и необходимых компетенций.' },
           { text: 'Фиксируем состав услуг, объем поручения и стоимость в соглашении до начала работы' }
         ]}
-        imageUrl="/images/bobkin.jpg"
+        imageUrl="/images/bobkin.webp"
         imageName="Аркадий Евгеньевич Бобкин"
         imageSubtitle="Директор ЮК «Де-Юре», куратор практики уголовного права"
         imageObjectPosition="50% -75px"
@@ -938,7 +938,7 @@ export default function ZashchitaPoterpevshegoClient() {
         title="Куратор практики"
         name="Аркадий Евгеньевич Бобкин"
         position={<>Директор, управляющий партнёр<br />ЮК «Де-Юре»,<br />куратор практики уголовного права</>}
-        imageUrl="/images/bobkin.jpg"
+        imageUrl="/images/bobkin.webp"
         imagePosition="center 15%"
         profileHref="/specialisty/bobkin-arkadiy-evgenevich/"
         profileText="Подробнее об Аркадии Евгеньевиче Бобкине →"

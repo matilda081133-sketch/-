@@ -109,7 +109,7 @@ export default function SpecialistyPage() {
               '@type': 'Person',
               'name': 'Бобкин Аркадий Евгеньевич',
               'jobTitle': 'Директор, управляющий партнёр ЮК «Де-Юре»',
-              'image': 'https://dejure-help.ru/images/bobkin.jpg',
+              'image': 'https://dejure-help.ru/images/bobkin.webp',
               'url': 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/',
               'worksFor': {
                 '@type': 'LegalService',
@@ -126,7 +126,7 @@ export default function SpecialistyPage() {
               'name': 'Конопкин Дмитрий Сергеевич',
               'jobTitle': 'Адвокат',
               'identifier': '48/812',
-              'image': 'https://dejure-help.ru/images/konopkin.jpg',
+              'image': 'https://dejure-help.ru/images/konopkin.webp',
               'url': 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/'
             }
           },
@@ -137,7 +137,7 @@ export default function SpecialistyPage() {
               '@type': 'Person',
               'name': 'Смольянинова Марина Валерьевна',
               'jobTitle': 'Ведущий юрист ЮК «Де-Юре»',
-              'image': 'https://dejure-help.ru/images/smolyaninova.jpg',
+              'image': 'https://dejure-help.ru/images/smolyaninova.webp',
               'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
               'worksFor': {
                 '@type': 'LegalService',
@@ -154,7 +154,7 @@ export default function SpecialistyPage() {
               'name': 'Гусев Олег Юрьевич',
               'jobTitle': 'Адвокат',
               'identifier': '48/672',
-              'image': 'https://dejure-help.ru/images/gusev.jpg',
+              'image': 'https://dejure-help.ru/images/gusev.webp',
               'url': 'https://dejure-help.ru/specialisty/gusev-oleg-yurevich/'
             }
           },
@@ -165,7 +165,7 @@ export default function SpecialistyPage() {
               '@type': 'Person',
               'name': 'Начешников Владимир Викторович',
               'jobTitle': 'Специалист ЮК «Де-Юре»',
-              'image': 'https://dejure-help.ru/images/nacheshnikov.jpg',
+              'image': 'https://dejure-help.ru/images/nacheshnikov.webp',
               'url': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
               'worksFor': {
                 '@type': 'LegalService',

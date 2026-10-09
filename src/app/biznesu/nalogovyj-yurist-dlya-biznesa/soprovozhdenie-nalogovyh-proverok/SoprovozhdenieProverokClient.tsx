@@ -310,7 +310,7 @@ export default function SoprovozhdenieProverokClient() {
         }
         secondaryCtaText="Риски проверок"
         secondaryCtaLink="#urgent"
-        imageUrl="/images/bobkin.jpg"
+        imageUrl="/images/bobkin.webp"
         imageName="Аркадий Евгеньевич Бобкин"
         imageSubtitle="Директор, управляющий партнёр ЮК «Де-Юре», куратор направления"
         imageObjectPosition="center 15%"
@@ -766,7 +766,7 @@ export default function SoprovozhdenieProverokClient() {
         title="Куратор направления — Аркадий Евгеньевич Бобкин"
         name="Аркадий Евгеньевич Бобкин"
         position={<>Директор, управляющий партнёр ЮК «Де-Юре»,<br />куратор направления «Налоговые проверки и споры»</>}
-        imageUrl="/images/bobkin.jpg"
+        imageUrl="/images/bobkin.webp"
         imagePosition="center 15%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

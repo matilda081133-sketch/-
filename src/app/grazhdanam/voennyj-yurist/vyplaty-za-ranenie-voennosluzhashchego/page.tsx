@@ -148,7 +148,7 @@ export default function VyplatyRaneniePage() {
         "jobTitle": "Адвокат",
         "description": "Адвокат, реестровый номер 48/812",
         "url": "https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/",
-        "image": "https://dejure-help.ru/images/konopkin.jpg"
+        "image": "https://dejure-help.ru/images/konopkin.webp"
       },
       {
         "@type": "WebPage",
@@ -202,7 +202,7 @@ export default function VyplatyRaneniePage() {
         primaryCtaText="Получить консультацию"
         primaryCtaLink="#form"
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, реестровый номер 48/812"
         imageMarginTop="0px"
@@ -389,7 +389,7 @@ export default function VyplatyRaneniePage() {
         title="Адвокат по военным делам"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, реестровый номер 48/812"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Дмитрий Сергеевич Конопкин работает с вопросами выплат за ранение военнослужащих. Изучает медицинские и служебные документы, оценивает возможные основания для получения выплат и определяет порядок действий при задержке, отказе или ошибках в оформлении документов.

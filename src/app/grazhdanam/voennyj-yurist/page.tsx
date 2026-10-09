@@ -178,7 +178,7 @@ export default function VoennyjYuristPage() {
         primaryCtaLink="#form"
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
         ctaMarginTop="36px"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, реестровый номер 48/812"
         trustItems={[]}
@@ -554,7 +554,7 @@ export default function VoennyjYuristPage() {
         title="Адвокат по военным делам"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, реестровый номер 48/812"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Дмитрий Сергеевич Конопкин работает с вопросами военного права: уголовной защитой военнослужащих, обжалованием заключений ВВК и решений военкоматов, а также спорами о выплатах. Опыт работы в Следственном комитете помогает ему оценивать процессуальные риски, изучать материалы и выстраивать позицию по сложным делам.

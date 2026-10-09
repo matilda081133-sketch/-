@@ -370,7 +370,7 @@ export default function ArendaKommercheskayaClient() {
         }
         secondaryCtaText="Что проверит юрист"
         secondaryCtaLink="#what-we-check"
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imageName="Владимир Викторович Начешников"
         imageSubtitle="Специалист по аренде и договорам коммерческой недвижимости"
         imageObjectPosition="center 15%"

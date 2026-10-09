@@ -370,7 +370,7 @@ export default function StroitelnyeSporyClient() {
         }
         secondaryCtaText="Что проверит юрист"
         secondaryCtaLink="#situations"
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imageName="Владимир Викторович Начешников"
         imageSubtitle="Специалист по строительным спорам и подрядным договорам"
         imageObjectPosition="center 15%"

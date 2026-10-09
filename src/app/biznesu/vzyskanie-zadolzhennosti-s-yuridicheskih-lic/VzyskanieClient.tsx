@@ -674,7 +674,7 @@ export default function VzyskanieClient() {
           { text: 'Работаем на результат до фактического исполнения' },
           { text: 'Куратор направления — Владимир Викторович Начешников' }
         ]}
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imageName="Владимир Викторович Начешников"
         imageSubtitle="Специалист ЮК «Де-Юре», куратор направления"
         imageObjectPosition="center 15%"
@@ -1722,7 +1722,7 @@ export default function VzyskanieClient() {
         title={<><span style={{ display: 'inline-block' }}>Куратор направления — Владимир</span> <br /><span style={{ display: 'inline-block' }}>Викторович Начешников</span></>}
         name="Владимир Викторович Начешников"
         position="Специалист ЮК «Де-Юре», куратор направления"
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imagePosition="center 15%"
         profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
         profileText="Подробнее о Владимире Викторовиче Начешникове →"

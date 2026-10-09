@@ -337,7 +337,7 @@ export default function BankrotstvoFizicheskihLicClient() {
             )
           }
         ]}
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imageName="Владимир Викторович Начешников"
         imageSubtitle="Специалист ЮК «Де-Юре»"
         imageObjectPosition="center 15%"
@@ -1097,7 +1097,7 @@ export default function BankrotstvoFizicheskihLicClient() {
         title={<><span style={{ display: 'inline-block' }}>Куратор направления — Владимир</span> <br /><span style={{ display: 'inline-block' }}>Викторович Начешников</span></>}
         name="Владимир Викторович Начешников"
         position="Специалист ЮК «Де-Юре»"
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imagePosition="center 15%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

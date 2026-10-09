@@ -21,7 +21,7 @@ export const metadata = {
     description: 'Проверка решений и действий военкомата и призывной комиссии, подготовка жалобы или административного иска, представительство. ЮК «Де-Юре». 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/grazhdanam/voennyj-yurist/spory-s-voenkomatom/',
     siteName: 'ЮК «Де-Юре»',
-    images: [{ url: 'https://dejure-help.ru/images/konopkin.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://dejure-help.ru/images/konopkin.webp', width: 1200, height: 630 }],
     locale: 'ru_RU',
     type: 'website'
   }
@@ -115,7 +115,7 @@ export default function SporySVoenkomatomPage() {
         jobTitle: 'Адвокат',
         description: 'Адвокат, реестровый номер 48/812',
         url: 'https://dejure-help.ru/specialisty/konopkin-dmitriy-sergeevich/',
-        image: 'https://dejure-help.ru/images/konopkin.jpg',
+        image: 'https://dejure-help.ru/images/konopkin.webp',
         knowsAbout: ['Военное право', 'Споры с военкоматом', 'Обжалование решений призывной комиссии']
       },
       {
@@ -254,7 +254,7 @@ export default function SporySVoenkomatomPage() {
         primaryCtaText="Обсудить решение военкомата"
         primaryCtaLink="#form"
         primaryCtaSubtext="Перезвоним вам в течение 15 минут в рабочее время"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, реестровый номер 48/812"
         trustItems={[
@@ -471,7 +471,7 @@ export default function SporySVoenkomatomPage() {
         title="Адвокат по военным делам"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, реестровый номер 48/812"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
             Дмитрий Сергеевич Конопкин работает со спорами, связанными с решениями и действиями военных комиссариатов и призывных комиссий. Изучает решение и документы, определяет предмет и порядок обжалования, представляет интересы доверителя при внесудебном обжаловании и в суде.

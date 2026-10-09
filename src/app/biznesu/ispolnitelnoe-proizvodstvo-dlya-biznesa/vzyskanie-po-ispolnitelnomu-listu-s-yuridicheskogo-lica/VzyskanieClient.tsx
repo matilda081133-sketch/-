@@ -262,7 +262,7 @@ export default function VzyskanieClient() {
           { text: 'Контролируем ход взыскания до зачисления денег' },
           { text: 'Куратор — 13 лет опыта в органах ФССП' },
         ]}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
         imageObjectPosition="50% -75px"
@@ -756,7 +756,7 @@ export default function VzyskanieClient() {
         title="Взысканием руководит юрист с опытом работы в ФССП"
         name="Марина Валерьевна Смольянинова"
         position="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         profileHref="/specialisty/smolyaninova-marina-valerevna/"
         profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[

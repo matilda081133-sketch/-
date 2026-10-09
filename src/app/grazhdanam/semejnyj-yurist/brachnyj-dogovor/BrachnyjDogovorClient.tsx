@@ -284,7 +284,7 @@ export default function BrachnyjDogovorClient() {
           <>Если требуется срочная помощь, позвоните: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a></>
         }
         trustItems={[{"text":"Защита личного имущества и долей в бизнесе"},{"text":"Составление договоров для ипотеки и банков"},{"text":"Проверка на кабальность и риски оспаривания"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Семейное право»"
         imageObjectPosition="center 20%"
@@ -439,7 +439,7 @@ export default function BrachnyjDogovorClient() {
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК &#171;Де-Юре&#187;,<br />куратор направления &#171;Семейное право&#187;</>}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imagePosition="center 20%"
         profileHref="/specialisty/smolyaninova-marina-valerevna/"
         profileText="Подробнее о Марине Валерьевне Смольяниновой →"

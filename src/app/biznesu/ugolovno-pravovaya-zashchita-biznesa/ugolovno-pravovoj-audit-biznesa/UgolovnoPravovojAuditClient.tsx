@@ -334,7 +334,7 @@ export default function UgolovnoPravovojAuditClient() {
             </span>
           </span>
         }
-        imageUrl="/images/bobkin.jpg"
+        imageUrl="/images/bobkin.webp"
         imageName="Аркадий Евгеньевич Бобкин"
         imageSubtitle="Директор, управляющий партнёр ЮК «Де-Юре», куратор направления"
         imageObjectPosition="center 15%"
@@ -559,7 +559,7 @@ export default function UgolovnoPravovojAuditClient() {
         title="Куратор направления"
         name="Аркадий Евгеньевич Бобкин"
         position={<>Директор, управляющий партнёр ЮК «Де-Юре»,<br />куратор направления «Уголовно-правовая защита бизнеса»</>}
-        imageUrl="/images/bobkin.jpg"
+        imageUrl="/images/bobkin.webp"
         imagePosition="center 15%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block', lineHeight: 1.65, fontSize: '15.5px' }}>

@@ -457,7 +457,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
           { text: 'Взаимодействие с ФССП, банками, судами' },
           { text: 'Куратор — 13 лет опыта в ФССП' },
         ]}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageObjectPosition="center 25%"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
@@ -948,7 +948,7 @@ export default function IspolnitelnoeGrazhdanamClient() {
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         profileHref="/specialisty/smolyaninova-marina-valerevna/"
         profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[

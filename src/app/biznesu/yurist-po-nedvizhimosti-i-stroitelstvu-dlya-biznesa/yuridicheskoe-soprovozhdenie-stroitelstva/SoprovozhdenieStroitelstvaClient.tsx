@@ -376,7 +376,7 @@ export default function SoprovozhdenieStroitelstvaClient() {
         }
         secondaryCtaText="Что проверит юрист"
         secondaryCtaLink="#situations"
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imageName="Владимир Викторович Начешников"
         imageSubtitle="Специалист по сопровождению строительства и девелопмента"
         imageObjectPosition="center 15%"

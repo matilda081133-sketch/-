@@ -410,7 +410,7 @@ export default function VzyskanieDolgovClient() {
         primaryCtaSubtext="Ответим в течение 15 минут в рабочее время"
         secondaryCtaText="Позвонить юристу"
         secondaryCtaLink="tel:+74742201525"
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageName="Смольянинова Марина Валерьевна"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре» • куратор направления"
       />
@@ -1387,7 +1387,7 @@ export default function VzyskanieDolgovClient() {
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления по взысканию задолженности</>}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imagePosition="center 25%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

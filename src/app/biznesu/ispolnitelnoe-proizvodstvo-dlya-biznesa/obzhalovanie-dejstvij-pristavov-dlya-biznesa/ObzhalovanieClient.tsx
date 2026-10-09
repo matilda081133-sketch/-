@@ -136,7 +136,7 @@ export default function ObzhalovanieClient() {
           { text: 'Оспаривание в суде и жалоба старшему приставу' },
           { text: 'Срочная оценка рисков для счетов и активов' },
         ]}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
         imageObjectPosition="50% -75px"
@@ -664,7 +664,7 @@ export default function ObzhalovanieClient() {
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
         position="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         profileHref="/specialisty/smolyaninova-marina-valerevna/"
         profileText="Подробнее о Марине Валерьевне Смольяниновой →"
         description={[

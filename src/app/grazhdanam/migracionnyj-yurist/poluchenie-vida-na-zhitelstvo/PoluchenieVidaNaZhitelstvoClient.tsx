@@ -162,7 +162,7 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
                 "text": "Куратор — адвокат Д. С. Конопкин"
         }
 ]}
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, рег. номер 48/812"
         imageObjectPosition="center 20%"
@@ -377,7 +377,7 @@ export default function PoluchenieVidaNaZhitelstvoClient() {
         title="Куратор направления"
         name="Дмитрий Сергеевич Конопкин"
         position="Адвокат, рег. номер 48/812"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imagePosition="center 15%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

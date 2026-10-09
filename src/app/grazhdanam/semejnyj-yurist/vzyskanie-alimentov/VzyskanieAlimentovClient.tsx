@@ -279,7 +279,7 @@ export default function VzyskanieAlimentovClient() {
           <>Если требуется срочная помощь, позвоните: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a></>
         }
         trustItems={[{"text":"Взыскание в долях и твёрдой денежной сумме"},{"text":"Поиск скрытых доходов плательщика"},{"text":"Расчёт и взыскание неустойки за просрочку"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Семейное право»"
         imageObjectPosition="center 20%"
@@ -434,7 +434,7 @@ export default function VzyskanieAlimentovClient() {
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК &#171;Де-Юре&#187;,<br />куратор направления &#171;Семейное право&#187;</>}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imagePosition="center 20%"
         profileHref="/specialisty/smolyaninova-marina-valerevna/"
         profileText="Подробнее о Марине Валерьевне Смольяниновой →"

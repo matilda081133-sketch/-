@@ -293,7 +293,7 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
           </span>
         }
         trustItems={[{"text":"Восстановление срока по ст. 1155 ГК РФ"},{"text":"Доказывание уважительности причин пропуска в суде"},{"text":"Аннулирование ранее выданных свидетельств нотариуса"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
         imageObjectPosition="center 20%"
@@ -467,7 +467,7 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК &#171;Де-Юре&#187;,<br />куратор направления &#171;Наследственное право&#187;</>}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imagePosition="center 20%"
         profileHref="/specialisty/smolyaninova-marina-valerevna/"
         profileText="Подробнее о Марине Валерьевне Смольяниновой →"

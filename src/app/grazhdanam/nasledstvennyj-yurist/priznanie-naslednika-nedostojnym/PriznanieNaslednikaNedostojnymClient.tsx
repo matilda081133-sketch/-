@@ -293,7 +293,7 @@ export default function PriznanieNaslednikaNedostojnymClient() {
           </span>
         }
         trustItems={[{"text":"Отстранение от наследования по ст. 1117 ГК РФ"},{"text":"Сбор доказательств противоправных действий"},{"text":"Перераспределение долей в пользу законных наследников"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imageName="Марина Валерьевна Смольянинова"
         imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
         imageObjectPosition="center 20%"
@@ -448,7 +448,7 @@ export default function PriznanieNaslednikaNedostojnymClient() {
         title="Куратор направления"
         name="Марина Валерьевна Смольянинова"
         position={<>Ведущий юрист ЮК &#171;Де-Юре&#187;,<br />куратор направления &#171;Наследственное право&#187;</>}
-        imageUrl="/images/smolyaninova.jpg"
+        imageUrl="/images/smolyaninova.webp"
         imagePosition="center 20%"
         profileHref="/specialisty/smolyaninova-marina-valerevna/"
         profileText="Подробнее о Марине Валерьевне Смольяниновой →"

@@ -307,7 +307,7 @@ export default function YuristPriProverkeMvdClient() {
         }
         secondaryCtaText="Что делать при визите"
         secondaryCtaLink="#urgent-action"
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imageName="Дмитрий Сергеевич Конопкин"
         imageSubtitle="Адвокат, председатель Коллегии адвокатов «Де-Юре», куратор направления «Миграционное сопровождение бизнеса»"
         imageObjectPosition="center 15%"
@@ -829,7 +829,7 @@ export default function YuristPriProverkeMvdClient() {
         title="Куратор направления — Дмитрий Сергеевич Конопкин"
         name="Дмитрий Сергеевич Конопкин"
         position={<>Адвокат, председатель Коллегии адвокатов «Де-Юре»,<br />куратор направления «Миграционное сопровождение бизнеса»</>}
-        imageUrl="/images/konopkin.jpg"
+        imageUrl="/images/konopkin.webp"
         imagePosition="center 15%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>

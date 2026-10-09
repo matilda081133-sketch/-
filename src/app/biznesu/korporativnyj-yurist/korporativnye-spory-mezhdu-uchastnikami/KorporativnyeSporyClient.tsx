@@ -391,7 +391,7 @@ export default function KorporativnyeSporyClient() {
             </span>
           </span>
         }
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imageName="Владимир Викторович Начешников"
         imageSubtitle="Специалист по корпоративным процедурам, куратор направления"
         imageObjectPosition="center 15%"
@@ -598,7 +598,7 @@ export default function KorporativnyeSporyClient() {
         title="Куратор направления"
         name="Владимир Викторович Начешников"
         position="Специалист по корпоративным процедурам и сопровождению бизнеса, куратор направления"
-        imageUrl="/images/nacheshnikov.jpg"
+        imageUrl="/images/nacheshnikov.webp"
         imagePosition="center 15%"
         profileHref="/specialisty/nacheshnikov-vladimir-viktorovich/"
         profileText="Подробнее о Владимире Викторовиче Начешникове →"
