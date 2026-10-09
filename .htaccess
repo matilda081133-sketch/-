@@ -1,0 +1,106 @@
+Options -Indexes
+
+ErrorDocument 404 /404.html
+
+# ----------------------------------------------------------------------
+# Gzip / Deflate Compression
+# ----------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Browser Caching (mod_expires & mod_headers)
+# ----------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML - no-cache to guarantee instant deployment updates
+    ExpiresByType text/html "access plus 0 seconds"
+
+    # XML / Sitemap - 24 hours (86400s)
+    ExpiresByType text/xml "access plus 1 day"
+    ExpiresByType application/xml "access plus 1 day"
+
+    # Next.js static JS/CSS and media assets (immutable with hashed filenames)
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Fonts
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    # 1 year immutable cache for static assets
+    <FilesMatch "\.(css|js|woff2|woff|ttf|otf|eot|jpg|jpeg|png|webp|svg|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # HTML files: allow conditional requests / microcaching with instant revalidation
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+    </FilesMatch>
+
+    # Sitemap.xml: 24-hour cache with must-revalidate
+    <FilesMatch "(sitemap\.xml|sitemap.*\.xml)$">
+        Header set Cache-Control "public, max-age=86400, must-revalidate"
+    </FilesMatch>
+
+    # Security headers
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+RewriteEngine On
+RewriteBase /
+
+# 1. Единый постоянный 301-редирект с HTTP на HTTPS (с сохранением пути и query string)
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteRule ^(.*)$ https://dejure-help.ru/$1 [R=301,L,QSA]
+
+# 2. Редирект с www на без-www
+RewriteCond %{HTTP_HOST} ^www\.dejure-help\.ru$ [NC]
+RewriteRule ^(.*)$ https://dejure-help.ru/$1 [R=301,L,QSA]
+
+# 3. Прямые алиасы / редиректы
+RewriteRule ^zhilishchnyj-yurist/?$ /grazhdanam/zhilishchnyj-yurist/ [R=301,L]
+RewriteRule ^zhilishchnyj-yurist/(.*)$ /grazhdanam/zhilishchnyj-yurist/$1 [R=301,L]
+
+# 4. Приведение URL к каноническому виду со слэшем на конце для путей без расширения
+RewriteCond %{REQUEST_URI} !\.
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ https://dejure-help.ru/$1/ [R=301,L,QSA]
+
+# 5. Отдача существующих файлов и директорий
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]

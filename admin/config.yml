@@ -1,0 +1,326 @@
+backend:
+  name: github
+  repo: matilda081133-sketch/-
+  branch: main
+  base_url: https://decap-cms-oauth.vercel.app
+  auth_endpoint: auth
+
+local_backend: true
+
+media_folder: "public/-/images/cms"
+public_folder: "/-/images/cms"
+
+locale: "ru"
+
+collections:
+  - name: "pages"
+    label: "📄 Тексты, кнопки и карточки ВСЕХ страниц сайта"
+    files:
+      # 1. Главная страница
+      - file: "src/content/pages/home.json"
+        label: "🏠 Главная страница (/)"
+        name: "home"
+        fields:
+          - { label: "Заголовок H1", name: "heroTitle", widget: "string" }
+          - { label: "Подзаголовок H1", name: "heroSubtitle", widget: "text" }
+          - { label: "Текст главной кнопки", name: "heroCtaText", widget: "string" }
+          - { label: "Ссылка главной кнопки", name: "heroCtaLink", widget: "string" }
+          - { label: "Заголовок раздела Услуги", name: "servicesTitle", widget: "string" }
+          - { label: "Заголовок раздела О компании", name: "aboutTitle", widget: "string" }
+          - { label: "Текст о компании", name: "aboutText", widget: "markdown" }
+
+      # 2. Земельный юрист (Хаб)
+      - file: "src/content/pages/land_lawyer.json"
+        label: "🌾 Земельный юрист — Хаб (/grazhdanam/zemelnyj-yurist/)"
+        name: "land_lawyer"
+        fields:
+          - { label: "Надзаголовок", name: "superTitle", widget: "string" }
+          - { label: "Заголовок H1", name: "heroTitle", widget: "string" }
+          - { label: "Подзаголовок H1", name: "heroSubtitle", widget: "text" }
+          - { label: "Текст главной кнопки", name: "primaryCtaText", widget: "string" }
+          - { label: "Ссылка главной кнопки", name: "primaryCtaLink", widget: "string" }
+          - { label: "Подпись под кнопкой", name: "primaryCtaSubtext", widget: "string" }
+          - { label: "Заголовок раздела Ситуации", name: "situationsTitle", widget: "string" }
+          - { label: "Подзаголовок раздела Ситуации", name: "situationsSubtitle", widget: "text" }
+          - label: "Карточки услуг и ситуаций"
+            name: "situations"
+            widget: "list"
+            fields:
+              - { label: "Тег", name: "tag", widget: "string" }
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Описание", name: "desc", widget: "text" }
+              - { label: "Текст кнопки", name: "buttonText", widget: "string" }
+              - { label: "Ссылка", name: "link", widget: "string" }
+
+      # 3. Споры о границах земельного участка
+      - file: "src/content/pages/boundary_disputes.json"
+        label: "📐 Споры о границах земельного участка (CIV-05-01)"
+        name: "boundary_disputes"
+        fields:
+          - { label: "1. Надзаголовок", name: "superTitle", widget: "string" }
+          - { label: "1. Заголовок H1", name: "heroTitle", widget: "string" }
+          - { label: "1. Подзаголовок H1", name: "heroSubtitle", widget: "text" }
+          - { label: "1. Кнопка 1: Текст", name: "primaryCtaText", widget: "string" }
+          - { label: "1. Кнопка 1: Ссылка", name: "primaryCtaLink", widget: "string" }
+          - { label: "1. Подпись под кнопкой 1", name: "primaryCtaSubtext", widget: "string" }
+          - { label: "1. Кнопка 2: Текст", name: "secondaryCtaText", widget: "string" }
+          - { label: "1. Кнопка 2: Ссылка", name: "secondaryCtaLink", widget: "string" }
+          - label: "1. Буллеты под кнопками"
+            name: "trustItems"
+            widget: "list"
+            fields:
+              - { label: "Текст буллета", name: "text", widget: "string" }
+          - { label: "2. Ситуации: Заголовок", name: "situationsTitle", widget: "string" }
+          - { label: "2. Ситуации: Подзаголовок", name: "situationsSubtitle", widget: "text" }
+          - label: "2. Карточки Ситуаций"
+            name: "situations"
+            widget: "list"
+            fields:
+              - { label: "Тег", name: "tag", widget: "string" }
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Описание", name: "desc", widget: "text" }
+          - { label: "2. CTA Баннер: Заголовок", name: "ctaCardTitle", widget: "string" }
+          - { label: "2. CTA Баннер: Подзаголовок", name: "ctaCardSubtitle", widget: "text" }
+          - { label: "2. CTA Баннер: Текст кнопки", name: "ctaCardButtonText", widget: "string" }
+          - { label: "2. CTA Баннер: Ссылка кнопки", name: "ctaCardButtonLink", widget: "string" }
+          - { label: "3. Как помогает: Заголовок", name: "helpTitle", widget: "string" }
+          - { label: "3. Как помогает: Подзаголовок", name: "helpSubtitle", widget: "text" }
+          - label: "3. Карточки действий юриста"
+            name: "helpActions"
+            widget: "list"
+            fields:
+              - { label: "Заголовок шага", name: "title", widget: "string" }
+              - { label: "Описание шага", name: "desc", widget: "text" }
+          - { label: "4. Документы: Заголовок", name: "docsTitle", widget: "string" }
+          - { label: "4. Документы: Подзаголовок", name: "docsSubtitle", widget: "text" }
+          - { label: "4. Заголовок 1-й карточки", name: "docsCard1Title", widget: "string" }
+          - { label: "4. Заголовок 2-й карточки", name: "docsCard2Title", widget: "string" }
+          - { label: "4. Примечание под документами", name: "docsNote", widget: "text" }
+          - { label: "5. Куратор: ФИО", name: "curatorName", widget: "string" }
+          - { label: "5. Куратор: Должность", name: "curatorPosition", widget: "string" }
+          - { label: "5. Куратор: Фото", name: "curatorPhoto", widget: "image" }
+          - { label: "5. Куратор: Текст кнопки", name: "curatorButtonText", widget: "string" }
+          - { label: "5. Куратор: Ссылка кнопки", name: "curatorButtonLink", widget: "string" }
+          - { label: "6. Практика: Заголовок", name: "casesTitle", widget: "string" }
+          - { label: "6. Практика: Кнопка «Смотреть все»", name: "casesShowAllText", widget: "string" }
+          - { label: "6. Практика: Ссылка кнопки", name: "casesShowAllLink", widget: "string" }
+          - { label: "8. Стоимость: Заголовок", name: "pricingTitle", widget: "string" }
+          - { label: "8. Стоимость: Подзаголовок", name: "pricingSubtitle", widget: "text" }
+          - { label: "8. Баннер стоимости: Заголовок", name: "pricingCtaTitle", widget: "string" }
+          - { label: "8. Баннер стоимости: Подзаголовок", name: "pricingCtaSubtitle", widget: "text" }
+          - { label: "8. Баннер стоимости: Текст кнопки", name: "pricingCtaButtonText", widget: "string" }
+          - { label: "8. Баннер стоимости: Ссылка кнопки", name: "pricingCtaButtonLink", widget: "string" }
+          - { label: "9. FAQ: Заголовок", name: "faqTitle", widget: "string" }
+          - { label: "9. FAQ: Подзаголовок", name: "faqSubtitle", widget: "text" }
+          - { label: "9. FAQ: Кнопка «Задать вопрос»", name: "faqCtaText", widget: "string" }
+          - { label: "9. FAQ: Ссылка кнопки", name: "faqCtaLink", widget: "string" }
+          - { label: "10. Связанные услуги: Заголовок", name: "relatedTitle", widget: "string" }
+          - { label: "10. Связанные услуги: Подзаголовок", name: "relatedSubtitle", widget: "text" }
+          - label: "10. Карточки связанных услуг"
+            name: "relatedServices"
+            widget: "list"
+            fields:
+              - { label: "Название услуги", name: "title", widget: "string" }
+              - { label: "Описание услуги", name: "desc", widget: "text" }
+              - { label: "Текст кнопки", name: "buttonText", widget: "string" }
+              - { label: "Ссылка", name: "link", widget: "string" }
+          - { label: "11. Форма: Метка", name: "formHeaderTag", widget: "string" }
+          - { label: "11. Форма: Заголовок рядом", name: "formTitle", widget: "string" }
+          - { label: "11. Форма: Описание рядом", name: "formSubtitle", widget: "text" }
+          - { label: "11. Форма: Время звонка", name: "formCallTimeTitle", widget: "string" }
+          - { label: "11. Форма: Текст кнопки", name: "formButtonText", widget: "string" }
+          - { label: "11. Форма: Подпись под кнопкой", name: "formSubtext", widget: "text" }
+
+      # 4. Военный юрист (Хаб)
+      - file: "src/content/pages/military_lawyer.json"
+        label: "🎖️ Военный юрист — Хаб (/grazhdanam/voennyj-yurist/)"
+        name: "military_lawyer"
+        fields:
+          - { label: "Надзаголовок", name: "superTitle", widget: "string" }
+          - { label: "Заголовок H1", name: "heroTitle", widget: "string" }
+          - { label: "Подзаголовок H1", name: "heroSubtitle", widget: "text" }
+          - { label: "Текст кнопки 1", name: "primaryCtaText", widget: "string" }
+          - { label: "Ссылка кнопки 1", name: "primaryCtaLink", widget: "string" }
+          - { label: "Подпись под кнопкой 1", name: "primaryCtaSubtext", widget: "string" }
+
+      # 5. Оспаривание ВВК
+      - file: "src/content/pages/vvk_challenge.json"
+        label: "🏥 Военное право: Оспаривание ВВК"
+        name: "vvk_challenge"
+        fields:
+          - { label: "1. Надзаголовок", name: "superTitle", widget: "string" }
+          - { label: "1. Заголовок H1", name: "heroTitle", widget: "string" }
+          - { label: "1. Подзаголовок H1", name: "heroSubtitle", widget: "text" }
+          - { label: "1. Текст кнопки 1", name: "primaryCtaText", widget: "string" }
+          - { label: "1. Ссылка кнопки 1", name: "primaryCtaLink", widget: "string" }
+          - { label: "2. Ситуации: Заголовок", name: "situationsTitle", widget: "string" }
+          - { label: "2. Ситуации: Подзаголовок", name: "situationsSubtitle", widget: "text" }
+          - { label: "3. Как помогаем: Заголовок", name: "helpTitle", widget: "string" }
+
+      # 6. Выплаты за ранение
+      - file: "src/content/pages/injury_payments.json"
+        label: "🩺 Военное право: Выплаты за ранение"
+        name: "injury_payments"
+        fields:
+          - { label: "1. Надзаголовок", name: "superTitle", widget: "string" }
+          - { label: "1. Заголовок H1", name: "heroTitle", widget: "string" }
+          - { label: "1. Подзаголовок H1", name: "heroSubtitle", widget: "text" }
+          - { label: "1. Текст кнопки 1", name: "primaryCtaText", widget: "string" }
+          - { label: "1. Ссылка кнопки 1", name: "primaryCtaLink", widget: "string" }
+
+      # 7. Выплаты семье погибшего
+      - file: "src/content/pages/death_payments.json"
+        label: "🕊️ Военное право: Выплаты семье погибшего"
+        name: "death_payments"
+        fields:
+          - { label: "1. Надзаголовок", name: "superTitle", widget: "string" }
+          - { label: "1. Заголовок H1", name: "heroTitle", widget: "string" }
+          - { label: "1. Подзаголовок H1", name: "heroSubtitle", widget: "text" }
+          - { label: "1. Текст кнопки 1", name: "primaryCtaText", widget: "string" }
+
+      # 8. Признание умершим
+      - file: "src/content/pages/missing_serviceman.json"
+        label: "🔍 Военное право: Признание умершим"
+        name: "missing_serviceman"
+        fields:
+          - { label: "1. Надзаголовок", name: "superTitle", widget: "string" }
+          - { label: "1. Заголовок H1", name: "heroTitle", widget: "string" }
+          - { label: "1. Подзаголовок H1", name: "heroSubtitle", widget: "text" }
+          - { label: "1. Текст кнопки 1", name: "primaryCtaText", widget: "string" }
+
+      # 9. СОЧ
+      - file: "src/content/pages/awol.json"
+        label: "⚠️ Военное право: Самовольное оставление части (СОЧ)"
+        name: "awol"
+        fields:
+          - { label: "1. Надзаголовок", name: "superTitle", widget: "string" }
+          - { label: "1. Заголовок H1", name: "heroTitle", widget: "string" }
+          - { label: "1. Подзаголовок H1", name: "heroSubtitle", widget: "text" }
+          - { label: "1. Текст кнопки 1", name: "primaryCtaText", widget: "string" }
+
+      # 10. Дезертирство
+      - file: "src/content/pages/desertion.json"
+        label: "⚖️ Военное право: Дезертирство"
+        name: "desertion"
+        fields:
+          - { label: "1. Надзаголовок", name: "superTitle", widget: "string" }
+          - { label: "1. Заголовок H1", name: "heroTitle", widget: "string" }
+          - { label: "1. Подзаголовок H1", name: "heroSubtitle", widget: "text" }
+          - { label: "1. Текст кнопки 1", name: "primaryCtaText", widget: "string" }
+
+      # 11. Споры с военкоматом
+      - file: "src/content/pages/draft_office.json"
+        label: "🛡️ Военное право: Споры с военкоматом"
+        name: "draft_office"
+        fields:
+          - { label: "1. Надзаголовок", name: "superTitle", widget: "string" }
+          - { label: "1. Заголовок H1", name: "heroTitle", widget: "string" }
+          - { label: "1. Подзаголовок H1", name: "heroSubtitle", widget: "text" }
+          - { label: "1. Текст кнопки 1", name: "primaryCtaText", widget: "string" }
+
+      # 12. Специалисты Хаб
+      - file: "src/content/pages/specialists_hub.json"
+        label: "👥 Специалисты — Общая страница (/specialisty/)"
+        name: "specialists_hub"
+        fields:
+          - { label: "Заголовок H1", name: "heroTitle", widget: "string" }
+          - { label: "Подзаголовок H1", name: "heroSubtitle", widget: "text" }
+          - { label: "Текст кнопки формы", name: "buttonText", widget: "string" }
+
+      # 13. Контакты
+      - file: "src/content/pages/contacts.json"
+        label: "📍 Контакты и Реквизиты (/kontakty/)"
+        name: "contacts"
+        fields:
+          - { label: "Основной телефон", name: "phone", widget: "string" }
+          - { label: "Адрес офиса в Липецке", name: "address", widget: "string" }
+          - { label: "Часы работы", name: "workHours", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+
+      # 14. 404
+      - file: "src/content/pages/error_404.json"
+        label: "🚫 Ошибка 404 (Страница не найдена)"
+        name: "error_404"
+        fields:
+          - { label: "Заголовок ошибки", name: "title", widget: "string" }
+          - { label: "Текст пояснения", name: "message", widget: "text" }
+          - { label: "Текст кнопки возврата", name: "buttonText", widget: "string" }
+          - { label: "Ссылка кнопки возврата", name: "buttonLink", widget: "string" }
+
+      # 15. 500
+      - file: "src/content/pages/error_500.json"
+        label: "⚠️ Ошибка 500 (Сбой сервера)"
+        name: "error_500"
+        fields:
+          - { label: "Заголовок ошибки", name: "title", widget: "string" }
+          - { label: "Текст пояснения", name: "message", widget: "text" }
+
+      # 16. 503
+      - file: "src/content/pages/error_503.json"
+        label: "🛠️ Ошибка 503 (Технические работы)"
+        name: "error_503"
+        fields:
+          - { label: "Заголовок ошибки", name: "title", widget: "string" }
+          - { label: "Текст пояснения", name: "message", widget: "text" }
+
+  - name: "team"
+    label: "👥 Индивидуальные Карточки Юристов"
+    folder: "src/content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ФИО специалиста", name: "name", widget: "string" }
+      - { label: "Должность", name: "position", widget: "string" }
+      - { label: "Портретная фотография", name: "photo", widget: "image" }
+      - { label: "Опыт работы (лет)", name: "experience", widget: "string" }
+      - { label: "Специализация / Направление", name: "specialization", widget: "string" }
+      - { label: "Подробное описание и биография", name: "bio", widget: "markdown" }
+      - { label: "Текст кнопки формы", name: "buttonText", widget: "string" }
+      - label: "Дипломы и Награды (Загрузка сканов)"
+        name: "awards"
+        widget: "list"
+        fields:
+          - { label: "Название документа", name: "title", widget: "string" }
+          - { label: "Скан / Фотография диплома", name: "image", widget: "image" }
+
+  - name: "cases"
+    label: "📁 Примеры из практики (Все кейсы)"
+    folder: "src/content/cases"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Категория спора", name: "category", widget: "string" }
+      - { label: "Заголовок кейса", name: "title", widget: "string" }
+      - { label: "Проблема (Описание ситуации)", name: "problem", widget: "text" }
+      - { label: "Что сделали (Действия юристов)", name: "action", widget: "text" }
+      - { label: "Ключевой результат", name: "result", widget: "text" }
+      - { label: "Прикреплённый документ / Решение суда (скан)", name: "documentImage", widget: "image", required: false }
+
+  - name: "pricing"
+    label: "💰 Цены и Тарифы"
+    folder: "src/content/pricing"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Название формата помощи / Услуги", name: "title", widget: "string" }
+      - { label: "Подзаголовок / Краткое описание", name: "subtitle", widget: "string" }
+      - { label: "Стоимость (например, от 15 000 ₽)", name: "price", widget: "string" }
+      - { label: "Выделенный популярный тариф", name: "popular", widget: "boolean", default: false }
+      - { label: "Бейдж (например, ВОСТРЕБОВАНО)", name: "badgeText", widget: "string", required: false }
+      - { label: "Текст кнопки выбора", name: "buttonText", widget: "string" }
+      - { label: "Ссылка кнопки выбора", name: "buttonHref", widget: "string" }
+      - label: "Что входит в стоимость"
+        name: "features"
+        widget: "list"
+        fields:
+          - { label: "Пункт услуги", name: "name", widget: "string" }
+          - { label: "Метка (✓)", name: "value", widget: "string", default: "✓" }
+
+  - name: "faqs"
+    label: "❓ Частые вопросы (FAQ)"
+    folder: "src/content/faqs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Вопрос клиента", name: "question", widget: "string" }
+      - { label: "Развёрнутый ответ юриста", name: "answer", widget: "markdown" }
