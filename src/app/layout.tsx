@@ -8,14 +8,14 @@ import GoalTracker from '@/components/GoalTracker';
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
   display: 'swap',
-  variable: '--font-sans',
+  variable: '--font-inter',
   weight: ['400', '500', '600', '700'],
 });
 
 const merriweather = Merriweather({
   subsets: ['latin', 'cyrillic'],
   display: 'swap',
-  variable: '--font-serif',
+  variable: '--font-merriweather',
   weight: ['400', '700'],
 });
 
@@ -32,6 +32,9 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${inter.variable} ${merriweather.variable}`}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
         {/* Yandex.Metrika counter */}
         <script
           type="text/javascript"
