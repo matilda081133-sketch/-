@@ -88,24 +88,24 @@ export default function Header() {
         {/* Логотип */}
         <div className="header-logo-col" style={{ display: 'flex', alignItems: 'center', justifySelf: 'start' }}>
           <Link href="/" onClick={closeMobileMenu} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                        <img 
+              src="/images/logo_dark.webp" 
+              alt="Де-Юре" 
+              className="desktop-logo" 
+              width={118} 
+              height={118} 
+              decoding="async" 
+              style={{ height: '118px', width: 'auto', transform: 'scale(1.36)', transformOrigin: 'left center' }} 
+            />
             <img 
               src="/images/logo_dark.webp" 
               alt="Де-Юре" 
-              className="desktop-logo"
-              width={110}
-              height={110}
-              decoding="async"
-              style={{ height: '110px', width: 'auto', transform: 'scale(1.25)', transformOrigin: 'left center' }} 
-            />
-            <img 
-              src="/images/logo_mobile.png" 
-              alt="Де-Юре" 
-              className="mobile-logo"
-              width={56}
-              height={56}
-              decoding="async"
-              fetchPriority="high"
-              style={{ height: '56px', width: 'auto', display: 'none', objectFit: 'contain' }} 
+              className="mobile-logo" 
+              width={76} 
+              height={76} 
+              decoding="async" 
+              fetchPriority="high" 
+              style={{ height: '76px', width: 'auto', display: 'none', transform: 'scale(1.42)', transformOrigin: 'left center', objectFit: 'contain' }} 
             />
           </Link>
         </div>
