@@ -356,7 +356,7 @@ export default function OstavlenieMestaDtpClient() {
             color: 'var(--color-deep-blue)',
             lineHeight: 1.6
           }}>
-            <strong>Если люди пострадали:</strong> Окажите помощь, немедленно вызовите скорую медицинскую помощь и полицию. При возможной уголовной квалификации (тяжкий вред здоровью или гибель людей по ст. 264 УК РФ) требуется отдельная срочная защита <a href="/ugolovnye-dela/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>адвоката по уголовным делам</a>.
+            <strong>Если люди пострадали:</strong> Окажите помощь, немедленно вызовите скорую медицинскую помощь и полицию. При возможной уголовной квалификации (тяжкий вред здоровью или гибель людей по ст. 264 УК РФ) требуется отдельная срочная защита <a href="/grazhdanam/advokat-po-ugolovnym-delam/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>адвоката по уголовным делам</a>.
           </div>
         </div>
       </section>
