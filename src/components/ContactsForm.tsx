@@ -340,7 +340,7 @@ export default function ContactsForm({
           >
             <div>
               <span style={{ fontSize: '11px', color: '#6C7A89', display: 'block', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
-                Выбранная услуга
+                Выбранное направление:
               </span>
               <strong style={{ fontSize: '15px', color: '#10273B' }}>
                 {selectedService}
@@ -362,7 +362,7 @@ export default function ContactsForm({
                 cursor: 'pointer',
                 padding: '4px 8px'
               }}
-              title="Сбросить выбор услуги"
+              title="Сбросить выбор"
             >
               ×
             </button>

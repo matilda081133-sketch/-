@@ -577,6 +577,9 @@ export default function Home() {
         ]}
       />
 
+      {/* 7. REVIEWS SECTION */}
+      <ReviewsBlock />
+
       {/* 8. PRICING SECTION */}
       <PricingBlock />
 
@@ -584,6 +587,7 @@ export default function Home() {
       <FAQBlock />
 
       {/* 10. CTA SECTION (FORM) */}
+      <div id="form" style={{ scrollMarginTop: '120px' }}></div>
       <section className="section bg-white" id="consultation" style={{ scrollMarginTop: '120px', padding: 'clamp(48px, 6vw, 80px) 0' }}>
         <div className="container">
           <div className="grid grid-2 main-consultation-grid" style={{ gap: 'clamp(32px, 5vw, 60px)', alignItems: 'stretch' }}>

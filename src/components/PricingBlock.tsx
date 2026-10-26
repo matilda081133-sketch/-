@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation';
 export interface PricingFeature {
   name: string | React.ReactNode;
   value?: string;
+  note?: string | React.ReactNode;
+  subtitle?: string | React.ReactNode;
 }
 
 export interface PricingTier {
@@ -24,6 +26,7 @@ export interface PricingTier {
   billingPeriod?: 'MON';
   features: (PricingFeature | string)[];
   exclusions?: string | string[];
+  footnote?: string | React.ReactNode;
   buttonText?: string;
   ctaText?: string;
   buttonHref?: string;
@@ -78,7 +81,7 @@ interface PricingBlockProps {
 
 export default function PricingBlock({
   title = "Стоимость юридических услуг в Липецке",
-  subtitle = "Честные цены, закрепленные в договоре. Никаких скрытых платежей.",
+  subtitle = "Указана стоимость отдельных услуг. Точную цену и состав работ согласуем после уточнения задачи и закрепим в договоре.",
   tiers: propTiers,
   groups,
   tabs,
@@ -86,9 +89,9 @@ export default function PricingBlock({
   ctaTitle = "Точную стоимость определим до начала работы",
   ctaSubtitle = "Сначала изучим обстоятельства и документы, предложим подходящий формат помощи и согласуем стоимость. Она не изменится без согласования с вами.",
   ctaButtonText = "Получить расчёт стоимости",
-  ctaButtonLink = "#form",
+  ctaButtonLink = "#consultation",
   ctaService,
-  disclaimer,
+  disclaimer = "Госпошлины, нотариальные, экспертные и другие расходы оплачиваются отдельно, если возникают по делу. Их необходимость и порядок оплаты согласуем заранее.",
   guaranteeText,
   sectionStyle,
   showDemoWarning,
@@ -104,41 +107,107 @@ export default function PricingBlock({
   const defaultTiers: PricingTier[] = [
     {
       title: 'Гражданам',
-      subtitle: 'Защита личных интересов',
+      subtitle: 'Консультации, документы и судебная защита',
       popular: false,
-      price: 'от 2 000 ₽',
+      buttonText: 'Рассчитать стоимость',
+      buttonHref: '#consultation',
+      footnote: 'Каждое последующее заседание — от 10 000 ₽.',
+      exclusions: 'Эти позиции относятся к гражданским спорам. Не распространять их автоматически на уголовные дела, банкротство и специальные процедуры.',
       features: [
-        { name: 'Юридическая консультация', value: '2 000 ₽' },
-        { name: 'Составление и подача иска', value: 'от 10 000 ₽' },
-        { name: 'Ведение дела в суде Липецка', value: 'от 15 000 ₽' },
-        { name: 'Апелляционная жалоба', value: 'от 20 000 ₽' },
-        { name: 'Ознакомление с материалами', value: '4 000 ₽/том' }
+        {
+          name: 'Консультация юриста',
+          value: '2 000 ₽',
+          note: 'Устно, до 1 часа. Углублённое изучение документов отдельно'
+        },
+        {
+          name: 'Составление искового заявления',
+          value: 'от 10 000 ₽',
+          note: 'Один иск по гражданскому спору. Подача и участие в суде отдельно'
+        },
+        {
+          name: 'Правовой анализ гражданского спора',
+          value: 'от 15 000 ₽',
+          note: 'По предоставленным материалам. Сбор дополнительных сведений и письменное заключение отдельно'
+        },
+        {
+          name: 'Претензия по гражданскому спору',
+          value: 'от 15 000 ₽',
+          note: 'Один мотивированный документ. Переговоры и судебная работа отдельно'
+        },
+        {
+          name: 'Представительство по гражданскому делу',
+          value: 'от 40 000 ₽',
+          note: 'Первая инстанция, до 3 заседаний. Письменные документы отдельно'
+        }
       ]
     },
     {
       title: 'Бизнесу',
-      subtitle: 'Комплексное юридическое сопровождение',
+      subtitle: 'Правовая помощь компаниям и предпринимателям',
       popular: true,
-      price: 'от 5 000 ₽',
+      buttonText: 'Рассчитать стоимость',
+      buttonHref: '#consultation',
+      footnote: 'Каждое последующее заседание — от 15 000 ₽.',
       features: [
-        { name: 'Консультация для бизнеса', value: '5 000 ₽' },
-        { name: 'Разработка договоров', value: 'от 10 000 ₽' },
-        { name: 'Досудебная претензионная работа', value: 'от 15 000 ₽' },
-        { name: 'Представительство в Арбитраже', value: 'от 15 000 ₽' },
-        { name: 'Правовой аудит документов', value: 'от 10 000 ₽' }
+        {
+          name: 'Консультация для бизнеса',
+          value: '5 000 ₽',
+          note: 'Устно, до 1 часа. Углублённое изучение материалов отдельно'
+        },
+        {
+          name: 'Разработка типового договора',
+          value: 'от 10 000 ₽',
+          note: 'Один типовой договор. Сложные индивидуальные договоры рассчитываются отдельно'
+        },
+        {
+          name: 'Досудебная претензия',
+          value: 'от 15 000 ₽',
+          note: 'Один мотивированный документ. Переговоры и сопровождение спора отдельно'
+        },
+        {
+          name: 'Анализ арбитражного спора',
+          value: 'от 30 000 ₽',
+          note: 'По предоставленным материалам. Сбор дополнительных сведений и письменное заключение отдельно'
+        },
+        {
+          name: 'Представительство в арбитражном суде',
+          value: 'от 50 000 ₽',
+          note: 'Первая инстанция, до 3 заседаний. Иск и другие письменные документы отдельно'
+        }
       ]
     },
     {
       title: 'Документы и консалтинг',
-      subtitle: 'Глубокая правовая аналитика',
+      subtitle: 'Подготовка документов и правовой анализ',
       popular: false,
-      price: 'от 10 000 ₽',
+      buttonText: 'Рассчитать стоимость',
+      buttonHref: '#consultation',
       features: [
-        { name: 'Письменная правовая оценка', value: 'от 30 000 ₽' },
-        { name: 'Официальное заключение юриста', value: 'от 35 000 ₽' },
-        { name: 'Участие в деловых переговорах', value: '15 000 ₽' },
-        { name: 'Защита интересов в госорганах', value: '15 000 ₽' },
-        { name: 'Разработка внутренних регламентов', value: 'от 15 000 ₽' }
+        {
+          name: 'Правовая проверка договора',
+          value: 'от 10 000 ₽',
+          note: 'Один договор и связанные документы сделки в согласованном объёме. Письменное заключение отдельно'
+        },
+        {
+          name: 'Письменное заключение по договору',
+          value: 'от 35 000 ₽',
+          note: 'По одному договору и согласованным документам сделки'
+        },
+        {
+          name: 'Участие в переговорах',
+          value: '15 000 ₽',
+          note: 'Одно участие до 4 часов. Подготовка и переработка документов отдельно'
+        },
+        {
+          name: 'Представление интересов в государственном органе',
+          value: '15 000 ₽',
+          note: 'Одно участие до 4 часов. Документы и повторные посещения отдельно'
+        },
+        {
+          name: 'Разработка трудового договора или должностной инструкции',
+          value: 'от 15 000 ₽',
+          note: 'Один документ. Локальные положения и правила рассчитываются отдельно'
+        }
       ]
     }
   ];
@@ -153,11 +222,12 @@ export default function PricingBlock({
     price: tier.price,
     features: (tier.features || []).map((f) =>
       typeof f === 'string'
-        ? { name: f, value: '' }
-        : { name: f.name || '', value: f.value || '' }
+        ? { name: f, value: '', note: '' }
+        : { name: f.name || '', value: f.value || '', note: f.note || f.subtitle || '' }
     ),
-    buttonText: tier.buttonText || tier.ctaText || 'Выбрать тариф',
-    buttonHref: tier.buttonHref || tier.ctaHref || '#form',
+    footnote: tier.footnote,
+    buttonText: tier.buttonText || tier.ctaText || 'Рассчитать стоимость',
+    buttonHref: tier.buttonHref || tier.ctaHref || '#consultation',
     exclusions: Array.isArray(tier.exclusions) ? tier.exclusions.join('; ') : tier.exclusions,
     hideOnMobile: Boolean(tier.hideOnMobile),
   }));
@@ -210,14 +280,59 @@ export default function PricingBlock({
     }));
   const allTiersForSchema = Array.from(new Map([...schemaTiersList, ...extraActionTiers].map(t => [typeof t.title === 'string' ? t.title : JSON.stringify(t.title), t])).values());
 
-  const pricedTiers = allTiersForSchema.map((tier) => ({
-    ...tier,
-    title: tier.title || tier.name || '',
-    subtitle: tier.subtitle || tier.description || '',
-    price: tier.price
-  })).filter(tier => {
+  const schemaOfferElements: any[] = [];
+  let itemPos = 1;
+
+  allTiersForSchema.forEach((tier) => {
+    const tierTitleStr = typeof tier.title === 'string' ? tier.title : 'Юридическая услуга';
+    const tierSubtitleStr = typeof tier.subtitle === 'string' ? tier.subtitle : '';
     const numPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
-    return Boolean(numPrice);
+    const isMinPrice = tier.price ? /от/i.test(String(tier.price)) : false;
+
+    if (numPrice) {
+      const priceSpecification = tier.billingPeriod === 'MON' ? {
+        '@type': 'UnitPriceSpecification',
+        ...(isMinPrice ? { 'minPrice': numPrice } : { 'price': numPrice }),
+        'priceCurrency': 'RUB',
+        'unitCode': 'MON',
+        'unitText': 'месяц',
+        'referenceQuantity': { '@type': 'QuantitativeValue', 'value': 1, 'unitCode': 'MON' }
+      } : undefined;
+
+      schemaOfferElements.push({
+        '@type': isMinPrice ? 'AggregateOffer' : 'Offer',
+        'position': itemPos++,
+        'name': tierTitleStr,
+        'description': tierSubtitleStr || undefined,
+        ...(isMinPrice ? { 'lowPrice': numPrice } : { 'price': numPrice }),
+        'priceCurrency': 'RUB',
+        ...(priceSpecification ? { 'priceSpecification': priceSpecification } : {}),
+        'availability': 'https://schema.org/InStock',
+        'url': offerUrl
+      });
+    }
+
+    // Include each individually priced service item
+    (tier.features || []).forEach((f) => {
+      const fName = typeof f === 'string' ? f : (f.name ? String(f.name) : '');
+      const fVal = typeof f === 'string' ? '' : (f.value || '');
+      const fNote = typeof f === 'string' ? '' : ((f as any).note || (f as any).subtitle || '');
+      const fNumPrice = fVal.replace(/[^\d]/g, '');
+      const fIsMin = /от/i.test(fVal);
+
+      if (fNumPrice) {
+        schemaOfferElements.push({
+          '@type': fIsMin ? 'AggregateOffer' : 'Offer',
+          'position': itemPos++,
+          'name': fName,
+          'description': fNote ? `${fNote}` : (tierSubtitleStr ? `${tierTitleStr}: ${fName}` : undefined),
+          ...(fIsMin ? { 'lowPrice': fNumPrice } : { 'price': fNumPrice }),
+          'priceCurrency': 'RUB',
+          'availability': 'https://schema.org/InStock',
+          'url': offerUrl
+        });
+      }
+    });
   });
 
   const renderCard = (tier: any, idxKey: any, colsCount?: any) => {
@@ -292,9 +407,9 @@ export default function PricingBlock({
           </div>
         )}
         
-        <div style={{ minHeight: isDense || isFour ? '165px' : '185px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', marginBottom: isDense ? '18px' : '24px' }}>
+        <div style={{ minHeight: tier.price ? (isDense || isFour ? '165px' : '185px') : (isDense || isFour ? '70px' : '75px'), display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', marginBottom: isDense ? '16px' : '20px' }}>
           <h3 style={{ fontSize: isDense ? '16.5px' : isFour ? '18px' : isThree ? '20px' : '22px', margin: '0 0 8px 0', color: 'inherit', textAlign: 'center', lineHeight: 1.3 }}>{tier.title}</h3>
-          <p style={{ fontSize: isDense ? '12.5px' : '14px', opacity: 0.8, margin: '0 0 12px 0', textAlign: 'center', lineHeight: 1.45 }}>{tier.subtitle}</p>
+          <p style={{ fontSize: isDense ? '12.5px' : '14px', opacity: 0.8, margin: 0, textAlign: 'center', lineHeight: 1.45 }}>{tier.subtitle}</p>
           
           {tier.price && (
             <div style={{ fontSize: isDense ? '22px' : '28px', fontFamily: 'var(--font-serif)', fontWeight: 'bold', marginTop: 'auto', textAlign: 'center' }}>
@@ -308,42 +423,82 @@ export default function PricingBlock({
           )}
         </div>
 
-        <ul style={{ listStyle: 'none', padding: 0, margin: isDense ? '0 0 24px 0' : '0 0 32px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: isDense ? '12px' : '16px' }}>
+        <ul style={{ listStyle: 'none', padding: 0, margin: isDense ? '0 0 18px 0' : '0 0 22px 0', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: isDense ? '10px' : '13px' }}>
           {(tier.features || []).map((feature: any, fIdx: number) => {
             const fName = typeof feature === 'string' ? feature : feature.name;
             const fVal = typeof feature === 'string' ? '' : feature.value;
+            const fNote = typeof feature === 'string' ? '' : (feature.note || feature.subtitle);
             return (
-              <li key={fIdx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '6px', fontSize: isDense ? '12px' : '13px', opacity: 0.9 }}>
-                <div style={{ display: 'flex', gap: '6px', flex: '1 1 0%', minWidth: 0 }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={tier.popular ? "rgba(255,255,255,0.5)" : "var(--color-primary)"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span style={{ lineHeight: 1.3, wordBreak: 'break-word' }}>{fName}</span>
+              <li key={fIdx} style={{ 
+                display: 'flex', 
+                flexDirection: 'column', 
+                gap: '4px', 
+                paddingBottom: fNote ? '8px' : '0', 
+                borderBottom: fNote && fIdx < (tier.features.length - 1) ? (tier.popular ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(23,50,77,0.08)') : 'none',
+                fontSize: isDense ? '12px' : '13px', 
+                opacity: 0.95 
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '6px' }}>
+                  <div style={{ display: 'flex', gap: '6px', flex: '1 1 0%', minWidth: 0 }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={tier.popular ? "#C5A059" : "var(--color-primary)"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span style={{ lineHeight: 1.3, wordBreak: 'break-word', fontWeight: fNote ? 600 : 400 }}>{fName}</span>
+                  </div>
+                  {fVal && fVal !== 'Да' && (
+                    <span style={{ fontWeight: 700, whiteSpace: 'nowrap', color: tier.popular ? '#C5A059' : 'var(--color-primary)', marginLeft: '6px', fontSize: isDense ? '12.5px' : '13.5px' }}>{fVal}</span>
+                  )}
                 </div>
-                {fVal && fVal !== 'Да' && (
-                  <span style={{ fontWeight: 600, whiteSpace: 'nowrap', color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)', marginLeft: '4px' }}>{fVal}</span>
+                {fNote && (
+                  <div style={{ fontSize: '11.5px', opacity: 0.75, lineHeight: 1.35, paddingLeft: '20px', color: 'inherit' }}>
+                    {fNote}
+                  </div>
                 )}
               </li>
             );
           })}
         </ul>
 
+        {tier.footnote && (
+          <div style={{
+            fontSize: '12.5px',
+            fontWeight: 600,
+            margin: '0 0 16px 0',
+            padding: '8px 12px',
+            background: tier.popular ? 'rgba(255, 255, 255, 0.08)' : 'rgba(23, 50, 77, 0.04)',
+            borderLeft: tier.popular ? '3px solid #C5A059' : '3px solid var(--color-primary)',
+            lineHeight: 1.4,
+            color: 'inherit'
+          }}>
+            {tier.footnote}
+          </div>
+        )}
+
         {tier.exclusions && (
-          <p style={{ fontSize: '12px', opacity: 0.7, margin: '0 0 16px 0', lineHeight: 1.4, fontStyle: 'italic', textAlign: 'center' }}>
+          <p style={{ fontSize: '11.5px', opacity: 0.72, margin: '0 0 16px 0', lineHeight: 1.4, fontStyle: 'italic', textAlign: 'left' }}>
             {tier.exclusions}
           </p>
         )}
 
         <a 
-          href={tier.buttonHref || "#form"} 
-          data-service={tierTitleStr}
-          data-direction={currentDirection}
-          onClick={() => {
+          href={tier.buttonHref || "#consultation"} 
+          data-service={`Расчёт стоимости: ${tierTitleStr}`}
+          data-direction={tierTitleStr}
+          onClick={(e) => {
+            const serviceName = `Расчёт стоимости: ${tierTitleStr}`;
             if (typeof window !== 'undefined') {
               window.dispatchEvent(new CustomEvent('dejure:select_service', {
                 detail: {
-                  service: tierTitleStr,
-                  direction: currentDirection
+                  service: serviceName,
+                  direction: tierTitleStr
                 }
               }));
+              const target = document.getElementById('consultation') || document.getElementById('form');
+              if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (window.history && window.history.pushState) {
+                  window.history.pushState(null, '', '#consultation');
+                }
+              }
             }
           }}
           className={`btn ${tier.popular ? 'btn-popular' : 'btn-regular'}`} 
@@ -356,10 +511,11 @@ export default function PricingBlock({
             whiteSpace: 'normal', 
             textWrap: 'balance', 
             lineHeight: 1.3, 
-            minHeight: isDense ? '48px' : '52px' 
+            minHeight: isDense ? '48px' : '52px',
+            cursor: 'pointer'
           }}
         >
-          {tier.buttonText || 'Узнать точную стоимость'}
+          {tier.buttonText || 'Рассчитать стоимость'}
         </a>
 
         {tier.extraAction && (
@@ -417,7 +573,7 @@ export default function PricingBlock({
   return (
     <section id="pricing" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--gradient-cream)', ...sectionStyle }}>
       {/* Schema.org Offer Catalog for SEO */}
-      {pricedTiers.length > 0 && (
+      {schemaOfferElements.length > 0 && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -425,44 +581,7 @@ export default function PricingBlock({
               '@context': 'https://schema.org',
               '@type': 'ItemList',
               'name': typeof title === 'string' ? title : 'Стоимость юридических услуг в Липецке',
-              'itemListElement': pricedTiers.map((tier, tIdx) => {
-                const numPrice = tier.price ? String(tier.price).replace(/[^\d]/g, '') : '';
-                const isMinPrice = tier.price ? /от/i.test(String(tier.price)) : false;
-                const priceSpecification = tier.billingPeriod === 'MON' ? {
-                  '@type': 'UnitPriceSpecification',
-                  ...(isMinPrice ? { 'minPrice': numPrice || '0' } : { 'price': numPrice || '0' }),
-                  'priceCurrency': 'RUB',
-                  'unitCode': 'MON',
-                  'unitText': 'месяц',
-                  'referenceQuantity': { '@type': 'QuantitativeValue', 'value': 1, 'unitCode': 'MON' }
-                } : undefined;
-
-                if (isMinPrice) {
-                  return {
-                    '@type': 'AggregateOffer',
-                    'position': tIdx + 1,
-                    'name': typeof tier.title === 'string' ? tier.title : 'Юридическая услуга',
-                    'description': typeof tier.subtitle === 'string' ? tier.subtitle : undefined,
-                    'lowPrice': numPrice || '0',
-                    'priceCurrency': 'RUB',
-                    ...(priceSpecification ? { 'priceSpecification': priceSpecification } : {}),
-                    'availability': 'https://schema.org/InStock',
-                    'url': offerUrl
-                  };
-                }
-
-                return {
-                  '@type': 'Offer',
-                  'position': tIdx + 1,
-                  'name': typeof tier.title === 'string' ? tier.title : 'Юридическая услуга',
-                  'description': typeof tier.subtitle === 'string' ? tier.subtitle : undefined,
-                  'price': numPrice || '0',
-                  'priceCurrency': 'RUB',
-                  ...(priceSpecification ? { 'priceSpecification': priceSpecification } : {}),
-                  'availability': 'https://schema.org/InStock',
-                  'url': offerUrl
-                };
-              })
+              'itemListElement': schemaOfferElements
             })
           }}
         />
@@ -574,10 +693,10 @@ export default function PricingBlock({
                 )}
               </div>
               <a
-                href={topTier.buttonHref || '#form'}
+                href={topTier.buttonHref || '#consultation'}
                 data-service={typeof topTier.title === 'string' ? topTier.title : 'Консультация юриста'}
                 data-direction={currentDirection}
-                onClick={() => {
+                onClick={(e) => {
                   const sName = typeof topTier.title === 'string' ? topTier.title : 'Консультация юриста';
                   if (typeof window !== 'undefined') {
                     window.dispatchEvent(new CustomEvent('dejure:select_service', {
@@ -586,6 +705,14 @@ export default function PricingBlock({
                         direction: currentDirection
                       }
                     }));
+                    const target = document.getElementById('consultation') || document.getElementById('form');
+                    if (target) {
+                      e.preventDefault();
+                      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      if (window.history && window.history.pushState) {
+                        window.history.pushState(null, '', '#consultation');
+                      }
+                    }
                   }
                 }}
                 className="btn btn-primary"
@@ -728,10 +855,10 @@ export default function PricingBlock({
             </div>
             <div style={{ flexShrink: 0 }}>
               <a 
-                href={ctaButtonLink || '#form'} 
+                href={ctaButtonLink || '#consultation'} 
                 data-service={ctaService || 'Расчёт комплексной защиты'}
                 data-direction={currentDirection}
-                onClick={() => {
+                onClick={(e) => {
                   const sName = ctaService || 'Расчёт комплексной защиты';
                   if (typeof window !== 'undefined') {
                     window.dispatchEvent(new CustomEvent('dejure:select_service', {
@@ -740,6 +867,14 @@ export default function PricingBlock({
                         direction: currentDirection
                       }
                     }));
+                    const target = document.getElementById('consultation') || document.getElementById('form');
+                    if (target) {
+                      e.preventDefault();
+                      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      if (window.history && window.history.pushState) {
+                        window.history.pushState(null, '', '#consultation');
+                      }
+                    }
                   }
                 }}
                 className="btn btn-primary" 
