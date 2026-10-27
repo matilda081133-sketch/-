@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { PRICING_DIRECTIONS } from '@/data/pricingData';
 import PricingPageClient from './PricingPageClient';
 
@@ -9,10 +11,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://dejure-help.ru/stoimost/',
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: 'Стоимость юридических услуг в Липецке — цены | Де-Юре',
     description: 'Цены на юридические услуги для граждан и бизнеса в Липецке. Консультации, документы и представительство. Объём работ и расчёт стоимости вашей задачи.',
     url: 'https://dejure-help.ru/stoimost/',
+    siteName: 'Юридическая компания «Де-Юре»',
+    locale: 'ru_RU',
     type: 'website',
     images: [
       {
@@ -143,20 +151,26 @@ export default function PricingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. Хлебные крошки */}
-      <div style={{ background: '#F8F9FA', borderBottom: '1px solid rgba(16, 39, 59, 0.06)', padding: '14px 0' }}>
-        <div className="container" style={{ maxWidth: '1040px', margin: '0 auto' }}>
-          <nav aria-label="Хлебные крошки" style={{ fontSize: '14px', color: '#718096' }}>
-            <Link href="/" style={{ color: '#10273B', textDecoration: 'none' }}>
-              Главная
-            </Link>
-            <span style={{ margin: '0 8px', color: '#A0AEC0' }}>/</span>
-            <span style={{ color: '#718096' }}>Стоимость</span>
-          </nav>
-        </div>
-      </div>
+      <Header />
 
-      <PricingPageClient />
+      <main>
+        {/* 1. Хлебные крошки */}
+        <div style={{ background: '#F8F9FA', borderBottom: '1px solid rgba(16, 39, 59, 0.06)', padding: '14px 0', marginTop: '80px' }}>
+          <div className="container" style={{ maxWidth: '1040px', margin: '0 auto' }}>
+            <nav aria-label="Хлебные крошки" style={{ fontSize: '14px', color: '#718096' }}>
+              <Link href="/" style={{ color: '#10273B', textDecoration: 'none' }}>
+                Главная
+              </Link>
+              <span style={{ margin: '0 8px', color: '#A0AEC0' }}>/</span>
+              <span style={{ color: '#718096' }}>Стоимость</span>
+            </nav>
+          </div>
+        </div>
+
+        <PricingPageClient />
+      </main>
+
+      <Footer />
     </>
   );
 }
