@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://dejure-help.ru/images/office-entrance.webp',
-        width: 1024,
-        height: 460,
+        url: 'https://dejure-help.ru/images/office-interior.webp',
+        width: 1216,
+        height: 768,
         alt: 'Офис коллегии адвокатов «Де-Юре» в Липецке — ул. Советская, д. 35',
       },
     ],
@@ -199,7 +199,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Правая колонка — Реальная фотография офиса коллегии адвокатов «Де-Юре» */}
+              {/* Правая колонка — Реальная фотография помещения офиса коллегии адвокатов «Де-Юре» */}
               <div
                 style={{
                   position: 'relative',
@@ -212,15 +212,14 @@ export default function AboutPage() {
                 }}
               >
                 <img
-                  src="/images/office-entrance.webp"
-                  alt="Офис коллегии адвокатов «Де-Юре» в Липецке — ул. Советская, д. 35, офис 213"
+                  src="/images/office-interior.webp"
+                  alt="Рабочий кабинет для консультаций в офисе коллегии адвокатов «Де-Юре» в Липецке"
                   width={600}
                   height={375}
                   style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    objectPosition: 'center 40%',
                     display: 'block',
                   }}
                 />
@@ -244,7 +243,7 @@ export default function AboutPage() {
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
-                  <span>Наш офис: Липецк, ул. Советская, д. 35 · 2 этаж, офис 213</span>
+                  <span>Кабинет для консультаций: Липецк, ул. Советская, д. 35 · Офис 213</span>
                 </div>
               </div>
             </div>
@@ -801,7 +800,10 @@ export default function AboutPage() {
                   Принимаем клиентов по предварительной записи в офисе в центре Липецка.
                 </p>
                 <div style={{ fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.6 }}>
-                  <strong>Адрес:</strong> г. Липецк, ул. Советская, д. 35, офис 213.
+                  <strong>Адрес:</strong> г. Липецк, ул. Советская, д. 35, БЦ «Антарес».
+                </div>
+                <div style={{ fontSize: '14.5px', color: 'var(--color-text-main)', lineHeight: 1.6, marginTop: '4px' }}>
+                  <strong>Маршрут в здании:</strong> центральный вход в БЦ «Антарес», 2-й этаж, офис 213 (коллегия адвокатов «Де-Юре»).
                 </div>
                 <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginTop: '4px' }}>
                   <strong>Режим работы:</strong> Пн–Пт 09:00–18:00. Сб, Вс — выходной.
@@ -858,14 +860,14 @@ export default function AboutPage() {
                 style={{
                   background: 'var(--color-white)',
                   border: '1px solid rgba(23, 50, 77, 0.1)',
-                  boxShadow: '0 6px 20px rgba(16, 39, 59, 0.05)',
+                  boxShadow: '0 6px 20px rgba(16, 39, 0.05)',
                   overflow: 'hidden',
                 }}
               >
                 <div style={{ aspectRatio: '16 / 10', overflow: 'hidden' }}>
                   <img
                     src="/images/office-entrance.webp"
-                    alt="Вход в офис 213 юридической компании «Де-Юре»"
+                    alt="Вход в здание БЦ „Антарес“ на улице Советской, 35 в Липецке"
                     width={600}
                     height={375}
                     loading="lazy"
@@ -874,7 +876,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <div style={{ padding: '14px 18px', fontSize: '13.5px', color: 'var(--color-text-secondary)' }}>
-                  2-й этаж, офис 213
+                  Вход в здание БЦ „Антарес“
                 </div>
               </div>
             </div>
