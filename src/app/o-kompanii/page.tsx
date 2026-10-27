@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://dejure-help.ru/images/office-interior.webp',
+        url: 'https://dejure-help.ru/images/office-entrance.webp',
         width: 1024,
-        height: 1024,
-        alt: 'Офис юридической компании «Де-Юре» в Липецке',
+        height: 460,
+        alt: 'Офис коллегии адвокатов «Де-Юре» в Липецке — ул. Советская, д. 35',
       },
     ],
   },
@@ -199,7 +199,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Правая колонка — Горизонтальная фотография интерьера/офиса */}
+              {/* Правая колонка — Реальная фотография офиса коллегии адвокатов «Де-Юре» */}
               <div
                 style={{
                   position: 'relative',
@@ -208,21 +208,44 @@ export default function AboutPage() {
                   boxShadow: '0 12px 32px rgba(16, 39, 59, 0.1)',
                   border: '1px solid rgba(23, 50, 77, 0.1)',
                   background: 'var(--color-white)',
-                  aspectRatio: '16 / 11',
+                  aspectRatio: '16 / 10',
                 }}
               >
                 <img
-                  src="/images/office-interior.webp"
-                  alt="Офис юридической компании «Де-Юре» в Липецке"
+                  src="/images/office-entrance.webp"
+                  alt="Офис коллегии адвокатов «Де-Юре» в Липецке — ул. Советская, д. 35, офис 213"
                   width={600}
-                  height={412}
+                  height={375}
                   style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
+                    objectPosition: 'center 40%',
                     display: 'block',
                   }}
                 />
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: 'linear-gradient(to top, rgba(16, 39, 59, 0.88) 0%, rgba(16, 39, 59, 0.5) 60%, transparent 100%)',
+                    padding: '24px 20px 14px',
+                    color: '#ffffff',
+                    fontSize: '13px',
+                    fontWeight: 500,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                  }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Наш офис: Липецк, ул. Советская, д. 35 · 2 этаж, офис 213</span>
+                </div>
               </div>
             </div>
           </div>
