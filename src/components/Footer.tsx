@@ -45,6 +45,7 @@ export default function Footer() {
 
   const companyLinks = [
     { title: "О компании", href: "/o-kompanii/" },
+    { title: "Стоимость", href: "/stoimost/" },
     { title: "Специалисты", href: "/specialisty" },
     { title: "Практика", href: "/praktika" },
     { title: "Контакты", href: "/kontakty" }

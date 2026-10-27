@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 export interface PricingFeature {
   name: string | React.ReactNode;
@@ -233,6 +234,7 @@ export default function PricingBlock({
   }));
 
   const pathname = usePathname();
+  const isHomepage = pathname === '/' || pathname === '' || pathname === '/index.html';
   const currentDirection = direction || (
     pathname?.includes('/voennyj-yurist') ? 'Военное право' :
     pathname?.includes('/semejnyj-yurist') ? 'Семейный юрист' :
@@ -830,6 +832,32 @@ export default function PricingBlock({
           </div>
         )}
         
+                {isHomepage && (
+          <div style={{ textAlign: 'center', marginTop: '28px', marginBottom: '20px' }}>
+            <Link
+              href="/stoimost/"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '15px',
+                fontWeight: 600,
+                color: 'var(--color-deep-blue)',
+                textDecoration: 'none',
+                padding: '12px 24px',
+                border: '1px solid rgba(16, 39, 59, 0.25)',
+                borderRadius: '4px',
+                backgroundColor: '#FFFFFF',
+                transition: 'all 0.2s ease',
+                boxShadow: '0 2px 6px rgba(16, 39, 59, 0.04)'
+              }}
+            >
+              <span>Все цены — прейскурант по 27 направлениям</span>
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        )}
+
         {ctaTitle && (
           <div className="pricing-cta-banner" style={{ 
             marginTop: '40px', 

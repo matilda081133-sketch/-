@@ -55,6 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/praktika/',
     '/kontakty/',
     '/o-kompanii/',
+    '/stoimost/',
     // Арбитражный юрист (Кластер BIZ-01)
     '/biznesu/arbitrazhnyj-yurist/',
     '/biznesu/arbitrazhnyj-yurist/isk-v-arbitrazhnyj-sud/',
