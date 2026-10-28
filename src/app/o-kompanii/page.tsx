@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://dejure-help.ru/images/office-interior.webp',
+        url: 'https://dejure-help.ru/images/office-interior-real.webp',
         width: 1600,
         height: 1200,
         alt: 'Консультационный кабинет в офисе коллегии адвокатов «Де-Юре» в Липецке',
@@ -212,7 +212,7 @@ export default function AboutPage() {
                 }}
               >
                 <img
-                  src="/images/office-interior.webp"
+                  src="/images/office-interior-real.webp"
                   alt="Консультационный кабинет в офисе коллегии адвокатов «Де-Юре» в Липецке"
                   width={600}
                   height={450}
