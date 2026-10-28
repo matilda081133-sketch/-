@@ -105,7 +105,7 @@ export default function Header() {
               height={76} 
               decoding="async" 
               fetchPriority="high" 
-              style={{ height: '76px', width: 'auto', display: 'none', transform: 'scale(1.42)', transformOrigin: 'left center', objectFit: 'contain' }} 
+              style={{ height: '76px', width: 'auto', display: 'none', transform: 'scale(1.56)', transformOrigin: 'left center', objectFit: 'contain' }} 
             />
           </Link>
         </div>
