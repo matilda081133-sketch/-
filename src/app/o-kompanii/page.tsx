@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://dejure-help.ru/images/office-interior.webp',
-        width: 1216,
-        height: 768,
-        alt: 'Офис коллегии адвокатов «Де-Юре» в Липецке — ул. Советская, д. 35',
+        width: 1600,
+        height: 1200,
+        alt: 'Консультационный кабинет в офисе коллегии адвокатов «Де-Юре» в Липецке',
       },
     ],
   },
@@ -208,14 +208,14 @@ export default function AboutPage() {
                   boxShadow: '0 12px 32px rgba(16, 39, 59, 0.1)',
                   border: '1px solid rgba(23, 50, 77, 0.1)',
                   background: 'var(--color-white)',
-                  aspectRatio: '16 / 10',
+                  aspectRatio: '4 / 3',
                 }}
               >
                 <img
                   src="/images/office-interior.webp"
-                  alt="Рабочий кабинет для консультаций в офисе коллегии адвокатов «Де-Юре» в Липецке"
+                  alt="Консультационный кабинет в офисе коллегии адвокатов «Де-Юре» в Липецке"
                   width={600}
-                  height={375}
+                  height={450}
                   style={{
                     width: '100%',
                     height: '100%',
