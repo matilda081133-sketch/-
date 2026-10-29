@@ -4,12 +4,11 @@
  * 1. На странице /stoimost/ (блок #oplata)
  * 2. В общем подвале сайта Footer.tsx (колонка «Компания»)
  *
- * Согласно ТЗ от 29.10.2026:
- * До получения и проверки рабочего адреса публичной платёжной страницы эквайринга
- * значение PAYMENT_URL остаётся null (кнопка и пояснение не публикуются).
+ * Альфа-Банк платёжная страница эквайринга:
+ * https://pay.alfabank.ru/sc/LFFpbIZfUkRdZgrC
  */
 
-export const PAYMENT_URL: string | null = null;
+export const PAYMENT_URL: string | null = 'https://pay.alfabank.ru/sc/LFFpbIZfUkRdZgrC';
 
 export const PAYMENT_BUTTON_TEXT = 'Оплатить услуги';
 
