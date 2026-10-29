@@ -282,12 +282,12 @@ export default function ContactsForm({
       flexDirection: 'column'
     }}>
       {title && (
-        <h3 style={{ fontSize: '28px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0', lineHeight: 1.2 }}>
+        <h3 style={{ fontSize: '28px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: '0 0 16px 0', lineHeight: 1.2, textWrap: 'balance' }}>
           {title}
         </h3>
       )}
       {subtitle && (
-        <p style={{ color: 'var(--color-text-secondary)', marginBottom: '24px', fontSize: '15px', lineHeight: 1.6 }}>
+        <p style={{ color: 'var(--color-text-secondary)', marginBottom: '24px', fontSize: '15px', lineHeight: 1.6, textWrap: 'balance' }}>
           {subtitle}
         </p>
       )}

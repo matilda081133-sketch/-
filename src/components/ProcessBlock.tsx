@@ -72,11 +72,11 @@ export default function ProcessBlock({
       
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ textAlign: alignTitle, marginBottom: '50px' }}>
-          <h2 className={alignTitle === 'left' ? 'with-accent' : ''} style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(32px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, textAlign: alignTitle }}>
+          <h2 className={alignTitle === 'left' ? 'with-accent' : ''} style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(32px, 4vw, 42px)', color: 'var(--color-deep-blue)', marginBottom: '16px', marginTop: 0, textAlign: alignTitle, textWrap: 'balance' }}>
             {title}
           </h2>
           {subtitle && (
-            <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6, textWrap: 'balance' }}>
               {subtitle}
             </p>
           )}
@@ -829,7 +829,7 @@ export default function ProcessBlock({
               borderTop: '3px solid var(--color-primary)'
             }}>
               <div style={{ flex: '1 1 300px' }}>
-                <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', marginBottom: '10px', fontWeight: '600', fontFamily: 'var(--font-serif)', lineHeight: 1.3 }}>
+                <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', marginBottom: '10px', fontWeight: '600', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textWrap: 'balance' }}>
                   {ctaTitle}
                 </h3>
                 {ctaSubtitle && (

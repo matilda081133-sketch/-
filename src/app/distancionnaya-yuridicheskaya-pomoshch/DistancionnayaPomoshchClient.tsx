@@ -178,10 +178,11 @@ export default function DistancionnayaPomoshchClient() {
                   color: 'var(--color-deep-blue, #10273B)',
                   lineHeight: 1.2,
                   margin: '0 0 20px 0',
-                  fontWeight: 700
+                  fontWeight: 700,
+                  textWrap: 'balance'
                 }}
               >
-                Дистанционная юридическая помощь
+                Дистанционная<br className="desktop-only" /> юридическая помощь
               </h1>
 
               <p
@@ -190,10 +191,11 @@ export default function DistancionnayaPomoshchClient() {
                   color: 'var(--color-deep-blue, #10273B)',
                   lineHeight: 1.6,
                   margin: '0 0 24px 0',
-                  fontWeight: 500
+                  fontWeight: 500,
+                  textWrap: 'balance'
                 }}
               >
-                Обратитесь в «Де-Юре» из другого города. Уточним вашу задачу, подберём специалиста и согласуем, какие действия можно выполнить дистанционно, а где потребуется личное участие или выезд представителя.
+                Обратитесь в «Де-Юре» из другого города.<br className="desktop-only" /> Уточним вашу задачу, подберём специалиста и согласуем, какие действия можно выполнить дистанционно, а где потребуется личное участие или выезд представителя.
               </p>
 
               {/* Преимущества Hero */}
@@ -330,13 +332,14 @@ export default function DistancionnayaPomoshchClient() {
                 color: '#10273B',
                 margin: '0 0 14px 0',
                 fontWeight: 700,
-                lineHeight: 1.25
+                lineHeight: 1.25,
+                textWrap: 'balance'
               }}
             >
-              С чем можно обратиться из другого города
+              С чем можно обратиться<br className="desktop-only" /> из другого города
             </h2>
-            <p style={{ fontSize: '16px', color: '#4A5568', margin: 0, maxWidth: '680px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.55 }}>
-              Форматы сотрудничества для доверителей из любых регионов России
+            <p style={{ fontSize: '16px', color: '#4A5568', margin: 0, maxWidth: '680px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.55, textWrap: 'balance' }}>
+              Форматы сотрудничества для доверителей<br className="desktop-only" /> из любых регионов России
             </p>
           </div>
 
@@ -359,8 +362,8 @@ export default function DistancionnayaPomoshchClient() {
                 flexDirection: 'column'
               }}
             >
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600 }}>
-                Консультация по вашей ситуации
+              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600, textWrap: 'balance' }}>
+                Консультация<br className="desktop-only" /> по вашей ситуации
               </h3>
               <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
                 Обсудим обстоятельства, уточним документы и определим возможные дальнейшие действия. Формат, время и стоимость консультации согласуем заранее.
@@ -378,7 +381,7 @@ export default function DistancionnayaPomoshchClient() {
                 flexDirection: 'column'
               }}
             >
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600 }}>
+              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600, textWrap: 'balance' }}>
                 Анализ документов
               </h3>
               <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
@@ -397,8 +400,8 @@ export default function DistancionnayaPomoshchClient() {
                 flexDirection: 'column'
               }}
             >
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600 }}>
-                Подготовка документов и обращений
+              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600, textWrap: 'balance' }}>
+                Подготовка документов<br className="desktop-only" /> и обращений
               </h3>
               <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
                 Можно согласовать подготовку заявления, претензии, жалобы, договора или другого документа по вашей задаче. Состав работы и порядок передачи результата определяются заранее.
@@ -416,8 +419,8 @@ export default function DistancionnayaPomoshchClient() {
                 flexDirection: 'column'
               }}
             >
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600 }}>
-                Представительство по делу
+              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600, textWrap: 'balance' }}>
+                Представительство<br className="desktop-only" /> по делу
               </h3>
               <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
                 Рассмотрим возможность участия специалиста в вашем регионе. Необходимость выезда, оформление полномочий, состав работ и расходы согласуются после изучения ситуации.
@@ -468,13 +471,14 @@ export default function DistancionnayaPomoshchClient() {
                 color: '#10273B',
                 margin: '0 0 14px 0',
                 fontWeight: 700,
-                lineHeight: 1.25
+                lineHeight: 1.25,
+                textWrap: 'balance'
               }}
             >
-              Как организуем работу
+              Как мы организуем работу
             </h2>
-            <p style={{ fontSize: '16px', color: '#4A5568', margin: 0, maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.55 }}>
-              Пять последовательных шагов от первого обращения до результата
+            <p style={{ fontSize: '16px', color: '#4A5568', margin: 0, maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.55, textWrap: 'balance' }}>
+              Пять последовательных шагов<br className="desktop-only" /> от первого обращения до результата
             </p>
           </div>
 
@@ -564,13 +568,14 @@ export default function DistancionnayaPomoshchClient() {
                 color: '#10273B',
                 margin: '0 0 14px 0',
                 fontWeight: 700,
-                lineHeight: 1.25
+                lineHeight: 1.25,
+                textWrap: 'balance'
               }}
             >
-              Документы и оформление полномочий
+              Документы и оформление<br className="desktop-only" /> полномочий
             </h2>
-            <p style={{ fontSize: '16px', color: '#4A5568', margin: 0, maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.55 }}>
-              Порядок обмена файлами, подписания договора и оформления доверенности
+            <p style={{ fontSize: '16px', color: '#4A5568', margin: 0, maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.55, textWrap: 'balance' }}>
+              Порядок обмена файлами, подписания договора<br className="desktop-only" /> и оформления доверенности
             </p>
           </div>
 
@@ -653,10 +658,11 @@ export default function DistancionnayaPomoshchClient() {
                 color: '#10273B',
                 margin: '0 0 16px 0',
                 fontWeight: 700,
-                lineHeight: 1.3
+                lineHeight: 1.3,
+                textWrap: 'balance'
               }}
             >
-              Прямая связь с вашим юристом
+              Прямая связь<br className="desktop-only" /> с вашим юристом
             </h2>
             <div style={{ fontSize: '15px', lineHeight: 1.65, color: '#4A5568', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <p style={{ margin: 0 }}>
@@ -679,10 +685,11 @@ export default function DistancionnayaPomoshchClient() {
                 color: '#10273B',
                 margin: '0 0 16px 0',
                 fontWeight: 700,
-                lineHeight: 1.3
+                lineHeight: 1.3,
+                textWrap: 'balance'
               }}
             >
-              Когда может потребоваться личное участие
+              Когда может потребоваться<br className="desktop-only" /> личное участие
             </h2>
             <div style={{ fontSize: '15px', lineHeight: 1.65, color: '#4A5568', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <p style={{ margin: 0 }}>
@@ -713,10 +720,11 @@ export default function DistancionnayaPomoshchClient() {
               margin: '0 0 20px 0',
               fontWeight: 700,
               lineHeight: 1.25,
-              textAlign: 'center'
+              textAlign: 'center',
+              textWrap: 'balance'
             }}
           >
-            Стоимость и оплата
+            Стоимость и порядок оплаты
           </h2>
           <div style={{ fontSize: '15.5px', lineHeight: 1.65, color: '#4A5568', display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '28px' }}>
             <p style={{ margin: 0 }}>

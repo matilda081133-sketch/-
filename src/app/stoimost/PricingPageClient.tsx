@@ -366,18 +366,20 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
             color: '#10273B',
             lineHeight: 1.2,
             margin: '0 0 18px 0',
-            fontWeight: 700
+            fontWeight: 700,
+            textWrap: 'balance'
           }}>
-            Стоимость юридических услуг в Липецке
+            Стоимость юридических услуг<br className="desktop-only" /> в Липецке
           </h1>
           <p style={{
             fontSize: 'clamp(16px, 2vw, 19px)',
             lineHeight: 1.6,
             color: '#4A5568',
             maxWidth: '780px',
-            margin: '0 auto 28px auto'
+            margin: '0 auto 28px auto',
+            textWrap: 'balance'
           }}>
-            Выберите направление и посмотрите стоимость отдельных услуг. Чтобы рассчитать вашу задачу целиком, уточним обстоятельства, необходимые действия и объём документов.
+            Выберите направление и посмотрите стоимость отдельных услуг.<br className="desktop-only" /> Чтобы рассчитать вашу задачу целиком, уточним обстоятельства,<br className="desktop-only" /> необходимые действия и объём документов.
           </p>
           <div>
             <button
@@ -449,7 +451,8 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
               fontFamily: 'var(--font-serif)',
               color: '#10273B',
               margin: '0 0 12px 0',
-              fontWeight: 700
+              fontWeight: 700,
+              textWrap: 'balance'
             }}>
               Цены по направлениям
             </h2>
@@ -458,9 +461,10 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
               color: '#4A5568',
               maxWidth: '680px',
               margin: '0 auto',
-              lineHeight: 1.55
+              lineHeight: 1.55,
+              textWrap: 'balance'
             }}>
-              У каждой позиции указан оплачиваемый объём. Цена «от» — минимальная стоимость этой услуги; итог зависит от сложности и объёма работы.
+              У каждой позиции указан оплачиваемый объём. Цена «от» — минимальная стоимость этой услуги;<br className="desktop-only" /> итог зависит от сложности и объёма работы.
             </p>
           </div>
 
@@ -532,8 +536,8 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
       {/* 1. От первого обращения до договора (#usloviya) — ЭТАЛОННЫЙ ШАБЛОННЫЙ ProcessBlock */}
       <div id="usloviya" style={{ scrollMarginTop: '110px' }}>
         <ProcessBlock
-          title="От первого обращения до договора"
-          subtitle="Четыре последовательных шага от первого обращения до согласования условий и начала работы"
+          title={<>От первого обращения<br className="desktop-only" /> до договора</>}
+          subtitle={<>Четыре последовательных шага от первого обращения<br className="desktop-only" /> до согласования условий и начала работы</>}
           steps={[
             {
               num: '01',
@@ -556,8 +560,8 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
               desc: 'До начала согласованных работ фиксируем их состав, стоимость и порядок оплаты в договоре. Дополнительные действия и расходы согласуем отдельно.'
             }
           ]}
-          ctaTitle="Рассчитать стоимость для вашей задачи"
-          ctaSubtitle="Опишите вопрос, и юрист определит состав и стоимость необходимых услуг."
+          ctaTitle={<>Рассчитать стоимость<br className="desktop-only" /> для вашей задачи</>}
+          ctaSubtitle={<>Опишите вопрос, и юрист определит<br className="desktop-only" /> состав и стоимость необходимых услуг.</>}
           ctaButtonText="Получить расчёт"
           ctaButtonHref="#consultation"
         />
@@ -579,11 +583,11 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
               Первичный разбор ситуации
             </span>
           </div>
-          <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', lineHeight: 1.25 }}>
-            Консультация и изучение документов
+          <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', lineHeight: 1.25, textWrap: 'balance' }}>
+            Консультация<br className="desktop-only" /> и изучение документов
           </h2>
-          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '850px', margin: '0 0 36px 0' }}>
-            Правила проведения устных консультаций, анализа материалов и зачёта оплаты
+          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '850px', margin: '0 0 36px 0', textWrap: 'balance' }}>
+            Правила проведения устных консультаций,<br className="desktop-only" /> анализа материалов и зачёта оплаты
           </p>
 
           <div className="grid grid-3" style={{ gap: '28px', marginBottom: '24px' }}>
@@ -596,10 +600,10 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
               display: 'flex',
               flexDirection: 'column'
             }}>
-              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.3 }}>
+              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.3, textWrap: 'balance' }}>
                 Стоимость консультации — 2 000 ₽
               </h3>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0 }}>
+              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0, textWrap: 'pretty' }}>
                 Устная консультация для граждан продолжительностью до одного часа — 2 000 ₽. Стоимость консультаций для бизнеса и отдельных специальных задач указана в соответствующих разделах прайса.
               </p>
             </div>
@@ -613,10 +617,10 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
               display: 'flex',
               flexDirection: 'column'
             }}>
-              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.3 }}>
-                Изучение документов и ответ
+              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.3, textWrap: 'balance' }}>
+                Изучение документов<br className="desktop-only" /> и ответ
               </h3>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0 }}>
+              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0, textWrap: 'pretty' }}>
                 Необходимость отдельного платного анализа зависит от вопроса и объёма материалов. До начала такой работы согласуем её состав и стоимость. Письменный ответ можно заказать отдельно; цену и срок подготовки определим заранее.
               </p>
             </div>
@@ -630,16 +634,16 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
               display: 'flex',
               flexDirection: 'column'
             }}>
-              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.3 }}>
-                Зачёт оплаты в дальнейшую работу
+              <h3 style={{ fontSize: '19px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 14px 0', lineHeight: 1.3, textWrap: 'balance' }}>
+                Зачёт оплаты<br className="desktop-only" /> в дальнейшую работу
               </h3>
-              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0 }}>
+              <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0, textWrap: 'pretty' }}>
                 Если после консультации или анализа документов вы заключаете договор на дальнейшую работу по этому вопросу, внесённая оплата засчитывается в стоимость договора.
               </p>
             </div>
           </div>
 
-          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
+          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, textWrap: 'balance' }}>
             Запись, перенос консультации и возможность срочного приёма согласуются с сотрудником компании.
           </p>
         </div>
@@ -660,11 +664,11 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
               Финансовые условия
             </span>
           </div>
-          <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', lineHeight: 1.25 }}>
+          <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', lineHeight: 1.25, textWrap: 'balance' }}>
             Договор и порядок оплаты
           </h2>
-          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '850px', margin: '0 0 36px 0' }}>
-            Прозрачные финансовые взаимоотношения, удобные способы расчёта и фиксация в договоре
+          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '850px', margin: '0 0 36px 0', textWrap: 'balance' }}>
+            Прозрачные финансовые взаимоотношения,<br className="desktop-only" /> удобные способы расчёта и фиксация в договоре
           </p>
 
           <div className="grid grid-4" style={{ gap: '24px', marginBottom: '28px' }}>
@@ -708,8 +712,8 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
             ))}
           </div>
 
-          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0, maxWidth: '900px' }}>
-            Адвокатская помощь оказывается независимым адвокатом по отдельному соглашению с доверителем. Условия участия, вознаграждение и порядок оплаты согласуются с адвокатом.
+          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0, maxWidth: '900px', textWrap: 'balance' }}>
+            Адвокатская помощь оказывается независимым адвокатом по отдельному соглашению с доверителем.<br className="desktop-only" /> Условия участия, вознаграждение и порядок оплаты согласуются с адвокатом.
           </p>
         </div>
       </section>
@@ -738,7 +742,8 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
                 color: 'var(--color-deep-blue)',
                 margin: '0 0 16px 0',
                 fontWeight: 700,
-                lineHeight: 1.3
+                lineHeight: 1.3,
+                textWrap: 'balance'
               }}
             >
               Дополнительные расходы
@@ -769,10 +774,11 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
                 color: 'var(--color-deep-blue)',
                 margin: '0 0 16px 0',
                 fontWeight: 700,
-                lineHeight: 1.3
+                lineHeight: 1.3,
+                textWrap: 'balance'
               }}
             >
-              Как вы будете узнавать о ходе дела
+              Как вы будете узнавать<br className="desktop-only" /> о ходе дела
             </h2>
             <div style={{ fontSize: '15.5px', lineHeight: 1.65, color: 'var(--color-text-secondary)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <p style={{ margin: 0 }}>
@@ -813,8 +819,8 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
             }}
             style={{ marginTop: 0 }}
           />
-          <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '16px 0 0 0', lineHeight: 1.5, textAlign: 'center' }}>
-            Через эту платёжную страницу оплачиваются услуги ООО ЮК «Де-Юре». Оплата адвокатской помощи производится в порядке, предусмотренном отдельным соглашением с адвокатом.
+          <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '16px 0 0 0', lineHeight: 1.5, textAlign: 'center', textWrap: 'balance' }}>
+            Через эту платёжную страницу оплачиваются услуги ООО ЮК «Де-Юре».<br className="desktop-only" /> Оплата адвокатской помощи производится в порядке, предусмотренном отдельным соглашением с адвокатом.
           </p>
         </div>
       </section>
@@ -840,10 +846,10 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
                 </span>
               </div>
               <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                Узнайте стоимость решения вашей задачи
+                Узнайте стоимость<br className="desktop-only" /> решения вашей задачи
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Оставьте контакты и кратко опишите вопрос. Уточним задачу, подберём профильного юриста и сообщим, какие сведения нужны для точного расчёта.
+                Оставьте контакты и кратко опишите вопрос.<br className="desktop-only" /> Уточним задачу, подберём профильного юриста<br className="desktop-only" /> и сообщим, какие сведения нужны для точного расчёта.
               </p>
 
               <div style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>

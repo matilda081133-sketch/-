@@ -41,7 +41,7 @@ export default function CtaCard({
       ...style
     }}>
       <div style={{ flex: '1 1 400px' }}>
-        <h3 style={{ fontSize: '24px', marginBottom: '16px', fontFamily: 'var(--font-serif)', color: isDark ? 'var(--color-white)' : 'var(--color-deep-blue)' }}>
+        <h3 style={{ fontSize: '24px', marginBottom: '16px', fontFamily: 'var(--font-serif)', color: isDark ? 'var(--color-white)' : 'var(--color-deep-blue)', textWrap: 'balance' }}>
           {title}
         </h3>
         <p style={{ fontSize: '16px', color: isDark ? 'rgba(255,255,255,0.85)' : 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, margin: 0, textWrap: 'balance' }}>
