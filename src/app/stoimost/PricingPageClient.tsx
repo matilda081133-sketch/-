@@ -649,70 +649,148 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
         </div>
       </section>
 
-      {/* 3. Договор и порядок оплаты — ШАБЛОННЫЙ БЛОК ИЗ 4 КАРТОЧЕК */}
+      {/* 3. Договор и порядок оплаты — ШАБЛОН БЛОКА «ЧТО ПРОВЕРЯЕТ ЮРИСТ ДО ДОПУСКА К РАБОТЕ» */}
       <section
         className="section bg-white"
         style={{
-          padding: 'clamp(48px, 6vw, 80px) 0',
+          padding: 'clamp(60px, 7vw, 85px) 0',
           borderBottom: '1px solid var(--color-border)'
         }}
       >
         <div className="container">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-            <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
-              Финансовые условия
-            </span>
+          <div style={{ maxWidth: '780px', marginBottom: '48px', textAlign: 'left' }}>
+            <div
+              style={{
+                fontSize: '12.5px',
+                fontWeight: 700,
+                color: 'var(--color-gold)',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                marginBottom: '12px'
+              }}
+            >
+              ФИНАНСОВЫЕ УСЛОВИЯ
+            </div>
+            <h2
+              className="with-accent"
+              style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(28px, 4vw, 42px)',
+                color: 'var(--color-deep-blue)',
+                marginBottom: '16px',
+                marginTop: 0,
+                lineHeight: 1.25,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}
+            >
+              Договор и порядок оплаты
+            </h2>
+            <p
+              style={{
+                fontSize: '16px',
+                color: 'var(--color-text-secondary)',
+                fontWeight: 400,
+                lineHeight: 1.6,
+                margin: 0,
+                textAlign: 'left',
+                textWrap: 'balance'
+              }}
+            >
+              Прозрачные финансовые взаимоотношения, удобные способы расчёта и фиксация условий в договоре.
+            </p>
           </div>
-          <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 16px 0', lineHeight: 1.25, textWrap: 'balance' }}>
-            Договор и порядок оплаты
-          </h2>
-          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '850px', margin: '0 0 36px 0', textWrap: 'balance' }}>
-            Прозрачные финансовые взаимоотношения,<br className="desktop-only" /> удобные способы расчёта и фиксация в договоре
-          </p>
 
-          <div className="grid grid-4" style={{ gap: '24px', marginBottom: '28px' }}>
+          <div className="grid grid-4" style={{ gap: '28px', position: 'relative', marginBottom: '32px' }}>
             {[
               {
+                num: '01',
                 title: 'Оформление договора',
-                text: 'Договор можно заключить в офисе или дистанционно через электронный документооборот. Если у вас нет ЭДО, можно организовать обмен документами почтой. Вы получаете свой экземпляр договора.'
+                desc: 'Договор можно заключить в офисе или дистанционно через электронный документооборот. Если у вас нет ЭДО, организуем обмен документами почтой. Вы получаете свой экземпляр договора.'
               },
               {
+                num: '02',
                 title: 'Предоплата и этапы',
-                text: 'Как правило, предоплата составляет 50% стоимости работ. Порядок внесения оставшейся суммы согласуется индивидуально. Возможность рассрочки или оплаты по этапам обсуждается до заключения договора.'
+                desc: 'Как правило, предоплата составляет 50% стоимости работ. Порядок внесения оставшейся суммы согласуется индивидуально. Возможность рассрочки или оплаты по этапам обсуждается до заключения договора.'
               },
               {
+                num: '03',
                 title: 'Способы оплаты',
-                text: 'Доступны оплата банковской картой, по QR-коду, банковским переводом и наличными. Подходящий способ и реквизиты сообщим при согласовании оплаты. Вы получите документы, подтверждающие платёж.'
+                desc: 'Доступны оплата банковской картой, по QR-коду, банковским переводом и наличными. Подходящий способ и реквизиты сообщим при согласовании оплаты. Вы получите документы, подтверждающие платёж.'
               },
               {
+                num: '04',
                 title: 'Подтверждение работы',
-                text: 'Выполненные действия и их стоимость отражаются в акте, который подписывают компания и клиент по завершении согласованного объёма помощи.'
+                desc: 'Выполненные действия и их стоимость отражаются в акте, который подписывают компания и клиент по завершении согласованного объёма юридической помощи.'
               }
             ].map((item, idx) => (
               <div
                 key={idx}
+                className="hover-lift"
                 style={{
-                  background: 'var(--gradient-cream)',
-                  border: '1px solid rgba(23, 50, 77, 0.1)',
-                  borderTop: '3px solid var(--color-primary)',
-                  padding: '28px 24px',
+                  background: 'linear-gradient(160deg, #FFFFFF 0%, #FBF8F3 100%)',
+                  padding: '36px 26px 32px 26px',
+                  border: '1px solid var(--color-border)',
+                  borderTop: '4px solid var(--color-gold)',
+                  boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
                   display: 'flex',
                   flexDirection: 'column',
-                  boxShadow: '0 4px 16px rgba(16, 39, 59, 0.04)'
+                  position: 'relative'
                 }}
               >
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', margin: '0 0 12px 0', lineHeight: 1.3 }}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '-14px',
+                    left: '24px',
+                    background: 'var(--color-gold)',
+                    color: '#FFFFFF',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    padding: '2px 10px',
+                    borderRadius: '2px',
+                    letterSpacing: '0.05em'
+                  }}
+                >
+                  {item.num}
+                </div>
+                <h3
+                  style={{
+                    fontSize: '18px',
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--color-deep-blue)',
+                    margin: '8px 0 14px 0',
+                    lineHeight: 1.35,
+                    fontWeight: 700
+                  }}
+                >
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  {item.text}
+                <p
+                  style={{
+                    fontSize: '14px',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0,
+                    textWrap: 'pretty'
+                  }}
+                >
+                  {item.desc}
                 </p>
               </div>
             ))}
           </div>
 
-          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.65, margin: 0, maxWidth: '900px', textWrap: 'balance' }}>
+          <p
+            style={{
+              fontSize: '14px',
+              color: 'var(--color-text-secondary)',
+              lineHeight: 1.65,
+              margin: 0,
+              maxWidth: '900px',
+              textWrap: 'balance'
+            }}
+          >
             Адвокатская помощь оказывается независимым адвокатом по отдельному соглашению с доверителем.<br className="desktop-only" /> Условия участия, вознаграждение и порядок оплаты согласуются с адвокатом.
           </p>
         </div>
