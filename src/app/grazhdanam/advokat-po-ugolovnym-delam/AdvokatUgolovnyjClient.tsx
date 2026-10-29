@@ -1222,7 +1222,6 @@ export default function AdvokatUgolovnyjClient() {
         title="Стоимость услуг адвоката по уголовным делам"
         subtitle="Понятные цены за определённую работу без скрытых условий. Точный объём правовой помощи и порядок оплаты фиксируются в соглашении с адвокатом до начала работы."
         tiers={pricingTiers}
-        gridCols="2x2"
         direction="Адвокат по уголовным делам"
         pageUrl="https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/"
         ctaTitle="Рассчитать стоимость защиты"

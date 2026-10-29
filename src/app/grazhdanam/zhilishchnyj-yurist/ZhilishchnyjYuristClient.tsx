@@ -1044,7 +1044,6 @@ export default function ZhilishchnyjYuristClient() {
               buttonHref: '#form'
             }
           ]}
-          gridCols={3}
           direction="Жилищный юрист"
           mobileNote={
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>

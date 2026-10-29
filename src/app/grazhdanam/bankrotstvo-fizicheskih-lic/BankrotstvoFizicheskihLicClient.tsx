@@ -1284,7 +1284,6 @@ export default function BankrotstvoFizicheskihLicClient() {
         title="Стоимость помощи при банкротстве физических лиц"
         subtitle="Разовые действия имеют отдельную цену. Состав сопровождения процедуры и обязательные расходы обсудим после анализа долгов, имущества и сделок."
         tiers={pricingTiers}
-        gridCols={4}
         direction="Банкротство физических лиц"
         pageUrl="https://dejure-help.ru/grazhdanam/bankrotstvo-fizicheskih-lic/"
         ctaTitle="Рассчитать сопровождение процедуры"

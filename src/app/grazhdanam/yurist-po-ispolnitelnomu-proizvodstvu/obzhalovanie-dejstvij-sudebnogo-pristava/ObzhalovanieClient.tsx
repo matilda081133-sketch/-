@@ -716,7 +716,6 @@ export default function ObzhalovanieClient() {
         title="Стоимость обжалования действий и бездействия пристава"
         subtitle="Стоимость зависит от способа обжалования, процессуальной стадии и сложности дела. До старта зафиксируем перечень услуг и цену в договоре."
         tiers={pricingTiers}
-        gridCols={4}
         direction="Юрист по исполнительному производству"
         pageUrl="https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/obzhalovanie-dejstvij-sudebnogo-pristava/"
         ctaTitle="Определим оптимальный маршрут обжалования до начала работы"

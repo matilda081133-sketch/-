@@ -503,7 +503,6 @@ export default function OformlenieIVstuplenieVNasledstvoClient() {
         title="Стоимость оформления и вступления в наследство"
         subtitle="Стоимость сопровождения зависит от состава имущества, числа наследников, состояния документов и необходимости сбора архивных справок."
         tiers={pricingTiers}
-        gridCols={2}
         direction="Наследственный юрист"
         ctaTitle=""
         disclaimer={

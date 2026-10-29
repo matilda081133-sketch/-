@@ -901,7 +901,6 @@ export default function ZashchitaOtTrebovaniyClient() {
         title="Стоимость защиты по требованию о долге"
         subtitle="Защиту можно начать с консультации, анализа материалов или одного возражения. До начала работы фиксируем конкретное действие, состав услуг и стоимость."
         tiers={pricingTiers}
-        gridCols={5}
         direction="Защита от требований по долгу"
         pageUrl="https://dejure-help.ru/grazhdanam/vzyskanie-dolgov/zashchita-ot-trebovaniy-po-dolgu/"
         ctaTitle="Определим точную стоимость до старта работы"

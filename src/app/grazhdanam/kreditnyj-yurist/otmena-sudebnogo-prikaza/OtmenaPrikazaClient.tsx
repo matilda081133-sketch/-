@@ -1799,7 +1799,6 @@ export default function OtmenaPrikazaClient() {
         title="Стоимость помощи при отмене судебного приказа"
         subtitle="По закону своевременные возражения могут быть краткими. Помощь юриста нужна, чтобы проверить срок и доставку, оформить и подать документ надлежащим способом, а при позднем обращении обосновать причины."
         tiers={pricingTiers}
-        gridCols={3}
         direction="Кредитный юрист"
         pageUrl="https://dejure-help.ru/grazhdanam/kreditnyj-yurist/otmena-sudebnogo-prikaza/"
         ctaTitle="Определим точную стоимость до старта работы"

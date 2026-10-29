@@ -886,7 +886,6 @@ export default function VozvratDenegClient() {
         title="Стоимость помощи по возврату списанных денег"
         subtitle="Стоимость зависит от оснований списания, процессуальной стадии и способа возврата средств. До начала работы зафиксируем состав услуг и цену в договоре."
         tiers={pricingTiers}
-        gridCols={4}
         direction="Юрист по исполнительному производству"
         pageUrl="https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vozvrat-nezakonno-spisannyh-deneg/"
         ctaTitle="Определим возможность возврата списанных денег до начала работы"

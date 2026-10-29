@@ -863,7 +863,6 @@ export default function SnyatieArestaAvtoClient() {
         title="Стоимость снятия ареста с автомобиля"
         subtitle="Стоимость зависит от оснований наложения запрета, процессуального статуса собственника и выбранного пути защиты. До начала работы зафиксируем условия в договоре."
         tiers={pricingTiers}
-        gridCols={4}
         direction="Юрист по исполнительному производству"
         pageUrl="https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/"
         ctaTitle="Определим основание и способ снятия ареста с автомобиля"

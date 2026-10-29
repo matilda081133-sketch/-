@@ -1080,7 +1080,6 @@ export default function VnesudebnoeBankrotstvoMfcClient() {
         title="Стоимость помощи при банкротстве через МФЦ"
         subtitle="Сама процедура в МФЦ бесплатна; услуги юриста оплачиваются только при обращении за помощью. Представитель не является обязательным."
         tiers={pricingTiers}
-        gridCols={3}
         direction="Банкротство физических лиц"
         pageUrl="https://dejure-help.ru/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/"
         ctaTitle="Расчёт подготовки заявления для МФЦ"

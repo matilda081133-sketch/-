@@ -146,6 +146,7 @@ export default function PricingBlock({
       title: 'Бизнесу',
       subtitle: 'Правовая помощь компаниям и предпринимателям',
       popular: true,
+      badgeText: 'ВОСТРЕБОВАНО',
       buttonText: 'Рассчитать стоимость',
       buttonHref: '#consultation',
       footnote: 'Каждое последующее заседание — от 15 000 ₽.',
@@ -213,25 +214,72 @@ export default function PricingBlock({
     }
   ];
 
+  const normalizeTiers = (tierList: PricingTier[]): (PricingTier & { features: { name: string | React.ReactNode; value: string; note: string | React.ReactNode }[]; title: string | React.ReactNode; subtitle: string | React.ReactNode; buttonText: string; buttonHref: string })[] => {
+    if (!tierList || tierList.length === 0) return [];
+
+    const formatted = tierList.map((tier) => ({
+      ...tier,
+      title: tier.title || tier.name || '',
+      subtitle: tier.subtitle || tier.description || '',
+      popular: tier.popular ?? tier.isPopular ?? false,
+      badgeText: tier.badgeText || tier.badge || '',
+      price: tier.price,
+      features: (tier.features || []).map((f) =>
+        typeof f === 'string'
+          ? { name: f, value: '', note: '' }
+          : { name: (f as any).name || '', value: (f as any).value || '', note: (f as any).note || (f as any).subtitle || '' }
+      ),
+      footnote: tier.footnote,
+      buttonText: tier.buttonText || tier.ctaText || 'Рассчитать стоимость',
+      buttonHref: tier.buttonHref || tier.ctaHref || '#consultation',
+      exclusions: Array.isArray(tier.exclusions) ? tier.exclusions.join('; ') : tier.exclusions,
+      hideOnMobile: Boolean(tier.hideOnMobile),
+    }));
+
+    const popularIndices = formatted
+      .map((t, idx) => (t.popular ? idx : -1))
+      .filter((idx) => idx !== -1);
+
+    let targetIdx = -1;
+    if (popularIndices.length > 0) {
+      targetIdx = popularIndices[0];
+    } else {
+      // None is marked popular! Pick the best card:
+      const keywords = ['комплекс', 'под ключ', 'сопровождение', 'ведение', 'полное', 'экспертиза', 'защита', 'представительство', 'пакет', 'судебное', 'арбитраж'];
+      const foundIdx = formatted.findIndex((t) => {
+        const s = `${String(t.title)} ${String(t.subtitle)}`.toLowerCase();
+        return keywords.some((k) => s.includes(k));
+      });
+
+      if (foundIdx !== -1) {
+        targetIdx = foundIdx;
+      } else if (formatted.length === 2) {
+        targetIdx = 1;
+      } else if (formatted.length === 3) {
+        targetIdx = 1; // Middle card
+      } else if (formatted.length === 4) {
+        targetIdx = 1; // 2nd card
+      } else if (formatted.length === 5) {
+        targetIdx = 2; // Middle card
+      } else if (formatted.length >= 6) {
+        targetIdx = Math.floor(formatted.length / 2);
+      } else {
+        targetIdx = 0;
+      }
+    }
+
+    return formatted.map((tier, idx) => {
+      const isPopular = idx === targetIdx;
+      return {
+        ...tier,
+        popular: isPopular,
+        badgeText: isPopular ? (tier.badgeText || 'ВОСТРЕБОВАНО') : '',
+      };
+    });
+  };
+
   const rawTiers = activeTab ? activeTab.tiers : (propTiers || (groups ? groups.flatMap(g => g.tiers) : defaultTiers));
-  const tiers = rawTiers.map((tier) => ({
-    ...tier,
-    title: tier.title || tier.name || '',
-    subtitle: tier.subtitle || tier.description || '',
-    popular: tier.popular ?? tier.isPopular ?? false,
-    badgeText: tier.badgeText || tier.badge || '',
-    price: tier.price,
-    features: (tier.features || []).map((f) =>
-      typeof f === 'string'
-        ? { name: f, value: '', note: '' }
-        : { name: f.name || '', value: f.value || '', note: f.note || f.subtitle || '' }
-    ),
-    footnote: tier.footnote,
-    buttonText: tier.buttonText || tier.ctaText || 'Рассчитать стоимость',
-    buttonHref: tier.buttonHref || tier.ctaHref || '#consultation',
-    exclusions: Array.isArray(tier.exclusions) ? tier.exclusions.join('; ') : tier.exclusions,
-    hideOnMobile: Boolean(tier.hideOnMobile),
-  }));
+  const tiers = normalizeTiers(rawTiers);
 
   const pathname = usePathname();
   const isHomepage = pathname === '/' || pathname === '' || pathname === '/index.html';
@@ -342,16 +390,18 @@ export default function PricingBlock({
     const isMinPrice = tier.price ? /от/i.test(String(tier.price)) : false;
     const tierTitleStr = typeof tier.title === 'string' ? tier.title : 'Юридическая услуга';
     const tierSubtitleStr = typeof tier.subtitle === 'string' ? tier.subtitle : '';
-    const isDense = colsCount === 5 || (colsCount === undefined && tiers.length >= 5);
-    const isFour = colsCount === 4 || (colsCount === undefined && tiers.length === 4);
-    const isThree = colsCount === 3 || (colsCount === undefined && tiers.length === 3);
+    const totalCols = typeof colsCount === 'number' ? colsCount : tiers.length;
+    const isSix = totalCols >= 6;
+    const isDense = totalCols === 5 || isSix;
+    const isFour = totalCols === 4;
+    const isThree = totalCols === 3;
 
     return (
       <div key={idxKey} style={{
         background: tier.popular ? 'linear-gradient(145deg, #0B1C2A 0%, #17375E 100%)' : 'var(--color-white)',
         color: tier.popular ? 'var(--color-white)' : 'var(--color-deep-blue)',
         borderRadius: '0',
-        padding: isDense ? '26px 12px' : isFour ? '32px 16px' : isThree ? '32px 24px' : '40px 30px',
+        padding: isSix ? '24px 10px' : isDense ? '26px 12px' : isFour ? '30px 16px' : isThree ? '32px 24px' : '40px 30px',
         boxShadow: tier.popular ? '0 20px 40px rgba(16, 39, 59, 0.15)' : '0 10px 30px rgba(0,0,0,0.05)',
         border: tier.popular ? '1px solid transparent' : '1px solid rgba(23, 50, 77, 0.1)',
         position: 'relative',
@@ -589,7 +639,7 @@ export default function PricingBlock({
         />
       )}
 
-      <div className="container" style={{ position: 'relative', zIndex: 1, ...(tiers.length >= 5 ? { maxWidth: '1400px' } : {}) }}>
+      <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: (tiers.length >= 4 || (groups && groups.some(g => g.tiers.length >= 4))) ? '1400px' : '1160px' }}>
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <h2 style={{ 
             marginTop: 0, 
@@ -770,7 +820,9 @@ export default function PricingBlock({
         {groups && groups.length > 0 ? (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
             {groups.map((group, gIdx) => {
-              const gCols = group.gridCols || (group.tiers.length >= 5 ? 5 : group.tiers.length === 4 ? 4 : group.tiers.length === 3 ? 3 : 2);
+              const groupTiers = normalizeTiers(group.tiers);
+              const gCount = groupTiers.length;
+              const gridClass = gCount >= 6 ? 'pricing-grid-6' : gCount === 5 ? 'pricing-grid-5' : gCount === 4 ? 'pricing-grid-4' : gCount === 3 ? 'pricing-grid-3' : 'pricing-grid-2';
               return (
                 <div key={gIdx} className="pricing-group">
                   <div style={{ marginBottom: '28px', textAlign: 'center' }}>
@@ -795,9 +847,9 @@ export default function PricingBlock({
                     )}
                   </div>
                   <div 
-                    className={`pricing-grid-container ${gCols === '2x2' ? 'pricing-grid-2x2' : gCols === 2 ? 'pricing-grid-2' : gCols === 3 ? 'pricing-grid-3' : gCols === 4 ? 'pricing-grid-4' : 'pricing-grid-5'}`}
+                    className={`pricing-grid-container ${gridClass}`}
                   >
-                    {group.tiers.map((tier, idx) => renderCard(tier, `${gIdx}-${idx}`, gCols))}
+                    {groupTiers.map((tier, idx) => renderCard(tier, `${gIdx}-${idx}`, gCount))}
                   </div>
                 </div>
               );
@@ -805,9 +857,9 @@ export default function PricingBlock({
           </div>
         ) : (
           <div 
-            className={`pricing-grid-container ${effectiveGridCols === '2x2' ? 'pricing-grid-2x2' : effectiveGridCols === 2 ? 'pricing-grid-2' : effectiveGridCols === 3 ? 'pricing-grid-3' : effectiveGridCols === 4 ? 'pricing-grid-4' : tiers.length >= 5 ? "pricing-grid-5" : tiers.length === 4 ? "pricing-grid-4" : tiers.length >= 3 ? "pricing-grid-3" : "pricing-grid-2"}`}
+            className={`pricing-grid-container ${tiers.length >= 6 ? 'pricing-grid-6' : tiers.length === 5 ? 'pricing-grid-5' : tiers.length === 4 ? 'pricing-grid-4' : tiers.length === 3 ? 'pricing-grid-3' : 'pricing-grid-2'}`}
           >
-            {tiers.map((tier, idx) => renderCard(tier, idx, effectiveGridCols))}
+            {tiers.map((tier, idx) => renderCard(tier, idx, tiers.length))}
           </div>
         )}
 
@@ -920,27 +972,25 @@ export default function PricingBlock({
           align-items: stretch;
           width: 100%;
         }
+        .pricing-grid-6 {
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+          gap: 12px;
+        }
         .pricing-grid-5 {
           grid-template-columns: repeat(5, minmax(0, 1fr));
           gap: 12px;
         }
-        .pricing-grid-4 {
-          grid-template-columns: repeat(4, minmax(0, 1fr));
+        .pricing-grid-4, .pricing-grid-2x2 {
+          grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
           gap: 16px;
-        }
-        .pricing-grid-2x2 {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 28px;
-          max-width: 1000px;
-          margin: 0 auto;
         }
         .pricing-grid-3 {
           grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 30px;
+          gap: 24px;
         }
         .pricing-grid-2 {
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 30px;
+          gap: 28px;
           max-width: 850px;
           margin: 0 auto;
         }
@@ -950,16 +1000,25 @@ export default function PricingBlock({
           margin-right: auto !important;
           width: 100% !important;
         }
+        @media (min-width: 992px) {
+          .pricing-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+          .pricing-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+          .pricing-grid-4, .pricing-grid-2x2 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+          .pricing-grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+          .pricing-grid-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+        }
         @media (max-width: 991px) and (min-width: 768px) {
-          .pricing-grid-5 {
+          .pricing-grid-5, .pricing-grid-6 {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 12px !important;
+          }
+          .pricing-grid-4, .pricing-grid-2x2 {
             grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
             gap: 16px !important;
           }
-        }
-        @media (max-width: 1024px) and (min-width: 768px) {
-          .pricing-grid-3, .pricing-grid-4, .pricing-grid-2x2 {
-            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            gap: 20px !important;
+          .pricing-grid-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 14px !important;
           }
         }
         .pricing-mobile-note-row {

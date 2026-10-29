@@ -886,7 +886,6 @@ export default function SnyatieArestaSchetaClient() {
         title="Стоимость снятия ареста со счёта и разблокировки карты"
         subtitle="Стоимость зависит от оснований блокировки, количества счетов и выбранного порядка защиты. До старта зафиксируем состав работы и цену в договоре."
         tiers={pricingTiers}
-        gridCols={4}
         direction="Юрист по исполнительному производству"
         pageUrl="https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/"
         ctaTitle="Определим порядок снятия ареста со счёта до начала работы"

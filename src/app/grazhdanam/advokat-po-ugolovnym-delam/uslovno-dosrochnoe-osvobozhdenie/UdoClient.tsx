@@ -965,7 +965,6 @@ export default function UdoClient() {
         title="Стоимость помощи адвоката"
         subtitle="Фиксированная стоимость услуг закрепляется в соглашении до начала работы."
         tiers={pricingTiers}
-        gridCols={2}
         ctaTitle=""
         direction="Адвокат по уголовным делам"
         pageUrl="https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/uslovno-dosrochnoe-osvobozhdenie/"

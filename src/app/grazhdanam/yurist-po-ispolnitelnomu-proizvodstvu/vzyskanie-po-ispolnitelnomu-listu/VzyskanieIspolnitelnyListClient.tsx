@@ -954,7 +954,6 @@ export default function VzyskanieIspolnitelnyListClient() {
         title="Стоимость помощи по взысканию по исполнительному листу"
         subtitle="Стоимость зависит от канала исполнения (банк или ФССП), наличия сведений об имуществе должника и объёма работы юриста. До начала работы зафиксируем условия в договоре."
         tiers={pricingTiers}
-        gridCols={4}
         direction="Юрист по исполнительному производству"
         pageUrl="https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/"
         ctaTitle="Определим оптимальный канал взыскания до начала работы"

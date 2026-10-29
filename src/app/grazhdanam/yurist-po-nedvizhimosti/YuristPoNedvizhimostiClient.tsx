@@ -303,7 +303,7 @@ export default function YuristPoNedvizhimostiClient() {
     {
       id: 'spory',
       label: 'Оформление права и судебные споры',
-      gridCols: '2x2',
+      
       tiers: [
         {
           title: 'Устная консультация по недвижимости',
