@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import ContactsForm from '@/components/ContactsForm';
 import { PRICING_DIRECTIONS, PricingDirection } from '@/data/pricingData';
 import { sendLeadToCRM } from '@/lib/crm';
 
@@ -16,15 +17,8 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
   const [openCitizensAnchor, setOpenCitizensAnchor] = useState<string | null>(null);
   const [openBusinessAnchor, setOpenBusinessAnchor] = useState<string | null>(null);
 
-  // Form state
+  // Direction state for calculator buttons linking to ContactsForm
   const [selectedDirection, setSelectedDirection] = useState<PricingDirection | null>(null);
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
-  const [agree, setAgree] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const activeAnchor = audience === 'citizens' ? openCitizensAnchor : openBusinessAnchor;
 
@@ -127,76 +121,6 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
         top: elementPosition - headerOffset,
         behavior: 'smooth'
       });
-    }
-  };
-
-  // Format phone number
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let val = e.target.value;
-    val = val.replace(/[^\d+]/g, '');
-    if (val.length > 18) val = val.substring(0, 18);
-    setPhone(val);
-  };
-
-  // Form submit handler
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(null);
-
-    if (!phone || phone.replace(/\D/g, '').length < 10) {
-      setError('Пожалуйста, укажите корректный номер телефона (не менее 10 цифр).');
-      return;
-    }
-
-    if (!agree) {
-      setError('Для отправки необходимо дать согласие на обработку персональных данных.');
-      return;
-    }
-
-    setLoading(true);
-
-    const dirTitle = selectedDirection ? selectedDirection.title : 'Не выбрано';
-    const selectedService = selectedDirection
-      ? `Расчёт стоимости по направлению ${selectedDirection.title}`
-      : 'Общий расчёт стоимости';
-    const audVal = selectedDirection ? selectedDirection.audience : '';
-
-    const payload = {
-      name: name.trim(),
-      phone: phone.startsWith('+') ? `'${phone}` : phone,
-      message: message.trim(),
-      direction: dirTitle,
-      selected_service: selectedService,
-      audience: audVal,
-      source_page: 'https://dejure-help.ru/stoimost/',
-      ctaSource: 'pricing_calculator',
-      page_title: 'Стоимость юридических услуг в Липецке — цены | Де-Юре',
-      page_url: typeof window !== 'undefined' ? window.location.href : 'https://dejure-help.ru/stoimost/'
-    };
-
-    try {
-      const result = await sendLeadToCRM(payload);
-      if (result.success) {
-        setLoading(false);
-        setSubmitted(true);
-
-        // Fire analytics goal strictly once per TZ section 8
-        trackEvent('pricing_form_success', {
-          direction_id: selectedDirection?.anchor,
-          audience: audVal
-        });
-
-        // Also call standard FORM_SUBMIT if registered
-        if (typeof window !== 'undefined' && typeof window.trackGoal === 'function') {
-          window.trackGoal('FORM_SUBMIT', { page: payload.page_title, cta: 'pricing_calculator' });
-        }
-      } else {
-        throw new Error(result.error || 'Ошибка отправки в CRM');
-      }
-    } catch (err: any) {
-      console.error('Ошибка отправки заявки:', err);
-      setLoading(false);
-      setError('Не удалось отправить заявку. Пожалуйста, проверьте номер телефона или свяжитесь с нами по телефону +7 (4742) 20-15-25.');
     }
   };
 
@@ -1094,255 +1018,167 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
       <section
         id="consultation"
         className="pricing-form-section"
-        style={{ padding: 'clamp(48px, 6vw, 84px) 0', background: '#FFFFFF', scrollMarginTop: '100px' }}
+        style={{
+          background: 'var(--color-surface, #F8F9FA)',
+          padding: 'clamp(48px, 6vw, 84px) 0',
+          borderTop: '1px solid var(--color-border, rgba(16, 39, 59, 0.08))',
+          scrollMarginTop: '100px'
+        }}
       >
-        <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-            <h2 style={{
-              fontSize: 'clamp(26px, 3.5vw, 36px)',
-              fontFamily: 'var(--font-serif)',
-              color: '#10273B',
-              margin: '0 0 12px 0',
-              fontWeight: 700
-            }}>
-              Узнайте стоимость решения вашей задачи
-            </h2>
-            <p style={{
-              fontSize: '16px',
-              color: '#4A5568',
-              margin: 0,
-              lineHeight: 1.55
-            }}>
-              Оставьте контакты и кратко опишите вопрос. Уточним задачу и сообщим, какие сведения нужны для расчёта.
-            </p>
-          </div>
-
-          {submitted ? (
-            <div style={{
-              padding: '36px 28px',
-              backgroundColor: '#F0FDF4',
-              border: '1px solid #86EFAC',
-              borderRadius: '6px',
-              textAlign: 'center'
-            }}>
-              <div style={{
-                width: '56px',
-                height: '56px',
-                borderRadius: '50%',
-                backgroundColor: '#22C55E',
-                color: '#FFFFFF',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '16px'
-              }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </div>
-              <h3 style={{ fontSize: '22px', color: '#166534', margin: '0 0 10px 0', fontWeight: 600 }}>
-                Заявка на расчёт принята
-              </h3>
-              <p style={{ fontSize: '16px', color: '#15803D', margin: '0 0 20px 0', lineHeight: 1.5 }}>
-                Специалист ЮК «Де-Юре» свяжется с вами в ближайшее рабочее время для уточнения обстоятельств и расчёта задачи.
-              </p>
-              <button
-                type="button"
-                onClick={() => {
-                  setSubmitted(false);
-                  setName('');
-                  setPhone('');
-                  setMessage('');
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '40px',
+              alignItems: 'start',
+            }}
+          >
+            <div>
+              <span
+                style={{
+                  color: 'var(--color-gold, #C29557)',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  fontSize: '13px',
+                  letterSpacing: '0.1em',
+                  display: 'block',
+                  marginBottom: '8px',
                 }}
-                className="btn btn-outline"
-                style={{ padding: '10px 24px', fontSize: '14px' }}
               >
-                Отправить ещё одну задачу
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              {/* Поле выбора направления */}
-              <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#10273B', marginBottom: '8px' }}>
-                  Направление юридической помощи
-                </label>
-                <div style={{ position: 'relative' }}>
-                  <select
-                    value={selectedDirection ? selectedDirection.anchor : ''}
-                    onChange={(e) => {
-                      const val = e.target.value;
-                      if (!val) {
-                        setSelectedDirection(null);
-                      } else {
-                        const found = PRICING_DIRECTIONS.find(d => d.anchor === val);
-                        setSelectedDirection(found || null);
-                      }
-                    }}
-                    style={{
-                      width: '100%',
-                      padding: '14px 16px',
-                      fontSize: '15px',
-                      borderRadius: '4px',
-                      border: '1px solid rgba(16, 39, 59, 0.25)',
-                      backgroundColor: '#FFFFFF',
-                      color: '#10273B',
-                      appearance: 'none',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <option value="">Не выбрано (Общий расчёт стоимости)</option>
-                    <optgroup label="Гражданам">
-                      {citizensDirections.map(d => (
-                        <option key={d.anchor} value={d.anchor}>{d.title}</option>
-                      ))}
-                    </optgroup>
-                    <optgroup label="Бизнесу">
-                      {businessDirections.map(d => (
-                        <option key={d.anchor} value={d.anchor}>{d.title}</option>
-                      ))}
-                    </optgroup>
-                  </select>
-                  <div style={{ position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: '#718096' }}>
-                    ▼
-                  </div>
-                </div>
-              </div>
+                Индивидуальный расчёт
+              </span>
+              <h2
+                style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: 'clamp(28px, 3.5vw, 40px)',
+                  color: 'var(--color-deep-blue, #10273B)',
+                  margin: '0 0 16px 0',
+                  lineHeight: 1.2,
+                }}
+              >
+                Узнайте стоимость решения вашей задачи
+              </h2>
+              <p
+                style={{
+                  fontSize: '16px',
+                  color: 'var(--color-text-secondary, #4A5568)',
+                  lineHeight: 1.6,
+                  margin: '0 0 24px 0',
+                }}
+              >
+                Оставьте контакты и кратко опишите вопрос. Уточним задачу, подберём профильного юриста и сообщим, какие сведения нужны для точного расчёта.
+              </p>
 
-              {/* Телефон (обязательный) */}
-              <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#10273B', marginBottom: '8px' }}>
-                  Телефон для связи <span style={{ color: '#E53E3E' }}>*</span>
-                </label>
-                <input
-                  type="tel"
-                  required
-                  placeholder="+7 (___) ___-__-__"
-                  value={phone}
-                  onChange={handlePhoneChange}
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                  marginBottom: '28px',
+                  padding: '16px 20px',
+                  background: 'rgba(16, 39, 59, 0.03)',
+                  borderLeft: '3px solid var(--color-gold, #C29557)',
+                }}
+              >
+                <a
+                  href="tel:+74742201525"
                   style={{
-                    width: '100%',
-                    padding: '14px 16px',
-                    fontSize: '16px',
-                    borderRadius: '4px',
-                    border: '1px solid rgba(16, 39, 59, 0.25)',
-                    backgroundColor: '#FFFFFF',
-                    color: '#10273B'
-                  }}
-                />
-              </div>
-
-              {/* Имя (необязательное) */}
-              <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#10273B', marginBottom: '8px' }}>
-                  Ваше имя (необязательно)
-                </label>
-                <input
-                  type="text"
-                  placeholder="Как к вам обращаться"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  style={{
-                    width: '100%',
-                    padding: '14px 16px',
-                    fontSize: '15px',
-                    borderRadius: '4px',
-                    border: '1px solid rgba(16, 39, 59, 0.25)',
-                    backgroundColor: '#FFFFFF',
-                    color: '#10273B'
-                  }}
-                />
-              </div>
-
-              {/* Описание ситуации (необязательное) */}
-              <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#10273B', marginBottom: '8px' }}>
-                  Краткое описание ситуации или вопрос (необязательно)
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="Кратко опишите ситуацию или вопрос…"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  style={{
-                    width: '100%',
-                    padding: '14px 16px',
-                    fontSize: '15px',
-                    borderRadius: '4px',
-                    border: '1px solid rgba(16, 39, 59, 0.25)',
-                    backgroundColor: '#FFFFFF',
-                    color: '#10273B',
-                    resize: 'vertical'
-                  }}
-                />
-              </div>
-
-              {/* Предупреждение о конфиденциальности по ТЗ раздел 5 */}
-              <div style={{
-                fontSize: '13px',
-                color: '#64748B',
-                lineHeight: 1.5,
-                padding: '10px 14px',
-                backgroundColor: '#F8FAFC',
-                borderRadius: '4px',
-                border: '1px solid #E2E8F0'
-              }}>
-                Не указывайте паспортные данные и другие конфиденциальные сведения. Способ передачи документов согласуем отдельно.
-              </div>
-
-              {/* Согласие на обработку персональных данных (не предустановлено) */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                <input
-                  type="checkbox"
-                  id="pricing_agree"
-                  checked={agree}
-                  onChange={(e) => setAgree(e.target.checked)}
-                  style={{ marginTop: '4px', cursor: 'pointer', width: '18px', height: '18px' }}
-                />
-                <label htmlFor="pricing_agree" style={{ fontSize: '13px', color: '#4A5568', lineHeight: 1.45, cursor: 'pointer' }}>
-                  Согласен на обработку персональных данных в соответствии с{' '}
-                  <Link href="/privacy-policy/" target="_blank" style={{ color: '#10273B', textDecoration: 'underline' }}>
-                    Политикой конфиденциальности
-                  </Link>
-                </label>
-              </div>
-
-              {/* Ошибка */}
-              {error && (
-                <div style={{
-                  padding: '12px 16px',
-                  backgroundColor: '#FEF2F2',
-                  border: '1px solid #F87171',
-                  borderRadius: '4px',
-                  color: '#991B1B',
-                  fontSize: '14px',
-                  lineHeight: 1.45
-                }}>
-                  {error}
-                </div>
-              )}
-
-              {/* Кнопка отправки */}
-              <div>
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="btn btn-primary"
-                  style={{
-                    width: '100%',
-                    padding: '16px 28px',
-                    fontSize: '16px',
-                    fontWeight: 600,
-                    minHeight: '52px',
-                    cursor: loading ? 'not-allowed' : 'pointer',
-                    opacity: loading ? 0.7 : 1
+                    fontSize: '18px',
+                    fontWeight: 700,
+                    color: 'var(--color-deep-blue, #10273B)',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '10px',
                   }}
                 >
-                  {loading ? 'Отправка...' : 'Получить расчёт стоимости'}
-                </button>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={{ flexShrink: 0 }}
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  <span>+7 (4742) 20-15-25</span>
+                </a>
+                <span style={{ fontSize: '15px', color: 'var(--color-text-secondary, #4A5568)' }}>
+                  г. Липецк, ул. Советская, д. 35, оф. 213
+                </span>
               </div>
-            </form>
-          )}
+
+              <div>
+                <div
+                  style={{
+                    color: 'var(--color-deep-blue, #10273B)',
+                    fontWeight: 600,
+                    fontSize: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                  }}
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--color-gold, #C29557)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={{ flexShrink: 0 }}
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  <span>Перезвоним в течение 15 минут в рабочее время</span>
+                </div>
+                <p
+                  style={{
+                    fontSize: '13px',
+                    color: 'var(--color-text-secondary, #4A5568)',
+                    lineHeight: 1.5,
+                    margin: '12px 0 0 0',
+                    fontStyle: 'italic',
+                  }}
+                >
+                  Не указывайте в форме паспортные данные и другие конфиденциальные сведения. Их можно передать юристу после установления защищённого способа связи.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <div
+                className="main-consultation-form-card"
+                style={{
+                  background: 'var(--gradient-cream, #FFFDF8)',
+                  padding: 'clamp(24px, 4vw, 40px)',
+                  borderRadius: '0',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  width: '100%',
+                  border: '1px solid rgba(0,0,0,0.06)',
+                  boxSizing: 'border-box',
+                }}
+              >
+                <ContactsForm
+                  direction={selectedDirection ? selectedDirection.title : "Стоимость и оплата"}
+                  title="Оставить заявку на расчёт"
+                  subtitle={<>Уточним обстоятельства вопроса и рассчитаем точную стоимость решения.</>}
+                  buttonText="Получить расчёт стоимости"
+                  commentLabel="Краткое описание вопроса (необязательно)"
+                  commentPlaceholder="Опишите ситуацию или вопрос для предварительного расчёта…"
+                  hiddenFields={[{ name: 'source_page', value: 'https://dejure-help.ru/stoimost/' }]}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -174,10 +174,10 @@ export default function Header() {
               <li><Link href="/o-kompanii" className="dropdown-link-2" style={{ fontWeight: 600 }}>О компании</Link></li>
               <li><Link href="/specialisty" className="dropdown-link-2">Специалисты</Link></li>
               <li><Link href="/stoimost" className="dropdown-link-2">Стоимость и оплата</Link></li>
-              <li><Link href="/praktika" className="dropdown-link-2">Судебная практика</Link></li>
             </ul>
           </div>
 
+          <Link href="/praktika" className="nav-link">Практика</Link>
           <Link href="/kontakty" className="nav-link">Контакты</Link>
         </nav>
 
@@ -438,13 +438,13 @@ export default function Header() {
                 <Link href="/stoimost" onClick={closeMobileMenu} style={{ color: 'var(--color-text-main)', fontSize: '15px', padding: '4px 0' }}>
                   Стоимость и оплата
                 </Link>
-                <Link href="/praktika" onClick={closeMobileMenu} style={{ color: 'var(--color-text-main)', fontSize: '15px', padding: '4px 0' }}>
-                  Судебная практика
-                </Link>
               </div>
             )}
           </div>
 
+          <Link href="/praktika" onClick={closeMobileMenu} style={{ padding: '14px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', borderBottom: '1px solid var(--color-border)', textDecoration: 'none' }}>
+            Практика
+          </Link>
           <Link href="/kontakty" onClick={closeMobileMenu} style={{ padding: '14px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', borderBottom: '1px solid var(--color-border)', textDecoration: 'none' }}>
             Контакты
           </Link>
