@@ -38,6 +38,20 @@ function getUtmParams(): Record<string, string> {
 }
 
 export async function sendLeadToCRM(payload: LeadPayload): Promise<{ success: boolean; bitrixLeadId?: number; error?: string }> {
+  // Защита от спама и фантомных кликов:
+  // Исключаем автоматическое создание сделок при клике на телефон (click_to_call)
+  // и отсекаем попытки отправки собственного номера компании +7 (4742) 20-15-25
+  const cleanPhone = String(payload.phone || '').replace(/\D/g, '');
+  if (
+    payload.ctaSource === 'click_to_call' ||
+    cleanPhone === '74742201525' ||
+    cleanPhone === '84742201525' ||
+    cleanPhone === '4742201525'
+  ) {
+    // Не создаем сделку в CRM при простом клике на номер, чтобы не замусоривать воронку и статистику
+    return { success: true };
+  }
+
   const utm = getUtmParams();
 
   const titleTopic = payload.selected_service || payload.direction || payload.specialist || 'Консультация';
