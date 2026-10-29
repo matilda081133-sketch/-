@@ -29,7 +29,8 @@ jobs:
         run: npm install
 
       - name: Build Next.js static export
-        run: npm run build
+        run: |
+          npm run build 2>&1 | tee build.log || (echo "### Build Failed" >> $GITHUB_STEP_SUMMARY && echo '```' >> $GITHUB_STEP_SUMMARY && cat build.log >> $GITHUB_STEP_SUMMARY && echo '```' >> $GITHUB_STEP_SUMMARY && exit 1)
 
       - name: Fix /-/ navigation paths in HTML (links, hrefs, breadcrumbs)
         run: |
