@@ -864,14 +864,20 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
                       alert('Платёжная страница эквайринга подключается банком. Для согласования счёта и реквизитов оплаты свяжитесь с вашим юристом: +7 (4742) 20-15-25');
                     }
                   }}
-                  className="btn btn-primary"
+                  className="btn btn-gold"
                   style={{
-                    display: 'inline-block',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     whiteSpace: 'nowrap',
                     padding: '16px 36px',
-                    fontSize: '15px',
+                    fontSize: '15.5px',
                     borderRadius: 0,
-                    fontWeight: 600
+                    fontWeight: 600,
+                    backgroundColor: 'var(--color-gold)',
+                    borderColor: 'var(--color-gold)',
+                    color: 'var(--color-white)',
+                    boxShadow: '0 4px 14px rgba(184, 156, 114, 0.3)'
                   }}
                 >
                   Перейти к оплате

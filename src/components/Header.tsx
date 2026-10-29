@@ -179,7 +179,6 @@ export default function Header() {
             </ul>
           </div>
 
-          <Link href="/praktika" className="nav-link">Практика</Link>
           <Link href="/kontakty" className="nav-link">Контакты</Link>
         </nav>
 
@@ -450,9 +449,6 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/praktika" onClick={closeMobileMenu} style={{ padding: '14px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', borderBottom: '1px solid var(--color-border)', textDecoration: 'none' }}>
-            Практика
-          </Link>
           <Link href="/kontakty" onClick={closeMobileMenu} style={{ padding: '14px 0', fontSize: '18px', fontWeight: 700, color: 'var(--color-deep-blue)', borderBottom: '1px solid var(--color-border)', textDecoration: 'none' }}>
             Контакты
           </Link>

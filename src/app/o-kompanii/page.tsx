@@ -338,6 +338,13 @@ export default function AboutPage() {
                 >
                   Дистанционная помощь →
                 </Link>
+                <Link
+                  href="/praktika/"
+                  className="btn btn-outline"
+                  style={{ padding: '14px 28px', fontSize: '15px', borderRadius: 0 }}
+                >
+                  Судебная практика →
+                </Link>
               </div>
             </div>
           </div>
