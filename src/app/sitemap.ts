@@ -56,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/kontakty/',
     '/o-kompanii/',
     '/stoimost/',
+    '/distancionnaya-yuridicheskaya-pomoshch/',
     // Арбитражный юрист (Кластер BIZ-01)
     '/biznesu/arbitrazhnyj-yurist/',
     '/biznesu/arbitrazhnyj-yurist/isk-v-arbitrazhnyj-sud/',
