@@ -204,12 +204,13 @@ export default function Footer() {
               </ul>
             </div>
 
-            {PAYMENT_URL && (
+            {/* Payment button visible per user request */}
+            {true && (
               <div style={{ marginTop: '20px' }}>
                 <a
-                  href={PAYMENT_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={PAYMENT_URL || '/stoimost/#oplata'}
+                  target={PAYMENT_URL ? "_blank" : undefined}
+                  rel={PAYMENT_URL ? "noopener noreferrer" : undefined}
                   onClick={() => {
                     if (typeof window !== 'undefined' && (window as any).ym) {
                       (window as any).ym(98402484, 'reachGoal', 'payment_click', {

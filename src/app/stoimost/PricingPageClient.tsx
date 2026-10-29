@@ -497,22 +497,20 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
               >
                 Условия работы и оплаты ↓
               </a>
-              {PAYMENT_URL && (
-                <a
-                  href="#oplata"
-                  style={{
-                    fontSize: '14.5px',
-                    color: '#10273B',
-                    textDecoration: 'underline',
-                    textUnderlineOffset: '4px',
-                    fontWeight: 500,
-                    opacity: 0.88,
-                    transition: 'opacity 0.2s ease'
-                  }}
-                >
-                  Оплатить согласованные услуги ↓
-                </a>
-              )}
+              <a
+                href="#oplata"
+                style={{
+                  fontSize: '14.5px',
+                  color: '#10273B',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '4px',
+                  fontWeight: 500,
+                  opacity: 0.88,
+                  transition: 'opacity 0.2s ease'
+                }}
+              >
+                Оплатить согласованные услуги ↓
+              </a>
             </div>
           </div>
         </div>
@@ -1033,59 +1031,63 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
         </div>
       </section>
 
-      {/* Раздел 8 ТЗ: Оплата согласованных услуг (#oplata) — публикуется только при наличии рабочей ссылки эквайринга per TZ п. 8 */}
-      {PAYMENT_URL && (
-        <section
-          id="oplata"
-          className="pricing-payment-section"
-          style={{
-            padding: 'clamp(44px, 5.5vw, 68px) 0',
-            background: '#F8F9FA',
-            borderBottom: '1px solid rgba(16, 39, 59, 0.08)',
-            scrollMarginTop: '110px'
-          }}
-        >
-          <div className="container" style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 style={{
-              fontSize: 'clamp(24px, 3.2vw, 30px)',
-              fontFamily: 'var(--font-serif)',
-              color: '#10273B',
-              margin: '0 0 16px 0',
-              fontWeight: 700,
-              lineHeight: 1.25
-            }}>
-              Оплата согласованных услуг
-            </h2>
-            <p style={{ fontSize: '16px', color: '#4A5568', lineHeight: 1.6, margin: '0 auto 24px auto', maxWidth: '600px' }}>
-              Уже согласовали с юристом услугу и сумму? Перейдите на платёжную страницу и оплатите по реквизитам и назначению, указанным в договоре или счёте.
-            </p>
-            <div style={{ marginBottom: '16px' }}>
-              <a
-                href={PAYMENT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackEvent('payment_click', { placement: 'pricing_page' })}
-                className="btn btn-outline"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '14px 32px',
-                  fontSize: '16px',
-                  fontWeight: 600,
-                  minHeight: '48px',
-                  textDecoration: 'none'
-                }}
-              >
-                Перейти к оплате
-              </a>
-            </div>
-            <p style={{ fontSize: '13.5px', color: '#718096', margin: 0, lineHeight: 1.5, maxWidth: '580px', marginLeft: 'auto', marginRight: 'auto' }}>
-              Через эту платёжную страницу оплачиваются услуги ООО ЮК „Де-Юре“. Оплата адвокатской помощи производится в порядке, предусмотренном отдельным соглашением с адвокатом.
-            </p>
+      {/* Раздел 8 ТЗ: Оплата согласованных услуг (#oplata) */}
+      <section
+        id="oplata"
+        className="pricing-payment-section"
+        style={{
+          padding: 'clamp(44px, 5.5vw, 68px) 0',
+          background: '#F8F9FA',
+          borderBottom: '1px solid rgba(16, 39, 59, 0.08)',
+          scrollMarginTop: '110px'
+        }}
+      >
+        <div className="container" style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{
+            fontSize: 'clamp(24px, 3.2vw, 30px)',
+            fontFamily: 'var(--font-serif)',
+            color: '#10273B',
+            margin: '0 0 16px 0',
+            fontWeight: 700,
+            lineHeight: 1.25
+          }}>
+            Оплата согласованных услуг
+          </h2>
+          <p style={{ fontSize: '16px', color: '#4A5568', lineHeight: 1.6, margin: '0 auto 24px auto', maxWidth: '600px' }}>
+            Для оплаты согласованных услуг ООО ЮК «Де-Юре». Сумму и назначение платежа уточните у вашего юриста перед проведением операции.
+          </p>
+          <div style={{ marginBottom: '16px' }}>
+            <a
+              href={PAYMENT_URL || "tel:+74742201525"}
+              target={PAYMENT_URL ? "_blank" : undefined}
+              rel={PAYMENT_URL ? "noopener noreferrer" : undefined}
+              onClick={(e) => {
+                trackEvent('payment_click', { placement: 'pricing_page' });
+                if (!PAYMENT_URL) {
+                  e.preventDefault();
+                  alert('Платёжная страница эквайринга подключается банком. Для согласования счёта и реквизитов оплаты свяжитесь с вашим юристом: +7 (4742) 20-15-25');
+                }
+              }}
+              className="btn btn-outline"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '14px 32px',
+                fontSize: '16px',
+                fontWeight: 600,
+                minHeight: '48px',
+                textDecoration: 'none'
+              }}
+            >
+              Перейти к оплате
+            </a>
           </div>
-        </section>
-      )}
+          <p style={{ fontSize: '13.5px', color: '#718096', margin: 0, lineHeight: 1.5, maxWidth: '580px', marginLeft: 'auto', marginRight: 'auto' }}>
+            Через эту платёжную страницу оплачиваются услуги ООО ЮК „Де-Юре“. Оплата адвокатской помощи производится в порядке, предусмотренном отдельным соглашением с адвокатом.
+          </p>
+        </div>
+      </section>
 
       {/* 5. Форма расчёта стоимости (#form, #consultation) */}
       <div id="form" style={{ scrollMarginTop: '100px' }}></div>
