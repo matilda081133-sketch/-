@@ -46,6 +46,7 @@ export default function Footer() {
 
   const companyLinks = [
     { title: "О компании", href: "/o-kompanii/" },
+    { title: "Дистанционная помощь", href: "/distancionnaya-yuridicheskaya-pomoshch/" },
     { title: "Стоимость", href: "/stoimost/" },
     { title: "Специалисты", href: "/specialisty" },
     { title: "Практика", href: "/praktika" },

@@ -160,7 +160,7 @@ export default function AboutPage() {
                     fontWeight: 500,
                   }}
                 >
-                  Помогаем гражданам и бизнесу решать правовые вопросы в Липецке и Липецкой области. По делам, допускающим <Link href="/distancionnaya-yuridicheskaya-pomoshch/" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '3px' }}>дистанционную юридическую помощь</Link>, работаем с клиентами из других регионов России.
+                  Помогаем гражданам и бизнесу решать правовые вопросы в Липецке и Липецкой области. По делам, допускающим <Link href="/distancionnaya-yuridicheskaya-pomoshch/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>дистанционную юридическую помощь</Link>, работаем с клиентами из других регионов России.
                 </p>
 
                 <p
@@ -330,6 +330,13 @@ export default function AboutPage() {
                   style={{ padding: '14px 28px', fontSize: '15px', borderRadius: 0 }}
                 >
                   Услуги бизнесу →
+                </Link>
+                <Link
+                  href="/distancionnaya-yuridicheskaya-pomoshch/"
+                  className="btn btn-outline"
+                  style={{ padding: '14px 28px', fontSize: '15px', borderRadius: 0 }}
+                >
+                  Дистанционная помощь →
                 </Link>
               </div>
             </div>

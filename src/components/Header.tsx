@@ -170,10 +170,12 @@ export default function Header() {
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </Link>
-            <ul id="dropdown-about" className={`dropdown-simple ${openDropdown === 'about' ? 'show' : ''}`} style={{ minWidth: '240px', width: 'auto' }}>
+            <ul id="dropdown-about" className={`dropdown-simple ${openDropdown === 'about' ? 'show' : ''}`} style={{ minWidth: '250px', width: 'auto' }}>
               <li><Link href="/o-kompanii" className="dropdown-link-2" style={{ fontWeight: 600 }}>О компании</Link></li>
+              <li><Link href="/distancionnaya-yuridicheskaya-pomoshch" className="dropdown-link-2">Дистанционная помощь</Link></li>
               <li><Link href="/specialisty" className="dropdown-link-2">Специалисты</Link></li>
               <li><Link href="/stoimost" className="dropdown-link-2">Стоимость и оплата</Link></li>
+              <li><Link href="/praktika" className="dropdown-link-2">Практика</Link></li>
             </ul>
           </div>
 
@@ -432,11 +434,17 @@ export default function Header() {
                 <Link href="/o-kompanii" onClick={closeMobileMenu} style={{ fontWeight: 'bold', color: 'var(--color-primary)', fontSize: '15px' }}>
                   О компании
                 </Link>
+                <Link href="/distancionnaya-yuridicheskaya-pomoshch" onClick={closeMobileMenu} style={{ color: 'var(--color-text-main)', fontSize: '15px', padding: '4px 0' }}>
+                  Дистанционная помощь
+                </Link>
                 <Link href="/specialisty" onClick={closeMobileMenu} style={{ color: 'var(--color-text-main)', fontSize: '15px', padding: '4px 0' }}>
                   Специалисты
                 </Link>
                 <Link href="/stoimost" onClick={closeMobileMenu} style={{ color: 'var(--color-text-main)', fontSize: '15px', padding: '4px 0' }}>
                   Стоимость и оплата
+                </Link>
+                <Link href="/praktika" onClick={closeMobileMenu} style={{ color: 'var(--color-text-main)', fontSize: '15px', padding: '4px 0' }}>
+                  Практика
                 </Link>
               </div>
             )}
