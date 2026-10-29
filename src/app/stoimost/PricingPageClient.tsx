@@ -513,11 +513,12 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
         </div>
       </section>
 
-      {/* 3. Основной блок прайса — В ОРГАНИЧНОМ ШАБЛОННОМ СТИЛЕ САЙТА */}
+      {/* 3. Основной блок прайса — СОГЛАСОВАННЫЙ ЗОЛОТОЙ ГРАДИЕНТ В СТИЛЕ САЙТА */}
       <section
-        className="section bg-white"
+        className="section bg-light"
         style={{
           padding: 'clamp(56px, 7vw, 90px) 0',
+          background: 'var(--gradient-cream)',
           borderBottom: '1px solid var(--color-border)'
         }}
       >

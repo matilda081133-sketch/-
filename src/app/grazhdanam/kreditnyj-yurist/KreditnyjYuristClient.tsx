@@ -375,7 +375,7 @@ export default function KreditnyjYuristClient() {
     {
       id: 'bank-mfo',
       label: 'Спор с банком или МФО',
-      gridCols: 3,
+      gridCols: 4,
       tiers: [
         {
           title: 'Проверка кредитного договора',
@@ -424,13 +424,14 @@ export default function KreditnyjYuristClient() {
           exclusions: 'Состав и стоимость определяются после изучения дела. Одобрение каникул или аннулирование долга зависят от установленных законом условий.',
           buttonText: 'Оценить маршрут',
           buttonHref: '#form'
-        }
+        },
+        consultationTier
       ]
     },
     {
       id: 'prikaz-isk',
       label: 'Судебный приказ или иск',
-      gridCols: 3,
+      gridCols: 4,
       tiers: [
         {
           title: 'Возражения на судебный приказ',
@@ -479,7 +480,8 @@ export default function KreditnyjYuristClient() {
           exclusions: 'Письменные процессуальные документы оплачиваются отдельно. Каждое заседание сверх включённых трёх — от 10 000 ₽.',
           buttonText: 'Обсудить защиту',
           buttonHref: '#form'
-        }
+        },
+        consultationTier
       ]
     }
   ];
