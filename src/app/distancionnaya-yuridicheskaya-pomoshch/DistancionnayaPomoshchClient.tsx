@@ -793,6 +793,8 @@ export default function DistancionnayaPomoshchClient() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {faqItems.map((item, idx) => {
               const isOpen = openFaq === idx;
+              const btnId = `remote-faq-btn-${idx}`;
+              const panelId = `remote-faq-panel-${idx}`;
               return (
                 <div
                   key={idx}
@@ -806,7 +808,11 @@ export default function DistancionnayaPomoshchClient() {
                   }}
                 >
                   <button
+                    id={btnId}
                     type="button"
+                    className="remote-faq-toggle-btn"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
                     onClick={() => toggleFaq(idx)}
                     style={{
                       width: '100%',
@@ -819,7 +825,7 @@ export default function DistancionnayaPomoshchClient() {
                       textAlign: 'left',
                       cursor: 'pointer',
                       gap: '16px',
-                      outline: 'none'
+                      transition: 'background-color 0.2s ease'
                     }}
                   >
                     <span style={{ fontSize: '16.5px', fontWeight: 600, color: '#10273B', lineHeight: 1.4 }}>
@@ -832,11 +838,15 @@ export default function DistancionnayaPomoshchClient() {
                         color: 'var(--color-primary, #C29557)',
                         flexShrink: 0
                       }}
+                      aria-hidden="true"
                     >
                       ▼
                     </span>
                   </button>
                   <div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={btnId}
                     style={{
                       padding: isOpen ? '16px 22px 22px' : '0 22px',
                       maxHeight: isOpen ? '500px' : '0',
@@ -854,6 +864,13 @@ export default function DistancionnayaPomoshchClient() {
               );
             })}
           </div>
+          <style dangerouslySetInnerHTML={{ __html: `
+            .remote-faq-toggle-btn:focus-visible {
+              outline: 2px solid var(--color-gold, #B89C72) !important;
+              outline-offset: -2px !important;
+              box-shadow: 0 0 0 3px rgba(184, 156, 114, 0.3) !important;
+            }
+          `}} />
         </div>
       </section>
 
@@ -937,10 +954,11 @@ export default function DistancionnayaPomoshchClient() {
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               {/* Город или регион (обязательный) */}
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#10273B', marginBottom: '8px' }}>
+                <label htmlFor="remote-city" style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#10273B', marginBottom: '8px', cursor: 'pointer' }}>
                   Ваш город или регион <span style={{ color: '#E53E3E' }}>*</span>
                 </label>
                 <input
+                  id="remote-city"
                   type="text"
                   required
                   placeholder="Например: Воронеж, Москва, Тамбов или область"
@@ -960,10 +978,11 @@ export default function DistancionnayaPomoshchClient() {
 
               {/* Телефон (обязательный) */}
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#10273B', marginBottom: '8px' }}>
+                <label htmlFor="remote-phone" style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#10273B', marginBottom: '8px', cursor: 'pointer' }}>
                   Телефон для связи <span style={{ color: '#E53E3E' }}>*</span>
                 </label>
                 <input
+                  id="remote-phone"
                   type="tel"
                   required
                   placeholder="+7 (___) ___-__-__"
@@ -983,10 +1002,11 @@ export default function DistancionnayaPomoshchClient() {
 
               {/* Имя (необязательное) */}
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#10273B', marginBottom: '8px' }}>
+                <label htmlFor="remote-name" style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#10273B', marginBottom: '8px', cursor: 'pointer' }}>
                   Ваше имя (необязательно)
                 </label>
                 <input
+                  id="remote-name"
                   type="text"
                   placeholder="Как к вам обращаться"
                   value={name}
@@ -1005,10 +1025,11 @@ export default function DistancionnayaPomoshchClient() {
 
               {/* Описание ситуации (необязательное) */}
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#10273B', marginBottom: '8px' }}>
+                <label htmlFor="remote-description" style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#10273B', marginBottom: '8px', cursor: 'pointer' }}>
                   Кратко опишите вопрос (необязательно)
                 </label>
                 <textarea
+                  id="remote-description"
                   rows={4}
                   placeholder="Суть вопроса, стадия дела или дата ближайшего заседания"
                   value={description}
