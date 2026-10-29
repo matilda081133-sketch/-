@@ -17,8 +17,15 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
   const [openCitizensAnchor, setOpenCitizensAnchor] = useState<string | null>(null);
   const [openBusinessAnchor, setOpenBusinessAnchor] = useState<string | null>(null);
 
-  // Direction state for calculator buttons linking to ContactsForm
+    // Form state per TZ
   const [selectedDirection, setSelectedDirection] = useState<PricingDirection | null>(null);
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+  const [agree, setAgree] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const activeAnchor = audience === 'citizens' ? openCitizensAnchor : openBusinessAnchor;
 
@@ -95,6 +102,74 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
       if (typeof window !== 'undefined' && window.history && window.history.replaceState) {
         window.history.replaceState(null, '', `#${dir.anchor}`);
       }
+    }
+  };
+
+  // Format phone number
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let val = e.target.value;
+    val = val.replace(/[^\d+]/g, '');
+    if (val.length > 18) val = val.substring(0, 18);
+    setPhone(val);
+  };
+
+  // Form submit handler
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+
+    if (!phone || phone.replace(/\D/g, '').length < 10) {
+      setError('Пожалуйста, укажите корректный номер телефона (не менее 10 цифр).');
+      return;
+    }
+
+    if (!agree) {
+      setError('Для отправки необходимо дать согласие на обработку персональных данных.');
+      return;
+    }
+
+    setLoading(true);
+
+    const dirTitle = selectedDirection ? selectedDirection.title : 'Не выбрано';
+    const selectedService = selectedDirection
+      ? `Расчёт стоимости по направлению ${selectedDirection.title}`
+      : 'Общий расчёт стоимости';
+    const audVal = selectedDirection ? selectedDirection.audience : '';
+
+    const payload = {
+      name: name.trim(),
+      phone: phone.startsWith('+') ? `'${phone}` : phone,
+      message: message.trim(),
+      direction: dirTitle,
+      selected_service: selectedService,
+      audience: audVal,
+      source_page: 'https://dejure-help.ru/stoimost/',
+      ctaSource: 'pricing_calculator',
+      page_title: 'Стоимость юридических услуг в Липецке — цены | Де-Юре',
+      page_url: typeof window !== 'undefined' ? window.location.href : 'https://dejure-help.ru/stoimost/'
+    };
+
+    try {
+      const result = await sendLeadToCRM(payload);
+      if (result.success) {
+        setLoading(false);
+        setSubmitted(true);
+
+        trackEvent('pricing_form_success', {
+          direction_id: selectedDirection?.anchor,
+          audience: audVal
+        });
+
+        if (typeof window !== 'undefined' && typeof window.trackGoal === 'function') {
+          window.trackGoal('FORM_SUBMIT', { page: payload.page_title, cta: 'pricing_calculator' });
+        }
+      } else {
+        throw new Error(result.error || 'Ошибка отправки в CRM');
+      }
+    } catch (err: any) {
+      console.error('Ошибка отправки заявки:', err);
+      setLoading(false);
+      setError('Не удалось отправить заявку. Пожалуйста, проверьте номер телефона или свяжитесь с нами по телефону +7 (4742) 20-15-25.');
     }
   };
 
@@ -532,168 +607,95 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
       {/* Раздел 3 ТЗ: От первого обращения до договора */}
       <section
         id="usloviya"
-        className="pricing-steps-section"
+        className="pricing-stages-section"
         style={{
-          padding: 'clamp(48px, 6vw, 76px) 0',
-          background: '#F8F9FA',
-          borderTop: '1px solid rgba(16, 39, 59, 0.08)',
-          borderBottom: '1px solid rgba(16, 39, 59, 0.08)',
+          padding: 'clamp(52px, 6.5vw, 84px) 0',
+          background: 'var(--color-surface, #F8F9FA)',
+          borderBottom: '1px solid var(--color-border, rgba(16, 39, 59, 0.08))',
           scrollMarginTop: '110px'
         }}
       >
-        <div className="container" style={{ maxWidth: '1040px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '44px' }}>
+            <span style={{ color: 'var(--color-gold, #C29557)', fontWeight: 600, textTransform: 'uppercase', fontSize: '13px', letterSpacing: '0.1em', display: 'block', marginBottom: '8px' }}>
+              Этапы взаимодействия
+            </span>
             <h2 style={{
-              fontSize: 'clamp(24px, 3.2vw, 32px)',
+              fontSize: 'clamp(26px, 3.4vw, 36px)',
               fontFamily: 'var(--font-serif)',
-              color: '#10273B',
-              margin: '0 0 12px 0',
+              color: 'var(--color-deep-blue, #10273B)',
+              margin: '0 0 14px 0',
               fontWeight: 700,
               lineHeight: 1.25
             }}>
               От первого обращения до договора
             </h2>
-            <p style={{ fontSize: '16px', color: '#4A5568', margin: 0, maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.55 }}>
-              Понятные и предсказуемые этапы начала работы над вашей правовой задачей
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary, #4A5568)', margin: 0, maxWidth: '680px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.6 }}>
+              Четыре последовательных шага от первого обращения до согласования условий и начала работы
             </p>
           </div>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
-            gap: '20px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '24px'
           }}>
-            {/* Этап 1 */}
-            <div style={{
-              background: '#FFFFFF',
-              border: '1px solid rgba(16, 39, 59, 0.12)',
-              borderRadius: '6px',
-              padding: '24px 20px',
-              boxShadow: '0 2px 6px rgba(16, 39, 59, 0.03)',
-              display: 'flex',
-              flexDirection: 'column'
-            }}>
-              <div style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(194, 149, 87, 0.15)',
-                color: '#C29557',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '15px',
-                fontWeight: 700,
-                marginBottom: '16px'
-              }}>
-                01
+            {[
+              {
+                num: '01',
+                tag: 'ПЕРВИЧНЫЙ КОНТАКТ',
+                title: 'Первичное обращение',
+                text: 'Вы сообщаете суть вопроса. Сотрудник компании уточняет обстоятельства, запрашивает необходимые документы и организует дальнейшее общение. Выяснение сути обращения и подбор специалиста бесплатны.'
+              },
+              {
+                num: '02',
+                tag: 'АНАЛИЗ ЗАДАЧИ',
+                title: 'Разбор задачи',
+                text: 'Профильный юрист знакомится с ситуацией и определяет, какая помощь требуется: консультация, анализ документов, подготовка обращения, переговоры или представительство. Если разбор требует платной работы, её объём и стоимость согласуются заранее.'
+              },
+              {
+                num: '03',
+                tag: 'ПРОЗРАЧНЫЙ РАСЧЁТ',
+                title: 'Согласование стоимости',
+                text: 'Определяем необходимые действия, объём документов, территорию работы и необходимость выездов. Консультация, подготовка документа и представительство — самостоятельные услуги. Их цены не складываются автоматически в обязательный пакет.'
+              },
+              {
+                num: '04',
+                tag: 'НАЧАЛО РАБОТЫ',
+                title: 'Заключение договора',
+                text: 'До начала согласованных работ фиксируем их состав, стоимость и порядок оплаты в договоре. Дополнительные действия и расходы согласуем отдельно.'
+              }
+            ].map((step, idx) => (
+              <div
+                key={idx}
+                className="usp-card"
+                style={{
+                  background: '#FFFFFF',
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  padding: '28px 24px',
+                  border: '1px solid rgba(16, 39, 59, 0.1)',
+                  boxShadow: '0 4px 16px rgba(16, 39, 59, 0.04)'
+                }}
+              >
+                <div className="usp-accent" />
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+                  <span style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold, #C29557)', fontWeight: 700, textTransform: 'uppercase' }}>
+                    {step.tag}
+                  </span>
+                  <span style={{ fontSize: '20px', fontWeight: 800, color: 'var(--color-primary, #C29557)', fontFamily: 'var(--font-serif)' }}>
+                    {step.num}
+                  </span>
+                </div>
+                <h3 style={{ fontSize: '19px', color: 'var(--color-deep-blue, #10273B)', margin: '0 0 12px 0', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.3 }}>
+                  {step.title}
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary, #4A5568)', lineHeight: 1.6, margin: 0 }}>
+                  {step.text}
+                </p>
               </div>
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600 }}>
-                Первичное обращение
-              </h3>
-              <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
-                Вы сообщаете суть вопроса. Сотрудник компании уточняет обстоятельства, запрашивает необходимые документы и организует дальнейшее общение. Выяснение сути обращения и подбор специалиста бесплатны.
-              </p>
-            </div>
-
-            {/* Этап 2 */}
-            <div style={{
-              background: '#FFFFFF',
-              border: '1px solid rgba(16, 39, 59, 0.12)',
-              borderRadius: '6px',
-              padding: '24px 20px',
-              boxShadow: '0 2px 6px rgba(16, 39, 59, 0.03)',
-              display: 'flex',
-              flexDirection: 'column'
-            }}>
-              <div style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(194, 149, 87, 0.15)',
-                color: '#C29557',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '15px',
-                fontWeight: 700,
-                marginBottom: '16px'
-              }}>
-                02
-              </div>
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600 }}>
-                Разбор задачи
-              </h3>
-              <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
-                Профильный юрист знакомится с ситуацией и определяет, какая помощь требуется: консультация, анализ документов, подготовка обращения, переговоры или представительство. Если разбор требует платной работы, её объём и стоимость согласуются заранее.
-              </p>
-            </div>
-
-            {/* Этап 3 */}
-            <div style={{
-              background: '#FFFFFF',
-              border: '1px solid rgba(16, 39, 59, 0.12)',
-              borderRadius: '6px',
-              padding: '24px 20px',
-              boxShadow: '0 2px 6px rgba(16, 39, 59, 0.03)',
-              display: 'flex',
-              flexDirection: 'column'
-            }}>
-              <div style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(194, 149, 87, 0.15)',
-                color: '#C29557',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '15px',
-                fontWeight: 700,
-                marginBottom: '16px'
-              }}>
-                03
-              </div>
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600 }}>
-                Согласование стоимости
-              </h3>
-              <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
-                Определяем необходимые действия, объём документов, территорию работы и необходимость выездов. Консультация, подготовка документа и представительство — самостоятельные услуги. Их цены не складываются автоматически в обязательный пакет.
-              </p>
-            </div>
-
-            {/* Этап 4 */}
-            <div style={{
-              background: '#FFFFFF',
-              border: '1px solid rgba(16, 39, 59, 0.12)',
-              borderRadius: '6px',
-              padding: '24px 20px',
-              boxShadow: '0 2px 6px rgba(16, 39, 59, 0.03)',
-              display: 'flex',
-              flexDirection: 'column'
-            }}>
-              <div style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(194, 149, 87, 0.15)',
-                color: '#C29557',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '15px',
-                fontWeight: 700,
-                marginBottom: '16px'
-              }}>
-                04
-              </div>
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600 }}>
-                Заключение договора
-              </h3>
-              <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
-                До начала согласованных работ фиксируем их состав, стоимость и порядок оплаты в договоре. Дополнительные действия и расходы согласуем отдельно.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -702,325 +704,379 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
       <section
         className="pricing-consultation-section"
         style={{
-          padding: 'clamp(48px, 6vw, 76px) 0',
+          padding: 'clamp(52px, 6.5vw, 84px) 0',
           background: '#FFFFFF',
-          borderBottom: '1px solid rgba(16, 39, 59, 0.08)'
+          borderBottom: '1px solid var(--color-border, rgba(16, 39, 59, 0.08))'
         }}
       >
-        <div className="container" style={{ maxWidth: '1040px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '44px' }}>
+            <span style={{ color: 'var(--color-gold, #C29557)', fontWeight: 600, textTransform: 'uppercase', fontSize: '13px', letterSpacing: '0.1em', display: 'block', marginBottom: '8px' }}>
+              Первичный разбор ситуации
+            </span>
             <h2 style={{
-              fontSize: 'clamp(24px, 3.2vw, 32px)',
+              fontSize: 'clamp(26px, 3.4vw, 36px)',
               fontFamily: 'var(--font-serif)',
-              color: '#10273B',
-              margin: '0 0 12px 0',
+              color: 'var(--color-deep-blue, #10273B)',
+              margin: '0 0 14px 0',
               fontWeight: 700,
               lineHeight: 1.25
             }}>
               Консультация и изучение документов
             </h2>
-            <p style={{ fontSize: '16px', color: '#4A5568', margin: 0, maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.55 }}>
-              Правила проведения консультаций, анализа материалов и зачёта оплаты
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary, #4A5568)', margin: 0, maxWidth: '680px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.6 }}>
+              Правила проведения устных консультаций, анализа материалов и зачёта оплаты
             </p>
           </div>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '24px',
-            marginBottom: '24px'
+            marginBottom: '28px'
           }}>
-            {/* Карточка 1 */}
-            <div style={{
-              background: '#F8F9FA',
-              border: '1px solid rgba(16, 39, 59, 0.12)',
-              borderRadius: '6px',
-              padding: '24px 22px'
-            }}>
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 12px 0', fontWeight: 600 }}>
-                Стоимость консультации
-              </h3>
-              <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
-                Устная консультация для граждан продолжительностью до одного часа — 2 000 ₽. Стоимость консультаций для бизнеса и отдельных специальных задач указана в соответствующих разделах прайса.
-              </p>
-            </div>
-
-            {/* Карточка 2 */}
-            <div style={{
-              background: '#F8F9FA',
-              border: '1px solid rgba(16, 39, 59, 0.12)',
-              borderRadius: '6px',
-              padding: '24px 22px'
-            }}>
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 12px 0', fontWeight: 600 }}>
-                Изучение документов и письменный ответ
-              </h3>
-              <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
-                Необходимость отдельного платного анализа зависит от вопроса и объёма материалов. До начала такой работы согласуем её состав и стоимость. Письменный ответ можно заказать отдельно; цену и срок подготовки определим заранее.
-              </p>
-            </div>
-
-            {/* Карточка 3 */}
-            <div style={{
-              background: '#F8F9FA',
-              border: '1px solid rgba(16, 39, 59, 0.12)',
-              borderRadius: '6px',
-              padding: '24px 22px'
-            }}>
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 12px 0', fontWeight: 600 }}>
-                Зачёт оплаты в дальнейшую работу
-              </h3>
-              <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
-                Если после консультации или анализа документов вы заключаете договор на дальнейшую работу по этому вопросу, внесённая оплата засчитывается в стоимость договора.
-              </p>
-            </div>
+            {[
+              {
+                tag: 'УСТНАЯ КОНСУЛЬТАЦИЯ',
+                title: 'Стоимость консультации — 2 000 ₽',
+                text: 'Устная консультация для граждан продолжительностью до одного часа — 2 000 ₽. Стоимость консультаций для бизнеса и отдельных специальных задач указана в соответствующих разделах прайса.'
+              },
+              {
+                tag: 'ЭКСПЕРТИЗА ДОКУМЕНТОВ',
+                title: 'Изучение документов и ответ',
+                text: 'Необходимость отдельного платного анализа зависит от вопроса и объёма материалов. До начала такой работы согласуем её состав и стоимость. Письменный ответ можно заказать отдельно; цену и срок подготовки определим заранее.'
+              },
+              {
+                tag: 'ФИНАНСОВЫЙ ЗАЧЁТ',
+                title: 'Зачёт оплаты в дальнейшую работу',
+                text: 'Если после консультации или анализа документов вы заключаете договор на дальнейшую работу по этому вопросу, внесённая оплата засчитывается в стоимость договора.'
+              }
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="usp-card"
+                style={{
+                  background: 'var(--gradient-cream, #FFFDF8)',
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  padding: '30px 24px',
+                  border: '1px solid rgba(16, 39, 59, 0.1)',
+                  boxShadow: '0 4px 16px rgba(16, 39, 59, 0.04)'
+                }}
+              >
+                <div className="usp-accent" />
+                <span style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold, #C29557)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '12px', display: 'block' }}>
+                  {item.tag}
+                </span>
+                <h3 style={{ fontSize: '19px', color: 'var(--color-deep-blue, #10273B)', margin: '0 0 12px 0', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.3 }}>
+                  {item.title}
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary, #4A5568)', lineHeight: 1.6, margin: 0 }}>
+                  {item.text}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div style={{
+            background: 'rgba(23, 50, 77, 0.03)',
+            padding: '16px 20px',
+            borderLeft: '4px solid var(--color-gold, #C29557)',
             fontSize: '14px',
-            color: '#718096',
-            textAlign: 'center',
-            lineHeight: 1.5
+            lineHeight: 1.6,
+            color: 'var(--color-deep-blue, #10273B)',
+            maxWidth: '1200px',
+            margin: '0 auto'
           }}>
             Запись, перенос консультации и возможность срочного приёма согласуются с сотрудником компании.
           </div>
         </div>
       </section>
 
-      {/* Раздел 5 ТЗ: Договор и порядок оплаты */}
+      {/* Раздел 5 ТЗ: Договор и порядок оплаты — ПО ШАБЛОНУ */}
       <section
         className="pricing-contract-section"
         style={{
-          padding: 'clamp(48px, 6vw, 76px) 0',
-          background: '#F8F9FA',
-          borderBottom: '1px solid rgba(16, 39, 59, 0.08)'
+          padding: 'clamp(52px, 6.5vw, 84px) 0',
+          background: 'var(--color-surface, #F8F9FA)',
+          borderBottom: '1px solid var(--color-border, rgba(16, 39, 59, 0.08))'
         }}
       >
-        <div className="container" style={{ maxWidth: '1040px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '44px' }}>
+            <span style={{ color: 'var(--color-gold, #C29557)', fontWeight: 600, textTransform: 'uppercase', fontSize: '13px', letterSpacing: '0.1em', display: 'block', marginBottom: '8px' }}>
+              Финансовые условия
+            </span>
             <h2 style={{
-              fontSize: 'clamp(24px, 3.2vw, 32px)',
+              fontSize: 'clamp(26px, 3.4vw, 36px)',
               fontFamily: 'var(--font-serif)',
-              color: '#10273B',
-              margin: '0 0 12px 0',
+              color: 'var(--color-deep-blue, #10273B)',
+              margin: '0 0 14px 0',
               fontWeight: 700,
               lineHeight: 1.25
             }}>
               Договор и порядок оплаты
             </h2>
-            <p style={{ fontSize: '16px', color: '#4A5568', margin: 0, maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.55 }}>
-              Прозрачные финансовые взаимоотношения и надёжная фиксация условий
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary, #4A5568)', margin: 0, maxWidth: '680px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.6 }}>
+              Прозрачные финансовые взаимоотношения, удобные способы расчёта и фиксация в договоре
             </p>
           </div>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
-            gap: '20px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '24px',
             marginBottom: '28px'
           }}>
-            {/* Карточка 1 */}
-            <div style={{
-              background: '#FFFFFF',
-              border: '1px solid rgba(16, 39, 59, 0.12)',
-              borderRadius: '6px',
-              padding: '24px 20px',
-              boxShadow: '0 2px 6px rgba(16, 39, 59, 0.03)'
-            }}>
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600 }}>
-                Оформление договора
-              </h3>
-              <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
-                Договор можно заключить в офисе или дистанционно через электронный документооборот. Если у вас нет ЭДО, можно организовать обмен документами почтой. Вы получаете свой экземпляр договора.
-              </p>
-            </div>
-
-            {/* Карточка 2 */}
-            <div style={{
-              background: '#FFFFFF',
-              border: '1px solid rgba(16, 39, 59, 0.12)',
-              borderRadius: '6px',
-              padding: '24px 20px',
-              boxShadow: '0 2px 6px rgba(16, 39, 59, 0.03)'
-            }}>
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600 }}>
-                Предоплата и этапы
-              </h3>
-              <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
-                Как правило, предоплата составляет 50% стоимости работ. Порядок внесения оставшейся суммы согласуется индивидуально. Возможность рассрочки или оплаты по этапам обсуждается до заключения договора.
-              </p>
-            </div>
-
-            {/* Карточка 3 */}
-            <div style={{
-              background: '#FFFFFF',
-              border: '1px solid rgba(16, 39, 59, 0.12)',
-              borderRadius: '6px',
-              padding: '24px 20px',
-              boxShadow: '0 2px 6px rgba(16, 39, 59, 0.03)'
-            }}>
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600 }}>
-                Способы оплаты
-              </h3>
-              <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
-                Доступны оплата банковской картой, по QR-коду, банковским переводом и наличными. Подходящий способ и реквизиты сообщим при согласовании оплаты. Вы получите документы, подтверждающие платёж.
-              </p>
-            </div>
-
-            {/* Карточка 4 */}
-            <div style={{
-              background: '#FFFFFF',
-              border: '1px solid rgba(16, 39, 59, 0.12)',
-              borderRadius: '6px',
-              padding: '24px 20px',
-              boxShadow: '0 2px 6px rgba(16, 39, 59, 0.03)'
-            }}>
-              <h3 style={{ fontSize: '18px', color: '#10273B', margin: '0 0 10px 0', fontWeight: 600 }}>
-                Подтверждение выполненной работы
-              </h3>
-              <p style={{ fontSize: '14.5px', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
-                Выполненные действия и их стоимость отражаются в акте, который подписывают компания и клиент.
-              </p>
-            </div>
+            {[
+              {
+                tag: 'ОФОРМЛЕНИЕ',
+                title: 'Оформление договора',
+                text: 'Договор можно заключить в офисе или дистанционно через электронный документооборот. Если у вас нет ЭДО, можно организовать обмен документами почтой. Вы получаете свой экземпляр договора.'
+              },
+              {
+                tag: 'РАСЧЁТ',
+                title: 'Предоплата и этапы',
+                text: 'Как правило, предоплата составляет 50% стоимости работ. Порядок внесения оставшейся суммы согласуется индивидуально. Возможность рассрочки или оплаты по этапам обсуждается до заключения договора.'
+              },
+              {
+                tag: 'ПЛАТЕЖИ',
+                title: 'Способы оплаты',
+                text: 'Доступны оплата банковской картой, по QR-коду, банковским переводом и наличными. Подходящий способ и реквизиты сообщим при согласовании оплаты. Вы получите документы, подтверждающие платёж.'
+              },
+              {
+                tag: 'ОТЧЁТНОСТЬ',
+                title: 'Подтверждение работы',
+                text: 'Выполненные действия и их стоимость отражаются в акте, который подписывают компания и клиент по завершении согласованного объёма помощи.'
+              }
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="usp-card"
+                style={{
+                  background: '#FFFFFF',
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  padding: '28px 24px',
+                  border: '1px solid rgba(16, 39, 59, 0.1)',
+                  boxShadow: '0 4px 16px rgba(16, 39, 59, 0.04)'
+                }}
+              >
+                <div className="usp-accent" />
+                <span style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold, #C29557)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '12px', display: 'block' }}>
+                  {item.tag}
+                </span>
+                <h3 style={{ fontSize: '19px', color: 'var(--color-deep-blue, #10273B)', margin: '0 0 12px 0', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.3 }}>
+                  {item.title}
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary, #4A5568)', lineHeight: 1.6, margin: 0 }}>
+                  {item.text}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div style={{
-            background: 'rgba(23, 50, 77, 0.04)',
+            background: 'rgba(23, 50, 77, 0.03)',
             padding: '16px 20px',
             borderLeft: '4px solid var(--color-primary, #C29557)',
             fontSize: '14px',
             lineHeight: 1.6,
-            color: '#334155'
+            color: 'var(--color-deep-blue, #10273B)'
           }}>
             Адвокатская помощь оказывается независимым адвокатом по отдельному соглашению с доверителем. Условия участия, вознаграждение и порядок оплаты согласуются с адвокатом.
           </div>
         </div>
       </section>
 
-      {/* Разделы 6 и 7 ТЗ: Дополнительные расходы и Связь с юристом */}
+      {/* Разделы 6 и 7 ТЗ: Дополнительные расходы и Связь с юристом — ОРГАНИЧНОЕ ОФОРМЛЕНИЕ В ДВУХКОЛОНОЧНОМ ШАБЛОНЕ */}
       <section
         className="pricing-extra-and-comm-section"
         style={{
-          padding: 'clamp(48px, 6vw, 76px) 0',
+          padding: 'clamp(52px, 6.5vw, 84px) 0',
           background: '#FFFFFF',
-          borderBottom: '1px solid rgba(16, 39, 59, 0.08)'
+          borderBottom: '1px solid var(--color-border, rgba(16, 39, 59, 0.08))'
         }}
       >
-        <div className="container" style={{ maxWidth: '880px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '40px' }}>
-          {/* Раздел 6: Дополнительные расходы */}
-          <div>
-            <h2 style={{
-              fontSize: 'clamp(22px, 2.8vw, 28px)',
-              fontFamily: 'var(--font-serif)',
-              color: '#10273B',
-              margin: '0 0 16px 0',
-              fontWeight: 700,
-              lineHeight: 1.3
-            }}>
-              Дополнительные расходы
-            </h2>
-            <div style={{ fontSize: '15px', lineHeight: 1.65, color: '#4A5568', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <p style={{ margin: 0 }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '28px' }}>
+            
+            {/* Карточка 1: Дополнительные расходы */}
+            <div
+              className="usp-card"
+              style={{
+                background: 'var(--gradient-cream, #FFFDF8)',
+                border: '1px solid rgba(16, 39, 59, 0.1)',
+                padding: 'clamp(28px, 3.5vw, 36px)',
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                boxShadow: '0 4px 16px rgba(16, 39, 59, 0.04)'
+              }}
+            >
+              <div className="usp-accent" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
+                <span style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold, #C29557)', fontWeight: 700, textTransform: 'uppercase' }}>
+                  Прозрачность расчётов
+                </span>
+              </div>
+              <h2 style={{
+                fontSize: 'clamp(22px, 2.5vw, 26px)',
+                fontFamily: 'var(--font-serif)',
+                color: 'var(--color-deep-blue, #10273B)',
+                margin: '0 0 16px 0',
+                lineHeight: 1.3
+              }}>
+                Дополнительные расходы
+              </h2>
+              <p style={{ color: 'var(--color-text-secondary, #4A5568)', fontSize: '15px', lineHeight: 1.65, margin: '0 0 20px 0' }}>
                 Госпошлины, нотариальные действия и оформление доверенности, экспертизы, командировки и другие необходимые расходы по делу оплачиваются отдельно от вознаграждения за юридическую работу.
               </p>
-              <p style={{ margin: 0 }}>
+              <div style={{
+                marginTop: 'auto',
+                padding: '14px 16px',
+                background: 'rgba(16, 39, 59, 0.04)',
+                borderLeft: '3px solid var(--color-gold, #C29557)',
+                fontSize: '14px',
+                lineHeight: 1.55,
+                color: 'var(--color-deep-blue, #10273B)'
+              }}>
                 Их необходимость и порядок оплаты предварительно согласуем с вами. Если требуется выезд в другой город, отдельно обсудим связанные с ним расходы. Возможные альтернативы выезду рассматриваются с учётом задачи.
-              </p>
+              </div>
             </div>
-          </div>
 
-          <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(16, 39, 59, 0.08)' }} />
-
-          {/* Раздел 7: Как вы будете узнавать о ходе дела */}
-          <div>
-            <h2 style={{
-              fontSize: 'clamp(22px, 2.8vw, 28px)',
-              fontFamily: 'var(--font-serif)',
-              color: '#10273B',
-              margin: '0 0 16px 0',
-              fontWeight: 700,
-              lineHeight: 1.3
-            }}>
-              Как вы будете узнавать о ходе дела
-            </h2>
-            <div style={{ fontSize: '15px', lineHeight: 1.65, color: '#4A5568', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <p style={{ margin: 0 }}>
+            {/* Карточка 2: Как вы будете узнавать о ходе дела */}
+            <div
+              className="usp-card"
+              style={{
+                background: 'var(--gradient-cream, #FFFDF8)',
+                border: '1px solid rgba(16, 39, 59, 0.1)',
+                padding: 'clamp(28px, 3.5vw, 36px)',
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                boxShadow: '0 4px 16px rgba(16, 39, 59, 0.04)'
+              }}
+            >
+              <div className="usp-accent" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
+                <span style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--color-gold, #C29557)', fontWeight: 700, textTransform: 'uppercase' }}>
+                  Прямое информирование
+                </span>
+              </div>
+              <h2 style={{
+                fontSize: 'clamp(22px, 2.5vw, 26px)',
+                fontFamily: 'var(--font-serif)',
+                color: 'var(--color-deep-blue, #10273B)',
+                margin: '0 0 16px 0',
+                lineHeight: 1.3
+              }}>
+                Как вы будете узнавать о ходе дела
+              </h2>
+              <p style={{ color: 'var(--color-text-secondary, #4A5568)', fontSize: '15px', lineHeight: 1.65, margin: '0 0 20px 0' }}>
                 Вы общаетесь напрямую с выделенным юристом. В начале работы согласуете регулярность встреч и взаимодействия. Юрист объясняет ход дела, выполненные действия и дальнейшие шаги.
               </p>
-              <p style={{ margin: 0 }}>
-                Если возникают дополнительные вопросы, вы можете запросить информацию вне согласованного графика.
-              </p>
+              <div style={{
+                marginTop: 'auto',
+                padding: '14px 16px',
+                background: 'rgba(16, 39, 59, 0.04)',
+                borderLeft: '3px solid var(--color-deep-blue, #10273B)',
+                fontSize: '14px',
+                lineHeight: 1.55,
+                color: 'var(--color-deep-blue, #10273B)'
+              }}>
+                Если возникают дополнительные вопросы, вы можете запросить информацию вне согласованного графика. Порядок взаимодействия и канал связи обсуждаются с юристом.
+              </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Раздел 8 ТЗ: Оплата согласованных услуг (#oplata) */}
+      {/* Раздел 8 ТЗ: Оплата согласованных услуг (#oplata) — ПО ШАБЛОНУ */}
       <section
         id="oplata"
         className="pricing-payment-section"
         style={{
-          padding: 'clamp(44px, 5.5vw, 68px) 0',
-          background: '#F8F9FA',
-          borderBottom: '1px solid rgba(16, 39, 59, 0.08)',
+          padding: 'clamp(52px, 6.5vw, 80px) 0',
+          background: 'var(--color-surface, #F8F9FA)',
+          borderBottom: '1px solid var(--color-border, rgba(16, 39, 59, 0.08))',
           scrollMarginTop: '110px'
         }}
       >
-        <div className="container" style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{
-            fontSize: 'clamp(24px, 3.2vw, 30px)',
-            fontFamily: 'var(--font-serif)',
-            color: '#10273B',
-            margin: '0 0 16px 0',
-            fontWeight: 700,
-            lineHeight: 1.25
-          }}>
-            Оплата согласованных услуг
-          </h2>
-          <p style={{ fontSize: '16px', color: '#4A5568', lineHeight: 1.6, margin: '0 auto 24px auto', maxWidth: '600px' }}>
-            Для оплаты согласованных услуг ООО ЮК «Де-Юре». Сумму и назначение платежа уточните у вашего юриста перед проведением операции.
-          </p>
-          <div style={{ marginBottom: '16px' }}>
-            <a
-              href={PAYMENT_URL || "tel:+74742201525"}
-              target={PAYMENT_URL ? "_blank" : undefined}
-              rel={PAYMENT_URL ? "noopener noreferrer" : undefined}
-              onClick={(e) => {
-                trackEvent('payment_click', { placement: 'pricing_page' });
-                if (!PAYMENT_URL) {
-                  e.preventDefault();
-                  alert('Платёжная страница эквайринга подключается банком. Для согласования счёта и реквизитов оплаты свяжитесь с вашим юристом: +7 (4742) 20-15-25');
-                }
-              }}
-              className="btn btn-outline"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '14px 32px',
-                fontSize: '16px',
-                fontWeight: 600,
-                minHeight: '48px',
-                textDecoration: 'none'
-              }}
-            >
-              Перейти к оплате
-            </a>
+        <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 20px' }}>
+          <div
+            className="usp-card"
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid rgba(16, 39, 59, 0.1)',
+              padding: 'clamp(32px, 4vw, 44px)',
+              position: 'relative',
+              textAlign: 'center',
+              boxShadow: '0 6px 20px rgba(16, 39, 59, 0.05)'
+            }}
+          >
+            <div className="usp-accent" />
+            <span style={{ color: 'var(--color-gold, #C29557)', fontWeight: 600, textTransform: 'uppercase', fontSize: '13px', letterSpacing: '0.1em', display: 'block', marginBottom: '10px' }}>
+              Безналичный расчёт
+            </span>
+            <h2 style={{
+              fontSize: 'clamp(24px, 3.2vw, 32px)',
+              fontFamily: 'var(--font-serif)',
+              color: 'var(--color-deep-blue, #10273B)',
+              margin: '0 0 16px 0',
+              fontWeight: 700,
+              lineHeight: 1.25
+            }}>
+              Оплата согласованных услуг
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary, #4A5568)', lineHeight: 1.6, margin: '0 auto 24px auto', maxWidth: '620px' }}>
+              Уже согласовали с юристом услугу и сумму? Перейдите на платёжную страницу и оплатите по реквизитам и назначению, указанным в договоре или счёте.
+            </p>
+            <div style={{ marginBottom: '18px' }}>
+              <a
+                href={PAYMENT_URL || "tel:+74742201525"}
+                target={PAYMENT_URL ? "_blank" : undefined}
+                rel={PAYMENT_URL ? "noopener noreferrer" : undefined}
+                onClick={(e) => {
+                  trackEvent('payment_click', { placement: 'pricing_page' });
+                  if (!PAYMENT_URL) {
+                    e.preventDefault();
+                    alert('Платёжная страница эквайринга подключается банком. Для согласования счёта и реквизитов оплаты свяжитесь с вашим юристом: +7 (4742) 20-15-25');
+                  }
+                }}
+                className="btn btn-primary"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '14px 36px',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  minHeight: '48px',
+                  textDecoration: 'none'
+                }}
+              >
+                Перейти к оплате
+              </a>
+            </div>
+            <p style={{ fontSize: '13px', color: '#718096', margin: 0, lineHeight: 1.5, maxWidth: '580px', marginLeft: 'auto', marginRight: 'auto' }}>
+              Через эту платёжную страницу оплачиваются услуги ООО ЮК «Де-Юре». Оплата адвокатской помощи производится в порядке, предусмотренном отдельным соглашением с адвокатом.
+            </p>
           </div>
-          <p style={{ fontSize: '13.5px', color: '#718096', margin: 0, lineHeight: 1.5, maxWidth: '580px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Через эту платёжную страницу оплачиваются услуги ООО ЮК „Де-Юре“. Оплата адвокатской помощи производится в порядке, предусмотренном отдельным соглашением с адвокатом.
-          </p>
         </div>
       </section>
 
-      {/* 5. Форма расчёта стоимости (#form, #consultation) */}
+      {/* 5. Форма расчёта стоимости (#form, #consultation) — ШАБЛОННАЯ, А ПОЛЯ ПО ТЗ */}
       <div id="form" style={{ scrollMarginTop: '100px' }}></div>
       <section
         id="consultation"
         className="pricing-form-section"
         style={{
-          background: 'var(--color-surface, #F8F9FA)',
-          padding: 'clamp(48px, 6vw, 84px) 0',
+          background: '#FFFFFF',
+          padding: 'clamp(52px, 6.5vw, 84px) 0',
           borderTop: '1px solid var(--color-border, rgba(16, 39, 59, 0.08))',
           scrollMarginTop: '100px'
         }}
@@ -1030,7 +1086,7 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '40px',
+              gap: '44px',
               alignItems: 'start',
             }}
           >
@@ -1064,7 +1120,7 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
                   fontSize: '16px',
                   color: 'var(--color-text-secondary, #4A5568)',
                   lineHeight: 1.6,
-                  margin: '0 0 24px 0',
+                  margin: '0 0 28px 0',
                 }}
               >
                 Оставьте контакты и кратко опишите вопрос. Уточним задачу, подберём профильного юриста и сообщим, какие сведения нужны для точного расчёта.
@@ -1076,9 +1132,9 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
                   flexDirection: 'column',
                   gap: '12px',
                   marginBottom: '28px',
-                  padding: '16px 20px',
+                  padding: '18px 22px',
                   background: 'rgba(16, 39, 59, 0.03)',
-                  borderLeft: '3px solid var(--color-gold, #C29557)',
+                  borderLeft: '4px solid var(--color-gold, #C29557)',
                 }}
               >
                 <a
@@ -1144,12 +1200,26 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
                   style={{
                     fontSize: '13px',
                     color: 'var(--color-text-secondary, #4A5568)',
-                    lineHeight: 1.5,
-                    margin: '12px 0 0 0',
+                    lineHeight: 1.55,
+                    margin: '14px 0 0 0',
+                    padding: '10px 14px',
+                    background: 'rgba(16, 39, 59, 0.03)',
+                    borderLeft: '3px solid rgba(16, 39, 59, 0.25)',
                     fontStyle: 'italic',
                   }}
                 >
-                  Не указывайте в форме паспортные данные и другие конфиденциальные сведения. Их можно передать юристу после установления защищённого способа связи.
+                  Не указывайте в форме паспортные данные, сведения о здоровье и другие конфиденциальные сведения. Их можно передать юристу после установления защищённого способа связи.
+                  <span
+                    style={{
+                      display: 'block',
+                      marginTop: '4px',
+                      color: 'rgba(44,51,64,0.55)',
+                      fontSize: '12px',
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    Основание: статья 10 № 152-ФЗ.
+                  </span>
                 </p>
               </div>
             </div>
@@ -1167,15 +1237,240 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
                   boxSizing: 'border-box',
                 }}
               >
-                <ContactsForm
-                  direction={selectedDirection ? selectedDirection.title : "Стоимость и оплата"}
-                  title="Оставить заявку на расчёт"
-                  subtitle={<>Уточним обстоятельства вопроса и рассчитаем точную стоимость решения.</>}
-                  buttonText="Получить расчёт стоимости"
-                  commentLabel="Краткое описание вопроса (необязательно)"
-                  commentPlaceholder="Опишите ситуацию или вопрос для предварительного расчёта…"
-                  hiddenFields={[{ name: 'source_page', value: 'https://dejure-help.ru/stoimost/' }]}
-                />
+                {submitted ? (
+                  <div style={{
+                    padding: '36px 20px',
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    minHeight: '280px'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold, #C29557)" strokeWidth="1.5" strokeLinecap="square" style={{ marginBottom: '16px' }}>
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue, #10273B)', fontFamily: 'var(--font-serif)', margin: '0 0 12px 0', lineHeight: 1.2 }}>
+                      Заявка на расчёт принята
+                    </h3>
+                    <p style={{ margin: '0 0 20px 0', color: 'var(--color-text-secondary, #4A5568)', fontSize: '15px', lineHeight: 1.6, maxWidth: '340px' }}>
+                      Специалист ЮК «Де-Юре» свяжется с вами в рабочее время для уточнения деталей и расчёта задачи.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSubmitted(false);
+                        setName('');
+                        setPhone('');
+                        setMessage('');
+                      }}
+                      className="btn btn-outline"
+                      style={{ padding: '10px 22px', fontSize: '14px' }}
+                    >
+                      Отправить ещё один вопрос
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                    <div>
+                      <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue, #10273B)', fontFamily: 'var(--font-serif)', margin: '0 0 8px 0', lineHeight: 1.2 }}>
+                        Оставить заявку на расчёт
+                      </h3>
+                      <p style={{ color: 'var(--color-text-secondary, #4A5568)', margin: '0 0 18px 0', fontSize: '14px', lineHeight: 1.5 }}>
+                        Уточним обстоятельства вопроса и рассчитаем точную стоимость решения.
+                      </p>
+                    </div>
+
+                    {/* Поле выбора направления по ТЗ */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                      <label htmlFor="pricing_direction_select" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue, #10273B)' }}>
+                        Направление юридической помощи
+                      </label>
+                      <div style={{ position: 'relative' }}>
+                        <select
+                          id="pricing_direction_select"
+                          value={selectedDirection ? selectedDirection.anchor : ''}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            if (!val) {
+                              setSelectedDirection(null);
+                            } else {
+                              const found = PRICING_DIRECTIONS.find(d => d.anchor === val);
+                              setSelectedDirection(found || null);
+                            }
+                          }}
+                          style={{
+                            width: '100%',
+                            padding: '13px 16px',
+                            border: '1px solid rgba(23, 50, 77, 0.2)',
+                            borderRadius: '0',
+                            fontSize: '15px',
+                            outline: 'none',
+                            background: '#FFFFFF',
+                            color: 'var(--color-deep-blue, #10273B)',
+                            fontFamily: 'inherit',
+                            cursor: 'pointer',
+                            appearance: 'none',
+                            boxSizing: 'border-box'
+                          }}
+                        >
+                          <option value="">Не выбрано (Общий расчёт стоимости)</option>
+                          <optgroup label="Гражданам">
+                            {citizensDirections.map(d => (
+                              <option key={d.anchor} value={d.anchor}>{d.title}</option>
+                            ))}
+                          </optgroup>
+                          <optgroup label="Бизнесу">
+                            {businessDirections.map(d => (
+                              <option key={d.anchor} value={d.anchor}>{d.title}</option>
+                            ))}
+                          </optgroup>
+                        </select>
+                        <div style={{ position: 'absolute', right: '14px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: '#718096', fontSize: '12px' }}>
+                          ▼
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Телефон (обязательный) по ТЗ */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                      <label htmlFor="pricing_phone" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue, #10273B)' }}>
+                        Телефон для связи <span style={{ color: 'var(--color-gold, #C29557)' }}>*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        id="pricing_phone"
+                        required
+                        placeholder="+7 (___) ___-__-__"
+                        value={phone}
+                        onChange={handlePhoneChange}
+                        style={{
+                          width: '100%',
+                          padding: '13px 16px',
+                          border: '1px solid rgba(23, 50, 77, 0.2)',
+                          borderRadius: '0',
+                          fontSize: '15px',
+                          outline: 'none',
+                          background: '#FFFFFF',
+                          color: 'var(--color-deep-blue, #10273B)',
+                          fontFamily: 'inherit',
+                          boxSizing: 'border-box'
+                        }}
+                      />
+                    </div>
+
+                    {/* Имя (необязательное) по ТЗ */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                      <label htmlFor="pricing_name" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue, #10273B)' }}>
+                        Ваше имя (необязательно)
+                      </label>
+                      <input
+                        type="text"
+                        id="pricing_name"
+                        placeholder="Как к вам обращаться"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        style={{
+                          width: '100%',
+                          padding: '13px 16px',
+                          border: '1px solid rgba(23, 50, 77, 0.2)',
+                          borderRadius: '0',
+                          fontSize: '15px',
+                          outline: 'none',
+                          background: '#FFFFFF',
+                          color: 'var(--color-deep-blue, #10273B)',
+                          fontFamily: 'inherit',
+                          boxSizing: 'border-box'
+                        }}
+                      />
+                    </div>
+
+                    {/* Описание ситуации (необязательное) по ТЗ */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                      <label htmlFor="pricing_message" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue, #10273B)' }}>
+                        Краткое описание вопроса (необязательно)
+                      </label>
+                      <textarea
+                        id="pricing_message"
+                        rows={3}
+                        placeholder="Опишите вопрос, стадию спора или приложите краткие пояснения…"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        style={{
+                          width: '100%',
+                          padding: '13px 16px',
+                          border: '1px solid rgba(23, 50, 77, 0.2)',
+                          borderRadius: '0',
+                          fontSize: '15px',
+                          outline: 'none',
+                          background: '#FFFFFF',
+                          color: 'var(--color-deep-blue, #10273B)',
+                          fontFamily: 'inherit',
+                          resize: 'vertical',
+                          boxSizing: 'border-box'
+                        }}
+                      />
+                    </div>
+
+                    {/* Дисклеймер о конфиденциальности */}
+                    <div style={{ fontSize: '12.5px', color: '#718096', lineHeight: 1.45, fontStyle: 'italic' }}>
+                      Не указывайте паспортные данные и другие конфиденциальные сведения. Способ передачи документов согласуем отдельно.
+                    </div>
+
+                    {/* Согласие 152-ФЗ */}
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                      <input
+                        type="checkbox"
+                        id="pricing_agree"
+                        checked={agree}
+                        onChange={(e) => setAgree(e.target.checked)}
+                        style={{ marginTop: '3px', cursor: 'pointer', width: '17px', height: '17px' }}
+                      />
+                      <label htmlFor="pricing_agree" style={{ fontSize: '13px', color: 'var(--color-text-secondary, #4A5568)', lineHeight: 1.4, cursor: 'pointer' }}>
+                        Согласен на обработку персональных данных в соответствии с{' '}
+                        <Link href="/privacy" target="_blank" style={{ color: 'var(--color-deep-blue, #10273B)', textDecoration: 'underline' }}>
+                          Политикой конфиденциальности
+                        </Link>
+                      </label>
+                    </div>
+
+                    {/* Ошибка */}
+                    {error && (
+                      <div style={{
+                        padding: '12px 14px',
+                        backgroundColor: '#FEF2F2',
+                        border: '1px solid #F87171',
+                        borderRadius: '0',
+                        color: '#991B1B',
+                        fontSize: '13.5px',
+                        lineHeight: 1.45
+                      }}>
+                        {error}
+                      </div>
+                    )}
+
+                    {/* Кнопка отправки */}
+                    <div>
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="btn btn-primary"
+                        style={{
+                          width: '100%',
+                          padding: '15px 28px',
+                          fontSize: '15.5px',
+                          fontWeight: 600,
+                          minHeight: '48px',
+                          cursor: loading ? 'not-allowed' : 'pointer',
+                          opacity: loading ? 0.7 : 1
+                        }}
+                      >
+                        {loading ? 'Отправка заявки...' : 'Получить расчёт стоимости'}
+                      </button>
+                    </div>
+                  </form>
+                )}
               </div>
             </div>
           </div>
